@@ -1,0 +1,9 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/00_hp_rpy/14_personal_requests.rpy", line 250: expected ':' not found.
+    label request_potion_menu
+                             ^
+
+Ren'Py Version: Ren'Py 6.18.2.729
