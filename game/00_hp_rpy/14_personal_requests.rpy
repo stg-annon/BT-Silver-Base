@@ -478,7 +478,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                     show screen hermione_main
                     with d3
                     pass  
-                "-Harley Quinn-":
+                "-Harley Quinn-" if "harley_quinn" in outfit_invintory:
                     her "Fine, let me go change."
                     show screen blkfade
                     hide screen hermione_main

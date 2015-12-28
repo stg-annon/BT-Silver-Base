@@ -76,23 +76,33 @@ label cupboard:
                         "-Never mind-":
                             jump possessions
                 
-                "-Potions-" if False:
+                "-Potion Items-" if False:
                     label possessions_potions:
                     menu:
-                        "-Cum Addiction Potion-" if "Cum Addiction Potion" in p_inv:
-                            jump possessions_potions
-                        "-Ass Expansion Potion-" if "Ass Expansion Potion" in p_inv:
-                            jump possessions_potions
-                        "-Breast Expansion Potion-" if "Breast Expansion Potion" in p_inv:
-                            jump possessions_potions
-                        "-Cat Transformation Potion-" if "Cat Transformation Potion" in p_inv:
-                            jump possessions_potions
-                        "-Luna Transformation Potion-" if "Luna Transformation Potion" in p_inv:
-                            jump possessions_potions
-                        "-Lamia Transformation Potion-" if "Lamia Transformation Potion" in p_inv:
-                            jump possessions_potions
-                        "-Transparency Potion-" if "Transparency Potion" in p_inv:
-                            jump possessions_potions
+                        "-Crafting Items-" if False:
+                            label possessions_potion_items:
+                            menu:
+                                "-Never mind-":
+                                    jump possessions_potions
+                        "-Potions-":
+                            label possessions_complete_potions:
+                            menu:
+                                "-Cum Addiction Potion-" if "Cum Addiction Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Ass Expansion Potion-" if "Ass Expansion Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Breast Expansion Potion-" if "Breast Expansion Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Cat Transformation Potion-" if "Cat Transformation Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Luna Transformation Potion-" if "Luna Transformation Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Lamia Transformation Potion-" if "Lamia Transformation Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Transparency Potion-" if "Transparency Potion" in p_inv:
+                                    jump possessions_complete_potions
+                                "-Never mind-":
+                                    jump possessions_potions
                         "-Never mind-":
                             jump possessions
                     

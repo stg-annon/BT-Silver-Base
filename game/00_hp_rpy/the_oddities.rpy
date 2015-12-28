@@ -59,6 +59,9 @@ label shop_books:
 
 label shop_potion_menu:
     menu:
+        "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:
+            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call screen shop_screen
         "-Polyjuice Potion-" if whoring >= 5:
             menu:
                 "-Buy the potion for 100 Gold-":
@@ -71,6 +74,9 @@ label shop_potion_menu:
                     call screen shop_screen
                 "-Nevermind-":
                     call screen shop_screen
+        "{color=#858585}-Transparent Tincture-{/color}" if whoring < 3:
+            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call screen shop_screen
         "-Transparent Tincture-" if whoring >= 3:
             menu:
                 "-Buy the potion for 75 Gold-":
@@ -83,6 +89,9 @@ label shop_potion_menu:
                     call screen shop_screen
                 "-Nevermind-":
                     call screen shop_screen
+        "{color=#858585}-Expanding Elixir-{/color}" if whoring < 8:
+            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call screen shop_screen
         "-Expanding Elixir-" if whoring >= 8:
             menu:
                 "-Buy the potion for 150 Gold-":
@@ -95,6 +104,9 @@ label shop_potion_menu:
                     call screen shop_screen
                 "-Nevermind-":
                     call screen shop_screen
+        "{color=#858585}-Moreish Mead-{/color}" if whoring < 14:
+            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call screen shop_screen
         "-Moreish Mead-" if whoring >= 14:
             menu:
                 "-Buy the potion for 200 Gold-":
