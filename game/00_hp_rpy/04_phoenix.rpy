@@ -135,7 +135,8 @@ label petting:
                     ">Popping noises start coming from all around the room."
                     hide screen hermione_main
                     m "What the fuck?! What's going on?!"
-                    $ hair_color = 5
+                    $ hair_style = "B"
+                    $ hair_color = 3
                     $ badges = False
                     $ only_upper = True
                     $ h_body = "01_hp/13_hermione_main/phoenix/fawkes_1.png"
@@ -225,7 +226,7 @@ label petting:
                     m "That didn't last nearly as long as I'd hoped."
                     faw "I'll do you a small favor and leave her like this."
                     hide screen hermione_main
-                    $ hair_color = 4
+                    $ hair_color = 0
                     with d3
                     $ h_body = "01_hp/13_hermione_main/phoenix/hermione_1.png"
                     show screen hermione_main
@@ -233,7 +234,7 @@ label petting:
                     hide screen hermione_main
                     with d3
                     $ h_body = "01_hp/13_hermione_main/phoenix/hermione_2.png"
-                    $ hair_color = 0
+                    $ hair_style = "A"
                     show screen hermione_main
                     her "Professor?!"
                     hide screen hermione_main
@@ -452,7 +453,8 @@ label talkingfawkes:
             m "Well shit.  I guess we broke her."
             "Hermione?" "Oh don't worry."
             hide screen hermione_main
-            $ hair_color = 5
+            $ hair_style = "B"
+            $ hair_color = 3
             $ badges = False
             $ only_upper = True
             $ h_body = "01_hp/13_hermione_main/phoenix/f_new.png"

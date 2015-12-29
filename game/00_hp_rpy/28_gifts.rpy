@@ -1214,18 +1214,30 @@ label hair_up:
     with d3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
-    if hair_color == 0:
-        $ hair_color = 6
-    elif hair_color == 1:
-        $ hair_color = 7
-    elif hair_color == 3:
-        $ hair_color = 8
-    elif hair_color == 4:
-        $ hair_color = 9
-    elif hair_color == 5:
-        $ hair_color = 10
-    else:
-        $ hair_color = 6
+    $ hair_style = "B"
+    
+    show screen blkfade
+    with d3
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause 2
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause.3
+    hide screen blkfade
+    with d3
+    jump day_time_requests
+
+label hair_down:
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    her "Sure, let me just go change it."
+    show screen blkfade
+    with d3
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    
+    $ hair_style = "A"
     
     show screen blkfade
     with d3

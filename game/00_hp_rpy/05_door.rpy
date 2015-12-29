@@ -468,8 +468,11 @@ label door:
                                     "-Dye your hair orange-" if not hair_color == 5:
                                         jump dye_orange
 
-                                    "-Wear your hair up-" if not hair_color >= 6:
+                                    "-Wear your hair up-" if not hair_style == "B":
                                         jump hair_up
+
+                                    "-Wear your hair down-" if hair_style == "B":
+                                        jump hair_down
 
                                     "-Never mind-":
                                         jump day_time_requests

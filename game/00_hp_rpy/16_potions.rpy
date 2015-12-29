@@ -74,6 +74,7 @@ label potion_menu:
             $ p_inv.remove(p_breast_expansion[0])
             $ p_inv.remove(p_breast_expansion[1])
             $ p_inv.append(p_potion_names[2])
+            jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[2]]\"-{/color}" if not set(p_breast_expansion).issubset(set(p_inv)):
             call p_lack_materials(2)
             jump potion_menu
@@ -84,6 +85,7 @@ label potion_menu:
             $ p_inv.remove(p_cat_transformation[0])
             $ p_inv.remove(p_cat_transformation[1])
             $ p_inv.append(p_potion_names[3])
+            jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[3]]\"-{/color}" if not set(p_cat_transformation).issubset(set(p_inv)):
             call p_lack_materials(3)
             jump potion_menu
@@ -94,6 +96,7 @@ label potion_menu:
             $ p_inv.remove(p_luna_transformation[0])
             $ p_inv.remove(p_luna_transformation[1])
             $ p_inv.append(p_potion_names[4])
+            jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[4]]\"-{/color}" if not set(p_luna_transformation).issubset(set(p_inv)):
             call p_lack_materials(4)
             jump potion_menu
@@ -104,6 +107,7 @@ label potion_menu:
             $ p_inv.remove(p_lamia_transformation[0])
             $ p_inv.remove(p_lamia_transformation[1])
             $ p_inv.append(p_potion_names[5])
+            jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[5]]\"-{/color}" if not set(p_lamia_transformation).issubset(set(p_inv)):
             call p_lack_materials(5)
             jump potion_menu
@@ -114,6 +118,7 @@ label potion_menu:
             $ p_inv.remove(p_transparency[0])
             $ p_inv.remove(p_transparency[1])
             $ p_inv.append(p_potion_names[6])
+            jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[6]]\"-{/color}" if not set(p_transparency).issubset(set(p_inv)):
             call p_lack_materials(6)
             jump potion_menu
@@ -126,6 +131,7 @@ label potion_menu:
             # $ p_inv.remove(POT_ARRAY_HERE[0])
             # $ p_inv.remove(POT_ARRAY_HERE[1])
             # $ p_inv.append(p_potion_names[POT_INDEX_HERE])
+            # jump potion_menu
         # "{color=#858585}-craft: \"[p_potion_names[POT_INDEX_HERE]]\"-{/color}" if not set(POT_ARRAY_HERE).issubset(set(p_inv)):
             # call p_lack_materials(POT_INDEX_HERE)
             # jump potion_menu

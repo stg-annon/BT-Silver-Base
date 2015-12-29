@@ -16,8 +16,7 @@ init:
     image side dum3 = "01_hp/26_dum/dum_03.png"
     image side dum4 = "01_hp/26_dum/dum_04.png"
     image side dum5 = "01_hp/26_dum/dum_05.png"
-
-
+    
     ### ADDING HOUSE POINTS ###
     image what_01_points:
         "01_hp/11_misc/01_points.png"

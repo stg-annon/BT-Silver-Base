@@ -275,6 +275,25 @@ label declare_ht_vars:
     $ order_item = 0
     $ order_quantity = 0
     
+    $ leg_pos = 0
+    $ right_arm_pos = 0
+    $ left_arm_pos = 0
+    $ her_breasts = 0
+    $ hair_color = 0
+    $ hair_style = "A"
+    
+    $ emote_anger = False
+    $ emote_exclam = False
+    $ emote_hearts = False
+    $ emote_question = False
+    $ emote_sweat = False
+    $ emote_suprize = False
+    $ anger = [51,76,86,110,351,346,345,343,317,309]
+    $ exclam = []
+    $ hearts = []
+    $ question = []
+    $ sweat = [24,34,57,108,340]
+    $ suprize = [80,335]
     
     $ store_gift_items = []
     $ store_gift_items.append("null")

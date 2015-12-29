@@ -310,7 +310,6 @@ $ glasses_worn = False
 $ legs_03 = False
 $ micro_skirt = False
 $ glasses = False
-$ hair_color = 0
 $ ears = False
 $ wear_shirts = True
 $ gave_tinyminiskirt = False
