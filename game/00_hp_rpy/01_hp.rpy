@@ -354,46 +354,7 @@ $ luna_skirt = "01_hp/26_luna/clothes/uniform/skirt.png"
 $ luna_panties = "01_hp/26_luna/clothes/underwear/panties.png" 
 $ luna_bra = "01_hp/26_luna/clothes/underwear/bra.png" 
 $ luna_zorder = 5
-## Potions store 
-call declare_potion_vars
-##CLOTHES STORE - Thanks anon
-$ outfit_wait_time = 0 #in days
-$ outfit_ready = False
-$ outfit_order_placed = False
-$ outfit_invintory = []
-$ outfit_order = "null"
 
-$ clothes_store_order_choice = "null"
-$ clothes_store_curr_page = 1
-
-$ clothes_store_inv = []
-$ clothes_store_inv.append("null")#buffer for index 0
-$ clothes_store_inv.append("gryffindor_cheerleader")#start page 1
-$ clothes_store_inv.append("slytherin_cheerleader")
-$ clothes_store_inv.append("maid")
-$ clothes_store_inv.append("silk_nightgown")
-$ clothes_store_inv.append("ball_dress")
-$ clothes_store_inv.append("ms_marvel")
-$ clothes_store_inv.append("heart_dancer")
-$ clothes_store_inv.append("power_girl")#end page 1
-###########################################
-$ clothes_store_inv.append("")#start page 2
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")#end page 2
-###########################################
-$ clothes_store_inv.append("")#start page 3
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")
-$ clothes_store_inv.append("")#end page 3
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
 screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество

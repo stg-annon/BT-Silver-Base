@@ -1,54 +1,64 @@
-label clothes_store_gui(page_no = 1):
+label declare_clothes_store_vars:
+
+    ##CLOTHES STORE - Thanks anon
+    $ outfit_wait_time = 0 #in days
+    $ outfit_ready = False
+    $ outfit_order_placed = False
+    $ outfit_invintory = []
+    $ outfit_order = "null"
     
-    $ clothes_store_curr_page = page_no
-    $ last_page = 3 # upper page limit
-    $ output = -1
+    $ clothes_store_order_choice = "null"
+    $ clothes_store_curr_page = 1
+    $ clothes_store_selection = 0
+
+    $ clothes_store_inv = []
+    $ clothes_store_inv.append("null")#buffer for index 0
+    $ clothes_store_inv.append("gryffindor_cheerleader")#start page 1
+    $ clothes_store_inv.append("slytherin_cheerleader")
+    $ clothes_store_inv.append("maid")
+    $ clothes_store_inv.append("silk_nightgown")
+    $ clothes_store_inv.append("ball_dress")
+    $ clothes_store_inv.append("ms_marvel")
+    $ clothes_store_inv.append("heart_dancer")
+    $ clothes_store_inv.append("power_girl")#end page 1
+    ###########################################
+    $ clothes_store_inv.append("wip")#start page 2
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")#end page 2
+    ###########################################
+    $ clothes_store_inv.append("")#start page 3
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("")#end page 3
+
+return
     
-    call screen cloth_store_imagemap
-    $ im_result = _return
-    
-    if im_result == "left":
-        if(clothes_store_curr_page - 1 > 0):
-            call test_cs_im(clothes_store_curr_page-1)
-        else:
-            call test_cs_im(1)
-    elif im_result == "right":
-        if(clothes_store_curr_page + 1 <= last_page):
-            call test_cs_im(clothes_store_curr_page+1)
-        else:
-            call test_cs_im(clothes_store_curr_page)
-    elif im_result == "item1":
-        $ output = 1
-        #DEBUG#"You picked page [clothes_store_curr_page] item 1!"
-    elif im_result == "item2":
-        $ output = 2
-        #DEBUG#"You picked page [clothes_store_curr_page] item 2!"
-    elif im_result == "item3":
-        $ output = 3
-        #DEBUG#"You picked page [clothes_store_curr_page] item 3!"
-    elif im_result == "item4":
-        $ output = 4
-        #DEBUG#"You picked page [clothes_store_curr_page] item 4!"
-    elif im_result == "item5":
-        $ output = 5
-        #DEBUG#"You picked page [clothes_store_curr_page] item 5!"
-    elif im_result == "item6":
-        $ output = 6
-        #DEBUG#"You picked page [clothes_store_curr_page] item 6!"
-    elif im_result == "item7":
-        $ output = 7
-        #DEBUG#"You picked page [clothes_store_curr_page] item 7!"
-    elif im_result == "item8":
-        $ output = 8
-        #DEBUG#"You picked page [clothes_store_curr_page] item 8!"
-    
-    
-    if im_result == "cancel":
-        $ clothes_store_order_choice = "CANCEL"
-    else:
-        $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ output)]
-    
+label clothes_store_gui:
+    call screen cs_p1
+    label cs_select_done:
     return
+    
+label cs_select:
+    $ tmp = ((clothes_store_curr_page-1)*8) + clothes_store_selection
+    #DEBUG#"You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
+    if clothes_store_inv[tmp] == "wip":
+        call cust_excuse("Sorry this outfit is currently a work in progress and unavalable at this time.")
+        jump clothes_menu
+    if clothes_store_selection == -1 or clothes_store_inv[tmp] == "":
+        jump clothes_menu
+    
+    $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ clothes_store_selection)]
+    $ clothes_store_selection = 0
+    jump cs_select_done
     
 label clothes_store:
     if outfit_ready:

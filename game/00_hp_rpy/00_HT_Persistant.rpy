@@ -179,51 +179,25 @@ label load_ht_persistant_vars:
         $ luna_bra = "01_hp/26_luna/clothes/underwear/bra.png" 
     if not hasattr(renpy.store,'luna_zorder'): #important!
         $ luna_zorder = 5
-
+    
     ###Define clothes store variables
+    if not hasattr(renpy.store,'outfit_invintory'): #important!
+        $ outfit_invintory = []
+    if not hasattr(renpy.store,'outfit_order'): #important!
+        $ outfit_order = "null"
     if not hasattr(renpy.store,'outfit_wait_time'): #important!
         $ outfit_wait_time = 0
     if not hasattr(renpy.store,'outfit_ready'): #important!
         $ outfit_ready = False
     if not hasattr(renpy.store,'outfit_order_placed'): #important!
         $ outfit_order_placed = False
-    if not hasattr(renpy.store,'outfit_invintory'): #important!
-        $ outfit_invintory = []
-    if not hasattr(renpy.store,'outfit_order'): #important!
-        $ outfit_order = "null"
-    if not hasattr(renpy.store,'clothes_store_order_choice'): #important!
-        $ clothes_store_order_choice = "null"
     if not hasattr(renpy.store,'clothes_store_curr_page'): #important!
         $ clothes_store_curr_page = 1
-    if not hasattr(renpy.store,'clothes_store_inv'): #important!
-        $ clothes_store_inv = []
-        $ clothes_store_inv.append("null")#buffer for index 0
-        $ clothes_store_inv.append("gryffindor_cheerleader")#start page 1
-        $ clothes_store_inv.append("slytherin_cheerleader")
-        $ clothes_store_inv.append("maid")
-        $ clothes_store_inv.append("silk_nightgown")
-        $ clothes_store_inv.append("ball_dress")
-        $ clothes_store_inv.append("ms_marvel")
-        $ clothes_store_inv.append("heart_dancer")
-        $ clothes_store_inv.append("power_girl")#end page 1
-        ###########################################
-        $ clothes_store_inv.append("")#start page 2
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")#end page 2
-        ###########################################
-        $ clothes_store_inv.append("")#start page 3
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")
-        $ clothes_store_inv.append("")#end page 3
+    
+    ###POTION STORE
+    if not hasattr(renpy.store,'p_inv'): #important!
+        $ p_inv = []
+    
     if not hasattr(renpy.store,'book_progress'): #important!
         $ book_progress = []
     if not hasattr(renpy.store,'book_done'): #important!
@@ -231,34 +205,6 @@ label load_ht_persistant_vars:
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
     
-    ###POTION STORE
-    if not hasattr(renpy.store,'p_base'): #important!
-        $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction"] #base potion names
-        $ p_items = ["Wormwood", "Knotgrass", "Root of Aconite", "Niffler's fancy", "Cat Hair", "Luna's Hair", "Basilisk Scale"] #item names
-        
-        
-        #v==SAVE THIS==v#
-        $ p_inv = [] #filled with testing items
-        #^==SAVE THIS==^#
-        
-        #$ p_inv.remove("ITEM") to remove an item
-        
-        $ p_potion_names = []
-        $ p_potion_names.append("Cum Addiction Potion")
-        $ p_potion_names.append("Ass Expansion Potion")
-        $ p_potion_names.append("Breast Expansion Potion")
-        $ p_potion_names.append("Cat Transformation Potion")
-        $ p_potion_names.append("Luna Transformation Potion")
-        $ p_potion_names.append("Lamia Transformation Potion")
-        $ p_potion_names.append("Transparency Potion")
-        
-        $ p_cum_addiction = ["Wormwood","Moreish Mead"]
-        $ p_ass_expansion = ["Knotgrass","Expanding Elixir"]
-        $ p_breast_expansion = ["Root of Aconite","Expanding Elixir"]
-        $ p_cat_transformation = ["Cat Hair","Polyjuice Potion"]
-        $ p_luna_transformation = ["Luna's Hair","Polyjuice Potion"]
-        $ p_lamia_transformation = ["Basilisk Scale","Polyjuice Potion"]
-        $ p_transparency = ["Niffler's fancy","Transparent Tincture"]
 return
 
 
@@ -267,6 +213,7 @@ label declare_ht_vars:
     
     call declare_book_vars
     call declare_potion_vars
+    call declare_clothes_store_vars
     
     
     $ skip_duel = False
@@ -294,6 +241,19 @@ label declare_ht_vars:
     $ question = []
     $ sweat = [24,34,57,108,340]
     $ suprize = [80,335]
+    
+    # $ new_request_01_lvl = 0
+    # $ new_request_02_lvl = 0
+    # $ new_request_03_lvl = 0
+    # $ new_request_04_lvl = 0
+    # $ new_request_05_lvl = 0
+    # $ new_request_08_lvl = 0
+    # $ new_request_11_lvl = 0
+    # $ new_request_12_lvl = 0
+    # $ new_request_16_lvl = 0
+    # $ new_request_22_lvl = 0
+    # $ new_request_29_lvl = 0
+    # $ new_request_31_lvl = 0
     
     $ store_gift_items = []
     $ store_gift_items.append("null")

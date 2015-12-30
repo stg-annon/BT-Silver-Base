@@ -168,29 +168,82 @@ screen shop_screen:
         idle "01_hp/25_mo/scroll_2_1.png"
         hover "01_hp/25_mo/scroll_2_2.png"
         action [Jump("sscrolls2")]
-
-screen cloth_store_imagemap:
     
+screen cs_p1:
+    
+    tag clothes_menu
     zorder hermione_main_zorder-1
     
     imagemap:
+        cache False
         ground "01_hp/18_store/cs_gui/c_s_ground.png"
-        idle "01_hp/18_store/cs_gui/c_s_idle-"+str(clothes_store_curr_page)+".png"
-        hover "01_hp/18_store/cs_gui/c_s_hover-"+str(clothes_store_curr_page)+".png"
+        idle "01_hp/18_store/cs_gui/c_s_idle-1.png"
+        hover "01_hp/18_store/cs_gui/c_s_hover-1.png"
         # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (56, 57, 156, 234) clicked Return("item1")
-        hotspot (233, 57, 156, 234) clicked Return("item2")
-        hotspot (409, 57, 156, 234) clicked Return("item3")
-        hotspot (585, 57, 156, 234) clicked Return("item4")
-        hotspot (56, 312, 156, 234) clicked Return("item5")
-        hotspot (233, 312, 156, 234) clicked Return("item6")
-        hotspot (409, 312, 156, 234) clicked Return("item7")
-        hotspot (585, 312, 156, 234) clicked Return("item8")
+        
+        hotspot (56, 57, 156, 234) clicked [SetVariable("clothes_store_selection",1),Jump("cs_select")]
+        hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
+        hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
+        hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
+        hotspot (56, 312, 156, 234) clicked [SetVariable("clothes_store_selection",5),Jump("cs_select")]
+        hotspot (233, 312, 156, 234) clicked [SetVariable("clothes_store_selection",6),Jump("cs_select")]
+        hotspot (409, 312, 156, 234) clicked [SetVariable("clothes_store_selection",7),Jump("cs_select")]
+        hotspot (585, 312, 156, 234) clicked [SetVariable("clothes_store_selection",8),Jump("cs_select")]
         
         #hotspot (16, 552, 34, 34) clicked Return("left")
-        #hotspot (745, 552, 34, 34) clicked Return("right")
-        hotspot (742, 11, 42, 41) clicked Return("cancel")
-
+        hotspot (745, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",2),Show("cs_p2")]
+        hotspot (742, 11, 42, 41) clicked [SetVariable("clothes_store_selection",-1),Jump("cs_select")]
+    
+screen cs_p2:
+    
+    tag clothes_menu
+    zorder hermione_main_zorder-1
+    
+    imagemap:
+        cache False
+        ground "01_hp/18_store/cs_gui/c_s_ground.png"
+        idle "01_hp/18_store/cs_gui/c_s_idle-2.png"
+        hover "01_hp/18_store/cs_gui/c_s_hover-2.png"
+        # (X upper-left corner, Y upper-left corner, width, height).
+        
+        hotspot (56, 57, 156, 234) clicked [SetVariable("clothes_store_selection",1),Jump("cs_select")]
+        # hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
+        # hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
+        # hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
+        # hotspot (56, 312, 156, 234) clicked [SetVariable("clothes_store_selection",5),Jump("cs_select")]
+        # hotspot (233, 312, 156, 234) clicked [SetVariable("clothes_store_selection",6),Jump("cs_select")]
+        # hotspot (409, 312, 156, 234) clicked [SetVariable("clothes_store_selection",7),Jump("cs_select")]
+        # hotspot (585, 312, 156, 234) clicked [SetVariable("clothes_store_selection",8),Jump("cs_select")]
+        
+        hotspot (16, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",1),Show("cs_p1")]
+        #hotspot (745, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",3),Show("cs_p3")]
+        hotspot (742, 11, 42, 41) clicked [SetVariable("clothes_store_selection",-1),Jump("cs_select")]
+    
+# screen cs_p3:
+    
+    # tag clothes_menu
+    # zorder hermione_main_zorder-1
+    
+    # imagemap:
+        # cache False
+        # ground "01_hp/18_store/cs_gui/c_s_ground.png"
+        # idle "01_hp/18_store/cs_gui/c_s_idle-3.png"
+        # hover "01_hp/18_store/cs_gui/c_s_hover-3.png"
+        # # (X upper-left corner, Y upper-left corner, width, height).
+        
+        # hotspot (56, 57, 156, 234) clicked [SetVariable("clothes_store_selection",1),Jump("cs_select")]
+        # hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
+        # hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
+        # hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
+        # hotspot (56, 312, 156, 234) clicked [SetVariable("clothes_store_selection",5),Jump("cs_select")]
+        # hotspot (233, 312, 156, 234) clicked [SetVariable("clothes_store_selection",6),Jump("cs_select")]
+        # hotspot (409, 312, 156, 234) clicked [SetVariable("clothes_store_selection",7),Jump("cs_select")]
+        # hotspot (585, 312, 156, 234) clicked [SetVariable("clothes_store_selection",8),Jump("cs_select")]
+        
+        # hotspot (16, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",2),Show("cs_p2")]
+        # hotspot (745, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",4),Show("cs_p4")]
+        # hotspot (742, 11, 42, 41) clicked [SetVariable("clothes_store_selection",-1),Jump("cs_select")]
+    
 screen cg:
     add cg_image
 
