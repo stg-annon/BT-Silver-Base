@@ -180,33 +180,16 @@ label load_ht_persistant_vars:
     if not hasattr(renpy.store,'luna_zorder'): #important!
         $ luna_zorder = 5
     
-    ###Define clothes store variables
-    if not hasattr(renpy.store,'outfit_invintory'): #important!
-        $ outfit_invintory = []
-    if not hasattr(renpy.store,'outfit_order'): #important!
-        $ outfit_order = "null"
-    if not hasattr(renpy.store,'outfit_wait_time'): #important!
-        $ outfit_wait_time = 0
-    if not hasattr(renpy.store,'outfit_ready'): #important!
-        $ outfit_ready = False
-    if not hasattr(renpy.store,'outfit_order_placed'): #important!
-        $ outfit_order_placed = False
-    
-    ###POTION STORE
-    if not hasattr(renpy.store,'p_inv'): #important!
-        #$ p_inv = []
-        $ p_inv = ["Wormwood","Wormwood","Wormwood","Wormwood","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead"] #filled with testing items
-    
-    if not hasattr(renpy.store,'book_progress'): #important!
-        $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
-    if not hasattr(renpy.store,'book_done'): #important!
-        $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
     if not hasattr(renpy.store,'store_gift_items'): #important!
         $ store_gift_items = []
     if not hasattr(renpy.store,'shop_found'): #important!
         $ shop_found = False
+    
+    call declare_book_persist
+    call declare_potion_persist
+    call declare_clothes_store_persist
     
 return
 

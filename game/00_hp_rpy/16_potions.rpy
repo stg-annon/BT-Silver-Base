@@ -1,10 +1,13 @@
+label declare_potion_persist:
+    if not hasattr(renpy.store,'p_inv'): #important!
+        #$ p_inv = []
+        $ p_inv = ["Wormwood","Wormwood","Wormwood","Wormwood","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead"] #filled with testing items
+    return
+
 label declare_potion_vars:
     
     $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction"] #base potion names
     $ p_items = ["Wormwood", "Knotgrass", "Root of Aconite", "Niffler's fancy", "Cat Hair", "Luna's Hair", "Basilisk Scale"] #item names
-    
-    # p_inv is the invintory fot this
-    #$ p_inv.remove("ITEM") to remove an item
     
     $ p_potion_names = []
     $ p_potion_names.append("Cum Addiction Potion")

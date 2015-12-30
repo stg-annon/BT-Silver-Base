@@ -1,3 +1,16 @@
+label declare_clothes_store_persist:
+    if not hasattr(renpy.store,'outfit_invintory'): #important!
+        $ outfit_invintory = []
+    if not hasattr(renpy.store,'outfit_order'): #important!
+        $ outfit_order = "null"
+    if not hasattr(renpy.store,'outfit_wait_time'): #important!
+        $ outfit_wait_time = 0
+    if not hasattr(renpy.store,'outfit_ready'): #important!
+        $ outfit_ready = False
+    if not hasattr(renpy.store,'outfit_order_placed'): #important!
+        $ outfit_order_placed = False
+    return
+
 label declare_clothes_store_vars:
 
     ##CLOTHES STORE - Thanks anon

@@ -1,3 +1,10 @@
+label declare_book_persist:
+    if not hasattr(renpy.store,'book_progress'): #important!
+        $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    if not hasattr(renpy.store,'book_done'): #important!
+        $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
+    return
+
 label declare_book_vars:
     
     $ cheat_reading = False
