@@ -34,12 +34,3 @@ label cheats_ht:
                     jump cheats_ht            
         "-Nevermind-":
             jump day_main_menu
-            
-label cheats_pt:
-    menu:
-        "-Gold-":
-            $ gold +=50000
-            "Obtained 50,000g"
-            jump cheats_pt
-        "-Nevermind-":
-            jump house
