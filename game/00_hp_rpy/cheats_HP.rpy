@@ -16,13 +16,24 @@ label cheats_ht:
             $ books = ["book_01", "book_02", "book_03", "book_04",  "book_05", "book_06", "book_07", "book_08", "book_09", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
             "Obtained Books."
             jump cheats_ht
+        "-Cheat Reading (off)-" if not cheat_reading:
+            $ cheat_reading = True
+            jump cheats_ht
+        "-Cheat Reading (on)-"if cheat_reading:
+            $ cheat_reading = False
+            jump cheats_ht
         
-
         "-Slytherin Points-":
             $ slytherin +=10000
             "10,000 to Slytherin!"
             jump cheats_ht
-            
+        
+        "-force public requests-":
+            $ force_unlock_pub_favors = True
+            $ lock_public_favors = False
+            "Public favours unlocked!"
+            jump cheats_ht
+        
         "-Imagination":
              menu:
                 "Have you used this cheat already today? (Using it more than once can break the game)"

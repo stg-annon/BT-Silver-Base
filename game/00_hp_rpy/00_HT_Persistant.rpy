@@ -204,6 +204,8 @@ label load_ht_persistant_vars:
         $ book_done = []
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
+    if not hasattr(renpy.store,'store_gift_items'): #important!
+        $ store_gift_items = []
     
 return
 
@@ -215,6 +217,7 @@ label declare_ht_vars:
     call declare_potion_vars
     call declare_clothes_store_vars
     
+    $ force_unlock_pub_favors = False
     
     $ skip_duel = False
     $ shop_found = False

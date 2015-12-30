@@ -720,3 +720,10 @@ label fire_out: #Shows Genie reading a book near the window.
     show screen reading
     with Dissolve(0.3)
     return
+    
+### READING GALADRIEL BOOKS IN PROPER ORDER ###
+label gal_proper:
+    m "Reading books out of order won't do me any good."
+    hide screen gift
+    return
+    

@@ -413,7 +413,84 @@ label epilogue:
 ### HAREM ###        
         
         
+label chapter_check_book_07: #Checks if the chapter just finished was the last one.
+    if book_07_units == 20:
+        if fire_in_fireplace:
+            show screen done_reading_02  
+            hide screen reading_near_fire
+        else:
+            show screen done_reading  
+            hide screen reading
+
+      
+        ">That was the last chapter. You finished the entire book."
+        if complited_leena_already and complited_shea_already and complited_stevens_already and victoria >= 1 and shea >= 1 and leena >= 1: #Harem ending. The DAHR's ticket.
+            m "Wow! What a great book! That was intense!"
+            
+            #m "No, I mean it! What a great peace of fiction! That Akabur dude must be a genius!"
+            if not found_dahrs_ticket_once:
+                m "Hm...?"
+                m "What is that...? A bookmark?"
+                $ the_gift = "01_hp/18_store/06.png" # The DAHR's ticket.
+                show screen gift
+                with d3
+                $ renpy.play('sounds/win2.mp3') #Sound of finding an item.
+                ">You found a DAHR's voucher."
+                hide screen gift
+                with d3
+                m "Hm..."
+                $ vouchers += 1 #Shows the amount of DAHR's vouchers in your possession.
+                $ found_dahrs_ticket_once = True # Turns TRUE after you complete "My Dear Waifu" with the harem ending and "Dahr's voucher" fall out.
+                $ waifu_book_completed = True
+        elif shea_waifu and shea >= 8: 
+            if not complited_shea_already: #Finished with Shea for the first time.
+                m "Not bad. I really grew to care about that Shea girl..."
+                g9 "Well, her and her anal virginity..."
+                $ complited_shea_already = True
+            else: #Finished with Shea for the second time.
+                m "So I ended up with Shea again, huh?"
+                m "Hm... Maybe I should try and make different choices next time...?"
+        elif victoria_waifu and victoria >= 7:
+            if not complited_stevens_already: #Finished with Ms.Stevens for the first time.
+                m "Not bad, not bad. That Ms. Stevens Lady turned out to be one dirty slut..."
+                $ complited_stevens_already = True
+            else: #Finished with Shea for the second time.
+                m "So I ended up with Ms.Stevens again?"
+                m "Hm... Maybe I should try and make different choices next time...?"
+        elif leena_waifu and leena >= 8:
+            if not complited_leena_already: #Finished with Leena for the first time.
+                g9 "Sweet! I love happy endings!"
+                $ complited_leena_already = True
+            else: #Finished with Shea for the second time.
+                m "So I ended up with that blond chick again?"
+                m "Hm... Maybe I should try and make different choices next time...?"
+
+        else:
+            m "Hm... What an anticlimactic ending..."
+            #m "Maybe I should read it again sometime."
         
+        if not dear_waifu_completed_once:
+            $ dear_waifu_completed_once = True # Turns TRUE when complete the book for the first time with any ending. Makes sure you get +1 imagination only once.
+            $ renpy.play('sounds/win_04.mp3')   #Not loud.
+            hide screen notes
+            show screen notes
+            ">Your imagination has improved."
+            $ imagination +=1
+        $ book_07_units = 0 #RESTING THE BOOK FOR ANOTHER PLAYTHORUGH.
+        $ shea = 0 #RESETING SHEA'S POINTS FOR THE NEXT PLAYTHOURGH.
+        $ victoria = 0
+        $ leena = 0
+        if fire_in_fireplace:
+            hide screen reading_near_fire
+        else:
+            hide screen reading
+        
+        if daytime:
+            jump night_start
+        else: 
+            jump day_start
+    else:
+        return    
         
         
         
