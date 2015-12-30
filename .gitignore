@@ -188,6 +188,7 @@ $RECYCLE.BIN/
 ## Python
 #############
 
+*.save
 *.rpyc
 *.py[cod]
 
