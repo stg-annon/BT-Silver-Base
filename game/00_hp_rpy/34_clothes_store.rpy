@@ -1,12 +1,6 @@
 label declare_clothes_store_vars:
 
     ##CLOTHES STORE - Thanks anon
-    $ outfit_wait_time = 0 #in days
-    $ outfit_ready = False
-    $ outfit_order_placed = False
-    $ outfit_invintory = []
-    $ outfit_order = "null"
-    
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
     $ clothes_store_selection = 0

@@ -191,21 +191,22 @@ label load_ht_persistant_vars:
         $ outfit_ready = False
     if not hasattr(renpy.store,'outfit_order_placed'): #important!
         $ outfit_order_placed = False
-    if not hasattr(renpy.store,'clothes_store_curr_page'): #important!
-        $ clothes_store_curr_page = 1
     
     ###POTION STORE
     if not hasattr(renpy.store,'p_inv'): #important!
-        $ p_inv = []
+        #$ p_inv = []
+        $ p_inv = ["Wormwood","Wormwood","Wormwood","Wormwood","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead"] #filled with testing items
     
     if not hasattr(renpy.store,'book_progress'): #important!
-        $ book_progress = []
+        $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'book_done'): #important!
-        $ book_done = []
+        $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
     if not hasattr(renpy.store,'store_gift_items'): #important!
         $ store_gift_items = []
+    if not hasattr(renpy.store,'shop_found'): #important!
+        $ shop_found = False
     
 return
 
@@ -220,7 +221,6 @@ label declare_ht_vars:
     $ force_unlock_pub_favors = False
     
     $ skip_duel = False
-    $ shop_found = False
     $ next_day = False
     $ order_item = 0
     $ order_quantity = 0

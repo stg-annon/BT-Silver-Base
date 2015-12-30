@@ -6,43 +6,6 @@ label declare_book_vars:
     $ speed_writing_books = [5,6,7,8]
     $ fiction_books = [9,10,11,12]
     
-    
-    #v=======Save these values==========v#
-    $ book_progress = []
-    
-    $ book_progress.append(0)#null
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    $ book_progress.append(0)
-    
-    
-    $ book_done = []
-    
-    $ book_done.append(False)#null
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    $ book_done.append(False)
-    #^=======Save these values==========^#
-    
-    
     $ book_name = []
     
     $ book_name.append("")

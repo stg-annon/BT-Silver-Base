@@ -1,6 +1,4 @@
 label shop_fake:
-    if shop_found == True:
-        jump shop_menu
     $ show_clothes_store = True
     $ shop_found = True
     sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
@@ -41,6 +39,8 @@ label shop_fake:
     call screen shop_screen 
 
 label shop_menu:
+    if not shop_found:
+        jump shop_fake
     show screen shop_screen
     sna_[1] "Hey Genie, what would you like to buy?"
     call screen shop_screen
