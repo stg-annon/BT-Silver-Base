@@ -156,13 +156,169 @@ label door:
                 
                 label day_time_requests:
                 menu:
-                    "-Chit chat-" if not chitchated_with_her:
-                        $ chitchated_with_her = True #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
-                        if mad <= 7:
-                            jump chit_chat
-                        else:
-                            her "I have nothing to say to you sir..."    
-                            jump day_time_requests
+                    "-Talk-":
+                        label hermione_talk:
+                        menu:
+                            "-Chit chat-" if not chitchated_with_her:
+                                $ chitchated_with_her = True #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
+                                if mad <= 7:
+                                    jump chit_chat
+                                else:
+                                    her "I have nothing to say to you sir..."    
+                                    jump hermione_talk
+                            
+                            "-Address me only as-":
+                                menu:
+                                    
+                                    "-Sir-":
+                                        $ genie_name = "Sir"
+                                        jump genie_change
+                                    
+                                    "-Dumbledore-":
+                                        $ genie_name = "Dumbledore"
+                                        jump genie_change
+                                    
+                                    "-Professor-":
+                                        $ genie_name = "Professor"
+                                        jump genie_change
+                                    
+                                    "-Old man-":
+                                        $ genie_name = "Old man"
+                                        jump genie_change
+                                    
+                                    "-Genie-":
+                                        if whoring >=5:
+                                            $ genie_name = "Genie"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-My Lord-":
+                                        if whoring >=7:
+                                            $ genie_name = "My Lord"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Darling-":
+                                        if whoring >=10:
+                                            $ genie_name = "Darling"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Lord Voldemort-":
+                                        if whoring >=15:
+                                            $ genie_name = "Lord Voldemort"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Daddy-":
+                                        if whoring >=20:
+                                            $ genie_name = "Daddy"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Master-":
+                                        if whoring >=20:
+                                            $ genie_name = "Master"
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Custom Input-":
+                                        $ temp_name = renpy.input("(Please enter the name.)")
+                                        $ temp_name = temp_name.strip()
+                                        if hermione_name == "":
+                                            $ genie_name = "Sir"
+                                        if whoring >=20:
+                                            $ genie_name = temp_name
+                                            jump genie_change
+                                        else:
+                                            jump genie_change_fail
+                                    
+                                    "-Never mind-":
+                                        jump hermione_talk
+                            
+                            "-From now on I will refer to you as-":
+                                menu:
+                                    
+                                    "-Miss Granger-":
+                                        $ hermione_name = "Miss Granger"
+                                        jump hermione_change
+                                    
+                                    "-Girl-":
+                                        $ hermione_name = "Girl"
+                                        jump hermione_change
+                                    
+                                    "-Good Girl-":
+                                        if whoring >=5:
+                                            $ hermione_name = "Good Girl"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Slave-":
+                                        if whoring >=10:
+                                            $ hermione_name = "Slave"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Princess-":
+                                        if whoring >=10:
+                                            $ hermione_name = "Princess"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Whore-":
+                                        if whoring >=15:
+                                            $ hermione_name = "Whore"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Little Girl-":
+                                        if whoring >=15:
+                                            $ hermione_name = "Little Girl"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Slytherin Slut-":
+                                        if whoring >=18:
+                                            $ hermione_name = "Slytherin Slut"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Mudblood-":
+                                        if whoring >=20:
+                                            $ hermione_name = "Mudblood"
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Custom Input-":
+                                        $ temp_name = renpy.input("(Please enter the name.)")
+                                        $ temp_name = temp_name.strip()
+                                        if hermione_name == "":
+                                            $ hermione_name = "Miss granger"
+                                        if whoring >=20:
+                                            $ hermione_name = temp_name
+                                            jump hermione_change
+                                        else:
+                                            jump hermione_change_fail
+                                    
+                                    "-Never mind-":
+                                        jump hermione_talk
+                            
+                            "-Never mind":
+                                jump day_time_requests
+                    
                     "-Tutoring-" if not daytime:
                         if mad >=1 and mad < 3:
                             her "I'm sorry, maybe tomorrow..."
@@ -531,155 +687,7 @@ label door:
                                 jump day_time_requests     
                                        
                                        
-                                       
-                    "-Address me only as-":
-                        menu:
-                            
-                            "-Sir-":
-                                $ genie_name = "Sir"
-                                jump genie_change
-                            
-                            "-Dumbledore-":
-                                $ genie_name = "Dumbledore"
-                                jump genie_change
-                            
-                            "-Professor-":
-                                $ genie_name = "Professor"
-                                jump genie_change
-                            
-                            "-Old man-":
-                                $ genie_name = "Old man"
-                                jump genie_change
-                            
-                            "-Genie-":
-                                if whoring >=5:
-                                    $ genie_name = "Genie"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-My Lord-":
-                                if whoring >=7:
-                                    $ genie_name = "My Lord"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Darling-":
-                                if whoring >=10:
-                                    $ genie_name = "Darling"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Lord Voldemort-":
-                                if whoring >=15:
-                                    $ genie_name = "Lord Voldemort"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Daddy-":
-                                if whoring >=20:
-                                    $ genie_name = "Daddy"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Master-":
-                                if whoring >=20:
-                                    $ genie_name = "Master"
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Custom Input-":
-                                $ temp_name = renpy.input("(Please enter the name.)")
-                                $ temp_name = temp_name.strip()
-                                if hermione_name == "":
-                                    $ genie_name = "Sir"
-                                if whoring >=20:
-                                    $ genie_name = temp_name
-                                    jump genie_change
-                                else:
-                                    jump genie_change_fail
-                            
-                            "-Never mind-":
-                                jump day_time_requests
-                    "-From now on I will refer to you as-":
-                        menu:
-                            
-                            "-Miss Granger-":
-                                $ hermione_name = "Miss Granger"
-                                jump hermione_change
-                            
-                            "-Girl-":
-                                $ hermione_name = "Girl"
-                                jump hermione_change
-                            
-                            "-Good Girl-":
-                                if whoring >=5:
-                                    $ hermione_name = "Good Girl"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Slave-":
-                                if whoring >=10:
-                                    $ hermione_name = "Slave"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Princess-":
-                                if whoring >=10:
-                                    $ hermione_name = "Princess"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Whore-":
-                                if whoring >=15:
-                                    $ hermione_name = "Whore"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Little Girl-":
-                                if whoring >=15:
-                                    $ hermione_name = "Little Girl"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Slytherin Slut-":
-                                if whoring >=18:
-                                    $ hermione_name = "Slytherin Slut"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Mudblood-":
-                                if whoring >=20:
-                                    $ hermione_name = "Mudblood"
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Custom Input-":
-                                $ temp_name = renpy.input("(Please enter the name.)")
-                                $ temp_name = temp_name.strip()
-                                if hermione_name == "":
-                                    $ hermione_name = "Miss granger"
-                                if whoring >=20:
-                                    $ hermione_name = temp_name
-                                    jump hermione_change
-                                else:
-                                    jump hermione_change_fail
-                            
-                            "-Never mind-":
-                                jump day_time_requests
-                    
+                              
                         
 #                    "-Personal requests (lv.1)":
 #                        if slytherin > gryffindor or slytherin == gryffindor:
@@ -904,24 +912,24 @@ label door:
 label genie_change:
     $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     her "Ok, from now on I'll call you [genie_name]"
-    jump day_time_requests
+    jump hermione_talk
 
 
 label genie_change_fail:
     $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
     her "I'm not calling you that!"
-    jump day_time_requests
+    jump hermione_talk
 
 label hermione_change:
     $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     her "Fine, call me whatever you want [genie_name]"
-    jump day_time_requests
+    jump hermione_talk
 
 
 label hermione_change_fail:
     $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
     her "I'm not letting you call me that!"
-    jump day_time_requests
+    jump hermione_talk
                 
 ################
 ### LEVEL 01 ###                
