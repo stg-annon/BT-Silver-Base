@@ -203,6 +203,8 @@ label declare_ht_vars:
     
     $ force_unlock_pub_favors = False
     
+    $ her_path = "01_hp/13_hermione_main/"
+    
     $ skip_duel = False
     $ next_day = False
     $ order_item = 0

@@ -59,6 +59,25 @@ label shop_books:
 
 label shop_potion_menu:
     menu:
+        "-Questions aquireing items-":
+            menu:
+                "-Knotgrass-":
+                    m "Do you know where I can find \"Knotgrass\""
+                    sna_[6] "You can sometimge find Knotgrass by the forbidden forest"
+                    jump shop_potion_menu
+                "-Root of Aconite-":
+                    m "Do you know where I can find \"Root of Aconite\""
+                    sna_[6] "Root of Aconite can be found down by the lake"
+                    jump shop_potion_menu
+                "-Wormwood-":
+                    m "Do you know where I can find \"Wormwood\""
+                    sna_[6] "Wormwood is sometimes found in the forbidden forest"
+                    jump shop_potion_menu
+                "-Niffler's Fancy-":
+                    m "Do you know where I can find \"Niffler's Fancy\""
+                    sna_[6] "hmm i think i heard that it's found by the lake"
+                    jump shop_potion_menu
+                
         "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:
             call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
             call screen shop_screen

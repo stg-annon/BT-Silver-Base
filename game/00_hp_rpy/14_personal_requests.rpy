@@ -1008,70 +1008,29 @@ label new_request_02: #SHOW ME YOUR PANTIES
     m "I just want you to show me your panties."             
     if request_02 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
         $ new_request_02_01 =  True #Hearts.
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "My... panties...?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her  "[genie_name]!"
+        call her_main("My... panties...?","body_14")
+        call her_main("[genie_name]!","body_47")
         m "I know, I know, this a little weird..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_48.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her  " {size=+7}A little !?{/size}"
+        call her_main(" {size=+7}A little !?{/size}","body_48")
         her "This is completely inappropriate!"
         m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her  "The \"good stuff\"? [genie_name] I don't understand..."
+        call her_main("The \"good stuff\"? [genie_name] I don't understand...","body_31")
         m "What don't you understand, [hermione_name]?"
         m "Do you need these points or not?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her  "I do..."
+        call her_main("I do...","body_31")
         m "Lift up your skirt then..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "............."
-        $ badges = False
+        call her_main(".............","body_47")
     else:
         if request_02 >= 1: #Not the first time
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Oh... again?"
+            call her_main("Oh... again?","body_29")
             m "Just do it..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her ".................."
-        $ badges = False
+        call her_main("..................","body_29")
         
 
     hide screen bld1
     hide screen hermione_main
     with d5
+    $ skirt_up = True
     $ menu_x = 0.5 #Default menu position restored.
     if whoring >= 6: # NO PANTIES
         show screen hermione_03_b
@@ -1104,7 +1063,6 @@ label new_request_02: #SHOW ME YOUR PANTIES
         show screen blktone
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
-        $ only_upper = True #When False legs are displayed in the hermione_main acreen.
         $ h_body = "01_hp/13_hermione_main/body_49.png" #Flashing panties
         show screen hermione_main
         show screen ctc
@@ -1117,22 +1075,12 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 ">You study Hermione's face..."
                 pause
                 ">You wonder what's going through her mind right now."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_51.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "......................."
+                call her_main(".......................","body_51")
                 pause
             "-Stare at her panties-":
                 ">That's a plain girlish underwear..."
                 pause
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_51.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "......................."
+                call her_main(".......................","body_51")
                
 
     elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
@@ -1142,7 +1090,6 @@ label new_request_02: #SHOW ME YOUR PANTIES
         show screen blktone
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
-        $ only_upper = True #When False legs are displayed in the hermione_main acreen.
         $ h_body = "01_hp/13_hermione_main/body_52.png" #Flashing panties
         show screen hermione_main
         show screen ctc
@@ -1151,47 +1098,17 @@ label new_request_02: #SHOW ME YOUR PANTIES
         her "Here, [genie_name]..."
         menu:
             "\"You don't look too embarrassed...\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_53.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "That's not true..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_54.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "But this is a small price to pay if the \"Gryffindors\" keep the cup this year."
+                call her_main("That's not true...","body_53")
+                call her_main("But this is a small price to pay if the \"Gryffindors\" keep the cup this year.","body_54")
                 her "I know everyone will be so happy..."
                 pause
             "\"I like your panties...\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_53.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "Thank you, [genie_name]..."
+                call her_main("Thank you, [genie_name]...","body_53")
             "-Keep looking into her eyes-":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_55.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her ".............................."
+                call her_main("..............................","body_55")
                 her "...........................?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_56.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "................................"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_57.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "[genie_name], please... You are embarrassing me."
+                call her_main("................................","body_56")
+                call her_main("[genie_name], please... You are embarrassing me.","body_57")
                 
 
     elif whoring >= 9: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No panties).
@@ -1201,56 +1118,30 @@ label new_request_02: #SHOW ME YOUR PANTIES
         show screen blktone
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
-        $ only_upper = True #When False legs are displayed in the hermione_main acreen.
         $ h_body = "01_hp/13_hermione_main/body_58.png" #Flashing panties
         show screen hermione_main
         show screen ctc
         with d3
         pause
         g4 "Where are your panties, [hermione_name]?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_59.png" #Flashing panties
-        show screen hermione_main
-        with d3
-        her "Oh, lately I just don't feel like wearing them..."
+        call her_main("Oh, lately I just don't feel like wearing them...","body_59")
         menu:
             "\"You little slut!\"":
                 her "Hm..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_58.png" #Flashing panties
-                show screen hermione_main
-                with d3
-                her "I suppose I am..."
+                call her_main("I suppose I am...","body_58")
                 her "Do I get extra points for that?"
                 menu:
                     "\"Absolutely!\"":
                         m "Absolutely!"
                         $ gryffindor +=10
                         m "Ten additional points to \"Gryffindor\"!" 
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_60.png" #Flashing panties
-                        show screen hermione_main
-                        with d3
-                        her "Thank you, [genie_name]!"
+                        call her_main("Thank you, [genie_name]!","body_60")
                     "\"Absolutely not!\"":
                         $ mad +=5
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_62.png" #Flashing panties
-                        show screen hermione_main
-                        with d3
-                        her "Why not!?"
+                        call her_main("Why not!?","body_62")
                         m "Sluts aren't paid"
                         m "That's what makes them sluts"
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_61.png" #Flashing panties
-                        show screen hermione_main
-                        with d3
-                        her "well are you even going to pay me 5 points?"   
+                        call her_main("well are you even going to pay me 5 points?","body_61")   
                         m "Are you a slut or are you a prostitute?"
                         her "{size=-4}...a slut {/size}"
                         m "Good girl"
@@ -1274,14 +1165,13 @@ label new_request_02: #SHOW ME YOUR PANTIES
     hide screen hermione_main
     with d3
     $ h_body = "01_hp/13_hermione_main/body_31.png" #Flashing panties
-    $ only_upper = False #When False legs are displayed in the hermione_main acreen.
+    $ skirt_up = False
     show screen hermione_02 #Hermione stands still.
     show screen hermione_main
     with fade
     
     stop music fadeout 4.0
 
-    $ badges = True
 
     her "will this be all then?"
     m "Yes, you can go now."
@@ -1297,7 +1187,6 @@ label new_request_02: #SHOW ME YOUR PANTIES
         her "Can't wait to tell the guys!"
         hide screen hermione_main
         with d3
-        $ badges = True
         $ h_xpos=300 #Defines position of the Hermione's full length sprite.
         $ h_body = "01_hp/13_hermione_main/body_12.png" #Flashing panties
         show screen hermione_main
@@ -3776,8 +3665,8 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                     her "It was, [genie_name]..."
                     m "Well, I hope these points will make you feel better."
                     
-                            
-    
+                    
+                    
     $ gryffindor +=15
     m "The \"Gryffindors\" gets 15 points!"
     her "Thank you, [genie_name]."
@@ -4052,9 +3941,6 @@ label new_request_03: #(Whoring = 3 - 5)
  
         
     label request_03_ends:
-    $ request_03 = True #True when Hermione has no panties on.
-    if whoring <= 5:
-        $ whoring +=1
         
     hide screen bld1
     hide screen hermione_main
@@ -4073,8 +3959,11 @@ label new_request_03: #(Whoring = 3 - 5)
     with Dissolve(.3)
 
     $ hermione_takes_classes = True
-
-
+    
+    $ request_03 = True #True when Hermione has no panties on.
+    if whoring <= 5:
+        $ whoring +=1
+    
     ### MUSIC BLOCK ###
     if daytime:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC

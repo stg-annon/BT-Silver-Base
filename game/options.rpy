@@ -148,7 +148,7 @@ init -1 python hide:v
 
     ## The file containing the default font.
 
-    style.default.font = "CREABBB.TTF"
+    style.default.font = "interface/CREABBB.TTF"
 
     ## The default size of text.
     style.default.size = 18
@@ -398,6 +398,6 @@ init python:
     #build.documentation('*.txt')
 
 
-    config.window_icon = "icon.png"
+    config.window_icon = "interface/icon.png"
 
     config.hard_rollback_limit = 100
