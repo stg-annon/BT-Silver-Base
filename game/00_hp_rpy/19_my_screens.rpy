@@ -731,11 +731,11 @@ screen blktone8:
 
 screen whitetone8:
     zorder 5 #Otherwise bird's food will be on top.
-    add im.Alpha("white.jpg", 0.8)
+    add im.Alpha("interface/white.jpg", 0.8)
     
 screen white:
     zorder 3
-    add "white.jpg"
+    add "interface/white.jpg"
     
 screen emo: #Character talking off screen.
     #zorder 3 
@@ -1690,43 +1690,11 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/25_mo/power_hair.png" xpos her_head_xpos ypos her_head_ypos
     elif custom_outfit == 9:
         add "01_hp/25_mo/harley_hair.png" xpos her_head_xpos ypos her_head_ypos
-    elif hair_color == 0:
-        add "01_hp/13_hermione_main/hair/hair_00.png" xpos her_head_xpos ypos her_head_ypos #The hair.    
-    elif hair_color == 1:
-        add "01_hp/13_hermione_main/hair/hair_01.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 2:
-        add "01_hp/13_hermione_main/hair/hair_02.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 3:
-        add "01_hp/13_hermione_main/hair/hair_03.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 4:
-        add "01_hp/13_hermione_main/hair/hair_04.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 5:
-        add "01_hp/13_hermione_main/hair/hair_05.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 6:
-        add "01_hp/13_hermione_main/hair/hair_06.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 7:
-        add "01_hp/13_hermione_main/hair/hair_07.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 8:
-        add "01_hp/13_hermione_main/hair/hair_08.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 9:
-        add "01_hp/13_hermione_main/hair/hair_09.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 10:
-        add "01_hp/13_hermione_main/hair/hair_10.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-
-    if ears == True and hair_color == 0:
-        add "01_hp/25_mo/ears_0.png" xpos her_head_xpos ypos her_head_ypos #The hair.    
+    elif hair_color >= 0:
+        add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+".png" xpos her_head_xpos ypos her_head_ypos
+    if ears == True and hair_color >= 0:
+        add "01_hp/25_mo/ears_"+str(hair_color)+".png" xpos her_head_xpos ypos her_head_ypos #The hair. 
     
-    if ears == True and hair_color == 1:
-        add "01_hp/25_mo/ears_1.png" xpos her_head_xpos ypos her_head_ypos #The hair.   
-    
-    if ears == True and hair_color == 2:
-        add "01_hp/25_mo/ears_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.   
-
-    if ears == True and hair_color == 3:
-        add "01_hp/25_mo/ears_3.png" xpos her_head_xpos ypos her_head_ypos #The hair.   
-
-    if ears == True and hair_color == 6:
-        add "01_hp/25_mo/ears_6.png" xpos her_head_xpos ypos her_head_ypos #The hair.   
 
     if transparency < 1 and badges:
         add "01_hp/13_hermione_main/customs/base.png" xpos her_head_xpos ypos her_head_ypos #Add her base 
@@ -1888,28 +1856,13 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/25_mo/power_hair_2.png" xpos her_head_xpos ypos her_head_ypos
     elif custom_outfit == 9:
         add "01_hp/25_mo/harley_hair_2.png" xpos her_head_xpos ypos her_head_ypos
-    elif hair_color == 0:
-        add "01_hp/13_hermione_main/hair/hair_00_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.    
-    elif hair_color == 1:
-        add "01_hp/13_hermione_main/hair/hair_01_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 2:
-        add "01_hp/13_hermione_main/hair/hair_02_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 3:
-        add "01_hp/13_hermione_main/hair/hair_03_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 4:
-        add "01_hp/13_hermione_main/hair/hair_04_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 5:
-        add "01_hp/13_hermione_main/hair/hair_05_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 6:
-        add "01_hp/13_hermione_main/hair/hair_06_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 7:
-        add "01_hp/13_hermione_main/hair/hair_07_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 8:
-        add "01_hp/13_hermione_main/hair/hair_08_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 9:
-        add "01_hp/13_hermione_main/hair/hair_09_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.
-    elif hair_color == 10:
-        add "01_hp/13_hermione_main/hair/hair_10_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.    
+    elif hair_color >= 0:
+        add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+"_2.png" xpos her_head_xpos ypos her_head_ypos
+    
+    
+    if ears == True and hair_color >= 0:
+        add "01_hp/25_mo/ears_"+str(hair_color)+"_2.png" xpos her_head_xpos ypos her_head_ypos #The hair.  
+   
 
     if glasses_worn:
         add "01_hp/13_hermione_main/glasses.png" xpos her_head_xpos ypos her_head_ypos #The glasses.
@@ -1937,6 +1890,21 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/13_hermione_main/robe.png" xpos her_head_xpos ypos her_head_ypos #The Robe.
     if tentacle_cosmetic == True:
         add "01_hp/25_mo/tentacles.png" xpos her_head_xpos ypos her_head_ypos #The Tentacles.
+    
+    
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in anger or emote_anger:
+        add "01_hp/13_hermione_main/body/emote/00.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in exclam or emote_exclam:
+        add "01_hp/13_hermione_main/body/emote/01.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in hearts or emote_hearts:
+        add "01_hp/13_hermione_main/body/emote/02.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in question or emote_question:
+        add "01_hp/13_hermione_main/body/emote/03.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in sweat or emote_sweat:
+        add "01_hp/13_hermione_main/body/emote/04.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in suprize or emote_suprize:
+        add "01_hp/13_hermione_main/body/emote/05.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    
     zorder 8  
     
     

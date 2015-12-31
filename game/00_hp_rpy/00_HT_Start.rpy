@@ -103,7 +103,7 @@ label start_ht:
     $ gave_the_dress = False #Turns True when Hermione has the dress.
 
 ### HEARTS ###
-
+    
     $  new_request_01_01 = False # Talk to me.
     $  new_request_01_02 = False
     $  new_request_01_03 = False

@@ -2719,20 +2719,31 @@ label costume_scene_1: #Maid role-play
     m "40 points to Gyrffindor."
     her "Thank you [genie_name]."
 
-label her_main(text,face):
+label her_main(text="",face="body_01"):
     hide screen hermione_main
     with d3
     $ h_body = her_path + face + ".png"
     show screen hermione_main
     with d3
-    if "[genie_name]" in text:
-        $ text1,text2 = text.split("[genie_name]")
-        her2 "[text1][genie_name][text2]"
-    else:
-        her2 "[text]"
+    if text != "":
+        if "[genie_name]" in text:
+            $ text1,text2 = text.split("[genie_name]")
+            her2 "[text1][genie_name][text2]"
+        else:
+            her2 "[text]"
     return
     
-    
+label her_head(text="",face="body_01"):
+    show screen h_head2
+    $ h_body = her_path + face + ".png"
+    if text != "":
+        if "[genie_name]" in text:
+            $ text1,text2 = text.split("[genie_name]")
+            her2 "[text1][genie_name][text2]"
+        else:
+            her2 "[text]"
+    hide screen h_head2
+    return
     
     
     

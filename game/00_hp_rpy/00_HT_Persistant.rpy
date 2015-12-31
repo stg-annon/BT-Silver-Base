@@ -180,6 +180,31 @@ label load_ht_persistant_vars:
     if not hasattr(renpy.store,'luna_zorder'): #important!
         $ luna_zorder = 5
     
+    if not hasattr(renpy.store,'new_request_01_heart'): #important!
+        $ new_request_01_heart = 0
+    if not hasattr(renpy.store,'new_request_02_heart'): #important!
+        $ new_request_02_heart = 0
+    if not hasattr(renpy.store,'new_request_03_heart'): #important!
+        $ new_request_03_heart = 0
+    if not hasattr(renpy.store,'new_request_04_heart'): #important!
+        $ new_request_04_heart = 0
+    if not hasattr(renpy.store,'new_request_05_heart'): #important!
+        $ new_request_05_heart = 0
+    if not hasattr(renpy.store,'new_request_08_heart'): #important!
+        $ new_request_08_heart = 0
+    if not hasattr(renpy.store,'new_request_11_heart'): #important!
+        $ new_request_11_heart = 0
+    if not hasattr(renpy.store,'new_request_12_heart'): #important!
+        $ new_request_12_heart = 0
+    if not hasattr(renpy.store,'new_request_16_heart'): #important!
+        $ new_request_16_heart = 0
+    if not hasattr(renpy.store,'new_request_22_heart'): #important!
+        $ new_request_22_heart = 0
+    if not hasattr(renpy.store,'new_request_29_heart'): #important!
+        $ new_request_29_heart = 0
+    if not hasattr(renpy.store,'new_request_31_heart'): #important!
+        $ new_request_31_heart = 0
+    
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
     if not hasattr(renpy.store,'store_gift_items'): #important!
@@ -230,18 +255,18 @@ label declare_ht_vars:
     $ sweat = [24,34,57,108,340]
     $ suprize = [80,335]
     
-    # $ new_request_01_lvl = 0
-    # $ new_request_02_lvl = 0
-    # $ new_request_03_lvl = 0
-    # $ new_request_04_lvl = 0
-    # $ new_request_05_lvl = 0
-    # $ new_request_08_lvl = 0
-    # $ new_request_11_lvl = 0
-    # $ new_request_12_lvl = 0
-    # $ new_request_16_lvl = 0
-    # $ new_request_22_lvl = 0
-    # $ new_request_29_lvl = 0
-    # $ new_request_31_lvl = 0
+    # $ new_request_01_count = 0
+    # $ new_request_02_count = 0
+    # $ new_request_03_count = 0
+    # $ new_request_04_count = 0
+    # $ new_request_05_count = 0
+    # $ new_request_08_count = 0
+    # $ new_request_11_count = 0
+    # $ new_request_12_count = 0
+    # $ new_request_16_count = 0
+    # $ new_request_22_count = 0
+    # $ new_request_29_count = 0
+    # $ new_request_31_count = 0
     
     $ store_gift_items = []
     $ store_gift_items.append("null")

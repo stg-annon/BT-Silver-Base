@@ -12,154 +12,82 @@ label new_personal_request:
                 label not_now2:
                 ### LEVEL 01 ###
                 menu:
-                    "Favour: \"Talk to me\" {image=heart_00}" if not new_request_01_01 and not new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Favour: \"Talk to me\" {image=heart_01}" if new_request_01_01 and not new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Favour: \"Talk to me\" {image=heart_02}" if new_request_01_02 and not new_request_01_03:
-                        jump new_request_01
-                    "Favour: \"Talk to me\" {image=heart_03}" if new_request_01_03:
+                    "Favour: \"Talk to me\" {image=heart_0[new_request_01_heart]}":
                         jump new_request_01
 
-                    "Favour: \"Nice panties\" {image=heart_00}" if not new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Favour: \"Nice panties\" {image=heart_01}" if new_request_02_01 and not new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Favour: \"Nice panties\" {image=heart_02}" if new_request_02_02 and not new_request_02_03: # LEVEL 1
-                        jump new_request_02
-                    "Favour: \"Nice panties\" {image=heart_03}" if new_request_02_03: # LEVEL 1
+                    "Favour: \"Nice panties\" {image=heart_0[new_request_02_heart]}": # LEVEL 1
                         jump new_request_02
                   
                     ### LEVEL 02 ###
-                    "{color=#858585}--A vague idea-{/color}-" if imagination == 1:
+                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Panty thief\" {image=heart_00}" if not new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
+                    "Favour: \"Panty thief\" {image=heart_0[new_request_03_heart]}" if imagination >= 2:
                         jump new_request_03
-                    "Favour: \"Panty thief\" {image=heart_01}" if new_request_03_01 and not new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
-                    "Favour: \"Panty thief\" {image=heart_02}" if new_request_03_02 and not new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
-                    "Favour: \"Panty thief\" {image=heart_03}" if new_request_03_03 and daytime and imagination >= 2:
-                        jump new_request_03
-                    
-                    "{color=#858585}--A vague idea-{/color}-" if imagination == 1:
+                        
+                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Breast molester\" {image=heart_00}" if not new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Favour: \"Breast molester\" {image=heart_01}" if new_request_04_01 and not new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Favour: \"Breast molester\" {image=heart_02}" if new_request_04_02 and not new_request_04_03 and imagination >= 2: 
-                        jump new_request_04
-                    "Favour: \"Breast molester\" {image=heart_03}" if new_request_04_03 and imagination >= 2: 
+                    "Favour: \"Breast molester\" {image=heart_0[new_request_04_heart]}" if imagination >= 2: 
                         jump new_request_04
                         
-                    "{color=#858585}--A vague idea-{/color}-" if imagination == 1:
+                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Butt molester\" {image=heart_00}" if not new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2:
-                        jump new_request_05
-                    "Favour: \"Butt molester\" {image=heart_01}" if new_request_05_01 and not new_request_05_02 and not new_request_05_03 and imagination >= 2: 
-                        jump new_request_05
-                    "Favour: \"Butt molester\" {image=heart_02}" if new_request_05_02 and not new_request_05_03 and imagination >= 2: 
-                        jump new_request_05
-                    "Favour: \"Butt molester\" {image=heart_03}" if new_request_05_03 and imagination >= 2: 
+                    "Favour: \"Butt molester\" {image=heart_0[new_request_05_heart]}" if imagination >= 2:
                         jump new_request_05
                         
                     ### LEVEL 03 ### IMAGINATION == 3
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 3:
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Show them to me!\" {image=heart_00}" if not new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3:
-                        jump new_request_08 
-                    "Favour: \"Show them to me!\" {image=heart_01}" if new_request_08_01 and not new_request_08_02 and not new_request_08_03 and imagination >= 3: 
-                        jump new_request_08 
-                    "Favour: \"Show them to me!\" {image=heart_02}" if new_request_08_02 and not new_request_08_03 and imagination >= 3: 
-                        jump new_request_08 
-                    "Favour: \"Show them to me!\" {image=heart_03}" if new_request_08_03 and imagination >= 3: 
-                        jump new_request_08 
-                    
+                    "Favour: \"Show them to me!\" {image=heart_0[new_request_08_heart]}" if imagination >= 3:
+                        jump new_request_08
+                        
 #                    "Favour: \"Show {size=+5}it{/size} to me! (NOT FINISHED YET)":
 #                        jump new_request_09
                     
                     ### LEVEL 04 ### IMAGINATION == 3
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 3:
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Dance for me!\" {image=heart_00}" if not new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3:
+                    "Favour: \"Dance for me!\" {image=heart_0[new_request_11_heart]}" if imagination >= 3:
                         jump new_request_11
-                    "Favour: \"Dance for me!\" {image=heart_01}" if new_request_11_01 and not new_request_11_02 and not new_request_11_03 and imagination >= 3: 
-                        jump new_request_11
-                    "Favour: \"Dance for me!\" {image=heart_02}" if new_request_11_02 and not new_request_11_03 and imagination >= 3:
-                        jump new_request_11
-                    "Favour: \"Dance for me!\" {image=heart_03}" if new_request_11_03 and imagination >= 3: 
-                        jump new_request_11
-                    
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 3:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Let me touch them!\" {image=heart_00}" if not new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    "Favour: \"Let me touch them!\" {image=heart_01}" if new_request_12_01 and not new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    "Favour: \"Let me touch them!\" {image=heart_02}" if new_request_12_02 and not new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    "Favour: \"Let me touch them!\" {image=heart_03}" if new_request_12_03 and daytime and imagination >= 3: # LEVEL 4
-                        jump new_request_12
-                    
-                    ### LEVEL 05 ### IMAGINATION == 4
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 4:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"touch me!\" {image=heart_00}" if not new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
-                        jump new_request_16
-                    "Favour: \"touch me!\" {image=heart_01}" if new_request_16_01 and not new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
-                        jump new_request_16
-                    "Favour: \"touch me!\" {image=heart_02}" if new_request_16_02 and not new_request_16_03 and imagination >= 4: # LEVEL 5
-                        jump new_request_16
-                    "Favour: \"touch me!\" {image=heart_03}" if new_request_16_03 and imagination >= 4:  # LEVEL 5
-                        jump new_request_16
-                       
-                    ### LEVEL 06 ### IMAGINATION == 4
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 4:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Suck it!\" {image=heart_00}" if not new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    "Favour: \"Suck it!\" {image=heart_01}" if new_request_22_01 and not new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    "Favour: \"Suck it!\" {image=heart_02}" if new_request_22_02 and not new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    "Favour: \"Suck it!\" {image=heart_03}" if new_request_22_03 and imagination >= 4: # LEVEL 6
-                        jump new_request_22
-                    
-                    ### LEVEL 07 ### IMAGINATION == 5
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 5:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Let's have sex!\" {image=heart_00}" if not new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Favour: \"Let's have sex!\" {image=heart_01}" if new_request_29_01 and not new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Favour: \"Let's have sex!\" {image=heart_02}" if new_request_29_02 and not new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
-                    "Favour: \"Let's have sex!\" {image=heart_03}" if new_request_29_03 and imagination >= 5: # LEVEL 7
-                        jump new_request_29
                         
-                    ### LEVEL 08 ###
-                    "{color=#858585}--A vague idea-{/color}-" if imagination < 5:
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour:  \"Time for anal!\" {image=heart_00}" if not new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
+                    "Favour: \"Let me touch them!\" {image=heart_0[new_request_12_heart]}" if imagination >= 3: # LEVEL 4
+                        jump new_request_12
+                        
+                    ### LEVEL 05 ### IMAGINATION == 4
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 4:
+                        call vague_idea
+                        jump not_now2
+                    "Favour: \"touch me!\" {image=heart_0[new_request_16_heart]}" if imagination >= 4: # LEVEL 5
+                        jump new_request_16
+                        
+                    ### LEVEL 06 ### IMAGINATION == 4
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 4:
+                        call vague_idea
+                        jump not_now2
+                    "Favour: \"Suck it!\" {image=heart_0[new_request_22_heart]}" if imagination >= 4: # LEVEL 6
+                        jump new_request_22
+                        
+                    ### LEVEL 07 ### IMAGINATION == 5
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 5:
+                        call vague_idea
+                        jump not_now2
+                    "Favour: \"Let's have sex!\" {image=heart_0[new_request_29_heart]}" if imagination >= 5: # LEVEL 7
+                        jump new_request_29
+                    
+                    ### LEVEL 08 ###
+                    "{color=#858585}-A vague idea-{/color}" if imagination < 5:
+                        call vague_idea
+                        jump not_now2
+                    "Favour:  \"Time for anal!\" {image=heart_0[new_request_31_heart]}" if imagination >= 5: # LEVEL 8
                         jump new_request_31
-                    "Favour:  \"Time for anal!\" {image=heart_01}" if new_request_31_01 and not new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
-                    "Favour:  \"Time for anal!\" {image=heart_02}" if new_request_31_02 and not new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
-                    "Favour:  \"Time for anal!\" {image=heart_03}" if new_request_31_03 and imagination >= 5: # LEVEL 8
-                        jump new_request_31
-                            
+                    
                     "-Cancel-":
                         jump new_personal_request
                 
@@ -186,21 +114,21 @@ label new_personal_request:
                             jump new_request_02_b
                             
                         ### LEVEL 02 ### IMAGINATION == 2
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 2:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 2:
                             call vague_idea
                             jump not_now3
                         "Favour: \"She's bait\"" if daytime  and imagination >= 2:
                             jump new_request_02_c
                         
                         ### LEVEL 03 ### IMAGINATION == 3
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 3:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Let a classmate molest you.\"" if imagination >= 3: # LEVEL 3
                             jump new_request_10
                         
                         ### LEVEL 04 ### IMAGINATION == 3
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 3:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Flash your tits to a classmate.\"" if imagination >= 3: # LEVEL 4
@@ -208,28 +136,28 @@ label new_personal_request:
                         
                         
                         ### LEVEL 05 ### IMAGINATION == 4
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 4:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Kiss a girl.\"" if imagination >= 4: # LEVEL 5
                             jump new_request_20
                             
                         ### LEVEL 06 ### IMAGINATION == 4
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 4:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Give a handjob to a classmate.\"" if imagination >= 4: # LEVEL 6
                             jump new_request_23
                             
                         ### LEVEL 07 ### IMAGINATION == 5
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 5:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Give a blowjob to a classmate\"" if imagination >= 5:# LEVEL 7
                             jump new_request_24
                                 
                          ### LEVEL 08 ### IMAGINATION == 5
-                        "{color=#858585}--A vague idea-{/color}-" if imagination < 5:
+                        "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                             call vague_idea
                             jump not_now3
                         "Favour: \"Have sex with a classmate\"" if imagination >= 5:# LEVEL 8
@@ -523,6 +451,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     m "Well?"
     if request_01 == 0 and whoring <=5: #First time this event taking place.
         $  new_request_01_01 = True #Hearts on menu buttons.
+        $ new_request_01_heart = 1
         hide screen hermione_main
         with d3
         $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
@@ -542,6 +471,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         if whoring >= 3 and whoring <= 5:
             $ level = "02"
             $  new_request_01_02 =True #Hearts on menu buttons.
+            $ new_request_01_heart = 2
         hide screen hermione_main
         with d3
         $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
@@ -655,6 +585,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
   
     elif whoring >= 6: #LEVEL 03
         $  new_request_01_03 = True #Hearts on menu buttons.
+        $ new_request_01_heart = 3
         hide screen hermione_main
         with d3
         $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
@@ -3771,6 +3702,7 @@ label new_request_03: #(Whoring = 3 - 5)
     if request_03 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
         $ new_request_03_01 = True # HEARTS.
+        $ new_request_03_heart = 1
         $ request_03 += 1
         hide screen hermione_main
         with d3
@@ -4009,6 +3941,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
         "\"How was your day, [hermione_name]?\"":
             if  whoring <= 5: #LEVEL 02. EVENT LEVEL: 01
                 $ new_request_03_01 = True # HEARTS.
+                $ new_request_03_heart = 1
                 hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
@@ -4055,6 +3988,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                     m "Yes, yes..."
             elif whoring >= 6 and whoring <= 8: #LEVEL 03. EVENT LEVEL 02.
                 $ new_request_03_02 = True # HEARTS.
+                $ new_request_03_heart = 2
                 hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
@@ -4143,6 +4077,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                             her "And my payment."
             elif whoring >= 9: #LEVEL 04. EVENT LEVEL 03.
                 $ new_request_03_03 = True # HEARTS.
+                $ new_request_03_heart = 3
                 hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite. center: 120. Right: 370.
@@ -4560,7 +4495,8 @@ label new_request_04:
         jump too_much
         
     elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
-        $ new_request_04_01 = True # Hearts.
+        $ new_request_04_01 = True # Hearts. 
+        $ new_request_04_heart = 1
         hide bld1
         with d3
         m "Come closer [hermione_name]..."
@@ -4665,8 +4601,10 @@ label new_request_04:
     if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
         if whoring >= 6 and whoring <= 8: # LEVEL 03.
             $ new_request_04_02 = True # Hearts.
+            $ new_request_04_heart = 2
         else:
             $ new_request_04_03 = True # Hearts.
+            $ new_request_04_heart = 3
         stop music fadeout 2.0
         m "Come closer [hermione_name]... I want to give your tits a massage..."
         her_[14] "As you say, [genie_name]..."
@@ -4845,12 +4783,15 @@ label new_request_05:
     if whoring >= 3 and whoring <= 5:
         $ level = "02"
         $ new_request_05_01 = True # HEARTS.
+        $ new_request_05_heart = 1
     elif whoring >= 6 and whoring <= 8:
         $ level = "03"
         $ new_request_05_02 = True # HEARTS.
+        $ new_request_05_heart = 2
     elif whoring >= 9:
         $ level = "04"
         $ new_request_05_03 = True # HEARTS.
+        $ new_request_05_heart = 3
         
         
     if whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. <=================================================================================== FIRST EVENT.
@@ -5166,6 +5107,7 @@ label new_request_05:
         
     elif whoring >= 6: # LEVEL 04 # Hermione is hesitant. <=================================================================================== SECOND EVENT.
         $ new_request_05_02 = True # HEARTS.
+        $ new_request_05_heart = 2
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
@@ -5721,126 +5663,48 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pass
         
     $ current_payout = 25 #Used when haggling about price of th favor.
+    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
         
     if request_08_points == 0 and whoring <= 11: # LEVEL 04 # FIRST TIME.
         m "[hermione_name]?"
         hide screen hermione_main
         with d3
         $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
         show screen hermione_main
         with d3
         her "Yes, [genie_name]..."
         m "How much will it cost me to see your tits?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
         stop music fadeout 1.0
-        her "How much will it cost you to...?"
+        call her_main("How much will it cost you to...?","body_14")
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "[genie_name]!"
+        call her_main("[genie_name]!","body_30")
         m "Hm... I thought your house could use some extra points..."
         m "But I guess I was wrong..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her ".........?"
+        call her_main(".........?","body_31")
         m "Please don't mind me..."
         m "All I want to do is help you..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "............."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "200 house points, [genie_name]."
+        call her_main(".............","body_29")
+        call her_main("200 house points, [genie_name].","body_33")
         m "So if I give you 200 house points, [hermione_name]..."
         m "You will shamelessly bare your melons before me?"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "[genie_name]! No need to be so vulgar!"
+        call her_main("[genie_name]! No need to be so vulgar!","body_47")
         her "I think I'd better go..."
         menu:
             "\"Wait. 200 points are yours. Show me!\"":
                 $ current_payout = 200 #Used when haggling about price of th favor.
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "Really?"
+                call her_main("Really?","body_14")
                 m "Well?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "......................................"
+                call her_main("......................................","body_29")
                 her "You have to promise me not to touch them, [genie_name]."
                 m "Sure, sure..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_32.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "I am only doing this for the honour of my house, [genie_name]!"
+                call her_main("I am only doing this for the honour of my house, [genie_name]!","body_32")
 
             "\"I will give you 5 points to see your tits.\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_72.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "Five?!"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_76.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "[genie_name], I am not going to expose myself for a meagre five points!"
+                call her_main("Five?!","body_72")
+                call her_main("[genie_name], I am not going to expose myself for a meagre five points!","body_76")
                 m "Well, your tits sure aren't worth 200, [hermione_name]!"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_73.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "(They aren't?)"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.
-                $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                show screen hermione_main
-                with d3
-                her "Maybe one hundred then?"
+                call her_main("(They aren't?)","body_73")
+                call her_main("Maybe one hundred then?","body_69")
                 menu:
                     "\"Fine. 100 it is! Bare them already!":
                         $ current_payout = 100 #Used when haggling about price of th favor.
@@ -5898,10 +5762,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         her_[1] "............"
         m "Very good..."
         her_[4] "....."
-
-        $ badges = False # Hides any badges from hermione_main screen.
-
-
+        
+        $ badges = False
+        $ lift_shirt = True
+    
         show screen blktone 
         with d3
         hide screen hermione_main
@@ -5969,6 +5833,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
             #$ only_upper = True #No lower body displayed. 
             $ badges = False # Hides any badges from hermione_main screen.
+            $ lift_shirt = True
 
             show screen hermione_main
             with d3
@@ -6246,29 +6111,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 menu:
                     "\"A Nice set of tits you got there.\"":
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_83.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
+                        call her_main("","body_83")
                         pause
                         her "Thank--"
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                        her "..........."
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_81.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
-                        her "You are being inappropriate, [genie_name]."
+                        call her_main("...........","body_82")
+                        call her_main("You are being inappropriate, [genie_name].","body_81")
                         
                     "\"Hm... I've seen better.\"":
                         $ mad += 7
@@ -6278,36 +6126,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 menu:
                     "\"You have great tits, [hermione_name].\"":
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
-                        her "You really think so [genie_name]?"
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_84.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
-                        her "I am glad you like them, [genie_name]..."
+                        call her_main("You really think so [genie_name]?","body_82")
+                        call her_main("I am glad you like them, [genie_name]...","body_84")
                     "\"Your tits are alright I suppose...\"":
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
-                        her "Huh?"
+                        call her_main("Huh?","body_82")
                         her "Does this mean you don't like them, [genie_name]?"
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_85.png" #Sprite of Hermione's upper body.
-                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                        show screen hermione_main
-                        with d3
-                        her "I'm sorry..."
+                        call her_main("I'm sorry...","body_85")
             ">You stare at her breasts for a while longer..."
             pause
             m "Alright, you can cover up, [hermione_name]..."
@@ -6319,6 +6143,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             with d3
             ">Hermione covers up..."
             $ badges = True # Shows layer with badges.
+            $ lift_shirt = False
             hide screen chair_02 #Genie's chair.
             hide screen genie_and_tits_01
             hide screen bld1
@@ -6514,6 +6339,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         with d5
                         
                         $ badges = True # Turns badges back on from hermione_main screen.
+                        $ lift_shirt = False
                         
                         show screen hermione_main
                         with d3
@@ -6805,12 +6631,15 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     if whoring >= 6 and whoring <= 8:
         $ level = "03"
         $ new_request_08_01 = True # HEARTS.
+        $ new_request_08_heart = 1
     if whoring >= 9 and whoring <= 11:
         $ level = "04"
         $ new_request_08_02 = True # HEARTS.
+        $ new_request_08_heart = 2
     if whoring >= 12:
         $ level = "05"
         $ new_request_08_03 = True # HEARTS.
+        $ new_request_08_heart = 3
 
     hide screen bld1
     hide screen hermione_main
@@ -7115,6 +6944,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         if whoring <=8:
             jump too_much
         $ new_request_11_01 = True # HEARTS
+        $ new_request_11_heart = 1
         m "Yes... You think you could manage that?"
         her "Ehm... I suppose so..."
         hide screen hermione_main
@@ -7360,7 +7190,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 jump could_not_flirt
 
     if request_11_points == 1: #<====================================================================================================================EVENT 02 
-        $ new_request_11_02 = True # HEARTS
+        $ new_request_11_02 = True # HEARTS 
+        $ new_request_11_heart = 2
         m "[hermione_name], I need you to dance for me."
         hide screen hermione_main
         with d3
@@ -7810,6 +7641,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
             
     if request_11_points >= 2: #<====================================================================================================================EVENT 03
         $ new_request_11_03 = True # HEARTS
+        $ new_request_11_heart = 3
         if snape_invated_to_watch: #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
             m "(Hm... Should I invite that Professor Snape guy to watch as well?)"
             menu:
@@ -11126,6 +10958,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     elif request_16_points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
 
         $ new_request_16_03 = True #  Hearts
+
+        $ new_request_16_heart = 3
         
         m "[hermione_name]?"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -11972,9 +11806,11 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     if whoring >= 12 and whoring <= 14:
         $ level = "05"
         $ new_request_16_01 = True #  Hearts
+        $ new_request_16_heart = 1
     if whoring >= 15 and whoring <= 17:
         $ level = "06"
         $ new_request_16_02 = True #  Hearts
+        $ new_request_16_heart = 2
     
 
     $ request_16_points += 1
