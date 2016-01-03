@@ -2787,6 +2787,45 @@ label her_walk_end_loiter(dissolveTime = 3):
         hide screen hermione_blink_f
     return
     
+label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter = False,redux_pause = 0):
+    hide screen luna_walk
+    hide screen luna_walk_f
+    $ walk_xpos = pos1 #(From)
+    $ walk_xpos2 = pos2 #(To)
+    $ luna_chibi_ypos = 250
+    $ luna_speed = speed #Speed of walking animation. (lower = faster)
+    hide screen luna_blink
+    hide screen luna_blink_f
+    if pos1 > pos2: #right to left (hermione_walk)
+        show screen luna_walk
+        pause (speed - redux_pause)
+        $ luna_chibi_xpos = pos2
+        hide screen luna_walk
+        if loiter:
+            show screen luna_blink
+    else: #left to right (hermione_walk_f)
+        show screen luna_walk_f
+        pause (speed - redux_pause)
+        $ luna_chibi_xpos = pos2
+        hide screen luna_walk_f
+        if loiter:
+            show screen luna_blink_f
+    return
+    
+label lun_walk_end_loiter(dissolveTime = 3):
+    if dissolveTime > 0:
+        hide screen luna_02
+        hide screen luna_01_f
+        hide screen luna_blink
+        hide screen luna_blink_f
+        with Dissolve((dissolveTime/10))
+    else:
+        hide screen luna_02
+        hide screen luna_01_f
+        hide screen luna_blink
+        hide screen luna_blink_f
+    return
+    
     
     
     
