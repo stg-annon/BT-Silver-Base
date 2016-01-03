@@ -1699,129 +1699,147 @@ label potion_scene_5: #Lamia potion
     jump day_main_menu
 
 label potion_scene_6: #Luna potion
-    m "Feeling thirsty?"
+    m "Might I offer you a drink?"
     $ changeHermioneMainScreen(hg_pth+"body_03.png")
-    her "I suppose. Why?"
-    m "Well you're in luck. I have a tasty brew for you right here."
+    her "You’re not trying to get me drunk on Butterbeer again are you?"
+    m "Nothing of the sort, just a harmless little potion."
     ">You hand her the potion bottle."
     $ changeHermioneMainScreen(hg_pth+"body_08.png")
-    her "Oh. Another one of your mysterious potions. I imagine that I'm not allowed to know what it is?"
-    m "Of course you're allowed to know."
+    her "Another of your mysterious potions?"
+    her "Let me guess, you won’t tell me what it does and I’ll embarrass myself in front of the whole class?"
+    m "Not at all."
     $ changeHermioneMainScreen(hg_pth+"body_17.png")
-    her "What? You usually insist on keeping it a secret."
-    m "I do, but today is a special case. I'll tell you what the potion is but not what I added to it."
-    $ changeHermioneMainScreen(hg_pth+"body_23.png")
-    her "Hmmmm. So what is it?"
-    m "Standard polyjuice potion."
+    her "That’s new."
+    her "... and somehow worrying"
+    her "So what exactly is it then?"
+    m "It’s your regular, run-off-the-mill Polyjuice Potion."
     $ changeHermioneMainScreen(hg_pth+"body_33.png")
-    her "Ughh, this stuff tastes like mud."
-    m "That may be the case but Imagine how sweet the look on your peers faces will be when they win the house cup."
-    $ changeHermioneMainScreen(hg_pth+"body_32.png")
-    her "You're right [genie_name]. For Gryffindor!"
-    "She downs the thick potion."
+    her "Ugh. Those taste like muck."
+    her "... and what’ll it turn me into?"
+    m "That, Miss Granger, is a secret."
+    $ changeHermioneMainScreen(hg_pth+"body_23.png")
+    her "Typical."
+    m "It’ll taste a lot sweeter if you imagine all the points you’ll earn for Gryffindor."
+    m "How much of a lead did Slytherin have on you again?"
+    her "You’re right [genie_name]. I can’t let Gryffindor down!"
+    ">She downs the thick potion."
     $ changeHermioneMainScreen(hg_pth+"body_43.png")
-    her "Ughhh. That stuff is so viscous, you can barely swallow it."
-    m "You managed, that's the main part."
+    her "Blehgh."
+    her "I was wrong, not muck. Snot. It’s as thick as Trollsnot."
+    m "As long as you keep it down, you’ll earn Gryffindor a great deal of points."
+    her "And I will."
     $ changeHermioneMainScreen(hg_pth+"body_44.png")
-    her "I did. So what now? Should I head to classes?"
-    m "Not yet, I want to see how you look once the transformation takes place."
-    $ changeHermioneMainScreen(hg_pth+"body_45.png")
-    her "Well that usually takes a few minutes with polyjuice. What should we do until then?"
-    m "Tell me, how are your classes going?"
+    her "So what now? I just go to class?"
+    m "Not yet, tell me something about yourself."
     $ changeHermioneMainScreen(hg_pth+"body_16.png")
-    her "Well ever since I started \"earning points\" with you my grades have started to suffer."
-    m "And that bothers you?"
+    her "Well, ever since I started my \"Extracurricular activities\" with you my attendance and grades have started slipping."
+    m "Troubling indeed."
+
     if whoring <= 13:
         $ changeHermioneMainScreen(hg_pth+"body_30.png")
-        her "Of course it does [genie_name]! I was the top of my year in all subjects!"
-        m "And now?"
+        her "It is! [genie_name], I used to be at the top of the class. My scores were impeccable. "
+        m "And how are your scores now?"
         $ changeHermioneMainScreen(hg_pth+"body_12.png")
-        her "Well I'll still at the top... Just not by as much."
-        m "You need to stop worrying about school so much."
+        her "Well I'm still at the top... Just not by as much."
+        m "Well, there are times when academic excellence shouldn’t be your primary concern."
         $ changeHermioneMainScreen(hg_pth+"body_17.png")
-        her "Hmmph, and what should I be worried about instead?"
-        m "Your face."
+        her "Hmmph, and what /should/ be my primary concern then?"
+        m "Currently. I’d say your face is pretty high on the list"
         $ changeHermioneMainScreen(hg_pth+"body_35.png")
-        her "What? Was that supposed to be a joke?"
-        m "No, you're face is doing something weird."
+        her "Excuse me. That is hardly appropriate for a headmaster."
+        m "No, I’m serious. You should really see the look on your face."
+
     else:
         $ changeHermioneMainScreen(hg_pth+"body_06.png")
-        her "Not really. I've learned that there are more important things in life."
-        m "Yeah, like my cock."
+        her "Not really. I realize there are other things I can excel in."
+        m "Like sucking cocks for house-points"
         $ changeHermioneMainScreen(hg_pth+"body_30.png")
         her "Professor!"
-        m "Oh don't act so surprised."
+        m "Oh don’t be so modest. If sucking dick was a class, you’d be Magna Cum Laude."
         $ changeHermioneMainScreen(hg_pth+"body_30.png")
-        her "Hmmm I suppose your right."
-        m "Of course I am. Now get that shocked look of your face."
+        her "Thank you professor. You know, there’s time to earn some more points before class. If you’re feeling generous I could…"
+        m "I’d have to know on whose face I’ll be cumming though "
         $ changeHermioneMainScreen(hg_pth+"body_30.png")
-        her "What look?"
-        m "Can't you control your face?"
+        her "What do you mean? …My face of course… I mean ...*urp*"
+        m "Maybe you should check the mirror"
     "*POOF*"
-    show heal_02 at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
-    pause 1
-    hide heal_02
     hide screen hermione_main
-    hide screen hermione_02 
+    hide screen hermione_02
+    $ luna_chibi("stand")
     $ changeLuna(1, 1, 4, 1)
-    her "Ughhh... what happened? Did the potion work?"
-    m "Indeed it did."
-    ">Hermione starts feeling her body, examining her breasts and outfit."
+    her "Ughhh... I feel like I’m going to throw up! Did the Polyjuice work??"
+    m "Like a charm."
+    ">Hermione starts examining herself, feeling out her outfit and pausing at her breasts." 
     $ changeLuna(5, 1, 5, 1)
-    her "Well it seems as though I'm still a girl and from the crest on my jumper I'd say that I'm probably in Ravenclaw."
-    ">Hermione examines her hair."
+    her "Apparently I’m still a girl. Someone from Ravenclaw?"
+    m "Keen powers of observation, Miss Granger"
+    ">Hermione grabs a lock of her hair"
     $ changeLuna(1, 7, 1, 4)
-    "Well I'm a blonde."
+    her "Definitely a blonde, though she could absolutely use a comb"
     $ changeLuna(1, 5, 1, 1)
-    ">Hermione finds the wand hovering in the blonde curls."
+    ">Suddenly Hermione feels something stuck in the mess of blonde. On closer examination it appears to be a wand."
     $ changeLuna(4, 1, 3, 1)
     her "..."
-    her "I'm Luna Lovegood aren't I."
+    her "You turned me into Loony Lovegood… I mean Luna Lovegood!?!"
     m "Very astute [hermione_name]."
-    m "(I have no idea who that is.)"
+    m "(No idea who that is, but she looks good.)"
     $ changeLuna(4, 1, 3, 17)
-    her "Why on earth would you transform me into Luna? She's crazy!"
-    m "Crazy?"
-    $ changeLuna(4, 1, 3, 17)
-    her "She has... imaginary friends [genie_name]."
-    m "Well that might be the case, but from what I can see she also has quite a real and impressive chest."
-    $ changeLuna(4, 1, 3, 17)
-    her "Hmmph, I suppose."
-    m "Is that a tinge of jealousy that I hear [hermione_main]?"
-    $ changeLuna(4, 1, 3, 17)
-    her "No, I'm surprised to hear that you've gone blind."
-    m "Now now, [hermione_main], she can't hold a candle to your brilliance of course."
-    $ changeLuna(4, 1, 3, 17)
-    her "Thank you [genie_name]."
-    m "But just to make sure we should probably confirm this. Why don't you show me her breasts so we can get a good look."
-    $ changeLuna(4, 1, 3, 17)
-    her "Alright..."
-    ">Hermione removes the Ravenclaw vest and shirt."
+    her "Why on earth would you want me to look like Luna? She's completely mental!"
+    m "I’m not seeing anything really wrong with her."
+    $ changeLuna(1, 1, 4, 4)
+    her "She has... imaginary friends and believes in things that can’t possibly exist [genie_name]. She is absolutely mad."
+    m "Fortunately, I’m not really interested in her mental health. I am interested in her impressive, and quite real, chest."
+    $ changeLuna(5, 1, 5, 3)
+    her "You can’t possibly be interested in that… that girl’s paltry breasts."
+    m "Currently they’re yours. And they don’t look so paltry from where I’m sitting [hermione_name]. Do I detect a hint of jealousy?"
+    $ changeLuna(1, 1, 3, 3)
+    her "Not at all, I suppose it is only natural that someone of your advanced age has trouble with their eyesight."
+    m "(definitely struck a nerve there.) Is that any way to talk to your elders, [hermione_name]? Perhaps you need a good spanking to remind you of your manners. We old people are good at giving those."
+    $ changeLuna(1, 1, 4, 9)
+    her "I..I apologize [genie_name]. I don’t know what came over me."
+    m "Apology accepted. I’m sure they can’t hold a candle to the brilliance of your boobs."
+    $ changeLuna(1, 2, 1, 4)
+    her "I’d like to think I’m more than just a pair of breasts… but thank you [genie_name]. That was flattering. In a way."
+    m "If you want to dispel all doubt, we could compare. Why don’t you lift your shirt and show me what you… err… She’s got under that sweater."
+    $ changeLuna(4, 2, 3, 4)
+    her "I’m still not entirely comfortable with this..."
+    ">Hermione quickly strips off her Ravenclaw top, followed by her bra."
+    hide screen luna
+    $ luna_chibi("stand_topless")
     $ luna_wear_top = False
     $ luna_wear_bra = False
-    $ changeLuna(4, 1, 3, 17)
-    her "Here, surely you can see how run of the mill they are now."
-    m "I'm not so sure. I think you might have some competition here [hermione_main]."
-    $ changeLuna(4, 1, 3, 17)
-    her "You can't be serious! Look at how saggy and old they look!"
-    m "Hmmm, I think I'll need a closer inspection."
-    ">Hermione walks over and presents herself."
-    m "Yes yes, upon inspection I've confirmed that they are indeed second to your own."
-    her "Thank you [genie_name], I'm glad that you finally came to your senses."
-    m "You're welcome [hermione_main]. 20 points to Gryffindor."
-    $ changeLuna(4, 1, 3, 17)
+    $ changeLuna(5, 2, 5, 3)
+    her "There, see. Perfectly ordinary breasts. Absolutely no need to keep looking at them."
+    m "I'm not quite convinced, the soft pale skin, the cute pink nipples and they look like quite a handful. I think you might have some serious competition here [hermione_name]."
+    $ changeLuna(5, 1, 3, 17)
+    her "You can't be serious! They’re saggy and couldn’t even fill a first-year’s palm!"
+    m "Hmmm, I’m not sure. I think a closer examination is required."
+    ">In a huff, Hermione walks over and presents her new set of breasts"
+    m "Yes yes, upon closer inspection it seems I was wrong. Luna’s breasts are indeed second to your own."
+    $ changeLuna(5, 1, 3, 4)
+    her "I’m glad you came to your senses. Thank you, If you’re completely satisfied, I’ll cover these hideous things up now."
+    m "Completely [hermione_name]. 20 points to Gryffindor."
+    hide screen luna
+    $ luna_chibi("stand")
+    $ luna_wear_top = True
+    $ luna_wear_bra = True
+    $ changeLuna(3, 1, 1, 1)
     her "Well I best be off to classes."
-    m "Looking like that?"
-    $ changeLuna(4, 1, 3, 17)
-    her "It's ok. Luna's barely in class anyway, I can just pretend to be her."
-    m "And what if you encounter her in the halls?"
-    $ changeLuna(4, 1, 3, 17)
-    her "Believe me [genie_name], Luna probably won't even notice, she's crazy."
+    m "You’re going to class looking like a fellow classmate?"
+    $ changeLuna(1, 1, 5, 1)
+    her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I’ll even improve her test scores. You’ll notify the teachers I can’t attend class right?"
+    m "Absolutely. (Not a chance.) But, what if you bump into her in the halls?"
+    $ changeLuna(5, 1, 1, 4)
+    her "Believe me [genie_name], Luna will probably think I’m some kind of Wrackspurt that’s messing with her head."
     hide screen bld1
     hide screen blkfade
     hide screen luna
     $ menu_x = 0.5 
     $ hermione_takes_classes = True
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    hide screen luna_chibi
+    with d3
+    $ luna_known = True
     jump day_main_menu
 ###COLLAR SCENES
 label collar_scene:

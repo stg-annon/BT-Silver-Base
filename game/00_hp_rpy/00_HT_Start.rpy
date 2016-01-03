@@ -394,7 +394,7 @@ label start_ht:
                 pass
 
     menu:
-        "-Actavate Cheats-":
+        "-Activate Cheats-":
             $ cheats_active = True
             $ avogadro_law = True
             $ gold = gold + 10000

@@ -153,34 +153,8 @@ label load_ht_persistant_vars:
         $ temp_outfit = custom_outfit
 
     ###Define Luna variables
-    if not hasattr(renpy.store,'luna_base'): #important!
-        $ luna_base = "01_hp/26_luna/base/base_01.png" 
-    if not hasattr(renpy.store,'luna_hair'): #important!
-        $ luna_hair = "01_hp/26_luna/base/hair_01.png" 
-    if not hasattr(renpy.store,'luna_xpos'): #important!
-        $ luna_xpos = 300
-    if not hasattr(renpy.store,'luna_ypos'): #important!
-        $ luna_ypos = 0
-    if not hasattr(renpy.store,'luna_mouth'): #important!
-        $ luna_mouth = "01_hp/26_luna/mouth/mouth_01.png" 
-    if not hasattr(renpy.store,'luna_eye'): #important!
-        $ luna_eye = "01_hp/26_luna/eye/eye_01.png" 
-    if not hasattr(renpy.store,'luna_eyebrow'): #important!
-        $ luna_eyebrow = "01_hp/26_luna/eye/eyebrow_01.png" 
-    if not hasattr(renpy.store,'luna_pupil'): #important!
-        $ luna_pupil = "01_hp/26_luna/eye/pupil_01.png" 
-    if not hasattr(renpy.store,'luna_top'): #important!
-        $ luna_top = "01_hp/26_luna/clothes/uniform/top.png" 
-    if not hasattr(renpy.store,'luna_acc'): #important!
-        $ luna_acc = "01_hp/26_luna/misc/jewel.png" 
-    if not hasattr(renpy.store,'luna_skirt'): #important!
-        $ luna_skirt = "01_hp/26_luna/clothes/uniform/skirt.png" 
-    if not hasattr(renpy.store,'luna_panties'): #important!
-        $ luna_panties = "01_hp/26_luna/clothes/underwear/panties.png" 
-    if not hasattr(renpy.store,'luna_bra'): #important!
-        $ luna_bra = "01_hp/26_luna/clothes/underwear/bra.png" 
-    if not hasattr(renpy.store,'luna_zorder'): #important!
-        $ luna_zorder = 5
+    if not hasattr(renpy.store,'luna_chibi_image'): #important!
+        call luna_init
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
         $ new_request_01_heart = 0

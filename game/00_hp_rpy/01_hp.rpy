@@ -340,20 +340,7 @@ $ panties = True
 $ fingering = False
 $ robe = 0
 ###DEFINE LUNA
-$ luna_base = "01_hp/26_luna/base/base_01.png" 
-$ luna_hair = "01_hp/26_luna/base/hair_01.png" 
-$ luna_xpos = 300
-$ luna_ypos = 0
-$ luna_mouth = "01_hp/26_luna/mouth/mouth_01.png" 
-$ luna_eye = "01_hp/26_luna/eye/eye_01.png" 
-$ luna_eyebrow = "01_hp/26_luna/eye/eyebrow_01.png" 
-$ luna_pupil = "01_hp/26_luna/eye/pupil_01.png" 
-$ luna_top = "01_hp/26_luna/clothes/uniform/top.png" 
-$ luna_acc = "01_hp/26_luna/misc/jewel.png" 
-$ luna_skirt = "01_hp/26_luna/clothes/uniform/skirt.png" 
-$ luna_panties = "01_hp/26_luna/clothes/underwear/panties.png" 
-$ luna_bra = "01_hp/26_luna/clothes/underwear/bra.png" 
-$ luna_zorder = 5
+call luna_init
 
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
 screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html

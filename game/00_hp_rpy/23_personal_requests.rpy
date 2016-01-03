@@ -10016,348 +10016,474 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        if not luna_known:
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
+            her "([genie_name], what should I do?)"
+            hide screen h_head2
+            m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
+            sna "Albus? Are you there? I need to talk to you."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+            her "(It's professor Snape!)"
+            her "([genie_name], please, send him away, I beg you!)"
+            hide screen h_head2
+            menu:
+                m "..."
+                "\"Please, come on in, Severus.\"":
+                    $ mad = 30
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_76.png" # HERMIONE
+                    stop music fadeout 1.0
+                    her "([genie_name], no!)"
+                    hide screen h_head2
+                    show screen blktone
+                    with d3
+                    with hpunch
+                    ">Hermione gives your balls a firm twist full of frustration."
+                    hide screen blktone
+                    with d3
+                    g4 "Ouch!"
+                    hide screen bld1
+                    with d3
+                    # SNAPE COMES IN
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ walk_xpos=610 #Animation of walking chibi. (From)
+                    $ walk_xpos2=360 #Coordinates of it's movement. (To)
+                    $ snapes_speed = 04.0 #The speed of moving the walking animation across the screen.
+                    show screen snape_walk_01 
+                    pause 4
+                    show screen snape_02 #Snape stands still.
+                    show screen bld1
+                    with d3
+                    $ s_head_xpos = 330 # x = 330,
+                    $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
+                    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+                    show screen s_head2
+
+                    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+                    sna "Good, you are here."
+                    hide screen s_head2
+                    
+                    $ g_c_u_pic = "blowjob_ani" # sucking
+                    hide screen h_c_u   # SUCKING
+                    show screen g_c_u # SUCKING
+                    with d3                      #  SUCKING
+                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "Listen, there is something I want to discuss..."
+                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "Hm...?"
+                    sna "Genie? Are you alright?"
+                    hide screen s_head2
+                    her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
+                    her "{size=-4}(No, please! I will die of shame!){/size}"
+                    m "Yes, Severus, I am fine..."
+                    her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
+                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "What are you... looking at?"
+                    hide screen s_head2
+                    m "Ehm... Just admiring...{w} the cupboard."
+                    m "Please continue..."
+                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "..............."
+                    hide screen s_head2
+                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                    m "Did you want to discuss something?"
+                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "Yes. That Hermione girl."
+                    hide screen s_head2
+                    her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
+                    m "Oh... What about her?"
+                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna2 "You promised that you would take care of the little witch."
+                    hide screen s_head2
+                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "But she is still being a major pain in my arse!"
+                    sna "Her tactics have changed..."
+                    $ s_sprite = "01_hp/10_snape_main/snape_03.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna2 "But the amount of grief she manages to bring me is the same..."
+                    hide screen s_head2
+                    m "I see... ah..."
+                    $ s_sprite = "01_hp/10_snape_main/snape_10.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "I swear, that girl is driving me crazy!"
+                    hide screen s_head2
+                    g4 "Yeah, she is driving me crazy as well... ah..."
+                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "Will you take care of this then?"
+                    hide screen s_head2
+                    m "Yes. She'll get what she deserves."
+                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
+                    show screen s_head2                                                          # SNAPE
+                    sna "Good. That is all I wanted to hear."
+                    if daytime:
+                        hide screen s_head2
+                        m "Well, have a good day, Severus."
+                        $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
+                        show screen s_head2                                                          # SNAPE
+                        sna "Yes, thank you."
+                    else:
+                        hide screen s_head2
+                        m "Good night, Severus."
+                        $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
+                        show screen s_head2                                                          # SNAPE
+                        sna "Right..."
+                    # SNAPE LEAVES
+                    hide screen s_head2
+                    hide screen ctc
+                    
+                    hide screen bld1
+                    with d3
+                    $ walk_xpos=360 #Animation of walking chibi. (From desk)
+                    $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
+                    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
+                    show screen snape_walk_01_f 
+                    pause 3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    hide screen snape_walk_01_f 
+                    with d4
+                    pause.5
+                    show screen ctc
+                    stop music fadeout 1.0
+                    pause
+                    hide screen ctc
+                    show screen blkfade
+                    with d5
         
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-        her "([genie_name], what should I do?)"
-        hide screen h_head2
-        m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
-        sna "Albus? Are you there? I need to talk to you."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-        her "(It's professor Snape!)"
-        her "([genie_name], please, send him away, I beg you!)"
-        hide screen h_head2
-        menu:
-            m "..."
-            "\"Please, come on in, Severus.\"":
-                $ mad = 30
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_76.png" # HERMIONE
-                stop music fadeout 1.0
-                her "([genie_name], no!)"
-                hide screen h_head2
-                show screen blktone
-                with d3
-                with hpunch
-                ">Hermione gives your balls a firm twist full of frustration."
-                hide screen blktone
-                with d3
-                g4 "Ouch!"
-                hide screen bld1
-                with d3
-                # SNAPE COMES IN
-                $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ walk_xpos=610 #Animation of walking chibi. (From)
-                $ walk_xpos2=360 #Coordinates of it's movement. (To)
-                $ snapes_speed = 04.0 #The speed of moving the walking animation across the screen.
-                show screen snape_walk_01 
-                pause 4
-                show screen snape_02 #Snape stands still.
-                show screen bld1
-                with d3
-                $ s_head_xpos = 330 # x = 330,
-                $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-                $ s_sprite = "01_hp/10_snape_main/snape_01.png"
-                show screen s_head2
+                    play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+                    ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
+                    ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."
+                    g4 "(Here it comes!)"
+                    jump blowjob_cum_scene
 
-                play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
-                sna "Good, you are here."
-                hide screen s_head2
-                
-                $ g_c_u_pic = "blowjob_ani" # sucking
-                hide screen h_c_u   # SUCKING
-                show screen g_c_u # SUCKING
-                with d3                      #  SUCKING
-                her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "Listen, there is something I want to discuss..."
-                $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "Hm...?"
-                sna "Genie? Are you alright?"
-                hide screen s_head2
-                her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
-                her "{size=-4}(No, please! I will die of shame!){/size}"
-                m "Yes, Severus, I am fine..."
-                her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
-                $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "What are you... looking at?"
-                hide screen s_head2
-                m "Ehm... Just admiring...{w} the cupboard."
-                m "Please continue..."
-                $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "..............."
-                hide screen s_head2
-                her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                m "Did you want to discuss something?"
-                $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "Yes. That Hermione girl."
-                hide screen s_head2
-                her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
-                m "Oh... What about her?"
-                $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna2 "You promised that you would take care of the little witch."
-                hide screen s_head2
-                her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "But she is still being a major pain in my arse!"
-                sna "Her tactics have changed..."
-                $ s_sprite = "01_hp/10_snape_main/snape_03.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna2 "But the amount of grief she manages to bring me is the same..."
-                hide screen s_head2
-                m "I see... ah..."
-                $ s_sprite = "01_hp/10_snape_main/snape_10.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "I swear, that girl is driving me crazy!"
-                hide screen s_head2
-                g4 "Yeah, she is driving me crazy as well... ah..."
-                her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "Will you take care of this then?"
-                hide screen s_head2
-                m "Yes. She'll get what she deserves."
-                $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                show screen s_head2                                                          # SNAPE
-                sna "Good. That is all I wanted to hear."
-                if daytime:
-                    hide screen s_head2
-                    m "Well, have a good day, Severus."
-                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Yes, thank you."
-                else:
-                    hide screen s_head2
-                    m "Good night, Severus."
-                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Right..."
-                # SNAPE LEAVES
-                hide screen s_head2
-                hide screen ctc
-                
-                hide screen bld1
-                with d3
-                $ walk_xpos=360 #Animation of walking chibi. (From desk)
-                $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-                $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
-                show screen snape_walk_01_f 
-                pause 3
-                $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                hide screen snape_walk_01_f 
-                with d4
-                pause.5
-                show screen ctc
-                stop music fadeout 1.0
-                pause
-                hide screen ctc
-                show screen blkfade
-                with d5
-    
-                play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
-                ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."
-                g4 "(Here it comes!)"
+                    
+                "\"I am busy right now, Severus.\"":
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+                    her "(Thank you, [genie_name].)"
+                    hide screen h_head2                                                          
+                    sna "Busy? With what?"
+                    sna "All you do is sit on you arse all day."
+                    sna "I really need to talk to you about something."
+                    m "I said I am busy, Severus."
+                    m "Understood? I am \"busy\"!"
+                    sna "Oh... You mean \"Busy\" busy? Gotcha!"
+                    sna "Well, I'll talk to you later then."
+        else:
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
+            her "([genie_name], what should I do?)"
+            hide screen h_head2
+            m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
+            lun "[l_genie_name]? Are you there? I need to talk to you."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+            her "(It's Luna Lovegood!)"
+            her "([genie_name], please, send her away, I beg you!)"
+            hide screen h_head2
+            menu:
+                m "..."
+                "\"Please, come on in, [luna_name].\"":
+                    $ mad += 5
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_76.png" # HERMIONE
+                    stop music fadeout 1.0
+                    her "([genie_name], no!)"
+                    hide screen bld1
+                    hide screen h_head2
+                    with d3
+                    # SNAPE COMES IN
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ luna_chibi("stand")
+                    $ changeLuna(1, 1, 4, 1)
+                    show screen bld1
+                    with d3
+                    lun "Thank goodness you are here [l_genie_name]!"
+                    
+                    $ g_c_u_pic = "blowjob_ani" # sucking
+                    hide screen h_c_u   # SUCKING
+                    show screen g_c_u # SUCKING
+                    with d3                      #  SUCKING
+                    her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                    $ changeLuna(1, 1, 4, 1)                                                         # SNAPE
+                    lun "I think I need some more help with these wrackspurts..."
+                    $ changeLuna(1, 1, 4, 1)                                                     # SNAPE
+                    lun "They're affecting me so much, Even right now all I can imagine is something inappropriate going on behind you."
+                    m "Don't worry [luna_name], I'm fine..."
+                    her "{size=-4}(What? *Slurp...?* *[luna_name]...?* *Gulp...?*){/size}"                                                # SNAPE
+                    lun "What are you... doing?"
+                    menu:
+                        "-Tell the truth-":
+                            m "Miss Granger is helping me relieve me of a particularly nasty wrackspurt afflication as we speak."
+                            $ changeLuna(1, 1, 4, 1)
+                            lun "You mean that she is behind your desk..."
+                            $ changeLuna(1, 1, 4, 1)
+                            lun "Releiving you as we speak."
+                            ">Hermione's face goes crimson with shame but she continues her efforts."
+                            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                            m "Yes, that's correct."
+                            lun "Well in that case I think I best be off. It seems that you're busy tending to other students."
+                            m "Thank you [luna_name]"
+                            if daytime:
+                                m "Well, have a good day.."
+                                $ changeLuna(1, 1, 4, 1)                                                       # SNAPE
+                                lun "Yes, thank you. I know that you will..."
+                            else:
+                                m "Good night, [luna_name]."
+                                $ changeLuna(1, 1, 4, 1)                                                        # SNAPE
+                                lun "Goodnight [l_genie_name].."
+                                $ changeLuna(1, 1, 4, 1)   
+                                lun "Goodnight hermione..."
 
+                        "-Lie-":
+                            m "Ehm... Just admiring...{w} the cupboard."
+                            m "Please continue..."                                                      # SNAPE
+                            lun "..............."
+                            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                            m "Did you want to discuss something?"
+                            $ changeLuna(1, 1, 4, 1)                                        # SNAPE
+                            lun "Yes. These wrackspurts."
+                            hide screen s_head2
+                            her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
+                            m "Oh... What about them?"
+                            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"                            # SNAPE
+                            lun "No matter what I do I can't seem to be rid of them!"
+                            $ changeLuna(1, 1, 4, 1)                         # SNAPE
+                            lun "They only seem to be getting worse!"
+                            m "I see... ah..."
+                            $ changeLuna(1, 1, 4, 1)                                                      # SNAPE
+                            lun "They're driving me crazy, I won't be able to cope much longer"
+                            g4 "Yeah, they're driving me crazy as well... ah..."
+                            her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
+                            $ changeLuna(1, 1, 4, 1)                            # SNAPE
+                            lun "Will you take care of them then?"
+                            m "Yes. I'll find a way to deal with the infestation soon."
+                            $ changeLuna(1, 1, 4, 1)                                                   # SNAPE
+                            lun "Thank you [l_genie_name]."
+                            if daytime:
+                                m "Well, have a good day, [luna_name]."
+                                $ changeLuna(1, 1, 4, 1)                                                       # SNAPE
+                                lun "Yes, thank you."
+                            else:
+                                m "Good night, [luna_name]."                                                     # SNAPE
+                                lun "Goodnight [l_genie_name]..."
+                    # SNAPE LEAVES
+                    hide screen luna
+                    
+                    hide screen bld1
+                    with d3
+                    show screen blkfade
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    hide screen luna_chibi
+                    with d4
+                    show screen ctc
+                    stop music fadeout 1.0
+                    hide screen ctc
+                    hide screen blkfade
+                    with d5
                 
-            "\"I am busy right now, Severus.\"":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her "(Thank you, [genie_name].)"
-                hide screen h_head2                                                          
-                sna "Busy? With what?"
-                sna "All you do is sit on you arse all day."
-                sna "I really need to talk to you about something."
-                m "I said I am busy, Severus."
-                m "Understood? I am \"busy\"!"
-                sna "Oh... You mean \"Busy\" busy? Gotcha!"
-                sna "Well, I'll talk to you later then."
+                    play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+                    ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
+
+                            
+                "\"I am busy right now, [luna_name].\"":
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+                    her "(Thank you, [genie_name].)"
+                    hide screen h_head2                                                          
+                    lun "Busy? How so?"
+                    lun "Are you helping another student fight off the wrackspurts?"
+                    m "Yes, that's exactly what I'm doing."
+                    lun "Oh... well, I'll visit you later then."
                 #">Hermione keeps sucking on your cock with a rather fierce determination."
                 
-                $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-                $ hermione_chibi_ypos = 10
-                $ h_c_u_pic = "hand_ani" # Not sucking
-                hide screen h_c_u   # SUCKING
-                show screen g_c_u # SUCKING
-                with d3                      #  SUCKING                
-                #">Hermione is working hard to please you..."
-                her "*Slurp!* *Slurp!* *Gulp!*"
-                show screen blktone
-                with d3
-                ">Hermione keeps sucking on your cock with a rather fierce determination."
-                ">Her technique is lacking but she makes up for it with the effort she puts it."
-                hide screen blktone
-                with d3
-                m "Yes... I love your eager, little mouth girl..."
-                her "*Gobble!* *Gobble!* *Gobble!*"
-                $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-                $ hermione_chibi_ypos = 10
-                $ h_c_u_pic = "hand_ani" # Not sucking
-                show screen h_c_u   # NOT SUCKING
-                hide screen g_c_u # NOT SUCKING
-                with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "[genie_name]?"
-                hide screen h_head2          
-                m "Hm?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "Are you going to cum on my face today?"
-                her "Or do you plan to cum in my mouth?"
-                hide screen h_head2
-                menu:
-                    "\"I Plan to splatter your face with cum!\"":
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "I see..."
-                        hide screen h_head2
-                        m "Why do you ask?"
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                        her2 "Oh... I just read in a book that semen contains a lot of antioxidants..."
-                        her "It's good for the skin..."
-                        hide screen h_head2
-                        m "Great. One facial coming up."
-                        m "Back to work now."
-                    "\"I Plan to fill your mouth with cum!\"":
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                        her "I see..."
-                        hide screen h_head2
-                        m "Why do you ask?"
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "Well, I am trying to watch my calorie-intake..."
-                        her2 "I just wonder how much calories your load contains, [genie_name]."
-                        her2 "Maybe I should skip my next meal..."
-                        hide screen h_head2
-                        m "[hermione_name]."
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "Yes?"
-                        hide screen h_head2
-                        m "Dick back in the mouth."
-                    "\"I don't plan so far ahead.\"":
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "I see..."
-                        hide screen h_head2
-                        m "Don't you like surprises?"
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "Not really..."
-                        her "I rather enjoy planning ahead actually..."
-                        hide screen h_head2
-                        m "Well some things in life are just unpredictable."
-                        m "There is only one way to find out for sure."
-                        
-                    "\"What would you like?\"":
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                        her "If it is all the same to you, [genie_name]..."
-                        if generating_points == 1:
-                            show screen h_head2                                                             # HERMIONE
-                            $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                            her2 "I would like you to cum on my face, [genie_name]."
-                            her2 "I read that it's good for the skin."
-                        else:
-                            show screen h_head2                                                             # HERMIONE
-                            $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                            her2 "I would like you to cum in my mouth."
-                            her2 "You usually cum so much so I think I will be able to just skip my next meal..."
-                            her2 "And do some homework instead."
-                        hide screen h_head2
-                        m "Well, we'll see about that."
-                        m "Back to sucking now."
-                    
-                    
-                $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-                $ hermione_chibi_ypos = 10
-                $ h_c_u_pic = "hand_ani" # Not sucking
-                hide screen h_c_u   # SUCKING
-                show screen g_c_u # SUCKING
-                with d3                      #  SUCKING   
-                her "*Slurp!* *Slurp!* *Slurp!*"
-                m "Hm..."
-                m "You are getting better at this [hermione_name]."
-                her "*Slurp!* *Slurp!* *Gulp!*"
-                m "Ok, say something nasty now..."
-                her "*Slurp--?"
-                $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-                $ hermione_chibi_ypos = 10
-                $ h_c_u_pic = "hand_ani" # Not sucking
-                show screen h_c_u   # NOT SUCKING
-                hide screen g_c_u # NOT SUCKING
-                with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                if whoring <= 20:
-                    $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-                    her "uhm..."
+            $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+            $ hermione_chibi_ypos = 10
+            $ h_c_u_pic = "hand_ani" # Not sucking
+            hide screen h_c_u   # SUCKING
+            show screen g_c_u # SUCKING
+            with d3                      #  SUCKING                
+            #">Hermione is working hard to please you..."
+            her "*Slurp!* *Slurp!* *Gulp!*"
+            show screen blktone
+            with d3
+            ">Hermione keeps sucking on your cock with a rather fierce determination."
+            ">Her technique is lacking but she makes up for it with the effort she puts it."
+            hide screen blktone
+            with d3
+            m "Yes... I love your eager, little mouth girl..."
+            her "*Gobble!* *Gobble!* *Gobble!*"
+            $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+            $ hermione_chibi_ypos = 10
+            $ h_c_u_pic = "hand_ani" # Not sucking
+            show screen h_c_u   # NOT SUCKING
+            hide screen g_c_u # NOT SUCKING
+            with d3                      #  NOT SUCKING
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+            her "[genie_name]?"
+            hide screen h_head2          
+            m "Hm?"
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+            her "Are you going to cum on my face today?"
+            her "Or do you plan to cum in my mouth?"
+            hide screen h_head2
+            menu:
+                "\"I Plan to splatter your face with cum!\"":
                     show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                    her "I eat cockroaches?"
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "I see..."
                     hide screen h_head2
-                    m "What the fuck?"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                    her "T-they are pretty nasty, [genie_name]..."
-                    hide screen h_head2
-                    m "No, [hermione_name], I mean something dirty!"
-                    m "And don't you dare to say \"mud\"!"
-                    m "I mean dirty in a sexual way!"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-                    her "Oh... Ehm..."
-                    hide screen h_head2
-                    m "Ah, never mind, the moment is gone..."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                    her "Ehm... I'm sorry, [genie_name]."
-                    hide screen h_head2
-                    m "Yeah, whatever. Make it up to me by sucking my cock harder."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-                    her "Of course, [genie_name]."
-                    hide screen h_head2
-                else:
-                    $ h_body = "01_hp/13_hermione_main/body_129.png" # HERMIONE
-                    her "I'm a slut [genie_name]."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
-                    her "A slut for your cum."
-                    hide screen h_head2
-                    m "That's it [hermione_name]."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_124.png" # HERMIONE
-                    her "It's all I can think about [genie_name]."
-                    her "Sucking your dirty old cock..."
-                    hide screen h_head2
-                    m "Well you better get back to it then [hermione_name]"
+                    m "Why do you ask?"
                     show screen h_head2                                                             # HERMIONE
                     $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                    her "Thank you [genie_name]."
+                    her2 "Oh... I just read in a book that semen contains a lot of antioxidants..."
+                    her "It's good for the skin..."
                     hide screen h_head2
-                    m "You're welcome cumslut."
+                    m "Great. One facial coming up."
+                    m "Back to work now."
+                "\"I Plan to fill your mouth with cum!\"":
                     show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_78.png" # HERMIONE
-                    her "..."
+                    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
+                    her "I see..."
                     hide screen h_head2
-                $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-                $ hermione_chibi_ypos = 10
-                $ h_c_u_pic = "hand_ani" # Not sucking
-                hide screen h_c_u   # SUCKING
-                show screen g_c_u # SUCKING
-                with d3                      #  SUCKING 
-                
+                    m "Why do you ask?"
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "Well, I am trying to watch my calorie-intake..."
+                    her2 "I just wonder how much calories your load contains, [genie_name]."
+                    her2 "Maybe I should skip my next meal..."
+                    hide screen h_head2
+                    m "[hermione_name]."
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "Yes?"
+                    hide screen h_head2
+                    m "Dick back in the mouth."
+                "\"I don't plan so far ahead.\"":
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "I see..."
+                    hide screen h_head2
+                    m "Don't you like surprises?"
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "Not really..."
+                    her "I rather enjoy planning ahead actually..."
+                    hide screen h_head2
+                    m "Well some things in life are just unpredictable."
+                    m "There is only one way to find out for sure."
+                    
+                "\"What would you like?\"":
+                    show screen h_head2                                                             # HERMIONE
+                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
+                    her "If it is all the same to you, [genie_name]..."
+                    if generating_points == 1:
+                        show screen h_head2                                                             # HERMIONE
+                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
+                        her2 "I would like you to cum on my face, [genie_name]."
+                        her2 "I read that it's good for the skin."
+                    else:
+                        show screen h_head2                                                             # HERMIONE
+                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
+                        her2 "I would like you to cum in my mouth."
+                        her2 "You usually cum so much so I think I will be able to just skip my next meal..."
+                        her2 "And do some homework instead."
+                    hide screen h_head2
+                    m "Well, we'll see about that."
+                    m "Back to sucking now."
+                    
+                    
+        $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+        $ hermione_chibi_ypos = 10
+        $ h_c_u_pic = "hand_ani" # Not sucking
+        hide screen h_c_u   # SUCKING
+        show screen g_c_u # SUCKING
+        with d3                      #  SUCKING   
+        her "*Slurp!* *Slurp!* *Slurp!*"
+        m "Hm..."
+        m "You are getting better at this [hermione_name]."
+        her "*Slurp!* *Slurp!* *Gulp!*"
+        m "Ok, say something nasty now..."
+        her "*Slurp--?"
+        $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+        $ hermione_chibi_ypos = 10
+        $ h_c_u_pic = "hand_ani" # Not sucking
+        show screen h_c_u   # NOT SUCKING
+        hide screen g_c_u # NOT SUCKING
+        with d3                      #  NOT SUCKING
+        show screen h_head2                                                             # HERMIONE
+        if whoring <= 20:
+            $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
+            her "uhm..."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+            her "I eat cockroaches?"
+            hide screen h_head2
+            m "What the fuck?"
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+            her "T-they are pretty nasty, [genie_name]..."
+            hide screen h_head2
+            m "No, [hermione_name], I mean something dirty!"
+            m "And don't you dare to say \"mud\"!"
+            m "I mean dirty in a sexual way!"
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
+            her "Oh... Ehm..."
+            hide screen h_head2
+            m "Ah, never mind, the moment is gone..."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
+            her "Ehm... I'm sorry, [genie_name]."
+            hide screen h_head2
+            m "Yeah, whatever. Make it up to me by sucking my cock harder."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
+            her "Of course, [genie_name]."
+            hide screen h_head2
+        else:
+            $ h_body = "01_hp/13_hermione_main/body_129.png" # HERMIONE
+            her "I'm a slut [genie_name]."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
+            her "A slut for your cum."
+            hide screen h_head2
+            m "That's it [hermione_name]."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_124.png" # HERMIONE
+            her "It's all I can think about [genie_name]."
+            her "Sucking your dirty old cock..."
+            hide screen h_head2
+            m "Well you better get back to it then [hermione_name]"
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
+            her "Thank you [genie_name]."
+            hide screen h_head2
+            m "You're welcome cumslut."
+            show screen h_head2                                                             # HERMIONE
+            $ h_body = "01_hp/13_hermione_main/body_78.png" # HERMIONE
+            her "..."
+            hide screen h_head2
+        $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+        $ hermione_chibi_ypos = 10
+        $ h_c_u_pic = "hand_ani" # Not sucking
+        hide screen h_c_u   # SUCKING
+        show screen g_c_u # SUCKING
+        with d3                      #  SUCKING   
                 her "*Slurp!* *Gulp!* *Slurp!*"
                 m "Yes, like this... Good..."
                 her "*Slurp!* *Slurp!* *Slurp!*"
