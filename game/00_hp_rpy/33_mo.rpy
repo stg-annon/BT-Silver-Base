@@ -2769,11 +2769,14 @@ label her_main(text="",face=""):
     show screen hermione_main
     with d3
     if text != "":
-        if "[genie_name]" in text:
+        if "[tmp_name]" in text:
+            $ text1,text2 = text.split("[tmp_name]")
+            her2 "[text1][tmp_name][text2]"
+        elif "[genie_name]" in text:
             $ text1,text2 = text.split("[genie_name]")
-            her2 "[text1][genie_name][text2]"
+            her "[text1][genie_name][text2]"
         else:
-            her2 "[text]"
+            her "[text]"
     return
     
 label her_head(text="",face=""):
@@ -2781,7 +2784,10 @@ label her_head(text="",face=""):
     if face != "":
         $ h_body = her_path + face + ".png"
     if text != "":
-        if "[genie_name]" in text:
+        if "[tmp_name]" in text:
+            $ text1,text2 = text.split("[tmp_name]")
+            her2 "[text1][tmp_name][text2]"
+        elif "[genie_name]" in text:
             $ text1,text2 = text.split("[genie_name]")
             her2 "[text1][genie_name][text2]"
         else:
