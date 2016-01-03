@@ -188,7 +188,8 @@ $RECYCLE.BIN/
 ## Python
 #############
 
-
+persistent
+*.rpyb
 *.txt
 *.save
 *.rpyc
