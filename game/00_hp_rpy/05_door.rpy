@@ -1636,17 +1636,22 @@ label too_much:
     hide screen bld1
     hide screen hermione_main
     with Dissolve(.3)
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    # $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    call her_walk(400,610,2)
+    
     with Dissolve(.3)    
     
     hide screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.5

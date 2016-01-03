@@ -317,12 +317,15 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     $ ears = True
@@ -370,12 +373,16 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
             hide screen ctc
             with Dissolve(.3)
             $ ears = False
-            $ walk_xpos=400 #Animation of walking chibi. (From)
-            $ walk_xpos2=610 #Coordinates of it's movement. (To)
-            $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-            show screen hermione_walk_01_f 
-            pause 2
-            hide screen hermione_walk_01_f 
+            
+            # $ walk_xpos=400 #Animation of walking chibi. (From)
+            # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+            # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+            # show screen hermione_walk_01_f 
+            # pause 2
+            # hide screen hermione_walk_01_f 
+            
+            call her_walk(400,610,2)
+            
             $ hermione_sleeping = True
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             with Dissolve(.3)
@@ -649,12 +656,15 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
             hide screen ctc
             with Dissolve(.3)
             
-            $ walk_xpos=400 #Animation of walking chibi. (From)
-            $ walk_xpos2=610 #Coordinates of it's movement. (To)
-            $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-            show screen hermione_walk_01_f 
-            pause 2
-            hide screen hermione_walk_01_f 
+            # $ walk_xpos=400 #Animation of walking chibi. (From)
+            # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+            # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+            # show screen hermione_walk_01_f 
+            # pause 2
+            # hide screen hermione_walk_01_f 
+            
+            call her_walk(400,610,2)
+            
             $ hermione_takes_classes = True
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             with Dissolve(.3)
@@ -756,12 +766,15 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     show screen genie
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ hermione_takes_classes = True
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
@@ -1053,17 +1066,22 @@ label potion_scene_2_2: #ass expansion
     hide screen hermione_main
     $ uni_sperm = False
     with Dissolve(.3)
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    # $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    
+    call her_walk(400,610,2)
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
     hide screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.5
@@ -1123,12 +1141,15 @@ label potion_scene_3: #cum addiction - work in progress, has some scenes adjuste
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     $ addicted = True
@@ -1540,12 +1561,15 @@ label potion_scene_4: #Transparent uniform
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     $ hermione_takes_classes = True
@@ -2805,7 +2829,7 @@ label her_walk_end_loiter(dissolveTime = 3):
         hide screen hermione_blink_f
     return
     
-label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter = False,redux_pause = 0):
+label luna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter = False,redux_pause = 0):
     hide screen luna_walk
     hide screen luna_walk_f
     $ walk_xpos = pos1 #(From)
@@ -2830,7 +2854,7 @@ label lun_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter =
             show screen luna_blink_f
     return
     
-label lun_walk_end_loiter(dissolveTime = 3):
+label luna_walk_end_loiter(dissolveTime = 3):
     if dissolveTime > 0:
         hide screen luna_02
         hide screen luna_01_f
@@ -2847,8 +2871,8 @@ label lun_walk_end_loiter(dissolveTime = 3):
 label test_walk:
     call her_walk(400,610,2)
     call her_walk(610,400,2)
-    call lun_walk(400,610,2)
-    call lun_walk(610,400,2)
+    call luna_walk(400,610,2)
+    call luna_walk(610,400,2)
     return
     
     

@@ -407,13 +407,15 @@ label want_to_rule:
                     pause.3
                     #Walks to the door
                     
-                    $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
-                    $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
-                    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-                    show screen hermione_walk_01_f 
-                    pause 2
-                    hide screen hermione_walk_01_f 
-                    $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
+                    # $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
+                    # $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
+                    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+                    # show screen hermione_walk_01_f 
+                    # pause 2
+                    # hide screen hermione_walk_01_f 
+                    # $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
+                    
+                    call her_walk(400,610,2)
                     show screen hermione_01_f
                     pause.5
                    
@@ -1101,16 +1103,16 @@ label crying_about_dress:
     hide screen ctc
     with d3
 
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
     
-
-    $ hermione_chibi_xpos = 610 # Stands near the door.
+    call her_walk(400,610,2)
     show screen hermione_01_f #Hermione stands still.
+    
     pause.3
     $ h_body = "01_hp/13_hermione_main/body_145.png"                                                                                                                                                         # HERMIONE HEAD
     $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
@@ -1458,12 +1460,15 @@ label giving_thre_dress:
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.8

@@ -307,12 +307,15 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     show screen genie
     with d3
 
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
@@ -334,12 +337,15 @@ label could_not_flirt_02: #Sent here when chose "Favour failed! No points for yo
     hide screen ctc
     with d3
 
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
@@ -418,13 +424,17 @@ label screams_of_rapings:
     hide screen blkfade
     hide screen blktone8
     with Dissolve(.3)
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    # $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    call her_walk(400,610,2)
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
 

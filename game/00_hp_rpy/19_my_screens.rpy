@@ -1568,15 +1568,15 @@ screen hermione_main2:
     
     
 screen c_scene: #Custom Scenes
-    tag head
+    tag gc
     if scene_number == 1:
-        add "01_hp/26_cg/scene_01.png" xpos 0 ypos 0
+        add "01_hp/28_cg/scene_01.png" xpos 0 ypos 0
     if scene_number == 2:
-        add "01_hp/26_cg/scene_02.png" xpos 0 ypos 0
+        add "01_hp/28_cg/scene_02.png" xpos 0 ypos 0
     if scene_number == 3:
-        add "01_hp/26_cg/scene_03.png" xpos 0 ypos 0
+        add "01_hp/28_cg/scene_03.png" xpos 0 ypos 0
     if scene_number == 4:
-        add "01_hp/26_cg/scene_04.png" xpos 0 ypos 0
+        add "01_hp/28_cg/scene_04.png" xpos 0 ypos 0
     zorder 3
  
  
@@ -2290,19 +2290,19 @@ screen luna:
     zorder luna_zorder
 
 screen dual_hand_job:
-    add "03_hp/01_bg/doublehand.png"
+    add "01_hp/01_bg/doublehand.png"
     zorder hermione_main_zorder
     
 screen snape_groping:
-    add "03_hp/01_bg/snapegrope.png"
+    add "01_hp/01_bg/snapegrope.png"
     zorder hermione_main_zorder
     
 screen snape_facial:
-    add "03_hp/01_bg/snapefacial.png"
+    add "01_hp/01_bg/snapefacial.png"
     zorder hermione_main_zorder
     
 screen snape_sex:
-    add "03_hp/01_bg/snapesex.png"
+    add "01_hp/01_bg/snapesex.png"
     zorder hermione_main_zorder
     
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE

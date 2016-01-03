@@ -589,12 +589,15 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     $ stockings = temp_stockings
     $ panties = True
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
@@ -827,12 +830,16 @@ label new_request_02: #SHOW ME YOUR PANTIES
     hide screen blktone 
     hide screen ctc
     with d3
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
@@ -1071,12 +1078,15 @@ label new_request_03: #(Whoring = 3 - 5)
     hide screen ctc
     with d3
 
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -1349,12 +1359,15 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     hide screen ctc
     with d3
 
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -2554,13 +2567,16 @@ label new_request_05:
     hide screen bld1
     hide screen hermione_main
     with Dissolve(.3)
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    # $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    call her_walk(400,610,2)
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
     
@@ -3621,13 +3637,16 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
-    $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    # $ hermione_chibi_xpos = 610 #Near the desk.
+    
+    call her_walk(400,610,2)
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)    
         
@@ -4541,12 +4560,16 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                         hide screen bld1
                         with d3
                         hide screen hermione_02 #Hermione stands still.
-                        $ walk_xpos=400 #Animation of walking chibi. (From)
-                        $ walk_xpos2=610 #Coordinates of it's movement. (To)
-                        $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-                        show screen hermione_walk_01_f 
-                        pause 2
-                        hide screen hermione_walk_01_f 
+                        
+                        # $ walk_xpos=400 #Animation of walking chibi. (From)
+                        # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+                        # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+                        # show screen hermione_walk_01_f 
+                        # pause 2
+                        # hide screen hermione_walk_01_f 
+                        
+                        call her_walk(400,610,2)
+                        
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                         with Dissolve(.3)
                         pause.2
@@ -5805,13 +5828,15 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     pause
                     #Walks to the door
                     
-                    $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
-                    $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
-                    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-                    show screen hermione_walk_01_f 
-                    pause 2
-                    hide screen hermione_walk_01_f 
-                    $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
+                    # $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
+                    # $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
+                    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+                    # show screen hermione_walk_01_f 
+                    # pause 2
+                    # hide screen hermione_walk_01_f 
+                    # $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
+                    
+                    call her_walk(400,650,2)
                     $ h_c_u_pic = "01_hp/animation/h_walk_01.png" 
                     show screen h_c_u
                     pause.5
@@ -6750,12 +6775,15 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     $ stockings = temp_stockings
     $ panties = True
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -7297,12 +7325,15 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -9169,12 +9200,15 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -10484,20 +10518,20 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         hide screen h_c_u   # SUCKING
         show screen g_c_u # SUCKING
         with d3                      #  SUCKING   
-                her "*Slurp!* *Gulp!* *Slurp!*"
-                m "Yes, like this... Good..."
-                her "*Slurp!* *Slurp!* *Slurp!*"
-                m "You know what? I think we are almost there."
-                her "*Slurp!* *Slurp!* *Slurp!*"
-                m "Yes, definitely."
-                her "*Slurp!* *Gobble!* *Gobble!*"
-                m "Alright, [hermione_name], this is the final stretch."
-                g4 "Show me what you've got."
-                her "!!! *Gobble-goble-slurp-goble!* !!!"
-                g4 "Yes, like that!"
-                her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
-                g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
-                g4 "Ghr!!!"
+        her "*Slurp!* *Gulp!* *Slurp!*"
+        m "Yes, like this... Good..."
+        her "*Slurp!* *Slurp!* *Slurp!*"
+        m "You know what? I think we are almost there."
+        her "*Slurp!* *Slurp!* *Slurp!*"
+        m "Yes, definitely."
+        her "*Slurp!* *Gobble!* *Gobble!*"
+        m "Alright, [hermione_name], this is the final stretch."
+        g4 "Show me what you've got."
+        her "!!! *Gobble-goble-slurp-goble!* !!!"
+        g4 "Yes, like that!"
+        her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+        g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
+        g4 "Ghr!!!"
                 
         menu:
             g4 "!!!"
@@ -10751,12 +10785,16 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -11936,12 +11974,15 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -13166,12 +13207,15 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    # $ walk_xpos=400 #Animation of walking chibi. (From)
+    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
+    # show screen hermione_walk_01_f 
+    # pause 2
+    # hide screen hermione_walk_01_f 
+    
+    call her_walk(400,610,2)
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
