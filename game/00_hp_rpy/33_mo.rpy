@@ -2826,7 +2826,12 @@ label lun_walk_end_loiter(dissolveTime = 3):
         hide screen luna_blink_f
     return
     
-    
+label test_walk:
+    call her_walk(400,610,2)
+    call her_walk(610,400,2)
+    call lun_walk(400,610,2)
+    call lun_walk(610,400,2)
+    return
     
     
     

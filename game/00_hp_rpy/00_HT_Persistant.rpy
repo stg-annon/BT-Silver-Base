@@ -268,6 +268,7 @@ label declare_ht_vars:
     
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 400
+    $ luna_speed = 2.0
     
     # $ new_request_01_count = 0
     # $ new_request_02_count = 0
