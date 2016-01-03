@@ -35,7 +35,8 @@ label giving_skirt:
     $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Thank you professor."
+    #her "Thank you professor."
+    her "Thank you [genie_name]."
     m "Don't mention it."
     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
@@ -2034,7 +2035,8 @@ label giving_vibrator: # VIBRATOR.
         $ h_body = "01_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Professor Dumbledore!"
+        #her "Professor Dumbledore!"
+        her "[genie_name]!"
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -3548,7 +3550,8 @@ label giving_sexdoll:
         $ h_body = "01_hp/13_hermione_main/body_32.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         show screen hermione_main                                                                                                                                                                                 #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Professor Dumbledore!!!"
+        #her "Professor Dumbledore!!!"
+        her "[genie_name]!!!"
         call upset
         $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
       

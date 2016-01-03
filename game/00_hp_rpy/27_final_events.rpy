@@ -22,7 +22,8 @@ label want_to_rule:
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-    her "Professor Dumbledore?"
+    #her "Professor Dumbledore?"
+    her "[genie_name]?"
     m "Miss Granger, how can I help you?"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -198,7 +199,8 @@ label want_to_rule:
                 $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Professor!"
+                #her "Professor!"
+                her "[genie_name]!"
                 m "What?"
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
@@ -262,7 +264,8 @@ label want_to_rule:
                 $ h_body = "01_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                 show screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
-                her "You are completely right, professor!"
+                #her "You are completely right, professor!"
+                her "You are completely right, [genie_name]!"
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3                                                                                                                                                                                                                        #HERMIONE
                 $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
@@ -370,7 +373,8 @@ label want_to_rule:
                     $ h_body = "01_hp/13_hermione_main/body_62.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
                     show screen hermione_main                                                                                                                                                                                 #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Professor, that was just mean."
+                    #her "Professor, that was just mean."
+                    her "[genie_name], that was just mean."
                     g9 "He-he..."
                     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -410,8 +414,7 @@ label want_to_rule:
                     pause 2
                     hide screen hermione_walk_01_f 
                     $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
-                    $ h_c_u_pic = im.Flip("01_hp/animation/h_walk_01.png", horizontal=True)
-                    show screen h_c_u
+                    show screen hermione_01_f
                     pause.5
                    
                     $ tt_xpos=670
@@ -455,10 +458,13 @@ label want_to_rule:
                     ">Hermione is taking her clothes off, one piece after another..."
                     ">Vest, shirt, her skirt and finally... the panties."
                     
-                    $ only_upper = True
+                    #$ only_upper = True
                     
                     
                     hide screen hermione_main
+                    $ badges = False # Turns off badges layer.
+                    $ wear_shirts = False
+                    $ wear_skirts = False
                     
                     $ hermione_chibi_xpos = 310 # Default 360
                     #$ hermione_chibi_ypos = 210
@@ -471,7 +477,6 @@ label want_to_rule:
                     pause
                     hide screen ctc
                     
-                    $ badges = False # Turns off badges layer.
                     
                     #add h_c_u_pic at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
                     g9 "Ni-i-i-ce!"
@@ -631,12 +636,12 @@ label want_to_rule:
     with d5
     
     $ badges = True
+    $ wear_shirts = True
+    $ wear_skirts = True
     
     show screen ctc
     pause 
     hide screen ctc
-    $ only_upper = False
-    $ badges = True # Turns badges layer back ON.
     show screen bld1
     with d3
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -1322,7 +1327,8 @@ label giving_thre_dress:
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-    her "PROFESSOR!"
+    #her "PROFESSOR!"
+    her "[genie_name]!"
     g4 "What? What happened? Don't tell me it's the wrong color or something!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE

@@ -125,6 +125,8 @@ label load_ht_persistant_vars:
         $ ears = False
     if not hasattr(renpy.store,'wear_shirts'): #important!
         $ wear_shirts = True
+    if not hasattr(renpy.store,'wear_skirts'): #important!
+        $ wear_skirts = True
     if not hasattr(renpy.store,'gave_tinyminiskirt'): #important!
         $ gave_tinyminiskirt = False
     if not hasattr(renpy.store,'wear_bra'): #important!
@@ -248,12 +250,21 @@ label declare_ht_vars:
     $ emote_question = False
     $ emote_sweat = False
     $ emote_suprize = False
-    $ anger = [51,76,86,110,351,346,345,343,317,309]
+    $ anger = ["body_51","body_76","body_86","body_110","body_351","body_346","body_345","body_343","body_317","body_309"]
     $ exclam = []
     $ hearts = []
     $ question = []
-    $ sweat = [24,34,57,108,340]
-    $ suprize = [80,335]
+    $ sweat = ["body_24","body_34","body_57","body_108","body_340"]
+    $ suprize = ["body_80","body_335"]
+    
+    
+    $ pub_q_blowjob_teach = False
+    $ pub_q_sex_teach = False
+    
+    $ per_q_the_gamble = False
+    $ per_q_the_gamble_a = False
+    $ per_q_the_gamble_b = False
+    $ per_q_the_gamble_c = False
     
     # $ new_request_01_count = 0
     # $ new_request_02_count = 0
@@ -334,4 +345,5 @@ label declare_ht_vars:
     $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
     #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
     
-return
+    
+    return

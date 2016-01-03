@@ -818,68 +818,9 @@ call points_changes #Makes changes in the Slytherin house points.
 call points_changes_gryffindor #Makes changes in the Gryffindor (And the rest of the houses) house points. (07_points_gry.rpy)
 # call snape_bonus # Not in use anymore.
 
-###JOBS###
-if current_job == 1:
-    jump maid_responses
-
-if current_job == 2:
-    jump barmaid_responses
-
-if current_job == 3:
-    jump gryffindor_cheer_responses
-
-if current_job == 4:
-    jump slytherin_cheer_responses
-
-if ears == True:
-    jump potion_scene_1_2
-
-if transparency < 1:
-    jump potion_scene_4_2
-
-if addicted == True:
-    jump potion_scene_3_2
-
 ### NIGHT REQUESTS ###
+call Night_Request_Block
 
-if request_02_b:
-    call new_request_02_b_complete
-if request_02_c:
-    call new_request_02_c_complete
-if request_03:
-    call new_request_03_complete
-if request_05:
-    call new_request_05_complete
-if request_06:
-    call new_request_06_complete
-if request_10:
-    call new_request_10_complete
-#if request_13: # SEE THROUGH SHIRT DURING CLASS. NOT USED.
-#    call request_13_complete
-if request_15: #(Flash a nipple to a teacher).
-    call new_request_15_complete
-if request_20: #(Grab a classmate's cock).
-    call new_request_20_complete
-if request_21: #(Jerk off on tits and put the clothes back on).
-    call new_request_21_complete
-if request_23: #(Give handjob to a classmate).
-    call new_request_23_complete
-if request_24: #(Flash your tits to a teacher).
-    call new_request_24_complete
-if request_25: #(Cum on face and send to class).
-    call new_request_25_complete
-if request_26: #(Go to class with mouth full of cum).
-    call new_request_26_complete
-if request_27: #(Blow two classmates).
-    call new_request_27_complete
-if request_28: #(Handjob to a teacher).
-    call new_request_28_complete
-if request_30: #(FUCK A CLASSMATE).
-    call new_request_30_complete
-if request_32: #(Put on a slutty dress and go to classes).
-    call new_request_32_complete
-if request_33: #(Go to classes with cum covered face).
-    call new_request_33_complete
 
 call c_r_night
 

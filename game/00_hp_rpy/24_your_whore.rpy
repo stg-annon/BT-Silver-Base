@@ -180,7 +180,8 @@ label your_whore:
     m "(Girl, it's me! Over here!)"
     show screen h_head2                                                             # HERMIONE
     $ h_body = "01_hp/13_hermione_main/body_163.png" # HERMIONE
-    her "Professor Dumbledore?"
+    #her "Professor Dumbledore?"
+    her "[genie_name]?"
     hide screen h_head2     
     m "(Shush! Keep your voice down and follow me.)"
     show screen h_head2                                                             # HERMIONE
@@ -1002,7 +1003,8 @@ label your_whore:
         sna2 "What an unpleasant surprise..."
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_162.png" # HERMIONE
-        her "Professor..."
+        #her "Professor..."
+        her "[genie_name]..."
         $ s_sprite = "01_hp/10_snape_main/snape_10.png"
         show screen s_head2
         sna "Well, go ahead then..."
@@ -1011,7 +1013,8 @@ label your_whore:
         $ tiara = True #Tiara is displayed.
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_160.png" # HERMIONE
-        her "Thank you, professor."
+        #her "Thank you, professor."
+        her "Thank you, [genie_name]."
         hide screen h_head2        
         pause.7
         
@@ -1235,7 +1238,7 @@ label your_whore:
         with d7                                                                        #<---- SCREEN
         her "I wish you could see how much Hogwarts changed me..."
         her "I wish you could see your little girl right now..."
-        her "{size=-5}Ah...{/size}{image=textheart.png}"
+        her "{size=-5}Ah...{/size}{image=textheart}"
         show screen ctc
         pause
         hide screen ctc
@@ -1278,8 +1281,8 @@ label your_whore:
         $ end_u_2_pic =  "01_hp/17_ending/121.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "{size=-3}Ah...{/size}{image=textheart.png}"
-        her "...............................a-ha...{image=textheart.png}{image=textheart.png}{image=textheart.png}"
+        her "{size=-3}Ah...{/size}{image=textheart}"
+        her "...............................a-ha...{image=textheart}{image=textheart}{image=textheart}"
         show screen ctc
         pause
         hide screen ctc
@@ -1341,7 +1344,7 @@ label your_whore:
         $ end_u_1_pic =  "01_hp/17_ending/121.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Ah...{image=textheart.png}{image=textheart.png}{image=textheart.png}"
+        her "Ah...{image=textheart}{image=textheart}{image=textheart}"
         show screen ctc
         pause
         hide screen ctc
@@ -1360,7 +1363,8 @@ label your_whore:
         pause.1
         hide screen bld1
         with d7
-        her "As you say, professor..."
+        #her "As you say, professor..."
+        her "As you say, [genie_name]..."
         show screen bld1
         with d7
         $ s_sprite = "01_hp/10_snape_main/snape_12.png"
@@ -1414,7 +1418,8 @@ label your_whore:
         $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_165.png" # HERMIONE
-        her "Professor Dumbledore..."
+        #her "Professor Dumbledore..."
+        her "[genie_name]..."
         her2 "There was something you wanted to discuss with me?"
         hide screen h_head2
         g4 "Not right now, whore!"
@@ -1493,7 +1498,8 @@ label your_whore:
         with hpunch
         # SLAP!
         
-        her "Ah! Professor!"
+        #her "Ah! Professor!"
+        her "Ah! [genie_name]!"
         g4 "I said, be quiet!"
         
         $ renpy.play('sounds/slap.mp3')
@@ -1505,7 +1511,8 @@ label your_whore:
         $ end_u_1_pic =  "01_hp/17_ending/55.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                       #<---- SCREEN
-        her "Ah! Professor!"
+        #her "Ah! Professor!"
+        her "Ah! [genie_name]!"
         $ end_u_2_pic =  "01_hp/17_ending/124.png" #<---- SCREEN
         show screen end_u_2                                               #<---- SCREEN
         with d5                                                                         #<---- SCREEN
@@ -1585,7 +1592,8 @@ label your_whore:
         $ end_u_2_pic =  "01_hp/17_ending/63.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Fuck me professor! Fuck me harder!!!"
+        #her "Fuck me professor! Fuck me harder!!!"
+        her "Fuck me [genie_name]! Fuck me harder!!!"
         g4 "Grht! Harder than this, whore?!"
         g4 "!!!"
         g4 "Crap!  Someone's coming!"
@@ -1629,12 +1637,14 @@ label your_whore:
         $ end_u_1_pic =  "01_hp/17_ending/129.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
-        her "Professor!!!?"
+        #her "Professor!!!?"
+        her "[genie_name]!!!?"
         m "The girl's frontal area is completely at your disposal."
         $ end_u_2_pic =  "01_hp/17_ending/130.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Professor! No!"
+        #her "Professor! No!"
+        her "[genie_name]! No!"
         m "What's wrong, slut?"
         $ end_u_1_pic =  "01_hp/17_ending/129.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
@@ -1654,7 +1664,8 @@ label your_whore:
         her "And stop moving your hips while we're talking, sir!"
         m "Boys, what is taking you so long?"
         m "I said, the whore is yours!"
-        her "Professor Dumbled--"
+        #her "Professor Dumbled--"
+        her "[genie_name]--"
         sly1 "Shut up, filth!"
         
         # FACE SPIT
@@ -1699,7 +1710,8 @@ label your_whore:
         m "Huh? You mean, like this?"
         with hpunch
         pause.3
-        her "Ah-aha! No, professor, stop it!"
+        #her "Ah-aha! No, professor, stop it!"
+        her "Ah-aha! No, [genie_name], stop it!"
         m "Stop? I think I will fuck you harder instead!"
         with hpunch
         pause.3
@@ -1733,7 +1745,8 @@ label your_whore:
         with d5                                                                        #<---- SCREEN
         her "Ah... Aha..."
         sly1 "Yes... I wanted to do this for quite some time now..."
-        her "Professor!"
+        #her "Professor!"
+        her "[genie_name]!"
         m "Huh? Oh, don't you mind me girl."
         m "Imagine that I'm not even here..."
         
@@ -1967,7 +1980,7 @@ label your_whore:
         $ end_u_2_pic =  "01_hp/17_ending/154.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "{size=-5}Ah... Don't call me that, you bastard...{/size}{image=textheart.png}"
+        her "{size=-5}Ah... Don't call me that, you bastard...{/size}{image=textheart}"
         sly1 "Gonna fuck your face real good, whore!"
         sly1 "And after I fill your mouth with my cum, you're gonna thank me!"
         sly1 "Aren't you, mudblood whore?"
@@ -2190,7 +2203,8 @@ label your_whore:
         $ end_u_1_pic =  "01_hp/17_ending/166.png" #<---- SCREEN
         show screen end_u_1                                             #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "{size=+3}No professor, I............!{/size}"
+        #her "{size=+3}No professor, I............!{/size}"
+        her "{size=+3}No [genie_name], I............!{/size}"
         g4 "Argh!"
         
         show screen white 
@@ -2519,7 +2533,8 @@ label your_whore:
         show screen end_u_2                                            #<---- SCREEN
         with d3                                                                        #<---- SCREEN
         her "Gua-ha..."
-        her "Thank you, professor."
+        #her "Thank you, professor."
+        her "Thank you, [genie_name]."
         show screen bld1
         with d3
         with hpunch
@@ -2733,11 +2748,11 @@ label your_whore:
         $ end_u_1_pic =  "01_hp/17_ending/47.png" #<---- SCREEN
         show screen end_u_1                                            #<---- SCREEN
         with d5                                                                        #<---- SCREEN
-        her "Ah...{image=textheart.png} It is, sir?"
+        her "Ah...{image=textheart} It is, sir?"
         her "That's probably from before..."
         m "From before?"
         m "You mean from when you were choking on my cock?"
-        her "Ah...{image=textheart.png} Yes, sir..."
+        her "Ah...{image=textheart} Yes, sir..."
         m "Did it make you cum?"
         $ end_u_2_pic =  "01_hp/17_ending/48.png" #<---- SCREEN
         show screen end_u_2                                            #<---- SCREEN
@@ -3185,7 +3200,8 @@ label your_whore:
                 $ end_u_2_pic =  "01_hp/17_ending/88.png" #<---- SCREEN
                 show screen end_u_2                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
-                her "Professor! My dress!"
+                #her "Professor! My dress!"
+                her "[genie_name]! My dress!"
                 g4 "What?"
                 her "Make sure you don't get any on my dress!"
                 g4 "Shut up about your dress, whore! You are ruining the momment!"
@@ -3248,7 +3264,8 @@ label your_whore:
                 $ end_u_1_pic =  "01_hp/17_ending/84.png" #<---- SCREEN
                 show screen end_u_1                                             #<---- SCREEN
                 with d5                                                                        #<---- SCREEN
-                her "Professor! My dress!"
+                #her "Professor! My dress!"
+                her "[genie_name]! My dress!"
                 g4 "What?"
                 her "Make sure you don't get any on my dress!"
                 g4 "Shut up about your dress, whore! You are ruining the momment!"
@@ -3945,7 +3962,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking. 
         pause.7
         
-        dum4 "Oh, dear... {image=textheart.png} "
+        dum4 "Oh, dear... {image=textheart} "
         pause 1
         
     $ renpy.play('sounds/win2.mp3')   #Not loud.

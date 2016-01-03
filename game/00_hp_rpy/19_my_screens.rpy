@@ -470,7 +470,31 @@ screen snape_walk_01_f: #Default Snape walk animation. (Mirrored).
     add "snape_walk_01_f" at custom_walk(walk_xpos, walk_xpos2)
     zorder 4
 
-    
+### LUNA CHIBI ###
+screen luna_01: #Luna stands still.
+    tag luna_chibi
+    add "01_hp/16_luna_chibi/walk/l_walk_a_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+screen luna_01_f: #Luna stands still. (MIRRORED)
+    tag luna_chibi
+    add im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True) at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+screen luna_02: #Luna stands still and blinks.
+    tag luna_chibi
+    add "ch_lun blink_a" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+screen luna_walk_01:
+    tag luna_chibi
+    add "ch_lun walk_a" at custom_walk_02(walk_xpos, walk_xpos2)
+screen luna_walk_01_f: #Luna Chibi. walking. animation. facing right. (Leaving tower).
+    tag luna_chibi
+    add "ch_lun walk_a_flip" at custom_walk_02(walk_xpos, walk_xpos2)
+screen luna_chibi_robe: #Luna. Chibi. Walking. Wearing a robe.
+    tag luna_chibi
+    add "ch_lun walk_robe" at custom_walk_02(walk_xpos, walk_xpos2)
+screen luna_chibi_robe_f: #Luna. Chibi. Walking. Wearing a robe.
+    tag luna_chibi
+    add "ch_lun walk_robe_flip" at custom_walk_02(walk_xpos, walk_xpos2)
+screen luna_02_b: #Luna stands still wearing a robe.
+    tag luna_chibi
+    add "01_hp/16_luna_chibi/walk/l_walk_robe_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
     
 ### HERMIONE CHIBI ###
 screen hermione_01: #Hermione stands still.
@@ -966,7 +990,7 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
-        elif not skirt_up and custom_outfit <= 19:
+        elif wear_skirts and not skirt_up and custom_outfit <= 19:
             if whoring <= 5:
                 add im.Alpha("01_hp/13_hermione_main/legs/legs_01.png", transparency) xpos h_xpos ypos h_ypos
             elif whoring >= 6 and whoring <= 11: #Mini skirt.
@@ -1134,17 +1158,18 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
     if tentacle_cosmetic == True:
         add "01_hp/25_mo/tentacles.png" xpos h_xpos ypos h_ypos #The Tentacles.
     
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in anger or emote_anger:
+    
+    if h_body.split("/")[-1].replace(".png","") in anger or emote_anger:
         add "01_hp/13_hermione_main/body/emote/00.png" xpos h_xpos ypos h_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in exclam or emote_exclam:
+    if h_body.split("/")[-1].replace(".png","") in exclam or emote_exclam:
         add "01_hp/13_hermione_main/body/emote/01.png" xpos h_xpos ypos h_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in hearts or emote_hearts:
+    if h_body.split("/")[-1].replace(".png","") in hearts or emote_hearts:
         add "01_hp/13_hermione_main/body/emote/02.png" xpos h_xpos ypos h_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in question or emote_question:
+    if h_body.split("/")[-1].replace(".png","") in question or emote_question:
         add "01_hp/13_hermione_main/body/emote/03.png" xpos h_xpos ypos h_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in sweat or emote_sweat:
+    if h_body.split("/")[-1].replace(".png","") in sweat or emote_sweat:
         add "01_hp/13_hermione_main/body/emote/04.png" xpos h_xpos ypos h_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in suprize or emote_suprize:
+    if h_body.split("/")[-1].replace(".png","") in suprize or emote_suprize:
         add "01_hp/13_hermione_main/body/emote/05.png" xpos h_xpos ypos h_ypos #Custom
     
     zorder hermione_main_zorder #(5) Otherwise candle light is shown on top.
@@ -2172,6 +2197,22 @@ screen luna:
     ### ZORDER
     zorder luna_zorder
 
+screen dual_hand_job:
+    add "03_hp/01_bg/doublehand.png"
+    zorder hermione_main_zorder
+    
+screen snape_groping:
+    add "03_hp/01_bg/snapegrope.png"
+    zorder hermione_main_zorder
+    
+screen snape_facial:
+    add "03_hp/01_bg/snapefacial.png"
+    zorder hermione_main_zorder
+    
+screen snape_sex:
+    add "03_hp/01_bg/snapesex.png"
+    zorder hermione_main_zorder
+    
 init python: ###Method Definition for new characters
     def changeLuna( l_eye=None, 
                     l_pupil=None, 
@@ -2305,6 +2346,7 @@ init python: ###Method Definition for new characters
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("luna")
         renpy.with_statement(Dissolve(0.5))
+        
     
 ###THANKS TO CLEANZO FOR WRITING THIS CODE
     def changeHermioneMainScreen(   image_name,

@@ -64,7 +64,6 @@ label cs_select:
         jump clothes_menu
     
     $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ clothes_store_selection)]
-    $ clothes_store_selection = 0
     jump cs_select_done
     
 label clothes_store:

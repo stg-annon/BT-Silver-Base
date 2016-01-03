@@ -1177,7 +1177,7 @@ label l_tutoring:
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
         show screen hermione_main
-        her "Yes {image=textheart.png} like that."
+        her "Yes {image=textheart} like that."
         ">You start to chew on her nipples."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
         show screen hermione_main
@@ -1194,7 +1194,7 @@ label l_tutoring:
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
         show screen hermione_main
-        her "Yes! {image=textheart.png}"
+        her "Yes! {image=textheart}"
         her "I... I..."
         g9 "Came, my dear."
         show screen blkfade
@@ -1435,12 +1435,12 @@ label l_tutoring:
         ">While you're moving your finger in her pussy, you take over her clit with your thumb."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n097_blush.png"
         show screen hermione_main
-        her "Haa {image=textheart.png}, I'm only your humble student, I wouldn't know such naughty things."
+        her "Haa {image=textheart}, I'm only your humble student, I wouldn't know such naughty things."
         m "One finger is rarely enough even with a tight pussy like yours."
         ">You insert a second finger in her tight and warm pussy..."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
         show screen hermione_main
-        her "Yesss {image=textheart.png}, I'll try to remember your teachings."
+        her "Yesss {image=textheart}, I'll try to remember your teachings."
         ">You increase the pace and feel her pussy tighten on your fingers."
         m "Maybe a third finger?"
         $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
@@ -1454,7 +1454,7 @@ label l_tutoring:
         with d1
         $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush.png"
         show screen hermione_main
-        her "Noo {image=textheart.png}{w=0.2} not so fast I will..."
+        her "Noo {image=textheart}{w=0.2} not so fast I will..."
         ">You increase your pace even more."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
         show screen hermione_main
@@ -1464,7 +1464,7 @@ label l_tutoring:
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
         show screen hermione_main
-        her "Haaaaa {image=textheart.png} yesss {image=textheart.png}."
+        her "Haaaaa {image=textheart} yesss {image=textheart}."
         g9 "Lucky girl."
         show screen blkfade
         with d5
@@ -1481,7 +1481,7 @@ label l_tutoring:
         her "I'm sure this lesson will be of great help tonight."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n096_blush_m.png"
         show screen hermione_main
-        her "And the other nights {image=textheart.png}."
+        her "And the other nights {image=textheart}."
         m "Always glad to help my little witch in her studies."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n063_blush_m.png"
         show screen hermione_main
@@ -1592,7 +1592,7 @@ label l_tutoring:
         $ h_body = "01_hp/27_ue/hermione/bd_her_n175_blush.png"
         show screen hermione_main
         with d3
-        her "{size=-2}(Thinking of the headmaster masturbating makes me wet already {image=textheart.png}){/size}"
+        her "{size=-2}(Thinking of the headmaster masturbating makes me wet already {image=textheart}){/size}"
         $ h_body = "01_hp/27_ue/hermione/bd_her_n144b_blush.png"
         show screen hermione_main
         her "{size=-2}(I've become such a whore. Not that I enjoy it all that much though){/size}"
@@ -1690,7 +1690,7 @@ label l_tutoring:
         her "Hear her cum!"
         $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
         show screen hermione_main
-        her "Like me! Aaah yesssss! {image=textheart.png} {image=textheart.png}"
+        her "Like me! Aaah yesssss! {image=textheart} {image=textheart}"
         #$ b_her_squirt = True # the squirting needs some work. Graphically, I mean.
         pause
         g11 "Ahh! You little whore!!!"
@@ -1892,7 +1892,7 @@ label l_tutoring:
         ">You suddenly insert the anal plug."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
         show screen hermione_main
-        her "Yesss {image=textheart.png} like that!"
+        her "Yesss {image=textheart} like that!"
         ">You remove it just as quickly while giving her butt a loud slap."
         play sound sd_boing1
         with flashbulb
@@ -1900,7 +1900,7 @@ label l_tutoring:
         with hpunch
         $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
         show screen hermione_main
-        her "Yessss more {image=textheart.png}."
+        her "Yessss more {image=textheart}."
         g9 "As you wish, princess."
         ">You promptly insert and remove it."
         play sound sd_boing1
@@ -1919,7 +1919,7 @@ label l_tutoring:
         $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03b.png"
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t2.png"
         show screen hermione_main
-        her "Aaaah {image=textheart.png}."
+        her "Aaaah {image=textheart}."
         play sound sd_boing1
         pause.1
         play sound sd_slap
@@ -1937,14 +1937,14 @@ label l_tutoring:
         ">You finger both her butthole and her pussy."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush.png"
         show screen hermione_main
-        her "Nooo it's too much {image=textheart.png}."
+        her "Nooo it's too much {image=textheart}."
         g9 "Faster? No problem!"
         hide screen groping_05
         show screen groping_05b
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
         show screen hermione_main
-        her "Aaah, you're killing me {image=textheart.png}."
+        her "Aaah, you're killing me {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c099_blush_t.png"
         show screen hermione_main
         her "{size=-2}(And I love it){/size}"
@@ -1964,17 +1964,17 @@ label l_tutoring:
         her "Keep it up, I..."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
         show screen hermione_main
-        her "Yessss {image=textheart.png}."
+        her "Yessss {image=textheart}."
         m "I can keep this up as long as you please."
         $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_04.png"
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
         show screen hermione_main
-        her "Yesss {image=textheart.png}, nooo I will die!"
+        her "Yesss {image=textheart}, nooo I will die!"
         g9 "In ecstasy."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush.png"
         show screen hermione_main
-        her "Aahh not again {image=textheart.png}."
+        her "Aahh not again {image=textheart}."
         hide screen groping_05b
         show screen no_groping_05
         m "I think you've had enough for one night."
@@ -2202,7 +2202,7 @@ label l_tutoring:
         hide screen no_groping_05
         show screen groping_05
         ">You push the first bead in with ease."
-        her "Hmmm {image=textheart.png}"
+        her "Hmmm {image=textheart}"
         m "How many do you think you can take, my dear?"
         $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
         show screen hermione_main
@@ -2211,22 +2211,22 @@ label l_tutoring:
         ">You push another one inside with little resistance."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
         show screen hermione_main
-        her "Yess {image=textheart.png}, one more please."
+        her "Yess {image=textheart}, one more please."
         ">You feel the beads sink deeper when you push the third one inside."
         $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
         show screen hermione_main
-        her "Ohhh, they're... they're moving {image=textheart.png}."
+        her "Ohhh, they're... they're moving {image=textheart}."
         ">The fourth takes some work before it pops in."
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
         show screen hermione_main
-        her "Ah {image=textheart.png} ah {image=textheart.png}."
+        her "Ah {image=textheart} ah {image=textheart}."
         ">You push the last one forcefully inside."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
         show screen hermione_main
-        her "Ahhhhh {image=textheart.png}, delightful."
+        her "Ahhhhh {image=textheart}, delightful."
         her "They're so deep in my ass... almost like your cock."
         g9 "I can..."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
@@ -2239,7 +2239,7 @@ label l_tutoring:
         ">You finger her butthole gently."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
         show screen hermione_main
-        her "Ahh... {image=textheart.png}{w=0.5} aah...{image=textheart.png}"
+        her "Ahh... {image=textheart}{w=0.5} aah...{image=textheart}"
         $ h_body = "01_hp/27_ue/hermione/bd_her_a066_blush_t.png"
         show screen hermione_main
         her "W-What did I say..."
@@ -2255,7 +2255,7 @@ label l_tutoring:
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
         show screen hermione_main
-        her "Yesss {image=textheart.png}."
+        her "Yesss {image=textheart}."
         m "I thought you didn't want the finger?"
         g9 "In that case, one more finger."
         ">She shivers when you insert a second finger."
@@ -2272,12 +2272,12 @@ label l_tutoring:
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_c058_blush_t.png"
         show screen hermione_main
-        her "Nooo... aahh {image=textheart.png}."
+        her "Nooo... aahh {image=textheart}."
         m "Your pussy is getting neglected. We need to fix that!"
         ">You start fingering her pussy with your other hand. She is panting heavily."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
         show screen hermione_main
-        her "Ah... ah... like that yesss {image=textheart.png}."
+        her "Ah... ah... like that yesss {image=textheart}."
         ">You suddenly pull out all the beads."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
         show screen hermione_main
@@ -2293,10 +2293,10 @@ label l_tutoring:
         her "No don't I..."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
         show screen hermione_main
-        her "Cummm {image=textheart.png}{image=textheart.png}."
+        her "Cummm {image=textheart}{image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush_t.png"
         show screen hermione_main
-        her "Agaaain aaah {image=textheart.png}."
+        her "Agaaain aaah {image=textheart}."
         g11 "Sorry my little anal whore but I'm starting to get tired."
         $ b_her_tears = False
         $ h_body = "01_hp/27_ue/hermione/bd_her_a162b_blush_t2.png"
@@ -2304,7 +2304,7 @@ label l_tutoring:
         her "Don't you dare stop now!"
         $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
         show screen hermione_main
-        her "Just a little more pleassse {image=textheart.png}."
+        her "Just a little more pleassse {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
         show screen hermione_main
         her "Because I will..."
@@ -2658,7 +2658,7 @@ label l_tutoring:
         ">You push the whole bottle neck up inside her asshole."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c057_blush.png"
         show screen hermione_main
-        her "Ohhh, yesss! {image=textheart.png}"
+        her "Ohhh, yesss! {image=textheart}"
         $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
         show screen hermione_main
         her "More, faster!"
@@ -2666,17 +2666,17 @@ label l_tutoring:
         ">You rotate the bottle while going back and forth deeper and deeper."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush_t.png"
         show screen hermione_main
-        her "Yessss, don't forget my pussy {image=textheart.png}."
+        her "Yessss, don't forget my pussy {image=textheart}."
         g9 "Oh, your pussy better be ready for what's coming!"
         ">You insert all four fingers in her sopping wet pussy."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c059_blush_t.png"
         show screen hermione_main
-        her "Sweet Circe, aah, aah, that's too much! {image=textheart.png}"
+        her "Sweet Circe, aah, aah, that's too much! {image=textheart}"
         m "Nothing is too much for my little whore."
         ">You increase the pace of both hands."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
         show screen hermione_main
-        her "No, no, yes, yessss! {image=textheart.png}"
+        her "No, no, yes, yessss! {image=textheart}"
         ">Most of the bottle is inside her now, leaving just enough to get a good grip."
         m "Push the bottle, push it!"
         ">Whenever she pushes it back you do the same in the other direction."
@@ -2684,7 +2684,7 @@ label l_tutoring:
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
         show screen hermione_main
-        her "This is, this is, aaaah!!! {image=textheart.png}{image=textheart.png}"
+        her "This is, this is, aaaah!!! {image=textheart}{image=textheart}"
         ">Her whole body convulses as she comes hard."
         show screen blkfade
         with d5
@@ -2846,7 +2846,7 @@ label l_tutoring:
         with hpunch
         $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
         show screen hermione_main
-        her "Ah, you brute {image=textheart.png}."
+        her "Ah, you brute {image=textheart}."
         m "Your butthole is the perfect fit, not too tight and not too stretched!"
         $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
         show screen hermione_main
@@ -2854,7 +2854,7 @@ label l_tutoring:
         ">You caress her clit while fucking her."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
         show screen hermione_main
-        her "Mmmh, yes {image=textheart.png}."
+        her "Mmmh, yes {image=textheart}."
         g9 "You love it don't you?"
         $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
         show screen hermione_main
@@ -2868,7 +2868,7 @@ label l_tutoring:
         ">You increase the pace."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush.png"
         show screen hermione_main
-        her "Ahh yesss {image=textheart.png}."
+        her "Ahh yesss {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
         show screen hermione_main
         her "I'm such a whore, I love sex even for free."
@@ -2883,7 +2883,7 @@ label l_tutoring:
         $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
         show screen hermione_main
         with hpunch
-        her "Aaaaah {image=textheart.png}."
+        her "Aaaaah {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
         show screen hermione_main
         her "I love being sodomized savagely by my headmaster."
@@ -2891,7 +2891,7 @@ label l_tutoring:
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
         show screen hermione_main
         with hpunch
-        her "Yessss {image=textheart.png}."
+        her "Yessss {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
         show screen hermione_main
         her "I love his big cock in my ass."
@@ -2906,7 +2906,7 @@ label l_tutoring:
         with hpunch
         $ h_body = "01_hp/27_ue/hermione/bd_her_c099_blush_t.png"
         show screen hermione_main
-        her "Aah, like this, punish me more master {image=textheart.png}."
+        her "Aah, like this, punish me more master {image=textheart}."
         play sound sd_slap
         with hpunch
         $ h_body = "01_hp/27_ue/hermione/bd_her_c179_blush_t.png"
@@ -2930,12 +2930,12 @@ label l_tutoring:
         pause.1
         $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
         show screen hermione_main
-        her "Cuuuum {image=textheart.png}{image=textheart.png}."
+        her "Cuuuum {image=textheart}{image=textheart}."
         show screen scr_her_sex("fast")
         ">You fuck her butthole fiercely."
         $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
         show screen hermione_main
-        her "Yes, yes, again, aaaah {image=textheart.png}."
+        her "Yes, yes, again, aaaah {image=textheart}."
         g11 "Yes, my little whore, yes!"
         hide screen scr_her_sex
         show screen scr_her_sex_cum_outside()
@@ -2956,7 +2956,7 @@ label l_tutoring:
         $ b_her_tears = True
         $ h_body = "01_hp/27_ue/hermione/bd_her_n156_blush.png"
         show screen hermione_main
-        her "Marvellous {image=textheart.png}."
+        her "Marvellous {image=textheart}."
         $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
         show screen hermione_main
         her "I'm so glad you agreed to tutor me, professor..."

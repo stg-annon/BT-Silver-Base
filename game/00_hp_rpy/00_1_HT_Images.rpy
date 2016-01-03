@@ -11,6 +11,8 @@ init:
     image heart_02 = "interface/heart_02.png"
     image heart_03 = "interface/heart_03.png"
     
+    image textheart = "interface/textheart.png"
+    
     image side dum1 = "01_hp/26_dum/dum_01.png"
     image side dum2 = "01_hp/26_dum/dum_02.png"
     image side dum3 = "01_hp/26_dum/dum_03.png"
