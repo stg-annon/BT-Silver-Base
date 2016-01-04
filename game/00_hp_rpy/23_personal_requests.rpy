@@ -9473,7 +9473,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 call her_head("I do not!","body_33")
                 m "Stubborn girl..."
                 call her_head("Aha...{image=textheart}","body_131") 
-                "\"So... What's new in your life?\"":
+            "\"So... What's new in your life?\"":
                 call her_head("...[genie_name]?","body_31")
                 m "Just trying to have a polite conversation."
                 call her_head("Ah-ah... But... ah...","body_31")
@@ -9498,7 +9498,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 m "If you say so..."
                 call her_head("A-ah...{image=textheart}","body_131")
                 call her_head("I am... ah...{image=textheart} not a prostitute...","body_132")            
-                "\"......................................................\"":
+            "\"......................................................\"":
                 call her_head("A-ha... ah...","body_131")
                 m "*Panting!*"
                 call her_head("Ah... ha-aha...","body_131")
@@ -9626,7 +9626,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 call her_head("[genie_name], I am only doing this for my house.","body_136")
                 m "Seriously? Still?"
                 call her_head("Could I just get paid now... please?","body_131")
-                "-Cum inside Hermione-":
+            "-Cum inside Hermione-":
                 with hpunch
                 g4 "{size=+7}Argh!!!{/size}"
                 
@@ -9685,7 +9685,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 m "And everyone knows that witchers are infertile..."
                 call her_head("[genie_name], you make no sense...","body_117")
                 call her_head("Can I please just get paid now...?")
-                elif request_29_points == 1: # SECOND EVENT <============================================================== EVENT 02
+    elif request_29_points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
         call her_main("[genie_name]!","body_30")
         m "Just say \"I do\" and come over here, [hermione_name]."
@@ -9995,7 +9995,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 call her_head("Maybe you are right, [genie_name], and I shouldn't worry so much.","body_122")
                 if whoring <= 23:
                     her "Can I get my payment now?"
-                "-Cum all over Hermione-":
+            "-Cum all over Hermione-":
                 
                 with hpunch
                 g4 "{size=+7}Argh!!!{/size}"
