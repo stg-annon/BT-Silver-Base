@@ -1,4 +1,4 @@
-    
+
 ### SCREENS ###
 screen main_menu_01:
     imagebutton: # DOOR
@@ -1074,6 +1074,10 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/marvel_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 9:
                 add im.Alpha("01_hp/25_mo/harley_pants.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 10:
+                add im.Alpha("01_hp/25_mo/ball_dress_skirt.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 11:
+                add im.Alpha("01_hp/25_mo/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 1:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
@@ -1145,6 +1149,10 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
             elif custom_outfit == 9:
                 add im.Alpha("01_hp/25_mo/harley_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/25_mo/harley_collar.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 10:
+                add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 11:
+                add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
             elif custom_breast == 2:
@@ -1227,6 +1235,11 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
         add "01_hp/25_mo/marvel_gloves.png" xpos h_xpos ypos h_ypos
     elif custom_outfit == 9:
         add "01_hp/25_mo/harley_gloves.png" xpos h_xpos ypos h_ypos
+    elif custom_outfit == 11:
+        add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
+        add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
+        add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
+
 
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
