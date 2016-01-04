@@ -480,7 +480,7 @@ label door:
                             ##    $ gifted = True
                             ##    jump giving_silk_bra #28_gifts.rpy
                                 
-                            "-The Ball Dress-" if "ball_dress" in gifts12 and not gave_the_dress:
+                            "-The Ball Dress-" if "ball_dress" in outfit_invintory and not gave_the_dress:
                                 show screen  blktone
                                 with d3
                                 m "(I have the feeling that there will be no turning back for me after I give her this dress...)"

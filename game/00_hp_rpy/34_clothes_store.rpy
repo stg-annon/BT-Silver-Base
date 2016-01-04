@@ -35,9 +35,9 @@ label declare_clothes_store_vars:
     $ clothes_store_inv.append("heart_dancer")
     $ clothes_store_inv.append("power_girl")#end page 1
     ###########################################
-    $ clothes_store_inv.append("wip")#start page 2
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("harley_quinn")#start page 2
+    $ clothes_store_inv.append("christmas_costume")
+    $ clothes_store_inv.append("lara_croft")
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")
@@ -259,7 +259,7 @@ label custom_orders:
         maf "As you wish."
         m "Thank you very much."
         maf "You're quite welcome sir."
-        call place_outfit_order("heart_dancer",6,300)
+        call place_outfit_order("heart_dancer",4,300)
         jump clothes_menu
 
     if clothes_store_order_choice == "power_girl" and clothes_store_order_choice in outfit_invintory:
@@ -274,8 +274,59 @@ label custom_orders:
         maf "But I'm sure that my grandson has a comic of hers. I'm set to visit him this weekend so I can take a look."
         m "Thank you very much."
         maf "No need to thank me sir. Payment will suffice."
-        call place_outfit_order("power_girl",7,400)
+        call place_outfit_order("power_girl",3,350)
         jump clothes_menu
+
+    if clothes_store_order_choice == "harley_quinn" and clothes_store_order_choice in outfit_invintory:
+        call cust_excuse("You already own this outfit.")
+        jump custom_orders
+    #
+    if clothes_store_order_choice == "harley_quinn"and not clothes_store_order_choice in outfit_invintory:
+        m "I was wondering if it would be possible for you to make me a super villain costume."
+        maf "Certainly, who did you have in mind?"
+        m "Do you know Harley Quinn?"
+        maf "I'm afraid not..."
+        maf "But I'm sure that my grandson has a comic of hers. I'll just have to wrestle it out of his grubby little hands."
+        m "Thank you very much."
+        maf "You're quite welcome."
+        call place_outfit_order("harley_quinn",4,300)
+        jump clothes_menu
+
+    if clothes_store_order_choice == "lara_croft" and clothes_store_order_choice in outfit_invintory:
+        call cust_excuse("You already own this outfit.")
+        jump custom_orders
+    #
+    if clothes_store_order_choice == "lara_croft"and not clothes_store_order_choice in outfit_invintory:
+        m "I was wondering if it would be possible for you to make me another costume."
+        maf "Certainly, what are you after?"
+        m "I don't suppose that you know Lara croft?"
+        maf "I'm afraid not..."
+        m "She's a video game character..."
+        maf "Well my little muggle grandson loves video games. I'm sure he can show me what she looks like."
+        m "Thank you very much."
+        maf "You're welcome. I'm seeing him tonight so I should be able to complete this one slightly faster than usual."
+        m "Fantastic."
+        call place_outfit_order("lara_croft",2,275)
+        jump clothes_menu
+
+    if clothes_store_order_choice == "christmas_costume" and clothes_store_order_choice in outfit_invintory:
+        call cust_excuse("You already own this outfit.")
+        jump custom_orders
+    #
+    if clothes_store_order_choice == "christmas_costume"and not clothes_store_order_choice in outfit_invintory:
+        m "I was wondering if it would be possible for you to make me a festive costume."
+        maf "Certainly, what what holiday are you looking to \"celebrate\"?"
+        m "Christmas."
+        maf "At this time of year?"
+        m "It's never to early to start the festivities..."
+        maf "Evidently not. I'll have it done as soon as I can. "
+        m "Thank you very much."
+        maf "You're welcome. I'll even give you a special price. Consider it my Christmas gift to you.."
+        m "Thank you."
+        call place_outfit_order("christmas_costume",2,50)
+        jump clothes_menu
+
+
     if clothes_store_order_choice == "CANCEL":
         jump clothes_menu
         
@@ -344,6 +395,21 @@ label pickup_outfit:
             $ outfit_invintory.append("power_girl")
             call receive_package
             call display_package(">The superhero costume has been added to your possessions.")
+            call screen main_menu_01
+        if outfit_order == "harley_quinn":
+            $ outfit_invintory.append("harley_quinn")
+            call receive_package
+            call display_package(">The supervillain costume has been added to your possessions.")
+            call screen main_menu_01
+        if outfit_order == "lara_croft":
+            $ outfit_invintory.append("lara_croft")
+            call receive_package
+            call display_package(">The video game costume has been added to your possessions.")
+            call screen main_menu_01
+        if outfit_order == "christmas_costume":
+            $ outfit_invintory.append("christmas_costume")
+            call receive_package
+            call display_package(">The Christmas costume has been added to your possessions.")
             call screen main_menu_01
         #if outfit_order == "": 
 return

@@ -370,6 +370,7 @@ $ save_name = temp_name
 $ menu_x = 0.5 #Just to make sure that menu is displayed in the center of the screen by default.
 
 ### RESETING STUFF ###
+call luna_day_flags
 $ only_upper = False #When true, legs are not displayed in the hermione_main screen.
 $ autograph = False #Displays professor Lockhart's autograph on Hermione's leg.
 $ no_blinking = False #When True - blinking animation is not displayed.
@@ -702,7 +703,7 @@ label night_start:
 
 
 
-
+call luna_night_flags
 $ daytime = False
 $ snape_busy = False
 $ hermione_takes_classes = False
