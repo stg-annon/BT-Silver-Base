@@ -1798,6 +1798,23 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
         add "01_hp/13_hermione_main/auto_09.png" xpos h_xpos ypos h_ypos # Tiara
     if tentacle_cosmetic == True:
         add "01_hp/25_mo/tentacles.png" xpos h_xpos ypos h_ypos #The Tentacles.
+        
+    
+    if h_body.split("/")[-1].replace(".png","") in anger or emote_anger:
+        add "01_hp/13_hermione_main/body/emote/00.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if h_body.split("/")[-1].replace(".png","") in exclam or emote_exclam:
+        add "01_hp/13_hermione_main/body/emote/01.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if h_body.split("/")[-1].replace(".png","") in hearts or emote_hearts:
+        add "01_hp/13_hermione_main/body/emote/02.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if h_body.split("/")[-1].replace(".png","") in question or emote_question:
+        add "01_hp/13_hermione_main/body/emote/03.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if h_body.split("/")[-1].replace(".png","") in sweat or emote_sweat:
+        add "01_hp/13_hermione_main/body/emote/04.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    if h_body.split("/")[-1].replace(".png","") in suprize or emote_suprize:
+        add "01_hp/13_hermione_main/body/emote/05.png" xpos her_head_xpos ypos her_head_ypos #Custom
+    
+        
+        
     zorder 8
     
     
@@ -2009,17 +2026,17 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/25_mo/tentacles.png" xpos her_head_xpos ypos her_head_ypos #The Tentacles.
     
     
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in anger or emote_anger:
+    if h_body.split("/")[-1].replace(".png","") in anger or emote_anger:
         add "01_hp/13_hermione_main/body/emote/00.png" xpos her_head_xpos ypos her_head_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in exclam or emote_exclam:
+    if h_body.split("/")[-1].replace(".png","") in exclam or emote_exclam:
         add "01_hp/13_hermione_main/body/emote/01.png" xpos her_head_xpos ypos her_head_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in hearts or emote_hearts:
+    if h_body.split("/")[-1].replace(".png","") in hearts or emote_hearts:
         add "01_hp/13_hermione_main/body/emote/02.png" xpos her_head_xpos ypos her_head_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in question or emote_question:
+    if h_body.split("/")[-1].replace(".png","") in question or emote_question:
         add "01_hp/13_hermione_main/body/emote/03.png" xpos her_head_xpos ypos her_head_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in sweat or emote_sweat:
+    if h_body.split("/")[-1].replace(".png","") in sweat or emote_sweat:
         add "01_hp/13_hermione_main/body/emote/04.png" xpos her_head_xpos ypos her_head_ypos #Custom
-    if int(str(h_body.split("/")[-1].split("_")[-1]).replace(".png","")) in suprize or emote_suprize:
+    if h_body.split("/")[-1].replace(".png","") in suprize or emote_suprize:
         add "01_hp/13_hermione_main/body/emote/05.png" xpos her_head_xpos ypos her_head_ypos #Custom
     
     zorder 8  
