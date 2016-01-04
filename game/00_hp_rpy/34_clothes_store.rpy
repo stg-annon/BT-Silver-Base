@@ -13,6 +13,12 @@ label declare_clothes_store_persist:
 
 label declare_clothes_store_vars:
 
+    $ outfit_invintory = []
+    $ outfit_order = "null"
+    $ outfit_wait_time = 0
+    $ outfit_ready = False
+    $ outfit_order_placed = False
+    
     ##CLOTHES STORE - Thanks anon
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
