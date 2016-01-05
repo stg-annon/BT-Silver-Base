@@ -237,7 +237,7 @@ label tentacle_2: #Enjoyable tentacle scene
     her "hmmm aaaaa hhhhhhuuuttt!"
     m "One last time. Say it like you mean it."
     ">As she goes to exhale you quickly remove the tentacle from her mouth."
-    her "I'm a slut!"
+    her "{size=+5}I'm a slut!{/size}"
     ">The realisation of what has just occurred hits her like a ton of bricks."
     her "I-I'm cumming... Profes-"
     ">You quickly reinsert the tentacle into her mouth, silencing her."
@@ -1881,8 +1881,10 @@ label collar_scene:
     her "My reputation is ruined! What will people think when they find out what I've been doing with my ninety year old Professor?"
     $ changeHermioneMainScreen(hg_pth+"body_32.png")
     her "I'll be known as a slut for the the rest of my life!"
+    her "I'll never be able to get a good job..."
+    her "My friends will hate me..."
     $ changeHermioneMainScreen(hg_pth+"body_31.png")
-    her "You don't think I'm a slut do you [genie_name]?"
+    her "Please, You don't think I'm a slut do you [genie_name]?"
     menu:
         "-You are a slut-" if lock_public_favors == True:
             jump slut_scene
@@ -1895,6 +1897,8 @@ label collar_scene:
         
 label slut_scene: #Locked to her being your slut
     m "Of course you're a slut."
+    $ changeHermioneMainScreen(hg_pth+"body_21.png")
+    her "!!!"
     m "You come here nearly every day and do unspeakable things. A normal girl doesn't let her headmaster fuck her in the ass."
     $ changeHermioneMainScreen(hg_pth+"body_67.png")
     her "I knew it... How will I be able to live this down?"

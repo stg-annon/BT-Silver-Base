@@ -8810,7 +8810,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     lun "What are you... doing?"
                     menu:
                         "-Tell the truth-":
-                            m "Miss Granger is helping me relieve me of a particularly nasty wrackspurt afflication as we speak."
+                            m "Miss Granger is helping relieve me of a particularly nasty wrackspurt afflication as we speak."
                             $ changeLuna(1, 1, 4, 1)
                             lun "You mean that she is behind your desk..."
                             $ changeLuna(1, 1, 4, 1)
