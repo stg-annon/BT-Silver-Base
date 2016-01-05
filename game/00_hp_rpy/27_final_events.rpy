@@ -735,51 +735,16 @@ label against_the_rule:
     with d3                                                                                                                                                   #SNAPE
     sna "You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!"
     m "I'm guessing that's bad?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_10.png"                                                               #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Bad?{w} {size=+5}BAD?!{/size}"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_15.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "{size=+5}That's a catastrophe!{/size}"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_16.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "last year's ball was completely horrible!"
+    call sna_main("Bad?{w} {size=+5}BAD?!{/size}","snape_10")
+    call sna_main("{size=+5}That's a catastrophe!{/size}","snape_15")
+    call sna_main("last year's ball was completely horrible!","snape_16")
     m "Was it? I heard differently..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_10.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Oh really? And who told you that?"
+    call sna_main("Oh really? And who told you that?","snape_10")
     m "not a very reliable source apparently..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_08.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Dammit... Dammit all to hell..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_07.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "I had big plans for the thing..."
+    call sna_main("Dammit... Dammit all to hell...","snape_08")
+    call sna_main("I had big plans for the thing...","snape_07")
     m "Really? Like what?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Oh, that doesn't matter now..."
+    call sna_main("Oh, that doesn't matter now...","snape_06")
     #sna "The girl is a complete control freak..."
     sna "Now the girl will use prefects or the ghosts to keep an eye on me throughout entire thing..."
     m "Right, that reminds me..."
@@ -790,25 +755,10 @@ label against_the_rule:
 #    with d3                                                                                                                                                  #SNAPE
 #    sna "Huh?"
     m "Am I supposed to show up as well?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_03.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Show up?"
+    call sna_main("Show up?","snape_03")
     sna "You are expected to host the bloody thing!"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "But don't you worry! I'll figure something out!"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Hm... I'll Probably have to host the ball instead..."
+    call sna_main("But don't you worry! I'll figure something out!","snape_09")
+    call sna_main("Hm... I'll Probably have to host the ball instead...","snape_06")
     m "............"
 #    sna ".................."
 #    hide screen snape_main                                                                                                                   #SNAPE
@@ -825,82 +775,27 @@ label against_the_rule:
 #    with d3                                                                                                                                                  #SNAPE
 #    sna "Yes, that'll show her!"
 #    m "................"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Well, the Autumn ball is about to happen and Hermione Granger is in charge..."
+    call sna_main("Well, the Autumn ball is about to happen and Hermione Granger is in charge...","snape_09")
     sna "There is no changing it now..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Sorry for the outburst..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_16.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "That girl brings out the worst in me..."
+    call sna_main("Sorry for the outburst...","snape_05")
+    call sna_main("That girl brings out the worst in me...","snape_16")
     m "Don't sweat it..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "You know what...?"
+    call sna_main("You know what...?","snape_06")
     sna "I don't feel like working today..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Do we still have any of Dumbledore's wine left?"
+    call sna_main("Do we still have any of Dumbledore's wine left?","snape_05")
     m "I believe so..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Great! Pour me some..."
+    call sna_main("Great! Pour me some...","snape_02")
     m "Seriously? You're just gonna bail on your class like that?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_03.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Yeah, big news - I hate my job."
+    call sna_main("Yeah, big news - I hate my job.","snape_03")
     sna "And since you are my boss..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "I don't know why I even bother teaching those so-called students..."
+    call sna_main("I don't know why I even bother teaching those so-called students...","snape_06")
     m "To maintain the charade?"
     m "for the Same reason why I never leave this room...?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Right..."
+    call sna_main("Right...","snape_05")
     sna "But you know what else could endanger out little enterprise?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_07.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Me losing it during class and strangling a couple of \"Gryffindor\" maggots with my bare hands..."
+    call sna_main("Me losing it during class and strangling a couple of \"Gryffindor\" maggots with my bare hands...","snape_07")
     m "Hm... I see your point..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                                              #SNAPE
-    show screen snape_main                                                                                                                 #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    sna "Seriously, man... I need a drink..."
+    call sna_main("Seriously, man... I need a drink...","snape_06")
 
     show screen blkfade
     with d3
@@ -1530,68 +1425,23 @@ label good_bye_snape:
 #    m ".....?"
     sna "I think I may have figured out why your magic does not work the way it should..."
     g4 "Seriously?!"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/23.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Yes..."
+    call sna_main("Yes...","23")
     sna "It's quite obvious actually... I'm surprised that it didn't cross my mind before."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/24.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "You see, the thing is that every building in \"Hogwarts\" is enchanted with all kinds of protection spells..."
+    call sna_main("You see, the thing is that every building in \"Hogwarts\" is enchanted with all kinds of protection spells...","24")
     m "Protection spells, huh?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/23.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Yes..."
+    call sna_main("Yes...","23")
     sna "Very powerful, old and nasty magic..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/24.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Even the land itself is heavily enchanted for kilometers in every direction..."
+    call sna_main("Even the land itself is heavily enchanted for kilometers in every direction...","24")
     m "Hm..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_25.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Basically, any number of spells could be interfering with your powers around here..."
+    call sna_main("Basically, any number of spells could be interfering with your powers around here...","snape_25")
     m "Wait, then how come that you have no problems with casting your spells?"
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "My magic is \"Hogwarts\" magic, friend..."
+    call sna_main("My magic is \"Hogwarts\" magic, friend...","snape_05")
     sna "But I bet your powers are alien enough to be perceived as a threat."
     m "Interesting..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/24.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "I think if you manage to get far enough from the school grounds..."
+    call sna_main("I think if you manage to get far enough from the school grounds...","24")
     m "I will be able to go home... finally..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "Yes, and the best time to do that would be tonight..."
-    hide screen snape_main                                                                                                                   #SNAPE
-    with d3                                                                                                                                                  #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/23.png"                                                                            #SNAPE
-    show screen snape_main                                                                                                                  #SNAPE
-    with d3                                                                                                                                                   #SNAPE
-    sna "While everyone is preoccupied with that bloody \"Autumn ball\" you could sneak out unnoticed..."
+    call sna_main("Yes, and the best time to do that would be tonight...","snape_02")
+    call sna_main("While everyone is preoccupied with that bloody \"Autumn ball\" you could sneak out unnoticed...","23")
     
     hide screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE

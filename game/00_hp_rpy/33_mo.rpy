@@ -2780,9 +2780,9 @@ label her_main(text="",face=""):
     return
     
 label her_head(text="",face=""):
-    show screen h_head2
     if face != "":
         $ h_body = her_path + face + ".png"
+    show screen h_head2
     if text != "":
         if "[tmp_name]" in text:
             $ text1,text2 = text.split("[tmp_name]")
@@ -2794,6 +2794,16 @@ label her_head(text="",face=""):
             her2 "[text]"
     hide screen h_head2
     return
+    
+label sna_main(text="",face=""):
+    hide screen snape_main
+    with d3
+    if face != "":
+        $ s_sprite = "01_hp/10_snape_main/"+str(face)+".png"
+    show screen snape_main
+    with d3
+    if text != "":
+        sna "[text]"
     
     
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):
@@ -2874,12 +2884,6 @@ label luna_walk_end_loiter(dissolveTime = 3):
         hide screen luna_blink_f
     return
     
-label test_walk:
-    call her_walk(400,610,2)
-    call her_walk(610,400,2)
-    call luna_walk(400,610,2)
-    call luna_walk(610,400,2)
-    return
     
     
     
