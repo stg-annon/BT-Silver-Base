@@ -2807,7 +2807,24 @@ label sna_main(text="",face=""):
     show screen snape_main
     with d3
     if text != "":
-        sna "[text]"
+        if "[hermione_name]" in text:
+            $ text1,text2 = text.split("[hermione_name]")
+            sna "[text1][hermione_name][text2]"
+        elif "[genie_name]" in text:
+            $ text1,text2 = text.split("[genie_name]")
+            sna "[text1][genie_name][text2]"
+        else:
+            sna "[text]"
+    return
+    
+label sna_head(text="",face=""):
+    if face != "":
+        $ s_sprite = "01_hp/10_snape_main/"+str(face)+".png"
+    show screen s_head
+    if text != "":
+        sna2 "[text]"
+    hide screen s_head
+    return
     
     
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):

@@ -266,7 +266,7 @@ label snape_chitchat:
 
         elif one_of_ten == 6:
             call sna_main("Do you know what an \"Internet\" is?","24")
-            call sna_main("Apparently it allows you to go \"on the line\" and see magical photographs of naked muggle women." # SNAPE SAYS "ON THE LINE","snape_02") ON PURPOSE. I KNOW THAT WAS REALLY OBVIOUS MAESTRO
+            call sna_main("Apparently it allows you to go \"on the line\" and see magical photographs of naked muggle women.","snape_02") # SNAPE SAYS "ON THE LINE" ON PURPOSE. I KNOW THAT WAS REALLY OBVIOUS MAESTRO
             call sna_main("Kind of makes me wish we had one here in Hogwarts.","snape_26")
             call sna_main("","snape_09")
 

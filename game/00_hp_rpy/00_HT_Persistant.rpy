@@ -241,6 +241,12 @@ label declare_ht_vars:
     $ per_q_the_gamble_b = False
     $ per_q_the_gamble_c = False
     
+    $ h_body = "01_hp/13_hermione_main/body_01.png"
+    $ h_xpos = 370
+    $ h_ypos = 0
+    $ her_head_xpos = 390
+    $ her_head_ypos = 235
+    
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 400
     $ luna_speed = 2.0
