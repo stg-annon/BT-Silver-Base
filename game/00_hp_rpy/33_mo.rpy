@@ -2761,11 +2761,13 @@ label costume_scene_1: #Maid role-play
     m "40 points to Gyrffindor."
     her "Thank you [genie_name]."
 
-label her_main(text="",face=""):
+label her_main(text="",face="",tears=""):
     hide screen hermione_main
     with d3
     if face != "":
         $ h_body = her_path + face + ".png"
+    if tears != "":
+        $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
     show screen hermione_main
     with d3
     if text != "":
@@ -2779,9 +2781,11 @@ label her_main(text="",face=""):
             her "[text]"
     return
     
-label her_head(text="",face=""):
+label her_head(text="",face="",tears=""):
     if face != "":
         $ h_body = her_path + face + ".png"
+    if tears != "":
+        $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
     show screen h_head2
     if text != "":
         if "[tmp_name]" in text:

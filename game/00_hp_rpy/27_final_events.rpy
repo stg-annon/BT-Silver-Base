@@ -15,86 +15,39 @@ label want_to_rule:
     show screen bld1
     with Dissolve(.3)
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    hide screen hermione_main
+    with d3
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+    
     #her "Professor Dumbledore?"
-    her "[genie_name]?"
+    call her_main("[genie_name]?","body_15")
     m "Miss Granger, how can I help you?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?"
+    call her_main("Sir, have you made your decision yet on who will be in charge of the \"ABOC\" this year?","body_14")
     m "\"ABOC\"?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "The \"Autumn Ball Organization Committee\", sir..."
+    call her_main("The \"Autumn Ball Organization Committee\", sir...","body_16")
     m "Ehm... Sure..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Please excuse me if I am being too direct with this, sir..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "But I think you should put me in charge."
+    call her_main("Please excuse me if I am being too direct with this, sir...","body_07")
+    call her_main("But I think you should put me in charge.","body_04")
     her "I did it last year and it was the best organized \"autumn ball\" Hogwarts has had in years."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "You said so yourself, sir. Do you remember?"
+    call her_main("You said so yourself, sir. Do you remember?","body_03")
     m "Right, of course..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "So, is this a yes?"
+    call her_main("So, is this a yes?","body_01")
     her "Does this mean I will be in charge again this year?"
     menu:
         m "..."
         "\"You shall be in charge, miss Granger.\"":
             jump one_thing
         "\"No. Professor Snape shall be in charge!\"":
-            hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-            with d3                                                                                                                                                                                                                        #HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-            show screen hermione_main                                                                                                                                                                                 #HERMIONE
-            with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Professor Snape, sir?"
+            call her_main("Professor Snape, sir?","body_07")
             her "But, traditionally organizing and hosting the ball is the responsibility of the students..."
             her "Teachers are only present as the guests of honour..."
             m "Well of course... I was just kidding."
             m "You shall be in charge, miss Granger..."
             label one_thing:
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-            her "Thank you, sir."
+                call her_main("Thank you, sir.","body_06")
             m "There is one condition, though..."
-            hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-            with d3                                                                                                                                                                                                                        #HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-            show screen hermione_main                                                                                                                                                                                 #HERMIONE
-            with d3                                                                                                                                                                                                                        #HERMIONE
-            her "A conditions, sir?"
+            call her_main("A conditions, sir?","body_07")
             
             $ d_flag_04 = False
             label no_sleeping_with_professor:
@@ -119,58 +72,23 @@ label want_to_rule:
                 "\"You will have to sleep with me.\"" if not d_flag_04:
                     $ mad += 17
                     $ d_flag_04 = True
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "I will have to... sleep...?"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "..................."
+                    call her_main("I will have to... sleep...?","body_18")
+                    call her_main("...................","body_187")
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     her "I am not stupid, sir... Quite the opposite in fact."
                     her "And I understand that the nature of the favours I have been selling you lately..."
                     her "...Might have led you to believe that I would be willing to..."
                     her "...To let you have your way with me eventually, sir..."
                     m "Wha-a-a...? I would never--"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Please, let me finish, sir."
+                    call her_main("Please, let me finish, sir.","body_86")
                     m "Right..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "I know that you are a rather wise man yourself, sir."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "So, please... understand this..."
+                    call her_main("I know that you are a rather wise man yourself, sir.","body_47")
+                    call her_main("So, please... understand this...","body_66")
                     her "I may be willing to sacrifice my pride and even my dignity for the sake of my house..."
                     her "But sleeping with my headmaster?"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_187.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "That is where I draw the line, sir."
+                    call her_main("That is where I draw the line, sir.","body_187")
                     m "Got it. Let's just forget I said anything."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_141.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "{size=-5}(I wish I could...){/size}"
+                    call her_main("{size=-5}(I wish I could...){/size}","body_141")
                     jump no_sleeping_with_professor
     
                     
@@ -187,71 +105,26 @@ label want_to_rule:
     
 
             if d_flag_01 or d_flag_02 or d_flag_03:
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "What?!"
+                call her_main("What?!","body_14")
                 m "What?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
                 #her "Professor!"
-                her "[genie_name]!"
+                call her_main("[genie_name]!","body_47")
                 m "What?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "You are abusing your power, sir. Again!"
+                call her_main("You are abusing your power, sir. Again!","body_66")
                 m "Seriously? After all those favours you sold me?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Those were for the sake of my house, sir."
+                call her_main("Those were for the sake of my house, sir.","body_79")
                 m "Well this one is for the sake of the \"Autumn prom\"."
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "It's the \"Autumn Ball\", sir..."
+                call her_main("It's the \"Autumn Ball\", sir...","body_120")
                 m "Oh, come on..."
                 m "Entrusting the thing to somebody else would be a crime, you know that."
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her ".........."
+                call her_main("..........","body_69")
                 m "Don't you care about your classmates at all?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "What?"
+                call her_main("What?","body_31")
                 m "Put your selfishness aside for once, would you?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "My... selfishness?"
+                call her_main("My... selfishness?","body_29")
                 m "Your classmates deserve the best organized ball possible!"
                 m "And only {size=+5}YOU{/size} can give them that!"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "...that is true actually."
+                call her_main("...that is true actually.","body_118")
                 m "People depend on you, girl!"
                 if d_flag_01:
                     m "So I suggest that you stop being selfish and show me your tits!"
@@ -259,25 +132,10 @@ label want_to_rule:
                     m "So I suggest that you stop being selfish and show me your pussy!"
                 elif d_flag_03:
                     m "So I suggest that you stop being selfish and get naked for me!"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
                 #her "You are completely right, professor!"
-                her "You are completely right, [genie_name]!"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "I must do this. Everyone depends on me."
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_128.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                her "Just give me a second please..."
+                call her_main("You are completely right, [genie_name]!","body_87")
+                call her_main("I must do this. Everyone depends on me.","body_120")
+                call her_main("Just give me a second please...","body_128")
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d5   
                 m "............"
@@ -300,22 +158,13 @@ label want_to_rule:
                     
                     $ badges = False
                     
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
+                    call her_main("","body_82")
                     show screen ctc
                     pause
                     hide screen ctc
                     m "Very good miss Granger..."
                     m "Your ample tits are always a welcome sight..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_85.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "...................."
+                    call her_main("....................","body_85")
                     show screen ctc
                     pause
                     hide screen ctc
@@ -346,12 +195,8 @@ label want_to_rule:
             
                     $ uni_sperm = True
                     $ u_sperm = "01_hp/13_hermione_main/panties.png" #Panties
-            
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_60.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
+                    
+                    call her_main("","body_60")
                     
                     show screen ctc
                     pause
@@ -361,34 +206,14 @@ label want_to_rule:
                     with hpunch
                     g4 "What are you doing, girl?!"
                     g4 "I am your headmaster! Do you have no shame?!"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/191.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "What?! But--"
+                    call her_main("What?! But--","191")
                     g9 "He-he... Relax, girl. I'm just kidding."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_62.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
                     #her "Professor, that was just mean."
-                    her "[genie_name], that was just mean."
+                    call her_main("[genie_name], that was just mean.","body_62")
                     g9 "He-he..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_61.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "....................................."
+                    call her_main(".....................................","body_61")
                     m "I do like your shaved little pussy though..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_61.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her ".....thank you, sir."
+                    call her_main(".....thank you, sir.","body_61")
                     show screen ctc
                     pause
                     hide screen ctc
@@ -482,11 +307,7 @@ label want_to_rule:
                     
                     #add h_c_u_pic at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
                     g9 "Ni-i-i-ce!"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_105.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
+                    call her_main("","body_105")
                     show screen ctc
                     pause
                     hide screen ctc
@@ -496,99 +317,33 @@ label want_to_rule:
                     $ h_tears = True
                     $  u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
                     
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_107.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Oh, please, don't mind me, sir."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_105.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Just enjoy the... {w}the... {w}the view..."
+                    call her_main("Oh, please, don't mind me, sir.","body_107")
+                    call her_main("Just enjoy the... {w}the... {w}the view...","body_105")
                     m "Are you... crying?"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_97.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "*Sob!* No, not really, sir... *sob!*..."
+                    call her_main("*Sob!* No, not really, sir... *sob!*...","body_97")
                     her "It is just that I am standing here before my headmaster completely naked... *SOB!*"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_114.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "These are the tears of shame, sir."
+                    call her_main("These are the tears of shame, sir.","body_114")
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $  u_tears_pic = "01_hp/13_hermione_main/tears_04.png"
-                    $ h_body = "01_hp/13_hermione_main/body_101.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Yes, yes, sir, please.... *Sob!*"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_104.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Please keep on looking at my naked body... *Sob!*"
+                    call her_main("Yes, yes, sir, please.... *Sob!*","body_101","tears_04")
+                    call her_main("Please keep on looking at my naked body... *Sob!*","body_104")
                     g4 "(What the...?)"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_191.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Sir, I am begging you!"
+                    call her_main("Sir, I am begging you!","body_191")
                     m "Kind of sounds like an order--"       
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_192.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "I need it!"
+                    call her_main("I need it!","body_192")
                     her "...I need to shamelessly present my naked body before you like this!"
                     m ".............?"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_193.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "I need to feel this embarrassment and humiliation! *SOB!*"
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_194.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "The fate of the \"Autumn ball\" depends on this..."
+                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","body_193")
+                    call her_main("The fate of the \"Autumn ball\" depends on this...","body_194")
                     her "So, sir, please..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_195.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Keep looking at my naked breasts, and my pussy..."
+                    call her_main("Keep looking at my naked breasts, and my pussy...","body_195")
                     show screen ctc
                     pause
                     hide screen ctc
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_196.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Yes! Make my skin burn with shame, sir... *Sob!*"
+                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","body_196")
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_191.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "Are you sure, sir?"
+                    call her_main("Are you sure, sir?","body_191")
                     her "Are you sure that you humiliated me enough, sir?"
                     m "...................."
                     m "(Is she getting off on this? Is she being sarcastic? I don't get it...)"
@@ -597,12 +352,7 @@ label want_to_rule:
                     pause
                     hide screen ctc
                     m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
-                    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_103.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                    with d3                                                                                                                                                                                                                        #HERMIONE
-                    her "As you wish, sir..."
+                    call her_main("As you wish, sir...","body_103")
                     
                     show screen ctc
                     pause 
@@ -646,22 +396,12 @@ label want_to_rule:
     hide screen ctc
     show screen bld1
     with d3
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_74.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?"
+    call her_main("So I am officially in charge of this year's \"Autumn Ball Organization Committee\" now?","body_74")
     m "That you are."
     her "Thank you sir! You will not regret this, I promise!"
     m "{size=-4}(Why would I?){/size}"
     m "{size=-4}(I couldn't care less about the whole thing...){/size}"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_68.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Well, I'd better go now. I have so many arrangements to make!"
+    call her_main("Well, I'd better go now. I have so many arrangements to make!","body_68")
     m "By all means, Miss Granger. Have a nice day."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3 
@@ -889,100 +629,33 @@ label crying_about_dress:
     show screen bld1
     with Dissolve(.3)
     
+    hide screen hermione_main
+    with d3
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_22.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-    her "My parents sent me the wrong dress!"
+    
+    call her_main("My parents sent me the wrong dress!","body_22")
     m "are You kidding me!?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "They sent me the dress I wore to the ball last year..."
+    call her_main("They sent me the dress I wore to the ball last year...","body_21")
     m "Those inconsiderate bastards!"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_67.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Are you making fun of me sir?"
+    call her_main("Are you making fun of me sir?","body_67")
     m "Can you blame me?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_140.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I will become the laughingstock of Hogwarts! *Sob!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_142.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "My reputation is as good as ruined! *Sob!*"
+    call her_main("I will become the laughingstock of Hogwarts! *Sob!*","body_140")
+    call her_main("My reputation is as good as ruined! *Sob!*","body_142")
     m "Seriously? After all the favours you sold me you care about a thing like this?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir."
+    call her_main("Wearing the same dress to the \"Autumn Ball\" for two years in a row would be more humiliating than any favour I sold you so far, sir.","body_143")
     with hpunch
     g4 "You've gotta be kidding me..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Oh, you wouldn't understand..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_148.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "You're just like my father!"
+    call her_main("Oh, you wouldn't understand...","body_145")
+    call her_main("You're just like my father!","body_148")
     m "I beg your pardon?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_144.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I mean... ehm..."
+    call her_main("I mean... ehm...","body_144")
     her "Forgive me sir..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I don't know why I am telling you all of this..."
+    call her_main("I don't know why I am telling you all of this...","body_143")
     m "................"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_142.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "......................*sob!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I think I'd better go now...*sob*"
+    call her_main("......................*sob!*","body_142")
+    call her_main("I think I'd better go now...*sob*","body_145")
     m "Well, don't let me keep you a moment longer, miss Granger...."
     # Walks to the door.
     
@@ -1063,53 +736,17 @@ label sorry_about_hesterics:
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     
     m "Miss Granger?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Sorry to disturb you sir..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I came to apologize for my..."
+    call her_main("Sorry to disturb you sir...","body_11")
+    call her_main("I came to apologize for my...","body_10")
     her "...my hysterical behaviour yesterday."
     m "Sure thing, don't worry about it."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Thank you, sir."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Still, I cannot help but feel awful for causing a scene..."
+    call her_main("Thank you, sir.","body_02")
+    call her_main("Still, I cannot help but feel awful for causing a scene...","body_04")
     m "So the issue has been resolved then?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Not really..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Not at all actually..."
+    call her_main("Not really...","body_11")
+    call her_main("Not at all actually...","body_12")
     m "Hm..?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_73.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "But that is not a big deal..."
+    call her_main("But that is not a big deal...","body_73")
     her "I'm just overreacting..."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -1118,12 +755,7 @@ label sorry_about_hesterics:
     with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
     her "I woN't be able to attend the ball this year... so what?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I spent countless hours with organizing the event..."
+    call her_main("I spent countless hours with organizing the event...","body_33")
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
 
@@ -1141,18 +773,8 @@ label sorry_about_hesterics:
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "And now I will not even be able to... to... *Sob!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "To... *SOB!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Excuse me sir!"
+    call her_main("To... *SOB!*","body_143")
+    call her_main("Excuse me sir!","body_145")
     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
     
@@ -1203,122 +825,41 @@ label giving_thre_dress:
     ">You give the ball gown to Hermione..."
     hide screen gift
     with d3
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Hm...? What is this?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
+    call her_main("Hm...? What is this?","body_01")
+    call her_main("{size=+7}A DRESS?!{/size}","body_18")
     with hpunch
-    her "{size=+7}A DRESS?!{/size}"
     m "I thought that you--"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_22.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     #her "PROFESSOR!"
-    her "[genie_name]!"
+    call her_main("[genie_name]!","body_22")
     g4 "What? What happened? Don't tell me it's the wrong color or something!"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "It's perfect, sir...*sob!*"
+    call her_main("It's perfect, sir...*sob!*","body_21")
     her "It's perfect... *sob!* ...I love it."
     m "You sure don't look like it..."
     her "I am sorry, sir... *Sob!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_140.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I... I am just..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I am so happy..."
+    call her_main("I... I am just...","body_140")
+    call her_main("I am so happy...","body_143")
     her "Thank you, sir. Thank you so much."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I cannot believe that you would do something like that for me..."
+    call her_main("I cannot believe that you would do something like that for me...","body_145")
     m "Well, I did. Now stop crying."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_147.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I can't, sir. I am so happy and so grateful..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_144.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Do you want me to suck your cock, sir?"
+    call her_main("I can't, sir. I am so happy and so grateful...","body_147")
+    call her_main("Do you want me to suck your cock, sir?","body_144")
     m "What?"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_144.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Because I will do it!"
+    call her_main("Because I will do it!","body_144")
     her "And I will swallow and everything!"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "And you wouldn't have to pay me a single house point!"
+    call her_main("And you wouldn't have to pay me a single house point!","body_143")
     m "uhm... Maybe some other time..."
     m "This is not the type of crying I find arousing..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I'm sorry, sir. I'm such a mess..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_143.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "But this is so unexpected..."
+    call her_main("I'm sorry, sir. I'm such a mess...","body_145")
+    call her_main("But this is so unexpected...","body_143")
     her "You made me so happy, sir...*sob!*"
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Thank you sir! *SOB!* Thank you! *SOB!*"
+    call her_main("Thank you sir! *SOB!* Thank you! *SOB!*","body_145")
     m "Well... err... there, there..."
     m "Better stop crying before you stain that new dress of yours with those tears..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_147.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "My new dress! *SOB!*"
+    call her_main("My new dress! *SOB!*","body_147")
     m "Alright, you know what? Just get out of my office."
     m "Just take your dress and leave."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_145.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "Of course... I am sorry, sir!"
+    call her_main("Of course... I am sorry, sir!","body_145")
     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3          
     
