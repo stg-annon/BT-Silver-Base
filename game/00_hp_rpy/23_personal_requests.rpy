@@ -6727,9 +6727,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         call her_main("Although, now when I say it out loud like this...","body_118")
         m "Too late! You already said \"yes\"!"
         call her_main("I know...","body_24")
-        label blowjob_jumping:
         
-        # BLOWJOB
+        label blowjob_jumping:  # BLOWJOB
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         hide screen genie
@@ -6748,14 +6747,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         pause
         show screen bld1
         with d3
-#        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-#        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-#        show screen h_head2                                                             # HERMIONE
-#        $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-
-
-        
-
         
         her "*Slurp!* *Gulp!* *Slurp!*"
         m "Yes..."
@@ -7126,8 +7117,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     call her_head("Yes...","body_34")
                 call her_head("Can I get paid before I leave, [genie_name]?","body_44")
                 $ aftersperm = True
-
-        
         
     elif request_22_points == 1: #  <============================================================== EVENT 02
         m "[hermione_name]?"
@@ -7154,8 +7143,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 call her_main("I got you... [genie_name].","body_24")
                 m "What?"
         call her_main("Well, so much has happened lately...","body_45")
-        her2 "I had so many new experiences that kind of changed the way I look at things..."
-        her2 "So I was just trying to imagine how the \"old me\" would've reacted to this."
+        her "I had so many new experiences that kind of changed the way I look at things..."
+        her "So I was just trying to imagine how the \"old me\" would've reacted to this."
         m "So..."
         g4 "You were messing with me then?"
         call her_main("uhm... I'm sorry [genie_name], I didn't mean to...","body_34")
@@ -8947,9 +8936,9 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 m "You plan to keep it in? My cum I mean."
                 call her_head("Yes...","body_156")
                 if daytime:
-                    her2 "I hope it won't start leaking during my classes..."
+                    her_head("I hope it won't start leaking during my classes...")
                 else:
-                    her2 "I hope it won't start leaking before I get to my room..."
+                    her_head("I hope it won't start leaking before I get to my room...")
                 m "Well, good luck on your journey."
                 call her_head("Can I get paid now please?","body_155")
                 "-Pull out and cum on Hermione-":
