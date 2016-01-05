@@ -208,6 +208,7 @@ label declare_ht_vars:
     
     $ skip_duel = False
     $ next_day = False
+    $ shop_found = False
     $ order_item = 0
     $ order_quantity = 0
     

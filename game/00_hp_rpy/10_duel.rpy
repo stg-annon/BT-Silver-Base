@@ -66,10 +66,6 @@ label duel:
     hide screen snape_defends
     hide screen blkfade
     
-    if skip_duel == True:
-        jump snape_lost
-    
-    
     show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
     show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
 

@@ -756,6 +756,9 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     sna_[1] "Since you refuse to cooperate, I'll be taking you into custody by force!"
     g4 "What?! Wait!"
     
+    if skip_duel == True:
+        jump snape_lost
+    
     
     stop music 
     $ renpy.play('sounds/glass_break.mp3') #Sound of a door opening.
