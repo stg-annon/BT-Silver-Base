@@ -207,8 +207,8 @@ screen cs_p2:
         # (X upper-left corner, Y upper-left corner, width, height).
         
         hotspot (56, 57, 156, 234) clicked [SetVariable("clothes_store_selection",1),Jump("cs_select")]
-        # hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
-        # hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
+        hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
+        hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
         # hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
         # hotspot (56, 312, 156, 234) clicked [SetVariable("clothes_store_selection",5),Jump("cs_select")]
         # hotspot (233, 312, 156, 234) clicked [SetVariable("clothes_store_selection",6),Jump("cs_select")]
@@ -1078,6 +1078,8 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ball_dress_skirt.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 1:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
@@ -1153,6 +1155,8 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
             elif custom_breast == 2:
@@ -1239,6 +1243,8 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
         add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
+    elif custom_outfit == 12:
+        add im.Alpha("01_hp/25_mo/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
 
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
@@ -1391,6 +1397,8 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/ball_dress_skirt.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 1:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
@@ -1466,6 +1474,8 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
             elif custom_breast == 2:
@@ -1553,6 +1563,8 @@ screen hermione_main2:
         add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
+    elif custom_outfit == 12:
+        add im.Alpha("01_hp/25_mo/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
@@ -1711,6 +1723,8 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
             elif custom_breast == 2:
@@ -1779,6 +1793,8 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
         add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
+    elif custom_outfit == 12:
+        add im.Alpha("01_hp/25_mo/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
     if robeon:
         add "01_hp/13_hermione_main/robe.png" xpos h_xpos ypos h_ypos #The Robe.
@@ -1967,6 +1983,8 @@ screen h_head2: #Screen that shows Hermione's head.
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_outfit == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
+            elif custom_outfit == 12:
+                add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos her_head_xpos ypos her_head_ypos
             elif custom_breast == 2:
@@ -2051,6 +2069,8 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/25_mo/christmas_gloves.png" xpos her_head_xpos ypos her_head_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos her_head_xpos ypos her_head_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos her_head_xpos ypos her_head_ypos
+    elif custom_outfit == 12:
+        add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
         
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos her_head_xpos ypos her_head_ypos #Displays sperm.

@@ -124,6 +124,7 @@ label luna_favour_luna:
 label luna_summon:
     $ changeLuna(1, 1, 4, 1)
 return
+
 label luna_away:
     $ luna_busy = True
     $ renpy.play('sounds/door.mp3')
@@ -134,16 +135,20 @@ label luna_intro_1:
     lun "Hello Professor."
     menu:
         "\"Hello child\"":
+            lun "(child? Does he even know who I am?)"
             pass
         "\"Hello girl\"":
+            lun "(Girl? Does he even know who I am?)"
             pass
-        "\"Hello Ms Lovegood\"":
+        "\"Hello [luna_name]\"":
+            lun "(He knows my name!)"
             pass
     lun "I came here to day to ask about the Quibbler. I was wondering if we could get some new ink colors, the ones we have at the moment don't quite work for the new article that I am working on."
 
 ###FAVOURS###------------------------------------------------------
 
 label luna_favour_1: ###TALK TO HER
+
     jump luna_away
 label luna_favour_2: ###TALK TO ME
     jump luna_away
