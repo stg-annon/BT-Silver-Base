@@ -218,6 +218,8 @@ label declare_ht_vars:
     $ her_breasts = 0
     $ hair_color = 0
     $ hair_style = "A"
+    $ wear_shirts = True
+    $ wear_skirts = True
     
     $ emote_anger = False
     $ emote_exclam = False

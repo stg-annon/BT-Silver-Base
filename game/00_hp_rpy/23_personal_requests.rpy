@@ -769,13 +769,8 @@ label new_request_03: #(Whoring = 3 - 5)
             hide screen hermione_main
             with d3
             ">Hermione takes off her panties and hands them over to you..."
-        hide screen hermione_main
-        with d3
         ">Hermione's panties acquired."
-        $ h_body = "01_hp/13_hermione_main/body_15.png" #Flashing panties
-        show screen hermione_main
-        with d3
-        her "Well, the classes are about to start, so I'd better go now..."
+        call her_main("Well, the classes are about to start, so I'd better go now...","body_15")
 
  
         
@@ -2884,9 +2879,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $ badges = True # Hides any badges from hermione_main screen.
                         $ lift_shirt = False
                         $ sperm_on_tits = True
-                        $ h_body = "01_hp/13_hermione_main/body_85.png" #Sprite of Hermione's upper body.
-                        show screen hermione_main
-                        with d3
+                        call her_main("","body_85")
                         pause
                         her "My uniform is ruined though..."
                         m "Don't worry, I'm sure no one will notice."
@@ -3074,43 +3067,19 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     if request_11_points == 0: #<==============================EVENT 01
         
         m "[hermione_name], I need you to dance for me a little."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "You want me to..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "...dance for you, [genie_name]?"
+        call her_main("You want me to...","body_11")
+        call her_main("...dance for you, [genie_name]?","body_10")
         if whoring <=8:
             jump too_much
         $ new_request_11_01 = True # HEARTS
         $ new_request_11_heart = 1
         m "Yes... You think you could manage that?"
         her "Ehm... I suppose so..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "Is this your official wish, [genie_name]?"
+        call her_main("Is this your official wish, [genie_name]?","body_11")
         with hpunch
         g4 "What did you just say!?"
         stop music fadeout 1.0
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "I mean, favour. Is this an official favour [genie_name]?"
+        call her_main("I mean, favour. Is this an official favour [genie_name]?","body_12")
         show screen whitetone8
         hide screen blktone
         with Dissolve(1)
@@ -3133,13 +3102,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         m "Got lost in my thoughts for a moment there..."
         her "So am I getting paid for this?"
         m "Of course, [hermione_name]!"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "So... Just a little dancing then..."
+        call her_main("So... Just a little dancing then...","body_29")
         m "Whenever you're ready..."
         her "................."
         hide screen hermione_main
@@ -3325,12 +3288,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         call her_main("That again, [genie_name]...?","body_66")
         m "You will get paid accordingly of course..."
         call her_main("............................","body_69")
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "And you expect me to... ehm..."
+        call her_main("And you expect me to... ehm...","body_69")
         m "Take your clothes off. Naturally."
         stop music fadeout 1.0
         call her_main("......................","body_69")
@@ -3817,10 +3775,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     call sna_head("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
                     call her_head("Well, maybe that's because you deserve it... [genie_name].","body_86")
                     call sna_head("What?!","snape_10")
-                    sna "How dare you....?"
+                    call sna_head"How dare you....?"
                     call sna_head("Who do you think you are? You filthy mu--","snape_15")
                     call her_head("[genie_name], one of your staff is verbally abusing me!","body_62")
-                    her2 "Are you going to allow this?"
+                    call her_head("Are you going to allow this?")
                     call sna_head("Verbally abusing...?! You have some nerve, girl!","snape_08")
                     call sna_head("Albus, will you allow her to talk back to a teacher like that?","snape_10")
                     call her_head("[genie_name]!","body_62")
@@ -3892,7 +3850,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call sna_head("What about him?","snape_09")
                             m "Is he still causing you grief?"
                             call sna_head("Oh...","snape_09")
-                            sna "Not really, no..."
+                            call sna_head"Not really, no..."
                             call sna_head("To be honest I never really had a problem with the boy himself...","snape_06")
                             sna2 "Although I did plan to make his life here miserable because of his father..."
                             call sna_head("But lately I have way more interesting projects to occupy myself with...","snape_02")
@@ -4218,14 +4176,12 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         pause
                                         $ flip = True # Flips hermione_main screen.
                                         $ u_sperm = "01_hp/13_hermione_main/auto_05.png"
-                                        $ h_body = "01_hp/13_hermione_main/body_101.png"
                                         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                                         if custom_outfit == 0:
                                             $ only_upper = True #No legs shown.
                                         show screen bld1
                                         with d5
-                                        show screen hermione_main
-                                        with d3
+                                        call her_main("","body_101")
                                         pause
                                         hide screen ctc
                                         her "I demand a higher grade than that!"
@@ -4342,7 +4298,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
                             ">Hermione seems very focused on her dancing routine..."
                             call sna_head("Yes, and now another pirouette!","snape_19")
-                            sna "Magnificent!"
+                            call sna_head"Magnificent!"
                             show screen blkfade
                             with d3
                             ">Hermione performs another set of movements and pirouettes..."
@@ -4376,10 +4332,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             hide screen ctc
                             with d5
                             ">Professor Snape leaves..."
-                            show screen h_head2                                                              # HERMIONE
-                            $ h_body = "01_hp/13_hermione_main/body_91.png" # HERMIONE
                             stop music fadeout 1.0
-                            her "...................."
+                            call her_head("....................","body_91")
                             pause.5
                             ">.................{w}.................{w}.................{w}................."
                             $ badges = True
@@ -4594,7 +4548,6 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     if custom_outfit == 0:
                         $ badges = False# Hides any badges from hermione_main screen.
                     
-                    show screen h_head2
                     $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                     $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                     
@@ -5161,13 +5114,11 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     with d3
     hide screen hermione_main
     with d3
-    $ h_body = "01_hp/13_hermione_main/body_82.png" #Sprite of Hermione's upper body.
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     #$ only_upper = True #No lower body displayed. 
     $ badges = False
     $ lift_shirt = True
-    show screen hermione_main
-    with d3
+    call her_main("","body_82")
     pause
     her "...................................."
     
@@ -5396,7 +5347,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 call her_head("Ouch! It hurts! *SOB!*","183")
                 m "Did you like it though?"
                 call her_head("Did I... \"like it\, [genie_name]..?","body_81")
-                her "What girl in her right mind would like to be treated this way?"
+                call her_head("What girl in her right mind would like to be treated this way?")
                 stop music fadeout 1.0
                 call her_head("You are a mean and demented old man!","184")
                 hide screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -5420,7 +5371,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             elif whoring >= 12 and whoring <= 14: # LEVEL 05 # <=================================================================================== SECOND EVENT.
                 call her_head("!!!","182")
                 call her_head("Ouch!","183")
-                her "[genie_name], what did you do this for?"
+                call her_head("[genie_name], what did you do this for?")
                 m "Dunno... Seemed like a good idea..."
                 m "Did you like it?"
                 call her_head("...Of course, not, [genie_name].","body_83")
@@ -5434,10 +5385,10 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 pause.08
                 hide screen white
                 call her_head("!!!","182")
-                her "Ouch! Stop hurting me!"
+                call her_head("Ouch! Stop hurting me!")
                 m "Admit that you enjoy it and I will."
                 call her_head("But I don't...","body_85")
-                her "And if you plan to keep on doing this to me, [genie_name]..."
+                call her_head("And if you plan to keep on doing this to me, [genie_name]...")
                 call her_head("...then I think I should leave.","body_81")
                 m "Fine, fine..."
                 hide screen hermione_main
@@ -5450,7 +5401,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                 m "Dunno... Seemed like a good idea..."
                 m "Did you like it?"
                 call her_head("..........","body_82")
-                her "I am not a pervert..."
+                call her_head("I am not a pervert...")
                 hide screen hermione_main
                 with d3
                 show screen blktone8
@@ -5563,14 +5514,14 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
         m "Yes, [hermione_name].  35 points to \"Gryffindor\"." 
         $ gryffindor +=35
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-    $ h_body = "01_hp/13_hermione_main/body_13.png" #Flashing panties
     $ badges = True
     $ lift_shirt = False
     show screen hermione_main
     hide screen hermione_01_f #Hermione stands still.
     with d3
-    her "Thank you, [genie_name]..."
-
+    
+    call her_main("Thank you, [genie_name]...","body_13")
+    
     if whoring <= 11: # If still of level of unlocking - 04
         $ whoring +=1
 
@@ -5735,11 +5686,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             call her_head("Are you about to finish, [genie_name]?!")
             m "About to finish?"
             m "Don't be ridiculous [hermione_name], we are just getting started."
-            call her_head("","")
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-            her "Oh..."
-            her "......"
+            call her_head("Oh...","body_34")
+            call her_head("......")
             call her_head("You will give me a warning though, won't you, [genie_name]?","body_44") 
         else:
             call her_head("[genie_name]...?","body_34")    
@@ -5806,7 +5754,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 g4 "!!!"
                 call her_head("Or better yet, pump me full of it, [genie_name]!","body_64")
                 hide screen ctc
-                hide screen h_head2 
                 with hpunch
                 g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
             
@@ -5880,7 +5827,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 hide screen blkfade
                 with d3
 
-                hide screen h_head2 
                 m "Good... Now do it again and just stay there for a while."
                 call her_head("You mean with my lips touching your... cock, [genie_name]?","body_31")
                 call her_head("No, I will look stupid...","body_29") 
@@ -5938,8 +5884,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 ">Hermione suddenly slides your already dripping cock under her shirt..."
                 g4 "?!!"
                 ">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man."
-                hide screen h_head2 
-                
                 show screen white 
                 pause.1
                 hide screen white
@@ -6019,20 +5963,16 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 #                g4 "You whore! You little nasty wore!"
 #                g4 "There! Allover your fucking belly and tits!"
 #                her "Ah! It's so hot!"
-#                hide screen h_head2 
-#                g4 "Oh, yes, this is so good!"
+#                #                g4 "Oh, yes, this is so good!"
 #                her "Ah..."
-#                hide screen h_head2 
-#                m "..............."
+#                #                m "..............."
 #                her "............"
-#                hide screen h_head2 
-#                m "I think I'm done..."
+#                #                m "I think I'm done..."
 #                her "Oh..."
 #                ">Hermione releases your still pulsating cock."
 #                her "Ew... Your sperm, [genie_name]..."
 #                her "It's everywhere under my uniform..."
-#                hide screen h_head2 
-#                m "What possessed you to put my cock there, [hermione_name]?"
+#                #                m "What possessed you to put my cock there, [hermione_name]?"
                 
 
             "-Just start cumming-":
@@ -6044,8 +5984,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 call her_head("WHAT?!","body_48")               
                 g4 "Take this!"
 
-                hide screen h_head2 
-                
                 show screen white 
                 pause.1
                 hide screen white
@@ -6346,7 +6284,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 call her_head("And then I put one finger here...")
                 m "Hm... I don't feel anything..."
                 call her_head("Really?","body_118")
-                her "Hm..."
+                call her_head("Hm...")
                 call her_head("Oh! That's right!","body_124")
                 call her_head("The finger goes here! Silly me!")
                 with hpunch
@@ -6450,8 +6388,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     m "Come on, humour me."
                     call her_head("[tmp_name]","body_30")
                     g9 "He-he..."
-                    hide screen h_head2
-                elif one_out_of_three == 3:
+                    elif one_out_of_three == 3:
                     call her_head("...........","body_29")
                     call her_head("Do I really have to?")
                     m "Just say it."
@@ -6527,7 +6464,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 call her_head("Ah!! It's so hot!","body_64")
                 call her_head("And it's getting everywhere! So much of it!","body_121")
                 call her_head("...[genie_name].")
-                hide screen h_head2       
                 g4 "Argh!!!"
                 m "............"
                 m "I think I am done..."
@@ -6589,8 +6525,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 call her_head("WHAT?!","body_48")               
                 g4 "Take this!"
 
-                hide screen h_head2 
-                
                 show screen white 
                 pause.1
                 hide screen white
@@ -6727,6 +6661,8 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
 label new_request_22: #LV.6 (Whoring = 15 - 17)
     hide screen hermione_main 
     with d3
+    $ h_xpos=140
+    
     if request_22_points == 0:
         m "{size=-4}(Should I ask her for a blowjob?){/size}"
     else:
@@ -6739,7 +6675,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-            
+    
     if "slytherin_cheerleader" in outfit_invintory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -6775,76 +6711,22 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
     if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Yes, [genie_name]?"
+        call her_main("Yes, [genie_name]?","body_01")
         m "I plan to grant \"Gryffindor\" 55 house points today..."
         m "If you suck me off..."
         if whoring <=14: # LEVEL 05
             jump too_much
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_87.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Oh..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_124.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Alright."
+        call her_main("Oh...","body_87")
+        call her_main("Alright.","body_124")
         m "Really? Just like that?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Yes. I know I'm supposed feel outraged..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "But somehow I do not..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_124.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "I suppose I am just glad that I can help out my house..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "And if to do that I must put your penis in my mouth so be it..."
+        call her_main("Yes. I know I'm supposed feel outraged...","body_118")
+        call her_main("But somehow I do not...","body_117")
+        call her_main("I suppose I am just glad that I can help out my house...","body_124")
+        call her_main("And if to do that I must put your penis in my mouth so be it...","body_120")
         m "Well, alright then."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "Although, now when I say it out loud like this..."
+        call her_main("Although, now when I say it out loud like this...","body_118")
         m "Too late! You already said \"yes\"!"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        her "I know..."
+        call her_main("I know...","body_24")
         label blowjob_jumping:
         
         # BLOWJOB
@@ -6895,11 +6777,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-                her "Oh, well..."
-                her "We are still active, but..."
-                hide screen h_head2       
+                call her_head("Oh, well...","body_118")
+                call her_head("We are still active, but...")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -6907,13 +6786,10 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_122.png" # HERMIONE
-                her2 "But we are not getting as popular and as much support as I thought we would..."
+                call her_head("But we are not getting as popular and as much support as I thought we would...","body_122")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
-                hide screen h_head2
                 her "*Slurp!* *Gulp!* *Gulp!*"
                 m "Oh... This is good..."
                 her "*Slurp!* *Slurp!* *Slurp!*"
@@ -6927,27 +6803,18 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her "That's not what we stand for, [genie_name]."
-                hide screen h_head2
+                call her_head("That's not what we stand for, [genie_name].","body_117")
                 m "What do you mean?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_16.png" # HERMIONE
-                her2 "The \"MRM\" is about gender equality."
-                her2 "We are not as much against selling sexual favours to the teachers..."
-                her2 "As we are against the gender inequality that the selling of sexual favour creates..."
-                hide screen h_head2
+                call her_head("The \"MRM\" is about gender equality.","body_16")
+                call her_head("We are not as much against selling sexual favours to the teachers...")
+                call her_head("As we are against the gender inequality that the selling of sexual favour creates...")
                 m "Hm..."
                 m "This conversation is starting to bore me..."
                 m "Suck on my cock some more before we continue."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "Of course, [genie_name]."
+                call her_head("Of course, [genie_name].","body_121")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
-                hide screen h_head2
                 her "*Gobble!* *Slurp!* *Slurp!*"
                 m "Yes, much better..."
                 m "But you still disapprove of selling the favours, right?"
@@ -6955,57 +6822,33 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-                her2 "Yes, it is frowned upon..."
-                hide screen h_head2 
+                call her_head("Yes, it is frowned upon...","body_120")
                 m "And yet, you are the biggest offender by far."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-                her "But what choice do I have?"
-                her2 "I've been put in a very difficult position..."
-                hide screen h_head2
+                call her_head("But what choice do I have?","body_120")
+                call her_head("I've been put in a very difficult position...")
                 m "The cock, [hermione_name]."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-                her "Right, sorry..."
+                call her_head("Right, sorry...","body_120")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
-                hide screen h_head2
                 her "*Slurp!* *Gulp!* *Gltch!*"
                 her "*Slurp--"
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her2 "This one time we had a meeting right after I sold you another favour, [genie_name]."
-                her2 "I had to give a speech with my uniform all messy and stained."
-                her2 "It felt awful that I had to do that..."
-                hide screen h_head2     
+                call her_head("This one time we had a meeting right after I sold you another favour, [genie_name].","body_117")
+                call her_head("I had to give a speech with my uniform all messy and stained.")
+                call her_head("It felt awful that I had to do that...")
                 m "You did enjoy it a little bit though..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE  
-                her "Well..."
-                hide screen h_head2        
+                call her_head("Well...","body_118")
                 m "Just admit it."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her "..............."
-                hide screen h_head2
+                call her_head("...............","body_117")
                 m "Yes, I knew it. You took pleasure in it, you little perv."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-                her2 "I suppose it was embarrassing and exciting at the same time..."
-                her2 "And it made me feel even worse about myself."
-                hide screen h_head2
+                call her_head("I suppose it was embarrassing and exciting at the same time...","body_118")
+                call her_head("And it made me feel even worse about myself.")
                 m "You poor thing."
                 m "Cock back in the mouth."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her "Yes, [genie_name]."
-                hide screen h_head2
+                call her_head("Yes, [genie_name].","body_117")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -7021,48 +6864,29 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_75.png" # HERMIONE
-                her "Yes, I believe they are..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_74.png" # HERMIONE
-                her2 "With me being an excellent student despite being muggle-born and all..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                her2 "Although at first they were against sending me to some \"Bogus boarding school\"."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_74.png" # HERMIONE
-                her2 "Took some effort to convince them that \"Hogwarts\" is a respectable institution."
-                hide screen h_head2     
+                call her_head("Yes, I believe they are...","body_75")
+                call her_head("With me being an excellent student despite being muggle-born and all...","body_74")
+                call her_head("Although at first they were against sending me to some \"Bogus boarding school\".","body_117")
+                call her_head("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","body_74")
                 m "Yes, a respectable institution indeed."
                 m "Cock back in your mouth [hermione_name]."
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
                 her "*Slurp!* *Gulp!* *Gobble!*"
-                hide screen h_head2     
                 m "Yes, just keep at it for a while..."
                 her "*Slurp!* *Gltch!* *Gulp!*"
-                hide screen h_head2     
                 m "Good, good..."
                 m "So, what would your folks say if they were to see you now, [hermione_name]?"
                 her "*Slurp--"
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_87.png" # HERMIONE
-                her "They would not understand of course..."
-                her "But I do not care."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-                her2 "I am not afraid to \"get my hands dirty\" and do what needs to be done."
-                hide screen h_head2     
+                call her_head("They would not understand of course...","body_87")
+                call her_head("But I do not care.")
+                call her_head("I am not afraid to \"get my hands dirty\" and do what needs to be done.","body_120")
                 m "A bit rebellious, aren't you?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_122.png" # HERMIONE
-                her "Hm... I suppose I am."
-                hide screen h_head2     
+                call her_head("Hm... I suppose I am.","body_122")
                 m "Back to sucking then. Teach your folks a lesson."
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
@@ -7080,10 +6904,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 with d3
                 $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
                 $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_13.png" # HERMIONE
-                her "What can I say that you don't already know, [genie_name]?"
-                hide screen h_head2     
+                call her_head("What can I say that you don't already know, [genie_name]?","body_13")
                 m "Yes... Ehm... I know everything of course."
                 m "But I want to see how much you know."
                 m "To test your knowledge on the subject."
@@ -7092,10 +6913,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 ">As soon as you mention \"test\" Hermone's eyes light up with excitement."
                 hide screen blktone
                 with d3
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_80.png" # HERMIONE
-                her "OK. But I need a moment gather my thoughts..."
-                hide screen h_head2  
+                call her_head("OK. But I need a moment gather my thoughts...","body_80")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -7107,14 +6925,9 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
                 hide screen ctc
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_87.png" # HERMIONE
-                her2 "The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name."
-                her2 "The heraldic animal of \"Gryffindor\" is the lion..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-                her "And it's colors are red and gold."
-                hide screen h_head2   
+                call her_head("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","body_87")
+                call her_head("The heraldic animal of \"Gryffindor\" is the lion...")
+                call her_head("And it's colors are red and gold.","body_127")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING 
@@ -7122,13 +6935,10 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-                her2 "Professor Minerva McGonagall is the headmaster of our house."
-                her2 "The \"Gryffindor\" house emphasizes the traits of courage..."
-                her2 "As well as \"daring, nerve and chivalry\"..."
-                her2 "And thus its members are generally regarded as brave but reckless..."
-                hide screen h_head2     
+                call her_head("Professor Minerva McGonagall is the headmaster of our house.","body_127")
+                call her_head("The \"Gryffindor\" house emphasizes the traits of courage...")
+                call her_head("As well as \"daring, nerve and chivalry\"...")
+                call her_head("And thus its members are generally regarded as brave but reckless...")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -7136,36 +6946,25 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-                her2 "\"Gryffindor\" corresponds roughly to the element of fire..."
-                her2 "And for that reason the colours of red and gold were chosen."
-                hide screen h_head2     
+                call her_head("\"Gryffindor\" corresponds roughly to the element of fire...","body_127")
+                call her_head("And for that reason the colours of red and gold were chosen.")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
                 her "*Slurp!* *Gulp!* *Slurp!*"
                 m "Hm..."
                 m "Well, I thought I could turn this around somehow to make fun of you..."
-                hide screen h_head2     
                 her "*Slurp??*"
                 m "Well, with your house representing courage and righteousness and such..."
                 m "And you being a nasty slut..."
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_86.png" # HERMIONE
-                her "[genie_name]!"
-                hide screen h_head2     
-                hide screen h_head2     
+                call her_head("[genie_name]!","body_86")
                 m "But to be honest..."
                 m "\"Daring, nerve, fire, recklessness\"..."
                 m "That sort of describes your personality quite well..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_45.png" # HERMIONE
-                her "[genie_name]..."
-                hide screen h_head2     
+                call her_head("[genie_name]...","body_45")
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
                 with d3                      #  SUCKING
@@ -7180,10 +6979,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         show screen h_c_u   # NOT SUCKING
         hide screen g_c_u # NOT SUCKING
         with d3                      #  NOT SUCKING
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_87.png" # HERMIONE
-        her "[genie_name]... I am a... whore."
-        hide screen h_head2  
+        call her_head("[genie_name]... I am a... whore.","body_87")
         m "What?"
         hide screen h_c_u   # SUCKING
         show screen g_c_u # SUCKING
@@ -7192,10 +6988,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         show screen h_c_u   # NOT SUCKING
         hide screen g_c_u # NOT SUCKING
         with d3                      #  NOT SUCKING
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-        her2 "I truly am a slut and deeply enjoy sucking your cock."
-        hide screen h_head2  
+        call her_head("I truly am a slut and deeply enjoy sucking your cock.","body_117")
         m "Oh, yes, yes... Say more things like that."
         hide screen h_c_u   # SUCKING
         show screen g_c_u # SUCKING
@@ -7204,25 +6997,16 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         show screen h_c_u   # NOT SUCKING
         hide screen g_c_u # NOT SUCKING
         with d3                      #  NOT SUCKING
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-        her "Please, [genie_name]. Cum for me."
-        hide screen h_head2  
+        call her_head("Please, [genie_name]. Cum for me.","body_121")
         with hpunch
         g4 "Argh! You little...!!!"
         g4 "{size=-4}(Here it comes. Should I give her a warning?){/size}"
         menu:
             m "..."
             "-Warn her-":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "Yes, I love to suck and --"
-                hide screen h_head2  
+                call her_head("Yes, I love to suck and --","body_121")
                 g4 "Heads up, [hermione_name]! Here it comes!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_18.png" # HERMIONE
-                her "!!!"
-                hide screen h_head2      
+                call her_head("!!!","body_18")
                 show screen ctc
                 pause
                 show screen blkfade
@@ -7258,55 +7042,31 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_126.png" # HERMIONE
-                her ".............."
-                hide screen h_head2  
+                call her_head("..............","body_126")
                 m "Are you alright there, [hermione_name]?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Yes, [genie_name]..."
-                her "You came so much..."
-                hide screen h_head2  
+                call her_head("Yes, [genie_name]...","body_123")
+                call her_head("You came so much...")
                 m "You managed to swallow it all though."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Yes... I thought I would choke..."
-                her2 "But I made a promise to myself that I won't let go of your penis no matter what!"
-                hide screen h_head2  
+                call her_head("Yes... I thought I would choke...","body_123")
+                call her_head("But I made a promise to myself that I won't let go of your penis no matter what!")
                 m "Good girl."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Thank you, [genie_name]."
-                her "But, still... You came so much..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "I almost feel as if I just got fed..."
-                her "My stomach is so full..."
-                hide screen h_head2  
+                call her_head("Thank you, [genie_name].","body_123")
+                call her_head("But, still... You came so much...")
+                call her_head("I almost feel as if I just got fed...","body_121")
+                call her_head("My stomach is so full...")
                 g9 "Yes, I fed you with my cum!"
                 if daytime:
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her2 "I think I may skip the meal and go straight to class today."
+                    call her_head("I think I may skip the meal and go straight to class today.","body_121")
                 else:
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her2 "Yes. I think I may skip supper tonight..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_122.png" # HERMIONE
-                her "Can I get paid now?"
-                hide screen h_head2  
+                    call her_head("Yes. I think I may skip supper tonight...","body_121")
+                call her_head("Can I get paid now?","body_122")
                 show screen ctc
                 pause
                 hide screen ctc
                 show screen blkfade
                 with d3
             "-Don't bother-":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                her "Yes, I love to suck and --"
-                hide screen h_head2  
+                call her_head("Yes, I love to suck and --","body_121")
                 show screen white 
                 pause.1
                 hide screen white
@@ -7316,11 +7076,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen white
                 with hpunch
                 g4 "{size=+7}Whore!{/size}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-                her "!!?"
-                hide screen h_head2
-                
+                call her_head("!!?","body_48")
                 $ g_c_u_pic = "cum_on_face_ani"
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
@@ -7336,48 +7092,27 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 #Cumming.
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-                her "[genie_name]..."
-                hide screen h_head2  
+                call her_head("[genie_name]...","body_48")
                 g4 "Don't you move now, [hermione_name]."
                 g4 "Yes, just be still and take it."
                 g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_21.png" # HERMIONE
-                her ".............."
-                hide screen h_head2  
+                call her_head("..............","body_21")
                 m "Whew..."
                 $ g_c_u_pic = "cum_on_face_blink_ani"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_33.png" # HERMIONE
-                her ".............."
-                hide screen h_head2  
+                call her_head("..............","body_33")
                 m "Alright, I'm done..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "................."
+                call her_head(".................","body_31")
                 if daytime:
                     her "My classes are about to start..."
                 else:
                     pass
-                hide screen h_head2  
                 m "Just wipe it off and you'll be alright."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "............"
-                hide screen h_head2  
+                call her_head("............","body_31")
                 m "Unless, you don't want to."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-                her "Huh?"
-                hide screen h_head2  
+                call her_head("Huh?","body_34")
                 m "And would rather go outside looking like this."
                 m "Let everyone see what a nasty little slut you are."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-                her "Of course not, [genie_name]!"
-                hide screen h_head2  
+                call her_head("Of course not, [genie_name]!","body_34")
                 show screen ctc
                 pause
                 hide screen ctc
@@ -7388,129 +7123,52 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     m "You better go before you are late for your classes..."
                 else:
                     m "It's getting late..."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-                    her "Yes..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_44.png" # HERMIONE
-                her "Can I get paid before I leave, [genie_name]?"
-                hide screen h_head2
+                    call her_head("Yes...","body_34")
+                call her_head("Can I get paid before I leave, [genie_name]?","body_44")
                 $ aftersperm = True
 
         
         
     elif request_22_points == 1: #  <============================================================== EVENT 02
         m "[hermione_name]?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "[genie_name]?"
+        call her_main("[genie_name]?","body_01")
         m "How about another blowjob?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        her "[genie_name], how dare you propose such a thing to one of your pupils!"
+        call her_main("[genie_name], how dare you propose such a thing to one of your pupils!","body_86")
         m "Wha...?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_86.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "This is unbecoming of a man of your standing."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "You should be ashamed of yourself [genie_name]!"
+        call her_main("This is unbecoming of a man of your standing.","body_86")
+        call her_main("You should be ashamed of yourself [genie_name]!","body_47")
         menu:
             m "???"
             "\"Fine. No points to you then! Leave!\"":
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                         
-                her "[genie_name], calm down, please."
+                call her_main("[genie_name], calm down, please.","body_24")
                 m "You are dismissed, [hermione_name]."
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                         
-                her "[genie_name], please, I didn't mean any of the things I said."
+                call her_main("[genie_name], please, I didn't mean any of the things I said.","body_24")
                 m "What?"
             "\"Ehm... I am sorry?\"":
                 stop music fadeout 1.0
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                         
-                her "*Giggle*"
+                call her_main("*Giggle*","body_06")
                 m "Huh?"
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3                                         
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                her "I got you... [genie_name]."
+                call her_main("I got you... [genie_name].","body_24")
                 m "What?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "Well, so much has happened lately..."
+        call her_main("Well, so much has happened lately...","body_45")
         her2 "I had so many new experiences that kind of changed the way I look at things..."
         her2 "So I was just trying to imagine how the \"old me\" would've reacted to this."
         m "So..."
         g4 "You were messing with me then?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "uhm... I'm sorry [genie_name], I didn't mean to..."
+        call her_main("uhm... I'm sorry [genie_name], I didn't mean to...","body_34")
         g4 "You nasty little girl! You must be punished!"
         g9 "I'll punish you with my cock!"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                         
-        her "..............................."
+        call her_main("...............................","body_34")
 
         jump blowjob_jumping
   
     elif request_22_points >= 2: # <============================================================== EVENT 03
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Suck my dick, [hermione_name]."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                         #HERMIONE                                                                                                                                                                                                                                          
-        her "Of course..."
+        call her_main("Of course...","body_45")
         # Sucking.
         
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -7553,26 +7211,17 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
         if not luna_known:
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-            her "([genie_name], what should I do?)"
-            hide screen h_head2
+            call her_head("([genie_name], what should I do?)","body_48")
             m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
             sna "Albus? Are you there? I need to talk to you."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-            her "(It's professor Snape!)"
-            her "([genie_name], please, send him away, I beg you!)"
-            hide screen h_head2
+            call her_head("(It's professor Snape!)","body_117")
+            call her_head("([genie_name], please, send him away, I beg you!)")
             menu:
                 m "..."
                 "\"Please, come on in, Severus.\"":
                     $ mad = 30
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_76.png" # HERMIONE
                     stop music fadeout 1.0
-                    her "([genie_name], no!)"
-                    hide screen h_head2
+                    call her_head("([genie_name], no!)","body_76")
                     show screen blktone
                     with d3
                     with hpunch
@@ -7594,90 +7243,49 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     with d3
                     $ s_head_xpos = 330 # x = 330,
                     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-                    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
-                    show screen s_head2
-
                     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
-                    sna "Good, you are here."
-                    hide screen s_head2
                     
+                    call sna_head("Good, you are here.","snape_01")
                     $ g_c_u_pic = "blowjob_ani" # sucking
                     hide screen h_c_u   # SUCKING
                     show screen g_c_u # SUCKING
                     with d3                      #  SUCKING
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Listen, there is something I want to discuss..."
-                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Hm...?"
-                    sna "Genie? Are you alright?"
-                    hide screen s_head2
+                    call sna_head("Listen, there is something I want to discuss...","snape_06")
+                    call sna_head("Hm...?","snape_05")
+                    call sna_head"Genie? Are you alright?"
                     her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
                     her "{size=-4}(No, please! I will die of shame!){/size}"
                     m "Yes, Severus, I am fine..."
                     her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
-                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "What are you... looking at?"
-                    hide screen s_head2
+                    call sna_head("What are you... looking at?","snape_05")
                     m "Ehm... Just admiring...{w} the cupboard."
                     m "Please continue..."
-                    $ s_sprite = "01_hp/10_snape_main/snape_05.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "..............."
-                    hide screen s_head2
+                    call sna_head("...............","snape_05")
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                     m "Did you want to discuss something?"
-                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Yes. That Hermione girl."
-                    hide screen s_head2
+                    call sna_head("Yes. That Hermione girl.","snape_06")
                     her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
                     m "Oh... What about her?"
-                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna2 "You promised that you would take care of the little witch."
-                    hide screen s_head2
+                    call sna_head("You promised that you would take care of the little witch.","snape_04")
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "But she is still being a major pain in my arse!"
-                    sna "Her tactics have changed..."
-                    $ s_sprite = "01_hp/10_snape_main/snape_03.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna2 "But the amount of grief she manages to bring me is the same..."
-                    hide screen s_head2
+                    call sna_head("But she is still being a major pain in my arse!","snape_04")
+                    call sna_head"Her tactics have changed..."
+                    call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
                     m "I see... ah..."
-                    $ s_sprite = "01_hp/10_snape_main/snape_10.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "I swear, that girl is driving me crazy!"
-                    hide screen s_head2
+                    call sna_head("I swear, that girl is driving me crazy!","snape_10")
                     g4 "Yeah, she is driving me crazy as well... ah..."
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    $ s_sprite = "01_hp/10_snape_main/snape_04.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Will you take care of this then?"
-                    hide screen s_head2
+                    call sna_head("Will you take care of this then?","snape_04")
                     m "Yes. She'll get what she deserves."
-                    $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                    show screen s_head2                                                          # SNAPE
-                    sna "Good. That is all I wanted to hear."
+                    call sna_head("Good. That is all I wanted to hear.","snape_06")
                     if daytime:
-                        hide screen s_head2
                         m "Well, have a good day, Severus."
-                        $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                        show screen s_head2                                                          # SNAPE
-                        sna "Yes, thank you."
+                        call sna_head("Yes, thank you.","snape_06")
                     else:
-                        hide screen s_head2
                         m "Good night, Severus."
-                        $ s_sprite = "01_hp/10_snape_main/snape_06.png" # SNAPE
-                        show screen s_head2                                                          # SNAPE
-                        sna "Right..."
+                        call sna_head("Right...","snape_06")
                     # SNAPE LEAVES
-                    hide screen s_head2
                     hide screen ctc
                     
                     hide screen bld1
@@ -7706,10 +7314,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
                     
                 "\"I am busy right now, Severus.\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                    her "(Thank you, [genie_name].)"
-                    hide screen h_head2                                                          
+                    call her_head("(Thank you, [genie_name].)","body_117")
                     sna "Busy? With what?"
                     sna "All you do is sit on you arse all day."
                     sna "I really need to talk to you about something."
@@ -7718,27 +7323,18 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     sna "Oh... You mean \"Busy\" busy? Gotcha!"
                     sna "Well, I'll talk to you later then."
         else:
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-            her "([genie_name], what should I do?)"
-            hide screen h_head2
+            call her_head("([genie_name], what should I do?)","body_48")
             m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
             lun "[l_genie_name]? Are you there? I need to talk to you."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-            her "(It's Luna Lovegood!)"
-            her "([genie_name], please, send her away, I beg you!)"
-            hide screen h_head2
+            call her_head("(It's Luna Lovegood!)","body_117")
+            call her_head("([genie_name], please, send her away, I beg you!)")
             menu:
                 m "..."
                 "\"Please, come on in, [luna_name].\"":
                     $ mad += 5
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_76.png" # HERMIONE
                     stop music fadeout 1.0
-                    her "([genie_name], no!)"
+                    call her_head("([genie_name], no!)","body_76")
                     hide screen bld1
-                    hide screen h_head2
                     with d3
                     # SNAPE COMES IN
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -7791,7 +7387,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                             m "Did you want to discuss something?"
                             $ changeLuna(1, 1, 4, 1)                                        # SNAPE
                             lun "Yes. These wrackspurts."
-                            hide screen s_head2
                             her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
                             m "Oh... What about them?"
                             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"                            # SNAPE
@@ -7835,10 +7430,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
                             
                 "\"I am busy right now, [luna_name].\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-                    her "(Thank you, [genie_name].)"
-                    hide screen h_head2                                                          
+                    call her_head("(Thank you, [genie_name].)","body_117")
                     lun "Busy? How so?"
                     lun "Are you helping another student fight off the wrackspurts?"
                     m "Yes, that's exactly what I'm doing."
@@ -7867,78 +7459,44 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             show screen h_c_u   # NOT SUCKING
             hide screen g_c_u # NOT SUCKING
             with d3                      #  NOT SUCKING
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-            her "[genie_name]?"
-            hide screen h_head2          
+            call her_head("[genie_name]?","body_121")
             m "Hm?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-            her "Are you going to cum on my face today?"
-            her "Or do you plan to cum in my mouth?"
-            hide screen h_head2
+            call her_head("Are you going to cum on my face today?","body_121")
+            call her_head("Or do you plan to cum in my mouth?")
             menu:
                 "\"I Plan to splatter your face with cum!\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "I see..."
-                    hide screen h_head2
+                    call her_head("I see...","body_121")
                     m "Why do you ask?"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                    her2 "Oh... I just read in a book that semen contains a lot of antioxidants..."
-                    her "It's good for the skin..."
-                    hide screen h_head2
+                    call her_head("Oh... I just read in a book that semen contains a lot of antioxidants...","body_123")
+                    call her_head("It's good for the skin...")
                     m "Great. One facial coming up."
                     m "Back to work now."
                 "\"I Plan to fill your mouth with cum!\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                    her "I see..."
-                    hide screen h_head2
+                    call her_head("I see...","body_123")
                     m "Why do you ask?"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "Well, I am trying to watch my calorie-intake..."
-                    her2 "I just wonder how much calories your load contains, [genie_name]."
-                    her2 "Maybe I should skip my next meal..."
-                    hide screen h_head2
+                    call her_head("Well, I am trying to watch my calorie-intake...","body_121")
+                    call her_head("I just wonder how much calories your load contains, [genie_name].")
+                    call her_head("Maybe I should skip my next meal...")
                     m "[hermione_name]."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "Yes?"
-                    hide screen h_head2
+                    call her_head("Yes?","body_121")
                     m "Dick back in the mouth."
                 "\"I don't plan so far ahead.\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "I see..."
-                    hide screen h_head2
+                    call her_head("I see...","body_121")
                     m "Don't you like surprises?"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "Not really..."
-                    her "I rather enjoy planning ahead actually..."
-                    hide screen h_head2
+                    call her_head("Not really...","body_121")
+                    call her_head("I rather enjoy planning ahead actually...")
                     m "Well some things in life are just unpredictable."
                     m "There is only one way to find out for sure."
                     
                 "\"What would you like?\"":
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-                    her "If it is all the same to you, [genie_name]..."
+                    call her_head("If it is all the same to you, [genie_name]...","body_121")
                     if generating_points == 1:
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                        her2 "I would like you to cum on my face, [genie_name]."
-                        her2 "I read that it's good for the skin."
+                        call her_head("I would like you to cum on my face, [genie_name].","body_123")
+                        call her_head("I read that it's good for the skin.")
                     else:
-                        show screen h_head2                                                             # HERMIONE
-                        $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                        her2 "I would like you to cum in my mouth."
-                        her2 "You usually cum so much so I think I will be able to just skip my next meal..."
-                        her2 "And do some homework instead."
-                    hide screen h_head2
+                        call her_head("I would like you to cum in my mouth.","body_123")
+                        call her_head("You usually cum so much so I think I will be able to just skip my next meal...")
+                        call her_head("And do some homework instead.")
                     m "Well, we'll see about that."
                     m "Back to sucking now."
                     
@@ -7961,60 +7519,30 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         show screen h_c_u   # NOT SUCKING
         hide screen g_c_u # NOT SUCKING
         with d3                      #  NOT SUCKING
-        show screen h_head2                                                             # HERMIONE
         if whoring <= 20:
-            $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-            her "uhm..."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-            her "I eat cockroaches?"
-            hide screen h_head2
+            call her_head("uhm...","body_118")
+            call her_head("I eat cockroaches?","body_117")
             m "What the fuck?"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-            her "T-they are pretty nasty, [genie_name]..."
-            hide screen h_head2
+            call her_head("T-they are pretty nasty, [genie_name]...","body_117")
             m "No, [hermione_name], I mean something dirty!"
             m "And don't you dare to say \"mud\"!"
             m "I mean dirty in a sexual way!"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-            her "Oh... Ehm..."
-            hide screen h_head2
+            call her_head("Oh... Ehm...","body_118")
             m "Ah, never mind, the moment is gone..."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-            her "Ehm... I'm sorry, [genie_name]."
-            hide screen h_head2
+            call her_head("Ehm... I'm sorry, [genie_name].","body_117")
             m "Yeah, whatever. Make it up to me by sucking my cock harder."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_120.png" # HERMIONE
-            her "Of course, [genie_name]."
-            hide screen h_head2
-        else:
-            $ h_body = "01_hp/13_hermione_main/body_129.png" # HERMIONE
-            her "I'm a slut [genie_name]."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
-            her "A slut for your cum."
-            hide screen h_head2
+            call her_head("Of course, [genie_name].","body_120")
+            else:
+            call her_head("I'm a slut [genie_name].","body_129")
+            call her_head("A slut for your cum.","body_128")
             m "That's it [hermione_name]."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_124.png" # HERMIONE
-            her "It's all I can think about [genie_name]."
-            her "Sucking your dirty old cock..."
-            hide screen h_head2
+            call her_head("It's all I can think about [genie_name].","body_124")
+            call her_head("Sucking your dirty old cock...")
             m "Well you better get back to it then [hermione_name]"
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-            her "Thank you [genie_name]."
-            hide screen h_head2
+            call her_head("Thank you [genie_name].","body_123")
             m "You're welcome cumslut."
-            show screen h_head2                                                             # HERMIONE
-            $ h_body = "01_hp/13_hermione_main/body_78.png" # HERMIONE
-            her "..."
-            hide screen h_head2
-        $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+            call her_head("...","body_78")
+            $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
         $ hermione_chibi_ypos = 10
         $ h_c_u_pic = "hand_ani" # Not sucking
         hide screen h_c_u   # SUCKING
@@ -8043,7 +7571,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 g4 "Here it comes, [hermione_name]! get ready to swallow fast!"
                 her "!!!"
                 
-                hide screen h_head2      
                 show screen ctc
                 pause
                 show screen blkfade
@@ -8081,47 +7608,28 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u   # NOT SUCKING
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_125.png" # HERMIONE
-                her "..........................."
-                her "................"
-                her "........"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_126.png" # HERMIONE
+                call her_head("...........................","body_125")
+                call her_head("................")
+                call her_head("........")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                her "*GULP!*"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_115.png" # HERMIONE
-                her "Gua-ha..."
-                hide screen h_head2  
+                call her_head("*GULP!*","body_126")
+                call her_head("Gua-ha...","body_115")
                 m "You alright?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                her "Yes, [genie_name]..."
-                hide screen h_head2  
+                call her_head("Yes, [genie_name]...","body_123")
                 m "Going to skip your next meal?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "I think so..."
-                her "You always cum so much, [genie_name]..."
-                hide screen h_head2  
+                call her_head("I think so...","body_123")
+                call her_head("You always cum so much, [genie_name]...")
                 m "Heh... And who's fault is that??"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "............." #Smile.
-                her "Can I get paid now?"
+                call her_head(".............","body_123") #Smile.
+                call her_head("Can I get paid now?")
                 if whoring >= 20:
-                    hide screen h_head2  
                     if daytime:
                         m "What, even after I just gave you lunch?"
                     else:
                         m "What, even after I fed you dinner"
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_17.png" # HERMIONE
-                    her "............." #Smile.
-                    her "Fine, I suppose this was worth a meal"
-                hide screen h_head2  
+                    call her_head(".............","body_17") #Smile.
+                    call her_head("Fine, I suppose this was worth a meal")
                 show screen ctc
                 pause
                 hide screen ctc
@@ -8139,13 +7647,9 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen g_c_u # NOT SUCKING
                 with d3                      #  NOT SUCKING
                 g4 "Ready for your facial, [hermione_name]?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Yes [genie_name]!"
-                hide screen h_head2      
+                call her_head("Yes [genie_name]!","body_123")
                 g4 "Here it comes then!"
                 
-                hide screen h_head2  
                 show screen white 
                 pause.1
                 hide screen white
@@ -8155,11 +7659,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 hide screen white
                 with hpunch
                 g4 "{size=+7}Whore!{/size}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-                her "!!?"
-                hide screen h_head2
-                
+                call her_head("!!?","body_48")
                 $ g_c_u_pic = "cum_on_face_ani"
                 hide screen h_c_u   # SUCKING
                 show screen g_c_u # SUCKING
@@ -8175,32 +7675,17 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 #Cumming.
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-                her "[genie_name]..."
-                hide screen h_head2  
+                call her_head("[genie_name]...","body_48")
                 g4 "All over your fucking face!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Aaah!"
+                call her_head("Aaah!","body_123")
                 $ g_c_u_pic = "cum_on_face_blink_ani"
-                hide screen h_head2  
                 m "Well, I'm done."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "...................................."
-                hide screen h_head2  
+                call her_head("....................................","body_123")
                 m "I said it's over, [hermione_name]."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Yes, I heard you [genie_name]..."
-                hide screen h_head2  
+                call her_head("Yes, I heard you [genie_name]...","body_123")
                 m "So... Aren't you going to clean up?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "In a moment..."
-                her2 "I'm giving my skin time to soak in the anti-oxidants..." 
-                hide screen h_head2  
+                call her_head("In a moment...","body_123")
+                call her_head("I'm giving my skin time to soak in the anti-oxidants...") 
                 m "Hm... I find this quite hot..."
                 m "Take your time, [hermione_name]..."
                 show screen blkfade
@@ -8209,31 +7694,16 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 ">A while later."
                 $ uni_sperm = False
                 $ aftersperm = True
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_122.png" # HERMIONE
-                her "I take it you enjoyed yourself [genie_name]?"
-                hide screen h_head2  
+                call her_head("I take it you enjoyed yourself [genie_name]?","body_122")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 m "Yes I did, [hermione_name]."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-                her "Good, so Can I get paid now?"
+                call her_head("Good, so Can I get paid now?","body_123")
                 if whoring >= 20:
-                    hide screen h_head2  
                     m "What, even after I just gave you a salon treatment?"
                     m "Women pay a lot of money for a good facial."
-                    show screen h_head2                                                             # HERMIONE
-                    $ h_body = "01_hp/13_hermione_main/body_17.png" # HERMIONE
-                    her "............." #Smile.
-                    her "Fine, but my skin better look better tomorrow."
-                hide screen h_head2  
-                
-                    
-                
-            
-        
-    
-    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+                    call her_head(".............","body_17") #Smile.
+                    call her_head("Fine, but my skin better look better tomorrow.")
+                $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
     hide screen h_c_u
     hide screen g_c_u
@@ -8254,13 +7724,12 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     if whoring <= 19:
         m "Yes, [hermione_name]. 55 points to \"Gryffindor\"." 
         $ gryffindor +=55
+        
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-    $ h_body = "01_hp/13_hermione_main/body_13.png" #Flashing panties
-    show screen hermione_main
     hide screen hermione_01_f #Hermione stands still.
     with d3
-    her "Thank you, [genie_name]..."
-
+    call her_main("Thank you, [genie_name]...","body_13")
+    
     if whoring <= 17:
         $ whoring +=1
 
@@ -9028,12 +8497,10 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         m "Yes, [hermione_name]. 65 points to the \"Gryffindor\" house." 
         $ gryffindor +=65
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-    $ h_body = "01_hp/13_hermione_main/body_13.png" #Flashing panties
-    show screen hermione_main
     hide screen hermione_01_f #Hermione stands still.
     with d3
-    her "Thank you, [genie_name]..."
-
+    call her_main("Thank you, [genie_name]...","body_13")
+    
     if whoring <= 20: # Level 07 <
         $ whoring +=1
 
@@ -9098,31 +8565,13 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
  
     if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                         
-        her "[genie_name]..?"
+        call her_main("[genie_name]..?","body_17")
         m "How familiar you are with the term \"Anal Sex\"?"
         if whoring <=20:
             jump too_much
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_79.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                         
-        her "90 house points..."
+        call her_main("90 house points...","body_79")
         m "What?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE          
-        her "............................."
+        call her_main(".............................","body_66")
         m "Well alright then. 90 house points it is."
         hide screen hermione_main   
         
@@ -9136,35 +8585,17 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_29.png" # HERMIONE
-        her "..........."
-        hide screen h_head2      
+        call her_head("...........","body_29")
         m "Let's see..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-        her "................."
-        hide screen h_head2      
+        call her_head(".................","body_34")
         m "Hm..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_18.png" # HERMIONE
-        her "!!!"
-        hide screen h_head2      
+        call her_head("!!!","body_18")
         g4 "Oh, come on!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_20.png" # HERMIONE
-        her "Ouch!"
-        hide screen h_head2      
+        call her_head("Ouch!","body_20")
         m "Just try to loosen up a little, would you?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_21.png" # HERMIONE
-        her "I'm trying!"
-        hide screen h_head2      
+        call her_head("I'm trying!","body_21")
         m "Ok, what if I do this..?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_20.png" # HERMIONE
-        her "Ouch! What are you doing, [genie_name]?"
-        hide screen h_head2      
+        call her_head("Ouch! What are you doing, [genie_name]?","body_20")
         m "Yeah, this won't work either..."
         m "Hm..."
         m "Alright, I think I know what we should do."
@@ -9172,84 +8603,40 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             m "..."
             "\"I think I'll spit on it and just force it in!\"":
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_18.png" # HERMIONE
-                her "Force it in, [genie_name]?!"
-                hide screen h_head2      
+                call her_head("Force it in, [genie_name]?!","body_18")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting. 
                 g3 "*SPIT!*"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_32.png" # HERMIONE
-                her "Eeeeeew!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "No, [genie_name], wait! Maybe if I just relax--"
-                hide screen h_head2      
+                call her_head("Eeeeeew!","body_32")
+                call her_head("No, [genie_name], wait! Maybe if I just relax--","body_31")
                 m "No need, here I come!"
                 with hpunch
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_22.png" # HERMIONE
-                her "ARGH!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_20.png" # HERMIONE
-                her "Ouch! Ouch! Ouch!"
-                hide screen h_head2      
+                call her_head("ARGH!","body_22")
+                call her_head("Ouch! Ouch! Ouch!","body_20")
                 g4 "Almost in!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_32.png" # HERMIONE
-                her "No, you're hurting me! You are hurting me!"
-                hide screen h_head2      
+                call her_head("No, you're hurting me! You are hurting me!","body_32")
                 g4 "Almost! Almost!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_32.png" # HERMIONE
-                her "Ah! It hurts!"
-                hide screen h_head2      
+                call her_head("Ah! It hurts!","body_32")
                 g4 "Shut it, [hermione_name]! I'm doing you a favour!"
                 g4 "Your anus is so tight it's completely un-fuckable!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_20.png" # HERMIONE
-                her "Then stop, please!"
-                hide screen h_head2      
+                call her_head("Then stop, please!","body_20")
                 m "No! We need to loosen up your asshole a little!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_20.png" # HERMIONE
-                her "But I don't want you to!"
-                hide screen h_head2      
+                call her_head("But I don't want you to!","body_20")
                 m "Really? How do you expect people to fuck you up your ass then?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_132.png" # HERMIONE
-                her "What people?"
-                hide screen h_head2      
+                call her_head("What people?","body_132")
                 g4 "You know... people."
                 g4 "Argh, dammit... My dick is hurting too now."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_131.png" # HERMIONE
-                her "Stop then! Stop, [genie_name]!"
-                her "I've changed my mind! I don't need 90 points!"
-                hide screen h_head2      
+                call her_head("Stop then! Stop, [genie_name]!","body_131")
+                call her_head("I've changed my mind! I don't need 90 points!")
                 g4 "I think I'm almost..."
                 
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her2 "{size=+5}AAAAAAAAhhhhh!!!{/size}"
-                hide screen h_head2
+                call her_head("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
                 g4 "YES!!!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!"
-                hide screen h_head2
+                call her_head("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","body_130")
                 g4 "Let us pump this little asshole full of semen then, shall we?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_137.png" # HERMIONE
-                her "Yes... Please, I just want this to end..."
-                hide screen h_head2
-
-
-
-
+                call her_head("Yes... Please, I just want this to end...","body_137")
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 hide screen genie
                 $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
@@ -9279,41 +8666,22 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                
                 g4 "Agh... You want this to end sooner?"
                 g4 "Help me out then!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "*sob!* How?"
-                hide screen h_head2       
+                call her_head("*sob!* How?","body_139")
                 g4 "You know..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "Oh..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her "I am a whore??"
-                hide screen h_head2    
+                call her_head("Oh...","body_139")
+                call her_head("I am a whore??","body_140")
                 g9 "Yes you are!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_141.png" # HERMIONE
-                her "*Sob!* I am a whore..."
-                her "I love to suck cock..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her2 "And now my tiny asshole is getting ripped to pieces... *Sob!*"
-                hide screen h_head2    
+                call her_head("*Sob!* I am a whore...","body_141")
+                call her_head("I love to suck cock...")
+                call her_head("And now my tiny asshole is getting ripped to pieces... *Sob!*","body_142")
                 g4 "Yes! Yes!"
                 g4 "Agrh! Yes!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "No! Is it getting bigger?! I'm scared!"
-                hide screen h_head2    
+                call her_head("No! Is it getting bigger?! I'm scared!","body_144")
                 g4 "ARGH!"
 
                 
             "\"Suck me off first. Lubricate my cock!\"":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "Oh... Alright..."
-                hide screen h_head2    
+                call her_head("Oh... Alright...","body_31")
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                 #SUCKING
                 
@@ -9346,48 +8714,28 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 
                 
                 her "*Slurp!* *Slurp!* *Slurp!*"
-                hide screen h_head2    
                 m "Yes... good..."
                 her "*Slurp!* *Slurp!* *Slurp!*"
-                hide screen h_head2    
                 m "Alright, I think that's enough. Back on the desk now."
                 show screen blkfade
                 with d3
 
                 
                 #ON THE DESK
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "............."
-                hide screen h_head2    
+                call her_head(".............","body_31")
                 g4 "Yes! Almost!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_32.png" # HERMIONE
-                her "Ouch!"
-                hide screen h_head2    
+                call her_head("Ouch!","body_32")
                 m "Relax. Almost in."
                 
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her2 "{size=+5}AAAAAAAAhhhhh!!!{/size}"
-                hide screen h_head2
+                call her_head("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
                 g4 "YES!!!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her "My... my..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_132.png" # HERMIONE
-                her "It hurts!"
-                hide screen h_head2
+                call her_head("My... my...","body_130")
+                call her_head("It hurts!","body_132")
                 g4 "Let's pump this little asshole full of semen then, shall we?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_141.png" # HERMIONE
-                her "....................."
-                hide screen h_head2               
-                
+                call her_head(".....................","body_141")
                 # SEX
                 
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -9409,34 +8757,18 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 with d3    
 
 
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "....................."
-                hide screen h_head2    
+                call her_head(".....................","body_139")
                 m "You alright there, slut?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her2 "Ah... You are... stretching me out from the inside... [genie_name]."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_141.png" # HERMIONE
-                her "And it still hurts..."
-                hide screen h_head2    
+                call her_head("Ah... You are... stretching me out from the inside... [genie_name].","body_140")
+                call her_head("And it still hurts...","body_141")
                 m "Hm..."
                 m "Maybe not enough lubrication...?"
                 m "Come on down, [hermione_name]. Suck my dick some more."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her "What? But..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "But it's dirty... It's been inside already."
-                hide screen h_head2    
+                call her_head("What? But...","body_140")
+                call her_head("But it's dirty... It's been inside already.","body_139")
                 m "Yes, it's been inside, but that doesn't mean it's dirty now."
                 m "Come one, [hermione_name]. Suck my cock some more."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "..........."
-                hide screen h_head2   
+                call her_head("...........","body_139")
                 show screen blkfade
                 with d3
                 
@@ -9499,81 +8831,38 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 show screen bld1
                 with d3    
                 
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "Ah..."
-                hide screen h_head2     
+                call her_head("Ah...","body_139")
                 m "Better now?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her "It still hurts..."
-                her "But I think I will be fine..."
-                hide screen h_head2     
+                call her_head("It still hurts...","body_140")
+                call her_head("But I think I will be fine...")
                 m "I'll take it slow for now..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_141.png" # HERMIONE
-                her "Ah... thank you, [genie_name]."
-                hide screen h_head2     
+                call her_head("Ah... thank you, [genie_name].","body_141")
                 m "Oh... yes... this feels great..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "..........."
-                hide screen h_head2     
+                call her_head("...........","body_139")
                 m "Oh... So tight..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_143.png" # HERMIONE
-                her "................"
-                hide screen h_head2     
+                call her_head("................","body_143")
                 m "Why are you being so quiet [hermione_name]?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her "Because this is painful..."
-                her "And I just want you to cum sooner, [genie_name]..."
-                hide screen h_head2     
+                call her_head("Because this is painful...","body_140")
+                call her_head("And I just want you to cum sooner, [genie_name]...")
                 m "So you stifle your cries of pain?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "yes [genie_name]. *Sob!*"
-                hide screen h_head2     
+                call her_head("yes [genie_name]. *Sob!*","body_142")
                 m "Don't do that."
                 m "Sob, scream and cry as much as you wish!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_140.png" # HERMIONE
-                her "B-but--"
-                hide screen h_head2     
+                call her_head("B-but--","body_140")
                 m "That will make me cum sooner."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "Really? *Sob!*"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*"
-                hide screen h_head2     
+                call her_head("Really? *Sob!*","body_142")
+                call her_head("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*","body_139")
                 m "Yes, yes..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "*SOB!*"
-                hide screen h_head2     
+                call her_head("*SOB!*","body_145")
                 m "You poor little kid..."
                 m "A Big, evil man is raping your asshole!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_146.png" # HERMIONE
-                her "*SOB!* Yeees! *SOB!*"
-                hide screen h_head2     
+                call her_head("*SOB!* Yeees! *SOB!*","body_146")
                 g4 "Argh!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_147.png" # HERMIONE
-                her "No, I'm scared! *SOB!*"
-                hide screen h_head2   
-        
-        menu:
+                call her_head("No, I'm scared! *SOB!*","body_147")
+                menu:
             "-Fill Hermione up with cum-":
                 g4 "Argh!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE  
-                her "No! AH!"
-                hide screen h_head2    
-                
+                call her_head("No! AH!","body_130")
                 show screen white 
                 pause.1
                 hide screen white
@@ -9599,66 +8888,28 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2  
-                
-                
+                call her_head("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}","body_144")
                 g4 "Yes, you whore! Yes!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "It hurts, it hurts!"
-                hide screen h_head2         
+                call her_head("It hurts, it hurts!","body_145")
                 g4 "Shut up!"
                 with hpunch
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_149.png" # HERMIONE
-                her "No, I am already full! Stop cumming, you bastard!"
-                hide screen h_head2      
+                call her_head("No, I am already full! Stop cumming, you bastard!","body_149")
                 g4 "Shut the fuck up, slut! I am not done yet!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_146.png" # HERMIONE
-                her "No! Please! My stomach! I will explode!"
-                hide screen h_head2   
+                call her_head("No! Please! My stomach! I will explode!","body_146")
                 g4 "ARGH!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "No, I think I will throw up..."
-                hide screen h_head2    
+                call her_head("No, I think I will throw up...","body_144")
                 with hpunch
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_150.png" # HERMIONE
                 play sound "sounds/burp.mp3"
-                her "{size=+7}*BURP!*!!!!!{/size}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_151.png" # HERMIONE
-                her "......................."
-                her "............."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_126.png" # HERMIONE
+                call her_head("{size=+7}*BURP!*!!!!!{/size}","body_150")
+                call her_head(".......................","body_151")
+                call her_head(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                her "{size=+7}*GULP!*{/size}"  
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "*SOB!* I HATE YOU..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_148.png" # HERMIONE
-                her "{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}"
-                her "{size=+5}I HATE YOU! YOU HEAR ME?!{/size}"
-                hide screen h_head2   
+                call her_head("{size=+7}*GULP!*{/size}","body_126")
+                call her_head("*SOB!* I HATE YOU...","body_145")
+                call her_head("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}","body_148")
+                call her_head("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
                 g4 "Agh...Shut it, whore!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "*sob!* *Sob!*..."
-                hide screen h_head2
-                
-                
-                
-                
-                
-                
-                
+                call her_head("*sob!* *Sob!*...","body_145")
                 # AFTER CUM INSIDE
                 
                 hide screen bld1
@@ -9669,27 +8920,14 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 show screen bld1
                 with d3
                 $ g_c_u_pic = "01_hp/08_animation_02/23_cum_19.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "*Sob!*..."
-                hide screen h_head2
+                call her_head("*Sob!*...","body_142")
                 m "Whew!... I think that was the last of it."
                 m "You alright?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "Yes... *Sob!*"
-                hide screen h_head2 
+                call her_head("Yes... *Sob!*","body_142")
                 m "Are You crying?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "My butt hurts, but I am alright, [genie_name]..."
-                hide screen h_head2 
+                call her_head("My butt hurts, but I am alright, [genie_name]...","body_142")
                 m "Well, you took my dick stoically, I must say..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "Thank you [genie_name]..."
-                hide screen h_head2 
-
+                call her_head("Thank you [genie_name]...","body_142")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -9697,49 +8935,24 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 show screen blkfade
                 with d7
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_152.png" # HERMIONE
-                her "I apologize for saying that I hate you, [genie_name]..."
-                her "And your cock is not nasty..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_153.png" # HERMIONE
-                her "I don't know what's gotten into me..."
-                hide screen h_head2
+                call her_head("I apologize for saying that I hate you, [genie_name]...","body_152")
+                call her_head("And your cock is not nasty...")
+                call her_head("I don't know what's gotten into me...","body_153")
                 g9 "My dick!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_153.png" # HERMIONE
-                her2 "I suppose it's as when you call me a \"whore\". I know you actually don't mean it..."
-                hide screen h_head2    
+                call her_head("I suppose it's as when you call me a \"whore\". I know you actually don't mean it...","body_153")
                 m "Yeah, sure..."
                 m "Does it still hurt?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_154.png" # HERMIONE  
-                her "A little..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_155.png" # HERMIONE
-                her "I also feel full and warm inside..."
-                hide screen h_head2      
+                call her_head("A little...","body_154")
+                call her_head("I also feel full and warm inside...","body_155")
                 m "You plan to keep it in? My cum I mean."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_156.png" # HERMIONE     
-                her "Yes..."
+                call her_head("Yes...","body_156")
                 if daytime:
                     her2 "I hope it won't start leaking during my classes..."
                 else:
                     her2 "I hope it won't start leaking before I get to my room..."
-                hide screen h_head2 
                 m "Well, good luck on your journey."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_155.png" # HERMIONE  
-                her "Can I get paid now please?"
-                hide screen h_head2 
-                
-                    
-                
-                
-                
-                
-            "-Pull out and cum on Hermione-":
+                call her_head("Can I get paid now please?","body_155")
+                "-Pull out and cum on Hermione-":
                 
                 $ g_c_u_pic = "sex_cum_out_ani"
                 show screen white 
@@ -9755,19 +8968,10 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_133.png" # HERMIONE
-                her2 "Ah...{image=textheart}{image=textheart}{image=textheart}"
+                call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
 
-                hide screen h_head2     
                 g4 "Yes!!! Allover your ass!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_134.png" # HERMIONE
-                her "Ah... It's so hot!"
-                hide screen h_head2          
-
-                
-                hide screen h_head2     
+                call her_head("Ah... It's so hot!","body_134")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -9783,70 +8987,26 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 with d7
                 
                 m "Well, I'm done... You can get off my desk now."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_138.png" # HERMIONE
-                her "Yes, [genie_name]..."
-                hide screen h_head2     
+                call her_head("Yes, [genie_name]...","body_138")
                 m "You feeling alright?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_139.png" # HERMIONE
-                her "Yes, [genie_name]. It still hurts a little, but..."
-                hide screen h_head2     
+                call her_head("Yes, [genie_name]. It still hurts a little, but...","body_139")
                 m "But what?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_138.png" # HERMIONE
-                her "But in a good way... [genie_name]."
-                hide screen h_head2     
+                call her_head("But in a good way... [genie_name].","body_138")
                 m "In a good way, huh?"
                 g9 "Heh... You cute, little mynx."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_138.png" # HERMIONE
-                her "Can I get paid now, [genie_name]?"
-                hide screen h_head2 
-
-        
-    elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
+                call her_head("Can I get paid now, [genie_name]?","body_138")
+                elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE                     
-        her "[genie_name]?"
+        call her_main("[genie_name]?","body_15")
         m "I will be buying another favour from you today..."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_08.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE    
-        her "............."
+        call her_main(".............","body_08")
         m "Care to guess what the favour will be?"
         m "You have three attempts to find out."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE    
-        her "..........."
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_66.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE    
-        her "Anal sex?"
+        call her_main("...........","body_09")
+        call her_main("Anal sex?","body_66")
         g4 "Wha..........?!"
         g4 "How did you...?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE    
-        her "Just a lucky guess, [genie_name]..."
+        call her_main("Just a lucky guess, [genie_name]...","body_47")
         m "Sometimes you scare me, [hermione_name]..."
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3 
@@ -9858,13 +9018,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
     elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
         m "How about another assfuck, [hermione_name]?"
-        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_78.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-        show screen hermione_main                                                                                                                                                                                 #HERMIONE
-        with d3                                                                                                                                                                                                                        #HERMIONE     
-        her "Of course, [genie_name]."
+        call her_main("Of course, [genie_name].","body_78")
         g9 "Come here, you little mynx!"
         hide screen hermione_main     
         with d3
@@ -9876,37 +9030,18 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
         $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
         $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_29.png" # HERMIONE
-        her "........"
-        hide screen h_head2               
+        call her_head("........","body_29")
         m "Hm..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-        her "..........."
-        hide screen h_head2
-        
-        
+        call her_head("...........","body_31")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-        her2 "Ooooohhhhhhhhhhhh....{image=textheart}"
-        hide screen h_head2
+        call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
         g4 "Oh, ye-es!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-        her "Ah..."
-        hide screen h_head2
+        call her_head("Ah...","body_121")
         m "It seems like your butthole became a bit more welcoming, [hermione_name]."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
-        her "Ah... It still hurts a little."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_129.png" # HERMIONE
-        her "And please, just call me \"whore\", [genie_name]."
-        hide screen h_head2
+        call her_head("Ah... It still hurts a little.","body_128")
+        call her_head("And please, just call me \"whore\", [genie_name].","body_129")
         g4 "Agh! You slut! You always get me with your words!"
 
 
@@ -9941,201 +9076,98 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         
         # INSERTION
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-        her "Ah... Ah..."
-        her "Ah..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
-        her "[genie_name]?"
-        hide screen h_head2
+        call her_head("Ah... Ah...","body_127")
+        call her_head("Ah...")
+        call her_head("[genie_name]?","body_128")
         m "Yes, whore?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-        her "Em..."
-        hide screen h_head2
+        call her_head("Em...","body_117")
         hide screen ctc
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-        her "Would you marry me, [genie_name]?"
-        hide screen h_head2
+        call her_head("Would you marry me, [genie_name]?","body_118")
         with hpunch
         g4 "{size=+9} WHAT?!{/size}"
         g4 "Don't tell me you're pregnant, [hermione_name]!"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_122.png" # HERMIONE
-        her "I Couldn't get pregnant the way we are doing it, [genie_name]..."
-        hide screen h_head2
+        call her_head("I Couldn't get pregnant the way we are doing it, [genie_name]...","body_122")
         m "What is this talk of marriage then?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-        her "You misunderstood me [genie_name]."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-        her "I meant to say, would you marry a girl {size=+5}like{/size} me?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_34.png" # HERMIONE
-        her2 "I would never propose to a man with his cock in my ass, [genie_name]..."
-        hide screen h_head2
+        call her_head("You misunderstood me [genie_name].","body_117")
+        call her_head("I meant to say, would you marry a girl {size=+5}like{/size} me?","body_118")
+        call her_head("I would never propose to a man with his cock in my ass, [genie_name]...","body_34")
         m "Good. Because I don't think any man would be able to say \"no\" to then."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-        her "Ah{image=textheart}..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-        her2 "What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?"
-        hide screen h_head2
+        call her_head("Ah{image=textheart}...","body_127")
+        call her_head("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","body_118")
         m "Huh?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_118.png" # HERMIONE
-        her "I mean, with all that was happening lately... ah{image=textheart}..."
-        her "I can't help but feel unclean... damaged even."
-        her "And in a no way innocent..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_117.png" # HERMIONE
-        her "Who would want a wife like that?"
-        hide screen h_head2  
+        call her_head("I mean, with all that was happening lately... ah{image=textheart}...","body_118")
+        call her_head("I can't help but feel unclean... damaged even.")
+        call her_head("And in a no way innocent...")
+        call her_head("Who would want a wife like that?","body_117")
         menu:
             m "..."
             "\"I would marry you in a heartbeat!\"":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_31.png" # HERMIONE
-                her "What?"
-                hide screen h_head2  
+                call her_head("What?","body_31")
                 m "Well, hypothetically speaking of course..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_54.png" # HERMIONE
-                her "...of course...{image=textheart}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_53.png" # HERMIONE
-                her ".............."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_55.png" # HERMIONE
-                her "But why do you say that, [genie_name]?"
-                hide screen h_head2  
+                call her_head("...of course...{image=textheart}","body_54")
+                call her_head("..............","body_53")
+                call her_head("But why do you say that, [genie_name]?","body_55")
                 m "Huh?"
                 m "What do you mean \"why\", whore?"
                 m "You are young and attractive..."
                 m "Tight asshole, full tits and wet little pussy..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_127.png" # HERMIONE
-                her "Ah...{image=textheart}"
-                hide screen h_head2  
+                call her_head("Ah...{image=textheart}","body_127")
                 m "You will make some lucky guy a very happy man one day, whore."
                 m "Ehm, I mean, [hermione_name]."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_134.png" # HERMIONE
-                her "No, \"whore\" is good. Call me that, [genie_name]."
-                hide screen h_head2  
+                call her_head("No, \"whore\" is good. Call me that, [genie_name].","body_134")
                 m "There, you see? You are a great catch, I'm telling you, whore."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "Ah...{image=textheart} Thank you, [genie_name]."
-                hide screen h_head2  
+                call her_head("Ah...{image=textheart} Thank you, [genie_name].","body_142")
                 m "Huh?"
                 m "Are you crying?"
                 label among_other_things:
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_133.png" # HERMIONE
-                her "Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2  
+                call her_head("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 m "Among other things?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_135.png" # HERMIONE
-                her "I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2  
+                call her_head("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_135")
                 g4 "Agh! My cock!" 
                 g4 "Relax your muscles a little, would you?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_131.png" # HERMIONE
-                her "BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2  
+                call her_head("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","body_131")
                 g4 "Fine! Have it your way whore!"
                 with hpunch
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her "{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}"
-                hide screen h_head2  
+                call her_head("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","body_130")
                 g4 "{size=+7}Argh!{/size}"
                 
             "\"Marriage is out of the picture for you.\"":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_143.png" # HERMIONE
-                her "That's what I thought..."
-                hide screen h_head2  
+                call her_head("That's what I thought...","body_143")
                 m "Oh... I just love that little asshole of yours!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "....................."
-                her2 "Yes... After all the things I had to do for my house..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "...no one will ever want me..."
-                hide screen h_head2  
+                call her_head(".....................","body_142")
+                call her_head("Yes... After all the things I had to do for my house...")
+                call her_head("...no one will ever want me...","body_145")
                 m "Oh, they will want you alright!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "What? But you said..."
-                hide screen h_head2  
+                call her_head("What? But you said...","body_144")
                 m "Marriage, [hermione_name]. Marriage is impossible for you."
                 m "But as a man-pleaser you are a great catch!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "Really?"
-                hide screen h_head2  
+                call her_head("Really?","body_144")
                 m "Are you kidding me?!"
                 m "Young, hot and slutty. You could have any man you want!"
                 m "Or a wizard or whatever you are into..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_157.png" # HERMIONE
-                her "I think you may be right, [genie_name]."
-                hide screen h_head2  
+                call her_head("I think you may be right, [genie_name].","body_157")
                 m "I know I am right, whore."
                 m "Now wiggle that little ass of yours a little."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_138.png" # HERMIONE
-                her "Like this?"
-                hide screen h_head2  
+                call her_head("Like this?","body_138")
                 m  "Yes, that's a good whore."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_133.png" # HERMIONE
-                her "I am a whore, aren't I?"
-                hide screen h_head2  
+                call her_head("I am a whore, aren't I?","body_133")
                 m "You just sold me your asshole for 90 house points. How would you call that?"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_138.png" # HERMIONE
-                her "Yes, yes...{image=textheart} I am a whore...{image=textheart}"
-                hide screen h_head2  
+                call her_head("Yes, yes...{image=textheart} I am a whore...{image=textheart}","body_138")
                 m "Are you crying?"
                 jump among_other_things
                 
         menu:
             g4 "!!!"
             "-Fill Hermione up with cum-":
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_130.png" # HERMIONE
-                her "!!!"
-                hide screen h_head2 
+                call her_head("!!!","body_130")
                 m "Yes! Argh!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_134.png" # HERMIONE
-                her "Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}"
-                hide screen h_head2 
+                call her_head("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}","body_134")
                 m "Shut up, whore!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_137.png" # HERMIONE
-                her "Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2 
+                call her_head("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}","body_137")
                 m "Agh!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_144.png" # HERMIONE
-                her "Ah...{image=textheart} your cum, [genie_name]...{image=textheart}"
-                hide screen h_head2 
+                call her_head("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}","body_144")
                 m "Yes, yes..."
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_145.png" # HERMIONE
-                her "Ah...{image=textheart}"
-                hide screen h_head2          
+                call her_head("Ah...{image=textheart}","body_145")
                 m "......"
                 hide screen bld1
                 with d3
@@ -10166,31 +9198,16 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_133.png" # HERMIONE
-                her "Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}"
-                hide screen h_head2    
+                call her_head("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}","body_133")
                 g4 "{size=+7}Yes I do, whore!{/size}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_147.png" # HERMIONE
-                her "Ah, me too! Me too!"
-                hide screen h_head2    
+                call her_head("Ah, me too! Me too!","body_147")
                 g4 "{size=+7}FUCKING SLUT!{/size}"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_142.png" # HERMIONE
-                her "Ah...{image=textheart} your cum...{image=textheart}"
-                her "I'm so full...{image=textheart}{image=textheart}{image=textheart}"
+                call her_head("Ah...{image=textheart} your cum...{image=textheart}","body_142")
+                call her_head("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
 
 
-                hide screen h_head2     
                 g4 "Yes!!! All over your ass!"
-                show screen h_head2                                                             # HERMIONE
-                $ h_body = "01_hp/13_hermione_main/body_134.png" # HERMIONE
-                her "Ah... It's so hot!"
-                hide screen h_head2          
-
-                
-                hide screen h_head2     
+                call her_head("Ah... It's so hot!","body_134")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -10220,28 +9237,15 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
               
         #Ending
         m "Well, this was intense..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_158.png" # HERMIONE
-        her "Ah-ha...{image=textheart} ah...{image=textheart}"
-        hide screen h_head2   
+        call her_head("Ah-ha...{image=textheart} ah...{image=textheart}","body_158")
         m "Are You alright, [hermione_name]?"
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_158.png" # HERMIONE
-        her "I think so... I'm not sure..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_158.png" # HERMIONE
-        her "I think I may still be cumming, [genie_name]."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_158.png" # HERMIONE
-        her "Or maybe not..."
-        her "Everything is in a daze... and my legs feel so weak..."
+        call her_head("I think so... I'm not sure...","body_158")
+        call her_head("I think I may still be cumming, [genie_name].","body_158")
+        call her_head("Or maybe not...","body_158")
+        call her_head("Everything is in a daze... and my legs feel so weak...")
         if whoring <= 23:
             her "Can I just get paid now, [genie_name]?"
-        hide screen h_head2                                                             # HERMIONE
-
-        
-    
-    stop music fadeout 1.0
+        stop music fadeout 1.0
     
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
@@ -10265,12 +9269,10 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         m "Yes, [hermione_name]. 90 points to \"Gryffindor\"." 
         $ gryffindor +=90
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-    $ h_body = "01_hp/13_hermione_main/body_141.png" #Flashing panties
-    show screen hermione_main
     hide screen hermione_01_f #Hermione stands still.
     with d3
-    her "Thank you, [genie_name]..."
-
+    call her_main("Thank you, [genie_name]...","body_141")
+    
     if whoring <= 23: # Level 08 <
         $ whoring +=1
 
