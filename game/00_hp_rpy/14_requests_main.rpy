@@ -294,6 +294,23 @@ label new_personal_request:
         her "The Gryffindors are in the lead. I don't need to do this."
         jump day_time_requests
     
+label end_hermione_personal_request:
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    ### MUSIC BLOCK ###
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+    ### END OF BLOCK ###
+    
+    if daytime:
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        $ hermione_sleeping = True
+        jump night_main_menu
     
 label could_not_flirt: #Sent here when choose "Favour failed! No points for you!" (Hermione is leaving without getting any points).
     hide screen blkfade

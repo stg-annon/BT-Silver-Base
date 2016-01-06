@@ -1,21 +1,3 @@
-label end_hermione_personal_request:
-    $ renpy.play('sounds/door.mp3') #Sound of a door.
-    with Dissolve(.3)
-    
-    ### MUSIC BLOCK ###
-    if daytime:
-        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
-    else:
-        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-    ### END OF BLOCK ###
-    
-    if daytime:
-        $ hermione_takes_classes = True
-        jump day_main_menu
-    else:
-        $ hermione_sleeping = True
-        jump night_main_menu
-
 ###################REQUEST_01 JUST STAND THERE.
 label new_request_01: #LV.1 (Whoring = 0 - 2)
     hide screen hermione_main
@@ -6708,7 +6690,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-
+    
     if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","body_01")
@@ -7693,6 +7675,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     call her_head(".............","body_17") #Smile.
                     call her_head("Fine, but my skin better look better tomorrow.")
                 $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    
     $ gryffindor += current_payout #35
     hide screen h_c_u
     hide screen g_c_u
@@ -7713,7 +7696,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     if whoring <= 19:
         m "Yes, [hermione_name]. 55 points to \"Gryffindor\"." 
         $ gryffindor +=55
-        
+    
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     hide screen hermione_01_f #Hermione stands still.
     with d3
@@ -7721,9 +7704,6 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     
     if whoring <= 17:
         $ whoring +=1
-
-
-    
     
     if request_22_points == 0:
         $ new_request_22_01 = True #  HEARTS
@@ -7734,17 +7714,16 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     if request_22_points >= 2:
         $ new_request_22_03 = True #  HEARTS
         $ new_request_22_heart = 3
-
+    
     $ request_22_points += 1
-
+    $ custom_outfit = temp_outfit
+    $ stockings = temp_stockings
+    
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
     hide screen ctc
     with Dissolve(.3)
-    
-    $ custom_outfit = temp_outfit
-    $ stockings = temp_stockings
     
     # $ walk_xpos=400 #Animation of walking chibi. (From)
     # $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -7755,24 +7734,10 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     
     call her_walk(400,610,2)
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-
+    jump end_hermione_personal_request
     
-    call music_block
-    
-    if daytime:
-        $ hermione_takes_classes = True
-        jump night_main_menu
-    else:
-        $ hermione_sleeping = True
-        jump day_main_menu            
-        
 ###################REQUEST_29 (Level 07) (65 pt.) (Sex). #################################################################
 label new_request_29: #LV.7 (Whoring = 18 - 20)
-
     hide screen hermione_main 
     with d3
     m "{size=-4}(Should I ask her to have sex with me?){/size}"
@@ -7784,8 +7749,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-            
-  
+    
     if request_29_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01")
@@ -8095,6 +8059,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 m "And everyone knows that witchers are infertile..."
                 call her_head("[genie_name], you make no sense...","body_117")
                 call her_head("Can I please just get paid now...?")
+    
     elif request_29_points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
         call her_main("[genie_name]!","body_30")
@@ -8103,7 +8068,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         call her_main("I do....","body_118")
         hide screen hermione_main    
         jump your_ass
-
+    
     elif request_29_points >= 2: # THIRD EVENT <============================================================== EVENT 03
         m "[hermione_name]..."
         m "Last night I had a dream..."
@@ -8465,6 +8430,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                 if whoring <= 23:
                     call her_head("Can I get my payment now?","body_122")
                 $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
@@ -8492,10 +8458,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     
     if whoring <= 20: # Level 07 <
         $ whoring +=1
-
-
-
-
+    
     if request_29_points == 0:
         $ new_request_29_01 = True # HEARTS
         $ new_request_29_heart = 1
@@ -8505,11 +8468,10 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     if request_29_points >= 2:
         $ new_request_29_03 = True # HEARTS
         $ new_request_29_heart = 3
-
-
-
+    
     $ request_29_points += 1
-
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
@@ -8525,18 +8487,8 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     
     call her_walk(400,610,2)
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-
-    #call music_block 
+    jump end_hermione_personal_request
     
-    if daytime:
-        jump night_start
-    else:
-        jump day_start
-        
 ###################REQUEST_31 (Level 08) (75 pt.) (Anal sex).  #####################################################
 label new_request_31: #LV.8 (Whoring = 21 - 23)
     hide screen hermione_main 
@@ -8550,8 +8502,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-            
- 
+    
     if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]..."
         call her_main("[genie_name]..?","body_17")
@@ -9000,11 +8951,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3 
         jump lucky_guess
-        
-        
-        
-        
-        
+    
     elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
         m "How about another assfuck, [hermione_name]?"
         call her_main("Of course, [genie_name].","body_78")
@@ -9277,6 +9224,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 
 
     $ request_31_points += 1
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
 
     hide screen bld1
     hide screen hermione_main
@@ -9293,20 +9241,8 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     
     call her_walk(400,610,2)
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-
-    call music_block
+    jump end_hermione_personal_request
     
-    if daytime:
-        $ hermione_takes_classes = True
-        jump night_main_menu
-    else:
-        $ hermione_sleeping = True
-        jump day_main_menu            
-        
 label per_quest_the_gamble:
     hide screen hermione_main
     with d3
