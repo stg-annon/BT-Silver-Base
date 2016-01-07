@@ -56,6 +56,7 @@ label declare_clothes_store_vars:
 return
     
 label clothes_store_gui:
+    $ clothes_store_curr_page = 1
     call screen cs_p1
     label cs_select_done:
     return
@@ -424,6 +425,8 @@ label display_package(str):
 return
 
 label receive_package:
+    if letters >= 1:
+        $ letters -= 1
     $ outfit_order = ""
     $ outfit_order_placed = False
     $ outfit_ready = False

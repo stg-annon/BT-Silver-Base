@@ -4987,7 +4987,6 @@ label pub_quest_blowjob_teach:# "teacher blowjob" (Level 09)
     hide screen hermione_main 
     with d3
      
-    call display_order_hide
     m "{size=-4}(Tell her to give a blowjob to one of her teachers?){/size}"
     $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
     menu:
@@ -5106,7 +5105,6 @@ label pub_quest_blowjob_teach_complete:
     call her_main("You should have heard the smacking sound I was making to get as much cum as I could between my lips.",134)
     hide screen hermione_main
     with d3
-    call display_order_hide
     $ h_body = curr_body + "body_68.png" #Sprite of Hermione's upper body.
     show screen hermione_main
     with d3
@@ -5591,7 +5589,7 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
 label pub_quest_sex_teach:# "teacher sex" (Level 09)
     hide screen hermione_main 
     with d3
-    call display_order_hide
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite.
     m "{size=-4}(Tell her to have sex with one of her teachers?){/size}"
     $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
     menu:

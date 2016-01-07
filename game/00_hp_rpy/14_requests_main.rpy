@@ -694,6 +694,22 @@ label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+########################################
+####                                ####
+####        UNUSED REQUESTS         ####
+####                                ####
+########################################
+    
+    
+    
 ###################REQUEST_06 (Level 02) (Flash panties to classmate.) #################################################################################
 label new_request_06:
     if whoring <=2:

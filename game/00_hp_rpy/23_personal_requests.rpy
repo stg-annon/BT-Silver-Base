@@ -9246,7 +9246,6 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 label per_quest_the_gamble:
     hide screen hermione_main
     with d3
-    call display_order_hide
     m "{size=-4}(I'm bored...){/size}"
     g9 "{size=-4}(Should I try something completely different?){/size}"
     
