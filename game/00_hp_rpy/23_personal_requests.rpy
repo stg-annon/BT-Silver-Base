@@ -3757,7 +3757,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     call sna_head("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
                     call her_head("Well, maybe that's because you deserve it... [genie_name].","body_86")
                     call sna_head("What?!","snape_10")
-                    call sna_head"How dare you....?"
+                    call sna_head("How dare you....?")
                     call sna_head("Who do you think you are? You filthy mu--","snape_15")
                     call her_head("[genie_name], one of your staff is verbally abusing me!","body_62")
                     call her_head("Are you going to allow this?")
@@ -3832,7 +3832,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call sna_head("What about him?","snape_09")
                             m "Is he still causing you grief?"
                             call sna_head("Oh...","snape_09")
-                            call sna_head"Not really, no..."
+                            call sna_head("Not really, no...")
                             call sna_head("To be honest I never really had a problem with the boy himself...","snape_06")
                             sna2 "Although I did plan to make his life here miserable because of his father..."
                             call sna_head("But lately I have way more interesting projects to occupy myself with...","snape_02")
@@ -4280,7 +4280,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
                             ">Hermione seems very focused on her dancing routine..."
                             call sna_head("Yes, and now another pirouette!","snape_19")
-                            call sna_head"Magnificent!"
+                            call sna_head("Magnificent!")
                             show screen blkfade
                             with d3
                             ">Hermione performs another set of movements and pirouettes..."
@@ -6370,7 +6370,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     m "Come on, humour me."
                     call her_head("[tmp_name]","body_30")
                     g9 "He-he..."
-                    elif one_out_of_three == 3:
+                elif one_out_of_three == 3:
                     call her_head("...........","body_29")
                     call her_head("Do I really have to?")
                     m "Just say it."
@@ -7224,7 +7224,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                     call sna_head("Listen, there is something I want to discuss...","snape_06")
                     call sna_head("Hm...?","snape_05")
-                    call sna_head"Genie? Are you alright?"
+                    call sna_head("Genie? Are you alright?")
                     her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
                     her "{size=-4}(No, please! I will die of shame!){/size}"
                     m "Yes, Severus, I am fine..."
@@ -7241,7 +7241,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     call sna_head("You promised that you would take care of the little witch.","snape_04")
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                     call sna_head("But she is still being a major pain in my arse!","snape_04")
-                    call sna_head"Her tactics have changed..."
+                    call sna_head("Her tactics have changed...")
                     call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
                     m "I see... ah..."
                     call sna_head("I swear, that girl is driving me crazy!","snape_10")
@@ -7503,7 +7503,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
             call her_head("Ehm... I'm sorry, [genie_name].","body_117")
             m "Yeah, whatever. Make it up to me by sucking my cock harder."
             call her_head("Of course, [genie_name].","body_120")
-            else:
+        else:
             call her_head("I'm a slut [genie_name].","body_129")
             call her_head("A slut for your cum.","body_128")
             m "That's it [hermione_name]."
@@ -8799,7 +8799,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 call her_head("*SOB!* Yeees! *SOB!*","body_146")
                 g4 "Argh!"
                 call her_head("No, I'm scared! *SOB!*","body_147")
-                menu:
+        menu:
             "-Fill Hermione up with cum-":
                 g4 "Argh!"
                 call her_head("No! AH!","body_130")
@@ -8887,12 +8887,12 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 m "You plan to keep it in? My cum I mean."
                 call her_head("Yes...","body_156")
                 if daytime:
-                    her_head("I hope it won't start leaking during my classes...")
+                    call her_head("I hope it won't start leaking during my classes...")
                 else:
-                    her_head("I hope it won't start leaking before I get to my room...")
+                    call her_head("I hope it won't start leaking before I get to my room...")
                 m "Well, good luck on your journey."
                 call her_head("Can I get paid now please?","body_155")
-                "-Pull out and cum on Hermione-":
+            "-Pull out and cum on Hermione-":
                 
                 $ g_c_u_pic = "sex_cum_out_ani"
                 show screen white 
@@ -8935,7 +8935,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                 m "In a good way, huh?"
                 g9 "Heh... You cute, little mynx."
                 call her_head("Can I get paid now, [genie_name]?","body_138")
-                elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
+    elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_15")
         m "I will be buying another favour from you today..."

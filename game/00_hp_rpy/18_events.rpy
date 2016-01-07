@@ -84,18 +84,14 @@ label event_00:
     menu:
         m "..."
         "\"Actually I'm a bit busy.\"":
-            $ s_sprite = "01_hp/10_snape_main/snape_04.png"
-            show screen snape_main
-            with d3
-            who2 "Well, aren't you always, Albus?"                            
+            call sna_main("","snape_04")
+            who2 "Well, aren't you always, Albus?"
         "\"Of course. What is it?\"":
-            pass                       
+            pass
         "\"And Albus to you too.\"":
-            $ s_sprite = "01_hp/10_snape_main/snape_05.png"
-            show screen snape_main
-            with d3
+            call sna_main("","snape_05")
             who2 "What?"
-            $ s_sprite = "01_hp/10_snape_main/snape_04.png"
+            call sna_main("","snape_04")
             who2 "Albus I'm not in the mood for your... shenanigans."
         "\"Take me to your leader.\"":
             $ s_sprite = "01_hp/10_snape_main/snape_01.png"
@@ -113,20 +109,20 @@ label event_00:
     who2 "I have something important I need to discuss with you..."
     who2 "I think we need to revise our admittance policy." 
     hide screen snape_main
-    with d2
+    with d3
     m "................?"
     $ s_sprite = "01_hp/10_snape_main/snape_03.png"
     show screen snape_main
-    with d2
+    with d3
     who2 "Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis."
     hide screen snape_main
-    with d2
+    with d3
     m "................"
     $ s_sprite = "01_hp/10_snape_main/snape_07.png"
     show screen snape_main
     who2 "Most of them belong to your precious \"gryffindor\" house of course..."
     hide screen snape_main
-    with d2
+    with d3
     m "......?"
     show screen snape_main
     who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
@@ -1056,18 +1052,12 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    show screen hermione_02
     show screen ctc
-    with Dissolve(.3)
+    show screen hermione_02
+    with d3
+    call her_main("","body_01")
     pause
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Good morning professor."
+    call her_main("Good morning professor.","body_03")
     hide screen ctc
     menu:
         "\"Good morning... girl.\"":
@@ -1081,28 +1071,14 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
             pass
     her "I am very busy with my class schedule, but I kept my morning free today so that I could see you, professor."
     her "You probably know why I am here too."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "The issue I have been fruitlessly trying to bring to your attention lately."
+    call her_main("The issue I have been fruitlessly trying to bring to your attention lately.","body_04")
     her "I cannot understand why you are not acting to stop that nonsense, professor!"
     her "This simply cannot continue like that!"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "The inequality is starting to affect all of the houses..."
+    call her_main("The inequality is starting to affect all of the houses...","body_02")
     her "Simply because we have more integrity than the rest..."
     her "Do you think it's fair that the people who deserve to be in the lead are being pushed back instead?"
     her "Do you think that's fair, professor? Do you?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
+    call her_main("","body_03")
     m "{size=-4}(Would you look at that pretty, little thing?){/size}"
     m "{size=-4}(Look at her going on and on about something... She's adorable.){/size}"
     m "{size=-4}(Damn, I haven't seen a woman in weeks.){/size}"
@@ -1126,24 +1102,12 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         show screen genie_jerking_off
         with d3
     m "Yes, keep on going, dear."
-    $ h_body = "01_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
     show screen bld1
     with d3
-    her "\"Yes\"?! So you think it's fair?"
+    call her_main("\"Yes\"?! So you think it's fair?","body_05")
     m "Oh, of course not, I meant \"no\". But Keep on going anyway..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "That's a relief. I'm glad that you agree with me, professor..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!"
+    call her_main("That's a relief. I'm glad that you agree with me, professor...","body_03")
+    call her_main("As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!","body_04")
     if d_flag_01:
         hide screen hermione_main
         hide screen bld1
@@ -1179,23 +1143,13 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         m "{size=-4}(Look at those huge knockers on you, girl!){/size}"
         m "{size=-4}(Yes... I want to squeeze my dick between them...){/size}"
     her "As you can see the situation is dire..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "But we can still set everything right..."
+    call her_main("But we can still set everything right...","body_02")
     her "As the representative of our school's Student Representative Body..."
     her "I have a few suggestions on how to do that more efficiently."
     if not d_flag_01:
         m ".............."
     her "First of all the house point system needs to be reinforced!"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "You need to control the point distribution better, sir."
+    call her_main("You need to control the point distribution better, sir.","body_03")
     if d_flag_01:
         g4 "{size=-4}(Yes, you are a whore... A nasty little whore... I bet you love to suck cocks... Don't you? Yes, I bet you do...){/size}"
         hide screen hermione_main
@@ -1210,12 +1164,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     her "Of course you agree with me on this, professor, do you not?"
     if d_flag_01:
         g4 "{size=-4}*Panting heavily*{/size}"
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "Professor...?"
+        call her_main("Professor...?","body_07")
         g4 "{size=-4}(Crap. What does she want now?){/size}"
         g4 "Yes, it's all true. Please keep going..."
         her "Ehm... So, as I was saying..."
@@ -1236,41 +1185,21 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         m "Uhm... I suppose I do..."
         her "{size=-4}(\"Suppose\"?){/size}"
         her "{size=-4}(When did Professor Dumbledore become so... apathetic.){/size}"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Another measure you could take in consideration is tightening the control over your staff..."
+    call her_main("Another measure you could take in consideration is tightening the control over your staff...","body_04")
     her "Especially the teachers..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision..."
+    call her_main("I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision...","body_03")
     if d_flag_01:
         g4 "{size=-4}(Yes! You little whore! You fucking little whore!) *Panting*{/size}"
     else:
         m "......................."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I understand that you may not have time for this, professor, After all you are the headmaster of our school and a very busy and important man."
+    call her_main("I understand that you may not have time for this, professor, After all you are the headmaster of our school and a very busy and important man.","body_04")
     her "being a top student is hard on me as well sometimes..."
     if d_flag_01:
         g4 "{size=-4}(She said \"hard-on\"!) *Panting*{/size}"
     her "But you could delegate that task to me..."
     her "Just put your faith in me professor." 
     if d_flag_01: 
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "Yes, you can do it! Just put it in me, sir!"
+        call her_main("Yes, you can do it! Just put it in me, sir!","body_01")
         stop music fadeout 1.0
         show screen white 
         pause.1
@@ -1306,34 +1235,14 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         m "Yes, girl. It's all exactly as you say and I will.... take care of it all."
     else:
         m "Alright... I will think about your proposal, I promise."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Really?"
+    call her_main("Really?","body_07")
     her "hm..........."
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "That's a relief! Thank you, professor."
+    call her_main("That's a relief! Thank you, professor.","body_04")
     if d_flag_01:
         m "No, no, thank you..."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "Hm..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "My classes are about to start so I'd better go now."
+        call her_main("Hm...","body_07")
+    call her_main("My classes are about to start so I'd better go now.","body_04")
     her "Thank you for your time..."
     hide screen bld1
     hide screen hermione_main
@@ -1689,65 +1598,29 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     with Dissolve(.3)
     show screen ctc
     pause
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-
-    her "Good morning, professor Dumbledore."
+    call her_main("Good morning, professor Dumbledore.","body_04")
     hide screen ctc
     menu:
 
         "\"Good morning, child.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "{size=-4}(Again with the \"child\"...){/size}"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Sir, I would appreciate it if you would treat me as an equal..."
+            call her_main("{size=-4}(Again with the \"child\"...){/size}","body_09")
+            call her_main("Sir, I would appreciate it if you would treat me as an equal...","body_04")
             m "{size=-4}(I'm literally millions of years older than you, witch. We are anything but equal.){/size}"
             m "...................."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "................"
+            call her_main("................","body_09")
         "\"Good morning, miss Granger.\"":
             her "Ehm... so, about the reason of me being here today then..."
         "\"Yeah, yeah, whatever...\"":
             pass
     
     her "I see that no matter what I do I simply cannot get through to you, sir."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "So in light of your negligence towards your duties I decided to take the initiative myself!"
+    call her_main("So in light of your negligence towards your duties I decided to take the initiative myself!","body_04")
     m "Did you now...?"
     her "Yes! We, the proud students of Hogwarts, detest sexism..."
     her "No individual shall be treated differently based on his or her gender."
     m "But--"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Please, let me finish, professor!"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I'm organizing the \"Men's rights movements\" in our school!"
+    call her_main("Please, let me finish, professor!","body_05")
+    call her_main("I'm organizing the \"Men's rights movements\" in our school!","body_04")
     g4 "Oh, boy, this is just so typical!"
     g4 "Blame everything on--"
     stop music fadeout 1.0
@@ -1761,75 +1634,30 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     her "You have no idea how hard it is to be a boy in our school these days..."
     menu:
         "\"Didn't see this one coming...\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "No, you did not, because you, as an authority figure, refuse to listen to us, sir!"
+            call her_main("No, you did not, because you, as an authority figure, refuse to listen to us, sir!","body_04")
             her "But we will make you hear us..."
         "{size=-3}\"That's literally the dumbest idea I've ever heard.\"{/size}":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "I knew you would say something like that..."
+            call her_main("I knew you would say something like that...","body_07")
 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Did you know that some of the girls in this school are now selling favours for house points...?"
+    call her_main("Did you know that some of the girls in this school are now selling favours for house points...?","body_09")
     her "Sometimes even for good grades..."
     m "Really?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Nobody from the \"Gryffindor\" house of course..."
+    call her_main("Nobody from the \"Gryffindor\" house of course...","body_04")
     her "And that's what puts us at a disadvantage - our integrity!"
     her "As for the boys - they have to work ten times harder than the girls simply to pass a test..."
     her "Or, if they are lucky enough, to get one meagre house-point..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "This is sexism in its purest form!"
+    call her_main("This is sexism in its purest form!","body_02")
     menu:
         m "..."
         "\"What you want me to do?\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Nothing!"
+            call her_main("Nothing!","body_03")
             m "Great. I'm good at that."
         "\"I'm Not sure what to say...\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "You do not need to say anything anymore, professor."
+            call her_main("You do not need to say anything anymore, professor.","body_03")
         "\"You are being ridiculous!\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Am I? Well, we'll see..."
+            call her_main("Am I? Well, we'll see...","body_07")
 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I already sent a letter to the ministry of magic."
+    call her_main("I already sent a letter to the ministry of magic.","body_04")
     with hpunch
     g4 "{size=+7}You did what?!{/size}"
     m "{size=-4}(Wait, do I really give a damn about that?){/size}"
@@ -2178,191 +2006,61 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     with Dissolve(.3)   
     pause
 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Good evening professor."
+    call her_main("Good evening professor.","body_12")
     hide screen ctc
     menu:
         "\"-stare full of hatred-\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "You can stare at me all you want, sir."
+            call her_main("You can stare at me all you want, sir.","body_07")
             her "It will not make the problems of this school go away."
         "*sigh of exasperation*":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Is this a bad time?"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Well, since I'm already here..."
+            call her_main("Is this a bad time?","body_03")
+            call her_main("Well, since I'm already here...","body_02")
         "\"....................................\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_02.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Professor?"
+            call her_main("Professor?","body_02")
             m "Yes, yes..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Something... bizarre has happened today..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I'm Not sure how to describe this..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "................................"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I think I almost failed a test..."
+    call her_main("Something... bizarre has happened today...","body_04")
+    call her_main("I'm Not sure how to describe this...","body_07")
+    call her_main("................................","body_09")
+    call her_main("I think I almost failed a test...","body_12")
     menu:
         "\"That happens to students sometimes.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "To other students, yes. But not to me, sir!"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Never to me..."
+            call her_main("To other students, yes. But not to me, sir!","body_12")
+            call her_main("Never to me...","body_13")
         "\"(Way to go, Snape!)\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Excuse me?"
+            call her_main("Excuse me?","body_03")
             m "What?"
             m "Oh, I said, that's too bad. How're you holding up?"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "................."
+            call her_main(".................","body_07")
         "\"So why tell me?\"":
             her "Because... this is not an ordinary event!"
 
     her "I'm not sure what is going on here..."
     m "An evil scheme against you, miss Granger?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "This is not a laughing matter, sir."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "You should consider me a \"measuring stick\" for our educational system."
+    call her_main("This is not a laughing matter, sir.","body_03")
+    call her_main("You should consider me a \"measuring stick\" for our educational system.","body_04")
     her "If I \"almost\" fail a test, the rest of the students will definitely fail it."
     m "Is that so...?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Yes, professor. Something went terribly wrong today..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "................................."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "But what if it did not?"
+    call her_main("Yes, professor. Something went terribly wrong today...","body_07")
+    call her_main(".................................","body_12")
+    call her_main("But what if it did not?","body_11")
     her "What if all the tests will be this difficult from now on?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "I need to study harder!"
+    call her_main("I need to study harder!","body_10")
     label cant_say:
     menu:
         "\"I could tutor you, miss Granger.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "You professor?"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Oh, thank you for your offer but I don't think that would be necessary, sir."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "The best tutor is a book, and I have the entire Hogwarts library at my disposal."
+            call her_main("You professor?","body_14")
+            call her_main("Oh, thank you for your offer but I don't think that would be necessary, sir.","body_15")
+            call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.","body_16")
         "\"A wise decision, miss Granger.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Thank you, professor."
+            call her_main("Thank you, professor.","body_15")
         "\"You need to put my cock in your mouth.\"":
             m "You need to put my co--"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "Huh?"
+            call her_main("Huh?","body_15")
             m "{size=-4}(No, I can't actually say that...){/size}"
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3
-            her "......?"
+            call her_main("......?","body_17")
             jump cant_say
     m "............"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
-    her "Well, if there is nothing else, I have a studying schedule to keep."
+    call her_main("Well, if there is nothing else, I have a studying schedule to keep.","body_16")
     m "By all means..."
     
     hide screen bld1
@@ -2412,152 +2110,44 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     with Dissolve(.3)
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-
-    her "Professor, something awful happened today!"
+    call her_main("Professor, something awful happened today!","body_11")
     her "I failed a test today..."
     her "I cannot believe this is happening!"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "How this even possible?!"
+    call her_main("How this even possible?!","body_18")
     menu:
         "\"You should study more, girl!\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_19.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "But I did study all night!"
+            call her_main("But I did study all night!","body_19")
         "\"There, there... It'll be alright.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_20.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "No it won't! This is a catastrophe!" 
+            call her_main("No it won't! This is a catastrophe!","body_20") 
 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_21.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "And the worst part is that I think I might be the only one who has failed..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_22.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "How will it make me look like?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_23.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "I will know for sure when we get the results though..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "Yes, I'm sure everyone else failed as well..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "I mean, they must have, right?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "....................."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "....right?"
+    call her_main("And the worst part is that I think I might be the only one who has failed...","body_21")
+    call her_main("How will it make me look like?","body_22")
+    call her_main("I will know for sure when we get the results though...","body_23")
+    call her_main("Yes, I'm sure everyone else failed as well...","body_13")
+    call her_main("I mean, they must have, right?","body_11")
+    call her_main(".....................","body_13")
+    call her_main("....right?","body_11")
     menu:
         "{size=-3}\"Of course. You are a top student after all.\"{/size}":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "Exactly..."
+            call her_main("Exactly...","body_09")
             her "Or at least I used to be until today..."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_20.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "I cannot believe this is happening!"
+            call her_main("I cannot believe this is happening!","body_20")
         "{size=-3}\"You could get smarter if I tutor you.\"{/size}":
             $ tutoring_offer_made = True #Affects conversation in the next event.
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_17.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "hm..."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "Yes, that could help I suppose..."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "I appreciate your offer, professor, but..."
+            call her_main("hm...","body_17")
+            call her_main("Yes, that could help I suppose...","body_13")
+            call her_main("I appreciate your offer, professor, but...","body_14")
             her "May I think about it?"
             m "Don't take too long..."
         "{size=-3}\"I suppose we'll know soon enough.\"{/size}":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3 
-            her "Yes, I suppose we will..."
+            call her_main("Yes, I suppose we will...","body_15")
 
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "I'm sorry, professor, I'm probably just overreacting anyway..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "But you must understand that my reputation is at stake here!"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "There's gotta be something wrong with the test..."
+    call her_main("I'm sorry, professor, I'm probably just overreacting anyway...","body_24")
+    call her_main("But you must understand that my reputation is at stake here!","body_14")
+    call her_main("There's gotta be something wrong with the test...","body_12")
     her "And although I failed I probably still got the most points in the test..."
     her "As usual..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    
-
-    her "Well I'd better go now. We have another \"MRM\" meeting today."
+    call her_main("Well I'd better go now. We have another \"MRM\" meeting today.","body_04")
     her "I will let you know about the new ideas we will come up with tonight."
     m "I can hardly wait..."
 
@@ -2640,12 +2230,7 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     her "I did... uhm..."
     her "... I failed that test after all."
     her "I..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_27.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "I am sorry, professor..."
+    call her_main("I am sorry, professor...","body_27")
     her "I'm not sure why I am here..."
     her "I think I'd better go..."
     m "..................."
@@ -2742,24 +2327,9 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
 
     her "Good morning, Professor."
     m "How can I help you today, miss Granger?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "Well, first of all I am terribly sorry about yesterday's display, sir..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_08.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "I never failed a test in my life, so I wasn't sure how to react..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "But I am all better now..."
+    call her_main("Well, first of all I am terribly sorry about yesterday's display, sir...","body_04")
+    call her_main("I never failed a test in my life, so I wasn't sure how to react...","body_08")
+    call her_main("But I am all better now...","body_04")
     m "I see..." 
     her "I will not take much of your time, I promise..."
     if tutoring_offer_made:
@@ -2769,40 +2339,15 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
                 her "A while back you offered to tutor me, sir..."
                 menu:
                     "\"Oh... That offer has expired.\"":
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.
-                        show screen hermione_main
-                        with d3     
-                        her "It..."
+                        call her_main("It...","body_14")
                         her "Expired, sir?"
                         her "B-but...."
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-                        show screen hermione_main
-                        with d3     
-                        her "But I require tutoring, and you are the smartest wizard I know..."
-                        hide screen hermione_main
-                        with d3
-                        $ h_body = "01_hp/13_hermione_main/body_28.png" #Sprite of Hermione's upper body.
-                        show screen hermione_main
-                        with d3     
-                        her "Please, sir, I really need your help."
+                        call her_main("But I require tutoring, and you are the smartest wizard I know...","body_11")
+                        call her_main("Please, sir, I really need your help.","body_28")
                         menu:
                             "\"Show me your tits and it's a deal!\"":
-                                hide screen hermione_main
-                                with d3
-                                $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
-                                show screen hermione_main
-                                with d3     
-                                her "m-my...?"
-                                hide screen hermione_main
-                                with d3
-                                $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-                                show screen hermione_main
-                                with d3     
-                                her "............"
+                                call her_main("m-my...?","body_18")
+                                call her_main("............","body_29")
                                 her "....."
                                 hide screen hermione_main
                                 with d3
@@ -2815,25 +2360,10 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
                                 her "I am not some \"Slytherin\" floozy!"
                                 m "Of course not, miss Granger."
                                 m "It was a test... You passed. Good job."
-                                hide screen hermione_main
-                                with d3
-                                $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-                                show screen hermione_main
-                                with d3  
-                                her "What...?"
-                                hide screen hermione_main
-                                with d3
-                                $ h_body = "01_hp/13_hermione_main/body_24.png" #Sprite of Hermione's upper body.
-                                show screen hermione_main
-                                with d3  
-                                her "Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir."
+                                call her_main("What...?","body_31")
+                                call her_main("Oh, of course. I'm so silly sometimes. Sorry about the yelling, sir.","body_24")
                                 m "My offer is still valid. If you want me to then I can tutor you."
-                                hide screen hermione_main
-                                with d3
-                                $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-                                show screen hermione_main
-                                with d3  
-                                her ".............."
+                                call her_main("..............","body_29")
                             "\"Well, alright, alright...\"":
                                 pass
                     "\"Oh, that's right. Great.\"":
@@ -2842,77 +2372,31 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
             "\"Splendid! Starting today?\"":
                 pass
     else:
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3 
-        her "I... uhm..."
+        call her_main("I... uhm...","body_07")
         her "Sir Dumbledore, I hope this is not too much to ask..."
         m "Yes?"
         her "Ehm... would it be alright if..."
         her "..............."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3 
-        her "do You think you could tutor me a little, sir?"
+        call her_main("do You think you could tutor me a little, sir?","body_09")
         menu:
             "\"I suppose that is possible\"":
                 pass
             "\"Hm... I'm quite busy actually.\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3 
-                her "Sir, please, you are the smartest wizard I know!"
+                call her_main("Sir, please, you are the smartest wizard I know!","body_11")
                 m "{size=-4}(You have no idea, little witch.){/size}"
                 m "Well, it could be arranged, I suppose..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3 
-    her "Thank you, sir. I am very grateful."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_16.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3     
+    call her_main("Thank you, sir. I am very grateful.","body_01")
+    call her_main("Just let me know when, and I will bring my books!","body_16")
 
-    her "Just let me know when, and I will bring my books!"
-
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3     
-    her "I must study even harder from now on..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3     
-    her "And I'll be taking private lessons from you sir, as often as possible."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3     
-    her "But that's not all..."
+    call her_main("I must study even harder from now on...","body_09")
+    call her_main("And I'll be taking private lessons from you sir, as often as possible.","body_06")
+    call her_main("But that's not all...","body_07")
     her "The \"MRM\" shall investigate our education system much closer now..."
     her "I think some sort of foul-play might be taking place..."
     m "No way!"
     her "I have a list of suspects already but I will get back to you on this later...."
     m "Ehm... alright..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_10.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3     
-    her "Oh, the classes are about to start. I'd better go..."
+    call her_main("Oh, the classes are about to start. I'd better go...","body_10")
     
     hide screen bld1
     hide screen hermione_main
@@ -3018,39 +2502,14 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     with Dissolve(.3)
     her "Good evening, professor..."
     her "........................"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3   
+    call her_main("........................","body_29")
     her "........................"
-    her "........................"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3   
-    her "Ehm......"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3  
-    her "................."
+    call her_main("Ehm......","body_31")
+    call her_main(".................","body_29")
     m "What is it, miss Granger?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3   
-    her "Well, ehm..."
+    call her_main("Well, ehm...","body_31")
     her "You see... The \"Gryffindor\" house is not in the lead anymore..."
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3   
-    her "And... everyone is working so hard..."
+    call her_main("And... everyone is working so hard...","body_29")
     her "And they look up to me for help but I don't know what to do..."
     m "............................"
     her "Professor Dumbledore...."
@@ -3068,36 +2527,16 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     with d3   
     menu:
         "\"You mean like a sexual favour?\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3   
-            her "Ehm... I'm not sure..."
+            call her_main("Ehm... I'm not sure...","body_34")
             her "The kind that would gain our house additional points..."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3   
-            her "I could write an essay for you or..."
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_34.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3   
-            her "Or maybe clean your tower..?"
+            call her_main("I could write an essay for you or...","body_31")
+            call her_main("Or maybe clean your tower..?","body_34")
             m "{size=-4}(Clean my tower? Heh... There's gotta be dirty joke in there somewhere...){/size}"
             m "Well, alright then, I think we can figure something out."
         "\"Well, if you insist...\"":
             pass
         "\"I don't think so, miss Granger.\"":
-            hide screen hermione_main
-            with d3
-            $ h_body = "01_hp/13_hermione_main/body_31.png" #Sprite of Hermione's upper body.
-            show screen hermione_main
-            with d3   
-            her "B-but... We need the points..."
+            call her_main("B-but... We need the points...","body_31")
             her "Professor, please, I am really desperate..."
             m "Desperate you say..?"
             m "Well alright..."
@@ -3170,12 +2609,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         with d3
         her "M-my... tongue, sir?"
         m "Yes, girl, open your mouth and show me your tongue."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-        show screen hermione_main
-        with d3
-        her "{size=-7}(What a weirdo...){/size}"
+        call her_main("{size=-7}(What a weirdo...){/size}","body_12")
         hide screen hermione_main
         with d3
         $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
@@ -3397,113 +2831,33 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         menu:
             g9 "..."
             "\"Do you need to be punished?\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Do I need to... be punished?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Ehm..."
+                call her_main("Do I need to... be punished?","body_11")
+                call her_main("Ehm...","body_13")
                 her "....................."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_12.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Well, I am not perfect, if that's what you mean, sir..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_13.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "But do I need to be punished... hm?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Is this really for me to decide...? I mean..."
+                call her_main("Well, I am not perfect, if that's what you mean, sir...","body_12")
+                call her_main("But do I need to be punished... hm?","body_13")
+                call her_main("Is this really for me to decide...? I mean...","body_07")
                 her "What does this have to do with anything?"
                 m "You are overanalyzing this, girl."
                 m "Just say that you need to be punished!"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Fine. I need to be punished!"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "{size=-5}(And I truly do think so sometimes...){/size}"
+                call her_main("Fine. I need to be punished!","body_05")
+                call her_main("{size=-5}(And I truly do think so sometimes...){/size}","body_33")
                 m "That's a good girl."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_44.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "................??"
+                call her_main("................??","body_44")
                 m "Now that wasn't hard at all, was it?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "n-no , sir..."
+                call her_main("n-no , sir...","body_29")
                 m "Alrighty, then..."
             "\"Do you want to get spanked?\"":
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Do I want to..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Get s-spanked??"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Tsk!"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Professor, I don't think I'm comfortable with--"
+                call her_main("Do I want to...","body_11")
+                call her_main("Get s-spanked??","body_18")
+                call her_main("Tsk!","body_05")
+                call her_main("Professor, I don't think I'm comfortable with--","body_04")
                 m "My bad, let me rephrase the question..."
                 m "How badly do you need those points?"
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her ".................."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_04.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "Yes, sir. I do need to get spanked."
+                call her_main("..................","body_09")
+                call her_main("Yes, sir. I do need to get spanked.","body_04")
                 m "Alright, that's good enough for now..."
-                hide screen hermione_main
-                with d3
-                $ h_body = "01_hp/13_hermione_main/body_07.png" #Sprite of Hermione's upper body.
-                show screen hermione_main
-                with d3
-                her "{size=-4}(For now?){/size}"
+                call her_main("{size=-4}(For now?){/size}","body_07")
             "\"Come here and suck my cock!\"":
                 m "{size=-5}(Too early for this... I need to reel her in first.){/size}"
                 jump to_early_for_sucking_cocks
