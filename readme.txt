@@ -5,12 +5,21 @@ WHAT IS SILVER?:
 SHOULD I DOWNLOAD THIS OR THE RUSSIAN VERSION?:
 	That is completely a personal choice. The Russian version is almost certainly a more complete product than silver. At the present point in time I would recommend the Russian version over silver if you want a complete play through. If you want to do some bug testing or just see the new content and already have BT then download silver.
 
-CONTENT CHANGES THIS PATCH (22/12/2015):
-	▪ Bug Fixes (See below - // means fixed)
-	▪ Costumes can now be worn during specific private favours assuming you own them
-	▪ Cheats now work
-BALANCE CHANGES THIS PATCH:
-	▪ Snape now has very little HP during the duel (Will die in one hit)
+CREDITS (IN NO PARTICULAR ORDER):
+	Mo - Writing, coding and mod compilation (That's me.)
+	Unattended Edition Crew - Tutoring and additional assets. 
+	CatBug - Writing, coding and mod work.
+	Helpful Anons - Art and other stuff (Nameless people who contribute ideas and assets. TY for maid costume anon.)
+	Captain Nemo - Art (Seriously, probably the best and most dedicated artist we have had working on Hermione. TY)
+	Artguy - (Art and being a bro.)
+	Heretic - Writing (Custom Events)
+	Linear - Art (Outfits)
+	Maverick - Coding and general help (General stuff)
+	JJ - Writing (I'm not sure if there is anything of his yet)
+	Cleanzo - Coding (Helped with the python methods.)
+	TrainerFan - Writing (Unfinished scene that'll be added later.)
+(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)
+
 KNOWN BUGS:
 	▪ //Cat tail goes in front of certain outfits instead of behind (long skirts and jeans)
 	▪ Outfits change mid scenes (when whoring goes up)
@@ -24,32 +33,6 @@ KNOWN BUGS:
 	▪ Dialogue doesn't match up with if Hermione isn't wearing a shirt/skirt
 	▪ Hair changes back to default hair during UE tutoring 
 	▪ //Too many arms during certain favours
-WRITTEN CONTENT NOT YET IMPLEMENTED:
-	▪ Collar scenes
-	▪ Tentacle scenes
-	▪ Public shaming
-	▪ Cat bug's expansion scene
-	▪ Luna Polyjuice potion (Chibis required)
-UNWRITTEN CONTENT THAT'S PLANNED:
-	▪ Levels for the potions (like private favours)
-WHAT WAS DONE THIS WEEK:
-	▪ Breast Expansion potion
-	▪ Costume role-play scenes
-	▪ Writing Polyjuice potion
-	▪ Clothes store GUI
-PLAN FOR NEXT WEEK:
-	▪ More role-play scenes
-	▪ Lamia potion
-	▪ Public shaming
-SUGGESTIONS:
-	▪ Edit books so that each chapter is twice as long, and there are only half as many.
-	▪ I really love the idea of Hermione's "default" clothes getting skimpier and skimpier over time. If you possibly included a scene where genie comments on it, I think it would be great
-	▪ When having sex, it doesn't really make sense or Hermione to say "let me take my panties off"
-	▪ 3rd anal scene changes based around (“No, ‘Whore’ is good. Call me that, [name].”)
-	▪ Time period between the first and second time Hermione is too long
-	▪ Hermione seems way too immediately willing to change clothes/hair
-	▪ Ability to quick continue books
-	▪ Extend the Butt Molester scene
 
 POTION COMBINATIONS:
 Cat Potion 			= Polyjuice + Cat hair 							(Dormitories)
