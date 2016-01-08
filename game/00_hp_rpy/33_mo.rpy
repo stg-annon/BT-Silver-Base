@@ -2769,37 +2769,37 @@ label her_main(text="",face="",tears=""):
     hide screen hermione_main
     with d3
     if face != "":
-        $ h_body = her_path + face + ".png"
+        $ h_body = her_path + str(face) + ".png"
     if tears != "":
         $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
     show screen hermione_main
     with d3
     if text != "":
-        if "[tmp_name]" in text:
-            $ text1,text2 = text.split("[tmp_name]")
-            her2 "[text1][tmp_name][text2]"
-        elif "[genie_name]" in text:
-            $ text1,text2 = text.split("[genie_name]")
-            her "[text1][genie_name][text2]"
-        else:
-            her "[text]"
+        if "[tmp_name]" in text or "[genie_name]" in text:
+            if "[tmp_name]" in text:
+                $ text1,text2 = text.split("[tmp_name]")
+                $ text = (text1 + tmp_name + text2)
+            if "[genie_name]" in text:
+                $ text1,text2 = text.split("[genie_name]")
+                $ text = (text1 + genie_name + text2)
+        her "[text]"
     return
     
 label her_head(text="",face="",tears=""):
     if face != "":
-        $ h_body = her_path + face + ".png"
+        $ h_body = her_path + str(face) + ".png"
     if tears != "":
         $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
     show screen h_head2
     if text != "":
-        if "[tmp_name]" in text:
-            $ text1,text2 = text.split("[tmp_name]")
-            her2 "[text1][tmp_name][text2]"
-        elif "[genie_name]" in text:
-            $ text1,text2 = text.split("[genie_name]")
-            her2 "[text1][genie_name][text2]"
-        else:
-            her2 "[text]"
+        if "[tmp_name]" in text or "[genie_name]" in text:
+            if "[tmp_name]" in text:
+                $ text1,text2 = text.split("[tmp_name]")
+                $ text = (text1 + tmp_name + text2)
+            if "[genie_name]" in text:
+                $ text1,text2 = text.split("[genie_name]")
+                $ text = (text1 + genie_name + text2)
+        her2 "[text]"
     hide screen h_head2
     return
     
@@ -2811,14 +2811,14 @@ label sna_main(text="",face=""):
     show screen snape_main
     with d3
     if text != "":
-        if "[hermione_name]" in text:
-            $ text1,text2 = text.split("[hermione_name]")
-            sna "[text1][hermione_name][text2]"
-        elif "[genie_name]" in text:
-            $ text1,text2 = text.split("[genie_name]")
-            sna "[text1][genie_name][text2]"
-        else:
-            sna "[text]"
+        if "[hermione_name]" in text or "[genie_name]" in text:
+            if "[hermione_name]" in text:
+                $ text1,text2 = text.split("[hermione_name]")
+                $ text = (text1 + hermione_name + text2)
+            elif "[genie_name]" in text:
+                $ text1,text2 = text.split("[genie_name]")
+                $ text = (text1 + genie_name + text2)
+        sna "[text]"
     return
     
 label sna_head(text="",face=""):

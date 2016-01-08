@@ -2682,27 +2682,27 @@ image genie_jerking_off: #Genie sitting behind his desk and jerking off...
     repeat
 
 image genie_jerking_sperm_ani: #Sperm after jerking off.
-    "01_hp/08_animation_02/cum/jerking_sperm_01.png"
+    "01_hp/animation/jerking_sperm_01.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_02.png"
+    "01_hp/animation/jerking_sperm_02.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_03.png"
+    "01_hp/animation/jerking_sperm_03.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_04.png"
+    "01_hp/animation/jerking_sperm_04.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_05.png"
+    "01_hp/animation/jerking_sperm_05.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_06.png"
+    "01_hp/animation/jerking_sperm_06.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_07.png"
+    "01_hp/animationjerking_sperm_07.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_08.png"
+    "01_hp/animation/jerking_sperm_08.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_09.png"
+    "01_hp/animation/jerking_sperm_09.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_10.png"
+    "01_hp/animation/jerking_sperm_10.png"
     pause.1
-    "01_hp/08_animation_02/cum/jerking_sperm_11.png"
+    "01_hp/animation/jerking_sperm_11.png"
     pause 2
     repeat
 

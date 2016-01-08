@@ -568,13 +568,11 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
 ####################################
 label wine_first:
     m "Look what I've got!"
-    $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
+    $ s_head_xpos = 330 # x = 330,                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna "Hm..?"
-    sna "Let me see..."
-    hide screen s_head2    
+    
+    call sna_head("Hm..?","snape_05")
+    call sna_head("Let me see...")
     pause.1
     $ the_gift = "01_hp/18_store/27.png" # WINE.
     show screen gift
@@ -584,18 +582,11 @@ label wine_first:
     with d3
     $ wine -= 1
     
-    $ s_sprite = "01_hp/10_snape_main/24.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna2 "This one has got to be from Albus' personal stash!"
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna2 "Some pricey and incredibly rare stuff."
-    hide screen s_head2 
+    
+    call san_head("This one has got to be from Albus' personal stash!","24")
+    call san_head("Some pricey and incredibly rare stuff.","snape_06")
     m "Shall we then?"
-    $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna "We most certainly shall!"
-    hide screen s_head2 
+    call san_head("We most certainly shall!","snape_02")
     show screen bld1
     with d3
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -621,51 +612,28 @@ label wine_not_first:
     $ wine -= 1
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                        # SNAPE
-    show screen s_head2                                                                                                 # SNAPE
-    sna "Another one?"
+    call san_head("Another one?","snape_05")
     if one_of_ten == 1:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Splendid!"
+        call san_head("Splendid!","snape_02")
     elif one_of_ten == 2:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Alright!"
+        call san_head("Alright!","snape_02")
     elif one_of_ten == 3:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Awesome!"
+        call san_head("Awesome!","snape_02")
     elif one_of_ten == 4:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Well done, my friend!"
+        call san_head("Well done, my friend!","snape_02")
     elif one_of_ten == 5:
-        $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Did you find Albus' secret stash or was it his personal wine cellar?"
+        call san_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
     elif one_of_ten == 6:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "lately I am having hard time drinking anything but this!"
+        call san_head("lately I am having hard time drinking anything but this!","snape_02")
     elif one_of_ten == 7:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Great! I feel less stressed out already!"
+        call san_head("Great! I feel less stressed out already!","snape_02")
     elif one_of_ten == 8:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "This just keeps getting better and better!"
+        call san_head("This just keeps getting better and better!","snape_02")
     elif one_of_ten == 9:
-        $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "Seriously, how big is that stash?"
+        call san_head("Seriously, how big is that stash?","snape_05")
     elif one_of_ten == 2:
-        $ s_sprite = "01_hp/10_snape_main/snape_02.png"                                        # SNAPE
-        show screen s_head2    
-        sna2 "It's sure good to be us! let's uncork that bastard!"
+        call san_head("It's sure good to be us! let's uncork that bastard!","snape_02")
     
-    hide screen s_head2 
     show screen bld1
     with d3
     $ renpy.play('sounds/win_04.mp3')   #Not loud.

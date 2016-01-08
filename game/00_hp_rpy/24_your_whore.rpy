@@ -995,30 +995,19 @@ label your_whore:
     if public_whore_ending: #Students talking. Ending "Public whore".
         $ s_head_xpos = 330 # x = 330,
         $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-        $ s_sprite = "01_hp/10_snape_main/snape_03.png"
-        show screen s_head2
-        sna "Miss Granger...?"
-        $ s_sprite = "01_hp/10_snape_main/snape_04.png"
-        sna2 "You decided to show up after all?"
-        sna2 "What an unpleasant surprise..."
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_162.png" # HERMIONE
+        call san_head("Miss Granger...?","snape_03")
+        call sna_head("You decided to show up after all?","snape_04")
+        $ s_sprite = "01_hp/10_snape_main/.png"
+        call sna_head("What an unpleasant surprise...")
         #her "Professor..."
-        her "[genie_name]..."
-        $ s_sprite = "01_hp/10_snape_main/snape_10.png"
-        show screen s_head2
-        sna "Well, go ahead then..."
-        sna "Here is the tiara..."
-        sna "And the stage is yours..."
+        call her_head("Professor...","body_162")
+        call san_head("Well, go ahead then...","snape_10")
+        call sna_head("Here is the tiara...")
+        call sna_head("And the stage is yours...")
         $ tiara = True #Tiara is displayed.
-        show screen h_head2                                                             # HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_160.png" # HERMIONE
         #her "Thank you, professor."
-        her "Thank you, [genie_name]."
-        hide screen h_head2        
+        call her_head("Thank you, professor.","body_160")
         pause.7
-        
-        
         
         $ end_u_1_pic =  "01_hp/17_ending/108.png" #<---- SCREEN
         hide screen blkfade
@@ -1190,10 +1179,7 @@ label your_whore:
         with hpunch
         g4 "!!!"
         #play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        $ s_sprite = "01_hp/10_snape_main/snape_11.png"
-        show screen s_head2
-        sna "!!!"
-        hide screen s_head2
+        call sna_head("!!!","snape_11")
         hide screen blktone
         hide screen bld1
         show screen ctc
