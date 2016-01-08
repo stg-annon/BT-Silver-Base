@@ -505,19 +505,19 @@ label rum_block(item):
             with d3
         if "gold" in item:
             if item == "gold1":
-                $tmp_gold = gold1
+                $ tmp_gold = gold1
             if item == "gold2":
-                $tmp_gold = gold2
+                $ tmp_gold = gold2
             if item == "gold3":
-                $tmp_gold = gold3
+                $ tmp_gold = gold3
             if item == "gold4":
-                $tmp_gold = gold4
+                $ tmp_gold = gold4
             $ renpy.play('sounds/win2.mp3')   #Not loud.
             $ the_gift = "01_hp/18_store/28.png" # GOLD.
             show screen gift
             with d3
             ">You found [tmp_gold] gold..." 
-            $ gold = gold + tmp_gold
+            $ gold += tmp_gold
             hide screen gift
             with d3
     return

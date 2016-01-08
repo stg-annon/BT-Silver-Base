@@ -2694,7 +2694,7 @@ image genie_jerking_sperm_ani: #Sperm after jerking off.
     pause.1
     "01_hp/animation/jerking_sperm_06.png"
     pause.1
-    "01_hp/animationjerking_sperm_07.png"
+    "01_hp/animation/jerking_sperm_07.png"
     pause.1
     "01_hp/animation/jerking_sperm_08.png"
     pause.1
@@ -2995,182 +2995,131 @@ image jerking_off_03_ani: #SNape jerking off in front of dancing on a desk Hermi
 
 ### CUM ###
 image jerking_off_cum_ani: #Sperm.
-    "01_hp/08_animation_02/cum/08_cum_01.png"
+    "01_hp/animation/08_cum_01.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_02.png"
+    "01_hp/animation/08_cum_02.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_03.png"
+    "01_hp/animation/08_cum_03.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_04.png"
+    "01_hp/animation/08_cum_04.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_05.png"
+    "01_hp/animation/08_cum_05.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_06.png"
+    "01_hp/animation/08_cum_06.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_07.png"
+    "01_hp/animation/08_cum_07.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_08.png"
+    "01_hp/animation/08_cum_08.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_09.png"
+    "01_hp/animation/08_cum_09.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_10.png"
+    "01_hp/animation/08_cum_10.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_11.png"
+    "01_hp/animation/08_cum_11.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_12.png"
+    "01_hp/animation/08_cum_12.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_13.png"
+    "01_hp/animation/08_cum_13.png"
     pause 3
-    "01_hp/08_animation_02/cum/08_cum_14.png"
+    "01_hp/animation/08_cum_14.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_15.png"
+    "01_hp/animation/08_cum_15.png"
     pause.1
-    "01_hp/08_animation_02/cum/08_cum_16.png"
+    "01_hp/animation/08_cum_16.png"
     pause.1
     repeat
 
 ### CUM_02 ###
 image genie_cum_03: #Genie cuming on Hermione after she is done striping.
-    "01_hp/08_animation_02/cum/09_cum_01.png"
+    "01_hp/08_animation_02/09_cum_01.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_02.png"
+    "01_hp/08_animation_02/09_cum_02.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_03.png"
+    "01_hp/08_animation_02/09_cum_03.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_04.png"
+    "01_hp/08_animation_02/09_cum_04.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_05.png"
+    "01_hp/08_animation_02/09_cum_05.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_06.png"
+    "01_hp/08_animation_02/09_cum_06.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_07.png"
+    "01_hp/08_animation_02/09_cum_07.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_08.png"
+    "01_hp/08_animation_02/09_cum_08.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_09.png"
+    "01_hp/08_animation_02/09_cum_09.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_10.png"
+    "01_hp/08_animation_02/09_cum_10.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_11.png"
+    "01_hp/08_animation_02/09_cum_11.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_12.png"
+    "01_hp/08_animation_02/09_cum_12.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_13.png"
+    "01_hp/08_animation_02/09_cum_13.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_14.png"
+    "01_hp/08_animation_02/09_cum_14.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_15.png"
+    "01_hp/08_animation_02/09_cum_15.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_16.png"
+    "01_hp/08_animation_02/09_cum_16.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_17.png"
+    "01_hp/08_animation_02/09_cum_17.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_18.png"
+    "01_hp/08_animation_02/09_cum_18.png"
     pause 2
-    "01_hp/08_animation_02/cum/09_cum_19.png"
+    "01_hp/08_animation_02/09_cum_19.png"
     pause.1
-    "01_hp/08_animation_02/cum/09_cum_20.png"
+    "01_hp/08_animation_02/09_cum_20.png"
     pause.1
-    "01_hp/08_animation_02/cum/00.png"
+    "01_hp/08_animation_02/00.png"
     pause.5
     repeat
 
 ### CUM_03 ###
 image snape_cum_01: #Snape cumming on Hermione after she is done striping.
-    "01_hp/08_animation_02/cum/11_cum_01.png"
+    "01_hp/08_animation_02/11_cum_01.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_02.png"
+    "01_hp/08_animation_02/11_cum_02.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_03.png"
+    "01_hp/08_animation_02/11_cum_03.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_04.png"
+    "01_hp/08_animation_02/11_cum_04.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_05.png"
+    "01_hp/08_animation_02/11_cum_05.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_06.png"
+    "01_hp/08_animation_02/11_cum_06.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_07.png"
+    "01_hp/08_animation_02/11_cum_07.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_08.png"
+    "01_hp/08_animation_02/11_cum_08.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_09.png"
+    "01_hp/08_animation_02/11_cum_09.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_10.png"
+    "01_hp/08_animation_02/11_cum_10.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_11.png"
+    "01_hp/08_animation_02/11_cum_11.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_12.png"
+    "01_hp/08_animation_02/11_cum_12.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_13.png"
+    "01_hp/08_animation_02/11_cum_13.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_14.png"
+    "01_hp/08_animation_02/11_cum_14.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_15.png"
+    "01_hp/08_animation_02/11_cum_15.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_16.png"
+    "01_hp/08_animation_02/11_cum_16.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_17.png"
+    "01_hp/08_animation_02/11_cum_17.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_18.png"
+    "01_hp/08_animation_02/11_cum_18.png"
     pause 2
-    "01_hp/08_animation_02/cum/11_cum_19.png"
+    "01_hp/08_animation_02/11_cum_19.png"
     pause.1
-    "01_hp/08_animation_02/cum/11_cum_20.png"
+    "01_hp/08_animation_02/11_cum_20.png"
     pause.1
-    "01_hp/08_animation_02/cum/00.png"
+    "01_hp/08_animation_02/00.png"
     pause.5
     repeat
-
-
-
-### Her Bounce ANIMATION ###   
-image bounce_ani_s:
-    "01_hp/08_animation_02/30_bounce_1.png"
-    pause .15
-    "01_hp/08_animation_02/30_bounce_2.png"
-    pause .15
-    "01_hp/08_animation_02/30_bounce_3.png"
-    pause .15
-    "01_hp/08_animation_02/30_bounce_4.png"
-    pause .15
-    "01_hp/08_animation_02/30_bounce_5.png"
-    pause .15
-    "01_hp/08_animation_02/30_bounce_6.png"
-    pause .15
-    repeat
-image bounce_ani:
-    "01_hp/08_animation_02/30_bounce_1.png"
-    pause .1
-    "01_hp/08_animation_02/30_bounce_2.png"
-    pause .1
-    "01_hp/08_animation_02/30_bounce_3.png"
-    pause .1
-    "01_hp/08_animation_02/30_bounce_4.png"
-    pause .1
-    "01_hp/08_animation_02/30_bounce_5.png"
-    pause .1
-    "01_hp/08_animation_02/30_bounce_6.png"
-    pause .1
-    repeat
-image bounce_ani_f:
-    "01_hp/08_animation_02/30_bounce_1.png"
-    pause .05
-    "01_hp/08_animation_02/30_bounce_2.png"
-    pause .05
-    "01_hp/08_animation_02/30_bounce_3.png"
-    pause .05
-    "01_hp/08_animation_02/30_bounce_4.png"
-    pause .05
-    "01_hp/08_animation_02/30_bounce_5.png"
-    pause .05
-    "01_hp/08_animation_02/30_bounce_6.png"
-    pause .05
-    repeat
-    
-
-    
-
-    
     
     
     
