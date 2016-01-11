@@ -10,6 +10,8 @@ screen luna:
     add luna_eye xpos luna_xpos ypos luna_ypos #Add the eye outline
     add luna_eyebrow xpos luna_xpos ypos luna_ypos #Add the eyebrow
     ### CLOTHES 
+    if luna_wear_glasses:
+        add luna_glasses xpos luna_xpos ypos luna_ypos # Add the glasses
     if luna_wear_bra:
         add luna_bra xpos luna_xpos ypos luna_ypos # Add the bra
     if luna_wear_panties:

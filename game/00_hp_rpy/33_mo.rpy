@@ -109,8 +109,8 @@ label tentacle_scene_intro: #Public tentacle scene
 
 label tentacle_1: #Public tentacle scene
     $ cg("01_hp/25_mo/h1.png")
-    with d3
     hide screen blkfade
+    with d3
     her "What on earth is going on?"
     ">You start pumping the tentacles in her vagina slowly"
     $ cg("01_hp/25_mo/h2.png")
@@ -1867,6 +1867,10 @@ label potion_scene_6: #Luna potion
     jump day_main_menu
 ###COLLAR SCENES
 label collar_scene:
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(610,400,1)
+    show screen hermione_02 #Hermione stands still.
+    $ u_tears_pic = "01_hp/13_hermione_main/tears_04.png"
     $ h_tears = True
     ">Hermione bursts into the room crying"
     $ changeHermioneMainScreen(hg_pth+"body_21.png")
@@ -1918,116 +1922,197 @@ label slut_scene: #Locked to her being your slut
     $ changeHermioneMainScreen(hg_pth+"body_29.png")
     her "..."
     ">Hermione walks over and kneels before you as you pull out your cock from your robes."
+    play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen genie
+    $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ genie_chibi_ypos = 10
+    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ hermione_chibi_ypos = 10
+    $ g_c_u_pic = "blowjob_ani"
+    $ h_c_u_pic = "hand_ani"
+    show screen chair_02
+    show screen h_c_u
+    
+    hide screen hermione_02 #Hermione stands still.
+    hide screen blkfade
+    hide screen blktone
+    hide screen bld1
+    with fade
+    pause
+    show screen bld1
+    with d3
+    $ hermione_main_zorder = 8
     m "That's a good little slut. Now if you want to suck my cock I expect you to ask nicely."
-    $ changeHermioneMainScreen(hg_pth+"body_44.png")
-    her "What? This is bad enough, just let me suck your cock."
+    $ changeHermioneMainScreen(hg_pth+"body_44.png", x_pos=390, y_pos= 235)
+    her "What? This is bad enough, just let me suck \nyour cock."
+    hide screen hermione_main
     m "Sluts beg for cock. And seeing as how you're a slut, I expect you to beg."
-    $ changeHermioneMainScreen(hg_pth+"body_33.png")
+    $ changeHermioneMainScreen(hg_pth+"body_33.png", x_pos=390, y_pos= 235)
     her "..."
-    $ changeHermioneMainScreen(hg_pth+"body_31.png")
+    hide screen hermione_main
+    $ changeHermioneMainScreen(hg_pth+"body_31.png", x_pos=390, y_pos= 235)
     her "Please [genie_name], let me suck your cock."
+    hide screen hermione_main
     m "Hmmm that was almost good enough. Try again, a little harder."
-    $ changeHermioneMainScreen(hg_pth+"body_32.png")
-    her "Pretty please [genie_name], please let me suck your big beautiful cock."
+    $ changeHermioneMainScreen(hg_pth+"body_32.png", x_pos=390, y_pos= 235)
+    her "Pretty please [genie_name], please let me suck\nyour big beautiful cock."
+    hide screen hermione_main
     m "Good girl."
     menu:
         "-Throat fuck-":
             m "Here's you reward slut!"
             ">You grab the back of her head and force your cock into her mouth and to the entrance of her throat."
-            $ changeHermioneMainScreen(hg_pth+"body_48.png")
+            show screen g_c_u
+            hide screen h_c_u
+            with d3
+            $ changeHermioneMainScreen(hg_pth+"body_48.png", x_pos=390, y_pos= 235)
             her "!!!"
+            hide screen hermione_main
             ">You feel her push back against your legs."
             m "Now, now [hermione_name] good sluts know how to deepthroat. Just relax your throat."
-            $ changeHermioneMainScreen(hg_pth+"body_39.png")    ###May want to remove picture of Hermione when she can't talk.
+            $ changeHermioneMainScreen(hg_pth+"body_39.png", x_pos=390, y_pos= 235)    ###May want to remove picture of Hermione when she can't talk.
             her "eeettsss hhooooo hhhhggggg!"
+            hide screen hermione_main
             m "Come on [hermione_name] you are a good slut aren't you."
-            $ changeHermioneMainScreen(hg_pth+"body_40.png")
+            $ changeHermioneMainScreen(hg_pth+"body_40.png", x_pos=390, y_pos= 235)
             her "..."
+            hide screen hermione_main
             ">Hermiones throat relaxes and allows you to enter."
             m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
-            $ changeHermioneMainScreen(hg_pth+"body_115.png")
+            $ changeHermioneMainScreen(hg_pth+"body_115.png", x_pos=390, y_pos= 235)
             her "Sucking noises"
+            hide screen hermione_main
             m "I asked you a question slut."
-            $ changeHermioneMainScreen(hg_pth+"body_116.png")
+            $ changeHermioneMainScreen(hg_pth+"body_116.png", x_pos=390, y_pos= 235)
             her "hhyyym aaaa hhhhtttt"
+            hide screen hermione_main
             ">You increase the speed in her throat."
             m "What was that [hermione_name]? I couldn't hear you over you sucking my cock. Try speaking a little louder."
-            $ changeHermioneMainScreen(hg_pth+"body_48.png")
+            $ changeHermioneMainScreen(hg_pth+"body_48.png", x_pos=390, y_pos= 235)
             her "hhhhyyyyyym aaaaaaa hhhhhhhhttttttt!"
+            hide screen hermione_main
             ">The vibration from her throat on your penis is amazing."
             m "Once more, so that I can hear you."
             ">You pull her head off your cock."
-            $ changeHermioneMainScreen(hg_pth+"body_32.png")
+            show screen h_c_u
+            hide screen g_c_u
+            with d3
+            $ changeHermioneMainScreen(hg_pth+"body_32.png", x_pos=390, y_pos= 235)
             her "{size=+10}I'm a slut!{/size}"
+            hide screen hermione_main
             m "Yes you are."
             ">You impale her back into your cock."
+            show screen g_c_u
+            hide screen h_c_u
+            with d3
         "-Let her suck you-":
             m "Well if you insist [hermione_name]."
             ">Hermione takes you into her waiting mouth."
+            show screen g_c_u
+            hide screen h_c_u
+            with d3
             m "See, don't you feel better now that you have a cock in your mouth?"
-            $ changeHermioneMainScreen(hg_pth+"body_35.png")
+            $ changeHermioneMainScreen(hg_pth+"body_35.png", x_pos=390, y_pos= 235)
             her "mmmmmmm"
+            hide screen hermione_main
             m "Admit it, you love this."
-            $ changeHermioneMainScreen(hg_pth+"body_39.png")
+            $ changeHermioneMainScreen(hg_pth+"body_39.png", x_pos=390, y_pos= 235)
             her "sucking noises"
+            hide screen hermione_main
             m "You love being used as someone else's plaything."
-            $ changeHermioneMainScreen(hg_pth+"body_40.png")
+            $ changeHermioneMainScreen(hg_pth+"body_40.png", x_pos=390, y_pos= 235)
             her "sucking noises"
+            hide screen hermione_main
             m "You might act upset that people will find out what you are."
-            $ changeHermioneMainScreen(hg_pth+"body_65.png")
+            $ changeHermioneMainScreen(hg_pth+"body_65.png", x_pos=390, y_pos= 235)
             her "sucking noises"
+            hide screen hermione_main
             m "But deep down, you're just glad that you don't have to act like you're not a massive slut."
-            $ changeHermioneMainScreen(hg_pth+"body_40.png")
+            $ changeHermioneMainScreen(hg_pth+"body_40.png", x_pos=390, y_pos= 235)
             her "sucking noises"
+            hide screen hermione_main
             m "Aren't you"
-            $ changeHermioneMainScreen(hg_pth+"body_39.png")
+            $ changeHermioneMainScreen(hg_pth+"body_39.png", x_pos=390, y_pos= 235)
             her "..."
+            hide screen hermione_main
             m "I asked you a question slut."
+            show screen h_c_u
+            hide screen g_c_u
+            with d3
             ">She takes you out of her mouth."
-            $ changeHermioneMainScreen(hg_pth+"body_33.png")
+            $ changeHermioneMainScreen(hg_pth+"body_33.png", x_pos=390, y_pos= 235)
             her "...yes. I am a massive slut."
+            hide screen hermione_main
             m "Good to hear you finally admit it. Now, back in the mouth."
-            $ changeHermioneMainScreen(hg_pth+"body_64.png")
+            $ changeHermioneMainScreen(hg_pth+"body_64.png", x_pos=390, y_pos= 235)
             her "Yes [genie_name]"
+            hide screen hermione_main
             ">Hermione takes you back into her mouth with renewed effort."
+            show screen g_c_u
+            hide screen h_c_u
+            with d3
     m "Ughhh, I'm getting close girl."
     m "Get ready."
     ">Hermione starts focusing on the tip of your cock, licking your slit."
     m "That did it. Here it comes!"
     ">You pull out of her mouth and start pumping your cock."
+    $ g_c_u_pic = "cum_on_face_ani"
+    $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+    $ uni_sperm = True
     m "Here's your reward you filthy fucking cumslut!"
     ">You explode across her face."
     ">One string of your cum even goes up her nostril."
     m "Who's a slut?"
-    $ changeHermioneMainScreen(hg_pth+"body_68.png")
+    $ g_c_u_pic = "cum_on_face_blink_ani"
+    $ changeHermioneMainScreen(hg_pth+"body_68.png", x_pos=390, y_pos= 235)
     her "I am..."
+    hide screen hermione_main
     m "Good, well now that we've established that I have a present for you."
-    $ changeHermioneMainScreen(hg_pth+"body_124.png")
+    $ changeHermioneMainScreen(hg_pth+"body_124.png", x_pos=390, y_pos= 235)
     her "A present? What is it?"
+    hide screen hermione_main
     m "It's a lovely necklace to help remember who you are."
     ">You present her the \"slut\" collar."
-    $ changeHermioneMainScreen(hg_pth+"body_119.png")
-    her "This isn't a necklace, this is a collar with slut written on it! I can't wear this!"
+    $ changeHermioneMainScreen(hg_pth+"body_119.png", x_pos=390, y_pos= 235)
+    her "This isn't a necklace, this is a collar with slut \nwritten on it! I can't wear this!"
+    hide screen hermione_main
     m "You can and will wear this."
     m "You are MY slut and you will do well to remember it. Now put it on and get out of my office."
-    $ changeHermioneMainScreen(hg_pth+"body_118.png")
+    $ changeHermioneMainScreen(hg_pth+"body_118.png", x_pos=390, y_pos= 235)
     her "...Fine"
+    hide screen hermione_main
     ">She tightens the collar around the neck."
-    $ changeHermioneMainScreen(hg_pth+"body_117.png")
-    her "Can I at least get a towel or something to clean my face?"
+    $ collar = 2
+    $ changeHermioneMainScreen(hg_pth+"body_117.png", x_pos=390, y_pos= 235)
+    her "Can I at least get a towel or something to \nclean my face?"
+    hide screen hermione_main
     m "Why? Everyone already knows what a slut you are, walking back to your room with a bit of cum on your face is hardly going to change that."
-    $ changeHermioneMainScreen(hg_pth+"body_120.png")
+    $ changeHermioneMainScreen(hg_pth+"body_120.png", x_pos=390, y_pos= 235)
     her "You can't be serious?!"
+    hide screen hermione_main
     m "I am, and if you ever want to suck my cock again you will do as I say."
-    $ changeHermioneMainScreen(hg_pth+"body_127.png")
+    $ changeHermioneMainScreen(hg_pth+"body_127.png", x_pos=390, y_pos= 235)
     her "...yes [genie_name]."
-    m "Well get going, and come see me tomorrow morning."
-    $ changeHermioneMainScreen(hg_pth+"body_128.png")
+    hide screen hermione_main
+    m "Well get going."
+    $ changeHermioneMainScreen(hg_pth+"body_128.png", x_pos=390, y_pos= 235)
     her "Good night [genie_name]."
-    m "Good night."
-    m "Slut."
-    $ changeHermioneMainScreen(hg_pth+"body_124.png")
+    hide screen hermione_main
+    m "Good night. {w}Slut."
+    $ changeHermioneMainScreen(hg_pth+"body_124.png", x_pos=390, y_pos= 235)
     her "..."
+    show screen genie
+    hide screen chair_02
+    hide screen hermione_main
+    hide screen chair_02
+    hide screen g_c_u
+    hide screen h_c_u
+    hide screen ctc
+    hide screen bld1
+    $ hermione_main_zorder = 5
+    call her_walk(400,610,2)
+    jump end_hermione_personal_request
     #she then comes back in the evening with a story about some people abusing her and some congratulating her
 label whore_scene: #(locked behind the public whoring flag)
     #sex scene where she begs genie to cum inside her
@@ -2050,70 +2135,116 @@ label whore_scene: #(locked behind the public whoring flag)
     $ changeHermioneMainScreen(hg_pth+"body_132.png")
     her "Sir please, you're being too mean..."
     m "Oh is the little whore getting upset? Don't worry, I'll make you feel all better."
-    m "Bend over."
+    her "How?"
+    m "Come over here and bend over."
     $ changeHermioneMainScreen(hg_pth+"body_117.png")
     her "You can't be serious? After what you just said?"
-    m "I am serious, now be a good little whore and bend over my desk and I'll give you want."
+    m "I am serious, now be a good little whore and bend over my desk and I'll give you what you want."
     $ changeHermioneMainScreen(hg_pth+"body_118.png")
     her "..."
+    call her_walk(400,210,1)
+    show screen blkfade
+    with d3
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen genie
+    $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "pause_sex"
+    show screen chair_02
+    show screen g_c_u
+    hide screen hermione_02 #Hermione stands still.
+    hide screen blkfade
+    with d3
+    $ hermione_main_zorder = 8
     ">Hermione walks over to your desk silently, bends over and presents herself."
     m "See what a good little whore you are. Now if you ask nicely I'll fuck you."
-    $ changeHermioneMainScreen(hg_pth+"body_118.png")
+    $ changeHermioneMainScreen(hg_pth+"body_118.png", x_pos=390, y_pos= 235)
     her "..."
-    $ changeHermioneMainScreen(hg_pth+"body_87.png")
+    hide screen hermione_main
+    $ changeHermioneMainScreen(hg_pth+"body_87.png", x_pos=390, y_pos= 235)
     her "Please [genie_name]."
+    hide screen hermione_main
     m "Please what?"
-    $ changeHermioneMainScreen(hg_pth+"body_67.png")
+    $ changeHermioneMainScreen(hg_pth+"body_67.png", x_pos=390, y_pos= 235)
     her "Please fuck me..."
+    hide screen hermione_main
     m "I'm not sure I quite heard that. You'll have to speak up."
-    $ changeHermioneMainScreen(hg_pth+"body_130.png")
+    $ changeHermioneMainScreen(hg_pth+"body_130.png", x_pos=390, y_pos= 235)
     her "{size=+5}Please fuck my cunt{/size}"
+    hide screen hermione_main
+    m "Seeing as how you asked nicely."
+    $ g_c_u_pic = "sex_ani"
     ">You take a firm grip of her hips and thrust into her sopping pussy."
     m "Ugh you're still so tight."
     m "I thought that you would have loosened up after all the guys you've fucked."
-    $ changeHermioneMainScreen(hg_pth+"body_131.png")
+    $ changeHermioneMainScreen(hg_pth+"body_131.png", x_pos=390, y_pos= 235)
     her "[genie_name]..."
+    hide screen hermione_main
     m "Don't try and act innocent with me [hermione_name]. I know what you do in the dormitories after dark."
     m "Just admit what you are."
-    $ changeHermioneMainScreen(hg_pth+"body_136.png")
+    $ changeHermioneMainScreen(hg_pth+"body_136.png", x_pos=390, y_pos= 235)
     her "{size=-5}I'm a whore.{/size}"
+    hide screen hermione_main
     m "What was that, I couldn't hear you ever the sound of me fucking you."
-    $ changeHermioneMainScreen(hg_pth+"body_134.png")
+    $ changeHermioneMainScreen(hg_pth+"body_134.png", x_pos=390, y_pos= 235)
     her "I'm a whore."
+    hide screen hermione_main
     m "Very good, now beg me."
-    $ changeHermioneMainScreen(hg_pth+"body_133.png")
+    $ changeHermioneMainScreen(hg_pth+"body_133.png", x_pos=390, y_pos= 235)
     her "Beg you to what?"
+    hide screen hermione_main
     m "Beg me to cum inside your pussy, whore."
-    $ changeHermioneMainScreen(hg_pth+"body_123.png")
+    $ changeHermioneMainScreen(hg_pth+"body_123.png", x_pos=390, y_pos= 235)
     her "Please fill my little pussy with your thick cum."
+    hide screen hermione_main
     m "That's a good little whore, who else have you told that to?"
     m "Is it just me or do you beg every other boy you meet to cum inside you?"
-    $ changeHermioneMainScreen(hg_pth+"body_122.png")
+    $ changeHermioneMainScreen(hg_pth+"body_122.png", x_pos=390, y_pos= 235)
     her "..."
+    hide screen hermione_main
     m "Tell me girl."
-    $ changeHermioneMainScreen(hg_pth+"body_132.png")
+    $ changeHermioneMainScreen(hg_pth+"body_132.png", x_pos=390, y_pos= 235)
     her "I beg every boy that fucks me to cum inside!"
+    hide screen hermione_main
     m "What a fucking whore."
-    $ changeHermioneMainScreen(hg_pth+"body_144.png")
+    $ changeHermioneMainScreen(hg_pth+"body_144.png", x_pos=390, y_pos= 235)
     her "I-I'm cumming."
+    hide screen hermione_main
     m "Well I think I might join you then."
     ">You increase your pumping of her pussy."
     m "Here's your cum, whore. You earned it."
     ">You push yourself all the way in and start shooting off into her womb."
-    $ changeHermioneMainScreen(hg_pth+"body_149.png")
+    $ g_c_u_pic = "sex_cum_in_ani"
+    $ changeHermioneMainScreen(hg_pth+"body_149.png", x_pos=390, y_pos= 235)
     her "!!!"
+    hide screen hermione_main
     m "That's it, take it all you fucking slut."
-    $ changeHermioneMainScreen(hg_pth+"body_158.png")
+    $ changeHermioneMainScreen(hg_pth+"body_158.png", x_pos=390, y_pos= 235)
     her "..."
+    hide screen hermione_main
     m "Well aren't you going to at least be grateful."
-    $ changeHermioneMainScreen(hg_pth+"body_157.png")
+    $ changeHermioneMainScreen(hg_pth+"body_157.png", x_pos=390, y_pos= 235)
     her "...Thank you [genie_name]."
+    hide screen hermione_main
     m "Thank you for what?"
-    $ changeHermioneMainScreen(hg_pth+"body_158.png")
+    $ changeHermioneMainScreen(hg_pth+"body_158.png", x_pos=390, y_pos= 235)
     her "Thank you for ... cumming in my pussy."
+    hide screen hermione_main
     m "You're welcome girl. A good whore should always be grateful."
-    $ changeHermioneMainScreen(hg_pth+"body_155.png")
+    $ changeHermioneMainScreen(hg_pth+"body_155.png", x_pos=390, y_pos= 235)
     her "Yes [genie_name]."
+    hide screen hermione_main
+    show screen blkfade
+    with d3                                                                                                                                                                                 #HERMIONE
+    show screen genie
+    hide screen chair_02
+    hide screen g_c_u
+    show screen hermione_02 #Hermione stands still.
+    $ hermione_chibi_xpos = 400
+    hide screen blkfade
+    with d3
+    $ hermione_main_zorder = 5
+    ">Hermione gets to her feet"
     m "Well seeing as how you said thank you I have a present for you."
     $ changeHermioneMainScreen(hg_pth+"body_154.png")
     her "A present?"
@@ -2136,12 +2267,16 @@ label whore_scene: #(locked behind the public whoring flag)
     $ changeHermioneMainScreen(hg_pth+"body_143.png")
     her "...Fine"
     ">She places the collar around her neck and tightens it."
+    $ collar = 3
     $ changeHermioneMainScreen(hg_pth+"body_142.png")
     her "Goodbye [genie_name]."
     m "Goodbye whore."
-    m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
-    $ changeHermioneMainScreen(hg_pth+"body_145.png")
-    her "...yes [genie_name]."
+    hide screen hermione_main
+    call her_walk(400,610,2)
+    jump end_hermione_personal_request
+    #m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
+    #$ changeHermioneMainScreen(hg_pth+"body_145.png")
+    #her "...yes [genie_name]."
 
 label whore_scene_2:
 
@@ -2169,6 +2304,20 @@ label slave_scene:
     m "Now be a good girl and bend over the desk."
     $ changeHermioneMainScreen(hg_pth+"body_117.png")
     her "..."
+    call her_walk(400,210,1)
+    show screen blkfade
+    with d3
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen genie
+    $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "pause_sex"
+    show screen chair_02
+    show screen g_c_u
+    hide screen hermione_02 #Hermione stands still.
+    hide screen blkfade
+    with d3
+    $ hermione_main_zorder = 8
     ">Hermione walks over to your desk, bends over it and then lifts her skirt up."
     $ changeHermioneMainScreen(hg_pth+"body_118.png")
     her "Yes [genie_name]."
@@ -2178,6 +2327,7 @@ label slave_scene:
     her "Please [genie_name], please fuck my slutty ass."
     m "Good girl."
     ">You thrust your full length into her in one motion."
+    $ g_c_u_pic = "sex_ani"
     m "You're very tight today, are you enjoying this?"
     $ changeHermioneMainScreen(hg_pth+"body_78.png")
     her "Yes [genie_name], I'm loving this."
@@ -2262,12 +2412,16 @@ label slave_scene:
     $ changeHermioneMainScreen(hg_pth+"body_122.png")
     her "Yes master..."
     ">She tightens the collar around her neck."
+    $ collar = 1
     m "That look suits you girl."
     $ changeHermioneMainScreen(hg_pth+"body_124.png")
     her "Thank you master. Will I be getting any points today?"
     m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
     $ changeHermioneMainScreen(hg_pth+"body_128.png")
-    her "I suppose your right"
+    her "I suppose your right."
+    hide screen hermione_main
+    call her_walk(400,610,2)
+    jump end_hermione_personal_request
 
 
 
@@ -2304,12 +2458,16 @@ label good_girl_scene:
     $ changeHermioneMainScreen(hg_pth+"body_128.png")
     her "Thank you [genie_name]."
     ">Hermione slowly lifts her top."
+    $ lift_shirt = True
+    $ badges = False
     $ changeHermioneMainScreen(hg_pth+"body_82.png")
     her "Do you like them [genie_name]"
     m "Of course I do, they're lovely."
     $ changeHermioneMainScreen(hg_pth+"body_84.png")
     her "Thank you [genie_name], you're always so kind."
     ">She lowers her top."
+    $ lift_shirt = False
+    $ badges = True
     m "50 points to Gryffindor."
     $ gryffindor += 50
     $ changeHermioneMainScreen(hg_pth+"body_111.png")

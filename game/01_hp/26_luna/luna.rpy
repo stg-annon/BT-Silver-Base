@@ -31,6 +31,7 @@ label luna_init:
     $ luna_eye = "01_hp/26_luna/eye/eye_01.png" 
     $ luna_eyebrow = "01_hp/26_luna/eye/eyebrow_01.png" 
     $ luna_pupil = "01_hp/26_luna/eye/pupil_01.png" 
+    $ luna_glasses = "01_hp/26_luna/misc/glasses.png" 
     $ luna_top = "01_hp/26_luna/clothes/uniform/top.png" 
     $ luna_acc = "01_hp/26_luna/misc/jewel.png" 
     $ luna_skirt = "01_hp/26_luna/clothes/uniform/skirt.png" 
@@ -42,6 +43,7 @@ label luna_init:
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 250
 
+    $ luna_wear_glasses = False
     $ luna_wear_bra = True
     $ luna_wear_panties = True
     $ luna_wear_skirt = True
@@ -132,18 +134,82 @@ label luna_away:
     jump day_main_menu
 
 label luna_intro_1:
-    lun "Hello Professor."
-    menu:
-        "\"Hello child\"":
-            lun "(child? Does he even know who I am?)"
-            pass
-        "\"Hello girl\"":
-            lun "(Girl? Does he even know who I am?)"
-            pass
-        "\"Hello [luna_name]\"":
-            lun "(He knows my name!)"
-            pass
-    lun "I came here to day to ask about the Quibbler. I was wondering if we could get some new ink colors, the ones we have at the moment don't quite work for the new article that I am working on."
+    $ luna_wear_glasses = True
+    lun "Hello, Professor!"
+    m "Hello, Luna."
+    lun "Professor, I need your help with something."
+    m "(Damn, she’s fine!) Yes girl, what is it?"
+    lun "I’ve asked the other teachers and they all laugh at me, but I need help with some wrackspurts."
+
+    menu: 
+        "\"Wrackspurts?... Is that some sort of wizard STD?\"":
+            lun "Hahaha, I guess you could say that, Professor! "
+            lun "Wrackspurts are invisible creatures which float into a person’s ear and make their brain go fuzzy."
+            lun "You can only view them wearing these spectrespecs!"
+
+            m "I see... (This bitch is crazy)"
+            m "Well Miss Lovegood what can we do about it?"
+            lun "I am not sure professor, normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius -"
+            "*Genie jumps from the table*"
+            m "DID YOU JUST CAST A SPELL ON ME?!"
+            lun "Professor?"
+            m "EXPLAIN YOURSELF!"
+            lun "I am sorry Professor, I am not sure what-"
+            m "XENOFIUS! What does it do?"
+            lun "Xenofius? I’ve not heard of that spell before, Professor."
+            m "The spell... That you just... Never mind."
+            lun "(A Secret spell?) Professor, your magic is the strongest in Hogwarts and these wrackspurts are really getting to me."
+        "\"I am afraid I can’t help you Miss Lovegood.\"":
+            lun "Oh please, Professor! You’re the only one powerful enough to help."
+            "*You can see Luna is rocking her pelvis as though she were grinding the air*"
+            m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
+            lun "Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!"
+            "*Luna hands you a Quibbler*"
+            m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
+            "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
+            "*Luna points to her spectrespecs* "
+            lun "I can see them, Professor."
+            m "Yes, well...(No wonder Hermione called her Loony Lovegood)."
+        "\"What in Agrabah are you wearing?\"":
+            lun "Oh! These are my spectrespecs, professor!"
+            m "(Please don’t be mind-reading, please don’t be mind-reading-)"
+            lun "They help me see the wrackspurts."
+            m "(Thank the great  desert sands!)"
+            lun "And this is my butter beer necklace."
+            m "(Damn, her tits are huge!... I wonder if I could...)"
+            menu:
+                "-Start Masturbating-":
+                    m "( I am sure she won’t notice)"
+                    lun "You know... To keep away the Nargles!"
+                    m "(Those perfect lips!)"
+                    lun "Hmmm, they still seem rather fond of my shoes though."
+                    m "(Damn, her voice is dreamy. I can’t wait to listen to her choking on my cock)"
+                    lun "And several pairs of my underwear are missing too."
+                    m "(Yes, yes, almost there!)"
+                    lun "Though Father says that’s most likely the work of a Blithering Cumdrinker"
+                    m  "ARGH!"
+                    lun "Don’t be scared, Professor, they only go after women’s underwear."
+                    m "(Wow, she was completely oblivious. This is going to be easier than I thought!)"
+                    m "Ah, yes girl. Now what were you saying again?"
+                    lun "Oh, the wrackspurts! Yes, Professor, they’re proving to be quite a pain."
+                "-No, I better not.-":
+                    lun "You know... To keep away the Nargles!"
+                    m "(What is she blabbering about?)"
+                    lun "Hmmm, they still seem rather fond of my shoes though."
+                    m "Right, sure. Now what were you saying again, something about wrackspurts?"
+                    lun "Oh, the wrackspurts! Yes, Professor, they’re proving to be quite a pain."
+
+    "*Luna is visibly grinding her pelvis against her thighs.*"
+    m "(Is she really?... Ohhh). Miss Lovegood, I think I can help you."
+    lun "Oh, Joy, professor! "
+    m "Your case is exceptionally rare, Miss Lovegood and I will need to see you frequently in order to completely ensure that your crack squirts *ahem* are gone."
+    lun "Wrackspurts, professor."
+    m "Yes, your rack squirts. Run along now girl, I shall see you in my office tomorrow."
+    lun "Very well, professor!"
+    "*Luna skips out of the room, squeezing her legs together as she prances*"
+    m "(This is going to be fun!)"
+    $ luna_wear_glasses = True
+    jump luna_away
 
 ###FAVOURS###------------------------------------------------------
 
