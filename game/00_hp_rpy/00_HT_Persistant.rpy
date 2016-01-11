@@ -253,6 +253,19 @@ label declare_ht_vars:
     $ luna_chibi_ypos = 400
     $ luna_speed = 2.0
     
+    $ new_request_01_heart = 0
+    $ new_request_02_heart = 0
+    $ new_request_03_heart = 0
+    $ new_request_04_heart = 0
+    $ new_request_05_heart = 0
+    $ new_request_08_heart = 0
+    $ new_request_11_heart = 0
+    $ new_request_12_heart = 0
+    $ new_request_16_heart = 0
+    $ new_request_22_heart = 0
+    $ new_request_29_heart = 0
+    $ new_request_31_heart = 0
+    
     # $ new_request_01_count = 0
     # $ new_request_02_count = 0
     # $ new_request_03_count = 0
