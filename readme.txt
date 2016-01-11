@@ -20,7 +20,7 @@ CREDITS (IN NO PARTICULAR ORDER):
 	TrainerFan - Writing (Unfinished scene that'll be added later.)
 	Techy - Outfit
 	(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)
-
+	
 KNOWN BUGS:
 	▪ Outfits change mid scenes (when whoring goes up)
 	▪ Fawkes still has the issue of acting as if you've already spoken the first time you click on her
@@ -30,11 +30,14 @@ KNOWN BUGS:
 	▪ Hermione's initial reaction to panty thief occurs multiple times
 	▪ Dialogue doesn't match up with if Hermione isn't wearing a shirt/skirt
 	▪ Hair changes back to default hair during UE tutoring 
+	
+SEND BUG REPORTS TO:
+	stg.trainer.annon@gmail.com
 
 POTION COMBINATIONS:
-Cat Potion 			= Polyjuice + Cat hair 							(Dormitories)
-Luna Potion 		= Polyjuice + Blonde hair 						(Dormitories)
-Ass Expansion 		= Expanding Elixir + Knotgrass 					(Forest)
-Breast Expansion	= Expanding Elixir + Root of Aconite 			(Lake)
-Cum Addiction 		= Moreish mead + Wormwood 						(Forest)
-Transparency Potion	= Transparent tincture + Niffler's Fancy 		(Lake)
+Cat Potion 		= Polyjuice + Cat hair 			   (Dormitories)
+Luna Potion 		= Polyjuice + Blonde hair		   (Dormitories)
+Ass Expansion 		= Expanding Elixir + Knotgrass 		   (Forest)
+Breast Expansion	= Expanding Elixir + Root of Aconite 	   (Lake)
+Cum Addiction 		= Moreish mead + Wormwood 		   (Forest)
+Transparency Potion	= Transparent tincture + Niffler's Fancy   (Lake)
