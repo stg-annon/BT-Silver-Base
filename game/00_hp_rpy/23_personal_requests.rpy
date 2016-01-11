@@ -484,7 +484,8 @@ label new_request_02: #SHOW ME YOUR PANTIES
 
 
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
-        $ new_request_02_01 =  True #Hearts.
+        #$ new_request_02_01 =  True #Hearts.
+        $ new_request_02_heart = 1
         
         hide screen hermion_main
         with d3
@@ -515,7 +516,8 @@ label new_request_02: #SHOW ME YOUR PANTIES
                
 
     elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
-        $ new_request_02_02 =  True #Hearts.
+        #$ new_request_02_02 =  True #Hearts.
+        $ new_request_02_heart = 2
         
         hide screen hermion_main
         with d3
@@ -546,8 +548,9 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
                 
 
-    elif whoring >= 9: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No panties).
-        $ new_request_02_03 =  True #Hearts.
+    elif whoring >= 6: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No panties).
+        #$ new_request_02_03 =  True #Hearts.
+        $ new_request_02_heart = 3
         
         hide screen hermion_main
         with d3
