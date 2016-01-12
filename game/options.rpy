@@ -29,8 +29,8 @@ init -1 python hide:v
 
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
-    config.name = "Bitch Trainer"
-    config.version = "1.03"
+    config.name = "WT Silver"
+    config.version = "1.00"
 
     #########################################
     # Themes
@@ -333,12 +333,12 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "Bitch_Trainer_1.03"
+    build.directory_name = "WT_Silver_1.00"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
     ## users can click 'mygame.exe' to start the game.
-    build.executable_name = "Bitch Trainer"
+    build.executable_name = "WT Silver"
 
     ## If True, Ren'Py will include update information into packages. This
     ## allows the updater to run.
