@@ -1,6 +1,5 @@
-﻿HOW DO I INSTALL WT SILVER:
-	for reasons along the lines of renpy is dumb, you have to download the base game from mega and download the latest build from here on git then copy replace the game folder into the base from mega
-	https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig
+HOW DO I INSTALL THE LATEST WT SILVER:
+	you have to download the base game from mega and download the latest build from here on git then copy replace the game folder into the base from mega https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig
 
 WHAT IS SILVER?:
 	It's essentially a modpack of a few different mods and some new content. It adds some new scenes, a map, scene changes, potions, custom outfits and evolving outfits. At the moment it is in a  beta state with new content and bug fixes being added periodically.
@@ -35,13 +34,10 @@ KNOWN BUGS:
 	▪ Dialogue doesn't match up with if Hermione isn't wearing a shirt/skirt
 	▪ Hair changes back to default hair during UE tutoring 
 	
-SEND BUG REPORTS TO:
-	stg.trainer.annon@gmail.com
-
 POTION COMBINATIONS:
-Cat Potion 		= Polyjuice + Cat hair 			   (Dormitories)
-Luna Potion 		= Polyjuice + Blonde hair		   (Dormitories)
-Ass Expansion 		= Expanding Elixir + Knotgrass 		   (Forest)
-Breast Expansion	= Expanding Elixir + Root of Aconite 	   (Lake)
-Cum Addiction 		= Moreish mead + Wormwood 		   (Forest)
-Transparency Potion	= Transparent tincture + Niffler's Fancy   (Lake)
+	Cat Potion 		= Polyjuice + Cat hair 			   (Dormitories)
+	Luna Potion 		= Polyjuice + Blonde hair		   (Dormitories)
+	Ass Expansion 		= Expanding Elixir + Knotgrass 		   (Forest)
+	Breast Expansion	= Expanding Elixir + Root of Aconite 	   (Lake)
+	Cum Addiction 		= Moreish mead + Wormwood 		   (Forest)
+	Transparency Potion	= Transparent tincture + Niffler's Fancy   (Lake)
