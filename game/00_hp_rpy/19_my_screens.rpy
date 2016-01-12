@@ -973,7 +973,7 @@ screen with_snape:
     tag hanging_with_snape
     zorder 3
 screen with_snape_animated:
-    add "genie_jerking_sperm"
+    add "genie_toast_goblet"
     tag hanging_with_snape
     zorder 3
 

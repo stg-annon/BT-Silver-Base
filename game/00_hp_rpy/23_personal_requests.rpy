@@ -8,7 +8,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-    if ("maid" or "gryffindor_cheerleader" or "slytherin_cheerleader" or "ms_marvel" or "heart_dancer" or "power_girl" or "harley_quinn") in outfit_invintory:
+    if "maid" in outfit_invintory or "gryffindor_cheerleader" in outfit_invintory or "slytherin_cheerleader" in outfit_invintory or "ms_marvel" in outfit_invintory or "heart_dancer" in outfit_invintory or "power_girl" in outfit_invintory:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
