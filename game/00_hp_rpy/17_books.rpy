@@ -445,7 +445,7 @@ menu:
                 $ the_gift = "01_hp/18_store/02.png" # GAME OF THRONES.
                 show screen gift
                 with d3
-                "[book06]\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
+                "\"The game of Armchairs\"\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
                 menu:
                     "-Read the book-":
                         hide screen gift
@@ -455,7 +455,7 @@ menu:
                         hide screen gift
                         jump fiction_books_menu
             "-Book: \"The game of Armchairs\"-{image=check_08}" if "book_11" in books and book_progress[11] == book_chapters[11]:
-                "[book06]\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
+                "\"The game of Armchairs\"\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
                 m "Why would I want to do this to myself again?"
                 jump fiction_books_menu
                 
