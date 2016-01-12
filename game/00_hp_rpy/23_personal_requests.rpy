@@ -487,7 +487,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
         #$ new_request_02_01 =  True #Hearts.
         $ new_request_02_heart = 1
         
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
         $ h_ypos=0 #Defines position of the Hermione's full length sprite.
@@ -519,7 +519,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
         #$ new_request_02_02 =  True #Hearts.
         $ new_request_02_heart = 2
         
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
         $ h_ypos=0 #Defines position of the Hermione's full length sprite.
@@ -552,7 +552,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
         #$ new_request_02_03 =  True #Hearts.
         $ new_request_02_heart = 3
         
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
         $ h_ypos=0 #Defines position of the Hermione's full length sprite.
@@ -802,7 +802,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     show screen bld1
     with Dissolve(.3)
     
-    hide screen hermion_main
+    hide screen hermione_main
     with d3
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
@@ -822,7 +822,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 $ new_request_03_01 = True # HEARTS.
                 $ new_request_03_heart = 1
                 
-                hide screen hermion_main
+                hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite.
                 
@@ -844,7 +844,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 $ new_request_03_02 = True # HEARTS.
                 $ new_request_03_heart = 2
                 
-                hide screen hermion_main
+                hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite.
                 
@@ -884,7 +884,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 $ new_request_03_03 = True # HEARTS.
                 $ new_request_03_heart = 3
                 
-                hide screen hermion_main
+                hide screen hermione_main
                 with d3
                 $ h_xpos=120 #Defines position of the Hermione's full length sprite.
                 
@@ -955,7 +955,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
 label panties_soaked_in_cum:### PANTIES SOAKED IN CUM ###
     
     if whoring >= 3 and whoring <= 5: # LEVEL 02
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         $ h_xpos=120 #Defines position of the Hermione's full length sprite.
         
@@ -1063,7 +1063,7 @@ label panties_soaked_in_cum:### PANTIES SOAKED IN CUM ###
         
         call her_main("I am only doing this to give my house a fair chance at winning the cup this year...","body_74")
         m "Right..."
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         show screen blktone8
         with d3
@@ -2926,7 +2926,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     hide screen blkfade
     with Dissolve(1)
     
-    hide screen hermion_main
+    hide screen hermione_main
     with d3
     $ h_xpos=370 #Defines position of the Hermione's full length sprite.
     $ h_ypos=0
@@ -3265,7 +3265,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     if request_11_points == 1: #<====================================================================================================================EVENT 02 
         $ new_request_11_02 = True # HEARTS 
         $ new_request_11_heart = 2
-        hide screen hermion_main
+        hide screen hermione_main
         with d3
         $ h_xpos=140
         
@@ -4328,7 +4328,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     hide screen blktone
                     with d3
                     
-                    show screen hermion_main
+                    show screen hermione_main
                     with d3
                     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                     
@@ -6006,7 +6006,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 m "Yes... I Feel so much better now..."
                 pause
                 
-                hide screen hermion_main
+                hide screen hermione_main
                 with d3
                 $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                 $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
@@ -6548,7 +6548,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause
                 $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
                 
-                hide screen hermion_main
+                hide screen hermione_main
                 with d3
                 $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                 $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
