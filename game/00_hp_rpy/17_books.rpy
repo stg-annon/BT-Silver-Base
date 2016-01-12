@@ -3,6 +3,8 @@ label declare_book_persist:
         $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'book_done'): #important!
         $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
+    if not hasattr(renpy.store,'s_reading_lvl'): #important!
+        $ s_reading_lvl = 0
     return
 
 label declare_book_vars:
@@ -12,6 +14,12 @@ label declare_book_vars:
     $ speed_reading_books = [1,2,3,4]
     $ speed_writing_books = [5,6,7,8]
     $ fiction_books = [9,10,11,12]
+    
+    
+    $ s_reading_lvl = 0
+    $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
+    $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
+    
     
     $ book_name = []
     
