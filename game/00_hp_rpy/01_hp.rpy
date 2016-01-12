@@ -342,9 +342,9 @@ $ robe = 0
 call luna_init
 
 ###SCREENS### NO NEED FOR THIS ONE ANYMORE. (SHOWS WHORING THOUGH).
-screen statistics: #более подробно см. здесь http://www.renpy.org/doc/html/screens.html
-    hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
-        spacing 10 xpos 630 ypos 20#отступ для текста, если надо прямо в левом углу — убираем его
+screen statistics: #http://www.renpy.org/doc/html/screens.html
+    hbox: 
+        spacing 10 xpos 630 ypos 2
         text "{size=-3}Day: [day]\nWhoring: [whoring]\nLevel: [level]\nKnowledge: [knowledge]\nSlytherin [slytherin]\nGryffindor [gryffindor]\nS.Freind: [snape_friendship]\nDay of week: [day_of_week]\nConcentration: [concentration]\nSpeedwriting: [speedwriting]{/size}" #сумма текстом
 
 
@@ -509,10 +509,10 @@ if wather_generator >= 81 and wather_generator <= 90: # RAIN
     show image "01_hp/07_weather/cloudy.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
     show rain at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
 elif wather_generator >= 1 and wather_generator <= 40: # CLEAR WEATHER.
-    show screen new_window # показываем заглушку за окном #<<<XALJIO------------------------------------------XALJIO!!!!!!!!!!!
+    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
     #show image "01_hp/01_bg/03_weather.png"
 elif wather_generator >= 41 and wather_generator <= 60: #Floating cloud
-    show screen new_window # показываем заглушку за окном #<<<XALJIO------------------------------------------XALJIO!!!!!!!!!!!
+    show screen new_window #<<<------------------------------------------!!!!!!!!!!!
     show screen cloud #THE CLOUD.
     #show image "01_hp/01_bg/03_weather.png"
     #show cloud_01 at Position(xpos=280, ypos=215, xanchor="center", yanchor="center")
@@ -992,27 +992,26 @@ init -2:
     
     
     transform custom_walk_02(x,x2): #Same custom walk but for Hermione.
-        xpos x #координата X, из которой облако начинает движение
-        ypos 250 #высота, на котором плывет облако
-        linear hermione_speed xpos x2 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+        xpos x
+        ypos 250
+        linear hermione_speed xpos x2 # linear
 
-    transform custom_walk(x,x2): #Метод ATL для задания движения облаков. Более продвинутый и современный, чем move. Про его возможности читать здесь: http://www.renpy.org/wiki/atl 
-        xpos x #координата X, из которой облако начинает движение
-        ypos 210 #высота, на котором плывет облако
-        linear snapes_speed xpos x2 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+    transform custom_walk(x,x2): # http://www.renpy.org/wiki/atl 
+        xpos x
+        ypos 210
+        linear snapes_speed xpos x2 # linear
         
-    transform genie_walk(x,x2): #Метод ATL для задания движения облаков. Более продвинутый и современный, чем move. Про его возможности читать здесь: http://www.renpy.org/wiki/atl 
-        xpos x #координата X, из которой облако начинает движение
-        ypos 260 #высота, на котором плывет облако
-        linear snapes_speed xpos x2 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+    transform genie_walk(x,x2): #http://www.renpy.org/wiki/atl 
+        xpos x
+        ypos 260
+        linear snapes_speed xpos x2 # linear
         
 
 
-#методы движения через ATL надо объявлять в этом блоке
-    transform cloud_move: #Метод ATL для задания движения облаков. Более продвинутый и современный, чем move. Про его возможности читать здесь: http://www.renpy.org/wiki/atl
-        xpos 408 #координата X, из которой облако начинает движение
-        choice: #Функция, для выбора случайного значение из (в данном случае) пяти заданных для высоты облака. Можно хоть 20 выборов задать.
-            ypos 150 #высота, на котором плывет облако
+    transform cloud_move: #http://www.renpy.org/wiki/atl
+        xpos 408
+        choice:
+            ypos 150
         choice:
             ypos 160
         choice:
@@ -1022,47 +1021,36 @@ init -2:
         choice:
             ypos 200
 
-        linear 15.0 xpos 50 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+        linear 15.0 xpos 50 # linear
         pause 7
-        repeat # повтор движения
+        repeat
 
 
     transform cloud_night_move_01: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        xpos 408 #координата X, из которой облако начинает движение
+        xpos 408
         choice:
             ypos 130
         choice:
-            ypos 150 #высота, на котором плывет облако
+            ypos 150
         choice:
-            ypos 150 #высота, на котором плывет облако
-        linear 30.0 xpos 50 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+            ypos 150
+        linear 30.0 xpos 50 # linear
         pause 2
-        repeat # повтор движения
+        repeat
 
     transform cloud_night_move_02: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        xpos 408 #координата X, из которой облако начинает движение
+        xpos 408
         choice:
-            ypos 150 #высота, на котором плывет облако
+            ypos 150
         choice:
-            ypos 170 #высота, на котором плывет облако
-        linear 70.0 xpos 50 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+            ypos 170
+        linear 70.0 xpos 50 # linear
         pause 2
-        repeat # повтор движения
+        repeat
 
     transform cloud_night_move_03: #CLOUD NIGHT 01. http://www.renpy.org/wiki/atl
-        xpos 408 #координата X, из которой облако начинает движение
-        ypos 160 #высота, на котором плывет облако
-        linear 50.0 xpos 50 # linear — скорость движения. Чем больше значение , тем медленнее. xpos — координата x, куда облако движется
+        xpos 408
+        ypos 160
+        linear 50.0 xpos 50 # linear
         pause 2
-        repeat # повтор движения
-
-
-
-
-
-
-
-
-
-    label assmenu_ht: # Sent here from "EXTRAS" menu. Basically just jumps to the title screen.
-        return
+        repeat

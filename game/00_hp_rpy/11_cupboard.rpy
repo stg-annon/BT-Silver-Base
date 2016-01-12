@@ -352,7 +352,7 @@ label rummaging:
             else: 
                 jump day_start
     
-    if rum_times == 15 and not cataloug_found:
+    if rum_times >= 7 and not cataloug_found:
         $ renpy.play('sounds/win2.mp3')   #Not loud.
         $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
         $ the_gift = "01_hp/18_store/31.png" # DAHR's oddities catalog. 
