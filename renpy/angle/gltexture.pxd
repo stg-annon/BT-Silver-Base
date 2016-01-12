@@ -79,7 +79,8 @@ cpdef blend(
     double alpha,
     double over,
     double fraction,
-    Environ environ)
+    Environ environ,
+    bint nearest)
 
 cpdef imageblend(
     TextureGrid tg0,
@@ -92,4 +93,5 @@ cpdef imageblend(
     double over,
     double fraction,
     int ramp,
-    Environ environ)
+    Environ environ,
+    bint nearest)

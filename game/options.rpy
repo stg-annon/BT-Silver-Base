@@ -30,7 +30,7 @@ init -1 python hide:v
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "WT Silver"
-    config.version = "1.00"
+    config.version = "1.01"
 
     #########################################
     # Themes

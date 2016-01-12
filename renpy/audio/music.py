@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -406,6 +406,18 @@ def set_mixer(channel, mixer, default=False):
     except:
         if renpy.config.debug_sound:
             raise
+
+def get_all_mixers():
+    """
+    This gets all mixers in use.
+    """
+
+    rv = set()
+
+    for i in renpy.audio.audio.all_channels:
+        rv.add(i.mixer)
+
+    return list(rv)
 
 def channel_defined(channel):
     """

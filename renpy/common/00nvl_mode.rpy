@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -408,7 +408,7 @@ python early hide:
     def parse_nvl_show_hide(l):
         rv = l.simple_expression()
         if rv is None:
-            renpy.error('expected simple expression')
+            rv = "None"
 
         if not l.eol():
             renpy.error('expected end of line')

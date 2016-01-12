@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -120,7 +120,7 @@ def predict_show_display_say(who, what, who_args, what_args, window_args, image=
     if screen:
         props = compute_widget_properties(who_args, what_args, window_args)
 
-        renpy.display.screen.predict_screen(
+        renpy.display.predict.screen(
             screen,
             _widget_properties=props,
             who=who,
@@ -395,16 +395,18 @@ def display_say(
     after_rollback = renpy.game.after_rollback
     if after_rollback:
         slow = False
+        all_at_once = True
 
     # If we're committed to skipping this statement, disable slow.
     elif (renpy.config.skipping and
           (renpy.game.preferences.skip_unseen or
            renpy.game.context().seen_current(True))):
         slow = False
+        all_at_once = True
 
     # Figure out which pause we're on. (Or set the pause to None in
     # order to put us in all-at-once mode.)
-    if not interact:
+    if not interact or renpy.game.preferences.self_voicing:
         all_at_once = True
 
     dtt = DialogueTextTags(what)
@@ -807,7 +809,7 @@ class ADVCharacter(object):
 
             ctx = renpy.game.context()
 
-            if (ctx.translate_language is not None) and (ctx.translate_identifier is not None):
+            if ctx.translate_block_language is not None:
                 translate = False
             else:
                 translate = True

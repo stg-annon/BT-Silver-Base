@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -56,21 +56,27 @@ from renpy.display.behavior import map_event, queue_event, clear_keymap_cache
 from renpy.display.minigame import Minigame
 from renpy.display.screen import define_screen, show_screen, hide_screen, use_screen, current_screen
 from renpy.display.screen import has_screen, get_screen, get_widget, ScreenProfile as profile_screen
+from renpy.display.screen import get_widget_properties
+
 from renpy.display.focus import focus_coordinates
 from renpy.display.predict import screen as predict_screen
-from renpy.display.image import image_exists
+
+from renpy.display.image import image_exists, image_exists as has_image
+from renpy.display.image import get_available_image_tags, get_available_image_attributes
+
+from renpy.display.im import load_surface, load_image
 
 from renpy.curry import curry, partial
 from renpy.audio.sound import play
 from renpy.display.video import movie_start_fullscreen, movie_start_displayable, movie_stop
 
-from renpy.loadsave import load, save, list_saved_games, can_load, rename_save, unlink_save, scan_saved_game
+from renpy.loadsave import load, save, list_saved_games, can_load, rename_save, copy_save, unlink_save, scan_saved_game
 from renpy.loadsave import list_slots, newest_slot, slot_mtime, slot_json, slot_screenshot, force_autosave
 
 from renpy.python import py_eval as eval
 from renpy.python import rng as random
 from renpy.atl import atl_warper
-from renpy.easy import predict, displayable
+from renpy.easy import predict, displayable, split_properties
 from renpy.parser import unelide_filename, get_parse_errors
 from renpy.translation import change_language, known_languages
 
@@ -86,6 +92,14 @@ from renpy.text.extras import check_text_tags
 
 from renpy.memory import profile_memory, diff_memory, profile_rollback
 
+from renpy.text.textsupport import TAG as TEXT_TAG, TEXT as TEXT_TEXT, PARAGRAPH as TEXT_PARAGRAPH, DISPLAYABLE as TEXT_DISPLAYABLE
+
+from renpy.execution import not_infinite_loop
+
+from renpy.sl2.slparser import CustomParser as register_sl_statement, register_sl_displayable
+
+from renpy.ast import eval_who
+
 renpy_pure("ParameterizedText")
 renpy_pure("Keymap")
 renpy_pure("has_screen")
@@ -98,13 +112,13 @@ renpy_pure("check_text_tags")
 
 import time
 import sys
+import threading
 
 def public_api():
     """
     :undocumented:
 
-    This does nothing, except to make the pyflakes warnings about
-    unused imports go away.
+    This does nothing, except to make warnings about unused imports go away.
     """
     ParameterizedText
     register_sfont, register_mudgefont, register_bmfont
@@ -114,7 +128,7 @@ def public_api():
     curry, partial
     play
     movie_start_fullscreen, movie_start_displayable, movie_stop
-    load, save, list_saved_games, can_load, rename_save, unlink_save, scan_saved_game
+    load, save, list_saved_games, can_load, rename_save, copy_save, unlink_save, scan_saved_game
     list_slots, newest_slot, slot_mtime, slot_json, slot_screenshot, force_autosave
     eval
     random
@@ -124,10 +138,10 @@ def public_api():
     music
     time
     define_screen, show_screen, hide_screen, use_screen, has_screen
-    current_screen, get_screen, get_widget, profile_screen
+    current_screen, get_screen, get_widget, profile_screen, get_widget_properties
     focus_coordinates
     predict, predict_screen
-    displayable
+    displayable, split_properties
     unelide_filename, get_parse_errors
     change_language, known_languages
     language_tailor
@@ -136,8 +150,17 @@ def public_api():
     check_text_tags
     map_event, queue_event, clear_keymap_cache
     const, pure, not_const
-    image_exists
-    profile_memory, diff_memory
+    image_exists, has_image
+    get_available_image_tags, get_available_image_attributes
+    load_image, load_surface
+    profile_memory, diff_memory, profile_rollback
+    TEXT_TAG
+    TEXT_TEXT
+    TEXT_PARAGRAPH
+    TEXT_DISPLAYABLE
+    not_infinite_loop
+    register_sl_statement, register_sl_displayable
+    eval_who
 
 del public_api
 
@@ -221,11 +244,10 @@ def checkpoint(data=None, keep_rollback=None):
         game is being rolled back.
     """
 
-    if renpy.store._rollback:
-        if keep_rollback is None:
-            keep_rollback = renpy.config.keep_rollback_data
+    if keep_rollback is None:
+        keep_rollback = renpy.config.keep_rollback_data
 
-        renpy.game.log.checkpoint(data, keep_rollback=keep_rollback)
+    renpy.game.log.checkpoint(data, keep_rollback=keep_rollback, hard=renpy.store._rollback)
 
 
 def block_rollback():
@@ -237,6 +259,22 @@ def block_rollback():
     """
 
     renpy.game.log.block()
+
+
+def suspend_rollback(flag):
+    """
+    :doc: rollback
+    :args: (flag)
+
+    Rollback will skip sections of the game where rollback has been
+    suspended.
+
+    `flag`:
+        When `flag` is true, rollback is suspended. When false,
+        rollback is resumed.
+    """
+
+    renpy.game.log.suspend_checkpointing(flag)
 
 
 def fix_rollback():
@@ -341,6 +379,61 @@ def copy_images(old, new):
             renpy.display.image.register_image(new + k[lenold:], v)
 
 
+def default_layer(layer, tag, expression=False):
+    """
+    :undocumented:
+
+    If layer is not None, returns it. Otherwise, interprets `tag` as a name
+    or tag, then looks up what the default layer for that tag is, and returns
+    the result.
+    """
+
+    if layer is not None:
+        return layer
+
+    if expression:
+        return 'master'
+
+    if isinstance(tag, tuple):
+        tag = tag[0]
+    elif " " in tag:
+        tag = tag.split()[0]
+
+    return renpy.config.tag_layer.get(tag, renpy.config.default_tag_layer)
+
+
+def can_show(name, layer=None, tag=None):
+    """
+    :doc: image_func
+
+    Determines if `name` can be used to show an image. This interprets `name`
+    as a tag and attributes. This is combined with the attributes of the
+    currently-showing image with `tag` on `layer` to try to determine a unique image
+    to show. If a unique image can be show, returns the name of that image as
+    a tuple. Otherwise, returns None.
+
+    `tag`
+        The image tag to get attributes from. If not given, defaults to the first
+        component of `name`.
+
+    `layer`
+        The layer to check. If None, uses the default layer for `tag`.
+    """
+
+    if not isinstance(name, tuple):
+        name = tuple(name.split())
+
+    if tag is None:
+        tag = name[0]
+
+    layer = default_layer(layer, None)
+
+    try:
+        return renpy.game.context().images.apply_attributes(layer, tag, name)
+    except:
+        return None
+
+
 def showing(name, layer='master'):
     """
     :doc: image_func
@@ -352,15 +445,29 @@ def showing(name, layer='master'):
         May be a string giving the image name or a tuple giving each
         component of the image name. It may also be a string giving
         only the image tag.
+
+
+    `layer`
+        The layer to check. If None, uses the default layer for `tag`.
     """
 
     if not isinstance(name, tuple):
         name = tuple(name.split())
 
+    layer = default_layer(layer, name)
+
     return renpy.game.context().images.showing(layer, name)
 
+def get_showing_tags(layer='master'):
+    """
+    :doc: image_func
 
-def predict_show(name, layer='master', what=None, tag=None, at_list=[ ]):
+    Returns the set of image tags that are currently being shown on `layer`
+    """
+
+    return renpy.game.context().images.get_showing_tags(layer)
+
+def predict_show(name, layer=None, what=None, tag=None, at_list=[ ]):
     """
     :undocumented:
 
@@ -370,7 +477,7 @@ def predict_show(name, layer='master', what=None, tag=None, at_list=[ ]):
         The name of the image to show, a string.
 
     `layer`
-        The layer the image is being show non.
+        The layer the image is being shown on.
 
     `what`
         What is being show - if given, overrides `name`.
@@ -383,6 +490,8 @@ def predict_show(name, layer='master', what=None, tag=None, at_list=[ ]):
     """
 
     key = tag or name[0]
+
+    layer = default_layer(key, layer)
 
     if what is None:
         what = name
@@ -415,7 +524,7 @@ def predict_show(name, layer='master', what=None, tag=None, at_list=[ ]):
     renpy.display.predict.displayable(img)
 
 
-def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behind=[ ], atl=None, transient=False, munge_name=True):
+def show(name, at_list=[ ], layer=None, what=None, zorder=None, tag=None, behind=[ ], atl=None, transient=False, munge_name=True):
     """
     :doc: se_images
     :args: (name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behind=[ ])
@@ -432,7 +541,8 @@ def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behin
 
     `layer`
         A string, giving the name of the layer on which the image will be shown.
-        The equivalent of the ``onlayer`` property.
+        The equivalent of the ``onlayer`` property. If None, uses the default
+        layer associated with the tag.
 
     `what`
         If not None, this is a displayable that will be shown in lieu of
@@ -441,7 +551,8 @@ def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behin
         associate a tag with the image.
 
     `zorder`
-        An integer, the equivalent of the ``zorder`` property.
+        An integer, the equivalent of the ``zorder`` property. If None, the
+        zorder is preserved if it exists, and is otherwise set to 0.
 
     `tag`
         A string, used to specify the the image tag of the shown image. The
@@ -452,18 +563,33 @@ def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behin
         The equivalent of the ``behind`` property.
     """
 
+    default_transform = renpy.config.default_transform
+
     if renpy.game.context().init_phase:
         raise Exception("Show may not run while in init phase.")
 
     if not isinstance(name, tuple):
         name = tuple(name.split())
 
+    if zorder is None and not renpy.config.preserve_zorder:
+        zorder = 0
+
     sls = scene_lists()
     key = tag or name[0]
+
+    layer = default_layer(layer, key)
 
     if renpy.config.sticky_positions:
         if not at_list and key in sls.at_list[layer]:
             at_list = sls.at_list[layer][key]
+
+    if not at_list:
+        tt = renpy.config.tag_transform.get(key, None)
+        if tt is not None:
+            if not isinstance(tt, list):
+                at_list = [ tt ]
+            else:
+                at_list = list(tt)
 
     if what is None:
         what = name
@@ -471,7 +597,16 @@ def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behin
         what = tuple(what.split())
 
     if isinstance(what, renpy.display.core.Displayable):
-        base = img = what
+
+        if renpy.config.wrap_shown_transforms and isinstance(what, renpy.display.motion.Transform):
+            base = img = renpy.display.image.ImageReference(what, style='image_placement')
+
+            # Semi-principled, but mimics pre-6.99.6 behavior - if `what` is
+            # already a transform, do not apply the default transform to it.
+            default_transform = None
+
+        else:
+            base = img = what
 
     else:
 
@@ -506,10 +641,10 @@ def show(name, at_list=[ ], layer='master', what=None, zorder=0, tag=None, behin
     if renpy.config.missing_hide:
         renpy.config.missing_hide(name, layer)
 
-    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=renpy.config.default_transform, transient=transient)
+    sls.add(layer, img, key, zorder, behind, at_list=at_list, name=name, atl=atl, default_transform=default_transform, transient=transient)
 
 
-def hide(name, layer='master'):
+def hide(name, layer=None):
     """
     :doc: se_images
 
@@ -520,7 +655,8 @@ def hide(name, layer='master'):
          any image with the tag is hidden (the precise name does not matter).
 
     `layer`
-         The layer on which this function operates.
+         The layer on which this function operates. If None, uses the default
+         layer associated with the tag.
     """
 
     if renpy.game.context().init_phase:
@@ -531,6 +667,9 @@ def hide(name, layer='master'):
 
     sls = scene_lists()
     key = name[0]
+
+    layer = default_layer(layer, key)
+
     sls.remove(layer, key)
 
     if renpy.config.missing_hide:
@@ -555,6 +694,9 @@ def scene(layer='master'):
         $ renpy.show("bg beach")
     """
 
+    if layer is None:
+        layer = 'master'
+
     if renpy.game.context().init_phase:
         raise Exception("Scene may not run while in init phase.")
 
@@ -563,25 +705,6 @@ def scene(layer='master'):
 
     if renpy.config.missing_scene:
         renpy.config.missing_scene(layer)
-
-
-def watch(expression, style='default', **properties):
-    """
-    :doc: debug
-
-    This watches the given python expression, by displaying it in the
-    upper-left corner of the screen (although position properties
-    can change that). The expression should always be
-    defined, never throwing an exception.
-
-    A watch will not persist through a save or restart.
-    """
-
-    def overlay_func():
-        renpy.ui.text(unicode(renpy.python.py_eval(expression)),
-                      style=style, **properties)
-
-    renpy.config.overlay_functions.append(overlay_func)
 
 
 def input(prompt, default='', allow=None, exclude='{}', length=None, with_none=None, pixel_width=None): #@ReservedAssignment
@@ -1114,10 +1237,15 @@ def pause(delay=None, music=None, with_none=None, hard=False, checkpoint=None):
     if renpy.game.after_rollback and roll_forward is None:
         delay = 0
 
-    if hard:
-        renpy.ui.saybehavior(dismiss='dismiss_hard_pause')
+    if delay is None:
+        afm = " "
     else:
-        renpy.ui.saybehavior()
+        afm = None
+
+    if hard or not renpy.store._dismiss_pause:
+        renpy.ui.saybehavior(afm=afm, dismiss='dismiss_hard_pause')
+    else:
+        renpy.ui.saybehavior(afm=afm)
 
     if delay is not None:
         renpy.ui.pausebehavior(delay, False)
@@ -1250,8 +1378,8 @@ def rollback(force=False, checkpoints=1, defer=False, greedy=True, label=None):
         executed.
 
     `greedy`
-        If true, rollback will occur just before the previous checkpoint.
-        If false, rollback occurs to just before the current checkpoint.
+        If true, rollback will finish just after the previous checkpoint.
+        If false, rollback finish just before the current checkpoint.
 
     `label`
         If not None, a label that is called when rollback completes.
@@ -1425,6 +1553,15 @@ def call(label, *args, **kwargs):
     """
 
     raise renpy.game.CallException(label, args, kwargs)
+
+def return_statement():
+    """
+    :doc: se_call
+
+    Causes Ren'Py to return from the current Ren'Py-level call.
+    """
+
+    jump("_renpy_return")
 
 
 def screenshot(filename):
@@ -1632,7 +1769,7 @@ def log(msg):
     :doc: debug
 
     If :var:`config.log` is not set, this does nothing. Otherwise, it opens
-    the logfile (if not already open), formats the message to 70
+    the logfile (if not already open), formats the message to :var:`config.log_width`
     columns, and prints it to the logfile.
     """
 
@@ -1644,17 +1781,22 @@ def log(msg):
     if msg is None:
         return
 
-    if not logfile:
-        import codecs
+    try:
 
-        logfile = _file(renpy.config.log, "a")
-        if not logfile.tell():
-            logfile.write(codecs.BOM_UTF8)
+        if not logfile:
+            import codecs
+            logfile = _file(renpy.config.log, "a")
 
-    import textwrap
+            if not logfile.tell():
+                logfile.write(codecs.BOM_UTF8)
 
-    print >>logfile, textwrap.fill(msg).encode("utf-8")
-    logfile.flush()
+        import textwrap
+
+        print >>logfile, textwrap.fill(msg, renpy.config.log_width).encode("utf-8")
+        logfile.flush()
+
+    except:
+        renpy.config.log = None
 
 
 def force_full_redraw():
@@ -1805,17 +1947,22 @@ def image_size(im):
     return surf.get_size()
 
 
-def get_at_list(name, layer='master'):
+def get_at_list(name, layer=None):
     """
-    :undocumented:
+    :doc: se_images
 
-    Returns the list of transforms being applied to a layer.
+    Returns the list of transforms being applied to the image with tag `name`
+    on `layer`. Returns an empty list if no transofrms are being applied, or
+    None if the image is not shown.
+
+    If `layer` is None, uses the default layer for the given tag.
     """
 
     if isinstance(name, basestring):
         name = tuple(name.split())
 
     tag = name[0]
+    layer = default_layer(layer, tag)
 
     return renpy.game.context().scene_lists.at_list[layer].get(tag, None)
 
@@ -2054,6 +2201,7 @@ def load_string(s, filename="<string>"):
 def pop_call():
     """
     :doc: other
+    :name: renpy.pop_call
 
     Pops the current call from the call stack, without returning to
     the location.
@@ -2062,8 +2210,7 @@ def pop_call():
     to its caller.
     """
 
-    renpy.game.context().pop_dynamic()
-    renpy.game.context().lookup_return(pop=True)
+    renpy.game.context().pop_call()
 
 pop_return = pop_call
 
@@ -2153,9 +2300,13 @@ def get_image_bounds(tag, width=None, height=None, layer='master'):
     `width`, `height`
         The width and height of the area that contains the image. If None,
         defaults the width and height of the screen, respectively.
+
+    `layer`
+        If None, uses the default layer for `tag`.
     """
 
     tag = tag.split()[0]
+    layer = default_layer(layer, tag)
 
     if width is None:
         width = renpy.config.screen_width
@@ -2279,7 +2430,7 @@ def stop_predict_screen(name):
     """
 
     new_predict = renpy.python.RevertableDict(renpy.store._predict_screen)
-    new_predict.pop(name)
+    new_predict.pop(name, None)
     renpy.store._predict_screen = new_predict
 
 
@@ -2287,7 +2438,7 @@ def call_screen(_screen_name, *args, **kwargs):
     """
     :doc: screens
 
-    The programmatic equivalent of the show screen statement.
+    The programmatic equivalent of the call screen statement.
 
     This shows `_screen_name` as a screen, then causes an interaction
     to occur. The screen is hidden at the end of the interaction, and
@@ -2342,6 +2493,9 @@ def list_files(common=False):
     rv = [ ]
 
     for dir, fn in renpy.loader.listdirfiles(common): #@ReservedAssignment
+        if fn.startswith("saves/"):
+            continue
+
         rv.append(fn)
 
     return rv
@@ -2409,8 +2563,24 @@ def mode(mode):
 
     if mode in modes:
         modes.remove(mode)
+
     modes.insert(0, mode)
 
+def get_mode():
+    """
+    :doc: modes
+
+    Returns the current mode, or None if it is not defined.
+    """
+
+    ctx = renpy.game.context()
+
+    if not ctx.use_modes:
+        return None
+
+    modes = ctx.modes
+
+    return modes[0]
 
 def notify(message):
     """
@@ -2499,19 +2669,25 @@ def get_side_image(prefix_tag, image_tag=None, not_showing=True, layer='master')
 
     If not_showing is True, this only returns a side image if the image the
     attributes are taken from is not on the screen.
+
+    If `layer` is None, uses the default layer for the currently showing
+    tag.
     """
 
     images = renpy.game.context().images
 
     if image_tag is not None:
-        attrs = (image_tag,) + images.get_attributes(layer, image_tag)
+        image_layer = default_layer(layer, image_tag)
+        attrs = (image_tag,) + images.get_attributes(image_layer, image_tag)
     else:
         attrs = renpy.store._side_image_attributes
 
     if not attrs:
         return None
 
-    if not_showing and images.showing(layer, (attrs[0], )):
+    attr_layer = default_layer(layer, attrs)
+
+    if not_showing and images.showing(attr_layer, (attrs[0], )):
         return None
 
     required = set()
@@ -2543,6 +2719,21 @@ def set_physical_size(size):
     if get_renderer_info()["resizable"]:
         renpy.display.draw.quit()
         renpy.display.interface.set_mode(size)
+
+def reset_physical_size():
+    """
+    :doc: other
+
+    Attempts to set the size of the physical window to the specified values
+    in renpy.config. (That is, screen_width and screen_height.) This has the
+    side effect of taking the screen out of fullscreen mode.
+    """
+
+    renpy.game.preferences.fullscreen = False
+
+    if get_renderer_info()["resizable"]:
+        renpy.display.draw.quit()
+        renpy.display.interface.set_mode((renpy.config.screen_width, renpy.config.screen_height))
 
 
 @renpy_pure
@@ -2719,7 +2910,7 @@ def count_seen_dialogue_blocks():
     when the script has changed and older dialogue blocks are no longer accessible.
     """
 
-    return len(renpy.game.persistent._seen_translates) # @UndefinedVariable
+    return renpy.game.seen_translates_count
 
 
 def substitute(s, scope=None, translate=True):
@@ -2789,3 +2980,163 @@ def set_return_stack(stack):
     """
 
     renpy.game.context().set_return_stack(stack)
+
+def invoke_in_thread(fn, *args, **kwargs):
+    """
+    :doc: other
+
+    Invokes the function `fn` in a background thread, passing it the
+    provided arguments and keyword arguments. Restarts the interaction
+    once the thread returns.
+
+    This function creates a daemon thread, which will be automatically
+    stopped when Ren'Py is shutting down.
+    """
+
+    def run():
+        try:
+            fn(*args, **kwargs)
+        except:
+            import traceback
+            traceback.print_exc()
+
+        restart_interaction()
+
+    t = threading.Thread(target=run)
+    t.daemon = True
+    t.start()
+
+def cancel_gesture():
+    """
+    :doc: gesture
+
+    Cancels the current gesture, preventing the gesture from being recognized.
+    This should be called by displayables that have gesture-like behavior.
+    """
+
+    renpy.display.gesture.recognizer.cancel() # @UndefinedVariable
+
+def execute_default_statement(start=False):
+    """
+    :undocumented:
+
+    Executes the default statement.
+    """
+
+    for i in renpy.ast.default_statements:
+        i.set_default(start)
+
+def write_log(s, *args):
+    """
+    :undocumented:
+
+    Writes to log.txt.
+    """
+
+    renpy.display.log.write(s, *args)
+
+def predicting():
+    """
+    :doc: screens
+
+    Returns true if Ren'Py is currently predicting the screen.
+    """
+
+    return renpy.display.predict.predicting
+
+def get_line_log():
+    """
+    :undocumented:
+
+    Returns the list of lines that have been shown since the last time
+    :func:`renpy.clear_line_log` was called.
+    """
+
+    return renpy.game.context().line_log[:]
+
+def clear_line_log():
+    """
+    :undocumented:
+
+    Clears the line log.
+    """
+
+    renpy.game.context().line_log = [ ]
+
+def add_layer(layer, above=None, below=None, menu_clear=True):
+    """
+    :doc: other
+
+    Adds a new layer to the screen. If the layer already exists, this
+    function does nothing.
+
+    One of `behind` or `above` must be given.
+
+    `layer`
+        A string giving the name of the new layer to add.
+
+    `above`
+        If not None, a string giving the name of a layer the new layer will
+        be placed above.
+
+    `below`
+        If not None, a string giving the name of a layer the new layer will
+        be placed below.
+
+    `menu_clear`
+        If true, this layer will be cleared when entering the game menu
+        context, and restored when leaving the
+    """
+
+    layers = renpy.config.layers
+
+    if layer in renpy.config.layers:
+        return
+
+    if (above is not None) and (below is not None):
+        raise Exception("The above and below arguments to renpy.add_layer are mutually exclusive.")
+
+    elif above is not None:
+        try:
+            index = layers.index(above) + 1
+        except ValueError:
+            raise Exception("Layer '%s' does not exist." % above)
+
+    elif below is not None:
+        try:
+            index = layers.index(below)
+        except ValueError:
+            raise Exception("Layer '%s' does not exist." % below)
+
+    else:
+        raise Exception("The renpy.add_layer function requires either the above or below argument.")
+
+    layers.insert(index, layer)
+
+    if menu_clear:
+        renpy.config.menu_clear_layers.append(layer) # @UndefinedVariable
+
+def maximum_framerate(t):
+    """
+    :doc: other
+
+    Forces Ren'Py to draw the screen at the maximum framerate for `t` seconds.
+    """
+
+    if renpy.display.interface is not None:
+        renpy.display.interface.maximum_framerate(t)
+    else:
+        renpy.display.core.initial_maximum_framerate = max(renpy.display.core.initial_maximum_framerate, t)
+
+
+def is_start_interact():
+    """
+    :doc: other
+
+    Returns true if restart_interaction has not been called during the current
+    interaction. This can be used to determine if the interaction is just being
+    started, or has been restarted.
+    """
+
+    return renpy.display.interface.start_interact
+

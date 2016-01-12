@@ -1,4 +1,4 @@
-﻿# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+﻿# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -352,6 +352,12 @@ init -1400:
 
     define irisout = CropMove(1.0, "irisout")
     define irisin = CropMove(1.0, "irisin")
+    
+    # Various uses of PushMove.
+    define pushright = PushMove(1.0, "pushright")
+    define pushleft = PushMove(1.0, "pushleft")
+    define pushup = PushMove(1.0, "pushup")
+    define pushdown = PushMove(1.0, "pushdown")
 
     # Zoom-based transitions. Legacy - nowadays, these are probably best done with ATL.
     define zoomin = OldMoveTransition(0.5, enter_factory=ZoomInOut(0.01, 1.0))
@@ -375,10 +381,6 @@ init 1400 python:
         narrator = _narrator
 
     renpy.pure('narrator')
-
-    if not hasattr(store, 'name_only'):
-        name_only = adv
-
     renpy.pure('name_only')
 
     if not hasattr(store, 'centered'):

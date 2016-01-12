@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -22,6 +22,9 @@
 # This file contains support for state-machine controlled animations.
 
 import renpy.display
+import renpy.game
+import renpy.easy
+
 import random
 
 class State(object):

@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -229,7 +229,37 @@ def reset():
 renpy.game.post_init.append(reset)
 
 def interact(type='misc', roll_forward=None, **kwargs): #@ReservedAssignment
-    # Docs in wiki.
+    """
+    :doc: ui
+    :args: (roll_forward=None, mouse='default')
+
+    Causes an interaction with the user, and returns the result of that
+    interaction. This causes Ren'Py to to redraw the screen and begin
+    processing input events. When a displayable returns a value in
+    response to an event, that value is returned from ui.interact,
+    and the interaction ends.
+
+    This function is rarely called directly. It is usually called by other
+    parts of Ren'Py, including the say statement, menu statement, with statement,
+    pause statement, call screen, :func:`renpy.input`, among many other
+    functions. However, it can be called directly if necessary.
+
+    When an interaction ends, the transient layer and all screens shown with
+    transient=True are cleared from the scene lists.
+
+    The following arguments are documented. As other, undocumented arguments
+    exist for Ren'Py's internal use, please pass all arguments as keyword
+    arguments.
+
+    `roll_forward`
+        The information that will be returned by this function when a
+        roll forward occurs. (If None, the roll forward is ignored.) This
+        should usually be passed the result of the :func:`renpy.roll_forward_info`
+        function.
+
+    `mouse`
+        The style of mouse cursor to use during this function.
+    """
 
     if stack is None:
         raise Exception("Interaction not allowed during init phase.")
@@ -400,9 +430,9 @@ class Wrapper(renpy.object.Object):
         if not stack:
             raise Exception("Can't add displayable during init phase.")
 
-        # Pull out the special kwargs, id, at, and style_group.
+        # Pull out the special kwargs, widget_id, at, and style_group.
 
-        id = kwargs.pop("id", None) #@ReservedAssignment
+        widget_id = kwargs.pop("id", None) #@ReservedAssignment
 
         at_list = kwargs.pop("at", [ ])
         if not isinstance(at_list, (list, tuple)):
@@ -428,24 +458,19 @@ class Wrapper(renpy.object.Object):
         do_add = True
 
         if screen:
-            if id in screen.widget_properties:
-                keyword.update(screen.widget_properties[id])
+            if widget_id in screen.widget_properties:
+                keyword.update(screen.widget_properties[widget_id])
 
-            if id in screen.hidden_widgets:
+            if widget_id in screen.hidden_widgets:
                 do_add = False
 
-        grab = False
-
         if old_transfers:
-            if self.replaces:
-                w = screen.old_widgets.get(id, None)
+            old_main = screen.old_widgets.get(widget_id, None)
 
-                if w is not None:
-                    keyword["replaces"] = w
-
-                    if (renpy.display.focus.grab is w) and (not screen.hiding):
-                        grab = True
-
+            if self.replaces and old_main is not None:
+                keyword["replaces"] = old_main
+        else:
+            old_main = None
 
         if self.style and "style" not in keyword:
             keyword["style"] = style_group_style(self.style, style_group)
@@ -461,11 +486,14 @@ class Wrapper(renpy.object.Object):
             del tb # Important! Prevents memory leaks via our frame.
             raise
 
+        main = w._main or w
+
+        # Migrate the focus.
+        if (old_main is not None) and (not screen.hiding):
+            renpy.display.focus.replaced_by[id(old_main)] = main
+
         # Wrap the displayable based on the at_list and at_stack.
         atw = w
-
-        if grab:
-            renpy.display.focus.new_grab = w
 
         while at_stack:
             at_list.append(at_stack.pop())
@@ -486,18 +514,16 @@ class Wrapper(renpy.object.Object):
         elif self.many:
             stack.append(Many(w, self.imagemap, style_group))
 
-        main = w._main or w
-
-        # If we have an id, record the displayable, the transform,
+        # If we have an widget_id, record the displayable, the transform,
         # and maybe take the state from a previous transform.
-        if screen and id is not None:
-            screen.widgets[id] = main
+        if screen and widget_id is not None:
+            screen.widgets[widget_id] = main
 
             if isinstance(atw, renpy.display.motion.Transform):
-                screen.transforms[id] = atw
+                screen.transforms[widget_id] = atw
 
                 if old_transfers:
-                    oldt = screen.old_transforms.get(id, None)
+                    oldt = screen.old_transforms.get(widget_id, None)
                 else:
                     oldt = None
 
@@ -594,12 +620,12 @@ saybehavior = Wrapper(renpy.display.behavior.SayBehavior)
 pausebehavior = Wrapper(renpy.display.behavior.PauseBehavior)
 soundstopbehavior = Wrapper(renpy.display.behavior.SoundStopBehavior)
 
-def _key(key, action=None):
+def _key(key, action=None, activate_sound=None):
 
     if action is None:
         raise Exception("Action is required in ui.key.")
 
-    return renpy.display.behavior.Keymap(**{ key : action})
+    return renpy.display.behavior.Keymap(activate_sound=activate_sound, **{ key : action})
 
 key = Wrapper(_key)
 
@@ -891,14 +917,7 @@ imagebutton = Wrapper(_imagebutton, style="image_button")
 
 def _textbutton(label, clicked=None, style=None, text_style=None, substitute=True, scope=None, **kwargs):
 
-    button_kwargs = { }
-    text_kwargs = { }
-
-    for k, v in kwargs.iteritems():
-        if k.startswith("text_"):
-            text_kwargs[k[5:]] = v
-        else:
-            button_kwargs[k] = v
+    text_kwargs, button_kwargs = renpy.easy.split_properties(kwargs, "text_", "")
 
     # Deal with potentially bad keyword arguments. (We'd get these if the user
     # writes text_align instead of text_text_align.)
@@ -917,20 +936,14 @@ def _textbutton(label, clicked=None, style=None, text_style=None, substitute=Tru
     text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
     rv.add(text)
     rv._main = text
+    rv._composite_parts = [ text ]
     return rv
 
 textbutton = Wrapper(_textbutton)
 
 def _label(label, style=None, text_style=None, substitute=True, scope=None, **kwargs):
 
-    label_kwargs = { }
-    text_kwargs = { }
-
-    for k, v in kwargs.iteritems():
-        if k.startswith("text_"):
-            text_kwargs[k[5:]] = v
-        else:
-            label_kwargs[k] = v
+    text_kwargs, label_kwargs = renpy.easy.split_properties(kwargs, "text_", "")
 
     if style is None:
         style = style_group_style('label', NoStyleGroupGiven)
@@ -942,6 +955,7 @@ def _label(label, style=None, text_style=None, substitute=True, scope=None, **kw
     text = renpy.text.text.Text(label, style=text_style, substitute=substitute, scope=scope, **text_kwargs)
     rv.add(text)
     rv._main = text
+    rv._composite_parts = [ text ]
     return rv
 
 label = Wrapper(_label)
@@ -1145,13 +1159,18 @@ def _imagemap(ground=None, hover=None, insensitive=None, idle=None, selected_hov
     properties.setdefault('fit_first', True)
 
     rv = renpy.display.layout.MultiBox(layout='fixed', **properties)
+    parts = [ ]
 
     if ground:
         rv.add(renpy.easy.displayable(ground))
+        parts.append(ground)
 
     box = renpy.display.layout.MultiBox(layout='fixed')
     rv.add(box)
+    parts.append(box)
+
     rv._main = box
+    rv._composite_parts = parts
 
     return rv
 
@@ -1303,6 +1322,21 @@ def gamemenus(*args):
 # The on statement.
 
 on = Wrapper(renpy.display.behavior.OnEvent)
+
+##############################################################################
+# A utility function so CDD components can be given an id.
+def screen_id(id_, d):
+    """
+    :doc: ui
+
+    Assigns the displayable `d` the screen widget id `id_`, as if it had
+    been created by a screen statement with that id.
+    """
+
+    if screen is None:
+        raise Exception("ui.screen_id must be called from within a screen.")
+
+    screen.widget_id[id_] = d
 
 ##############################################################################
 # Postamble

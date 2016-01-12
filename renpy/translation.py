@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -83,24 +83,40 @@ class ScriptTranslator(object):
         """
 
         label = None
-        filename = None
+
+        if not nodes:
+            return
+
+        TranslatePython = renpy.ast.TranslatePython
+        TranslateBlock = renpy.ast.TranslateBlock
+        Menu = renpy.ast.Menu
+        Translate = renpy.ast.Translate
+
+        filename = renpy.exports.unelide_filename(nodes[0].filename)
+        filename = os.path.normpath(os.path.abspath(filename))
 
         for n in nodes:
 
-            if filename is None:
-                filename = renpy.exports.unelide_filename(n.filename)
-                filename = os.path.normpath(os.path.abspath(filename))
+            if not n.translation_relevant:
+                continue
 
-            if isinstance(n.name, basestring):
-                label = n.name
+            if n.name.__class__ is not tuple:
+                if isinstance(n.name, basestring):
+                    label = n.name
 
-            if isinstance(n, renpy.ast.TranslatePython):
+            type_n = n.__class__
+
+            if type_n is TranslatePython:
+                if n.language is not None:
+                    self.languages.add(n.language)
                 self.python[n.language].append(n)
 
-            if isinstance(n, renpy.ast.TranslateBlock):
+            elif type_n is TranslateBlock:
+                if n.language is not None:
+                    self.languages.add(n.language)
                 self.block[n.language].append(n)
 
-            elif isinstance(n, renpy.ast.Menu):
+            elif type_n is Menu:
 
                 for i in n.items:
                     s = i[0]
@@ -110,8 +126,7 @@ class ScriptTranslator(object):
 
                     self.additional_strings[filename].append((n.linenumber, s))
 
-            elif isinstance(n, renpy.ast.Translate):
-
+            elif type_n is Translate:
 
                 if n.language is None:
                     self.default_translates[n.identifier] = n
@@ -135,7 +150,7 @@ class ScriptTranslator(object):
                 continue
 
             translate = self.language_translates[identifier, language]
-            next_node = self.default_translates[identifier].next
+            next_node = self.default_translates[identifier].after
 
             renpy.ast.chain_block(translate.block, next_node)
 
@@ -454,6 +469,10 @@ def init_translation():
 
     load_all_rpts()
 
+    renpy.store._init_language() # @UndefinedVariable
+
+old_language = "language never set"
+
 def change_language(language):
     """
     :doc: translation_functions
@@ -461,6 +480,8 @@ def change_language(language):
     Changes the current language to `language`, which can be a string or
     None to use the default language.
     """
+
+    global old_language
 
     renpy.game.preferences.language = language
 
@@ -481,12 +502,16 @@ def change_language(language):
     for i in renpy.config.change_language_callbacks:
         i()
 
-    # Reset various parts of the system. Most notably, this clears the image
-    # cache, letting us load translated images.
-    renpy.exports.free_memory()
+    if old_language != language:
 
-    # Rebuild the styles.
-    renpy.style.rebuild() # @UndefinedVariable
+        # Reset various parts of the system. Most notably, this clears the image
+        # cache, letting us load translated images.
+        renpy.exports.free_memory()
+
+        # Rebuild the styles.
+        renpy.style.rebuild() # @UndefinedVariable
+
+        old_language = language
 
     # Restart the interaction.
     renpy.exports.restart_interaction()
@@ -925,7 +950,7 @@ def notags_filter(s):
 
 class DialogueFile(object):
 
-    def __init__(self, filename, output, tdf=True): # @ReservedAssignment
+    def __init__(self, filename, output, tdf=True, strings=False, notags=True, escape=True): # @ReservedAssignment
         """
         `filename`
             The file we're extracting dialogue from.
@@ -933,6 +958,15 @@ class DialogueFile(object):
         `tdf`
             If true, dialogue is extracted in tab-delimited format. If false,
             dialogue is extracted by itself.
+
+        `strings`
+            If true, extract all translatable strings, not just dialogue.
+
+        `notags`
+            If true, strip text tags from the extracted dialogue.
+
+        `escape`
+            If true, escape special characters in the dialogue.
         """
 
         self.filename = filename
@@ -943,17 +977,22 @@ class DialogueFile(object):
             return
 
         self.tdf = tdf
+        self.notags = notags
+        self.escape = escape
+        self.strings = strings
 
         self.f = open(output, "a")
 
-        self.write_translates()
+        self.write_dialogue()
 
         self.f.close()
 
-    def write_translates(self):
+    def write_dialogue(self):
         """
-        Writes the translates to the file.
+        Writes the dialogue to the file.
         """
+
+        lines = []
 
         translator = renpy.game.script.translator
 
@@ -971,24 +1010,69 @@ class DialogueFile(object):
                     else:
                         who = n.who
 
-                    what = notags_filter(n.what)
+                    what = n.what
+
+                    if self.notags:
+                        what = notags_filter(what)
+
+                    if self.escape:
+                        what = quote_unicode(what)
 
                     if self.tdf:
 
-                        line = [
+                        lines.append([
                             t.identifier,
                             who,
                             what,
                             n.filename,
                             str(n.linenumber),
-                            ]
+                            ])
 
                     else:
-                        line = [
-                            what
-                            ]
+                        lines.append([what])
 
-                    self.f.write("\t".join(line).encode("utf-8") + "\n")
+        if self.strings:
+            lines.extend(self.get_strings())
+
+            # If we're tab-delimited, we have line number info, which means we
+            # can sort the list so everything's in order, for menus and stuff.
+            if self.tdf:
+                lines.sort(key = lambda x: int(x[4]))
+
+        for line in lines:
+            self.f.write("\t".join(line).encode("utf-8") + "\n")
+
+    def get_strings(self):
+        """
+        Finds the strings in the file.
+        """
+
+        lines = []
+
+        filename = renpy.parser.elide_filename(self.filename)
+
+        for line, s in scan_strings(self.filename):
+
+            stl = renpy.game.script.translator.strings[None]
+
+            if s in stl.translations:
+                continue
+
+            stl.translations[s] = s
+
+            if self.notags:
+                s = notags_filter(s)
+
+            if self.escape:
+                s = quote_unicode(s)
+
+            if self.tdf:
+                lines.append(["", "", s, filename, str(line)])
+
+            else:
+                lines.append([s])
+
+        return lines
 
 
 def dialogue_command():
@@ -998,7 +1082,10 @@ def dialogue_command():
     """
 
     ap = renpy.arguments.ArgumentParser(description="Generates or updates translations.")
-    ap.add_argument("--text", help="Apply rot13 while generating translations.", dest="text", action="store_true")
+    ap.add_argument("--text", help="Output the dialogue as plain text, instead of a tab-delimited file.", dest="text", action="store_true")
+    ap.add_argument("--strings", help="Output all translatable strings, not just dialogue.", dest="strings", action="store_true")
+    ap.add_argument("--notags", help="Strip text tags from the dialogue.", dest="notags", action="store_true")
+    ap.add_argument("--escape", help="Escape quotes and other special characters.", dest="escape", action="store_true")
     args = ap.parse_args()
 
     tdf = not args.text
@@ -1029,7 +1116,7 @@ def dialogue_command():
             continue
 
         filename = os.path.normpath(filename)
-        DialogueFile(filename, output, tdf=tdf)
+        DialogueFile(filename, output, tdf=tdf, strings=args.strings, notags=args.notags, escape=args.escape)
 
     return False
 

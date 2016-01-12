@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -60,6 +60,9 @@ class Solid(renpy.display.core.Displayable):
 
     def render(self, width, height, st, at):
 
+        width = max(self.style.xminimum, width)
+        height = max(self.style.yminimum, height)
+
         color = self.color or self.style.color
 
         rv = Render(width, height)
@@ -83,7 +86,7 @@ class Solid(renpy.display.core.Displayable):
 class Frame(renpy.display.core.Displayable):
     """
     :doc: disp_imagelike
-    :args: (image, left, top, right=None, bottom=None, tile=False, **properties)
+    :args: (image, left=0, top=0, right=None, bottom=None, tile=False, **properties)
 
     A displayable that resizes an image to fill the available area,
     while preserving the width and height of its borders.  is often
@@ -122,6 +125,8 @@ class Frame(renpy.display.core.Displayable):
 
     __version__ = 1
 
+    properties = { }
+
     def after_upgrade(self, version):
         if version < 2:
             self.left = self.xborder
@@ -129,7 +134,7 @@ class Frame(renpy.display.core.Displayable):
             self.top = self.yborder
             self.bottom = self.yborder
 
-    def __init__(self, image, left=None, top=None, right=None, bottom=None, xborder=None, yborder=None, bilinear=True, tile=False, **properties):
+    def __init__(self, image, left=None, top=None, right=None, bottom=None, xborder=0, yborder=0, bilinear=True, tile=False, **properties):
         super(Frame, self).__init__(**properties)
 
         self.image = renpy.easy.displayable(image)
@@ -139,7 +144,7 @@ class Frame(renpy.display.core.Displayable):
         if left is None:
             left = xborder
         if top is None:
-            top= yborder
+            top = yborder
 
         if right is None:
             right = left
@@ -170,9 +175,15 @@ class Frame(renpy.display.core.Displayable):
         if self.tile != o.tile:
             return False
 
+        return True
+
     def render(self, width, height, st, at):
 
-        crend = render(self.image, width, height, st, at)
+        width = max(self.style.xminimum, width)
+        height = max(self.style.yminimum, height)
+
+        image = self.style.child or self.image
+        crend = render(image, width, height, st, at)
 
         sw, sh = crend.get_size()
         sw = int(sw)
@@ -411,8 +422,12 @@ class Frame(renpy.display.core.Displayable):
         return rrv
 
     def visit(self):
-        return [ self.image ]
+        return [ ]
 
+    def predict_one(self):
+        pd = renpy.display.predict.displayable
+        self.style._predict_frame(pd)
+        pd(self.image)
 
 class FileCurrentScreenshot(renpy.display.core.Displayable):
     """

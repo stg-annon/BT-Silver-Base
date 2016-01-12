@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -86,7 +86,7 @@ def first_not_none(*args):
 
 class TransformState(renpy.object.Object):
 
-    nearest = False
+    nearest = None
     xoffset = None
     yoffset = None
     inherited_xpos = None
@@ -99,9 +99,9 @@ class TransformState(renpy.object.Object):
     events = True
     crop_relative = False
 
-    def __init__(self): # W0231
+    def __init__(self):
         self.alpha = 1
-        self.nearest = False
+        self.nearest = None
         self.additive = 0.0
         self.rotate = None
         self.rotate_pad = True
@@ -411,7 +411,7 @@ class Transform(Container):
     additive = Proxy("additive")
     rotate = Proxy("rotate")
     rotate_pad = Proxy("rotate_pad")
-    transform_anchor = Proxy("anchor")
+    transform_anchor = Proxy("transform_anchor")
     zoom = Proxy("zoom")
     xzoom = Proxy("xzoom")
     yzoom = Proxy("yzoom")
@@ -644,6 +644,9 @@ class Transform(Container):
         Takes the transformation state from object t into this object.
         """
 
+        if self is t:
+            return
+
         if not isinstance(t, Transform):
             return
 
@@ -658,6 +661,9 @@ class Transform(Container):
         Takes the execution state from object t into this object. This is
         overridden by renpy.atl.TransformBase.
         """
+
+        if self is t:
+            return
 
         if not isinstance(t, Transform):
             return
@@ -702,6 +708,16 @@ class Transform(Container):
 
         if not self.child:
             return None
+
+        # Prevent time from ticking backwards, as can happen if we replace a
+        # transform but keep its state.
+        if st + self.st_offset <= self.st:
+            self.st_offset = self.st - st
+        if at + self.at_offset <= self.at:
+            self.at_offset = self.at - at
+
+        self.st = st = st + self.st_offset
+        self.at = at = at + self.at_offset
 
         if not (self.hide_request or self.replaced_request):
             d = self.copy()
@@ -752,6 +768,9 @@ class Transform(Container):
         This updates the state to that at self.st, self.at.
         """
 
+        self.hide_response = True
+        self.replaced_response = True
+
         # If we have to, call the function that updates this transform.
         if self.arguments is not None:
             self.default_function(self, self.st, self.at)
@@ -767,22 +786,6 @@ class Transform(Container):
 
         self.active = True
 
-        # Use non-None elements of the child placement as defaults.
-        child = self.child
-        if child is not None and renpy.config.transform_uses_child_position:
-
-            pos = child.get_placement()
-
-            if pos[0] is not None:
-                state.inherited_xpos = pos[0]
-            if pos[2] is not None:
-                state.inherited_xanchor = pos[2]
-            if pos[1] is not None:
-                state.inherited_ypos = pos[1]
-            if pos[3] is not None:
-                state.inherited_yanchor = pos[3]
-
-            state.subpixel |= pos[6]
 
     # The render method is now defined in accelerator.pyx.
 
@@ -825,6 +828,8 @@ class Transform(Container):
         # If we don't have a child for some reason, set it to null.
         if child is None:
             child = get_null()
+        else:
+            child = child.parameterize('displayable', [ ])
 
         rv = Transform(
             child=child,
@@ -842,7 +847,24 @@ class Transform(Container):
             self.update_state()
 
         if self.child is not None:
-            _cxpos, _cypos, _cxanchor, _cyanchor, cxoffset, cyoffset, _csubpixel = self.child.get_placement()
+            cxpos, cypos, cxanchor, cyanchor, cxoffset, cyoffset, csubpixel = self.child.get_placement()
+
+            # Use non-None elements of the child placement as defaults.
+            state = self.state
+
+            if renpy.config.transform_uses_child_position:
+
+                if cxpos is not None:
+                    state.inherited_xpos = cxpos
+                if cxanchor is not None:
+                    state.inherited_xanchor = cxanchor
+                if cypos is not None:
+                    state.inherited_ypos = cypos
+                if cyanchor is not None:
+                    state.inherited_yanchor = cyanchor
+
+                state.subpixel |= csubpixel
+
         else:
             cxoffset = 0
             cyoffset = 0
@@ -908,6 +930,9 @@ class ATLTransform(renpy.atl.ATLTransformBase, Transform):
         Transform.__init__(self, child=child, function=self.execute, **properties)
 
         self.raw_child = self.child
+
+    def __repr__(self):
+        return "<ATL Transform {:x} {!r}>".format(id(self), self.atl.loc)
 
     def _show(self):
         super(ATLTransform, self)._show()
@@ -991,19 +1016,7 @@ class Motion(Container):
         self.position = None
 
 
-    def get_placement(self):
-
-        if self.position is None:
-            return super(Motion, self).get_placement()
-        else:
-            return self.position + (self.style.xoffset, self.style.yoffset, self.style.subpixel)
-
-    def render(self, width, height, st, at):
-
-        if self.anim_timebase:
-            t = at
-        else:
-            t = st
+    def update_position(self, t, sizes):
 
         if renpy.game.less_updates:
             if self.delay:
@@ -1038,11 +1051,8 @@ class Motion(Container):
             if t > 1.0:
                 t = 2.0 - t
 
-        child = render(self.child, width, height, st, at)
-        cw, ch = child.get_size()
-
         if self.add_sizes:
-            res = self.function(t, (width, height, cw, ch))
+            res = self.function(t, sizes)
         else:
             res = self.function(t)
 
@@ -1052,6 +1062,30 @@ class Motion(Container):
             self.position = res + (self.style.xanchor, self.style.yanchor)
         else:
             self.position = res
+
+    def get_placement(self):
+
+        if self.position is None:
+            if self.add_sizes:
+                # Almost certainly gives the wrong placement, but there's nothing
+                # we can do.
+                return super(Motion, self).get_placement()
+            else:
+                self.update_position(0.0, None)
+
+        return self.position + (self.style.xoffset, self.style.yoffset, self.style.subpixel)
+
+    def render(self, width, height, st, at):
+
+        if self.anim_timebase:
+            t = at
+        else:
+            t = st
+
+        child = render(self.child, width, height, st, at)
+        cw, ch = child.get_size()
+
+        self.update_position(t, (width, height, cw, ch))
 
         rv = renpy.display.render.Render(cw, ch)
         rv.blit(child, (0, 0))
@@ -1081,19 +1115,8 @@ class Interpolate(object):
 
     def __call__(self, t, sizes=(None, None, None, None)):
 
-        def interp(a, b, c):
-
-            if c is not None:
-                if type(a) is float:
-                    a = a * c
-                if type(b) is float:
-                    b = b * c
-
-            rv = a + t * (b - a)
-
-            return renpy.display.core.absolute(rv)
-
-        return [ interp(a, b, c) for a, b, c in zip(self.start, self.end, sizes) ]
+        types = (renpy.atl.position,) * len(self.start)
+        return renpy.atl.interpolate(t, tuple(self.start), tuple(self.end), types)
 
 
 def Pan(startpos, endpos, time, child=None, repeat=False, bounce=False,
@@ -1142,7 +1165,6 @@ def Pan(startpos, endpos, time, child=None, repeat=False, bounce=False,
                   style=style,
                   anim_timebase=anim_timebase,
                   time_warp=time_warp,
-                  add_sizes=True,
                   **properties)
 
 def Move(startpos, endpos, time, child=None, repeat=False, bounce=False,
@@ -1186,7 +1208,6 @@ def Move(startpos, endpos, time, child=None, repeat=False, bounce=False,
                   anim_timebase=anim_timebase,
                   style=style,
                   time_warp=time_warp,
-                  add_sizes=True,
                   **properties)
 
 

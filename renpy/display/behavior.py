@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -27,7 +27,7 @@ import renpy.audio
 
 from renpy.display.render import render, Render
 
-import pygame
+import pygame_sdl2 as pygame
 
 import math
 
@@ -50,6 +50,9 @@ def compile_event(key, keydown):
     if key in renpy.config.keymap:
         return compile_event(renpy.config.keymap[key], keydown)
 
+    if key in renpy.config.default_keymap:
+        return compile_event(renpy.config.default_keymap[key], keydown)
+
     if key is None:
         return "(False)"
 
@@ -68,12 +71,9 @@ def compile_event(key, keydown):
         else:
             return "(False)"
 
-    # Deal with the Joystick.
-    if part[0] == "joy":
-        if keydown:
-            return "(ev.type == %d and ev.press and ev.press == renpy.game.preferences.joymap.get(%r, None))" % (renpy.display.core.JOYEVENT, key)
-        else:
-            return "(ev.type == %d and ev.release and ev.release == renpy.game.preferences.joymap.get(%r, None))" % (renpy.display.core.JOYEVENT, key)
+    # Deal with the Joystick / Gamepad.
+    if part[0] == "joy" or part[0] == "pad":
+        return "(False)"
 
     # Otherwise, deal with it as a key.
     if keydown:
@@ -81,24 +81,36 @@ def compile_event(key, keydown):
     else:
         rv = "(ev.type == %d" % pygame.KEYUP
 
-    if part[0] == "alt":
-        part.pop(0)
+    MODIFIERS = { "repeat", "alt", "meta", "shift", "noshift", "ctrl" }
+    modifiers = set()
+
+    while part[0] in MODIFIERS:
+        modifiers.add(part.pop(0))
+
+    if "repeat" in modifiers:
+        rv += " and (ev.repeat)"
+    else:
+        rv += " and (not ev.repeat)"
+
+    if "alt" in modifiers:
         rv += " and (ev.mod & %d)" % pygame.KMOD_ALT
     else:
         rv += " and not (ev.mod & %d)" % pygame.KMOD_ALT
 
-    if part[0] == "meta":
-        part.pop(0)
+    if "meta" in modifiers:
         rv += " and (ev.mod & %d)" % pygame.KMOD_META
     else:
         rv += " and not (ev.mod & %d)" % pygame.KMOD_META
 
-    if part[0] == "shift":
-        part.pop(0)
+    if "ctrl" in modifiers:
+        rv += " and (ev.mod & %d)" % pygame.KMOD_CTRL
+    else:
+        rv += " and not (ev.mod & %d)" % pygame.KMOD_CTRL
+
+    if "shift" in modifiers:
         rv += " and (ev.mod & %d)" % pygame.KMOD_SHIFT
 
-    if part[0] == "noshift":
-        part.pop(0)
+    if "noshift" in modifiers:
         rv += " and not (ev.mod & %d)" % pygame.KMOD_SHIFT
 
     if len(part) == 1:
@@ -141,12 +153,12 @@ def clear_keymap_cache():
     keyup_cache.clear()
 
 
-def queue_event(name, up=False):
+def queue_event(name, up=False, **kwargs):
     """
     :doc: other
 
     Queues an event with the given name. `Name` should be one of the event
-    names in :var:`config.keymap`.
+    names in :var:`config.keymap`, or a list of such names.
 
     `up`
         This should be false when the event begins (for example, when a keyboard
@@ -164,7 +176,13 @@ def queue_event(name, up=False):
     if not renpy.display.interface:
         return
 
-    ev = pygame.event.Event(renpy.display.core.EVENTNAME, { "eventname" : name, "up" : up })
+    if not isinstance(name, (list, tuple)):
+        name = [ name ]
+
+    data = { "eventnames" : name, "up" : up }
+    data.update(kwargs)
+
+    ev = pygame.event.Event(renpy.display.core.EVENTNAME, data)
     pygame.event.post(ev)
 
 def map_event(ev, keysym):
@@ -182,7 +200,7 @@ def map_event(ev, keysym):
     """
 
     if ev.type == renpy.display.core.EVENTNAME:
-        if ev.eventname == keysym and not ev.up:
+        if (keysym in ev.eventnames) and not ev.up:
             return True
 
         return False
@@ -198,7 +216,7 @@ def map_keyup(ev, name):
     """Returns true if the event matches the named keycode being released."""
 
     if ev.type == renpy.display.core.EVENTNAME:
-        if ev.eventname == name and ev.up:
+        if (name in ev.eventnames) and ev.up:
             return True
 
     check_code = keyup_cache.get(name, None)
@@ -216,6 +234,9 @@ def skipping(ev):
     """
 
     if not renpy.config.allow_skipping:
+        return
+
+    if not renpy.store._skipping:
         return
 
     if map_event(ev, "skip"):
@@ -364,14 +385,21 @@ class Keymap(renpy.display.layout.Null):
     k_constant from pygame.constants, or the unicode for the key.
     """
 
-    def __init__(self, replaces=None, **keymap):
-        super(Keymap, self).__init__(style='default')
+    def __init__(self, replaces=None, activate_sound=None, **keymap):
+        if activate_sound is not None:
+            super(Keymap, self).__init__(style='default', activate_sound=activate_sound)
+        else:
+            super(Keymap, self).__init__(style='default')
+
         self.keymap = keymap
 
     def event(self, ev, x, y, st):
 
         for name, action in self.keymap.iteritems():
             if map_event(ev, name):
+
+                if self.style.activate_sound:
+                    renpy.audio.music.play(self.style.activate_sound, channel="sound")
 
                 rv = run(action)
 
@@ -509,6 +537,27 @@ class SayBehavior(renpy.display.layout.Null):
                     renpy.exports.restart_interaction()
                     raise renpy.display.core.IgnoreEvent()
 
+                if not renpy.config.enable_rollback_side:
+                    rollback_side = "disable"
+                if renpy.mobile:
+                    rollback_side = renpy.game.preferences.mobile_rollback_side
+                else:
+                    rollback_side = renpy.game.preferences.desktop_rollback_side
+
+                percent = 1.0 * x / renpy.config.screen_width
+
+                if rollback_side == "left":
+
+                    if percent < renpy.config.rollback_side_size:
+                        renpy.exports.rollback()
+                        raise renpy.display.core.IgnoreEvent()
+
+                elif rollback_side == "right":
+
+                    if (1.0 - percent) < renpy.config.rollback_side_size:
+                        renpy.exports.rollback()
+                        raise renpy.display.core.IgnoreEvent()
+
                 if renpy.game.preferences.using_afm_enable and \
                     renpy.game.preferences.afm_enable and \
                     not renpy.game.preferences.afm_after_click:
@@ -525,9 +574,9 @@ class SayBehavior(renpy.display.layout.Null):
 
         skip_delay = renpy.config.skip_delay / 1000.0
 
-        if renpy.config.allow_skipping and renpy.config.skipping:
+        if renpy.config.skipping and renpy.config.allow_skipping and renpy.store._skipping:
 
-            if st >= skip_delay:
+            if ev.type == renpy.display.core.TIMEEVENT and st >= skip_delay:
                 if renpy.game.preferences.skip_unseen:
                     return True
                 elif renpy.config.skipping == "fast":
@@ -792,7 +841,7 @@ class ImageButton(Button):
 
     def __init__(self,
                  idle_image,
-                 hover_image,
+                 hover_image = None,
                  insensitive_image = None,
                  activate_image = None,
                  selected_idle_image = None,
@@ -804,6 +853,7 @@ class ImageButton(Button):
                  hovered=None,
                  **properties):
 
+        hover_image = hover_image or idle_image
         insensitive_image = insensitive_image or idle_image
         activate_image = activate_image or hover_image
 
@@ -861,6 +911,7 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
     old_caret_pos = 0
     pixel_width = None
     default = u""
+    edit_text = u""
 
     def __init__(self,
                  default="",
@@ -925,9 +976,11 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
 
     def update_text(self, new_content, editable, check_size=False):
 
+        edit = renpy.display.interface.text_editing
+
         old_content = self.content
 
-        if new_content != self.content or editable != self.editable:
+        if new_content != self.content or editable != self.editable or edit:
             renpy.display.render.redraw(self, 0)
 
         self.editable = editable
@@ -937,6 +990,30 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
         if caret is None:
             caret = self.caret
 
+        # Format text being edited by the IME.
+        if edit:
+
+            self.edit_text = edit.text
+
+            edit_text_0 = edit.text[:edit.start]
+            edit_text_1 = edit.text[edit.start:edit.start + edit.length]
+            edit_text_2 = edit.text[edit.start + edit.length:]
+
+            edit_text = ""
+
+            if edit_text_0:
+                edit_text += "{u=1}" + edit_text_0.replace("{", "{{") + "{/u}"
+
+            if edit_text_1:
+                edit_text += "{u=2}" + edit_text_1.replace("{", "{{") + "{/u}"
+
+            if edit_text_2:
+                edit_text += "{u=1}" + edit_text_2.replace("{", "{{") + "{/u}"
+
+        else:
+            self.edit_text = ""
+            edit_text = ""
+
         def set_content(content):
 
             if content == "":
@@ -944,7 +1021,7 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
 
             if editable:
                 l = len(content)
-                self.set_text([self.prefix, content[0:self.caret_pos].replace("{", "{{"), caret,
+                self.set_text([self.prefix, content[0:self.caret_pos].replace("{", "{{"), edit_text, caret,
                                             content[self.caret_pos:l].replace("{", "{{"), self.suffix])
             else:
                 self.set_text([self.prefix, content.replace("{", "{{"), self.suffix ])
@@ -986,6 +1063,8 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
 
         l = len(self.content)
 
+        raw_text = None
+
         if map_event(ev, "input_backspace"):
 
             if self.content and self.caret_pos > 0:
@@ -997,8 +1076,14 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
             raise renpy.display.core.IgnoreEvent()
 
         elif map_event(ev, "input_enter"):
+
+            content = self.content
+
+            if self.edit_text:
+                content = content[0:self.caret_pos] + self.edit_text + self.content[self.caret_pos:]
+
             if not self.changed:
-                return self.content
+                return content
 
         elif map_event(ev, "input_left"):
             if self.caret_pos > 0:
@@ -1024,25 +1109,66 @@ class Input(renpy.text.text.Text): #@UndefinedVariable
             renpy.display.render.redraw(self, 0)
             raise renpy.display.core.IgnoreEvent()
 
-        elif ev.type == pygame.KEYDOWN and ev.unicode:
-            if ord(ev.unicode[0]) < 32:
-                return None
+        elif map_event(ev, "input_home"):
+            self.caret_pos = 0
+            self.update_text(self.content, self.editable)
+            renpy.display.render.redraw(self, 0)
+            raise renpy.display.core.IgnoreEvent()
 
-            if self.length and len(self.content) >= self.length:
-                raise renpy.display.core.IgnoreEvent()
+        elif map_event(ev, "input_end"):
+            self.caret_pos = l
+            self.update_text(self.content, self.editable)
+            renpy.display.render.redraw(self, 0)
+            raise renpy.display.core.IgnoreEvent()
 
-            if self.allow and ev.unicode not in self.allow:
-                raise renpy.display.core.IgnoreEvent()
-
-            if self.exclude and ev.unicode in self.exclude:
-                raise renpy.display.core.IgnoreEvent()
-
-            content = self.content[0:self.caret_pos] + ev.unicode + self.content[self.caret_pos:l]
-            self.caret_pos += 1
-
-            self.update_text(content, self.editable, check_size=True)
+        elif ev.type == pygame.TEXTEDITING:
+            self.update_text(self.content, self.editable, check_size=True)
 
             raise renpy.display.core.IgnoreEvent()
+
+        elif ev.type == pygame.TEXTINPUT:
+            self.edit_text = ""
+            raw_text = ev.text
+
+        elif ev.type == pygame.KEYDOWN:
+            if ev.unicode and ord(ev.unicode[0]) >= 32:
+                raw_text = ev.unicode
+            elif renpy.display.interface.text_event_in_queue():
+                raw_text = ''
+
+        if raw_text is not None:
+
+            text = ""
+
+            for c in raw_text:
+
+                if self.allow and c not in self.allow:
+                    continue
+                if self.exclude and c in self.exclude:
+                    continue
+
+                text += c
+
+            if self.length:
+                remaining = self.length - len(self.content)
+                text = text[:remaining]
+
+            if text:
+
+                content = self.content[0:self.caret_pos] + text + self.content[self.caret_pos:l]
+                self.caret_pos += len(text)
+
+                self.update_text(content, self.editable, check_size=True)
+
+            raise renpy.display.core.IgnoreEvent()
+
+    def render(self, width, height, st, at):
+        rv = super(Input, self).render(width, height, st, at)
+
+        if self.editable:
+            rv.text_input = True
+
+        return rv
 
 # A map from adjustment to lists of displayables that want to be redrawn
 # if the adjustment changes.
@@ -1520,6 +1646,10 @@ class Bar(renpy.display.core.Displayable):
 
         return None
 
+    def set_style_prefix(self, prefix, root):
+        if root:
+            super(Bar, self).set_style_prefix(prefix, root)
+
     def _tts(self):
         return ""
 
@@ -1680,6 +1810,10 @@ class MouseArea(renpy.display.core.Displayable):
         return Render(width, height)
 
     def event(self, ev, x, y, st):
+
+        # Mouseareas should not handle events when something else is grabbing.
+        if renpy.display.focus.get_grab():
+            return
 
         if self.style.focus_mask is not None:
             crend = renpy.display.render.render(self.style.focus_mask, self.width, self.height, st, self.at_st_offset + st)

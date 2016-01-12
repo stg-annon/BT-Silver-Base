@@ -1,4 +1,4 @@
-# Copyright 2004-2014 Tom Rothamel <pytom@bishoujo.us>
+# Copyright 2004-2015 Tom Rothamel <pytom@bishoujo.us>
 #
 # Permission is hereby granted, free of charge, to any person
 # obtaining a copy of this software and associated documentation files
@@ -24,7 +24,7 @@
 
 from renpy.display.render import render, Render
 import renpy.display
-import pygame
+import pygame_sdl2 as pygame
 
 
 def scale(num, base):
@@ -175,6 +175,11 @@ class Container(renpy.display.core.Displayable):
         children = self.children
         offsets = self.offsets
 
+        # In #641, these went out of sync. Since they should resync on a
+        # render, ignore the event for a short while rather than crashing.
+        if len(offsets) != len(children):
+            return None
+
         for i in xrange(len(offsets) - 1, -1, -1):
 
             d = children[i]
@@ -240,8 +245,7 @@ def LiveComposite(size, *args, **properties):
 
     for pos, widget in zip(args[0::2], args[1::2]):
         xpos, ypos = pos
-        rv.add(Position(renpy.easy.displayable(widget),
-                        xpos=xpos, xanchor=0, ypos=ypos, yanchor=0))
+        rv.add(Position(widget, xpos=xpos, xanchor=0, ypos=ypos, yanchor=0))
 
     return rv
 
@@ -266,6 +270,13 @@ class Position(Container):
         super(Position, self).__init__(style=style, **properties)
         self.add(child)
 
+    def parameterize(self, name, parameters):
+
+        rv = Position(self.child.parameterize('displayable', [ ]))
+        rv.style = self.style.copy()
+
+        return rv
+
     def render(self, width, height, st, at):
 
         surf = render(self.child, width, height, st, at)
@@ -280,6 +291,11 @@ class Position(Container):
     def get_placement(self):
 
         xpos, ypos, xanchor, yanchor, xoffset, yoffset, subpixel = self.child.get_placement()
+
+        if xoffset is None:
+            xoffset = 0
+        if yoffset is None:
+            yoffset = 0
 
         v = self.style.xpos
         if v is not None:
@@ -299,14 +315,14 @@ class Position(Container):
 
         v = self.style.xoffset
         if v is not None:
-            xoffset = v
+            xoffset += v
 
         v = self.style.yoffset
         if v is not None:
-            yoffset = v
+            yoffset += v
 
         v = self.style.subpixel
-        if v is not None:
+        if (not subpixel) and (v is not None):
             subpixel = v
 
         return xpos, ypos, xanchor, yanchor, xoffset, yoffset, subpixel
@@ -455,6 +471,22 @@ class MultiBox(Container):
         # The scene list for this widget.
         self.scene_list = None
 
+    def parameterize(self, name, parameters):
+        if not type(self) is MultiBox:
+            return self
+
+        if self.layers or self.scene_list:
+            return self
+
+        rv = MultiBox(layout=self.default_layout)
+        rv.style = self.style.copy()
+
+        rv.children = self._list_type(i.parameterize('displayable', [ ]) for i in self.children)
+        rv.offsets = self._list_type()
+        rv.start_times = self._list_type(self.start_times)
+
+        return rv
+
     def _clear(self):
         super(MultiBox, self)._clear()
 
@@ -561,13 +593,13 @@ class MultiBox(Container):
         else:
             adjust_times = False
 
-        xminimum = self.style.xminimum
-        if xminimum is not None:
-            width = max(width, scale(xminimum, width))
+        minx = self.style.xminimum
+        if minx is not None:
+            width = max(width, scale(minx, width))
 
-        yminimum = self.style.yminimum
-        if yminimum is not None:
-            height = max(height, scale(yminimum, height))
+        miny = self.style.yminimum
+        if miny is not None:
+            height = max(height, scale(miny, height))
 
         if self.first:
 
@@ -619,8 +651,18 @@ class MultiBox(Container):
 
                 if rv is None:
 
-                    if self.style.fit_first:
-                        width, height = surf.get_size()
+                    ff = self.style.fit_first
+
+                    if ff:
+                        w, h = surf.get_size()
+
+                        if ff == "width":
+                            width = w
+                        elif ff == "height":
+                            height = h
+                        else:
+                            width = w
+                            height = h
 
                     rv = renpy.display.render.Render(width, height, layer_name=self.layer_name)
 
@@ -653,9 +695,10 @@ class MultiBox(Container):
         spacings = [ first_spacing ] + [ spacing ] * (len(self.children) - 1)
 
         box_wrap = self.style.box_wrap
-
         xfill = self.style.xfill
         yfill = self.style.yfill
+        xminimum = self.style.xminimum
+        yminimum = self.style.yminimum
 
         # The shared height and width of the current line. The line_height must
         # be 0 for a vertical box, and the line_width must be 0 for a horizontal
@@ -676,6 +719,11 @@ class MultiBox(Container):
         # The maximum x and y.
         maxx = 0
         maxy = 0
+
+        # The minimum size of x and y.
+        minx = 0
+        miny = 0
+
 
         def layout_line(line, xfill, yfill):
             """
@@ -720,16 +768,23 @@ class MultiBox(Container):
         x = 0
         y = 0
 
-        full_width = False
-        full_height = False
+
 
         if layout == "horizontal":
 
-            full_height = yfill
+            if yfill:
+                miny = height
+            else:
+                miny = yminimum
 
             line_height = 0
             line = [ ]
             remwidth = width
+
+            if xfill:
+                target_width = width
+            else:
+                target_width = xminimum
 
             for d, padding, cst, cat in zip(children, spacings, csts, cats):
 
@@ -742,7 +797,7 @@ class MultiBox(Container):
                 sw, sh = surf.get_size()
 
                 if box_wrap and remwidth - sw - padding <= 0 and line:
-                    maxx, maxy = layout_line(line, remwidth if xfill else 0, 0)
+                    maxx, maxy = layout_line(line, target_width - x, 0)
 
                     y += line_height
                     x = 0
@@ -756,16 +811,24 @@ class MultiBox(Container):
                 x += sw + padding
                 remwidth -= (sw + padding)
 
-            maxx, maxy = layout_line(line, remwidth if xfill else 0, 0)
+            maxx, maxy = layout_line(line, target_width - x, 0)
 
 
         elif layout == "vertical":
 
-            full_width = xfill
+            if xfill:
+                minx = width
+            else:
+                minx = xminimum
 
             line_width = 0
             line = [ ]
             remheight = height
+
+            if yfill:
+                target_height = height
+            else:
+                target_height = yminimum
 
             for d, padding, cst, cat in zip(children, spacings, csts, cats):
 
@@ -778,7 +841,7 @@ class MultiBox(Container):
                 sw, sh = surf.get_size()
 
                 if box_wrap and remheight - sh - padding <= 0:
-                    maxx, maxy = layout_line(line, 0, remheight if yfill else 0)
+                    maxx, maxy = layout_line(line, 0, target_height - y)
 
                     x += line_width
                     y = 0
@@ -791,7 +854,7 @@ class MultiBox(Container):
                 y += sh + padding
                 remheight -= (sh + padding)
 
-            maxx, maxy = layout_line(line, 0, remheight if yfill else 0)
+            maxx, maxy = layout_line(line, 0, target_height - y)
 
         else:
             raise Exception("Unknown box layout: %r" % layout)
@@ -799,10 +862,10 @@ class MultiBox(Container):
         # Back to the common for vertical and horizontal.
 
         if not xfill:
-            width = maxx
+            width = max(xminimum, maxx)
 
         if not yfill:
-            height = maxy
+            height = max(yminimum, maxy)
 
         rv = renpy.display.render.Render(width, height)
 
@@ -810,10 +873,8 @@ class MultiBox(Container):
             placements.reverse()
 
         for child, x, y, w, h, surf in placements:
-            if full_width:
-                w = width
-            if full_height:
-                h = height
+            w = max(minx, w)
+            h = max(miny, h)
 
             offset = child.place(rv, x, y, w, h, surf)
             offsets.append(offset)
@@ -827,7 +888,6 @@ class MultiBox(Container):
 
 
     def event(self, ev, x, y, st):
-
 
         children_offsets = zip(self.children, self.offsets, self.start_times)
 
@@ -1050,7 +1110,7 @@ class DynamicDisplayable(renpy.display.core.Displayable):
                  if tooltip:
                      return tooltip, .1
                  else:
-                     return Null()
+                     return Null(), .1
 
         image tooltipper = DynamicDisplayable(show_tooltip)
 
@@ -1431,6 +1491,9 @@ class Viewport(Container):
         if not self.style.yfill:
             height = min(ch, height)
 
+        width = max(width, self.style.xminimum)
+        height = max(height, self.style.yminimum)
+
         if self.set_adjustments:
             self.xadjustment.range = max(cw - width, 0)
             self.xadjustment.page = width
@@ -1593,9 +1656,7 @@ def LiveCrop(rect, child, **properties):
         image eileen cropped = LiveCrop((0, 0, 300, 300), "eileen happy")
     """
 
-    x, y, w, h = rect
-
-    return Viewport(child, offsets=(x, y), xmaximum=w, ymaximum=h, **properties)
+    return renpy.display.motion.Transform(child, crop=rect, **properties)
 
 class Side(Container):
 
@@ -1611,12 +1672,25 @@ class Side(Container):
         if isinstance(positions, basestring):
             positions = positions.split()
 
+        seen = set()
+
         for i in positions:
             if not i in Side.possible_positions:
                 raise Exception("Side used with impossible position '%s'." % (i,))
 
+            if i in seen:
+                raise Exception("Side used with duplicate position '%s'." % (i,))
+
+            seen.add(i)
+
         self.positions = tuple(positions)
         self.sized = False
+
+    def add(self, d):
+        if len(self.children) >= len(self.positions):
+            raise Exception("Side has been given too many arguments.")
+
+        super(Side, self).add(d)
 
     def _clear(self):
         super(Side, self)._clear()
@@ -1879,7 +1953,6 @@ class Flatten(Container):
     when absolutely required.
     """
 
-
     def __init__(self, child, **properties):
         super(Flatten, self).__init__(**properties)
 
@@ -1895,4 +1968,74 @@ class Flatten(Container):
         rv.blit(tex, (0, 0))
         rv.depends_on(cr, focus=True)
 
+        rv.reverse = renpy.display.draw.draw_to_virt
+        rv.forward = renpy.display.render.IDENTITY
+
+        self.offsets = [ (0, 0) ]
+
         return rv
+
+
+class AlphaMask(Container):
+    """
+    :doc: disp_imagelike
+
+    This displayable takes its colors from `child`, and its alpha channel
+    from the multiplication of the alpha channels of `child` and `mask`.
+    The result is a displayable that has the same colors as `child`, is
+    transparent where either `child` or `mask` is transparent, and is
+    opaque where `child` and `mask` are both opaque.
+
+    The `child` and `mask` parameters may be arbitrary displayables. The
+    size of the AlphaMask is the size of the overlap between `child` and
+    `mask`.
+
+    Note that this takes different arguments from :func:`im.AlphaMask`,
+    which uses the mask's color channel.
+    """
+
+    def __init__(self, child, mask, **properties):
+        super(AlphaMask, self).__init__(**properties)
+
+        self.add(child)
+        self.mask = renpy.easy.displayable(mask)
+        self.null = None
+        self.size = None
+
+    def render(self, width, height, st, at):
+
+        cr = renpy.display.render.render(self.child, width, height, st, at)
+        mr = renpy.display.render.render(self.mask, width, height, st, at)
+
+        cw, ch = cr.get_size()
+        mw, mh = mr.get_size()
+
+        w = min(cw, mw)
+        h = min(ch, mh)
+        size = (w, h)
+
+        if self.size != size:
+            self.null = Null(w, h)
+
+        nr = renpy.display.render.render(self.null, width, height, st, at)
+
+        rv = renpy.display.render.Render(w, h, opaque=False)
+
+        rv.operation = renpy.display.render.IMAGEDISSOLVE
+        rv.operation_alpha = 1.0
+        rv.operation_complete = 256.0 / (256.0 + 256.0)
+        rv.operation_parameter = 256
+
+        rv.blit(mr, (0, 0), focus=False, main=False)
+        rv.blit(nr, (0, 0), focus=False, main=False)
+        rv.blit(cr, (0, 0))
+
+        return rv
+
+
+
+
+
+
+
+
