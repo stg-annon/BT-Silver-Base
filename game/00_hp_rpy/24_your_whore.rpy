@@ -995,13 +995,13 @@ label your_whore:
     if public_whore_ending: #Students talking. Ending "Public whore".
         $ s_head_xpos = 330 # x = 330,
         $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-        call san_head("Miss Granger...?","snape_03")
+        call sna_head("Miss Granger...?","snape_03")
         call sna_head("You decided to show up after all?","snape_04")
         $ s_sprite = "01_hp/10_snape_main/.png"
         call sna_head("What an unpleasant surprise...")
         #her "Professor..."
         call her_head("Professor...","body_162")
-        call san_head("Well, go ahead then...","snape_10")
+        call sna_head("Well, go ahead then...","snape_10")
         call sna_head("Here is the tiara...")
         call sna_head("And the stage is yours...")
         $ tiara = True #Tiara is displayed.

@@ -2091,93 +2091,93 @@ image kiss_cum_ani:
     repeat
 
 image clothed_dance_ani:### HERMIONE DANCING FULLY CLOTHED ###
-    "01_hp/16_hermione_chibi/new/dance/01_dancing_01.png"
+    "01_hp/16_hermione_chibi/dance/01_dancing_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/01_dancing_02.png"
+    "01_hp/16_hermione_chibi/dance/01_dancing_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/01_dancing_03.png"
+    "01_hp/16_hermione_chibi/dance/01_dancing_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/01_dancing_04.png"
+    "01_hp/16_hermione_chibi/dance/01_dancing_04.png"
     pause.1
     repeat
 image no_vest_dance_ani:### HERMIONE DANCING NO VEST###
-    "01_hp/16_hermione_chibi/new/dance/02_no_vest_01.png"
+    "01_hp/16_hermione_chibi/dance/02_no_vest_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/02_no_vest_02.png"
+    "01_hp/16_hermione_chibi/dance/02_no_vest_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/02_no_vest_03.png"
+    "01_hp/16_hermione_chibi/dance/02_no_vest_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/02_no_vest_04.png"
+    "01_hp/16_hermione_chibi/dance/02_no_vest_04.png"
     pause.1
     repeat
 image no_skirt_dance_ani:### HERMIONE DANCING NO SKIRT###
-    "01_hp/16_hermione_chibi/new/dance/04_no_skirt_01.png"
+    "01_hp/16_hermione_chibi/dance/04_no_skirt_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/04_no_skirt_02.png"
+    "01_hp/16_hermione_chibi/dance/04_no_skirt_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/04_no_skirt_03.png"
+    "01_hp/16_hermione_chibi/dance/04_no_skirt_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/04_no_skirt_04.png"
+    "01_hp/16_hermione_chibi/dance/04_no_skirt_04.png"
     pause.1
     repeat
 image no_shirt_dance_ani:### HERMIONE DANCING NO SHIRT###
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_01.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_02.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_03.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_04.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_04.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_05.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_05.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_06.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_06.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_07.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_07.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_08.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_08.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/03_no_shirt_09.png"
+    "01_hp/16_hermione_chibi/dance/03_no_shirt_09.png"
     pause.1
     repeat
 image no_panties_dance_ani:### HERMIONE DANCING NO PANTIES###
-    "01_hp/16_hermione_chibi/new/dance/07_dance_01.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_02.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_03.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_04.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_04.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_05.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_05.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_06.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_06.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_07.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_07.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_08.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_08.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/07_dance_09.png"
+    "01_hp/16_hermione_chibi/dance/07_dance_09.png"
     pause.1
     repeat
 image no_shirt_no_skirt_dance_ani:### HERMIONE DANCING NO SHIRT NO SKIRT###
-    "01_hp/16_hermione_chibi/new/dance/05_panties_01.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_01.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_02.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_02.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_03.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_03.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_04.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_04.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_05.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_05.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_06.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_06.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_07.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_07.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_08.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_08.png"
     pause.1
-    "01_hp/16_hermione_chibi/new/dance/05_panties_09.png"
+    "01_hp/16_hermione_chibi/dance/05_panties_09.png"
     pause.1
     repeat
 
@@ -2265,21 +2265,21 @@ image ch_hem robe_f: # Hermione chibi. Wearing a robe.
     repeat
 
 image ch_hem run_f:
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_01.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_01.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_02.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_02.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_03.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_03.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_02.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_02.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_01.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_01.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_04.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_04.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_05.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_05.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_04.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_04.png", horizontal=True)
     pause.07
     repeat
 
@@ -2474,39 +2474,39 @@ image thought: #Thinking emotion over a chibi.
     
     
 image ch_hem run:
-    "01_hp/16_hermione_chibi/new/run/h_run_01.png"
+    "01_hp/16_hermione_chibi/run/h_run_01.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_02.png"
+    "01_hp/16_hermione_chibi/run/h_run_02.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_03.png"
+    "01_hp/16_hermione_chibi/run/h_run_03.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_02.png"
+    "01_hp/16_hermione_chibi/run/h_run_02.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_01.png"
+    "01_hp/16_hermione_chibi/run/h_run_01.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_04.png"
+    "01_hp/16_hermione_chibi/run/h_run_04.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_05.png"
+    "01_hp/16_hermione_chibi/run/h_run_05.png"
     pause.07
-    "01_hp/16_hermione_chibi/new/run/h_run_04.png"
+    "01_hp/16_hermione_chibi/run/h_run_04.png"
     pause.07
     repeat
 image ch_hem run_flip:
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_01.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_01.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_02.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_02.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_03.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_03.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_02.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_02.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_01.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_01.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_04.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_04.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_05.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_05.png", horizontal=True)
     pause.07
-    im.Flip("01_hp/16_hermione_chibi/new/run/h_run_04.png", horizontal=True)
+    im.Flip("01_hp/16_hermione_chibi/run/h_run_04.png", horizontal=True)
     pause.07
     repeat
     

@@ -1,3 +1,7 @@
+﻿HOW DO I INSTALL WT SILVER:
+	for reasons along the lines of renpy is dumb, you have to download the base game from mega and download the latest build from here on git then copy replace the game folder into the base from mega
+	https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig
+
 WHAT IS SILVER?:
 	It's essentially a modpack of a few different mods and some new content. It adds some new scenes, a map, scene changes, potions, custom outfits and evolving outfits. At the moment it is in a  beta state with new content and bug fixes being added periodically.
 	▪ Cheats are in the closet

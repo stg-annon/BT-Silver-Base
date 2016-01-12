@@ -583,10 +583,10 @@ label wine_first:
     $ wine -= 1
     
     
-    call san_head("This one has got to be from Albus' personal stash!","24")
-    call san_head("Some pricey and incredibly rare stuff.","snape_06")
+    call sna_head("This one has got to be from Albus' personal stash!","24")
+    call sna_head("Some pricey and incredibly rare stuff.","snape_06")
     m "Shall we then?"
-    call san_head("We most certainly shall!","snape_02")
+    call sna_head("We most certainly shall!","snape_02")
     show screen bld1
     with d3
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
@@ -612,27 +612,27 @@ label wine_not_first:
     $ wine -= 1
     $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
     $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
-    call san_head("Another one?","snape_05")
+    call sna_head("Another one?","snape_05")
     if one_of_ten == 1:
-        call san_head("Splendid!","snape_02")
+        call sna_head("Splendid!","snape_02")
     elif one_of_ten == 2:
-        call san_head("Alright!","snape_02")
+        call sna_head("Alright!","snape_02")
     elif one_of_ten == 3:
-        call san_head("Awesome!","snape_02")
+        call sna_head("Awesome!","snape_02")
     elif one_of_ten == 4:
-        call san_head("Well done, my friend!","snape_02")
+        call sna_head("Well done, my friend!","snape_02")
     elif one_of_ten == 5:
-        call san_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
+        call sna_head("Did you find Albus' secret stash or was it his personal wine cellar?","snape_05")
     elif one_of_ten == 6:
-        call san_head("lately I am having hard time drinking anything but this!","snape_02")
+        call sna_head("lately I am having hard time drinking anything but this!","snape_02")
     elif one_of_ten == 7:
-        call san_head("Great! I feel less stressed out already!","snape_02")
+        call sna_head("Great! I feel less stressed out already!","snape_02")
     elif one_of_ten == 8:
-        call san_head("This just keeps getting better and better!","snape_02")
+        call sna_head("This just keeps getting better and better!","snape_02")
     elif one_of_ten == 9:
-        call san_head("Seriously, how big is that stash?","snape_05")
+        call sna_head("Seriously, how big is that stash?","snape_05")
     elif one_of_ten == 2:
-        call san_head("It's sure good to be us! let's uncork that bastard!","snape_02")
+        call sna_head("It's sure good to be us! let's uncork that bastard!","snape_02")
     
     show screen bld1
     with d3

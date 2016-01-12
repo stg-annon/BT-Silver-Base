@@ -1,7 +1,7 @@
 init:
     image tension = "04_pt/quest01/fight.png"   
 
-    image ch_hem 01 = "01_hp/16_hermione_chibi/new/walk/h_walk_a_01.png"
+    image ch_hem 01 = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
 
     image check_07 = "interface/check_07.png"
     image check_08 = "interface/check_08.png"
