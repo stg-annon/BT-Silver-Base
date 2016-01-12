@@ -375,6 +375,7 @@ $ autograph = False #Displays professor Lockhart's autograph on Hermione's leg.
 $ no_blinking = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
 $ aftersperm = False #Shows cum stains on Hermione's uniform.
+$ uni_sperm = False
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
 $ only_upper = False #When False legs are displayed in the hermione_main acreen.
@@ -708,6 +709,12 @@ label night_start:
     play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
 
 
+###RESET STUFF
+$ only_upper = False #When true, legs are not displayed in the hermione_main screen.
+$ no_blinking = False #When True - blinking animation is not displayed.
+$ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
+$ aftersperm = False #Shows cum stains on Hermione's uniform.
+$ uni_sperm = False
 
 
 call luna_night_flags

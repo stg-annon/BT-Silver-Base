@@ -2339,12 +2339,22 @@ label slave_scene:
     m "Good, and who am I?"
     $ changeHermioneMainScreen(hg_pth+"body_68.png")
     her "Professor Dumbledore."
-    "Slap! You unleash a firm slap across her buttocks."
+    $ renpy.play('sounds/slap.mp3')
+    show screen white 
+    pause.1
+    hide screen white
+    with hpunch
+    "You unleash a firm slap across her buttocks."
     m "That's not who I am to you [hermione_name]. To you I am your master."
     m "Do you understand now?"
     $ changeHermioneMainScreen(hg_pth+"body_22.png")
     her "Yes."
-    "Slap! You give her another powerful slap that leaves a bright red mark."
+    $ renpy.play('sounds/slap.mp3')
+    show screen white 
+    pause.1
+    hide screen white
+    with hpunch
+    " You give her another powerful slap that leaves a bright red mark."
     m "Yes what?"
     $ changeHermioneMainScreen(hg_pth+"body_21.png")
     her "Yes master."
@@ -2355,7 +2365,12 @@ label slave_scene:
     m "What was that, I couldn't quite make that out."
     $ changeHermioneMainScreen(hg_pth+"body_67.png")
     her "A slave."
-    ">Slap! You give her yet another strong slap across her buttocks."
+    $ renpy.play('sounds/slap.mp3')
+    show screen white 
+    pause.1
+    hide screen white
+    with hpunch
+    ">You give her yet another strong slap across her buttocks."
     m "You aren't just some common slave [hermione_name]."
     $ changeHermioneMainScreen(hg_pth+"body_79.png")
     her "I'm not?"
@@ -2363,7 +2378,12 @@ label slave_scene:
     m "You're my personal slave."
     $ changeHermioneMainScreen(hg_pth+"body_118.png")
     her "I think I'm about to cum master."
-    ">Slap! You give her a fierce slap to her left buttock."
+    $ renpy.play('sounds/slap.mp3')
+    show screen white 
+    pause.1
+    hide screen white
+    with hpunch
+    ">You give her a fierce slap to her left buttock."
     m "You will come when I give you permission and not a second sooner."
     $ changeHermioneMainScreen(hg_pth+"body_119.png")
     her "Please master, may I cum?"
@@ -2375,12 +2395,18 @@ label slave_scene:
     m "That's it girl. Almost there, just a little more..."
     ">You grab her hips and impale her on your throbbing member."
     m "Ughhh"
+    $ g_c_u_pic = "sex_cum_in_ani"
     ">You roar as you cum inside her tight hole."
     $ changeHermioneMainScreen(hg_pth+"body_130.png")
     her "I'm cumming!"
     ">You continue to shoot ropes of cum into her asshole."
     $ changeHermioneMainScreen(hg_pth+"body_121.png")
     her "Thank you sir."
+    $ renpy.play('sounds/slap.mp3')
+    show screen white 
+    pause.1
+    hide screen white
+    with hpunch
     ">Slap!"
     m "What was that girl? It almost sounded like you didn't call me master."
     $ changeHermioneMainScreen(hg_pth+"body_123.png")
@@ -2393,6 +2419,9 @@ label slave_scene:
     m "Because I said so. Now get off the table and on to your knees."
     $ changeHermioneMainScreen(hg_pth+"body_118.png")
     her "Yes master."
+    $ h_c_u_pic = "hand_ani"
+    hide screen g_c_u
+    show screen h_c_u_pic
     ">Hermione pulls herself of the table and kneels in front of you."
     m "Tell me what you are."
     $ changeHermioneMainScreen(hg_pth+"body_124.png")
@@ -2419,6 +2448,18 @@ label slave_scene:
     m "Hahaha, of course not. Slaves aren't paid girl, that's what makes them slaves."
     $ changeHermioneMainScreen(hg_pth+"body_128.png")
     her "I suppose your right."
+    hide screen hermione_main
+    show screen blkfade
+    with d3                                                                                                                                                                                 #HERMIONE
+    show screen genie
+    hide screen chair_02
+    hide screen g_c_u
+    hide screen h_c_u
+    show screen hermione_02 #Hermione stands still.
+    $ hermione_chibi_xpos = 400
+    hide screen blkfade
+    with d3
+    $ hermione_main_zorder = 5
     hide screen hermione_main
     call her_walk(400,610,2)
     jump end_hermione_personal_request

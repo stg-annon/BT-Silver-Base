@@ -220,6 +220,10 @@ label declare_ht_vars:
     $ hair_style = "A"
     $ wear_shirts = True
     $ wear_skirts = True
+
+    $ custom_outfit = 0
+    $ temp_outfit = 0
+    $ temp_stockings = 0
     
     $ emote_anger = False
     $ emote_exclam = False
