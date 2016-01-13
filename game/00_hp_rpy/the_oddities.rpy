@@ -23,6 +23,12 @@ label __init_variables:
         #$ gift_item_inv.append(0)
     if not hasattr(renpy.store,'shop_found'): #important!
         $ shop_found = False
+    if not hasattr(renpy.store,'store_gift_items'): #important!
+        $ store_gift_items = []
+    if not hasattr(renpy.store,'sscroll_'): #important!
+        $ sscroll_ = []
+    if not hasattr(renpy.store,'bought_glasses'): #important!
+        $ bought_glasses = False
     
     $ store_gift_items = []
     $ store_gift_items.append("null")

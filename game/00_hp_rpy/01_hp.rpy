@@ -300,7 +300,6 @@ $ custom_shirt = False
 $ transparency = 1
 $ genie_name = "sir"
 $ hermione_name = "miss granger"
-$ found_shop = False
 $ tent_scroll = False
 $ v_tutoring = 0
 $ hermione_desperate_done = False

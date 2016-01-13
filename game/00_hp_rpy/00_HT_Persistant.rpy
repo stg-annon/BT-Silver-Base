@@ -64,8 +64,6 @@ label __init_variables:
         $ genie_name = "sir"
     if not hasattr(renpy.store,'hermione_name'): #important!
         $ hermione_name = "miss granger"
-    if not hasattr(renpy.store,'found_shop'): #important!
-        $ found_shop = False
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
     if not hasattr(renpy.store,'shaming'): #important!
@@ -90,8 +88,6 @@ label __init_variables:
         $ heretic_busy = False
     if not hasattr(renpy.store,'hermione_desperate_done'): #important!
         $ hermione_desperate_done = False
-    if not hasattr(renpy.store,'bought_glasses'): #important!
-        $ bought_glasses = False
     if not hasattr(renpy.store,'glasses_worn'): #important!
         $ glasses_worn = False
     if not hasattr(renpy.store,'legs_03'): #important!
@@ -151,13 +147,19 @@ label __init_variables:
         $ new_request_29_heart = 0
     if not hasattr(renpy.store,'new_request_31_heart'): #important!
         $ new_request_31_heart = 0
-    if not hasattr(renpy.store,'sscroll_'): #important!
-        $ sscroll_ = []
-    if not hasattr(renpy.store,'store_gift_items'): #important!
-        $ store_gift_items = []
-    if not hasattr(renpy.store,'shop_found'): #important!
-        $ shop_found = False
     
+    if not hasattr(renpy.store,'pub_q_blowjob_teach'): #important!
+        $ pub_q_blowjob_teach = False
+    if not hasattr(renpy.store,'pub_q_sex_teach'): #important!
+        $ pub_q_sex_teach = False
+    if not hasattr(renpy.store,'per_q_the_gamble'): #important!
+        $ per_q_the_gamble = False
+    if not hasattr(renpy.store,'per_q_the_gamble_a'): #important!
+        $ per_q_the_gamble_a = False
+    if not hasattr(renpy.store,'per_q_the_gamble_b'): #important!
+        $ per_q_the_gamble_b = False
+    if not hasattr(renpy.store,'per_q_the_gamble_c'): #important!
+        $ per_q_the_gamble_c = False
     
     $ force_unlock_pub_favors = False
     
@@ -193,15 +195,6 @@ label __init_variables:
     $ question = []
     $ sweat = ["body_24","body_34","body_57","body_108","body_340"]
     $ suprize = ["body_80","body_335"]
-    
-    
-    $ pub_q_blowjob_teach = False
-    $ pub_q_sex_teach = False
-    
-    $ per_q_the_gamble = False
-    $ per_q_the_gamble_a = False
-    $ per_q_the_gamble_b = False
-    $ per_q_the_gamble_c = False
     
     $ h_body = "01_hp/13_hermione_main/body_01.png"
     $ h_xpos = 370
