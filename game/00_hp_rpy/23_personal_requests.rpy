@@ -8,7 +8,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-    if "maid" in outfit_invintory or "gryffindor_cheerleader" in outfit_invintory or "slytherin_cheerleader" in outfit_invintory or "ms_marvel" in outfit_invintory or "heart_dancer" in outfit_invintory or "power_girl" in outfit_invintory:
+    if "maid" in outfit_inventory or "gryffindor_cheerleader" in outfit_inventory or "slytherin_cheerleader" in outfit_inventory or "ms_marvel" in outfit_inventory or "heart_dancer" in outfit_inventory or "power_girl" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -16,7 +16,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                 $ changeHermioneMainScreen(hg_pth+"body_10.png")
                 her "As what?"
                 menu:
-                    "-A maid-" if "maid" in outfit_invintory:
+                    "-A maid-" if "maid" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -30,7 +30,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass
-                    "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_invintory:
+                    "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -44,7 +44,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass
-                    "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_invintory:
+                    "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -58,7 +58,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass
-                    "-Ms Marvel-" if "ms_marvel" in outfit_invintory:
+                    "-Ms Marvel-" if "ms_marvel" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -71,7 +71,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass
-                    "-A heart dancer-" if "heart_dancer" in outfit_invintory:
+                    "-A heart dancer-" if "heart_dancer" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -84,7 +84,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass
-                    "-power girl-" if "power_girl" in outfit_invintory:
+                    "-power girl-" if "power_girl" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -98,7 +98,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         show screen hermione_main
                         with d3
                         pass  
-                    "-Harley Quinn-" if "harley_quinn" in outfit_invintory:
+                    "-Harley Quinn-" if "harley_quinn" in outfit_inventory:
                         her "Fine, let me go change."
                         show screen blkfade
                         hide screen hermione_main
@@ -1978,7 +1978,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     if whoring <=5:
         jump too_much
         
-    if "power_girl" in outfit_invintory:
+    if "power_girl" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -3013,7 +3013,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         "\"(Not right now.)\"":
             jump new_personal_request
 
-    if "heart_dancer" in outfit_invintory:
+    if "heart_dancer" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -6661,7 +6661,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if "slytherin_cheerleader" in outfit_invintory:
+    if "slytherin_cheerleader" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":

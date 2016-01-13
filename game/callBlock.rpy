@@ -7,12 +7,9 @@ label select_start:
             # jump start_pt
         # "-Quit-":
             # return
-label load_persistant_variables:
-    call load_ht_persistant_vars
-    # call load_pt_persistant_vars
-    return
     
-label declare_game_variables:
-    call declare_ht_vars
-    # call declare_pt_vars
-    return
+init python:
+    def init_variables():
+        initvarlabels = [label for label in renpy.get_all_labels() if label.endswith('__init_variables') ]
+        for l in initvarlabels:
+            renpy.call_in_new_context(l) 

@@ -1,29 +1,20 @@
-label declare_book_persist:
+label __init_variables:
     if not hasattr(renpy.store,'book_progress'): #important!
         $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'book_done'): #important!
         $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
     if not hasattr(renpy.store,'s_reading_lvl'): #important!
         $ s_reading_lvl = 0
-    return
-
-label declare_book_vars:
-    
-    $ cheat_reading = False
+    if not hasattr(renpy.store,'cheat_reading'): #important!
+        $ cheat_reading = False
     
     $ speed_reading_books = [1,2,3,4]
     $ speed_writing_books = [5,6,7,8]
     $ fiction_books = [9,10,11,12]
     
     
-    $ s_reading_lvl = 0
-    $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
-    $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
-    
-    
     $ book_name = []
-    
-    $ book_name.append("")
+    $ book_name.append("")#null
     $ book_name.append("\"Copper book of spirit\"")
     $ book_name.append("\"Bronze book of spirit\"")
     $ book_name.append("\"Silver book of spirit\"")
@@ -37,8 +28,8 @@ label declare_book_vars:
     $ book_name.append("\"The game of Armchairs\"")
     $ book_name.append("\"My dear waifu\"")
     
-    $ book_description = []
     
+    $ book_description = []
     $ book_description.append("")#null
     $ book_description.append("\nThis book contains various tips on how to improve one's efficiency.")
     $ book_description.append("\nThis book contains various tips on how to improve one's efficiency.")
@@ -53,8 +44,8 @@ label declare_book_vars:
     $ book_description.append("An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape.")
     $ book_description.append("{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?")
     
-    $ bought_book = []
     
+    $ bought_book = []
     $ bought_book.append(False)#null
     $ bought_book.append(False)
     $ bought_book.append(False)
@@ -71,8 +62,7 @@ label declare_book_vars:
     
     
     $ book_effect = []
-    
-    $ book_effect.append("")
+    $ book_effect.append("")#null
     $ book_effect.append(">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.")
     $ book_effect.append(">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when doing paperwork.")
     $ book_effect.append(">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when doing paperwork.")
@@ -88,7 +78,6 @@ label declare_book_vars:
     
     
     $ book_chapters = []
-    
     $ book_chapters.append(0)#null
     $ book_chapters.append(10)
     $ book_chapters.append(10)
@@ -105,7 +94,6 @@ label declare_book_vars:
     
     
     $ book_chapter_description = [[0 for i in xrange(21)] for i in xrange(21)]
-    
     $ book_chapter_description[9][1]= "Galadriel - a gentle and gracious elven princess is introduced into the story."
     $ book_chapter_description[9][2]= "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story."
     $ book_chapter_description[9][3]= "King Methis makes an announcement. His daughter, princess Galadriel is to be wed to chancellor Mofothelis."
@@ -126,8 +114,6 @@ label declare_book_vars:
     $ book_chapter_description[9][18]= "Galadriel gains popularity quickly. Humans, Dark Elves and even the occasional dwarf - she spreads her legs for everyone."
     $ book_chapter_description[9][19]= "The fame of the young and beautiful elven whore spreads. Galadriel accepts her new life in the brothel."
     $ book_chapter_description[9][20]= "Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-"
-    
-    
     
     $ book_chapter_description[10][1]= "Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly."
     $ book_chapter_description[10][2]= "Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel."
@@ -150,8 +136,6 @@ label declare_book_vars:
     $ book_chapter_description[10][18]= "It takes the elven princess several minutes to realize that she was never pregnant. The entire adventure was nothing but a dream."
     $ book_chapter_description[10][19]= "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis."
     $ book_chapter_description[10][20]= "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
-    
-    
     
     $ book_chapter_description[11][1] = "A family of noble northmen is introduced into the story."
     $ book_chapter_description[11][2] = "The royal family and the king are introduced into the story."

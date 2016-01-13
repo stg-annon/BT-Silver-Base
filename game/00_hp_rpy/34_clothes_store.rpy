@@ -1,25 +1,45 @@
-label declare_clothes_store_persist:
-    #if not hasattr(renpy.store,'outfit_invintory'): #important!
-    #    $ outfit_invintory = []
-    #if not hasattr(renpy.store,'outfit_order'): #important!
-    #    $ outfit_order = "null"
+label __init_variables:
+    if not hasattr(renpy.store,'outfit_inventory'): #important!
+        $ outfit_inventory = []
+    if not hasattr(renpy.store,'outfit_order'): #important!
+        $ outfit_order = "null"
     if not hasattr(renpy.store,'outfit_wait_time'): #important!
         $ outfit_wait_time = 0
     if not hasattr(renpy.store,'outfit_ready'): #important!
         $ outfit_ready = False
     if not hasattr(renpy.store,'outfit_order_placed'): #important!
         $ outfit_order_placed = False
-    return
+    if not hasattr(renpy.store,'micro_skirt'): #important!
+        $ micro_skirt = False
+    if not hasattr(renpy.store,'glasses'): #important!
+        $ glasses = False
+    if not hasattr(renpy.store,'wear_shirts'): #important!
+        $ wear_shirts = True
+    if not hasattr(renpy.store,'wear_skirts'): #important!
+        $ wear_skirts = True
+    if not hasattr(renpy.store,'gave_tinyminiskirt'): #important!
+        $ gave_tinyminiskirt = False
+    if not hasattr(renpy.store,'clothes_intro_done'): #important!
+        $ clothes_intro_done = False
+    if not hasattr(renpy.store,'custom_outfit_1_bought'): #important!
+        $ custom_outfit_1_bought = False
+    if not hasattr(renpy.store,'custom_outfit_2_bought'): #important!
+        $ custom_outfit_2_bought = False
+    if not hasattr(renpy.store,'custom_outfit_3_bought'): #important!
+        $ custom_outfit_3_bought = False
+    if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
+        $ custom_outfit_4_bought = False
+    if not hasattr(renpy.store,'custom_clothes_1_bought'): #important!
+        $ custom_clothes_1_bought = False
+    if not hasattr(renpy.store,'custom_clothes_2_bought'): #important!
+        $ custom_clothes_2_bought = False
+    if not hasattr(renpy.store,'custom_clothes_3_bought'): #important!
+        $ custom_clothes_3_bought = False
+    if not hasattr(renpy.store,'custom_clothes_4_bought'): #important!
+        $ custom_clothes_4_bought = False
+    if not hasattr(renpy.store,'custom_clothes_5_bought'): #important!
+        $ custom_clothes_5_bought = False
 
-label declare_clothes_store_vars:
-
-    $ outfit_invintory = []
-    $ outfit_order = "null"
-    $ outfit_wait_time = 0
-    $ outfit_ready = False
-    $ outfit_order_placed = False
-    
-    ##CLOTHES STORE - Thanks anon
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
     $ clothes_store_selection = 0
@@ -52,8 +72,8 @@ label declare_clothes_store_vars:
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")#end page 3
-
-return
+    
+    return
     
 label clothes_store_gui:
     $ clothes_store_curr_page = 1
@@ -126,12 +146,12 @@ label custom_orders:
     
     call clothes_store_gui
     
-    #"{color=#858585}-Gryffindor Cheerleader Outfit-{/color}"if "gryffindor_cheerleader" in outfit_invintory:
-    if clothes_store_order_choice == "gryffindor_cheerleader" and clothes_store_order_choice in outfit_invintory:
+    #"{color=#858585}-Gryffindor Cheerleader Outfit-{/color}"if "gryffindor_cheerleader" in outfit_inventory:
+    if clothes_store_order_choice == "gryffindor_cheerleader" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
-    #"-Gryffindor Cheerleader Outfit- (200 Gold)"if not "gryffindor_cheerleader" in outfit_invintory:
-    if clothes_store_order_choice == "gryffindor_cheerleader" and not clothes_store_order_choice in outfit_invintory:
+    #"-Gryffindor Cheerleader Outfit- (200 Gold)"if not "gryffindor_cheerleader" in outfit_inventory:
+    if clothes_store_order_choice == "gryffindor_cheerleader" and not clothes_store_order_choice in outfit_inventory:
         m "I'd like to order a cheerleader outfit."
         maf "A cheerleader outfit? Those horribly crass things popular in America?"
         maf "Why on earth would you want to buy that?"
@@ -145,12 +165,12 @@ label custom_orders:
         call place_outfit_order(clothes_store_order_choice,3,200)
         jump clothes_menu
     
-    #"{color=#858585}-Slytherin Cheerleader outfit-{/color}"if "slytherin_cheerleader" in outfit_invintory:
-    if clothes_store_order_choice == "slytherin_cheerleader" and clothes_store_order_choice in outfit_invintory:
+    #"{color=#858585}-Slytherin Cheerleader outfit-{/color}"if "slytherin_cheerleader" in outfit_inventory:
+    if clothes_store_order_choice == "slytherin_cheerleader" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
-    #"-Slytherin Cheerleader outfit- (200 Gold)"if not "slytherin_cheerleader" in outfit_invintory:
-    if clothes_store_order_choice == "slytherin_cheerleader" and  not clothes_store_order_choice in outfit_invintory:
+    #"-Slytherin Cheerleader outfit- (200 Gold)"if not "slytherin_cheerleader" in outfit_inventory:
+    if clothes_store_order_choice == "slytherin_cheerleader" and  not clothes_store_order_choice in outfit_inventory:
         m "I'd like to order another cheerleader outfit."
         maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
         m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -162,12 +182,12 @@ label custom_orders:
         call place_outfit_order("slytherin_cheerleader",3,200)
         jump clothes_menu
     
-    #"{color=#858585}-Maid outfit-{/color}"if "maid" in outfit_invintory:
-    if clothes_store_order_choice == "maid" and clothes_store_order_choice in outfit_invintory:
+    #"{color=#858585}-Maid outfit-{/color}"if "maid" in outfit_inventory:
+    if clothes_store_order_choice == "maid" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
-    #"-Maid outfit- (100 Gold)"if not "maid" in outfit_invintory:
-    if clothes_store_order_choice == "maid" and not clothes_store_order_choice in outfit_invintory:
+    #"-Maid outfit- (100 Gold)"if not "maid" in outfit_inventory:
+    if clothes_store_order_choice == "maid" and not clothes_store_order_choice in outfit_inventory:
         m "I'd like to order a maid outfit."
         maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
         m "It's going to be a present."
@@ -182,12 +202,12 @@ label custom_orders:
         call place_outfit_order("maid",2,100)
         jump clothes_menu
     
-    #"{color=#858585}-Silk Nightgown-{/color}"if "silk_nightgown" in outfit_invintory:
-    if clothes_store_order_choice == "silk_nightgown" and clothes_store_order_choice in outfit_invintory:
+    #"{color=#858585}-Silk Nightgown-{/color}"if "silk_nightgown" in outfit_inventory:
+    if clothes_store_order_choice == "silk_nightgown" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
-    #"-Silk Nightgown- (140 Gold)"if not "silk_nightgown" in outfit_invintory:
-    if clothes_store_order_choice == "silk_nightgown"and not clothes_store_order_choice in outfit_invintory:
+    #"-Silk Nightgown- (140 Gold)"if not "silk_nightgown" in outfit_inventory:
+    if clothes_store_order_choice == "silk_nightgown"and not clothes_store_order_choice in outfit_inventory:
         m "I'd like to order another custom outfit today."
         maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
         m "Well I can assure you that this outfit is not conservative."
@@ -205,12 +225,12 @@ label custom_orders:
         call place_outfit_order("silk_nightgown",2,140)
         jump clothes_menu
     
-    #"{color=#858585}-Ball Dress-{/color}"if "ball_dress" in outfit_invintory:
-    if clothes_store_order_choice == "ball_dress" and clothes_store_order_choice in outfit_invintory:
+    #"{color=#858585}-Ball Dress-{/color}"if "ball_dress" in outfit_inventory:
+    if clothes_store_order_choice == "ball_dress" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
-    #"-Ball Dress- (1500 gold)" if sorry_for_hesterics and not "ball_dress" in outfit_invintory:
-    if sorry_for_hesterics and clothes_store_order_choice == "ball_dress" and not clothes_store_order_choice in outfit_invintory:
+    #"-Ball Dress- (1500 gold)" if sorry_for_hesterics and not "ball_dress" in outfit_inventory:
+    if sorry_for_hesterics and clothes_store_order_choice == "ball_dress" and not clothes_store_order_choice in outfit_inventory:
         m "Do you sell Ball Dresses?"
         maf "Hmmm, we do although they're nothing special. Why?"
         m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
@@ -230,11 +250,11 @@ label custom_orders:
         call cust_excuse("You cannot purchase this outfit... yet.")
         jump custom_orders
 
-    if clothes_store_order_choice == "ms_marvel" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "ms_marvel" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "ms_marvel"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "ms_marvel"and not clothes_store_order_choice in outfit_inventory:
         m "Tell me Madam Mafkin, have you ever heard of super-heroes?"
         maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
         m "Fantastic, I was wondering if it would be possible for you to make me a costume."
@@ -247,11 +267,11 @@ label custom_orders:
         call place_outfit_order("ms_marvel",5,250)
         jump clothes_menu
         
-    if clothes_store_order_choice == "heart_dancer" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "heart_dancer" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "heart_dancer"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "heart_dancer"and not clothes_store_order_choice in outfit_inventory:
         m "Have you ever seen a burlesque show Madam?"
         maf "I've done more than that, I've designed a few of the outfits for them!"
         m "Splendid, I was wondering if I could commision one."
@@ -263,11 +283,11 @@ label custom_orders:
         call place_outfit_order("heart_dancer",4,300)
         jump clothes_menu
 
-    if clothes_store_order_choice == "power_girl" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "power_girl" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "power_girl"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "power_girl"and not clothes_store_order_choice in outfit_inventory:
         m "I was wondering if it would be possible for you to make me a super hero costume."
         maf "Certainly, who did you have in mind?"
         m "Do you know Power Girl?"
@@ -278,11 +298,11 @@ label custom_orders:
         call place_outfit_order("power_girl",3,350)
         jump clothes_menu
 
-    if clothes_store_order_choice == "harley_quinn" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "harley_quinn" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "harley_quinn"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "harley_quinn"and not clothes_store_order_choice in outfit_inventory:
         m "I was wondering if it would be possible for you to make me a super villain costume."
         maf "Certainly, who did you have in mind?"
         m "Do you know Harley Quinn?"
@@ -293,11 +313,11 @@ label custom_orders:
         call place_outfit_order("harley_quinn",4,300)
         jump clothes_menu
 
-    if clothes_store_order_choice == "lara_croft" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "lara_croft" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "lara_croft"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "lara_croft"and not clothes_store_order_choice in outfit_inventory:
         m "I was wondering if it would be possible for you to make me another costume."
         maf "Certainly, what are you after?"
         m "I don't suppose that you know Lara croft?"
@@ -310,11 +330,11 @@ label custom_orders:
         call place_outfit_order("lara_croft",2,275)
         jump clothes_menu
 
-    if clothes_store_order_choice == "christmas_costume" and clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "christmas_costume" and clothes_store_order_choice in outfit_inventory:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "christmas_costume"and not clothes_store_order_choice in outfit_invintory:
+    if clothes_store_order_choice == "christmas_costume"and not clothes_store_order_choice in outfit_inventory:
         m "I was wondering if it would be possible for you to make me a festive costume."
         maf "Certainly, what what holiday are you looking to \"celebrate\"?"
         m "Christmas."
@@ -358,57 +378,57 @@ label pickup_outfit:
     if outfit_order_placed: # OUTFIT
         
         if outfit_order == "gryffindor_cheerleader":
-            $ outfit_invintory.append("gryffindor_cheerleader")
+            $ outfit_inventory.append("gryffindor_cheerleader")
             call receive_package
             call display_package(">A sporty Gryffindor cheerleader outfit has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "slytherin_cheerleader":
-            $ outfit_invintory.append("slytherin_cheerleader")
+            $ outfit_inventory.append("slytherin_cheerleader")
             call receive_package
             call display_package(">A \"more sporty\" Slytherin cheerleader outfit has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "maid":
-            $ outfit_invintory.append("maid")
+            $ outfit_inventory.append("maid")
             call receive_package
             call display_package(">A french maid outfit has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "silk_nightgown":
-            $ outfit_invintory.append("silk_nightgown")
+            $ outfit_inventory.append("silk_nightgown")
             call receive_package
             call display_package(">A transparent silk nightgown has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "ball_dress":
-            $ outfit_invintory.append("ball_dress")
+            $ outfit_inventory.append("ball_dress")
             call receive_package
             call display_package(">The ball dress has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "ms_marvel":
-            $ outfit_invintory.append("ms_marvel")
+            $ outfit_inventory.append("ms_marvel")
             call receive_package
             call display_package(">The superhero costume has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "heart_dancer":
-            $ outfit_invintory.append("heart_dancer")
+            $ outfit_inventory.append("heart_dancer")
             call receive_package
             call display_package(">The dancer costume has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "power_girl":
-            $ outfit_invintory.append("power_girl")
+            $ outfit_inventory.append("power_girl")
             call receive_package
             call display_package(">The superhero costume has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "harley_quinn":
-            $ outfit_invintory.append("harley_quinn")
+            $ outfit_inventory.append("harley_quinn")
             call receive_package
             call display_package(">The supervillain costume has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "lara_croft":
-            $ outfit_invintory.append("lara_croft")
+            $ outfit_inventory.append("lara_croft")
             call receive_package
             call display_package(">The video game costume has been added to your possessions.")
             call screen main_menu_01
         if outfit_order == "christmas_costume":
-            $ outfit_invintory.append("christmas_costume")
+            $ outfit_inventory.append("christmas_costume")
             call receive_package
             call display_package(">The Christmas costume has been added to your possessions.")
             call screen main_menu_01

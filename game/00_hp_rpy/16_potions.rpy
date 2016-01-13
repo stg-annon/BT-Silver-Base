@@ -1,10 +1,6 @@
-label declare_potion_persist:
+label __init_variables:
     if not hasattr(renpy.store,'p_inv'): #important!
-        #$ p_inv = []
-        $ p_inv = ["Wormwood","Wormwood","Wormwood","Wormwood","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead","Moreish Mead"] #filled with testing items
-    return
-
-label declare_potion_vars:
+        $ p_inv = []
     
     $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction"] #base potion names
     $ p_items = ["Wormwood", "Knotgrass", "Root of Aconite", "Niffler's fancy", "Cat Hair", "Luna's Hair", "Basilisk Scale"] #item names
@@ -17,7 +13,6 @@ label declare_potion_vars:
     $ p_potion_names.append("Luna Transformation Potion")
     $ p_potion_names.append("Lamia Transformation Potion")
     $ p_potion_names.append("Transparency Potion")
-    
     
     $ p_cum_addiction = ["Wormwood","Moreish Mead"]
     $ p_ass_expansion = ["Knotgrass","Expanding Elixir"]
@@ -36,7 +31,7 @@ label declare_potion_vars:
     $ p_ingredients[5] = ["Basilisk Scale","Polyjuice Potion"]
     $ p_ingredients[6] = ["Niffler's fancy","Transparent Tincture"]
     
-return
+    return
 
 label potion_menu:
     menu:

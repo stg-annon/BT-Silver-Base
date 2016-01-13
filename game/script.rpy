@@ -9,13 +9,13 @@ define e = Character('Eileen', color="#c8ffc8")
 
 # The game starts here.
 label start:
+    $ init_variables()
     scene black
     call select_start
     return
  
 label after_load:
-    call declare_game_variables
-    call load_persistant_variables
+    $ init_variables()
     return
  
     

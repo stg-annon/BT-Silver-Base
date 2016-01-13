@@ -480,7 +480,7 @@ label door:
                             ##    $ gifted = True
                             ##    jump giving_silk_bra #28_gifts.rpy
                                 
-                            "-The Ball Dress-" if "ball_dress" in outfit_invintory and not gave_the_dress:
+                            "-The Ball Dress-" if "ball_dress" in outfit_inventory and not gave_the_dress:
                                 show screen  blktone
                                 with d3
                                 m "(I have the feeling that there will be no turning back for me after I give her this dress...)"
@@ -662,21 +662,21 @@ label door:
                         label working_menu:
                         menu:
                             
-                            "-Work as a maid-" if "maid" in outfit_invintory and daytime:
+                            "-Work as a maid-" if "maid" in outfit_inventory and daytime:
                                 jump job_1
                                 
-                            "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_invintory:
+                            "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_inventory:
                                 "This job is only available during the day."
                                 jump day_time_requests
                             
-                            "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_invintory:
+                            "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_inventory:
                                 jump job_3
                             
                             "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
                                 "This job is only available during the day."
                                 jump day_time_requests
                             
-                            "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_invintory:
+                            "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_inventory:
                                 jump job_4
                             
                             "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:

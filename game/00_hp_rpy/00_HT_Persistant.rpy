@@ -1,24 +1,5 @@
-label load_ht_persistant_vars:
-    if not hasattr(renpy.store,'clothes_intro_done'): #important!
-        $ clothes_intro_done = False
-    if not hasattr(renpy.store,'custom_outfit_1_bought'): #important!
-        $ custom_outfit_1_bought = False
-    if not hasattr(renpy.store,'custom_outfit_2_bought'): #important!
-        $ custom_outfit_2_bought = False
-    if not hasattr(renpy.store,'custom_outfit_3_bought'): #important!
-        $ custom_outfit_3_bought = False
-    if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
-        $ custom_outfit_4_bought = False
-    if not hasattr(renpy.store,'custom_clothes_1_bought'): #important!
-        $ custom_clothes_1_bought = False
-    if not hasattr(renpy.store,'custom_clothes_2_bought'): #important!
-        $ custom_clothes_2_bought = False
-    if not hasattr(renpy.store,'custom_clothes_3_bought'): #important!
-        $ custom_clothes_3_bought = False
-    if not hasattr(renpy.store,'custom_clothes_4_bought'): #important!
-        $ custom_clothes_4_bought = False
-    if not hasattr(renpy.store,'custom_clothes_5_bought'): #important!
-        $ custom_clothes_5_bought = False
+label __init_variables:
+    #place save variables here
     if not hasattr(renpy.store,'freckles'): #important!
         $ freckles = False
     if not hasattr(renpy.store,'robe'): #important!
@@ -115,20 +96,10 @@ label load_ht_persistant_vars:
         $ glasses_worn = False
     if not hasattr(renpy.store,'legs_03'): #important!
         $ legs_03 = False
-    if not hasattr(renpy.store,'micro_skirt'): #important!
-        $ micro_skirt = False
-    if not hasattr(renpy.store,'glasses'): #important!
-        $ glasses = False
     if not hasattr(renpy.store,'hair_color'): #important!
         $ hair_color = 0
     if not hasattr(renpy.store,'ears'): #important!
         $ ears = False
-    if not hasattr(renpy.store,'wear_shirts'): #important!
-        $ wear_shirts = True
-    if not hasattr(renpy.store,'wear_skirts'): #important!
-        $ wear_skirts = True
-    if not hasattr(renpy.store,'gave_tinyminiskirt'): #important!
-        $ gave_tinyminiskirt = False
     if not hasattr(renpy.store,'wear_bra'): #important!
         $ wear_bra = False
     if not hasattr(renpy.store,'scene_number'): #important!
@@ -180,7 +151,6 @@ label load_ht_persistant_vars:
         $ new_request_29_heart = 0
     if not hasattr(renpy.store,'new_request_31_heart'): #important!
         $ new_request_31_heart = 0
-    
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
     if not hasattr(renpy.store,'store_gift_items'): #important!
@@ -188,19 +158,6 @@ label load_ht_persistant_vars:
     if not hasattr(renpy.store,'shop_found'): #important!
         $ shop_found = False
     
-    call declare_book_persist
-    call declare_potion_persist
-    call declare_clothes_store_persist
-    
-return
-
-
-label declare_ht_vars:
-    # place extra varables here
-    
-    call declare_book_vars
-    call declare_potion_vars
-    call declare_clothes_store_vars
     
     $ force_unlock_pub_favors = False
     
@@ -208,7 +165,6 @@ label declare_ht_vars:
     
     $ skip_duel = False
     $ next_day = False
-    $ shop_found = False
     $ order_item = 0
     $ order_quantity = 0
     
@@ -256,98 +212,5 @@ label declare_ht_vars:
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 400
     $ luna_speed = 2.0
-    
-    $ new_request_01_heart = 0
-    $ new_request_02_heart = 0
-    $ new_request_03_heart = 0
-    $ new_request_04_heart = 0
-    $ new_request_05_heart = 0
-    $ new_request_08_heart = 0
-    $ new_request_11_heart = 0
-    $ new_request_12_heart = 0
-    $ new_request_16_heart = 0
-    $ new_request_22_heart = 0
-    $ new_request_29_heart = 0
-    $ new_request_31_heart = 0
-    
-    # $ new_request_01_count = 0
-    # $ new_request_02_count = 0
-    # $ new_request_03_count = 0
-    # $ new_request_04_count = 0
-    # $ new_request_05_count = 0
-    # $ new_request_08_count = 0
-    # $ new_request_11_count = 0
-    # $ new_request_12_count = 0
-    # $ new_request_16_count = 0
-    # $ new_request_22_count = 0
-    # $ new_request_29_count = 0
-    # $ new_request_31_count = 0
-    
-    $ store_gift_items = []
-    $ store_gift_items.append("null")
-    $ store_gift_items.append("lollipop candy")
-    $ store_gift_items.append("Chocolate")
-    $ store_gift_items.append("Plush owl")
-    $ store_gift_items.append("Butterbeer")
-    $ store_gift_items.append("Educational magazines")
-    $ store_gift_items.append("Girly magazines")
-    $ store_gift_items.append("Adult magazines")
-    $ store_gift_items.append("Porn magazines")
-    $ store_gift_items.append("Viktor Krum Poster")
-    $ store_gift_items.append("Sexy lingerie")
-    $ store_gift_items.append("A pack of condoms")
-    $ store_gift_items.append("Vibrator")
-    $ store_gift_items.append("Jar of anal lubricant")
-    $ store_gift_items.append("Ball gag and cuffs")
-    $ store_gift_items.append("Anal plugs")
-    $ store_gift_items.append("Thestral Strap-on")
-    $ store_gift_items.append("Lady Speed Stick-2000")
-    $ store_gift_items.append("Sex doll \"Joanne\"")
-    #$ store_gift_items.append("anal_beads")
-    
-    $ gift_item_inv = []
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    $ gift_item_inv.append(0)
-    #$ gift_item_inv.append(0)
-    
-    $ gift_description = []
-    $ gift_description.append("invalid item")
-    $ gift_description.append("A lollipop candy. An adult candy for kids or kids candy for adults?")
-    $ gift_description.append("The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
-    $ gift_description.append("a Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
-    $ gift_description.append("Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-    $ gift_description.append("Educational magazines. \nthe Trusty companions of every social outcast.")
-    $ gift_description.append("Girly magazines. \nAll cool girls are reading these.")
-    $ gift_description.append("Your boyfriend is turning into a nice guy? \nYour husband won't abuse you anymore? \nAll you wanted to know about relationships, love and sex. Mostly about sex.")
-    $ gift_description.append("Give these to your girlfriend to test her, to your wife to shame her and to your daughter to avoid \"the talk\".")
-    $ gift_description.append("A skilled Quidditch Seeker, Viktor has been selected to play for the Bulgarian National Quidditch team despite still going to school, and is widely regarded as one of the best players in the world.")
-    $ gift_description.append("Sexy lingerie \"Fairy Godmother\". Charm your wizard in bed or empress your sisters at a Sabbath.")
-    $ gift_description.append("\"Pink unicorn condoms\". \nUnleash the one-horned beast!\n{size=-4}May contain traces of actual unicorn saliva.{/size}")
-    $ gift_description.append("A magnificent, magically enhanced vibrator made of vine wood, with a dragon heartstring core.")
-    $ gift_description.append("A Jar of anal lube, Buy this for your loved one - show that you care.")
-    $ gift_description.append("Ball gag and cuffs, Turn your soulmate into your cellmate.")
-    $ gift_description.append("Anal plugs decorated with actual tails. \nSizes vary to satisfy expert practitioners and beginner alike.")
-    $ gift_description.append("Thestral strap-on.\nWhen you see it, you'll shit bricks.")
-    $ gift_description.append("The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!")
-    $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
-    #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
-    
     
     return
