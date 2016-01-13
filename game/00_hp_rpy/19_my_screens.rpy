@@ -491,10 +491,10 @@ screen luna_blink_f: #Luna stands still and blinks.
 
 screen luna_01: #Luna stands still.
     tag luna_chibi
-    add "01_hp/26_luna/chibis/walk/l_walk_a_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+    add "01_hp/16_luna_chibi/walk/l_walk_a_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
 screen luna_01_f: #Luna stands still. (MIRRORED)
     tag luna_chibi
-    add im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True) at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+    add im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True) at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
 screen luna_02: #Luna stands still and blinks.
     tag luna_chibi
     add "ch_lun blink_a" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
@@ -512,7 +512,7 @@ screen luna_chibi_robe_f: #Luna. Chibi. Walking. Wearing a robe.
     add "ch_lun walk_robe_flip" at custom_walk_02(walk_xpos, walk_xpos2)
 screen luna_02_b: #Luna stands still wearing a robe.
     tag luna_chibi
-    add "01_hp/26_luna/chibis/walk/l_walk_robe_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
+    add "01_hp/16_luna_chibi/walk/l_walk_robe_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
     
 ### HERMIONE CHIBI ###
 screen hermione_walk:
