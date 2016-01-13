@@ -14,22 +14,22 @@ label l_tutoring_check:
     elif v_tutoring == 6 and whoring >= 11:
         jump l_tutoring
     elif v_tutoring == 7 and whoring >= 14:
-        if mag3 >= 1:
+        if gift_item_inv[7] >= 1:# Adult magazines
             jump l_tutoring
         else:
             m "I need to buy adult magazines for this lesson."
     elif v_tutoring == 8 and whoring >= 17:
-        if mag4 >= 1:
+        if gift_item_inv[8] >= 1:# Porn magazines
             jump l_tutoring
         else:
             m "I need to buy porn magazines for this lesson."
     elif v_tutoring == 9 and whoring >= 20:
-        if vibrator >= 1:
+        if gift_item_inv[12] >= 1:# Vibrator
             jump l_tutoring
         else:
             m "I need to buy a vibrator for this lesson."
     elif v_tutoring == 10 and whoring >= 23:
-        if plug >= 1:
+        if gift_item_inv[15] >= 1:# Anal plugs
             jump l_tutoring
         else:
             m "I need to buy anal plugs for this lesson."

@@ -83,209 +83,209 @@ image ch_hem hotdog:
     
 ### LUNA ANIMATIONS
 image ch_lun walk_a:    #shirt 00
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_03.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_03.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_04.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_05.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_05.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_04.png"
     pause.08
     repeat
 image ch_lun walk_a_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_03.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_05.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_04.png", horizontal=True)
     pause.08
     repeat
 image ch_lun blink_a:
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause 2
-    "01_hp/16_luna_chibi/walk/l_walk_a_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause 5
-    "01_hp/16_luna_chibi/walk/l_walk_a_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_a_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_a_01.png"
     pause 3
     repeat
 image ch_lun blink_a_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_a_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_lun walk_n:    #shirt 00
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_03.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_03.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_04.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_05.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_05.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_04.png"
     pause.08
     repeat
 image ch_lun walk_n_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_03.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_05.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_04.png", horizontal=True)
     pause.08
     repeat
 image ch_lun blink_n:
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause 2
-    "01_hp/16_luna_chibi/walk/l_walk_n_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause 5
-    "01_hp/16_luna_chibi/walk/l_walk_n_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_n_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_n_01.png"
     pause 3
     repeat
 image ch_lun blink_n_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_n_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_lun walk_robe:    #shirt 00
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_03.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_03.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_02.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_02.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_04.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_05.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_05.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_04.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_04.png"
     pause.08
     repeat
 image ch_lun walk_robe_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_03.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_02.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_05.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_04.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_04.png", horizontal=True)
     pause.08
     repeat
 image ch_lun blink_robe:
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause 2
-    "01_hp/16_luna_chibi/walk/l_walk_robe_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause 5
-    "01_hp/16_luna_chibi/walk/l_walk_robe_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_06.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_06.png"
     pause.08
-    "01_hp/16_luna_chibi/walk/l_walk_robe_01.png"
+    "01_hp/26_luna/chibis/walk/l_walk_robe_01.png"
     pause 3
     repeat
 image ch_lun blink_robe_flip:
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_luna_chibi/walk/l_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/26_luna/chibis/walk/l_walk_robe_01.png", horizontal=True)
     pause 3
     repeat
     
