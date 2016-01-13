@@ -29,6 +29,42 @@ label __init_variables:
         $ sscroll_ = []
     if not hasattr(renpy.store,'bought_glasses'): #important!
         $ bought_glasses = False
+    if not hasattr(renpy.store,'sscroll_'): #important!
+        $ sscroll_ = []
+        $ sscroll_.append(False)
+         
+        $ sscroll_.append(False)# Turns TRUE if the scroll had been bought.
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
+        $ sscroll_.append(False)
     
     $ store_gift_items = []
     $ store_gift_items.append("null")
@@ -73,6 +109,43 @@ label __init_variables:
     $ gift_description.append("The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!")
     $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
     #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
+    
+    
+    $ scroll_name_ = []
+    $ scroll_name_.append("")
+    
+    $ scroll_name_.append("The room")
+    $ scroll_name_.append("The calendar")
+    $ scroll_name_.append("The girl")
+    $ scroll_name_.append("Deeptroating")
+    $ scroll_name_.append("Poster 01")
+    $ scroll_name_.append("Poster 02")
+    $ scroll_name_.append("Chibi-dancing")
+    $ scroll_name_.append("Game items")
+    $ scroll_name_.append("Panties no panties")
+    $ scroll_name_.append("A lot of pegs")
+
+    $ scroll_name_.append("House-elf brothel")
+    $ scroll_name_.append("Me and Lola")
+    $ scroll_name_.append("Hard training")
+    $ scroll_name_.append("Wizard's Chess")
+    $ scroll_name_.append("Tutoring books")
+    $ scroll_name_.append("Extra gifts 01")
+    $ scroll_name_.append("Extra gifts 02")
+    $ scroll_name_.append("Fiction books")
+    $ scroll_name_.append("Singer whore")
+    $ scroll_name_.append("Casting")
+
+    $ scroll_name_.append("Witch robe 01")
+    $ scroll_name_.append("Witch robe 02")
+    $ scroll_name_.append("Witch robe 03")
+    $ scroll_name_.append("Witch robe 04")
+    $ scroll_name_.append("The walk")
+    $ scroll_name_.append("Durmstrang")
+    $ scroll_name_.append("Gag ball")
+    $ scroll_name_.append("New clothes 01")
+    $ scroll_name_.append("New clothes 02")
+    $ scroll_name_.append("The gang")
     return
 
 label shop_fake:
