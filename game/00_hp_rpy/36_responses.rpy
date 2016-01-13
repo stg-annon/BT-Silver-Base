@@ -76,14 +76,25 @@ label map_lake: #Label controlling what happens when you go to the lake
 
 label map_dorms: #Label controlling what happens when you go to the dorms
     menu:
-        "-Search the area-":
+        "-Search the area-":#Luna's Hair
             if day_random >= 7:
-                ">You search around the lake and manage to find a clump for bright orange fur."
+                ">You search around the dorms and manage to find a clump for bright orange fur."
                 m "This must belong to some sort of animal."
                 menu: 
                     "-Take the Fur-":
                         ">You gain 1 Cat Fur."
                         $ p_inv.append("Cat Hair")
+                    "-Leave it-":
+                        pass
+                ">Finding nothing else of interest you return to your office."
+                jump return_office
+            elif day_random > 5:
+                ">You search around the dorms and manage to find an comb with some hair in it."
+                m "This must be someones hair."
+                menu: 
+                    "-Take the hair-":
+                        ">You gain 1 Luna's Hair."
+                        $ p_inv.append("Luna's Hair")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
