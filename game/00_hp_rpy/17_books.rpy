@@ -45,22 +45,6 @@ label __init_variables:
     $ book_description.append("{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?")
     
     
-    $ bought_book = []
-    $ bought_book.append(False)#null
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    $ bought_book.append(False)
-    
-    
     $ book_effect = []
     $ book_effect.append("")#null
     $ book_effect.append(">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.")

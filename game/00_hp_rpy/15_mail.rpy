@@ -211,57 +211,6 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     
 label mail_02: #Packages only. <=====================================================================### PACKAGES ###=================================================== 
     
-    if True in bought_book:
-        $ book_num = -1
-        if bought_book[1]:
-            $ book_num = int(1)
-        if bought_book[2]:
-            $ book_num = int(2)
-        if bought_book[3]:
-            $ book_num = int(3)
-        if bought_book[4]:
-            $ book_num = int(4)
-        if bought_book[5]:
-            $ book_num = int(5)
-        if bought_book[6]:
-            $ book_num = int(6)
-        if bought_book[7]:
-            $ book_num = int(7)
-        if bought_book[8]:
-            $ book_num = int(8)
-        if bought_book[9]:
-            $ book_num = int(9)
-        if bought_book[10]:
-            $ book_num = int(10)
-        if bought_book[11]:
-            $ book_num = int(11)
-        if bought_book[12]:
-            $ book_num = int(12)
-        
-        $ bought_book[book_num] = False
-        $ package_is_here = False
-        $ days_in_delivery = 0
-        $ books.append("book_"+str(book_num))
-        if book_num in fiction_books:
-            if book_num == 9:
-                $ the_gift = "01_hp/18_store/04.png"
-            if book_num == 10:
-                $ the_gift = "01_hp/18_store/05.png"
-            if book_num == 11:
-                $ the_gift = "01_hp/18_store/02.png"
-            if book_num == 12:
-                $ the_gift = "01_hp/18_store/03.png"
-        else:
-            $ the_gift = "01_hp/18_store/08.png"
-        show screen gift
-        with d3
-        $ tmp = book_name[book_num]
-        "Book [tmp] has been added to your collection."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    
 ### ITEMS ###    
     if order_item != 0:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.

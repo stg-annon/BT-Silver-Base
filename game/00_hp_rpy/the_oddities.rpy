@@ -31,8 +31,7 @@ label __init_variables:
         $ bought_glasses = False
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = []
-        $ sscroll_.append(False)
-         
+        $ sscroll_.append(False)#null
         $ sscroll_.append(False)# Turns TRUE if the scroll had been bought.
         $ sscroll_.append(False)
         $ sscroll_.append(False)
@@ -43,7 +42,6 @@ label __init_variables:
         $ sscroll_.append(False)
         $ sscroll_.append(False)
         $ sscroll_.append(False)
-        
         $ sscroll_.append(False)
         $ sscroll_.append(False)
         $ sscroll_.append(False)
@@ -54,7 +52,6 @@ label __init_variables:
         $ sscroll_.append(False)
         $ sscroll_.append(False)
         $ sscroll_.append(False)
-        
         $ sscroll_.append(False)
         $ sscroll_.append(False)
         $ sscroll_.append(False)
@@ -110,10 +107,8 @@ label __init_variables:
     $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
     #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
     
-    
     $ scroll_name_ = []
-    $ scroll_name_.append("")
-    
+    $ scroll_name_.append("null")
     $ scroll_name_.append("The room")
     $ scroll_name_.append("The calendar")
     $ scroll_name_.append("The girl")
@@ -124,7 +119,6 @@ label __init_variables:
     $ scroll_name_.append("Game items")
     $ scroll_name_.append("Panties no panties")
     $ scroll_name_.append("A lot of pegs")
-
     $ scroll_name_.append("House-elf brothel")
     $ scroll_name_.append("Me and Lola")
     $ scroll_name_.append("Hard training")
@@ -135,7 +129,6 @@ label __init_variables:
     $ scroll_name_.append("Fiction books")
     $ scroll_name_.append("Singer whore")
     $ scroll_name_.append("Casting")
-
     $ scroll_name_.append("Witch robe 01")
     $ scroll_name_.append("Witch robe 02")
     $ scroll_name_.append("Witch robe 03")
@@ -653,16 +646,9 @@ label the_oddities:
     
 label book_block(book_id, book_cost):
     if book_id in fiction_books:
-        if book_id == 9:
-            $ the_gift = "01_hp/18_store/04.png"
-        if book_id == 10:
-            $ the_gift = "01_hp/18_store/05.png"
-        if book_id == 11:
-            $ the_gift = "01_hp/18_store/02.png"
-        if book_id == 12:
-            $ the_gift = "01_hp/18_store/03.png"
+        $ the_gift = "01_hp/18_store/books/"+str(book_id)+".png"
     else:
-        $ the_gift = "01_hp/18_store/08.png"
+        $ the_gift = "01_hp/18_store/books/1-8.png"
     show screen gift
     with d3
     $ temp_str = str(book_description[book_id])
@@ -671,9 +657,14 @@ label book_block(book_id, book_cost):
         "-Buy the book for [book_cost] gold -":
             if gold >= book_cost:
                 $ gold -= book_cost
-                $ order_placed = True
-                $ bought_book[book_id] = True #Affects 15_mail.rpy
-                call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                $ books.append("book_"+str(book_id))
+                $ tmp = book_name[book_id]
+                "Book [tmp] has been added to your collection."
+                hide screen gift
+                with d3
+                # $ order_placed = True
+                # $ bought_book[book_id] = True #Affects 15_mail.rpy
+                # call thx_4_shoping #Massage that says "Thank you for shopping here!".
                 call screen shop_screen
             else:
                 call no_gold #Massage: m "I don't have enough gold".

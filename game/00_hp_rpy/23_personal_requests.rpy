@@ -4152,7 +4152,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ hermione_chibi_xpos = 300 #Near the desk: 400. (210 - standing on desk.)
                                         $ hermione_chibi_ypos = 260#Default: 250. (180- standing on desk.)
                                         show screen h_c_u 
-                                        $ h_c_u_pic = "01_hp/08_animation_02/07_dance_03.png"
+                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_03.png"
                                         ">Hermione furiously jumps off your desk."
                                         hide screen blkfade
                                         with d3
@@ -7411,7 +7411,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
                     ">Seeing her being so confused and vulnerable and yet continuing to perform her task diligently pushes you over the edge."
                     g4 "(Here it comes!)"
-                    jump blowjob_cum_scene
+                    #jump blowjob_cum_scene
 
                     
                 "\"I am busy right now, Severus.\"":
