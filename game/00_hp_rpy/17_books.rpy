@@ -158,6 +158,7 @@ menu:
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it today?"
                 menu:
                     "-Read the book-":
+                        hide screen gift
                         call reading_book_block(1)
                         #jump reading_book_01
                     "-Never mind-":
@@ -182,6 +183,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_01" in books and book_progress[1] == book_chapters[1]:
+                            hide screen gift
                             call reading_book_block(2)
                             #jump reading_book_02
                         else:
@@ -209,6 +211,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_02" in books and book_progress[2] == book_chapters[2]:
+                            hide screen gift
                             call reading_book_block(3)
                             #jump reading_book_03
                         else:
@@ -236,6 +239,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_03" in books and book_progress[3] == book_chapters[3]:
+                            hide screen gift
                             call reading_book_block(4)
                             #jump reading_book_04
                         else:
@@ -263,6 +267,7 @@ menu:
                 ">This book contains a bunch of very basic techniques used to improve one's ability to write quickly."
                 menu:
                     "-Read the book-":
+                        hide screen gift
                         call reading_book_block(5)
                         #jump reading_book_5
                     "-Never mind-":
@@ -287,6 +292,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_5" in books and book_progress[5] == book_chapters[5]:
+                            hide screen gift
                             call reading_book_block(6)
                             #jump reading_book_6
                         else:
@@ -314,6 +320,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_6" in books and book_progress[6] == book_chapters[6]:
+                            hide screen gift
                             call reading_book_block(7)
                             #jump reading_book_7
                         else:
@@ -344,6 +351,7 @@ menu:
                 menu:
                     "-Read the book-":
                         if "book_7" in books and book_progress[7] == book_chapters[7]:
+                            hide screen gift
                             call reading_book_block(8)
                             #jump reading_book_8
                         else:
