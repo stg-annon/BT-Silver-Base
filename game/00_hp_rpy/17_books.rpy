@@ -552,7 +552,8 @@ label chapter_check_book(bookID =-1):
             ">Your imagination has improved."
             $ imagination +=1
         else:
-            ">[book_effect[bookID]]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
+            $ tmp = book_effect[bookID]
+            ">[tmp]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
             
             if bookID in speed_reading_books:
                 $ concentration += 1

@@ -1911,8 +1911,8 @@ screen h_head2: #Screen that shows Hermione's head.
         if ne: # Desplays a fishnets in hermione_main screen.
             if ne_01:
                 add "01_hp/13_hermione_main/nets.png" xpos her_head_xpos ypos her_head_ypos # FISHNETS.
-                if not legs_02 and not only_upper and not legs_03: # Long skirt is on.
-                    add "01_hp/13_hermione_main/patch.png" xpos her_head_xpos ypos her_head_ypos # Patch
+                ##if not legs_02 and not only_upper and not legs_03: # Long skirt is on.
+                ##    add "01_hp/13_hermione_main/patch.png" xpos her_head_xpos ypos her_head_ypos # Patch
     
     if not only_upper:
         if whoring <= 12 or custom_bra >=0:
