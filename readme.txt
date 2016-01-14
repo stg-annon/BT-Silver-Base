@@ -41,3 +41,16 @@ POTION COMBINATIONS:
 	Breast Expansion	= Expanding Elixir + Root of Aconite 	   (Lake)
 	Cum Addiction 		= Moreish mead + Wormwood 		   (Forest)
 	Transparency Potion	= Transparent tincture + Niffler's Fancy   (Lake)
+
+PRIVATE FAVOUR COSTUMES:
+	Talk to me: Harley Quinn
+	Nice Panties: 
+	Panty Thief:
+	Breast Molester: Christmas outfit
+	Butt Molester: Maid
+	Show them to me: Power Girl
+	Dance for me: Heart Dancer
+	Touch me: Gryffindor Cheerleader 
+	Suck it: Slytherin Cheerleader
+	Sex: Lara Croft
+	Anal: Ball Dress
