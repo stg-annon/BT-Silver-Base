@@ -1041,7 +1041,7 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/23_clothes_store/costumes/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 12:
                 add im.Alpha("01_hp/23_clothes_store/costumes/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 1:
+            elif custom_skirt == 1 and custom_outfit == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/ass_exp1.png", transparency) xpos h_xpos ypos h_ypos
@@ -1049,7 +1049,7 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 5:
+            elif custom_skirt == 5 and custom_outfit == 0:
                 add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
         elif wear_skirts and not skirt_up and custom_outfit <= 19:
             if whoring <= 5:
@@ -1362,7 +1362,7 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_outfit == 12:
                 add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 1:
+            elif custom_skirt == 1 and custom_outfit == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/ass_exp1.png", transparency) xpos h_xpos ypos h_ypos
@@ -1370,7 +1370,7 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 5:
+            elif custom_skirt == 5 and custom_outfit == 0:
                 add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
         elif not skirt_up and custom_outfit <= 19:
             if whoring <= 5:
@@ -1892,7 +1892,7 @@ screen h_head2: #Screen that shows Hermione's head.
                 add im.Alpha("01_hp/25_mo/maid_skirt.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_outfit == 2:
                 add im.Alpha("01_hp/25_mo/cheer_pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_skirt == 1:
+            elif custom_skirt == 1 and custom_outfit == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/jeans_2.png", transparency) xpos her_head_xpos ypos her_head_ypos

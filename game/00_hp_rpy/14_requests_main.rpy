@@ -28,13 +28,13 @@ label new_personal_request:
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Breast molester\" {image=heart_0[new_request_04_heart]}" if imagination >= 2: 
+                    "Favour: \"Breast molester\" {image=heart_0[new_request_04_heart]}   {image=interface/clothes.png}" if imagination >= 2: 
                         jump new_request_04
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Butt molester\" {image=heart_0[new_request_05_heart]}" if imagination >= 2:
+                    "Favour: \"Butt molester\" {image=heart_0[new_request_05_heart]}   {image=interface/clothes.png}" if imagination >= 2:
                         jump new_request_05
                         
                     ### LEVEL 03 ### IMAGINATION == 3
@@ -57,14 +57,14 @@ label new_personal_request:
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let me touch them!\" {image=heart_0[new_request_12_heart]}" if imagination >= 3: # LEVEL 4
+                    "Favour: \"Let me touch them!\" {image=heart_0[new_request_12_heart]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
                         jump new_request_12
                         
                     ### LEVEL 05 ### IMAGINATION == 4
                     "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"touch me!\" {image=heart_0[new_request_16_heart]}" if imagination >= 4: # LEVEL 5
+                    "Favour: \"touch me!\" {image=heart_0[new_request_16_heart]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
                         jump new_request_16
                         
                     ### LEVEL 06 ### IMAGINATION == 4
@@ -78,14 +78,14 @@ label new_personal_request:
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let's have sex!\" {image=heart_0[new_request_29_heart]}" if imagination >= 5: # LEVEL 7
+                    "Favour: \"Let's have sex!\" {image=heart_0[new_request_29_heart]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
                         jump new_request_29
                     
                     ### LEVEL 08 ###
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour:  \"Time for anal!\" {image=heart_0[new_request_31_heart]}" if imagination >= 5: # LEVEL 8
+                    "Favour:  \"Time for anal!\" {image=heart_0[new_request_31_heart]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
                         jump new_request_31
                     
                     "-Cancel-":

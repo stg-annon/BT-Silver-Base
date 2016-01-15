@@ -67,6 +67,8 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         $ temp_stockings = stockings 
                         $ temp_outfit = custom_outfit
                         $ custom_outfit = 8
+                        $ stockings = 0
+                        $ panties = False
                         hide  screen blkfade
                         show screen hermione_main
                         with d3
@@ -80,6 +82,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         $ temp_stockings = stockings 
                         $ temp_outfit = custom_outfit
                         $ custom_outfit = 4
+                        $ stockings = 0
                         hide  screen blkfade
                         show screen hermione_main
                         with d3
@@ -93,6 +96,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         $ temp_stockings = stockings 
                         $ temp_outfit = custom_outfit
                         $ custom_outfit = 7
+                        $ stockings = 0
                         $ panties = False
                         hide  screen blkfade
                         show screen hermione_main
@@ -1084,7 +1088,40 @@ label new_request_04:
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-    
+
+
+    if "ms_marvel" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "As what?"
+                m "Ms Marvel."
+                if whoring >= 7:
+                    $ changeHermioneMainScreen(hg_pth+"body_30.png")
+                    her "A super hero costume?"
+                    m "It's not that bad. It's empowering."
+                    $ changeHermioneMainScreen(hg_pth+"body_34.png")
+                    her "..."
+                    $ changeHermioneMainScreen(hg_pth+"body_33.png")
+                    her "Fine, let me go change."
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 8
+                    $ panties = False
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
     
     
     if whoring <=2: # LEVEL 01 # Hermione refuses.
@@ -1335,7 +1372,9 @@ label new_request_04:
         else:
             her_[2] "(I'll just ask him about it next time)"
         hide screen hermione_01_f
-    
+    $ stockings = temp_stockings 
+    $ custom_outfit = temp_outfit
+    $ panties = True
     jump end_hermione_personal_request
     
 ###################REQUEST_05 (Level 02) (BUTT MOLESTER).
@@ -1349,6 +1388,40 @@ label new_request_05:
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+
+    if "maid" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "As what?"
+                m "A maid."
+                if whoring >= 5:
+                    $ changeHermioneMainScreen(hg_pth+"body_53.png")
+                    her "A maid?"
+                    m "A french maid."
+                    $ changeHermioneMainScreen(hg_pth+"body_54.png")
+                    her "..."
+                    $ changeHermioneMainScreen(hg_pth+"body_33.png")
+                    her "Well, if you insist..."
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ stockings = 1
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 1
+                    $ panties = False
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
 
     
     if whoring <=2:
@@ -1955,7 +2028,9 @@ label new_request_05:
         show screen hermione_01_f #Hermione stands still.
         her_[12] "..........................."
         hide screen hermione_01_f #Hermione stands still.
-        
+    $ stockings = temp_stockings 
+    $ custom_outfit = temp_outfit
+    $ panties = True
     jump end_hermione_personal_request
         
 ###################REQUEST_08 (Level 03) (Show me tits). #####################################################################################################################
@@ -5021,6 +5096,42 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+
+    if "christmas_costume" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "As what?"
+                m "My christmas present."
+                if whoring >= 14:
+                    $ changeHermioneMainScreen(hg_pth+"body_56.png")
+                    her "Your present?"
+                    m "Yes, I've been a very good boy this year."
+                    $ changeHermioneMainScreen(hg_pth+"body_58.png")
+                    her "..."
+                    $ changeHermioneMainScreen(hg_pth+"body_59.png")
+                    her "Fine, let me go wrap myself."
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 11
+                    $ stockings = 0
+                    $ panties = False
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
+
+
     
     if whoring <=8:
         jump too_much
@@ -5541,7 +5652,10 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     # show screen hermione_walk_01_f 
     # pause 2
     # hide screen hermione_walk_01_f 
-    
+    $ custom_outfit = temp_outfit
+    $ stockings = temp_stockings
+    $ panties = True
+
     call her_walk(400,610,2)
     
     jump end_hermione_personal_request      
@@ -5562,6 +5676,40 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+
+    if "gryffindor_cheerleader" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "As what?"
+                m "A Cheerleader."
+                if whoring >= 17:
+                    $ changeHermioneMainScreen(hg_pth+"body_50.png")
+                    her "A Cheerleader?"
+                    m "For gryffindor."
+                    $ changeHermioneMainScreen(hg_pth+"body_44.png")
+                    her "..."
+                    $ changeHermioneMainScreen(hg_pth+"body_29.png")
+                    her "Fine, at least it's gryffindor."
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 2
+                    $ stockings = 2
+                    $ panties = False
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
     
     $ current_payout = 45 #Used when haggling about price of th favor.
     
@@ -6637,6 +6785,10 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     # show screen hermione_walk_01_f 
     # pause 2
     # hide screen hermione_walk_01_f 
+
+    $ custom_outfit = temp_outfit
+    $ stockings = temp_stockings
+    $ panties = True
     
     call her_walk(400,610,2)
     
@@ -7879,6 +8031,39 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+
+    if "lara_croft" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "As what?"
+                m "As who. I want you to dress up as Lara Croft"
+                if whoring >= 22:
+                    $ changeHermioneMainScreen(hg_pth+"body_31.png")
+                    her "Who?"
+                    m "She's a video game character."
+                    $ changeHermioneMainScreen(hg_pth+"body_73.png")
+                    her "..."
+                    $ changeHermioneMainScreen(hg_pth+"body_82.png")
+                    her "Whatever, let me go change."
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 12
+                    $ stockings = 0
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
     
     if request_29_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
@@ -8601,6 +8786,9 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     
     $ request_29_points += 1
     $ aftersperm = False #Show cum stains on Hermione's uniform.
+
+    $ custom_outfit = temp_outfit
+    $ stockings = temp_stockings
     
     hide screen bld1
     hide screen hermione_main
@@ -8632,6 +8820,40 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+
+    if "ball_dress" in outfit_inventory:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                $ changeHermioneMainScreen(hg_pth+"body_10.png")
+                her "In what?"
+                m "Your ball dress."
+                if whoring >= 22:
+                    $ changeHermioneMainScreen(hg_pth+"body_130.png")
+                    her "What?"
+                    her "You got me a new ball dress?"
+                    m "Indeed I did, but you'll have to earn it."
+                    $ changeHermioneMainScreen(hg_pth+"body_119.png")
+                    her "Of course"
+                    $ changeHermioneMainScreen(hg_pth+"body_188.png")
+                    her "Let me go try it on!"
+                    show screen blkfade
+                    hide screen hermione_main
+                    with d3
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    $ temp_stockings = stockings 
+                    $ temp_outfit = custom_outfit
+                    $ custom_outfit = 12
+                    $ stockings = 0
+                    hide  screen blkfade
+                    show screen hermione_main
+                    with d3
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
     
     if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]..."

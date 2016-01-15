@@ -46,10 +46,11 @@ PRIVATE FAVOUR COSTUMES:
 	Talk to me: Harley Quinn
 	Nice Panties: School Uniform
 	Panty Thief: School Uniform
-	Breast Molester: Christmas outfit
+	Breast Molester: Ms Marvel
 	Butt Molester: Maid
 	Show them to me: Power Girl
 	Dance for me: Heart Dancer
+	Let me touch them: Christmas
 	Touch me: Gryffindor Cheerleader 
 	Suck it: Slytherin Cheerleader
 	Sex: Lara Croft
