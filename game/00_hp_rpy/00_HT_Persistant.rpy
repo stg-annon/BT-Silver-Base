@@ -161,27 +161,35 @@ label __init_variables:
     if not hasattr(renpy.store,'per_q_the_gamble_c'): #important!
         $ per_q_the_gamble_c = False
     
-    $ force_unlock_pub_favors = False
+
+    if not hasattr(renpy.store,'hair_style'): #important!
+        $ hair_style = "A"
+    if not hasattr(renpy.store,'skip_duel'): #important!
+        $ skip_duel = False
+    if not hasattr(renpy.store,'next_day'): #important!
+        $ next_day = False
+    if not hasattr(renpy.store,'order_item'): #important!
+        $ order_item = 0
+    if not hasattr(renpy.store,'order_quantity'): #important!
+        $ order_quantity = 0
+    if not hasattr(renpy.store,'force_unlock_pub_favors'): #important!
+        $ force_unlock_pub_favors = False
+    if not hasattr(renpy.store,'leg_pos'): #important!
+        $ leg_pos = 0
+    if not hasattr(renpy.store,'right_arm_pos'): #important!
+        $ right_arm_pos = 0
+    if not hasattr(renpy.store,'left_arm_pos'): #important!
+        $ left_arm_pos = 0
+    if not hasattr(renpy.store,'her_breasts'): #important!
+        $ her_breasts = 0
+    if not hasattr(renpy.store,'wear_shirts'): #important!
+        $ wear_shirts = True
+    if not hasattr(renpy.store,'wear_skirts'): #important!
+        $ wear_skirts = True
+
     
     $ her_path = "01_hp/13_hermione_main/"
     
-    $ skip_duel = False
-    $ next_day = False
-    $ order_item = 0
-    $ order_quantity = 0
-    
-    $ leg_pos = 0
-    $ right_arm_pos = 0
-    $ left_arm_pos = 0
-    $ her_breasts = 0
-    $ hair_color = 0
-    $ hair_style = "A"
-    $ wear_shirts = True
-    $ wear_skirts = True
-
-    $ custom_outfit = 0
-    $ temp_outfit = 0
-    $ temp_stockings = 0
     
     $ emote_anger = False
     $ emote_exclam = False
