@@ -13,7 +13,7 @@ label cheats_ht:
             "Obtained Voucher."
             jump cheats_ht
         "-Books-" if day >= 16:
-            $ books = ["book_01", "book_02", "book_03", "book_04",  "book_05", "book_06", "book_07", "book_08", "book_09", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
+            $ books = ["book_1", "book_2", "book_3", "book_4",  "book_5", "book_6", "book_7", "book_8", "book_9", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
             "Obtained Books."
             jump cheats_ht
         "-Cheat Reading (off)-" if not cheat_reading:

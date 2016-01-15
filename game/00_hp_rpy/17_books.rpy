@@ -7,6 +7,12 @@ label __init_variables:
         $ s_reading_lvl = 0
     if not hasattr(renpy.store,'cheat_reading'): #important!
         $ cheat_reading = False
+    if not hasattr(renpy.store,'books'): #important!
+        $ books = []
+    
+    #$ books = ["book_1", "book_2", "book_3", "book_4",  "book_5", "book_6", "book_7", "book_8", "book_9", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
+    #All books.
+
     
     $ speed_reading_books = [1,2,3,4]
     $ speed_writing_books = [5,6,7,8]
@@ -182,7 +188,7 @@ menu:
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it now?"
                 menu:
                     "-Read the book-":
-                        if "book_01" in books and book_progress[1] == book_chapters[1]:
+                        if "book_1" in books and book_progress[1] == book_chapters[1]:
                             hide screen gift
                             call reading_book_block(2)
                             #jump reading_book_02
@@ -203,14 +209,14 @@ menu:
                 jump books_on_improvement
             
             ###-3-###"\"Silver book of spirit\""  
-            "-Book: \"Silver book of spirit\"-" if "book_03" in books and book_progress[3] <= book_chapters[3]-1:
+            "-Book: \"Silver book of spirit\"-" if "book_3" in books and book_progress[3] <= book_chapters[3]-1:
                 $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it today?"
                 menu:
                     "-Read the book-":
-                        if "book_02" in books and book_progress[2] == book_chapters[2]:
+                        if "book_2" in books and book_progress[2] == book_chapters[2]:
                             hide screen gift
                             call reading_book_block(3)
                             #jump reading_book_03
@@ -238,7 +244,7 @@ menu:
                 ">This book contains various tips on how to improve one's efficiency."
                 menu:
                     "-Read the book-":
-                        if "book_03" in books and book_progress[3] == book_chapters[3]:
+                        if "book_3" in books and book_progress[3] == book_chapters[3]:
                             hide screen gift
                             call reading_book_block(4)
                             #jump reading_book_04

@@ -140,14 +140,11 @@ $ hanging_with_snape = False #Turns true when "hanging with Snape during the nig
 $ have_catalogue = False #Turns True when you obtain "The muggle oddities" catalog. (The button shows).
 
 
-$ books = []
 $ gifts12 = []
 
 $ hermione_desperate_done = False
 $ fawkes_intro_done = False
 
-#$ books = ["book_01", "book_02", "book_03", "book_04",  "book_05", "book_06", "book_07", "book_08", "book_09", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
-#All books.
 
 ### GENIE STATS ###============================
 $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of whoring.
