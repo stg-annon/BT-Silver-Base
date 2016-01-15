@@ -44,8 +44,8 @@ POTION COMBINATIONS:
 
 PRIVATE FAVOUR COSTUMES:
 	Talk to me: Harley Quinn
-	Nice Panties: 
-	Panty Thief:
+	Nice Panties: School Uniform
+	Panty Thief: School Uniform
 	Breast Molester: Christmas outfit
 	Butt Molester: Maid
 	Show them to me: Power Girl
