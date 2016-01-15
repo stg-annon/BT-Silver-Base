@@ -112,62 +112,25 @@ screen room_back:
     else:
         add "01_hp/25_mo/room_bg2.png"
     zorder 0
-
+    
 screen shop_screen:
+
     if daytime:
         add "01_hp/25_mo/room_bg1.png"
     else:
         add "01_hp/25_mo/room_bg2.png"
-    add "01_hp/25_mo/shop_screen.png"
-    imagebutton: # Books
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/books1.png"
-        hover "01_hp/25_mo/books2.png"
-        action [Jump("shop_books")]
-    imagebutton: # Return Button
-        xpos 750 
-        ypos 550
-        focus_mask True
-        idle "interface/continue.png"
-        hover "interface/continue2.png"
-        action [Jump("day_main_menu")]
-    imagebutton: # Tentacle Scroll
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/scroll_3_1.png"
-        hover "01_hp/25_mo/scroll_3_2.png"
-        action [Jump("tentacle_shop_scene")]
-    imagebutton: # Potions
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/potion_1_1.png"
-        hover "01_hp/25_mo/potion_1_2.png"
-        action [Jump("shop_potion_menu")]
-    imagebutton: # Gift Box
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/gift_1.png"
-        hover "01_hp/25_mo/gift_2.png"
-        action [Jump("gifts_menu")]
-    imagebutton: # Scrolls 1
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/scroll_1_1.png"
-        hover "01_hp/25_mo/scroll_1_2.png"
-        action [Jump("sscrolls")]
-    imagebutton: # Scrolls 2
-        xpos 0 
-        ypos 0
-        focus_mask True
-        idle "01_hp/25_mo/scroll_2_1.png"
-        hover "01_hp/25_mo/scroll_2_2.png"
-        action [Jump("sscrolls2")]
+    
+    imagemap:
+        ground "01_hp/25_mo/shop_ground.png"
+        hover "01_hp/25_mo/shop_hover.png"
+        # (X upper-left corner, Y upper-left corner, width, height).
+        hotspot (0, 0, 266, 110) clicked Jump("sscrolls")   # Scrolls 1
+        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2")# Scrolls 2
+        hotspot (0, 215, 233, 80) clicked Jump("shop_books") # Books
+        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu")   # Gift Box
+        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene")  # Tentacle Scroll
+        hotspot (606, 0, 197, 538) clicked Jump("shop_potion_menu")   # Potions
+        hotspot (750, 550, 40, 40) clicked Jump("day_main_menu") # Return Button
     
 screen cs_p1:
     
@@ -209,7 +172,7 @@ screen cs_p2:
         hotspot (56, 57, 156, 234) clicked [SetVariable("clothes_store_selection",1),Jump("cs_select")]
         hotspot (233, 57, 156, 234) clicked [SetVariable("clothes_store_selection",2),Jump("cs_select")]
         hotspot (409, 57, 156, 234) clicked [SetVariable("clothes_store_selection",3),Jump("cs_select")]
-        # hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
+        hotspot (585, 57, 156, 234) clicked [SetVariable("clothes_store_selection",4),Jump("cs_select")]
         # hotspot (56, 312, 156, 234) clicked [SetVariable("clothes_store_selection",5),Jump("cs_select")]
         # hotspot (233, 312, 156, 234) clicked [SetVariable("clothes_store_selection",6),Jump("cs_select")]
         # hotspot (409, 312, 156, 234) clicked [SetVariable("clothes_store_selection",7),Jump("cs_select")]

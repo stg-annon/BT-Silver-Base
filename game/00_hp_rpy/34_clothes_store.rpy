@@ -1,6 +1,8 @@
 label __init_variables:
     if not hasattr(renpy.store,'outfit_inventory'): #important!
         $ outfit_inventory = []
+    if not hasattr(renpy.store,'cs_stock_inventory'): #important!
+        $ cs_stock_inventory = []
     if not hasattr(renpy.store,'outfit_order'): #important!
         $ outfit_order = "null"
     if not hasattr(renpy.store,'outfit_wait_time'): #important!
@@ -29,17 +31,11 @@ label __init_variables:
         $ custom_outfit_3_bought = False
     if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
         $ custom_outfit_4_bought = False
-    if not hasattr(renpy.store,'custom_clothes_1_bought'): #important!
-        $ custom_clothes_1_bought = False
-    if not hasattr(renpy.store,'custom_clothes_2_bought'): #important!
-        $ custom_clothes_2_bought = False
-    if not hasattr(renpy.store,'custom_clothes_3_bought'): #important!
-        $ custom_clothes_3_bought = False
-    if not hasattr(renpy.store,'custom_clothes_4_bought'): #important!
-        $ custom_clothes_4_bought = False
-    if not hasattr(renpy.store,'custom_clothes_5_bought'): #important!
-        $ custom_clothes_5_bought = False
-
+    if not hasattr(renpy.store,'cs_existing_stock'): #important!
+        $ cs_existing_stock = [False,False,False,False,False,False,False,False]
+    if not hasattr(renpy.store,'cd_accessories'): #important!
+        $ cd_accessories = [False,False,False]
+    
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
     $ clothes_store_selection = 0
@@ -58,7 +54,7 @@ label __init_variables:
     $ clothes_store_inv.append("harley_quinn")#start page 2
     $ clothes_store_inv.append("christmas_costume")
     $ clothes_store_inv.append("lara_croft")
-    $ clothes_store_inv.append("")
+    $ clothes_store_inv.append("pirate")
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")
     $ clothes_store_inv.append("")
@@ -334,7 +330,7 @@ label custom_orders:
         call cust_excuse("You already own this outfit.")
         jump custom_orders
     #
-    if clothes_store_order_choice == "christmas_costume"and not clothes_store_order_choice in outfit_inventory:
+    if clothes_store_order_choice == "christmas_costume" and not clothes_store_order_choice in outfit_inventory:
         m "I was wondering if it would be possible for you to make me a festive costume."
         maf "Certainly, what what holiday are you looking to \"celebrate\"?"
         m "Christmas."
@@ -346,8 +342,16 @@ label custom_orders:
         m "Thank you."
         call place_outfit_order("christmas_costume",2,50)
         jump clothes_menu
-
-
+    
+    if clothes_store_order_choice == "pirate" and clothes_store_order_choice in outfit_inventory:
+        call cust_excuse("You already own this outfit.")
+        jump custom_orders
+    if clothes_store_order_choice == "pirate" and not clothes_store_order_choice in outfit_inventory:
+        m "I want a pireate outfit"
+        maf "ok"
+        call place_outfit_order("pirate",2,75)
+        jump clothes_menu
+        
     if clothes_store_order_choice == "CANCEL":
         jump clothes_menu
         
@@ -432,6 +436,11 @@ label pickup_outfit:
             call receive_package
             call display_package(">The Christmas costume has been added to your possessions.")
             call screen main_menu_01
+        if outfit_order == "pirate":
+            $ outfit_inventory.append("pirate")
+            call receive_package
+            call display_package(">The Pirate costume has been added to your possessions.")
+            call screen main_menu_01
         #if outfit_order == "": 
 return
 
@@ -460,7 +469,7 @@ label cust_excuse(text="Meh, you cant use this yet"): #custom text option for ot
 
 label existing_stock:
     menu:
-        "-Pants/Skirts-":
+        "-Pants/Skirts-":#Jeans#Stockings#Fishnet Stockings#Lace Bra and Panties#Cup-less Lace Bra#Silk Bra and Panties
             menu:
                 "-Jeans- (75 Gold)":
                     "A pair of standard muggle jeans, albeit a little low slung."
@@ -468,7 +477,7 @@ label existing_stock:
                         "-Buy-":
                             if gold >= 75:
                                 $ gold -= 75
-                                $ custom_clothes_1_bought = True
+                                $ cs_existing_stock[0] = True
                                 maf "Thank you very much."
                                 jump clothes_menu
                             else:
@@ -486,7 +495,7 @@ label existing_stock:
                         "-Buy-":
                             if gold >= 50:
                                 $ gold -= 50
-                                $ custom_clothes_2_bought = True
+                                $ cs_existing_stock[1] = True
                                 maf "Thank you very much."
                                 jump clothes_menu
                             else:
@@ -516,7 +525,7 @@ label existing_stock:
                     "A lovely lace bra and panty set."
                     if gold >= 50:
                         $ gold -= 50
-                        $ custom_clothes_3_bought = True
+                        $ cs_existing_stock[2] = True
                         maf "Thank you very much."
                         jump clothes_menu
                     else:
@@ -526,7 +535,7 @@ label existing_stock:
                     "A revealing piece of clothing that only serves to highlight the wearer's breasts."
                     if gold >= 125:
                         $ gold -= 125
-                        $ custom_clothes_4_bought = True
+                        $ cs_existing_stock[3] = True
                         maf "Thank you very much."
                         jump clothes_menu
                     else:
@@ -536,7 +545,7 @@ label existing_stock:
                     "A smooth and comfortable lace bra and panty set."
                     if gold >= 150:
                         $ gold -= 150
-                        $ custom_clothes_5_bought = True
+                        $ cs_existing_stock[4] = True
                         maf "Thank you very much."
                         jump clothes_menu
                     else:

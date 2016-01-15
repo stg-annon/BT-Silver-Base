@@ -460,23 +460,23 @@ label door:
                             ##    $ gifted = True
                             ##    jump giving_silk_nightgown #28_gifts.rpy
                                 
-                            ##"-Jeans-" if custom_clothes_1_bought == True:
+                            ##"-Jeans-" if cs_existing_stock[0] == True:
                             ##   $ gifted = True
                             ##    jump giving_jeans #28_gifts.rpy
                                 
-                            ##"-Gryffindor Stockings-" if custom_clothes_2_bought == True:
+                            ##"-Gryffindor Stockings-" if cs_existing_stock[1] == True:
                             ##    $ gifted = True
                             ##    jump giving_gryffindor_stockings #28_gifts.rpy
                                 
-                            ##"-Lace Bra and Panties-" if custom_clothes_3_bought == True:
+                            ##"-Lace Bra and Panties-" if cs_existing_stock[2] == True:
                             ##    $ gifted = True
                             ##    jump giving_lace_bra #28_gifts.rpy
                                 
-                            ##"-Cup-less Lace Bra-" if custom_clothes_4_bought == True:
+                            ##"-Cup-less Lace Bra-" if cs_existing_stock[3] == True:
                             ##    $ gifted = True
                             ##    jump giving_cupless_bra #28_gifts.rpy
                                 
-                            ##"-Silk Bra and Panties-" if custom_clothes_5_bought == True:
+                            ##"-Silk Bra and Panties-" if cs_existing_stock[4] == True:
                             ##    $ gifted = True
                             ##    jump giving_silk_bra #28_gifts.rpy
                                 
@@ -540,13 +540,13 @@ label door:
                                     "-Take the fishnets off-" if ne_01 and nets == 7:
                                         jump nets_take
                                                             
-                                    "-Put the jeans on-" if custom_clothes_1_bought and custom_skirt != 1:
+                                    "-Put the jeans on-" if cs_existing_stock[0] and custom_skirt != 1:
                                         jump jeans_on
                             
                                     "-Take the jeans off-" if custom_skirt == 1:
                                         jump jeans_off
                                                             
-                                    "-Put the Gryffindor Stockings on-" if custom_clothes_1_bought and stockings != 2:
+                                    "-Put the Gryffindor Stockings on-" if cs_existing_stock[0] and stockings != 2:
                                         jump g_stockings_on
                             
                                     "-Take the Gryffindor Stockings off-" if stockings == 2:
