@@ -158,7 +158,7 @@ menu:
         menu:
             ###-1-###"\"Copper book of spirit\""
             "-Book: \"Copper book of spirit\"-" if "book_1" in books and book_progress[1] <= book_chapters[1]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it today?"
@@ -171,7 +171,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Copper book of spirit\"-{image=check_08}" if "book_1" in books and book_progress[1] == book_chapters[1]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it now?"
@@ -182,7 +182,7 @@ menu:
                 
             ###-2-###"\"Bronze book of spirit\""   
             "-Book: \"Bronze book of spirit\"-" if "book_2" in books and book_progress[2] <= book_chapters[2]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it now?"
@@ -199,7 +199,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Bronze book of spirit\"-{image=check_08}" if "book_2" in books and book_progress[2] == book_chapters[2]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -210,7 +210,7 @@ menu:
             
             ###-3-###"\"Silver book of spirit\""  
             "-Book: \"Silver book of spirit\"-" if "book_3" in books and book_progress[3] <= book_chapters[3]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency. Do you want to read it today?"
@@ -227,7 +227,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Silver book of spirit\"-{image=check_08}" if "book_3" in books and book_progress[3] == book_chapters[3]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -238,7 +238,7 @@ menu:
                 
             ###-4-###"\"Golden book of spirit\"" 
             "-Book: \"Golden book of spirit\"-" if "book_4" in books and book_progress[4] <= book_chapters[4]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -255,7 +255,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Golden book of spirit\"-{image=check_08}" if "book_4" in books and book_progress[4] == book_chapters[4]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -267,7 +267,7 @@ menu:
             
             ###-5-###"\"Speedwriting for beginners\""
             "-Book: \"Speedwriting for beginners\"-" if "book_5" in books and book_progress[5] <= book_chapters[5]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains a bunch of very basic techniques used to improve one's ability to write quickly."
@@ -280,7 +280,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Speedwriting for beginners\"-{image=check_08}" if "book_5" in books and book_progress[5] == book_chapters[5]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -291,7 +291,7 @@ menu:
         
             ###-6-###"\"Speedwriting for amateurs\""
             "-Book: \"Speedwriting for amateurs\"-" if "book_6" in books and book_progress[6] <= book_chapters[6]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains intermediate techniques used to improve one's ability to write quickly."
@@ -308,7 +308,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Speedwriting for amateurs\"-{image=check_08}" if "book_6" in books and book_progress[6] == book_chapters[6]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -319,7 +319,7 @@ menu:
                 
             ###-7-###"\"Speedwriting for advanced writers\""
             "-Book: \"Speedwriting for advanced writers\"-" if "book_7" in books and book_progress[7] <= book_chapters[7]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains advanced techniques used to improve one's ability to write quickly."
@@ -336,7 +336,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Speedwriting for advanced writers\"-{image=check_08}" if "book_7" in books and book_progress[7] == book_chapters[7]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -350,7 +350,7 @@ menu:
                 
             ###-8-###"\"Speedwriting for experts.\""
             "-Book: \"Speedwriting for experts\"-" if "book_8" in books and book_progress[8] <= book_chapters[8]-1:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains expert techniques used to improve one's ability to write quickly."
@@ -367,7 +367,7 @@ menu:
                         hide screen gift
                         jump books_on_improvement
             "-Book: \"Speedwriting for experts\"-{image=check_08}" if "book_8" in books and book_progress[8] == book_chapters[8]:
-                $ the_gift = "01_hp/18_store/08.png" # Copper book of spirit.
+                $ the_gift = "01_hp/18_store/books/1-8.png" # Copper book of spirit.
                 show screen gift
                 with d3
                 ">This book contains various tips on how to improve one's efficiency."
@@ -383,7 +383,7 @@ menu:
         menu:
             ###-9-###05"\"The Tale of Galadriel\""    
             "-Book: \"The Tale of Galadriel. Book I.\"-" if "book_9" in books and book_progress[9] <= book_chapters[9]-1:
-                $ the_gift = "01_hp/18_store/04.png" # THE TALE OF GALADRIEL. BOOK ONE.
+                $ the_gift = "01_hp/18_store/books/9.png" # THE TALE OF GALADRIEL. BOOK ONE.
                 show screen gift
                 ">This book contains a rather lengthy tale, describing the life and adventures of a young elven female by the name of Galadriel in great detail."
                 with d3
@@ -396,7 +396,7 @@ menu:
                         hide screen gift
                         jump  fiction_books_menu
             "-Book: \"The Tale of Galadriel. Book I.\"-{image=check_08}" if "book_9" in books and book_progress[9] == book_chapters[9]:
-                $ the_gift = "01_hp/18_store/04.png" # THE TALE OF GALADRIEL. BOOK ONE.
+                $ the_gift = "01_hp/18_store/books/9.png" # THE TALE OF GALADRIEL. BOOK ONE.
                 show screen gift
                 ">This book contains a rather lengthy tale, describing the life and adventures of a young elven female by the name of Galadriel in great detail."
                 ">You already finished this one."
@@ -405,7 +405,7 @@ menu:
             
             ###-10-###05_b"\"The Tale of Galadriel. BOOK TWO.\""    
             "-Book: \"The Tale of Galadriel. Book II.\"-" if "book_10" in books and book_progress[10] <= book_chapters[10]-1:
-                $ the_gift = "01_hp/18_store/05.png" # THE TALE OF GALADRIEL. BOOK TWO.
+                $ the_gift = "01_hp/18_store/books/10.png" # THE TALE OF GALADRIEL. BOOK TWO.
                 show screen gift
                 ">This book contains a rather lengthy tale, describing the life and adventures of a young elven female by the name of Galadriel in great detail."
                 with d3
@@ -423,7 +423,7 @@ menu:
                         hide screen gift
                         jump  fiction_books_menu
             "-Book: \"The Tale of Galadriel. Book II.\"-{image=check_08}" if "book_10" in books and book_progress[10] == book_chapters[10]:
-                $ the_gift = "01_hp/18_store/05.png" # THE TALE OF GALADRIEL. BOOK TWO.
+                $ the_gift = "01_hp/18_store/books/10.png" # THE TALE OF GALADRIEL. BOOK TWO.
                 show screen gift
                 ">This book contains a rather lengthy tale, describing the life and adventures of a young elven female by the name of Galadriel in great detail."
                 ">You already finished this one."
@@ -432,7 +432,7 @@ menu:
                 
             ###-11-###06"\"The game of chairs\""    
             "-Book: \"The game of Armchairs\"-" if "book_11" in books and book_progress[11] <= book_chapters[11]-1:
-                $ the_gift = "01_hp/18_store/02.png" # GAME OF THRONES.
+                $ the_gift = "01_hp/18_store/books/11.png" # GAME OF THRONES.
                 show screen gift
                 with d3
                 "\"The game of Armchairs\"\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
@@ -445,13 +445,16 @@ menu:
                         hide screen gift
                         jump fiction_books_menu
             "-Book: \"The game of Armchairs\"-{image=check_08}" if "book_11" in books and book_progress[11] == book_chapters[11]:
+                $ the_gift = "01_hp/18_store/books/11.png" # GAME OF THRONES.
+                show screen gift
                 "\"The game of Armchairs\"\nAn epic tale of betrayal, murder and rape, then some more murder, some more betrayal and some more rape."
                 m "Why would I want to do this to myself again?"
+                hide screen gift
                 jump fiction_books_menu
                 
             ###-12-###07"\"My dear waifu\""
             "-Book: \"My dear waifu\"-" if "book_12" in books and book_progress[12] <= book_chapters[12]-1 and not waifu_book_completed:
-                $ the_gift = "01_hp/18_store/03.png" # MY DEAR WAIFU.
+                $ the_gift = "01_hp/18_store/books/12.png" # MY DEAR WAIFU.
                 show screen gift
                 with d3
                 "\"My Dear waifu\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
@@ -475,7 +478,7 @@ menu:
                         hide screen gift
                         jump fiction_books_menu
             "-Book: \"My dear waifu\"-{image=check_08}" if "book_12" in books and waifu_book_completed:
-                $ the_gift = "01_hp/18_store/03.png" # MY DEAR WAIFU.
+                $ the_gift = "01_hp/18_store/books/12.png" # MY DEAR WAIFU.
                 show screen gift
                 with d3
                 "\"My Dear waifu\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
