@@ -415,6 +415,44 @@ label jeans_off:
     hide screen blkfade
     with d3
     jump day_time_requests
+
+label jeans_short_on:
+    if whoring >= 12:
+        call her_main("You want me to wear pants that are this short?","body_55")
+        m "I do."
+        call her_main("But they're so short...","body_56")
+    else:
+        call her_main("You want me to wear muggle pants?","body_08")
+        her "That are this short..."
+        m "I do."
+        call her_main("...{w}Fine","body_12")
+    
+    $ custom_skirt = 5
+    
+    show screen blkfade
+    with d3
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause 2
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause.3
+    hide screen blkfade
+    with d3
+    jump day_time_requests
+    
+label jeans_short_off:
+    call her_main("Ok.","body_01")
+    
+    $ custom_skirt = 0
+    
+    show screen blkfade
+    with d3
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause 2
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause.3
+    hide screen blkfade
+    with d3
+    jump day_time_requests
     
 label g_stockings_on:
     call her_main("Ok then","body_01")

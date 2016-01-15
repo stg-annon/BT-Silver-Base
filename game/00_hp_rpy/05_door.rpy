@@ -545,6 +545,12 @@ label door:
                             
                                     "-Take the jeans off-" if custom_skirt == 1:
                                         jump jeans_off
+
+                                    "-Put the short jeans on-" if cs_existing_stock[5] and custom_skirt != 1:
+                                        jump jeans_short_on
+                            
+                                    "-Take the short jeans off-" if custom_skirt == 1:
+                                        jump jeans_short_on
                                                             
                                     "-Put the Gryffindor Stockings on-" if cs_existing_stock[0] and stockings != 2:
                                         jump g_stockings_on

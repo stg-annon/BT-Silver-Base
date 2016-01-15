@@ -1007,8 +1007,6 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
         if ne: # Desplays a fishnets in hermione_main screen.
             if ne_01:
                 add "01_hp/13_hermione_main/nets.png" xpos h_xpos ypos h_ypos # FISHNETS.
-                if not legs_02 and not only_upper and not legs_03: # Long skirt is on.
-                    add "01_hp/13_hermione_main/patch.png" xpos h_xpos ypos h_ypos # Patch
     if fingering == True:
         add "01_hp/13_hermione_main/shirts/arm.png" xpos h_xpos ypos h_ypos
     if not only_upper:
@@ -1051,6 +1049,8 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_skirt == 5:
+                add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
         elif wear_skirts and not skirt_up and custom_outfit <= 19:
             if whoring <= 5:
                 add im.Alpha("01_hp/13_hermione_main/legs/legs_01.png", transparency) xpos h_xpos ypos h_ypos
@@ -1370,6 +1370,8 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
+            elif custom_skirt == 5:
+                add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
         elif not skirt_up and custom_outfit <= 19:
             if whoring <= 5:
                 add im.Alpha("01_hp/13_hermione_main/legs/legs_01.png", transparency) xpos h_xpos ypos h_ypos

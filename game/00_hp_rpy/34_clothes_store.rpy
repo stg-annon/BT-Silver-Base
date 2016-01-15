@@ -32,7 +32,7 @@ label __init_variables:
     if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
         $ custom_outfit_4_bought = False
     if not hasattr(renpy.store,'cs_existing_stock'): #important!
-        $ cs_existing_stock = [False,False,False,False,False,False,False,False]
+        $ cs_existing_stock = [False,False,False,False,False,False,False,False,False]
     if not hasattr(renpy.store,'cd_accessories'): #important!
         $ cd_accessories = [False,False,False]
     
@@ -478,6 +478,20 @@ label existing_stock:
                             if gold >= 75:
                                 $ gold -= 75
                                 $ cs_existing_stock[0] = True
+                                maf "Thank you very much."
+                                jump clothes_menu
+                            else:
+                                m "I don't have enough."
+                                jump clothes_menu
+                        "-Never mind-":
+                            jump existing_stock
+                "-Short Jeans- (150 Gold)":
+                    "A pair of short daisy dukes."
+                    menu:
+                        "-Buy-":
+                            if gold >= 150:
+                                $ gold -= 150
+                                $ cs_existing_stock[5] = True
                                 maf "Thank you very much."
                                 jump clothes_menu
                             else:
