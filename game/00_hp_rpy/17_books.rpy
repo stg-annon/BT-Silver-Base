@@ -413,7 +413,7 @@ menu:
                     "-Read the book-":
                         if "book_9" in books and book_progress[9] == book_chapters[9]: # MAKES SURE YOU DON'T READ PART II BEFORE PART I.
                             hide screen gift
-                            call reading_book_block(5)
+                            call reading_book_block(10)
                             #jump reading_book_10_alt      
                         else:
                             call gal_proper
