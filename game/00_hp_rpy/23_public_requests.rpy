@@ -890,7 +890,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
                                     her "............?"
                                     hide screen hermione_main 
                                     with d3
-                                    $ only_upper = False #Skirt lifted.
+                                    #$ only_upper = False #Skirt lifted.#no legs bug
                                     $ autograph = False #Autograph shown.
                                     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center.
                                     $ h_body = "01_hp/13_hermione_main/body_47.png" #Flashing panties
