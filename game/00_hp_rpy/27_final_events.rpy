@@ -156,6 +156,7 @@ label want_to_rule:
                     show screen bld1
                     with d3
                     
+                    $ lift_shirt = True
                     $ badges = False
                     
                     call her_main("","body_82")
@@ -173,10 +174,13 @@ label want_to_rule:
                     show screen blkfade 
                     with d5
                     pause.7
+                    $ lift_shirt = False
+                    $ badges = True
                 elif d_flag_02: # SHOW ME PUSSY
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                     
-                    $ only_upper = True
+                    $ skirt_up = True
+                    $ panties = False
                     
                     hide screen blkfade
                     with d3
@@ -193,8 +197,6 @@ label want_to_rule:
                     show screen bld1
                     with d3
             
-                    $ uni_sperm = True
-                    $ u_sperm = "01_hp/13_hermione_main/panties.png" #Panties
                     
                     call her_main("","body_60")
                     
@@ -222,7 +224,8 @@ label want_to_rule:
                     show screen blkfade 
                     with d5
                     pause.7
-                    $ uni_sperm = False
+                    $ skirt_up = False
+                    $ panties = True
                 
                 elif d_flag_03: # STRIP NAKED
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
