@@ -454,7 +454,7 @@ menu:
                 $ the_gift = "01_hp/18_store/03.png" # MY DEAR WAIFU.
                 show screen gift
                 with d3
-                "\"[book07]\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
+                "\"My Dear waifu\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
                 menu:
                     "-Read the book-":
                         if dear_waifu_completed_once and book_progress[12] == book_chapters[12]:
@@ -478,7 +478,7 @@ menu:
                 $ the_gift = "01_hp/18_store/03.png" # MY DEAR WAIFU.
                 show screen gift
                 with d3
-                "\"[book07]\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
+                "\"My Dear waifu\" {size=-4}BY AKABUR{/size}" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
                 menu:
                     "-Read the book-":
                         if dear_waifu_completed_once and book_progress[12] == 0:
