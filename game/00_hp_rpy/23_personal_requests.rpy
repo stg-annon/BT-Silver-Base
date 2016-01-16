@@ -8844,7 +8844,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                     $ temp_stockings = stockings 
                     $ temp_outfit = custom_outfit
-                    $ custom_outfit = 12
+                    $ custom_outfit = 10
                     $ stockings = 0
                     hide  screen blkfade
                     show screen hermione_main
@@ -9577,6 +9577,9 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 
     $ request_31_points += 1
     $ aftersperm = False #Show cum stains on Hermione's uniform.
+
+    $ custom_outfit = temp_outfit
+    $ stockings = temp_stockings
 
     hide screen bld1
     hide screen hermione_main
