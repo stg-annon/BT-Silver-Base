@@ -221,8 +221,6 @@ label new_personal_request:
                             jump request_potion_menu
                     ##"-Snek-" if whoring >= 3:
                     ##    jump potion_scene_5
-                    ##"-Polyjuice Potion-" if whoring >= 10:
-                    ##    jump potion_scene_6
                     "-Nevermind -":
                         jump new_personal_request
             "-Public Shaming-" if collar >= 1:

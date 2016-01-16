@@ -6,12 +6,19 @@ label map_attic: #Label controlling what happens when you access the attic
         m "Guess I'll have to ask Snape about a key."
         jump return_office
     if attic_open and tentacle_owned:
-        ">You venture up to the attic and find an angry tentacle plant"
-        m "Better get out of here before the plant remembers that I'm the one that cut it"
+        ">You venture up to the attic and find an angry tentacle plant."
+        m "Better get out of here before the plant remembers that I'm the one that cut it."
         ">You quickly return to your office."
         jump return_office
     else: #Scene where genie has to take a sample of the devil's snare plant
         ">You find your way through the winding staircases to the attic door."
+        m "Hmmmmm, it seems to be open."
+        ">You walk through the dusty room, light softly cascading though the windows."
+        m "Well where's this magical plant?"
+        ">A slender piece of vine is visible, skirting the room, as if to avoid the light."
+        m "This must be it."
+        ">You cut a piece and leave."
+        ">As you shut the door you hear the room erupt in a series of loud crashes."
         $ tentacle_owned = True
         jump return_office
 

@@ -42,6 +42,10 @@ label cheats_ht:
                 "-No-":
                     $ imagination += 1
                     "Your imagination grows!"
-                    jump cheats_ht            
+                    jump cheats_ht 
+        "-Map-":
+            "Map added to inventory!"
+            $ cataloug_found = True
+            jump cheats_ht       
         "-Nevermind-":
             jump day_main_menu

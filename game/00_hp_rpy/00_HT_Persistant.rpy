@@ -187,6 +187,11 @@ label __init_variables:
     if not hasattr(renpy.store,'wear_skirts'): #important!
         $ wear_skirts = True
 
+    if not hasattr(renpy.store,'tentacle_owned'): #important!
+        $ tentacle_owned = False
+    if not hasattr(renpy.store,'tent_scroll'): #important!
+        $ tent_scroll = False
+
     
     $ her_path = "01_hp/13_hermione_main/"
     

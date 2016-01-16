@@ -39,6 +39,7 @@ label tentacle_shop_scene:
             sna_[1] "Thank you very much"
             $ gold -= 1200
             $ tent_scroll = True
+            $ attic_open = True
             call screen shop_screen
         "-No thanks-":
             m "No thanks, not right now"
@@ -102,18 +103,19 @@ label tentacle_scene_intro: #Public tentacle scene
     ">You move a tentacle with a mouth on the end of it to her right breast and latch onto it."
     her "Please, I'm not going to be able to stay still if this keeps going"
     ">The three tentacles at the entrance of her vagina suddenly thrust into her"
+    $ tentacle_cosmetic = True
     if lock_public_favors == False:
         jump tentacle_1
     jump tentacle_2
             
 
 label tentacle_1: #Public tentacle scene
-    $ cg("01_hp/25_mo/h1.png")
+    $ cg("01_hp/28_cg/p1.png")
     hide screen blkfade
     with d3
     her "What on earth is going on?"
     ">You start pumping the tentacles in her vagina slowly"
-    $ cg("01_hp/25_mo/h2.png")
+    $ cg("01_hp/28_cg/p2.png")
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     m "Enjoying yourself slut?"
@@ -123,7 +125,7 @@ label tentacle_1: #Public tentacle scene
     her "How am I supposed to relax?!"
     m "Well if you're not going to relax, at least try to enjoy it..."
     ">You start rotating the tentacles in her vagina."
-    $ cg("01_hp/25_mo/h3.png")
+    $ cg("01_hp/28_cg/p3.png")
     her "..."
     spo "What's wrong Miss Granger?"
     her "It's nothing... it's just very uncomfortable..."
@@ -135,7 +137,7 @@ label tentacle_1: #Public tentacle scene
     m "Are you sure? Do you think you'll be able to stifle every moan?"
     ">You push deeply into her with the 3 tentacles."
     her "!!!"
-    $ cg("01_hp/25_mo/h4.png")
+    $ cg("01_hp/28_cg/p4.png")
     m "Do you think you'll be able to stop your hips from bucking?"
     ">You give her another powerful thrust."
     her "{size=-6}mmmm{/size}"
@@ -159,17 +161,20 @@ label tentacle_1: #Public tentacle scene
     her "Yes, yes, I'm a fucking slut. Fuck me harder."
     m "See that wasn't so hard now was it. How about I give you a little reward."
     her "Wha-"
+    $ cg("01_hp/28_cg/p5.png")
     ">You thrust a ribbed tentacle deeply into her asshole in one motion."
     her "!!!"
     her "It's in my ass... I-I'm cumming."
     ">You take alternating turns pumping into her ass and pussy."
     her "I'm cumming! It's too much..."
+    $ cg("01_hp/28_cg/p6.png")
     ">You feel her body shudder as the orgasm rocks her."
     ">This only spurs you on to fuck her harder."
     her "Please... no more... I'll faint..."
     ">You start to feel a strange energy flowing through the vines, moving towards the tips."
     m "This is it girl, get ready."
     her "...ready?..."
+    $ cg("01_hp/28_cg/p7.png")
     ">With one final surge you release the pent up energy in a surge of white sap all over her."
     m "Oh gods, it's like each vine is cumming. This is amazing..."
     ">The sensations proved to much for hermione and she faints, going limp in your tentacles."
@@ -183,7 +188,10 @@ label tentacle_1: #Public tentacle scene
     spo "Quickly, someone take her to the hospital."
     mal "Should we cover her up?"
     spo "Oh yes, I suppose you should."
-
+    $ tentacle_cosmetic = False
+    hide screen cg
+    $ hermione_takes_classes = True
+    jump day_main_menu
 
     #enter vagina
     #put flower to ear
@@ -194,15 +202,16 @@ label tentacle_1: #Public tentacle scene
     #have her talk about how enjoyable it is
 
 label tentacle_2: #Enjoyable tentacle scene
-    show screen tentacle_scene_1
-    with d3
+    $ cg("01_hp/28_cg/p1.png")
     hide screen blkfade
+    with d3
     her "What the hell kind of plant is this?"
     ">You start pumping the tentacles in her vagina slowly"
     her "Oh..."
     ">You move a small tentacle with a mouth on the end to her ear so that only she can hear you."
     m "Enjoying yourself [hermione_name]?"
     her "Profes-"
+    $ cg("01_hp/28_cg/e2.png")
     ">You quickly force another flowered tentacle into her mouth"
     m "Now, now [hermione_name], you don't want anyone to find out that how you've been earning so many points now do you?"
     her "mmmmmoo"
@@ -218,6 +227,7 @@ label tentacle_2: #Enjoyable tentacle scene
     m "Hear that [hermione_name]? Your classmates are starting to realise what a whore you really are."
     her "mmmoo mmmeey mmnnttt"
     m "What's that? Faster?"
+    $ cg("01_hp/28_cg/e3.png")
     ">You begin fucking Hermione in earnest"
     her "mmmmm..."
     "The sensation of fucking Hermione in two different holes is almost overwhelming"
@@ -226,6 +236,7 @@ label tentacle_2: #Enjoyable tentacle scene
     m "Trying to pretend that you hate it."
     ">You move a ridged tentacle towards her ass"
     her "mm eehh oorr mmmnooo!"
+    $ cg("01_hp/28_cg/e4.png")
     ">You enter her tight ass. The feeling of being in every hole at once is incredible."
     her "mmmmmmmm"
     ">Hermione barely manages a groan. She is being overwhelmed by the shear amount of pleasure that she is receiving."
@@ -236,13 +247,16 @@ label tentacle_2: #Enjoyable tentacle scene
     m "What was that I couldn't quite make it out over the sound of you sucking dick."
     her "hmmm aaaaa hhhhhhuuuttt!"
     m "One last time. Say it like you mean it."
+    $ cg("01_hp/28_cg/e5.png")
     ">As she goes to exhale you quickly remove the tentacle from her mouth."
     her "{size=+5}I'm a slut!{/size}"
     ">The realisation of what has just occurred hits her like a ton of bricks."
     her "I-I'm cumming... Profes-"
+    $ cg("01_hp/28_cg/e6.png")
     ">You quickly reinsert the tentacle into her mouth, silencing her."
     m "Good girl. Time for your reward."
     ">You quicken the pace as she convulses beneath you."
+    $ cg("01_hp/28_cg/e7.png")
     ">You explode from sap from nearly every vine. Exploding onto her head and into each of her holes."
     mal "Told you she was a slut."
     fem "I guess you were right..."
@@ -251,6 +265,10 @@ label tentacle_2: #Enjoyable tentacle scene
     spo "Miss Granger are you okay?"
     her "..."
     spo "Quickly, someone take her to the hospital, and cover her up."
+    $ tentacle_cosmetic = False
+    hide screen cg
+    $ hermione_takes_classes = True
+    jump day_main_menu
     
 ###POTION SCENES
 label potion_scene_1: #catears (keep in mind Genie is trying to transform her into another girl)
@@ -1981,7 +1999,7 @@ label slut_scene: #Locked to her being your slut
             ">Hermiones throat relaxes and allows you to enter."
             m "Ughhh! Your throat is so tight. You're such a filthy little slut aren't you?"
             $ changeHermioneMainScreen(hg_pth+"body_115.png", x_pos=390, y_pos= 235)
-            her "Sucking noises"
+            her "*Slurp!* *Gltch!* *Gulp!*"
             hide screen hermione_main
             m "I asked you a question slut."
             $ changeHermioneMainScreen(hg_pth+"body_116.png", x_pos=390, y_pos= 235)
@@ -2018,19 +2036,19 @@ label slut_scene: #Locked to her being your slut
             hide screen hermione_main
             m "Admit it, you love this."
             $ changeHermioneMainScreen(hg_pth+"body_39.png", x_pos=390, y_pos= 235)
-            her "sucking noises"
+            her "*Slurp!* *Gulp!* *Slurp!*"
             hide screen hermione_main
             m "You love being used as someone else's plaything."
             $ changeHermioneMainScreen(hg_pth+"body_40.png", x_pos=390, y_pos= 235)
-            her "sucking noises"
+            her "*Gulp!* *Gobble!* *Gobble!*"
             hide screen hermione_main
             m "You might act upset that people will find out what you are."
             $ changeHermioneMainScreen(hg_pth+"body_65.png", x_pos=390, y_pos= 235)
-            her "sucking noises"
+            her "*Gulp!* *Gobble!* *Slurp!*"
             hide screen hermione_main
             m "But deep down, you're just glad that you don't have to act like you're not a massive slut."
             $ changeHermioneMainScreen(hg_pth+"body_40.png", x_pos=390, y_pos= 235)
-            her "sucking noises"
+            her "*Slurp!* *Gobble!*"
             hide screen hermione_main
             m "Aren't you"
             $ changeHermioneMainScreen(hg_pth+"body_39.png", x_pos=390, y_pos= 235)

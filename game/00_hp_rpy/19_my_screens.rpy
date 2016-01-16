@@ -2403,7 +2403,7 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
         renpy.hide_screen("cg")
         #renpy.with_statement(Dissolve(0.5))
         if image is not None:
-            cg = image
+            cg_image = image
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("cg")
-        renpy.with_statement(Dissolve(0.3))
+        renpy.with_statement(Dissolve(0.5))

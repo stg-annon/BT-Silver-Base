@@ -67,6 +67,16 @@ label cupboard:
                             call disp_gift_item(17)
                         "-Sex doll \"Joanne\"-([gift_item_inv[18]])" if gift_item_inv[18] >= 1:
                             call disp_gift_item(18)
+                        "-Tentacle Scroll-" if tentacle_owned:
+                            ">Should I use this scroll..."
+                            menu:
+                                "\"(Yes, let's do it!)\"":
+                                    jump tentacle_scene_intro
+                                "\"(Not right now.)\"":
+                                    jump possessions
+                        "-Tentacle Scroll-" if tent_scroll and not tentacle_owned:
+                            m "It's missing the key ingredient."
+                            jump possessions
                         "-Never mind-":
                             jump possessions
                 
