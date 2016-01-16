@@ -3,16 +3,38 @@ label __init_variables:
         $ book_progress = [0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'book_done'): #important!
         $ book_done = [False,False,False,False,False,False,False,False,False,False,False,False,False]
-    if not hasattr(renpy.store,'s_reading_lvl'): #important!
-        $ s_reading_lvl = 0
     if not hasattr(renpy.store,'cheat_reading'): #important!
         $ cheat_reading = False
     if not hasattr(renpy.store,'books'): #important!
         $ books = []
     
+    ### GENIE STATS ###============================
+    if not hasattr(renpy.store,'imagination'): #important!
+        $ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of whoring.
+    if not hasattr(renpy.store,'concentration'): #important!
+        $ concentration = 0 #+1 for every completed book on concentration. Pops up during paperwork.
+    if not hasattr(renpy.store,'speedwriting'): #important!
+        $ speedwriting = 0 #+1 for every completed book on speedwriting. Pops up during paperwork.
+    if not hasattr(renpy.store,'s_reading_lvl'): #important!
+        $ s_reading_lvl = 0
+    
     #$ books = ["book_1", "book_2", "book_3", "book_4",  "book_5", "book_6", "book_7", "book_8", "book_9", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
     #All books.
-
+    
+    $ copper_book_id = 1
+    $ bronze_book_id = 2
+    $ silver_book_id = 3
+    $ golden_book_id = 4
+    
+    $ speed_beginners_book_id = 5
+    $ speed_amateurs_book_id = 6
+    $ speed_advanced_book_id = 7
+    $ speed_experts_book_id = 8
+    
+    $ galadriel_1_book_id = 9
+    $ galadriel_2_book_id = 10
+    $ armchairs_book_id = 11
+    $ waifu_book_id = 12
     
     $ speed_reading_books = [1,2,3,4]
     $ speed_writing_books = [5,6,7,8]
@@ -53,10 +75,10 @@ label __init_variables:
     
     $ book_effect = []
     $ book_effect.append("")#null
-    $ book_effect.append(">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.")
-    $ book_effect.append(">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when doing paperwork.")
-    $ book_effect.append(">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when doing paperwork.")
-    $ book_effect.append(">You have mastered your spirit and from now on you shall always complete an additional chapter when doing paperwork.")
+    $ book_effect.append(">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when reading.")
+    $ book_effect.append(">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when reading.")
+    $ book_effect.append(">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when reading.")
+    $ book_effect.append(">You have mastered your spirit and from now on you shall always complete an additional chapter when reading.")
     $ book_effect.append(">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.")
     $ book_effect.append(">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when doing paperwork.")
     $ book_effect.append(">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when doing paperwork.")
@@ -499,24 +521,21 @@ menu:
 
         
 label speed_reading_check(bookID = -1):
-    if cheat_reading:
-        ">You are a cheater so you get to keep on reading."
-    else:
-        if s_reading_lvl == 1: #30% chance
-            $ speed_dummies = renpy.random.randint(1, 3) 
-            #$ speed_dummies = 1 #Here for testing porpoise only.
-            if speed_dummies == 1: #Success.
-                ">Implementing some tricks you picked up in the \"Speed reading for dummies\" book allows you to save time and keep on reading."
-                call check_book(bookID)
-        if s_reading_lvl == 2: #50% chance
-            $ speed_dummies = renpy.random.randint(1, 2) 
-            #$ speed_dummies = 1 #Here for testing porpoise only.
-            if speed_dummies == 1: #Success.
-                ">Implementing speed reading techniques allows you to save time and keep on reading."
-                call check_book(bookID)
-        if s_reading_lvl > 2: #100% chance
+    if s_reading_lvl == 1: #30% chance
+        $ speed_dummies = renpy.random.randint(1, 3) 
+        #$ speed_dummies = 1 #Here for testing porpoise only.
+        if speed_dummies == 1: #Success.
+            ">Implementing some tricks you picked up in the \"Speed reading for dummies\" book allows you to save time and keep on reading."
+            call check_book(bookID)
+    if s_reading_lvl == 2: #50% chance
+        $ speed_dummies = renpy.random.randint(1, 2) 
+        #$ speed_dummies = 1 #Here for testing porpoise only.
+        if speed_dummies == 1: #Success.
             ">Implementing speed reading techniques allows you to save time and keep on reading."
             call check_book(bookID)
+    if s_reading_lvl > 2: #100% chance
+        ">Implementing speed reading techniques allows you to save time and keep on reading."
+        call check_book(bookID)
     return
     
 label chap_finished(bookID = -1):
@@ -565,9 +584,10 @@ label chapter_check_book(bookID =-1):
             ">[tmp]" # ex. ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork.."
             
             if bookID in speed_reading_books:
-                $ concentration += 1
+                $ s_reading_lvl += 1
             if bookID in speed_writing_books:
                 $ speedwriting += 1
+                $ concentration += 1
         
         $ book_done[bookID] = True
         
@@ -601,6 +621,7 @@ label check_book(bookID):
     call chapter_check_book(bookID)
     ">There are still some chapters left."
     if cheat_reading:
+        #">You are a cheater so you get to keep on reading."
         call check_book(bookID)
     return
     
@@ -654,7 +675,6 @@ label reading_block:
         play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     return
     
-    
 label no_fire: #Message you see that says you are reading a book during rain.
     ">The rain outside of the tower calms your mood and you feel like keeping on reading..."
     ">You try to keep on reading but after a while you realize that the air in your chambers is too damp for your liking."
@@ -662,13 +682,6 @@ label no_fire: #Message you see that says you are reading a book during rain.
     
 label yes_fire: #Message you see that says you are reading a book during rain near fireplace.
     ">The rain outside of your tower calms your mood and you feel like keeping on reading..."
-    return
-    
-label yes_book_08:
-    ">Implementing some tricks you picked up in the [book08] book allows you to save time and keep on reading."
-    return
-label yes_book_09:
-    ">Implementing speed reading techniques allows you to save time and keep on reading."
     return
     
 label fire_in: #Shows Genie reading a book near the fireplace.

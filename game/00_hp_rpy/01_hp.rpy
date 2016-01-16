@@ -147,25 +147,8 @@ $ fawkes_intro_done = False
 
 
 ### GENIE STATS ###============================
-$ imagination = 1 #+1 for every completed book. Unlocks new sexual favors to buy. 1 point of imagination = 1 level of whoring.
-$ concentration = 0 #+1 for every completed book on concentration. Pops up during paperwork.
-$ speedwriting = 0 #+1 for every completed book on speedwriting. Pops up during paperwork.
 $ job_lvl = 1 #Show how many reports you are allowed to complete per week.
 ### ===========================================
-
-### BOOKS ###
-$ shea = 0 #Shows how many times you went on a date with your stepsister Shea.
-$ shea_waifu = False #Turns True if you finish the book with Shea.
-$ complited_shea_already = False #Turns TRUE when you finish with Shea once. Need so that when you finish with Shea again you don get +1 Imagination.
-
-$ victoria = 0
-$ victoria_waifu = False #Turns True if you finish the book with ms.Victoria.
-$ complited_stevens_already = False #Turns TRUE when you finish with Ms.Stevens once. Need so that when you finish with Shea again you don get +1 Imagination.
-
-$ leena = 0
-$ leena_waifu = False #Completed the book with Leena.
-$ complited_leena_already = False #Turns TRUE when you finish with Leena once. Need so that when you finish with Shea again you don get +1 Imagination.
-$ waifu_book_completed = False #Turns TRUE when you unlock the harem ending.
 
 
 ### MUGGLE ODDITIES ### =========================================================================
