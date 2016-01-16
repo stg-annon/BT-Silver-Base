@@ -1,3 +1,30 @@
+label __init_variables:
+    if not hasattr(renpy.store,'shea'): #important!
+        $ shea = 0 #Shows how many times you went on a date with your stepsister Shea.
+    if not hasattr(renpy.store,'shea_waifu'): #important!
+        $ shea_waifu = False #Turns True if you finish the book with Shea.
+    if not hasattr(renpy.store,'complited_shea_already'): #important!
+        $ complited_shea_already = False #Turns TRUE when you finish with Shea once. Need so that when you finish with Shea again you don get +1 Imagination.
+    
+    if not hasattr(renpy.store,'victoria'): #important!
+        $ victoria = 0
+    if not hasattr(renpy.store,'victoria_waifu'): #important!
+        $ victoria_waifu = False #Turns True if you finish the book with ms.Victoria.
+    if not hasattr(renpy.store,'complited_stevens_already'): #important!
+        $ complited_stevens_already = False #Turns TRUE when you finish with Ms.Stevens once. Need so that when you finish with Shea again you don get +1 Imagination.
+    
+    if not hasattr(renpy.store,'leena'): #important!
+        $ leena = 0
+    if not hasattr(renpy.store,'leena_waifu'): #important!
+        $ leena_waifu = False #Completed the book with Leena.
+    if not hasattr(renpy.store,'complited_leena_already'): #important!
+        $ complited_leena_already = False #Turns TRUE when you finish with Leena once. Need so that when you finish with Shea again you don get +1 Imagination.
+    
+    if not hasattr(renpy.store,'waifu_book_completed'): #important!
+        $ waifu_book_completed = False #Turns TRUE when you unlock the harem ending.
+    
+    return
+
 label waifu:
     if book_progress[12] == 1:
         "Chapter [book_progress[12]]" "{size=-2}You are a teenage boy who is sharing his home with his cute stepsister Shea. What would you like to do after school today?{/size}"
