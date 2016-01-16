@@ -436,7 +436,7 @@ label epilogue:
 ### HAREM ###        
         
 
-label chapter_check_book_07: #Checks if the chapter just finished was the last one.
+label chapter_check_waifu: #Checks if the chapter just finished was the last one.
     if book_progress[12] == 20:
         if fire_in_fireplace:
             show screen done_reading_02  

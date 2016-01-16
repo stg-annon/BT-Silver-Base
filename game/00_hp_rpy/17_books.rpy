@@ -555,6 +555,7 @@ label chap_finished(bookID = -1):
             "Chapter [tmp_chap]" "[tmp_desc]"
         else:
             call waifu
+            call chapter_check_waifu
         
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
         show screen notes
