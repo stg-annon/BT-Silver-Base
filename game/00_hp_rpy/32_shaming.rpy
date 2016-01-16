@@ -875,7 +875,7 @@ label shaming_night:
         $ hermione_chibi_xpos = -20
         $ hermione_chibi_ypos = 75
         $ s_sprite = "01_hp/10_snape_main/snape_26.png"
-        $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
         show screen h_c_u
         show screen snape_main   
 

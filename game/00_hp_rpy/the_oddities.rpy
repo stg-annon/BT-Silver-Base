@@ -188,13 +188,73 @@ label shop_menu:
 
 label shop_books:
     sna_[1] "What type of book would you like?"
+    label shop_book_menu:
     menu:
         "-Educational Books-":
-            jump education_menu
-        "-Fictional Books-":
+            label education_menu:
+            menu:  
+                "-Book: [book_name[1]]-" if not "book_1" in books: # Copper book of spirit [1]
+                    call book_block(1,40)
+                    jump education_menu
+                "-Book: [book_name[2]]-" if not "book_2" in books: # Bronze book of spirit [2]
+                    call book_block(2,80)
+                    jump education_menu
+                "-Book: [book_name[3]]-" if not "book_3" in books: # Silver book of spirit [3]
+                    call book_block(3,90)
+                    jump education_menu
+                "-Book: [book_name[4]]-" if not "book_4" in books: # Golden book of spirit [4]
+                    call book_block(4,100)
+                    jump education_menu
+                "-Book: [book_name[5]]-" if not "book_5" in books: # Speedwriting for beginners [5]
+                    call book_block(5,90)
+                    jump education_menu 
+                "-Book: [book_name[6]]-" if not "book_6" in books: # Speedwriting for amateurs [6]
+                    call book_block(6,100)
+                    jump education_menu
+                "-Book: [book_name[7]]-" if not "book_7" in books: # Speedwriting for advanced writers [7]
+                    call book_block(7,130)
+                    jump education_menu
+                "-Book: [book_name[8]]-" if not "book_8" in books: # Speedwriting for experts [8]
+                    call book_block(8,175)
+                    jump education_menu 
+                "-Never mind-":
+                    jump shop_book_menu
+         
+        "-Fiction books-":
             sna_[1] "These books are mostly light erotica..." 
             sna_[20] "Some of the girls insisted that I order them in."
-            jump fiction_menu
+            label fiction_menu:
+            menu:
+                "-Book: [book_name[11]]- {image=check_07}" if not "book_11" in books: # The game of chairs [11]
+                    call book_block(11,100)
+                    jump fiction_menu
+                "-Book: [book_name[11]]- {image=check_08}-" if "book_11" in books:
+                    call do_have_book #Message that says that you already bought this book.
+                    jump fiction_menu
+            
+                "-Book: [book_name[9]]- {image=check_07}" if not "book_9" in books: # The Tale of Galadriel [9]
+                    call book_block(9,200)
+                    jump fiction_menu
+                "-Book: [book_name[9]]- {image=check_08}-" if "book_9" in books:
+                    call do_have_book #Message that says that you already bought this book.
+                    jump fiction_menu
+               
+                "-Book: [book_name[10]]- {image=check_07}" if not "book_10" in books: # The Tale of Galadriel. BOOK TWO [10]
+                    call book_block(10,250)
+                    jump fiction_menu
+                "-Book: [book_name[10]]- {image=check_08}" if "book_10" in books:
+                    call do_have_book #Message that says that you already bought this book.
+                    jump fiction_menu
+               
+                "-Book: [book_name[12]]- {image=check_07}-" if not "book_12" in books: # My dear waifu [12]
+                    call book_block(12,300)
+                    jump fiction_menu
+                "-Book: [book_name[12]]- {image=check_08}" if "book_12" in books:
+                    call do_have_book #Message that says that you already bought this book.
+                    jump fiction_menu
+                
+                "-Never mind-":
+                    jump shop_book_menu
         "-Never mind-":
             call screen shop_screen
 
@@ -288,69 +348,6 @@ label the_oddities:
     menu:
         dahr "Welcome to the \"Muggle oddities catalog\". Your taste is never too odd for us!"
         
-        "-Educational Books-":
-            label education_menu:
-            menu:  
-                "-Book: [book_name[1]]-" if not "book_1" in books: # Copper book of spirit [1]
-                    call book_block(1,40)
-                    jump education_menu
-                "-Book: [book_name[2]]-" if not "book_2" in books: # Bronze book of spirit [2]
-                    call book_block(2,80)
-                    jump education_menu
-                "-Book: [book_name[3]]-" if not "book_3" in books: # Silver book of spirit [3]
-                    call book_block(3,90)
-                    jump education_menu
-                "-Book: [book_name[4]]-" if not "book_4" in books: # Golden book of spirit [4]
-                    call book_block(4,100)
-                    jump education_menu
-                "-Book: [book_name[5]]-" if not "book_5" in books: # Speedwriting for beginners [5]
-                    call book_block(5,90)
-                    jump education_menu 
-                "-Book: [book_name[6]]-" if not "book_6" in books: # Speedwriting for amateurs [6]
-                    call book_block(6,100)
-                    jump education_menu
-                "-Book: [book_name[7]]-" if not "book_7" in books: # Speedwriting for advanced writers [7]
-                    call book_block(7,130)
-                    jump education_menu
-                "-Book: [book_name[8]]-" if not "book_8" in books: # Speedwriting for experts [8]
-                    call book_block(8,175)
-                    jump education_menu 
-                "-Never mind-":
-                    jump shop_menu
-         
-        "-Fiction books-":
-            label fiction_menu:
-            menu:
-                "-Book: [book_name[11]]- {image=check_07}" if not "book_11" in books: # The game of chairs [11]
-                    call book_block(11,100)
-                    jump fiction_menu
-                "-Book: [book_name[11]]- {image=check_08}-" if "book_11" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-            
-                "-Book: [book_name[9]]- {image=check_07}" if not "book_9" in books: # The Tale of Galadriel [9]
-                    call book_block(9,200)
-                    jump fiction_menu
-                "-Book: [book_name[9]]- {image=check_08}-" if "book_9" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-               
-                "-Book: [book_name[10]]- {image=check_07}" if not "book_10" in books: # The Tale of Galadriel. BOOK TWO [10]
-                    call book_block(10,250)
-                    jump fiction_menu
-                "-Book: [book_name[10]]- {image=check_08}" if "book_10" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-               
-                "-Book: [book_name[12]]- {image=check_07}-" if not "book_12" in books: # My dear waifu [12]
-                    call book_block(12,300)
-                    jump fiction_menu
-                "-Book: [book_name[12]]- {image=check_08}" if "book_12" in books:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                
-                "-Never mind-":
-                    jump shop_menu
          
         "-Gifts-":
             label gifts_menu:
@@ -663,7 +660,8 @@ label book_block(book_id, book_cost):
                 # $ order_placed = True
                 # $ bought_book[book_id] = True #Affects 15_mail.rpy
                 # call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                call screen shop_screen
+                # call screen shop_screen
+                return
             else:
                 call no_gold #Massage: m "I don't have enough gold".
                 return

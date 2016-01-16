@@ -96,15 +96,15 @@ screen map_screen:
         idle "01_hp/25_mo/map_idle.png"
         hover "01_hp/25_mo/map_hover.png"
         # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (192, 229, 38, 20) clicked Jump("map_attic")   # attic
-        hotspot (272, 373, 63, 41) clicked Jump("clothes_store")# clothes
-        hotspot (25, 374, 102, 66) clicked Jump("map_forest") # forest
-        hotspot (302, 523, 112, 49) clicked Jump("map_lake")   # lake
-        hotspot (273, 459, 75, 8) clicked Jump("map_dorms")  # dorms
-        #hotspot (656, 232, 106, 33) clicked Jump("inn_menu")   # inn
-        #hotspot (376, 84, 111, 57) clicked Jump("map_pitch") # pitch
-        hotspot (307, 240, 59, 37) clicked Jump("shop_menu")  # shop
-        hotspot (33, 535, 39, 39) clicked Jump("day_main_menu")# return
+        hotspot (192, 229, 38, 20) clicked Jump("map_attic") #attic
+        hotspot (272, 373, 63, 41) clicked Jump("clothes_store") #clothes
+        hotspot (25, 374, 102, 66) clicked Jump("map_forest") #forest
+        hotspot (302, 523, 112, 49) clicked Jump("map_lake") #lake
+        hotspot (273, 459, 75, 8) clicked Jump("map_dorms") #dorms
+        #hotspot (656, 232, 106, 33) clicked Jump("inn_menu") #inn
+        #hotspot (376, 84, 111, 57) clicked Jump("map_pitch") #pitch
+        hotspot (307, 240, 59, 37) clicked Jump("shop_menu") #shop
+        hotspot (33, 535, 39, 39) clicked Jump("day_main_menu") #return
         
 screen room_back:
     if daytime:
@@ -114,7 +114,9 @@ screen room_back:
     zorder 0
     
 screen shop_screen:
-
+    
+    zorder hermione_main_zorder-1
+    
     if daytime:
         add "01_hp/25_mo/room_bg1.png"
     else:
@@ -124,13 +126,13 @@ screen shop_screen:
         ground "01_hp/25_mo/shop_ground.png"
         hover "01_hp/25_mo/shop_hover.png"
         # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (0, 0, 266, 110) clicked Jump("sscrolls")   # Scrolls 1
-        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2")# Scrolls 2
-        hotspot (0, 215, 233, 80) clicked Jump("shop_books") # Books
-        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu")   # Gift Box
-        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene")  # Tentacle Scroll
-        hotspot (606, 0, 197, 538) clicked Jump("shop_potion_menu")   # Potions
-        hotspot (750, 550, 40, 40) clicked Jump("day_main_menu") # Return Button
+        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
+        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2") #Scrolls 2
+        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
+        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
+        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
+        hotspot (606, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
+        hotspot (750, 550, 40, 40) clicked Jump("day_main_menu") #Return Button
     
 screen cs_p1:
     

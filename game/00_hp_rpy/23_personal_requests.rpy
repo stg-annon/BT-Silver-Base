@@ -4127,7 +4127,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         $ hermione_chibi_xpos = -210 #400 = Near the desk.
                                         $ hermione_chibi_ypos = 10
-                                        $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                         ">And then slumps down on her butt exhausted."
                                         
                                         hide screen blktone
@@ -4366,7 +4366,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             ">And then slumps down on her butt exhausted."
                             $ hermione_chibi_xpos = -210 #400 = Near the desk.
                             $ hermione_chibi_ypos = 10
-                            $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                            $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                             show screen h_c_u
                             hide screen blkfade
                             with d3
@@ -4714,7 +4714,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         $ hermione_chibi_xpos = -210 #400 = Near the desk.
                                         $ hermione_chibi_ypos = 10
-                                        $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                         ">And then Hermione slumps on her butt, completely exhausted."
                                         hide screen blktone
                                         with d3
@@ -4834,7 +4834,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     call her_head("Yes, I believe this would be an appropriate amount.","body_102")
                                                     m "are we good then?"
                                                     call her_head("Yes, [genie_name]. Thank you [genie_name].","body_102")
-                                                    $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                                                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                                     hide screen bld1
                                                     with d3
                                                     pause
@@ -4854,7 +4854,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                                     m "So, just allow me to show my appreciation."
                                                     m "Fifty extra points. Well deserved, [hermione_name]."
                                                     call her_head("Thank very much, [genie_name].","body_108")
-                                                    $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                                                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                                     hide screen bld1
                                                     with d3
                                                     pause
@@ -4978,7 +4978,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     with d3
                     $ hermione_chibi_xpos = -210 #400 = Near the desk.
                     $ hermione_chibi_ypos = 10
-                    $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                     ">A few more movements, a couple of gestures and a little curtsy bow to the imaginary audience and Hermione slumps on her butt completely exhausted."
                     show screen h_c_u
                     hide screen blktone
@@ -5007,7 +5007,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call her_head("Em... I will keep that in mind, [genie_name]...","body_107")
                         "{size=-3}\".................................................\"{/size}":
                             call her_head(".......................","body_108")
-                            $ h_c_u_pic = "01_hp/08_animation_02/08_sits.png"
+                            $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                     hide screen bld1
                     show screen ctc
                     with d3
