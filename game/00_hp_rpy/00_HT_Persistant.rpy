@@ -120,7 +120,7 @@ label __init_variables:
         $ temp_outfit = custom_outfit
 
     ###Define Luna variables
-    if not hasattr(renpy.store,'luna_chibi_image'): #important!
+    if not hasattr(renpy.store,'luna_wear_glasses'): #important!
         call luna_init
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
