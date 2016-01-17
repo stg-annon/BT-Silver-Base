@@ -2563,6 +2563,7 @@ label good_girl_scene:
     hide screen hermione_main
     call her_walk(400,610,2)
     $ h_tears = False
+    $ collar = 4
     jump end_hermione_personal_request
 
 

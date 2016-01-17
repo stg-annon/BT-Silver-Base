@@ -7591,30 +7591,31 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     with d3
                     # SNAPE COMES IN
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    $ luna_chibi("stand")
+                    $ luna_chibi("stand", 400, 250)
                     $ changeLuna(1, 1, 4, 1)
                     show screen bld1
                     with d3
-                    lun "Thank goodness you are here [l_genie_name]!"
+                    lun "Hello [l_genie_name]."
                     
                     $ g_c_u_pic = "blowjob_ani" # sucking
                     hide screen h_c_u   # SUCKING
                     show screen g_c_u # SUCKING
                     with d3                      #  SUCKING
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    $ changeLuna(1, 1, 4, 1)                                                         # SNAPE
-                    lun "I think I need some more help with these wrackspurts..."
-                    $ changeLuna(1, 1, 4, 1)                                                     # SNAPE
-                    lun "They're affecting me so much, Even right now all I can imagine is something inappropriate going on behind you."
-                    m "Don't worry [luna_name], I'm fine..."
-                    her "{size=-4}(What? *Slurp...?* *[luna_name]...?* *Gulp...?*){/size}"                                                # SNAPE
-                    lun "What are you... doing?"
+                    $ changeLuna(1, 2, 4, 1)                                                         # SNAPE
+                    lun "Um, are you going to turn around sir..."
+                    m "I'm afraid I'm a bit preoccupied at the moment."
+                    $ changeLuna(1, 1, 5, 1)                                                     # SNAPE
+                    lun "Doing what?."
+                    her "{size=-4}(What? *Slurp...?* *Gulp...?*){/size}"                                                # SNAPE
                     menu:
                         "-Tell the truth-":
-                            m "Miss Granger is helping relieve me of a particularly nasty wrackspurt afflication as we speak."
-                            $ changeLuna(1, 1, 4, 1)
-                            lun "You mean that she is behind your desk..."
-                            $ changeLuna(1, 1, 4, 1)
+                            if collar == 0:
+                                $ collar = 5
+                            m "Miss Granger is helping relieve me as we speak."
+                            $ changeLuna(1, 2, 5, 4)
+                            lun "You mean that Hermione is behind your desk..."
+                            $ changeLuna(10, 1, 4, 9)
                             lun "Releiving you as we speak."
                             ">Hermione's face goes crimson with shame but she continues her efforts."
                             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
@@ -7623,13 +7624,13 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                             m "Thank you [luna_name]"
                             if daytime:
                                 m "Well, have a good day.."
-                                $ changeLuna(1, 1, 4, 1)                                                       # SNAPE
+                                $ changeLuna(1, 1, 1, 5)                                                       # SNAPE
                                 lun "Yes, thank you. I know that you will..."
                             else:
                                 m "Good night, [luna_name]."
                                 $ changeLuna(1, 1, 4, 1)                                                        # SNAPE
                                 lun "Goodnight [l_genie_name].."
-                                $ changeLuna(1, 1, 4, 1)   
+                                $ changeLuna(5, 2, 3, 1)   
                                 lun "Goodnight hermione..."
 
                         "-Lie-":
@@ -7638,13 +7639,13 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                             lun "..............."
                             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                             m "Did you want to discuss something?"
-                            $ changeLuna(1, 1, 4, 1)                                        # SNAPE
+                            $ changeLuna(2, 1, 4, 1)                                        # SNAPE
                             lun "Yes. These wrackspurts."
                             her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
                             m "Oh... What about them?"
                             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"                            # SNAPE
                             lun "No matter what I do I can't seem to be rid of them!"
-                            $ changeLuna(1, 1, 4, 1)                         # SNAPE
+                            $ changeLuna(1, 2, 4, 1)                         # SNAPE
                             lun "They only seem to be getting worse!"
                             m "I see... ah..."
                             $ changeLuna(1, 1, 4, 1)                                                      # SNAPE
@@ -7653,12 +7654,12 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                             her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                             $ changeLuna(1, 1, 4, 1)                            # SNAPE
                             lun "Will you take care of them then?"
-                            m "Yes. I'll find a way to deal with the infestation soon."
-                            $ changeLuna(1, 1, 4, 1)                                                   # SNAPE
-                            lun "Thank you [l_genie_name]."
+                            m "Yes. I'll find a way to deal with these rapers soon."
+                            $ changeLuna(1, 2, 5, 1)                                                   # SNAPE
+                            lun "...Thank you [l_genie_name]."
                             if daytime:
                                 m "Well, have a good day, [luna_name]."
-                                $ changeLuna(1, 1, 4, 1)                                                       # SNAPE
+                                $ changeLuna(1, 2, 1, 1)                                                       # SNAPE
                                 lun "Yes, thank you."
                             else:
                                 m "Good night, [luna_name]."                                                     # SNAPE

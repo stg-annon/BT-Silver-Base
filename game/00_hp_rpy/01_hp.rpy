@@ -634,7 +634,8 @@ if day == 1 and not bird_examined and not desk_examined and not cupboard_examine
     call event_01
 
 
-
+if collar == 5:
+    jump collar_scene
 
 
 
