@@ -55,15 +55,15 @@ image intro_06:
 
 
 image ch_hem potion:
-    "01_hp/25_mo/aka10.png"
+    "01_hp/16_hermione_chibi/potion1.png"
     pause 1
-    "01_hp/25_mo/aka11.png"
+    "01_hp/16_hermione_chibi/potion2.png"
     pause 1
-    "01_hp/25_mo/aka12.png"
+    "01_hp/16_hermione_chibi/potion3.png"
     pause 1
-    "01_hp/25_mo/aka13.png"
+    "01_hp/16_hermione_chibi/potion4.png"
     pause 1
-    "01_hp/25_mo/aka14.png"
+    "01_hp/16_hermione_chibi/potion5.png"
     pause 1.5
     repeat
 

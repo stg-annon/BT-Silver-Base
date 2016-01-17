@@ -3988,7 +3988,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call her_head("[genie_name]?!","body_94")
                             m "It's alright, [hermione_name]. Don't mind me..."
                             call sna_head("Oh, we're doing it like this then?","snape_12")
-                            call sna_head("Well, don't mind if I do...","body_94")
+                            call sna_head("Well, don't mind if I do...","snape_12")
                             $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.
                             call her_head("!!!")
                             hide screen genie
@@ -4158,7 +4158,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ genie_cum_chibi_xpos =  -210
                                         $ genie_cum_chibi_ypos  = 10
                                         $ g_c_c_u_pic = "genie_cum_03"
-                                        $ h_c_u_pic = "01_hp/08_animation_02/08_sits_02.png"
+                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits_02.png"
                                         show screen g_c_c_u
                                         pause
                                         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
