@@ -1,6 +1,4 @@
 init:
-    image tension = "04_pt/quest01/fight.png"   
-
     image ch_hem 01 = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
 
     image check_07 = "interface/check_07.png"
@@ -13,11 +11,11 @@ init:
     
     image textheart = "interface/textheart.png"
     
-    image side dum1 = "01_hp/26_dum/dum_01.png"
-    image side dum2 = "01_hp/26_dum/dum_02.png"
-    image side dum3 = "01_hp/26_dum/dum_03.png"
-    image side dum4 = "01_hp/26_dum/dum_04.png"
-    image side dum5 = "01_hp/26_dum/dum_05.png"
+    # image side dum1 = "01_hp/26_dum/dum_01.png"
+    # image side dum2 = "01_hp/26_dum/dum_02.png"
+    # image side dum3 = "01_hp/26_dum/dum_03.png"
+    # image side dum4 = "01_hp/26_dum/dum_04.png"
+    # image side dum5 = "01_hp/26_dum/dum_05.png"
     
     ### ADDING HOUSE POINTS ###
     image what_01_points:

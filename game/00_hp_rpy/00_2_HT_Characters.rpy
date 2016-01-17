@@ -22,9 +22,10 @@ init python:
     ann = Character('The Announcer', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     sly1 = Character('Slytherin student', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     sly2 = Character('Another Slytherin student', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-        
-        
-
+    cr1 = Character('Somebody from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    cr2 = Character('Another voice from the crowd', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+     
+    
     ###HARRY POTTER CHARACTERS###
     her = Character('Hermione', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     her2 = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).

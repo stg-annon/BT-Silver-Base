@@ -22,9 +22,7 @@ label after_load:
 init:
     
     $ commentaries = False # In the GALLERY turns commentaries ON and OFF.
-
-    image title2 = "title2.jpg"
-
+    
     ### Disposable flags ###
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -44,7 +42,6 @@ init:
     $ who = Character('Female voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ whom = Character('Male voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ who2 = Character('???', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    
     
     $ aa = Character('AKABUR', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     
@@ -511,49 +508,6 @@ image heal:
     "magic/heal18.png"
     pause.06
 
-image heal_02: # Smaller version of heal. 40% of the original size.
-    "magic_02/heal01.png"
-    pause.06
-    "magic_02/heal02.png"
-    pause.06
-    "magic_02/heal03.png"
-    pause.06
-    "magic_02/heal04.png"
-    pause.06
-    "magic_02/heal05.png"
-    pause.06
-    "magic_02/heal06.png"
-    pause.06
-    "magic_02/heal07.png"
-    pause.06
-    "magic_02/heal08.png"
-    pause.06
-    "magic_02/heal09.png"
-    pause.06
-    "magic_02/heal10.png"
-    pause.06
-    "magic_02/heal11.png"
-    pause.06
-    "magic_02/heal12.png"
-    pause.06
-    "magic_02/heal13.png"
-    pause.06
-    "magic_02/heal14.png"
-    pause.06
-    "magic_02/heal15.png"
-    pause.06
-    "magic_02/heal16.png"
-    pause.06
-    "magic_02/heal17.png"
-    pause.06
-    "magic_02/heal18.png"
-    pause.06
-
-
-
-
-
-
 ############################################
 #######EMOTIONS #^_^# ########################
 ############################################
@@ -755,29 +709,11 @@ image whitefade = "interface/whitefade.png"
 image con1 = "interface/cont1.png"
 image blk50 = im.Alpha("interface/blackfade.png", 0.5)
 image blk50 = im.Alpha("interface/blackfade.png", 0.5)
-
-
+    
 image ctc3 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.97, ypos=0.929, xanchor=1.0, yanchor=1.0)
 image ctc4 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.99, ypos=0.995, xanchor=0.8, yanchor=1.0)
 image ctc7 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2)
-
-
-image q1 = "04_pt/qchecklist/q1.png"
-image q2 = "04_pt/qchecklist/q2.png"
-image q3 = "04_pt/qchecklist/q3.png"
-image q4 = "04_pt/qchecklist/q4.png"
-image q5 = "04_pt/qchecklist/q5.png"
-image q6 = "04_pt/qchecklist/q6.png"
-image q7 = "04_pt/qchecklist/q7.png"
-image q8 = "04_pt/qchecklist/q8.png"
-image q9 = "04_pt/qchecklist/q9.png"
-image q10 = "04_pt/qchecklist/q10.png"
-image q11 = "04_pt/qchecklist/q11.png"
-image q12 = "04_pt/qchecklist/q12.png"
-image q13 = "04_pt/qchecklist/q13.png"
-image qbg = "04_pt/qchecklist/qbg.png"
-image bld2 = "04_pt/slavem/bld2.png"
-image bld = "04_pt/slavem/bld.png"
+    
 image bg meadow = "meadow.jpg"
 image bg magic = "meadowmagic.jpg"
 image title2 = "title2.jpg"
@@ -785,8 +721,6 @@ image csscroll = "screens/screen01.png"
 
 
 image bg lp = "lpotion/lpfinal00.jpg"
-image bg meadow = "meadow.jpg"
-image bg magic = "meadowmagic.jpg"
 image tension = "quest01/fight.png"
 
 

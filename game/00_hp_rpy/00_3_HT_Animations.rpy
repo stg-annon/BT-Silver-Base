@@ -1915,22 +1915,22 @@ image ani_her_sex_cum_inside_blink_naked:
     repeat
 
 ### HERMIONE SPITROAST ####
-image ani_her_spitroast:
-    "01_hp/08_animation_02/24_spit_r_01.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_02.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_03.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_04.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_05.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_06.png"
-    pause.15
-    "01_hp/08_animation_02/24_spit_r_07.png"
-    pause.15
-    repeat
+# image ani_her_spitroast:
+    # "01_hp/08_animation_02/24_spit_r_01.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_02.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_03.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_04.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_05.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_06.png"
+    # pause.15
+    # "01_hp/08_animation_02/24_spit_r_07.png"
+    # pause.15
+    # repeat
  
 
 

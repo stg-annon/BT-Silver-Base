@@ -3091,14 +3091,16 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loit
     hide screen hermione_blink_f
     if pos1 > pos2: #right to left (hermione_walk)
         show screen hermione_walk
-        pause (speed - redux_pause)
+        $ tmp = speed - redux_pause
+        pause tmp
         $ hermione_chibi_xpos = pos2
         hide screen hermione_walk
         if loiter:
             show screen hermione_blink
     else: #left to right (hermione_walk_f)
         show screen hermione_walk_f
-        pause (speed - redux_pause)
+        $ tmp = speed - redux_pause
+        pause tmp
         $ hermione_chibi_xpos = pos2
         hide screen hermione_walk_f
         if loiter:
@@ -3130,14 +3132,16 @@ label luna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter 
     hide screen luna_blink_f
     if pos1 > pos2: #right to left (hermione_walk)
         show screen luna_walk
-        pause (speed - redux_pause)
+        $ tmp = speed - redux_pause
+        pause tmp
         $ luna_chibi_xpos = pos2
         hide screen luna_walk
         if loiter:
             show screen luna_blink
     else: #left to right (hermione_walk_f)
         show screen luna_walk_f
-        pause (speed - redux_pause)
+        $ tmp = speed - redux_pause
+        pause tmp
         $ luna_chibi_xpos = pos2
         hide screen luna_walk_f
         if loiter:

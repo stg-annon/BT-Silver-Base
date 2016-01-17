@@ -3524,7 +3524,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         ">Hermione clutches her tits even harder and then gives them a couple of twists..."
         ">It almost looks as if she is mad at her own breasts and trying to punish them..."
         ">You find the thought strangely arousing..."
-        $ h_c_u_pic = "01_hp/08_animation_02/05_panties_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
         show screen h_c_u
         call her_head("Well, I hope you enjoyed yourself, [genie_name]!","body_92")
         m "What?"
@@ -3562,7 +3562,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         $ s_sprite = "01_hp/10_snape_main/snape_01.png"
         $ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box. Works for all full size sprites.
         show screen s_head
-        $ h_c_u_pic = "01_hp/08_animation_02/05_panties_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
         show screen h_c_u
         
         
@@ -9652,15 +9652,15 @@ label per_quest_the_gamble:
     hide screen hermione_walk_01
     hide screen hermione_main
     
-    call her_face("...fine. Just let me... there we...","body_04")#253
+    call her_head("...fine. Just let me... there we...","body_04")#253
 
     #*Penetration transition*
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
     
-    call her_face("OOOOOOOHH! {image=textheart}","body_235")#254
-    call her_face("Yes...","body_236")#255
+    call her_head("OOOOOOOHH! {image=textheart}","body_235")#254
+    call her_head("Yes...","body_236")#255
     
     hide screen hermione_main
     hide screen genie
@@ -9674,7 +9674,7 @@ label per_quest_the_gamble:
     
     ">Hermione begins to slowly slide up and down your dick."
     m "You can do better than this! Pick up the pace whore!"
-    call her_face("Ah... ah...{image=textheart}","body_237")#256
+    call her_head("Ah... ah...{image=textheart}","body_237")#256
     "She moves a little faster..."
     $ g_c_u_pic = "bounce_ani"
     show screen g_c_u
@@ -9685,28 +9685,28 @@ label per_quest_the_gamble:
     m "Faster."
     call soft_slaps
     #">You punctuate each word with a slap to her ass."
-    call her_face("AAAH! {image=textheart} {image=textheart} {image=textheart}","body_219")#257
+    call her_head("AAAH! {image=textheart} {image=textheart} {image=textheart}","body_219")#257
     "She starts to move much faster."
     $ g_c_u_pic = "bounce_ani_f"
     show screen g_c_u
-    call her_face("Yes! Harder!","body_232")#258
+    call her_head("Yes! Harder!","body_232")#258
     m "Honestly."
     ">You reach under her shirt with one hand and start to twist and pull on one of her nipples."
     ">You spank even harder with the other."
     call hard_slaps
-    call her_face("IT HUUURTS! {image=textheart} {image=textheart}","body_220")#259
+    call her_head("IT HUUURTS! {image=textheart} {image=textheart}","body_220")#259
     m "Even now, I still have to take the initiative, you self-deluding whore!"
-    call her_face("I- AH! {image=textheart} I'm n- Ah-a!","body_235")#260
+    call her_head("I- AH! {image=textheart} I'm n- Ah-a!","body_235")#260
     m "You're still claiming this is all just for the house points? Even while you're bouncing yourself up and down on my cock? "
-    call her_face("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236")#261
+    call her_head("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236")#261
     m "All right, fine. Prove it. If you can go {i}ONE FULL MONTH{/i} without any form of sexual relief;" 
     m "I'll award \"Gryffindor\" {i}ONE THOUSAND{/i} points and double the points of any favours you choose to take thereafter."
-    call her_face("!!!! REALLY?! (Oh god, I'm getting so close...)","body_202")#262
+    call her_head("!!!! REALLY?! (Oh god, I'm getting so close...)","body_202")#262
     m "Yes. BUT. If you can't, you belong to me. No more house points. You'll be my personal fucktoy from then on. Do we have a deal?"
-    call her_face("Yessss...","body_236")#263
+    call her_head("Yessss...","body_236")#263
     m "Answer me clearly, whore! Do we have a deal?"
-    call her_face("OH GOD! YES! YES WE HAVE A DEAL!","body_234")#264
-    call her_face("I! I'M-","body_234")#265
+    call her_head("OH GOD! YES! YES WE HAVE A DEAL!","body_234")#264
+    call her_head("I! I'M-","body_234")#265
     stop music fadeout 1 
     m "Good."
     
@@ -9719,7 +9719,7 @@ label per_quest_the_gamble:
     show screen genie
     
     ">You lift Hermione off of you."
-    call her_face("!!! W-what are you-","body_211")#266
+    call her_head("!!! W-what are you-","body_211")#266
     m "We did just make an agreement. Of course if you wish to forfeit already..."
     
     
@@ -9972,10 +9972,10 @@ label per_quest_the_gamble_complete:
         hide screen h_c_u # NOT SUCKING
         
         #her "Please- Give- Need- Please!"
-        call her_face("Please- Give- Need- Please!","body_209")
+        call her_head("Please- Give- Need- Please!","body_209")
         m "So much for a month! You couldn't even last a week!"
         #her "Need- Please-"
-        call her_face("Need- Please-","body_210")
+        call her_head("Need- Please-","body_210")
         #">She scrambles to stand as you lift her by her hair and half toss her onto the desk."
         ">Hermione scrambles to stand as you lift her by her hair and half toss her onto the desk."
         m "Well, since you asked so nicely."
@@ -9996,19 +9996,19 @@ label per_quest_the_gamble_complete:
         
         
         #her "AAAAAAAAAAHHH! Biiiiiiig!!!!!"
-        call her_face("AAAAAAAAAAHHH! Biiiiiiig!!!!!","body_219")
+        call her_head("AAAAAAAAAAHHH! Biiiiiiig!!!!!","body_219")
         m "Has your pussy actually gotten tighter?"
         #her "AAAAH! NO! NO! STILL NEEEEED!!!"
-        call her_face("AAAAH! NO! NO! STILL NEEEEED!!!","body_206")
+        call her_head("AAAAH! NO! NO! STILL NEEEEED!!!","body_206")
         m "Oh, right the spell. Well, you'll just have to wait till I'm ready to cum myself."
         #her "!!!"
-        call her_face("!!!","body_207")
+        call her_head("!!!","body_207")
         ">Hermione starts slamming herself against you with abandon."
         $ g_c_u_pic = "sex2_ani"
         show screen g_c_u
         with hpunch
         #her "GIVE! GIVE! GIVE! GIVE! GIVE!"
-        call her_face("GIVE! GIVE! GIVE! GIVE! GIVE!","body_213")
+        call her_head("GIVE! GIVE! GIVE! GIVE! GIVE!","body_213")
         ">With every thrust she seems to get tighter."
         m "FUCK! ALMOST. ALMOST! HERE WE GO!"
         ">You undo the spell as you flood Hermione's cunt with your cum."
@@ -10046,7 +10046,7 @@ label per_quest_the_gamble_complete:
         $ g_c_u_pic = "pause_sex"
         
         #her "!!!!"
-        call her_face("!!!!","body_234")
+        call her_head("!!!!","body_234")
         ">Hermione tries to scream but can only manage to gasp and convulse as she finally gets her release."
         ">You watch her and wait for her spasms to die down."
         
@@ -10058,11 +10058,11 @@ label per_quest_the_gamble_complete:
         ">Hermione's eyes are still glassy but she nods."
         m "Good. A deal is a deal. You belong to me now. Understand?"
         #her "Yesss."
-        call her_face("Yesss.","body_199")
+        call her_head("Yesss.","body_199")
         m "Ready for more?"
         ">Still twitching on the ground, she speaks slowly, as though her thoughts are traveling through molasses."
         #her "I... but... class..."
-        call her_face("I... but... class...","body_211")
+        call her_head("I... but... class...","body_211")
         m "Oh, you're not going to class."
         m "I'm going to thoroughly enjoy my first day as your owner."
         ">You walk to the door and send for Snape."
@@ -10070,55 +10070,55 @@ label per_quest_the_gamble_complete:
         ">You walk over to Hermione and lift her. Keeping her back to your chest and your hands under her thighs, you hold her up with her legs spread."
         m "Now put your hands around the back of my neck and tell me what you are."
         #her "Your whore."
-        call her_face("Your whore.","body_209")
+        call her_head("Your whore.","body_209")
         m "Wrong."
         #her "?"
-        call her_face("?","body_210")
+        call her_head("?","body_210")
         m "You see, whores get paid. Whores are people."
         m "You don't get paid. You stopped being a person when you sold yourself to me for release."
         m "You are my slave now. My toy. My pretty little fucktoy."
         m "SAY IT."
         #her "I'm your fucktoy."
-        call her_face("I'm your fucktoy.","body_199")
+        call her_head("I'm your fucktoy.","body_199")
         m "Now, what does a fucktoy want?"
         ">You lower her, teasing her asshole with the tip of your cock."
         #her "N-Nothing. A toy w-wants nothing. It's just used by its owner."
-        call her_face("N-Nothing. A toy w-wants nothing. It's just used by its owner.","body_215")
+        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","body_215")
         m "VERY good."
         ">You drop her onto your dick."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY AAASS!!!"
-        call her_face("MY AAASS!!!","body_219")
+        call her_head("MY AAASS!!!","body_219")
         m "Whose ass?"
         ">You lift her off your dick."
         #her "YOURS! YOUR FUCKTOY'S ASS!"
-        call her_face("YOURS! YOUR FUCKTOY'S ASS!","body_225")
+        call her_head("YOURS! YOUR FUCKTOY'S ASS!","body_225")
         ">Desperate tears form in her eyes."
         m "Since it is your first day, I'll be nice."
         m "I'll give you a few choices."
         m "Do you want me to fuck your ass?"
         #her "Yes."215
-        call her_face("Yes.","body_215")
+        call her_head("Yes.","body_215")
         m "How?"
         #her "Haaard. Pound me. Fill me with your cum!"
-        call her_face("Haaard. Pound me. Fill me with your cum!","body_213")
+        call her_head("Haaard. Pound me. Fill me with your cum!","body_213")
         m "As you wish!"
         ">You drop her back onto your dick and start pounding her ass, your dick is harder than it's ever been."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY ASS!!! YOU'LL BREAK IT!!"
-        call her_face("MY ASS!!! YOU'LL BREAK IT!!","body_219")
+        call her_head("MY ASS!!! YOU'LL BREAK IT!!","body_219")
         ">You lift her up slowly, making the threat clear."
         #her "AHH!! BREAK IT!! BREAK ME!! HARDER!!"
-        call her_face("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
+        call her_head("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
         call snape_enter
         sna_[1] "What did you-"
         sna_[8] "!!!"
         #her "CUMMING!! MY ASS IS CUMMING!!"
-        call her_face("CUMMING!! MY ASS IS CUMMING!!","body_236")
+        call her_head("CUMMING!! MY ASS IS CUMMING!!","body_236")
         m "As you can see, Miss Granger will be indisposed."
         ">Hermione's grip slips and she catches herself on your desk. She quivers as you adapt and start pounding her from behind."
        
@@ -10129,18 +10129,18 @@ label per_quest_the_gamble_complete:
         
         m "Can you arrange an excuse for the next day? Or three?"
         #her "AAAAH! OH GOD!"
-        call her_face("AAAAH! OH GOD!","body_238")
+        call her_head("AAAAH! OH GOD!","body_238")
         sna_[18] "Ha! Of course!"
         #her "AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}"
-        call her_face("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
+        call her_head("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
         sna_[21] "(This might be the happiest day of my life!)"
         call snape_leave
         ">Hermione kept screaming and shaking her ass on your dick. You're fairly certain she didn't notice the conversation."
         #her "I'm going insane! Your dick is driving your fucktoy insane!"
-        call her_face("I'm going insane! Your dick is driving your fucktoy insane!","body_236")
+        call her_head("I'm going insane! Your dick is driving your fucktoy insane!","body_236")
         m "You and your way with words!"
         #her "CUMMING! STILL CUMMING!"
-        call her_face("CUMMING! STILL CUMMING!","body_234")
+        call her_head("CUMMING! STILL CUMMING!","body_234")
         m "Here, let me JOIN YOU!"
         
         show screen white 
@@ -10169,12 +10169,12 @@ label per_quest_the_gamble_complete:
         
         
         #her "MY ASS! SO HOT!"
-        call her_face("MY ASS! SO HOT!","body_235")
+        call her_head("MY ASS! SO HOT!","body_235")
         #her "FILLING MY ASS!"
-        call her_face("FILLING MY ASS!","body_236")
+        call her_head("FILLING MY ASS!","body_236")
         m "YOU LIKE IT?"
         #her "YES!!!! {image=textheart} {image=textheart}"
-        call her_face("YES!!!! {image=textheart} {image=textheart}","body_234")
+        call her_head("YES!!!! {image=textheart} {image=textheart}","body_234")
         m "HAVE SOME MORE!"
         ">Hermione tries to scream as you flood her ass but once again can only manage gasps as she collapses to your desk, quivering."
         
