@@ -111,6 +111,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                         $ temp_stockings = stockings 
                         $ temp_outfit = custom_outfit
                         $ custom_outfit = 9
+                        $ stockings = 0
                         hide  screen blkfade
                         show screen hermione_main
                         with d3
@@ -410,7 +411,6 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    
     # $ walk_xpos=400 #Animation of walking chibi. (From)
     # $ walk_xpos2=610 #Coordinates of it's movement. (To)
     # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -419,7 +419,11 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     # hide screen hermione_walk_01_f 
     
     call her_walk(400,610,2)
-    
+  
+
+
+  
+
     jump end_hermione_personal_request
         
 ###################REQUEST_02 (Level 01)
@@ -473,12 +477,16 @@ label new_request_02: #SHOW ME YOUR PANTIES
     #play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 
 
+    
+    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    
     if whoring >= 0 and whoring <= 2: #LEVEL 01
-        her_[8] "........................"
+        call her_head("........................","body_05")
     elif whoring >= 3 and whoring <= 5: #LEVEL 02
-        her_[14] "....................."
+        call her_head(".....................","body_188")
     elif whoring >= 6: #LEVEL 03 and up.
-        her_[18] ".........................."
+        call her_head("..........................","body_188")
         g4 "!!?"
         
         
@@ -565,6 +573,8 @@ label new_request_02: #SHOW ME YOUR PANTIES
         with d3
         show screen blktone
         with d3
+        $ temp_panties = panties
+        $ panties = False
         call her_main("","body_58")
         show screen ctc
         with d3
@@ -593,6 +603,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
                         m "Good girl"
             "\"Good! Five points!\"":
                 pass
+
     
     
     
@@ -651,6 +662,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
     if whoring <= 2:
         $ whoring +=1
     $ request_02 += 1
+    $ panties = temp_panties
     
     jump end_hermione_personal_request
         
@@ -874,7 +886,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                             jump panties_soaked_in_cum
                         else:
                             pass
-                    "\"It's for the grater good...\"":
+                    "\"It's for the greater good...\"":
                         her "Exactly!"
                         her "We need those points badly..."
                         her "It is not my fault that the system is so corrupted..."
@@ -1089,7 +1101,6 @@ label new_request_04:
         "\"(Not right now.)\"":
             jump new_personal_request
 
-
     if "ms_marvel" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -1121,19 +1132,21 @@ label new_request_04:
                 else:
                     jump too_much
             "\"(Not right now.)\"":
-                pass
+                pass            
     
+    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
     
     if whoring <=2: # LEVEL 01 # Hermione refuses.
         jump too_much
-        
+    
     elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
         $ new_request_04_01 = True # Hearts. 
         $ new_request_04_heart = 1
         hide bld1
         with d3
-        m "Come closer [hermione_name]..."
-        her_[2] "Ehm... alright..."
+        m "Come closer [hermione_name]..."        
+        call her_head("Ehm... alright...","body_12")
         hide screen bld1
         with d3
         
@@ -1147,32 +1160,32 @@ label new_request_04:
         pause.5
         hide screen hermione_walk_01
         
-        her_[2] "[genie_name].....?"
+        call her_head("[genie_name].....?","body_12")
         menu: 
             m "..."
             "\"I'm gonna molest your tits now.\"":
-                her_[3] "What? What do you mean, [genie_name]--?"
+                call her_head("What? What do you mean, [genie_name]--?","body_202")
                 ">Hermione takes a hesitant step back..."
                 ">You reach out swiftly and grab both of her tits through her uniform..."
             "-Just reach out and grab her tits.-":
                 ">You reach out with both of your hands and grab the [hermione_name]'s tits!"
         stop music fadeout 1.0
         with hpunch
-        her_[7] "!!!?"
-        her_[8] "[genie_name]?!"
+        call her_head("!!!?","body_206")
+        call her_head("[genie_name]?!","body_205")
         ">Hermione tries to pull away from you, but you hold her firmly by her breasts..."
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        her_[9] "[genie_name], what are you--?"
+        call her_head("[genie_name], what are you--?","body_208")
         ">She tries to pull away again."
         ">You squeeze her tits like a vice."
-        her_[10] "[genie_name], you're hurting me!"
+        call her_head("[genie_name], you're hurting me!","body_141")
         g4 "Then stand still, [hermione_name]!"
-        her_[11] "B-but..."
+        call her_head("B-but...","body_202")
         m "All I want to do is squeeze your tits a little, then you will get your points!"
-        her_[12] "B-but... this is..."
+        call her_head("B-but... this is...","body_199")
         m "Just stand still..."
         m "go to your happy place or something..."
-        her_[11] "M-my happy place...?"
+        call her_head("M-my happy place...?","body_122")
         ">You feel the girl's shapely breasts in your palms..."
         hide screen genie
         show screen ctc
@@ -1183,40 +1196,40 @@ label new_request_04:
         hide screen blkfade
         with d5
         pause
-        her_[13] "............................"
+        call her_head("............................","body_132")
         menu:
             "-Squeeze her tits with all of your strength-":
                 show screen blktone
                 with d5
                 ">You put strength into your hold..."
-                her_[12] "my..........."
+                call her_head("my...........","body_199")
                 ">You squeeze her tits even harder..."
-                her_[13] "[genie_name], you're hurting them..."
+                call her_head("[genie_name], you're hurting them...","body_132")
                 m "Be quiet [hermione_name]..."
-                her_[12] "aw.............."
+                call her_head("aw..............","body_199")
                 ">You squeeze her ample tits with all your strength."
-                her_[10]"Ah! It hurts!"
-                her_[10] "They're gonna burst! Please stop it!"
+                call her_head("Ah! It hurts!","body_141")
+                call her_head("They're gonna burst! Please stop it!","body_141")
                 m "They are not going to burst, you silly girl..."
                 ">You losen your grip a little..."
-                her_[13] "It hurts..."
+                call her_head("It hurts...","body_132")
                 m "You will be fine..."
-                her_[4] "........."
+                call her_head(".........","body_203")
 
             "-Give her tits a tender massage-":
                 show screen blktone
                 with d5
                 ">You start massaging Hermione's beasts through her uniform..."
-                her_[13] "[genie_name]...?"
+                call her_head("[genie_name]...?","body_132")
                 m "The points, [hermione_name]... You need the points. Concentrate on that."
-                her_[4] "Yes..."
-                her_[15] "Yes, for the honour of the \"gryffindor\" house..."
+                call her_head("Yes...","body_203")
+                call her_head("Yes, for the honour of the \"gryffindor\" house...","body_208b")
                 "*Squeeze-squeeze!*"
                 ">You keep massaging her tits..."
                 ">You give one of her breasts a few pinches trying to locate the nipple..."
-                her_[13] "[genie_name]... you're pinching me...?"
+                call her_head("[genie_name]... you're pinching me...?","body_132")
                 ">Your attempts prove to be fruitless though. The fabric of the uniform is quite thick..."
-                her_[15] "\"gryffindor\" ............"
+                call her_head("\"gryffindor\" ............","body_208b")
 
             "-Let her go and give her the points-":
                 show screen blktone
@@ -1225,11 +1238,11 @@ label new_request_04:
                 show screen blkfade
                 with d5
                 ">You unhand the girl's breasts..."
-                her_[14] "Really?"
+                call her_head("Really?","body_188")
                 m "Yes, yes... I will even give you your points..."
-                her_[14] "Err... thank you, [genie_name]..."
+                call her_head("Err... thank you, [genie_name]...","body_188")
                 m "But you didn't earn them today..."
-                her_[12] "Aw........."
+                call her_head("Aw.........","body_199")
 
     if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
         if whoring >= 6 and whoring <= 8: # LEVEL 03.
@@ -1240,7 +1253,7 @@ label new_request_04:
             $ new_request_04_heart = 3
         stop music fadeout 2.0
         m "Come closer [hermione_name]... I want to give your tits a massage..."
-        her_[14] "As you say, [genie_name]..."
+        call her_head("As you say, [genie_name]...","body_188")
         
         hide screen bld1
         with d3
@@ -1256,7 +1269,7 @@ label new_request_04:
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         ">Hermione is starting to pull her uniform up..."
         m "No, leave it on. I want to massage them while you are fully dressed..."
-        her_[14] "Oh, I see..."
+        call her_head("Oh, I see...","body_188")
         ">Hermione stands in front of you expectantly..."
         ">You reach out for her ample breasts..."
         ">And start massaging them firmly..."
@@ -1272,38 +1285,38 @@ label new_request_04:
         pause
 
         "*squeeze-squeeze-squeeze*"
-        her_[16] "................"
+        call her_head("................","body_213")
         menu:
             "\"Do you enjoy this, [hermione_name]?\"":
-                her_[14] "What...?"
-                her_[14] "Oh, I don't mind it..."
+                call her_head("What...?","body_188")
+                call her_head("Oh, I don't mind it...","body_188")
                 "*squeeze-squeeze-squeeze*"
                 ">You keep massaging her soft tits..."
                 if whoring <= 12:
-                    her_[16] "I mean, this is not a big deal, as long as I am getting paid..."
+                    call her_head("I mean, this is not a big deal, as long as I am getting paid...","body_213")
                     ">You keep on massaging her tits through her uniform..."
-                    her_[1] "A small price to pay for the honour of my house, really......{image=textheart}"
+                    call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
                     m "Really? It seems to me as if you love it"
-                    her_[16] "I wouldn't say that I love it"
+                    call her_head("I wouldn't say that I love it","body_213")
                     ">You keep on massaging her tits through her uniform..."
                     m "What would you say then [hermione_name]?"
-                    her_[6] "I just like it, {size=-4}a lot{image=textheart}{/size}"
+                    call her_head("I just like it, {size=-4}a lot{image=textheart}{/size}","body_205")
             "-Pull on them abruptly with force-":
                 show screen blktone8
                 with d3
                 ">You give Hermione's tits a sudden but firm pull..."
                 with vpunch
-                her_[9] "Ouch...."
+                call her_head("Ouch....","body_208")
                 ">You pull on her tits again. This time much stronger."
                 with vpunch
-                her_[9] "Ouch! [genie_name], what are you trying to do...?"
+                call her_head("Ouch! [genie_name], what are you trying to do...?","body_208")
                 ">You jerk the girl down by her tits with all your strength..."
                 with vpunch
                 with vpunch
                 ">Hermione almost loses balance..."
-                her_[17] "*Panting* What are you doing, [genie_name]...?"
-                her_[18] "You don't need to be so rough with me....{image=textheart}"
+                call her_head("*Panting* What are you doing, [genie_name]...?","body_204")
+                call her_head("You don't need to be so rough with me....{image=textheart}","body_188")
     
     if whoring <= 5:
         $ whoring +=1
@@ -1326,7 +1339,7 @@ label new_request_04:
     stop music fadeout 1.0
     ">You let go of Hermione's breasts..."
     m "This will do for now."
-    her_[4] "................"
+    call her_head("................","body_203")
     
     hide screen blkfade 
     with d3
@@ -1366,15 +1379,16 @@ label new_request_04:
     
     if whoring >= 13:
         show screen hermione_01_f
-        her_[12] "(What about my points?)"
+        call her_head("(What about my points?)","body_199")
         if whoring >= 20:
-            her_[16] "(eh, who cares)"
+            call her_head("(eh, who cares)","body_213")
         else:
-            her_[2] "(I'll just ask him about it next time)"
+            call her_head("(I'll just ask him about it next time)","body_12")
         hide screen hermione_01_f
     $ stockings = temp_stockings 
     $ custom_outfit = temp_outfit
     $ panties = True
+    
     jump end_hermione_personal_request
     
 ###################REQUEST_05 (Level 02) (BUTT MOLESTER).
@@ -1422,7 +1436,9 @@ label new_request_05:
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-
+    
+    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
     
     if whoring <=2:
         jump too_much
@@ -1448,16 +1464,16 @@ label new_request_05:
         m "Come closer, child. Let me molest your butt a little."
         if request_05_points == 0 and whoring <= 5: #First time
             stop music fadeout 5.0
-            her_[7] "[genie_name]!?"
+            call her_head("[genie_name]!?","body_206")
             m "Relax, [hermione_name]. It will be the easiest 15 points you've ever made, I promise."
-            her_[8] "But...."
+            call her_head("But....","body_05")
             m "All I am going to do is squeeze your little butt a couple of times..."
-            her_[4] "This is inappropriate, [genie_name]................"
+            call her_head("This is inappropriate, [genie_name]................","body_203")
             m "Nobody needs to know how exactly you got the points..."
-            her_[12] "(These 15 points could really make a difference...)"
-            her_[19] "(Darn it.....!)"
+            call her_head("(These 15 points could really make a difference...)","body_199")
+            call her_head("(Darn it.....!)","body_208b")
         else:
-            her_[4] "Again.....?"
+            call her_head("Again.....?","body_203")
         hide screen bld1
         with d3
         $ walk_xpos=400 #Animation of walking chibi. (From)
@@ -1468,13 +1484,13 @@ label new_request_05:
         show screen blkfade
         with Dissolve(1)
         pause.5
-        her_[4] ".................."
-        her_[4] "Do you want me to turn around then, [genie_name]?"
+        call her_head("..................","body_203")
+        call her_head("Do you want me to turn around then, [genie_name]?","body_203")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         menu:
             m "Hm..."
             "\"Yes. Turn around, [hermione_name].\"":
-                her_[4] "As you say, [genie_name]..."
+                call her_head("As you say, [genie_name]...","body_203")
                 hide screen hermione_walk_01
                 hide screen genie
                 show screen ctc
@@ -1483,11 +1499,11 @@ label new_request_05:
                 hide screen blkfade
                 with d5
                 pause
-                her_[4] "............."
-                her_[4] "..........................."
-                her_[25] "[genie_name], I would like to be done with this sooner rather then later..."
+                call her_head(".............","body_203")
+                call her_head("...........................","body_203")
+                call her_head("[genie_name], I would like to be done with this sooner rather then later...","body_203")
                 m "Don't rush me [hermione_name]... Let me savour the moment..."
-                her_[4] "............................."
+                call her_head(".............................","body_203")
                 menu:
                     m "Hm..."
                     "-Give her butt a squeeze-":
@@ -1499,11 +1515,11 @@ label new_request_05:
                         pause.08
                         hide screen white
                         show screen bld1
-                        her_[22] "!!!!!!!!!!!!!"
-                        her_[22] "[genie_name]!!?"
+                        call her_head("!!!!!!!!!!!!!","body_210")
+                        call her_head("[genie_name]!!?","body_210")
                         menu:
                             "\"Fine, fine... I just couldn't resist....\"":
-                                her_[25] "......................."
+                                call her_head(".......................","body_203")
                                 pass
                             "-Give her butt another slap-":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1512,12 +1528,12 @@ label new_request_05:
                                 pause.08
                                 hide screen white
                                 show screen bld1
-                                her_[21] "!!!!!!!!!!!!!"
-                                her_[15] "[genie_name], what are you doing!?"
-                                her_[15] "You said all you were going to do is touch!"
+                                call her_head("!!!!!!!!!!!!!","body_210")
+                                call her_head("[genie_name], what are you doing!?","body_208b")
+                                call her_head("You said all you were going to do is touch!","body_208b")
                                 menu:
                                     "\"Fine, fine... I just couldn't resist....\"":
-                                        her_[25] "......................."
+                                        call her_head(".......................","body_203")
                                         pass
                                     "-Give her butt another slap-":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1526,24 +1542,24 @@ label new_request_05:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        her_[15] "Ouch! It hurts!"
-                                        her_[20] "This is so demeaning!"
-                                        her_[20] "You said all you were going to do is touch..."
-                                        #her_[20] "Why are you doing this, [genie_name]?"
+                                        call her_head("Ouch! It hurts!","body_208b")
+                                        call her_head("This is so demeaning!","body_187")
+                                        call her_head("You said all you were going to do is touch...","body_187")
+                                        #call her_head("Why are you doing this, [genie_name]?","body_187")
                                         g4 "Just stand still, [hermione_name]!"
-                                        her_[19] "I don't think so, [genie_name]!"
-                                        her_[24] "No amount of points are worth this humiliation!"
-                                        her_[23] "You are abusing your power, [genie_name]!"
+                                        call her_head("I don't think so, [genie_name]!","body_208b")
+                                        call her_head("No amount of points are worth this humiliation!","body_287")
+                                        call her_head("You are abusing your power, [genie_name]!","body_218")
                                         g4 "What?"
-                                        her_[19] "I'm leaving!"
+                                        call her_head("I'm leaving!","body_208b")
                                         menu:
                                             g4 "Tsk..."
                                             "\"I... I apologize...\"":
-                                                her_[25] "Just don't do this anymore, [genie_name]..."
+                                                call her_head("Just don't do this anymore, [genie_name]...","body_203")
                                                 pass
                                             "\"You are not getting any points for this!\"":
                                                 $ mad += 30
-                                                her_[20] "Ha! See if I care, [genie_name]!"
+                                                call her_head("Ha! See if I care, [genie_name]!","body_187")
                                                 ### Takes place aftre you refuse to pay her the points.
                                                 $ walk_xpos=300 #Animation of walking chibi. (From)
                                                 $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -1568,15 +1584,15 @@ label new_request_05:
                                                     jump night_main_menu
                                             "\"I'm subtracting points from you then!\"":
                                                 $ mad += 20
-                                                her_[22] "You can't be serious!?"
+                                                call her_head("You can't be serious!?","body_210")
                                                 $ gryffindor -=10
                                                 g4 "The \"Gryffindor\" house, minus 10 points!"
                                                 g4 "There! It's done!"
-                                                her_[24] "Gr..........."
-                                                her_[24] "........................"
-                                                her_[27] "This is not fair..."
+                                                call her_head("Gr...........","body_187")
+                                                call her_head("........................","body_187")
+                                                call her_head("This is not fair...","body_145")
                                                 m "What? Hey, wait, don't you start crying on me..."
-                                                her_[29] "I hate you, [genie_name]! I hate you!"
+                                                call her_head("I hate you, [genie_name]! I hate you!","body_147")
                                                 
                                                 $ walk_xpos=300 #Animation of walking chibi. (From)
                                                 $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -1612,56 +1628,56 @@ label new_request_05:
                 pause
                 show screen groping_02
                 with d7
-                her_[7] "!!!!!!?"
+                call her_head("!!!!!!?","body_206")
                 m "What is it, [hermione_name]?"
-                her_[15] "It's nothing [genie_name]..."
-                her_[15] "It's just... "
-                her_[15] "I can't believe this is really happening..."
-                her_[15] "This is so... inappropriate..."
+                call her_head("It's nothing [genie_name]...","body_208b")
+                call her_head("It's just... ","body_208b")
+                call her_head("I can't believe this is really happening...","body_208b")
+                call her_head("This is so... inappropriate...","body_208b")
                 m "Relax, [hermione_name]. It's not like you are enjoying this..."
-                her_[19] "What? Of course not! This is depraved..."
-                her_[19] "I am making this sacrifice for the the honour of my house..."
+                call her_head("What? Of course not! This is depraved...","body_208b")
+                call her_head("I am making this sacrifice for the the honour of my house...","body_208b")
                 m "Yes, concentrate on that..."
-                her_[20] "...................."
+                call her_head("....................","body_187")
                 show screen bld1
                 with d3
                 pause
-                her_[17] "But, [genie_name]..."
-                her_[5] "Why are {size=+7}you{/size} doing this?"
+                call her_head("But, [genie_name]...","body_204")
+                call her_head("Why are {size=+7}you{/size} doing this?","body_204")
                 menu: 
                     m "Hm..."
                     "\"I have my reasons...\"":
-                        her_[12] "Oh..."
-                        her_[25] "Hm..."
+                        call her_head("Oh...","body_199")
+                        call her_head("Hm...","body_203")
                     "\"In the name of science of course!\"":
-                        her_[3] "Really?!"
-                        her_[3] "Is this a research of some kind?"
+                        call her_head("Really?!","body_202")
+                        call her_head("Is this research of some kind?","body_202")
                         m "Yeah, sure, I'm researching ehm... er..."
                         m "Well, you wouldn't understand, this is some pretty advanced wizardry stuff..."
-                        her_[3] "I see..."
-                        her_[2] "Well, if it is for a research then I am glad to be of help..."
+                        call her_head("I see...","body_202")
+                        call her_head("Well, if it is for research then I am glad to be of help...","body_12")
                     "-Just squeeze her butt cheeks tighter-":
                         ">You give Hermione's butt cheeks a couple of extra firm squeezes."
-                        her_[5] "...................."
-                        her_[12] "(Shall I just be quiet then.....?)"
+                        call her_head("....................","body_204")
+                        call her_head("(Shall I just be quiet, then.....?)","body_199")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's buttocks..."
                 ">You slide your hands up and down her inner tighs..."
-                her_[15] "................"
+                call her_head("................","body_208b")
                 label connection_of_rapes:
                 menu:
                     "-Slide your hands under her panties-":
                         ">You slowly slide one of your hands under the fabric of the girl's panties..."
-                        her_[7] "[genie_name]... What are you...?"
+                        call her_head("[genie_name]... What are you...?","body_206")
                         m "That's alright, just think about those 15 points your house is about to receive..."
-                        her_[12] "............."
+                        call her_head(".............","body_199")
                         menu:
                             "-Prod her pussy with one of your fingers-":
                                 show screen blkfade
                                 with d3
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
-                                her_[7] "[genie_name]? No! What are you...?"
+                                call her_head("[genie_name]? No! What are you...?","body_206")
                                 ">Hermione tries to pull away from you..."
                                 menu:
                                     "-Force your finger into her pussy!-":
@@ -1675,13 +1691,13 @@ label new_request_05:
                                 show screen blkfade
                                 with d3
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
-                                her_[7] "[genie_name]? No! What are you doing!?"
+                                call her_head("[genie_name]? No! What are you doing!?","body_206")
                                 ">Hermione tries to pull away from you..."
                                 menu:
                                     "-Force your thumb into her butt-hole-":
                                         ">You force one of your thumbs into her little butt-hole..."
                                         with hpunch
-                                        her_[30] "!!?"
+                                        call her_head("!!?","body_119")
                                         ">It's very tight and warm inside..."
                                         jump screams_of_rapings
                                     "-Let the girl go...-":
@@ -1691,7 +1707,7 @@ label new_request_05:
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                her_[4] "As you say, [genie_name]..."
+                call her_head("As you say, [genie_name]...","body_203")
                 hide screen hermione_walk_01
                 hide screen genie
                 show screen ctc
@@ -1700,55 +1716,55 @@ label new_request_05:
                 hide screen blkfade
                 with d5
                 pause
-                her_[1] "[genie_name], please hurry up, before someone discovers us like this..."
+                call her_head("[genie_name], please hurry up, before someone discovers us like this...","body_200")
                 m "What is the problem, [hermione_name]?"
                 m "You know you are doing this for your house."
-                her_[4] "I do know."
-                her_[4] "But not everyone would see it that way..."
-                her_[4] "So let us be done with this as quick as possible..."
-                her_[5] "Please..."
+                call her_head("I do know.","body_203")
+                call her_head("But not everyone would see it that way...","body_203")
+                call her_head("So let us be done with this as quick as possible...","body_203")
+                call her_head("Please...","body_204")
                 m "Well, if you insist..."
                 show screen groping_01
                 with d7
-                her_[7] "!!!"
+                call her_head("!!!","body_206")
                 m "What is it?"
-                her_[5] "It's nothing, [genie_name]. Your hands are cold, that's all..."
+                call her_head("It's nothing, [genie_name]. Your hands are cold, that's all...","body_204")
                 show screen bld1 
                 with d3
                 show screen blktone8
                 with d3
                 ">You run your hands up and down Hermione's legs..."
-                her_[4] "........................."
+                call her_head(".........................","body_203")
                 ">You give her buttocks a good squeeze..."
-                her_[19] "................."
+                call her_head(".................","body_208b")
                 m "Don't look away, [hermione_name]. I want you to look into my eyes."
-                her_[19] "I would rather not, [genie_name]..."
+                call her_head("I would rather not, [genie_name]...","body_208b")
                 menu:
                     m "..."
                     "\"Fine. Just keep standing still then.\"":
-                        her_[15] "Thank you [genie_name]..."
+                        call her_head("Thank you [genie_name]...","body_208b")
                         ">You massage her buttocks lightly..."
-                        her_[15] "...................."
+                        call her_head("....................","body_208b")
                         ">And keep enjoying the sensation of her ass under your hands..."
-                        her_[19] "....................."
+                        call her_head(".....................","body_208b")
                         ">Then you give Hermione's butt one last squeeze."
-                        her_[19] "....................."
+                        call her_head(".....................","body_208b")
                     "\"Open your eyes, or lose the points!\"":
                         $ mad += 7
-                        her_[19] "Tsk! {size=-5}(You perverted old--{/size}"
+                        call her_head("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
                         m "Did you say something, [hermione_name]?"
-                        her_[8] "It's nothing, [genie_name]."
+                        call her_head("It's nothing, [genie_name].","body_05")
                         ">You massage her buttocks lightly..."
                         ">Hermione maintains the eye contact as she's been told..."
-                        her_[8] "...................."
-                        her_[4] "..............................."
+                        call her_head("....................","body_05")
+                        call her_head("...............................","body_203")
                         m "What did I tell you about looking away?"
-                        her_[19] "Yes, I remember..."
-                        her_[8] "................................."
-                        her_[25] "..................................."
-                        her_[25] ".................................................."
+                        call her_head("Yes, I remember...","body_208b")
+                        call her_head(".................................","body_05")
+                        call her_head("...................................","body_203")
+                        call her_head("..................................................","body_203")
                         ">You keep on enjoying the sensation of her soft ass-cheeks under your fingertips..."
-                        her_[8] "....................."
+                        call her_head(".....................","body_05")
                         jump connection_of_rapes
     
         
@@ -1758,7 +1774,7 @@ label new_request_05:
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
-        her_[17] "If I must..."
+        call her_head("If I must...","body_204")
         hide screen bld1
         with d3
         $ walk_xpos=400 #Animation of walking chibi. (From)
@@ -1769,12 +1785,12 @@ label new_request_05:
         show screen blkfade
         with Dissolve(1)
         pause.5
-        her_[18] "Do you want me to turn around then, [genie_name]?"
+        call her_head("Do you want me to turn around then, [genie_name]?","body_188")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         menu:
             m "Hm..."
             "\"Yes. Turn around, [hermione_name].\"":
-                her_[18] "As you say, [genie_name]..."
+                call her_head("As you say, [genie_name]...","body_188")
                 hide screen hermione_walk_01
                 hide screen genie
                 show screen ctc
@@ -1783,7 +1799,7 @@ label new_request_05:
                 hide screen blkfade
                 with d5
                 pause
-                her_[35] "............."
+                call her_head(".............","body_205")
                 menu:
                     m "Hm..."
                     "-Give her butt a squeeze-":
@@ -1795,11 +1811,11 @@ label new_request_05:
                         pause.08
                         hide screen white
                         show screen bld1
-                        her_[22] "!!!!!!!!!!!!!"
-                        her_[18] "[genie_name]....?"
+                        call her_head("!!!!!!!!!!!!!","body_210")
+                        call her_head("[genie_name]....?","body_188")
                         menu:
                             "\"Fine, fine... I just couldn't resist....\"":
-                                her_[18] "It's Ok..."
+                                call her_head("It's Ok...","body_188")
                                 pass
                             "-Give her butt another slap-":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1808,12 +1824,12 @@ label new_request_05:
                                 pause.08
                                 hide screen white
                                 show screen bld1
-                                her_[21] "!!!!!!!!!!!!!"
-                                her_[18] "[genie_name], what are you doing!?"
-                                her_[18] "You said all you are going to do is touch!"
+                                call her_head("!!!!!!!!!!!!!","body_210")
+                                call her_head("[genie_name], what are you doing!?","body_188")
+                                call her_head("You said all you are going to do is touch!","body_188")
                                 menu:
                                     "\"Fine, fine... I just couldn't resist....\"":
-                                        her_[18] "It's not a big deal..."
+                                        call her_head("It's not a big deal...","body_188")
                                         pass
                                     "-Give her butt another slap-":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1822,43 +1838,43 @@ label new_request_05:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        her_[34] "[genie_name], not so loud, please..."
-                                        her_[34] "What if somebody hears us?"
+                                        call her_head("[genie_name], not so loud, please...","body_212")
+                                        call her_head("What if somebody hears us?","body_212")
                                         m "Alright, alright... proceeding with groping then..."
-                                        her_[18] "................"
+                                        call her_head("................","body_188")
 
                 pause
                 show screen groping_02
                 with d7
-                her_[18] "..................."
+                call her_head("...................","body_188")
                 m "You are being awfully quiet today, [hermione_name]."
-                her_[18] "Am I...?"
+                call her_head("Am I...?","body_188")
                 if whoring <= 13:
-                    her_[35] "Well, you know me, [genie_name]..."
-                    her_[35] "I'm just happy to be able to do my part for the \"Gryffindor\" house...."
-                her_[35] "Please don't mind it and continue..."
-                her_[18] "(...to grope me...)"
+                    call her_head("Well, you know me, [genie_name]...","body_205")
+                    call her_head("I'm just happy to be able to do my part for the \"Gryffindor\" house....","body_205")
+                call her_head("Please don't mind it and continue...","body_205")
+                call her_head("(...to grope me...)","body_188")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's ass..."
                 ">And continue sliding your hands up and down her inner tighs..."
-                her_[18] "................"
+                call her_head("................","body_188")
                 label connection_of_rapes_02:
                 menu:
                     "-Slide your hands under her panties-":
                         ">You slowly slide one of your hands under the fabric of the girl's panties..."
-                        her_[17]"[genie_name]... What are you...?"
+                        call her_head("[genie_name]... What are you...?","body_204")
                         if whoring <= 13:
                             m "It's alright, just think about those 15 points your house is about to receive..."
                         else:
                             m "It's alright, just try to relax and enjoy yourself"
-                        her_[17] "As you say..."
+                        call her_head("As you say...","body_204")
                         menu:
                             "-Prod her pussy with one of your fingers-":
                                 show screen blkfade
                                 with d3
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
-                                her_[18] "[genie_name]?" 
+                                call her_head("[genie_name]?","body_188") 
                                 menu:
                                     "-Force your finger into her pussy!-":
                                         ">You force one of your fingers into her little pussy..."
@@ -1871,12 +1887,12 @@ label new_request_05:
                                 show screen blkfade
                                 with d3
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
-                                her_[18] "[genie_name]? What are planning on doing?"
+                                call her_head("[genie_name]? What are planning on doing?","body_188")
                                 menu:
                                     "-Force your thumb into her butt-hole-":
                                         ">You force one of your thumbs into her little butt-hole..."
                                         with hpunch
-                                        her_[36] "ah... your finger is up my..."
+                                        call her_head("ah... your finger is up my...","body_138")
                                         ">It's very tight and warm inside..."
                                         jump screams_of_pleasure
                                     "-Let the girl go...-":
@@ -1886,7 +1902,7 @@ label new_request_05:
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                her_[4] "As you say, [genie_name]..."
+                call her_head("As you say, [genie_name]...","body_203")
                 hide screen hermione_walk_01
                 hide screen genie
                 show screen ctc
@@ -1895,72 +1911,58 @@ label new_request_05:
                 hide screen blkfade
                 with d5
                 pause
-                her_[1] "[genie_name], please hurry up, before someone discovers us like this..."
+                call her_head("[genie_name], please hurry up, before someone discovers us like this...","body_200")
                 m "What's the problem, [hermione_name]?"
                 m "You know you are doing this for your house."
-                her_[4] "I do know."
-                her_[4] "But not everyone would see it that way..."
-                her_[4] "So let us be done with this as quick as possible..."
-                her_[5] "Please..."
+                call her_head("I do know.","body_203")
+                call her_head("But not everyone would see it that way...","body_203")
+                call her_head("So let us be done with this as quick as possible...","body_203")
+                call her_head("Please...","body_204")
                 m "Well, if you insist..."
                 show screen groping_01
                 with d7
-                her_[7] "!!!"
+                call her_head("!!!","body_206")
                 m "What is it?"
-                her_[5] "nothing, [genie_name]. Your hands are cold, that's all..."
+                call her_head("nothing, [genie_name]. Your hands are cold, that's all...","body_204")
                 show screen bld1 
                 with d3
                 show screen blktone8
                 with d3
                 ">You run your hands up and down Hermione's legs..."
-                her_[4] "........................."
+                call her_head(".........................","body_203")
                 ">And give her Ass a good squeeze..."
-                her_[19] "................."
+                call her_head(".................","body_208b")
                 m "Don't look away, girl. I want you to look into my eyes."
-                her_[19] "I would rather not, [genie_name]..."
+                call her_head("I would rather not, [genie_name]...","body_208b")
                 menu:
                     m "..."
                     "\"Fine. Just keep on standing still then.\"":
-                        her_[15] "Thank you [genie_name]..."
+                        call her_head("Thank you [genie_name]...","body_208b")
                         ">You massage her ass-cheeks lightly..."
-                        her_[15] "...................."
+                        call her_head("....................","body_208b")
                         ">And keep enjoying the sensation of her butt under your hands..."
-                        her_[19] "....................."
+                        call her_head(".....................","body_208b")
                         ">Then You give Hermione's butt one last squeeze."
-                        her_[19] "....................."
+                        call her_head(".....................","body_208b")
                     "\"Open your eyes, or you'll lose the points!\"":
                         $ mad += 20
-                        her_[19] "Tsk! {size=-5}(You perverted old--{/size}"
+                        call her_head("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
                         m "Did you say something, [hermione_name]?"
-                        her_[8] "It's nothing, [genie_name]."
+                        call her_head("It's nothing, [genie_name].","body_05")
                         ">You massage her ass-cheeks lightly..."
                         ">Hermione maintains eye contact as she's been told..."
-                        her_[8] "...................."
-                        her_[4] "..............................."
+                        call her_head("....................","body_05")
+                        call her_head("...............................","body_203")
                         m "What did I tell you about looking away?"
-                        her_[19] "Yes, I remember..."
-                        her_[8] "................................."
-                        her_[25] "..................................."
-                        her_[25] ".................................................."
+                        call her_head("Yes, I remember...","body_208b")
+                        call her_head(".................................","body_05")
+                        call her_head("...................................","body_203")
+                        call her_head("..................................................","body_203")
                         ">You keep enjoying the sensation of her soft buttocks under your fingertips..."
-                        her_[8] "....................."
+                        call her_head(".....................","body_05")
                         jump connection_of_rapes_02  
         
-        
-        
-        
-        
-        
-        
-  
-  
-  
-  
-  
-  
-  
-  
-    
+
         
     label ending_of_screams_of_pleasure:
     if whoring <= 5:
@@ -2026,11 +2028,12 @@ label new_request_05:
     
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         show screen hermione_01_f #Hermione stands still.
-        her_[12] "..........................."
+        call her_head("...........................","body_199")
         hide screen hermione_01_f #Hermione stands still.
     $ stockings = temp_stockings 
     $ custom_outfit = temp_outfit
     $ panties = True
+        
     jump end_hermione_personal_request
         
 ###################REQUEST_08 (Level 03) (Show me tits). #####################################################################################################################
@@ -2049,6 +2052,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
+            
+    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
     
     if whoring <=5:
         jump too_much
@@ -2158,9 +2164,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         show screen bld1
         with d3
         m "Hm..."
-        her_[12] "{size=-5}(My breasts are completely exposed...){/size}"
+        call her_head("{size=-5}(My breasts are completely exposed...){/size}","body_199")
         m "Come closer [hermione_name], let me take a better look..."
-        her_[4] "............"
+        call her_head("............","body_203")
         
         hide screen bld1
         with d3
@@ -2181,9 +2187,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         pause
         show screen bld1
         with d3
-        her_[1] "............"
+        call her_head("............","body_200")
         m "Very good..."
-        her_[4] "....."
+        call her_head(".....","body_203")
         
         $ badges = False
         $ lift_shirt = True
@@ -2203,10 +2209,10 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     else:
         if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
             m "[hermione_name]?"
-            her_[2] "Yes, [genie_name]?"
+            call her_head("Yes, [genie_name]?","body_12")
             m "I need to see your tits."
-            her_[4] "............"
-            her_[4] "Do you promise not to touch, [genie_name]?"
+            call her_head("............","body_203")
+            call her_head("Do you promise not to touch, [genie_name]?","body_203")
             m "Of course."
             hide screen blktone
             with d3
@@ -2267,9 +2273,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         elif whoring >= 9: # LEVEL 04 and higher# <=================================================================================== SECOND EVENT and THIRD EVENT. (HERMIONE IS INDIFFERENT) 
             m "I need to see your tits, [hermione_name]."
             if whoring >= 17:
-                her_[16] "Of course [genie_name]?"
+                call her_head("Of course [genie_name]","body_213")
             else:
-                her_[15] "Are you only going to watch, [genie_name]?"
+                call her_head("Are you only going to watch, [genie_name]?","body_208b")
                 m "Of course..."
             hide screen blktone
             with d3
@@ -2331,7 +2337,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                her_[7] "[genie_name], what are you doing?"
+                call her_head("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2346,15 +2352,15 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 m "Relax, [hermione_name]. Just stand still!"
                 m "Oh... Those are some nice titties you've got..."
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                her_[13] "No, [genie_name], please! You mustn't do this..."
+                call her_head("No, [genie_name], please! You mustn't do this...","body_132")
                 m "This won't take long, just stand still."
-                her_[24] "[genie_name], I didn't agree to this!"
+                call her_head("[genie_name], I didn't agree to this!","body_187")
                 with hpunch
-                her_[23] "You must unhand me now!!!"
+                call her_head("You must unhand me now!!!","body_218")
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you and covers up hastily."
-                her_[19] "I think I'd better go..."
+                call her_head("I think I'd better go...","body_208b")
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
                 hide screen groping_naked_tits
@@ -2366,12 +2372,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 show screen bld1
                 m "Go ahead, [hermione_name]. You are not getting paid if you do..."
-                her_[19] "But I showed you my..."
-                her_[24] "And you touched me..."
-                her_[23] "And I am getting nothing?"
+                call her_head("But I showed you my...","body_208b")
+                call her_head("And you touched me...","body_187")
+                call her_head("And I am getting nothing?","body_218")
                 m "You are dismissed, [hermione_name]..."
-                her_[19]  "Gr.................."
-                her_[19] "{size=-5}(Burn in hell, you wretched old---{/size}"
+                call her_head("Gr..................","body_208b")
+                call her_head("{size=-5}(Burn in hell, you wretched old---{/size}","body_208b")
                 $ mad += 22
                 call music_block
                 jump could_not_flirt
@@ -2382,7 +2388,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                her_[7] "[genie_name], what are you doing?"
+                call her_head("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2394,21 +2400,21 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 m "Relax, [hermione_name]. Just stand still!"
-                her_[4] "I didn't agree to this, [genie_name]..."
-                her_[4] "I don't think you should..."
+                call her_head("I didn't agree to this, [genie_name]...","body_203")
+                call her_head("I don't think you should...","body_203")
                 m "Don't you like it...?"
-                her_[12] "What?"
+                call her_head("What?","body_199")
                 m "Don't you like it how I squeeze and pull on your breasts?"
-                her_[12] "..............."
+                call her_head("...............","body_199")
                 m "Admit it, you like it a little bit..."
-                her_[12] "{size=-5}(So strange to see my breasts in someone else's hands...){/size}"
-                her_[13] "[genie_name], I am letting you do this to me to help my house out, nothing more!"
+                call her_head("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","body_199")
+                call her_head("[genie_name], I am letting you do this to me to help my house out, nothing more!","body_132")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                her_[4] "Please, unhand me now!"
+                call her_head("Please, unhand me now!","body_203")
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
-                her_[4] "You promised not to touch, [genie_name]..."
+                call her_head("You promised not to touch, [genie_name]...","body_203")
                 m "It was hard to resist..."
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
@@ -2420,8 +2426,8 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d5
                 pause
                 show screen bld1
-                her_[1] "............."
-                her_[9] "Can I get paid now please?"
+                call her_head(".............","body_200")
+                call her_head("Can I get paid now please?","body_208")
                 m "Sure..."
                 $ mad += 9
             elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT. ENJOYS A LITTLE.
@@ -2431,7 +2437,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                her_[7] "[genie_name], what are you doing?"
+                call her_head("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2443,49 +2449,49 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 m "Relax, [hermione_name]. Just stand still!"
-                her_[12] "But..."
-                her_[13] "ah...{image=textheart}"
-                her_[12] "I didn't agree to this..."
+                call her_head("But...","body_199")
+                call her_head("ah...{image=textheart}","body_132")
+                call her_head("I didn't agree to this...","body_199")
                 m "But you like it, don't you?"
                 if whoring >= 17:
-                    her_[17] "I love it [genie_name]!{image=textheart}"
+                    call her_head("I love it [genie_name]!{image=textheart}","body_204")
                 else:
-                    her_[13] "I do not, [genie_name]!{image=textheart}"
+                    call her_head("I do not, [genie_name]!{image=textheart}","body_132")
                 show screen blktone
                 with d3
                 ">You give her tits a couple of firm squeezes..."
                 hide screen blktone
                 with d3
                 if whoring >= 17:
-                    her_[18] "[genie_name], you promised not to touch..."
+                    call her_head("[genie_name], you promised not to touch...","body_188")
                     m "I know, I know... But it's hard to resist..."
-                    her_[6] "................."
+                    call her_head(".................","body_205")
                 else:
-                    her_[15] "[genie_name], you promised not to touch..."
+                    call her_head("[genie_name], you promised not to touch...","body_208b")
                     m "I know, I know... But it's hard to resist..."
-                    her_[20] "................."
-                her_[6] "....................ah...{image=textheart}"
-                her_[6] "[genie_name], you need to stop now..."
+                    call her_head(".................","body_187")
+                call her_head("....................ah...{image=textheart}","body_205")
+                call her_head("[genie_name], you need to stop now...","body_205")
                 m "Just a bit longer..."
                 show screen blktone8
                 with d3
                 ">You keep on massaging the girl's breasts..."
                 hide screen blktone8
                 with d3
-                her_[37] "[genie_name]... please, stop this..."
+                call her_head("[genie_name]... please, stop this...","body_196")
                 m "Why? Because you like it too much?"
-                her_[18] "No it's not that..."
-                her_[17] "I mean..."
+                call her_head("No it's not that...","body_188")
+                call her_head("I mean...","body_204")
                 show screen blktone8
                 with d3
                 ">You pull the tits in opposite directions and then squish them together..."
                 hide screen blktone8
                 with d3
-                her_[38] "Ah...{image=textheart} [genie_name], I really need to go..."
+                call her_head("Ah...{image=textheart} [genie_name], I really need to go...","body_213")
                 if daytime:
-                    her_[17] "That's right... the classes are about to start..."
+                    call her_head("That's right... the classes are about to start...","body_204")
                 else:
-                    her_[17] "It is getting late..."
+                    call her_head("It is getting late...","body_204")
                 m "Well, alright..."
                 show screen blkfade
                 with d5
@@ -2493,9 +2499,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 ">Hermione covers up..."
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 if if whoring >= 17:
-                    her_[18] "Please don't think I forgot that you broke your promise, [genie_name]."
+                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
                 else:
-                    her_[25] "Please don't think I forgot that you broke your promise, [genie_name]."
+                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_203")
                 m "Right..."
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
@@ -2508,9 +2514,9 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 pause
                 show screen bld1
                 if if whoring >= 17:
-                    her_[17] "Thank you [genie_name]."
+                    call her_head("Thank you [genie_name].","body_204")
                 else:
-                    her_[35] "Can I have my payment now?"
+                    call her_head("Can I have my payment now?","body_205")
                     $ mad +=7
    
         "\"Keep promise. Admire visually.\"":
@@ -2582,7 +2588,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 hide screen bld1
                 with d3
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                her_[30] "[genie_name]?!!"
+                call her_head("[genie_name]?!!","body_119")
                 m "Just stand still, [hermione_name]..."
                 hide screen hermione_walk_01
                 hide screen genie
@@ -2597,29 +2603,29 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 ">You stare at Hermione's breasts with hunger..."
-                her_[13] "[genie_name], what are you...?"
+                call her_head("[genie_name], what are you...?","body_132")
                 ">You keep stroking your hard cock..."
-                her_[12] "[genie_name], no..."
-                her_[12] "You must... Put it away..."
+                call her_head("[genie_name], no...","body_199")
+                call her_head("You must... Put it away...","body_199")
                 m "Stop whining [hermione_name]. I'm not touching you, am I?"
-                her_[19] "But..."
-                her_[20] "But I didn't agree to this!"
-                her_[19]"I..."
-                her_[19] "I think I'd better leave now!"
+                call her_head("But...","body_208b")
+                call her_head("But I didn't agree to this!","body_187")
+                call her_head("I...","body_208b")
+                call her_head("I think I'd better leave now!","body_208b")
                 menu:
                     "\"Leave now, and you'll get no points!\"":
                         $ only_upper = False
-                        her_[21] "After {size=+5}this{/size}? Are you kidding me, [genie_name]?"
-                        her_[21] "I showed you my..."
-                        her_[25] ".........."
-                        her_[24] "I am not going to sell you a single favour anymore, [genie_name]!"
+                        call her_head("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","body_210")
+                        call her_head("I showed you my...","body_210")
+                        call her_head("..........","body_203")
+                        call her_head("I am not going to sell you a single favour anymore, [genie_name]!","body_187")
                         show screen blkfade
                         with d3
                         ">Hermione pulls away from you and covers up..."
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
-                        her_[10] "I am not setting a foot into your office ever again, [genie_name]!"
+                        call her_head("I am not setting a foot into your office ever again, [genie_name]!","body_141")
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
-                        her_[27] "You are a horrible person, [genie_name]..."
+                        call her_head("You are a horrible person, [genie_name]...","body_145")
                         $ mad += 30
                         call music_block
                         jump could_not_flirt
@@ -2631,14 +2637,14 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         $ mad += 35
                         $ only_upper = False
                         ">You start jerking your cock furiously!"
-                        her_[23] "No, [genie_name], stop!"
+                        call her_head("No, [genie_name], stop!","body_218")
                         ">You jerk it even faster!"
-                        her_[25] "[genie_name], think I will be leaving now..."
+                        call her_head("[genie_name], think I will be leaving now...","body_203")
                         g4 "No, wait, I'm almost there!"
                         show screen blkfade
                         with d3
-                        her_[10] "Ew! [genie_name]!"
-                        her_[10] "I'm leaving!"
+                        call her_head("Ew! [genie_name]!","body_141")
+                        call her_head("I'm leaving!","body_141")
                         call music_block
                         jump could_not_flirt
             elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
@@ -2648,7 +2654,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 hide screen bld1
                 with d3
-                her_[30] "[genie_name]?"
+                call her_head("[genie_name]?","body_119")
                 ">You stare at Hermione's breasts with hunger..."
                 hide screen hermione_walk_01
                 hide screen genie
@@ -2662,30 +2668,30 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 
                 show screen bld1
                 with d3
-                her_[13] "[genie_name], I didn't agree to this..."
+                call her_head("[genie_name], I didn't agree to this...","body_132")
                 m "What are you complaining about, [hermione_name]?"
                 m "I'm not even touching you..."
-                her_[13] "Yes, but you are... touching yourself, [genie_name]."
+                call her_head("Yes, but you are... touching yourself, [genie_name].","body_132")
                 ">You pick up the pace..."
                 m "just stand still, [hermione_name]."
                 m "It will be over soon."
-                her_[13] ".................."
-                her_[12] "(It's so big...)"
+                call her_head("..................","body_132")
+                call her_head("(It's so big...)","body_199")
                 m "Yes... Yes, like this..."
                 m "Yes, with your tits all naked..."
-                her_[12] ".............."
-                her_[17] "well, so be it..."
-                her_[17] "You can keep touching yourself, [genie_name]..."
-                her_[1] "But you must promise me not to..."
-                her_[5] "Not to... em..."
-                her_[4] "Not to discharge..."
-                her_[8] "Not in front of me, [genie_name]..."
+                call her_head("..............","body_199")
+                call her_head("well, so be it...","body_204")
+                call her_head("You can keep touching yourself, [genie_name]...","body_204")
+                call her_head("But you must promise me not to...","body_200")
+                call her_head("Not to... em...","body_204")
+                call her_head("Not to discharge...","body_203")
+                call her_head("Not in front of me, [genie_name]...","body_05")
                 m "Fine, whatever..."
                 m "Oh, you little slut. You nasty little slut!"
-                her_[19] "......................."
+                call her_head(".......................","body_208b")
                 ">You start to stroke your cock even harder..."
                 g4 "Yes, I know you want this! Yes!"
-                her_[19] "................"
+                call her_head("................","body_208b")
                 show screen blkfade 
                 with d3
                 ">You are about to cum..."
@@ -2693,12 +2699,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     "-Hold it as promised-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        her_[15] "..............."
+                        call her_head("...............","body_208b")
                         ">Hermione covers up..."
                     "-Just start cumming-":
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
-                        her_[21] "Proff-- ??"
+                        call her_head("Proff-- ??","body_210")
                         show screen white 
                         pause.1
                         hide screen white
@@ -2718,12 +2724,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         pause
                         show screen bld1
                         with d3
-                        her_[23] "[genie_name], no, you promised!"
+                        call her_head("[genie_name], no, you promised!","body_218")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        her_[10] "[genie_name], how could you...?"
+                        call her_head("[genie_name], how could you...?","body_141")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -2737,7 +2743,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         m "Don't worry, I will give you your house points, [hermione_name]."
                         m "You did good."
                         her "................"
-                        her "I need to clean myslef up..."
+                        her "I need to clean myself up..."
                         hide screen hermione_main
                         with d3
                         show screen blkfade
@@ -2771,7 +2777,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 hide screen bld1
                 with d3
-                her_[6] "[genie_name]?"
+                call her_head("[genie_name]?","body_205")
                 ">You stare at Hermione's breasts with hunger..."
                 hide screen hermione_walk_01
                 hide screen genie
@@ -2786,49 +2792,49 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 if whoring >= 17:
-                    her_[16] "ah..."
-                    her_[17] "It's so big..."
-                    her_[18] "You just couldn't help yourself, could you [genie_name]?"
-                    her_[16] ".................."
+                    call her_head("ah...","body_213")
+                    call her_head("It's so big...","body_204")
+                    call her_head("You just couldn't help yourself, could you [genie_name]?","body_188")
+                    call her_head("..................","body_213")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    her_[16] ".............."
-                    her_[17] "well, so be it..."
-                    her_[1] "But you must promise me not to..."
-                    her_[5] "Not to... ehm..."
-                    her_[6] "Not to cum on me, [genie_name]..."
+                    call her_head("..............","body_213")
+                    call her_head("well, so be it...","body_204")
+                    call her_head("But you must promise me not to...","body_200")
+                    call her_head("Not to... ehm...","body_204")
+                    call her_head("Not to cum on me, [genie_name]...","body_205")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    her_[16] "......................."
+                    call her_head(".......................","body_213")
                     ">You start to stroke your cock even harder..."
                     g4 "Yes, I know you want this! Yes!"
-                    her_[16] "................"
+                    call her_head("................","body_213")
                     show screen blkfade 
                     with d3
                     # SAME AS PREVIOUS EVENT^^^
                 else:
-                    her_[13] "[genie_name], actually I never agreed to this..."
+                    call her_head("[genie_name], actually I never agreed to this...","body_132")
                     m "What are you complaining about, [hermione_name]?"
                     m "I'm not even touching you..."
-                    her_[13] "Yes, but you are... touching yourself, [genie_name]."
+                    call her_head("Yes, but you are... touching yourself, [genie_name].","body_132")
                     #">You pick up the pace..."
                     m "Just stand still, bitch."
                     m "It will be over soon."
-                    her_[13] ".................."
+                    call her_head("..................","body_132")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    her_[12] ".............."
-                    her_[17] "well, so be it..."
-                    her_[1] "But you must promise me not to..."
-                    her_[5] "Not to... ehm..."
-                    her_[4] "Not to discharge..."
-                    her_[4] "Not in front of me, [genie_name]..."
+                    call her_head("..............","body_199")
+                    call her_head("well, so be it...","body_204")
+                    call her_head("But you must promise me not to...","body_200")
+                    call her_head("Not to... ehm...","body_204")
+                    call her_head("Not to discharge...","body_203")
+                    call her_head("Not in front of me, [genie_name]...","body_203")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    her_[12] "......................."
+                    call her_head(".......................","body_199")
                     ">You start to stroke your cock even harder..."
                     g4 "Yes, I know you want this! Yes!"
-                    her_[12] "................"
+                    call her_head("................","body_199")
                     show screen blkfade 
                     with d3
                     # SAME AS PREVIOUS EVENT^^^
@@ -2837,14 +2843,14 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     "-Hold it in-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        her_[12] "..............."
-                        her_[12] "Ehm... I read that that is bad for you, [genie_name]..."
+                        call her_head("...............","body_199")
+                        call her_head("Ehm... I read that that is bad for you, [genie_name]...","body_199")
                         m "Huh?"
-                        her_[13] "It is bad for your health to just hold it in like this..."
-                        her_[12] "Em..."
-                        her_[14] "If you want to you can--"
+                        call her_head("It is bad for your health to just hold it in like this...","body_132")
+                        call her_head("Em...","body_199")
+                        call her_head("If you want to you can--","body_188")
                         g4 "Argh! You whore!"
-                        her_[7] "???"
+                        call her_head("???","body_206")
                         show screen white 
                         pause.1
                         hide screen white
@@ -2864,12 +2870,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         pause
                         show screen bld1
                         with d3
-                        her_[9] "[genie_name], I didn't mean that you can release your... semen on me, [genie_name]..."
+                        call her_head("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...","body_208")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        her_[18] "Well, what's done is done I suppose..."
+                        call her_head("Well, what's done is done I suppose...","body_188")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -2906,7 +2912,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         with d3
                     "-Just start cumming-":
                         g4 "Argh! You whore!"
-                        her_[7] "???"
+                        call her_head("???","body_206")
                         show screen white 
                         pause.1
                         hide screen white
@@ -2926,13 +2932,13 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         pause
                         show screen bld1
                         with d3
-                        her_[13] "ah...{image=textheart} It's so hot...{image=textheart}"
-                        her_[9] "[genie_name], you promised..."
+                        call her_head("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
+                        call her_head("[genie_name], you promised...","body_208")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        her_[15] "Well, what's done is done I suppose..."
+                        call her_head("Well, what's done is done I suppose...","body_208b")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -3054,19 +3060,19 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     show screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)    
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
-        her_[12] "(How humiliating... What have I become...?)"
+        call her_head("(How humiliating... What have I become...?)","body_199")
     elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
-        her_[12] "........................"
+        call her_head("........................","body_199")
     elif whoring >= 17 and aftersperm: # LEVEL 05 # <=================================================================================== THIRD EVENT.
-        her_[6] "{size=-5}(That was so exhilarating...){/size}"
-        her_[37] "{size=-5}(I wonder if anyone will notice my uniform!){/size}"
-        her_[37] "{size=-5}(What will people think of me?){/size}"
-        her_[16] "................................."
+        call her_head("{size=-5}(That was so exhilarating...){/size}","body_205")
+        call her_head("{size=-5}(I wonder if anyone will notice my uniform!){/size}","body_196")
+        call her_head("{size=-5}(What will people think of me?){/size}","body_196")
+        call her_head(".................................","body_213")
     elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT.
-        her_[6] "{size=-5}(That was so humiliating...){/size}"
-        her_[24] "{size=-5}(No, Hermione, you silly girl!){/size}"
-        her_[24] "{size=-5}(We are doing this to protect the honour of our house!){/size}"
-        her_[16] "................................."
+        call her_head("{size=-5}(That was so humiliating...){/size}","body_205")
+        call her_head("{size=-5}(No, Hermione, you silly girl!){/size}","body_187")
+        call her_head("{size=-5}(We are doing this to protect the honour of our house!){/size}","body_187")
+        call her_head(".................................","body_213")
     hide screen hermione_01_f #Hermione stands still.
     with Dissolve(.3)
 
@@ -3129,8 +3135,12 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         m "[hermione_name], I need you to dance for me a little."
         call her_main("You want me to...","body_11")
         call her_main("...dance for you, [genie_name]?","body_10")
+        
         if whoring <=8:
             jump too_much
+            
+        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
+        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
         $ new_request_11_01 = True # HEARTS
         $ new_request_11_heart = 1
         m "Yes... You think you could manage that?"
@@ -3175,47 +3185,47 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         show screen clothed_dance #Hermione stands still.
         with fade
         m "Hm..."
-        her_[12] "{size=-5}(...........................................){/size}"
-        her_[4] "{size=-5}(This is silly...){/size}"
+        call her_head("{size=-5}(...........................................){/size}","body_199")
+        call her_head( "{size=-5}(This is silly...){/size}","body_203")
         ">Hermione looks embarrassed but she keeps on \"dancing\"..."
         m "..................."
-        her_[4] "{size=-5}(...........................................){/size}"
+        call her_head( "{size=-5}(...........................................){/size}","body_203")
         m "Alright, you can start undressing now."
         show screen hermione_02 #Hermione stands still.
         with hpunch
-        her_[7] "??!"
-        her_[8] "I thought all I had to do was dance?"
+        call her_head( "??!","body_206")
+        call her_head( "I thought all I had to do was dance?","body_05")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Really? That's adorable."
         m "Now start taking off those clothes."
-        her_[12] "You want me to... strip for you...?"
+        call her_head("You want me to... strip for you...?","body_199")
         m "Yes. And I expect you to do it today, [hermione_name]."
-        her_[19] "[genie_name]!"
+        call her_head("[genie_name]!","body_208b")
         m "don't you raise your voice at me, [hermione_name]!"
-        her_[7] ".....!!?"
+        call her_head(".....!!?","body_206")
         m "Nobody is forcing you to do this."
         m "I am doing you a favour!"
         m "If you don't need the points, please feel free to leave."
-        her_[8] "....................."
-        her_[12] "......................................."
+        call her_head(".....................","body_05")
+        call her_head(".......................................","body_199")
         ">Hermione is starting to dance again..."
         show screen clothed_dance #Hermione stands still.
         with fade
-        her_[15] "{size=-5}(...........................................){/size}"
+        call her_head("{size=-5}(...........................................){/size}","body_208b")
         m "What are you waiting for then?"
         m "Start with the vest."
-        her_[12] "............................................................."
+        call her_head(".............................................................","body_199")
         ">Hermione gives you a confused look and then takes off her vest..."
         show screen ctc
         pause
         show screen no_vest_dance
         with d3
         pause
-        her_[19] "{size=-5}(Am I really going to do this?){/size}"
+        call her_head("{size=-5}(Am I really going to do this?){/size}","body_208b")
         menu:
             m "......................."
             "\"Now get rid of your skirt!\"":
-                her_[19] "................................."
+                call her_head(".................................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione starts to unzip her skirt..."
@@ -3223,8 +3233,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 ">Finally the zipper is undone and she has no choice but to take the skirt off..."
                 hide screen blktone
                 with d3
-                her_[19] "{size=-5}(Here it comes then...){/size}"
-                her_[24] "{size=-5}(For the honour of the \"Gryffindor\"....){/size}"
+                call her_head("{size=-5}(Here it comes then...){/size}","body_208b")
+                call her_head("{size=-5}(For the honour of the \"Gryffindor\"....){/size}","body_187")
                 ">Hermione takes of her  skirt..."
                 show screen ctc
                 pause
@@ -3232,10 +3242,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 with d3
                 pause
                 m "..............."
-                her_[19] "{size=-5}(.........................................){/size}"
+                call her_head("{size=-5}(.........................................){/size}","body_208b")
                 ">Hermione keeps on dancing..."
                 m "Alright, your shirt is next!"
-                her_[20] "My shirt....?"
+                call her_head("My shirt....?","body_187")
                 show screen blktone
                 with d3
                 ">Hermione looks extremely embarrassed..."
@@ -3243,19 +3253,19 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 hide screen blktone
                 with d3
                 m "What's the problem, [hermione_name]?"
-                her_[19] "I'm sorry, [genie_name]..."
-                her_[19] "It's stuck..."
-                her_[19] "It won't budge..."
-                her_[28] "Why won't it budge?! *sob*"
-                her_[28] "No, I can't do this, [genie_name]! *sob*"
+                call her_head("I'm sorry, [genie_name]...","body_208b")
+                call her_head("It's stuck...","body_208b")
+                call her_head("It won't budge...","body_208b")
+                call her_head("Why won't it budge?! *sob*","body_144")
+                call her_head("No, I can't do this, [genie_name]! *sob*","body_144")
                 m "What?"
-                her_[28] "I thought I could, but..."
-                her_[28] "Stripping for you, [genie_name]?"
-                her_[28] "People look up to me in this school!"
-                her_[28] "I have a reputation...*sob*"
-                her_[29] "And if I do this..."
+                call her_head("I thought I could, but...","body_144")
+                call her_head("Stripping for you, [genie_name]?","body_144")
+                call her_head("People look up to me in this school!","body_144")
+                call her_head("I have a reputation...*sob*","body_144")
+                call her_head("And if I do this...","body_147")
             "\"Now take off your shirt!\"":
-                her_[19] "................................."
+                call her_head(".................................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione starts to unbutton her shirt..."
@@ -3263,8 +3273,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 ">Finally the last button is undone and she has no choice but to take the shirt off..."
                 hide screen blktone
                 with d3
-                her_[19] "{size=-5}(Alright, here it comes...){/size}"
-                her_[19] "{size=-5}(For the honour of the \"Gryffindor\"!){/size}"
+                call her_head("{size=-5}(Alright, here it comes...){/size}","body_208b")
+                call her_head("{size=-5}(For the honour of the \"Gryffindor\"!){/size}","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione takes off her shirt..."
@@ -3275,12 +3285,12 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 show screen no_shirt_dance
                 with d3
                 pause
-                her_[40] "{size=-5}(I actually did it...){/size}"
-                her_[40] "{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}"
-                her_[40] "{size=-5}(This is so demeaning...){/size}"
-                her_[40] "{size=-5}(But I am doing this for my house...){/size}"
+                call her_head("{size=-5}(I actually did it...){/size}","body_208b")
+                call her_head("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}","body_208b")
+                call her_head("{size=-5}(This is so demeaning...){/size}","body_208b")
+                call her_head("{size=-5}(But I am doing this for my house...){/size}","body_208b")
                 m "Not bad...."
-                her_[40] "{size=-5}(.........................................){/size}"
+                call her_head("{size=-5}(.........................................){/size}","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione is topless now..."
@@ -3289,7 +3299,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 hide screen blktone
                 with d3
                 m "Alright, your skirt is next!"
-                her_[40] "...................."
+                call her_head("....................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione looks extremely embarrassed..."
@@ -3297,17 +3307,17 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 with d3
                 ">She fumbles with the zipper of her skirt..."
                 m "What's the problem, [hermione_name]?"
-                her_[40] "I'm sorry, [genie_name]..."
-                her_[40] "It's stuck..."
-                her_[40] "It won't budge..."
-                her_[40] "Why won't it budge?! *sob*"
-                her_[41] "No, I can't do this, [genie_name]! *sob*"
+                call her_head("I'm sorry, [genie_name]...","body_208b")
+                call her_head("It's stuck...","body_208b")
+                call her_head("It won't budge...","body_208b")
+                call her_head("Why won't it budge?! *sob*","body_208b")
+                call her_head("No, I can't do this, [genie_name]! *sob*","body_144")
                 m "What?"
-                her_[41] "I thought I could, but..."
-                her_[41] "Stripping for points, [genie_name]?"
-                her_[41] "People look up to me in this school!"
-                her_[41] "I have reputation...*sob*"
-                her_[42] "And If I do this..."
+                call her_head("I thought I could, but...","body_141")
+                call her_head("Stripping for points, [genie_name]?","body_141")
+                call her_head("People look up to me in this school!","body_141")
+                call her_head("I have reputation...*sob*","body_141")
+                call her_head("And If I do this...","body_148")
                 
         show screen blkfade 
         with d3
@@ -3317,7 +3327,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         show screen hermione_02 #Hermione stands still.
         hide screen blkfade
         with d3
-        her_[31] "[genie_name], I think I'd better go now... *Sob!*"
+        call her_head("[genie_name], I think I'd better go now... *Sob!*","body_145")
         
         $ her_head_xpos = 390
         $ her_head_ypos = 340
@@ -3524,7 +3534,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         ">Hermione clutches her tits even harder and then gives them a couple of twists..."
         ">It almost looks as if she is mad at her own breasts and trying to punish them..."
         ">You find the thought strangely arousing..."
-        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
+        $ h_c_u_pic = "01_hp/08_animation_02/05_panties_01.png"
         show screen h_c_u
         call her_head("Well, I hope you enjoyed yourself, [genie_name]!","body_92")
         m "What?"
@@ -3772,8 +3782,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
                     call her_head(".............","body_16")
                     
-                    $ s_head_xpos = 330 # x = 330,
-                    $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.
+                    $ tt_xpos = 330 # x = 330,
+                    $ tt_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.
                     call sna_head("......................","snape_05")
                     
                     m ".........................."
@@ -3828,7 +3838,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     m "Severus..."
                     call sna_head("No, Albus I want to hear little miss perfect's answer.","snape_03")
                     call her_head("I just want you to have a good time, [genie_name]...","body_57")
-                    call sna_head("Oh! It's \"[genie_name]\" now, isn't I?","snape_03")
+                    call sna_head("Oh! It's \"[genie_name]\" now, is it?","snape_03")
                     call sna_head("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
                     g9 "{size=-5}( \"snape'o'doodle\, heh... that's funny.){/size}"
                     call her_head(".............","body_57")
@@ -3863,10 +3873,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call sna_head("I beg your pardon?","snape_03")
                             g4 "The girl is already stripping for you!"
                             g4 "What punishment are you talking about?"
-                            call sna_head("Tsk... How about a flogging?","snape_16") 
+                            call sna_head("Tsk... How about a flogging?","snape_16")
                             g4 "Severus!"
                             call sna_head("Alright, alright, I see your point...","snape_17")
-                            m "[hermione_name], are you going to strip or did you climb on my desk to get a better view?"
+                            m "[hermione_name], are you going to strip or are you going to climb on my desk to give us a better view?"
                             call her_head("Ehm...","body_87")
                             m "Take of your skirt, [hermione_name]!"
                             call her_head("Yes, [genie_name]...","body_55")
@@ -3914,7 +3924,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                             call sna_head("To be honest I never really had a problem with the boy himself...","snape_06")
                             sna2 "Although I did plan to make his life here miserable because of his father..."
                             call sna_head("But lately I have way more interesting projects to occupy myself with...","snape_02")
-                            call her_head("...................","body_55")  
+                            call her_head("...................","body_55")
                         "\"Severus, what about the Weasleys?\"":
                             call sna_head("What about them?","snape_09")
                             m "Are they still causing you trouble?"
@@ -4431,7 +4441,26 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     # $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
                     
                     call her_walk(400,650,2)
-                    $ h_c_u_pic = "01_hp/animation/h_walk_01.png" 
+                    
+                    $ walk_ani_letter = ""
+                    if not wear_shirts:
+                        $walk_ani_letter = "n"
+                    elif whoring <= 3:# shirt_00
+                        $walk_ani_letter = "a"
+                    elif whoring >= 4 and whoring <= 7:# shirt_01
+                        $walk_ani_letter = "d"
+                    elif whoring >= 8 and whoring <= 14:# shirt_02
+                        $walk_ani_letter = "e"
+                    elif whoring >= 15 and whoring <= 20:# shirt_03
+                        $walk_ani_letter = "f"
+                    elif whoring >= 21:
+                        if day_random <= 4:# shirt_04
+                            $walk_ani_letter = "g"
+                        if day_random >= 5:# shirt_05
+                            $walk_ani_letter = "h"
+            
+            
+                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_01.png" 
                     show screen h_c_u
                     pause.5
                    
@@ -4443,10 +4472,10 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     hide screen thought
                     pause.5
                    
-                    $ h_c_u_pic = "01_hp/animation/h_walk_03.png" 
+                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_03.png"
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
-                    $ h_c_u_pic = "01_hp/animation/h_walk_01.png" 
+                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_01.png"
                     show screen ctc
                     pause
                     m "??!"
@@ -4743,7 +4772,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ genie_cum_chibi_xpos =  -210
                                         $ genie_cum_chibi_ypos  = 10
                                         $ g_c_c_u_pic = "genie_cum_03"
-                                        $ h_c_u_pic = "01_hp/08_animation_02/08_sits_02.png"
+                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits_02.png"
                                         show screen g_c_c_u
                                         pause
                                         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
@@ -5096,7 +5125,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-
+    
     if "christmas_costume" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -5130,9 +5159,6 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-
-
-    
     if whoring <=8:
         jump too_much
         
@@ -5655,7 +5681,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-
+    
     call her_walk(400,610,2)
     
     jump end_hermione_personal_request      
@@ -5676,7 +5702,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-
+    
     if "gryffindor_cheerleader" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -5710,7 +5736,6 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-    
     $ current_payout = 45 #Used when haggling about price of th favor.
     
     hide screen hermione_main
@@ -6785,16 +6810,14 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     # show screen hermione_walk_01_f 
     # pause 2
     # hide screen hermione_walk_01_f 
-
+    
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    
     call her_walk(400,610,2)
     
     jump end_hermione_personal_request         
         
-
 ### KISS SUCK! ###
 label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     ">Hermione swiftly puts the tip of your cock on her lips, as if to give it a kiss..."
@@ -6828,7 +6851,7 @@ label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     her2 "*Gulp!-Gulp!-Gulp!*"
     hide screen h_head2          
     g4 "Argh! You little whore!"
-    g4 "Yes, you slut! Dink my cum! Drink all of it!"
+    g4 "Yes, you slut! Drink my cum! Drink all of it!"
     her2 "*Gulp!-Gulp!-Gulp!*"
     g4 "Argh... Yes!"
     ">You notice that Hermione is barely able to keep up with the amount of hot cum your cock is pumping into her mouth."
@@ -6919,8 +6942,6 @@ label kiss_suck: #Jumps here after event #03 and if WHORING >= LEVEL 07
     her2 "...Can I just get paid now, please, [genie_name]?"
     hide screen h_head2
     jump done_with_handjob #^^^ (<-That's to a smiley. That's a arrow up).
-    
-        
 ###################REQUEST_22 (Level 06) (55 pt.) (Blowjob). 
 label new_request_22: #LV.6 (Whoring = 15 - 17)
     hide screen hermione_main 
@@ -7610,6 +7631,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     her "{size=-4}(What? *Slurp...?* *Gulp...?*){/size}"                                                # SNAPE
                     menu:
                         "-Tell the truth-":
+
                             if collar == 0:
                                 $ collar = 5
                             m "Miss Granger is helping relieve me as we speak."
@@ -8032,7 +8054,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-
+    
     if "lara_croft" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -8065,7 +8087,6 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-    
     if request_29_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01")
@@ -8787,10 +8808,9 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
     
     $ request_29_points += 1
     $ aftersperm = False #Show cum stains on Hermione's uniform.
-
+    
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
-    
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
@@ -8821,7 +8841,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
             pass
         "\"(Not right now.)\"":
             jump new_personal_request
-
+    
     if "ball_dress" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -8855,7 +8875,6 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                     jump too_much
             "\"(Not right now.)\"":
                 pass
-    
     if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]..."
         call her_main("[genie_name]..?","body_17")
@@ -9581,7 +9600,6 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
 
     $ custom_outfit = temp_outfit
     $ stockings = temp_stockings
-
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
