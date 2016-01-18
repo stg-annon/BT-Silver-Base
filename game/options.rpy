@@ -372,24 +372,6 @@ init python:
 
     ## Classify files as None to exclude them from the built distributions.
 
-    build.classify('**~', None)
-    build.classify('**.bak', None)
-    build.classify('**/.**', None)
-    build.classify('**/#**', None)
-    build.classify('**/thumbs.db', None)
-
-    ## To archive files, classify them as 'archive'.
-
-    build.classify('game/**.png', 'archive')
-    build.classify('game/**.jpg', 'archive')
-    build.classify('game/**.ogg', 'archive')
-    build.classify('game/**.mp3', 'archive')
-    build.classify('game/**.wav', 'archive')
-    build.classify('game/**.rpy', 'archive')
-    build.classify('game/**.rpyc', 'archive')
-    build.classify('game/**.TTF', 'archive')
-    build.classify('game/**.aif', 'archive')
-
 
     ## Files matching documentation patterns are duplicated in a mac app
     ## build, so they appear in both the app and the zip file.

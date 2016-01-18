@@ -16,6 +16,8 @@ label __init_variables:
         $ fingering = False
     if not hasattr(renpy.store,'panties'): #important!
         $ panties = True
+    if not hasattr(renpy.store,'temp_panties'): #important!
+        $ temp_panties = True
     if not hasattr(renpy.store,'v_tutoring'): #important!
         $ v_tutoring = 0
     if not hasattr(renpy.store,'current_job'): #important!

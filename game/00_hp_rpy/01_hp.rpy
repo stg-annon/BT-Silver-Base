@@ -315,6 +315,7 @@ $ lift_shirt = False
 $ book_hold = False
 $ skirt_up = False
 $ panties = True
+$ temp_panties = True
 $ fingering = False
 $ robe = 0
 ###DEFINE LUNA

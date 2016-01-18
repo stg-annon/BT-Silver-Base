@@ -75,7 +75,7 @@ label feeding:
 
 ### PETTING ###
 label petting:
-    if not fawkes_intro_done:
+    if fawkes_intro_done:
         if day >= 20 and bird_interact >= 10: # Counts how many times you have interacted with the bird.
             stop music fadeout 3.0
             show screen blktone8
