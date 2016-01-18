@@ -1,4 +1,5 @@
 label tentacle_shop_scene:
+    show screen shop_screen
     if tent_scroll:
         "You already own this scroll"
         call screen shop_screen

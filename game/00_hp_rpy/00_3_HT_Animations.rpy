@@ -2841,80 +2841,47 @@ image jerking_off_ani: #Genie jerking off in front of top pulled up (shirt + ves
     pause.2
     repeat
     
-image jerking_off_00_ani: #Genie jerking off in front of topless Hermione.
-    "01_hp/animation/07_jerking_off_a_01.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_a_02.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_a_03.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_a_04.png"
-    pause.2
-    repeat
-    
-image jerking_off_01_ani: #Genie jerking off in front of top pulled up (vest) Hermione.
-    "01_hp/animation/07_jerking_off_b_01.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_b_02.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_b_03.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_b_04.png"
-    pause.2
-    repeat
-    
-image jerking_off_04_ani: #Genie jerking off in front of top pulled up (shirt) Hermione.
-    "01_hp/animation/07_jerking_off_c_01.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_c_02.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_c_03.png"
-    pause.2
-    "01_hp/animation/07_jerking_off_c_04.png"
-    pause.2
-    repeat
-    
 ### JERKING OFF 2.0###
-image jerking_off_ani_a: #Genie jerking off in front of top pulled up (shirt + vest) Hermione.
-    "01_hp/08_animation_02/07_jerking_off_a_01.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_a_02.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_a_03.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_a_04.png"
-    pause.2
-    repeat
-image jerking_off_ani_b: #Genie jerking off in front of top pulled up (shirt) Hermione.
-    "01_hp/08_animation_02/07_jerking_off_b_01.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_b_02.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_b_03.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_b_04.png"
-    pause.2
-    repeat
-image jerking_off_ani_c: #Genie jerking off in front of top pulled up (vest) Hermione.
-    "01_hp/08_animation_02/07_jerking_off_c_01.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_c_02.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_c_03.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_c_04.png"
-    pause.2
-    repeat
-image jerking_off_ani_d: #Genie jerking off in front of topless Hermione. 
-    "01_hp/08_animation_02/07_jerking_off_d_01.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_d_02.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_d_03.png"
-    pause.2
-    "01_hp/08_animation_02/07_jerking_off_d_04.png"
-    pause.2
-    repeat
+# image jerking_off_ani_a: #Genie jerking off in front of top pulled up (shirt + vest) Hermione.
+    # "01_hp/08_animation_02/07_jerking_off_a_01.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_a_02.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_a_03.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_a_04.png"
+    # pause.2
+    # repeat
+# image jerking_off_ani_b: #Genie jerking off in front of top pulled up (shirt) Hermione.
+    # "01_hp/08_animation_02/07_jerking_off_b_01.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_b_02.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_b_03.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_b_04.png"
+    # pause.2
+    # repeat
+# image jerking_off_ani_c: #Genie jerking off in front of top pulled up (vest) Hermione.
+    # "01_hp/08_animation_02/07_jerking_off_c_01.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_c_02.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_c_03.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_c_04.png"
+    # pause.2
+    # repeat
+# image jerking_off_ani_d: #Genie jerking off in front of topless Hermione. 
+    # "01_hp/08_animation_02/07_jerking_off_d_01.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_d_02.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_d_03.png"
+    # pause.2
+    # "01_hp/08_animation_02/07_jerking_off_d_04.png"
+    # pause.2
+    # repeat
     
 image desk_blinking: #Animation of Hermione blinking her eyes standing at genie's desk.
     "01_hp/animation/00.png"
@@ -3880,26 +3847,26 @@ image flower_appear:
     "01_hp/08_animation_02/Flower4.png"
     pause.8
 
-image vanish_effect_bouquet:
-    "01_hp/08_animation_02/BouquetPaf.png"
-    pause.1
-    "01_hp/08_animation_02/PafAndSmoke.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmoke.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmokeTrans1.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmokeTrans2.png"
-    pause.1
+# image vanish_effect_bouquet:
+    # "01_hp/08_animation_02/BouquetPaf.png"
+    # pause.1
+    # "01_hp/08_animation_02/PafAndSmoke.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmoke.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmokeTrans1.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmokeTrans2.png"
+    # pause.1
 
-image vanish_effect_flower:
-    "01_hp/08_animation_02/FlowerPaf.png"
-    pause.1
-    "01_hp/08_animation_02/PafAndSmoke.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmoke.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmokeTrans1.png"
-    pause.1
-    "01_hp/08_animation_02/NoPafSmokeTrans2.png"
-    pause.1
+# image vanish_effect_flower:
+    # "01_hp/08_animation_02/FlowerPaf.png"
+    # pause.1
+    # "01_hp/08_animation_02/PafAndSmoke.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmoke.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmokeTrans1.png"
+    # pause.1
+    # "01_hp/08_animation_02/NoPafSmokeTrans2.png"
+    # pause.1

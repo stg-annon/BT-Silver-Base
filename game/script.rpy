@@ -513,155 +513,155 @@ image heal:
 ############################################
 
 image emo01:
-    "emotions/ex01.png"
+    "01_hp/06_emo/ex01.png"
     pause.1
-    "emotions/ex02.png"
+    "01_hp/06_emo/ex02.png"
     pause.1
-    "emotions/ex03.png"
+    "01_hp/06_emo/ex03.png"
     pause.1
-    "emotions/ex04.png"
+    "01_hp/06_emo/ex04.png"
     pause 2
-    "emotions/ex01.png"
+    "01_hp/06_emo/ex01.png"
     pause.1
-    "emotions/ex00.png"
+    "01_hp/06_emo/ex00.png"
 
 image emo02:
-    "emotions/exl01.png"
+    "01_hp/06_emo/exl01.png"
     pause.05
-    "emotions/exl02.png"
+    "01_hp/06_emo/exl02.png"
     pause.05
-    "emotions/exl03.png"
+    "01_hp/06_emo/exl03.png"
     pause.05
-    "emotions/exl04.png"
+    "01_hp/06_emo/exl04.png"
     pause.05
-    "emotions/exl05.png"
+    "01_hp/06_emo/exl05.png"
     pause.05
-    "emotions/exl06.png"
+    "01_hp/06_emo/exl06.png"
 
 image emoq:
-    "emotions/q1.png"
+    "01_hp/06_emo/q1.png"
     pause.05
-    "emotions/q2.png"
+    "01_hp/06_emo/q2.png"
     pause.05
-    "emotions/q3.png"
+    "01_hp/06_emo/q3.png"
     pause.05
-    "emotions/q4.png"
+    "01_hp/06_emo/q4.png"
     pause.05
-    "emotions/q1.png"
+    "01_hp/06_emo/q1.png"
     pause.05
-    "emotions/q2.png"
+    "01_hp/06_emo/q2.png"
     pause.05
-    "emotions/q3.png"
+    "01_hp/06_emo/q3.png"
     pause.05
-    "emotions/q4.png"
+    "01_hp/06_emo/q4.png"
 
 image emom:
-    "emotions/emo00.png"
+    "01_hp/06_emo/emo00.png"
     pause.08
-    "emotions/emo01.png"
+    "01_hp/06_emo/emo01.png"
 
 image excl:
-    "emotions/excl01.png"
+    "01_hp/06_emo/excl01.png"
     pause.08
-    "emotions/excl02.png"
+    "01_hp/06_emo/excl02.png"
     pause.08
-    "emotions/excl03.png"
+    "01_hp/06_emo/excl03.png"
     pause.08
-    "emotions/excl04.png"
+    "01_hp/06_emo/excl04.png"
     pause.08
 
 image qu:
-    "emotions/que1.png"
+    "01_hp/06_emo/que1.png"
     pause.08
-    "emotions/que2.png"
+    "01_hp/06_emo/que2.png"
     pause.08
-    "emotions/que3.png"
+    "01_hp/06_emo/que3.png"
     pause.08
-    "emotions/que4.png"
+    "01_hp/06_emo/que4.png"
     pause.08
-    "emotions/que5.png"
+    "01_hp/06_emo/que5.png"
     pause.08
-    "emotions/que6.png"
+    "01_hp/06_emo/que6.png"
 
 image an:
-    "emotions/an1.png"
+    "01_hp/06_emo/an1.png"
     pause.2
-    "emotions/an2.png"
+    "01_hp/06_emo/an2.png"
     pause.2
-    "emotions/an3.png"
+    "01_hp/06_emo/an3.png"
     pause.2
-    "emotions/an2.png"
+    "01_hp/06_emo/an2.png"
     pause.2
     repeat
 
 image sal:
-    "emotions/s1.png"
+    "01_hp/06_emo/s1.png"
     pause.08
-    "emotions/s2.png"
+    "01_hp/06_emo/s2.png"
     pause.2
-    "emotions/s3.png"
+    "01_hp/06_emo/s3.png"
     pause.08
-    "emotions/s4.png"
+    "01_hp/06_emo/s4.png"
     pause.2
-    "emotions/s5.png"
+    "01_hp/06_emo/s5.png"
     pause.08
-    "emotions/s6.png"
+    "01_hp/06_emo/s6.png"
     pause 1
-    "emotions/00.png"
+    "01_hp/06_emo/00.png"
     pause.08
     repeat
 
 image th:
-    "emotions/t1.png"
+    "01_hp/06_emo/t1.png"
     pause.2
-    "emotions/t2.png"
+    "01_hp/06_emo/t2.png"
     pause.2
-    "emotions/t3.png"
+    "01_hp/06_emo/t3.png"
     pause.2
-    "emotions/t4.png"
+    "01_hp/06_emo/t4.png"
     pause.2
     repeat
 
 image emo7:
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.2
-    "emotions/emotion01.png"
+    "01_hp/06_emo/emotion01.png"
     pause.2
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.08
-    "emotions/emotion01.png"
+    "01_hp/06_emo/emotion01.png"
     pause.08
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.08
-    "emotions/emotion01.png"
+    "01_hp/06_emo/emotion01.png"
     pause.08
 
 image emo8:
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.2
-    "emotions/emotion03.png"
+    "01_hp/06_emo/emotion03.png"
     pause.2
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.08
-    "emotions/emotion03.png"
+    "01_hp/06_emo/emotion03.png"
     pause.08
-    "emotions/emotion00.png"
+    "01_hp/06_emo/emotion00.png"
     pause.08
-    "emotions/emotion03.png"
+    "01_hp/06_emo/emotion03.png"
     pause.08
 
 image sur:
-    "emotions/sur1.png"
+    "01_hp/06_emo/sur1.png"
     pause.08
-    "emotions/sur2.png"
+    "01_hp/06_emo/sur2.png"
     pause.08
-    "emotions/sur3.png"
+    "01_hp/06_emo/sur3.png"
     pause.08
-    "emotions/sur4.png"
+    "01_hp/06_emo/sur4.png"
     pause.08
-    "emotions/sur5.png"
+    "01_hp/06_emo/sur5.png"
     pause.08
-    "emotions/sur6.png"
+    "01_hp/06_emo/sur6.png"
     pause.08
 
 
@@ -713,16 +713,6 @@ image blk50 = im.Alpha("interface/blackfade.png", 0.5)
 image ctc3 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.97, ypos=0.929, xanchor=1.0, yanchor=1.0)
 image ctc4 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2, xpos=0.99, ypos=0.995, xanchor=0.8, yanchor=1.0)
 image ctc7 = Animation("interface/ctc00.png", 0.2, "interface/ctc01.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc03.png", 0.2, "interface/ctc04.png", 0.5, "interface/ctc03.png", 0.2, "interface/ctc02.png", 0.2, "interface/ctc01.png", 0.2)
-    
-image bg meadow = "meadow.jpg"
-image bg magic = "meadowmagic.jpg"
-image title2 = "title2.jpg"
-image csscroll = "screens/screen01.png"
-
-
-image bg lp = "lpotion/lpfinal00.jpg"
-image tension = "quest01/fight.png"
-
 
 ## TRANSFORMATION
 
@@ -826,24 +816,6 @@ image splash2:
     pause 2
     "logo/logo06.jpg"
 
-
-
-label splashscreen:
-    $ renpy.pause(0)
-    scene black
-    with Pause(0.9)
-    $ renpy.play('sounds/start.mp3')
-    show image "logo/logo07.jpg"
-    pause 1
-    with dissolve
-    with Pause(2.0)
-
-    scene black
-    with dissolve
-    with Pause(1.0)
-
-    return
-
 label splashscreen:
     $ renpy.pause(0)
     scene black
@@ -859,22 +831,6 @@ label splashscreen:
     with Pause(1.0)
 
     return
-
-#label splashscreen:
-#    $ renpy.pause(0)
-#    scene black
-#    with Pause(0.5)
-#    $ renpy.play('sounds/logo2.mp3')
-#    show splash2
-#    pause 2
-#    with dissolve
-#    with Pause(2.0)
-
-#    scene black
-#    with dissolve
-#    with Pause(1.0)
-
-#    return
 
 label splashscreen2:
     $ renpy.pause(0)

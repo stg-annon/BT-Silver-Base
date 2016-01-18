@@ -103,7 +103,7 @@ screen map_screen:
         hotspot (273, 459, 75, 8) clicked Jump("map_dorms") #dorms
         #hotspot (656, 232, 106, 33) clicked Jump("inn_menu") #inn
         #hotspot (376, 84, 111, 57) clicked Jump("map_pitch") #pitch
-        hotspot (307, 240, 59, 37) clicked Jump("shop_menu") #shop
+        hotspot (307, 240, 59, 37) clicked Jump("shop_intro") #shop
         hotspot (33, 535, 39, 39) clicked Jump("day_main_menu") #return
         
 screen room_back:

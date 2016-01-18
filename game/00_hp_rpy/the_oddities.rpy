@@ -138,55 +138,159 @@ label __init_variables:
     $ scroll_name_.append("New clothes 02")
     $ scroll_name_.append("The gang")
     return
-
-label shop_fake:
-    $ show_clothes_store = True
-    $ shop_found = True
-    sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
-    sna_[1] "What if someone sees you?"
-    m "You expected me to stay cramped office for months? Besides, I look like Dumbdoor, no one will be able to tell the difference"
-    sna_[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
-    sna_[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
-    m "Fine, fine, I'll go back to my office. Let's talk a bit first though, being stuck in that office is making me go crazy."
-    sna_[1] "Alright, how's Miss Granger going?"
-    m "She's coming along. So what are you doing here? This looks like some sort of shop."
-    sna_[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
-    m "Why? Surely people can get their own ingredients?"
-    sna_[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
-    sna_[1] "If left unregulated students could brew some very dangerous concoctions."
-    m "Well I guess that makes sense. Is that all you sell?"
-    sna_[1] "I also brew potions and sell scrolls and textbooks to potions."
-    m "What sort of potions do you make?"
-    sna_[1] "Most of the time I just make the bases to potions."
-    m "Bases?"
-    sna_[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
-    sna_[1] "It helps preserve the potion as well as allows for the user to change the effect."
-    m "Well that's all pretty dull. Do you sell anything \"Interesting\"?"
-    sna_[1] "Interesting?"
-    m "You know, sex potions, stuff that would help us corrupt Miss Granger."
-    sna_[1] "Ah, well I know a few potions that you might like."
-    m "Such as?"
-    sna_[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
-    m "Hmmmm, you don't have anything better?"
-    sna_[1] "Not at the moment. I'll have to order the ingredients in."
-    m "How long will that take."
-    sna_[1] "It depends on the items. Some of them are very hard to come by."
-    sna_[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
-    m "Fair enough. Before I buy though are there any other stores on campus?"
-    sna_[1] "Only a tailor, why?"
-    m "Just making sure that there isn't a cheaper alternative."
-    sna_[1] "There isn't, now are you going to buy anything or not?"
+    
+label shop_intro:
     show screen shop_screen
-    call screen shop_screen 
-
+    if shop_found:
+        sna_[1] "Hey Genie, what would you like to buy?"
+        jump shop_menu
+    else:
+        $ show_clothes_store = True
+        $ shop_found = True
+        sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
+        sna_[1] "What if someone sees you?"
+        m "You expected me to stay cramped office for months? Besides, I look like Dumbdoor, no one will be able to tell the difference"
+        sna_[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
+        sna_[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
+        m "Fine, fine, I'll go back to my office. Let's talk a bit first though, being stuck in that office is making me go crazy."
+        sna_[1] "Alright, how's Miss Granger going?"
+        m "She's coming along. So what are you doing here? This looks like some sort of shop."
+        sna_[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
+        m "Why? Surely people can get their own ingredients?"
+        sna_[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
+        sna_[1] "If left unregulated students could brew some very dangerous concoctions."
+        m "Well I guess that makes sense. Is that all you sell?"
+        sna_[1] "I also brew potions and sell scrolls and textbooks to potions."
+        m "What sort of potions do you make?"
+        sna_[1] "Most of the time I just make the bases to potions."
+        m "Bases?"
+        sna_[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
+        sna_[1] "It helps preserve the potion as well as allows for the user to change the effect."
+        m "Well that's all pretty dull. Do you sell anything \"Interesting\"?"
+        sna_[1] "Interesting?"
+        m "You know, sex potions, stuff that would help us corrupt Miss Granger."
+        sna_[1] "Ah, well I know a few potions that you might like."
+        m "Such as?"
+        sna_[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
+        m "Hmmmm, you don't have anything better?"
+        sna_[1] "Not at the moment. I'll have to order the ingredients in."
+        m "How long will that take."
+        sna_[1] "It depends on the items. Some of them are very hard to come by."
+        sna_[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
+        m "Fair enough. Before I buy though are there any other stores on campus?"
+        sna_[1] "Only a tailor, why?"
+        m "Just making sure that there isn't a cheaper alternative."
+        sna_[1] "There isn't, now are you going to buy anything or not?"
+        jump shop_menu
+    
 label shop_menu:
-    if not shop_found:
-        jump shop_fake
     show screen shop_screen
-    sna_[1] "Hey Genie, what would you like to buy?"
     call screen shop_screen
-
+    
+label sscrolls:
+    show screen shop_screen
+    menu:
+        "-S.01: [scroll_name_[1]]-" if not sscroll_[1]:
+            call scroll_block(1,10)
+            jump sscrolls
+        "-S.02: [scroll_name_[2]]-" if not sscroll_[2]:
+            call scroll_block(2,30)
+            jump sscrolls
+        "-S.03: [scroll_name_[3]]-" if not sscroll_[3]:
+            call scroll_block(3,40)
+            jump sscrolls
+        "-S.04: [scroll_name_[4]]-" if not sscroll_[4]:
+            call scroll_block(4,70)
+            jump sscrolls
+        "-S.05: [scroll_name_[5]]-" if not sscroll_[5]:
+            call scroll_block(5,80)
+            jump sscrolls
+        "-S.06: [scroll_name_[6]]-" if not sscroll_[6]:
+            call scroll_block(6,80)
+            jump sscrolls
+        "-S.07: [scroll_name_[7]]-" if not sscroll_[7]:
+            call scroll_block(7,90)
+            jump sscrolls
+        "-S.08: [scroll_name_[8]]-" if not sscroll_[8]:
+            call scroll_block(8,50)
+            jump sscrolls
+        "-S.09: [scroll_name_[9]]-" if not sscroll_[9]:
+            call scroll_block(9,90)
+            jump sscrolls
+        "-S.10: [scroll_name_[10]]-" if not sscroll_[10]:
+            call scroll_block(10,50)
+            jump sscrolls
+        "-S.11: [scroll_name_[11]]-" if not sscroll_[11]:
+            call scroll_block(11,110)
+            jump sscrolls
+        "-S.12: [scroll_name_[12]]-" if not sscroll_[12]:
+            call scroll_block(12,110)
+            jump sscrolls
+        "-S.13: [scroll_name_[13]]-" if not sscroll_[13]:
+            call scroll_block(13,100)
+            jump sscrolls
+        "-S.14: [scroll_name_[14]]-" if not sscroll_[14]:
+            call scroll_block(14,80)
+            jump sscrolls
+        "-S.15: [scroll_name_[15]]-" if not sscroll_[15]:
+            call scroll_block(15,40)
+            jump sscrolls
+        "-Never mind-":
+            jump shop_menu
+    
+label sscrolls2:
+    show screen shop_screen
+    menu:
+        "-S.16: [scroll_name_[16]]-" if not sscroll_[16]:
+            call scroll_block(16,30)
+            jump sscrolls
+        "-S.17: [scroll_name_[17]]-" if not sscroll_[17]:
+            call scroll_block(17,30)
+            jump sscrolls
+        "-S.18: [scroll_name_[18]]-" if not sscroll_[18]:
+            call scroll_block(18,90)
+            jump sscrolls
+        "-S.19: [scroll_name_[19]]-" if not sscroll_[19]:
+            call scroll_block(19,50)
+            jump sscrolls
+        "-S.20: [scroll_name_[20]]-" if not sscroll_[20]:
+            call scroll_block(20,70)
+            jump sscrolls
+        "-S.21: [scroll_name_[21]]-" if not sscroll_[21]:
+            call scroll_block(21,90)
+            jump sscrolls
+        "-S.22: [scroll_name_[22]]-" if not sscroll_[22]:
+            call scroll_block(22,90)
+            jump sscrolls
+        "-S.23: [scroll_name_[23]]-" if not sscroll_[23]:
+            call scroll_block(23,150)
+            jump sscrolls
+        "-S.24: [scroll_name_[24]]-" if not sscroll_[24]:
+            call scroll_block(24,150)
+            jump sscrolls
+        "-S.25: [scroll_name_[25]]-" if not sscroll_[25]:
+            call scroll_block(25,100)
+            jump sscrolls
+        "-S.26: [scroll_name_[26]]-" if not sscroll_[26]:
+            call scroll_block(26,80)
+            jump sscrolls
+        "-S.27: [scroll_name_[27]]-" if not sscroll_[27]:
+            call scroll_block(27,200)
+            jump sscrolls2
+        "-S.28: [scroll_name_[28]]-" if not sscroll_[28]:
+            call scroll_block(28,150)
+            jump sscrolls2
+        "-S.29: [scroll_name_[29]]-" if not sscroll_[29]:
+            call scroll_block(29,200)
+            jump sscrolls2
+        "-S.30: [scroll_name_[30]]-" if not sscroll_[30]:
+            call scroll_block(30,70)
+            jump sscrolls2
+        "-Never mind-":
+            jump shop_menu
+    
 label shop_books:
+    show screen shop_screen
     sna_[1] "What type of book would you like?"
     label shop_book_menu:
     menu:
@@ -257,8 +361,70 @@ label shop_books:
                     jump shop_book_menu
         "-Never mind-":
             call screen shop_screen
-
+    
+label gifts_menu:
+    show screen shop_screen
+    if order_placed:
+        call cust_excuse("only one order can be placed at a time")
+        jump shop_menu
+    menu:
+        #dahr "Gifts that you can gift to that special someone."
+        
+        "-A lollipop candy- (20 g.)":
+            call gift_block(1,20)
+        "-Chocolate- (40 g.)":
+            call gift_block(2,40)
+        "-Stuffed Owl- (35 g.)":
+            call gift_block(3,35)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-Butterbeer- (50 g.)" if whoring >= 3:
+            call gift_block(4,50)
+        
+        "-Educational magazines- (30 g.)":
+            call gift_block(5,30)
+        "-Girly magazines- (45 g.)":
+            call gift_block(6,45)
+        "-Adult magazines- (60 g.)":
+            call gift_block(7,60)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-Porn magazines- (80 g.)" if whoring >= 3:
+            call gift_block(8,80)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-A pack of condoms- (50 g.)" if whoring >= 3:
+            call gift_block(11,50)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-Vibrator- (55 g.)" if whoring >= 3:
+            call gift_block(12,55)
+        
+        "-A jar of anal lubricant- (60 g.)":
+            call gift_block(13,60)
+        "-Ball gag and cuffs- (70 g.)":
+            call gift_block(14,70)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-Anal plugs- (85 g.)" if whoring >= 3:
+            call gift_block(15,85)
+        
+        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
+            call out # Message "Item us out of stock".
+        "-Thestral Strap-on- (200 g.)" if whoring >= 3:
+            call gift_block(16,200)
+        "-Never mind-":
+            hide screen gift
+            with d3
+            jump shop_menu
+    
 label shop_potion_menu:
+    show screen shop_screen
     menu:
         "-Questions aquireing items-":
             menu:
@@ -344,300 +510,133 @@ label shop_potion_menu:
     
     
     
-label the_oddities:
+    
+    
+label app:
     menu:
-        dahr "Welcome to the \"Muggle oddities catalog\". Your taste is never too odd for us!"
-        
-         
-        "-Gifts-":
-            label gifts_menu:
+        "-\"S.P.E.W.\" badge (100 gold)-" if not badge_01 == 7:
+            $ the_gift = "01_hp/18_store/29.png" # SPEW BADGE.
+            show screen gift
+            with d3
+            dahr "A \"S.P.E.W.\" badge. Pretend that you care..."
             menu:
-                #dahr "Gifts that you can gift to that special someone."
-                
-                "-A lollipop candy- (20 g.)":
-                    call gift_block(1,20)
-                "-Chocolate- (40 g.)":
-                    call gift_block(2,40)
-                "-Stuffed Owl- (35 g.)":
-                    call gift_block(3,35)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-Butterbeer- (50 g.)" if whoring >= 3:
-                    call gift_block(4,50)
-                
-                "-Educational magazines- (30 g.)":
-                    call gift_block(5,30)
-                "-Girly magazines- (45 g.)":
-                    call gift_block(6,45)
-                "-Adult magazines- (60 g.)":
-                    call gift_block(7,60)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-Porn magazines- (80 g.)" if whoring >= 3:
-                    call gift_block(8,80)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-A pack of condoms- (50 g.)" if whoring >= 3:
-                    call gift_block(11,50)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-Vibrator- (55 g.)" if whoring >= 3:
-                    call gift_block(12,55)
-                
-                "-A jar of anal lubricant- (60 g.)":
-                    call gift_block(13,60)
-                "-Ball gag and cuffs- (70 g.)":
-                    call gift_block(14,70)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-Anal plugs- (85 g.)" if whoring >= 3:
-                    call gift_block(15,85)
-                
-                "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-                    call out # Message "Item us out of stock".
-                "-Thestral Strap-on- (200 g.)" if whoring >= 3:
-                    call gift_block(16,200)
+                "-Buy the item (100 gold)-":
+                    if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
+                        call do_have_book # "I already own this one."
+                        jump app
+                    else:
+                        if gold >= 100:
+                            $ gold -=100
+                            $ order_placed = True
+                            $ bought_badge_01 = True #Affects 15_mail.rpy
+                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                            call screen shop_screen
+                        else:
+                            call no_gold #Massage: m "I don't have enough gold".
+                            hide screen gift
+                            with d3
+                            jump app
                 "-Never mind-":
                     hide screen gift
                     with d3
-                    jump shop_menu
-        
-        "-Apparel-":
-            label app:
-                pass
-            menu:
-                "-\"S.P.E.W.\" badge (100 gold)-" if not badge_01 == 7:
-                    $ the_gift = "01_hp/18_store/29.png" # SPEW BADGE.
-                    show screen gift
-                    with d3
-                    dahr "A \"S.P.E.W.\" badge. Pretend that you care..."
-                    menu:
-                        "-Buy the item (100 gold)-":
-                            if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
-                                call do_have_book # "I already own this one."
-                                jump app
-                            else:
-                                if gold >= 100:
-                                    $ gold -=100
-                                    $ order_placed = True
-                                    $ bought_badge_01 = True #Affects 15_mail.rpy
-                                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                    call screen shop_screen
-                                else:
-                                    call no_gold #Massage: m "I don't have enough gold".
-                                    hide screen gift
-                                    with d3
-                                    jump app
-                        "-Never mind-":
-                            hide screen gift
-                            with d3
-                            jump app
-                "-Glasses- (60 g.)":
-                    $ the_gift = "01_hp/18_store/glasses.png" # GLASSES
-                    show screen gift
-                    with d3
-                    call glasses_text
-                    menu:
-                        "-Buy the item (60 gold)-":
-                            if gold >= 60:
-                                $ gold -= 60
-                                $ order_placed = True
-                                $ bought_glasses = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                call screen shop_screen
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                jump app
-                        "-Never mind-":
-                            hide screen gift
-                            jump app            
-                "-Fishnet stokings (800 gold)-" if not nets == 7:
-                    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-                    show screen gift
-                    with d3
-                    call nets_text
-                    menu:
-                        "-Buy the item (800 gold)-":
-                            if nets == 7 or nets == 1: # == 7 means "gifted already"
-                                call do_have_book # "I already own this one."
-                                jump app
-                            else:
-                                if gold >= 800:
-                                    $ gold -= 800
-                                    $ order_placed = True
-                                    $ bought_nets = True #Affects 15_mail.rpy
-                                    call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                    call screen shop_screen
-                                else:
-                                    call no_gold #Massage: m "I don't have enough gold".
-                                    hide screen gift
-                                    with d3
-                                    jump app
-                        "-Never mind-":
-                            hide screen gift
-                            with d3
-                            jump app
-                "-School Miniskirt- (---)" if not bought_skirt_already and not gave_miniskirt and whoring >= 3:
-                    $ the_gift = "01_hp/18_store/07.png" # MINISKIRT
-                    show screen gift
-                    with d3
-                    dahr "School miniskirt. Improves grades drastically."
-                    menu:
-                        "-Buy the skirt- (---)":
-                            if vouchers >= 1: #Shows the amount of DAHR's vouchers in your possession.
-                                $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
-                                $ order_placed = True
-                                $ bought_miniskirt = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                call screen shop_screen
-                            else:
-                                dahr "This item is only redeemable with a \"DAHR's voucher\"."
-                                hide screen gift
-                                with d3
-                                jump app
-                        "-Never mind-":
-                            hide screen gift
-                            with d3
-                            jump app
-                "-Item Sold Out-" if bought_dress_already:
-                    "This item has been sold out."
                     jump app
-                "{color=#858585}-Item is out of stock-{/color}" if not sorry_for_hesterics: # NIGHT DRESS.
-                    call out # Message "Item us out of stock".
-                "-The Ball Dress- (1500 gold)" if sorry_for_hesterics and not bought_dress_already:
-                    $ the_gift = "01_hp/18_store/01.png" # DRESS.
-                    show screen gift
-                    with d3
-                    dahr "A nightdress for special occasions."
-                    menu:
-                        "-Buy the dress (1500 gold)-":
-                            if gold >= 1500:
-                                $ gold -=1500
-                                $ order_placed = True
-                                $ bought_ball_dress = True #Affects 15_mail.rpy
-                                call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                                call screen shop_screen
-                            else:
-                                call no_gold #Massage: m "I don't have enough gold".
-                                hide screen gift
-                                with d3
-                                jump app
-                        "-Never mind-":
+        "-Glasses- (60 g.)":
+            $ the_gift = "01_hp/18_store/glasses.png" # GLASSES
+            show screen gift
+            with d3
+            call glasses_text
+            menu:
+                "-Buy the item (60 gold)-":
+                    if gold >= 60:
+                        $ gold -= 60
+                        $ order_placed = True
+                        $ bought_glasses = True #Affects 15_mail.rpy
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                        call screen shop_screen
+                    else:
+                        call no_gold #Massage: m "I don't have enough gold".
+                        jump app
+                "-Never mind-":
+                    hide screen gift
+                    jump app            
+        "-Fishnet stokings (800 gold)-" if not nets == 7:
+            $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
+            show screen gift
+            with d3
+            call nets_text
+            menu:
+                "-Buy the item (800 gold)-":
+                    if nets == 7 or nets == 1: # == 7 means "gifted already"
+                        call do_have_book # "I already own this one."
+                        jump app
+                    else:
+                        if gold >= 800:
+                            $ gold -= 800
+                            $ order_placed = True
+                            $ bought_nets = True #Affects 15_mail.rpy
+                            call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                            call screen shop_screen
+                        else:
+                            call no_gold #Massage: m "I don't have enough gold".
                             hide screen gift
                             with d3
                             jump app
                 "-Never mind-":
-                        jump shop_menu
-                        
-        "-Sacred scrolls Volume I-":
-            label sscrolls:
+                    hide screen gift
+                    with d3
+                    jump app
+        "-School Miniskirt- (---)" if not bought_skirt_already and not gave_miniskirt and whoring >= 3:
+            $ the_gift = "01_hp/18_store/07.png" # MINISKIRT
+            show screen gift
+            with d3
+            dahr "School miniskirt. Improves grades drastically."
             menu:
-                "-S.01: [scroll_name_[1]]-" if not sscroll_[1]:
-                    call scroll_block(1,10)
-                    jump sscrolls
-                "-S.02: [scroll_name_[2]]-" if not sscroll_[2]:
-                    call scroll_block(2,30)
-                    jump sscrolls
-                "-S.03: [scroll_name_[3]]-" if not sscroll_[3]:
-                    call scroll_block(3,40)
-                    jump sscrolls
-                "-S.04: [scroll_name_[4]]-" if not sscroll_[4]:
-                    call scroll_block(4,70)
-                    jump sscrolls
-                "-S.05: [scroll_name_[5]]-" if not sscroll_[5]:
-                    call scroll_block(5,80)
-                    jump sscrolls
-                "-S.06: [scroll_name_[6]]-" if not sscroll_[6]:
-                    call scroll_block(6,80)
-                    jump sscrolls
-                "-S.07: [scroll_name_[7]]-" if not sscroll_[7]:
-                    call scroll_block(7,90)
-                    jump sscrolls
-                "-S.08: [scroll_name_[8]]-" if not sscroll_[8]:
-                    call scroll_block(8,50)
-                    jump sscrolls
-                "-S.09: [scroll_name_[9]]-" if not sscroll_[9]:
-                    call scroll_block(9,90)
-                    jump sscrolls
-                "-S.10: [scroll_name_[10]]-" if not sscroll_[10]:
-                    call scroll_block(10,50)
-                    jump sscrolls
-                "-S.11: [scroll_name_[11]]-" if not sscroll_[11]:
-                    call scroll_block(11,110)
-                    jump sscrolls
-                "-S.12: [scroll_name_[12]]-" if not sscroll_[12]:
-                    call scroll_block(12,110)
-                    jump sscrolls
-                "-S.13: [scroll_name_[13]]-" if not sscroll_[13]:
-                    call scroll_block(13,100)
-                    jump sscrolls
-                "-S.14: [scroll_name_[14]]-" if not sscroll_[14]:
-                    call scroll_block(14,80)
-                    jump sscrolls
-                "-S.15: [scroll_name_[15]]-" if not sscroll_[15]:
-                    call scroll_block(15,40)
-                    jump sscrolls
+                "-Buy the skirt- (---)":
+                    if vouchers >= 1: #Shows the amount of DAHR's vouchers in your possession.
+                        $ vouchers -= 1 #Shows the amount of DAHR's vouchers in your possession.
+                        $ order_placed = True
+                        $ bought_miniskirt = True #Affects 15_mail.rpy
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                        call screen shop_screen
+                    else:
+                        dahr "This item is only redeemable with a \"DAHR's voucher\"."
+                        hide screen gift
+                        with d3
+                        jump app
                 "-Never mind-":
-                    jump shop_menu
-                    
-        "-Sacred scrolls Volume II-":
-            label sscrolls2:
+                    hide screen gift
+                    with d3
+                    jump app
+        "-Item Sold Out-" if bought_dress_already:
+            "This item has been sold out."
+            jump app
+        "{color=#858585}-Item is out of stock-{/color}" if not sorry_for_hesterics: # NIGHT DRESS.
+            call out # Message "Item us out of stock".
+        "-The Ball Dress- (1500 gold)" if sorry_for_hesterics and not bought_dress_already:
+            $ the_gift = "01_hp/18_store/01.png" # DRESS.
+            show screen gift
+            with d3
+            dahr "A nightdress for special occasions."
             menu:
-                "-S.16: [scroll_name_[16]]-" if not sscroll_[16]:
-                    call scroll_block(16,30)
-                    jump sscrolls
-                "-S.17: [scroll_name_[17]]-" if not sscroll_[17]:
-                    call scroll_block(17,30)
-                    jump sscrolls
-                "-S.18: [scroll_name_[18]]-" if not sscroll_[18]:
-                    call scroll_block(18,90)
-                    jump sscrolls
-                "-S.19: [scroll_name_[19]]-" if not sscroll_[19]:
-                    call scroll_block(19,50)
-                    jump sscrolls
-                "-S.20: [scroll_name_[20]]-" if not sscroll_[20]:
-                    call scroll_block(20,70)
-                    jump sscrolls
-                "-S.21: [scroll_name_[21]]-" if not sscroll_[21]:
-                    call scroll_block(21,90)
-                    jump sscrolls
-                "-S.22: [scroll_name_[22]]-" if not sscroll_[22]:
-                    call scroll_block(22,90)
-                    jump sscrolls
-                "-S.23: [scroll_name_[23]]-" if not sscroll_[23]:
-                    call scroll_block(23,150)
-                    jump sscrolls
-                "-S.24: [scroll_name_[24]]-" if not sscroll_[24]:
-                    call scroll_block(24,150)
-                    jump sscrolls
-                "-S.25: [scroll_name_[25]]-" if not sscroll_[25]:
-                    call scroll_block(25,100)
-                    jump sscrolls
-                "-S.26: [scroll_name_[26]]-" if not sscroll_[26]:
-                    call scroll_block(26,80)
-                    jump sscrolls
-                "-S.27: [scroll_name_[27]]-" if not sscroll_[27]:
-                    call scroll_block(27,200)
-                    jump sscrolls2
-                "-S.28: [scroll_name_[28]]-" if not sscroll_[28]:
-                    call scroll_block(28,150)
-                    jump sscrolls2
-                "-S.29: [scroll_name_[29]]-" if not sscroll_[29]:
-                    call scroll_block(29,200)
-                    jump sscrolls2
-                "-S.30: [scroll_name_[30]]-" if not sscroll_[30]:
-                    call scroll_block(30,70)
-                    jump sscrolls2
+                "-Buy the dress (1500 gold)-":
+                    if gold >= 1500:
+                        $ gold -=1500
+                        $ order_placed = True
+                        $ bought_ball_dress = True #Affects 15_mail.rpy
+                        call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                        call screen shop_screen
+                    else:
+                        call no_gold #Massage: m "I don't have enough gold".
+                        hide screen gift
+                        with d3
+                        jump app
                 "-Never mind-":
-                    jump shop_menu
-        
+                    hide screen gift
+                    with d3
+                    jump app
         "-Never mind-":
-            call screen shop_screen
+                jump shop_menu
+    
     
 label book_block(book_id, book_cost):
     if book_id in fiction_books:
