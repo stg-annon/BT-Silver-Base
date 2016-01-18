@@ -361,76 +361,76 @@ label door:
                     "-Give her a present-" if not gifted:
                         menu:
                             "-A lollipop candy-([gift_item_inv[1]])" if gift_item_inv[1] >= 1:
-                                $ gifted = True 
-                                jump giving_candy #28_gifts.rpy
+                                $ gifted = True
+                                call give_her_gift(1)
                                 
                             "-Chocolate-([gift_item_inv[2]])" if gift_item_inv[2] >= 1:
                                 $ gifted = True 
-                                jump giving_chocolate #28_gifts.rpy
+                                call give_her_gift(2)
                             
                             "-Stuffed Owl-([gift_item_inv[3]])" if gift_item_inv[3] >= 1:
                                 $ gifted = True 
-                                jump giving_owl #28_gifts.rpy
+                                call give_her_gift(3)
                                 
                             "-Butterbeer-([gift_item_inv[4]])" if gift_item_inv[4] >= 1:
                                 $ gifted = True 
-                                jump giving_beer #28_gifts.rpy
+                                call give_her_gift(4)
                                 
                             "-Educational magazines-([gift_item_inv[5]])" if gift_item_inv[5] >= 1:
                                 $ gifted = True 
-                                jump giving_mag1 #28_gifts.rpy
+                                call give_her_gift(5)
                                 
                             "-Girly magazines-([gift_item_inv[6]])" if gift_item_inv[6] >= 1:
                                 $ gifted = True 
-                                jump giving_mag2 #28_gifts.rpy
+                                call give_her_gift(6)
                                 
                             "-Adult magazines-([gift_item_inv[7]])" if gift_item_inv[7] >= 1:
                                 $ gifted = True 
-                                jump giving_mag3 #28_gifts.rpy
+                                call give_her_gift(7)
                                 
                             "-Porn magazines-([gift_item_inv[8]])" if gift_item_inv[8] >= 1:
                                 $ gifted = True 
-                                jump giving_mag4 #28_gifts.rpy
+                                call give_her_gift(8)
                             
                             "-Viktor Krum Poster-([gift_item_inv[9]])" if gift_item_inv[9] >= 1:
                                 $ gifted = True 
-                                jump giving_krum #28_gifts.rpy
+                                call give_her_gift(9)
                             
                             "-Sexy lingerie-([gift_item_inv[10]])" if gift_item_inv[10] >= 1:
                                 $ gifted = True 
-                                jump giving_lingerie #28_gifts.rpy
+                                call give_her_gift(10)
                             
                             "-A pack of condoms-([gift_item_inv[11]])" if gift_item_inv[11] >= 1:
                                 $ gifted = True 
-                                jump giving_condoms #28_gifts.rpy
+                                call give_her_gift(11)
                                 
                             "-A jar of anal lubricant-([gift_item_inv[13]])" if gift_item_inv[13] >= 1:
                                 $ gifted = True 
-                                jump giving_lube #28_gifts.rpy
+                                call give_her_gift(13)
                             
                             "-A vibrator-([gift_item_inv[12]])" if gift_item_inv[12] >= 1:
                                 $ gifted = True 
-                                jump giving_vibrator #28_gifts.rpy
+                                call give_her_gift(12)
                             
                             "-Ball gag and cuffs -([gift_item_inv[14]])" if gift_item_inv[14] >= 1:
                                 $ gifted = True 
-                                jump giving_ballgag #28_gifts.rpy
+                                call give_her_gift(14)
                                 
                             "-Anal plugs -([gift_item_inv[15]])" if gift_item_inv[15] >= 1:
                                 $ gifted = True 
-                                jump giving_plug #28_gifts.rpy
+                                call give_her_gift(15)
                                 
                             "- A Thestral strap-on -([gift_item_inv[16]])" if gift_item_inv[16] >= 1:
                                 $ gifted = True 
-                                jump giving_strapon #28_gifts.rpy
+                                call give_her_gift(16)
                             
                             "- Lady Speed Stick-2000 -([gift_item_inv[17]])" if gift_item_inv[17] >= 1:
                                 $ gifted = True 
-                                jump giving_broom #28_gifts.rpy
+                                call give_her_gift(17)
                                 
                             "- Sex doll \"Joanne\" -([gift_item_inv[18]])" if gift_item_inv[18] >= 1:
                                 $ gifted = True 
-                                jump giving_sexdoll #28_gifts.rpy
+                                call give_her_gift(18)
                             
                             "-School miniskirt-" if have_miniskirt: # Turns TRUE when you have the skirt in your possession.
                                 $ gifted = True
