@@ -204,12 +204,12 @@ label __init_variables:
     $ emote_question = False
     $ emote_sweat = False
     $ emote_suprize = False
-    $ anger = ["body_51","body_76","body_86","body_110","body_351","body_346","body_345","body_343","body_317","body_309"]
+    $ anger = ["body_51","body_76","body_86","body_110","body_218","body_351","body_346","body_345","body_343","body_317","body_309"]
     $ exclam = []
     $ hearts = []
     $ question = []
-    $ sweat = ["body_24","body_34","body_57","body_108","body_340"]
-    $ suprize = ["body_80","body_335"]
+    $ sweat = ["body_24","body_34","body_57","body_108","body_208","body_340"]
+    $ suprize = ["body_80","body_80b","body_335"]
     
     $ h_body = "01_hp/13_hermione_main/body_01.png"
     $ h_xpos = 370

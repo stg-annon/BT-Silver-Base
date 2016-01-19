@@ -251,9 +251,7 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         call screen main_menu_01
-        
-        
-        
+    
     if bought_miniskirt:
         $ bought_miniskirt = False #Affects 15_mail.rpy
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
@@ -269,179 +267,7 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         call screen main_menu_01
-
     
-    if bought_anal_lube:
-        $ bought_anal_lube = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ anal_lube += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/09.png" # ANAL LUBRICANT.
-        show screen gift
-        with d3
-        ">A jar of anal lubricant has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    
-    if bought_condoms:
-        $ bought_condoms = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ condoms += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/10.png" # CONDOMS.
-        show screen gift
-        with d3
-        ">A pack of condoms has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-    
-    
-    if bought_candy:
-        $ bought_candy = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ candy += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/11.png" # CANDY.
-        show screen gift
-        with d3
-        ">A lollipop has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-        
-    if bought_chocolate:
-        $ bought_chocolate = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ chocolate += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/12.png" # CHOCOLATE.
-        show screen gift
-        with d3
-        ">A bar of chocolate has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_vibrator:
-        $ bought_vibrator = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ vibrator += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/13.png" # VIBRATOR.
-        show screen gift
-        with d3
-        ">A vibrator has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-        
-    if bought_strapon:
-        $ bought_strapon = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ strapon += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/14.png" # STRAP-ON.
-        show screen gift
-        with d3
-        ">A Thestral strapon has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-        
-        
-    if bought_ballgag:
-        $ bought_ballgag = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ ballgag += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/15.png" # BALL GAG.
-        show screen gift
-        with d3
-        ">A ball gag and a pair of cuffs have been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_plug:
-        $ bought_plug = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ plug += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/16.png" # ANAL PLUG.
-        show screen gift
-        with d3
-        ">An assortment of anal plugs has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_mag1:
-        $ bought_mag1 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ mag1 += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/17.png" # MAGAZINE # 1
-        show screen gift
-        with d3
-        ">An assortment of educational magazines has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_mag2:
-        $ bought_mag2 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ mag2 += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/18.png" # MAGAZINE # 2
-        show screen gift
-        with d3
-        ">An assortment of rather girly magazines has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_mag3:
-        $ bought_mag3 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ mag3 += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/19.png" # MAGAZINE # 3
-        show screen gift
-        with d3
-        ">An assortment of adult magazines has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-
     if bought_glasses:
         $ bought_glasses = False #Affects 15_mail.rpy
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
@@ -457,52 +283,7 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         call screen main_menu_01
-        
-    if bought_mag4:
-        $ bought_mag4 = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ mag4 += 1 #Amount of anal lubricant in possesion. 
-
-        $ the_gift = "01_hp/18_store/20.png" # MAGAZINE # 4
-        show screen gift
-        with d3
-        ">An assortment of porn magazines has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_beer:
-        $ bought_beer = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ beer += 1 
-
-        $ the_gift = "01_hp/18_store/21.png" # BUTTERBEER.
-        show screen gift
-        with d3
-        ">A bottle of butterbeer has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
-    if bought_owl:
-        $ bought_owl = False #Affects 15_mail.rpy
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ owl += 1 
-
-        $ the_gift = "01_hp/18_store/22.png" # PLUSH OWL.
-        show screen gift
-        with d3
-        ">An owl plushy has been added to your possessions."
-        hide screen gift
-        with d3
-        call screen main_menu_01
-        
+    
     if bought_badge_01:
         $ bought_badge_01 = False #Affects 15_mail.rpy
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
@@ -518,8 +299,6 @@ label mail_02: #Packages only. <================================================
         with d3
         call screen main_menu_01
     
-    
-    
     if bought_nets:
         $ bought_nets = False #Affects 15_mail.rpy
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
@@ -534,5 +313,5 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         call screen main_menu_01
- 
-    
+
+

@@ -48,20 +48,17 @@ label l_tutoring:
     $ d_flag_01 = False
     $ menu_x = 0.5
     $ hair_temp = hair_color
-    $ hair_color = 0
+    #$ hair_color = 0
 
     hide screen hermione_main
-    with d3
-
     $ h_xpos = 140
 
     if v_tutoring == 0:   # Whoring lvl 0
         $ h_xpos = 370
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051_norm.png"
-        show screen hermione_main
-        with d3
-        her "Of course, sir."
+        
+        call her_main("Of course, sir.","body_14")
         her "I'll go get my books then."
+        
         hide screen hermione_main
         show screen blkfade
         with d3
@@ -71,545 +68,295 @@ label l_tutoring:
         pause.3
         $ h_xpos = 140
         $ book_hold = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_norm.png"
-        show screen hermione_main
-        with d3
+        
+        call her_main("","body_45")
+        
         hide screen blkfade
         with d3
         show screen ctc
         pause
         hide screen ctc
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052_norm.png"
-        show screen hermione_main
-        with d3
-        her "Again, thank you for doing this for me, sir..."
+        
+        call her_main("Again, thank you for doing this for me, sir...","body_14")
         m "..........."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n042_norm.png"
-        show screen hermione_main
-        with d3
-        her "Sir?"
+        call her_main("Sir?","body_13")
         m "It's time to talk about your future, child."
         stop music fadeout 1.0
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a002b_norm.png"
-        show screen hermione_main
-        with d3
-        her "I'm not a child anymore professor!"
+        call her_main("I'm not a child anymore professor!","body_07")
         m "In a way you're right but..."
         her "..........."
         m "Anyway I can tutor you but you need to understand certain things about magic."
         m "With proper training you can learn to increase your magic ability."
         play music ms_manatees fadein 1 fadeout 1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n042_norm.png"
-        show screen hermione_main
-        her "Yes?"
+        call her_main("Yes?","body_13")
         m "Certain emotions like love and hate, pleasure and pain..."
         g9 "{size=-2}(If she falls for that, I'm a true genius){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n001_norm.png"
-        show screen hermione_main
-        her "I've been studying magic for years and I've never heard of such a thing."
+        call her_main("I've been studying magic for years and I've never heard of such a thing.","body_03")
         g4 "{size=-2}(Shit){/size}"
         m "And that's exactly why you're still a child. You still have much to learn about magic."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "Please stop that, professor. Nobody considers me a child anymore."
-        hide screen hermione_main
+        call her_main("Please stop that, professor. Nobody considers me a child anymore.","body_02")
         m "Yes, technically..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "Technically?!"
-        hide screen hermione_main
+        call her_main("Technically?!","body_02")
         g4 "Enough of this. You came to me to ask for my help and if it starts like that..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_norm.png"
-        show screen hermione_main
-        her "Yes, I suppose you are right..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_norm.png"
-        show screen hermione_main
-        her "Alright, I'm ready to study hard with you!"
-        hide screen hermione_main
+        call her_main("Yes, I suppose you are right...","body_05")
+        call her_main("Alright, I'm ready to study hard with you!","body_45")
         g9 "{size=-2}(Yes!){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a053_blush.png"
-        show screen hermione_main
-        her "What was that?"
+        call her_main("What was that?","body_186")
         m "Uh, yes I'm glad you're beginning to understand, {w=0.3}child."
         her "..........."
-        hide screen hermione_main
         m "Alright, I want you to take some time and think about what I've said. Next time we'll start with your first lesson."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052_norm.png"
-        show screen hermione_main
-        her "Can't we start now?"
-        hide screen hermione_main
+        call her_main("Can't we start now?","body_14")
         m "Miss Hermione, you're not the only student I must take care of."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "You're tutoring someone else?"
-        hide screen hermione_main
+        call her_main("You're tutoring someone else?","body_02")
         m "{size=-2}(If only...){/size}"
         m "I meant, I must take care of all the students of this school."
         m "But yes, there is another girl who needs..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n167_norm.png"
-        show screen hermione_main
-        her "A Slytherin girl?!"
+        call her_main("A Slytherin girl?!","body_130")
         g9 "That is none of your business, miss Granger."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_norm.png"
-        show screen hermione_main
-        her "Yes, professor, I'm sorry but with all the recent events I'm a little on edge."
+        call her_main("Yes, professor, I'm sorry but with all the recent events I'm a little on edge.","body_05")
         m "Apology accepted and now goodnight!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_norm.png"
-        show screen hermione_main
-        her "Good night professor and thanks again for taking some of your precious time to help me."
+        call her_main("Good night professor and thanks again for taking some of your precious time to help me.","body_45")
         hide screen bld1
         hide screen hermione_main
         with d3
         "You dismiss Hermione."
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[35] "{size=-4}(I'm glad professor agreed to tutor me){/size}"
         her_[2] "{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 1
         jump l_tutoring_end
 
     if v_tutoring == 1:   # Whoring lvl 1
         ##call her_pose("book")
         ##$ v_her_book = 1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_norm.png"
-        show screen hermione_main
-        with d3
+        call her_main("","body_45")
         m "Miss Granger, time for your first lesson."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n042_norm.png"
-        show screen hermione_main
-        her "Yes, professor."
+        call her_main("Yes, professor.","body_13")
         m "You've brought your books again, I don't think we'll need them for the moment."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n001_norm.png"
-        show screen hermione_main
-        her "Too bad, I love books."
+        call her_main("Too bad, I love books.","body_03")
         g9 "{size=-2}(And soon you'll love cock){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n042_norm.png"
-        show screen hermione_main
-        her "Yes?"
-        hide screen hermione_main
+        call her_main("Yes?","body_13")
         m "It's nothing, I was just thinking about our next lesson."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_norm.png"
-        show screen hermione_main
-        her "{size=-2}(The elderly...){/size}"
+        call her_main("{size=-2}(The elderly...){/size}","body_05")
         m "............."
-        hide screen hermione_main
         m "Anyway have you thought about what we discussed?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n001_norm.png"
-        show screen hermione_main
-        her "Not really, I'm not sure what you mean by \"emotions\"."
+        call her_main("Not really, I'm not sure what you mean by \"emotions\".","body_03")
         g9 "{size=-2}(Oh me I'm sure){/size}"
         m "For example, what was your state of mind when you heard those rumours about the Slytherin girls?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n167_norm.png"
-        show screen hermione_main
-        her "Please don't bring it up, sir, it really makes me mad!"
-        hide screen hermione_main
+        call her_main("Please don't bring it up, sir, it really makes me mad!","body_130")
         m "And what is this feeling?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n001_norm.png"
-        show screen hermione_main
-        her "...{w=0.5}an emotion I suppose..."
+        call her_main("...{w=0.5}an emotion I suppose...","body_03")
         m "Yes and don't you have emotions you prefer over others?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_norm.png"
-        show screen hermione_main
-        her "When I have the best score at a test."
-        hide screen hermione_main
+        call her_main("When I have the best score at a test.","body_75")
         m "{size=-2}(This girl is a monomaniac...){/size}"
         m "Don't you have other passions, things you like to do?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_norm.png"
-        show screen hermione_main
-        her "Yes! Studing and reading books."
-        hide screen hermione_main
+        call her_main("Yes! Studing and reading books.","body_75")
         g4 "{size=-2}(By all the ancient gods and the new){/size}"
         m "Things are not going in the right direction..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n001_norm.png"
-        show screen hermione_main
-        her "And what direction is that, sir?"
-        hide screen hermione_main
+        call her_main("And what direction is that, sir?","body_03")
         g9 "{size=-2}(You impaled on my cock){/size}"
         m "Adulthood Miss Hermione, adulthood..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a059b_norm.png"
-        show screen hermione_main
-        her "I am by far the most mature of my peers, professor. What more can you ask?"
-        hide screen hermione_main
+        call her_main("I am by far the most mature of my peers, professor. What more can you ask?","body_16")
         m "......{w=0.5}Miss Granger, did we not discuss this already? You need to accept you still have much to learn."
         m "I'm tired of all this and I have work to do so goodnight, child."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a053_blush.png"
-        show screen hermione_main
-        her "Tutoring one of those filthy Slytherin girls maybe?"
-        hide screen hermione_main
+        call her_main("Tutoring one of those filthy Slytherin girls maybe?","body_186")
         m "Maybe that's the right direction, think about what all those girls do with professors."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "But...{w=0.5} that's so wrong...{w=0.5} I don't know if I want to think about that."
+        call her_main("But...{w=0.5} that's so wrong...{w=0.5} I don't know if I want to think about that.","body_02")
         m "If you want to progress and to restore the Gryffindor pride, you must!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "Yes, you are right! It's my mission! I'll do my best professor."
-        hide screen hermione_main
+        call her_main("Yes, you are right! It's my mission! I'll do my best professor.","body_195")
         g9 "{size=-2}(She is so naive, it's adorable){/size}"
         m "Good, now time to go to bed child."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a002b_norm.png"
-        show screen hermione_main
-        her "{size=-2}(Tss like I'm going to bed at this time, I need to study more){/size}"
+        call her_main("{size=-2}(Tss like I'm going to bed at this time, I need to study more){/size}","body_07")
         hide screen bld1
         hide screen hermione_main
         with d3
         "You dismiss Hermione."
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[19] "{size=-4}(Filthy whores...){/size}"
         her_[35] "{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 2
         jump l_tutoring_end
 
     elif v_tutoring == 2:   # Whoring lvl 2
         m "Good you didn't bring your books this time."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a036_norm.png"
-        show screen hermione_main
-        with d3
-        her "Not that I agree with it. All the knowledge I need is in those books."
+        call her_main("Not that I agree with it. All the knowledge I need is in those books.","body_12")
         m "You're forgetting something important, practice and experience!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Maybe, after all you're not at the head of Hogwarts by chance."
+        call her_main("Maybe, after all you're not at the head of Hogwarts by chance.","body_17")
         m "Sometimes you seem to forget it Miss Granger."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "That sounded like something professor Snape would say..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_norm.png"
-        show screen hermione_main
-        her "Sorry about that, he thinks he's always right and it annoys me."
+        call her_main("That sounded like something professor Snape would say...","body_08")
+        call her_main(".........","body_17")
+        call her_main("Sorry about that, he thinks he's always right and it annoys me.","body_75")
         m "Not unlike you, miss Granger..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "I suppose you have a point..."
+        call her_main("I suppose you have a point...","body_203")
         m "From now on I hope it's clear."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n127_blush.png"
-        show screen hermione_main
-        her "Yes, professor Dumbledore."
-        hide screen hermione_main
+        call her_main("Yes, professor Dumbledore.","body_199")
         m "So, have you thought about emotions and their usefulness in the practice of magic?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "Yes, first I tried to cast a spell while thinking of the behavior of those Slytherin girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_norm.png"
-        show screen hermione_main
-        her "It made me angry and confused so I lost my focus and failed miserably."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "I don't think it helps at all."
-        hide screen hermione_main
+        call her_main("Yes, first I tried to cast a spell while thinking of the behavior of those Slytherin girls.","body_16")
+        call her_main("It made me angry and confused so I lost my focus and failed miserably.","body_82")
+        call her_main("I don't think it helps at all.","body_17")
         m "That's your problem Miss Granger, you think you know the answer and don't follow my instructions."
         m "I don't care about the behavior of those girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n168_norm.png"
-        show screen hermione_main
-        her "What professor! You don't care?!"
-        hide screen hermione_main
+        call her_main("What professor! You don't care?!","body_72")
         g9 "{size=-2}(Oh I do care, just not in the way you think){/size}"
         m "For this exercise, Miss Granger, for this exercise. Don't get on your high horse."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_norm.png"
-        show screen hermione_main
-        her "........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "Sorry about that, {w=0.5}again."
+        call her_main(".........","body_70")
+        call her_main("Sorry about that, {w=0.5}again.","body_08")
         m "I need you to focus on what those girls do with professors, not their behavior in general."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "But..."
+        call her_main("But...","body_183")
         m "Last time you were talking about your sacred duty and at the first hurdle you hesitate."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n023_norm.png"
-        show screen hermione_main
-        her "{size=-2}(\"Sacred\"? Don't exagerate old man){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Or not! Maybe I'll be remembered later for being the savior of house Gryffindor){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n156_blush.png"
-        show screen hermione_main
-        her "Yes, you're right! It {b}is{/b} my sacred duty!"
+        call her_main("{size=-2}(\"Sacred\"? Don't exagerate old man){/size}","body_73")
+        call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the savior of house Gryffindor){/size}","body_182")
+        call her_main("Yes, you're right! It {b}is{/b} my sacred duty!","body_46")
         g9 "{size=-2}(And it works every time, it's too easy... She looks so proud of herself){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052_blush.png"
-        show screen hermione_main
-        her "I'll do my best, professor!"
+        call her_main("I'll do my best, professor!","body_183")
         g9 "I'm excited too... uh, I'm sure you will."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_norm_e.png"
-        show screen hermione_main
-        her "I'm glad you have such a high confidence in me."
+        call her_main("I'm glad you have such a high confidence in me.","body_57b")
         m "And I'm glad you're starting to believe in this. I think you have a very good potential to master this branch of magic."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "You seem tired professor."
-        hide screen hermione_main
+        call her_main("You seem tired professor.","body_08")
         g11 "{size=-2}(Tired of waiting to annihilate your ass){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_norm.png"
-        show screen hermione_main
-        her "Yes, professor?"
+        call her_main("Yes, professor?","body_82")
         g9 "Yes we can!"
         m "Uh, I mean, I'm sure I'll tire you out soon enough, Miss Granger. How about you get some sleep?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "Sleep? I must study first."
-        hide screen hermione_main
+        call her_main("Sleep? I must study first.","body_16")
         m "I wasn't thinking about that but you're right, time to go to bed!"
         m "Just make sure to think about what you learned today."
-        "You dismiss Hermione."
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
+        hide screen hermione_main
         with d3
-
+        "You dismiss Hermione."
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[16] "{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}"
         her_[18] "{size=-4}(Probably all the problems caused by those harlots){/size}"
         her_[34] "{size=-4}(Well I will never be like them, so no need to worry){/size}"
-
+        show screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 3
         jump l_tutoring_end
 
     elif v_tutoring == 3:   # Whoring lvl 3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051_norm.png"
-        show screen hermione_main
-        her "First sir, I want to apologize for doubting you."
-        hide screen hermione_main
+        call her_main("First sir, I want to apologize for doubting you.","body_14")
         m "Yes?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_norm_e.png"
-        show screen hermione_main
-        her "Your \"atypical\" method works!"
-        hide screen hermione_main
+        call her_main("Your \"atypical\" method works!","body_34")
         m "{size=-2}(Impossible){/size}"
         m "It works? I mean yes, naturally it works!"
         m "I'm glad you've succeeded. Now tell me more."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_blush.png"
-        show screen hermione_main
-        her "I managed to levitate a heavy rock while thinking about the behavior of two girls I saw earlier in the library."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n113_blush.png"
-        show screen hermione_main
-        her "Usually I only manage to move small rocks. I don't know, I felt kind of warm inside thinking about that."
+        call her_main("I managed to levitate a heavy rock while thinking about the behavior of two girls I saw earlier in the library.","body_127")
+        call her_main("Usually I only manage to move small rocks. I don't know, I felt kind of warm inside thinking about that.","body_207")
         her "It felt weird but... {w=0.5}good at the same time."
-        hide screen hermione_main
         m "{size=-2}(She is so ignorant of life, unbelievable){/size}"
         m "You've never felt such a sensation before?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a137_blush.png"
-        show screen hermione_main
-        her "Generally I get angry and rush to stop such behavior."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059_blush.png"
-        show screen hermione_main
-        her "But yesterday, I don't know, I just watched without interrupting them."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052b_blush.png"
-        show screen hermione_main
-        her "And when I pictured it, as you told me to, it worked."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_blush_t.png"
-        show screen hermione_main
-        her "I feel at the same level as those harlots, I'm so ashamed."
+        call her_main("Generally I get angry and rush to stop such behavior.","body_140")
+        call her_main("But yesterday, I don't know, I just watched without interrupting them.","body_182")
+        call her_main("And when I pictured it, as you told me to, it worked.","body_183")
+        call her_main("I feel at the same level as those harlots, I'm so ashamed.","body_187")
         m "But you succeeded."
         g9 "{size=-2}(To my surprise){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a079_blush_e.png"
-        show screen hermione_main
-        her "Yes! With this method I'll have better grades in my tests and win the House Cup for Gryffindor!"
+        call her_main("Yes! With this method I'll have better grades in my tests and win the House Cup for Gryffindor!","body_208")
         g9 "{size=-2}(In your dreams){/size}"
         m "Good, good. Now I want to know more about those two girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "It's not very relevant, professor. And I'm not sure this is appropriate."
+        call her_main("It's not very relevant, professor. And I'm not sure this is appropriate.","body_203")
         m "How will you improve yourself if I can't guide you?"
         m "And for that, I must know more."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a036_blush.png"
-        show screen hermione_main
-        her "Alright, but it's embarassing."
+        call her_main("Alright, but it's embarassing.","body_203")
         g9 "{size=-2}(Ooh, I hope they were naked){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "I went to the library to study interactions between plants..."
+        call her_main("I went to the library to study interactions between plants...","body_16")
         g11 "{size=-2}(Yeah, yeah, come on){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n013_blush.png"
-        show screen hermione_main
-        her "... and I heard muffled sounds."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
-        show screen hermione_main
-        her "I was hoping to catch a teacher doing bad things with one of those Slytherin whores."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "I slowly headed towards the sounds and I discovered two girls in an alcove."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n067_blush.png"
-        show screen hermione_main
-        her "I remained hidden to observe them."
-        hide screen hermione_main
+        call her_main("... and I heard muffled sounds.","body_188")
+        call her_main("I was hoping to catch a teacher doing bad things with one of those Slytherin whores.","body_203")
+        call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.","body_183")
+        call her_main("I remained hidden to observe them.","body_209")
         g11 "{size=-2}(Come on!){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Yes, professor?"
+        call her_main("Yes, professor?","body_205")
         m "Yes, no, please continue."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "They were kissing passionately."
+        call her_main("They were kissing passionately.","body_182")
         g9 "And? And?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_blush.png"
-        show screen hermione_main
-        her "And a moment later they began to..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059b_blush.png"
-        show screen hermione_main
-        her "They began to..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n167b_blush2_t.png"
-        show screen hermione_main
-        her "They began to touch their breasts!"
+        call her_main("And a moment later they began to...","body_127")
+        call her_main("They began to...","body_182")
+        call her_main("They began to touch their breasts!","body_210")
         m "They were naked, I hope?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n054_blush.png"
-        show screen hermione_main
-        her "What?"
+        call her_main("What?","body_190")
         her "No, fortunately they were dressed."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a073_blush.png"
-        show screen hermione_main
-        her "How can such a thing happen in our beloved school!"
+        call her_main("How can such a thing happen in our beloved school!","body_191")
         m "But you kept watching, didn't you?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
-        show screen hermione_main
-        her "Only for educational purposes."
+        call her_main("Only for educational purposes.","body_203")
         g9 "{size=-2}(\"Educational purposes\", haha, never heard a worse excuse){/size}"
         m "And during all this time you didn't feel a certain need?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "To my shame, yes. Like I said before, I felt kind of warm inside."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a026_blush.png"
-        show screen hermione_main
-        her "Like when I have to pee but... different. Better."
+        call her_main("To my shame, yes. Like I said before, I felt kind of warm inside.","body_203")
+        call her_main("Like when I have to pee but... different. Better.","body_199")
         m "This good sensation, next time you experience it, let it come."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "But..."
+        call her_main("But...","body_183")
         m "It's the only way to get better, miss Hermione."
         m "If you suppress it, it won't work."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Ok...{w=0.3} I'll try my best."
+        call her_main("Ok...{w=0.3} I'll try my best.","body_203")
         her "But to be honest, sir, I thought you were going to punish those two sluts."
-        hide screen hermione_main
         m "Can you provide proof of their crime? No?"
         m "Even I can't punish students without proof of any wrongdoing."
         g11 "{size=-2}(With the possible exception of you!){/size}"
         m "Anyway, you've done well. I think it will be enought for this lesson."
         m "Remember well what I just told you and good night!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n011_norm.png"
-        show screen hermione_main
-        her "Good night, professor."
+        call her_main("Good night, professor.","body_06")
         hide screen hermione_main
-        "You dismiss Hermione."
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
         with d3
-
+        "You dismiss Hermione."
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[12] "{size=-4}(Well, I'll try to investigate those two girls again){/size}"
         her_[18] "{size=-4}(Like a real anthropologist){/size}"
         her_[35] "{size=-4}(Yes, that's right, Hermione the anthropologist!){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 4
         jump l_tutoring_end
 
     elif v_tutoring == 4:   # Whoring lvl 5
         m "So, any luck with your \"studies\"?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_norm.png"
-        show screen hermione_main
-        her "Yes! When you hear the results of my hunt, you'll be proud of me!"
+        call her_main("Yes! When you hear the results of my hunt, you'll be proud of me!","body_74")
         m "{size=-2}(\"Hunt\"?){/size}"
         m "Your \"hunt\" Miss Hermione?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_norm.png"
-        show screen hermione_main
-        her "Yes professor!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "Like an explorer in the wild jungle, I tracked those two filthy animals."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_blush_e.png"
-        show screen hermione_main
-        her "With success, sir!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_norm.png"
-        show screen hermione_main
-        her "Hogwarts has so many dark and discreet corners..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "Believe me, it wasn't easy, professor."
+        call her_main("Yes professor!","body_75")
+        call her_main("Like an explorer in the wild jungle, I tracked those two filthy animals.","body_157")
+        call her_main("With success, sir!","body_80b")
+        call her_main("Hogwarts has so many dark and discreet corners...","body_82")
+        call her_main("Believe me, it wasn't easy, professor.","body_157")
         m "I'm sure you gave it your best."
         m "But right now I await your report."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Yes, but before that I want to clarify that my report is purely for scientific purposes."
+        call her_main("Yes, but before that I want to clarify that my report is purely for scientific purposes.","body_205")
         m "{size=-2}(Sure...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "So I tracked down those two tarts to an area in the attic."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Which, by the way, seems to be the meeting place for girls of this... sort."
+        call her_main("So I tracked down those two tarts to an area in the attic.","body_16")
+        call her_main("Which, by the way, seems to be the meeting place for girls of this... sort.","body_17")
         m "And what is your opinion on them?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "At least they don't sleep with professors in exchange for house points."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
+        call her_main("At least they don't sleep with professors in exchange for house points.","body_08")
+        call her_main("","body_17")
         m "And that's it? No \"this behavior must be severely punished\" ?"
         m "Do you find girls of this sort attractive, miss Hermione?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "What? Lesbians? I'm not... I... no way I..."
+        call her_main("What? Lesbians? I'm not... I... no way I...","body_183")
         m "Alright, alright, back to your report if you please."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n077_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a029_blush.png"
-        show screen hermione_main
-        her "No, I'm not!"
+        call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}","body_199")
+        call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}","body_206")
+        call her_main("No, I'm not!","body_184b")
         m "Excuse me?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052_blush.png"
-        show screen hermione_main
-        her "Uh, yes, my report. My {b}scientific{/b} report."
+        call her_main("Uh, yes, my report. My {b}scientific{/b} report.","body_183")
         m "{size=-2}(Yeah, we get it..){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "So, like before, they started by kissing passionately."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n053_blush.png"
-        show screen hermione_main
-        her "With the tongue and everything!"
+        call her_main("So, like before, they started by kissing passionately.","body_182")
+        call her_main("With the tongue and everything!","body_189")
         menu:
             "-Start to jerk off while she is talking-":
                 $ d_flag_01 = True
@@ -623,44 +370,23 @@ label l_tutoring:
                 show screen genie_jerking_off
                 with d3
                 pause
-                $ h_body = "01_hp/27_ue/hermione/bd_her_n052_blush.png"
-                show screen hermione_main
             "Do nothing.":
-                $ h_body = "01_hp/27_ue/hermione/bd_her_n052_blush.png"
-                show screen hermione_main
+                pass
+        call her_main("","body_183")
         g9 "And? And?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059_blush.png"
-        show screen hermione_main
-        her "They pulled up their shirts and caressed each others breasts."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Their beautiful and tempting breasts){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
-        show screen hermione_main
-        her "Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c017_blush.png"
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03b.png"
+        call her_main("They pulled up their shirts and caressed each others breasts.","body_182")
+        call her_main("{size=-2}(Their beautiful and tempting breasts){/size}","body_196")
+        call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","body_212")
         $ b_her_tears = True
-        show screen hermione_main
-        her "{size=-2}(I can't believe I said that!){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "They were very excited and I could see their panties become wet."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "Disgusting."
+        call her_main("{size=-2}(I can't believe I said that!){/size}","body_213","e_her_tears_03b")
+        call her_main("They were very excited and I could see their panties become wet.","body_196")
+        call her_main("Disgusting.","body_214")
         if d_flag_01:
             g9 "{size=-2}(Yes... yes...){/size}"
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
-        show screen hermione_main
-        her "One of the girls went crazy and inserted her fingers into the other's \"thing\" and worked them furiously."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
-        show screen hermione_main
-        her "Soon imitated by her girlfriend."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
-        show screen hermione_main
-        her "Those whores came so hard they had to bite their lips not to scream."
+        call her_main("One of the girls went crazy and inserted her fingers into the other's \"thing\" and worked them furiously.","body_138")
+        call her_main("Soon imitated by her girlfriend.","body_212")
+        call her_main("Those whores came so hard they had to bite their lips not to scream.","body_215")
         if d_flag_01:
             her "{size=-2}(And me too){/size}"
             hide screen hermione_main
@@ -674,8 +400,6 @@ label l_tutoring:
             hide screen white
             with hpunch
             g11 "Me too! YES!"
-            hide screen hermione_main
-            with d3
             hide screen bld1
             with d3
             show screen genie_jerking_sperm
@@ -683,119 +407,75 @@ label l_tutoring:
             pause
             show screen bld1
             with d3
-            $ h_body = "01_hp/27_ue/hermione/bd_her_a071_blush.png"
-            show screen hermione_main
-            with d3
-            her "Professor!"
+            call her_main("Professor!","body_187")
             show screen genie_jerking_sperm_02
             with d3
             m "You enjoyed it too so don't act innocent."
             hide screen genie_jerking_sperm_02
             show screen genie
             with d3
-
             $ mad = +7
             $ d_flag_01 = False
         else:
             m "You enjoyed it too."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Maybe..."
+        call her_main("Maybe...","body_203")
         m "Anyway, I hope it was revealing."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "\"Revealing\"? I'm not sure what you mean by that."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "You're the headmaster, act as such!"
-        her "Do all you can to stop those acts of debauchery!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a025_norm.png"
-        show screen hermione_main
+        call her_main("\"Revealing\"? I'm not sure what you mean by that.","body_08")
+        call her_main("You're the headmaster, act as such!","body_02")
+        call her_main("Do all you can to stop those acts of debauchery!")
+        call her_main("","body_12")
         m "Yes, of course."
         m "{size=-2}(Hypocrite){/size}"
         her "{size=-2}(Old pervert){/size}"
         m "You said that those girls became wet."
         g9 "Weren't you a little too?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n077_blush.png"
-        show screen hermione_main
-        her "When I went to bed I noticed it, yes."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
-        show screen hermione_main
-        her "Apparently bad fluids are released from your body when you have faced such acts."
+        call her_main("When I went to bed I noticed it, yes.","body_199")
+        call her_main("Apparently bad fluids are released from your body when you have faced such acts.","body_206")
         m "No, they aren't bad. It happens when you're excited."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a169_blush.png"
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01b.png"
         $ b_her_tears = True
-        show screen hermione_main
-        her "No way! I can control myself!"
+        call her_main("No way! I can control myself!","body_216","e_her_tears_01b")
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_blush_t.png"
-        show screen hermione_main
+        call her_main("","body_187")
         m "No one can control their base desires."
         m "Consider this well and enjoy your night, Miss Hermione."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n025_norm_t.png"
-        show screen hermione_main
-        her "Good night, professor."
+        call her_main("Good night, professor.","body_29")
         hide screen hermione_main
-        "You dismiss Hermione."
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
         with d3
-
+        "You dismiss Hermione."
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[6] "{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}"
         her_[13] "{size=-4}(I lost control, it won't happen again!){/size}"
         her_[18] "{size=-4}(Good thing I'm not a degenerate like those filthy girls){/size}"
+        hide screen hermione_01_f
+        with d3
 
         $ v_tutoring = 5
         jump l_tutoring_end
 
     elif v_tutoring == 5:   # Whoring lvl 8
         m "Bravo, last time you experienced your first \"emotion\"."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "Yes, I remember but I still don't see the link with magic."
-        hide screen hermione_main
+        call her_main("Yes, I remember but I still don't see the link with magic.","body_08")
         m "{size=-2}(Me neither...){/size}"
         m "If you want to progress, you have to go a little further than a simple observation."
         m "You'll need to participate."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a168_blush.png"
-        show screen hermione_main
-        her "What! No way I'll participate in such debauchery!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a071_norm.png"
-        show screen hermione_main
-        her "How can you even suggest such a thing!"
+        call her_main("What! No way I'll participate in such debauchery!","body_217")
+        call her_main("How can you even suggest such a thing!","body_05")
         m "Oh you don't have to go that far in one go."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a059b_norm.png"
-        show screen hermione_main
-        her "I'm not sure I want to go there at all."
+        call her_main("I'm not sure I want to go there at all.","body_16")
         m "How many times do I have to remind you why you're doing this?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "Yes but..."
+        call her_main("Yes but...","body_02")
         m "But what?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "A girl like me shouldn't stoop to such practices."
+        call her_main("A girl like me shouldn't stoop to such practices.","body_17")
         m "A girl like you should use all means at their disposal in order to excel."
         her "..........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Alright, but this must remain between us."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n037_norm.png"
-        show screen hermione_main
-        her "You cannot disclose this to other professors, especially professor Snape!"
+        call her_main("Alright, but this must remain between us.","body_203")
+        call her_main("You cannot disclose this to other professors, especially professor Snape!","body_71")
         m "Oh, I have no intention of shar.. speaking of you with professor Snape."
         g9 "{size=-2}(You're mine){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_blush.png"
-        show screen hermione_main
-        her "Well, what must I do now?"
+        call her_main("Well, what must I do now?","body_127")
         m "Come here."
         hide screen hermione_main
         with d3
@@ -817,54 +497,35 @@ label l_tutoring:
         pause
         m "Have you ever touched yourself?"
         hide screen ctc
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "Professor!"
+        call her_main("Professor!","body_157")
         show screen groping_01
         with d7
         ">You touch her leg with your hands."
         m "Please answer the question, Miss Granger. Have you ever touched yourself?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "No, it's... it's wrong!"
+        call her_main("No, it's... it's wrong!","body_203")
         m "But when you looked at these girls, you felt certain emotions."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n067_blush.png"
-        show screen hermione_main
-        her "Yes and ?"
+        call her_main("Yes and ?","body_209")
         m "You didn't feel the need to touch yourself?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Yes... but I resisted."
+        call her_main("Yes... but I resisted.","body_205")
         ">You start to caress her thigh."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059_blush.png"
-        show screen hermione_main
-        her "Professor..."
+        call her_main("Professor...","body_182")
         m "And you felt those emotions without even touching yourself."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052b_blush.png"
-        show screen hermione_main
-        her "Yes..."
+        call her_main("Yes...","body_183")
         g9 "{size=-2}(What a slut){/size}"
         if whoring <= 12 or custom_bra >0:
             ">You move forward to her panties."
         else:
             ">You move forward to her pussy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059b_blush.png"
-        show screen hermione_main
+        call her_main("","body_182")
         m "Good."
         hide screen groping_01
         show screen no_groping_01
         ">You stop caressing her."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
-        show screen hermione_main
-        her "Why... why did you stop?"
+        call her_main("Why... why did you stop?","body_206")
         m "Oh, because I need you to think about all this before we meet again."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush_t.png"
-        show screen hermione_main
-        her "But..."
+        call her_main("But...","body_206")
         m "Good night, my dear."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n025_norm_t.png"
-        show screen hermione_main
-        her "Good night, professor."
+        call her_main("Good night, professor.","body_29")
         hide screen hermione_main
         show screen blkfade
         with d3
@@ -872,20 +533,15 @@ label l_tutoring:
         "You dismiss Hermione."
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[12] "{size=-4}(This is wrong...){/size}"
         her_[15] "{size=-4}(I shouldn't listen to him){/size}"
         her_[16] "{size=-4}(And yet...){/size}"
+        hide screen hermione_01_f
+        with d3
 
         $ v_tutoring = 6
         jump l_tutoring_end
@@ -894,19 +550,11 @@ label l_tutoring:
         m "Miss Hermione, I wanted to remind you that this is not a formal lesson."
         m "You need not wear your uniform for these lessons."
         m "At least take off that tie, I know it gets uncomfortable after all these hours."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a051_norm.png"
-        show screen hermione_main
-        her "The school rules are very strict about this, professor."
+        call her_main("The school rules are very strict about this, professor.","body_02")
         m "You have my permission, Miss Granger."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a026_blush.png"
-        show screen hermione_main
-        her ".........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a025_norm.png"
-        show screen hermione_main
-        her "Right. But only when I come to see you in the evenings."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I have to be careful with my reputation.){/size}"
+        call her_main("..........","body_199")
+        call her_main("Right. But only when I come to see you in the evenings.","body_12")
+        call her_main("{size=-2}(I have to be careful with my reputation.){/size}","body_203")
         m "It's a deal."
         show screen blkfade
         with d3
@@ -918,22 +566,14 @@ label l_tutoring:
         hide screen hermione_main
         hide screen blkfade
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_blush.png"
-        show screen hermione_main
+        call her_main("","body_188")
         m "There. Doesn't that feel better?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "Actually, it does, sir. Thank you."
+        call her_main("Actually, it does, sir. Thank you.","body_208b")
         m "So, have you started practicing my teachings?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "I don't even know where to start."
+        call her_main("I don't even know where to start.","body_08")
         m "You see, the secret is to stimulate appropriate areas."
         m "Areas which are more sensitive than others."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "You mean my intimate areas, sir?!"
-        hide screen hermione_main
+        call her_main("You mean my intimate areas, sir?!","body_203")
         m "Well, they're called intimate for a reason."
         m "You said you've never touched yourself because it was wrong."
         m "But it's never wrong to exercise ones body in order to reach a new level of consciousness."
@@ -942,34 +582,20 @@ label l_tutoring:
         m "But you shouldn't only caress your nipples but also grab your tits and squeeze them."
         m "And in the meanwhile, you can think of those two girls."
         g9 "Or what you want to do with those girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a079_blush_e.png"
-        show screen hermione_main
-        her "What makes you think... No, I don't want..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a169_blush.png"
-        show screen hermione_main
-        her "I definitely don't want to have {b}anything{/b} to do with those harlots!"
+        call her_main("What makes you think... No, I don't want...","body_208")
+        call her_main("I definitely don't want to have {b}anything{/b} to do with those harlots!","body_216")
         m "Don't lie to yourself. It's obvious that you feel a form of attraction to those two girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n113_blush_t.png"
-        show screen hermione_main
-        her "I...{w=0.3} I honestly don't know what to think anymore."
+        call her_main("I...{w=0.3} I honestly don't know what to think anymore.","body_207")
         her "At the moment my feelings are so confusing..."
         g9 "{size=-2}(Exactly what I was hoping){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n075_blush_t.png"
-        show screen hermione_main
-        her "I'm happy to earn points for my house and at the same time I feel so ashamed."
+        call her_main("I'm happy to earn points for my house and at the same time I feel so ashamed.","body_145")
         her "And the same goes for your lessons."
         m "Yet you can't deny your progress in the practice of magic."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03b.png"
-        $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "...{w=0.2} Yes...{w=0.2} perhaps you're right."
+        call her_main("...{w=0.2} Yes...{w=0.2} perhaps you're right.","body_157","e_her_tears_03b")
         m "You have to let it go, Miss Hermione, follow your instincts!"
         g9 "{size=-2}(Grab my cock and wank it savagely!){/size}"
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055b_blush_t.png"
-        show screen hermione_main
-        her "I'm not sure if..."
+        call her_main("I'm not sure if...","body_154")
         m "Enough procrastination, time for practice!"
         m "Come here."
         show screen blkfade
@@ -983,7 +609,7 @@ label l_tutoring:
         show screen groping_03
         with d1
         $ h_xpos = 160
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         hide screen blkfade
         with d5
@@ -993,32 +619,22 @@ label l_tutoring:
         hide screen ctc
         m "Like I said, it's important you learn how to properly stimulate your \"emotional\" body areas."
         m "It's not enough if I do it myself, you need to practice when you're alone."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n008_blush.png"
-        show screen hermione_main
+        call her_main("","body_182b")
         m "Like in your bed or in the shower, for example."
         ">You keep massaging her tits..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
+        call her_main("","body_182")
         ">You feel her nipples becoming hard."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "Yes but...{w=0.3} Professor, it's inappropriate for a girl of good education!"
+        call her_main("Yes but...{w=0.3} Professor, it's inappropriate for a girl of good education!","body_183")
         m "Don't let old prejudices weigh you down. You're a girl with great potential."
         ">You gently squeeze her nipples through the fabric."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "Ah, thank you professor."
+        call her_main("Ah, thank you professor.","body_196")
         m "A girl with a brilliant mind."
         ">You increase your grip on her nipples."
         m "A girl who will become a woman of exception."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush.png"
-        show screen hermione_main
-        her "Ahh yes... I'm already a woman of exception you fool."
+        call her_main("Ahh yes... I'm already a woman of exception you fool.","body_195")
         m "Fool?"
         ">You firmly pinch her nipples."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
-        show screen hermione_main
-        her "Ahhh yesss, not that hard, yesss..."
+        call her_main("Ahhh yesss, not that hard, yesss...","body_138")
         ">You abruptly stop."
 
         show screen blkfade
@@ -1028,45 +644,32 @@ label l_tutoring:
         show screen genie_and_hermione
         hide screen blkfade
         with d1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a162_blush_e.png"
-        show screen hermione_main
-        her "Don't stop, you idiot!"
+        
+        call her_main("Don't stop, you idiot!","body_218")
         show screen blkfade
         ">She moves away from the desk."
         hide screen genie_and_hermione
         show screen genie
         show screen hermione_02
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush_t.png"
-        show screen hermione_main
         hide screen blkfade
         with d1
-
-        her "..........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n072_blush_t.png"
-        show screen hermione_main
-        her "Sorry, professor."
+        
+        call her_main("...........","body_206")
+        call her_main("Sorry, professor.","body_187")
         m "Lesson is over. Time to practice by yourself."
         m "Good night my little witch."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_norm.png"
-        show screen hermione_main
-        her "Good night professor and thank you for this lesson."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "{size=-2}(This too short of a lesson){/size}"
+        call her_main("Good night professor and thank you for this lesson.","body_74")
+        call her_main("{size=-2}(This too short of a lesson){/size}","body_17")
         hide screen hermione_main
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
         with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[4] "{size=-4}(\"My little witch?\"){/size}"
         her_[6] "{size=-4}(Why not, after all...){/size}"
+        hide screen hermione_01_f
+        with d3
 
         $ lock_public_favors = True
         $ v_tutoring = 7
@@ -1074,48 +677,30 @@ label l_tutoring:
 
     elif v_tutoring == 7:   # Whoring lvl 14
         m "So, Miss Hermione, have you practiced my teachings?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Yes...{w=0.2} a little."
+        call her_main("Yes...{w=0.2} a little.","body_203")
         m "And?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_blush_e.png"
-        show screen hermione_main
-        her "It feels even better when I'm naked."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Oh no, I should never have said that){/size}"
+        call her_main("It feels even better when I'm naked.","body_80b")
+        call her_main("{size=-2}(Oh no, I should never have said that){/size}","body_206")
         m "Well come here and undress, we'll practice."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n113_blush.png"
-        show screen hermione_main
-        her "Completely?!"
+        call her_main("Completely?!","body_207")
         m "No, only the top will suffice."
         g9 "{size=-2}(For the moment...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "I'll be showing you my breasts without even earning any points?"
+        call her_main("I'll be showing you my breasts without even earning any points?","body_08")
         m "You can't have both points and lessons."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a079_blush_e.png"
-        show screen hermione_main
-        her "Ok..."
+        call her_main("Ok...","body_208")
         hide screen hermione_main
         hide screen hermione_02
         show screen hermione_04
         ##call her_pose("shirt raised")
         $ lift_shirt = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
-        show screen hermione_main
-        with fade
-        her "Like that?"
+        call her_main("Like that?","body_203")
         if custom_bra >=1 and badges and custom_outfit <= 0:
             m "Without your bra Miss Hermione... and come here."
         else:
             m "Yes and now come here."
         $ badges = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
-        show screen hermione_main
-        her "........"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
-        show screen hermione_main
+        call her_main("........","body_184b")
+        call her_main("","body_198")
         m "Now."
         show screen blkfade
         with d1
@@ -1129,7 +714,7 @@ label l_tutoring:
         with d1
         ##$ v_her_bra = 0
         $ h_xpos = 160
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_198.png"
         show screen hermione_main
         hide screen blkfade
         with d5
@@ -1153,48 +738,30 @@ label l_tutoring:
         with fade
         pause
 
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n127_blush.png"
-        show screen hermione_main
-        her "Professor, what are you doing?"
+        call her_main("Professor, what are you doing?","body_199")
         g9 "Teaching you, dear, teaching you."
         m "Doesn't it feel good?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
-        show screen hermione_main
-        her "A little..."
+        call her_main("A little...","body_198")
         m "Your hard nipples say the contrary."
         m "I can stop if you want."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "Yeah sure!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n097_blush.png"
-        show screen hermione_main
-        her "Suck them professor."
+        call her_main("Yeah sure!","body_195")
+        call her_main("Suck them professor.","body_212")
         g9 "As you wish, princess."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n095b_blush_t.png"
-        show screen hermione_main
+        call her_main("","body_212")
         ">You suck her nipples with devotion."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03c.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
-        show screen hermione_main
-        her "Yes {image=textheart} like that."
+        call her_main("Yes {image=textheart} like that.","body_212","e_her_tears_03c")
         ">You start to chew on her nipples."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
-        show screen hermione_main
-        her "Ah, noo, don't..."
+        call her_main("Ah, noo, don't...","body_219")
         ">You chew on them even harder."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t2.png"
-        show screen hermione_main
-        her "Not that hard, I will..."
+        call her_main("Not that hard, I will...","body_215")
         g9 "{size=-2}(Time for the grand finale){/size}"
         if whoring <= 12 or custom_bra >0:
             ">You quickly slip your hand into her panties and rub her pussy furiously."
         else:
             ">You quickly move your hand toward her pussy and rub it furiously."
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
-        show screen hermione_main
-        her "Yes! {image=textheart}"
+        call her_main("Yes! {image=textheart}","body_142")
         her "I... I..."
         g9 "Came, my dear."
         show screen blkfade
@@ -1210,25 +777,19 @@ label l_tutoring:
         hide screen blkfade
         show screen genie_and_hermione
         with d1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n016_blush_m.png"
-        show screen hermione_main
-        her "Is the lesson over professor?"
+        call her_main("Is the lesson over professor?","body_156")
         m "Not if you don't want it to be."
         her "Maybe it's enough for tonight."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n062_blush_m.png"
-        show screen hermione_main
-        her "After all, you have a lot of work to do."
+        call her_main("After all, you have a lot of work to do.","body_153")
         m "Sure."
         m "But before that I have a little present for you."
-        $ the_gift = "01_hp/18_store/19.png"
+        $ the_gift = "01_hp/18_store/gifts/7.png"
         show screen gift
         with d3
         ">You give an assortment of adult magazines to Hermione."
         hide screen gift
         m "I hope this will help you in your studies."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n069_blush_m.png"
-        show screen hermione_main
-        her "Yes, certainly."
+        call her_main("Yes, certainly.","body_155")
         her "Thank you and good night professor."
         m "Good night dear child."
         hide screen hermione_main
@@ -1238,21 +799,16 @@ label l_tutoring:
         "You dismiss Hermione."
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[6] "{size=-4}(I'm such a slut...){/size}"
         her_[16] "{size=-4}(Coming in front of my professor){/size}"
         her_[18] "{size=-4}(I definitely need to do that again){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 8
         jump l_tutoring_end
 
@@ -1260,16 +816,10 @@ label l_tutoring:
         m "Miss Hermione, is my office really that cold that you need to wear your vest?"
         m "I don't want you getting all hot and sweaty."
         m "{size=-2}(Oh wait...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a059b_norm.png"
-        show screen hermione_main
-        her "It's the vest or the tie but I must have a symbol of my house!"
+        call her_main("It's the vest or the tie but I must have a symbol of my house!","body_16")
         m "Alright, alright, you can wear your tie if you insist."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n020_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I've never seen him give in so quickly...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I did well to exercise my authority!){/size}"
+        call her_main("{size=-2}(I've never seen him give in so quickly...){/size}","body_206")
+        call her_main("{size=-2}(I did well to exercise my authority!){/size}","body_220")
         show screen blkfade
         with d3
         ">Hermione takes off her vest and puts her tie back on."
@@ -1280,62 +830,40 @@ label l_tutoring:
         hide screen hermione_main
         hide screen blkfade
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_blush.png"
-        show screen hermione_main
+        call her_main("","body_188")
         m "So tell me, were your readings enlightening?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "I'm not sure if \"readings\" is the right term but yes. Very \"stimulating\" too."
+        call her_main("I'm not sure if \"readings\" is the right term but yes. Very \"stimulating\" too.","body_208b")
         m "Maybe it's time to discover new areas to stimulate."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "You mean my pussy, right?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a036_norm.png"
-        show screen hermione_main
-        her "I'm not an idiot, professor."
+        call her_main("You mean my pussy, right?","body_08")
+        call her_main("I'm not an idiot, professor.","body_12")
         m "If it doesn't suit you, we can stop here."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "And if I said stop?"
+        call her_main("And if I said stop?","body_17")
         g4 ".........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "Haha, you should have seen your face!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n156_blush.png"
-        show screen hermione_main
-        her "With all your recent lessons you can imagine that this area isn't a *no man's land* any more."
+        call her_main("Haha, you should have seen your face!","body_220")
+        call her_main("With all your recent lessons you can imagine that this area isn't a *no man's land* any more.","body_46")
         g4 "Have you slept..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a168_blush.png"
-        show screen hermione_main
-        her "No I haven't! I'm not a harlot who offers her pussy to every boy around."
+        call her_main("No I haven't! I'm not a harlot who offers her pussy to every boy around.","body_217")
         m "{size=-2}(Good, your pussy is mine alone){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_norm.png"
-        show screen hermione_main
+        call her_main("","body_70")
         g9 "{size=-2}(Although I may agree to share it with other girls...){/size}"
         m "I'm happy you're behaving honorably, Miss Hermione."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_norm.png"
-        show screen hermione_main
-        her "Ha, who'd have guessed!"
+        call her_main("Ha, who'd have guessed!","body_203")
         m "Yes, I'm glad that my favorite student is not wasting her precious time with boys."
         her "Sure...{w=0.3} {size=-4}old hypocrite{/size}."
         m "Enough of this! Now take off your shirt and come here."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "Here we go for another \"lesson\"."
+        call her_main("Here we go for another \"lesson\".","body_08")
         hide screen hermione_main
         hide screen hermione_02
         show screen hermione_04
         ##$ v_her_shirt = 0
         $ wear_shirts = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_203.png"
         show screen hermione_main
         with fade
         if custom_bra >=1 and badges and custom_outfit <= 0:
             m "And your bra..."
             $ badges = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
-        show screen hermione_main
-        her "........"
+        call her_main("........","body_184b")
         show screen ctc
         pause
         show screen blkfade
@@ -1359,53 +887,38 @@ label l_tutoring:
         pause
         hide screen ctc
         $ h_xpos = 160
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
-        show screen hermione_main
+        call her_main("","body_198")
         hide screen blkfade
         with d5
         pause
         hide screen ctc
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "And free tits again, enjoy!"
+        call her_main("And free tits again, enjoy!","body_195")
         m "I definitely intend to."
         g9 "Lift your skirt."
         ##call her_pose("skirt raised")
         $ skirt_up = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n011_blush2.png"
-        show screen hermione_main
-        with d3
+        call her_main("","body_188")
         show screen ctc
         pause
         hide screen ctc
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
-        show screen hermione_main
         if whoring >= 13 and custom_bra == 0:
-            her "You love my pussy don't you?"
+            call her_main("You love my pussy don't you?","body_205")
             g9 "Oh yes, I love your smell, especially when you're wet."
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n068b_blush_e.png"
-            show screen hermione_main
-            her "Professor..."
+            call her_main("Professor...","body_208")
             hide screen no_groping_01
             show screen groping_06
             with d3
             ">You caress her clit."
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n020_blush.png"
-            show screen hermione_main
-            her "Professor!"
+            call her_main("Professor!","body_206")
         else:
-            her "You love my panties don't you?"
+            call her_main("You love my panties don't you?","body_205")
             g9 "Oh yes, I love their smell, especially when you're wet."
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n068b_blush_e.png"
-            show screen hermione_main
-            her "Professor..."
+            call her_main("Professor...","body_208")
             hide screen no_groping_01
             show screen groping_06
             with d3
             ">You caress her clit through the fabric."
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n020_blush.png"
-            show screen hermione_main
-            her "Professor!"
+            call her_main("Professor!","body_206")
             m "Now take them off."
             show screen blkfade
             with d5
@@ -1415,9 +928,7 @@ label l_tutoring:
             show screen no_groping_06
             hide screen blkfade
             $ b_her_panties_off = True
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
-            show screen hermione_main
-            with d3
+            call her_main("","body_198")
             show screen ctc
             $ panties = False
             pause
@@ -1428,43 +939,28 @@ label l_tutoring:
         hide screen no_groping_06
         show screen groping_06
         with d5
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "Yes, you're probably right."
+        call her_main("Yes, you're probably right.","body_195")
         m "Probably?!"
         ">While you're moving your finger in her pussy, you take over her clit with your thumb."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n097_blush.png"
-        show screen hermione_main
-        her "Haa {image=textheart}, I'm only your humble student, I wouldn't know such naughty things."
+        call her_main("Haa {image=textheart}, I'm only your humble student, I wouldn't know such naughty things.","body_212")
         m "One finger is rarely enough even with a tight pussy like yours."
         ">You insert a second finger in her tight and warm pussy..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
-        show screen hermione_main
-        her "Yesss {image=textheart}, I'll try to remember your teachings."
+        call her_main("Yesss {image=textheart}, I'll try to remember your teachings.","body_212")
         ">You increase the pace and feel her pussy tighten on your fingers."
         m "Maybe a third finger?"
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "Don't be so bold."
+        call her_main("Don't be so bold.","body_195","e_her_tears_01")
         ">Her whole body starts shaking as you increase your ramming."
         hide screen groping_06
         show screen groping_06b
         with d1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush.png"
-        show screen hermione_main
-        her "Noo {image=textheart}{w=0.2} not so fast I will..."
+        call her_main("Noo {image=textheart}{w=0.2} not so fast I will...","body_219")
         ">You increase your pace even more."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
-        show screen hermione_main
-        her "I will I will..."
+        call her_main("I will I will...","body_215")
         g9 "Time to get serious."
         ">You force your soaked thumb into her butthole."
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
-        show screen hermione_main
-        her "Haaaaa {image=textheart} yesss {image=textheart}."
+        call her_main("Haaaaa {image=textheart} yesss {image=textheart}.","body_215")
         g9 "Lucky girl."
         show screen blkfade
         with d5
@@ -1476,28 +972,18 @@ label l_tutoring:
         hide screen blkfade
         show screen no_groping_01
         with d1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n016_blush_m.png"
-        show screen hermione_main
-        her "I'm sure this lesson will be of great help tonight."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n096_blush_m.png"
-        show screen hermione_main
-        her "And the other nights {image=textheart}."
+        call her_main("I'm sure this lesson will be of great help tonight.","body_156")
+        call her_main("And the other nights {image=textheart}.","body_138")
         m "Always glad to help my little witch in her studies."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n063_blush_m.png"
-        show screen hermione_main
-        her "\"Studies\", yes, that's right."
+        call her_main("\"Studies\", yes, that's right.","body_156")
         m "And to aid your studies I have even more scientific materials."
-        $ the_gift = "01_hp/18_store/20.png"
+        $ the_gift = "01_hp/18_store/gifts/8.png"
         show screen gift
         with d3
         ">You give an assortment of porn magazines to Hermione."
         hide screen gift
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n069_blush_m.png"
-        show screen hermione_main
-        her "You can be certain that I'll study them profoundly."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n016_blush_m.png"
-        show screen hermione_main
-        her "Thank you and good night professor."
+        call her_main("You can be certain that I'll study them profoundly.","body_155")
+        call her_main("Thank you and good night professor.","body_156")
         m "Good night, my favorite little witch."
         hide screen hermione_main
         show screen blkfade
@@ -1506,79 +992,48 @@ label l_tutoring:
         "You dismiss Hermione."
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[6] "{size=-4}(Favorite...){/size}"
         her_[7] "{size=-4}(There's another one?){/size}"
         her_[35] "{size=-4}(I'll do my best to remain his favorite!){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 9
         jump l_tutoring_end
 
     elif v_tutoring == 9:   # Whoring lvl 20
         m "So, Miss Hermione, have you had an enjoyable night?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_blush.png"
-        show screen hermione_main
-        her "You shouldn't ask such things, Professor."
+        call her_main("You shouldn't ask such things, Professor.","body_127")
         m "I have to make sure my students have a pleasant nights rest."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "With your teachings and your \"scientific\" literature, indeed."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "I'll become proficient in human anatomy with all this documentation."
+        call her_main("With your teachings and your \"scientific\" literature, indeed.","body_157")
+        call her_main("I'll become proficient in human anatomy with all this documentation.","body_208b")
         m "Do you need some scientific instruments for your research?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n067_blush.png"
-        show screen hermione_main
-        her "They could come in handy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
-        show screen hermione_main
-        her "As long as it's not your dick."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Not that I don't appreciate it but no points no cock!){/size}"
+        call her_main("They could come in handy.","body_209")
+        call her_main("As long as it's not your dick.","body_203")
+        call her_main("{size=-2}(Not that I don't appreciate it but no points no cock!){/size}","body_220")
         m "Miss Hermione! This is a serious matter!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Sure..."
+        call her_main("Sure...","body_17")
         m ".........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "So what's my gift this time?"
-        $ the_gift = "01_hp/18_store/13.png"
+        call her_main("So what's my gift this time?","body_08")
+        $ the_gift = "01_hp/18_store/gifts/12.png"
         show screen gift
         with d3
         ">You give the vibrator to Hermione"
         hide screen gift
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "And I suppose you want me to test this in front of you?"
+        call her_main("And I suppose you want me to test this in front of you?","body_16")
         g9 "Of course."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Where is the educational purpose in all of this?"
+        call her_main("Where is the educational purpose in all of this?","body_17")
         m "Good question. Improving your skills?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a124_blush.png"
-        show screen hermione_main
-        her "At what? Magic?"
+        call her_main("At what? Magic?","body_207")
         m "Certainly."
         her "........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n065_blush.png"
-        show screen hermione_main
-        her "I have one request though."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "If I'm going to masturbate I don't want to be the only one. So enjoy the free show."
+        call her_main("I have one request though.","body_204")
+        call her_main("If I'm going to masturbate I don't want to be the only one. So enjoy the free show.","body_182")
         g9 "With pleasure!"
         ">You reach under the desk and grab your cock."
         hide screen hermione_main
@@ -1589,16 +1044,12 @@ label l_tutoring:
         with d3
         ##call her_pose("fingering")
         $ fingering = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n175_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_219.png"
         show screen hermione_main
         with d3
         her "{size=-2}(Thinking of the headmaster masturbating makes me wet already {image=textheart}){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144b_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I've become such a whore. Not that I enjoy it all that much though){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n056_blush.png"
-        show screen hermione_main
-        her "So... where do we start?"
+        call her_main("{size=-2}(I've become such a whore. Not that I enjoy it all that much though){/size}","body_220")
+        call her_main("So... where do we start?","body_190")
         if custom_bra == 0:
             m "Take off your shirt and bra, I want to see your tits."
             ##$ v_her_bra = 0
@@ -1613,18 +1064,16 @@ label l_tutoring:
         ##$ v_her_shirt = 0
         $ badges = False
         $ wear_shirts = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         pause
         her "You love them don't you?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_195.png"
         show screen hermione_main
         g9 "Oh yes..."
         her "Having watched the other girls I now know why."
         her "Those breasts are so tempting."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
-        show screen hermione_main
-        her "Big or small, I want to hold them in my hands and suck the nipples."
+        call her_main("Big or small, I want to hold them in my hands and suck the nipples.","body_219")
         g9 "Me too, me too!"
         m "Now lift your skirt!"
         show screen blkfade
@@ -1634,18 +1083,14 @@ label l_tutoring:
         with d1
         ##call her_pose("fingering skirt raised")
         $ skirt_up = True
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_01.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_205.png"
         show screen hermione_main
         pause
         her "Good idea."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n056_blush.png"
-        show screen hermione_main
-        her "Sometimes I wish I could do this with others girls."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "Masturbate naked in front of each other."
+        call her_main("Sometimes I wish I could do this with others girls.","body_190")
+        call her_main("Masturbate naked in front of each other.","body_196")
         if whoring <= 12 or custom_bra >0 and panties:
             g9 "Yes go on, take off your panties!"
             show screen blkfade
@@ -1654,24 +1099,16 @@ label l_tutoring:
             hide screen blkfade
             with d1
             $ panties = False
-            $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_02b.png"
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
+            $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_02b.png"
+            $ h_body = "01_hp/13_hermione_main/body_195.png"
             show screen hermione_main
             pause
             her "Your wish is my command."
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
-            show screen hermione_main
-            her "And mine is to touch another girl's pussy."
+            call her_main("And mine is to touch another girl's pussy.","body_212")
         else:
-            $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
-            show screen hermione_main
-            her "Touch her pussy like I'm touching mine now."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n174_blush.png"
-        show screen hermione_main
-        her "Caress it."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177_blush.png"
-        show screen hermione_main
-        her "Insert my fingers into her wet pussy."
+            call her_main("Touch her pussy like I'm touching mine now.","body_212")
+        call her_main("Caress it.","body_219")
+        call her_main("Insert my fingers into her wet pussy.","body_219")
         g11 "Yes, yes! Now the vibrator!"
         show screen blkfade
         with d5
@@ -1680,17 +1117,13 @@ label l_tutoring:
         with d1
         ##call her_pose("vibrator")
         $ vibrator = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
+        $ h_body = "01_hp/13_hermione_main/body_142.png"
         show screen hermione_main
         pause
         her "Oh I had forgotten about it already."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c179_blush_t.png"
-        show screen hermione_main
-        her "I want to hear her moan as I work my fingers."
+        call her_main("I want to hear her moan as I work my fingers.","body_215")
         her "Hear her cum!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
-        show screen hermione_main
-        her "Like me! Aaah yesssss! {image=textheart} {image=textheart}"
+        call her_main("Like me! Aaah yesssss! {image=textheart} {image=textheart}","body_215")
         #$ b_her_squirt = True # the squirting needs some work. Graphically, I mean.
         pause
         g11 "Ahh! You little whore!!!"
@@ -1717,18 +1150,12 @@ label l_tutoring:
         $ b_her_tears = False
         $ fingering = False
         #$ aftercum = True   # the aftercum skirt is a bit overkill IMO. Maybe reduce the height of the stains and add some dripping down the legs.
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055b_blush_m.png"
-        show screen hermione_main
-        her "I hope you enjoyed it as much I did."
+        call her_main("I hope you enjoyed it as much I did.","body_154")
         m "Oh fuck yes, you're doing great, my little witch!"
         g9 "Very good!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n062_blush_m.png"
-        show screen hermione_main
-        her "Thank you, professor."
+        call her_main("Thank you, professor.","body_153")
         m "After all this, you need to rest."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n069_blush_m.png"
-        show screen hermione_main
-        her "Oh yes. Good night professor."
+        call her_main("Oh yes. Good night professor.","body_155")
         m "Good night, my dirty little slut."
         "You dismiss Hermione."
         hide screen hermione_main
@@ -1737,42 +1164,31 @@ label l_tutoring:
         with d3
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[16] "{size=-4}(Rest...){/size}"
         her_[18] "{size=-4}(Not before I've played with this marvelous toy again){/size}"
         her_[34] "{size=-4}(And again){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 10
         jump l_tutoring_end
 
     elif v_tutoring == 10:   # Whoring lvl 23
         m "Miss Hermione, I see you still insist on wearing that tie."
         m "Don't you get tired of wearing it constantly?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_norm.png"
-        show screen hermione_main
-        her "I suppose I do... But I'm proud of being a Gryffindor and I'm willing to make such a small sacrifice for my house."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "{size=-2}(It does get stifling quite often){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
+        call her_main("I suppose I do... But I'm proud of being a Gryffindor and I'm willing to make such a small sacrifice for my house.","body_82")
+        call her_main("{size=-2}(It does get stifling quite often){/size}","body_214")
+        $ h_body = "01_hp/13_hermione_main/body_205.png"
         show screen hermione_main
         m "Miss Hermione, I know how strongly you feel towards your house. There's no need to keep up appearances in this office."
         her "Are you sure, professor?"
         m "Miss Hermione, I think you will feel much better without that tie."
         g9 "{size=-2}(And even better when covered in my cum){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "If you insist, professor."
+        call her_main("If you insist, professor.","body_208b")
         show screen blkfade
         with d3
         ">Hermione takes off her tie."
@@ -1781,57 +1197,31 @@ label l_tutoring:
         hide screen hermione_main
         hide screen blkfade
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_188.png"
         show screen hermione_main
         m "So... I hope my lessons are paying off."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_norm.png"
-        show screen hermione_main
-        her "You mean, by making me more \"open\" to the wonders of adulthood?"
+        call her_main("You mean, by making me more \"open\" to the wonders of adulthood?","body_08")
         m "Among other things..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "That's what I thought."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "But to be honest, I was looking forward to this lesson."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078_norm.png"
-        show screen hermione_main
-        her "{size=-2}(Maybe, I shouldn't have said that){/size}"
+        call her_main("That's what I thought.","body_17")
+        call her_main("But to be honest, I was looking forward to this lesson.","body_16")
+        call her_main("{size=-2}(Maybe, I shouldn't have said that){/size}","body_18")
         her "{size=-2}(This will drive him crazy and he'll rape me savagely on his desk){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Not that I would mind...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n156_blush.png"
-        show screen hermione_main
-        her "{size=-2}(And I could ask him for points afterwards){/size}"
+        call her_main("{size=-2}(Not that I would mind...){/size}","body_208b")
+        call her_main("{size=-2}(And I could ask him for points afterwards){/size}","body_46")
         m "Miss Hermione? Are you alright?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n074_blush.png"
-        show screen hermione_main
-        her "Yes professor! Sorry, I was thinking of my next exam."
+        call her_main("Yes professor! Sorry, I was thinking of my next exam.","body_209")
         m "Oh, I'm sure it's an important one. Maybe next lesson I can help you revise."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "I would love that!"
+        call her_main("I would love that!","body_182")
         m "So, anal stimulation..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "Ah! I knew you would say that."
+        call her_main("Ah! I knew you would say that.","body_220")
         her "{size=-2}(Once again, not that I mind...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c017_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I'm such a whore, even the Slytherin girls can't compete...){/size}"
+        call her_main("{size=-2}(I'm such a whore, even the Slytherin girls can't compete...){/size}","body_213")
         m "Come again, Miss Hermione?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_blush_e.png"
-        show screen hermione_main
-        her "In this school nobody can compete with me, right professor?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "In any field!"
+        call her_main("In this school nobody can compete with me, right professor?","body_80b")
+        call her_main("In any field!","body_220")
         m "In any field? I'm not sure."
         m "You still have things to learn..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a168_blush.png"
-        show screen hermione_main
-        her "What?! What are we waiting for then?"
+        call her_main("What?! What are we waiting for then?","body_217")
         ">She rips off her shirt and rushes to your desk."
         show screen blkfade
         hide screen hermione_main
@@ -1857,136 +1247,86 @@ label l_tutoring:
         with d5
         pause
         m "We haven't even started yet and you're already wet, my adorable slut."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a036_blush.png"
-        show screen hermione_main
-        her "It's you and your dirty talk!"
+        call her_main("It's you and your dirty talk!","body_203")
         her "Talking about anal insertions, asshole licking and... and..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "Fisting!"
+        call her_main("Fisting!","body_196")
         m "I never mentioned any of that."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n023_blush.png"
-        show screen hermione_main
-        her "Oh. You didn't?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Well maybe you didn't but you {b}were{/b} thinking about it!"
+        call her_main("Oh. You didn't?","body_214")
+        call her_main("Well maybe you didn't but you {b}were{/b} thinking about it!","body_205")
         g9 "Maybe."
         g9 "Your ass is so luscious I could eat it."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "My point exactly!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "Enough talking, old man. Get to work!"
+        call her_main("My point exactly!","body_208b")
+        call her_main("Enough talking, old man. Get to work!","body_157")
         m "I haven't even given you your gift yet!"
         m "I'll just put it where you'll be sure to find it."
         m "So, can we start the lesson?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a058_blush.png"
-        show screen hermione_main
-        her "Yes for Merlin's sake!"
+        call her_main("Yes for Merlin's sake!","body_183")
         m "But before that..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a162_blush.png"
-        show screen hermione_main
-        her "If you say another word I swear I will go back to my dorm right now!"
+        call her_main("If you say another word I swear I will go back to my dorm right now!","body_218")
         ">You suddenly insert the anal plug."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
-        show screen hermione_main
-        her "Yesss {image=textheart} like that!"
+        call her_main("Yesss {image=textheart} like that!","body_212")
         ">You remove it just as quickly while giving her butt a loud slap."
         play sound sd_boing1
         with flashbulb
         play sound sd_slap
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
-        show screen hermione_main
-        her "Yessss more {image=textheart}."
+        call her_main("Yessss more {image=textheart}.","body_219")
         g9 "As you wish, princess."
         ">You promptly insert and remove it."
         play sound sd_boing1
         pause.1
         play sound sd_slap
         with hpunch
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03d.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03d.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c178_blush.png"
-        show screen hermione_main
-        her "More!!"
+        call her_main("More!!","body_219")
         play sound sd_boing1
         pause.1
         play sound sd_slap
         with hpunch
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03b.png"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t2.png"
-        show screen hermione_main
-        her "Aaaah {image=textheart}."
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03b.png"
+        call her_main("Aaaah {image=textheart}.","body_215")
         play sound sd_boing1
         pause.1
         play sound sd_slap
         with hpunch
         m "You can touch yourself too, you know."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03d.png"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n186_blush.png"
-        show screen hermione_main
-        her "I can't."
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03d.png"
+        call her_main("I can't.","body_215")
         her "{size=-2}(If I do, I will lose what little dignity I have left){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
-        show screen hermione_main
-        her "{size=-2}(But tonight...){/size}"
+        call her_main("{size=-2}(But tonight...){/size}","body_215")
         m "I'll handle it then."
         ">You finger both her butthole and her pussy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush.png"
-        show screen hermione_main
-        her "Nooo it's too much {image=textheart}."
+        call her_main("Nooo it's too much {image=textheart}.","body_215")
         g9 "Faster? No problem!"
         hide screen groping_05
         show screen groping_05b
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
-        show screen hermione_main
-        her "Aaah, you're killing me {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c099_blush_t.png"
-        show screen hermione_main
-        her "{size=-2}(And I love it){/size}"
+        call her_main("Aaah, you're killing me {image=textheart}.","body_142")
+        call her_main("{size=-2}(And I love it){/size}","body_138")
         m "More fingers?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c058_blush_t.png"
-        show screen hermione_main
-        her "No more pleassse."
+        call her_main("No more pleassse.","body_154")
         m "Actually, it wasn't a question."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
-        show screen hermione_main
-        her "If you keep this pace I will..."
+        call her_main("If you keep this pace I will...","body_142")
         ">You feel her muscles tighten on your fingers."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
-        show screen hermione_main
-        her "Come!!"
+        call her_main("Come!!","body_215")
         g9 "Good girl."
         her "Keep it up, I..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
-        show screen hermione_main
-        her "Yessss {image=textheart}."
+        call her_main("Yessss {image=textheart}.","body_215")
         m "I can keep this up as long as you please."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_04.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_04.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
-        show screen hermione_main
-        her "Yesss {image=textheart}, nooo I will die!"
+        call her_main("Yesss {image=textheart}, nooo I will die!","body_215")
         g9 "In ecstasy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush.png"
-        show screen hermione_main
-        her "Aahh not again {image=textheart}."
+        call her_main("Aahh not again {image=textheart}.","body_215")
         hide screen groping_05b
         show screen no_groping_05
         m "I think you've had enough for one night."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c178_blush.png"
-        show screen hermione_main
-        her "Yes I... I better go."
+        call her_main("Yes I... I better go.","body_219")
         m "You forgot your gift."
         ">You promptly insert the butt plug."
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush.png"
-        show screen hermione_main
-        her "Aaaaaaah."
+        call her_main("Aaaaaaah.","body_215")
         hide screen no_groping_05
         show screen no_groping_05_desk
         hide screen hermione_main
@@ -2007,24 +1347,16 @@ label l_tutoring:
         with d3
 
         #$ aftercum = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n016_blush_m.png"
+        $ h_body = "01_hp/13_hermione_main/body_156.png"
         show screen hermione_main
         pause
         her "Thank you for everything, professor."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n062_blush_m.png"
-        show screen hermione_main
-        her "It was very...{w=0.5} enlightening."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n069_blush_m.png"
-        show screen hermione_main
-        her "But please, try to go easy on me next time."
+        call her_main("It was very...{w=0.5} enlightening.","body_153")
+        call her_main("But please, try to go easy on me next time.","body_155")
         g9 "I have absolutely no idea what you mean by that."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n016_blush_m.png"
-        show screen hermione_main
-        her "Good night professor."
+        call her_main("Good night professor.","body_156")
         m "Good night, my dear anal whore."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055b_blush_m.png"
-        show screen hermione_main
-        her "Professor..."
+        call her_main("Professor...","body_154")
         "You dismiss Hermione."
         hide screen hermione_main
         hide screen hermione_02
@@ -2032,29 +1364,22 @@ label l_tutoring:
         with d3
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[35] "{size=-4}(Finally tonight I'll just go to bed){/size}"
         her_[15] "{size=-4}(That was a little too intense){/size}"
         her_[34] "{size=-4}(Not that I'm complaining...){/size}"
-
+        show screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 11
         jump l_tutoring_end
 
     elif v_tutoring == 11:
         m "So..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "Wait..."
+        call her_main("Wait...","body_208b")
         show screen blkfade
         with d3
         ">Hermione unbuttons her collar."
@@ -2063,52 +1388,28 @@ label l_tutoring:
         hide screen hermione_main
         hide screen blkfade
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
-        show screen hermione_main
-        her "You have another gift for me?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059_blush.png"
-        show screen hermione_main
-        her "Please, please."
+        call her_main("You have another gift for me?","body_205")
+        call her_main("Please, please.","body_182")
         m "I thought I had to go easier on you?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "Oh don't worry, it was just a moment of weakness."
+        call her_main("Oh don't worry, it was just a moment of weakness.","body_220")
         her "I'm ready now!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n037_norm.png"
-        show screen hermione_main
-        her "{size=-2}(My body perhaps not...){/size}"
+        call her_main("{size=-2}(My body perhaps not...){/size}","body_71")
         m "Did you have fun with your anal plug?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c017_blush.png"
-        show screen hermione_main
-        her "Y-yes... I wear it sometimes..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a035_blush.png"
-        show screen hermione_main
-        her "But I cut the tail!"
+        call her_main("Y-yes... I wear it sometimes...","body_213")
+        call her_main("But I cut the tail!","body_203")
         her "{size=-2}(No way I could walk around like that...){/size}"
         m "And you like it?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "It's very...{w=0.5} stimulating. It helps me whenever I cast a spell."
+        call her_main("It's very...{w=0.5} stimulating. It helps me whenever I cast a spell.","body_157")
         m "Tell me the truth Miss Hermione, you wear it all the time, don't you?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Nooo..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n027_blush.png"
-        show screen hermione_main
-        her "Maybe..."
+        call her_main("Nooo...","body_203")
+        call her_main("Maybe...","body_219")
         her "........"
         m "Don't be ashamed, it's alright my little whore."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_blush_e.png"
-        show screen hermione_main
-        her "I wear it all the time and...{w=0.3} I love it!"
+        call her_main("I wear it all the time and...{w=0.3} I love it!","body_80b")
         g9 "{size=-2}(Marvelous){/size}"
         m "I've taught you good."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n058_norm.png"
-        show screen hermione_main
-        her "To be a slut? Yes you have..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "And now I want more so where is my gift?!"
+        call her_main("To be a slut? Yes you have...","body_16")
+        call her_main("And now I want more so where is my gift?!","body_17")
         m "There, there."
         $ the_gift = "01_hp/18_store/gift_anal_beads.png"
         show screen gift
@@ -2116,26 +1417,16 @@ label l_tutoring:
         ">You give the anal beads to Hermione"
         hide screen gift
         with d3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n108_blush.png"
-        show screen hermione_main
-        her "Oh! That's even better than a butt plug."
+        call her_main("Oh! That's even better than a butt plug.","body_211")
         g9 "And they can be useful for your pussy too."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "So many possibilities..."
+        call her_main("So many possibilities...","body_220")
         her "...so little time."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n159_norm.png"
-        show screen hermione_main
-        her "I suppose you want me to try them out?"
+        call her_main("I suppose you want me to try them out?","body_75")
         her "Or would you rather try them out on me yourself?"
         g9 "Oh yes."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_norm.png"
-        show screen hermione_main
-        her "I don't even know why I'm asking..."
+        call her_main("I don't even know why I'm asking...","body_70")
         her "{size=-2}(Old pervert...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "{size=-2}({b}My{/b} old pervert){/size}"
+        call her_main("{size=-2}({b}My{/b} old pervert){/size}","body_182")
         show screen blkfade
         if custom_bra >=1 and badges and custom_outfit <= 0:
             ">She wantonly removes her shirt and bra."
@@ -2149,21 +1440,13 @@ label l_tutoring:
         ##$ v_her_shirt = 0
         $ badges = False
         $ wear_shirts = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n097_blush.png"
-        show screen hermione_main
-        her "My tits are the best in all of Hogwarts!"
+        call her_main("My tits are the best in all of Hogwarts!","body_212")
         m "Have you been with many girls to say that?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
-        show screen hermione_main
-        her "I wish..."
+        call her_main("I wish...","body_194")
         g9 "I can tutor you on that too."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Maybe we should finish this lesson first."
+        call her_main("Maybe we should finish this lesson first.","body_205")
         m "Oh, we have time."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "Speaking of that..."
+        call her_main("Speaking of that...","body_157")
         show screen blkfade
         hide screen hermione_main
         with d3
@@ -2186,133 +1469,79 @@ label l_tutoring:
         pause
         hide screen ctc
         g9 "As always, it's a delightful view."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "I'm glad you love it."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n061_blush.png"
-        show screen hermione_main
-        her "Can we start now?"
+        call her_main("I'm glad you love it.","body_208b")
+        call her_main("Can we start now?","body_195")
         g9 "I suppose you want them in your ass?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Naturally."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I'll try them in my pussy later tonight){/size}"
+        call her_main("Naturally.","body_205")
+        call her_main("{size=-2}(I'll try them in my pussy later tonight){/size}","body_198")
         hide screen no_groping_05
         show screen groping_05
         ">You push the first bead in with ease."
         her "Hmmm {image=textheart}"
         m "How many do you think you can take, my dear?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "How many have you got?"
+        call her_main("How many have you got?","body_205")
         g9 "That's the spirit!"
         ">You push another one inside with little resistance."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "Yess {image=textheart}, one more please."
+        call her_main("Yess {image=textheart}, one more please.","body_196")
         ">You feel the beads sink deeper when you push the third one inside."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_01.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
-        show screen hermione_main
-        her "Ohhh, they're... they're moving {image=textheart}."
+        call her_main("Ohhh, they're... they're moving {image=textheart}.","body_194")
         ">The fourth takes some work before it pops in."
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t2.png"
-        show screen hermione_main
-        her "Ah {image=textheart} ah {image=textheart}."
+        call her_main("Ah {image=textheart} ah {image=textheart}.","body_212")
         ">You push the last one forcefully inside."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush_t.png"
-        show screen hermione_main
-        her "Ahhhhh {image=textheart}, delightful."
+        call her_main("Ahhhhh {image=textheart}, delightful.","body_219")
         her "They're so deep in my ass... almost like your cock."
         g9 "I can..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
-        show screen hermione_main
-        her "No you can't! My butthole is too tight for both."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
-        show screen hermione_main
-        her "{size=-2}(But it's such a good idea){/size}"
+        call her_main("No you can't! My butthole is too tight for both.","body_184b")
+        call her_main("{size=-2}(But it's such a good idea){/size}","body_194")
         m "I'm sure there's still room for at least one finger."
         ">You finger her butthole gently."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
-        show screen hermione_main
-        her "Ahh... {image=textheart}{w=0.5} aah...{image=textheart}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a066_blush_t.png"
-        show screen hermione_main
-        her "W-What did I say..."
+        call her_main("Ahh... {image=textheart}{w=0.5} aah...{image=textheart}","body_212")
+        call her_main("W-What did I say...","body_194")
         m ">You wiggle the finger inside."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03b.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03b.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a067_blush.png"
-        show screen hermione_main
-        her "You never listen, old pervert."
+        call her_main("You never listen, old pervert.","body_194")
         m "What can I say, I just know what's best for you, my little witch."
         ">You pick up the pace."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03d.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03d.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
-        show screen hermione_main
-        her "Yesss {image=textheart}."
+        call her_main("Yesss {image=textheart}.","body_194")
         m "I thought you didn't want the finger?"
         g9 "In that case, one more finger."
         ">She shivers when you insert a second finger."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush.png"
-        show screen hermione_main
-        her "Ahh noo... no more please."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c057_blush.png"
-        show screen hermione_main
-        her "My butthole is stretched so wide!"
+        call her_main("Ahh noo... no more please.","body_195")
+        call her_main("My butthole is stretched so wide!","body_196")
         g9 "Your butthole is doing great."
         ">You finger her butthole fiercely."
         hide screen groping_05
         show screen groping_05b
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c058_blush_t.png"
-        show screen hermione_main
-        her "Nooo... aahh {image=textheart}."
+        call her_main("Nooo... aahh {image=textheart}.","body_154")
         m "Your pussy is getting neglected. We need to fix that!"
         ">You start fingering her pussy with your other hand. She is panting heavily."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
-        show screen hermione_main
-        her "Ah... ah... like that yesss {image=textheart}."
+        call her_main("Ah... ah... like that yesss {image=textheart}.","body_215")
         ">You suddenly pull out all the beads."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
-        show screen hermione_main
-        her "Ahhhhhh!!"
+        call her_main("Ahhhhhh!!","body_158")
         ">And insert four fingers in her ass."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_04.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_04.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
-        show screen hermione_main
-        her "I'm cumming old bastard, I cumming!"
+        call her_main("I'm cumming old bastard, I cumming!","body_212")
         m "If you must..."
         ">You continue to work her ass while you finger her pussy."
         her "No don't I..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
-        show screen hermione_main
-        her "Cummm {image=textheart}{image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c188_blush_t.png"
-        show screen hermione_main
-        her "Agaaain aaah {image=textheart}."
+        call her_main("Cummm {image=textheart}{image=textheart}.","body_138")
+        call her_main("Agaaain aaah {image=textheart}.","body_215")
         g11 "Sorry my little anal whore but I'm starting to get tired."
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a162b_blush_t2.png"
-        show screen hermione_main
-        her "Don't you dare stop now!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
-        show screen hermione_main
-        her "Just a little more pleassse {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
-        show screen hermione_main
-        her "Because I will..."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_04.png"
+        call her_main("Don't you dare stop now!","body_148")
+        call her_main("Just a little more pleassse {image=textheart}.","body_158")
+        call her_main("Because I will...","body_158")
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_04.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
-        show screen hermione_main
-        her "Come again!!"
+        call her_main("Come again!!","body_215")
         show screen blkfade
         with d7
         ">There's a small puddle on your desk from her juices. You slowly remove your fingers."
@@ -2320,18 +1549,10 @@ label l_tutoring:
         show screen no_groping_05_desk
         hide screen blkfade
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055b_blush_m.png"
-        show screen hermione_main
-        her "*Pant* *pant*"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n063_blush_m.png"
-        show screen hermione_main
-        her "I feel completely ravaged but happy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n064_blush_m.png"
-        show screen hermione_main
-        her "Thank you professor, for letting me discover such great sensations."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n069_blush_m.png"
-        show screen hermione_main
-        her "But I'm exhausted so good night."
+        call her_main("*Pant* *pant*","body_154")
+        call her_main("I feel completely ravaged but happy.","body_156")
+        call her_main("Thank you professor, for letting me discover such great sensations.","body_156")
+        call her_main("But I'm exhausted so good night.","body_155")
         show screen blkfade
         with d3
         ">She puts her shirt back on and rushes to the door."
@@ -2341,28 +1562,22 @@ label l_tutoring:
         $ wear_shirts = True
         ##call her_pose()
         $ hermione_chibi_xpos = 610
-        ##show screen hermione_02_f
+        ##show screen hermione_01_f
         show screen genie
         hide screen blkfade
         m "Come back here, girl."
         g11 "I need your mouth, I can't hold it anymore."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n054_blush.png"
-        show screen hermione_main
-        her "Professor!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
-        show screen hermione_main
-        her "........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n020_blush.png"
-        show screen hermione_main
-        her "Can I have points for this?"
+        call her_main("Professor!","body_190")
+        call her_main(".........","body_205")
+        call her_main("Can I have points for this?","body_206")
         g11 "Now!"
         show screen blkfade
         with d5
         ">She comes back and does not seem particularly upset."
         hide screen hermione_main
-        ##hide screen hermione_02_f
+        ##hide screen hermione_01_f
         hide screen genie
         $ genie_chibi_xpos = -150
         $ genie_chibi_ypos = 10
@@ -2399,16 +1614,10 @@ label l_tutoring:
         show screen hermione_02
         hide screen blkfade
 
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n033_blush.png"
-        show screen hermione_main
-        her "Sir, I still think I deserve some..."
+        call her_main("Sir, I still think I deserve some...","body_203")
         m "Good night, my dear child."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "........."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
-        show screen hermione_main
-        her "Good night, professor."
+        call her_main(".........","body_214")
+        call her_main("Good night, professor.","body_184b")
         "You dismiss Hermione."
         hide screen hermione_main
         $ b_her_tears = False
@@ -2417,27 +1626,21 @@ label l_tutoring:
         with d3
         hide screen blkfade
         show screen genie
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[4] "{size=-4}(Sucking his cock without getting any points!){/size}"
         her_[6] "{size=-4}(If he hadn't made me come so hard...){/size}"
         her_[16] "{size=-4}(*sigh* Although I guess it's not that high a price...){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 12
         jump l_tutoring_end
 
     elif v_tutoring == 12:
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n020_blush.png"
-        show screen hermione_main
-        her "Oh! I can't believe I forgot! Stay where you are, I'll be right back!"
+        call her_main("Oh! I can't believe I forgot! Stay where you are, I'll be right back!","body_206")
         hide screen hermione_main
         show screen blkfade
         with d3
@@ -2460,41 +1663,29 @@ label l_tutoring:
         show screen hermione_walk_01
         pause 1
         show screen hermione_02
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "{size=-4}*panting*{/size} Oh good, you're still here."
+        call her_main("{size=-4}*panting*{/size} Oh good, you're still here.","body_183")
         m "Is it safe to assume you have honored my request this time?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n054_blush.png"
-        show screen hermione_main
-        her "I thought it was obvious."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b1_blush.png"
-        show screen hermione_main
-        her "I even had to hide in an alcove to avoid getting noticed on my way here!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059b_blush.png"
-        show screen hermione_main
-        her "It was so embarrassing!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "{size=-2}(And exciting!){/size}"
+        call her_main("I thought it was obvious.","body_190")
+        call her_main("I even had to hide in an alcove to avoid getting noticed on my way here!","body_183")
+        call her_main("It was so embarrassing!","body_182")
+        call her_main("{size=-2}(And exciting!){/size}","body_182")
         m "Are you sure you're not wearing anything underneath?"
         hide screen hermione_main
         with d3
         ">Hermione opens up her cloak a little."
         ##$ v_her_robe = "robe1_gap"
         $ robe = 2
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_205.png"
         show screen hermione_main
         pause
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_blush.png"
-        show screen hermione_main
-        her "Does this answer your question?"
+        call her_main("Does this answer your question?","body_190")
         m "Not really. It's hard to tell from this distance. I mean, it's so dark..."
         hide screen hermione_main
         with d3
         ">Hermione rolls her eyes and pulls the gap wider"
         ##$ v_her_robe = "robe1_gap_wide"
         $ robe = 3
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_208b.png"
         show screen hermione_main
         pause
         her "Is that better?"
@@ -2502,49 +1693,27 @@ label l_tutoring:
         hide screen hermione_main
         with d3
         ">Hermione makes to pull her cloak back together, then pauses and puts her hands back down."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n067_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_209.png"
         show screen hermione_main
         pause
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144_blush.png"
-        show screen hermione_main
-        her "Alright then, can we start the lesson now?"
+        call her_main("Alright then, can we start the lesson now?","body_220")
         m "Maybe, I don't know... do you like butterbeer?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n041_blush.png"
-        show screen hermione_main
-        her "You know I do. What's that got to do with..."
+        call her_main("You know I do. What's that got to do with...","body_200")
         g9 "......."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n167_blush.png"
-        show screen hermione_main
-        her "Do you mean...{w=0.3} no, no way professor!"
+        call her_main("Do you mean...{w=0.3} no, no way professor!","body_210")
         m "Oh, rest assured, we won't start with the bottom end."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n099_blush_e.png"
-        show screen hermione_main
-        her "Still, professor, this is so dirty..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n097_blush.png"
-        show screen hermione_main
-        her "{size=-2}(And exciting){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n039_blush.png"
-        show screen hermione_main
-        her "Moreover, my butthole isn't stretched enough."
+        call her_main("Still, professor, this is so dirty...","body_212")
+        call her_main("{size=-2}(And exciting){/size}","body_212")
+        call her_main("Moreover, my butthole isn't stretched enough.","body_184b")
         g4 "Are you kidding me, with all your training!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "And what a training!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "{size=-2}(Good thing I practiced by myself, otherwise...){/size}"
+        call her_main("And what a training!","body_214")
+        call her_main("{size=-2}(Good thing I practiced by myself, otherwise...){/size}","body_208b")
         g4 "Now stop making up excuses!"
         m "I can see you rubbing your thighs from excitement!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n056_blush.png"
-        show screen hermione_main
-        her "I thought it was so dark in here..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Humm, okay, but you better start out easy on me."
+        call her_main("I thought it was so dark in here...","body_190")
+        call her_main("Humm, okay, but you better start out easy on me.","body_17")
         g9 "I'm always gentle with you my dear child."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_norm.png"
-        show screen hermione_main
-        her "Yeah, obviously..."
+        call her_main("Yeah, obviously...","body_70")
         m "{size=-2}(It's not as if you don't like it rough){/size}"
         m "Alright, my desk, you, naked, now!"
 
@@ -2566,47 +1735,29 @@ label l_tutoring:
         with d5
         ##$ v_her_robe = "robe1_off"
         $ robe = 4
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         pause
         hide screen ctc
         her "You're crazy for my body, aren't you?"
         m "Why do you ask..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_norm.png"
-        show screen hermione_main
-        her "Because a girl likes to be complimented, professor!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_norm.png"
-        show screen hermione_main
-        her "Especially when she's about to do these kinds of things!"
+        call her_main("Because a girl likes to be complimented, professor!","body_17")
+        call her_main("Especially when she's about to do these kinds of things!","body_70")
         m "I meant, of course you have a amazing body! That's not up to question."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n015_blush.png"
-        show screen hermione_main
-        her "Best in the school?"
+        call her_main("Best in the school?","body_205")
         m "......{w=0.3} Yeah, yeah, best in the school."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a124_blush.png"
-        show screen hermione_main
-        her "I can tell you're lying!"
+        call her_main("I can tell you're lying!","body_207")
         m "Miss Hermione, I've lived for a very long time and believe me, I have seen few women with a body like yours."
         m "And definitely none in this school."
         m "{size=-2}(Severus still hasn't sent those Slytherin whores up){/size}"
         m "{size=-2}(I wonder if I can fire him for that...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
-        show screen hermione_main
-        her "Thank you, professor."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n068_blush.png"
-        show screen hermione_main
-        her "Feel free to do use my body as you please."
+        call her_main("Thank you, professor.","body_182")
+        call her_main("Feel free to do use my body as you please.","body_208b")
         m "{size=-2}(*sigh* women...){/size}"
         m "Bend over the desk my dear little witch."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "{size=-2}(It starts with my dear little witch and ends up with my dear anal whore){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n023_blush.png"
-        show screen hermione_main
-        her "{size=-2}(*sigh* men...){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n055_blush.png"
-        show screen hermione_main
-        her "As you wish my dear {b}old{/b} headmaster."
+        call her_main("{size=-2}(It starts with my dear little witch and ends up with my dear anal whore){/size}","body_214")
+        call her_main("{size=-2}(*sigh* men...){/size}","body_214")
+        call her_main("As you wish my dear {b}old{/b} headmaster.","body_190")
         m "{size=-2}(If you knew how old I actually am...){/size}"
         show screen blkfade
         with d5
@@ -2622,7 +1773,7 @@ label l_tutoring:
         with d5
         ##$ v_her_robe = 0
         $ robe = 0 
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n019_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         pause
         hide screen ctc
@@ -2630,61 +1781,37 @@ label l_tutoring:
         ">You take an empty butterbeer bottle, spit on the neck and push it inside her butthole."
         hide screen no_groping_laying_02
         show screen scr_her_fingering_naked("slow")
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c017_blush.png"
-        show screen hermione_main
-        her "Hmmm, yes like that."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n067_blush.png"
-        show screen hermione_main
-        her "My pussy feels lonely without your care."
+        call her_main("Hmmm, yes like that.","body_213")
+        call her_main("My pussy feels lonely without your care.","body_209")
         ">You start to finger her pussy too."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_196.png"
         show screen hermione_main
         m "Poor little thing."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c057_blush.png"
-        show screen hermione_main
-        her "What's better in life than this professor?"
+        call her_main("What's better in life than this professor?","body_196")
         m "Oh, I don't know."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n059b_blush.png"
-        show screen hermione_main
-        her "Thank you for letting me discover such pleasures."
+        call her_main("Thank you for letting me discover such pleasures.","body_182")
         g9 "{b}My{/b} pleasure."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n056_blush.png"
-        show screen hermione_main
-        her "It's even better when it's mutual, isn't it?"
+        call her_main("It's even better when it's mutual, isn't it?","body_190")
         m "Hmm, yes you're right. I'm glad you feel that way."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n044_blush.png"
-        show screen hermione_main
-        her "Now a little deeper please."
+        call her_main("Now a little deeper please.","body_200")
         ">You push the whole bottle neck up inside her asshole."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c057_blush.png"
-        show screen hermione_main
-        her "Ohhh, yesss! {image=textheart}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "More, faster!"
+        call her_main("Ohhh, yesss! {image=textheart}","body_196")
+        call her_main("More, faster!","body_196")
         show screen scr_her_fingering_naked()
         ">You rotate the bottle while going back and forth deeper and deeper."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush_t.png"
-        show screen hermione_main
-        her "Yessss, don't forget my pussy {image=textheart}."
+        call her_main("Yessss, don't forget my pussy {image=textheart}.","body_194")
         g9 "Oh, your pussy better be ready for what's coming!"
         ">You insert all four fingers in her sopping wet pussy."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c059_blush_t.png"
-        show screen hermione_main
-        her "Sweet Circe, aah, aah, that's too much! {image=textheart}"
+        call her_main("Sweet Circe, aah, aah, that's too much! {image=textheart}","body_154")
         m "Nothing is too much for my little whore."
         ">You increase the pace of both hands."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c068_blush_t.png"
-        show screen hermione_main
-        her "No, no, yes, yessss! {image=textheart}"
+        call her_main("No, no, yes, yessss! {image=textheart}","body_158")
         ">Most of the bottle is inside her now, leaving just enough to get a good grip."
         m "Push the bottle, push it!"
         ">Whenever she pushes it back you do the same in the other direction."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_04.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_04.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
-        show screen hermione_main
-        her "This is, this is, aaaah!!! {image=textheart}{image=textheart}"
+        call her_main("This is, this is, aaaah!!! {image=textheart}{image=textheart}","body_215")
         ">Her whole body convulses as she comes hard."
         show screen blkfade
         with d5
@@ -2694,12 +1821,8 @@ label l_tutoring:
         show screen no_groping_laying_02
         pause.3
         hide screen blkfade
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n049_blush_m.png"
-        show screen hermione_main
-        her "*Panting* *panting*"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush_m.png"
-        show screen hermione_main
-        her "P-professor...{w=0.3} I'm so happy right now."
+        call her_main("*Panting* *panting*","body_158")
+        call her_main("P-professor...{w=0.3} I'm so happy right now.","body_157")
         g9 "Glad to hear it."
         show screen blkfade
         ">After a while, she makes herself somewhat presentable."
@@ -2711,13 +1834,9 @@ label l_tutoring:
         hide screen blkfade
         with d3
         m "Sweet dreams my little princess."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n052_blush.png"
-        show screen hermione_main
-        her "You too, professor."
+        call her_main("You too, professor.","body_183")
         g9 "They are always sweet with you around."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n017_blush.png"
-        show screen hermione_main
-        her "Thank you."
+        call her_main("Thank you.","body_213")
         m "And next time bring your books, I'll help you with your revisions."
         "You dismiss Hermione."
         hide screen hermione_main
@@ -2727,27 +1846,20 @@ label l_tutoring:
         $ b_her_tears = False
         hide screen blkfade
         show screen genie
-
-        $ walk_xpos = 400
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[35] "{size=-4}(Yes, sweet dreams...){/size}"
         her_[34] "{size=-4}(Sweet and wet!){/size}"
-
+        hide screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 13
         jump l_tutoring_end
 
     elif v_tutoring == 13:
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n041_norm.png"
-        show screen hermione_main
-        her "I'll go get my books right away, sir!"
+        call her_main("I'll go get my books right away, sir!","body_13")
         hide screen hermione_main
         show screen blkfade
         with d3
@@ -2756,7 +1868,7 @@ label l_tutoring:
         play sound sd_door
         pause.3
         $ book_hold = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_norm.png"
+        $ h_body = "01_hp/13_hermione_main/body_45.png"
         show screen hermione_main
         show screen hermione_02
         show screen ctc
@@ -2765,35 +1877,19 @@ label l_tutoring:
         pause
         hide screen ctc
         m "Your vest is back?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n051b_norm.png"
-        show screen hermione_main
-        her "Revisions are a serious matter!"
+        call her_main("Revisions are a serious matter!","body_11")
         m "{size=-2}(My cock in your ass is a serious matter...){/size}"
         m "In this regard, I kinda lied, it's more of a mock exam than revisions."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "What a surprise!"
+        call her_main("What a surprise!","body_214")
         m "I need to make sure you've been working out your butthole."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n023_blush.png"
-        show screen hermione_main
-        her "........"
+        call her_main("........","body_214")
         g9 "With my cock."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n031_blush.png"
-        show screen hermione_main
-        her "I see..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_blush.png"
-        show screen hermione_main
-        her "I'm not against that but I bet I'll gain no points for this?"
+        call her_main("I see...","body_201")
+        call her_main("I'm not against that but I bet I'll gain no points for this?","body_203")
         m "I'm helping you with your revisions, why should you be getting points for that?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n029b_blush.png"
-        show screen hermione_main
-        her "And what revisions..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n011_blush2.png"
-        show screen hermione_main
-        her "Alright, since you have helped me a lot, I'm in."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014b_blush.png"
-        show screen hermione_main
-        her "{size=-2}(I give myself away for free now, what a bad whore I make){/size}"
+        call her_main("And what revisions...","body_184b")
+        call her_main("Alright, since you have helped me a lot, I'm in.","body_188")
+        call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}","body_157")
         m "Come here and strip."
         show screen blkfade
         hide screen hermione_main
@@ -2813,7 +1909,7 @@ label l_tutoring:
         $ wear_shirts = False
         $ badges = False
         $ custom_outfit = 20
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n018_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_198.png"
         show screen hermione_main
         show screen ctc
         hide screen blkfade
@@ -2833,9 +1929,7 @@ label l_tutoring:
         ##$ v_her_book = 0
         ##$ v_her_shirt = 0
         $ book_hold = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_a029_blush.png"
-        show screen hermione_main
-        her "I should read about this spell called \"the Clap\"!"
+        call her_main("I should read about this spell called \"the Clap\"!","body_184b")
         ">You take advantage of her moment of distraction to force you cock into her butthole."
         show screen blkfade
         pause 1
@@ -2844,104 +1938,68 @@ label l_tutoring:
         show screen scr_her_sex("slow")
         hide screen blkfade
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
-        show screen hermione_main
-        her "Ah, you brute {image=textheart}."
+        call her_main("Ah, you brute {image=textheart}.","body_194")
         m "Your butthole is the perfect fit, not too tight and not too stretched!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
-        show screen hermione_main
-        her "You've trained me well..."
+        call her_main("You've trained me well...","body_212")
         ">You caress her clit while fucking her."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c047_blush.png"
-        show screen hermione_main
-        her "Mmmh, yes {image=textheart}."
+        call her_main("Mmmh, yes {image=textheart}.","body_196")
         g9 "You love it don't you?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n014_blush.png"
-        show screen hermione_main
-        her "Your cock in my ass, oh yes."
+        call her_main("Your cock in my ass, oh yes.","body_205")
         m "Even without points?"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n008_blush.png"
-        show screen hermione_main
-        her "Don't make me regret agreeing to this."
+        call her_main("Don't make me regret agreeing to this.","body_182b")
         m "Say you love it even without points."
         show screen scr_her_sex()
         ">You increase the pace."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c177b_blush.png"
-        show screen hermione_main
-        her "Ahh yesss {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n078b_blush.png"
-        show screen hermione_main
-        her "I'm such a whore, I love sex even for free."
+        call her_main("Ahh yesss {image=textheart}.","body_219")
+        call her_main("I'm such a whore, I love sex even for free.","body_206")
         g9 "You know it!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n056_blush.png"
-        show screen hermione_main
-        her "Don't make it a habit."
+        call her_main("Don't make it a habit.","body_190")
         m "......"
         ">You pull out your cock and roughly shove it back inside."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_01.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_01.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c067_blush.png"
+        $ h_body = "01_hp/13_hermione_main/body_194.png"
         show screen hermione_main
         with hpunch
         her "Aaaaah {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c097_blush_t1.png"
-        show screen hermione_main
-        her "I love being sodomized savagely by my headmaster."
+        call her_main("I love being sodomized savagely by my headmaster.","body_212")
         ">And again."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t1.png"
+        $ h_body = "01_hp/13_hermione_main/body_215.png"
         show screen hermione_main
         with hpunch
         her "Yessss {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c098_blush_t.png"
-        show screen hermione_main
-        her "I love his big cock in my ass."
+        call her_main("I love his big cock in my ass.","body_138")
         ">You slap her buttcheek."
         play sound sd_slap
         with hpunch
         $ b_her_tears = False
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c058_blush_t.png"
-        show screen hermione_main
-        her "And being punished for my sluttiness."
+        call her_main("And being punished for my sluttiness.","body_154")
         play sound sd_slap
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c099_blush_t.png"
-        show screen hermione_main
-        her "Aah, like this, punish me more master {image=textheart}."
-        play sound sd_slap
+        call her_main("Aah, like this, punish me more master {image=textheart}.","body_138")
+        play sound sd_slap 
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c179_blush_t.png"
-        show screen hermione_main
-        her "Yess!"
-        play sound sd_slap
+        call her_main("Yess!","body_215")
+        play sound sd_slap 
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
-        show screen hermione_main
-        her "Mooore!"
-        play sound sd_slap
+        call her_main("Mooore!","body_215")
+        play sound sd_slap 
         with hpunch
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c078_blush_t.png"
-        show screen hermione_main
-        her "I'm about to..."
-        play sound sd_slap
+        call her_main("I'm about to...","body_142")
+        play sound sd_slap 
         with hpunch
         pause.1
         play sound sd_slap
         with hpunch
         pause.1
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c189_blush_t.png"
-        show screen hermione_main
-        her "Cuuuum {image=textheart}{image=textheart}."
+        call her_main("Cuuuum {image=textheart}{image=textheart}.","body_215")
         show screen scr_her_sex("fast")
         ">You fuck her butthole fiercely."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c187_blush_t3.png"
-        show screen hermione_main
-        her "Yes, yes, again, aaaah {image=textheart}."
+        call her_main("Yes, yes, again, aaaah {image=textheart}.","body_215")
         g11 "Yes, my little whore, yes!"
         hide screen scr_her_sex
         show screen scr_her_sex_cum_outside()
-        $ h_body = "01_hp/27_ue/hermione/bd_her_c058_blush_t.png"
-        show screen hermione_main
-        her "*Panting* *panting*"
+        call her_main("*Panting* *panting*","body_154")
         show screen scr_her_sex_cum_outside(1)
         g11 "*Panting* *panting*"
         show screen blkfade
@@ -2952,41 +2010,23 @@ label l_tutoring:
         show screen no_groping_laying_02
         hide screen blkfade
         m "*sigh* that was, that was..."
-        $ u_tears_pic = "01_hp/27_ue/hermione/e_her_tears_03.png"
+        $ u_tears_pic = "01_hp/13_hermione_main/e_her_tears_03.png"
         $ b_her_tears = True
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n156_blush.png"
-        show screen hermione_main
-        her "Marvellous {image=textheart}."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n095_blush.png"
-        show screen hermione_main
-        her "I'm so glad you agreed to tutor me, professor..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n144b_blush.png"
-        show screen hermione_main
-        her "Your lessons have changed my life so much!"
+        call her_main("Marvellous {image=textheart}.","body_46")
+        call her_main("I'm so glad you agreed to tutor me, professor...","body_212")
+        call her_main("Your lessons have changed my life so much!","body_220")
         g9 "{size=-2}(Victory!){/size}"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n032_blush.png"
-        show screen hermione_main
-        her "But if you think you can fuck me all the time without giving me points..."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n036_blush.png"
-        show screen hermione_main
-        her "You're dreaming!"
+        call her_main("But if you think you can fuck me all the time without giving me points...","body_203")
+        call her_main("You're dreaming!","body_214")
         m "{size=-2}(Ohhh...){/size}"
         m "Even occasionally?"
         her "......."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n044_blush.png"
-        show screen hermione_main
-        her "Only if you are well-behaved..."
+        call her_main("Only if you are well-behaved...","body_200")
         g9 "I'm the most well-behaved professor in the whole school!"
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n037_blush.png"
-        show screen hermione_main
-        her "Sure."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n022_blush.png"
-        show screen hermione_main
-        her "{size=-2}(At least, you're not the worst...){/size}"
+        call her_main("Sure.","body_203")
+        call her_main("{size=-2}(At least, you're not the worst...){/size}","body_214")
         m "Good night my beloved princess."
-        $ h_body = "01_hp/27_ue/hermione/bd_her_n012_blush.png"
-        show screen hermione_main
-        her "Good night my beloved prince."
+        call her_main("Good night my beloved prince.","body_188")
         ">You dismiss Hermione."
         ">She puts her clothes back on without haste."
         hide screen hermione_main
@@ -2999,27 +2039,22 @@ label l_tutoring:
         show screen genie
         hide screen blkfade
         with d3
-
-        $ walk_xpos = 300
-        $ walk_xpos2 = 610
-        $ hermione_speed = 02.0
-        show screen hermione_walk_01_f
-        pause 2
-        $ hermione_chibi_xpos = 610
-        hide screen hermione_walk_01_f
-        ##show screen hermione_02_f
-        with d3
-
+        
+        call her_walk(400,610,2)
+        
+        show screen hermione_01_f
         her_[16] "{size=-4}(I called my headmaster \"my beloved prince\"){/size}"
         her_[18] "{size=-4}(He's hardly Prince Charming but...){/size}"
         her_[38] "{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}"
-
+        show screen hermione_01_f
+        with d3
+        
         $ v_tutoring = 14
         jump l_tutoring_end
 
 label l_tutoring_end:
     play sound sd_door
-    ##hide screen hermione_02_f
+    ##hide screen hermione_01_f
     with d3
 
     $ aftercum = False

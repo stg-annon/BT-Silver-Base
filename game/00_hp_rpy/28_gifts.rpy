@@ -1075,37 +1075,29 @@ label give_her_gift(gift_id):
     
     if gift_id == 1:#candy
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
-            $ gift_item_inv[gift_id] -= 1
-            $ mad -= 5
             call her_main("A lollipop?","body_01")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Thank you, [genie_name].","body_06")
-            call happy
+            call happy(5)
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
-            $ gift_item_inv[gift_id] -= 1
-            $ mad -= 5
             call her_main("Candy?","body_03")
             call her_main("Candy is for kids, [genie_name].","body_02")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Thank you...","body_29")
-            call happy
+            call happy(5)
             $ h_body = "01_hp/13_hermione_main/body_06.png"
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
-            $ gift_item_inv[gift_id] -= 1
-            $ mad -= 5
             call her_main("Candy?","body_03")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Ehm... Sure, thanks...","body_08")
-            call happy
+            call happy(5)
             $ h_body = "01_hp/13_hermione_main/body_06.png"
         if whoring >= 18: # Lv 7+  
-            $ gift_item_inv[gift_id] -= 1
-            $ mad -=5
             call her_main("A lollipop?","body_06")
             call her_main("Clever girls use candy like this as a \"weapon\".","body_46")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Thank you, [genie_name].","body_74")
-            call happy
+            call happy(5)
             $ h_body = "01_hp/13_hermione_main/body_128.png"
     if gift_id == 2:#chocolate
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -1581,14 +1573,12 @@ label give_her_gift(gift_id):
             call happy(30)
     if gift_id == 18:#sex doll
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
-            $ mad += 20
             call her_main("Is this...","body_48")
             call her_main("A sex doll?!","body_34")
             call her_main("[genie_name]!!!","body_32")
             call upset(20)
             $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
-            $ mad += 20
             call her_main("A sex doll?","body_48")
             call her_main("This is just so unbecoming for an esteemed wizard such as yourself, [genie_name]...","body_120")
             call upset(20)
