@@ -2738,8 +2738,7 @@ label new_request_15_complete:
         show screen hermione_01_f #Hermione stands still.
         pause.3
         $ h_body = "01_hp/13_hermione_main/body_120.png"                                                                                                                                                         # HERMIONE HEAD
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.       # HERMIONE HEAD
+        $ her_head_ypos = her_head_only
         show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
         her "\"Slytherin\"..."
         hide screen h_head2       
@@ -2750,8 +2749,7 @@ label new_request_15_complete:
         show screen hermione_01_f #Hermione stands still.
         pause.3
         $ h_body = "01_hp/13_hermione_main/body_120.png"                                                                                                                                                         # HERMIONE HEAD
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.       # HERMIONE HEAD
+        $ her_head_ypos = her_head_only
         show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
         her "(I can't believe I did that today...)"
         $ h_body = "01_hp/13_hermione_main/body_119.png"                                                                                                                                                         # HERMIONE HEAD
@@ -2773,8 +2771,7 @@ label new_request_15_complete:
         show screen hermione_01_f #Hermione stands still.
         pause.3
         $ h_body = "01_hp/13_hermione_main/body_123.png"                                                                                                                                                         # HERMIONE HEAD
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.       # HERMIONE HEAD
+        $ her_head_ypos = her_head_only
         show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
         her "........................."
         hide screen h_head2       

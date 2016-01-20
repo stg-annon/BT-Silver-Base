@@ -3018,7 +3018,7 @@ label costume_scene_1: #Maid role-play
 
 label her_main(text="",face="",tears=""):
     hide screen hermione_main
-    with d3
+    #with d3
     if face != "":
         $ h_body = her_path + str(face) + ".png"
     if tears != "":
@@ -3164,7 +3164,9 @@ label luna_walk_end_loiter(dissolveTime = 3):
         hide screen luna_blink_f
     return
     
-    
-    
+label chibi_emote:
+    #$ xpos = chibi_xpos (150-behind_desk_further, 185-behind_desk, 210-on_desk, 400-bird, 500-fireplace, 610-door)
+    #$ ypos = chibi_ypos (250)
+    return
     
     

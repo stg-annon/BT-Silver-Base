@@ -344,7 +344,7 @@ label rummaging:
         if rum_times == 2 or rum_times == 3:
             $ renpy.play('sounds/win2.mp3')   #Not loud.
             $ potions += 1
-            $ the_gift = "01_hp/18_store/32.png" # CANDY.
+            $ the_gift = "01_hp/18_store/32.png"
             show screen gift
             with d3
             ">You found some sort of potion..." 

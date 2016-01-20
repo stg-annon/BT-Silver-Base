@@ -2140,26 +2140,6 @@ image no_shirt_dance_ani:### HERMIONE DANCING NO SHIRT###
     "01_hp/16_hermione_chibi/dance/03_no_shirt_09.png"
     pause.1
     repeat
-image no_panties_dance_ani:### HERMIONE DANCING NO PANTIES###
-    "01_hp/16_hermione_chibi/dance/07_dance_01.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_02.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_03.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_04.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_05.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_06.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_07.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_08.png"
-    pause.1
-    "01_hp/16_hermione_chibi/dance/07_dance_09.png"
-    pause.1
-    repeat
 image no_shirt_no_skirt_dance_ani:### HERMIONE DANCING NO SHIRT NO SKIRT###
     "01_hp/16_hermione_chibi/dance/05_panties_01.png"
     pause.1
@@ -2178,6 +2158,26 @@ image no_shirt_no_skirt_dance_ani:### HERMIONE DANCING NO SHIRT NO SKIRT###
     "01_hp/16_hermione_chibi/dance/05_panties_08.png"
     pause.1
     "01_hp/16_hermione_chibi/dance/05_panties_09.png"
+    pause.1
+    repeat
+image no_panties_dance_ani:### HERMIONE DANCING NO PANTIES###
+    "01_hp/16_hermione_chibi/dance/07_dance_01.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_02.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_03.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_04.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_05.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_06.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_07.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_08.png"
+    pause.1
+    "01_hp/16_hermione_chibi/dance/07_dance_09.png"
     pause.1
     repeat
 

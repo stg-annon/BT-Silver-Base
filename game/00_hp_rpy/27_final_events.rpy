@@ -686,8 +686,7 @@ label crying_about_dress:
     
     pause.3
     $ h_body = "01_hp/13_hermione_main/body_145.png"                                                                                                                                                         # HERMIONE HEAD
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390                                # HERMIONE HEAD
-    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.       # HERMIONE HEAD
+    $ her_head_ypos = her_head_only
     show screen bld1
     with d3
     show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         

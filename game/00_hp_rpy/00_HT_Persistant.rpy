@@ -216,6 +216,10 @@ label __init_variables:
     $ h_ypos = 0
     $ her_head_xpos = 390
     $ her_head_ypos = 235
+    $ her_head_only = 300 #(340,300,290)
+    $ her_head_tits = 235
+    $ her_chibi_dance_xpos = 210
+    $ her_chibi_dance_ypos = 180
     
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 400

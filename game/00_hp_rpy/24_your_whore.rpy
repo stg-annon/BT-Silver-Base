@@ -146,8 +146,7 @@ label your_whore:
     m "(There she is!)"
     
     mal "Hermione, hey..."
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ her_head_ypos = her_head_tits
     show screen h_head2                                                             # HERMIONE
     $ h_body = "01_hp/13_hermione_main/body_159.png" # HERMIONE
     $ no_upper = True #Skirt not displayed.
@@ -650,8 +649,7 @@ label your_whore:
         # CUMMING
         pause.5
         m "What on earth just happened, girl?!"
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_tits
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_165.png" # HERMIONE
         her "What do you mean, sir?"
@@ -1400,8 +1398,7 @@ label your_whore:
         pause
         hide screen ctc
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_tits
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_165.png" # HERMIONE
         #her "Professor Dumbledore..."
@@ -2711,8 +2708,7 @@ label your_whore:
         with hpunch
         with kissiris
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         show screen h_head2                                                             # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_172.png" # HERMIONE
         her2 "{size=+5}Ahh!!!{/size}"
@@ -3262,8 +3258,7 @@ label your_whore:
                 g4 "Yes! Much better!"
         
                 
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_tits
                 
         show screen ctc
         pause
@@ -3775,8 +3770,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         hide screen ctc
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         $ tiara = False #Turns off displaying of the tiara in h_head2 screen.
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.  
+        $ her_head_ypos = her_head_tits
         show screen h_head2                                                                                                  # HERMIONE
         $ h_body = "01_hp/13_hermione_main/body_120.png"                                     # HERMIONE
         

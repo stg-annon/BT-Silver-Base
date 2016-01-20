@@ -2176,27 +2176,27 @@ screen genie_and_tits_01: #Genie sitting, looking ar naked tits. Hermione stands
 ### HERMIONE DANCING FULLY CLOTHED ###
 screen clothed_dance: #Hermione stands still.
     tag hermione
-    add "clothed_dance_ani" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
 
 ### HERMIONE DANCING NO VEST ###
 screen no_vest_dance: #Hermione stands still.
     tag hermione
-    add "no_vest_dance_ani" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    add "no_vest_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO VEST ###
 screen no_skirt_dance: #Hermione stands still.
     tag hermione
-    add "no_skirt_dance_ani" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    add "no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO VEST ###
 screen no_shirt_dance: #Hermione stands still.
     tag hermione
-    add "no_shirt_dance_ani" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    add "no_shirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO SKIRT NO SHIRT ###
 screen no_shirt_no_skirt_dance: #Hermione stands still.
     tag hermione
-    add "no_shirt_no_skirt_dance_ani" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    add "no_shirt_no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE CHIBI UNIVERSAL SCREEN ###
 screen h_c_u: 

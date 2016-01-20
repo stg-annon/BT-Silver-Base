@@ -242,7 +242,7 @@ label l_tutoring:
         her_[16] "{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}"
         her_[18] "{size=-4}(Probably all the problems caused by those harlots){/size}"
         her_[34] "{size=-4}(Well I will never be like them, so no need to worry){/size}"
-        show screen hermione_01_f
+        hide screen hermione_01_f
         with d3
         
         $ v_tutoring = 3

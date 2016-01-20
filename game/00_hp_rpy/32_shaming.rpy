@@ -307,7 +307,7 @@ label shaming_night:
         hide screen hermione_04
         $ hermione_chibi_xpos = 400
         #$ hermione_chibi_ypos = 0
-        $ h_c_u_pic = "01_hp/08_animation_02/03_no_shirt_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/03_no_shirt_01.png"
         show screen h_c_u
 
         ">She throws the shirt on your desk."
@@ -392,7 +392,7 @@ label shaming_night:
         hide screen h_c_u
         $ hermione_chibi_xpos = 400
         #$ hermione_chibi_ypos = 0
-        $ h_c_u_pic = "01_hp/08_animation_02/07_dance_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
 
         hide screen hermione_main
@@ -700,7 +700,7 @@ label shaming_night:
         hide screen hermione_02_b
         $ hermione_chibi_xpos = 400
         #$ hermione_chibi_ypos = 0
-        $ h_c_u_pic = "01_hp/08_animation_02/07_dance_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
         show screen ctc
         pause
@@ -807,7 +807,7 @@ label shaming_night:
         hide screen hermione_02_b
         $ hermione_chibi_xpos = 400
         #$ hermione_chibi_ypos = 0
-        $ h_c_u_pic = "01_hp/08_animation_02/07_dance_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
         show screen hermione_main
         pause 

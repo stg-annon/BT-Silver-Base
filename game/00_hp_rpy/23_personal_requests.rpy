@@ -478,8 +478,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 
 
     
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ her_head_ypos = her_head_only
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01
         call her_head("........................","body_05")
@@ -1134,8 +1133,7 @@ label new_request_04:
             "\"(Not right now.)\"":
                 pass            
     
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ her_head_ypos = her_head_only
     
     if whoring <=2: # LEVEL 01 # Hermione refuses.
         jump too_much
@@ -1437,8 +1435,7 @@ label new_request_05:
             "\"(Not right now.)\"":
                 pass
     
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ her_head_ypos = her_head_only
     
     if whoring <=2:
         jump too_much
@@ -2053,8 +2050,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
         "\"(Not right now.)\"":
             jump new_personal_request
             
-    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+    $ her_head_ypos = her_head_only
     
     if whoring <=5:
         jump too_much
@@ -3139,8 +3135,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         if whoring <=8:
             jump too_much
             
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         $ new_request_11_01 = True # HEARTS
         $ new_request_11_heart = 1
         m "Yes... You think you could manage that?"
@@ -3329,8 +3324,8 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         with d3
         call her_head("[genie_name], I think I'd better go now... *Sob!*","body_145")
         
-        $ her_head_xpos = 390
-        $ her_head_ypos = 340
+        $ her_head_ypos = her_head_only
+        
         menu:
             "\"Alright. I had fun. Here are your points.\"":
                 call her_head("Really? I didn't ruin it completely then?","body_13")
@@ -3402,8 +3397,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         show screen blktone
         with d3
         
-        $ her_head_xpos = 390
-        $ her_head_ypos = 340
+        $ her_head_ypos = her_head_only
     
         call her_head("If I must degrade myself in order to protect the honour of my house...","body_30")
         ">Hermione is starting to take off her vest..."
@@ -3515,8 +3509,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         if custom_outfit == 0:
             $ badges = False # Turns off the badges layer.
         
-        $ her_head_xpos = 390
-        $ her_head_ypos = 235
+        $ her_head_ypos = her_head_tits
         
         call her_head("(Dancing naked in front of the headmaster...)","body_89")
         call her_head("(If my parents knew about this they would lose their minds...)")
@@ -3534,7 +3527,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         ">Hermione clutches her tits even harder and then gives them a couple of twists..."
         ">It almost looks as if she is mad at her own breasts and trying to punish them..."
         ">You find the thought strangely arousing..."
-        $ h_c_u_pic = "01_hp/08_animation_02/05_panties_01.png"
+        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
         show screen h_c_u
         call her_head("Well, I hope you enjoyed yourself, [genie_name]!","body_92")
         m "What?"
@@ -3778,8 +3771,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking. 
                     pause 1
                     
-                    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                    $ her_head_ypos = her_head_only
                     call her_head(".............","body_16")
                     
                     $ tt_xpos = 330 # x = 330,
@@ -3981,8 +3973,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     if custom_outfit == 0:
                         $ badges = False # Hides the layer with badges.
                     
-                    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                    $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                    $ her_head_ypos = her_head_tits
                     call her_head("........","body_90")
                     menu:
                         m "..."
@@ -4430,40 +4421,14 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     hide screen bld1
                     with d3
                     pause
+                    
+                    
                     #Walks to the door
-                    
-                    # $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
-                    # $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
-                    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-                    # show screen hermione_walk_01_f 
-                    # pause 2
-                    # hide screen hermione_walk_01_f 
-                    # $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
-                    
                     call her_walk(400,650,2)
+                    show screen hermione_01_f
                     
-                    $ walk_ani_letter = ""
-                    if not wear_shirts:
-                        $walk_ani_letter = "n"
-                    elif whoring <= 3:# shirt_00
-                        $walk_ani_letter = "a"
-                    elif whoring >= 4 and whoring <= 7:# shirt_01
-                        $walk_ani_letter = "d"
-                    elif whoring >= 8 and whoring <= 14:# shirt_02
-                        $walk_ani_letter = "e"
-                    elif whoring >= 15 and whoring <= 20:# shirt_03
-                        $walk_ani_letter = "f"
-                    elif whoring >= 21:
-                        if day_random <= 4:# shirt_04
-                            $walk_ani_letter = "g"
-                        if day_random >= 5:# shirt_05
-                            $walk_ani_letter = "h"
-            
-            
-                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_01.png" 
-                    show screen h_c_u
+                    #Locks the door
                     pause.5
-                   
                     $ tt_xpos=670
                     $ tt_ypos=200
                     show screen thought 
@@ -4471,25 +4436,21 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     pause.5
                     hide screen thought
                     pause.5
-                   
-                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_03.png"
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
-                    $ h_c_u_pic = "01_hp/16_hermione_chibi/walk/h_walk_" + walk_ani_letter + "_01.png"
                     show screen ctc
                     pause
+                    
+                    #Returns from the door
                     m "??!"
-                    hide screen h_c_u
+                    hide screen hermione_01_f
                     hide screen ctc
-                    $ walk_xpos=650 #Animation of walking chibi. (From)
-                    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-                    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-                    show screen hermione_walk_01 
-                    pause 3
-                    $ hermione_chibi_xpos = 400 #Near the desk.
+                    call her_walk(650,400,3)
                     show screen hermione_02 #Hermione stands still.
                     show screen bld1
                     with d3
+                    
+                    
                     call her_main("Just in case...","body_69")
                     stop music fadeout 1.0
                     hide screen hermione_main
@@ -4499,8 +4460,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     with Dissolve(1)
                     $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking. 
                     pause 5
-                    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                    $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                    $ her_head_ypos = her_head_only
                     
                     call her_head("Just for the record...","body_16")
                     call her_head("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","body_17")
@@ -4508,8 +4468,6 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     call her_head("..........","body_69")
                     hide screen blkfade
                     hide screen bld1
-                    $ hermione_chibi_xpos = 210 #Near the desk: 400.
-                    $ hermione_chibi_ypos = 180 #Default: 250
                     show screen clothed_dance #Hermione stands still.
                     show screen ctc
                     with fade
@@ -4637,8 +4595,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     if custom_outfit == 0:
                         $ badges = False# Hides any badges from hermione_main screen.
                     
-                    $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                    $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                    $ her_head_ypos = her_head_tits
                     
                     call her_head("Must you be so vulgar, [genie_name]?","body_90")
                     menu: 
@@ -4954,8 +4911,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         with d7
                                         ">Hermione jumps off your desk and starts to put her clothes back on while glaring at you..."
                                         m "Oh, come on! Don't leave me like that!"
-                                        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                                        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                                        $ her_head_ypos = her_head_only
                                         
                                         call her_head("The dance is over [genie_name]!","body_101")
                                         pause 1
@@ -5272,8 +5228,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
             
             if whoring >= 9 and whoring <= 14: # LEVEL 04 AND LEVEL 05 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
 
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 call her_head("..............................","body_118")    
                 m "You have great tits, [hermione_name]..."
                 call her_head("....................................","body_118") 
@@ -5369,8 +5324,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
 
             elif whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
                
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 call her_head("Ah...","body_121")
                 m "A bit sensitive today, aren't you?"
                 call her_head("I suppose...","body_128")
@@ -5806,8 +5760,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         pause
         show screen bld1
         with d3
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_tits
         call her_head("...........","body_31")
         m "Whenever you're ready, [hermione_name]."
         call her_head("Right...","body_34")
@@ -6071,8 +6024,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause 
                         
                 $ aftersperm = True
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 call her_head(".......................","body_119")                
                 m "..........................."
                 call her_head(".......................","body_119")    
@@ -6109,8 +6061,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 hide screen desk_02
                 show screen genie
                 hide screen g_c_u
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_tits
                 call her_head("Ew... Your sperm, [genie_name]...","body_118")
                 call her_head("It's everywhere under my uniform...","body_117")          
                 m "Just put it in your mouth next time."
@@ -6173,8 +6124,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with d3
                         
                 $ aftersperm = True
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 call her_head(".......................","body_119")          
                 m "Yes... I Feel so much better now..."
                 pause
@@ -6319,8 +6269,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         
         
         ">Hermione puts her slender hands on your cock..."
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=290 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         stop music fadeout 3.0
         call her_head("Do you like it when I do it like this, [genie_name]?","body_68")
         g9 "Actually, yes! Very nice!"
@@ -6609,8 +6558,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 pause 
                         
                 $ aftersperm = True
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 
 
                 
@@ -6640,8 +6588,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 hide screen desk_02
                 show screen genie
                 hide screen g_c_u
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_tits
                 hide screen blkfade
                 with d5
                 
@@ -6714,8 +6661,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                 with d3
                         
                 $ aftersperm = True
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=300 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_only
                 call her_head(".......................","body_119")          
                 m "Yes... I Feel so much better now..."
                 pause
@@ -7051,8 +6997,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u
                 hide screen g_c_u
                 with d3
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_tits
                 call her_head("Oh, well...","body_118")
                 call her_head("We are still active, but...")
                 hide screen h_c_u   # SUCKING
@@ -7138,8 +7083,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u
                 hide screen g_c_u
                 with d3
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_tits
                 call her_head("Yes, I believe they are...","body_75")
                 call her_head("With me being an excellent student despite being muggle-born and all...","body_74")
                 call her_head("Although at first they were against sending me to some \"Bogus boarding school\".","body_117")
@@ -7178,8 +7122,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                 show screen h_c_u
                 hide screen g_c_u
                 with d3
-                $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-                $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+                $ her_head_ypos = her_head_tits
                 call her_head("What can I say that you don't already know, [genie_name]?","body_13")
                 m "Yes... Ehm... I know everything of course."
                 m "But I want to see how much you know."
@@ -7482,8 +7425,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         hide screen g_c_u # NOT SUCKING
         with d3                      #  NOT SUCKING
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=235 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_tits
         if not luna_known:
             call her_head("([genie_name], what should I do?)","body_48")
             m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
@@ -8113,8 +8055,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
         with d7
             
         stop music fadeout 1.0
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         call her_head(".............","body_120")
         call her_head("!!!!!!!!!!!!!!!","body_119")
         m "Relax, [hermione_name]. I'm Just gonna take off your panties."
@@ -8895,8 +8836,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
         stop music fadeout 1.0
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         call her_head("...........","body_29")
         m "Let's see..."
         call her_head(".................","body_34")
@@ -9336,8 +9276,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
         
         stop music fadeout 1.0
         
-        $ her_head_xpos=390 #Defines position of the Hermione's full length sprite. (Default 370). 140 - center. Bottom right: 390
-        $ her_head_ypos=340 #Defines position of the Hermione's full length sprite. (Default 0). Right bottom corner: 340 - head only. 235 - tits.
+        $ her_head_ypos = her_head_only
         call her_head("........","body_29")
         m "Hm..."
         call her_head("...........","body_31")
