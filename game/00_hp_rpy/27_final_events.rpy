@@ -233,20 +233,14 @@ label want_to_rule:
                     hide screen bld1
                     with d3
                     pause.3
+                    
+                    
                     #Walks to the door
-                    
-                    # $ walk_xpos=400 #Animation of walking chibi. (From) 400 = desk.
-                    # $ walk_xpos2=650 #Coordinates of it's movement. (To) 610 = door.
-                    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-                    # show screen hermione_walk_01_f 
-                    # pause 2
-                    # hide screen hermione_walk_01_f 
-                    # $ hermione_chibi_xpos = 650 # Position of the chibi (Near the door).
-                    
-                    call her_walk(400,610,2)
+                    call her_walk(400,650,2)
                     show screen hermione_01_f
+                    
+                    #Locks the door
                     pause.5
-                   
                     $ tt_xpos=670
                     $ tt_ypos=200
                     show screen thought 
@@ -254,31 +248,24 @@ label want_to_rule:
                     pause.5
                     hide screen thought
                     pause.5
-                   
-                    $ h_c_u_pic = im.Flip("01_hp/animation/h_walk_03.png", horizontal=True)
                     $ renpy.play('sounds/09_lock.wav') #Sound of a door opening.
                     pause.4
-                    $ h_c_u_pic = im.Flip("01_hp/animation/h_walk_01.png", horizontal=True)
                     show screen ctc
                     pause
+                    
+                    #Returns from the door
                     m "??!"
-                    hide screen h_c_u
+                    hide screen hermione_01_f
                     hide screen ctc
-                    $ walk_xpos=650 #Animation of walking chibi. (From)
-                    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-                    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-                    show screen hermione_walk_01 
-                    pause 3
-                    $ hermione_chibi_xpos = 400 #Near the desk.
+                    call her_walk(650,400,3)
                     show screen hermione_02 #Hermione stands still.
                     show screen bld1
-                    with Dissolve(.3)
+                    with d3
+                    
+                    
                     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                     $ h_ypos=0
-                    $ h_body = "01_hp/13_hermione_main/body_69.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
-                    her "Just in case..."
+                    call her_main("Just in case...","body_69")
                     show screen ctc
                     pause
                     hide screen ctc
@@ -298,7 +285,7 @@ label want_to_rule:
                     
                     $ hermione_chibi_xpos = 310 # Default 360
                     #$ hermione_chibi_ypos = 210
-                    $  h_c_u_pic = "01_hp/08_animation_02/01.png" #Hermione naked. 
+                    $  h_c_u_pic = "01_hp/16_hermione_chibi/01.png" #Hermione naked. 
                     show screen h_c_u 
                     
                     hide screen blkfade
@@ -318,7 +305,7 @@ label want_to_rule:
                     m "Huh?"
                     
                     $ h_tears = True
-                    $  u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
+                    $ u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
                     
                     call her_main("Oh, please, don't mind me, sir.","body_107")
                     call her_main("Just enjoy the... {w}the... {w}the view...","body_105")
