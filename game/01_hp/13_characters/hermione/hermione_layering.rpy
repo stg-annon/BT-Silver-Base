@@ -40,8 +40,8 @@ screen hermione_main_new:
     zorder hermione_zorder
     
 label h_outfit(outfit_id):
-    $ custom_outfit = outfit_id
     hide screen hermione_main_new
+    $ custom_outfit = outfit_id
     if custom_outfit == 0:
         $ hermione_custom_outfit = False
         $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
@@ -80,10 +80,17 @@ label h_outfit(outfit_id):
             $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
         
         $ hermione_custom_outfit = True
+    
+    if custom_outfit in hermione_custom_outfit_nip_fix:
+        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_2.png"
+    else:
+        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_1.png"
+    
     show screen hermione_main_new
     return
     
 label h_action(name =  ""):
+    hide screen hermione_main_new
     $ hermione_action = False
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
@@ -118,14 +125,21 @@ label h_action(name =  ""):
             $ h_action_b = "00_blank.png"
         $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
         $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
+    call update_her_uniform
+    show screen hermione_main_new
     return
     
 label update_her_uniform:
-    if not hermione_wear_top and not hermione_wear_bra:
-        if not hermione_perm_expand:
+    if not hermione_wear_top:
+        if not hermione_wear_bra:
+            if not hermione_perm_expand:
+                $ h_breasts = 2
+            else:
+                $ h_breasts = 3
+        elif h_bra in h_bra_nip_fix:
             $ h_breasts = 2
         else:
-            $ h_breasts = 3
+            $ h_breasts = 1
     else:
         $ h_breasts = 1
         if whoring <= 3:# shirt_00
@@ -152,6 +166,8 @@ label update_her_uniform:
         
         
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
+    $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
+    $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_"+str(h_skirt)+".png"
     if not hermione_wear_skirt and (h_top >= 2 and h_top <= 4):
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
@@ -171,6 +187,7 @@ label new_main_menu:
             menu:
                 "-Outfit 0-":
                     call h_outfit(0)
+                    call update_her_uniform
                     jump new_main_menu_outfit
                 "-Outfit 1-":
                     call h_outfit(1)
@@ -256,20 +273,69 @@ label new_main_menu:
             call h_action("")
             call update_her_uniform
             jump new_main_menu
-        "-Toggle Top-":
-            if hermione_wear_top:
-                $ hermione_wear_top = False
-            else:
-                $ hermione_wear_top = True
-            call update_her_uniform
-            jump new_main_menu
-        "-Toggle Bra-":
-            if hermione_wear_bra:
-                $ hermione_wear_bra = False
-            else:
-                $ hermione_wear_bra = True
-            call update_her_uniform
-            jump new_main_menu
+        "-Base clothes-":
+            label new_main_menu_base_clothes:
+            menu:
+                "-Toggle Top-":
+                    if hermione_wear_top:
+                        $ hermione_wear_top = False
+                    else:
+                        $ hermione_wear_top = True
+                    call update_her_uniform
+                    jump new_main_menu_base_clothes
+                "-Toggle Bra-":
+                    if hermione_wear_bra:
+                        $ hermione_wear_bra = False
+                    else:
+                        $ hermione_wear_bra = True
+                    call update_her_uniform
+                    jump new_main_menu_base_clothes
+                "-Toggle Skirt-":
+                    if hermione_wear_skirt:
+                        $ hermione_wear_skirt = False
+                    else:
+                        $ hermione_wear_skirt = True
+                    call update_her_uniform
+                    jump new_main_menu_base_clothes
+                "-Toggle Panties-":
+                    if hermione_wear_panties:
+                        $ hermione_wear_panties = False
+                    else:
+                        $ hermione_wear_panties = True
+                    call update_her_uniform
+                    jump new_main_menu_base_clothes
+                "-Back-":
+                    jump new_main_menu
+        "-Underwear-":
+            label new_main_menu_underwear:
+            menu:
+                "-normal-":
+                    $ h_bra = "base_bra_white_1"
+                    $ h_panties = "base_panties_1"
+                    call update_her_uniform
+                    jump new_main_menu_underwear
+                "-cup-":
+                    $ h_bra = "cup_bra"
+                    $ h_panties = "cup_panties"
+                    call update_her_uniform
+                    jump new_main_menu_underwear
+                "-lace-":
+                    $ h_bra = "lace_bra"
+                    $ h_panties = "lace_pants"
+                    call update_her_uniform
+                    jump new_main_menu_underwear
+                "-silk-":
+                    $ h_bra = "silk_bra"
+                    $ h_panties = "silk_pants"
+                    call update_her_uniform
+                    jump new_main_menu_underwear
+                "-latex-":
+                    $ h_bra = "latex_bra"
+                    $ h_panties = "latex_panties"
+                    call update_her_uniform
+                    jump new_main_menu_underwear
+                "-Back-":
+                    jump new_main_menu
         "-Toggle perm expand-":
             if hermione_perm_expand:
                 $ hermione_perm_expand = False

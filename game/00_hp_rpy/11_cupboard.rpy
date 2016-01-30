@@ -18,7 +18,7 @@ label cupboard:
             hide screen desk
             with Dissolve(0.5)
             jump day_main_menu
-            
+        
         "-Rummage through the cupboard-" if not searched and not day == 1:
             jump rummaging
         "{color=#858585}-Rummage through the cupboard-{/color}" if searched and not day == 1:

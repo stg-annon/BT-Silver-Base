@@ -40,6 +40,9 @@ label __init_variables:
     $ hermione_action = False
     
     $ h_breasts = 1
+    $ h_bra = "base_bra_white_1"
+    $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
+    $ h_panties = "base_panties_1"
     $ h_top = 1
     $ h_skirt = 1
     $ h_action_a = "00_blank.png"
@@ -59,6 +62,8 @@ label __init_variables:
     # 10 ball dress
     # 11 christmas
     # 12 lara croft 
+    
+    $ hermione_custom_outfit_nip_fix = [11]
     
     $ hermione_custom_hair_list = []
     $ hermione_custom_hair_list.append("")
@@ -130,7 +135,6 @@ label __init_variables:
     $ hermione_custom_outfit_list [9][1] = "harley_top.png"
     $ hermione_custom_outfit_list [9][2] = "harley_gloves.png"
     $ hermione_custom_outfit_list [9][3] = "harley_collar.png"
-    $ hermione_custom_outfit_list [9][3] = ""
     $ hermione_custom_outfit_list [9][4] = ""
     
     $ hermione_custom_outfit_list [10][0] = "ball_dress_skirt.png" 
