@@ -2,9 +2,11 @@ screen hermione_main_new:
     
     add hermione_base xpos hermione_xpos ypos hermione_ypos #Add the base body
     add hermione_legs xpos hermione_xpos ypos hermione_ypos
-    add hermione_right_arm xpos hermione_xpos ypos hermione_ypos
+    if not hermione_action:
+        add hermione_right_arm xpos hermione_xpos ypos hermione_ypos
     add hermione_breasts xpos hermione_xpos ypos hermione_ypos
-    add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
+    if not hermione_action:
+        add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
     add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     add h_body xpos hermione_xpos ypos hermione_ypos
     
@@ -27,6 +29,10 @@ screen hermione_main_new:
         add hermione_custom_d xpos hermione_xpos ypos hermione_ypos
     
     add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
+    
+    if hermione_action:
+        add hermiome_action_a xpos hermione_xpos ypos hermione_ypos
+        add hermiome_action_b xpos hermione_xpos ypos hermione_ypos
     
     ### ZORDER
     zorder hermione_zorder
@@ -79,6 +85,42 @@ label h_outfit(outfit_id):
     show screen hermione_main_new
     return
     
+label h_action(name =  ""):
+    if name == "" or name == "none":
+        $ hermione_action = False
+        $ hermione_wear_skirt = True
+        $ hermione_wear_top = True
+    else:
+        $ hermione_action = True
+        if name == "lift skirt":
+            $ hermione_wear_skirt = False
+            if whoring <= 5:
+                $ h_action_a = "lift_skirt_1.png"
+            if whoring >= 6 and whoring <= 11:
+                $ h_action_a = "lift_skirt_2.png"
+            if whoring >= 12 and whoring <= 19:
+                $ h_action_a = "lift_skirt_3.png"
+            if whoring >= 20:
+                $ h_action_a = "lift_skirt_4.png"
+        if name == "lift top":
+            $ hermione_wear_top = False
+            if whoring <= 3:# shirt_00
+                $ h_action_a = "lift_top_1.png"
+            elif whoring >= 4 and whoring <= 20:
+                $ h_action_a = "lift_top_2-4.png"
+            elif whoring >= 21:
+                if day_random <= 4:# shirt_04
+                    $ h_action_a = "lift_top_5_3.png"
+                if day_random >= 5:# shirt_05
+                    $ h_action_a = "lift_top_6.png"
+            if hermione_perm_expand and (not hermione_wear_bra):
+                $ h_action_b = "lift_top_expand_perm_overlay.png"
+            else:
+                $ h_action_b = "00_blank.png"
+        $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
+        $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
+    return
+    
 label update_her_uniform:
     if not hermione_wear_top and not hermione_wear_bra:
         if not hermione_perm_expand:
@@ -108,10 +150,14 @@ label update_her_uniform:
         $ h_skirt = 3
     if whoring >= 20:
         $ h_skirt = 4
-    
+        
+        
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_"+str(h_skirt)+".png"
-    $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
+    if not hermione_wear_skirt and (h_top >= 2 and h_top <= 4):
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
+    else:
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
     
     
     $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
@@ -121,45 +167,89 @@ label update_her_uniform:
     
 label new_main_menu:
     menu:
-        "-Outfit 0-":
-            call h_outfit(0)
-            jump new_main_menu
-        "-Outfit 1-":
-            call h_outfit(1)
-            jump new_main_menu
-        "-Outfit 2-":
-            call h_outfit(2)
-            jump new_main_menu
-        "-Outfit 3-":
-            call h_outfit(3)
-            jump new_main_menu
-        "-Outfit 4-":
-            call h_outfit(4)
-            jump new_main_menu
-        "-Outfit 7-":
-            call h_outfit(7)
-            jump new_main_menu
-        "-Outfit 8-":
-            call h_outfit(8)
-            jump new_main_menu
-        "-Outfit 9-":
-            call h_outfit(9)
-            jump new_main_menu
-        "-Outfit 10-":
-            call h_outfit(10)
-            jump new_main_menu
-        "-Outfit 11-":
-            call h_outfit(11)
-            jump new_main_menu
-        "-Outfit 12-":
-            call h_outfit(12)
-            jump new_main_menu
-        "-Hair A-":
-            $ h_hair_style = "A"
+        "-outfits-":
+            label new_main_menu_outfit:
+            menu:
+                "-Outfit 0-":
+                    call h_outfit(0)
+                    jump new_main_menu_outfit
+                "-Outfit 1-":
+                    call h_outfit(1)
+                    jump new_main_menu_outfit
+                "-Outfit 2-":
+                    call h_outfit(2)
+                    jump new_main_menu_outfit
+                "-Outfit 3-":
+                    call h_outfit(3)
+                    jump new_main_menu_outfit
+                "-Outfit 4-":
+                    call h_outfit(4)
+                    jump new_main_menu_outfit
+                "-Outfit 7-":
+                    call h_outfit(7)
+                    jump new_main_menu_outfit
+                "-Outfit 8-":
+                    call h_outfit(8)
+                    jump new_main_menu_outfit
+                "-Outfit 9-":
+                    call h_outfit(9)
+                    jump new_main_menu_outfit
+                "-Outfit 10-":
+                    call h_outfit(10)
+                    jump new_main_menu_outfit
+                "-Outfit 11-":
+                    call h_outfit(11)
+                    jump new_main_menu_outfit
+                "-Outfit 12-":
+                    call h_outfit(12)
+                    jump new_main_menu_outfit
+                "-Back-":
+                    jump new_main_menu
+        
+        "-hair-":
+            label new_main_menu_hair:
+            menu:
+                "-Hair A-":
+                    $ h_hair_style = "A"
+                    call update_her_uniform
+                    jump new_main_menu_hair
+                "-Hair B-":
+                    $ h_hair_style= "B"
+                    call update_her_uniform
+                    jump new_main_menu_hair
+                "-Back-":
+                    jump new_main_menu
+        "-Lift top-":
+            call h_action("lift top")
             call update_her_uniform
             jump new_main_menu
-        "-Hair B-":
-            $ h_hair_style= "B"
+        "-Lift Skirt-":
+            call h_action("lift skirt")
+            call update_her_uniform
+            jump new_main_menu
+        "-No Action-":
+            call h_action("")
+            call update_her_uniform
+            jump new_main_menu
+        "-Toggle Top-":
+            if hermione_wear_top:
+                $ hermione_wear_top = False
+            else:
+                $ hermione_wear_top = True
+            call update_her_uniform
+            jump new_main_menu
+        "-Toggle Bra-":
+            if hermione_wear_bra:
+                $ hermione_wear_bra = False
+            else:
+                $ hermione_wear_bra = True
+            call update_her_uniform
+            jump new_main_menu
+        "-Toggle perm expand-":
+            if hermione_perm_expand:
+                $ hermione_perm_expand = False
+            else:
+                $ hermione_perm_expand = True
             call update_her_uniform
             jump new_main_menu
         "-Never mind-":

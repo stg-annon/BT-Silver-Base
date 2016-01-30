@@ -27,23 +27,28 @@ label __init_variables:
     $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
+    $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
+    $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     
     $ hermione_wear_bra = True
     $ hermione_wear_panties = True
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
     
+    $ hermione_perm_expand = False
     $ hermione_custom_outfit = False
+    $ hermione_action = False
     
     $ h_breasts = 1
     $ h_top = 1
     $ h_skirt = 1
+    $ h_action_a = "00_blank.png"
+    $ h_action_b = "00_blank.png"
     
     if not hasattr(renpy.store,'hair_a_tmp'): #important!
         $ hair_a_tmp = ""
     if not hasattr(renpy.store,'hair_b_tmp'): #important!
         $ hair_b_tmp = ""
-    
     # 1 maid
     # 2 gryff cheer
     # 3 sly cheer
@@ -53,7 +58,7 @@ label __init_variables:
     # 9 harley
     # 10 ball dress
     # 11 christmas
-    # 12 laura croft 
+    # 12 lara croft 
     
     $ hermione_custom_hair_list = []
     $ hermione_custom_hair_list.append("")
