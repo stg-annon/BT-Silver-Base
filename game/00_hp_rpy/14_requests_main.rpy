@@ -5,8 +5,8 @@ label new_personal_request:
         
         label not_now:
         menu:
-            "-Custom favours-":
-                jump new_custom_request
+            #"-Custom favours-":
+            #    jump new_custom_request
 
             "-Personal favours-":
                 label not_now2:

@@ -1,3 +1,12 @@
+label __init_variables:
+    $ heretic = 0
+    $ heretic_01 = False
+    $ heretic_02 = False
+    $ heretic_03 = False
+    $ heretic_busy = False
+    $ hermione_desperate_done = False
+    return
+
 label heretic:
     hide screen hermione_main
     with d3

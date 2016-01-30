@@ -7,6 +7,8 @@ screen hermione_main_new:
     add hermione_breasts xpos hermione_xpos ypos hermione_ypos
     if not hermione_action:
         add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
+    elif not hermione_wear_skirt:
+        add "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_0.png" xpos hermione_xpos ypos hermione_ypos
     add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     add h_body xpos hermione_xpos ypos hermione_ypos
     
@@ -42,19 +44,15 @@ label h_outfit(outfit_id):
     hide screen hermione_main_new
     if custom_outfit == 0:
         $ hermione_custom_outfit = False
-        $ hermione_hair_a = hair_a_tmp
-        $ hermione_hair_b = hair_b_tmp
+        $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+        $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     else:
-        if "01_hp/13_characters/hermione/clothes/custom/" not in hermione_hair_a or "01_hp/13_characters/hermione/clothes/custom/" not in hermione_hair_b:
-            $ hair_a_tmp = hermione_hair_a
-            $ hair_b_tmp = hermione_hair_b
-        
         if hermione_custom_hair_list[custom_outfit] != "":
             $ hermione_hair_a = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_custom_hair_list[custom_outfit])+".png"
             $ hermione_hair_b = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_custom_hair_list[custom_outfit])+"_2.png"
         else:
-            $ hermione_hair_a = hair_a_tmp
-            $ hermione_hair_b = hair_b_tmp
+            $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+            $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
         
         if hermione_custom_outfit_list[custom_outfit][0] != "":
             $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[custom_outfit][0]
@@ -80,16 +78,17 @@ label h_outfit(outfit_id):
             $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[custom_outfit][3]
         else:
             $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-            
+        
         $ hermione_custom_outfit = True
     show screen hermione_main_new
     return
     
 label h_action(name =  ""):
+    $ hermione_action = False
+    $ hermione_wear_skirt = True
+    $ hermione_wear_top = True
     if name == "" or name == "none":
-        $ hermione_action = False
-        $ hermione_wear_skirt = True
-        $ hermione_wear_top = True
+        pass
     else:
         $ hermione_action = True
         if name == "lift skirt":
@@ -113,10 +112,10 @@ label h_action(name =  ""):
                     $ h_action_a = "lift_top_5_3.png"
                 if day_random >= 5:# shirt_05
                     $ h_action_a = "lift_top_6.png"
-            if hermione_perm_expand and (not hermione_wear_bra):
-                $ h_action_b = "lift_top_expand_perm_overlay.png"
-            else:
-                $ h_action_b = "00_blank.png"
+        if hermione_perm_expand and not hermione_wear_bra and not hermione_wear_top:
+            $ h_action_b = "lift_top_expand_perm_overlay.png"
+        else:
+            $ h_action_b = "00_blank.png"
         $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
         $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     return
@@ -217,6 +216,32 @@ label new_main_menu:
                     $ h_hair_style= "B"
                     call update_her_uniform
                     jump new_main_menu_hair
+                "-Color-":
+                    menu:
+                        "-Brown-":
+                            $ h_hair_color = 1
+                            call update_her_uniform
+                            jump new_main_menu_hair
+                        "-Blonde-":
+                            $ h_hair_color = 2
+                            call update_her_uniform
+                            jump new_main_menu_hair
+                        "-Red-":
+                            $ h_hair_color = 3
+                            call update_her_uniform
+                            jump new_main_menu_hair
+                        "-Black-":
+                            $ h_hair_color = 4
+                            call update_her_uniform
+                            jump new_main_menu_hair
+                        "-Blue-":
+                            $ h_hair_color = 5
+                            call update_her_uniform
+                            jump new_main_menu_hair
+                        "-Orange-":
+                            $ h_hair_color = 6
+                            call update_her_uniform
+                            jump new_main_menu_hair
                 "-Back-":
                     jump new_main_menu
         "-Lift top-":

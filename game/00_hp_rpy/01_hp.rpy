@@ -245,17 +245,6 @@ $ cust_char_1_enabled = False
 $ cust_char_2_enabled = False
 $ cust_char_3_enabled = False
 #Custom Variables Previously Defined at desk
-$ shaming = 0
-$ shaming_busy = False
-$ shaming_01 = False
-$ shaming_02 = False
-$ shaming_03 = False
-$ heretic = 0
-$ heretic_01 = False
-$ heretic_02 = False
-$ heretic_03 = False
-$ heretic_busy = False
-$ hermione_desperate_done = False
 $ current_job = 0
 $ custom_breast = 0
 $ custom_bra = 0

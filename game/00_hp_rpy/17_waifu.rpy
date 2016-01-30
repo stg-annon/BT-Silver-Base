@@ -454,7 +454,7 @@ label chapter_check_waifu: #Checks if the chapter just finished was the last one
             if not found_dahrs_ticket_once:
                 m "Hm...?"
                 m "What is that...? A bookmark?"
-                $ the_gift = "03_hp/18_store/06.png" # The DAHR's ticket.
+                $ the_gift = "01_hp/18_store/06.png" # The DAHR's ticket.
                 show screen gift
                 with d3
                 $ renpy.play('sounds/win2.mp3') #Sound of finding an item.

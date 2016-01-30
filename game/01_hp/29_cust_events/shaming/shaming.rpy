@@ -1,3 +1,11 @@
+label __init_variables:
+    $ shaming = 0
+    $ shaming_busy = False
+    $ shaming_01 = False
+    $ shaming_02 = False
+    $ shaming_03 = False
+    return
+
 label shaming:
     hide screen hermione_main
     with d3
