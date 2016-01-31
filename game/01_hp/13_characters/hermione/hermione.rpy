@@ -18,6 +18,7 @@ label __init_variables:
     
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
+    $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/00_blank.png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_1.png"
     
@@ -45,13 +46,10 @@ label __init_variables:
     $ h_panties = "base_panties_1"
     $ h_top = 1
     $ h_skirt = 1
+    $ h_stocking = "00_blank"
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
     
-    if not hasattr(renpy.store,'hair_a_tmp'): #important!
-        $ hair_a_tmp = ""
-    if not hasattr(renpy.store,'hair_b_tmp'): #important!
-        $ hair_b_tmp = ""
     # 1 maid
     # 2 gryff cheer
     # 3 sly cheer

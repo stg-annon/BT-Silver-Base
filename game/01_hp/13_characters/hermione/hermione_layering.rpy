@@ -13,6 +13,7 @@ screen hermione_main_new:
     add h_body xpos hermione_xpos ypos hermione_ypos
     
   ### CLOTHES
+    add hermione_stockings xpos hermione_xpos ypos hermione_ypos
     if not hermione_custom_outfit:
         ### SKIRT
         if hermione_wear_skirt:
@@ -89,16 +90,16 @@ label h_outfit(outfit_id):
     show screen hermione_main_new
     return
     
-label h_action(name =  ""):
+label h_action(action =  ""):
     hide screen hermione_main_new
     $ hermione_action = False
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
-    if name == "" or name == "none":
+    if action == "" or action == "none":
         pass
     else:
         $ hermione_action = True
-        if name == "lift skirt":
+        if action == "lift skirt":
             $ hermione_wear_skirt = False
             if whoring <= 5:
                 $ h_action_a = "lift_skirt_1.png"
@@ -108,7 +109,7 @@ label h_action(name =  ""):
                 $ h_action_a = "lift_skirt_3.png"
             if whoring >= 20:
                 $ h_action_a = "lift_skirt_4.png"
-        if name == "lift top":
+        if action == "lift top":
             $ hermione_wear_top = False
             if whoring <= 3:# shirt_00
                 $ h_action_a = "lift_top_1.png"
@@ -119,12 +120,30 @@ label h_action(name =  ""):
                     $ h_action_a = "lift_top_5_3.png"
                 if day_random >= 5:# shirt_05
                     $ h_action_a = "lift_top_6.png"
+        if action == "hold book":
+            $ hermione_wear_top = False
+            if whoring <= 3:# shirt_00
+                $ h_action_a = "hold_book_1.png"
+            elif whoring >= 4 and whoring <= 7:# shirt_01
+                $ h_action_a = "hold_book_2.png"
+            elif whoring >= 8 and whoring <= 14:# shirt_02
+                $ h_action_a = "hold_book_3.png"
+            elif whoring >= 15 and whoring <= 20:# shirt_03
+                $ h_action_a = "hold_book_4.png"
+            elif whoring >= 21:
+                if day_random <= 4:# shirt_04
+                    $ h_action_a = "hold_book_5.png"
+                if day_random >= 5:# shirt_05
+                    $ h_action_a = "hold_book_6.png"
         if hermione_perm_expand and not hermione_wear_bra and not hermione_wear_top:
             $ h_action_b = "lift_top_expand_perm_overlay.png"
         else:
             $ h_action_b = "00_blank.png"
         $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
-        $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
+        if action == "hold book":
+            $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+        else:
+            $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     call update_her_uniform
     show screen hermione_main_new
     return
@@ -163,10 +182,10 @@ label update_her_uniform:
         $ h_skirt = 3
     if whoring >= 20:
         $ h_skirt = 4
-        
-        
+    
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
+    $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_"+str(h_skirt)+".png"
     if not hermione_wear_skirt and (h_top >= 2 and h_top <= 4):
@@ -261,18 +280,27 @@ label new_main_menu:
                             jump new_main_menu_hair
                 "-Back-":
                     jump new_main_menu
-        "-Lift top-":
-            call h_action("lift top")
-            call update_her_uniform
-            jump new_main_menu
-        "-Lift Skirt-":
-            call h_action("lift skirt")
-            call update_her_uniform
-            jump new_main_menu
-        "-No Action-":
-            call h_action("")
-            call update_her_uniform
-            jump new_main_menu
+        "-Actions-":
+            label new_main_menu_actions:
+            menu:
+                "-Lift top-":
+                    call h_action("lift top")
+                    call update_her_uniform
+                    jump new_main_menu_actions
+                "-Lift Skirt-":
+                    call h_action("lift skirt")
+                    call update_her_uniform
+                    jump new_main_menu_actions
+                "-Hold Book-":
+                    call h_action("hold book")
+                    call update_her_uniform
+                    jump new_main_menu_actions
+                "-No Action-":
+                    call h_action("")
+                    call update_her_uniform
+                    jump new_main_menu_actions
+                "-Back-":
+                    jump new_main_menu
         "-Base clothes-":
             label new_main_menu_base_clothes:
             menu:
@@ -334,6 +362,51 @@ label new_main_menu:
                     $ h_panties = "latex_panties"
                     call update_her_uniform
                     jump new_main_menu_underwear
+                "-Back-":
+                    jump new_main_menu
+        "-Stockings-":
+            label new_main_menu_stocking:
+            menu:
+                "-none-":
+                    $ h_stocking = "00_blank"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-black-":
+                    $ h_stocking = "black"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-fishnet_a-":
+                    $ h_stocking = "fishnet_a"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-fishnet_b-":
+                    $ h_stocking = "fishnet_b"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-gryff-":
+                    $ h_stocking = "gryff"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-gryff_vibe-":
+                    $ h_stocking = "gryff_vibe"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-lace-":
+                    $ h_stocking = "lace"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-latex-":
+                    $ h_stocking = "latex"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-slyth_vibe-":
+                    $ h_stocking = "slyth_vibe"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
+                "-white-":
+                    $ h_stocking = "white"
+                    call update_her_uniform
+                    jump new_main_menu_stocking
                 "-Back-":
                     jump new_main_menu
         "-Toggle perm expand-":
