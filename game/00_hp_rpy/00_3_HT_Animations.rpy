@@ -53,6 +53,81 @@ image intro_06:
 
 ###HARRY POTTER ANIMATIONS###
 
+image heal:
+    "magic/heal01.png"
+    pause.06
+    "magic/heal02.png"
+    pause.06
+    "magic/heal03.png"
+    pause.06
+    "magic/heal04.png"
+    pause.06
+    "magic/heal05.png"
+    pause.06
+    "magic/heal06.png"
+    pause.06
+    "magic/heal07.png"
+    pause.06
+    "magic/heal08.png"
+    pause.06
+    "magic/heal09.png"
+    pause.06
+    "magic/heal10.png"
+    pause.06
+    "magic/heal11.png"
+    pause.06
+    "magic/heal12.png"
+    pause.06
+    "magic/heal13.png"
+    pause.06
+    "magic/heal14.png"
+    pause.06
+    "magic/heal15.png"
+    pause.06
+    "magic/heal16.png"
+    pause.06
+    "magic/heal17.png"
+    pause.06
+    "magic/heal18.png"
+    pause.06
+
+image heal_02: # Smaller version of heal. 40% of the original size.
+    "magic_02/heal01.png"
+    pause.06
+    "magic_02/heal02.png"
+    pause.06
+    "magic_02/heal03.png"
+    pause.06
+    "magic_02/heal04.png"
+    pause.06
+    "magic_02/heal05.png"
+    pause.06
+    "magic_02/heal06.png"
+    pause.06
+    "magic_02/heal07.png"
+    pause.06
+    "magic_02/heal08.png"
+    pause.06
+    "magic_02/heal09.png"
+    pause.06
+    "magic_02/heal10.png"
+    pause.06
+    "magic_02/heal11.png"
+    pause.06
+    "magic_02/heal12.png"
+    pause.06
+    "magic_02/heal13.png"
+    pause.06
+    "magic_02/heal14.png"
+    pause.06
+    "magic_02/heal15.png"
+    pause.06
+    "magic_02/heal16.png"
+    pause.06
+    "magic_02/heal17.png"
+    pause.06
+    "magic_02/heal18.png"
+    pause.06
 
 image ch_hem potion:
     "01_hp/16_hermione_chibi/potion1.png"
