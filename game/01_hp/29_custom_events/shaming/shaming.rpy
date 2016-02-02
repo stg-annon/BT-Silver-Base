@@ -87,7 +87,7 @@ label shaming_night:
 
 
     if shaming == 0: #First time this event taking place.
-        call ce_her_main(,"1000",320)        
+        call ce_her_main("","1000",320)        
         m "Good evening, Miss Granger."
         her "Good evening, Professor."
         her "So what do you want me to do?"
@@ -95,11 +95,11 @@ label shaming_night:
         m "First of all, please take off your robe."
         her "Of course, Sir."
 
-        call ce_her_main(,"1100")      
+        call ce_her_main("","1100")      
         pause .1
-        call ce_her_main(,"1200")    
+        call ce_her_main("","1200")    
         pause .1  
-        call ce_her_main(,"1300") 
+        call ce_her_main("","1300") 
         pause .1  
         
         m "..."
@@ -123,7 +123,7 @@ label shaming_night:
             call ce_her_main("Professor I'm really not comfortable with you jerking off in front of me...","1500")
             m "I don't care."
         else:
-            call ce_her_main(,"1600")
+            call ce_her_main("","1600")
             "Hermione notices what you are doing."
             "But she doesn't object."
         m "You see, Miss Granger..."
@@ -147,18 +147,18 @@ label shaming_night:
         m "Try as you might you won't be able to leave."
         m "Now, miss Granger,"
         m "Please take off your shirt."
-        call ce_her_main(,"2400")   
+        call ce_her_main("","2400")   
         show screen ctc
         pause 
         her "..."
         ">hermoine stares at you with a look that could burn holes through walls."
         hide screen hermione_02
         show screen hermione_04
-        call ce_her_main(,"2500")   
+        call ce_her_main("","2500")   
         pause
         m "Oh yeah look at those perfect titties..."
         m "All the way off, miss Granger."
-        call ce_her_main(,"2600")
+        call ce_her_main("","2600")
         
         hide screen hermione_04
         $ hermione_chibi_xpos = 400
@@ -172,7 +172,7 @@ label shaming_night:
         m "Excuse me?"
         call ce_her_main("I refuse.","2800")
         m "If you think that will stop me, you've got the wrong idea, slut."
-        call ce_her_main(,"2900")   
+        call ce_her_main("","2900")   
         show screen ctc
         pause 
         ">You conjure up some pink fluffy cuffs and bind Hermione's hands together."
@@ -183,9 +183,9 @@ label shaming_night:
         m "I'm in complete control of this situation, and you're powerless!"
         m "Immobilized in my room, with practically every person in the castle asleep."
         m "I'm going to enjoy this..."
-        call ce_her_main(,"3100")   
+        call ce_her_main("","3100")   
         "You reach under her skirt."
-        call ce_her_main(,"3200")   
+        call ce_her_main("","3200")   
         show screen ctc
         pause 
         "and slowly pull down her panties."
@@ -212,7 +212,7 @@ label shaming_night:
         #$ hermione_chibi_ypos = 0
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
-        call ce_her_main(,"3400")   
+        call ce_her_main("","3400")   
         show screen ctc
         pause
         "Hermione starts sobbing."
@@ -220,12 +220,12 @@ label shaming_night:
         ">hermione is glancing at your dick."
         her "Please Professor, I'll do anything, just don't do this to me."
         m "Keep your mouth shut, wench."
-        call ce_her_main(,"3600")   
+        call ce_her_main("","3600")   
         show screen ctc
         her "!!!"
         her "MMHHHM!! MHHHMMMH!"
         m "much better"
-        call ce_her_main(,"3700")   
+        call ce_her_main("","3700")   
         "Tears are running down Hermione's cheecks."
         m "This is perfect"
         m "I'm going to..."
@@ -234,7 +234,7 @@ label shaming_night:
         hide screen white
         pause.2
         show screen white 
-        call ce_her_main(,"3800")   
+        call ce_her_main("","3800")   
         pause .1
         hide screen white
         with hpunch
@@ -248,14 +248,14 @@ label shaming_night:
         hide screen g_c_c_u
         
         m "AHHHhhhhh"
-        call ce_her_main(,"3900")   
+        call ce_her_main("","3900")   
         "Hermione is still sobbing."
         "You are instantly rock hard again"
         if whoring > 22:
             "You notice that she seems to be rubbing her thighs together."
         m "You fucking slut"
         m "This is your destiny"
-        call ce_her_main(,"4000") 
+        call ce_her_main("","4000") 
         m "My personal cumbucket"
         m "It's coming..."
         
@@ -264,7 +264,7 @@ label shaming_night:
         hide screen white
         pause.2
         show screen white 
-        call ce_her_main(,"4100")   
+        call ce_her_main("","4100")   
         pause .1
         hide screen white
         with hpunch
@@ -290,7 +290,7 @@ label shaming_night:
         m "..."
         m "(Oh dear)"
         m "(I might have overdone it a little)"
-        call ce_her_main(,"4200") 
+        call ce_her_main("","4200") 
         "You take off the gag"
         m "One Hundred House points for Gryffindor"
         $ gryffindor +=100
@@ -309,7 +309,7 @@ label shaming_night:
             m "What's wrong, Didn't I just give you a shitload of points in return?"
             m "I'd be glad if I were you..."
             "Hermione grabs her robe."
-            call ce_her_main(,"4300")  
+            call ce_her_main("","4300")  
             show screen ctc
             pause 
             "And leaves after shooting a nastly look towards you."
@@ -351,7 +351,7 @@ label shaming_night:
                 "-That's enough for one night-":
                     "You take off the cuffs."
                     m "cover yourself and go to bed, tomorrow is another day"
-                    call ce_her_main(,"4600") 
+                    call ce_her_main("","4600") 
                     show screen ctc
                     pause 
                     $ shaming_clothed = True
@@ -414,11 +414,11 @@ label shaming_night:
         m "I think you have that backwards."
         her "What?"
         m "Nevermind. Take that ridiculous robe off."
-        call ce_her_main(,"6200")
+        call ce_her_main("","6200")
         with d3
         "Hermione peels off her robe to expose a very revealing sling bikini."
         
-        call ce_her_main(,"6300")
+        call ce_her_main("","6300")
         hide screen hermione_02_b
         $ hermione_chibi_xpos = 400
         #$ hermione_chibi_ypos = 0
@@ -447,7 +447,7 @@ label shaming_night:
         m "Not your tits you silly bitch, your cunt."
         her "Oh god, yes sir, tell me what a filthy fuck-toy I am."
         
-        call ce_her_main(,"6600")
+        call ce_her_main("","6600")
         pause
         
         "Hermione reveals her dripping wet pussy with a rapturous expression on her face."
@@ -460,7 +460,7 @@ label shaming_night:
         m "Just go get Snape and don’t act like a massive whore until I tell you to."
         her "Yes Professor."
         
-        call ce_her_main(,"6800")
+        call ce_her_main("","6800")
         show screen ctc
         pause
         hide screen custom_event_h
@@ -506,7 +506,7 @@ label shaming_night:
         $ hermione_chibi_xpos = 400
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
-        call ce_her_main(,"6900",280)
+        call ce_her_main("","6900",280)
         pause 
 
         hide screen snape_main
@@ -552,7 +552,7 @@ label shaming_night:
         call ce_her_main("Professor… I think it’s stuck…","7000")
         m "Well pull harder girl."
         her "Oh god… I can feel it… AH!"
-        call ce_her_main(,"7100")
+        call ce_her_main("","7100")
         pause
         "With an audible pop the dildo rockets out of Hermione’s slit. She falls to the ground and starts convulsing."
         
@@ -589,14 +589,14 @@ label shaming_night:
         hide screen snape_main
         
         "Genie and Snape jerk off over Hermione. From the look on her face she is nearly catatonic with excitement."
-        call ce_her_main(,"7200",390,150)
+        call ce_her_main("","7200",390,150)
         her "Please…Please let me taste them…"
         "Without waiting, Snape grabs Hermione by the hair and rams his cock down her throat."
         m "That’s the spirit, but I was hoping to hear her beg more."
         sna "Ha! I have an idea. Oh Miss Granger, you stuck up, know it all, cock gobbling whore."
         her "Mys?"
         sna "Beg for cock as I fuck your slutty little throat."
-        call ce_her_main(,"7300")
+        call ce_her_main("","7300")
         "Tears begun streaming down her face as Hermione struggles to enunciate her pleas for cock."
         her "Mys Prfussur. Pleeth thuk mye in evury wun ov may thluddy vuk-howes. Ah need cahk do vive. *Gag* Ah Exzitht to thurviz dick."
         m "Holy fuck Severus, you’re a genius! Beg for the dildo bitch!"
@@ -620,7 +620,7 @@ label shaming_night:
         $ s_c_c_u_pic = "snape_cum_01"
         show screen s_c_c_u
         show screen g_c_c_u
-        call ce_her_main(,"7500",140,0)
+        call ce_her_main("","7500",140,0)
         hide screen white
         with hpunch
         pause

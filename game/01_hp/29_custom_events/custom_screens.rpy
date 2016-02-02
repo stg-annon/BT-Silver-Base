@@ -64,7 +64,7 @@ screen custom_event_head_h:
     
     zorder 8
     
-label ce_her_main(text = "", body=ce_body_filename,xpos = ce_xpos,ypos = ce_ypos eventName = ce_name):
+label ce_her_main(text = "", body=ce_body_filename,xpos = ce_xpos,ypos = ce_ypos, eventName = ce_name):
     hide screen custom_event_h
     if xpos != ce_xpos:
         $ ce_xpos = xpos
