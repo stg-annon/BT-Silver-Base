@@ -27,6 +27,7 @@ label __init_variables:
     $ hermione_custom_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
@@ -39,6 +40,8 @@ label __init_variables:
     $ hermione_perm_expand = False
     $ hermione_custom_outfit = False
     $ hermione_action = False
+    
+    $ h_request_wear_panties = False
     
     $ h_breasts = 1
     $ h_bra = "base_bra_white_1"
@@ -61,25 +64,18 @@ label __init_variables:
     # 11 christmas
     # 12 lara croft 
     
+    $ outfit_set_size = 20
+    
     $ hermione_custom_outfit_nip_fix = [11]
     
-    $ hermione_custom_hair_list = []
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("power_hair")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("harley_hair")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
-    $ hermione_custom_hair_list.append("")
+    #if not hasattr(renpy.store,'hermione_custom_hair_list'): #important!
+    $ hermione_custom_hair_list = [""] * outfit_set_size
+    $ hermione_custom_hair_list[7] = ("power_hair")
+    $ hermione_custom_hair_list[9] = ("harley_hair")
     
     
-    $ hermione_custom_outfit_list = [[0 for i in xrange(5)] for i in xrange(16)]
+    #if not hasattr(renpy.store,'hermione_custom_outfit_list'): #important!
+    $ hermione_custom_outfit_list = [[0 for i in xrange(5)] for i in xrange(outfit_set_size)]
     
     $ hermione_custom_outfit_list [1][0] = "maid_stockings.png" 
     $ hermione_custom_outfit_list [1][1] = "maid_skirt.png"
@@ -152,5 +148,8 @@ label __init_variables:
     $ hermione_custom_outfit_list [12][2] = "lara_gloves.png"
     $ hermione_custom_outfit_list [12][3] = ""
     $ hermione_custom_outfit_list [12][4] = ""
+    
+    #if not hasattr(renpy.store,'h_current_sets'): #important!
+    $ h_current_sets = 12
     
     return

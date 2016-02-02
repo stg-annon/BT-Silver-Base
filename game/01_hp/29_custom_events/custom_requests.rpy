@@ -84,8 +84,9 @@ label new_custom_request:
 
 
             ### LEVEL 07 ### IMAGINATION == 5
-
-
+            
+            "{color=#404033}Favour: \"Rubber Cement\"":
+                jump rcement
             
             "-Never mind-":
 
