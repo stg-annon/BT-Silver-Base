@@ -92,41 +92,41 @@ image heal:
     pause.06
 
 image heal_02: # Smaller version of heal. 40% of the original size.
-    "magic_02/heal01.png"
+    "magic/heal_02/heal01.png"
     pause.06
-    "magic_02/heal02.png"
+    "magic/heal_02/heal02.png"
     pause.06
-    "magic_02/heal03.png"
+    "magic/heal_02/heal03.png"
     pause.06
-    "magic_02/heal04.png"
+    "magic/heal_02/heal04.png"
     pause.06
-    "magic_02/heal05.png"
+    "magic/heal_02/heal05.png"
     pause.06
-    "magic_02/heal06.png"
+    "magic/heal_02/heal06.png"
     pause.06
-    "magic_02/heal07.png"
+    "magic/heal_02/heal07.png"
     pause.06
-    "magic_02/heal08.png"
+    "magic/heal_02/heal08.png"
     pause.06
-    "magic_02/heal09.png"
+    "magic/heal_02/heal09.png"
     pause.06
-    "magic_02/heal10.png"
+    "magic/heal_02/heal10.png"
     pause.06
-    "magic_02/heal11.png"
+    "magic/heal_02/heal11.png"
     pause.06
-    "magic_02/heal12.png"
+    "magic/heal_02/heal12.png"
     pause.06
-    "magic_02/heal13.png"
+    "magic/heal_02/heal13.png"
     pause.06
-    "magic_02/heal14.png"
+    "magic/heal_02/heal14.png"
     pause.06
-    "magic_02/heal15.png"
+    "magic/heal_02/heal15.png"
     pause.06
-    "magic_02/heal16.png"
+    "magic/heal_02/heal16.png"
     pause.06
-    "magic_02/heal17.png"
+    "magic/heal_02/heal17.png"
     pause.06
-    "magic_02/heal18.png"
+    "magic/heal_02/heal18.png"
     pause.06
 
 image ch_hem potion:
