@@ -5,8 +5,12 @@
 *.pydevproject
 .project
 .metadata
+game/music/
 bin/
 tmp/
+*.mp3
+*.ogg
+*.MP3
 *.tmp
 *.bak
 *.swp
