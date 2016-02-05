@@ -31,10 +31,12 @@ label __init_variables:
         $ custom_outfit_3_bought = False
     if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
         $ custom_outfit_4_bought = False
+    if not hasattr(renpy.store,'cs_accessories'): #important!
+        $ cs_accessories = [False,False,False]
     if not hasattr(renpy.store,'cs_existing_stock'): #important!
-        $ cs_existing_stock = [False,False,False,False,False,False,False,False,False]
-    if not hasattr(renpy.store,'cd_accessories'): #important!
-        $ cd_accessories = [False,False,False]
+        $ cs_existing_stock = []
+    if not hasattr(renpy.store,'cs_existing_stock_gifted'): #important!
+        $ cs_existing_stock_gifted = []
     
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
@@ -470,124 +472,109 @@ label cust_excuse(text="Meh, you cant use this yet"): #custom text option for ot
 label existing_stock:
     menu:
         "-Pants/Skirts-":#Jeans#Stockings#Fishnet Stockings#Lace Bra and Panties#Cup-less Lace Bra#Silk Bra and Panties
+            label existing_stock_pants_skirts:
             menu:
                 "-Jeans- (75 Gold)":
                     "A pair of standard muggle jeans, albeit a little low slung."
                     menu:
-                        "-Buy-":
-                            if gold >= 75:
-                                $ gold -= 75
-                                $ cs_existing_stock[0] = True
-                                maf "Thank you very much."
-                                jump clothes_menu
-                            else:
-                                m "I don't have enough."
-                                jump clothes_menu
+                        "-Buy the item (75 gold)-":
+                            call cs_buy_stock("jeans", 75)
+                            jump existing_stock_pants_skirts
                         "-Never mind-":
-                            jump existing_stock
+                            jump existing_stock_pants_skirts
                 "-Short Jeans- (150 Gold)":
                     "A pair of short daisy dukes."
                     menu:
-                        "-Buy-":
-                            if gold >= 150:
-                                $ gold -= 150
-                                $ cs_existing_stock[5] = True
-                                maf "Thank you very much."
-                                jump clothes_menu
-                            else:
-                                m "I don't have enough."
-                                jump clothes_menu
+                        "-Buy the item (150 gold)-":
+                            call cs_buy_stock("short_jeans", 150)
+                            jump existing_stock_pants_skirts
                         "-Never mind-":
-                            jump existing_stock
+                            jump existing_stock_pants_skirts
                 "-Return-":
                     jump clothes_menu
         "-Stockings-":
+            label existing_stock_stockings:
             menu:
                 "-Gryffindor Stockings- (50 Gold)":
                     "A pair of cheerful school stockings, in house colors."
                     menu:
-                        "-Buy-":
-                            if gold >= 50:
-                                $ gold -= 50
-                                $ cs_existing_stock[1] = True
-                                maf "Thank you very much."
-                                jump clothes_menu
-                            else:
-                                m "I don't have enough."
-                                jump clothes_menu
+                        "-Buy the item (50 gold)-":
+                            call cs_buy_stock("gryffindor_stockings", 50)
+                            jump existing_stock_stockings
                         "-Never mind-":
-                            jump existing_stock
+                            jump existing_stock_stockings
                 "-Fishnet Stockings- (75 Gold)":
                     "A pair of sultry fishnet stockings."
                     menu:
-                        "-Buy-":
-                            if gold >= 75:
-                                $ gold -= 75
-                                $ nets = 1
-                                maf "Thank you very much."
-                                jump clothes_menu
-                            else:
-                                m "I don't have enough."
-                                jump clothes_menu
+                        "-Buy the item (75 gold)-":
+                            call cs_buy_stock("fishnet_stockings", 75)
+                            jump existing_stock_stockings
                         "-Never mind-":
-                            jump existing_stock
+                            jump existing_stock_stockings
                 "-Return-":
                     jump clothes_menu
         "-Bras and Panties-":
+            label existing_stock_bras_panties:
             menu:
                 "-Lace Bra and Panties- (50 Gold)":
                     "A lovely lace bra and panty set."
-                    if gold >= 50:
-                        $ gold -= 50
-                        $ cs_existing_stock[2] = True
-                        maf "Thank you very much."
-                        jump clothes_menu
-                    else:
-                        m "I don't have enough."
-                        jump clothes_menu
-                "-Cup-less Lace Bra- (125 Gold)":
+                    menu:
+                        "-Buy the item (50 gold)-":
+                            call cs_buy_stock("lace_set", 50)
+                            jump existing_stock_bras_panties
+                        "-Never mind-":
+                            jump existing_stock_bras_panties
+                "-Cup-less Lace Bra and panties- (125 Gold)":
                     "A revealing piece of clothing that only serves to highlight the wearer's breasts."
-                    if gold >= 125:
-                        $ gold -= 125
-                        $ cs_existing_stock[3] = True
-                        maf "Thank you very much."
-                        jump clothes_menu
-                    else:
-                        m "I don't have enough."
-                        jump clothes_menu
+                    menu:
+                        "-Buy the item (125 gold)-":
+                            call cs_buy_stock("cup_set", 125)
+                            jump existing_stock_bras_panties
+                        "-Never mind-":
+                            jump existing_stock_bras_panties
                 "-Silk Bra and Panties- (150 Gold)":
                     "A smooth and comfortable lace bra and panty set."
-                    if gold >= 150:
-                        $ gold -= 150
-                        $ cs_existing_stock[4] = True
-                        maf "Thank you very much."
-                        jump clothes_menu
-                    else:
-                        m "I don't have enough."
-                        jump clothes_menu
-                "-Return-":
+                    menu:
+                        "-Buy the item (150 gold)-":
+                            call cs_buy_stock("silk_set", 150)
+                            jump existing_stock_bras_panties
+                        "-Never mind-":
+                            jump existing_stock_bras_panties
+                "-Never Mind-":
                     jump clothes_menu
         "-Return-":
             jump clothes_menu
 label accessories:
     menu:
         "-\"S.P.E.W.\" badge-":
-            maf "A badge designed to show one's opposition of elf slavery. "
+            maf "A badge designed to show one's opposition of elf slavery."
             menu:
                 "-Buy the item (100 gold)-":
-                    if badge_01 == 7 or badge_01 == 1: # == 7 means "gifted already" # badge_01 == 1 because otherwise you could still buy it in the shop, even if you have 1 already.
-                        m "I already own this."
-                        jump accessories
-                    else:
-                        if gold >= 100:
-                            $ gold -=100
-                            $ badge_01 = 1
-                            maf "Thank you very much."
-                            jump clothes_menu
-                        else:
-                            m "I don't have enough gold..."
-                            jump accessories
+                    call cs_buy_stock("SPEW_badge",100)
+                    jump accessories
+                "-Never mind-":
+                    jump accessories
+        "-\"I <3 C.U.M.\" badge-":
+            maf "A badge that displays ones affection towards semen."
+            menu:
+                "-Buy the item (150 gold)-":
+                    call cs_buy_stock("CUM_badge",150)
+                    jump accessories
                 "-Never mind-":
                     jump accessories
         "-Never mind-":
             jump clothes_menu
+            
+label cs_buy_stock(item_id = "", cost):
+    if gold >= cost && item_id != "":
+        if item_id in cs_existing_stock:
+            m "I already own this."
+            return
+        else:
+            $ gold -= cost
+            $ cs_existing_stock.append(item_id)
+            maf "Thank you very much."
+            return
+    else:
+        m "I don't have enough."
+        return

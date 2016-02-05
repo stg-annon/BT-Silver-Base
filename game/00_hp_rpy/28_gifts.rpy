@@ -1055,6 +1055,141 @@ label nets_take:
     with d3
     jump day_time_requests
     
+label her_gift_menu:
+    menu:
+        "-A lollipop candy-([gift_item_inv[1]])" if gift_item_inv[1] >= 1:
+            $ gifted = True
+            call give_her_gift(1)
+            
+        "-Chocolate-([gift_item_inv[2]])" if gift_item_inv[2] >= 1:
+            $ gifted = True 
+            call give_her_gift(2)
+        
+        "-Stuffed Owl-([gift_item_inv[3]])" if gift_item_inv[3] >= 1:
+            $ gifted = True 
+            call give_her_gift(3)
+            
+        "-Butterbeer-([gift_item_inv[4]])" if gift_item_inv[4] >= 1:
+            $ gifted = True 
+            call give_her_gift(4)
+            
+        "-Educational magazines-([gift_item_inv[5]])" if gift_item_inv[5] >= 1:
+            $ gifted = True 
+            call give_her_gift(5)
+            
+        "-Girly magazines-([gift_item_inv[6]])" if gift_item_inv[6] >= 1:
+            $ gifted = True 
+            call give_her_gift(6)
+            
+        "-Adult magazines-([gift_item_inv[7]])" if gift_item_inv[7] >= 1:
+            $ gifted = True 
+            call give_her_gift(7)
+            
+        "-Porn magazines-([gift_item_inv[8]])" if gift_item_inv[8] >= 1:
+            $ gifted = True 
+            call give_her_gift(8)
+        
+        "-Viktor Krum Poster-([gift_item_inv[9]])" if gift_item_inv[9] >= 1:
+            $ gifted = True 
+            call give_her_gift(9)
+        
+        "-Sexy lingerie-([gift_item_inv[10]])" if gift_item_inv[10] >= 1:
+            $ gifted = True 
+            call give_her_gift(10)
+        
+        "-A pack of condoms-([gift_item_inv[11]])" if gift_item_inv[11] >= 1:
+            $ gifted = True 
+            call give_her_gift(11)
+            
+        "-A jar of anal lubricant-([gift_item_inv[13]])" if gift_item_inv[13] >= 1:
+            $ gifted = True 
+            call give_her_gift(13)
+        
+        "-A vibrator-([gift_item_inv[12]])" if gift_item_inv[12] >= 1:
+            $ gifted = True 
+            call give_her_gift(12)
+        
+        "-Ball gag and cuffs -([gift_item_inv[14]])" if gift_item_inv[14] >= 1:
+            $ gifted = True 
+            call give_her_gift(14)
+            
+        "-Anal plugs -([gift_item_inv[15]])" if gift_item_inv[15] >= 1:
+            $ gifted = True 
+            call give_her_gift(15)
+            
+        "- A Thestral strap-on -([gift_item_inv[16]])" if gift_item_inv[16] >= 1:
+            $ gifted = True 
+            call give_her_gift(16)
+        
+        "- Lady Speed Stick-2000 -([gift_item_inv[17]])" if gift_item_inv[17] >= 1:
+            $ gifted = True 
+            call give_her_gift(17)
+            
+        "- Sex doll \"Joanne\" -([gift_item_inv[18]])" if gift_item_inv[18] >= 1:
+            $ gifted = True 
+            call give_her_gift(18)
+        
+        "-School miniskirt-" if have_miniskirt: # Turns TRUE when you have the skirt in your possession.
+            $ gifted = True
+            jump giving_skirt #28_gifts.rpy
+        
+        "-\"S.P.E.W.\" badge-" if "SPEW_badge" in cs_existing_stock and "SPEW_badge" not in cs_existing_stock_gifted:
+            $ gifted = True
+            call give_her_existing_stock("SPEW_badge")
+        
+        "-Fishnet stockings-" if "fishnet_stockings" in cs_existing_stock and "fishnet_stockings" not in cs_existing_stock_gifted:
+            $ gifted = True
+            call give_her_existing_stock("fishnet_stockings")
+            
+        ##"-Gryffindor Cheerleader Outfit-" if custom_outfit_1_bought == True:
+        ##    $ gifted = True
+        ##    jump giving_gryffindor_cheer #28_gifts.rpy
+
+        ##"-Slytherin Cheerleader Outfit-" if custom_outfit_2_bought == True:
+        ##    $ gifted = True
+        ##    jump giving_slytherin_cheer #28_gifts.rpy
+
+        ##"-Maid Outfit-" if custom_outfit_3_bought == True:
+        ##    $ gifted = True
+        ##    jump giving_maid_outfit #28_gifts.rpy
+
+        ##"-Silk Nightgown-" if custom_outfit_4_bought == True:
+        ##    $ gifted = True
+        ##    jump giving_silk_nightgown #28_gifts.rpy
+            
+        ##"-Jeans-" if cs_existing_stock[0] == True:
+        ##   $ gifted = True
+        ##    jump giving_jeans #28_gifts.rpy
+            
+        ##"-Gryffindor Stockings-" if cs_existing_stock[1] == True:
+        ##    $ gifted = True
+        ##    jump giving_gryffindor_stockings #28_gifts.rpy
+            
+        ##"-Lace Bra and Panties-" if cs_existing_stock[2] == True:
+        ##    $ gifted = True
+        ##    jump giving_lace_bra #28_gifts.rpy
+            
+        ##"-Cup-less Lace Bra-" if cs_existing_stock[3] == True:
+        ##    $ gifted = True
+        ##    jump giving_cupless_bra #28_gifts.rpy
+            
+        ##"-Silk Bra and Panties-" if cs_existing_stock[4] == True:
+        ##    $ gifted = True
+        ##    jump giving_silk_bra #28_gifts.rpy
+            
+        "-The Ball Dress-" if "ball_dress" in outfit_inventory and not gave_the_dress:
+            show screen  blktone
+            with d3
+            m "(I have the feeling that there will be no turning back for me after I give her this dress...)"
+            m "(Am I ready for this?)"
+            hide screen blktone
+            menu:
+                "\"Yes, I am...\"":
+                    jump giving_thre_dress #27_final_events.rpy
+                "\"No, not yet...\"":
+                    jump day_time_requests
+        "-Never mind-":
+            jump day_time_requests
     
 label give_gift(text = "", gift_id = 0):
     hide screen hermione_main
@@ -1603,42 +1738,79 @@ label give_her_gift(gift_id):
     jump day_time_requests
     
     
-    
-    
-     ### S.P.E.W. BADGE ###
-label giving_badge_01: 
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ badge_01 = 7 # Means already gifted.
-    call her_main("A badge?","body_01")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/29.png" # S.P.E.W. BADGE.
+label display_gift(str, gift_id):
+    hide screen hermione_main
+    with d3
+    $ the_gift = "01_hp/18_store/"+str(gift_id)+".png"
     show screen gift
     with d3
-    ">You give the badge to Hermione...\n>The \"S.P.E.W. badge has been added to the wardrobe."
+    "[str]"
     hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_06")
-    call happy
-
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests                    
-            
+    with d3
+    return
+    
+label give_her_existing_stock(stock_id):
+    hide screen hermione_main
+    with d5
+    $ h_xpos=140
+    
+    if stock_id = "fishnet_stockings":
+        call her_main("A pair of stockings?","body_03")
+        call display_gift(">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe.","30")
+        call her_main("Thank you, [genie_name].","body_04")
+        $ cs_existing_stock_gifted.append("fishnet_stockings")
+        $ dress_code = True
+        call happy(30)
+    if stock_id = "SPEW_badge":
+        call her_main("A badge?","body_01")
+        call display_gift(">You give the badge to Hermione...\n>The \"S.P.E.W. badge has been added to the wardrobe.","29")
+        $ cs_existing_stock_gifted.append("SPEW_badge")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_06")
+        call happy(30)
+    if stock_id = "jeans":
+        call her_main("A pair of jeans?","body_03")
+        call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("jeans")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
+    if stock_id = "lace_set":
+        call her_main("A set of undergarments?","body_03")
+        call display_gift(">You give the lace bra and panties to Hermione...\n>lace bra and panties have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("lace_set")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
+    if stock_id = "cup_set":
+        call her_main("A set of undergarments??","body_03")
+        call display_gift(">You give the cup bra and panties to Hermione...\n>cup bra and panties have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("cup_set")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
+    if stock_id = "silk_set":
+        call her_main("A set of undergarments?","body_03")
+        call display_gift(">You give the silk bra and panties to Hermione...\n>silk bra and panties have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("silk_set")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
         
+    if stock_id = "ITEM_ID":
+        call her_main("HERMIONE_QUESTIONS_ITEM?","body_03")
+        call display_gift(">You give the ITEM to Hermione...\n>ITEM have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("ITEM_ID")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
         
-        
-    ### FISHNET STOCKINGS ###
-label giving_nets: 
+    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    show screen hermione_main
+    with d3
+    jump day_time_requests 
+    
+label giving_gryffindor_stockings:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d5                                                                                                                                                                                                                        #HERMIONE
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
@@ -1664,8 +1836,93 @@ label giving_nets:
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests                    
-            
+    jump day_time_requests    
+
+label giving_lace_bra:
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d5                                                                                                                                                                                                                        #HERMIONE
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    
+
+    $ mad -= 30
+    $ nets = 7 # Means already gifted.
+    call her_main("A pair of stockings?","body_03")
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
+    show screen gift
+    with d3
+    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
+    hide screen gift
+
+    $ dress_code = True
+
+    call her_main("Thank you, [genie_name].","body_04")
+    call happy
+    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+
+    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    jump day_time_requests    
+
+label giving_cupless_bra:
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d5                                                                                                                                                                                                                        #HERMIONE
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    
+
+    $ mad -= 30
+    $ nets = 7 # Means already gifted.
+    call her_main("A pair of stockings?","body_03")
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
+    show screen gift
+    with d3
+    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
+    hide screen gift
+
+    $ dress_code = True
+
+    call her_main("Thank you, [genie_name].","body_04")
+    call happy
+    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+
+    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    jump day_time_requests    
+
+label giving_silk_bra:
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d5                                                                                                                                                                                                                        #HERMIONE
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    
+
+    $ mad -= 30
+    $ nets = 7 # Means already gifted.
+    call her_main("A pair of stockings?","body_03")
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
+    show screen gift
+    with d3
+    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
+    hide screen gift
+
+    $ dress_code = True
+
+    call her_main("Thank you, [genie_name].","body_04")
+    call happy
+    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+
+    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
+    show screen hermione_main                                                                                                                                                                                 #HERMIONE
+    with d3                                                                                                                                                                                                                        #HERMIONE
+    jump day_time_requests    
+
+    
 ###GIVING CLOTHING RESPONSES
 label giving_gryffindor_cheer:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -1766,146 +2023,6 @@ label giving_silk_nightgown:
     show screen gift
     with d3
     ">You give the nightgown to Hermione...\n>A silk nightgown has been added to the wardrobe."
-    hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_04")
-    call happy
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests    
-
-label giving_jeans:
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ nets = 7 # Means already gifted.
-    call her_main("A pair of stockings?","body_03")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-    show screen gift
-    with d3
-    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
-    hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_04")
-    call happy
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests    
-
-label giving_gryffindor_stockings:
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ nets = 7 # Means already gifted.
-    call her_main("A pair of stockings?","body_03")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-    show screen gift
-    with d3
-    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
-    hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_04")
-    call happy
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests    
-
-label giving_lace_bra:
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ nets = 7 # Means already gifted.
-    call her_main("A pair of stockings?","body_03")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-    show screen gift
-    with d3
-    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
-    hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_04")
-    call happy
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests    
-
-label giving_cupless_bra:
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ nets = 7 # Means already gifted.
-    call her_main("A pair of stockings?","body_03")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-    show screen gift
-    with d3
-    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
-    hide screen gift
-
-    $ dress_code = True
-
-    call her_main("Thank you, [genie_name].","body_04")
-    call happy
-    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    jump day_time_requests    
-
-label giving_silk_bra:
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d5                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    
-
-    $ mad -= 30
-    $ nets = 7 # Means already gifted.
-    call her_main("A pair of stockings?","body_03")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
-    show screen gift
-    with d3
-    ">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe."
     hide screen gift
 
     $ dress_code = True

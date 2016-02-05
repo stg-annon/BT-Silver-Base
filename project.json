@@ -1,1 +1,1 @@
-{"build_update": false, "packages": ["mac", "win"], "add_from": false, "force_recompile": true}
+{"build_update": false, "packages": ["win", "mac"], "add_from": false, "force_recompile": true}

@@ -85,8 +85,8 @@ label new_custom_request:
 
             ### LEVEL 07 ### IMAGINATION == 5
             
-            "{color=#404033}Favour: \"Rubber Cement\"":
-                jump rcement
+            # "{color=#404033}Favour: \"Rubber Cement\"":
+                # jump rcement
             
             "-Never mind-":
 
@@ -126,9 +126,9 @@ jump night_resume
 
 label custom_request_wrapup:
 
-    $ only_upper = only_upper_fixer
-    $ badges = badges_fixer
-    $ ne = ne_fixer
+    # $ only_upper = only_upper_fixer
+    # $ badges = badges_fixer
+    # $ ne = ne_fixer
 
     if daytime:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC

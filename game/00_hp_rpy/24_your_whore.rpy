@@ -2,9 +2,9 @@ label your_whore:
     show screen end_u_1
     $ end_u_1_pic =  "01_hp/17_ending/02.png"
     
-    $ badges = False
-    $ hair_color = 10 
-    $ collar = 0 
+    # $ badges = False
+    # $ hair_color = 10 
+    # $ collar = 0 
     
     hide screen hermione_main
     hide screen room # MAIN BG (DAY).
