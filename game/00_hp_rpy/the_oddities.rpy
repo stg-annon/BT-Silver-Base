@@ -426,7 +426,7 @@ label gifts_menu:
 label shop_potion_menu:
     show screen shop_screen
     menu:
-        "-Questions aquireing items-":
+        "-Questions acquiring items-":
             menu:
                 "-Knotgrass-":
                     m "Do you know where I can find \"Knotgrass\""

@@ -128,7 +128,7 @@ label her_gift_menu:
             
         "-Jeans-" if "jeans" in cs_existing_stock and "jeans" not in cs_existing_stock_gifted:
            $ gifted = True
-            call give_her_existing_stock("jeans")
+           call give_her_existing_stock("jeans")
         
         ##"-Gryffindor Cheerleader Outfit-" if custom_outfit_1_bought == True:
         ##    $ gifted = True
