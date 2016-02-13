@@ -13,7 +13,7 @@ label start_ht:
     $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
     $ aftersperm = False #Shows cum stains on Hermione's uniform.
     $ legs_02 = False # Turns TRUE when miniskirt is activated.
-    $ h_tears = False #Displays a layer with tears.
+    $ display_h_tears = False #Displays a layer with tears.
 
     $ current_payout = 0 #Used when haggling about price of th favor.
 

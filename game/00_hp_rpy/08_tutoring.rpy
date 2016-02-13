@@ -5,16 +5,14 @@ label tutoring:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_14.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     
     her "Of course, sir."
     her "I'll go get my books then."
     
-    
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-
     show screen blkfade
     with d3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -29,7 +27,7 @@ label tutoring:
 
 
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     
@@ -43,14 +41,14 @@ label tutoring:
     
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     
     her "Again, thank you for doing this for me, sir..."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_199.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "..........."
@@ -58,7 +56,7 @@ label tutoring:
 ###########JJ edits start  ##############################
 #   hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_200.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_200.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "Sir?"
@@ -67,21 +65,21 @@ label tutoring:
 #    g4 "I can't do this."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "Huh?"
 #    m "I can't tutor you, miss Granger..."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
 #    her "B-but..."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "But, sir, you promised!"
@@ -90,7 +88,7 @@ label tutoring:
 #    m "Akabur is a lazy faggot and cut this content..."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "???"
@@ -99,21 +97,21 @@ label tutoring:
 #    m "I sure hope you didn't donate to him, otherwise you'd have been ripped off."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "Is he really that much of a jew?"
 #    m "Unfortunately, yes. And people just don't understand."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "Why not?"
 #    m "Because they're retarded. He could shit on a plate, take a picture, and ask for $500 and he'd get it."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    stop music
@@ -126,7 +124,7 @@ label tutoring:
 #    m "*Sigh* It's an unfortunate truth..."
 #    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
 #    her "Sir, I think I'll be leaving now..."
@@ -138,26 +136,26 @@ label tutoring:
 ###########JJ additions   12/28/2014 ####################  
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Sir?"
     m "Ah, yes, Miss Granger.  Well, let\’s start with what you need help with."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_201.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "I don't really know.  I can read my books to find answers and write parchments."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "I hoped you could teach me something that would give me an advantage with practical magic so I didn't have to practice that so much."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "(Practical magic?  I can't do what she does with wands and words!  What the hell am I going to teach her?  Think fast, Genie!)"
@@ -166,52 +164,52 @@ label tutoring:
     m "Ummm...Well, you see, practical magic...isn't always that practical.  You must learn to use magic {i}differently{/i} if you want to progress."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Use magic differently?  I've been doing things the same way as long as I've been at Hogwarts!"
     her "I'm doing it exactly the way I was taught!  The way the teachers do it!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_206.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
     her "And I'm the best at nearly every kind of magic among all of the students!  And better than some of the teachers as well!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Music for Manatees.mp3" fadein 1 fadeout 1
     m "Yet as you say, you are now beginning to have difficulty with some of your classes.  The teachers are saying that your work isn't up to par?"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_198.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3
     her "Y-yes.  In some of them.  Professor Snape particularly, but some are saying..."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
     m "I know.  The teachers have all come to me concerned about your...stagnation.  You should be progressing much faster in your ability than you are."
     m "Some have said they are concerned you may not be able to pass the next tier of tests satisfactorily."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
     her "The N.E.W.T.s?  But...but I must pass them!  No one has said I might fail!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_202.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3 
     m "You said you were failing tests already.  If you cannot pass simple course work I don't know how you will pass a newt..."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_204.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3 
     her "Professor, this is terrible!  I've done so well before!  I can't fail now!  What is the problem?  I have to fix whatever it is!"
@@ -219,13 +217,13 @@ label tutoring:
     m "Let's put the books away for now and ready your wand."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_203.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3 
     her "Yes, sir."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     
@@ -237,7 +235,7 @@ label tutoring:
     her "Flos productum!"
     show screen H_Flowers_in
     her ">A small flower appears on the desk."
-    $ h_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "That was fine wand work, Miss Granger.  Now, please make it vanish."
@@ -252,27 +250,27 @@ label tutoring:
     her "> The flower vanishes"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "Now, let me see you try it without the wand."                                                                                                                                                                                                              #HERMIONE
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_08_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_08_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Without the wand, sir?"
     m "Yes, yes.  Put your wand away and produce a flower again.  No gestures, either.  And no magic words."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_16_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_16_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "But...but it won’t work, Professor.  Magic doesn’t work that way, sir.  You know that!"
     m "Ah, but I do not know that, Miss Granger.  Watch!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "<Now for a bit of razzle-dazzle.  And maybe a little bonus just for me...>"
@@ -280,7 +278,7 @@ label tutoring:
     show screen G_Flowers_in
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/HermioneDancerTransform.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/HermioneDancerTransform.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "That’s amazing, sir!  You did magic without a wand or anything!  And not a simple spell, either!"
@@ -290,14 +288,14 @@ label tutoring:
     hide screen G_Flowers_out
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_130_wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_130_wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "<I can't believe she didn't notice that!>"
     m "Indeed, Miss Granger.  You are a talented witch and you should be able to do the same as I do by now."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_15_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "Something troubles me that I noticed about you when you were using magic.  I have an idea why you cannot do the same.  May I see your wand?"
@@ -305,7 +303,7 @@ label tutoring:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "Hmm.  Hmmm.  Very interesting.  Quite remarkable, I would say.  You do rather a lot of magic with the wand, I believe."
-    $ h_body = "01_hp/13_hermione_main/body_13_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_13_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Well, yes, sir.  And all the time.  Every chance I get, really.  What is it, Professor?"
@@ -313,7 +311,7 @@ label tutoring:
     m "You see, I checked your aura and then checked your wand’s aura.  You have practically no magical aura left in you at all."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_12_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_12_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Auras?  Isn’t that just a bunch of Divination nonsense?"
@@ -321,7 +319,7 @@ label tutoring:
     m "Or they should not, I should say.  Perhaps you should be paying more attention in Divination class."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_07_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_07_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "I haven't taken any Divination classes in years!  Trelawney is such a fraud!"
@@ -331,7 +329,7 @@ label tutoring:
     m "It may leave a trace behind, usually small.  A portion of your magical aura."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_11_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_11_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "I see.  That must be why Priori Incantatem can reveal the last spell a wand was used to cast!"
@@ -341,14 +339,14 @@ label tutoring:
     m "Soon they themselves are little more than any non-magical person unless the have their wand.  You have invested nearly all of your magical ability into your wand!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_13_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_13_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Is that why I have so much trouble casting spells with someone else's wand?"
     m  "Very good, Miss Granger!  You have the right of it."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "But that means I might become a muggle or a squib one day?  If I don’t have my wand, I mean?"
@@ -356,7 +354,7 @@ label tutoring:
     m "But I think I can help you halt and possibly reverse the process.  It may be that you can get your magic back inside you and return you to normal.  "
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_22_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_22_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Oh, Professor, I will do anything to get my magic back where it belongs!  I can almost feel it, that I’m not as magical as I once was!"
@@ -366,21 +364,21 @@ label tutoring:
     m "You might get back to half your original level in as little as three or four years."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_130_wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_130_wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Three....or four years!?!  Oh, I can’t wait that long, sir!  I have tests coming up and need to practice for them right away! " 
     her "And from what you say, with as little magic as I have in me now I don’t think I could pass any examination!"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_22_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_22_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     m "Your school examinations do pose a problem.  But I once read of another way to retrieve a magic aura from a your wand that might be much faster.  "
     m "You will have to work hard at it though."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_07_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_07_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "I am not afraid of hard work, sir!  I would do anything to get my abilities back! Just tell me what to do!"
@@ -390,14 +388,14 @@ label tutoring:
     m "<I can't believe wasting time reading all of those idiotic books paid off with some useful mumbo-jumbo!>"
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_08_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_08_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Where is the mula-...mudla-...Oh, where is it located?  How do I channel the energy back to it so I can be restored?"
     m "It is near the coccyx at the base of your spine.  I have read that lost magical energy must come back in through one of the body’s natural portals."
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Portals?  What are those?"
@@ -406,7 +404,7 @@ label tutoring:
     m "You need only hold the wand at a portal and focus on bringing the magical energy back inside you.  "
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ hermione_body = "01_hp/13_hermione_main/body_10_Wand.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
     her "Professor, I know it's important and I need to do it but...do you think...this...transfer...will it hurt?"
@@ -566,7 +564,7 @@ label tutoring:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     $ badges = True
     with d3                                                                                                                                                                                                                        #HERMIONE
-#    $ h_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+#    $ hermione_body = "01_hp/13_hermione_main/body_205.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
 #    show screen hermione_main                                                                                                                                                                                 #HERMIONE
 #    with d3                                                                                                                                                                                                                        #HERMIONE
     stop music

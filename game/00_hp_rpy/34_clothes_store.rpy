@@ -38,6 +38,8 @@ label __init_variables:
     if not hasattr(renpy.store,'cs_existing_stock_gifted'): #important!
         $ cs_existing_stock_gifted = []
     
+    $ outfit_inventory = ["gryffindor_cheerleader","slytherin_cheerleader","maid","silk_nightgown","ball_dress","ms_marvel","heart_dancer","power_girl","harley_quinn","christmas_costume","lara_croft","pirate"]#for testing only
+    
     $ clothes_store_order_choice = "null"
     $ clothes_store_curr_page = 1
     $ clothes_store_selection = 0

@@ -304,7 +304,7 @@ label want_to_rule:
                     her "*Sob!*"
                     m "Huh?"
                     
-                    $ h_tears = True
+                    $ display_h_tears = True
                     $ u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
                     
                     call her_main("Oh, please, don't mind me, sir.","body_107")
@@ -423,7 +423,7 @@ label want_to_rule:
     $ hermione_takes_classes = True
     $ days_without_an_event = 0
 
-    $ h_tears = False
+    $ display_h_tears = False
     
     call music_block
     
@@ -437,7 +437,7 @@ label against_the_rule:
     $ days_without_an_event = 0
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ snapes_speed = 02.0 #The speed of moving the walking animation across the screen.
+    $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
     $ walk_xpos=470 #Animation of walking chibi. (From)
     $ walk_xpos2=360 #Coordinates of it's movement. (To)
     show screen snape_walk_01 
@@ -578,7 +578,7 @@ label against_the_rule:
 #    $ walk_xpos=360 #Animation of walking chibi. (From desk) 360
 #    $ walk_xpos2=610 #Coordinates of it's movement. (To the door) 610
     
-#    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
+#    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
 #    show screen snape_walk_01_f 
 #    pause 3
 #    hide screen snape_walk_01_f 
@@ -748,7 +748,7 @@ label sorry_about_hesterics:
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
 
-    $ h_tears = True
+    $ display_h_tears = True
     $  u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
     $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
@@ -757,7 +757,7 @@ label sorry_about_hesterics:
     
     hide screen hermione_main                                                                                                                                                                                   #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_tears = False
+    $ display_h_tears = False
     $ h_body = "01_hp/13_hermione_main/body_139.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3                                                                                                                                                                                                                        #HERMIONE
@@ -925,7 +925,7 @@ label good_bye_snape:
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ snapes_speed = 02.0 #The speed of moving the walking animation across the screen.
+    $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
     $ walk_xpos=470 #Animation of walking chibi. (From)
     $ walk_xpos2=360 #Coordinates of it's movement. (To) 360
     show screen snape_walk_01 
@@ -1051,7 +1051,7 @@ label good_bye_snape:
     with d3
     $ walk_xpos=360 #Animation of walking chibi. (From desk)
     $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
+    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
     show screen snape_walk_01_f 
     hide screen blkfade 
     with d3
@@ -1304,7 +1304,7 @@ label good_bye_snape:
 
     $ walk_xpos=270 #Animation of walking chibi. (From desk)
     $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
+    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
     hide screen g_c_u
     show screen genie_walk
     hide screen blkfade 

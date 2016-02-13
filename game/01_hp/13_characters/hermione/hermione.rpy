@@ -1,5 +1,9 @@
 label __init_variables:
-    $ h_body = "01_hp/13_characters/hermione/body/face/body_01.png"
+    
+    $ user_outfit_choice = 0
+    
+    $ hermione_body = "01_hp/13_characters/hermione/body/face/body_01.png"
+    $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/tears_01.png"
     $ hermione_base = "01_hp/13_characters/hermione/body/base/hermione_base.png"
     $ hermione_legs  = "01_hp/13_characters/hermione/body/legs/legs_1.png"
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_1.png"
@@ -7,20 +11,26 @@ label __init_variables:
     $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/A_1_2.png"
     $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
     $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
+    $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
     
+    $ h_body = "body_01"
+    $ h_tears = "tears_01"
     $ h_hair_style = "A"
     $ h_hair_color = 1
     
     $ hermione_xpos = 370
     $ hermione_ypos = 0
+    $ hermione_head_xpos = 390
+    $ hermione_head_ypos = 235
     
-    $ hermione_zorder = 8
+    $ hermione_zorder = 5
     
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/00_blank.png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_1.png"
+    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/00_blank.png"
     
     $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     $ hermione_custom_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
@@ -32,6 +42,8 @@ label __init_variables:
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     
+    $ hermione_wear_robe = False
+    
     $ hermione_wear_bra = True
     $ hermione_wear_panties = True
     $ hermione_wear_skirt = True
@@ -41,14 +53,18 @@ label __init_variables:
     $ hermione_custom_outfit = False
     $ hermione_action = False
     
+    
+    $ h_display_tears = False
     $ h_request_wear_panties = False
     
-    $ h_breasts = 1
     $ h_bra = "base_bra_white_1"
-    $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     $ h_panties = "base_panties_1"
-    $ h_top = 1
     $ h_skirt = 1
+    $ h_top = 1
+    $ h_robe = "00_blank"
+    
+    $ h_breasts = 1
+    $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     $ h_stocking = "00_blank"
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
@@ -66,13 +82,13 @@ label __init_variables:
     
     $ outfit_set_size = 20
     
-    $ hermione_custom_outfit_nip_fix = [11]
-    
     #if not hasattr(renpy.store,'hermione_custom_hair_list'): #important!
     $ hermione_custom_hair_list = [""] * outfit_set_size
     $ hermione_custom_hair_list[7] = ("power_hair")
     $ hermione_custom_hair_list[9] = ("harley_hair")
     
+    $ hermione_custom_breast_list = ["breasts_1"] * outfit_set_size
+    $ hermione_custom_breast_list[11] = "breasts_2"
     
     #if not hasattr(renpy.store,'hermione_custom_outfit_list'): #important!
     $ hermione_custom_outfit_list = [[0 for i in xrange(5)] for i in xrange(outfit_set_size)]
@@ -151,5 +167,26 @@ label __init_variables:
     
     #if not hasattr(renpy.store,'h_current_sets'): #important!
     $ h_current_sets = 12
+    
+    
+    $ hermione_emote_anger = False
+    $ hermione_emote_exclam = False
+    $ hermione_emote_hearts = False
+    $ hermione_emote_question = False
+    $ hermione_emote_sweat = False
+    $ hermione_emote_suprize = False
+    $ hermione_anger = ["body_51","body_76","body_86","body_110","body_218","body_351","body_346","body_345","body_343","body_317","body_309","head_exp/24"]
+    $ hermione_exclam = ["head_exp/30"]
+    $ hermione_hearts = []
+    $ hermione_question = []
+    $ hermione_sweat = ["body_24","body_34","body_57","body_108","body_208","body_340","head_exp/9"]
+    $ hermione_suprize = ["body_80","body_80b","body_335"]
+    
+    
+    
+    $ u_h_animation = ""
+    $ u_h_animation_paused = ""
+    $ u_h_ani_xpos = 0
+    $ u_h_ani_ypos = 0
     
     return

@@ -409,20 +409,16 @@ screen thought: #Thinking emotion over a chibi.
 ### SNAPE CHIBI
 screen snape_01: #Snape stands still near the door.
     tag snape
-    add "01_hp/09_snape_ani/snape_0130.png" at Position(xpos=610, ypos=210)
+    add "01_hp/09_snape_ani/snape_0130.png" at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
     
 screen snape_01_f: #Snape stands still near the door. (Mirrored).
     tag snape
-    add im.Flip("01_hp/09_snape_ani/snape_0130.png", horizontal=True) at Position(xpos=610, ypos=210)
+    add im.Flip("01_hp/09_snape_ani/snape_0130.png", horizontal=True) at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
     
 screen snape_02: #Snape stands still near the desk.
     tag snape
     add "01_hp/09_snape_ani/snape_0130.png" at Position(xpos=360, ypos=210) 
     zorder 3
-
-
-
-    
     
 screen snape_walk_01: #Default Snape walk animation. 
     tag snape
@@ -478,80 +474,6 @@ screen luna_chibi_robe_f: #Luna. Chibi. Walking. Wearing a robe.
 screen luna_02_b: #Luna stands still wearing a robe.
     tag luna_chibi
     add "01_hp/26_luna/chibis/walk/l_walk_robe_01.png" at Position(xpos=luna_chibi_xpos, ypos=luna_chibi_ypos)
-    
-### HERMIONE CHIBI ###
-screen hermione_walk:
-    tag hermione
-    if not wear_shirts:
-        add "ch_hem walk_n" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem walk_a" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem walk_d" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem walk_e" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem walk_f" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem walk_g" at custom_walk_02(walk_xpos, walk_xpos2)
-        if day_random >= 5:# shirt_05
-            add "ch_hem walk_h" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder 4
-screen hermione_walk_f: #Hermione walking animation. facing right. (Leaving tower).
-    tag hermione
-    if not wear_shirts:
-        add "ch_hem walk_n_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem walk_a_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem walk_d_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem walk_e_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem walk_f_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem walk_g_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-        if day_random >= 5:# shirt_05
-            add "ch_hem walk_h_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder 4
-screen hermione_blink: #Hermione stands still and blinks.
-    tag hermione
-    if not wear_shirts:
-        add "ch_hem blink_n" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem blink_a" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem blink_d" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem blink_e" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem blink_f" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem blink_g" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add "ch_hem blink_h" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
-screen hermione_blink_f: #Hermione stands still and blinks.
-    tag hermione
-    if not wear_shirts:
-        add "ch_hem blink_n_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem blink_a_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem blink_d_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem blink_e_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem blink_f_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem blink_g_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add "ch_hem blink_h_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
     
 
 screen hermione_01: #Hermione stands still.
@@ -945,7 +867,7 @@ screen with_snape_animated:
     
     
 ### HERMIONE MAIN ###
-screen hermione_main: #Screen that shows a full sprite of HERMIONE.
+screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
     #tag big_hermione
     
     if custom_outfit == 7 or custom_outfit == 7.2:
@@ -1078,7 +1000,7 @@ screen hermione_main: #Screen that shows a full sprite of HERMIONE.
             add im.Alpha("01_hp/25_mo/silk_bra.png", transparency) xpos h_xpos ypos h_ypos
         elif custom_bra == 3:
             add im.Alpha("01_hp/25_mo/silk_bra_2.png", transparency) xpos h_xpos ypos h_ypos
-    if h_tears:
+    if display_h_tears:
         add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
 
     if skirt_up == True:
@@ -1399,7 +1321,7 @@ screen hermione_main2:
             add im.Alpha("01_hp/25_mo/silk_bra.png", transparency) xpos h_xpos ypos h_ypos
         elif custom_bra == 3:
             add im.Alpha("01_hp/25_mo/silk_bra_2.png", transparency) xpos h_xpos ypos h_ypos
-    if h_tears:
+    if display_h_tears:
         add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
 
     if skirt_up == True:
@@ -1660,7 +1582,7 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
     if freckles == True:
         add "01_hp/25_mo/freckles.png" xpos h_xpos ypos h_ypos
 
-    if h_tears:
+    if display_h_tears:
         add u_tears_pic xpos h_xpos ypos h_ypos #Universal tears layer.
     if not badges and level == "01":
         add "01_hp/13_hermione_main/shirts/shirt_00.png" xpos h_xpos ypos h_ypos #The shirts.
@@ -1920,7 +1842,7 @@ screen h_head2: #Screen that shows Hermione's head.
             add im.Alpha("01_hp/13_hermione_main/shirts/bra_01.png", transparency) xpos her_head_xpos ypos her_head_ypos
         elif custom_bra == 3:
             add im.Alpha("01_hp/25_mo/silk_bra.png", transparency) xpos her_head_xpos ypos her_head_ypos
-    if h_tears:
+    if display_h_tears:
         add u_tears_pic xpos her_head_xpos ypos her_head_ypos #Universal tears layer.
 
 

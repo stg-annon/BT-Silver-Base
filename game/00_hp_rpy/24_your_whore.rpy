@@ -3671,7 +3671,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
     if public_whore_ending: # PUBLIC WHORE ENDING
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ snapes_speed = 02.0 #The speed of moving the walking animation across the screen.
+        $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
         $ walk_xpos=470 #Animation of walking chibi. (From)
         $ walk_xpos2=360 #Coordinates of it's movement. (To)
         show screen snape_walk_01 

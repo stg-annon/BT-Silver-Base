@@ -1890,7 +1890,7 @@ label collar_scene:
     call her_walk(610,400,1)
     show screen hermione_02 #Hermione stands still.
     $ u_tears_pic = "01_hp/13_hermione_main/tears_04.png"
-    $ h_tears = True
+    $ display_h_tears = True
     ">Hermione bursts into the room crying"
     $ changeHermioneMainScreen(hg_pth+"body_21.png")
     her "[genie_name], am I a slut?"
@@ -2131,7 +2131,7 @@ label slut_scene: #Locked to her being your slut
     hide screen bld1
     $ hermione_main_zorder = 5
     call her_walk(400,610,2)
-    $ h_tears = False
+    $ display_h_tears = False
     jump end_hermione_personal_request
     #she then comes back in the evening with a story about some people abusing her and some congratulating her
 label whore_scene: #(locked behind the public whoring flag)
@@ -2293,7 +2293,7 @@ label whore_scene: #(locked behind the public whoring flag)
     m "Goodbye whore."
     hide screen hermione_main
     call her_walk(400,610,2)
-    $ h_tears = False
+    $ display_h_tears = False
     jump end_hermione_personal_request
     #m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
     #$ changeHermioneMainScreen(hg_pth+"body_145.png")
@@ -2508,7 +2508,7 @@ label slave_scene:
     $ hermione_main_zorder = 5
     hide screen hermione_main
     call her_walk(400,610,2)
-    $ h_tears = False
+    $ display_h_tears = False
     jump end_hermione_personal_request
 
 
@@ -2563,7 +2563,7 @@ label good_girl_scene:
     m "You too [hermione_name]."
     hide screen hermione_main
     call her_walk(400,610,2)
-    $ h_tears = False
+    $ display_h_tears = False
     $ collar = 4
     jump end_hermione_personal_request
 
@@ -3016,15 +3016,20 @@ label costume_scene_1: #Maid role-play
     m "40 points to Gyrffindor."
     her "Thank you [genie_name]."
 
-label her_main(text="",face="",tears=""):
+label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermione_ypos):
     hide screen hermione_main
     #with d3
-    if face != "":
-        $ h_body = her_path + str(face) + ".png"
-    if tears != "":
-        $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
+    if xpos != hermione_xpos:
+        $ hermione_xpos = xpos
+    if ypos != hermione_ypos:
+        $ hermione_ypos = ypos
+    if face != h_body:
+        $ h_body = face
+        #$ hermione_body = her_path + str(face) + ".png"
+    $ h_tears = tears
+    call h_update
     show screen hermione_main
-    with d3
+    with d1
     if text != "":
         if "[tmp_name]" in text or "[genie_name]" in text:
             if "[tmp_name]" in text:
@@ -3036,12 +3041,13 @@ label her_main(text="",face="",tears=""):
         her "[text]"
     return
     
-label her_head(text="",face="",tears=""):
-    if face != "":
-        $ h_body = her_path + str(face) + ".png"
-    if tears != "":
-        $ u_tears_pic = "01_hp/13_hermione_main/"+str(tears)+".png"
-    show screen h_head2
+label her_head(text="",face=h_body,tears=""):
+    if face != h_body:
+        $ h_body = face
+        # $ h_body = her_path + str(face) + ".png"
+    $ h_tears = tears
+    call h_update
+    show screen hermione_head #h_head2
     if text != "":
         if "[tmp_name]" in text or "[genie_name]" in text:
             if "[tmp_name]" in text:
@@ -3051,7 +3057,7 @@ label her_head(text="",face="",tears=""):
                 $ text1,text2 = text.split("[genie_name]")
                 $ text = (text1 + genie_name + text2)
         her2 "[text]"
-    hide screen h_head2
+    hide screen hermione_head #h_head2
     return
     
 label sna_main(text="",face=""):
@@ -3072,7 +3078,11 @@ label sna_main(text="",face=""):
         sna "[text]"
     return
     
-label sna_head(text="",face=""):
+label sna_head(text="",face="",xpos=s_head_xpos ,ypos=s_head_ypos):
+    if xpos != s_head_xpos:
+        $ s_head_xpos = xpos
+    if ypos != s_head_ypos:
+        $ s_head_ypos = ypos
     if face != "":
         $ s_sprite = "01_hp/10_snape_main/"+str(face)+".png"
     show screen s_head
@@ -3132,17 +3142,17 @@ label luna_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = luna_speed, loiter 
     $ luna_speed = speed #Speed of walking animation. (lower = faster)
     hide screen luna_blink
     hide screen luna_blink_f
-    if pos1 > pos2: #right to left (hermione_walk)
+    if pos1 > pos2: #right to left (luna_walk)
         show screen luna_walk
-        $ tmp = speed - redux_pause
+        $ tmp = luna_speed - redux_pause
         pause tmp
         $ luna_chibi_xpos = pos2
         hide screen luna_walk
         if loiter:
             show screen luna_blink
-    else: #left to right (hermione_walk_f)
+    else: #left to right (luna_walk_f)
         show screen luna_walk_f
-        $ tmp = speed - redux_pause
+        $ tmp = luna_speed - redux_pause
         pause tmp
         $ luna_chibi_xpos = pos2
         hide screen luna_walk_f
@@ -3164,9 +3174,28 @@ label luna_walk_end_loiter(dissolveTime = 3):
         hide screen luna_blink_f
     return
     
-label chibi_emote:
-    #$ xpos = chibi_xpos (150-behind_desk_further, 185-behind_desk, 210-on_desk, 400-bird, 500-fireplace, 610-door)
-    #$ ypos = chibi_ypos (250)
+label snape_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = False,redux_pause = 0):
+    hide screen snape_walk_01
+    hide screen snape_walk_01_f
+    $ walk_xpos = pos1 #(From)
+    $ walk_xpos2 = pos2 #(To)
+    $ snape_chibi_ypos = 250
+    $ snape_speed = speed #Speed of walking animation. (lower = faster)
+    if pos1 > pos2: #right to left (snape_walk_01)
+        show screen snape_walk_01
+        $ tmp = snape_speed - redux_pause
+        pause tmp
+        $ snape_chibi_xpos = pos2
+        hide screen snape_walk_01
+        if loiter:
+            show screen snape_01
+    else: #left to right (snape_walk_01_f)
+        show screen snape_walk_01_f
+        $ tmp = snape_speed - redux_pause
+        pause tmp
+        $ snape_chibi_xpos = pos2
+        hide screen snape_walk_01_f
+        if loiter:
+            show screen snape_01_f
     return
-    
     

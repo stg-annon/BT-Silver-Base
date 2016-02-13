@@ -221,6 +221,10 @@ label __init_variables:
     $ her_chibi_dance_xpos = 210
     $ her_chibi_dance_ypos = 180
     
+    $ snape_chibi_xpos=610
+    $ snape_chibi_ypos=210
+    $ snape_speed = 2.0
+    
     $ luna_chibi_xpos = 400
     $ luna_chibi_ypos = 400
     $ luna_speed = 2.0

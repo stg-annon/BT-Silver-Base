@@ -520,3 +520,47 @@ init:
         im.Alpha("01_hp/11_misc/50.png", 0.0)
 
     #############################################################
+    
+### UNIVERSAL ANIMATION ###
+label __init_variables:
+    $ u_ani_pause_img = ""
+    $ u_ani_play_img = ""
+    $ u_ani_xpos = 0
+    $ u_ani_ypos = 0
+    return
+    
+label set_u_ani(play = u_ani_play_img, pause = u_ani_pause_img, xpos = u_ani_xpos, ypos = u_ani_ypos):
+    if play != u_ani_play_img:
+        $ u_ani_play_img = play
+    if pause != u_ani_pause_img:
+        $ u_ani_pause_img = pause
+    if xpos != u_ani_xpos:
+        $ u_ani_xpos = xpos
+    if ypos != u_ani_ypos:
+        $ u_ani_ypos = ypos
+    return
+    
+label u_play_ani:
+    hide screen u_ani_pause
+    show screen u_ani_play
+    with d3
+    return
+label u_pause_ani:
+    hide screen u_ani_play
+    show screen u_ani_pause
+    with d3
+    return
+    
+label u_end_ani:
+    hide screen u_ani_play
+    hide screen u_ani_pause
+    with d3
+    return
+    
+screen u_ani_pause: 
+    tag u_animation
+    add u_ani_pause_img at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)
+
+screen u_ani_play: 
+    tag u_animation
+    add u_ani_play_img at Position(xpos=u_ani_xpos, ypos=u_ani_ypos)

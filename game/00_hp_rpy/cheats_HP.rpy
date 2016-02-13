@@ -1,7 +1,6 @@
 label cheats_ht:
     menu:
         "-Test new main-":
-            show screen hermione_main_new
             jump new_main_menu
         "-Gold-":
             $ gold += 50000

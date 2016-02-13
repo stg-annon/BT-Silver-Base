@@ -900,12 +900,12 @@ init -2:
     transform custom_walk(x,x2): # http://www.renpy.org/wiki/atl 
         xpos x
         ypos 210
-        linear snapes_speed xpos x2 # linear
+        linear snape_speed xpos x2 # linear
         
     transform genie_walk(x,x2): #http://www.renpy.org/wiki/atl 
         xpos x
         ypos 260
-        linear snapes_speed xpos x2 # linear
+        linear snape_speed xpos x2 # linear
         
 
 

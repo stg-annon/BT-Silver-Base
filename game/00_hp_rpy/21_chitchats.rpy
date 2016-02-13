@@ -594,7 +594,7 @@ label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tuto
     with d3
     $ walk_xpos=360 #Animation of walking chibi. (From desk)
     $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snapes_speed = 03.0 #The speed of moving the walking animation across the screen.
+    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
     show screen snape_walk_01_f 
     pause 3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
