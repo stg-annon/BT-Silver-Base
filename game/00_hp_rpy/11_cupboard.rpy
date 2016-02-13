@@ -174,63 +174,63 @@ label cupboard:
                 "-Sacred scrolls volume I-" if cataloug_found:
                     label sc_col_men:
                     menu:
-                        "-S.01: [scroll_name_[1]]-" if sscroll_[1] or persistent.ss_01:
+                        "-S.01: [scroll_name[1]]-" if sscroll_[1] or persistent.ss_01:
                             call disp_sacred_scrolls(1)
                             jump sc_col_men
                             
-                        "-S.02: [scroll_name_[2]]-" if sscroll_[2] or persistent.ss_02:
+                        "-S.02: [scroll_name[2]]-" if sscroll_[2] or persistent.ss_02:
                             call disp_sacred_scrolls(2)
                             jump sc_col_men
                             
-                        "-S.03: [scroll_name_[3]]-" if sscroll_[3] or persistent.ss_03:
+                        "-S.03: [scroll_name[3]]-" if sscroll_[3] or persistent.ss_03:
                             call disp_sacred_scrolls(3)
                             jump sc_col_men
                             
-                        "-S.04: [scroll_name_[4]]-" if sscroll_[4] or persistent.ss_04:
+                        "-S.04: [scroll_name[4]]-" if sscroll_[4] or persistent.ss_04:
                             call disp_sacred_scrolls(4)
                             jump sc_col_men
                             
-                        "-S.05: [scroll_name_[5]]-" if sscroll_[5] or persistent.ss_05:
+                        "-S.05: [scroll_name[5]]-" if sscroll_[5] or persistent.ss_05:
                             call disp_sacred_scrolls(5)
                             jump sc_col_men
                             
-                        "-S.06: [scroll_name_[6]]-" if sscroll_[6] or persistent.ss_06:
+                        "-S.06: [scroll_name[6]]-" if sscroll_[6] or persistent.ss_06:
                             call disp_sacred_scrolls(6)
                             jump sc_col_men
                             
-                        "-S.07: [scroll_name_[7]]-" if sscroll_[7] or persistent.ss_07:
+                        "-S.07: [scroll_name[7]]-" if sscroll_[7] or persistent.ss_07:
                             call disp_sacred_scrolls(7)
                             jump sc_col_men
                             
-                        "-S.08: [scroll_name_[8]]-" if sscroll_[8] or persistent.ss_08:
+                        "-S.08: [scroll_name[8]]-" if sscroll_[8] or persistent.ss_08:
                             call disp_sacred_scrolls(8)
                             jump sc_col_men
                             
-                        "-S.09: [scroll_name_[9]]-" if sscroll_[9] or persistent.ss_09:
+                        "-S.09: [scroll_name[9]]-" if sscroll_[9] or persistent.ss_09:
                             call disp_sacred_scrolls(9)
                             jump sc_col_men
                             
-                        "-S.10: [scroll_name_[10]]-" if sscroll_[10] or persistent.ss_10:
+                        "-S.10: [scroll_name[10]]-" if sscroll_[10] or persistent.ss_10:
                             call disp_sacred_scrolls(10)
                             jump sc_col_men
                         
-                        "-S.11: [scroll_name_[11]]-" if sscroll_[11] or persistent.ss_11:
+                        "-S.11: [scroll_name[11]]-" if sscroll_[11] or persistent.ss_11:
                             call disp_sacred_scrolls(11)
                             jump sc_col_men
                         
-                        "-S.12: [scroll_name_[12]]-" if sscroll_[12] or persistent.ss_12:
+                        "-S.12: [scroll_name[12]]-" if sscroll_[12] or persistent.ss_12:
                             call disp_sacred_scrolls(12)
                             jump sc_col_men
                         
-                        "-S.13: [scroll_name_[13]]-" if sscroll_[13] or persistent.ss_13:
+                        "-S.13: [scroll_name[13]]-" if sscroll_[13] or persistent.ss_13:
                             call disp_sacred_scrolls(13)
                             jump sc_col_men
                         
-                        "-S.14: [scroll_name_[14]]-" if sscroll_[14] or persistent.ss_14:
+                        "-S.14: [scroll_name[14]]-" if sscroll_[14] or persistent.ss_14:
                             call disp_sacred_scrolls(14)
                             jump sc_col_men
                         
-                        "-S.15: [scroll_name_[15]]-" if sscroll_[15] or persistent.ss_15:
+                        "-S.15: [scroll_name[15]]-" if sscroll_[15] or persistent.ss_15:
                             call disp_sacred_scrolls(15)
                             jump sc_col_men
 
@@ -240,63 +240,63 @@ label cupboard:
                 "-Sacred scrolls volume II-" if cataloug_found:
                     label sc_col_men2:
                     menu:
-                        "-S.16: [scroll_name_[16]]-" if sscroll_[16] or persistent.ss_16:
+                        "-S.16: [scroll_name[16]]-" if sscroll_[16] or persistent.ss_16:
                             call disp_sacred_scrolls(16)
                             jump sc_col_men2
                             
-                        "-S.17: [scroll_name_[17]]-" if sscroll_[17] or persistent.ss_17:
+                        "-S.17: [scroll_name[17]]-" if sscroll_[17] or persistent.ss_17:
                             call disp_sacred_scrolls(17)
                             jump sc_col_men2
                             
-                        "-S.18: [scroll_name_[18]]-" if sscroll_[18] or persistent.ss_18:
+                        "-S.18: [scroll_name[18]]-" if sscroll_[18] or persistent.ss_18:
                             call disp_sacred_scrolls(18)
                             jump sc_col_men2
                             
-                        "-S.19: [scroll_name_[19]]-" if sscroll_[19] or persistent.ss_19:
+                        "-S.19: [scroll_name[19]]-" if sscroll_[19] or persistent.ss_19:
                             call disp_sacred_scrolls(19)
                             jump sc_col_men2
                             
-                        "-S.20: [scroll_name_[20]]-" if sscroll_[20] or persistent.ss_20:
+                        "-S.20: [scroll_name[20]]-" if sscroll_[20] or persistent.ss_20:
                             call disp_sacred_scrolls(20)
                             jump sc_col_men2
                             
-                        "-S.21: [scroll_name_[21]]-" if sscroll_[21] or persistent.ss_21:
+                        "-S.21: [scroll_name[21]]-" if sscroll_[21] or persistent.ss_21:
                             call disp_sacred_scrolls(21)
                             jump sc_col_men2
                             
-                        "-S.22: [scroll_name_[22]]-" if sscroll_[22] or persistent.ss_22:
+                        "-S.22: [scroll_name[22]]-" if sscroll_[22] or persistent.ss_22:
                             call disp_sacred_scrolls(22)
                             jump sc_col_men2
                             
-                        "-S.23: [scroll_name_[23]]-" if sscroll_[23] or persistent.ss_23:
+                        "-S.23: [scroll_name[23]]-" if sscroll_[23] or persistent.ss_23:
                             call disp_sacred_scrolls(23)
                             jump sc_col_men2
                             
-                        "-S.24: [scroll_name_[24]]-" if sscroll_[24] or persistent.ss_24:
+                        "-S.24: [scroll_name[24]]-" if sscroll_[24] or persistent.ss_24:
                             call disp_sacred_scrolls(24)
                             jump sc_col_men2
                             
-                        "-S.25: [scroll_name_[25]]-" if sscroll_[25] or persistent.ss_25:
+                        "-S.25: [scroll_name[25]]-" if sscroll_[25] or persistent.ss_25:
                             call disp_sacred_scrolls(25)
                             jump sc_col_men2
                         
-                        "-S.26: [scroll_name_[26]]-" if sscroll_[26] or persistent.ss_26:
+                        "-S.26: [scroll_name[26]]-" if sscroll_[26] or persistent.ss_26:
                             call disp_sacred_scrolls(26)
                             jump sc_col_men2
                         
-                        "-S.27: [scroll_name_[27]]-" if sscroll_[27] or persistent.ss_27:
+                        "-S.27: [scroll_name[27]]-" if sscroll_[27] or persistent.ss_27:
                             call disp_sacred_scrolls(27)
                             jump sc_col_men2
                         
-                        "-S.28: [scroll_name_[28]]-" if sscroll_[28] or persistent.ss_28:
+                        "-S.28: [scroll_name[28]]-" if sscroll_[28] or persistent.ss_28:
                             call disp_sacred_scrolls(28)
                             jump sc_col_men2
                         
-                        "-S.29: [scroll_name_[29]]-" if sscroll_[29] or persistent.ss_29:
+                        "-S.29: [scroll_name[29]]-" if sscroll_[29] or persistent.ss_29:
                             call disp_sacred_scrolls(29)
                             jump sc_col_men2
                         
-                        "-S.30: [scroll_name_[30]]-" if sscroll_[30] or persistent.ss_30:
+                        "-S.30: [scroll_name[30]]-" if sscroll_[30] or persistent.ss_30:
                             call disp_sacred_scrolls(30)
                             jump sc_col_men2
 
@@ -497,7 +497,7 @@ label rum_block(item):
         $ the_gift = "01_hp/18_store/gifts/"+str(item)+".png" # LINGERIE
         show screen gift
         with d3
-        $ tmp_str = "You found "+store_gift_items[item]+"..."
+        $ tmp_str = "You found "+store_gift_item_name[item]+"..."
         ">[tmp_str]"
         $ tmp_str = gift_description[item]
         ">[tmp_str]"

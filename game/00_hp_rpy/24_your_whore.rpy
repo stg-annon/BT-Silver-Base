@@ -3954,7 +3954,30 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ badges = True # Turns the badges layer in hermione_main back on.
         
     $ persistent.game_complete = True # Turns TRUE after you beat the game. Unlocks the gallery.
-        
+    
+    # SILVER Items
+    
+    # gift item invintory
+    $ persistent.gift_item_inv = []
+    $ persistent.gift_item_inv = gift_item_inv
+    
+    # scroll invintory
+    $ persistent.sscroll_ = []
+    $ persistent.sscroll_ = sscroll_
+    
+    # outfit invintory 
+    $ persistent.outfit_inventory = []
+    $ persistent.outfit_inventory = outfit_inventory
+    
+    # books
+    $ persistent.book_progress = []
+    $ persistent.book_progress = book_progress
+    $ persistent.book_done = []
+    $ persistent.book_done = book_done
+    $ persistent.books = []
+    $ persistent.books = books
+    
+    
     if public_whore_ending:
         $ persistent.ending_02 = True # Unlocked ending 01.
     else:
@@ -3969,6 +3992,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
    
     
     ### POSSESSIONS ###
+    
     $ persistent.lolipop = 0
     $ persistent.lolipop = persistent.lolipop + candy # LOLIPOP.
     

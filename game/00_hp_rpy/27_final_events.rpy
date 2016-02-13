@@ -994,7 +994,7 @@ label good_bye_snape:
     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
     $ s_sprite = "01_hp/10_snape_main/snape_09.png"
     show screen s_head2
-    sna_[17] "Seems like it..."
+    sna[17] "Seems like it..."
     hide screen s_head2
     hide screen blkfade 
     with d3

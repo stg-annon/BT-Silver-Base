@@ -1,87 +1,34 @@
 label __init_variables:
     if not hasattr(renpy.store,'gift_item_inv'): #important!
-        $ gift_item_inv = []
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        $ gift_item_inv.append(0)
-        #$ gift_item_inv.append(0)
+        $ gift_item_inv = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'shop_found'): #important!
         $ shop_found = False
-    if not hasattr(renpy.store,'store_gift_items'): #important!
-        $ store_gift_items = []
     if not hasattr(renpy.store,'bought_glasses'): #important!
         $ bought_glasses = False
     if not hasattr(renpy.store,'sscroll_'): #important!
-        $ sscroll_ = []
-        $ sscroll_.append(False)#null
-        $ sscroll_.append(False)# Turns TRUE if the scroll had been bought.
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
-        $ sscroll_.append(False)
+        $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
     
-    $ store_gift_items = []
-    $ store_gift_items.append("null")
-    $ store_gift_items.append("lollipop candy")
-    $ store_gift_items.append("Chocolate")
-    $ store_gift_items.append("Plush owl")
-    $ store_gift_items.append("Butterbeer")
-    $ store_gift_items.append("Educational magazines")
-    $ store_gift_items.append("Girly magazines")
-    $ store_gift_items.append("Adult magazines")
-    $ store_gift_items.append("Porn magazines")
-    $ store_gift_items.append("Viktor Krum Poster")
-    $ store_gift_items.append("Sexy lingerie")
-    $ store_gift_items.append("A pack of condoms")
-    $ store_gift_items.append("Vibrator")
-    $ store_gift_items.append("Jar of anal lubricant")
-    $ store_gift_items.append("Ball gag and cuffs")
-    $ store_gift_items.append("Anal plugs")
-    $ store_gift_items.append("Thestral Strap-on")
-    $ store_gift_items.append("Lady Speed Stick-2000")
-    $ store_gift_items.append("Sex doll \"Joanne\"")
-    #$ store_gift_items.append("anal_beads")
+    $ store_gift_item_name = []
+    $ store_gift_item_name.append("null")
+    $ store_gift_item_name.append("lollipop candy")
+    $ store_gift_item_name.append("Chocolate")
+    $ store_gift_item_name.append("Plush owl")
+    $ store_gift_item_name.append("Butterbeer")
+    $ store_gift_item_name.append("Educational magazines")
+    $ store_gift_item_name.append("Girly magazines")
+    $ store_gift_item_name.append("Adult magazines")
+    $ store_gift_item_name.append("Porn magazines")
+    $ store_gift_item_name.append("Viktor Krum Poster")
+    $ store_gift_item_name.append("Sexy lingerie")
+    $ store_gift_item_name.append("A pack of condoms")
+    $ store_gift_item_name.append("Vibrator")
+    $ store_gift_item_name.append("Jar of anal lubricant")
+    $ store_gift_item_name.append("Ball gag and cuffs")
+    $ store_gift_item_name.append("Anal plugs")
+    $ store_gift_item_name.append("Thestral Strap-on")
+    $ store_gift_item_name.append("Lady Speed Stick-2000")
+    $ store_gift_item_name.append("Sex doll \"Joanne\"")
+    #$ store_gift_item_name.append("anal_beads")
     
     $ gift_description = []
     $ gift_description.append("invalid item")
@@ -105,82 +52,82 @@ label __init_variables:
     $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
     #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
     
-    $ scroll_name_ = []
-    $ scroll_name_.append("null")
-    $ scroll_name_.append("The room")
-    $ scroll_name_.append("The calendar")
-    $ scroll_name_.append("The girl")
-    $ scroll_name_.append("Deeptroating")
-    $ scroll_name_.append("Poster 01")
-    $ scroll_name_.append("Poster 02")
-    $ scroll_name_.append("Chibi-dancing")
-    $ scroll_name_.append("Game items")
-    $ scroll_name_.append("Panties no panties")
-    $ scroll_name_.append("A lot of pegs")
-    $ scroll_name_.append("House-elf brothel")
-    $ scroll_name_.append("Me and Lola")
-    $ scroll_name_.append("Hard training")
-    $ scroll_name_.append("Wizard's Chess")
-    $ scroll_name_.append("Tutoring books")
-    $ scroll_name_.append("Extra gifts 01")
-    $ scroll_name_.append("Extra gifts 02")
-    $ scroll_name_.append("Fiction books")
-    $ scroll_name_.append("Singer whore")
-    $ scroll_name_.append("Casting")
-    $ scroll_name_.append("Witch robe 01")
-    $ scroll_name_.append("Witch robe 02")
-    $ scroll_name_.append("Witch robe 03")
-    $ scroll_name_.append("Witch robe 04")
-    $ scroll_name_.append("The walk")
-    $ scroll_name_.append("Durmstrang")
-    $ scroll_name_.append("Gag ball")
-    $ scroll_name_.append("New clothes 01")
-    $ scroll_name_.append("New clothes 02")
-    $ scroll_name_.append("The gang")
+    $ scroll_name = []
+    $ scroll_name.append("null")
+    $ scroll_name.append("The room")
+    $ scroll_name.append("The calendar")
+    $ scroll_name.append("The girl")
+    $ scroll_name.append("Deeptroating")
+    $ scroll_name.append("Poster 01")
+    $ scroll_name.append("Poster 02")
+    $ scroll_name.append("Chibi-dancing")
+    $ scroll_name.append("Game items")
+    $ scroll_name.append("Panties no panties")
+    $ scroll_name.append("A lot of pegs")
+    $ scroll_name.append("House-elf brothel")
+    $ scroll_name.append("Me and Lola")
+    $ scroll_name.append("Hard training")
+    $ scroll_name.append("Wizard's Chess")
+    $ scroll_name.append("Tutoring books")
+    $ scroll_name.append("Extra gifts 01")
+    $ scroll_name.append("Extra gifts 02")
+    $ scroll_name.append("Fiction books")
+    $ scroll_name.append("Singer whore")
+    $ scroll_name.append("Casting")
+    $ scroll_name.append("Witch robe 01")
+    $ scroll_name.append("Witch robe 02")
+    $ scroll_name.append("Witch robe 03")
+    $ scroll_name.append("Witch robe 04")
+    $ scroll_name.append("The walk")
+    $ scroll_name.append("Durmstrang")
+    $ scroll_name.append("Gag ball")
+    $ scroll_name.append("New clothes 01")
+    $ scroll_name.append("New clothes 02")
+    $ scroll_name.append("The gang")
     return
     
 label shop_intro:
     show screen shop_screen
     if shop_found:
-        sna_[1] "Hey Genie, what would you like to buy?"
+        sna[1] "Hey Genie, what would you like to buy?"
         jump shop_menu
     else:
         $ show_clothes_store = True
         $ shop_found = True
-        sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
-        sna_[1] "What if someone sees you?"
+        sna[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
+        sna[1] "What if someone sees you?"
         m "You expected me to stay cramped office for months? Besides, I look like Dumbdoor, no one will be able to tell the difference"
-        sna_[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
-        sna_[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
+        sna[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
+        sna[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
         m "Fine, fine, I'll go back to my office. Let's talk a bit first though, being stuck in that office is making me go crazy."
-        sna_[1] "Alright, how's Miss Granger going?"
+        sna[1] "Alright, how's Miss Granger going?"
         m "She's coming along. So what are you doing here? This looks like some sort of shop."
-        sna_[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
+        sna[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
         m "Why? Surely people can get their own ingredients?"
-        sna_[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
-        sna_[1] "If left unregulated students could brew some very dangerous concoctions."
+        sna[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
+        sna[1] "If left unregulated students could brew some very dangerous concoctions."
         m "Well I guess that makes sense. Is that all you sell?"
-        sna_[1] "I also brew potions and sell scrolls and textbooks to potions."
+        sna[1] "I also brew potions and sell scrolls and textbooks to potions."
         m "What sort of potions do you make?"
-        sna_[1] "Most of the time I just make the bases to potions."
+        sna[1] "Most of the time I just make the bases to potions."
         m "Bases?"
-        sna_[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
-        sna_[1] "It helps preserve the potion as well as allows for the user to change the effect."
+        sna[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
+        sna[1] "It helps preserve the potion as well as allows for the user to change the effect."
         m "Well that's all pretty dull. Do you sell anything \"Interesting\"?"
-        sna_[1] "Interesting?"
+        sna[1] "Interesting?"
         m "You know, sex potions, stuff that would help us corrupt Miss Granger."
-        sna_[1] "Ah, well I know a few potions that you might like."
+        sna[1] "Ah, well I know a few potions that you might like."
         m "Such as?"
-        sna_[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
+        sna[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
         m "Hmmmm, you don't have anything better?"
-        sna_[1] "Not at the moment. I'll have to order the ingredients in."
+        sna[1] "Not at the moment. I'll have to order the ingredients in."
         m "How long will that take."
-        sna_[1] "It depends on the items. Some of them are very hard to come by."
-        sna_[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
+        sna[1] "It depends on the items. Some of them are very hard to come by."
+        sna[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
         m "Fair enough. Before I buy though are there any other stores on campus?"
-        sna_[1] "Only a tailor, why?"
+        sna[1] "Only a tailor, why?"
         m "Just making sure that there isn't a cheaper alternative."
-        sna_[1] "There isn't, now are you going to buy anything or not?"
+        sna[1] "There isn't, now are you going to buy anything or not?"
         jump shop_menu
     
 label shop_menu:
@@ -190,49 +137,49 @@ label shop_menu:
 label sscrolls:
     show screen shop_screen
     menu:
-        "-S.01: [scroll_name_[1]]-" if not sscroll_[1]:
+        "-S.01: [scroll_name[1]]-" if not sscroll_[1]:
             call scroll_block(1,10)
             jump sscrolls
-        "-S.02: [scroll_name_[2]]-" if not sscroll_[2]:
+        "-S.02: [scroll_name[2]]-" if not sscroll_[2]:
             call scroll_block(2,30)
             jump sscrolls
-        "-S.03: [scroll_name_[3]]-" if not sscroll_[3]:
+        "-S.03: [scroll_name[3]]-" if not sscroll_[3]:
             call scroll_block(3,40)
             jump sscrolls
-        "-S.04: [scroll_name_[4]]-" if not sscroll_[4]:
+        "-S.04: [scroll_name[4]]-" if not sscroll_[4]:
             call scroll_block(4,70)
             jump sscrolls
-        "-S.05: [scroll_name_[5]]-" if not sscroll_[5]:
+        "-S.05: [scroll_name[5]]-" if not sscroll_[5]:
             call scroll_block(5,80)
             jump sscrolls
-        "-S.06: [scroll_name_[6]]-" if not sscroll_[6]:
+        "-S.06: [scroll_name[6]]-" if not sscroll_[6]:
             call scroll_block(6,80)
             jump sscrolls
-        "-S.07: [scroll_name_[7]]-" if not sscroll_[7]:
+        "-S.07: [scroll_name[7]]-" if not sscroll_[7]:
             call scroll_block(7,90)
             jump sscrolls
-        "-S.08: [scroll_name_[8]]-" if not sscroll_[8]:
+        "-S.08: [scroll_name[8]]-" if not sscroll_[8]:
             call scroll_block(8,50)
             jump sscrolls
-        "-S.09: [scroll_name_[9]]-" if not sscroll_[9]:
+        "-S.09: [scroll_name[9]]-" if not sscroll_[9]:
             call scroll_block(9,90)
             jump sscrolls
-        "-S.10: [scroll_name_[10]]-" if not sscroll_[10]:
+        "-S.10: [scroll_name[10]]-" if not sscroll_[10]:
             call scroll_block(10,50)
             jump sscrolls
-        "-S.11: [scroll_name_[11]]-" if not sscroll_[11]:
+        "-S.11: [scroll_name[11]]-" if not sscroll_[11]:
             call scroll_block(11,110)
             jump sscrolls
-        "-S.12: [scroll_name_[12]]-" if not sscroll_[12]:
+        "-S.12: [scroll_name[12]]-" if not sscroll_[12]:
             call scroll_block(12,110)
             jump sscrolls
-        "-S.13: [scroll_name_[13]]-" if not sscroll_[13]:
+        "-S.13: [scroll_name[13]]-" if not sscroll_[13]:
             call scroll_block(13,100)
             jump sscrolls
-        "-S.14: [scroll_name_[14]]-" if not sscroll_[14]:
+        "-S.14: [scroll_name[14]]-" if not sscroll_[14]:
             call scroll_block(14,80)
             jump sscrolls
-        "-S.15: [scroll_name_[15]]-" if not sscroll_[15]:
+        "-S.15: [scroll_name[15]]-" if not sscroll_[15]:
             call scroll_block(15,40)
             jump sscrolls
         "-Never mind-":
@@ -241,49 +188,49 @@ label sscrolls:
 label sscrolls2:
     show screen shop_screen
     menu:
-        "-S.16: [scroll_name_[16]]-" if not sscroll_[16]:
+        "-S.16: [scroll_name[16]]-" if not sscroll_[16]:
             call scroll_block(16,30)
             jump sscrolls
-        "-S.17: [scroll_name_[17]]-" if not sscroll_[17]:
+        "-S.17: [scroll_name[17]]-" if not sscroll_[17]:
             call scroll_block(17,30)
             jump sscrolls
-        "-S.18: [scroll_name_[18]]-" if not sscroll_[18]:
+        "-S.18: [scroll_name[18]]-" if not sscroll_[18]:
             call scroll_block(18,90)
             jump sscrolls
-        "-S.19: [scroll_name_[19]]-" if not sscroll_[19]:
+        "-S.19: [scroll_name[19]]-" if not sscroll_[19]:
             call scroll_block(19,50)
             jump sscrolls
-        "-S.20: [scroll_name_[20]]-" if not sscroll_[20]:
+        "-S.20: [scroll_name[20]]-" if not sscroll_[20]:
             call scroll_block(20,70)
             jump sscrolls
-        "-S.21: [scroll_name_[21]]-" if not sscroll_[21]:
+        "-S.21: [scroll_name[21]]-" if not sscroll_[21]:
             call scroll_block(21,90)
             jump sscrolls
-        "-S.22: [scroll_name_[22]]-" if not sscroll_[22]:
+        "-S.22: [scroll_name[22]]-" if not sscroll_[22]:
             call scroll_block(22,90)
             jump sscrolls
-        "-S.23: [scroll_name_[23]]-" if not sscroll_[23]:
+        "-S.23: [scroll_name[23]]-" if not sscroll_[23]:
             call scroll_block(23,150)
             jump sscrolls
-        "-S.24: [scroll_name_[24]]-" if not sscroll_[24]:
+        "-S.24: [scroll_name[24]]-" if not sscroll_[24]:
             call scroll_block(24,150)
             jump sscrolls
-        "-S.25: [scroll_name_[25]]-" if not sscroll_[25]:
+        "-S.25: [scroll_name[25]]-" if not sscroll_[25]:
             call scroll_block(25,100)
             jump sscrolls
-        "-S.26: [scroll_name_[26]]-" if not sscroll_[26]:
+        "-S.26: [scroll_name[26]]-" if not sscroll_[26]:
             call scroll_block(26,80)
             jump sscrolls
-        "-S.27: [scroll_name_[27]]-" if not sscroll_[27]:
+        "-S.27: [scroll_name[27]]-" if not sscroll_[27]:
             call scroll_block(27,200)
             jump sscrolls2
-        "-S.28: [scroll_name_[28]]-" if not sscroll_[28]:
+        "-S.28: [scroll_name[28]]-" if not sscroll_[28]:
             call scroll_block(28,150)
             jump sscrolls2
-        "-S.29: [scroll_name_[29]]-" if not sscroll_[29]:
+        "-S.29: [scroll_name[29]]-" if not sscroll_[29]:
             call scroll_block(29,200)
             jump sscrolls2
-        "-S.30: [scroll_name_[30]]-" if not sscroll_[30]:
+        "-S.30: [scroll_name[30]]-" if not sscroll_[30]:
             call scroll_block(30,70)
             jump sscrolls2
         "-Never mind-":
@@ -291,7 +238,7 @@ label sscrolls2:
     
 label shop_books:
     show screen shop_screen
-    sna_[1] "What type of book would you like?"
+    sna[1] "What type of book would you like?"
     label shop_book_menu:
     menu:
         "-Educational Books-":
@@ -325,8 +272,8 @@ label shop_books:
                     jump shop_book_menu
          
         "-Fiction books-":
-            sna_[1] "These books are mostly light erotica..." 
-            sna_[20] "Some of the girls insisted that I order them in."
+            sna[1] "These books are mostly light erotica..." 
+            sna[20] "Some of the girls insisted that I order them in."
             label fiction_menu:
             menu:
                 "-Book: [book_name[11]]- {image=check_07}" if not "book_11" in books: # The game of chairs [11]
@@ -430,19 +377,19 @@ label shop_potion_menu:
             menu:
                 "-Knotgrass-":
                     m "Do you know where I can find \"Knotgrass\""
-                    sna_[6] "You can sometimge find Knotgrass by the forbidden forest"
+                    sna[6] "You can sometimge find Knotgrass by the forbidden forest"
                     jump shop_potion_menu
                 "-Root of Aconite-":
                     m "Do you know where I can find \"Root of Aconite\""
-                    sna_[6] "Root of Aconite can be found down by the lake"
+                    sna[6] "Root of Aconite can be found down by the lake"
                     jump shop_potion_menu
                 "-Wormwood-":
                     m "Do you know where I can find \"Wormwood\""
-                    sna_[6] "Wormwood is sometimes found in the forbidden forest"
+                    sna[6] "Wormwood is sometimes found in the forbidden forest"
                     jump shop_potion_menu
                 "-Niffler's Fancy-":
                     m "Do you know where I can find \"Niffler's Fancy\""
-                    sna_[6] "hmm i think i heard that it's found by the lake"
+                    sna[6] "hmm i think i heard that it's found by the lake"
                     jump shop_potion_menu
                 
         "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:

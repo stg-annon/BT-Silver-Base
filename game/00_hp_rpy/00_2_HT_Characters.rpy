@@ -3,13 +3,13 @@ init python:
     # Character tables
     
     ### SNAPE HEAD ###
-    sna_ = [""]
+    sna = [""]
     for i in range(1,26):
-        sna_.append("")
-        sna_[i] = Character("Severus Snape", color="#402313", window_right_padding=270, show_side_image=Image("01_hp/12_snape_head/head_" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
+        sna.append("")
+        sna[i] = Character("Severus Snape", color="#402313", window_right_padding=270, show_side_image=Image("01_hp/12_snape_head/head_" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
     
     
-    ### HERMIONE HEAD ###
+    ### HERMIONE HEAD (OLD) ###
     her_ = [""]
     for i in range(1,43):
         her_.append("")

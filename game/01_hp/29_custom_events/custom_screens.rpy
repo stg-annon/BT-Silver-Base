@@ -43,7 +43,7 @@ label __init_variables:
 screen custom_event_h:
     
     if ce_hair:
-        add hermione_hair_a xpos ce_xpos ypos ce_ypos
+        add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+".png" xpos ce_xpos ypos ce_ypos
     
     if ce_base:
         add cust_a xpos ce_xpos ypos ce_ypos
@@ -64,14 +64,14 @@ screen custom_event_h:
         add cust_e xpos ce_xpos ypos ce_ypos
     
     if ce_hair:
-        add hermione_hair_b xpos ce_xpos ypos ce_ypos
+        add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+"_2.png" xpos ce_xpos ypos ce_ypos
     
     zorder ce_zorder
     
 screen custom_event_head_h:
     
     if ce_hair:
-        add hermione_hair_a xpos ce_head_xpos ypos ce_head_ypos
+        add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+".png" xpos ce_head_xpos ypos ce_head_ypos
     
     if ce_base:
         add cust_a xpos ce_head_xpos ypos ce_head_ypos
@@ -92,7 +92,7 @@ screen custom_event_head_h:
         add cust_e xpos ce_head_xpos ypos ce_head_ypos
     
     if ce_hair:
-        add hermione_hair_b xpos ce_head_xpos ypos ce_head_ypos
+        add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+"_2.png" xpos ce_head_xpos ypos ce_head_ypos
     
     zorder 8
     

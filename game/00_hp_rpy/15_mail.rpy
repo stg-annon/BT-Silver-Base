@@ -221,7 +221,7 @@ label mail_02: #Packages only. <================================================
         $ the_gift = "01_hp/18_store/gifts/"+str(order_item)+".png" # CONDOMS.
         show screen gift
         with d3
-        $ tmp_str = "\""+store_gift_items[order_item]
+        $ tmp_str = "\""+store_gift_item_name[order_item]
         if order_quantity > 1:
             $ tmp_str += "'s\""
             ">([order_quantity]) [tmp_str] have been added to your possessions."

@@ -39,7 +39,7 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-back-":
                     jump cheats_ht
-        "-Gold-":
+        "-Gold (+50,000g)-":
             $ gold += 50000
             "Obtained 50,000g."
             jump cheats_ht
@@ -47,7 +47,7 @@ label cheats_ht:
             $ vouchers += 1
             "Obtained Voucher."
             jump cheats_ht
-        "-Slytherin Points-":
+        "-Slytherin Points (+10,000)-":
             $ slytherin +=10000
             "10,000 to Slytherin!"
             jump cheats_ht

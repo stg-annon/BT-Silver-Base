@@ -68,7 +68,7 @@ label gallery_ht:
             
 label volone_ht:
     menu:
-        "-S.01: [scroll_name_[1]]-" if persistent.ss_01:
+        "-S.01: [scroll_name[1]]-" if persistent.ss_01:
             show image "01_hp/19_extras/01.png" with d3
             if commentaries:
                 a1 "This is a first ever draft of the Dumbledore's office."
@@ -78,7 +78,7 @@ label volone_ht:
             hide screen ctc
             hide image "01_hp/19_extras/01.png" with d3
             pass
-        "-S.02: [scroll_name_[2]]-" if persistent.ss_02:
+        "-S.02: [scroll_name[2]]-" if persistent.ss_02:
             show image "01_hp/19_extras/02.png" with d3
             if commentaries:
                 a1 "The calendar..."
@@ -92,7 +92,7 @@ label volone_ht:
             hide screen ctc
             hide image "01_hp/19_extras/02.png" with d3
             pass
-        "-S.03: [scroll_name_[3]]-" if persistent.ss_03:
+        "-S.03: [scroll_name[3]]-" if persistent.ss_03:
             show image "01_hp/19_extras/03.png" with d3
             if commentaries:
                 a1 "A couple of very early drawings of Hermione..."
@@ -102,7 +102,7 @@ label volone_ht:
             hide image "01_hp/19_extras/03.png" with d3
             pass
             
-        "-S.04: [scroll_name_[4]]-" if persistent.ss_04:
+        "-S.04: [scroll_name[4]]-" if persistent.ss_04:
             show image "01_hp/19_extras/04.png" with d3
             if commentaries:
                 a1 "The deepthroating scene..."
@@ -114,7 +114,7 @@ label volone_ht:
             hide image "01_hp/19_extras/04.png" with d3
             pass
             
-        "-S.05: [scroll_name_[5]]-" if persistent.ss_05:
+        "-S.05: [scroll_name[5]]-" if persistent.ss_05:
             show image "01_hp/19_extras/05.png" with d3
             if commentaries:
                 a1 "The game poster..."
@@ -125,7 +125,7 @@ label volone_ht:
             hide image "01_hp/19_extras/05.png" with d3
             pass
             
-        "-S.06: [scroll_name_[6]]-" if persistent.ss_06:
+        "-S.06: [scroll_name[6]]-" if persistent.ss_06:
             show image "01_hp/19_extras/06.png" with d3
             if commentaries:
                 a1 "Alternative game poster."
@@ -136,7 +136,7 @@ label volone_ht:
             hide image "01_hp/19_extras/06.png" with d3
             pass
             
-        "-S.07: [scroll_name_[7]]-" if persistent.ss_07:
+        "-S.07: [scroll_name[7]]-" if persistent.ss_07:
             show image "01_hp/19_extras/07.png" with d3
             if commentaries:
                 a1 "Some chibi closeups."
@@ -147,7 +147,7 @@ label volone_ht:
             hide image "01_hp/19_extras/07.png" with d3
             pass
             
-        "-S.08: [scroll_name_[8]]-" if persistent.ss_08:
+        "-S.08: [scroll_name[8]]-" if persistent.ss_08:
             show image "01_hp/19_extras/08.png" with d3
             if commentaries:
                 a1 "A banch of items that I ended up not using..."
@@ -159,7 +159,7 @@ label volone_ht:
             hide image "01_hp/19_extras/08.png" with d3
             pass
             
-        "-S.09: [scroll_name_[9]]-" if persistent.ss_09:
+        "-S.09: [scroll_name[9]]-" if persistent.ss_09:
             show image "01_hp/19_extras/09.png" with d3
             if commentaries:
                 a1 "The drawing of Hermione from the poster. (by Dahr)"
@@ -170,7 +170,7 @@ label volone_ht:
             hide image "01_hp/19_extras/09.png" with d3
             pass
             
-        "-S.10: [scroll_name_[10]]-" if persistent.ss_10:
+        "-S.10: [scroll_name[10]]-" if persistent.ss_10:
             show image "01_hp/19_extras/10.png" with d3
             if commentaries:
                 a1 "Another ithing that never made it into the final game..."
@@ -183,7 +183,7 @@ label volone_ht:
             hide image "01_hp/19_extras/10.png" with d3
             pass
             
-        "-S.11: [scroll_name_[11]]-" if persistent.ss_11:
+        "-S.11: [scroll_name[11]]-" if persistent.ss_11:
             show image "01_hp/19_extras/11.png" with d3
             if commentaries:
                 a1 "The house-elf brothel... Just another thing that never happened."
@@ -193,7 +193,7 @@ label volone_ht:
             hide image "01_hp/19_extras/11.png" with d3
             pass
             
-        "-S.12: [scroll_name_[12]]-" if persistent.ss_12:
+        "-S.12: [scroll_name[12]]-" if persistent.ss_12:
             show image "01_hp/19_extras/12.png" with d3
             if commentaries:
                 a1 "A drawing featuring yours truly as a Durmstrung mage and Lola as a student..."
@@ -205,7 +205,7 @@ label volone_ht:
             pass
         
         
-        "-S.13: [scroll_name_[13]]-" if persistent.ss_13:
+        "-S.13: [scroll_name[13]]-" if persistent.ss_13:
             show image "01_hp/19_extras/13.png" with d3
             if commentaries:
                 a1 "Another one of those side-quests that never happened..."
@@ -217,7 +217,7 @@ label volone_ht:
             hide image "01_hp/19_extras/13.png" with d3
             pass
         
-        "-S.14: [scroll_name_[14]]-" if persistent.ss_14:
+        "-S.14: [scroll_name[14]]-" if persistent.ss_14:
             show image "01_hp/19_extras/14.png" with d3
             if commentaries:
                 a1 "Another sub-quest..."
@@ -228,7 +228,7 @@ label volone_ht:
             hide image "01_hp/19_extras/14.png" with d3
             pass
         
-        "-S.15: [scroll_name_[15]]-" if persistent.ss_15:
+        "-S.15: [scroll_name[15]]-" if persistent.ss_15:
             show image "01_hp/19_extras/15.png" with d3
             if commentaries:
                 a1 "There is more then one way for a pretty girl to carry her books around."
@@ -250,7 +250,7 @@ label volone_ht:
         
 label voltwo:
     menu:
-        "-S.16: [scroll_name_[16]]-" if persistent.ss_16:
+        "-S.16: [scroll_name[16]]-" if persistent.ss_16:
             show image "01_hp/19_extras/16.png" with d3
             if commentaries:
                 a1 "A couple of items that didn't make it into the final game..."
@@ -262,7 +262,7 @@ label voltwo:
             hide screen ctc
             hide image "01_hp/19_extras/16.png" with d3
             pass
-        "-S.17: [scroll_name_[17]]-" if persistent.ss_17:
+        "-S.17: [scroll_name[17]]-" if persistent.ss_17:
             show image "01_hp/19_extras/17.png" with d3
             if commentaries:
                 #17.
@@ -274,7 +274,7 @@ label voltwo:
             hide screen ctc
             hide image "01_hp/19_extras/17.png" with d3
             pass
-        "-S.18: [scroll_name_[18]]-" if persistent.ss_18:
+        "-S.18: [scroll_name[18]]-" if persistent.ss_18:
             show image "01_hp/19_extras/18.png" with d3
             if commentaries:
                  #18.
@@ -286,7 +286,7 @@ label voltwo:
             hide image "01_hp/19_extras/18.png" with d3
             pass
             
-        "-S.19: [scroll_name_[19]]-" if persistent.ss_19:
+        "-S.19: [scroll_name[19]]-" if persistent.ss_19:
             show image "01_hp/19_extras/19.png" with d3
             if commentaries:
                 #19.
@@ -298,7 +298,7 @@ label voltwo:
             hide image "01_hp/19_extras/19.png" with d3
             pass
             
-        "-S.20: [scroll_name_[20]]-" if persistent.ss_20:
+        "-S.20: [scroll_name[20]]-" if persistent.ss_20:
             show image "01_hp/19_extras/20.png" with d3
             if commentaries:
                 #20.
@@ -312,7 +312,7 @@ label voltwo:
             hide image "01_hp/19_extras/20.png" with d3
             pass
             
-        "-S.21: [scroll_name_[21]]-" if persistent.ss_21:
+        "-S.21: [scroll_name[21]]-" if persistent.ss_21:
             show image "01_hp/19_extras/21.png" with d3
             if commentaries:
                 #21 
@@ -326,7 +326,7 @@ label voltwo:
             hide image "01_hp/19_extras/21.png" with d3
             pass
             
-        "-S.22: [scroll_name_[22]]-" if persistent.ss_22:
+        "-S.22: [scroll_name[22]]-" if persistent.ss_22:
             show image "01_hp/19_extras/22.png" with d3
             if commentaries:
                 #22
@@ -339,7 +339,7 @@ label voltwo:
             hide image "01_hp/19_extras/22.png" with d3
             pass
             
-        "-S.23: [scroll_name_[23]]-" if persistent.ss_23:
+        "-S.23: [scroll_name[23]]-" if persistent.ss_23:
             show image "01_hp/19_extras/23.png" with d3
             if commentaries:
                 #23. 
@@ -351,7 +351,7 @@ label voltwo:
             hide image "01_hp/19_extras/23.png" with d3
             pass
             
-        "-S.24: [scroll_name_[24]]-" if persistent.ss_24:
+        "-S.24: [scroll_name[24]]-" if persistent.ss_24:
             show image "01_hp/19_extras/24.png" with d3
             if commentaries:
                 #24.
@@ -363,7 +363,7 @@ label voltwo:
             hide image "01_hp/19_extras/24.png" with d3
             pass
             
-        "-S.25: [scroll_name_[25]]-" if persistent.ss_25:
+        "-S.25: [scroll_name[25]]-" if persistent.ss_25:
             show image "01_hp/19_extras/25.png" with d3
             if commentaries:
                 #25.
@@ -376,7 +376,7 @@ label voltwo:
             hide image "01_hp/19_extras/25.png" with d3
             pass
             
-        "-S.26: [scroll_name_[26]]-" if persistent.ss_26:
+        "-S.26: [scroll_name[26]]-" if persistent.ss_26:
             show image "01_hp/19_extras/26.png" with d3
             if commentaries:
                 #26.
@@ -389,7 +389,7 @@ label voltwo:
             hide image "01_hp/19_extras/26.png" with d3
             pass
             
-        "-S.27: [scroll_name_[27]]-" if persistent.ss_27:
+        "-S.27: [scroll_name[27]]-" if persistent.ss_27:
             show image "01_hp/19_extras/27.png" with d3
             if commentaries:
                 #27.
@@ -402,7 +402,7 @@ label voltwo:
             pass
 
         
-        "-S.28: [scroll_name_[28]]-" if persistent.ss_28:
+        "-S.28: [scroll_name[28]]-" if persistent.ss_28:
             show image "01_hp/19_extras/28.png" with d3
             if commentaries:
                 #28.
@@ -413,7 +413,7 @@ label voltwo:
             hide image "01_hp/19_extras/28.png" with d3
             pass
         
-        "-S.29: [scroll_name_[29]]-" if persistent.ss_29:
+        "-S.29: [scroll_name[29]]-" if persistent.ss_29:
             show image "01_hp/19_extras/29.png" with d3
             if commentaries:
                 #29.
@@ -424,7 +424,7 @@ label voltwo:
             hide image "01_hp/19_extras/29.png" with d3
             pass
         
-        "-S.30: [scroll_name_[30]]-" if persistent.ss_30:
+        "-S.30: [scroll_name[30]]-" if persistent.ss_30:
             show image "01_hp/19_extras/30.png" with d3
             if commentaries:
                 #30.

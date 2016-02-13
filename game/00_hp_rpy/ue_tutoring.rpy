@@ -124,8 +124,8 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[35] "{size=-4}(I'm glad professor agreed to tutor me){/size}"
-        her_[2] "{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}"
+        call her_head("{size=-4}(I'm glad professor agreed to tutor me){/size}","head_exp/35")
+        call her_head("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","head_exp/2")
         hide screen hermione_01_f
         with d3
         
@@ -181,8 +181,8 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[19] "{size=-4}(Filthy whores...){/size}"
-        her_[35] "{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good){/size}"
+        call her_head("{size=-4}(Filthy whores...){/size}","head_exp/19")
+        call her_head("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good){/size}","head_exp/35")
         hide screen hermione_01_f
         with d3
         
@@ -239,9 +239,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[16] "{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}"
-        her_[18] "{size=-4}(Probably all the problems caused by those harlots){/size}"
-        her_[34] "{size=-4}(Well I will never be like them, so no need to worry){/size}"
+        call her_head("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}","head_exp/16")
+        call her_head("{size=-4}(Probably all the problems caused by those harlots){/size}","head_exp/18")
+        call her_head("{size=-4}(Well I will never be like them, so no need to worry){/size}","head_exp/34")
         hide screen hermione_01_f
         with d3
         
@@ -317,9 +317,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[12] "{size=-4}(Well, I'll try to investigate those two girls again){/size}"
-        her_[18] "{size=-4}(Like a real anthropologist){/size}"
-        her_[35] "{size=-4}(Yes, that's right, Hermione the anthropologist!){/size}"
+        call her_head("{size=-4}(Well, I'll try to investigate those two girls again){/size}","head_exp/12")
+        call her_head("{size=-4}(Like a real anthropologist){/size}","head_exp/18")
+        call her_head("{size=-4}(Yes, that's right, Hermione the anthropologist!){/size}","head_exp/35")
         hide screen hermione_01_f
         with d3
         
@@ -446,9 +446,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[6] "{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}"
-        her_[13] "{size=-4}(I lost control, it won't happen again!){/size}"
-        her_[18] "{size=-4}(Good thing I'm not a degenerate like those filthy girls){/size}"
+        call her_head("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","head_exp/6")
+        call her_head("{size=-4}(I lost control, it won't happen again!){/size}","head_exp/13")
+        call her_head("{size=-4}(Good thing I'm not a degenerate like those filthy girls){/size}","head_exp/18")
         hide screen hermione_01_f
         with d3
 
@@ -537,9 +537,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[12] "{size=-4}(This is wrong...){/size}"
-        her_[15] "{size=-4}(I shouldn't listen to him){/size}"
-        her_[16] "{size=-4}(And yet...){/size}"
+        call her_head("{size=-4}(This is wrong...){/size}","head_exp/12")
+        call her_head("{size=-4}(I shouldn't listen to him){/size}","head_exp/15")
+        call her_head("{size=-4}(And yet...){/size}","head_exp/16")
         hide screen hermione_01_f
         with d3
 
@@ -666,8 +666,8 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[4] "{size=-4}(\"My little witch?\"){/size}"
-        her_[6] "{size=-4}(Why not, after all...){/size}"
+        call her_head("{size=-4}(\"My little witch?\"){/size}","head_exp/4")
+        call her_head("{size=-4}(Why not, after all...){/size}","head_exp/6")
         hide screen hermione_01_f
         with d3
 
@@ -803,9 +803,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[6] "{size=-4}(I'm such a slut...){/size}"
-        her_[16] "{size=-4}(Coming in front of my professor){/size}"
-        her_[18] "{size=-4}(I definitely need to do that again){/size}"
+        call her_head("{size=-4}(I'm such a slut...){/size}","head_exp/6")
+        call her_head("{size=-4}(Coming in front of my professor){/size}","head_exp/16")
+        call her_head("{size=-4}(I definitely need to do that again){/size}","head_exp/18")
         hide screen hermione_01_f
         with d3
         
@@ -996,9 +996,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[6] "{size=-4}(Favorite...){/size}"
-        her_[7] "{size=-4}(There's another one?){/size}"
-        her_[35] "{size=-4}(I'll do my best to remain his favorite!){/size}"
+        call her_head("{size=-4}(Favorite...){/size}","head_exp/6")
+        call her_head("{size=-4}(There's another one?){/size}","head_exp/7")
+        call her_head("{size=-4}(I'll do my best to remain his favorite!){/size}","head_exp/35")
         hide screen hermione_01_f
         with d3
         
@@ -1168,9 +1168,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[16] "{size=-4}(Rest...){/size}"
-        her_[18] "{size=-4}(Not before I've played with this marvelous toy again){/size}"
-        her_[34] "{size=-4}(And again){/size}"
+        call her_head("{size=-4}(Rest...){/size}","head_exp/16")
+        call her_head("{size=-4}(Not before I've played with this marvelous toy again){/size}","head_exp/18")
+        call her_head("{size=-4}(And again){/size}","head_exp/34")
         hide screen hermione_01_f
         with d3
         
@@ -1368,9 +1368,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[35] "{size=-4}(Finally tonight I'll just go to bed){/size}"
-        her_[15] "{size=-4}(That was a little too intense){/size}"
-        her_[34] "{size=-4}(Not that I'm complaining...){/size}"
+        call her_head("{size=-4}(Finally tonight I'll just go to bed){/size}","head_exp/35")
+        call her_head("{size=-4}(That was a little too intense){/size}","head_exp/15")
+        call her_head("{size=-4}(Not that I'm complaining...){/size}","head_exp/34")
         show screen hermione_01_f
         with d3
         
@@ -1630,9 +1630,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[4] "{size=-4}(Sucking his cock without getting any points!){/size}"
-        her_[6] "{size=-4}(If he hadn't made me come so hard...){/size}"
-        her_[16] "{size=-4}(*sigh* Although I guess it's not that high a price...){/size}"
+        call her_head("{size=-4}(Sucking his cock without getting any points!){/size}","head_exp/4")
+        call her_head("{size=-4}(If he hadn't made me come so hard...){/size}","head_exp/6")
+        call her_head("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","head_exp/16")
         hide screen hermione_01_f
         with d3
         
@@ -1850,8 +1850,8 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[35] "{size=-4}(Yes, sweet dreams...){/size}"
-        her_[34] "{size=-4}(Sweet and wet!){/size}"
+        call her_head("{size=-4}(Yes, sweet dreams...){/size}","head_exp/35")
+        call her_head("{size=-4}(Sweet and wet!){/size}","head_exp/34")
         hide screen hermione_01_f
         with d3
         
@@ -2043,9 +2043,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_01_f
-        her_[16] "{size=-4}(I called my headmaster \"my beloved prince\"){/size}"
-        her_[18] "{size=-4}(He's hardly Prince Charming but...){/size}"
-        her_[38] "{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}"
+        call her_head("{size=-4}(I called my headmaster \"my beloved prince\"){/size}","head_exp/16")
+        call her_head("{size=-4}(He's hardly Prince Charming but...){/size}","head_exp/18")
+        call her_head("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","head_exp/38")
         show screen hermione_01_f
         with d3
         

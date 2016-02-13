@@ -12,7 +12,7 @@ screen hermione_main:
     add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     
     add hermione_body xpos hermione_xpos ypos hermione_ypos
-    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos
+    add hermione_tears xpos hermione_xpos ypos hermione_ypos
     
   ### CLOTHES
     add hermione_stockings xpos hermione_xpos ypos hermione_ypos
@@ -25,6 +25,8 @@ screen hermione_main:
         ### TOP
         if hermione_wear_top:
             add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
+            if badges:
+                add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         elif hermione_wear_bra:
             add hermione_bra xpos hermione_xpos ypos hermione_ypos # Add the bra
     else:
@@ -35,13 +37,15 @@ screen hermione_main:
         add hermione_custom_e xpos hermione_xpos ypos hermione_ypos
         add hermione_custom_action_a xpos hermione_xpos ypos hermione_ypos
     
+    
     add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
     
     if hermione_action:
         add hermiome_action_a xpos hermione_xpos ypos hermione_ypos
         add hermiome_action_b xpos hermione_xpos ypos hermione_ypos
     
-    add hermione_robe xpos hermione_xpos ypos hermione_ypos
+    if hermione_wear_robe:
+        add hermione_robe xpos hermione_xpos ypos hermione_ypos
     
     if uni_sperm:
         add u_sperm xpos hermione_xpos ypos hermione_ypos
@@ -138,6 +142,9 @@ label reset_hermione_main:
 label h_update:
     $ hermione_body = "01_hp/13_hermione_main/"+str(h_body)+".png"
     #$ hermione_body = "01_hp/13_characters/hermione/body/face/"+str(h_body)+".png"
+    
+    if h_robe != "":
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str(h_robe)+".png"
     
     if h_tears != "":
         $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/"+str(h_tears)+".png"
@@ -345,9 +352,9 @@ label update_her_uniform:
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     else:
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
-    
     $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
     $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/"+str(h_badge)+".png"
     return
     
 label set_custom_layer(a=hermione_custom_a,b=hermione_custom_b,c=hermione_custom_c,d=hermione_custom_d,e=hermione_custom_e, save = False):
