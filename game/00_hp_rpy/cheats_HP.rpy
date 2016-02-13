@@ -24,7 +24,7 @@ label cheats_ht:
             label cheats_ht_books:
             menu:
                 "-Max Imagination":
-                     $ imagination = 5
+                    $ imagination = 5
                     "Your imagination grows!"
                     jump cheats_ht_books
                 "-Cheat Reading (off)-" if not cheat_reading:
