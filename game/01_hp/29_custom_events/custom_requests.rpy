@@ -1,6 +1,6 @@
 label new_custom_request:
     if slytherin > gryffindor or slytherin == gryffindor:
-        $ h_body = "01_hp/13_hermione_main/crstart.png"
+        $ h_body = "crstart"
         show screen hermione_main
         $ menu_x = 0.2 #Default: 0.5
 

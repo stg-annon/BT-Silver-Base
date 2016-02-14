@@ -37,6 +37,8 @@ label __init_variables:
     $ cust_f = "01_hp/29_custom_events/common/skirt.png"
     $ cust_g = "01_hp/29_custom_events/common/top.png"
     
+    $ ce_h_anger = False
+    $ ce_h_sweat = False
     
     return
     
@@ -66,6 +68,11 @@ screen custom_event_h:
     if ce_hair:
         add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+"_2.png" xpos ce_xpos ypos ce_ypos
     
+    if ce_h_anger:
+        add "01_hp/13_characters/emote/01.png" xpos ce_xpos ypos ce_ypos
+    elif ce_h_sweat:
+        add "01_hp/13_characters/emote/05.png" xpos ce_xpos ypos ce_ypos
+        
     zorder ce_zorder
     
 screen custom_event_head_h:
@@ -94,6 +101,11 @@ screen custom_event_head_h:
     if ce_hair:
         add "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+"_2.png" xpos ce_head_xpos ypos ce_head_ypos
     
+    if ce_h_anger:
+        add "01_hp/13_characters/emote/01.png" xpos ce_head_xpos ypos ce_head_ypos
+    elif ce_h_sweat:
+        add "01_hp/13_characters/emote/05.png" xpos ce_head_xpos ypos ce_head_ypos
+        
     zorder 8
     
 label ce_her_main(text = "", body=ce_body_filename,xpos = ce_xpos,ypos = ce_ypos, eventName = ce_name):

@@ -6,9 +6,26 @@ label __init_variables:
     $ heretic_busy = False
     $ hermione_desperate_done = False
     return
+    
+label heritic_intro:
+    $ ce_base = True
+    $ ce_top = True
+    $ ce_arms = True
+    $ ce_head_ypos = 235
+    return
+    
+label heritic_event:
+    $ ce_base = False
+    $ ce_top = False
+    $ ce_arms = False
+    return
 
+    
 label heretic:
     $ ce_name = "heretic"
+    $ menu_x = 0.5
+    call heritic_intro
+    hide screen hermione_main
     hide screen custom_event_h
     with d3
     m "{size=-4}(Is she really going to let me do this?){/size}"
@@ -63,12 +80,14 @@ label heretic:
         ">Changing her strategy, Hermione drops to her knees and rests the base of the cock against the floor. She starts rocking back and forth to wiggle the dick deeper inside her."
         g9 "Lift your skirt, bitch, I want to watch."
         
+        call heritic_event
         show screen blktone
         call ce_her_main("","p_jt",140)
         show screen ctc
         pause
         hide screen custom_event_h
         with d3
+        call heritic_intro
         
         ">Complying, Hermione flips her skirt up to reveal her engorged snatch."
         call ce_her_head("Oh my god... mmmmhh","v")
@@ -86,12 +105,14 @@ label heretic:
         call ce_her_head("I can't... it won't go any deeper.","e")
         m "Allow me."
         
+        call heritic_event
         show screen blktone
         call ce_her_main("","p_di",140)
         show screen ctc
         pause
         hide screen custom_event_h
         with d3
+        call heritic_intro
         
         ">With a few idle movements of your one free hand, you forces the dildo to shoot up inside of Hermione."
         call ce_her_head("AAAAHHH!","a")
@@ -117,12 +138,14 @@ label heretic:
                     call ce_her_head("...","e")
                     g9 "You had better hurry. Wouldn't want to be late for class."
                     
+                    call heritic_event
                     show screen blktone
                     call ce_her_main("","p_us",140)
                     show screen ctc
                     pause
                     hide screen custom_event_h
                     with d3
+                    call heritic_intro
                     
                     call ce_her_head("Sir, it's sticking out of the bottom of my skirt!","e")
                     g9 "I know. Off you go."
@@ -135,12 +158,14 @@ label heretic:
                 $ gryffindor +=50
                 call ce_her_head("Uh, sir... Could you help me?","e")
                 
+                call heritic_event
                 show screen blktone
                 call ce_her_main("","p_jt",140)
                 show screen ctc
                 pause
                 hide screen custom_event_h
                 with d3
+                call heritic_intro
                 
                 ">You wave your hand. The dildo erupts out of Hermione, who begins spasming in ecstacy again."
                 m "Now say thank you."
@@ -168,6 +193,7 @@ label heretic:
         #### END THE SCENE ####
 ### First Quest Night ###
 label heretic_night:
+    $ menu_x = 0.5
     call her_walk(520,400,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
@@ -181,12 +207,14 @@ label heretic_night:
     if exposure <= 3: #Caught By Harry
         m "Good evening Miss Granger."
         
+        call heritic_event
         show screen blktone
         call ce_her_main("","p_nd",140)
         show screen ctc
         pause
         hide screen custom_event_h
         with d3
+        call heritic_intro
         
         call ce_her_head("Hello sir.","n")
         m "So I see you didn't live up to you end of the bargain."
@@ -195,12 +223,14 @@ label heretic_night:
         g4 "Then where is the dildo, girl?!"
         call ce_her_head("It's... err...","n")
         
+        call heritic_event
         show screen blktone
         call ce_her_main("","p_dd",140)
         show screen ctc
         pause
         hide screen custom_event_h
         with d3
+        call heritic_intro
         
         ">Hermione pulls up her skirt to reveal the dildo lodged deeply in her cunt."
         g4 "Would you care to explain yourself, or are you ready to admit what a whore you are?"
@@ -412,12 +442,14 @@ label heretic_night:
     else: #Caught By Draco
         m "Good evening, Miss Granger."
         
+        call heritic_event
         show screen blktone
         call ce_her_main("","p_m",140)
         show screen ctc
         pause
         hide screen custom_event_h
         with d3
+        call heritic_intro
         
         m "My goodness, interesting day?"
         call ce_her_head("Can I just get paid, sir?","mash")

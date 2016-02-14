@@ -5,9 +5,53 @@ label __init_variables:
     $ shaming_02 = False
     $ shaming_03 = False
     return
-
+    
+label shaming_intro:
+    
+    $ ce_base = True
+    $ ce_skirt = True
+    $ ce_top = True
+    $ ce_arms = True
+    
+    $ ce_breasts = 1
+    
+    $ ce_hair_a = hermione_hair_a
+    $ ce_hair_b = hermione_hair_b
+    
+    $ cust_a = "01_hp/29_custom_events/common/body.png"
+    $ cust_b = "01_hp/29_custom_events/common/arms.png"
+    $ cust_c = "01_hp/29_custom_events/common/breasts_"+str(ce_breasts)+".png"
+    $ cust_f = hermione_skirt
+    $ cust_g = hermione_top
+    
+    return
+    
+label shaming_event:
+    
+    $ ce_base = False
+    $ ce_skirt = False
+    $ ce_top = False
+    $ ce_arms = False
+    
+    $ ce_breasts = 1
+    
+    $ ce_hair_a = "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+".png"
+    $ ce_hair_b = "01_hp/29_custom_events/common/hair/"+str(ce_hair_style)+"_"+str(ce_hair_color)+"_2.png"
+    
+    $ cust_a = "01_hp/29_custom_events/common/body.png"
+    $ cust_b = "01_hp/29_custom_events/common/arms.png"
+    $ cust_c = "01_hp/29_custom_events/common/breasts_"+str(ce_breasts)+".png"
+    $ cust_d = "01_hp/29_custom_events/common/panties.png"
+    $ cust_e = "01_hp/29_custom_events/common/bra.png"
+    $ cust_f = "01_hp/29_custom_events/common/skirt.png"
+    $ cust_g = "01_hp/29_custom_events/common/top.png"
+    
+    return
+    
 label shaming:
     $ ce_name = "shaming"
+    call shaming_intro
+    hide screen hermione_main
     hide screen custom_event_h
     with d3
     m "{size=-4}(Should I...){/size}"
@@ -153,6 +197,9 @@ label shaming_night:
         her "..."
         ">hermoine stares at you with a look that could burn holes through walls."
         hide screen hermione_02
+        hide screen custom_event_h
+        with d3
+        call shaming_event
         show screen hermione_04
         call ce_her_main("","2500")   
         pause
@@ -168,11 +215,19 @@ label shaming_night:
         
         ">She throws the shirt on your desk."
         m "Now the panties, Miss Granger"
+        hide screen custom_event_h
+        with d3
+        $ ce_h_anger = True
         call ce_her_main("No.","2700")
+        $ ce_h_anger = False
         m "Excuse me?"
+        hide screen custom_event_h
+        with d3
+        $ ce_h_anger = True
         call ce_her_main("I refuse.","2800")
+        $ ce_h_anger = False
         m "If you think that will stop me, you've got the wrong idea, slut."
-        call ce_her_main("","2900")   
+        call ce_her_main("","2900")
         show screen ctc
         pause 
         ">You conjure up some pink fluffy cuffs and bind Hermione's hands together."
@@ -183,9 +238,9 @@ label shaming_night:
         m "I'm in complete control of this situation, and you're powerless!"
         m "Immobilized in my room, with practically every person in the castle asleep."
         m "I'm going to enjoy this..."
-        call ce_her_main("","3100")   
+        call ce_her_main("","3100")
         "You reach under her skirt."
-        call ce_her_main("","3200")   
+        call ce_her_main("","3200")
         show screen ctc
         pause 
         "and slowly pull down her panties."
@@ -300,6 +355,9 @@ label shaming_night:
             her "..."
             m "wait, don't you need to..."
             "Hermione leaves"
+            hide screen custom_event_h
+            hide screen h_c_u
+            with d3
             m "yeah I definitely overdid it"
             m "I hope she's okay..."
             $ shaming_clothed = False
@@ -358,6 +416,7 @@ label shaming_night:
         $ shaming_01 = True
         $ shaming_busy = False
         hide screen g_c_u
+        hide screen h_c_u
         hide screen desk
         hide screen desk_02
         show screen genie
@@ -370,6 +429,11 @@ label shaming_night:
             pause 2
             hide screen hermione_chibi_robe_f
     else:  
+        hide screen custom_event_h
+        with d3
+        $ ce_hair_a = "B"
+        $ ce_hair_b = 1
+        
         # "Hermione's face is noticably flushed."
         # "An awkward silence falls"
         # m "So uhhhh..."
@@ -395,6 +459,7 @@ label shaming_night:
         # her "I wanted to reward you for everything you've done for me."
         # her "No house points involved, just you and me..."
         # her "My body is yours for the rest of the night."
+        
         
         call ce_her_main("I came to see you.","6000",320)     
         m "Good evening, Miss Granger."
