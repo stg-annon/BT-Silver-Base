@@ -222,7 +222,7 @@ label set_outfit_action(action = ""):
     hide screen hermione_main
     hide screen blktone 
     hide screen ctc
-    with d3
+    with d5
     call h_outfit_action(action)
     return
     

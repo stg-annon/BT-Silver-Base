@@ -211,7 +211,7 @@ label __init_variables:
     $ sweat = ["body_24","body_34","body_57","body_108","body_208","body_340"]
     $ suprize = ["body_80","body_80b","body_335"]
     
-    $ h_body = "01_hp/13_hermione_main/body_01.png"
+    $ h_body = "body_01"
     $ h_xpos = 370
     $ h_ypos = 0
     $ her_head_xpos = 390

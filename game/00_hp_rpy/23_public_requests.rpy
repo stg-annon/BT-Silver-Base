@@ -2466,7 +2466,7 @@ label new_request_23_complete: # <==============================================
             with d3
             pause.5
             $ uni_sperm = False  #Universal sperm.
-            $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            call her_main("","body_120")
             hide screen blkfade
             with d3
             pause

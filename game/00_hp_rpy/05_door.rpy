@@ -116,45 +116,28 @@ label door:
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
-                    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
-                    her ">Looks like Hermione is still a little upset with you..."
+                    call her_main("","body_03")
+                    ">Looks like Hermione is still a little upset with you..."
                 elif mad >=3 and mad < 10:
-                    $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_03")
                     ">Hermione is upset with you."
                 elif mad >=10 and mad < 20:
-                    $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_09")
                     ">Hermione is very upset with you."
                 elif mad >=20 and mad < 40:
-                    $ h_body = "01_hp/13_hermione_main/body_05.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_05")
                     ">Hermione is mad at you."
                 elif mad >=40 and mad < 50:
-                    $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_47")
                     ">Hermione is very mad at you."
                 elif mad >=50 and mad < 60:
-                    $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_47")
                     ">Hermione is furious at you."
                 elif mad >=60:
-                    $ h_body = "01_hp/13_hermione_main/body_47.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
+                    call her_main("","body_47")
                     ">Hermione hates your guts."
                 else:
-                    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-                    show screen hermione_main
-                    with d3
-                    her "Yes, [genie_name]?"
+                    call her_main("Yes, [genie_name]?","body_01")
                 
                 label day_time_requests:
                 menu:
@@ -570,23 +553,19 @@ label door:
             jump day_main_menu
     
 label genie_change:
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    her "Ok, from now on I'll call you [genie_name]"
+    call her_main("Ok, from now on I'll call you [genie_name]","body_01")
     jump hermione_talk
     
 label genie_change_fail:
-    $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
-    her "I'm not calling you that!"
+    call her_main("I'm not calling you that!","body_30")
     jump hermione_talk
     
 label hermione_change:
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    her "Fine, call me whatever you want [genie_name]"
+    call her_main("Fine, call me whatever you want [genie_name]","body_01")
     jump hermione_talk
     
 label hermione_change_fail:
-    $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.
-    her "I'm not letting you call me that!"
+    call her_main("I'm not letting you call me that!","body_30")
     jump hermione_talk
     
 

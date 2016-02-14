@@ -653,14 +653,11 @@ label crying_about_dress:
     call her_walk(400,610,2)
     show screen hermione_stand_f #Hermione stands still.
     
-    pause.3
-    $ h_body = "01_hp/13_hermione_main/body_145.png"                                                                                                                                                         # HERMIONE HEAD
+    pause.3                                                                                                                                                      # HERMIONE HEAD
     $ her_head_ypos = her_head_only
     show screen bld1
     with d3
-    show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
-    her "(My life is ruined...)"
-    hide screen h_head2       
+    call her_head("(My life is ruined...)","body_145")
     hide screen hermione_stand_f #Hermione stands still.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
@@ -719,42 +716,23 @@ label sorry_about_hesterics:
     m "Hm..?"
     call her_main("But that is not a big deal...","body_73")
     her "I'm just overreacting..."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_71.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
     play music "music/Despair_by_erenik.mp3" fadein 1 fadeout 1 # SAD THEME.
-    her "I woN't be able to attend the ball this year... so what?"
+    call her_main("I woN't be able to attend the ball this year... so what?","body_71")
     call her_main("I spent countless hours with organizing the event...","body_33")
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-
-    $ display_h_tears = True
-    $  u_tears_pic = "01_hp/13_hermione_main/tears_01.png"
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "I worked so hard... and..."
-    
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ display_h_tears = False
-    $ h_body = "01_hp/13_hermione_main/body_139.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    her "And now I will not even be able to... to... *Sob!*"
+    call her_main("I worked so hard... and...","body_11","tears_01")
+    call her_main("And now I will not even be able to... to... *Sob!*","body_139")
     call her_main("To... *SOB!*","body_143")
     call her_main("Excuse me sir!","body_145")
     hide screen hermione_main                                                                                                                                                                                 #HERMIONE
     with d3  
+    hide screen no_groping_02
+    hide screen bld1
+    show screen genie
+    with d1
     
     $ walk_xpos=370 #Animation of walking chibi. (From) 300
     $ walk_xpos2=750 #Coordinates of it's movement. (To) 610
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen. 0.02
-    hide screen no_groping_02
-    hide screen bld1
-    show screen genie
     show screen hermione_run
     #with fade
     pause 1.3 # .9

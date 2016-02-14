@@ -731,13 +731,7 @@ label new_request_09: #LV.3 (Whoring = 6 - 8)
     if request_09_points == 0 and whoring <= 11: # LEVEL 04 # FIRST TIME.
         m "[hermione_name]..."
         m "I would like to award \"Gryffindor\" with  25 house points today."
-        hide screen hermione_main
-        with d3
-        $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.
-        $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-        show screen hermione_main
-        with d3
-        her "Really?"
+        call her_main("Really?","body_03",xpos=370)
         her "Thank you so much, [genie_name]!"
         m "Yes, but I will require your help..."
         her "Of course, [genie_name]! Anything!"

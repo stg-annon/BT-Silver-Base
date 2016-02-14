@@ -1200,12 +1200,9 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
         with d3
         pause 3
         
-        $ h_body = "01_hp/13_hermione_main/body_18.png" #Sprite of Hermione's upper body.
         show screen bld1
         with d3
-        show screen hermione_main
-        with d3
-        her "Professor?! What is going on...?"
+        call her_main("Professor?! What is going on...?","body_18")
         show screen genie_jerking_sperm_02
         with d3
         g4 "Ah... YESSSSS.....!"
@@ -1276,14 +1273,9 @@ label event_08_02:
     show screen bld1
     with Dissolve(.3)
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
     show screen hermione_blink
-    with Dissolve(.3)
-
-    her "Good morning, professor Dumbledore."
+    with d3
+    call her_main("Good morning, professor Dumbledore.","body_01",xpos=370,ypos=0)
     menu:
         "\"Good morning, miss Granger.\"":
             pass
@@ -1370,27 +1362,15 @@ label event_08_03:
     "*Knock-knock-knock!*"
     m "Who is--"
     her "Professor, I'm coming in..."
-    $ walk_xpos=610 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 2.5
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    call her_walk(610,400,3)
     show screen hermione_blink #Hermione stands still.
     pause.5
-    her "Good morning, professor Dumbledore."
     show screen bld1
-    with Dissolve(.3)
-    
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
     show screen hermione_blink
-    with Dissolve(.3)
+    with d3
     
+    call her_main("Good morning, professor Dumbledore.","body_01",xpos=370,ypos=0)
     menu:
         "\"Good morning, miss Granger.\"":
             pass
@@ -1562,13 +1542,8 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     g4 "Blame everything on--"
     stop music fadeout 1.0
     m "Wait, did you say {size=+5}MEN'S{/size} rights movement?"
-    hide screen hermione_main
-    with d3
-    $ h_body = "01_hp/13_hermione_main/body_11.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    with d3
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    her "You have no idea how hard it is to be a boy in our school these days..."
+    call her_main("You have no idea how hard it is to be a boy in our school these days...","body_11")
     menu:
         "\"Didn't see this one coming...\"":
             call her_main("No, you did not, because you, as an authority figure, refuse to listen to us, sir!","body_04")
@@ -1881,19 +1856,13 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     #show screen hermione_blink #Hermione stands still.
     show screen hermione_02_b #Hermione stands still wearing a robe.
     show screen bld1
+    show screen ctc
     with Dissolve(.3)
     
     $ robeon = True #Hermione is wearing a robe.
-    $ only_upper = True #Otherwise skirt shows up under the robe.
     
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite.
-    $ h_ypos=0
-    $ h_body = "01_hp/13_hermione_main/body_09.png" #Sprite of Hermione's upper body.
-    show screen hermione_main
-    show screen ctc
-    with Dissolve(.3)   
+    call her_main("","body_09",xpos=370,ypos=0)
     pause
-
     call her_main("Good evening professor.","body_12")
     hide screen ctc
     menu:

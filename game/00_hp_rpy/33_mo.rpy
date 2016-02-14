@@ -2550,23 +2550,15 @@ label public_event_1_2:#Returns to your office after being made walk around the 
 label public_event_2: #Walk around school covered in genies cum #At the moment this reuses the default blowjob scene (modified) for the intro. This may change
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     m "Suck my dick, [hermione_name]."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    with d3                                                                                                                                                                                                                        #HERMIONE
-    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
-    show screen hermione_main                                                                                                                                                                                 #HERMIONE
-    with d3                                                                                                                                                                                                                         #HERMIONE                                                                                                                                                                                                                                          
-    her "Of course..."
+    call her_main("Of course...","body_45",xpos=140)
     # Sucking.
     
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-    hide screen genie
-    $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ genie_chibi_ypos = 10
-    $ g_c_u_pic = "blowjob_ani"
-    show screen chair_02
-    show screen g_c_u
+    call set_u_ani("blowjob_ani","hand_ani",-150,10)
+    call u_play_ani
     
+    show screen chair_02
+    hide screen hermione_main
+    hide screen genie
     hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     hide screen blktone
@@ -2580,13 +2572,6 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     her "*Slurp!* *Slurp!* *Gulp!*"
     m "Yes, good girl..."
     her "*Slurp!* *Gobble!* *Slurp!*"
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    hide screen h_c_u   # SUCKING
-    show screen g_c_u # SUCKING
-    with d3                      #  SUCKING                
-    #">Hermione is working hard to please you..."
     her "*Slurp!* *Slurp!* *Gulp!*"
     show screen blktone
     with d3
@@ -2596,83 +2581,36 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     with d3
     m "Yes... I love your eager, little mouth girl..."
     her "*Gobble!* *Gobble!* *Gobble!*"
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    show screen h_c_u   # NOT SUCKING
-    hide screen g_c_u # NOT SUCKING
-    with d3                      #  NOT SUCKING
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-    her "[genie_name]?"
-    hide screen h_head2          
+    call u_pause_ani
+    call her_head("[genie_name]?"."body_121")          
     m "Hm?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-    her "Are you going to cum on my face today?"
-    her "Or do you plan to cum in my mouth?"
-    hide screen h_head2
+    call her_head("Are you going to cum on my face today?"."body_121")
+    call her_head("Or do you plan to cum in my mouth?")
     m "I Plan to splatter your face with cum!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_121.png" # HERMIONE
-    her "I see..."
-    hide screen h_head2
+    call her_head("I see..."."body_121")
     m "Why do you ask?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-    her2 "Oh... I just read in a book that semen contains a lot of antioxidants..."
-    her "It's good for the skin..."
-    hide screen h_head2
+    call her_head("Oh... I just read in a book that semen contains a lot of antioxidants...","body_123")
+    call her_head("It's good for the skin...")
     m "Great. One facial coming up."
     m "Back to work now."
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    hide screen h_c_u   # SUCKING
-    show screen g_c_u # SUCKING
-    with d3                      #  SUCKING   
+    call u_play_ani
     her "*Slurp!* *Slurp!* *Slurp!*"
     m "Hm..."
     m "You are getting better at this [hermione_name]."
     her "*Slurp!* *Slurp!* *Gulp!*"
     m "Ok, say something nasty now..."
     her "*Slurp--?"
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    show screen h_c_u   # NOT SUCKING
-    hide screen g_c_u # NOT SUCKING
-    with d3                      #  NOT SUCKING
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_129.png" # HERMIONE
-    her "I'm a slut [genie_name]."
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_128.png" # HERMIONE
-    her "A slut for your cum."
-    hide screen h_head2
+    call u_pause_ani
+    call her_head("I'm a slut [genie_name]."."body_129")
+    call her_head("A slut for your cum."."body_128")
     m "That's it [hermione_name]."
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_124.png" # HERMIONE
-    her "It's all I can think about [genie_name]."
-    her "Sucking your dirty old cock..."
-    hide screen h_head2
+    call her_head("It's all I can think about [genie_name]."."body_124")
+    call her_head("Sucking your dirty old cock...")
     m "Well you better get back to it then [hermione_name]"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-    her "Thank you [genie_name]."
-    hide screen h_head2
+    call her_head("Thank you [genie_name]."."body_123")
     m "You're welcome cumslut."
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_78.png" # HERMIONE
-    her "..."
-    hide screen h_head2
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    hide screen h_c_u   # SUCKING
-    show screen g_c_u # SUCKING
-    with d3                      #  SUCKING 
-    
+    call her_head("..."."body_78")
+    call u_play_ani
     her "*Slurp!* *Gulp!* *Slurp!*"
     m "Yes, like this... Good..."
     her "*Slurp!* *Slurp!* *Slurp!*"
@@ -2689,20 +2627,11 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     g4 "Ghr!!!"
     show screen bld1
     hide screen blkfade
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
-    $ h_c_u_pic = "hand_ani" # Not sucking
-    show screen h_c_u   # NOT SUCKING
-    hide screen g_c_u # NOT SUCKING
-    with d3                      #  NOT SUCKING
+    with d3
+    call u_pause_ani
     g4 "Ready for your facial, [hermione_name]?"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-    her "Yes [genie_name]!"
-    hide screen h_head2      
+    call her_head("Yes [genie_name]!"."body_123")      
     g4 "Here it comes then!"
-    
-    hide screen h_head2  
     show screen white 
     pause.1
     hide screen white
@@ -2712,15 +2641,10 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     hide screen white
     with hpunch
     g4 "{size=+7}Whore!{/size}"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-    her "!!?"
-    hide screen h_head2
+    call her_head("!!?"."body_48")
     
-    $ g_c_u_pic = "cum_on_face_ani"
-    hide screen h_c_u   # SUCKING
-    show screen g_c_u # SUCKING
-    with d3                      #  SUCKING
+    call set_u_ani("cum_on_face_ani")
+    
     show screen ctc
     hide screen bld1
     with d3
@@ -2732,19 +2656,12 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     #Cumming.
     $ uni_sperm = True
     $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_48.png" # HERMIONE
-    her "[genie_name]..."
-    hide screen h_head2  
+    call her_head("[genie_name]..."."body_48")  
     g4 "All over your fucking face!"
-    show screen h_head2                                                             # HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_123.png" # HERMIONE
-    her "Aaah!"
-    $ g_c_u_pic = "cum_on_face_blink_ani"
-    hide screen h_head2  
+    call her_head("Aaah!"."body_123")
+    call set_u_ani("cum_on_face_blink_ani")
     m "Well, I'm done."
-
-
+    
     her "Thank you [genie_name]."
     ">She goes to reach for a towel to clean her face."
     m "Not so fast [hermione_name], today I have an extra little task that I would like you to perform."

@@ -605,11 +605,9 @@ label l_tutoring:
         show screen ctc
         show screen groping_03
         with d1
-        $ h_xpos = 160
-        $ h_body = "01_hp/13_hermione_main/body_182.png"
-        show screen hermione_main
         hide screen blkfade
         with d5
+        call her_main("","body_182",xpos=160)
         pause
         show screen bld1
         with d3
@@ -710,11 +708,9 @@ label l_tutoring:
         show screen genie_and_tits_01
         with d1
         ##$ v_her_bra = 0
-        $ h_xpos = 160
-        $ h_body = "01_hp/13_hermione_main/body_198.png"
-        show screen hermione_main
         hide screen blkfade
         with d5
+        call her_main("","body_198",xpos=160)
         pause
         show screen bld1
         with d3

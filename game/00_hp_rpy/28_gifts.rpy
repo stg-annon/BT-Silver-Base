@@ -190,20 +190,20 @@ label give_her_gift(gift_id):
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Thank you...","body_29")
             call happy(5)
-            $ h_body = "01_hp/13_hermione_main/body_06.png"
+            $ h_body = "body_06"
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             call her_main("Candy?","body_03")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Ehm... Sure, thanks...","body_08")
             call happy(5)
-            $ h_body = "01_hp/13_hermione_main/body_06.png"
+            $ h_body = "body_06"
         if whoring >= 18: # Lv 7+  
             call her_main("A lollipop?","body_06")
             call her_main("Clever girls use candy like this as a \"weapon\".","body_46")
             call give_gift(">You give the candy to Hermione...",gift_id)
             call her_main("Thank you, [genie_name].","body_74")
             call happy(5)
-            $ h_body = "01_hp/13_hermione_main/body_128.png"
+            $ h_body = "body_128"
     if gift_id == 2:#chocolate
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("A chocolate bar?","body_01")
@@ -259,7 +259,7 @@ label give_her_gift(gift_id):
             call her_main("Shame...","body_118")
             call her_main("I mean, thank you, [genie_name].","body_34")
             call give_gift(">You give the owl to Hermione...",gift_id)
-            $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_01"
             call happy(4)
     if gift_id == 3:#butterbeer
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
@@ -289,7 +289,7 @@ label give_her_gift(gift_id):
             call her_main("I shall drink this later with the boys.","body_06")
             call her_main("Err... I meant to say with the girls, of course.","body_189")
             call happy(20)
-            $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_01"
     if gift_id == 5:#edu mags
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("\"Popular magic\" magazines?","body_01")
@@ -323,7 +323,7 @@ label give_her_gift(gift_id):
             call her_main("This is the sort of press some \"slytherin\" bimbo would appreciate.","body_17")
             call her_main("I am way above silly magazines like that, [genie_name].","body_16")
             call no_change
-            $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_01"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("I don't read magazines of that nature, [genie_name]...","body_04")
             call her_main("................","body_13")
@@ -331,21 +331,21 @@ label give_her_gift(gift_id):
             call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
             call her_main("Thank you, [genie_name]!","body_08")
             call happy(5)
-            $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_06"
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             call her_main("I ashamed to admit this, but...","body_10")
             call her_main("I really enjoy reading magazines like that lately...","body_24")
             call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
             call her_main("Thank you, [genie_name].","body_08")
             call happy(15)
-            $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_06"
         if whoring >= 18: # Lv 7+  
             call her_main("The Latest edition of \"Girlz\"?!","body_18")
             call her_main("I can't have enough of that brilliant magazine!","body_24")
             call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
             call her_main("Thank you, [genie_name].","body_08")
             call happy(15)
-            $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_06"
     if gift_id == 7:#adult mags
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("Are that...?","body_02")
@@ -359,14 +359,14 @@ label give_her_gift(gift_id):
             call her_main("[genie_name], I have no interest in things like that.","body_69")
             call her_main("And how is this an appropriate present for one of your students, [genie_name]?","body_47")
             call upset(3)
-            $ h_body = "01_hp/13_hermione_main/body_29.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_29"
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             call her_main("Adult magazines?","body_31")
             call her_main("[genie_name], this is such an inappropriate present for a girl my age...","body_34")
             call give_gift(">You give an assortment of adult magazines to Hermione...",gift_id)
             call her_main("I shall throw these away myself...","body_79")
             call happy(8)
-            $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_120"
         if whoring >= 18: # Lv 7+  
             call her_main("The New edition of \"L.o.v.e.\"!!!","body_75")
             call her_main("Err.. I mean, adult magazines?","body_122")
@@ -387,7 +387,7 @@ label give_her_gift(gift_id):
             call her_main("Research them?","body_79")
             call her_main("Despicable!","body_86")
             call upset(8)
-            $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_120"
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
             call her_main("That's hardcore porn, [genie_name].","body_31")
             call her_main("Which is a completely inappropriate gift for a girl my age!","body_34")
@@ -396,7 +396,7 @@ label give_her_gift(gift_id):
             call give_gift(">You give an assortment of porn magazines to Hermione...",gift_id)
             call her_main("And I shall throw them in the trash, where they and... girls who like these things belong...","body_79")
             call no_change
-            $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_120"
         if whoring >= 18: # Lv 7+  
             call her_main("Pornography?","body_48")
             call her_main("................","body_118")
@@ -406,14 +406,14 @@ label give_her_gift(gift_id):
             call her_main("Solely for research purposes of course...","body_189")
             call give_gift(">You give an assortment of porn magazines to Hermione...",gift_id)
             call happy(15)
-            $ h_body = "01_hp/13_hermione_main/body_45.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_45"
     if gift_id == 9:#krum poster
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("A Quidditch poster?","body_73")
             call her_main("What am I supposed to do with it, [genie_name]?","body_185")
             call her_main("No, thank you.","body_184")
             call no_change
-            $ h_body = "01_hp/13_hermione_main/body_71.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_71"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("A Quidditch poster?","body_73")
             call her_main("Hm...","body_185")
@@ -461,7 +461,7 @@ label give_her_gift(gift_id):
             call her_main("Condoms?!","body_18")
             call her_main("[genie_name], I wouldn't even know what to do with them...","body_30")
             call upset(6)
-            $ h_body = "01_hp/13_hermione_main/body_03.png"
+            $ h_body = "body_03"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("...Condoms?","body_07")
             call her_main("Ehm... Is this a part of some new Hogwarts sex ed program or something?","body_04")
@@ -473,13 +473,13 @@ label give_her_gift(gift_id):
             call her_main("Well, I shall accept them simply because it is rude to refuse a gift...","body_04")
             call give_gift(">You give a pack of condoms to Hermione...", gift_id)
             call happy(3)
-            $ h_body = "01_hp/13_hermione_main/body_29.png"
+            $ h_body = "body_29"
         if whoring >= 18: # Lv 7+
             call her_main("A pack of condoms?","body_08")
             call her_main("I appreciate your concern, [genie_name]. Thank you.","body_128")
             call give_gift(">You give a pack of condoms to Hermione...", gift_id)
             call happy(4)
-            $ h_body = "01_hp/13_hermione_main/body_45.png"
+            $ h_body = "body_45"
     if gift_id == 12:#vibrator
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("A magic wand?","body_01")
@@ -489,7 +489,7 @@ label give_her_gift(gift_id):
             call her_main("[genie_name]!","body_187")
             call her_main("This is just beyond inappropriate!","body_30")
             call upset(10)
-            $ h_body = "01_hp/13_hermione_main/body_120.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_120"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("Is this what I think it is?","body_118")
             call her_main("[genie_name], let me remind you that I belong to the noble house of \"Gryffindor\".","body_186")
@@ -517,7 +517,7 @@ label give_her_gift(gift_id):
             call her_main("But I have the feeling that the jar is full of something vile and inappropriate...","body_05")
             call her_main("No, thank you, [genie_name].")
             call upset(6)
-            $ h_body = "01_hp/13_hermione_main/body_03.png"
+            $ h_body = "body_03"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("Hm...","body_73")
             call her_main("I think I know what this is...","body_66")
@@ -532,7 +532,7 @@ label give_her_gift(gift_id):
             call give_gift(">You give the jar to Hermione...", gift_id, 0)
             call her_main("Still, I think you should not give presents like this to your pupils, [genie_name].","body_186")
             call no_change
-            $ h_body = "01_hp/13_hermione_main/body_79.png"
+            $ h_body = "body_79"
         if whoring >= 18: # Lv 7+  
             call her_main("Anal lubricant, [genie_name]?","body_124")
             call her_main("I know a couple of girls who would do anything for a commodity like that.","body_186")
@@ -607,7 +607,7 @@ label give_her_gift(gift_id):
             call give_gift(">You give the strap-on to Hermione...",gift_id)
             call her_main("Thank you very much, [genie_name]. I promise to take good care of it.","body_16")
             call happy(20)
-            $ h_body = "01_hp/13_hermione_main/body_15.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_15"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("!!!","body_18")
             call her_main("That is...","body_118")
@@ -647,7 +647,7 @@ label give_her_gift(gift_id):
             call her_main("Is it like a saddle...?","body_08")
             call give_gift(">You give the broom to Hermione...",gift_id)
             call her_main("Thank you for the gift, [genie_name].","body_11")
-            $ h_body = "01_hp/13_hermione_main/body_06.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_06"
             call happy(20)
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("A broom...?","body_01")
@@ -682,7 +682,7 @@ label give_her_gift(gift_id):
             call her_main("A sex doll?!","body_34")
             call her_main("[genie_name]!!!","body_32")
             call upset(20)
-            $ h_body = "01_hp/13_hermione_main/body_33.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+            $ h_body = "body_33"
         if whoring >= 6 and whoring <= 11: # Lv 3-4.
             call her_main("A sex doll?","body_48")
             call her_main("This is just so unbecoming for an esteemed wizard such as yourself, [genie_name]...","body_120")
@@ -942,7 +942,7 @@ label giving_skirt:
     show screen notes
     #">\"Dresscode\" option unlocked. From now on you can affect Hermione's attire choices."
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)                                                       #HERMIONE
-    $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+    $ h_body = "body_01"
     show screen hermione_main                                                                                                                                                                                 #HERMIONE
     jump day_time_requests
     
@@ -1017,7 +1017,7 @@ label mini_on:
         call her_main("Of course, [genie_name]...","body_118")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_78.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        $ h_body = "body_78"
                                                                                                                                                                                                                           #HERMIONE
     
     
@@ -1041,7 +1041,7 @@ label mini_off:
         call her_main("I'm glad that you came to your senses, [genie_name].","body_04")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        $ h_body = "body_03"
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         call her_main("Gladly, [genie_name].","body_01")
@@ -1148,7 +1148,7 @@ label tiny_on:
         call her_main("Of course, [genie_name]...","body_118")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_78.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        $ h_body = "body_78"
                                                                                                                                                                                                                           #HERMIONE
     
     
@@ -1246,7 +1246,7 @@ label shirt_on:
 label bra_on:
     call her_main("What, I can't do that, everyone would call me a slut","body_05")
     m "just do it"
-    $ h_body = "01_hp/13_hermione_main/body_30.png" #Sprite of Hermione's upper body.    
+    $ h_body = "body_30"
     her "[genie_name], I have to draw a line somewhere, I'm not walking around with no shirt on!"
     m "i'll give you 100 points"
     her "200"
@@ -1865,7 +1865,7 @@ label nets_put:
         call her_main("If you insist, [genie_name]...","body_118")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_78.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE
+        $ h_body = "body_78"
     
     $ ne = True # Shows fishnets layer.
     $ ne_01 = True # Shows the fishnets.
@@ -1891,7 +1891,7 @@ label nets_take:
         call her_main("I'm glad that you came to your senses, [genie_name].","body_04")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         with d3                                                                                                                                                                                                                        #HERMIONE
-        $ h_body = "01_hp/13_hermione_main/body_03.png" #Sprite of Hermione's upper body.                                                                   #HERMIONE 
+        $ h_body = "body_03"
         
     if whoring >= 6 and whoring <= 11: # Lv 3-4.
         call her_main("Gladly, [genie_name].","body_01")
