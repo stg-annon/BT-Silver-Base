@@ -1758,113 +1758,28 @@ image ani_her_sex_cum_inside_blink_naked:
 ### HERMIONE CHIBI ###
 screen hermione_walk:
     tag hermione_chibi
-    if not wear_shirts:
-        add "ch_hem walk_n" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem walk_a" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem walk_d" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem walk_e" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem walk_f" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem walk_g" at custom_walk_02(walk_xpos, walk_xpos2)
-        if day_random >= 5:# shirt_05
-            add "ch_hem walk_h" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder 4
+    add hermione_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2)
+    zorder hermione_chibi_zorder
 screen hermione_walk_f:  #Hermione walking animation. facing right. (Leaving tower).
     tag hermione_chibi
-    if not wear_shirts:
-        add "ch_hem walk_n_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem walk_a_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem walk_d_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem walk_e_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem walk_f_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem walk_g_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-        if day_random >= 5:# shirt_05
-            add "ch_hem walk_h_flip" at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder 4
+    add hermione_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2)
+    zorder hermione_chibi_zorder
 screen hermione_blink:   #Hermione stands still and blinks.
     tag hermione_chibi
-    if not wear_shirts:
-        add "ch_hem blink_n" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem blink_a" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem blink_d" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem blink_e" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem blink_f" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem blink_g" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add "ch_hem blink_h" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
+    add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder hermione_chibi_zorder
 screen hermione_blink_f: #Hermione stands still and blinks facing right. (Leaving tower).
     tag hermione_chibi
-    if not wear_shirts:
-        add "ch_hem blink_n_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add "ch_hem blink_a_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "ch_hem blink_d_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "ch_hem blink_e_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "ch_hem blink_f_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "ch_hem blink_g_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add "ch_hem blink_h_flip" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
+    add hermione_chibi_blink_f at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder hermione_chibi_zorder
 screen hermione_stand:   #Hermione stands still
     tag hermione_chibi
-    if not wear_shirts:
-        add "01_hp/16_hermione_chibi/walk/h_walk_n_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add "01_hp/16_hermione_chibi/walk/h_walk_a_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add "01_hp/16_hermione_chibi/walk/h_walk_d_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add "01_hp/16_hermione_chibi/walk/h_walk_e_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add "01_hp/16_hermione_chibi/walk/h_walk_f_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add "01_hp/16_hermione_chibi/walk/h_walk_g_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add "01_hp/16_hermione_chibi/walk/h_walk_h_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
+    add hermione_chibi_stand at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder hermione_chibi_zorder
 screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
     tag hermione_chibi
-    if not wear_shirts:
-        add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring <= 3:# shirt_00
-        add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 4 and whoring <= 7:# shirt_01
-        add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 8 and whoring <= 14:# shirt_02
-        add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 15 and whoring <= 20:# shirt_03
-        add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-        if day_random >= 5:# shirt_05
-            add im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder 4
-    
+    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+    zorder hermione_chibi_zorder
     
 screen hermione_lift_skirt:
     tag hermione_chibi

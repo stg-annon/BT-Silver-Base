@@ -60,7 +60,7 @@ label __init_variables:
     $ hermione_custom_outfit = False
     $ hermione_action = False
     
-    
+    $ h_show_top = True
     $ h_display_tears = False
     $ h_request_wear_panties = False
     
@@ -77,6 +77,14 @@ label __init_variables:
     $ h_stocking = "00_blank"
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
+    
+    
+    $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    $ hermione_chibi_blink = "ch_hem blink_a"
+    $ hermione_chibi_blink_f = "ch_hem blink_a_flip"
+    $ hermione_chibi_walk = "ch_hem walk_a"
+    $ hermione_chibi_walk_f = "ch_hem walk_a_flip"
+    $ hermione_chibi_zorder = 3
     
     # 1 maid
     # 2 gryff cheer

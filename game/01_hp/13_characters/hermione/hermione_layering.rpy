@@ -25,8 +25,6 @@ screen hermione_main:
         ### TOP
         if hermione_wear_top:
             add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
-            if badges:
-                add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         elif hermione_wear_bra:
             add hermione_bra xpos hermione_xpos ypos hermione_ypos # Add the bra
     else:
@@ -44,16 +42,18 @@ screen hermione_main:
         add hermiome_action_a xpos hermione_xpos ypos hermione_ypos
         add hermiome_action_b xpos hermione_xpos ypos hermione_ypos
     
-    if hermione_wear_robe:
-        add hermione_robe xpos hermione_xpos ypos hermione_ypos
-    
     if uni_sperm:
         add u_sperm xpos hermione_xpos ypos hermione_ypos
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos hermione_xpos ypos hermione_ypos
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos ypos hermione_ypos
+    
+    if badges and hermione_wear_skirt and not hermione_custom_outfit:
+        add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         
+    if hermione_wear_robe:
+        add hermione_robe xpos hermione_xpos ypos hermione_ypos
     add hermione_emote xpos hermione_xpos ypos hermione_ypos
     
     ### ZORDER
@@ -102,7 +102,6 @@ screen hermione_head:
         add hermiome_action_a xpos hermione_head_xpos ypos hermione_head_ypos
         add hermiome_action_b xpos hermione_head_xpos ypos hermione_head_ypos
     
-    add hermione_robe xpos hermione_head_xpos ypos hermione_head_xpos
     
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos ypos hermione_head_ypos
@@ -110,7 +109,9 @@ screen hermione_head:
         add "01_hp/13_hermione_main/auto_02.png" xpos hermione_head_xpos ypos hermione_head_ypos
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos hermione_head_xpos ypos hermione_head_ypos
-        
+    
+    if hermione_wear_robe:
+        add hermione_robe xpos hermione_head_xpos ypos hermione_head_xpos
     add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos
     
     ### ZORDER
@@ -254,6 +255,8 @@ label h_action(action =  ""):
     $ hermione_action = False
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
+    $ hermione_wear_bra = True
+    call update_her_body
     if action == "" or action == "none" or action == 0:
         pass
     else:
@@ -268,8 +271,10 @@ label h_action(action =  ""):
                 $ h_action_a = "lift_skirt_3.png"
             if whoring >= 20:
                 $ h_action_a = "lift_skirt_4.png"
-        if action == "lift top":
+        if action == "lift_top":
             $ hermione_wear_top = False
+            $ hermione_wear_bra = False
+            call update_her_body
             if whoring <= 3:# shirt_00
                 $ h_action_a = "lift_top_1.png"
             elif whoring >= 4 and whoring <= 20:
@@ -305,7 +310,7 @@ label h_action(action =  ""):
             $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     return
     
-label update_her_uniform:
+label update_her_body:
     if not hermione_wear_top:
         if not hermione_wear_bra:
             if not hermione_perm_expand:
@@ -318,19 +323,29 @@ label update_her_uniform:
             $ h_breasts = 1 # nipple corrected breasts
     else:
         $ h_breasts = 1
-        if whoring <= 3:# top 1
-            $ h_top = 1
-        elif whoring >= 4 and whoring <= 7:# top 2
-            $ h_top = 2
-        elif whoring >= 8 and whoring <= 14:# top 3
-            $ h_top = 3
-        elif whoring >= 15 and whoring <= 20:# top 4
-            $ h_top = 4
-        elif whoring >= 21:
-            if day_random <= 4:# top 5
-                $ h_top = 5
-            if day_random >= 5:# top 6
-                $ h_top = 6
+    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
+    $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
+    $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    return
+    
+label update_her_uniform:
+    call update_her_body
+    call update_chibi_uniform
+    ### TOP
+    if whoring <= 3:# top 1
+        $ h_top = 1
+    elif whoring >= 4 and whoring <= 7:# top 2
+        $ h_top = 2
+    elif whoring >= 8 and whoring <= 14:# top 3
+        $ h_top = 3
+    elif whoring >= 15 and whoring <= 20:# top 4
+        $ h_top = 4
+    elif whoring >= 21:
+        if day_random <= 4:# top 5
+            $ h_top = 5
+        if day_random >= 5:# top 6
+            $ h_top = 6
+    ### SKIRT
     if whoring <= 5: # skirt 1
         $ h_skirt = 1
     if whoring >= 6 and whoring <= 11: # skirt 2
@@ -343,18 +358,63 @@ label update_her_uniform:
     if whoring >= 6:
         $ hermione_wear_panties = False
     
-    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_"+str(h_skirt)+".png"
+    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/"+str(h_badge)+".png"
     if not hermione_wear_skirt and (h_top >= 2 and h_top <= 4):
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     else:
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
-    $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
-    $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
-    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/"+str(h_badge)+".png"
+    return
+    
+label update_chibi_uniform:
+    
+    if not wear_shirts:
+        $ hermione_chibi_blink = "ch_hem blink_n"
+        $ hermione_chibi_blink_f = "ch_hem blink_n_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_n"
+        $ hermione_chibi_walk_f = "ch_hem walk_n_flip"
+    elif whoring <= 3:# shirt_00
+        $ hermione_chibi_blink = "ch_hem blink_a"
+        $ hermione_chibi_blink_f = "ch_hem blink_a_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_a"
+        $ hermione_chibi_walk_f = "ch_hem walk_a_flip"
+    elif whoring >= 4 and whoring <= 7:# shirt_01
+        $ hermione_chibi_blink = "ch_hem blink_d"
+        $ hermione_chibi_blink_f = "ch_hem blink_d_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_d"
+        $ hermione_chibi_walk_f = "ch_hem walk_d_flip"
+    elif whoring >= 8 and whoring <= 14:# shirt_02
+        $ hermione_chibi_blink = "ch_hem blink_e"
+        $ hermione_chibi_blink_f = "ch_hem blink_e_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_e"
+        $ hermione_chibi_walk_f = "ch_hem walk_e_flip"
+    elif whoring >= 15 and whoring <= 20:# shirt_03
+        $ hermione_chibi_blink = "ch_hem blink_f"
+        $ hermione_chibi_blink_f = "ch_hem blink_f_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_f"
+        $ hermione_chibi_walk_f = "ch_hem walk_f_flip"
+    elif whoring >= 21:
+        if day_random <= 4:# shirt_04
+            $ hermione_chibi_blink = "ch_hem blink_g"
+            $ hermione_chibi_blink_f = "ch_hem blink_g_flip"
+            $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+            $ hermione_chibi_walk = "ch_hem walk_g"
+            $ hermione_chibi_walk_f = "ch_hem walk_g_flip"
+        if day_random >= 5:# shirt_05
+            $ hermione_chibi_blink = "ch_hem blink_h"
+            $ hermione_chibi_blink_f = "ch_hem blink_h_flip"
+            $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+            $ hermione_chibi_walk = "ch_hem walk_h"
+            $ hermione_chibi_walk_f = "ch_hem walk_h_flip"
+        
     return
     
 label set_custom_layer(a=hermione_custom_a,b=hermione_custom_b,c=hermione_custom_c,d=hermione_custom_d,e=hermione_custom_e, save = False):
@@ -390,6 +450,9 @@ label h_custom_set(a = "",b = "",c = "",d = "",e = "", hair = "", breastType = "
 label new_main_menu: # testing menu found in cheats or jumped to
     show screen hermione_main
     menu:
+        "-update main-":
+            call update_her_uniform
+            jump new_main_menu
         "-robes-":
             menu:
                 "-off-":

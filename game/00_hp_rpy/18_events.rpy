@@ -1018,7 +1018,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 610
     $ hermione_chibi_ypos = 250
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with Dissolve(.5)
     pause.3
     if not d_flag_01:
@@ -1029,12 +1029,12 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     
     call her_walk(610,400,3)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     
     show screen bld1
     show screen ctc
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     
     call her_main("","body_01",xpos=370,ypos=0)
@@ -1230,13 +1230,6 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     hide screen hermione_main
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -1277,7 +1270,7 @@ label event_08_02:
             m "{size=-4}(Crap!){/size}"
     
     call her_walk(610,400,3)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     
     pause.5
     show screen bld1
@@ -1287,7 +1280,7 @@ label event_08_02:
     $ h_ypos=0
     $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     show screen hermione_main
-    show screen hermione_02
+    show screen hermione_blink
     with Dissolve(.3)
 
     her "Good morning, professor Dumbledore."
@@ -1385,7 +1378,7 @@ label event_08_03:
     with d4
     pause 2.5
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     her "Good morning, professor Dumbledore."
     show screen bld1
@@ -1395,7 +1388,7 @@ label event_08_03:
     $ h_ypos=0
     $ h_body = "01_hp/13_hermione_main/body_01.png" #Sprite of Hermione's upper body.
     show screen hermione_main
-    show screen hermione_02
+    show screen hermione_blink
     with Dissolve(.3)
     
     menu:
@@ -1530,14 +1523,14 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     
     call her_walk(610,400,3,redux_pause=0.5)
     
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with d3
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("","body_03",xpos=370,ypos=0)
     show screen ctc
@@ -1663,13 +1656,13 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     
     call her_walk(610,400,3,redux_pause=0.5)
     
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with d3
     pause.5
     show screen bld1
     with d3
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good morning, professor Dumbledore.","body_01",xpos=370,ypos=0)
     menu:
@@ -1792,12 +1785,12 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     with d4
     pause 2.5
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good morning, professor Dumbledore.","body_01",xpos=370,ypos=0)
     menu:
@@ -1885,7 +1878,7 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
     with d4
     pause 1.8
     $ hermione_chibi_xpos = 400 #Near the desk.
-    #show screen hermione_02 #Hermione stands still.
+    #show screen hermione_blink #Hermione stands still.
     show screen hermione_02_b #Hermione stands still wearing a robe.
     show screen bld1
     with Dissolve(.3)
@@ -1997,7 +1990,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     with d4
     pause 1.8
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with d3
     her "Professor! I need to talk to you!"
     m "(So She doesn't even bother to knock anymore?)"
@@ -2076,7 +2069,7 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     with d4
     pause 1.3
     $ hermione_chibi_xpos = 500 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with d3
     her "....................."
     m "???"
@@ -2085,10 +2078,10 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
     show screen hermione_walk_01 
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     pause 1.8
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with d3
     her "............"
     m "Miss Granger?" 
@@ -2140,7 +2133,7 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     
 #    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 #    $ hermione_chibi_xpos = 400 #Middle of the room.
-#    show screen hermione_01_f #Hermione stands still.
+#    show screen hermione_stand_f #Hermione stands still.
 #    with d3
 #    her "................."
 #    $ walk_xpos=400 #Animation of walking chibi. (From)
@@ -2151,7 +2144,7 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
 #    hide screen hermione_walk_01_f 
 #    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
 #    $ hermione_chibi_xpos = 500 #Middle of the room.
-#    show screen hermione_01_f #Hermione stands still.
+#    show screen hermione_stand_f #Hermione stands still.
 #    with Dissolve(.3)
 #    her "................"
     
@@ -2189,12 +2182,12 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
     with d4
     pause 1.8
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     with d3
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good morning, Professor.","body_01",xpos=370,ypos=0)
     m "How can I help you today, miss Granger?"
@@ -2345,12 +2338,12 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     with d4
     pause 2.5
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good evening, professor...","body_13",xpos=370,ypos=0)
     her "........................"
@@ -2470,7 +2463,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
         hide screen bld1
         with d3
         pause.5
-        show screen hermione_01_f #Hermione stands still.
+        show screen hermione_stand_f #Hermione stands still.
         with Dissolve(.7)
 
         call her_head(".................................","head_exp/2")
@@ -2484,7 +2477,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 call her_head("..............","head_exp/4")
                 call her_head("Thank you, professor...")
             "\"That's enough. Here are your points...\"":
-                show screen hermione_01 #Hermione stands still.
+                show screen hermione_stand #Hermione stands still.
                 with Dissolve(.7)
                 pause.5
                 show screen bld1
@@ -2492,7 +2485,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
                 jump stupid_enogh
         
         m "Very good, you can turn back now..."
-        show screen hermione_01 #Hermione stands still.
+        show screen hermione_stand #Hermione stands still.
         with Dissolve(.7)
         pause.7
         show screen hermione_main
@@ -2614,7 +2607,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     
     call her_walk(400,610,2)
     
-    show screen hermione_01_f #Hermione stands still.
+    show screen hermione_stand_f #Hermione stands still.
     with d3
 
     if d_flag_01: #Show me your tongue
@@ -2641,7 +2634,7 @@ label event_15: # Hermione comes and asks to buy a favour from her.
 
 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    hide screen hermione_01_f #Hermione stands still.
+    hide screen hermione_stand_f #Hermione stands still.
     with d3
 
 

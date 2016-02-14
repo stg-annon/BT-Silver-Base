@@ -65,7 +65,7 @@ label new_request_02_b:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -81,12 +81,12 @@ label new_request_02_b_complete:
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
@@ -374,7 +374,7 @@ label new_request_02_b_complete:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -435,7 +435,7 @@ label new_request_02_c:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -451,12 +451,12 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
@@ -852,7 +852,7 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -970,7 +970,7 @@ label new_request_10:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -985,7 +985,7 @@ label new_request_10_complete: #<===============================================
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02
+    show screen hermione_blink
     show screen bld1
     with d3
     pause.5
@@ -1257,7 +1257,7 @@ label new_request_10_complete: #<===============================================
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -1385,7 +1385,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -1402,14 +1402,14 @@ label new_request_15_complete:
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
     if whoring >= 9 and whoring <= 11: # LEVEL 04 <=============================================================EVENT LEVEL 01                    
         if one_out_of_three == 1: ### EVENT (A)
-                show screen hermione_02
+                show screen hermione_blink
                 with d3
                 call her_main("Good evening, [genie_name]...","body_31",xpos=370)
                 m "[hermione_name]..."
@@ -1701,13 +1701,13 @@ label new_request_15_complete:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
     call her_walk(400,610,2)
     
-    show screen hermione_01_f #Hermione stands still.
+    show screen hermione_stand_f #Hermione stands still.
     pause.3
     
     if one_out_of_three == 2 and whoring >= 12 and whoring <= 14: #Event level 02.
@@ -1727,7 +1727,7 @@ label new_request_15_complete:
         $ her_head_ypos = her_head_only
         call her_head(".........................","body_123")
     
-    hide screen hermione_01_f #Hermione stands still.
+    hide screen hermione_stand_f #Hermione stands still.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with d3
     
@@ -1811,7 +1811,7 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -1830,7 +1830,7 @@ label new_request_20_complete: # <==============================================
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -2229,7 +2229,7 @@ label new_request_20_complete: # <==============================================
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -2345,7 +2345,7 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -2362,7 +2362,7 @@ label new_request_23_complete: # <==============================================
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -2789,7 +2789,7 @@ label new_request_23_complete: # <==============================================
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -2883,7 +2883,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -2900,7 +2900,7 @@ label new_request_24_complete:  # <=============================================
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -3103,7 +3103,7 @@ label new_request_24_complete:  # <=============================================
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3157,7 +3157,7 @@ label pub_quest_blowjob_teach:# "teacher blowjob" (Level 09)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3174,12 +3174,12 @@ label pub_quest_blowjob_teach_complete:
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(610,400,3,redux_pause=0.5)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good evening, sir...","body_01",xpos=370,ypos=0)
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -3242,7 +3242,7 @@ label pub_quest_blowjob_teach_complete:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3298,7 +3298,7 @@ label new_request_30: #LV.8 (Whoring = 21 - 23)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3332,7 +3332,7 @@ label new_request_30_complete: # <==============================================
     elif one_out_of_three == 2: ### EVENT (B)
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         call her_walk(520,400,2)
-        show screen hermione_02 #Hermione stands still.
+        show screen hermione_blink #Hermione stands still.
         pause.5
         show screen bld1
         with Dissolve(.3)
@@ -3363,7 +3363,7 @@ label new_request_30_complete: # <==============================================
             pass
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         call her_walk(520,400,2)
-        show screen hermione_02 #Hermione stands still.
+        show screen hermione_blink #Hermione stands still.
         pause.5
         show screen bld1
         with Dissolve(.3)
@@ -3393,7 +3393,7 @@ label new_request_30_complete: # <==============================================
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3414,7 +3414,7 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(520,400,2)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -3446,7 +3446,7 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3494,7 +3494,7 @@ label pub_quest_sex_teach:# "teacher sex" (Level 09)
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     
@@ -3511,12 +3511,12 @@ label pub_quest_sex_teach_complete:
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(610,400,3,redux_pause=0.5)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
     
-    show screen hermione_02
+    show screen hermione_blink
     with d3
     call her_main("Good evening, sir...","body_01",xpos=370,ypos=0)
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -3583,7 +3583,7 @@ label pub_quest_sex_teach_complete:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     

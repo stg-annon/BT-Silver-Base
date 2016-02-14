@@ -3756,14 +3756,14 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         show screen hermione_walk_01 
         pause 3
         $ hermione_chibi_xpos = 400 #Near the desk.
-        show screen hermione_02 #Hermione stands still.
+        show screen hermione_blink #Hermione stands still.
         pause.5
         show screen bld1
         with Dissolve(.3)
         
         $ h_xpos=370 #Defines position of the Hermione's full length sprite.
         $ h_ypos=0
-        show screen hermione_02
+        show screen hermione_blink
         
         show screen ctc
         pause

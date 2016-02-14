@@ -1,5 +1,4 @@
 label door:
-    call update_her_uniform
     menu:
         "-Examine the door-" if not door_examined:
             $ door_examined = True
@@ -84,7 +83,6 @@ label door:
                 jump night_main_menu
         
         "-Summon Hermione-" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
-     
             if hermione_takes_classes:
                 show screen bld1
                 with d3
@@ -101,6 +99,8 @@ label door:
                 jump night_main_menu
                 
             else:
+                call update_her_uniform
+                
                 #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
                 #stop music fadeout 2.0
                 
@@ -112,7 +112,7 @@ label door:
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                 $ hermione_chibi_xpos = 400 #Near the desk.
-                show screen hermione_02 #Hermione stands still.
+                show screen hermione_blink #Hermione stands still.
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
@@ -536,7 +536,7 @@ label door:
                             hide screen bld1
                             hide screen hermione_main
                             hide screen blktone 
-                            hide screen hermione_02
+                            hide screen hermione_blink
                             hide screen ctc
                             with d3
                             jump day_main_menu
@@ -550,7 +550,7 @@ label door:
                             hide screen bld1
                             hide screen hermione_main
                             hide screen blktone 
-                            hide screen hermione_02
+                            hide screen hermione_blink
                             hide screen ctc
                             with d3
                             $ hermione_sleeping = True

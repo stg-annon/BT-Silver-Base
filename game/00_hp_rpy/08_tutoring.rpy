@@ -474,7 +474,7 @@ label tutoring:
     her "Thank you sir.  I'd be too embarrassed to have you watch this."
     m "<Wow! It worked!>"
     her "(Hermione blushes and puts the wand under her skirt)"
-    hide screen hermione_02
+    hide screen hermione_blink
     show screen hermione_02_w
     her "All right, Professor.  Now what do I do?"
     m "Do you feel the energy coursing into you?"
@@ -524,7 +524,7 @@ label tutoring:
     m "Wonderful!  Now, let me examine your wand again, please."
     her "(Hermione pulls it from under her skirt, looks at it, then pauses and wipes it off on the hem before handing to Genie)"
     hide screen hermione_02_wf
-    show screen hermione_02
+    show screen hermione_blink
     m "Hmmm.  Yes, yes, yes.  Excellent!  Miss Granger, I believe you may have reduced the amount of magic stored in the wand by a considerable amount."  
     m "Possibly 2 or maybe even 3 percent!"
     her "Two percent!? Is that all?"

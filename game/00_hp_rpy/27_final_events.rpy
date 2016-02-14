@@ -10,7 +10,7 @@ label want_to_rule:
     with d4
     pause 1.7 
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -237,7 +237,7 @@ label want_to_rule:
                     
                     #Walks to the door
                     call her_walk(400,650,2)
-                    show screen hermione_01_f
+                    show screen hermione_stand_f
                     
                     #Locks the door
                     pause.5
@@ -255,10 +255,10 @@ label want_to_rule:
                     
                     #Returns from the door
                     m "??!"
-                    hide screen hermione_01_f
+                    hide screen hermione_stand_f
                     hide screen ctc
                     call her_walk(650,400,3)
-                    show screen hermione_02 #Hermione stands still.
+                    show screen hermione_blink #Hermione stands still.
                     show screen bld1
                     with d3
                     
@@ -373,7 +373,7 @@ label want_to_rule:
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.             
                     
     $ hermione_chibi_xpos = 360 # Default 360
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     hide screen blkfade
     with d5
     
@@ -393,22 +393,11 @@ label want_to_rule:
     m "{size=-4}(I couldn't care less about the whole thing...){/size}"
     call her_main("Well, I'd better go now. I have so many arrangements to make!","body_68")
     m "By all means, Miss Granger. Have a nice day."
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen hermione_main
+    hide screen bld1
     with d3 
     
-    hide screen bld1
-
-
-    hide screen hermione_02
-
-
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    pause.2
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    call her_main(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
@@ -614,7 +603,7 @@ label crying_about_dress:
     with d4
     pause 1.7 
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -657,19 +646,12 @@ label crying_about_dress:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
-
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
     
     call her_walk(400,610,2)
-    show screen hermione_01_f #Hermione stands still.
+    show screen hermione_stand_f #Hermione stands still.
     
     pause.3
     $ h_body = "01_hp/13_hermione_main/body_145.png"                                                                                                                                                         # HERMIONE HEAD
@@ -679,7 +661,7 @@ label crying_about_dress:
     show screen h_head2                                                                                                                                                                                                                    # HERMIONE HEAD         
     her "(My life is ruined...)"
     hide screen h_head2       
-    hide screen hermione_01_f #Hermione stands still.
+    hide screen hermione_stand_f #Hermione stands still.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
    
@@ -716,7 +698,7 @@ label sorry_about_hesterics:
     with d4
     pause 1.7 
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
     with Dissolve(.3)
@@ -869,7 +851,7 @@ label giving_thre_dress:
     
     $ hermione_chibi_xpos = 400 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     pause.1
     hide screen blkfade
     with d3
@@ -885,18 +867,11 @@ label giving_thre_dress:
     hide screen ctc
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.8
+    
     show screen bld1
     with d3
     m "......................"

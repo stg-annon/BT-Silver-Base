@@ -302,14 +302,14 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     m "You do. I suggest holding your nose if the smell is too much."
     $ changeHermioneMainScreen(hg_pth+"body_20.png")
     her "For Gryffindor."
-    hide screen hermione_02
+    hide screen hermione_blink
     show screen ch_potion
     ">Hermione holds her nose and quickly downs the flask."
     $ changeHermioneMainScreen(hg_pth+"body_42.png")
     pause
     $ changeHermioneMainScreen(hg_pth+"body_22.png")
     hide screen ch_potion
-    show screen hermione_02
+    show screen hermione_blink
     her "Ughhh. That was horrible."
     m "Well done."
     $ changeHermioneMainScreen(hg_pth+"body_21.png")
@@ -336,17 +336,10 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     hide screen ctc
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
+    
     $ ears = True
     if hair_color == 5:
         $ hair_color = 0
@@ -362,7 +355,7 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
 label potion_scene_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     $ changeHermioneMainScreen(hg_pth+"body_05.png")
@@ -393,18 +386,11 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
             with Dissolve(.3)
             $ ears = False
             
-            # $ walk_xpos=400 #Animation of walking chibi. (From)
-            # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-            # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-            # show screen hermione_walk_01_f 
-            # pause 2
-            # hide screen hermione_walk_01_f 
-            
             call her_walk(400,610,2)
-            
-            $ hermione_sleeping = True
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             with Dissolve(.3)
+            
+            $ hermione_sleeping = True
             jump night_main_menu
         "-Make her suck you off-" if whoring >= 17:
             pass
@@ -433,7 +419,7 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     show screen chair_02
     show screen g_c_u
     
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     hide screen blktone
     hide screen bld1
@@ -560,7 +546,7 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     hide screen g_c_u
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ hermione_sleeping = True
@@ -585,13 +571,13 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     ">You hand her the potion and she brings it up to her nose."
     $ changeHermioneMainScreen(hg_pth+"body_06.png")
     her "Well you're right, it does smell good. Let's find out if it tastes good..."
-    hide screen hermione_02
+    hide screen hermione_blink
     show screen ch_potion
     ">She drinks the potion at a leisurely pace."
     $ changeHermioneMainScreen(hg_pth+"body_74.png")
     her "Ahhh."
     $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    show screen hermione_02
+    show screen hermione_blink
     hide screen ch_potion
     her "That wasn't actually that bad."
     $ changeHermioneMainScreen(hg_pth+"body_122.png")
@@ -675,18 +661,11 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
             hide screen ctc
             with Dissolve(.3)
             
-            # $ walk_xpos=400 #Animation of walking chibi. (From)
-            # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-            # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-            # show screen hermione_walk_01_f 
-            # pause 2
-            # hide screen hermione_walk_01_f 
-            
             call her_walk(400,610,2)
-            
-            $ hermione_takes_classes = True
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             with Dissolve(.3)
+            
+            $ hermione_takes_classes = True
             jump day_main_menu
         "-Play with her breasts-":
             pass
@@ -700,7 +679,7 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     m "Deal."
     ">Hermione walks over to behind your desk, her breasts swaying rhythmically as she moves."
     show screen blkfade
-    hide screen hermione_02 #Stands with tits out.
+    hide screen hermione_blink #Stands with tits out.
     hide screen genie
     show screen groping_naked_tits
     with d1
@@ -785,19 +764,11 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     show screen genie
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
-    
-    $ hermione_takes_classes = True
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
-    jump day_main_menu
+    
+    $ hermione_takes_classes = True
     jump day_main_menu
 
 
@@ -817,11 +788,11 @@ label potion_scene_2_2: #ass expansion
     her "At least this one smells good."
     show screen ch_potion
     with d3
-    hide screen hermione_02
+    hide screen hermione_blink
     ">She drinks the whole potion over a series of gulps."
     hide screen ch_potion
     with d3
-    show screen hermione_02
+    show screen hermione_blink
     $ changeHermioneMainScreen(hg_pth+"body_24.png")
     her "Ahhh, that was good! So what was it?"
     m "The effects should be visible soon enough."
@@ -855,15 +826,11 @@ label potion_scene_2_2: #ass expansion
     ">Hermione hops over to your desk, her ass bouncing as she moves, and presents herself to you."
     hide screen bld1
     with d3
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=280 #Coordinates of it's movement. (To)
-    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01 
-    pause 1
+    
+    call her_walk(400,280,3,redux_pause=2)
     show screen blkfade
     with Dissolve(1)
     pause.5
-    hide screen hermione_walk_01
     hide screen genie
     show screen ctc
     show screen no_groping_02
@@ -957,11 +924,11 @@ label potion_scene_2_2: #ass expansion
             hide screen bld1
             hide screen groping_01
             hide screen groping_02
-            show screen hermione_02
+            show screen hermione_blink
             show screen genie
             with d1
             $ hermione_chibi_xpos = 400 #Near the desk.
-            show screen hermione_02 #Hermione stands still.
+            show screen hermione_blink #Hermione stands still.
             show screen bld1
             hide screen blkfade
             with Dissolve(1)
@@ -1057,11 +1024,11 @@ label potion_scene_2_2: #ass expansion
             hide screen groping_02
             hide screen chair_02
             hide screen g_c_u
-            show screen hermione_02
+            show screen hermione_blink
             show screen genie
             with d1
             $ hermione_chibi_xpos = 400 #Near the desk.
-            show screen hermione_02 #Hermione stands still.
+            show screen hermione_blink #Hermione stands still.
             show screen bld1
             hide screen blkfade
             with Dissolve(1)
@@ -1086,25 +1053,11 @@ label potion_scene_2_2: #ass expansion
     $ uni_sperm = False
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    # $ hermione_chibi_xpos = 610 #Near the desk.
-    
-    
     call her_walk(400,610,2)
-    show screen hermione_01_f #Hermione stands still.
-    with Dissolve(.3)
-    hide screen hermione_01_f #Hermione stands still.
-    with Dissolve(.3)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     pause.5
-    $ hermione_main_zorder = 5
+    
     $ hermione_takes_classes = True
     hide screen groping_02
     hide screen hermione_main
@@ -1127,13 +1080,13 @@ label potion_scene_3: #cum addiction - work in progress, has some scenes adjuste
     her "..."
     show screen ch_potion
     with d3
-    hide screen hermione_02
+    hide screen hermione_blink
     ">Hermione cautiously starts drinking the potion."
     $ changeHermioneMainScreen(hg_pth+"body_126.png")
     pause .5
     hide screen ch_potion
     with d3
-    show screen hermione_02
+    show screen hermione_blink
     $ changeHermioneMainScreen(hg_pth+"body_30.png")
     her "This isn't a potion! This is just a bottle full of your cum!"
     $ changeHermioneMainScreen(hg_pth+"body_43.png")
@@ -1160,17 +1113,10 @@ label potion_scene_3: #cum addiction - work in progress, has some scenes adjuste
     hide screen ctc
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
+    
     $ addicted = True
     $ hermione_takes_classes = True
     jump day_main_menu
@@ -1178,7 +1124,7 @@ label potion_scene_3: #cum addiction - work in progress, has some scenes adjuste
 label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     ">Hermione quickly enters your office."
@@ -1211,7 +1157,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     show screen chair_02
     show screen g_c_u
     
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     hide screen blktone
     hide screen bld1
@@ -1562,12 +1508,12 @@ label potion_scene_4: #Transparent uniform
     m "As always [hermione_name], you'll ha-"
     $ changeHermioneMainScreen(hg_pth+"body_07.png")
     her "Have to wait and see. I know."
-    hide screen hermione_02
+    hide screen hermione_blink
     show screen ch_potion
     ">Hermione quickly drinks the potion."      #new
     $ changeHermioneMainScreen(hg_pth+"body_04.png")
     hide screen ch_potion
-    show screen hermione_02
+    show screen hermione_blink
     her "Can I go now?"
     m "Yes you may. 20 points to Gryffindor"
     $ changeHermioneMainScreen(hg_pth+"body_16.png")
@@ -1580,17 +1526,10 @@ label potion_scene_4: #Transparent uniform
     hide screen ctc
     with Dissolve(.3)
     
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
-    
     call her_walk(400,610,2)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
+    
     $ hermione_takes_classes = True
     if whoring <= 7:
         $ transparency = 0.8
@@ -1605,7 +1544,7 @@ label potion_scene_4: #Transparent uniform
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     if whoring <= 7: #Very angry and embarrassed
@@ -1723,15 +1662,10 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
     hide screen ctc
     with Dissolve(.3)
     
-    $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    $ hermione_chibi_xpos = 610 #Near the desk.
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01_f 
-    pause 2
-    hide screen hermione_walk_01_f 
+    call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
+    
     $ hermione_sleeping = True
     jump night_main_menu
         
@@ -1807,7 +1741,7 @@ label potion_scene_6: #Luna potion
         m "Maybe you should check the mirror"
     "*POOF*"
     hide screen hermione_main
-    hide screen hermione_02
+    hide screen hermione_blink
     $ luna_chibi("stand")
     $ changeLuna(1, 1, 4, 1)
     her "Ughhh... I feel like I’m going to throw up! Did the Polyjuice work??"
@@ -1888,7 +1822,7 @@ label potion_scene_6: #Luna potion
 label collar_scene:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(610,400,1)
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     $ u_tears_pic = "01_hp/13_hermione_main/tears_04.png"
     $ display_h_tears = True
     ">Hermione bursts into the room crying"
@@ -1953,7 +1887,7 @@ label slut_scene: #Locked to her being your slut
     show screen chair_02
     show screen h_c_u
     
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     hide screen blktone
     hide screen bld1
@@ -2172,7 +2106,7 @@ label whore_scene: #(locked behind the public whoring flag)
     $ g_c_u_pic = "pause_sex"
     show screen chair_02
     show screen g_c_u
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     with d3
     $ hermione_main_zorder = 8
@@ -2259,7 +2193,7 @@ label whore_scene: #(locked behind the public whoring flag)
     show screen genie
     hide screen chair_02
     hide screen g_c_u
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     $ hermione_chibi_xpos = 400
     hide screen blkfade
     with d3
@@ -2335,7 +2269,7 @@ label slave_scene:
     $ g_c_u_pic = "pause_sex"
     show screen chair_02
     show screen g_c_u
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     with d3
     $ hermione_main_zorder = 8
@@ -2501,7 +2435,7 @@ label slave_scene:
     hide screen chair_02
     hide screen g_c_u
     hide screen h_c_u
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     $ hermione_chibi_xpos = 400
     hide screen blkfade
     with d3
@@ -2633,7 +2567,7 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
     show screen chair_02
     show screen g_c_u
     
-    hide screen hermione_02 #Hermione stands still.
+    hide screen hermione_blink #Hermione stands still.
     hide screen blkfade
     hide screen blktone
     hide screen bld1
@@ -3121,14 +3055,14 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loit
     
 label her_walk_end_loiter(dissolveTime = 3):
     if dissolveTime > 0:
-        hide screen hermione_02
-        hide screen hermione_01_f
+        hide screen hermione_stand
+        hide screen hermione_stand_f
         hide screen hermione_blink
         hide screen hermione_blink_f
         with Dissolve((dissolveTime/10))
     else:
-        hide screen hermione_02
-        hide screen hermione_01_f
+        hide screen hermione_stand
+        hide screen hermione_stand_f
         hide screen hermione_blink
         hide screen hermione_blink_f
     return

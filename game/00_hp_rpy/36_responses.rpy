@@ -157,7 +157,7 @@ label maid_responses:
     $ custom_outfit = 1
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     $ changeHermioneMainScreen(hg_pth+"body_01.png")
@@ -216,7 +216,7 @@ label maid_responses:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ hermione_sleeping = True
@@ -231,7 +231,7 @@ label barmaid_responses:
     $ custom_outfit = 5
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     $ changeHermioneMainScreen(hg_pth+"body_01.png")
@@ -266,7 +266,7 @@ label barmaid_responses:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ hermione_sleeping = True
@@ -281,7 +281,7 @@ label gryffindor_cheer_responses:
     $ custom_outfit = 2
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     $ changeHermioneMainScreen(hg_pth+"body_01.png")
@@ -411,7 +411,7 @@ label gryffindor_cheer_responses:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ hermione_sleeping = True
@@ -426,7 +426,7 @@ label slytherin_cheer_responses:
     $ custom_outfit = 3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_02 #Hermione stands still.
+    show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
     if day_random >=9 and lock_public_favors == False:
@@ -559,7 +559,7 @@ label slytherin_cheer_responses:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ hermione_sleeping = True
@@ -582,7 +582,7 @@ label job_1:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ current_job = 1
@@ -600,7 +600,7 @@ label job_2:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ current_job = 2
@@ -617,7 +617,7 @@ label job_3:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ current_job = 3
@@ -634,7 +634,7 @@ label job_4:
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
     $ current_job = 4

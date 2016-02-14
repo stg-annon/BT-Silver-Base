@@ -323,18 +323,11 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     hide screen hermione_main
     hide screen blktone 
     hide screen chair_02
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen jerking_off_01 #Hermione topless. Genie jerking off.
     hide screen ctc
     show screen genie
     with d3
-
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f 
     
     call her_walk(400,610,2)
     
@@ -355,16 +348,9 @@ label could_not_flirt_02: #Sent here when chose "Favour failed! No points for yo
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
-    hide screen hermione_02
+    hide screen hermione_blink
     hide screen ctc
     with d3
-
-    # $ walk_xpos=400 #Animation of walking chibi. (From)
-    # $ walk_xpos2=610 #Coordinates of it's movement. (To)
-    # $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    # show screen hermione_walk_01_f 
-    # pause 2
-    # hide screen hermione_walk_01_f
     
     call her_walk(400,610,2)
     
@@ -448,14 +434,14 @@ label screams_of_rapings:
     with Dissolve(.3)
     
     call her_walk(400,610,2)
-    show screen hermione_01_f #Hermione stands still.
+    show screen hermione_stand_f #Hermione stands still.
     with d3
 
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         call her_head("...........................","head_exp/12")
         
         
-    hide screen hermione_01_f #Hermione stands still.
+    hide screen hermione_stand_f #Hermione stands still.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with d3
     pause.5
@@ -582,7 +568,7 @@ label too_much:
     hide screen blktone
     hide screen bld1
     hide screen hermione_main
-    hide screen hermione_01_f #Hermione stands still.
+    hide screen hermione_stand_f #Hermione stands still.
     with d3
     
     call her_walk(400,610,2)

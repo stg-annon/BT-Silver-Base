@@ -123,10 +123,10 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(I'm glad professor agreed to tutor me){/size}","head_exp/35")
         call her_head("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","head_exp/2")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 1
@@ -180,10 +180,10 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Filthy whores...){/size}","head_exp/19")
         call her_head("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good){/size}","head_exp/35")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 2
@@ -238,11 +238,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}","head_exp/16")
         call her_head("{size=-4}(Probably all the problems caused by those harlots){/size}","head_exp/18")
         call her_head("{size=-4}(Well I will never be like them, so no need to worry){/size}","head_exp/34")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 3
@@ -316,11 +316,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Well, I'll try to investigate those two girls again){/size}","head_exp/12")
         call her_head("{size=-4}(Like a real anthropologist){/size}","head_exp/18")
         call her_head("{size=-4}(Yes, that's right, Hermione the anthropologist!){/size}","head_exp/35")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 4
@@ -445,11 +445,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","head_exp/6")
         call her_head("{size=-4}(I lost control, it won't happen again!){/size}","head_exp/13")
         call her_head("{size=-4}(Good thing I'm not a degenerate like those filthy girls){/size}","head_exp/18")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
 
         $ v_tutoring = 5
@@ -479,15 +479,12 @@ label l_tutoring:
         m "Come here."
         hide screen hermione_main
         with d3
-        $ walk_xpos = 400
-        $ walk_xpos2 = 300
-        $ hermione_speed = 01.0
-        show screen hermione_walk_01
-        pause 1
+        
+        call her_walk(400,300,1)
         show screen blkfade
         with d1
         pause.5
-        hide screen hermione_walk_01
+        
         hide screen genie
         show screen ctc
         show screen no_groping_01
@@ -536,11 +533,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(This is wrong...){/size}","head_exp/12")
         call her_head("{size=-4}(I shouldn't listen to him){/size}","head_exp/15")
         call her_head("{size=-4}(And yet...){/size}","head_exp/16")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
 
         $ v_tutoring = 6
@@ -561,8 +558,8 @@ label l_tutoring:
         ">Hermione takes off her tie."
         ##$ v_her_current_shirt = "shirt1_without_tie"
         ##$ v_her_shirt = v_her_current_shirt
-        hide screen hermione_02
-        show screen hermione_02
+        hide screen hermione_blink
+        show screen hermione_blink
         hide screen hermione_main
         hide screen blkfade
         with d3
@@ -602,7 +599,7 @@ label l_tutoring:
         with d1
         pause.5
         ">Hermione walks towards your desk."
-        hide screen hermione_02
+        hide screen hermione_blink
         hide screen genie
         ">You grab her tits and massage them softly."
         show screen ctc
@@ -650,7 +647,7 @@ label l_tutoring:
         ">She moves away from the desk."
         hide screen genie_and_hermione
         show screen genie
-        show screen hermione_02
+        show screen hermione_blink
         hide screen blkfade
         with d1
         
@@ -665,10 +662,10 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(\"My little witch?\"){/size}","head_exp/4")
         call her_head("{size=-4}(Why not, after all...){/size}","head_exp/6")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
 
         $ lock_public_favors = True
@@ -689,7 +686,7 @@ label l_tutoring:
         m "You can't have both points and lessons."
         call her_main("Ok...","body_208")
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen hermione_04
         ##call her_pose("shirt raised")
         $ lift_shirt = True
@@ -802,11 +799,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(I'm such a slut...){/size}","head_exp/6")
         call her_head("{size=-4}(Coming in front of my professor){/size}","head_exp/16")
         call her_head("{size=-4}(I definitely need to do that again){/size}","head_exp/18")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 8
@@ -825,8 +822,8 @@ label l_tutoring:
         ">Hermione takes off her vest and puts her tie back on."
         ##$ v_her_current_shirt = "shirt2"
         ##$ v_her_shirt = "shirt2_tucked"
-        hide screen hermione_02
-        show screen hermione_02
+        hide screen hermione_blink
+        show screen hermione_blink
         hide screen hermione_main
         hide screen blkfade
         with d3
@@ -853,7 +850,7 @@ label l_tutoring:
         m "Enough of this! Now take off your shirt and come here."
         call her_main("Here we go for another \"lesson\".","body_08")
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen hermione_04
         ##$ v_her_shirt = 0
         $ wear_shirts = False
@@ -869,25 +866,19 @@ label l_tutoring:
         show screen blkfade
         hide screen hermione_main
         with d3
-        $ walk_xpos = 400
-        $ walk_xpos2 = 300
-        $ hermione_speed = 01.0
+        
         hide screen blkfade
-        hide screen hermione_04
-        show screen hermione_walk_01
-        pause 1
+        call her_walk(400,300,1)
         show screen blkfade
         with d1
         pause.5
-        hide screen hermione_walk_01
         hide screen genie
         show screen no_groping_06
         hide screen blkfade
         with d5
         pause
         hide screen ctc
-        $ h_xpos = 160
-        call her_main("","body_198")
+        call her_main("","body_198",xpos = 160)
         hide screen blkfade
         with d5
         pause
@@ -995,11 +986,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Favorite...){/size}","head_exp/6")
         call her_head("{size=-4}(There's another one?){/size}","head_exp/7")
         call her_head("{size=-4}(I'll do my best to remain his favorite!){/size}","head_exp/35")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 9
@@ -1058,7 +1049,7 @@ label l_tutoring:
         show screen blkfade
         with d5
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         hide screen blkfade
         with d1
         ##$ v_her_shirt = 0
@@ -1139,7 +1130,7 @@ label l_tutoring:
         hide screen genie_jerking_sperm_02
         hide screen her_naked
         show screen genie
-        show screen hermione_02
+        show screen hermione_blink
         hide screen blkfade
         with d3
         ##call her_pose()
@@ -1159,7 +1150,7 @@ label l_tutoring:
         m "Good night, my dirty little slut."
         "You dismiss Hermione."
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen blkfade
         with d3
         hide screen blkfade
@@ -1167,11 +1158,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Rest...){/size}","head_exp/16")
         call her_head("{size=-4}(Not before I've played with this marvelous toy again){/size}","head_exp/18")
         call her_head("{size=-4}(And again){/size}","head_exp/34")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 10
@@ -1228,19 +1219,13 @@ label l_tutoring:
         with d3
         ##$ v_her_shirt = 0
         ##$ v_her_bra = 0
-        $ badges = False
-        $ wear_shirts = False
-        $ walk_xpos = 400
-        $ walk_xpos2 = 300
-        $ hermione_speed = 01.0
+        ##$ badges = False
+        ##$ wear_shirts = False
         hide screen blkfade
-        hide screen hermione_02
-        show screen hermione_walk_01
-        pause 1
+        call her_walk(400,300,1)
         show screen blkfade
         with d1
         pause.5
-        hide screen hermione_walk_01
         hide screen genie
         show screen groping_05
         hide screen blkfade
@@ -1342,7 +1327,7 @@ label l_tutoring:
         $ b_her_tears = False
         hide screen no_groping_05_desk
         show screen genie
-        show screen hermione_02
+        show screen hermione_blink
         hide screen blkfade
         with d3
 
@@ -1359,7 +1344,7 @@ label l_tutoring:
         call her_main("Professor...","body_154")
         "You dismiss Hermione."
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen blkfade
         with d3
         hide screen blkfade
@@ -1367,11 +1352,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Finally tonight I'll just go to bed){/size}","head_exp/35")
         call her_head("{size=-4}(That was a little too intense){/size}","head_exp/15")
         call her_head("{size=-4}(Not that I'm complaining...){/size}","head_exp/34")
-        show screen hermione_01_f
+        show screen hermione_stand_f
         with d3
         
         $ v_tutoring = 11
@@ -1434,7 +1419,7 @@ label l_tutoring:
         else:
             ">She wantonly removes her shirt."
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         pause.5
         hide screen blkfade
         ##$ v_her_shirt = 0
@@ -1450,16 +1435,11 @@ label l_tutoring:
         show screen blkfade
         hide screen hermione_main
         with d3
-        $ walk_xpos = 400
-        $ walk_xpos2 = 300
-        $ hermione_speed = 01.0
         hide screen blkfade
-        show screen hermione_walk_01
-        pause 1
+        call her_walk(400,300,1)
         show screen blkfade
         with d1
         pause.5
-        hide screen hermione_walk_01
         hide screen genie
         show screen ctc
         show screen no_groping_05
@@ -1562,7 +1542,7 @@ label l_tutoring:
         $ wear_shirts = True
         ##call her_pose()
         $ hermione_chibi_xpos = 610
-        ##show screen hermione_01_f
+        ##show screen hermione_stand_f
         show screen genie
         hide screen blkfade
         m "Come back here, girl."
@@ -1577,7 +1557,7 @@ label l_tutoring:
         with d5
         ">She comes back and does not seem particularly upset."
         hide screen hermione_main
-        ##hide screen hermione_01_f
+        ##hide screen hermione_stand_f
         hide screen genie
         $ genie_chibi_xpos = -150
         $ genie_chibi_ypos = 10
@@ -1611,7 +1591,7 @@ label l_tutoring:
         hide screen chair_02
         show screen genie
         $ hermione_chibi_xpos = 300
-        show screen hermione_02
+        show screen hermione_blink
         hide screen blkfade
 
         call her_main("Sir, I still think I deserve some...","body_203")
@@ -1621,7 +1601,7 @@ label l_tutoring:
         "You dismiss Hermione."
         hide screen hermione_main
         $ b_her_tears = False
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen blkfade
         with d3
         hide screen blkfade
@@ -1629,11 +1609,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Sucking his cock without getting any points!){/size}","head_exp/4")
         call her_head("{size=-4}(If he hadn't made me come so hard...){/size}","head_exp/6")
         call her_head("{size=-4}(*sigh* Although I guess it's not that high a price...){/size}","head_exp/16")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 12
@@ -1662,7 +1642,7 @@ label l_tutoring:
         $ hermione_speed = 01.0
         show screen hermione_walk_01
         pause 1
-        show screen hermione_02
+        show screen hermione_blink
         call her_main("{size=-4}*panting*{/size} Oh good, you're still here.","body_183")
         m "Is it safe to assume you have honored my request this time?"
         call her_main("I thought it was obvious.","body_190")
@@ -1727,7 +1707,7 @@ label l_tutoring:
         show screen blkfade
         with d5
         ">Hermione slowly slides down her robe."
-        hide screen hermione_02
+        hide screen hermione_blink
         $ hermione_chibi_xpos = 300
         show screen ctc
         with d1
@@ -1762,7 +1742,6 @@ label l_tutoring:
         show screen blkfade
         with d5
         ">Hermione languorously bends over the desk."
-        hide screen hermione_walk_01
         hide screen her_naked
         hide screen hermione_main
         hide screen genie
@@ -1830,7 +1809,7 @@ label l_tutoring:
         $ robe = 1
         hide screen no_groping_laying_02
         show screen genie
-        show screen hermione_02
+        show screen hermione_blink
         hide screen blkfade
         with d3
         m "Sweet dreams my little princess."
@@ -1840,7 +1819,7 @@ label l_tutoring:
         m "And next time bring your books, I'll help you with your revisions."
         "You dismiss Hermione."
         hide screen hermione_main
-        hide screen hermione_02
+        hide screen hermione_blink
         show screen blkfade
         with d3
         $ b_her_tears = False
@@ -1849,10 +1828,10 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(Yes, sweet dreams...){/size}","head_exp/35")
         call her_head("{size=-4}(Sweet and wet!){/size}","head_exp/34")
-        hide screen hermione_01_f
+        hide screen hermione_stand_f
         with d3
         
         $ v_tutoring = 13
@@ -1870,7 +1849,7 @@ label l_tutoring:
         $ book_hold = True
         $ h_body = "01_hp/13_hermione_main/body_45.png"
         show screen hermione_main
-        show screen hermione_02
+        show screen hermione_blink
         show screen ctc
         hide screen blkfade
         with d3
@@ -1892,18 +1871,13 @@ label l_tutoring:
         call her_main("{size=-2}(I give myself away for free now, what a bad whore I make){/size}","body_157")
         m "Come here and strip."
         show screen blkfade
+        hide screen hermione_04
         hide screen hermione_main
         with d3
-        $ walk_xpos = 400
-        $ walk_xpos2 = 300
-        $ hermione_speed = 01.0
         hide screen blkfade
-        hide screen hermione_04
-        show screen hermione_walk_01
-        pause 1
+        call her_walk(400,300,1)
         show screen blkfade
         with d3
-        hide screen hermione_walk_01
         pause 1
         $ panties = False
         $ wear_shirts = False
@@ -2042,11 +2016,11 @@ label l_tutoring:
         
         call her_walk(400,610,2)
         
-        show screen hermione_01_f
+        show screen hermione_stand_f
         call her_head("{size=-4}(I called my headmaster \"my beloved prince\"){/size}","head_exp/16")
         call her_head("{size=-4}(He's hardly Prince Charming but...){/size}","head_exp/18")
         call her_head("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","head_exp/38")
-        show screen hermione_01_f
+        show screen hermione_stand_f
         with d3
         
         $ v_tutoring = 14
@@ -2054,7 +2028,7 @@ label l_tutoring:
 
 label l_tutoring_end:
     play sound sd_door
-    ##hide screen hermione_01_f
+    ##hide screen hermione_stand_f
     with d3
 
     $ aftercum = False
