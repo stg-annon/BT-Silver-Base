@@ -34,7 +34,7 @@ label __init_variables:
     if not hasattr(renpy.store,'cs_accessories'): #important!
         $ cs_accessories = [False,False,False]
     if not hasattr(renpy.store,'cs_existing_stock'): #important!
-        $ cs_existing_stock = []
+        $ cs_existing_stock = [False,False,False,False,False]
     if not hasattr(renpy.store,'cs_existing_stock_gifted'): #important!
         $ cs_existing_stock_gifted = []
     
