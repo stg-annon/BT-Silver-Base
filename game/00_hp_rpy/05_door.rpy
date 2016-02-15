@@ -321,7 +321,7 @@ label door:
                             jump new_personal_request
                     
                     "-Give her a present-" if not gifted:
-                        jump existing_stock
+                        jump her_gift_menu
                     
                     "-Wardrobe-" if dress_code:
                         if mad >=1 and mad < 3:
@@ -426,28 +426,36 @@ label door:
                             "-Hair-":
                                 menu:
                                     "-Dye your hair brown-" if not hair_color == 0:
-                                        jump dye_brown
+                                        call dye_brown
+                                        jump day_time_requests
 
                                     "-Dye your hair blonde-" if not hair_color == 1:
-                                        jump dye_blonde
+                                        call dye_blonde
+                                        jump day_time_requests
                             
                                     "-Dye your hair red-" if not hair_color == 2:
-                                        jump dye_red
+                                        call dye_red
+                                        jump day_time_requests
                             
                                     "-Dye your hair black-" if not hair_color == 3:
-                                        jump dye_black
+                                        call dye_black
+                                        jump day_time_requests
                                     
                                     "-Dye your hair blue-" if not hair_color == 4:
-                                        jump dye_blue
+                                        call dye_blue
+                                        jump day_time_requests
 
                                     "-Dye your hair orange-" if not hair_color == 5:
-                                        jump dye_orange
+                                        call dye_orange
+                                        jump day_time_requests
 
                                     "-Wear your hair up-" if not hair_style == "B":
-                                        jump hair_up
+                                        call hair_up
+                                        jump day_time_requests
 
                                     "-Wear your hair down-" if hair_style == "B":
-                                        jump hair_down
+                                        call hair_down
+                                        jump day_time_requests
 
                                     "-Never mind-":
                                         jump day_time_requests
@@ -538,7 +546,7 @@ label door:
                             with d3
                             $ hermione_sleeping = True
                             jump night_main_menu
-        
+                            
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
             ">Professor Snape is unavailable."
             if daytime:

@@ -1636,6 +1636,7 @@ label custom_10_off:
     with d3
     jump day_time_requests
     
+    
 label dye_blonde:
     call her_main("Why do you want me to change my hair?","body_01")
     m "I don't know, I suppose I just have a thing for blondes"
@@ -1651,7 +1652,7 @@ label dye_blonde:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label dye_red:
     call her_main("this'll be fun, Maybe I'll look like Batwoman!","body_01")
@@ -1669,7 +1670,7 @@ label dye_red:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label dye_black:
     call her_main("I have been feeling a bit depressed recently.","body_01")
@@ -1686,7 +1687,7 @@ label dye_black:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label dye_brown:
     call her_main("Brown seems so boring now.","body_01")
@@ -1701,7 +1702,7 @@ label dye_brown:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label dye_blue:
     call her_main("Blue?","body_01")
@@ -1718,7 +1719,7 @@ label dye_blue:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label dye_orange:
     call her_main("Orange?","body_01")
@@ -1735,7 +1736,7 @@ label dye_orange:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label hair_up:
     call her_main("Sure, let me just go change it.","body_01")
@@ -1753,7 +1754,7 @@ label hair_up:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label hair_down:
     call her_main("Sure, let me just go change it.","body_01")
@@ -1771,7 +1772,7 @@ label hair_down:
     pause.3
     hide screen blkfade
     with d3
-    jump day_time_requests
+    return
     
 label badge_take:
     call her_main("As you wish, [genie_name]...","body_01")
