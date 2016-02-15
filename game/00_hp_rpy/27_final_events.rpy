@@ -397,7 +397,7 @@ label want_to_rule:
     hide screen bld1
     with d3 
     
-    call her_main(400,610,2)
+    call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
 
