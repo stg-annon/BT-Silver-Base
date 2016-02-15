@@ -568,7 +568,7 @@ label accessories:
             jump clothes_menu
             
 label cs_buy_stock(item_id = "", cost):
-    if gold >= cost && item_id != "":
+    if gold >= cost and item_id != "":
         if item_id in cs_existing_stock:
             m "I already own this."
             return

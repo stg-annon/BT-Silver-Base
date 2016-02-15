@@ -5,46 +5,46 @@ label tentacle_shop_scene:
         call screen shop_screen
     if whoring <= 15:
         m "What's in this scroll?"
-        sna[1] "Don't worry about it."
+        sna_[1] "Don't worry about it."
         m "Why?"
-        sna[1] "You're not ready for what's in this scroll."
+        sna_[1] "You're not ready for what's in this scroll."
         m "Well that just makes me want it more."
-        sna[1] "Too bad."
+        sna_[1] "Too bad."
         call screen shop_screen
     m "What's this scroll?"
-    sna[1] "This is the recipe for a powerful and forbidden potion."
+    sna_[1] "This is the recipe for a powerful and forbidden potion."
     m "What does it do?" 
-    sna[1] "It transforms you into any magical creature you desire."
+    sna_[1] "It transforms you into any magical creature you desire."
     m "Like what?"
-    sna[1] "Anything you can secure a sample of."
-    sna[1] "A powerful phoenix, a terrifying gorgon, a deadly basilisk or an awe inspiring dragon."
+    sna_[1] "Anything you can secure a sample of."
+    sna_[1] "A powerful phoenix, a terrifying gorgon, a deadly basilisk or an awe inspiring dragon."
     m "Not sure I'd really want to transform into any of those, I am trying to keep my presence here a secret after all."
-    sna[1] "Well then perhaps there is a creature that would suit you and your \"Hobbies\"."
+    sna_[1] "Well then perhaps there is a creature that would suit you and your \"Hobbies\"."
     m "Such as?"
-    sna[1] "There are rumours of a plant hidden somewhere on the school grounds"
+    sna_[1] "There are rumours of a plant hidden somewhere on the school grounds"
     m "A plant? Why would I want to be a plant?"
-    sna[1] "This is no ordinary plant, it has fast and powerful limbs that are incredibly sensitive"
+    sna_[1] "This is no ordinary plant, it has fast and powerful limbs that are incredibly sensitive"
     m "So it's a tentacle monster?"
-    sna[1] "Pretty much. I'm not sure where it lives however. The real Dumbledore always kept it's location a secret from me."
+    sna_[1] "Pretty much. I'm not sure where it lives however. The real Dumbledore always kept it's location a secret from me."
     m "Well who does know?"
-    sna[1] "Apparently three students have encountered it."
+    sna_[1] "Apparently three students have encountered it."
     m "Do you know their names?"
-    sna[1] "No sorry, I was busy attending to other \"matters\" when it happened. You'll have to ask around, try the inn."
+    sna_[1] "No sorry, I was busy attending to other \"matters\" when it happened. You'll have to ask around, try the inn."
     m "Ok, well how much is the scroll?"
-    sna[1] "1200 gold coins."
+    sna_[1] "1200 gold coins."
     m "1200! Why on earth is it so expensive?"
-    sna[1] "Forbidden magic is quite a risky and expensive endeavour my friend, I'll sell it for no less than 1200."
+    sna_[1] "Forbidden magic is quite a risky and expensive endeavour my friend, I'll sell it for no less than 1200."
     menu:
         "-Buy the scroll- (1200)" if gold >= 1200:
             m "Fine, here's the money"
-            sna[1] "Thank you very much"
+            sna_[1] "Thank you very much"
             $ gold -= 1200
             $ tent_scroll = True
             $ attic_open = True
             call screen shop_screen
         "-No thanks-":
             m "No thanks, not right now"
-            sna[1] "Perhaps later then"
+            sna_[1] "Perhaps later then"
             call screen shop_screen
     
 

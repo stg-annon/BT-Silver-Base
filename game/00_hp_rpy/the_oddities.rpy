@@ -89,45 +89,45 @@ label __init_variables:
 label shop_intro:
     show screen shop_screen
     if shop_found:
-        sna[1] "Hey Genie, what would you like to buy?"
+        sna_[1] "Hey Genie, what would you like to buy?"
         jump shop_menu
     else:
         $ show_clothes_store = True
         $ shop_found = True
-        sna[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
-        sna[1] "What if someone sees you?"
+        sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
+        sna_[1] "What if someone sees you?"
         m "You expected me to stay cramped office for months? Besides, I look like Dumbdoor, no one will be able to tell the difference"
-        sna[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
-        sna[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
+        sna_[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
+        sna_[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
         m "Fine, fine, I'll go back to my office. Let's talk a bit first though, being stuck in that office is making me go crazy."
-        sna[1] "Alright, how's Miss Granger going?"
+        sna_[1] "Alright, how's Miss Granger going?"
         m "She's coming along. So what are you doing here? This looks like some sort of shop."
-        sna[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
+        sna_[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
         m "Why? Surely people can get their own ingredients?"
-        sna[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
-        sna[1] "If left unregulated students could brew some very dangerous concoctions."
+        sna_[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
+        sna_[1] "If left unregulated students could brew some very dangerous concoctions."
         m "Well I guess that makes sense. Is that all you sell?"
-        sna[1] "I also brew potions and sell scrolls and textbooks to potions."
+        sna_[1] "I also brew potions and sell scrolls and textbooks to potions."
         m "What sort of potions do you make?"
-        sna[1] "Most of the time I just make the bases to potions."
+        sna_[1] "Most of the time I just make the bases to potions."
         m "Bases?"
-        sna[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
-        sna[1] "It helps preserve the potion as well as allows for the user to change the effect."
+        sna_[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
+        sna_[1] "It helps preserve the potion as well as allows for the user to change the effect."
         m "Well that's all pretty dull. Do you sell anything \"Interesting\"?"
-        sna[1] "Interesting?"
+        sna_[1] "Interesting?"
         m "You know, sex potions, stuff that would help us corrupt Miss Granger."
-        sna[1] "Ah, well I know a few potions that you might like."
+        sna_[1] "Ah, well I know a few potions that you might like."
         m "Such as?"
-        sna[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
+        sna_[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
         m "Hmmmm, you don't have anything better?"
-        sna[1] "Not at the moment. I'll have to order the ingredients in."
+        sna_[1] "Not at the moment. I'll have to order the ingredients in."
         m "How long will that take."
-        sna[1] "It depends on the items. Some of them are very hard to come by."
-        sna[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
+        sna_[1] "It depends on the items. Some of them are very hard to come by."
+        sna_[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
         m "Fair enough. Before I buy though are there any other stores on campus?"
-        sna[1] "Only a tailor, why?"
+        sna_[1] "Only a tailor, why?"
         m "Just making sure that there isn't a cheaper alternative."
-        sna[1] "There isn't, now are you going to buy anything or not?"
+        sna_[1] "There isn't, now are you going to buy anything or not?"
         jump shop_menu
     
 label shop_menu:
@@ -238,7 +238,7 @@ label sscrolls2:
     
 label shop_books:
     show screen shop_screen
-    sna[1] "What type of book would you like?"
+    sna_[1] "What type of book would you like?"
     label shop_book_menu:
     menu:
         "-Educational Books-":
@@ -272,8 +272,8 @@ label shop_books:
                     jump shop_book_menu
          
         "-Fiction books-":
-            sna[1] "These books are mostly light erotica..." 
-            sna[20] "Some of the girls insisted that I order them in."
+            sna_[1] "These books are mostly light erotica..." 
+            sna_[20] "Some of the girls insisted that I order them in."
             label fiction_menu:
             menu:
                 "-Book: [book_name[11]]- {image=check_07}" if not "book_11" in books: # The game of chairs [11]
@@ -377,19 +377,19 @@ label shop_potion_menu:
             menu:
                 "-Knotgrass-":
                     m "Do you know where I can find \"Knotgrass\""
-                    sna[6] "You can sometimge find Knotgrass by the forbidden forest"
+                    sna_[6] "You can sometimge find Knotgrass by the forbidden forest"
                     jump shop_potion_menu
                 "-Root of Aconite-":
                     m "Do you know where I can find \"Root of Aconite\""
-                    sna[6] "Root of Aconite can be found down by the lake"
+                    sna_[6] "Root of Aconite can be found down by the lake"
                     jump shop_potion_menu
                 "-Wormwood-":
                     m "Do you know where I can find \"Wormwood\""
-                    sna[6] "Wormwood is sometimes found in the forbidden forest"
+                    sna_[6] "Wormwood is sometimes found in the forbidden forest"
                     jump shop_potion_menu
                 "-Niffler's Fancy-":
                     m "Do you know where I can find \"Niffler's Fancy\""
-                    sna[6] "hmm i think i heard that it's found by the lake"
+                    sna_[6] "hmm i think i heard that it's found by the lake"
                     jump shop_potion_menu
                 
         "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:

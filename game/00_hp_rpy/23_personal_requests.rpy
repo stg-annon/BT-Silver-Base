@@ -8970,15 +8970,15 @@ label per_quest_the_gamble_complete:
         hide screen blkfade
         with fade
         "You tell Snape about what happened."
-        sna[5] "!!! You did what!? Are you completely MAD?!"
+        sna_[5] "!!! You did what!? Are you completely MAD?!"
         m "Not completely, no. All is well in hand. Stop worrying so much."
-        sna[4] "But-"
+        sna_[4] "But-"
         m "Think about it."
         m "I've spent how long getting her hooked on orgasms? And now I've forced her to go cold turkey."
         m "No matter how much she masturbates or how frantically she fucks she can't cum."
         m "She can still get excited, though."
         m "With her frustration constantly building, I wouldn't give her much before she snaps. A week, week and a half, tops."
-        sna[11] "Hmm... Well, we'll just have to hope for the best."
+        sna_[11] "Hmm... Well, we'll just have to hope for the best."
         m "It will all work out. Just trust me."
         $ per_q_the_gamble_a = False
         $ per_q_the_gamble_b = True
@@ -9223,8 +9223,8 @@ label per_quest_the_gamble_complete:
         #her "AHH!! BREAK IT!! BREAK ME!! HARDER!!"
         call her_head("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
         call snape_enter
-        sna[1] "What did you-"
-        sna[8] "!!!"
+        sna_[1] "What did you-"
+        sna_[8] "!!!"
         #her "CUMMING!! MY ASS IS CUMMING!!"
         call her_head("CUMMING!! MY ASS IS CUMMING!!","body_236")
         m "As you can see, Miss Granger will be indisposed."
@@ -9238,10 +9238,10 @@ label per_quest_the_gamble_complete:
         m "Can you arrange an excuse for the next day? Or three?"
         #her "AAAAH! OH GOD!"
         call her_head("AAAAH! OH GOD!","body_238")
-        sna[18] "Ha! Of course!"
+        sna_[18] "Ha! Of course!"
         #her "AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}"
         call her_head("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
-        sna[21] "(This might be the happiest day of my life!)"
+        sna_[21] "(This might be the happiest day of my life!)"
         call snape_leave
         ">Hermione kept screaming and shaking her ass on your dick. You're fairly certain she didn't notice the conversation."
         #her "I'm going insane! Your dick is driving your fucktoy insane!"

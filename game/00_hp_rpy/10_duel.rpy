@@ -74,10 +74,10 @@ label duel:
     
     
     m "This is foolish... You are no match for me..."
-    sna[1] "Amusing..."
+    sna_[1] "Amusing..."
     m "{size=-4}(Actually my human body is quite weak...){/size}"
     m "{size=-4}(But I should still be way more powerful than any human wizard...){/size}"
-    sna[1] "Let the duel begin!"
+    sna_[1] "Let the duel begin!"
     hide screen bld1
     show screen hp_bar
     with d5
@@ -92,13 +92,13 @@ label duel:
 label duel_main:
     if genie_hp <= 30000 and not d_flag_01:
         $ d_flag_01 = True
-        sna[1] "Ready to give up yet?"
+        sna_[1] "Ready to give up yet?"
         g4 "Tsk..."
         
     if snape_hp <= 400 and not d_flag_02:
         $ d_flag_02 = True
         g4 "{size=-4}(He is getting weaker, I can feel it!){/size}"
-        sna[1] "*Panting*"
+        sna_[1] "*Panting*"
     
     call screen duel_buttons
    

@@ -300,11 +300,12 @@ label start_ht:
     show image "interface/blackfade.png"
     if persistent.game_complete: # Offer for game+
         menu:
-            "NEW GAME +" ">Would you like to carry over your gold and possessions from your previous playthrough into this one?"
+            "NEW GAME +" ">Would you like to carry over your gold, possessions, books, scrolls, and outfits from your previous playthrough into this one?"
             "\"Yes, please.\"":
+                # Code needed here for adding persistant items across games
                 $ gold = gold + persistent.gold
                 ">[persistent.gold] gold has been added to your founds."
-
+                
                 if persistent.lolipop >= 1:
                     $ candy = candy + persistent.lolipop # LOLIPOP.
                     ">[persistent.lolipop] pieces of candy have been added to your possessions."

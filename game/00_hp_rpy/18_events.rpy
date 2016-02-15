@@ -550,20 +550,20 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     show screen bld1
     with d3
     if d_flag_01:
-        sna[6] "Who are you, scum!"
+        sna_[6] "Who are you, scum!"
         g4 "What? It's me... uhm... Abius! I mean, Albus!"
-        sna[4] "You cannot fool me."
-        sna[4] "Just now, you used some sort of alien magic!"
-        sna[6] "Reveal your true self to me now, fiend! Who are you?!"
+        sna_[4] "You cannot fool me."
+        sna_[4] "Just now, you used some sort of alien magic!"
+        sna_[6] "Reveal your true self to me now, fiend! Who are you?!"
     else:
-        sna[1] "My name is Severus Snape!"
-        sna[1] "Now, who might you be...?"
+        sna_[1] "My name is Severus Snape!"
+        sna_[1] "Now, who might you be...?"
         
     g4 "!!!"
-    sna[1] "Easy now... Just answer my question."
+    sna_[1] "Easy now... Just answer my question."
     
     m "Alright, alright, just calm down, would you...?"
-    sna[1] "........"
+    sna_[1] "........"
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -574,22 +574,22 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
         "\"I am not your enemy.\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna[1] "That the first thing an enemy would say."
+            sna_[1] "That the first thing an enemy would say."
         "\"I'm just a tourist. I'll be leaving now.\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna[1] "You are not going anywhere."
+            sna_[1] "You are not going anywhere."
         "\"I work for Albis Doombldore!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna[1] "It's Albus Dumbledore, you moron!"
+            sna_[1] "It's Albus Dumbledore, you moron!"
     if d_points == 2:
         pass
     else:
         jump no_wait
 
-    sna[1] "Who sent you here? What did you do with the real Albus?"
-    sna[1] "Shed your disguise and reveal your true self at once, this is your last warning!"
+    sna_[1] "Who sent you here? What did you do with the real Albus?"
+    sna_[1] "Shed your disguise and reveal your true self at once, this is your last warning!"
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -601,18 +601,18 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
         "\"I can't. It's hard to explain...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna[1] "I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!"
+            sna_[1] "I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!"
         "\"Stop threatening me, human!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna[1] "\"Human\"?"
-            sna[1] "Are you implying that you are {size=+5}not{/size} one?"
-            sna[1] "What are you then?! Dispell your cloaking charm immediately or else!"
+            sna_[1] "\"Human\"?"
+            sna_[1] "Are you implying that you are {size=+5}not{/size} one?"
+            sna_[1] "What are you then?! Dispell your cloaking charm immediately or else!"
         "\"I mean you no harm, I swear!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna[1] "Is that so?"
-            sna[1] "Prove it then. Dispel your cloaking charm now!"
+            sna_[1] "Is that so?"
+            sna_[1] "Prove it then. Dispel your cloaking charm now!"
 
     if d_points == 2:
         pass
@@ -621,10 +621,10 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
 
             
             
-    sna[1] "I've heard enough!"
+    sna_[1] "I've heard enough!"
     g4 "By the great desert sands! Would you let me explain, human?!"
-    sna[1] "There is nothing left to explain!"
-    sna[1] "Since you refuse to cooperate, I'll be taking you into custody by force!"
+    sna_[1] "There is nothing left to explain!"
+    sna_[1] "Since you refuse to cooperate, I'll be taking you into custody by force!"
     g4 "What?! Wait!"
     
     if skip_duel == True:
@@ -654,7 +654,7 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     stop music fadeout 2.0
     g4 "*Panting*"
     g4 "Ready to talk now?!"
-    sna[8] "(...i-impossible...)"
+    sna_[8] "(...i-impossible...)"
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
@@ -665,53 +665,53 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
     show screen bld1
     with d3
     m "You did give me a good run for my money though..."
-    sna[1] "The way you conjure the spells with your bare hands..."
-    sna[1] "No human could do that... who--"
-    sna[4] "{size=+5}What are you?{/size}"
-    sna[1] "Some sort of shape-shifting demon summoned by \"you know who\"?"
+    sna_[1] "The way you conjure the spells with your bare hands..."
+    sna_[1] "No human could do that... who--"
+    sna_[4] "{size=+5}What are you?{/size}"
+    sna_[1] "Some sort of shape-shifting demon summoned by \"you know who\"?"
     m "Summoned by whom?"
-    sna[2] "By \"you know who\"!"
+    sna_[2] "By \"you know who\"!"
     m "What?"
-    sna[7] "......................"
+    sna_[7] "......................"
     m "............................"
     m "Listen, I'm not a demon..."
     m "And I sure as heck don't work for \"I don't know who\"!"
-    sna[1] "............................."
+    sna_[1] "............................."
     m "I've been ehm..."
     m "...Conducting an experiment back in my world, during which something went wrong and I ended up here."
     m "That's all..."
-    sna[1] ".........................."
-    sna[1] "What became of to the real Albus Dumbledore then?"
+    sna_[1] ".........................."
+    sna_[1] "What became of to the real Albus Dumbledore then?"
     m "I'm sure he is fine."
     m "He's Probably feeling as surprised about finding himself in my world as I am about finding myself here..."
-    sna[1] "...................................."
-    sna[1] "When did this happen?"
+    sna_[1] "...................................."
+    sna_[1] "When did this happen?"
     m "Four days ago..."
-    sna[1] "Can you go back?"
+    sna_[1] "Can you go back?"
     m "I think so..."
-    sna[2] "Why didn't you then?"
+    sna_[2] "Why didn't you then?"
     m "Not sure..."
     m "The Magic of this world is so bizarre... Perhaps I just got curious."
-    sna[1] "..................."
-    sna[1] "You need to fix this..."
+    sna_[1] "..................."
+    sna_[1] "You need to fix this..."
     m "Fix what?"
-    sna[4] "Everything. You need to bring back Albus and leave our world."
+    sna_[4] "Everything. You need to bring back Albus and leave our world."
     menu:
         m "..."
 
         "\"Yes, yes, I know. Off I go then.\"":
             m "Yes, yes, I know..."
             m "Well, off I go then. Sorry for the ruckus."
-            sna[1] "No harm done..."
+            sna_[1] "No harm done..."
         "\"But I like it here! Can't I stay?\"":
-            sna[1] "Absolutely not."
-            sna[1] "Whoever you are, you are not from this plane of existence."
-            sna[1] "Your very presence here upsets the natural order of things."
-            sna[1] "And these days this school needs a proper headmaster more than ever."
-    sna[1] "Have a save trip home now."
+            sna_[1] "Absolutely not."
+            sna_[1] "Whoever you are, you are not from this plane of existence."
+            sna_[1] "Your very presence here upsets the natural order of things."
+            sna_[1] "And these days this school needs a proper headmaster more than ever."
+    sna_[1] "Have a save trip home now."
     m "Ehm... Thank you, mr. Severus. Good luck with your students and the \"potter gang\"."
-    sna[1] "\"The potter gang\"?"
-    sna[7] "Oh, right, those buggers..."
+    sna_[1] "\"The potter gang\"?"
+    sna_[7] "Oh, right, those buggers..."
     menu:
         "-Undo the spell-":
             pass
@@ -722,23 +722,23 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
         "-Undo the spell-":
             pass
 
-    sna[1] "Did it work? Albus, is that really you?"
+    sna_[1] "Did it work? Albus, is that really you?"
     menu:
         m "..."
         "\"Yeah, that's me. So good to be back!\"":
-            sna[1] "Glad to have you back, old friend. Are you alright?"
+            sna_[1] "Glad to have you back, old friend. Are you alright?"
             m "I'm fine, Severus, thank you."
-            sna[1] "How was it, in that other world?"
+            sna_[1] "How was it, in that other world?"
             m "A lot of sand and very hot, but other than that quite pleasant."
-            sna[1] "I see... Did you miss your brother?"
+            sna_[1] "I see... Did you miss your brother?"
             menu:
                 m "..."
                 "\"Yes, I missed you so much!\"":
-                    sna[1] "......................."
-                    sna[1] "Yeah, right...."
+                    sna_[1] "......................."
+                    sna_[1] "Yeah, right...."
                 "\"I don't have a brother, Severus.\"":
-                     sna[1] "........................"
-                     sna[1] "You may not have one, but the real Albus Dumbledore does."
+                     sna_[1] "........................"
+                     sna_[1] "You may not have one, but the real Albus Dumbledore does."
                 "-Use magic to get the right answer-":
                     show screen bld1
                     with d3
@@ -746,66 +746,66 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
                     hide screen bld1
                     with d3
                     m "My little brother Aberforth? Why would I miss him?"
-                    sna[1] "I can feel it whenever you use your alien magic..."
+                    sna_[1] "I can feel it whenever you use your alien magic..."
         "\"Nope. It's still me. The non-human guy.\"":
             pass
 
 
-    sna[1] "Why are you still here, creature?"
+    sna_[1] "Why are you still here, creature?"
     m "I'm not sure... I tried to undo the spell but nothing happened..."
 
 
-    sna[7] "Marvelous..."
-    sna[1] "What does this mean? So You're staying here for good?"
+    sna_[7] "Marvelous..."
+    sna_[1] "What does this mean? So You're staying here for good?"
     m "Of course not..."
     m "Me being here at all is only possible because the spell is compensating for the unbalance caused by itself..."
     m "said spell will wear off eventually and I shall be pulled back into my world."
     m "Likewise, your Dumbledore-friend shall be pulled back here."
-    sna[1] "I see..."
-    sna[1] "How long until the spell wears off?"
+    sna_[1] "I see..."
+    sna_[1] "How long until the spell wears off?"
     menu:
         m "..."
         "\"A couple of days.\"":
-            sna[1] "I see..."
+            sna_[1] "I see..."
         "\"A week or so...\"":
-            sna[1] "Hm.... A week, huh..."
+            sna_[1] "Hm.... A week, huh..."
         "\"Could be months...\"":
-             sna[1] "That long?"
-             sna[1] "Now isn't that just \"perfect\"?"
+             sna_[1] "That long?"
+             sna_[1] "Now isn't that just \"perfect\"?"
         "\"I have no clue...\"":
-            sna[1] "....................."
-            sna[2] "Splendid..."
+            sna_[1] "....................."
+            sna_[2] "Splendid..."
 
     m "Alright, to be honest I'm not sure where to go from here..."
     m "All this time I thought I could undo the spell whenever I want to..."
-    sna[1] "..................................................."
-    sna[1] ".................................."
-    sna[1] "..................."
+    sna_[1] "..................................................."
+    sna_[1] ".................................."
+    sna_[1] "..................."
     m "Snape?"
-    sna[1] "..................................................."
+    sna_[1] "..................................................."
     m "Severus?"
-    sna[6] "Yes, yes..."
-    sna[1] "Listen, it's very late, and too much happened already..."
-    sna[7] "I need to process all of this."
-    sna[1] "I will come to see you tomorrow, after my classes."
-    sna[6] "Until then, keep your true identity and our conversation a secret, alright?"
+    sna_[6] "Yes, yes..."
+    sna_[1] "Listen, it's very late, and too much happened already..."
+    sna_[7] "I need to process all of this."
+    sna_[1] "I will come to see you tomorrow, after my classes."
+    sna_[6] "Until then, keep your true identity and our conversation a secret, alright?"
     m "Not a problem."
-    sna[1] "Alright then..."
-    sna[1] "But before I go, I have one more question..."
+    sna_[1] "Alright then..."
+    sna_[1] "But before I go, I have one more question..."
     m "I'm listening..."
-    sna[2] "........"
-    sna[1] "If you are not a human, then..."
-    sna[7] "What are you?"
+    sna_[2] "........"
+    sna_[1] "If you are not a human, then..."
+    sna_[7] "What are you?"
     m "...I'm a genie."
-    sna[1] "A genie?"
+    sna_[1] "A genie?"
     m "Yes, I possess phenomenal cosmic powers and all that..."
-    sna[1] "Seriously?"
+    sna_[1] "Seriously?"
     m "Oh, yes."
-    sna[1] "Unbelievable..."
-    sna[1] "Well, I'll see you tomorrow.... genie."
+    sna_[1] "Unbelievable..."
+    sna_[1] "Well, I'll see you tomorrow.... genie."
     m "I'll be here..."
 
-    sna[7] "(A genie? Now that's new...)"
+    sna_[7] "(A genie? Now that's new...)"
     jump day_start
 ###############################################################################################################################################################        
 label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
