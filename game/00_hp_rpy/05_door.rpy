@@ -344,139 +344,185 @@ label door:
                             jump day_time_requests
                         else:
                             pass
+                        label day_request_wardrobe:
                         menu:
                             "-Clothing-":
+                                label day_request_clothing:
                                 menu:
                                     "-Put the fishnets on-" if not ne_01 and nets == 7:
                                         jump nets_put
-                            
+                                        jump day_request_clothing
+                                        
                                     "-Take the fishnets off-" if ne_01 and nets == 7:
                                         jump nets_take
-                                                            
+                                        jump day_request_clothing
+                                        
                                     "-Put the jeans on-" if cs_existing_stock[0] and custom_skirt != 1:
                                         jump jeans_on
-                            
+                                        jump day_request_clothing
+                                        
                                     "-Take the jeans off-" if custom_skirt == 1:
                                         jump jeans_off
-
+                                        jump day_request_clothing
+                                        
                                     "-Put the short jeans on-" if cs_existing_stock[5] and custom_skirt != 1:
                                         jump jeans_short_on
-                            
+                                        jump day_request_clothing
+                                        
                                     "-Take the short jeans off-" if custom_skirt == 1:
                                         jump jeans_short_on
-                                                            
+                                        jump day_request_clothing
+                                        
                                     "-Put the Gryffindor Stockings on-" if cs_existing_stock[0] and stockings != 2:
                                         jump g_stockings_on
-                            
+                                        jump day_request_clothing
+                                        
                                     "-Take the Gryffindor Stockings off-" if stockings == 2:
                                         jump g_stockings_off
-                                                            
-                                    "-Put the Lace Bra and Panties on-" if custom_bra != 1:
-                                        jump lace_on
-                            
-                                    "-Take the Lace Bra and Panties off-" if custom_bra == 1:
-                                        jump lace_off
-                                                                                                             
-                                    "-Put the Cup-less Lace Bra on-" if not ne_01 and nets == 7:
-                                        jump cupless_on
-                            
-                                    "-Take the Cup-less Lace Bra off-" if ne_01 and nets == 7:
-                                        jump cupless_off
-                                                                                                             
-                                    "-Put the Silk Bra and Panties on-" if custom_bra != 3:
-                                        jump silk_on
-                            
-                                    "-Take the Silk Bra and Panties off-" if custom_bra == 3:
-                                        jump silk_off
-                            
-                                    "-Don't wear a top-" if wear_shirts:
-                                        jump bra_on
-                            
-                                    "-Put some clothes on-" if not wear_shirts:
-                                        jump bra_off
-                                    
-                                    "-Never mind-":
-                                        jump day_time_requests
-                            
-                            "-Accessories-":
-                                menu:
-                                    "-Put the badge on-" if not ba_01 and badge_01 == 7:
-                                        jump badge_put
-                            
-                                    "-Take the badge off-" if ba_01 and badge_01 == 7:
-                                        jump badge_take
+                                        jump day_request_clothing
                                         
-                                    "-Put the glasses on-" if not glasses_worn:
-                                        jump give_glasses
-                            
-                                    "-Take the glasses off-" if glasses_worn:
-                                        jump take_glasses
-
-                                    "-Put freckles on-" if not freckles:
-                                        $ freckles = True
-                                        jump day_time_requests
-                            
-                                    "-Take the freckles off-" if freckles:
-                                        $ freckles = False
-                                        jump day_time_requests
-
+                                    "-Put the Lace Bra and Panties on-" if "lace_set" in cs_existing_stock and h_bra != "lace_bra":
+                                        call set_h_underwear("lace_bra","lace_pants")
+                                        jump day_request_clothing
+                                        
+                                    "-Take the Lace Bra and Panties off-" if "lace_set" in cs_existing_stock and h_bra == "lace_bra":
+                                        call set_h_underwear("base_bra_white_1","base_panties_1")
+                                        jump day_request_clothing
+                                        
+                                    "-Put the Cup-less Lace Bra on-" if "cup_set" in cs_existing_stock and h_bra != "cup_bra":
+                                        call set_h_underwear("cup_bra","cup_panties")
+                                        jump day_request_clothing
+                                        
+                                    "-Take the Cup-less Lace Bra off-" if "cup_set" in cs_existing_stock and h_bra == "cup_bra":
+                                        call set_h_underwear("base_bra_white_1","base_panties_1")
+                                        jump day_request_clothing
+                                        
+                                    "-Put the Silk Bra and Panties on-" if "silk_set" in cs_existing_stock and h_bra != "silk_bra":
+                                        call set_h_underwear("silk_bra","silk_pants")
+                                        jump day_request_clothing
+                                        
+                                    "-Take the Silk Bra and Panties off-" if "silk_set" in cs_existing_stock and h_bra == "silk_bra":
+                                        call set_h_underwear("base_bra_white_1","base_panties_1")
+                                        jump day_request_clothing
+                                        
+                                    "-Put the Latex and Panties on-" if "latex_set" in cs_existing_stock and h_bra != "latex_bra":
+                                        call set_h_underwear("latex_bra","latex_panties")
+                                        jump day_request_clothing
+                                        
+                                    "-Take the Latex and Panties off-" if "latex_set" in cs_existing_stock and h_bra == "latex_bra":
+                                        call set_h_underwear("base_bra_white_1","base_panties_1")
+                                        jump day_request_clothing
+                                        
+                                    "-Don't wear a top-" if hermione_wear_top:
+                                        $ hermione_wear_top = False
+                                        call update_her_uniform
+                                        jump day_request_clothing
+                                        
+                                    "-Put top back on-" if not hermione_wear_top:
+                                        $ hermione_wear_top = True
+                                        call update_her_uniform
+                                        jump day_request_clothing
+                                        
                                     "-Never mind-":
-                                        jump day_time_requests
-                            
-                            "-Hair-":
+                                        jump day_request_wardrobe
+                                        
+                            "-Accessories-":
+                                label day_request_accessories:
                                 menu:
-                                    "-Dye your hair brown-" if not hair_color == 0:
-                                        call dye_brown
-                                        jump day_time_requests
-
-                                    "-Dye your hair blonde-" if not hair_color == 1:
-                                        call dye_blonde
-                                        jump day_time_requests
-                            
-                                    "-Dye your hair red-" if not hair_color == 2:
-                                        call dye_red
-                                        jump day_time_requests
-                            
-                                    "-Dye your hair black-" if not hair_color == 3:
-                                        call dye_black
-                                        jump day_time_requests
-                                    
-                                    "-Dye your hair blue-" if not hair_color == 4:
-                                        call dye_blue
-                                        jump day_time_requests
-
-                                    "-Dye your hair orange-" if not hair_color == 5:
-                                        call dye_orange
-                                        jump day_time_requests
-
-                                    "-Wear your hair up-" if not hair_style == "B":
-                                        call hair_up
-                                        jump day_time_requests
-
-                                    "-Wear your hair down-" if hair_style == "B":
-                                        call hair_down
-                                        jump day_time_requests
-
+                                    "-Put \"S.P.E.W.\" badge on-" if "SPEW_badge" in cs_existing_stock and h_badge != "SPEW_badge":
+                                        call h_badge_on("SPEW_badge")
+                                        jump day_request_accessories
+                                        
+                                    "-Take \"S.P.E.W.\" badge off-" if "SPEW_badge" in cs_existing_stock and h_badge == "SPEW_badge":
+                                        call h_badge_off
+                                        jump day_request_accessories
+                                        
+                                    "-Put I <3 C.U.M.\" badge on-" if "CUM_badge" in cs_existing_stock and h_badge != "CUM_badge":
+                                        call h_badge_on("CUM_badge")
+                                        jump day_request_accessories
+                                        
+                                    "-Take I <3 C.U.M.\" badge off-" if "CUM_badge" in cs_existing_stock and h_badge == "CUM_badge":
+                                        call h_badge_off
+                                        jump day_request_accessories
+                                        
                                     "-Never mind-":
-                                        jump day_time_requests
-                            
+                                        jump day_request_wardrobe
+                                        
+                            "-Hair-":
+                                label day_request_hair:
+                                menu:
+                                    "-Dye your hair brown-" if not h_hair_color == 1:
+                                        call her_main("Brown seems so boring now.","body_01")
+                                        call set_h_hair_color(1)
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair blonde-" if not h_hair_color == 2:
+                                        call her_main("Why do you want me to change my hair?","body_01")
+                                        m "I don't know, I suppose I just have a thing for blondes"
+                                        her "well I've always heard blondes have more fun!"
+                                        call set_h_hair_color(2)
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair red-" if not h_hair_color == 3:
+                                        call her_main("this'll be fun, Maybe I'll look like Batwoman!","body_01")
+                                        m "You read comics?"
+                                        her "no, i just play certain games"
+                                        m "What?"
+                                        call set_h_hair_color(3)
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair black-" if not h_hair_color == 4:
+                                        call her_main("I have been feeling a bit depressed recently.","body_01")
+                                        her "I wonder if it's because of all the favors I've been doing"
+                                        m "Don't worry about it"
+                                        call set_h_hair_color(4)
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair blue-" if not h_hair_color == 5:
+                                        call her_main("Blue?","body_01")
+                                        m "Why not?"
+                                        her "Just seems a bit attention seeking..."
+                                        call set_h_hair_color(5)
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair orange-" if not h_hair_color == 6:
+                                        call her_main("Orange?","body_01")
+                                        m "That's what I said."
+                                        her "Alright, well just let me change it."
+                                        call set_h_hair_color(6)
+                                        jump day_request_hair
+                                        
+                                    "-Wear your hair up-" if not h_hair_style == "B":
+                                        call her_main("Sure, let me just go change it.","body_01")
+                                        call set_h_hair_style("B")
+                                        jump day_request_hair
+                                        
+                                    "-Wear your hair down-" if not h_hair_style == "A":
+                                        call her_main("Sure, let me just go change it.","body_01")
+                                        call set_h_hair_style("A")
+                                        jump day_request_hair
+                                        
+                                    "-Never mind-":
+                                        jump day_request_wardrobe
+                                        
                             "-Collars-" if False:
+                                label day_request_collars:
                                 menu:
                                     "-Take off the collar-" if collar >= 1:
                                         $ collar = 0
-                                        jump day_time_requests
+                                        jump day_request_collars
                                     "-Put on the slave collar-":
                                         $ collar = 1
-                                        jump day_time_requests
+                                        jump day_request_collars
                                     "-Put on the slut collar-":
                                         $ collar = 2
-                                        jump day_time_requests
+                                        jump day_request_collars
                                     "-Put on the whore collar-":
                                         $ collar = 3
-                                        jump day_time_requests
+                                        jump day_request_collars
                                     "-Never mind-":
-                                        jump day_time_requests
-                            
+                                        jump day_request_wardrobe
+                                        
                             "-Never mind":
                                 jump day_time_requests
                     

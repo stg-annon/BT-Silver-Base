@@ -542,31 +542,40 @@ label existing_stock:
                             jump existing_stock_bras_panties
                         "-Never mind-":
                             jump existing_stock_bras_panties
+                "-Latex Bra and Panties- (150 Gold)":
+                    "A tight and shiny lace bra and panty set."
+                    menu:
+                        "-Buy the item (150 gold)-":
+                            call cs_buy_stock("latex_set", 150)
+                            jump existing_stock_bras_panties
+                        "-Never mind-":
+                            jump existing_stock_bras_panties
                 "-Never Mind-":
                     jump clothes_menu
+        "-Accessories-":
+            label accessories:
+            menu:
+                "-\"S.P.E.W.\" badge-":
+                    maf "A badge designed to show one's opposition of elf slavery."
+                    menu:
+                        "-Buy the item (100 gold)-":
+                            call cs_buy_stock("SPEW_badge",100)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "-\"I <3 C.U.M.\" badge-":
+                    maf "A badge that displays ones affection towards semen."
+                    menu:
+                        "-Buy the item (150 gold)-":
+                            call cs_buy_stock("CUM_badge",150)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "-Never mind-":
+                    jump existing_stock
         "-Return-":
             jump clothes_menu
-label accessories:
-    menu:
-        "-\"S.P.E.W.\" badge-":
-            maf "A badge designed to show one's opposition of elf slavery."
-            menu:
-                "-Buy the item (100 gold)-":
-                    call cs_buy_stock("SPEW_badge",100)
-                    jump accessories
-                "-Never mind-":
-                    jump accessories
-        "-\"I <3 C.U.M.\" badge-":
-            maf "A badge that displays ones affection towards semen."
-            menu:
-                "-Buy the item (150 gold)-":
-                    call cs_buy_stock("CUM_badge",150)
-                    jump accessories
-                "-Never mind-":
-                    jump accessories
-        "-Never mind-":
-            jump clothes_menu
-            
+    
 label cs_buy_stock(item_id = "", cost):
     if gold >= cost and item_id != "":
         if item_id in cs_existing_stock:

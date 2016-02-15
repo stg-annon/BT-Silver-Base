@@ -1200,8 +1200,7 @@ label take_glasses:
 label badge_put:
     call her_main("Of course, [genie_name]...","body_01")
     
-    $ badges = True
-    $ ba_01 = True
+    $ hermione_badges = True
     
     show screen blkfade
     with d3
@@ -1636,143 +1635,55 @@ label custom_10_off:
     with d3
     jump day_time_requests
     
-    
-label dye_blonde:
-    call her_main("Why do you want me to change my hair?","body_01")
-    m "I don't know, I suppose I just have a thing for blondes"
-    her "well I've always heard blondes have more fun!"
-    
-    $ hair_color = 1
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
+label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
+    hide screen hermione_main
+    with d5
+    $ h_bra = bra
+    $ h_panties = panties
+    call update_her_uniform
+    show screen hermione_main
+    with d5
     return
     
-label dye_red:
-    call her_main("this'll be fun, Maybe I'll look like Batwoman!","body_01")
-    m "You read comics?"
-    her "no, i just play certain games"
-    m "What?"
-    
-    $ hair_color = 2
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
+label h_badge_on(badge = "SPEW_badge"):
+    hide screen hermione_main
+    with d5
+    $ hermione_badges = True
+    $ h_badge = badge
+    call update_her_uniform
+    show screen hermione_main
+    with d5
     return
     
-label dye_black:
-    call her_main("I have been feeling a bit depressed recently.","body_01")
-    her "I wonder if it's because of all the favors I've been doing"
-    m "Don't worry about it"
-    
-    $ hair_color = 3
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
+label h_badge_off:
+    hide screen hermione_main
+    with d5
+    $ hermione_badges = False
+    $ h_badge = ""
+    call update_her_uniform
+    show screen hermione_main
+    with d5
     return
     
-label dye_brown:
-    call her_main("Brown seems so boring now.","body_01")
-    
-    $ hair_color = 0
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
+label set_h_hair_style(style = "A"):
+    hide screen hermione_main
+    with d5
+    $ h_hair_style = style
+    call update_her_body
+    show screen hermione_main
+    with d5
     return
     
-label dye_blue:
-    call her_main("Blue?","body_01")
-    m "Why not?"
-    her "Just seems a bit attention seeking..."
-    
-    $ hair_color = 4
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
+label set_h_hair_color(color = 0):
+    hide screen hermione_main
+    with d5
+    $ h_hair_color = color
+    call update_her_body
+    show screen hermione_main
+    with d5
     return
     
-label dye_orange:
-    call her_main("Orange?","body_01")
-    m "That's what I said."
-    her "Alright, well just let me change it."
-    
-    $ hair_color = 5
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    return
-    
-label hair_up:
-    call her_main("Sure, let me just go change it.","body_01")
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    
-    $ hair_style = "B"
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    return
-    
-label hair_down:
-    call her_main("Sure, let me just go change it.","body_01")
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    
-    $ hair_style = "A"
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    return
+#$ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
 label badge_take:
     call her_main("As you wish, [genie_name]...","body_01")

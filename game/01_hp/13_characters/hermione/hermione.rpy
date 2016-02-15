@@ -56,6 +56,8 @@ label __init_variables:
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
     
+    $ hermione_badges = False
+    
     $ hermione_perm_expand = False
     $ hermione_custom_outfit = False
     $ hermione_action = False
