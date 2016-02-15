@@ -2031,10 +2031,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             hide screen hermione_main
             with d3
             
-            if user_outfit_choice > 0:
-                call set_outfit_action("lift_top")
-            else:
-                call set_hermione_action("lift_top")
+            call set_hermione_action("lift_top")
             
             call her_main("","body_84",xpos=140)
             pause
