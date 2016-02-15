@@ -413,6 +413,14 @@ label door:
                                         call set_h_underwear("base_bra_white_1","base_panties_1")
                                         jump day_request_clothing
                                         
+                                    "-Stop wearing panties-" if h_request_wear_panties and whoring >= 6:
+                                        call panties_off
+                                        jump day_request_clothing
+                                        
+                                    "-Wear panties-" if not h_request_wear_panties and whoring >= 6:
+                                        call panties_on
+                                        jump day_request_clothing
+                                        
                                     "-Don't wear a top-" if hermione_wear_top:
                                         $ hermione_wear_top = False
                                         call update_her_uniform

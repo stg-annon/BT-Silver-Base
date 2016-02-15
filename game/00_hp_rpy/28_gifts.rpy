@@ -788,35 +788,6 @@ label give_her_existing_stock(stock_id):
     jump day_time_requests 
     
     
-###WEAR PANTIES
-label panties_on(id=""):
-    m "I want you to start wearing panties again"
-    her "those boring old things"
-    if id=="":
-        m "yep"
-        her "do i get anything for this"
-        menu:
-            "hows 5 points sound":
-                $ gryffindor += 5
-                pass
-            "nope just do it":
-                pass
-        her "fine I'll do it"
-        $ h_panties = "base_panties_1"
-    else:
-        m "nope I want you to use these ones"
-        ">You present hermione with the new pair of panties and matching bra"
-        her "oh, alright"
-        her "(I can't wait to try these on)"
-        $ h_panties = id
-    $ h_request_wear_panties = True
-    return
-label panties_off:
-    m "stop wearing those panties"
-    her "freedom at last"
-    $ h_request_wear_panties = False
-    return
-    
 ###GIVING CLOTHING RESPONSES
 label giving_gryffindor_cheer:
     hide screen hermione_main
@@ -1634,6 +1605,28 @@ label custom_10_off:
     hide screen blkfade
     with d3
     jump day_time_requests
+    
+###WEAR PANTIES
+label panties_on:
+    m "I want you to start wearing panties again"
+    her "those boring old things"
+    m "yep"
+    her "do i get anything for this"
+    menu:
+        "hows 5 points sound":
+            $ gryffindor += 5
+            pass
+        "nope just do it":
+            pass
+    her "fine I'll do it"
+    $ h_request_wear_panties = True
+    return
+    
+label panties_off:
+    m "stop wearing those panties"
+    her "freedom at last"
+    $ h_request_wear_panties = False
+    return
     
 label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
     hide screen hermione_main
