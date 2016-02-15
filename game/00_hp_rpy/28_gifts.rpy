@@ -1606,8 +1606,44 @@ label custom_10_off:
     with d3
     jump day_time_requests
     
+label h_top_on:
+    hide screen hermione_main
+    with d5  
+    $ hermione_wear_top = True
+    call update_her_uniform
+    show screen hermione_main
+    with d5 
+    return
+    
+label h_top_off:
+    hide screen hermione_main
+    with d5    
+    $ hermione_wear_top = False
+    call update_her_uniform
+    show screen hermione_main
+    with d5 
+    return
+    
+label h_skirt_on:
+    hide screen hermione_main
+    with d5  
+    $ hermione_wear_skirt = True
+    call update_her_uniform
+    show screen hermione_main
+    with d5 
+    return
+    
+label h_skirt_off:
+    hide screen hermione_main
+    with d5  
+    $ hermione_wear_skirt = False
+    call update_her_uniform
+    show screen hermione_main
+    with d5 
+    return
+    
 ###WEAR PANTIES
-label panties_on:
+label h_panties_on:
     m "I want you to start wearing panties again"
     her "those boring old things"
     m "yep"
@@ -1622,7 +1658,7 @@ label panties_on:
     $ h_request_wear_panties = True
     return
     
-label panties_off:
+label h_panties_off:
     m "stop wearing those panties"
     her "freedom at last"
     $ h_request_wear_panties = False

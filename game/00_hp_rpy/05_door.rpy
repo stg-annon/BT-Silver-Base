@@ -382,7 +382,7 @@ label door:
                                         jump day_request_clothing
                                         
                                     "-Put the Lace Bra and Panties on-" if "lace_set" in cs_existing_stock and h_bra != "lace_bra":
-                                        call set_h_underwear("lace_bra","lace_pants")
+                                        call set_h_underwear("lace_bra","lace_panties")
                                         jump day_request_clothing
                                         
                                     "-Take the Lace Bra and Panties off-" if "lace_set" in cs_existing_stock and h_bra == "lace_bra":
@@ -398,7 +398,7 @@ label door:
                                         jump day_request_clothing
                                         
                                     "-Put the Silk Bra and Panties on-" if "silk_set" in cs_existing_stock and h_bra != "silk_bra":
-                                        call set_h_underwear("silk_bra","silk_pants")
+                                        call set_h_underwear("silk_bra","silk_panties")
                                         jump day_request_clothing
                                         
                                     "-Take the Silk Bra and Panties off-" if "silk_set" in cs_existing_stock and h_bra == "silk_bra":
@@ -413,22 +413,28 @@ label door:
                                         call set_h_underwear("base_bra_white_1","base_panties_1")
                                         jump day_request_clothing
                                         
-                                    "-Stop wearing panties-" if h_request_wear_panties and whoring >= 6:
-                                        call panties_off
-                                        jump day_request_clothing
-                                        
-                                    "-Wear panties-" if not h_request_wear_panties and whoring >= 6:
-                                        call panties_on
-                                        jump day_request_clothing
-                                        
                                     "-Don't wear a top-" if hermione_wear_top:
-                                        $ hermione_wear_top = False
-                                        call update_her_uniform
+                                        call h_top_off
                                         jump day_request_clothing
                                         
                                     "-Put top back on-" if not hermione_wear_top:
-                                        $ hermione_wear_top = True
-                                        call update_her_uniform
+                                        call h_top_on
+                                        jump day_request_clothing
+                                        
+                                    "-Don't wear a skirt-" if hermione_wear_skirt:
+                                        call h_skirt_off
+                                        jump day_request_clothing
+                                        
+                                    "-Put skirt back on-" if not hermione_wear_skirt:
+                                        call h_skirt_on
+                                        jump day_request_clothing
+                                        
+                                    "-Stop wearing panties-" if h_request_wear_panties and whoring >= 6:
+                                        call h_panties_off
+                                        jump day_request_clothing
+                                        
+                                    "-Wear panties-" if not h_request_wear_panties and whoring >= 6:
+                                        call h_panties_on
                                         jump day_request_clothing
                                         
                                     "-Never mind-":

@@ -46,8 +46,18 @@ label __init_variables:
     $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
+    $ hermiome_action_bra = hermione_bra
+    $ hermiome_action_panties = hermione_panties
+    $ hermiome_action_top = hermione_top
+    $ hermiome_action_skirt = hermione_skirt
+    
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
+    
+    $ h_action_show_bra = True
+    $ h_action_show_panties = True
+    $ h_action_show_top = True
+    $ h_action_show_skirt = True
     
     $ hermione_wear_robe = False
     
