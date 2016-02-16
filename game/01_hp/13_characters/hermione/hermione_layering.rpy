@@ -1,4 +1,5 @@
 screen hermione_main:
+    tag hermione_main
     
     add hermione_base xpos hermione_xpos ypos hermione_ypos #Add the base body
     add hermione_legs xpos hermione_xpos ypos hermione_ypos
@@ -67,6 +68,7 @@ screen hermione_main:
     zorder hermione_zorder
     
 screen hermione_head:
+    tag hermione_head
     
     add hermione_base xpos hermione_head_xpos ypos hermione_head_ypos #Add the base body
     add hermione_legs xpos hermione_head_xpos ypos hermione_head_ypos
@@ -414,6 +416,13 @@ label update_chibi_uniform:
     return
     
 label reset_hermione_main:
+    show screen hermione_blank_main
+    show screen hermione_blank_head
+    show screen hermione_blank_chibi
+    hide screen hermione_blank_main
+    hide screen hermione_blank_head
+    hide screen hermione_blank_chibi
+    
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     hide screen bld1
     hide screen hermione_main

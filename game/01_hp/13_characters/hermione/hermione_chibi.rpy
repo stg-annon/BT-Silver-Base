@@ -1755,6 +1755,17 @@ image ani_her_sex_cum_inside_blink_naked:
     
 ### SCREENS
     
+screen hermione_blank_main:
+    tag hermione_main
+    zorder hermione_zorder
+screen hermione_blank_head:
+    tag hermione_head
+    zorder 8
+screen hermione_blank_chibi:
+    tag hermione_chibi
+    zorder hermione_chibi_zorder
+    
+    
 ### HERMIONE CHIBI ###
 screen hermione_walk:
     tag hermione_chibi

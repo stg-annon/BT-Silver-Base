@@ -3,6 +3,8 @@ label __init_variables:
     $ h_whoring = 0
     $ h_reputation = 21
     
+    $ hermione_zorder = 5
+    
     if not hasattr(renpy.store,'hermione_xpos'): #important!
         $ hermione_xpos = 370
     if not hasattr(renpy.store,'hermione_ypos'): #important!
@@ -23,10 +25,8 @@ label __init_variables:
     
     $ h_body = "body_01"
     $ h_tears = "00_blank"
-    $ h_bra = "base_bra_white_1"
-    $ h_panties = "base_panties_1"
-    $ h_skirt = 1
-    $ h_top = 1
+    
+    $ h_display_tears = False
     
     if not hasattr(renpy.store,'hermione_hair_a'): #important!
         $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/A_1.png"
@@ -38,44 +38,48 @@ label __init_variables:
         $ h_hair_color = 1
     
     
-    $ hermione_zorder = 5
-    
-    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/spew_badge.png"
-    
+    if not hasattr(renpy.store,'hermione_bra'): #important!
+        $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
+    if not hasattr(renpy.store,'hermione_panties'): #important!
+        $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
     if not hasattr(renpy.store,'hermione_skirt'): #important!
         $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
     if not hasattr(renpy.store,'hermione_top'): #important!
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_1.png"
     
-    $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
-    $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
-    $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/00_blank.png"
-    
-    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe.png"
-    
-    
-    
-    
-    $ hermione_wear_robe = False
+    if not hasattr(renpy.store,'h_bra'): #important!
+        $ h_bra = "base_bra_white_1"
+    if not hasattr(renpy.store,'h_panties'): #important!
+        $ h_panties = "base_panties_1"
+    if not hasattr(renpy.store,'h_skirt'): #important!
+        $ h_skirt = 1
+    if not hasattr(renpy.store,'h_top'): #important!
+        $ h_top = 1
     
     $ hermione_wear_bra = True
     $ hermione_wear_panties = True
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
     
-    $ hermione_badges = False
+    if not hasattr(renpy.store,'h_request_wear_panties'): #important!
+        $ h_request_wear_panties = False
     
-    $ hermione_perm_expand = False
     
-    $ h_display_tears = False
-    $ h_request_wear_panties = False
-    
+    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe.png"
+    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/spew_badge.png"
+    $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/00_blank.png"
     
     $ h_badge = "spew_badge"
     $ h_stocking = "00_blank"
+    
+    $ hermione_wear_robe = False
+    $ hermione_badges = False
+    
+    
     $ h_breasts = 1
     $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     
+    $ hermione_perm_expand = False
     
     ## Chibi Vars
     $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
