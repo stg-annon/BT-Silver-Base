@@ -703,7 +703,7 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     $ changeHermioneMainScreen(hg_pth+"body_118.png")
     her "...It feels like they're getting-"
     $ custom_breast =2
-    $ custom_outfit = 20
+    $ custom_outfit_old = 20
     "*RIIIP*"
     $ changeHermioneMainScreen(hg_pth+"body_119.png")
     her "!!!"
@@ -755,7 +755,7 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     her "Will... that be all [genie_name]?"
     m "Yes [hermione_name]. You can go now."
     $ custom_breast = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     hide screen bld1
     hide screen hermione_main
     hide screen groping_naked_tits
@@ -2807,7 +2807,7 @@ label costume_scene_1: #Maid role-play
     $ changeHermioneMainScreen(hg_pth+"body_64.png")
     her "Let me go change."
     $ stockings = 1
-    $ custom_outfit = 1
+    $ custom_outfit_old = 1
     $ changeHermioneMainScreen(hg_pth+"body_64.png")
     pause
     $ changeHermioneMainScreen(hg_pth+"body_64.png")

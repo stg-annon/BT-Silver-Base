@@ -798,9 +798,9 @@ screen with_snape_animated:
 screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
     #tag big_hermione
     
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/23_clothes_store/costumes/power_hair.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/23_clothes_store/costumes/harley_hair.png" xpos h_xpos ypos h_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+".png" xpos h_xpos ypos h_ypos
@@ -872,28 +872,28 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
             else:
                 add im.Alpha("01_hp/13_hermione_main/legs/pants.png", transparency) xpos h_xpos ypos h_ypos
 
-        if custom_skirt >= 1 or custom_outfit >= 1 and custom_outfit <= 19 and not skirt_up:
-            if custom_outfit == 1:
+        if custom_skirt >= 1 or custom_outfit_old >= 1 and custom_outfit_old <= 19 and not skirt_up:
+            if custom_outfit_old == 1:
                 add im.Alpha("01_hp/23_clothes_store/costumes/maid_skirt.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/23_clothes_store/costumes/cheer_pants.png", transparency) xpos h_xpos ypos h_ypos            
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/23_clothes_store/costumes/s_cheer_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/23_clothes_store/costumes/heart_legs.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/23_clothes_store/costumes/h_cheer_pants_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/23_clothes_store/costumes/marvel_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/23_clothes_store/costumes/harley_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/23_clothes_store/costumes/ball_dress_skirt.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/23_clothes_store/costumes/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/23_clothes_store/costumes/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 1 and custom_outfit == 0:
+            elif custom_skirt == 1 and custom_outfit_old == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/ass_exp1.png", transparency) xpos h_xpos ypos h_ypos
@@ -901,9 +901,9 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 5 and custom_outfit == 0:
+            elif custom_skirt == 5 and custom_outfit_old == 0:
                 add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
-        elif wear_skirts and not skirt_up and custom_outfit <= 19:
+        elif wear_skirts and not skirt_up and custom_outfit_old <= 19:
             if whoring <= 5:
                 add im.Alpha("01_hp/13_hermione_main/legs/legs_01.png", transparency) xpos h_xpos ypos h_ypos
             elif whoring >= 6 and whoring <= 11: #Mini skirt.
@@ -919,7 +919,7 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
     if aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos h_xpos ypos h_ypos #Displays sperm.
 
-    if custom_bra >=1 and badges and custom_outfit <= 0:
+    if custom_bra >=1 and badges and custom_outfit_old <= 0:
         if custom_bra == 1:
             add im.Alpha("01_hp/25_mo/lace_bra.png", transparency) xpos h_xpos ypos h_ypos
         elif custom_bra == 2:
@@ -943,34 +943,34 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
     elif book_hold and not wear_shirts:
         add "01_hp/13_hermione_main/shirts/book_04.png" xpos h_xpos ypos h_ypos #Displays sperm.
     elif badges and wear_shirts: #Determine what top she will wear
-        if custom_shirt == True or custom_outfit >= 1 or custom_breast >= 1:
-            if custom_outfit == 1 and not robeon:
+        if custom_shirt == True or custom_outfit_old >= 1 or custom_breast >= 1:
+            if custom_outfit_old == 1 and not robeon:
                 add im.Alpha("01_hp/23_clothes_store/costumes/maid_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/23_clothes_store/costumes/cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/23_clothes_store/costumes/s_cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/23_clothes_store/costumes/heart_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/23_clothes_store/costumes/h_cheer_top_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 6:
+            elif custom_outfit_old == 6:
                 add im.Alpha("01_hp/25_mo/jumper.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 7:
+            elif custom_outfit_old == 7:
                 add im.Alpha("01_hp/23_clothes_store/costumes/power_costume.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 7.2:
+            elif custom_outfit_old == 7.2:
                 add im.Alpha("01_hp/23_clothes_store/costumes/power_costume_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/23_clothes_store/costumes/marvel_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/23_clothes_store/costumes/marvel_sash.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/23_clothes_store/costumes/harley_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/23_clothes_store/costumes/harley_collar.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/23_clothes_store/costumes/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/23_clothes_store/costumes/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/23_clothes_store/costumes/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
@@ -1031,9 +1031,9 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
             add "01_hp/13_hermione_main/customs/collar_3.png" xpos h_xpos ypos h_ypos
 
 
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/23_clothes_store/costumes/power_hair_2.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/23_clothes_store/costumes/harley_hair_2.png" xpos h_xpos ypos h_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+"_2.png" xpos h_xpos ypos h_ypos
@@ -1045,20 +1045,20 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
     if glasses_worn:
         add "01_hp/13_hermione_main/glasses.png" xpos h_xpos ypos h_ypos #The glasses.
 
-    if custom_outfit == 1:
+    if custom_outfit_old == 1:
         add "01_hp/23_clothes_store/costumes/maid_hat.png" xpos h_xpos ypos h_ypos
         add "01_hp/23_clothes_store/costumes/maid_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 4:
+    elif custom_outfit_old == 4:
         add "01_hp/23_clothes_store/costumes/heart_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 8:
+    elif custom_outfit_old == 8:
         add "01_hp/23_clothes_store/costumes/marvel_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/23_clothes_store/costumes/harley_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 11:
+    elif custom_outfit_old == 11:
         add "01_hp/23_clothes_store/costumes/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/23_clothes_store/costumes/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/23_clothes_store/costumes/christmas_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 12:
+    elif custom_outfit_old == 12:
         add im.Alpha("01_hp/23_clothes_store/costumes/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
 
@@ -1066,7 +1066,7 @@ screen hermione_main_old: #Screen that shows a full sprite of HERMIONE.
         add "01_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
     if uni_sperm:
         add u_sperm xpos h_xpos ypos h_ypos #Universal sperm.        
-    if badges and not robeon and custom_outfit == 0 and wear_shirts:
+    if badges and not robeon and custom_outfit_old == 0 and wear_shirts:
         if ba_01 and whoring <= 12:
             add "01_hp/13_hermione_main/badge.png" xpos h_xpos ypos h_ypos #The Robe.
         elif ba_01 and whoring >= 13:
@@ -1106,9 +1106,9 @@ screen hermione_main2:
     
     
     
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair.png" xpos h_xpos ypos h_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+".png" xpos h_xpos ypos h_ypos
@@ -1193,28 +1193,28 @@ screen hermione_main2:
             else:
                 add im.Alpha("01_hp/13_hermione_main/legs/pants.png", transparency) xpos h_xpos ypos h_ypos
 
-        if custom_skirt >= 1 or custom_outfit >= 1 and custom_outfit <= 19 and not skirt_up:
-            if custom_outfit == 1:
+        if custom_skirt >= 1 or custom_outfit_old >= 1 and custom_outfit_old <= 19 and not skirt_up:
+            if custom_outfit_old == 1:
                 add im.Alpha("01_hp/25_mo/maid_skirt.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/25_mo/cheer_pants.png", transparency) xpos h_xpos ypos h_ypos            
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/25_mo/s_cheer_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/25_mo/heart_legs.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/25_mo/h_cheer_pants_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/25_mo/marvel_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/25_mo/harley_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/25_mo/ball_dress_skirt.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/25_mo/christmas_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 1 and custom_outfit == 0:
+            elif custom_skirt == 1 and custom_outfit_old == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/ass_exp1.png", transparency) xpos h_xpos ypos h_ypos
@@ -1222,9 +1222,9 @@ screen hermione_main2:
                 add im.Alpha("01_hp/25_mo/ass_exp2.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_skirt == 4:
                 add im.Alpha("01_hp/25_mo/snake.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_skirt == 5 and custom_outfit == 0:
+            elif custom_skirt == 5 and custom_outfit_old == 0:
                 add im.Alpha("01_hp/23_clothes_store/existing_stock/jeans_short.png", transparency) xpos h_xpos ypos h_ypos
-        elif not skirt_up and custom_outfit <= 19:
+        elif not skirt_up and custom_outfit_old <= 19:
             if whoring <= 5:
                 add im.Alpha("01_hp/13_hermione_main/legs/legs_01.png", transparency) xpos h_xpos ypos h_ypos
             elif whoring >= 6 and whoring <= 11: #Mini skirt.
@@ -1240,7 +1240,7 @@ screen hermione_main2:
     if aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos h_xpos ypos h_ypos #Displays sperm.
 
-    if custom_bra >=1 and badges and custom_outfit <= 0:
+    if custom_bra >=1 and badges and custom_outfit_old <= 0:
         if custom_bra == 1:
             add im.Alpha("01_hp/25_mo/lace_bra.png", transparency) xpos h_xpos ypos h_ypos
         elif custom_bra == 2:
@@ -1264,34 +1264,34 @@ screen hermione_main2:
     elif book_hold and not wear_shirts:
         add "01_hp/13_hermione_main/shirts/book_04.png" xpos h_xpos ypos h_ypos #Displays sperm.
     elif badges and wear_shirts: #Determine what top she will wear
-        if custom_shirt == True or custom_outfit >= 1 or custom_breast >= 1:
-            if custom_outfit == 1 and not robeon:
+        if custom_shirt == True or custom_outfit_old >= 1 or custom_breast >= 1:
+            if custom_outfit_old == 1 and not robeon:
                 add im.Alpha("01_hp/25_mo/maid_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/25_mo/cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/25_mo/s_cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/25_mo/heart_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/25_mo/h_cheer_top_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 6:
+            elif custom_outfit_old == 6:
                 add im.Alpha("01_hp/25_mo/jumper.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 7:
+            elif custom_outfit_old == 7:
                 add im.Alpha("01_hp/25_mo/power_costume.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 7.2:
+            elif custom_outfit_old == 7.2:
                 add im.Alpha("01_hp/25_mo/power_costume_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/25_mo/marvel_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/25_mo/marvel_sash.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/25_mo/harley_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/25_mo/harley_collar.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
@@ -1352,9 +1352,9 @@ screen hermione_main2:
             add "01_hp/13_hermione_main/customs/collar_3.png" xpos h_xpos ypos h_ypos
 
 
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair_2.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair_2.png" xpos h_xpos ypos h_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+"_2.png" xpos h_xpos ypos h_ypos
@@ -1367,27 +1367,27 @@ screen hermione_main2:
     if glasses_worn:
         add "01_hp/13_hermione_main/glasses.png" xpos h_xpos ypos h_ypos #The glasses.
 
-    if custom_outfit == 1:
+    if custom_outfit_old == 1:
         add "01_hp/25_mo/maid_hat.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/maid_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 4:
+    elif custom_outfit_old == 4:
         add "01_hp/25_mo/heart_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 8:
+    elif custom_outfit_old == 8:
         add "01_hp/25_mo/marvel_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 11:
+    elif custom_outfit_old == 11:
         add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 12:
+    elif custom_outfit_old == 12:
         add im.Alpha("01_hp/25_mo/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos h_xpos ypos h_ypos #Displays sperm.
     if uni_sperm:
         add u_sperm xpos h_xpos ypos h_ypos #Universal sperm.        
-    if badges and not robeon and custom_outfit == 0 and wear_shirts:
+    if badges and not robeon and custom_outfit_old == 0 and wear_shirts:
         if ba_01 and whoring <= 12:
             add "01_hp/13_hermione_main/badge.png" xpos h_xpos ypos h_ypos #The Robe.
         elif ba_01 and whoring >= 13:
@@ -1452,9 +1452,9 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
     if not only_upper:
         add "01_hp/13_hermione_main/legs_01.png" xpos h_xpos ypos h_ypos
     
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair.png" xpos h_xpos ypos h_ypos
     elif hair_color == 0:
         add "01_hp/13_hermione_main/hair/hair_00.png" xpos h_xpos ypos h_ypos #The hair.    
@@ -1515,32 +1515,32 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
     if not badges and level == "01":
         add "01_hp/13_hermione_main/shirts/shirt_00.png" xpos h_xpos ypos h_ypos #The shirts.
     if badges and wear_shirts: #Determine what top she will wear
-        if custom_shirt == True or custom_outfit >= 1 or custom_breast >= 1:
-            if custom_outfit == 1 and not robeon:
+        if custom_shirt == True or custom_outfit_old >= 1 or custom_breast >= 1:
+            if custom_outfit_old == 1 and not robeon:
                 add im.Alpha("01_hp/25_mo/maid_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/25_mo/cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/25_mo/s_cheer_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/25_mo/heart_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/25_mo/h_cheer_top_2.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 6:
+            elif custom_outfit_old == 6:
                 add im.Alpha("01_hp/25_mo/jumper.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 7:
+            elif custom_outfit_old == 7:
                 add im.Alpha("01_hp/25_mo/power_costume.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/25_mo/marvel_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/25_mo/marvel_sash.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/25_mo/harley_top.png", transparency) xpos h_xpos ypos h_ypos
                 add im.Alpha("01_hp/25_mo/harley_collar.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos h_xpos ypos h_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos h_xpos ypos h_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos h_xpos ypos h_ypos
@@ -1597,20 +1597,20 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
             add "01_hp/13_hermione_main/customs/collar_2.png" xpos h_xpos ypos h_ypos
         if collar == 3:
             add "01_hp/13_hermione_main/customs/collar_3.png" xpos h_xpos ypos h_ypos
-    if custom_outfit == 1:
+    if custom_outfit_old == 1:
         add "01_hp/25_mo/maid_hat.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/maid_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 4:
+    elif custom_outfit_old == 4:
         add "01_hp/25_mo/heart_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 8:
+    elif custom_outfit_old == 8:
         add "01_hp/25_mo/marvel_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_gloves.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 11:
+    elif custom_outfit_old == 11:
         add "01_hp/25_mo/christmas_gloves.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos h_xpos ypos h_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 12:
+    elif custom_outfit_old == 12:
         add im.Alpha("01_hp/25_mo/lara_gloves.png", transparency) xpos h_xpos ypos h_ypos
 
     if robeon:
@@ -1621,9 +1621,9 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
         elif ba_01 and whoring >= 13:
             add "01_hp/25_mo/cum_badge.png" xpos h_xpos ypos h_ypos
 
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair_2.png" xpos h_xpos ypos h_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair_2.png" xpos h_xpos ypos h_ypos
     elif hair_color == 0:
         add "01_hp/13_hermione_main/hair/hair_00_2.png" xpos h_xpos ypos h_ypos #The hair.    
@@ -1686,9 +1686,9 @@ screen h_head: #Screen that shows a full sprite of HERMIONE.
     
 screen h_head2: #Screen that shows Hermione's head.
     tag head
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair.png" xpos her_head_xpos ypos her_head_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+".png" xpos her_head_xpos ypos her_head_ypos
@@ -1739,12 +1739,12 @@ screen h_head2: #Screen that shows Hermione's head.
                 add im.Alpha("01_hp/25_mo/silk_pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
             else:
                 add im.Alpha("01_hp/13_hermione_main/legs/pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
-        if custom_skirt >= 1 or custom_outfit >= 1:
-            if custom_outfit == 1:
+        if custom_skirt >= 1 or custom_outfit_old >= 1:
+            if custom_outfit_old == 1:
                 add im.Alpha("01_hp/25_mo/maid_skirt.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/25_mo/cheer_pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_skirt == 1 and custom_outfit == 0:
+            elif custom_skirt == 1 and custom_outfit_old == 0:
                 add im.Alpha("01_hp/25_mo/jeans.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_skirt == 2:
                 add im.Alpha("01_hp/25_mo/jeans_2.png", transparency) xpos her_head_xpos ypos her_head_ypos
@@ -1763,7 +1763,7 @@ screen h_head2: #Screen that shows Hermione's head.
         add "01_hp/13_hermione_main/auto_03.png" xpos her_head_xpos ypos her_head_ypos #Displays sperm.
 
 
-    if custom_bra >=1 and badges and custom_outfit <= 0:
+    if custom_bra >=1 and badges and custom_outfit_old <= 0:
         if custom_bra == 1:
             add im.Alpha("01_hp/25_mo/lace_bra.png", transparency) xpos her_head_xpos ypos her_head_ypos
         elif custom_bra == 2:
@@ -1775,32 +1775,32 @@ screen h_head2: #Screen that shows Hermione's head.
 
 
     if badges and wear_shirts: #Determine what top she will wear
-        if custom_shirt == True or custom_outfit >= 1 or custom_breast >= 1:
-            if custom_outfit == 1 and not robeon:
+        if custom_shirt == True or custom_outfit_old >= 1 or custom_breast >= 1:
+            if custom_outfit_old == 1 and not robeon:
                 add im.Alpha("01_hp/25_mo/maid_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 2:
+            elif custom_outfit_old == 2:
                 add im.Alpha("01_hp/25_mo/cheer_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 3:
+            elif custom_outfit_old == 3:
                 add im.Alpha("01_hp/25_mo/s_cheer_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 4:
+            elif custom_outfit_old == 4:
                 add im.Alpha("01_hp/25_mo/heart_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 5:
+            elif custom_outfit_old == 5:
                 add im.Alpha("01_hp/25_mo/h_cheer_top_2.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 6:
+            elif custom_outfit_old == 6:
                 add im.Alpha("01_hp/25_mo/jumper.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 7:
+            elif custom_outfit_old == 7:
                 add im.Alpha("01_hp/25_mo/power_costume.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 8:
+            elif custom_outfit_old == 8:
                 add im.Alpha("01_hp/25_mo/marvel_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
                 add im.Alpha("01_hp/25_mo/marvel_sash.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 9:
+            elif custom_outfit_old == 9:
                 add im.Alpha("01_hp/25_mo/harley_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
                 add im.Alpha("01_hp/25_mo/harley_collar.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 10:
+            elif custom_outfit_old == 10:
                 add im.Alpha("01_hp/25_mo/ball_dress_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 11:
+            elif custom_outfit_old == 11:
                 add im.Alpha("01_hp/25_mo/christmas_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
-            elif custom_outfit == 12:
+            elif custom_outfit_old == 12:
                 add im.Alpha("01_hp/25_mo/lara_top.png", transparency) xpos her_head_xpos ypos her_head_ypos
             elif custom_breast == 1:
                 add "01_hp/25_mo/tit_exp_1.png" xpos her_head_xpos ypos her_head_ypos
@@ -1858,9 +1858,9 @@ screen h_head2: #Screen that shows Hermione's head.
         if collar == 3:
             add "01_hp/13_hermione_main/customs/collar_3.png" xpos her_head_xpos ypos her_head_ypos
 
-    if custom_outfit == 7 or custom_outfit == 7.2:
+    if custom_outfit_old == 7 or custom_outfit_old == 7.2:
         add "01_hp/25_mo/power_hair_2.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_hair_2.png" xpos her_head_xpos ypos her_head_ypos
     elif hair_color >= 0:
         add "01_hp/13_hermione_main/body/head/"+str(hair_style)+"_"+str(hair_color)+"_2.png" xpos her_head_xpos ypos her_head_ypos
@@ -1873,27 +1873,27 @@ screen h_head2: #Screen that shows Hermione's head.
     if glasses_worn:
         add "01_hp/13_hermione_main/glasses.png" xpos her_head_xpos ypos her_head_ypos #The glasses.
 
-    if custom_outfit == 1:
+    if custom_outfit_old == 1:
         add "01_hp/25_mo/maid_hat.png" xpos her_head_xpos ypos her_head_ypos
         add "01_hp/25_mo/maid_gloves.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 4:
+    elif custom_outfit_old == 4:
         add "01_hp/25_mo/heart_collar.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 8:
+    elif custom_outfit_old == 8:
         add "01_hp/25_mo/marvel_gloves.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 9:
+    elif custom_outfit_old == 9:
         add "01_hp/25_mo/harley_gloves.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 11:
+    elif custom_outfit_old == 11:
         add "01_hp/25_mo/christmas_gloves.png" xpos her_head_xpos ypos her_head_ypos
         add "01_hp/25_mo/christmas_antlers.png" xpos her_head_xpos ypos her_head_ypos
         add "01_hp/25_mo/christmas_collar.png" xpos her_head_xpos ypos her_head_ypos
-    elif custom_outfit == 12:
+    elif custom_outfit_old == 12:
         add im.Alpha("01_hp/25_mo/lara_pants.png", transparency) xpos her_head_xpos ypos her_head_ypos
         
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
         add "01_hp/13_hermione_main/auto_02.png" xpos her_head_xpos ypos her_head_ypos #Displays sperm.
     if uni_sperm:
         add u_sperm xpos her_head_xpos ypos her_head_ypos #Universal sperm.        
-    if badges and not robeon and custom_outfit == 0:
+    if badges and not robeon and custom_outfit_old == 0:
         if ba_01 and whoring <= 12:
             add "01_hp/13_hermione_main/badge.png" xpos her_head_xpos ypos her_head_ypos #The Robe.
         elif ba_01 and whoring >= 13:
@@ -2185,19 +2185,19 @@ screen luna:
     zorder luna_zorder
 
 screen dual_hand_job:
-    add "01_hp/01_bg/doublehand.png"
+    add "01_hp/28_cg/scene_02.png"
     zorder hermione_main_zorder
     
 screen snape_groping:
-    add "01_hp/01_bg/snapegrope.png"
+    add "01_hp/28_cg/scene_01.png"
     zorder hermione_main_zorder
     
 screen snape_facial:
-    add "01_hp/01_bg/snapefacial.png"
+    add "01_hp/28_cg/scene_03.png"
     zorder hermione_main_zorder
     
 screen snape_sex:
-    add "01_hp/01_bg/snapesex.png"
+    add "01_hp/28_cg/scene_04.png"
     zorder hermione_main_zorder
     
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE

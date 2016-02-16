@@ -2736,8 +2736,8 @@ label new_request_23_complete: # <==============================================
             m "You enjoyed it, didn't you?"
             call her_main("To be completely honest with you, sir... I did.","body_123")
             call her_main("It was exciting.","body_111")
-            call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.",body_123)
-            call her_main("I didn't know what to do I could't just go about the rest of class with huge globs of cum all over my hands.",body_118)
+            call her_main("God, there was so much.  My hands looked like a candle had dripped hot wax all over them.","body_123")
+            call her_main("I didn't know what to do I could't just go about the rest of class with huge globs of cum all over my hands.","body_118")
             her "So I decided to rub it all over the inside of my thighs to keep from having to stain my clothes."
             call her_main("Every time I walked I could smell their cum from between my legs.","body_134")
             m "That's quite an interesting story miss Granger."

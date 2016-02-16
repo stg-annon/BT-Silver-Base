@@ -689,7 +689,7 @@ label l_tutoring:
         ##call her_pose("shirt raised")
         $ lift_shirt = True
         call her_main("Like that?","body_203")
-        if custom_bra >=1 and badges and custom_outfit <= 0:
+        if custom_bra >=1 and badges and custom_outfit_old <= 0:
             m "Without your bra Miss Hermione... and come here."
         else:
             m "Yes and now come here."
@@ -853,7 +853,7 @@ label l_tutoring:
         $ h_body = "01_hp/13_hermione_main/body_203.png"
         show screen hermione_main
         with fade
-        if custom_bra >=1 and badges and custom_outfit <= 0:
+        if custom_bra >=1 and badges and custom_outfit_old <= 0:
             m "And your bra..."
             $ badges = False
         call her_main("........","body_184b")
@@ -1409,7 +1409,7 @@ label l_tutoring:
         her "{size=-2}(Old pervert...){/size}"
         call her_main("{size=-2}({b}My{/b} old pervert){/size}","body_182")
         show screen blkfade
-        if custom_bra >=1 and badges and custom_outfit <= 0:
+        if custom_bra >=1 and badges and custom_outfit_old <= 0:
             ">She wantonly removes her shirt and bra."
             ##$ v_her_bra = 0
         else:
@@ -1631,7 +1631,7 @@ label l_tutoring:
         $ badges = False
         $ wear_shirts = False
         $ panties = False
-        $ custom_outfit = 20
+        $ custom_outfit_old = 20
         hide screen blkfade
         $ walk_xpos = 600
         $ walk_xpos2 = 400
@@ -1878,7 +1878,7 @@ label l_tutoring:
         $ panties = False
         $ wear_shirts = False
         $ badges = False
-        $ custom_outfit = 20
+        $ custom_outfit_old = 20
         $ h_body = "01_hp/13_hermione_main/body_198.png"
         show screen hermione_main
         show screen ctc
@@ -2036,7 +2036,7 @@ label l_tutoring_end:
     $ badges = True
     $ fingering = False
     $ robe = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     ##call her_pose()
     jump day_start
 

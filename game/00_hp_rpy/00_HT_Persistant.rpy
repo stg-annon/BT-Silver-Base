@@ -42,8 +42,8 @@ label __init_variables:
         $ stockings = 0
     if not hasattr(renpy.store,'attic_open'): #important!
         $ attic_open = False
-    if not hasattr(renpy.store,'custom_outfit'): #important!
-        $ custom_outfit = 0
+    if not hasattr(renpy.store,'custom_outfit_old'): #important!
+        $ custom_outfit_old = 0
     if not hasattr(renpy.store,'show_attic'): #important!
         $ show_attic = True
     if not hasattr(renpy.store,'show_clothes_store'): #important!
@@ -123,7 +123,7 @@ label __init_variables:
     if not hasattr(renpy.store,'temp_stockings'): #important!
         $ temp_stockings = stockings
     if not hasattr(renpy.store,'temp_outfit'): #important!
-        $ temp_outfit = custom_outfit
+        $ temp_outfit = custom_outfit_old
 
     ###Define Luna variables
     if not hasattr(renpy.store,'luna_wear_glasses'): #important!

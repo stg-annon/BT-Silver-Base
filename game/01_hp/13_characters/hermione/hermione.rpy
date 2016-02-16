@@ -3,31 +3,39 @@ label __init_variables:
     $ h_whoring = 0
     $ h_reputation = 21
     
-    $ hermione_xpos = 370
-    $ hermione_ypos = 0
-    $ hermione_head_xpos = 390
-    $ hermione_head_ypos = 235
+    if not hasattr(renpy.store,'hermione_xpos'): #important!
+        $ hermione_xpos = 370
+    if not hasattr(renpy.store,'hermione_ypos'): #important!
+        $ hermione_ypos = 0
+    if not hasattr(renpy.store,'hermione_head_xpos'): #important!
+        $ hermione_head_xpos = 390
+    if not hasattr(renpy.store,'hermione_head_ypos'): #important!
+        $ hermione_head_ypos = 235
     
     $ hermione_body = "01_hp/13_characters/hermione/body/face/body_01.png"
     $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/00_blank.png"
     $ hermione_base = "01_hp/13_characters/hermione/body/base/hermione_base.png"
     $ hermione_legs  = "01_hp/13_characters/hermione/body/legs/legs_1.png"
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_1.png"
-    $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/A_1.png"
-    $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/A_1_2.png"
     $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
     $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
     $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
     
     $ h_body = "body_01"
     $ h_tears = "00_blank"
-    $ h_hair_style = "A"
-    $ h_hair_color = 1
     $ h_bra = "base_bra_white_1"
     $ h_panties = "base_panties_1"
     $ h_skirt = 1
     $ h_top = 1
     
+    if not hasattr(renpy.store,'hermione_hair_a'): #important!
+        $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/A_1.png"
+    if not hasattr(renpy.store,'hermione_hair_b'): #important!
+        $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/A_1_2.png"
+    if not hasattr(renpy.store,'h_hair_style'): #important!
+        $ h_hair_style = "A"
+    if not hasattr(renpy.store,'h_hair_color'): #important!
+        $ h_hair_color = 1
     
     
     $ hermione_zorder = 5
@@ -58,7 +66,6 @@ label __init_variables:
     $ hermione_badges = False
     
     $ hermione_perm_expand = False
-    $ hermione_custom_outfit = False
     
     $ h_display_tears = False
     $ h_request_wear_panties = False
@@ -79,7 +86,8 @@ label __init_variables:
     $ hermione_chibi_zorder = 3
     
     ## Action Vars
-    $ hermione_action = False
+    if not hasattr(renpy.store,'hermione_action'): #important!
+        $ hermione_action = False
     
     $ hermiome_action_bra = hermione_bra
     $ hermiome_action_panties = hermione_panties
@@ -121,12 +129,22 @@ label __init_variables:
     
     
     ## Custom Clothes/Outfits Vars
-    $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-    $ hermione_custom_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-    $ hermione_custom_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-    $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-    $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-    $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'custom_outfit'): #important!
+        $ custom_outfit = 0
+    if not hasattr(renpy.store,'hermione_custom_outfit'): #important!
+        $ hermione_custom_outfit = False
+    if not hasattr(renpy.store,'hermione_custom_a'): #important!
+        $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'hermione_custom_b'): #important!
+        $ hermione_custom_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'hermione_custom_c'): #important!
+        $ hermione_custom_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'hermione_custom_d'): #important!
+        $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'hermione_custom_e'): #important!
+        $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+    if not hasattr(renpy.store,'hermione_custom_action_a'): #important!
+        $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
     $ outfit_set_size = 20
     

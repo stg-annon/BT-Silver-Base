@@ -258,7 +258,7 @@ $ hg_pth = "01_hp/13_hermione_main/"
 $ inn_first = True
 $ stockings = 0
 $ attic_open = False
-$ custom_outfit = 0
+$ custom_outfit_old = 0
 $ show_attic = True
 $ show_clothes_store = True
 $ clothes_intro_done = False
@@ -323,6 +323,8 @@ screen statistics: #http://www.renpy.org/doc/html/screens.html
 label day_start:
 
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY THEME
+
+call reset_hermione_main
 
 $ flip = False
 $ chitchated_with_her = False #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
