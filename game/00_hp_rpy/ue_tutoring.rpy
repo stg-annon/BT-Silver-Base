@@ -378,7 +378,7 @@ label l_tutoring:
         call her_main("{size=-2}(Their beautiful and tempting breasts){/size}","body_196")
         call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","body_212")
         $ b_her_tears = True
-        call her_main("{size=-2}(I can't believe I said that!){/size}","body_213","e_her_tears_03b")
+        call her_main("{size=-2}(I can't believe I said that!){/size}","body_213","tears_03b")
         call her_main("They were very excited and I could see their panties become wet.","body_196")
         call her_main("Disgusting.","body_214")
         if d_flag_01:
@@ -433,7 +433,7 @@ label l_tutoring:
         call her_main("Apparently bad fluids are released from your body when you have faced such acts.","body_206")
         m "No, they aren't bad. It happens when you're excited."
         $ b_her_tears = True
-        call her_main("No way! I can control myself!","body_216","e_her_tears_01b")
+        call her_main("No way! I can control myself!","body_216","tears_01b")
         $ b_her_tears = False
         call her_main("","body_187")
         m "No one can control their base desires."
@@ -588,7 +588,7 @@ label l_tutoring:
         call her_main("I'm happy to earn points for my house and at the same time I feel so ashamed.","body_145")
         her "And the same goes for your lessons."
         m "Yet you can't deny your progress in the practice of magic."
-        call her_main("...{w=0.2} Yes...{w=0.2} perhaps you're right.","body_157","e_her_tears_03b")
+        call her_main("...{w=0.2} Yes...{w=0.2} perhaps you're right.","body_157","tears_03b")
         m "You have to let it go, Miss Hermione, follow your instincts!"
         g9 "{size=-2}(Grab my cock and wank it savagely!){/size}"
         $ b_her_tears = False
@@ -743,7 +743,7 @@ label l_tutoring:
         call her_main("","body_212")
         ">You suck her nipples with devotion."
         $ b_her_tears = True
-        call her_main("Yes {image=textheart} like that.","body_212","e_her_tears_03c")
+        call her_main("Yes {image=textheart} like that.","body_212","tears_03c")
         ">You start to chew on her nipples."
         call her_main("Ah, noo, don't...","body_219")
         ">You chew on them even harder."
@@ -936,7 +936,7 @@ label l_tutoring:
         ">You increase the pace and feel her pussy tighten on your fingers."
         m "Maybe a third finger?"
         $ b_her_tears = True
-        call her_main("Don't be so bold.","body_195","e_her_tears_01")
+        call her_main("Don't be so bold.","body_195","tears_01")
         ">Her whole body starts shaking as you increase your ramming."
         hide screen groping_06
         show screen groping_06b
