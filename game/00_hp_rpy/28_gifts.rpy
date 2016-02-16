@@ -722,59 +722,58 @@ label display_gift(str, gift_id):
 label give_her_existing_stock(stock_id):
     hide screen hermione_main
     with d5
-    $ h_xpos=140
+    $ hermione_xpos = 140
     
-    if stock_id = "fishnet_stockings":
+    if stock_id == "fishnet_stockings":
         call her_main("A pair of stockings?","body_03")
         call display_gift(">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe.","30")
         call her_main("Thank you, [genie_name].","body_04")
         $ cs_existing_stock_gifted.append("fishnet_stockings")
         $ dress_code = True
         call happy(30)
-    if stock_id = "gryffindor_stockings":
+    if stock_id == "gryffindor_stockings":
         call her_main("A pair of stockings?","body_03")
         call display_gift(">You give the stockings to Hermione...\n>gryffindor stockings have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("gryffindor_stockings")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
-    if stock_id = "SPEW_badge":
+    if stock_id == "SPEW_badge":
         call her_main("A badge?","body_01")
         call display_gift(">You give the badge to Hermione...\n>The \"S.P.E.W. badge has been added to the wardrobe.","29")
         $ cs_existing_stock_gifted.append("SPEW_badge")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_06")
         call happy(30)
-    if stock_id = "jeans":
+    if stock_id == "jeans":
         call her_main("A pair of jeans?","body_03")
         call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("jeans")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
-    if stock_id = "lace_set":
+    if stock_id == "lace_set":
         call her_main("A set of undergarments?","body_03")
         call display_gift(">You give the lace bra and panties to Hermione...\n>lace bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("lace_set")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
-    if stock_id = "cup_set":
+    if stock_id == "cup_set":
         call her_main("A set of undergarments??","body_03")
         call display_gift(">You give the cup bra and panties to Hermione...\n>cup bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("cup_set")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
-    if stock_id = "silk_set":
+    if stock_id == "silk_set":
         call her_main("A set of undergarments?","body_03")
         call display_gift(">You give the silk bra and panties to Hermione...\n>silk bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("silk_set")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
-        
-    if stock_id = "ITEM_ID":
+    if stock_id == "ITEM_ID":
         call her_main("HERMIONE_QUESTIONS_ITEM?","body_03")
         call display_gift(">You give the ITEM to Hermione...\n>ITEM have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("ITEM_ID")
@@ -782,7 +781,7 @@ label give_her_existing_stock(stock_id):
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
         
-    $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    $ hermione_xpos = 370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     show screen hermione_main
     with d3
     jump day_time_requests 
