@@ -2185,19 +2185,19 @@ screen luna:
     zorder luna_zorder
 
 screen dual_hand_job:
-    add "01_hp/01_bg/doublehand.png"
+    add "01_hp/28_cg/scene_02.png"
     zorder hermione_main_zorder
     
 screen snape_groping:
-    add "01_hp/01_bg/snapegrope.png"
+    add "01_hp/28_cg/scene_01.png"
     zorder hermione_main_zorder
     
 screen snape_facial:
-    add "01_hp/01_bg/snapefacial.png"
+    add "01_hp/28_cg/scene_03.png"
     zorder hermione_main_zorder
     
 screen snape_sex:
-    add "01_hp/01_bg/snapesex.png"
+    add "01_hp/28_cg/scene_04.png"
     zorder hermione_main_zorder
     
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE

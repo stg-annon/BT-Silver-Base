@@ -106,9 +106,8 @@ label door:
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
                 
-                call her_main(xpos=410,ypos=0)
-                # $ h_xpos=410 #Defines position of the Hermione's full length sprite.
-                # $ h_ypos=0
+                $ hermione_xpos = 410
+                $ hermione_ypos = 0
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                 $ hermione_chibi_xpos = 400 #Near the desk.
