@@ -708,13 +708,13 @@ label give_her_gift(gift_id):
     jump day_time_requests
     
     
-label display_gift(str, gift_id):
+label display_gift(text=">Gift given", gift_id):
     hide screen hermione_main
     with d3
     $ the_gift = "01_hp/18_store/"+str(gift_id)+".png"
     show screen gift
     with d3
-    "[str]"
+    "[text]"
     hide screen gift
     with d3
     return
