@@ -18,37 +18,37 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
                     "-A maid-" if "maid" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(1)
+                        call set_hermione_outfit(1)
                         pass
                     "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(2)
+                        call set_hermione_outfit(2)
                         pass
                     "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(3)
+                        call set_hermione_outfit(3)
                         pass
                     "-Ms Marvel-" if "ms_marvel" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(8)
+                        call set_hermione_outfit(8)
                         pass
                     "-A heart dancer-" if "heart_dancer" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(4)
+                        call set_hermione_outfit(4)
                         pass
                     "-power girl-" if "power_girl" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(7)
+                        call set_hermione_outfit(7)
                         pass  
                     "-Harley Quinn-" if "harley_quinn" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(9)
+                        call set_hermione_outfit(9)
                         pass
             "\"(Not right now.)\"":
                 pass
@@ -924,7 +924,7 @@ label new_request_04:
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(8)
+                    call set_hermione_outfit(8)
                     pass
                 else:
                     jump too_much
@@ -1199,7 +1199,7 @@ label new_request_05:
                     call her_main("...","body_54")
                     call her_main("Well, if you insist...","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(1)
+                    call set_hermione_outfit(1)
                     pass
                 else:
                     jump too_much
@@ -1807,12 +1807,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                     "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(2)
+                        call set_hermione_outfit(2)
                         pass
                     "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_inventory:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(3)
+                        call set_hermione_outfit(3)
                         pass
                     "-Power girl-" if "power_girl" in outfit_inventory:
                         call her_main("In that ridiculous costume?","body_30")
@@ -1820,7 +1820,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         call her_main("...","body_34")
                         call her_main("Fine, let me go change.","body_33")
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call hermione_set_outfit(7)
+                        call set_hermione_outfit(7)
                         pass
                 call her_main(xpos=120)
                 pause
@@ -2069,7 +2069,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you and covers up hastily."
-                call end_hermione_action
+                call set_hermione_action("none")
                 call her_head("I think I'd better go...","body_208b")
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
@@ -2124,7 +2124,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
-                call end_hermione_action
+                call set_hermione_action("none")
                 call her_head("You promised not to touch, [genie_name]...","body_203")
                 m "It was hard to resist..."
                 hide screen blkfade
@@ -2208,7 +2208,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d5
                 ">You let go of the girl's breasts..."
                 ">Hermione covers up..."
-                call end_hermione_action
+                call set_hermione_action("none")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 if if whoring >= 17:
                     call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
@@ -2278,7 +2278,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             show screen blkfade
             with d3
             ">Hermione covers up..."
-            call end_hermione_action
+            call set_hermione_action("none")
             # $ badges = True # Shows layer with badges.
             # $ lift_shirt = False
             hide screen chair_02 #Genie's chair.
@@ -2334,7 +2334,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         show screen blkfade
                         with d3
                         ">Hermione pulls away from you and covers up..."
-                        call end_hermione_action
+                        call set_hermione_action("none")
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
                         call her_head("I am not setting a foot into your office ever again, [genie_name]!","body_141")
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
@@ -2358,7 +2358,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         with d3
                         call her_head("Ew! [genie_name]!","body_141")
                         call her_head("I'm leaving!","body_141")
-                        call end_hermione_action
+                        call set_hermione_action("none")
                         call music_block
                         jump could_not_flirt
             elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
@@ -2414,7 +2414,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         g4 "I'd better stop now I suppose..."
                         call her_head("...............","body_208b")
                         ">Hermione covers up..."
-                        call end_hermione_action
+                        call set_hermione_action("none")
                     "-Just start cumming-":
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
@@ -2452,7 +2452,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         
                         hide screen hermione_main
                         with d3
-                        call end_hermione_action
+                        call set_hermione_action("none")
                         $ sperm_on_tits = False
                         $ aftersperm = True
                         
@@ -2594,7 +2594,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         pause
                         hide screen hermione_main
                         with d3
-                        call end_hermione_action
+                        call set_hermione_action("none")
                         $ badges = True # Shows badges on hermione_main screen.
                         $ lift_shirt = False
                         $ sperm_on_tits = False
@@ -2658,7 +2658,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         pause
                         hide screen hermione_main
                         with d3
-                        call end_hermione_action
+                        call set_hermione_action("none")
                         $ badges = True # Turns the badges layer back on.
                         $ lift_shirt = False
                         $ sperm_on_tits = False
@@ -2796,7 +2796,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(4)
+                    call set_hermione_outfit(4)
                     pass
                 else:
                     jump too_much
@@ -4760,7 +4760,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
                     call her_main("...","body_58")
                     call her_main("Fine, let me go wrap myself.","body_59")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(11)
+                    call set_hermione_outfit(11)
                     pass
                 else:
                     jump too_much
@@ -5308,7 +5308,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
                     call her_main("...","body_44")
                     call her_main("Fine, at least it's gryffindor.","body_29")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(2)
+                    call set_hermione_outfit(2)
                     pass
                 else:
                     jump too_much
@@ -6476,7 +6476,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(3)
+                    call set_hermione_outfit(3)
                     pass
                 else:
                     jump too_much
@@ -7393,7 +7393,7 @@ label new_request_29: #LV.7 (Whoring = 18 - 20)
                     call her_main("...","body_73")
                     call her_main("Whatever, let me go change.","body_82")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(12)
+                    call set_hermione_outfit(12)
                     pass
                 else:
                     jump too_much
@@ -8055,7 +8055,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
                     call her_main("Of course","body_119")
                     call her_main("Let me go try it on!","body_188")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call hermione_set_outfit(10)
+                    call set_hermione_outfit(10)
                     pass
                 else:
                     jump too_much

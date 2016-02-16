@@ -115,55 +115,30 @@ screen hermione_head:
     ### ZORDER
     zorder 8
     
-label hermione_set_outfit(outfit_id):
+    
+label set_hermione_robe(robe = ""):
+    hide screen hermione_main
+    with d3
+    call h_robe(robe)
+    return
+    
+label h_robe(robe = ""):
+    if robe == "":
+        $ hermione_wear_robe = False
+    else:
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str(robe)
+        $ hermione_wear_robe = True
+    return
+    
+## Outfit Blocks
+label set_hermione_outfit(outfit_id):
     show screen blkfade
     hide screen hermione_main
     with d3
-    $ user_outfit_choice = outfit_id
     call h_outfit(outfit_id)
     pause .5
     hide screen blkfade
     with d5
-    return
-    
-label reset_hermione_main:
-    $ aftersperm = False #Show cum stains on Hermione's uniform.
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen ctc
-    with d3
-    call h_outfit(0)
-    call h_action("none")
-    call update_her_uniform
-    return
-    
-label h_update:
-    $ hermione_body = "01_hp/13_hermione_main/"+str(h_body)+".png"
-    #$ hermione_body = "01_hp/13_characters/hermione/body/face/"+str(h_body)+".png"
-    
-    if h_robe != "":
-        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str(h_robe)+".png"
-    
-    if h_tears != "":
-        $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/"+str(h_tears)+".png"
-    else:
-        $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/00_blank.png"
-    
-    if h_body in hermione_anger or hermione_emote_anger:
-        $ hermione_emote = "01_hp/13_characters/emote/01.png"
-    elif h_body in hermione_exclam or hermione_emote_exclam:
-        $ hermione_emote = "01_hp/13_characters/emote/02.png"
-    elif h_body in hermione_hearts or hermione_emote_hearts:
-        $ hermione_emote = "01_hp/13_characters/emote/03.png"
-    elif h_body in hermione_question or hermione_emote_question:
-        $ hermione_emote = "01_hp/13_characters/emote/04.png"
-    elif h_body in hermione_sweat or hermione_emote_sweat:
-        $ hermione_emote = "01_hp/13_characters/emote/05.png"
-    elif hermione_body in hermione_suprize or hermione_emote_suprize:
-        $ hermione_emote = "01_hp/13_characters/emote/06.png"
-    else:
-        $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
     return
     
 label h_outfit(outfit_id):
@@ -210,11 +185,7 @@ label h_outfit(outfit_id):
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(hermione_custom_breast_list[custom_outfit])+".png"
     return
     
-label end_hermione_action:
-    call h_action("")
-    call h_action("")
-    return
-    
+## Action Blocks
 label set_hermione_action(action = ""):
     hide screen bld1
     hide screen hermione_main
@@ -222,9 +193,6 @@ label set_hermione_action(action = ""):
     hide screen ctc
     with d3
     call h_action(action)
-    return
-    
-label h_robe(robe = ""):
     return
     
 label h_action(action =  ""):
@@ -312,6 +280,32 @@ label h_action(action =  ""):
                 $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     return
     
+## Control Blocks
+label h_update:
+    $ hermione_body = "01_hp/13_hermione_main/"+str(h_body)+".png"
+    #$ hermione_body = "01_hp/13_characters/hermione/body/face/"+str(h_body)+".png"
+    
+    if h_tears != "":
+        $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/"+str(h_tears)+".png"
+    else:
+        $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/00_blank.png"
+    
+    if h_body in hermione_anger or hermione_emote_anger:
+        $ hermione_emote = "01_hp/13_characters/emote/01.png"
+    elif h_body in hermione_exclam or hermione_emote_exclam:
+        $ hermione_emote = "01_hp/13_characters/emote/02.png"
+    elif h_body in hermione_hearts or hermione_emote_hearts:
+        $ hermione_emote = "01_hp/13_characters/emote/03.png"
+    elif h_body in hermione_question or hermione_emote_question:
+        $ hermione_emote = "01_hp/13_characters/emote/04.png"
+    elif h_body in hermione_sweat or hermione_emote_sweat:
+        $ hermione_emote = "01_hp/13_characters/emote/05.png"
+    elif hermione_body in hermione_suprize or hermione_emote_suprize:
+        $ hermione_emote = "01_hp/13_characters/emote/06.png"
+    else:
+        $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
+    return
+   
 label update_her_body:
     if not hermione_wear_top:
         if not hermione_wear_bra:
@@ -417,6 +411,19 @@ label update_chibi_uniform:
         
     return
     
+label reset_hermione_main:
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with d3
+    call h_outfit(0)
+    call h_action("none")
+    call update_her_uniform
+    return
+     
+     
 label set_custom_layer(a=hermione_custom_a,b=hermione_custom_b,c=hermione_custom_c,d=hermione_custom_d,e=hermione_custom_e, save = False):
     if a != hermione_custom_a:
         $ hermione_custom_a = a

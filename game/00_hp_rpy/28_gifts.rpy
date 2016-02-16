@@ -1694,19 +1694,19 @@ label h_badge_off:
     with d5
     return
     
-label set_h_hair_style(style = "A"):
+label set_h_hair_style(hair_style = "A"):
     hide screen hermione_main
     with d5
-    $ h_hair_style = style
+    $ h_hair_style = hair_style
     call update_her_body
     show screen hermione_main
     with d5
     return
     
-label set_h_hair_color(color = 0):
+label set_h_hair_color(hair_color = 0):
     hide screen hermione_main
     with d5
-    $ h_hair_color = color
+    $ h_hair_color = hair_color
     call update_her_body
     show screen hermione_main
     with d5
