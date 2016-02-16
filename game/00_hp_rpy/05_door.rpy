@@ -346,6 +346,69 @@ label door:
                             pass
                         label day_request_wardrobe:
                         menu:
+                            "-Hair-":
+                                label day_request_hair:
+                                menu:
+                                    "-Wear your hair up-" if not h_hair_style == "B":
+                                        call her_main("Sure, let me just go change it.","body_01")
+                                        call set_h_hair_style("B")
+                                        jump day_request_hair
+                                        
+                                    "-Wear your hair down-" if not h_hair_style == "A":
+                                        call her_main("Sure, let me just go change it.","body_01")
+                                        call set_h_hair_style("A")
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair-":
+                                        label day_request_hair_dye:
+                                        menu:
+                                            "-Dye Brown-" if not h_hair_color == 1:
+                                                call her_main("Brown seems so boring now.","body_01")
+                                                call set_h_hair_color(1)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Dye Blonde-" if not h_hair_color == 2:
+                                                call her_main("Why do you want me to change my hair?","body_01")
+                                                m "I don't know, I suppose I just have a thing for blondes"
+                                                her "well I've always heard blondes have more fun!"
+                                                call set_h_hair_color(2)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Dye Red-" if not h_hair_color == 3:
+                                                call her_main("this'll be fun, Maybe I'll look like Batwoman!","body_01")
+                                                m "You read comics?"
+                                                her "no, i just play certain games"
+                                                m "What?"
+                                                call set_h_hair_color(3)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Dye Black-" if not h_hair_color == 4:
+                                                call her_main("I have been feeling a bit depressed recently.","body_01")
+                                                her "I wonder if it's because of all the favors I've been doing"
+                                                m "Don't worry about it"
+                                                call set_h_hair_color(4)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Dye Blue-" if not h_hair_color == 5:
+                                                call her_main("Blue?","body_01")
+                                                m "Why not?"
+                                                her "Just seems a bit attention seeking..."
+                                                call set_h_hair_color(5)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Dye Orange-" if not h_hair_color == 6:
+                                                call her_main("Orange?","body_01")
+                                                m "That's what I said."
+                                                her "Alright, well just let me change it."
+                                                call set_h_hair_color(6)
+                                                jump day_request_hair_dye
+                                                
+                                            "-Never mind-":
+                                                jump day_request_hair
+                                        
+                                    "-Never mind-":
+                                        jump day_request_wardrobe
+                            
                             "-Clothing-":
                                 label day_request_clothing:
                                 menu:
@@ -439,7 +502,7 @@ label door:
                                         
                                     "-Never mind-":
                                         jump day_request_wardrobe
-                                        
+                            
                             "-Accessories-":
                                 label day_request_accessories:
                                 menu:
@@ -461,64 +524,7 @@ label door:
                                         
                                     "-Never mind-":
                                         jump day_request_wardrobe
-                                        
-                            "-Hair-":
-                                label day_request_hair:
-                                menu:
-                                    "-Dye your hair brown-" if not h_hair_color == 1:
-                                        call her_main("Brown seems so boring now.","body_01")
-                                        call set_h_hair_color(1)
-                                        jump day_request_hair
-                                        
-                                    "-Dye your hair blonde-" if not h_hair_color == 2:
-                                        call her_main("Why do you want me to change my hair?","body_01")
-                                        m "I don't know, I suppose I just have a thing for blondes"
-                                        her "well I've always heard blondes have more fun!"
-                                        call set_h_hair_color(2)
-                                        jump day_request_hair
-                                        
-                                    "-Dye your hair red-" if not h_hair_color == 3:
-                                        call her_main("this'll be fun, Maybe I'll look like Batwoman!","body_01")
-                                        m "You read comics?"
-                                        her "no, i just play certain games"
-                                        m "What?"
-                                        call set_h_hair_color(3)
-                                        jump day_request_hair
-                                        
-                                    "-Dye your hair black-" if not h_hair_color == 4:
-                                        call her_main("I have been feeling a bit depressed recently.","body_01")
-                                        her "I wonder if it's because of all the favors I've been doing"
-                                        m "Don't worry about it"
-                                        call set_h_hair_color(4)
-                                        jump day_request_hair
-                                        
-                                    "-Dye your hair blue-" if not h_hair_color == 5:
-                                        call her_main("Blue?","body_01")
-                                        m "Why not?"
-                                        her "Just seems a bit attention seeking..."
-                                        call set_h_hair_color(5)
-                                        jump day_request_hair
-                                        
-                                    "-Dye your hair orange-" if not h_hair_color == 6:
-                                        call her_main("Orange?","body_01")
-                                        m "That's what I said."
-                                        her "Alright, well just let me change it."
-                                        call set_h_hair_color(6)
-                                        jump day_request_hair
-                                        
-                                    "-Wear your hair up-" if not h_hair_style == "B":
-                                        call her_main("Sure, let me just go change it.","body_01")
-                                        call set_h_hair_style("B")
-                                        jump day_request_hair
-                                        
-                                    "-Wear your hair down-" if not h_hair_style == "A":
-                                        call her_main("Sure, let me just go change it.","body_01")
-                                        call set_h_hair_style("A")
-                                        jump day_request_hair
-                                        
-                                    "-Never mind-":
-                                        jump day_request_wardrobe
-                                        
+                            
                             "-Collars-" if False:
                                 label day_request_collars:
                                 menu:
@@ -536,7 +542,7 @@ label door:
                                         jump day_request_collars
                                     "-Never mind-":
                                         jump day_request_wardrobe
-                                        
+                            
                             "-Never mind":
                                 jump day_time_requests
                     

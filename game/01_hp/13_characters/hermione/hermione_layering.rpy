@@ -130,6 +130,7 @@ label h_robe(robe = ""):
         $ hermione_wear_robe = True
     return
     
+    
 ## Outfit Blocks
 label set_hermione_outfit(outfit_id):
     show screen blkfade
@@ -184,6 +185,7 @@ label h_outfit(outfit_id):
     
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(hermione_custom_breast_list[custom_outfit])+".png"
     return
+    
     
 ## Action Blocks
 label set_hermione_action(action = ""):
@@ -279,6 +281,7 @@ label h_action(action =  ""):
             if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
                 $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     return
+    
     
 ## Control Blocks
 label h_update:
