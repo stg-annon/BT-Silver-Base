@@ -17,21 +17,25 @@ label __init_variables:
     $ hermione_base = "01_hp/13_characters/hermione/body/base/hermione_base.png"
     $ hermione_legs  = "01_hp/13_characters/hermione/body/legs/legs_1.png"
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_1.png"
-    $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/A_1.png"
-    $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/A_1_2.png"
     $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
     $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
     $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
     
     $ h_body = "body_01"
     $ h_tears = "00_blank"
-    $ h_hair_style = "A"
-    $ h_hair_color = 1
     $ h_bra = "base_bra_white_1"
     $ h_panties = "base_panties_1"
     $ h_skirt = 1
     $ h_top = 1
     
+    if not hasattr(renpy.store,'hermione_hair_a'): #important!
+        $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/A_1.png"
+    if not hasattr(renpy.store,'hermione_hair_b'): #important!
+        $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/A_1_2.png"
+    if not hasattr(renpy.store,'h_hair_style'): #important!
+        $ h_hair_style = "A"
+    if not hasattr(renpy.store,'h_hair_color'): #important!
+        $ h_hair_color = 1
     
     
     $ hermione_zorder = 5

@@ -320,6 +320,8 @@ label day_start:
 
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY THEME
 
+call reset_hermione_main
+
 $ flip = False
 $ chitchated_with_her = False #Prevents you from chitchatting with Hermione more then once per time of day. Turns back to False every night. (And every day).
 $ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night and every day.

@@ -5394,6 +5394,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
         pause.1
         show screen blkfade
         with Dissolve(1)
+        hide screen hermione_walk_01 
         pause.3
         label event_01_round_02:
         ">Hermione puts her slender hands on your cock..."
