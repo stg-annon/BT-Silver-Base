@@ -560,7 +560,7 @@ label cum_block:
 label too_much:
     stop music fadeout 2.0
     call her_main("[genie_name]??!","body_48",xpos=120)
-    her "How could ask for such a thing!?"
+    her "How could you ask for such a thing!?"
     call her_main("I think I better leave.","body_34",xpos=120)
     
     $ mad += 7
@@ -576,8 +576,24 @@ label too_much:
     call reset_hermione_main
     jump end_hermione_personal_request
 
+label very_no:
+    stop music fadeout 2.0
+    call her_main("Absolutely not!","body_12",xpos=120)
+    her "I'll show you that my integrity and honour as a Gryffindor cannot be bought!"
+    call her_main("I'm leaving this instant.","body_30",xpos=120)
     
+    $ mad += 7
     
+    hide screen blktone
+    hide screen bld1
+    hide screen hermione_main
+    hide screen hermione_stand_f #Hermione stands still.
+    with d3
+    
+    call her_walk(400,610,2)
+    
+    call reset_hermione_main
+    jump end_hermione_personal_request
     
     
     

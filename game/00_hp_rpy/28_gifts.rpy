@@ -708,13 +708,13 @@ label give_her_gift(gift_id):
     jump day_time_requests
     
     
-label display_gift(str, gift_id):
+label display_gift(str1, gift_id):
     hide screen hermione_main
     with d3
     $ the_gift = "01_hp/18_store/"+str(gift_id)+".png"
     show screen gift
     with d3
-    "[str]"
+    "[str1]"
     hide screen gift
     with d3
     return
@@ -745,10 +745,17 @@ label give_her_existing_stock(stock_id):
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_06")
         call happy(30)
-    if stock_id == "jeans":
+    if stock_id == "long_jeans":
         call her_main("A pair of jeans?","body_03")
         call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
-        $ cs_existing_stock_gifted.append("jeans")
+        $ cs_existing_stock_gifted.append("long_jeans")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
+    if stock_id == "short_jeans":
+        call her_main("A pair of daisy dukes?","body_03")
+        call display_gift(">You give the daisy dukes to Hermione...\n>short jeans have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("short_jeans")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
@@ -1250,75 +1257,6 @@ label bra_off:
     with d3
     jump day_time_requests
     
-label jeans_on:
-    call her_main("You want me to wear muggle pants?","body_01")
-    m "Well their called jeans."
-    her "That's not what I meant..."
-    
-    $ custom_skirt = 1
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-    
-label jeans_off:
-    call her_main("Ok.","body_01")
-    
-    $ custom_skirt = 0
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-
-label jeans_short_on:
-    if whoring >= 12:
-        call her_main("You want me to wear pants that are this short?","body_55")
-        m "I do."
-        call her_main("But they're so short...","body_56")
-    else:
-        call her_main("You want me to wear muggle pants?","body_08")
-        her "That are this short..."
-        m "I do."
-        call her_main("...{w}Fine","body_12")
-    
-    $ custom_skirt = 5
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-    
-label jeans_short_off:
-    call her_main("Ok.","body_01")
-    
-    $ custom_skirt = 0
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
     
 label g_stockings_on:
     call her_main("Ok then","body_01")
@@ -1673,6 +1611,27 @@ label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
     with d5
     return
     
+label set_h_skirt(skirt="base_skirt"):   
+    hide screen hermione_main
+    with d5
+    $ h_skirt = skirt
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+    
+label set_h_stockings(stockings="00_blank"):   
+
+
+
+    hide screen hermione_main
+    with d5
+    $ h_stocking = stockings
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+    
 label h_badge_on(badge = "SPEW_badge"):
     hide screen hermione_main
     with d5
@@ -1727,6 +1686,207 @@ label badge_take:
     hide screen blkfade
     with d3
     jump day_time_requests
+    
+###Jeans ###
+label equip_jeans:
+
+    if whoring >= 0 and whoring <= 2 and request_jeans == False: # Lv 0
+        call her_main("Muggle pants?","body_11")
+        m "Yup"
+        call her_main(".....?","body_11")
+        call her_main("Wait you want me to WEAR them!?","body_31")
+        m "Yup"
+        call her_main("At school!?")
+        m "How does 10 points sound?"
+        call her_main("Those are not part of the school uniform! I'd be suspended or *shudder* worse!","body_18")
+        m "Who cares. 15 points?"
+        call her_main("NO amount of points is worth being suspended!","body_07")
+        m "30?"
+        jump very_no
+    elif whoring >= 3 and whoring < 6 and request_jeans == False: #Lv 1  - 2
+       call her_main("Muggle pants?","body_11")
+       m "Yup"
+       call her_main(".....","body_11")
+       call her_main("You... want me to wear them...","body_31")
+       m "Yup"
+       call her_main("At school?")
+       m "How does 10 points sound?"
+       call her_main("But they're not part of the school uniform... I'd get suspended... I don't have permission!","body_18")
+       m "I'm the head master, [hermione_name]. I'm giving you permission"
+       m "15 points?"
+       call her_main("............")   
+       call her_main("... How on earth am I going to explain this to my classmates?","body_21")
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call set_h_skirt("jeans")
+       call her_main("","body_21",xpos=120,ypos=0)
+       show screen ctc
+       with d3
+       pause
+       $ request_jeans = True
+       m "15 points for Gryffindor!"
+       $ gryffindor +=15
+       call her_main("Thank you, [genie_name]","body_29",xpos=410)
+    elif request_jeans == True:
+       call set_h_skirt("jeans")
+    elif whoring >= 6 and whoring < 9 and request_jeans == False:
+       call her_main("Jeans?","body_02")
+       m "Yup"
+       call her_main("You want me to wear them at school?","body_17")
+       m "Yup"
+       call her_main("*sigh* as long as I don't get into any trouble...","body_16")
+       call her_main("and I get some points for Gryffindor","body_14")
+       m "I'm the head master, [hermione_name], there won't be any trouble."
+       m "And 15 points for Gryffindor!"
+       $ gryffindor +=15
+       call her_main("Thank you, [genie_name]! (These might.. get me some extra attention)","body_59")
+       call her_main("(Not that I want the attention!) I'm only in it for the points!","body_58")
+       g9 ""
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call set_h_skirt("jeans")
+       call her_main("","body_58",xpos=120,ypos=0)
+       $ request_jeans = True
+       show screen ctc
+       with d3
+       pause
+       call her_main("","body_01",xpos=410)
+    elif whoring >= 9 and whoring <= 15 and request_jeans == False: 
+       call her_main("Jeans?","body_02")
+       m "Yup"
+       call her_main("Aren't they a little... plain?","body_66")
+       m "How do you mean?"
+       call her_main("How am I going to save Gryffindor if I look like just another boring girl?","body_16")
+       call her_main("How am I going to get my points?","body_16")
+       call her_main("At least make this worth while... Please, [genie_name]","body_17")
+       m "15 points for Gryffindor, I guess?"
+       call her_main("You're the best, [genie_name]!","body_129")
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call set_h_skirt("jeans")
+       $ request_jeans = True
+       show screen ctc
+       with d3
+       call her_main("*humph* ... (These are so stuffy... How am i supposed to get my hands into...)","body_12",xpos=120)
+       call her_main("(What if [genie_name] needs me to...)","body_12",xpos=120)
+       call her_main("(No... i shouldn't think about things like that! Keep your head in the game, [hermione_name]","body_141")
+       call her_main("...","body_141")
+       call her_main("(ahh... i thought about it again... naughty [hermione_name]!)","body_188")
+       g9 "....."
+       call her_main("","body_188",xpos=410)
+    
+    elif whoring > 15: 
+        call her_main("...Jeans?","body_02")
+        m "Yup"
+        call her_main("*sigh*...are you serious?","body_04")
+        m "...? You're going to draw the line at... a pair of jeans, [hermione_name]?"
+        call her_main("Of course not, [genie_name]!","body_87")
+        call her_main("It's just that... they take... time to get off","body_204")
+        g4 "..."
+        call her_main("I have needs and...","body_204")
+        call her_main("There's a lot of fabric, [genie_name]")
+        call her_main("between [genie_name] and his... [hermione_name]'s ...")
+        m "And [hermione_name]'s what?"
+        call her_main("...and [hermione_name]'s cunt, [genie_name]","body_208b")
+        g4 "(This needy little slut was once the feared Hermione Granger?)"
+        g9 ""
+        call her_main("...")
+        call her_main("I'll go change immediately, [genie_name]","body_209")
+        show screen bld1
+        with d3
+        show screen blktone
+        with d3
+        call set_h_skirt("jeans")
+        call her_main("","body_209",xpos=120,ypos=0)
+        $ request_jeans = True
+        show screen ctc
+        with d3
+        pause
+        call her_main("If you still have time, [genie_name], we could test how long it takes to get out of this thing?","body_205")
+        g9 "(I love my job)"
+        call her_main("","body_209",xpos=410)
+    
+    jump day_request_clothing
+    
+### Gryffindor Stockings ###
+label equip_gryyf_stockings:
+    if whoring < 3 and request_gryyf_stockings == False:
+       call her_main("Is that!?","body_11")
+       call her_main("A pair of legendary Gryffindor socks!?","body_48")
+       m "Yep?"
+       call her_main("That sell out from the uniform shop on the very first day, of EVERY SINGLE YEAR!?","body_48")
+       m "Probably?"
+       call her_main("I NEED THEM! What'll it cost me!?","body_34")
+       m "No cost"
+       call her_main("!","body_48")
+       m "It's a gift, [hermione_name], to show you what a great guy ME, Proffesor DeltaDwarf, really is!"
+       call her_main("...")
+       call her_main("hhmppphhh", "body_42")
+       call her_main("hahahahahahaha!","body_80b")
+       call her_main("ahhh....","body_157")
+       call her_main("You're too funny! Thanks for the gift! I'll try them on right away","body_01")
+       g6 "(...What did I say?)"
+       call her_main("I've always wanted a pair of these, they're so warm, and they reduce distractions for the boys","body_18")
+       m "Just glad to help, [hermione_name]!
+       g4 (hehehe... hope you remember this moment the first time you get fucked so hard you scream!)"
+       call her_main("They feel great!","body_01",xpos=120,ypos=0)
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call set_h_stockings("gryff")
+       show screen ctc
+       with d3
+       pause
+       call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
+       g9 "(We'll see about that)"
+       $ request_gryyf_stockings = True
+    elif:
+     if whoring >= 3 and whoring < 6 and request_gryyf_stockings == False:
+       call her_main("Is that!?","body_11")
+       call her_main("A pair of legendary Gryffindor socks!?","body_48")
+       m "Yep?"
+       call her_main("That sell out from the uniform shop on the very first day, of EVERY SINGLE YEAR!?","body_48")
+       m "Probably?"
+       call her_main("I NEED THEM! What'll it cost me!?","body_34")
+       m "Just a favour"
+       call her_main("!","body_48")
+       m "It's a gift, [hermione_name], to show you what a great guy ME, Proffesor DeltaDwarf, really is!"
+       call her_main("...")
+       call her_main("hhmppphhh", "body_42")
+       call her_main("hahahahahahaha!","body_80b")
+       call her_main("ahhh....","body_157")
+       call her_main("You're too funny! Thanks for the gift! I'll try them on right away","body_01")
+       g6 "(...What did I say?)"
+       call her_main("I've always wanted a pair of these, they're so warm, and they reduce distractions for the boys","body_18")
+       m "Just glad to help, [hermione_name]!
+       g4 (hehehe... hope you remember this moment the first time you get fucked so hard you scream!)"
+       call her_main("They feel great!","body_01",xpos=120,ypos=0)
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call set_h_stockings("gryff")
+       show screen ctc
+       with d3
+       pause
+       call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
+       g9 "(We'll see about that)"
+       $ request_gryyf_stockings = True
+    
+    
+    else:
+        call set_h_stockings("gryff")
+        $ request_gryyf_stockings = True
+    
+    jump day_request_clothing
+        
     
 ### FISHNETS ###
 label nets_put:
@@ -1785,8 +1945,8 @@ label nets_put:
         call her_main("Hm...?","body_15")
         call her_main("Fishnet stockings?","body_17")
         call her_main("I don't know about that [genie_name]...","body_29")
+        m "..."
         menu:
-            m "..."
             "\"Just put them on!\"":
                 call her_main("Alright, alright...","body_69")
             "\"I will give you 15 points.\"":
@@ -1795,11 +1955,11 @@ label nets_put:
                 call her_main("Alright. I don't mind then.","body_68")
             "\"Fine. Forget it\"":
                 call her_main("Oh...","body_13")
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3            
-                jump day_time_requests
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        with d3                                                                                                                                                                                                                        #HERMIONE
+        show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        with d3            
+        jump day_time_requests
     
     if whoring >= 18: # Lv 7+
         call her_main("If you insist, [genie_name]...","body_118")

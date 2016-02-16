@@ -345,24 +345,40 @@ label update_her_uniform:
         if day_random >= 5:# top 6
             $ h_top = 6
     ### SKIRT
-    if whoring <= 5: # skirt 1
-        $ h_skirt = 1
-    if whoring >= 6 and whoring <= 11: # skirt 2
-        $ h_skirt = 2
-    if whoring >= 12 and whoring <= 19: # skirt 3
-        $ h_skirt = 3
-    if whoring >= 20: # skirt 4
-        $ h_skirt = 4
     
+    if h_skirt == 1:
+       $ h_skirt = "skirt_1"
+    elif h_skirt == 2:
+       $ h_skirt = "skirt_2"
+    elif h_skirt == 3:
+       $ h_skirt = "skirt_3"
+    elif h_skirt == 4:
+       $ h_skirt = "skirt_4"
+    
+    if whoring <= 5 and h_skirt == "base_skirt": # skirt 1
+        $ h_skirt = "skirt_1"
+    if whoring >= 6 and whoring <= 11 and h_skirt == "base_skirt": # skirt 2
+        $ h_skirt = "skirt_2"
+    if whoring >= 12 and whoring <= 19 and h_skirt == "base_skirt": # skirt 3
+        $ h_skirt = "skirt_3"
+    if whoring >= 20 and h_skirt == "base_skirt": # skirt 4
+        $ h_skirt = "skirt_4"
+        
     if whoring >= 6:
         $ hermione_wear_panties = False
     
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
-    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_"+str(h_skirt)+".png"
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/"+str(h_skirt)+".png"
     $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/"+str(h_badge)+".png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
+    
+    if custom_skirt == 1: # jeans
+        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans.png"
+        
+    if custom_skirt == 5: # short_jeans
+        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans_short.png"
     
     return
     

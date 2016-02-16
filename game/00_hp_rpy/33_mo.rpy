@@ -2882,13 +2882,16 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
     show screen hermione_main
     with d1
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" in text:
+        if "[tmp_name]" in text or "[genie_name]" or "[hermione_name]" in text:
             if "[tmp_name]" in text:
                 $ text1,text2 = text.split("[tmp_name]")
                 $ text = (text1 + tmp_name + text2)
             if "[genie_name]" in text:
                 $ text1,text2 = text.split("[genie_name]")
                 $ text = (text1 + genie_name + text2)
+            if "[hermione_name]" in text:
+                $ text1,text2 = text.split("[hermione_name]")
+                $ text = (text1 + hermione_name + text2)
         her "[text]"
     return
     

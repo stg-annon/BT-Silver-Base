@@ -367,7 +367,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
     $ skirt_up = True
     $ menu_x = 0.5 #Default menu position restored.
     if whoring >= 6: # NO PANTIES
-        show screen hermione_03_b
+        show screen hermione_03_bhermione_03_b
         with d3
     else:
         show screen hermione_03 #Hermione lifts her skirt
@@ -447,9 +447,9 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
                 
 
-    elif whoring >= 6: #LEVEL 04 and up. <====================================================================== FINAL EVENT! (No panties).
-        #$ new_request_02_03 =  True #Hearts.
-        $ new_request_02_heart = 3
+    elif whoring >= 12: #LEVEL 06 and up. <====================================================================== FINAL EVENT! (No panties).
+        #$ new_request_02_04 =  True #Hearts.
+        $ new_request_02_heart = 4
         
         show screen bld1
         with d3
@@ -3747,7 +3747,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         ">Hermione bends over and slides her panties down."
                                         ">Her movements lack grace..."
                                         ">But a pretty pussy is always a welcome sight nonetheless..."
-                                        ">You show your appreciation by stroking your cook even faster..."
+                                        ">You show your appreciation by stroking your cock even faster..."
                                         
                                        
                                         hide screen blktone8 
