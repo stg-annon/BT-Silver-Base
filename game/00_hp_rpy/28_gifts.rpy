@@ -1663,16 +1663,6 @@ label h_panties_off:
     $ h_request_wear_panties = False
     return
     
-label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
-    hide screen hermione_main
-    with d5
-    $ h_bra = bra
-    $ h_panties = panties
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    return
-    
 label h_badge_on(badge = "SPEW_badge"):
     hide screen hermione_main
     with d5
@@ -1693,6 +1683,16 @@ label h_badge_off:
     with d5
     return
     
+label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
+    hide screen hermione_main
+    with d5
+    $ h_bra = bra
+    $ h_panties = panties
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+    
 label set_h_hair_style(hair_style = "A"):
     hide screen hermione_main
     with d5
@@ -1707,6 +1707,15 @@ label set_h_hair_color(hair_color = 0):
     with d5
     $ h_hair_color = hair_color
     call update_her_body
+    show screen hermione_main
+    with d5
+    return
+    
+label set_h_stockings(stocking = "00_blank"):
+    hide screen hermione_main
+    with d5
+    $ h_stocking = stocking
+    call update_her_uniform
     show screen hermione_main
     with d5
     return
