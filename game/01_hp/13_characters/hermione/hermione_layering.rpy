@@ -660,12 +660,12 @@ label new_main_menu: # testing menu found in cheats or jumped to
                     jump new_main_menu_underwear
                 "-lace-":
                     $ h_bra = "lace_bra"
-                    $ h_panties = "lace_pants"
+                    $ h_panties = "lace_panties"
                     call update_her_uniform
                     jump new_main_menu_underwear
                 "-silk-":
                     $ h_bra = "silk_bra"
-                    $ h_panties = "silk_pants"
+                    $ h_panties = "silk_panties"
                     call update_her_uniform
                     jump new_main_menu_underwear
                 "-latex-":
