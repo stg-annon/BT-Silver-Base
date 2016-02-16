@@ -8,7 +8,7 @@ label inn_menu:
             m "I present you you're new barmaid."
             $ robeon = True
             $ stockings = 5
-            $ custom_outfit = 5
+            $ custom_outfit_old = 5
             $ changeHermioneMainScreen(hg_pth+"body_07.png", x_pos=140)
             pause
             abe "Well go on then girl, take the robe off."

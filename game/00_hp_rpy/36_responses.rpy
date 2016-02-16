@@ -154,7 +154,7 @@ label return_office:
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
     $ stockings = 1
-    $ custom_outfit = 1
+    $ custom_outfit_old = 1
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -221,14 +221,14 @@ label maid_responses:
     with d3
     $ hermione_sleeping = True
     $ stockings = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     $ current_job = 0
     jump night_main_menu
 
 label barmaid_responses:
     $ payment = renpy.random.randint(20, 50)
     $ stockings = 5
-    $ custom_outfit = 5
+    $ custom_outfit_old = 5
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -271,14 +271,14 @@ label barmaid_responses:
     with d3
     $ hermione_sleeping = True
     $ stockings = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     $ current_job = 0
     jump night_main_menu
 
 label gryffindor_cheer_responses:
     $ payment = renpy.random.randint(40, 80)
     $ stockings = 2
-    $ custom_outfit = 2
+    $ custom_outfit_old = 2
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -416,14 +416,14 @@ label gryffindor_cheer_responses:
     with d3
     $ hermione_sleeping = True
     $ stockings = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     $ current_job = 0
     jump night_main_menu
 
 label slytherin_cheer_responses:
     $ payment = renpy.random.randint(50, 100)
     $ stockings = 4
-    $ custom_outfit = 3
+    $ custom_outfit_old = 3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_chibi_xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -564,7 +564,7 @@ label slytherin_cheer_responses:
     with d3
     $ hermione_sleeping = True
     $ stockings = 0
-    $ custom_outfit = 0
+    $ custom_outfit_old = 0
     $ current_job = 0
     $ uni_sperm = False 
     jump night_main_menu

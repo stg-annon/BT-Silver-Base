@@ -221,7 +221,6 @@ label h_action(action =  ""):
                     $ h_action_a = "cherr_flash.png"
                 if custom_outfit == 7:
                     $ h_action_a = "power_costume_2.png"
-            $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
         else:
             $ hermione_action = True
             $ hermiome_action_bra = hermione_bra
@@ -273,13 +272,13 @@ label h_action(action =  ""):
                 else:
                     $ h_action_b = "lift_top_normal_overlay.png"
                 
-            $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
-            $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
-            
-            if action == "hold_book":
-                $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
-            if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
-                $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
+    $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
+    $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
+    $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
+    if action == "hold_book":
+        $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
+        $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     return
     
     

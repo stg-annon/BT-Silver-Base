@@ -321,7 +321,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     
     call reset_hermione_main
     
-    # $ custom_outfit = temp_outfit
+    # $ custom_outfit_old = temp_outfit
     # $ stockings = temp_stockings
     # $ panties = True
     
@@ -1768,7 +1768,7 @@ label new_request_05:
         call her_head("...........................","body_199")
         hide screen hermione_stand_f #Hermione stands still.
     $ stockings = temp_stockings 
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ panties = True
         
     jump end_hermione_personal_request
@@ -1977,11 +1977,12 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             with d3
             call set_hermione_action("lift_top")
             
+            show screen blktone
+            with d3
             if whoring >= 17:
                 call her_main("","body_84",xpos=140)
             else:
                 call her_main("","body_81",xpos=140)
-            
             pause
             her "...................................."
             
@@ -2025,14 +2026,13 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
             show screen bld1
             with d3
             m "Very good..."
-            show screen blktone 
-            with d3
             
             hide screen hermione_main
             with d3
-            
             call set_hermione_action("lift_top")
             
+            show screen blktone
+            with d3
             call her_main("","body_84",xpos=140)
             pause
             her "...................................."
@@ -2582,7 +2582,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
-                        if custom_outfit == 0:
+                        if custom_outfit_old == 0:
                             $ badges = False # Hides any badges from hermione_main screen.
                         call her_main("","body_85")
                         pause
@@ -2673,16 +2673,16 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                         hide screen blkfade
                         with d5
                         $ badges = True # Hides any badges from hermione_main screen.
-                        if custom_outfit == 7.2:
-                            $ custom_outfit = 7
+                        if custom_outfit_old == 7.2:
+                            $ custom_outfit_old = 7
                         call her_main("","body_45")
                         pause
                         her "Well, this should do for now..."
                         hide screen hermione_main
                         with d3
                         
-
     
+    call set_hermione_action("none")
     $ badges = True # Hides any badges from hermione_main screen.
     $ lift_shirt = False
     hide screen jerking_off_01                   
@@ -2735,7 +2735,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
     hide screen bld1
     hide screen hermione_main
     with Dissolve(.3)
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
     
@@ -3185,7 +3185,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                 g9 "{size=-4}(Yes, To motorboat these titties would be the best!){/size}"
         ">While you are lost in thought, Hermione keeps on dancing..."
         
-        if custom_outfit == 0:
+        if custom_outfit_old == 0:
             $ badges = False # Turns off the badges layer.
         
         $ her_head_ypos = her_head_tits
@@ -3641,7 +3641,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     m "Alright! We Finally get to the good stuff!"
                     call sna_head("Hm...","snape_13")
                     
-                    if custom_outfit == 0:
+                    if custom_outfit_old == 0:
                         $ badges = False # Hides the layer with badges.
                     
                     $ her_head_ypos = her_head_tits
@@ -3909,7 +3909,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                                         $ flip = True # Flips hermione_main screen.
                                         $ u_sperm = "01_hp/13_hermione_main/auto_05.png"
                                         $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
-                                        if custom_outfit == 0:
+                                        if custom_outfit_old == 0:
                                             $ only_upper = True #No legs shown.
                                         show screen bld1
                                         with d5
@@ -4263,7 +4263,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
                     with d3
                     g9 "Yes! The tits!"
                     
-                    if custom_outfit == 0:
+                    if custom_outfit_old == 0:
                         $ badges = False# Hides any badges from hermione_main screen.
                     
                     $ her_head_ypos = her_head_tits
@@ -4721,7 +4721,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     hide screen ctc
     with d3
     
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
     
@@ -5269,7 +5269,7 @@ label new_request_12: #LV.4 (Whoring = 9 - 11)
     
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
     
@@ -6365,7 +6365,7 @@ label new_request_16: #LV.5 (Whoring = 12 - 14)
     
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
     call her_walk(400,610,2)
@@ -7352,7 +7352,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         $ new_request_22_heart = 3
     
     $ request_22_points += 1
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     
     hide screen bld1
@@ -8699,7 +8699,7 @@ label new_request_31: #LV.8 (Whoring = 21 - 23)
     $ request_31_points += 1
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
-    $ custom_outfit = temp_outfit
+    $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     hide screen bld1
     hide screen hermione_main
