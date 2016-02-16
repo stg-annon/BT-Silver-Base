@@ -411,37 +411,41 @@ label door:
                             "-Clothing-":
                                 label day_request_clothing:
                                 menu:
-                                    "-Put the fishnets on-" if not ne_01 and nets == 7:
-                                        jump nets_put
-                                        jump day_request_clothing
+                                    # "-Put the fishnets on-" if "fishnet_stockings" in cs_existing_stock:
+                                        # jump nets_put
+                                        # jump day_request_clothing
                                         
-                                    "-Take the fishnets off-" if ne_01 and nets == 7:
-                                        jump nets_take
-                                        jump day_request_clothing
+                                    # "-Take the fishnets off-" if "fishnet_stockings" in cs_existing_stock:
+                                        # jump nets_take
+                                        # jump day_request_clothing
                                         
-                                    "-Put the jeans on-" if cs_existing_stock[0] and custom_skirt != 1:
-                                        jump jeans_on
-                                        jump day_request_clothing
+                                    # "-Put the Gryffindor Stockings on-" if "gryffindor_stockings" in cs_existing_stock:
+                                        # jump g_stockings_on
+                                        # jump day_request_clothing
                                         
-                                    "-Take the jeans off-" if custom_skirt == 1:
-                                        jump jeans_off
-                                        jump day_request_clothing
+                                    # "-Take the Gryffindor Stockings off-" if "gryffindor_stockings" in cs_existing_stock:
+                                        # jump g_stockings_off
+                                        # jump day_request_clothing
                                         
-                                    "-Put the short jeans on-" if cs_existing_stock[5] and custom_skirt != 1:
-                                        jump jeans_short_on
-                                        jump day_request_clothing
                                         
-                                    "-Take the short jeans off-" if custom_skirt == 1:
-                                        jump jeans_short_on
-                                        jump day_request_clothing
                                         
-                                    "-Put the Gryffindor Stockings on-" if cs_existing_stock[0] and stockings != 2:
-                                        jump g_stockings_on
-                                        jump day_request_clothing
                                         
-                                    "-Take the Gryffindor Stockings off-" if stockings == 2:
-                                        jump g_stockings_off
-                                        jump day_request_clothing
+                                    # "-Put the jeans on-" if "jeans" in cs_existing_stock:
+                                        # jump jeans_on
+                                        # jump day_request_clothing
+                                        
+                                    # "-Take the jeans off-" if "jeans" in cs_existing_stock:
+                                        # jump jeans_off
+                                        # jump day_request_clothing
+                                        
+                                    # "-Put the short jeans on-" if "short_jeans" in cs_existing_stock:
+                                        # jump jeans_short_on
+                                        # jump day_request_clothing
+                                        
+                                    # "-Take the short jeans off-" if "short_jeans" in cs_existing_stock:
+                                        # jump jeans_short_on
+                                        # jump day_request_clothing
+                                        
                                         
                                     "-Put the Lace Bra and Panties on-" if "lace_set" in cs_existing_stock and h_bra != "lace_bra":
                                         call set_h_underwear("lace_bra","lace_panties")
