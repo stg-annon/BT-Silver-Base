@@ -16,12 +16,18 @@ screen hermione_main:
     
   ### CLOTHES
     add hermione_stockings xpos hermione_xpos ypos hermione_ypos
+    
+    if hermione_dribble:
+        add "01_hp/13_characters/hermione/body/legs/dripping.png" xpos hermione_xpos ypos hermione_ypos
+    
     if not hermione_custom_outfit and not hermione_action:
         ### SKIRT
         if hermione_wear_skirt:
             add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
         elif hermione_wear_panties or h_request_wear_panties:
             add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
+            if hermione_wetpanties:
+                add "01_hp/13_characters/hermione/overlays/pantystain.png" xpos hermione_xpos ypos hermione_ypos
         ### TOP
         if hermione_wear_top:
             add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
@@ -60,8 +66,9 @@ screen hermione_main:
         add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         
     if hermione_wear_robe:
-        add hermione_robe xpos hermione_xpos ypos hermione_ypos
+        add robe xpos hermione_xpos ypos hermione_ypos
     add hermione_emote xpos hermione_xpos ypos hermione_ypos
+    
     
     ### ZORDER
     zorder hermione_zorder
@@ -269,12 +276,13 @@ label h_action(action =  ""):
                         $ h_action_a = "hold_book_5.png"
                     if day_random >= 5:# shirt_05
                         $ h_action_a = "hold_book_6.png"
-            if action == "hands_behind" or action == "dribble":
-                $ h_action_show_skirt = False
-                $ h_action_show_panties = False
-            if action == "hands_behind":
+
+            if action == "hands_behind": 
                 $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/both/behind.png"
                 $ hermione_right_arm = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            if action == "hands_free":
+                $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
+                $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
             
             
             if not h_action_show_bra and not h_action_show_top:
@@ -286,10 +294,6 @@ label h_action(action =  ""):
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
-    
-    if action == "dribble":
-        $ hermiome_action_a = "01_hp/13_characters/hermione/body/legs/dripping.png"
-        $ hermiome_action_b = "01_hp/13_characters/hermione/body/legs/dripping.png"
     
     if action == "hold_book":
         $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
@@ -340,6 +344,7 @@ label update_her_body:
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_"+str(h_breasts)+".png"
     $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
     $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+    
     return
     
 label update_her_uniform:

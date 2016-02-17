@@ -55,7 +55,6 @@ label __init_variables:
     
     
     
-    
     $ hermione_wear_robe = False
     
     $ hermione_wear_bra = True

@@ -1,9 +1,17 @@
 label __init_variables:
     #place save variables here
     if not hasattr(renpy.store,'request_jeans'):
-        $request_jeans = False
+        $ request_jeans = False
+    if not hasattr(renpy.store,'dribble_equippable'):
+        $ dribble_equippable = False
+    if not hasattr(renpy.store,'hermione_wetpanties'):
+        $ hermione_wetpanties = False        
+    if not hasattr(renpy.store,'wetpanties_equippable'):
+        $ wetpanties_equippable = False            
     if not hasattr(renpy.store,'request_gryyf_stockings'):
-        $request_gryyf_stockings = False
+        $ request_gryyf_stockings = False
+    if not hasattr(renpy.store,'hermione_dribble'):
+        $ hermione_dribble = False
     if not hasattr(renpy.store,'freckles'): #important!
         $ freckles = False
     if not hasattr(renpy.store,'robe'): #important!

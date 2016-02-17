@@ -382,7 +382,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
         call her_head("........................","body_05")
     elif whoring >= 3 and whoring <= 5: #LEVEL 02
         call her_head(".....................","body_188")
-    elif whoring >= 6: #LEVEL 03 and up.
+    elif whoring >= 9: #LEVEL 03 and up.
         call her_head("..........................","body_188")
         g4 "!!?"
         
@@ -419,7 +419,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 call her_main(".......................","body_51")
                
 
-    elif whoring >= 3 and whoring <= 5: #LEVEL 02  <====================================================================== SECOND EVENT!
+    elif whoring >= 3 and whoring <= 8: #LEVEL 02  <====================================================================== SECOND EVENT!
         #$ new_request_02_02 =  True #Hearts.
         $ new_request_02_heart = 2
         
@@ -447,7 +447,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
                 
 
-    elif whoring >= 12: #LEVEL 06 and up. <====================================================================== FINAL EVENT! (No panties).
+    elif whoring >= 9: #LEVEL 06 and up. <====================================================================== FINAL EVENT! (No panties).
         #$ new_request_02_04 =  True #Hearts.
         $ new_request_02_heart = 4
         
