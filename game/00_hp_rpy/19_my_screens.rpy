@@ -2027,6 +2027,10 @@ screen genie_and_tits_01: #Genie sitting, looking ar naked tits. Hermione stands
 screen clothed_dance: #Hermione stands still.
     tag hermione_chibi
     add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
+    
+screen clothed_dance_pause: #Hermione stands still.
+    tag hermione_chibi
+    add "ch_hem blink_a" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
 
 ### HERMIONE DANCING NO VEST ###
 screen no_vest_dance: #Hermione stands still.
