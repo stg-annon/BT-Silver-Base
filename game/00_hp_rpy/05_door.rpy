@@ -579,7 +579,41 @@ label door:
                                         jump day_request_collars
                                     "-Never mind-":
                                         jump day_request_wardrobe
-                            
+                                        
+                            "-Overlays-":
+                                label day_request_overlays:
+                                menu:
+                                
+                                    "{color=#858585}-Thigh Grool Locked-{/color}" if dribble_equippable == False:
+                                        "You should try equipping the Gryffindor Stockings between 3 and 6 whoring"
+                                        jump day_request_overlays
+                                    
+                                    "{color=#858585}-Damp Panties Locked-{/color}" if wetpanties_equippable == False:
+                                        "You should try equipping the Gryffindor Stockings between 3 and 6 whoring"
+                                        jump day_request_overlays
+                                    
+                                    "-Thigh Grool On-" if dribble_equippable == True and hermione_dribble == False:
+                                        $ hermione_dribble = True
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                    "-Thigh Grool Off-" if dribble_equippable == True and hermione_dribble == True:
+                                        $ hermione_dribble = False
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                    
+                                    "-Damp Panties On-" if wetpanties_equippable == True and hermione_wetpanties == False:
+                                        $ hermione_wetpanties = True
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                        
+                                    "-Damp Panties Off-" if wetpanties_equippable == True and hermione_wetpanties == True:
+                                        $ hermione_wetpanties = False
+                                        call update_her_uniform
+                                        jump day_request_overlays  
+                                        
+                                    "-Never mind":
+                                        jump day_time_requests
+                                    
                             "-Never mind":
                                 jump day_time_requests
                     

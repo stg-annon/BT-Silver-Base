@@ -23,12 +23,14 @@ screen hermione_main:
     
     if not hermione_custom_outfit and not hermione_action:
         ### SKIRT
-        if hermione_wear_skirt:
-            add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
-        elif hermione_wear_panties or h_request_wear_panties:
+        if h_request_wear_panties or hermione_wear_panties:
             add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
             if hermione_wetpanties:
                 add "01_hp/13_characters/hermione/overlays/pantystain.png" xpos hermione_xpos ypos hermione_ypos
+                
+        if hermione_wear_skirt:
+            add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
+
         ### TOP
         if hermione_wear_top:
             add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top

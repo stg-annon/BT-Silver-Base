@@ -129,9 +129,9 @@ label equip_jeans:
 label equip_gryyf_stockings:
     if whoring < 3 and request_gryyf_stockings == False:
        call her_main("Is that!?","body_11")
-       call her_main("A pair of legendary Gryffindor socks!?","body_48")
+       call her_main("A pair of Gryffindor stockings!?","body_48")
        m "Yep?"
-       call her_main("That sell out from the uniform shop on the very first day, of EVERY SINGLE YEAR!?","body_48")
+       call her_main("They're sold out from the uniform shop on the very first day, of EVERY SINGLE YEAR!","body_48")
        m "Probably?"
        call her_main("I NEED THEM! What'll it cost me!?","body_34")
        m "No cost"
@@ -144,9 +144,9 @@ label equip_gryyf_stockings:
        call her_main("You're too funny! Thanks for the gift! I'll put them on right away","body_01")
        g6 "(...What did I say?)"
        call her_main("I've always wanted a pair of these! They're warm, and they reduce unwanted attention from the boys","body_45")
-       call her_main("I will be just like having a skirt that's twice as long!","body_46")
+       call her_main("I will be the next best thing to having a skirt that's twice as long!","body_46")
        m "Just glad to help, [hermione_name]!
-       g4 (hehehe... hope you remember those words after I've made you so needy and desperate that vacuuming up cum from those boys will be your only priority in life)"
+       g4 (hehehe... hope you remember those words after I've made you so needy and desperate you'll suck off a hundred boys just to get off once)"
        call her_main("They feel great!","body_01",xpos=120,ypos=0)
        show screen bld1
        with d3
@@ -157,15 +157,20 @@ label equip_gryyf_stockings:
        with d3
        pause
        call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
-       g9 "(We'll see about that)"
+       g9 "(We'll see)"
        $ request_gryyf_stockings = True
+       
     elif whoring >= 3 and whoring <= 6 and request_gryyf_stockings == False:
+    
+       $ hermione_wear_skirt = True
+       $ hermione_wear_top = True
+       
        call her_main("Is that...","body_11")
        $ hermione_emote_exclam = True
-       call her_main("A pair of the incredibly rare Gryffindor stockings!?","body_48")
+       call her_main("A pair of Gryffindor stockings!?","body_48")
        m "Yep?"
-       call her_main("That are totally sold out!?","body_48")
-       m "Yep?"
+       call her_main("They're sold out from the uniform shop on the very first day, of EVERY SINGLE YEAR!","body_48")
+       m "K?"
        call her_main("....")
        $ hermione_emote_exclam = False
        $ hermione_emote_hearts = True
@@ -178,7 +183,7 @@ label equip_gryyf_stockings:
        m "All I want, [hermione_name], is to see how great they look on you."
        m "Easy, right?"
        call her_main("...")
-       call her_main("You just want to see my stockings? That should be no problem...", "body_14")
+       call her_main("You just want to see me in stockings? That should be no problem...", "body_14")
        call her_main("(Is he up to something?)","body_07")
        call her_main(".....")
        call her_main("","body_01",xpos=120,ypos=0)
@@ -200,11 +205,11 @@ label equip_gryyf_stockings:
        call her_main("(Oh no...)","body_28") #Worried, teeth showing
        call her_main("(I knew it! That pervert!)","body_47") #Angry, teeth showing
        call her_main("(sigh...)","body_47")
-       call her_main("(alright, [hermione_name], we've done this before, just roll with it)","body_47")
+       call her_main("(alright, [hermione_name], we've done this before, it's as easy as Arithmancy)","body_47")
        call her_main("(there's nothing embarrassing about this!)","body_140") #Worried, embarrassing, small tears
        call her_main("I'm just showing that bastard a little square of fabric", "body_186")
        call her_main("That's all!")
-       call her_main("And think of how much more I'll get done without boys oogling at my legs all day...","body_141") #Worried, angry, embarrassed
+       call her_main("And think of how much more I'll get done without boys staring at my legs all day...","body_141") #Worried, angry, embarrassed
        m "I'm waiting, [hermione_name]. Don't tell me you don't want your gift?"
        call her_main("No, [genie_name], I want it.")
        g9 "Then earn it, [hermione_name]"
@@ -227,24 +232,25 @@ label equip_gryyf_stockings:
        show screen hermione_blink #Hermione stands still.
        with fade
        m "They suit you, [hermione_name]"
-       call her_main("(these compliments shouldn't be affecting me like this...)", "body_182")
+       call her_main("Again with the sweet talk?")
+       call her_main("(it won't work on someone like me...)", "body_182")
        m "Your panties, your stockings... they make you look so pretty"
        call her_main("(ahh! he called me pretty)", "body_188")
        call her_main("You saw what you wanted... now I can go, right [genie_name]?","body_141",xpos=120)
        #call her_main("Please?","body_141")
-       m "(True)"
+       m "(True, I did get a great panty shot)"
        g9 "(But I could try to get more out of her...)"
        m "What should I do?"
        menu:
             "What a cutie! Let her go":
-                m "Of course, [hermione_name]. Enjoy your gift"
+                m "Of course, [hermione_name]. Enjoy your stockings"
                 $ hermione_emote_hearts = True
                 call set_hermione_action("")
                 call update_her_uniform
                 call her_main("Thanks, [genie_name]! I'll wear them whenever you want.","body_209")
                 call her_main("(phew. why does it feel like a dodged a bullet, though?)","body_209")
                 $ hermione_emote_hearts = False
-                $mad -= 30
+                $mad = 0
             
             "Cute is boring. Break her.":
                m "That was certainly adequate, [hermione_name]..."
