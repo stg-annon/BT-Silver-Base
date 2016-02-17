@@ -522,18 +522,18 @@ label door:
                                             "-Never mind-":
                                                 jump day_request_clothing
                                         
-                                     "-Put the jeans on-" if "long_jeans" in cs_existing_stock and h_skirt != "jeans":
+                                    "-Put the jeans on-" if "long_jeans" in cs_existing_stock and h_skirt != "jeans":
                                          jump equip_jeans
                                         
-                                     "-Take the jeans off-" if h_skirt == "jeans":
+                                    "-Take the jeans off-" if h_skirt == "jeans":
                                          call set_h_skirt("base_skirt")
                                          jump day_request_clothing
                                         
-                                     "-Put the short jeans on-" if "short_jeans" in cs_existing_stock and h_skirt != "jeansshort":
-                                         jump jeans_short_on
+                                    "-Put the short jeans on-" if "short_jeans" in cs_existing_stock and h_skirt != "jeansshort":
+                                         call set_h_skirt("jeansshort")
                                          jump day_request_clothing
                                         
-                                     "-Take the short jeans off-"if h_skirt == "jeansshort":
+                                    "-Take the short jeans off-"if h_skirt == "jeansshort":
                                          call set_h_skirt("base_skirt")
                                          jump day_request_clothing
                                         

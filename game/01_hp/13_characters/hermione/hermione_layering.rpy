@@ -63,7 +63,7 @@ screen hermione_main:
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos ypos hermione_ypos
     
-    if hermione_badges and hermione_wear_skirt and not hermione_custom_outfit:
+    if hermione_badges and hermione_wear_top and not hermione_custom_outfit:
         add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         
     if hermione_wear_robe:
