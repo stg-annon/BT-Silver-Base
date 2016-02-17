@@ -1830,11 +1830,12 @@ label equip_gryyf_stockings:
        call her_main("hhmppphhh", "body_42")
        call her_main("hahahahahahaha!","body_80b")
        call her_main("ahhh....","body_157")
-       call her_main("You're too funny! Thanks for the gift! I'll try them on right away","body_01")
+       call her_main("You're too funny! Thanks for the gift! I'll put them on right away","body_01")
        g6 "(...What did I say?)"
-       call her_main("I've always wanted a pair of these, they're so warm, and they reduce distractions for the boys","body_18")
+       call her_main("I've always wanted a pair of these! They're warm, and they reduce unwanted attention from the boys","body_45")
+       call her_main("I will be just like having a skirt that's twice as long!","body_46")
        m "Just glad to help, [hermione_name]!
-       g4 (hehehe... hope you remember this moment the first time you get fucked so hard you scream!)"
+       g4 (hehehe... hope you remember those words after I've made you so needy and desperate that vacuuming up cum from those boys will be your only priority in life)"
        call her_main("They feel great!","body_01",xpos=120,ypos=0)
        show screen bld1
        with d3
@@ -1847,27 +1848,25 @@ label equip_gryyf_stockings:
        call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
        g9 "(We'll see about that)"
        $ request_gryyf_stockings = True
-    elif:
-     if whoring >= 3 and whoring < 6 and request_gryyf_stockings == False:
-       call her_main("Is that!?","body_11")
-       call her_main("A pair of legendary Gryffindor socks!?","body_48")
+    elif whoring >= 3 and whoring < 6 and request_gryyf_stockings == False:
+       call her_main("Is that...","body_11")
+       call her_main("A pair of the incredibly rare Gryffindor thigh-highs!?","body_48")
        m "Yep?"
-       call her_main("That sell out from the uniform shop on the very first day, of EVERY SINGLE YEAR!?","body_48")
-       m "Probably?"
-       call her_main("I NEED THEM! What'll it cost me!?","body_34")
-       m "Just a favour"
-       call her_main("!","body_48")
-       m "It's a gift, [hermione_name], to show you what a great guy ME, Proffesor DeltaDwarf, really is!"
+       call her_main("That are totally sold out!?","body_48")
+       m "Yep?"
+       call her_main("....")
+       call her_main("I NEED THEM!", "body_34")
+       call her_main("What'll it cost me!?", "body_34")
+       call her_main("WHAT DO I HAVE TO DO!?","body_32")
+       m "Just a small favour"
+       call her_main("(!)","body_48")
+       m "All I want, [hermione_name], is to see how great they look on you."
+       m "Easy, right?"
        call her_main("...")
-       call her_main("hhmppphhh", "body_42")
-       call her_main("hahahahahahaha!","body_80b")
-       call her_main("ahhh....","body_157")
-       call her_main("You're too funny! Thanks for the gift! I'll try them on right away","body_01")
-       g6 "(...What did I say?)"
-       call her_main("I've always wanted a pair of these, they're so warm, and they reduce distractions for the boys","body_18")
-       m "Just glad to help, [hermione_name]!
-       g4 (hehehe... hope you remember this moment the first time you get fucked so hard you scream!)"
-       call her_main("They feel great!","body_01",xpos=120,ypos=0)
+       call her_main("You just want to see my thigh-highs? That should be no problem...", "body_14")
+       call her_main("(Is he up to something?)","body_07")
+       call her_main(".....")
+       call her_main("","body_01",xpos=120,ypos=0)
        show screen bld1
        with d3
        show screen blktone
@@ -1876,10 +1875,168 @@ label equip_gryyf_stockings:
        show screen ctc
        with d3
        pause
-       call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
-       g9 "(We'll see about that)"
+       call her_main("What do you think, [genie_name]?")
+       m "Impressive..."
+       m "They look great, [hermione_name]!"
+       call her_main("[genie_name]! My appearance has no bearing on my academic ability.","body_217") #Embarrassed mouth wide eyes closed angry
+       call her_main("......","body_186")
+       call her_main("(That does make me feel kinda nice, though...)","body_186") #Embarrassed mouth open angry
+       g9 "But, I'm having a hard time seeing all the details with that skirt in the way"
+       call her_main("(Oh no...)","body_28") #Worried, teeth showing
+       call her_main("(I knew it! That pervert!)","body_47") #Angry, teeth showing
+       call her_main("(sigh...)","body_47")
+       call her_main("(alright, [hermione_name], we've done this before, just go through the motions)","body_47")
+       call her_main("(there's nothing embarrassing about this!)","body_140") #Worried, embarrassing, small tears
+       call her_main("I'm just showing that bastard a little square of fabric", "body_186")
+       call her_main("That's all!")
+       call her_main("And think of how much more I'll get done without boys oogling at my legs all day...","body_141") #Worried, angry, embarrassed
+       m "I'm waiting, [hermione_name]. Don't tell me you don't want your gift?"
+       call her_main("No, [genie_name], I want it.")
+       g9 "Then earn it, [hermione_name]"
+       call her_main("....","body_182b",xpos=120) #embarrassed, eyes closed, mouth closed
+       
+       call set_hermione_action("lift_skirt")
+       $ skirt_up = True
+       show screen hermione_03
+       show screen ctc
+       pause
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call her_main("","body_141",xpos=120)
+       with d3
+       pause
+       call reset_hermione_main
+       $ skirt_up = False
+       show screen hermione_blink #Hermione stands still.
+       with fade
+       call set_hermione_action("")
+       m "They look beautiful on you, [hermione_name]"
+       m "Absolutely stunning"
+       call her_main("You saw what you wanted... now I can go, right, [genie_name]?","body_141",xpos=120)
+       call her_main("Please.","body_141")
+       m "That was certainly adequate, [hermione_name]..."
+       call her_main("(Adequate...?)","body_81",xpos=120)
+       m "However..."
+       call her_main("oh no...","body_48",xpos=120)
+       m "You're one of our top students..."
+       m "And there are still areas covered by your skirt that I can't see."
+       m "You're not giving 100\%, here!"
+       call her_main("(No way...)","body_48",xpos=120)
+       
+       g4 "You're going to remove your skirt"
+       g4 "Then you're going to remove your panties."
+       g9 "And then I'm going to get a proper look. Just as we agreed."
+       g9 "You'll also be rewarded for your exemplary effort"
+       call her_main("NO")
+       g4 "(?)"
+       call her_main("NO WAY!","body_147")
+       call her_main("THERE IS ABSOLUTELY NO WAY AM I GOING TO DO THAT!!!","body_148")
+       call her_main("I'm not a cheap whore for you to play with","body_148")
+       g4 "..."
+       m "Would you like to have your gift taken back from you?"
+       call her_main("....","body_140")
+       m "Your points?"
+       call her_main("...........","body_140")
+       m "How about I take points for disobedience to the head master, instead?"
+       call her_main("...............","body_48",xpos=145)
+       m "And end our tutoring arrangement all together..."
+       m "Wonder what will happen to your report card?"
+       m "Wonder what your parents will think?"
+       call her_main("Stop....","body_143")
+       g9 "(Hmm?)"
+       call her_main("I get it already...","body_143",xpos=120)
+       call her_main(".......","body_143")
+       $mad += 55
+       ">With tears rolling down her soft cheeks, Hermione begins to unzip her skirt"
+       ">Her trembling hands make it difficult just to keep hold of the zipper"
+       ">Eventually she gets it, and after hooking her thumb over her panties, she lowers the rest of her dignity to the floor"    
+       $ hermione_wear_skirt = False
+       $ h_request_wear_panties = False
+       $ hermione_wear_panties = False
+       call update_her_uniform
+       hide screen ctc
+       with d3
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call her_main(".......","body_147")
+       pause
+       show screen ctc
+       with d3
+       m "Hands behind your back, [hermione_name]. I want to see everything."
+       call her_main("Yes, [genie_name]","body_145")
+       ">Hermione does as she's told, too weak and vulnerable to fight back"
+       m "There's a good girl."
+       call set_hermione_action("hands_behind")
+       call set_hermione_action("")
+       hide screen ctc
+       with d3
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call her_main("","body_145")
+       pause
+       show screen ctc
+       with d3
+       g9 "(Perfect...)"
+       call her_main(".......","body_145")
+       call her_main("(After all he's done to me... why does his gaze still...)","body_145")
+       call her_main("(Burn me up...)","body_145")
+       call her_main("This shouldn't be happening but...","body_145")
+       call her_main("Ahh... hehehehehehehe","body_142")
+       m "(...has she lost it already?)"
+       call her_main("(I don't care any more... You'll be headed straight to Azkaban once this is over)","body_142")
+       call her_main("(But at least melt me some more with that gaze of fire!!!)","body_142")
+       g9 "(My sweet little [hermione_name]!)"
+       ">Slowly but surely, you see a stream of sweet nectar start to leak out of Hermione."
+       call set_hermione_action("hands_behind")
+       call set_hermione_action("")
+       call set_hermione_action("dribble")
+       hide screen ctc
+       with d3
+       show screen bld1
+       with d3
+       show screen blktone
+       with d3
+       call her_main("","body_158")
+       pause
+       show screen ctc
+       with d3
+       call her_main("(This is.... too good)")
+       call her_main("If only I'd known about this sort of pleasure before I became a fucking bookworm")
+       g9 "(heh. not long now before you'll beg for this kind of punishment, my little cunt)"
+       call her_main("(give me more....)")
+       ">After what feels like an age passes"
+       m "We're done here, [hermione_name]"
+       call her_main(".....","body_158")
+       m "You can keep the thigh-highs."
+       call her_main(".......","body_158")
+       m "And 50 points to Gryffindor for your outstanding preformance."
+       $ gryffindor += 50
+       call her_main("..........","body_158")
+       g4 "What do you say when you've been given a gift?"
+       call her_main("..........","body_158")
+       call her_main("Thank you, [genie_name]","body_158")
+       g9 "That's right, [hermione_name]. Don't forget your clothes on the way out."
+       call her_main("(What good will they do me in the future?)","body_158")
        $ request_gryyf_stockings = True
-    
+       $ hermione_wear_skirt = True
+       $ hermione_wear_panties = True
+       $ h_request_wear_panties = True
+       hide screen blktone
+       hide screen bld1
+       hide screen hermione_main
+       hide screen hermione_stand_f #Hermione stands still.
+       with d3
+       call her_walk(400,610,2)
+       call reset_hermione_main
+       m "Hope I didn't overdo it..."
+       g9 "I'm sure she'll be fine in a couple of days."
+       jump end_hermione_personal_request
     
     else:
         call set_h_stockings("gryff")

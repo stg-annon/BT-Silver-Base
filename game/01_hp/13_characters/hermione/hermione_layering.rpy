@@ -202,10 +202,14 @@ label h_action(action =  ""):
     $ h_action_show_top = True
     $ h_action_show_skirt = True
     $ h_action_show_bra = True
-    if hermione_wear_panties or h_request_wear_panties or whoring < 6:
+    if hermione_wear_panties or h_request_wear_panties or whoring < 12:
         $ h_action_show_panties = True
     else:
         $ h_action_show_panties = False
+    if hermione_wear_bra:
+        $ h_action_show_bra = True
+    else:
+        $ h_action_show_bra = False
     
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
@@ -265,6 +269,13 @@ label h_action(action =  ""):
                         $ h_action_a = "hold_book_5.png"
                     if day_random >= 5:# shirt_05
                         $ h_action_a = "hold_book_6.png"
+            if action == "hands_behind" or action == "dribble":
+                $ h_action_show_skirt = False
+                $ h_action_show_panties = False
+            if action == "hands_behind":
+                $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/both/behind.png"
+                $ hermione_right_arm = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            
             
             if not h_action_show_bra and not h_action_show_top:
                 if hermione_perm_expand:
@@ -275,6 +286,11 @@ label h_action(action =  ""):
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
+    
+    if action == "dribble":
+        $ hermiome_action_a = "01_hp/13_characters/hermione/body/legs/dripping.png"
+        $ hermiome_action_b = "01_hp/13_characters/hermione/body/legs/dripping.png"
+    
     if action == "hold_book":
         $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
@@ -363,7 +379,7 @@ label update_her_uniform:
     if whoring >= 20 and h_skirt == "base_skirt": # skirt 4
         $ h_skirt = "skirt_4"
         
-    if whoring >= 6:
+    if whoring >= 12:
         $ hermione_wear_panties = False
     
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
