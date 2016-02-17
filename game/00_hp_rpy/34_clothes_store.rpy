@@ -476,7 +476,10 @@ label existing_stock:
         "-Pants/Skirts-":#Jeans#Stockings#Fishnet Stockings#Lace Bra and Panties#Cup-less Lace Bra#Silk Bra and Panties
             label existing_stock_pants_skirts:
             menu:
-                "-Jeans- (75 Gold)":
+                "{color=#858585}-Jeans- (75 Gold)-{/color}"if "jeans" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_pants_skirts
+                "-Jeans- (75 Gold)" if "jeans" not in cs_existing_stock:
                     "A pair of standard muggle jeans, albeit a little low slung."
                     menu:
                         "-Buy the item (75 gold)-":
@@ -484,7 +487,10 @@ label existing_stock:
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
-                "-Short Jeans- (150 Gold)":
+                "{color=#858585}-Short Jeans- (150 Gold)-{/color}"if "short_jeans" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_pants_skirts
+                "-Short Jeans- (150 Gold)" if "short_jeans" not in cs_existing_stock:
                     "A pair of short daisy dukes."
                     menu:
                         "-Buy the item (150 gold)-":
@@ -493,11 +499,14 @@ label existing_stock:
                         "-Never mind-":
                             jump existing_stock_pants_skirts
                 "-Return-":
-                    jump clothes_menu
+                    jump existing_stock
         "-Stockings-":
             label existing_stock_stockings:
             menu:
-                "-Gryffindor Stockings- (50 Gold)":
+                "{color=#858585}-Gryffindor Stockings- (50 Gold)-{/color}"if "gryffindor_stockings" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_stockings
+                "-Gryffindor Stockings- (50 Gold)" if "gryffindor_stockings" not in cs_existing_stock:
                     "A pair of cheerful school stockings, in house colors."
                     menu:
                         "-Buy the item (50 gold)-":
@@ -505,7 +514,10 @@ label existing_stock:
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
-                "-Fishnet Stockings- (75 Gold)":
+                "{color=#858585}-Fishnet Stockings- (75 Gold)-{/color}"if "fishnet_stockings" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_stockings
+                "-Fishnet Stockings- (75 Gold)" if "fishnet_stockings" not in cs_existing_stock:
                     "A pair of sultry fishnet stockings."
                     menu:
                         "-Buy the item (75 gold)-":
@@ -514,11 +526,14 @@ label existing_stock:
                         "-Never mind-":
                             jump existing_stock_stockings
                 "-Return-":
-                    jump clothes_menu
+                    jump existing_stock
         "-Bras and Panties-":
             label existing_stock_bras_panties:
             menu:
-                "-Lace Bra and Panties- (50 Gold)":
+                "{color=#858585}-Lace Bra and Panties- (50 Gold){/color}"if "lace_set" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_bras_panties
+                "-Lace Bra and Panties- (50 Gold)" if "lace_set" not in cs_existing_stock:
                     "A lovely lace bra and panty set."
                     menu:
                         "-Buy the item (50 gold)-":
@@ -526,7 +541,10 @@ label existing_stock:
                             jump existing_stock_bras_panties
                         "-Never mind-":
                             jump existing_stock_bras_panties
-                "-Cup-less Lace Bra and panties- (125 Gold)":
+                "{color=#858585}-Cup-less Lace Bra and panties- (125 Gold){/color}"if "cup_set" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_bras_panties
+                "-Cup-less Lace Bra and panties- (125 Gold)" if "cup_set" not in cs_existing_stock:
                     "A revealing piece of clothing that only serves to highlight the wearer's breasts."
                     menu:
                         "-Buy the item (125 gold)-":
@@ -534,7 +552,10 @@ label existing_stock:
                             jump existing_stock_bras_panties
                         "-Never mind-":
                             jump existing_stock_bras_panties
-                "-Silk Bra and Panties- (150 Gold)":
+                "{color=#858585}-Silk Bra and Panties- (150 Gold){/color}"if "silk_set" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_bras_panties
+                "-Silk Bra and Panties- (150 Gold)" if "silk_set" not in cs_existing_stock:
                     "A smooth and comfortable lace bra and panty set."
                     menu:
                         "-Buy the item (150 gold)-":
@@ -542,7 +563,10 @@ label existing_stock:
                             jump existing_stock_bras_panties
                         "-Never mind-":
                             jump existing_stock_bras_panties
-                "-Latex Bra and Panties- (150 Gold)":
+                "{color=#858585}-Latex Bra and Panties- (150 Gold){/color}"if "latex_set" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_bras_panties
+                "-Latex Bra and Panties- (150 Gold)" if "latex_set" not in cs_existing_stock:
                     "A tight and shiny lace bra and panty set."
                     menu:
                         "-Buy the item (150 gold)-":
@@ -551,11 +575,14 @@ label existing_stock:
                         "-Never mind-":
                             jump existing_stock_bras_panties
                 "-Never Mind-":
-                    jump clothes_menu
+                    jump existing_stock
         "-Accessories-":
             label accessories:
             menu:
-                "-\"S.P.E.W.\" badge-":
+                "{color=#858585}-\"S.P.E.W.\" badge-{/color}"if "SPEW_badge" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-\"S.P.E.W.\" badge-" if "SPEW_badge" not in cs_existing_stock:
                     maf "A badge designed to show one's opposition of elf slavery."
                     menu:
                         "-Buy the item (100 gold)-":
@@ -563,7 +590,10 @@ label existing_stock:
                             jump accessories
                         "-Never mind-":
                             jump accessories
-                "-\"I <3 C.U.M.\" badge-":
+                "{color=#858585}-\"I <3 C.U.M.\" badge-{/color}"if "CUM_badge" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-\"I <3 C.U.M.\" badge-" if "CUM_badge" not in cs_existing_stock:
                     maf "A badge that displays ones affection towards semen."
                     menu:
                         "-Buy the item (150 gold)-":

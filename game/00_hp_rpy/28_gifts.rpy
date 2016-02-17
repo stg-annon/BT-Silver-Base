@@ -708,13 +708,13 @@ label give_her_gift(gift_id):
     jump day_time_requests
     
     
-label display_gift(str1, gift_id):
+label display_gift(text=">Gift given", gift_id):
     hide screen hermione_main
     with d3
     $ the_gift = "01_hp/18_store/"+str(gift_id)+".png"
     show screen gift
     with d3
-    "[str1]"
+    "[text]"
     hide screen gift
     with d3
     return
@@ -1601,37 +1601,6 @@ label h_panties_off:
     $ h_request_wear_panties = False
     return
     
-label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
-    hide screen hermione_main
-    with d5
-    $ h_bra = bra
-    $ h_panties = panties
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    return
-    
-label set_h_skirt(skirt="base_skirt"):   
-    hide screen hermione_main
-    with d5
-    $ h_skirt = skirt
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    return
-    
-label set_h_stockings(stockings="00_blank"):   
-
-
-
-    hide screen hermione_main
-    with d5
-    $ h_stocking = stockings
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    return
-    
 label h_badge_on(badge = "SPEW_badge"):
     hide screen hermione_main
     with d5
@@ -1642,11 +1611,21 @@ label h_badge_on(badge = "SPEW_badge"):
     with d5
     return
     
-label h_badge_off:
+label h_badge_on(badge = "SPEW_badge"):
     hide screen hermione_main
     with d5
     $ hermione_badges = False
     $ h_badge = ""
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+    
+label h_badge_off:
+    hide screen hermione_main
+    with d5
+    $ h_bra = bra
+    $ h_panties = panties
     call update_her_uniform
     show screen hermione_main
     with d5
@@ -1670,6 +1649,25 @@ label set_h_hair_color(hair_color = 0):
     with d5
     return
     
+label set_h_stockings(stocking = "00_blank"):
+    hide screen hermione_main
+    with d5
+    $ h_stocking = stocking
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+    
+
+label set_h_skirt(skirt="base_skirt"):   
+    hide screen hermione_main
+    with d5
+    $ h_skirt = skirt
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+
 #$ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
 label badge_take:

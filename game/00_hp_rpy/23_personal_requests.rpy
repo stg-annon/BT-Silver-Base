@@ -2854,8 +2854,6 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         ">Hermione starts dancing..."
         stop music fadeout 1.0
         hide screen blktone
-        $ hermione_chibi_xpos = 400 #Near the desk.
-        #$ hermione_chibi_ypos = 240 #Default: 250
         show screen clothed_dance #Hermione stands still.
         with fade
         m "Hm..."
@@ -2865,7 +2863,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
         m "..................."
         call her_head( "{size=-5}(...........................................){/size}","body_203")
         m "Alright, you can start undressing now."
-        show screen hermione_blink #Hermione stands still.
+        show screen clothed_dance_pause #Hermione stands still.
         with hpunch
         call her_head( "??!","body_206")
         call her_head( "I thought all I had to do was dance?","body_05")
@@ -4717,6 +4715,7 @@ label new_request_11: #LV.4 (Whoring = 9 - 11)
     
     hide screen bld1
     hide screen hermione_main
+    hide screen hermione_blink
     hide screen blktone 
     hide screen ctc
     with d3
