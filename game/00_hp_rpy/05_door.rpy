@@ -151,6 +151,33 @@ label door:
                                     her "I have nothing to say to you sir..."    
                                     jump hermione_talk
                             
+                            "-Working-":
+                                label working_menu:
+                                menu:
+                                    "-Work as a maid-" if "maid" in outfit_inventory and daytime:
+                                        jump job_1
+                                        
+                                    "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_inventory:
+                                        "This job is only available during the day."
+                                        jump working_menu
+                                    
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_inventory:
+                                        jump job_3
+                                    
+                                    "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
+                                        "This job is only available during the day."
+                                        jump working_menu
+                                    
+                                    "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_inventory:
+                                        jump job_4
+                                    
+                                    "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
+                                        "This job is only available during the day."
+                                        jump working_menu
+                                          
+                                    "-Never mind-":
+                                        jump hermione_talk     
+                            
                             "-Address me only as-":
                                 menu:
                                     "-Sir-":
@@ -556,33 +583,6 @@ label door:
                             
                             "-Never mind":
                                 jump day_time_requests
-                    
-                    "-Working-":
-                        label working_menu:
-                        menu:
-                            "-Work as a maid-" if "maid" in outfit_inventory and daytime:
-                                jump job_1
-                                
-                            "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_inventory:
-                                "This job is only available during the day."
-                                jump day_time_requests
-                            
-                            "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_inventory:
-                                jump job_3
-                            
-                            "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
-                                "This job is only available during the day."
-                                jump day_time_requests
-                            
-                            "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_inventory:
-                                jump job_4
-                            
-                            "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
-                                "This job is only available during the day."
-                                jump day_time_requests
-                                  
-                            "-Never mind-":
-                                jump day_time_requests     
                     
 #                    "-Ending \"Your whore\"-":
 #                        jump your_whore
