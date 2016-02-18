@@ -75,9 +75,9 @@ label __init_variables:
     if not hasattr(renpy.store,'transparency'): #important!
         $ transparency = 1
     if not hasattr(renpy.store,'genie_name'): #important!
-        $ genie_name = "Daddy"
+        $ genie_name = "Sir"
     if not hasattr(renpy.store,'hermione_name'): #important!
-        $ hermione_name = "cum dump"
+        $ hermione_name = "Girl"
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
     if not hasattr(renpy.store,'shaming'): #important!

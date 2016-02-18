@@ -69,7 +69,7 @@ screen hermione_main:
         add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         
     if hermione_wear_robe:
-        add robe xpos hermione_xpos ypos hermione_ypos
+        add hermione_robe xpos hermione_xpos ypos hermione_ypos
     add hermione_emote xpos hermione_xpos ypos hermione_ypos
     
     
@@ -520,24 +520,31 @@ label new_main_menu: # testing menu found in cheats or jumped to
             menu:
                 "-off-":
                     $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/00_blank.png"
+                    $ hermione_wear_robe = False
                     jump new_main_menu
-                "-gryff 1-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_1")+".png"
+                "-gryff robe basic-":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
-                "-gryff 2-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_2")+".png"
+                "-gryff robe gap-":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_gap.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
-                "-gryff 3-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_3")+".png"
+                "-gryff robe wide gap":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_gap_wide.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
-                "-gryff 4-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_4")+".png"
+                "-gryff robe off":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_off.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
-                "-gryff 5-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_5")+".png"
+                "-gryff robe no shirt":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_shirt_none.png.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
-                "-gryff 6-":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str("gryff_6")+".png"
+                "-gryff robe quidditch":
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_quidditch.png"
+                    $ hermione_wear_robe = True
                     jump new_main_menu
         "-outfits-":
             label new_main_menu_outfit:
