@@ -25,9 +25,7 @@ screen hermione_main:
         ### SKIRT
         if h_request_wear_panties or hermione_wear_panties:
             add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
-            if hermione_wetpanties:
-                add "01_hp/13_characters/hermione/overlays/pantystain.png" xpos hermione_xpos ypos hermione_ypos
-                
+            add hermione_panties_overlay xpos hermione_xpos ypos hermione_ypos
         if hermione_wear_skirt:
             add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
 
@@ -213,7 +211,7 @@ label h_action(action =  ""):
     $ h_action_show_top = True
     $ h_action_show_skirt = True
     $ h_action_show_bra = True
-    if hermione_wear_panties or h_request_wear_panties or whoring < 12:
+    if hermione_wear_panties or h_request_wear_panties or whoring < h_stop_wearing_panties_lvl:
         $ h_action_show_panties = True
     else:
         $ h_action_show_panties = False
@@ -360,22 +358,21 @@ label update_her_body:
 label update_her_uniform:
     call update_her_body
     call update_chibi_uniform
-    ### TOP
-    if whoring <= 3:# top 1
-        $ h_top = 1
-    elif whoring >= 4 and whoring <= 7:# top 2
-        $ h_top = 2
-    elif whoring >= 8 and whoring <= 14:# top 3
-        $ h_top = 3
-    elif whoring >= 15 and whoring <= 20:# top 4
-        $ h_top = 4
-    elif whoring >= 21:
-        if day_random <= 4:# top 5
-            $ h_top = 5
-        if day_random >= 5:# top 6
-            $ h_top = 6
-    ### SKIRT
     
+    
+    if h_top == 1:
+       $ h_top = "top_1"
+    elif h_top == 2:
+       $ h_top = "top_2"
+    elif h_top == 3:
+       $ h_top = "top_3"
+    elif h_top == 4:
+       $ h_top = "top_4"
+    elif h_top == 5:
+       $ h_top = "top_5"
+    elif h_top == 6:
+       $ h_top = "top_6"
+       
     if h_skirt == 1:
        $ h_skirt = "skirt_1"
     elif h_skirt == 2:
@@ -385,6 +382,23 @@ label update_her_uniform:
     elif h_skirt == 4:
        $ h_skirt = "skirt_4"
     
+    
+    ### TOP
+    if whoring <= 3:# top 1
+        $ h_top = "top_1"
+    elif whoring >= 4 and whoring <= 7:# top 2
+        $ h_top = "top_2"
+    elif whoring >= 8 and whoring <= 14:# top 3
+        $ h_top = "top_3"
+    elif whoring >= 15 and whoring <= 20:# top 4
+        $ h_top = "top_4"
+    elif whoring >= 21:
+        if day_random <= 4:# top 5
+            $ h_top = "top_5"
+        if day_random >= 5:# top 6
+            $ h_top = "top_6"
+    
+    ### SKIRT
     if whoring <= 5 and h_skirt == "base_skirt": # skirt 1
         $ h_skirt = "skirt_1"
     if whoring >= 6 and whoring <= 11 and h_skirt == "base_skirt": # skirt 2
@@ -394,8 +408,15 @@ label update_her_uniform:
     if whoring >= 20 and h_skirt == "base_skirt": # skirt 4
         $ h_skirt = "skirt_4"
         
-    if whoring >= 12:
+        
+    ### PANTIES
+    if whoring >= h_stop_wearing_panties_lvl:
         $ hermione_wear_panties = False
+    if hermione_wetpanties:
+        $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/pantystain.png"
+    else:
+        $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/00_blank.png"
+        
     
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"

@@ -126,9 +126,9 @@ label her_gift_menu:
             $ gifted = True
             call give_her_existing_stock("silk_set")
             
-        "-Jeans-" if "jeans" in cs_existing_stock and "jeans" not in cs_existing_stock_gifted:
+        "-Jeans-" if "jeans_long" in cs_existing_stock and "jeans_long" not in cs_existing_stock_gifted:
            $ gifted = True
-           call give_her_existing_stock("jeans")
+           call give_her_existing_stock("jeans_long")
         
         ##"-Gryffindor Cheerleader Outfit-" if custom_outfit_1_bought == True:
         ##    $ gifted = True
@@ -745,10 +745,10 @@ label give_her_existing_stock(stock_id):
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_06")
         call happy(30)
-    if stock_id == "long_jeans":
+    if stock_id == "jeans_long":
         call her_main("A pair of jeans?","body_03")
         call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
-        $ cs_existing_stock_gifted.append("long_jeans")
+        $ cs_existing_stock_gifted.append("jeans_long")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)

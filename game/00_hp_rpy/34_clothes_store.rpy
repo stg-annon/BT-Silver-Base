@@ -476,14 +476,14 @@ label existing_stock:
         "-Pants/Skirts-":#Jeans#Stockings#Fishnet Stockings#Lace Bra and Panties#Cup-less Lace Bra#Silk Bra and Panties
             label existing_stock_pants_skirts:
             menu:
-                "{color=#858585}-Jeans- (75 Gold)-{/color}"if "jeans" in cs_existing_stock:
+                "{color=#858585}-Jeans- (75 Gold)-{/color}"if "jeans_long" in cs_existing_stock:
                     call cust_excuse("You already own this.")
                     jump existing_stock_pants_skirts
-                "-Jeans- (75 Gold)" if "jeans" not in cs_existing_stock:
+                "-Jeans- (75 Gold)" if "jeans_long" not in cs_existing_stock:
                     "A pair of standard muggle jeans, albeit a little low slung."
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("long_jeans", 75)
+                            call cs_buy_stock("jeans_long", 75)
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts

@@ -5,6 +5,8 @@ label __init_variables:
     
     $ hermione_zorder = 5
     
+    $ h_stop_wearing_panties_lvl = 12
+    
     if not hasattr(renpy.store,'hermione_xpos'): #important!
         $ hermione_xpos = 370
     if not hasattr(renpy.store,'hermione_ypos'): #important!
@@ -42,6 +44,7 @@ label __init_variables:
         $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
     if not hasattr(renpy.store,'hermione_panties'): #important!
         $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/base_panties_1.png"
+    $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/00_blank.png"
     if not hasattr(renpy.store,'hermione_skirt'): #important!
         $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_1.png"
     if not hasattr(renpy.store,'hermione_top'): #important!

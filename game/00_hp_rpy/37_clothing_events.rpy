@@ -31,7 +31,7 @@ label equip_jeans:
        with d3
        show screen blktone
        with d3
-       call set_h_skirt("jeans")
+       call set_h_skirt("jeans_long")
        call her_main("","body_21",xpos=120,ypos=0)
        show screen ctc
        with d3
@@ -41,7 +41,7 @@ label equip_jeans:
        $ gryffindor +=15
        call her_main("Thank you, [genie_name]","body_29",xpos=410)
     elif request_jeans == True:
-       call set_h_skirt("jeans")
+       call set_h_skirt("jeans_long")
     elif whoring >= 6 and whoring < 9 and request_jeans == False:
        call her_main("Jeans?","body_02")
        m "Yup"
@@ -59,7 +59,7 @@ label equip_jeans:
        with d3
        show screen blktone
        with d3
-       call set_h_skirt("jeans")
+       call set_h_skirt("jeans_long")
        call her_main("","body_58",xpos=120,ypos=0)
        $ request_jeans = True
        show screen ctc
@@ -80,7 +80,7 @@ label equip_jeans:
        with d3
        show screen blktone
        with d3
-       call set_h_skirt("jeans")
+       call set_h_skirt("jeans_long")
        $ request_jeans = True
        show screen ctc
        with d3
@@ -113,7 +113,7 @@ label equip_jeans:
         with d3
         show screen blktone
         with d3
-        call set_h_skirt("jeans")
+        call set_h_skirt("jeans_long")
         call her_main("","body_209",xpos=120,ypos=0)
         $ request_jeans = True
         show screen ctc

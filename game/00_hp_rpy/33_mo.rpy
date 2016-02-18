@@ -2888,7 +2888,6 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
             if "[genie_name]" in text:
                 $ text = text.replace("[genie_name]",genie_name)
             if "[hermione_name]" in text:
-                $ text1,text2 = text.split("[hermione_name]")
                 $ text = text.replace("[hermione_name]",hermione_name)
         her "[text]"
     return
@@ -2906,6 +2905,8 @@ label her_head(text="",face=h_body,tears=""):
                 $ text = text.replace("[tmp_name]",tmp_name)
             if "[genie_name]" in text:
                 $ text = text.replace("[genie_name]",genie_name)
+            if "[hermione_name]" in text:
+                $ text = text.replace("[hermione_name]",hermione_name)
         her2 "[text]"
     hide screen hermione_head #h_head2
     return
@@ -2919,10 +2920,10 @@ label sna_main(text="",face=""):
     with d3
     if text != "":
         if "[hermione_name]" in text or "[genie_name]" in text:
+            if "[genie_name]" in text:
+                $ text = text.replace("[genie_name]",genie_name)
             if "[hermione_name]" in text:
                 $ text = text.replace("[hermione_name]",hermione_name)
-            elif "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
         sna "[text]"
     return
     
