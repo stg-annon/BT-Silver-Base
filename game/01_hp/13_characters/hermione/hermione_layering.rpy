@@ -253,6 +253,8 @@ label h_action(action =  ""):
                     $ h_action_a = "lift_skirt_3.png"
                 if whoring >= 20:
                     $ h_action_a = "lift_skirt_4.png"
+                   
+                    
             if action == "lift_top":
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
@@ -303,6 +305,10 @@ label h_action(action =  ""):
         $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
         $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
+    
+    if hermione_wetpanties == True and action == "lift_skirt" and hermione_wear_panties == True:
+        $ hermiome_action_b = "01_hp/13_characters/hermione/overlays/pantystain.png"
+        
     return
     
     
@@ -690,6 +696,8 @@ label new_main_menu: # testing menu found in cheats or jumped to
                         $ hermione_wear_panties = True
                     call update_her_uniform
                     jump new_main_menu_base_clothes
+                    
+                    
                 "-Back-":
                     jump new_main_menu
         
@@ -784,7 +792,13 @@ label new_main_menu: # testing menu found in cheats or jumped to
             else:
                 $ hermione_perm_expand = True
             call update_her_uniform
+            jump new_main_menu            
+            
+        "-Hide Menu-":
+            show screen ctc
+            pause
             jump new_main_menu
+        
         "-Never mind-":
             hide screen hermione_main
             jump day_main_menu

@@ -353,7 +353,7 @@ label equip_gryyf_stockings:
                with d3
                call her_main("(This is....)")
                call her_main("(too good)")
-               g9 "(heh. not long now before you'll be this dripping wet all the time, cunt)"
+               g9 "(heh. once i'm done with you, you'll be dripping like this every day)"
                call her_main("(more....)")
                call her_main("(i want to be tutored more by [genie_name]!)")
                m "..."
@@ -375,9 +375,9 @@ label equip_gryyf_stockings:
                call her_main("(..pussy is throbbing)","body_158")
                call her_main("(i might become an addict if i'm not careful)","body_158")
                ">Hermione retrieves her clothes and starts putting them back on"
-               call her_main("(just the panties touching...","body_142")
+               call her_main("(just the panties touching...)","body_142")
                call her_main("(feels incredible!)","body_142")
-               "You can't help but notice her staining the pure white fabric hugging her leaking cunt "
+               "You can't help but notice stains on the pure white fabric that's hugging her leaking cunt "
                call set_hermione_action("hands_free")
                call set_hermione_action("")
                $ hermione_wetpanties = True
