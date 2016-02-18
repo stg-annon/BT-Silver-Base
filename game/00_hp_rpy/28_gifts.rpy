@@ -745,10 +745,17 @@ label give_her_existing_stock(stock_id):
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_06")
         call happy(30)
-    if stock_id == "jeans":
+    if stock_id == "long_jeans":
         call her_main("A pair of jeans?","body_03")
         call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
-        $ cs_existing_stock_gifted.append("jeans")
+        $ cs_existing_stock_gifted.append("long_jeans")
+        $ dress_code = True
+        call her_main("Thank you, [genie_name].","body_04")
+        call happy(30)
+    if stock_id == "short_jeans":
+        call her_main("A pair of daisy dukes?","body_03")
+        call display_gift(">You give the daisy dukes to Hermione...\n>short jeans have been added to the wardrobe.","07")
+        $ cs_existing_stock_gifted.append("short_jeans")
         $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
@@ -1250,75 +1257,6 @@ label bra_off:
     with d3
     jump day_time_requests
     
-label jeans_on:
-    call her_main("You want me to wear muggle pants?","body_01")
-    m "Well their called jeans."
-    her "That's not what I meant..."
-    
-    $ custom_skirt = 1
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-    
-label jeans_off:
-    call her_main("Ok.","body_01")
-    
-    $ custom_skirt = 0
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-
-label jeans_short_on:
-    if whoring >= 12:
-        call her_main("You want me to wear pants that are this short?","body_55")
-        m "I do."
-        call her_main("But they're so short...","body_56")
-    else:
-        call her_main("You want me to wear muggle pants?","body_08")
-        her "That are this short..."
-        m "I do."
-        call her_main("...{w}Fine","body_12")
-    
-    $ custom_skirt = 5
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
-    
-label jeans_short_off:
-    call her_main("Ok.","body_01")
-    
-    $ custom_skirt = 0
-    
-    show screen blkfade
-    with d3
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause 2
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    pause.3
-    hide screen blkfade
-    with d3
-    jump day_time_requests
     
 label g_stockings_on:
     call her_main("Ok then","body_01")
@@ -1673,7 +1611,7 @@ label h_badge_on(badge = "SPEW_badge"):
     with d5
     return
     
-label h_badge_off:
+label h_badge_off(badge = "SPEW_badge"):
     hide screen hermione_main
     with d5
     $ hermione_badges = False
@@ -1720,6 +1658,16 @@ label set_h_stockings(stocking = "00_blank"):
     with d5
     return
     
+
+label set_h_skirt(skirt="base_skirt"):   
+    hide screen hermione_main
+    with d5
+    $ h_skirt = skirt
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
+
 #$ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
 label badge_take:
@@ -1794,8 +1742,8 @@ label nets_put:
         call her_main("Hm...?","body_15")
         call her_main("Fishnet stockings?","body_17")
         call her_main("I don't know about that [genie_name]...","body_29")
+        m "..."
         menu:
-            m "..."
             "\"Just put them on!\"":
                 call her_main("Alright, alright...","body_69")
             "\"I will give you 15 points.\"":
@@ -1804,11 +1752,11 @@ label nets_put:
                 call her_main("Alright. I don't mind then.","body_68")
             "\"Fine. Forget it\"":
                 call her_main("Oh...","body_13")
-                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
-                with d3                                                                                                                                                                                                                        #HERMIONE
-                show screen hermione_main                                                                                                                                                                                 #HERMIONE
-                with d3            
-                jump day_time_requests
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        with d3                                                                                                                                                                                                                        #HERMIONE
+        show screen hermione_main                                                                                                                                                                                 #HERMIONE
+        with d3            
+        jump day_time_requests
     
     if whoring >= 18: # Lv 7+
         call her_main("If you insist, [genie_name]...","body_118")

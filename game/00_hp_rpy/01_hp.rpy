@@ -213,6 +213,14 @@ $ request_30 = False #Turns True when Hermione is sent on request No.30. (Blowjo
 $ request_32 = False #Turns True when Hermione is sent on request No.32. (Put on a slutty dress and go to classes).
 $ request_33 = False #Turns True when Hermione is sent on request No.33. (Go to classes with cum covered face).
 
+###MITTY TEST VARS###
+$ request_jeans = False
+$ hermione_dribble = False
+$ request_gryyf_stockings = False
+$ dribble_equippable = False
+$ hermione_wetpanties = False
+$ wetpanties_equippable = False
+
 # EVENTS #==============================================================================================================================================
 ### EVENT 01 ####
 $ desk_examined = False #Turns True when you did examine you desk on day one.

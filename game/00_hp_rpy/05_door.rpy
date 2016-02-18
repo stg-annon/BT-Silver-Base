@@ -474,7 +474,7 @@ label door:
                                                 jump day_request_clothing_stockings
                                                 
                                             "-Put the Gryffindor Stockings on-" if "gryffindor_stockings" in cs_existing_stock and h_stocking != "gryff":
-                                                call set_h_stockings("gryff")
+                                                jump equip_gryyf_stockings
                                                 jump day_request_clothing_stockings
                                                 
                                             "-Take the Gryffindor Stockings off-" if "gryffindor_stockings" in cs_existing_stock and h_stocking == "gryff":
@@ -522,21 +522,20 @@ label door:
                                             "-Never mind-":
                                                 jump day_request_clothing
                                         
-                                    # "-Put the jeans on-" if "jeans" in cs_existing_stock:
-                                        # jump jeans_on
-                                        # jump day_request_clothing
+                                    "-Put the jeans on-" if "long_jeans" in cs_existing_stock and h_skirt != "jeans":
+                                         jump equip_jeans
                                         
-                                    # "-Take the jeans off-" if "jeans" in cs_existing_stock:
-                                        # jump jeans_off
-                                        # jump day_request_clothing
+                                    "-Take the jeans off-" if h_skirt == "jeans":
+                                         call set_h_skirt("base_skirt")
+                                         jump day_request_clothing
                                         
-                                    # "-Put the short jeans on-" if "short_jeans" in cs_existing_stock:
-                                        # jump jeans_short_on
-                                        # jump day_request_clothing
+                                    "-Put the short jeans on-" if "short_jeans" in cs_existing_stock and h_skirt != "jeansshort":
+                                         call set_h_skirt("jeansshort")
+                                         jump day_request_clothing
                                         
-                                    # "-Take the short jeans off-" if "short_jeans" in cs_existing_stock:
-                                        # jump jeans_short_on
-                                        # jump day_request_clothing
+                                    "-Take the short jeans off-"if h_skirt == "jeansshort":
+                                         call set_h_skirt("base_skirt")
+                                         jump day_request_clothing
                                         
                                     "-Never mind-":
                                         jump day_request_wardrobe
@@ -580,7 +579,41 @@ label door:
                                         jump day_request_collars
                                     "-Never mind-":
                                         jump day_request_wardrobe
-                            
+                                        
+                            "-Overlays-":
+                                label day_request_overlays:
+                                menu:
+                                
+                                    "{color=#858585}-Thigh Grool Locked-{/color}" if dribble_equippable == False:
+                                        "You should try equipping the Gryffindor Stockings between 3 and 6 whoring"
+                                        jump day_request_overlays
+                                    
+                                    "{color=#858585}-Damp Panties Locked-{/color}" if wetpanties_equippable == False:
+                                        "You should try equipping the Gryffindor Stockings between 3 and 6 whoring"
+                                        jump day_request_overlays
+                                    
+                                    "-Thigh Grool On-" if dribble_equippable == True and hermione_dribble == False:
+                                        $ hermione_dribble = True
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                    "-Thigh Grool Off-" if dribble_equippable == True and hermione_dribble == True:
+                                        $ hermione_dribble = False
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                    
+                                    "-Damp Panties On-" if wetpanties_equippable == True and hermione_wetpanties == False:
+                                        $ hermione_wetpanties = True
+                                        call update_her_uniform
+                                        jump day_request_overlays
+                                        
+                                    "-Damp Panties Off-" if wetpanties_equippable == True and hermione_wetpanties == True:
+                                        $ hermione_wetpanties = False
+                                        call update_her_uniform
+                                        jump day_request_overlays  
+                                        
+                                    "-Never mind":
+                                        jump day_time_requests
+                                    
                             "-Never mind":
                                 jump day_time_requests
                     

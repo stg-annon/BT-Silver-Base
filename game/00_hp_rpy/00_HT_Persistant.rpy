@@ -1,5 +1,17 @@
 label __init_variables:
     #place save variables here
+    if not hasattr(renpy.store,'request_jeans'):
+        $ request_jeans = False
+    if not hasattr(renpy.store,'dribble_equippable'):
+        $ dribble_equippable = False
+    if not hasattr(renpy.store,'hermione_wetpanties'):
+        $ hermione_wetpanties = False        
+    if not hasattr(renpy.store,'wetpanties_equippable'):
+        $ wetpanties_equippable = False            
+    if not hasattr(renpy.store,'request_gryyf_stockings'):
+        $ request_gryyf_stockings = False
+    if not hasattr(renpy.store,'hermione_dribble'):
+        $ hermione_dribble = False
     if not hasattr(renpy.store,'freckles'): #important!
         $ freckles = False
     if not hasattr(renpy.store,'robe'): #important!
@@ -57,15 +69,15 @@ label __init_variables:
     if not hasattr(renpy.store,'cheerleader'): #important!
         $ cheerleader = True
     if not hasattr(renpy.store,'custom_skirt'): #important!
-        $ custom_skirt = False
+        $ custom_skirt = 0
     if not hasattr(renpy.store,'custom_shirt'): #important!
-        $ custom_shirt = False
+        $ custom_shirt = 0
     if not hasattr(renpy.store,'transparency'): #important!
         $ transparency = 1
     if not hasattr(renpy.store,'genie_name'): #important!
-        $ genie_name = "sir"
+        $ genie_name = "Sir"
     if not hasattr(renpy.store,'hermione_name'): #important!
-        $ hermione_name = "miss granger"
+        $ hermione_name = "Girl"
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
     if not hasattr(renpy.store,'shaming'): #important!

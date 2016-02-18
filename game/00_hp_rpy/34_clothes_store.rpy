@@ -448,11 +448,11 @@ label pickup_outfit:
         #if outfit_order == "": 
 return
 
-label display_package(str):
+label display_package(str1):
     $ the_gift = "01_hp/18_store/07.png"
     show screen gift
     with d3
-    "[str]"
+    "[str1]"
     hide screen gift
     with d3
 return
@@ -483,7 +483,7 @@ label existing_stock:
                     "A pair of standard muggle jeans, albeit a little low slung."
                     menu:
                         "-Buy the item (75 gold)-":
-                            call cs_buy_stock("jeans", 75)
+                            call cs_buy_stock("long_jeans", 75)
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts

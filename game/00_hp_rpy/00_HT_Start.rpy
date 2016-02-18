@@ -109,6 +109,7 @@ label start_ht:
     $ new_request_02_01 = False #SHOW ME YOUR PANTIES
     $ new_request_02_02 = False #SHOW ME YOUR PANTIES
     $ new_request_02_03 = False #SHOW ME YOUR PANTIES
+    $ new_request_02_04 = False #SHOW ME YOUR PANTIES
 
     $ new_request_03_01 = False # "Give me your panties"
     $ new_request_03_02 = False # "Give me your panties"

@@ -13,6 +13,24 @@ label cheats_ht:
                     $ whoring = 22
                     "Hermione is now a giant slut"
                     jump cheats_ht_hermione
+                "-Reset Clothing Scenes-":
+                    $ request_jeans = False
+                    $ hermione_dribble = False
+                    $ request_gryyf_stockings = False
+                    $ dribble_equippable = False
+                    $ hermione_wetpanties = False
+                    $ wetpanties_equippable = False
+                    "Clothing scenes reset! Try equipping the jeans or gryffindor stockings at various whoring levels"
+                    jump cheats_ht_hermione
+                    
+                "-Increase Whoring-":
+                    $ whoring += 1
+                    "Hermione became more depraved"
+                    jump cheats_ht_hermione
+                "-Decrease Whoring-":
+                    $ whoring -= 1
+                    "Hermione recovered some of her dignity"
+                    jump cheats_ht_hermione
                 "-force public requests-":
                     $ force_unlock_pub_favors = True
                     $ lock_public_favors = False
