@@ -340,7 +340,7 @@ label equip_gryyf_stockings:
                g9 "(how a bitch feels when she's in heat)"
                ">Slowly but surely, you see a trickle of nectar begin to leak out of Hermione."
                $ hermione_dribble = True
-               call update_her_body
+               call h_update_body
                hide screen ctc
                with d3
                show screen bld1

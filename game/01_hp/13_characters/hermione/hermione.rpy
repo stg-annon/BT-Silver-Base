@@ -55,9 +55,9 @@ label __init_variables:
     if not hasattr(renpy.store,'h_panties'): #important!
         $ h_panties = "base_panties_1"
     if not hasattr(renpy.store,'h_skirt'): #important!
-        $ h_skirt = 1
+        $ h_skirt = "skirt_1"
     if not hasattr(renpy.store,'h_top'): #important!
-        $ h_top = 1
+        $ h_top = "top_1"
     
     $ hermione_wear_bra = True
     $ hermione_wear_panties = True
@@ -79,7 +79,7 @@ label __init_variables:
     $ hermione_badges = False
     
     
-    $ h_breasts = 1
+    $ h_breasts = "breasts_1"
     $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     
     $ hermione_perm_expand = False
@@ -153,94 +153,103 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_custom_action_a'): #important!
         $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
-    $ outfit_set_size = 20
     
-    #if not hasattr(renpy.store,'hermione_custom_hair_list'): #important!
-    $ hermione_custom_hair_list = [""] * outfit_set_size
-    $ hermione_custom_hair_list[7] = ("power_hair")
-    $ hermione_custom_hair_list[9] = ("harley_hair")
     
-    $ hermione_custom_breast_list = ["breasts_1"] * outfit_set_size
-    $ hermione_custom_breast_list[11] = "breasts_2"
+    
+    
+    $ hermione_defined_outfit_list_size = 13
+    
+    $ h_player_generated_outfits = 0
+    
+    #if not hasattr(renpy.store,'hermione_outfit_names'): #important!
+    $ hermione_outfit_names = ["null","Maid","Griffindor Cheerleader","Slythrin Cheerleader","Heart Dancer","","","Power Girl","Mrs Marvel","Harley Quinn","Ball Dress","Christmas Girl","Lara Croft"]
+    $ hermione_outfit_id = ["null","maid","gryffindor_cheerleader","slytherin_cheerleader","heart_dancer","","","power_girl","ms_marvel","harley_quinn","ball_dress","christmas_costume","lara_croft"]
+    
     
     #if not hasattr(renpy.store,'hermione_custom_outfit_list'): #important!
-    $ hermione_custom_outfit_list = [[0 for i in xrange(5)] for i in xrange(outfit_set_size)]
+    $ hermione_custom_outfit_list = [[0 for i in xrange(hermione_defined_outfit_list_size)] for i in xrange(5)]
     
-    $ hermione_custom_outfit_list [1][0] = "maid_stockings.png" 
+    $ hermione_custom_outfit_list [0][1] = "maid_stockings.png" 
     $ hermione_custom_outfit_list [1][1] = "maid_skirt.png"
-    $ hermione_custom_outfit_list [1][2] = "maid_top.png"
-    $ hermione_custom_outfit_list [1][3] = "maid_gloves.png"
-    $ hermione_custom_outfit_list [1][4] = "maid_hat.png"
+    $ hermione_custom_outfit_list [2][1] = "maid_top.png"
+    $ hermione_custom_outfit_list [3][1] = "maid_gloves.png"
+    $ hermione_custom_outfit_list [4][1] = "maid_hat.png"
     
-    $ hermione_custom_outfit_list [2][0] = "cheer_stockings.png" 
-    $ hermione_custom_outfit_list [2][1] = "cheer_pants.png"
+    $ hermione_custom_outfit_list [0][2] = "cheer_stockings.png" 
+    $ hermione_custom_outfit_list [1][2] = "cheer_pants.png"
     $ hermione_custom_outfit_list [2][2] = "cheer_top.png"
-    $ hermione_custom_outfit_list [2][3] = ""
-    $ hermione_custom_outfit_list [2][4] = ""
+    $ hermione_custom_outfit_list [3][2] = ""
+    $ hermione_custom_outfit_list [4][2] = ""
     
-    $ hermione_custom_outfit_list [3][0] = "s_cheer_stockings.png" 
-    $ hermione_custom_outfit_list [3][1] = "s_cheer_pants.png"
-    $ hermione_custom_outfit_list [3][2] = "s_cheer_top.png"
+    $ hermione_custom_outfit_list [0][3] = "s_cheer_stockings.png" 
+    $ hermione_custom_outfit_list [1][3] = "s_cheer_pants.png"
+    $ hermione_custom_outfit_list [2][3] = "s_cheer_top.png"
     $ hermione_custom_outfit_list [3][3] = ""
-    $ hermione_custom_outfit_list [3][4] = ""
-    
-    $ hermione_custom_outfit_list [4][0] = "heart_legs.png" 
-    $ hermione_custom_outfit_list [4][1] = "heart_top.png"
-    $ hermione_custom_outfit_list [4][2] = "heart_collar.png"
     $ hermione_custom_outfit_list [4][3] = ""
+    
+    $ hermione_custom_outfit_list [0][4] = "heart_legs.png" 
+    $ hermione_custom_outfit_list [1][4] = "heart_top.png"
+    $ hermione_custom_outfit_list [2][4] = "heart_collar.png"
+    $ hermione_custom_outfit_list [3][4] = ""
     $ hermione_custom_outfit_list [4][4] = ""
     
-    $ hermione_custom_outfit_list [5][0] = "" 
-    $ hermione_custom_outfit_list [5][1] = ""
-    $ hermione_custom_outfit_list [5][2] = ""
-    $ hermione_custom_outfit_list [5][3] = ""
-    $ hermione_custom_outfit_list [5][4] = ""
+    $ hermione_custom_outfit_list [0][5] = "" 
+    $ hermione_custom_outfit_list [1][5] = ""
+    $ hermione_custom_outfit_list [2][5] = ""
+    $ hermione_custom_outfit_list [3][5] = ""
+    $ hermione_custom_outfit_list [4][5] = ""
     
-    $ hermione_custom_outfit_list [6][0] = "" 
-    $ hermione_custom_outfit_list [6][1] = ""
-    $ hermione_custom_outfit_list [6][2] = ""
-    $ hermione_custom_outfit_list [6][3] = ""
-    $ hermione_custom_outfit_list [6][4] = ""
+    $ hermione_custom_outfit_list [0][6] = "" 
+    $ hermione_custom_outfit_list [1][6] = ""
+    $ hermione_custom_outfit_list [2][6] = ""
+    $ hermione_custom_outfit_list [3][6] = ""
+    $ hermione_custom_outfit_list [4][6] = ""
     
-    $ hermione_custom_outfit_list [7][0] = "power_costume.png" 
-    $ hermione_custom_outfit_list [7][1] = ""
-    $ hermione_custom_outfit_list [7][2] = ""
-    $ hermione_custom_outfit_list [7][3] = ""
-    $ hermione_custom_outfit_list [7][4] = ""
+    $ hermione_custom_outfit_list [0][7] = "power_costume.png" 
+    $ hermione_custom_outfit_list [1][7] = ""
+    $ hermione_custom_outfit_list [2][7] = ""
+    $ hermione_custom_outfit_list [3][7] = ""
+    $ hermione_custom_outfit_list [4][7] = ""
     
-    $ hermione_custom_outfit_list [8][0] = "marvel_pants.png" 
-    $ hermione_custom_outfit_list [8][1] = "marvel_top.png"
-    $ hermione_custom_outfit_list [8][2] = "marvel_sash.png"
-    $ hermione_custom_outfit_list [8][3] = "marvel_gloves.png"
-    $ hermione_custom_outfit_list [8][4] = ""
+    $ hermione_custom_outfit_list [0][8] = "marvel_pants.png" 
+    $ hermione_custom_outfit_list [1][8] = "marvel_top.png"
+    $ hermione_custom_outfit_list [2][8] = "marvel_sash.png"
+    $ hermione_custom_outfit_list [3][8] = "marvel_gloves.png"
+    $ hermione_custom_outfit_list [4][8] = ""
     
-    $ hermione_custom_outfit_list [9][0] = "harley_pants.png" 
-    $ hermione_custom_outfit_list [9][1] = "harley_top.png"
-    $ hermione_custom_outfit_list [9][2] = "harley_gloves.png"
-    $ hermione_custom_outfit_list [9][3] = "harley_collar.png"
-    $ hermione_custom_outfit_list [9][4] = ""
+    $ hermione_custom_outfit_list [0][9] = "harley_pants.png" 
+    $ hermione_custom_outfit_list [1][9] = "harley_top.png"
+    $ hermione_custom_outfit_list [2][9] = "harley_gloves.png"
+    $ hermione_custom_outfit_list [3][9] = "harley_collar.png"
+    $ hermione_custom_outfit_list [4][9] = ""
     
-    $ hermione_custom_outfit_list [10][0] = "ball_dress_skirt.png" 
-    $ hermione_custom_outfit_list [10][1] = "ball_dress_top.png"
-    $ hermione_custom_outfit_list [10][2] = ""
-    $ hermione_custom_outfit_list [10][3] = ""
-    $ hermione_custom_outfit_list [10][4] = ""
+    $ hermione_custom_outfit_list [0][10] = "ball_dress_skirt.png" 
+    $ hermione_custom_outfit_list [1][10] = "ball_dress_top.png"
+    $ hermione_custom_outfit_list [2][10] = ""
+    $ hermione_custom_outfit_list [3][10] = ""
+    $ hermione_custom_outfit_list [4][10] = ""
     
-    $ hermione_custom_outfit_list [11][0] = "christmas_pants.png" 
-    $ hermione_custom_outfit_list [11][1] = "christmas_top.png"
-    $ hermione_custom_outfit_list [11][2] = "christmas_gloves.png"
-    $ hermione_custom_outfit_list [11][3] = "christmas_collar.png"
-    $ hermione_custom_outfit_list [11][4] = "christmas_antlers.png"
+    $ hermione_custom_outfit_list [0][11] = "christmas_pants.png" 
+    $ hermione_custom_outfit_list [1][11] = "christmas_top.png"
+    $ hermione_custom_outfit_list [2][11] = "christmas_gloves.png"
+    $ hermione_custom_outfit_list [3][11] = "christmas_collar.png"
+    $ hermione_custom_outfit_list [4][11] = "christmas_antlers.png"
     
-    $ hermione_custom_outfit_list [12][0] = "lara_pants.png" 
-    $ hermione_custom_outfit_list [12][1] = "lara_top.png"
-    $ hermione_custom_outfit_list [12][2] = "lara_gloves.png"
-    $ hermione_custom_outfit_list [12][3] = ""
-    $ hermione_custom_outfit_list [12][4] = ""
+    $ hermione_custom_outfit_list [0][12] = "lara_pants.png" 
+    $ hermione_custom_outfit_list [1][12] = "lara_top.png"
+    $ hermione_custom_outfit_list [2][12] = "lara_gloves.png"
+    $ hermione_custom_outfit_list [3][12] = ""
+    $ hermione_custom_outfit_list [4][12] = ""
     
-    #if not hasattr(renpy.store,'h_current_sets'): #important!
-    $ h_current_sets = 12
+    #if not hasattr(renpy.store,'hermione_custom_outfit_hair_list'): #important!
+    $ hermione_custom_outfit_hair_list = [""] * hermione_defined_outfit_list_size
+    $ hermione_custom_outfit_hair_list[7] = ("power_hair")
+    $ hermione_custom_outfit_hair_list[9] = ("harley_hair")
     
+    $ hermione_custom_outfit_breast_list = ["breasts_1"] * hermione_defined_outfit_list_size
+    $ hermione_custom_outfit_breast_list[11] = "breasts_2"
+    
+    $ h_menu_list = [["choice a",""],["choice b","b"]]
     
     
     return
