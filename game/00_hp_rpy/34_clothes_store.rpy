@@ -487,14 +487,14 @@ label existing_stock:
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts
-                "{color=#858585}-Short Jeans- (150 Gold)-{/color}"if "short_jeans" in cs_existing_stock:
+                "{color=#858585}-Short Jeans- (150 Gold)-{/color}"if "jeans_short" in cs_existing_stock:
                     call cust_excuse("You already own this.")
                     jump existing_stock_pants_skirts
-                "-Short Jeans- (150 Gold)" if "short_jeans" not in cs_existing_stock:
+                "-Short Jeans- (150 Gold)" if "jeans_short" not in cs_existing_stock:
                     "A pair of short daisy dukes."
                     menu:
                         "-Buy the item (150 gold)-":
-                            call cs_buy_stock("short_jeans", 150)
+                            call cs_buy_stock("jeans_short", 150)
                             jump existing_stock_pants_skirts
                         "-Never mind-":
                             jump existing_stock_pants_skirts

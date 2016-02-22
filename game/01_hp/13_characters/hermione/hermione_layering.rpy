@@ -495,12 +495,22 @@ label set_custom_layer(a=hermione_custom_a,b=hermione_custom_b,c=hermione_custom
         call h_save_custom_outfit
     return
     
-    
+     
+label h_load_custom_outfit(outfit_id=-1):
+    if outfit_id != -1:
+        $ hermione_custom_outfit = True
+        $ hermione_custom_a = hermione_custom_outfit_list[0][outfit_id]
+        $ hermione_custom_b = hermione_custom_outfit_list[1][outfit_id]
+        $ hermione_custom_c = hermione_custom_outfit_list[2][outfit_id]
+        $ hermione_custom_d = hermione_custom_outfit_list[3][outfit_id]
+        $ hermione_custom_e = hermione_custom_outfit_list[4][outfit_id]
+    return
+        
 label h_save_custom_outfit(hair = "", breastType = "breasts_1"):
     
     $ outfit_name = ""
     $ outfit_name = renpy.input("(Use keyboard to enter the a name fot thid Outfit.)")
-    $ outfit_name = tmp_name.strip()
+    $ outfit_name = outfit_name.strip()
     if outfit_name == "":
         $ hermione_outfit_names.append("Outfit_"+str(len(hermione_custom_outfit_hair_list)))
     else:
@@ -548,7 +558,7 @@ label new_main_menu: # testing menu found in cheats or jumped to
                     $ hermione_wear_robe = True
                     jump new_main_menu
                 "-gryff robe no shirt":
-                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_shirt_none.png.png"
+                    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_shirt_none.png"
                     $ hermione_wear_robe = True
                     jump new_main_menu
                 "-gryff robe quidditch":
@@ -592,21 +602,32 @@ label new_main_menu: # testing menu found in cheats or jumped to
                             $ hermione_custom_outfit = True
                             menu make_your_own_create:
                                 "-save current state-":
+                                    call h_save_custom_outfit
                                     jump make_your_own
                                 "-top-":
                                     menu make_your_own_top:
+                                        "-jumper-":
+                                            call set_custom_layer(c="01_hp/13_characters/hermione/clothes/custom/mix-match/jumper.png")
+                                            jump make_your_own_top
+                                        "-white t-":
+                                            call set_custom_layer(c="01_hp/13_characters/hermione/clothes/custom/mix-match/white_t.png")
+                                            jump make_your_own_top
                                         "-back-":
                                             jump make_your_own_create
                                 "-bottom-":
                                     menu make_your_own_bottom:
-                                        "-back-":
-                                            jump make_your_own_create
-                                "-bra-":
-                                    menu make_your_own_bra:
-                                        "-back-":
-                                            jump make_your_own_create
-                                "-panites-":
-                                    menu make_your_own_panties:
+                                        "-Long Jeans-":
+                                            call set_custom_layer(b="01_hp/13_characters/hermione/clothes/custom/mix-match/jeans_long.png")
+                                            jump make_your_own_bottom
+                                        "-Short Jeans-":
+                                            call set_custom_layer(b="01_hp/13_characters/hermione/clothes/custom/mix-match/jeans_short.png")
+                                            jump make_your_own_bottom
+                                        "-Skirt A-":
+                                            call set_custom_layer(b="01_hp/13_characters/hermione/clothes/custom/mix-match/skirt_2.0.png")
+                                            jump make_your_own_bottom
+                                        "-Skirt B-":
+                                            call set_custom_layer(b="01_hp/13_characters/hermione/clothes/custom/mix-match/skirt_3.0.png")
+                                            jump make_your_own_bottom
                                         "-back-":
                                             jump make_your_own_create
                                 "-breasts-":
@@ -630,7 +651,7 @@ label new_main_menu: # testing menu found in cheats or jumped to
                             if choice == -1:
                                 jump new_main_menu_outfit
                             else:
-                                call h_outfit(choice)
+                                call h_load_custom_outfit(choice)
                                 jump new_main_menu_outfit
                         "-Back-":
                             jump new_main_menu_outfit
@@ -894,7 +915,7 @@ label set_custom_menu_vars:
     python:
         tmp_list_a = []
         tmp_list_b = []
-        for i in range(hermione_defined_outfit_list_size-1,len(hermione_outfit_names)):
+        for i in range(hermione_defined_outfit_list_size,len(hermione_outfit_names)):
             if hermione_outfit_names[i] not in ["null",""]:
                 tmp_list_a.append(hermione_outfit_names[i])
                 tmp_list_b.append(i)

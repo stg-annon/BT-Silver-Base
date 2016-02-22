@@ -474,8 +474,11 @@ label door:
                                                 jump day_request_clothing_stockings
                                                 
                                             "-Put the Gryffindor Stockings on-" if "gryffindor_stockings" in cs_existing_stock and h_stocking != "gryff":
-                                                jump equip_gryyf_stockings
-                                                jump day_request_clothing_stockings
+                                                if request_gryyf_stockings == False and whoring <= 6:
+                                                    jump equip_gryyf_stockings
+                                                else:
+                                                    call set_h_stockings("gryff")
+                                                    jump day_request_clothing_stockings
                                                 
                                             "-Take the Gryffindor Stockings off-" if "gryffindor_stockings" in cs_existing_stock and h_stocking == "gryff":
                                                 call set_h_stockings
@@ -492,7 +495,7 @@ label door:
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Take the Lace Bra and Panties off-" if "lace_set" in cs_existing_stock and h_bra == "lace_bra":
-                                                call set_h_underwear("base_bra_white_1","base_panties_1")
+                                                call set_h_underwear
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Put the Cup-less Lace Bra on-" if "cup_set" in cs_existing_stock and h_bra != "cup_bra":
@@ -500,7 +503,7 @@ label door:
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Take the Cup-less Lace Bra off-" if "cup_set" in cs_existing_stock and h_bra == "cup_bra":
-                                                call set_h_underwear("base_bra_white_1","base_panties_1")
+                                                call set_h_underwear
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Put the Silk Bra and Panties on-" if "silk_set" in cs_existing_stock and h_bra != "silk_bra":
@@ -508,7 +511,7 @@ label door:
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Take the Silk Bra and Panties off-" if "silk_set" in cs_existing_stock and h_bra == "silk_bra":
-                                                call set_h_underwear("base_bra_white_1","base_panties_1")
+                                                call set_h_underwear
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Put the Latex and Panties on-" if "latex_set" in cs_existing_stock and h_bra != "latex_bra":
@@ -516,25 +519,29 @@ label door:
                                                 jump day_request_clothing_underwear
                                                 
                                             "-Take the Latex and Panties off-" if "latex_set" in cs_existing_stock and h_bra == "latex_bra":
-                                                call set_h_underwear("base_bra_white_1","base_panties_1")
+                                                call set_h_underwear
                                                 jump day_request_clothing_underwear
                                             
                                             "-Never mind-":
                                                 jump day_request_clothing
                                         
                                     "-Put the jeans on-" if "jeans_long" in cs_existing_stock and h_skirt != "jeans_long":
-                                         jump equip_jeans
+                                        if request_jeans == False:
+                                            jump equip_jeans
+                                        else:
+                                            call set_h_skirt("jeans_long")
+                                            jump day_request_clothing
                                         
                                     "-Take the jeans off-" if h_skirt == "jeans_long":
-                                         call set_h_skirt("base_skirt")
+                                         call set_h_skirt
                                          jump day_request_clothing
                                         
-                                    "-Put the short jeans on-" if "short_jeans" in cs_existing_stock and h_skirt != "jeansshort":
-                                         call set_h_skirt("jeansshort")
+                                    "-Put the short jeans on-" if "jeans_short" in cs_existing_stock and h_skirt != "jeans_short":
+                                         call set_h_skirt("jeans_short")
                                          jump day_request_clothing
                                         
-                                    "-Take the short jeans off-"if h_skirt == "jeansshort":
-                                         call set_h_skirt("base_skirt")
+                                    "-Take the short jeans off-"if h_skirt == "jeans_short":
+                                         call set_h_skirt
                                          jump day_request_clothing
                                         
                                     "-Never mind-":

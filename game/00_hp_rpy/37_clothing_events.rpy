@@ -1,7 +1,7 @@
 ###Jeans ###
 label equip_jeans:
 
-    if whoring >= 0 and whoring <= 2 and request_jeans == False: # Lv 0
+    if whoring >= 0 and whoring <= 2: # Lv 0
         call her_main("Muggle pants?","body_11")
         m "Yup"
         call her_main(".....?","body_11")
@@ -14,7 +14,7 @@ label equip_jeans:
         call her_main("NO amount of points is worth being suspended!","body_07")
         m "30?"
         jump very_no
-    elif whoring >= 3 and whoring < 6 and request_jeans == False: #Lv 1  - 2
+    elif whoring >= 3 and whoring < 6: #Lv 1  - 2
        call her_main("Muggle pants?","body_11")
        m "Yup"
        call her_main(".....","body_11")
@@ -40,9 +40,7 @@ label equip_jeans:
        m "15 points for Gryffindor!"
        $ gryffindor +=15
        call her_main("Thank you, [genie_name]","body_29",xpos=410)
-    elif request_jeans == True:
-       call set_h_skirt("jeans_long")
-    elif whoring >= 6 and whoring < 9 and request_jeans == False:
+    elif whoring >= 6 and whoring < 9:
        call her_main("Jeans?","body_02")
        m "Yup"
        call her_main("You want me to wear them at school?","body_17")
@@ -66,7 +64,7 @@ label equip_jeans:
        with d3
        pause
        call her_main("","body_01",xpos=410)
-    elif whoring >= 9 and whoring <= 15 and request_jeans == False: 
+    elif whoring >= 9 and whoring <= 15: 
        call her_main("Jeans?","body_02")
        m "Yup"
        call her_main("Aren't they a little... plain?","body_66")
@@ -91,7 +89,6 @@ label equip_jeans:
        call her_main("(ahh... i thought about it again... naughty [hermione_name]!)","body_188")
        g9 "....."
        call her_main("","body_188",xpos=410)
-    
     elif whoring > 15: 
         call her_main("...Jeans?","body_02")
         m "Yup"
@@ -127,7 +124,7 @@ label equip_jeans:
     
 ### Gryffindor Stockings ###
 label equip_gryyf_stockings:
-    if whoring < 3 and request_gryyf_stockings == False:
+    if whoring < 3:
        call her_main("Is that!?","body_11")
        call her_main("A pair of Gryffindor stockings!?","body_48")
        m "Yep?"
@@ -146,7 +143,7 @@ label equip_gryyf_stockings:
        call her_main("I've always wanted a pair of these! They're warm, and they reduce unwanted attention from the boys","body_45")
        call her_main("I will be the next best thing to having a skirt that's twice as long!","body_46")
        m "Just glad to help, [hermione_name]!
-       g4 (hehehe... hope you remember those words after I've made you so needy and desperate you'll suck off a hundred boys just to get off once)"
+       g4 "(hehehe... hope you remember those words after I've made you so needy and desperate you'll suck off a hundred boys just to get off once)"
        call her_main("They feel great!","body_01",xpos=120,ypos=0)
        show screen bld1
        with d3
@@ -159,8 +156,8 @@ label equip_gryyf_stockings:
        call her_main("Thanks again, [genie_name]! You're too kind","body_01",xpos=410)
        g9 "(We'll see)"
        $ request_gryyf_stockings = True
-       
-    elif whoring >= 3 and whoring <= 6 and request_gryyf_stockings == False:
+    
+    elif whoring >= 3 and whoring <= 6:
     
        $ hermione_wear_skirt = True
        $ hermione_wear_top = True
@@ -417,11 +414,4 @@ label equip_gryyf_stockings:
        
        jump end_hermione_personal_request
     
-    
-    
-    else:
-        call set_h_stockings("gryff")
-        $ request_gryyf_stockings = True
-    
     jump day_request_clothing
-        
