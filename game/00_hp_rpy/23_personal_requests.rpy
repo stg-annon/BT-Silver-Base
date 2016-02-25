@@ -1702,7 +1702,7 @@ label new_request_05:
     
     elif whoring >= 24: # LEVEL 05 # <=================================================================================== THIRD EVENT.
         $ new_request_05_02 = True # HEARTS.
-        $ new_request_05_heart = 3
+        $ new_request_05_heart = 2
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
@@ -1813,7 +1813,7 @@ label new_request_05:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her("yes!!!","body_212")
+                        call her_head("yes!!!","body_212")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
@@ -1852,7 +1852,7 @@ label new_request_05:
                 call her_head("Well, you know me, [genie_name]...","body_205")
                 call her_head("I'm just happy to be able to do my part","body_205")
                 call her_head("Please don't mind it and continue...","body_205")
-                call her_head("(...to grope me...)","body_212")
+                call her_head("(...to grope me...)","body_133")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's ass..."
@@ -1860,16 +1860,14 @@ label new_request_05:
                 call her_head("................","body_188")
                 label connection_of_rapes_02:
                 menu:
-                    "-Slide your hands under her panties-":
-                        ">You slowly slide one of your hands under the fabric of the girl's panties..."
+                    "-Slide your hands between her legs-":
+                        ">You slowly slide one of your hands towards her crotch..."
                         call her_head("[genie_name]... What are you...?","body_205")
                         m "something you'll enjoy."
                         m "just relax and leave everything to me."
                         call her_head("As you say...","body_205")
                         menu:
                             "-Prod her pussy with one of your fingers-":
-                                show screen blkfade
-                                with d3
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
                                 call her_head("[genie_name]?","body_205") 
                                 menu:
@@ -1877,12 +1875,49 @@ label new_request_05:
                                         ">You force one of your fingers into her little pussy..."
                                         ">It's very tight and warm..."
                                         ">it is quite wet as well...  Seems like Hermione's taking pleasure in this..."
-                                        jump screams_of_pleasure
+                                        call her_head("ah... your finger is in my...","body_134")
+                                        call her_head("ah... wait-","body_142")
+                                        ">you slowly start to pump your fingers"
+                                        call her_head("-only fifteen poin-","body_143")
+                                        ">you speed up slightly"
+                                        call her_head("{image=textheart}-my duty-{image=textheart}","body_144")
+                                        ">you start rubbing her clit"
+                                        call her_head("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
+                                        m "we can, of course, stop right here, unfulfilled. if that's what you really want."
+                                        call her_head("...","body_142")
+                                        m "well?"
+                                        call her_head("...keep going...","body_143")
+                                        m "hm?"
+                                        call her_head("keep fingering my pussy!!","body_148")
+                                        m "you want me to keep fingering your cunt? is that what your saying?"
+                                        call her_head("Yes!{image=textheart} fuck my cunt with your fingers!{image=textheart}","body_135","tears_04")
+                                        ">her hips roll and slam into your fingers."
+                                        call her_head("shove them deep in my slutty fuckhole!!{image=textheart}","body_133","tears_04")
+                                        m "hm... i don't think my fingers are up to this task after all..."
+                                        ">you take your fingers out of the girl's gushing cunt."
+                                        call her_head("what!!? no, don't st-","body_137")
+                                        ">...so you can take the dildo out of your desk."
+                                        call her_head("oh, god yes!!","body_158")
+                                        m "this is a much better fit isn't it?"
+                                        call her_head("aah!{image=textheart}","body_133","tears_04")
+                                        m "you're far too much of slut to be satisfied by fingers, aren't you?"
+                                        call her_head("yesfinewhatever!","body_148")
+                                        call her_head("i don't care!","body_149")
+                                        call her_head("just don't stop!","body_134","tears_04")
+                                        ">her hips meet your every thrust, nearly tearing the toy from your grip."
+                                        call her_head("donstopdonstopdonstop-","body_158")
+                                        call her_head("pleasepleasepleaseplease-","body_147")
+                                        m "are you enjoying yourself, [hermione_name]?"
+                                        call her_head("yes! I love how you spank me!","body_158")
+                                        call her_head("I love how you grope me!","body_137")
+                                        call her_head("I love how you play with my little fuckholes!","body_194","tears_04")
+                                        call her_head("ohgodohgodohgod","body_149")
+                                        ">Hermione tries to scream as her body bucks and the orgasm takes her, but can't get enough air to do more then moan."
+                                        call her_head("oooooooh...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_135")
+                                        jump ending_of_screams_of_pleasure
                                     "-Let the girl go...-":
                                         pass
                             "-Prod her butt-hole instead-":
-                                show screen blkfade
-                                with d3
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
                                 call her_head("[genie_name]? you're not planning t-","body_204")
                                 menu:
@@ -1891,29 +1926,101 @@ label new_request_05:
                                         with hpunch
                                         call her_head("ah... your finger is up my...","body_134")
                                         ">It's very tight and warm inside..."
-                                        call her_head("ah... wait-","body_")
+                                        call her_head("ah... wait-","body_142")
                                         ">you slowly start to pump your thumb"
-                                        call her_head("-only fifteen poin-","body_")
+                                        call her_head("-only fifteen poin-","body_143")
                                         ">you speed up slightly"
-                                        call her_head("{image=textheart}-my duty-{image=textheart}","body_")
+                                        call her_head("{image=textheart}-my duty-{image=textheart}","body_144")
                                         ">you rotate thumb as you go"
-                                        call her_head("!!{image=textheart}-gryffindor-{image=textheart}","")
+                                        call her_head("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
                                         m "we can, of course, stop right here, unfulfilled. if that's what you really want."
-                                        call her_head("...","body_")
+                                        call her_head("...","body_142")
                                         m "well?"
-                                        call her_head("...keep going...","body_")
+                                        call her_head("...keep going...","body_143")
                                         m "hm?"
-                                        call her_head("keep fingering my ass!!","body_")
-                                        m "with pleasure!"
-                                        jump screams_of_pleasure
+                                        call her_head("keep fingering my ass!!","body_148")
+                                        ">you pull your thumb out of her tight little asshole..."
+                                        call her_head("w-what!?","body_149")
+                                        call her_head("why w-","body_148")
+                                        ">...and replace it with two fingers"
+                                        call her_head("Aaah!","body_149")
+                                        call her_head("B-Bastard!{image=textheart}","body_147")
+                                        call her_head("Y-you teasing b-bastard!{image=textheart}{image=textheart}","body_158")
+                                        m "do you like this, [hermione_name]?"
+                                        call her_head("yes!!!","body_142")
+                                        m "do you love it?"
+                                        call her_head("oh, god, yes!!!","body_134","tears_04")
+                                        m "tell me what you love!"
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("aaah!!{image=textheart}{image=textheart}{image=textheart}","body_149")
+                                        m "I asked you a question."
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("when you finger my ass!","body_147")
+                                        call her_head("i love it when you fuck my ass with your fingers!","body_158")
+                                        m "what else do you love?"
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("when you slap my slutty ass!","body_147")
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("a-again! i'm c-c","body_149")
+                                        m "you're cumming again?"
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("yes!","body_146")
+                                        m "you're cumming from being spanked again?"
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("yes!!","body_147")
+                                        m "you're cumming from having your headmaster's fingers shoved up your tight little asshole?"
+                                        $ renpy.play('sounds/slap_02.mp3') #SLAP!
+                                        show screen white
+                                        with hpunch
+                                        pause.08
+                                        hide screen white
+                                        show screen bld1
+                                        call her_head("yes!!!{image=textheart}","body_149")
+                                        ">Hermione's body starts to buck wildly."
+                                        ">you grab herby the hair with your free hand to keep her on the desk even as you frantically pump your fingers into her big, tight ass"
+                                        call her_head("ohgodohgodohgod","body_149")
+                                        m "what are you cumming from, little whore?"
+                                        call her_head("!!!!","body_206","tears_04")
+                                        m "where's all this pleasure coming from?!"
+                                        call her_head("my aaaaaaaass!{image=textheart}","body_135","tears_04")
+                                        ">with one last spasm,hermione collapses to the desk. even after fainting, her Body still twitches, and her hips keep rolling."
+                                        jump ending_of_screams_of_pleasure
                                     "-Let the girl go...-":
                                         pass
-                            "-Stop pushing your luck. Dismiss the girl-":
-                                pass
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_205")
+                call her_head("As you say, [genie_name]...","crstart")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_01
@@ -1921,56 +2028,84 @@ label new_request_05:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head("[genie_name], please hurry up, before someone discovers us like this...","body_200")
+                call her_head("[genie_name], please hurry...","body_200")
                 m "What's the problem, [hermione_name]?"
-                m "You know you are doing this for your house."
-                call her_head("I do know.","body_203")
-                call her_head("But not everyone would see it that way...","body_203")
-                call her_head("So let us be done with this as quick as possible...","body_203")
-                call her_head("Please...","body_204")
-                m "Well, if you insist..."
+                call her_head("I don't have long before class.","body_203")
+                m "do you enjoy this so much?"
+                call her_head("I wouldn't phrase it like that...","body_221")
+                call her_head("anyway, let's get started.","body_209")
+                ">you raise an eyebrow"
+                call her_head("Please...","body_208")
+                m "Well, since you asked so nicely..."
                 show screen groping_01
                 with d7
                 call her_head("!!!","body_206")
                 m "What is it?"
-                call her_head("nothing, [genie_name]. Your hands are cold, that's all...","body_204")
-                show screen bld1 
-                with d3
-                show screen blktone8
-                with d3
+                call her_head("nothing, [genie_name].","body_205")
+                m "it didn't sound like nothing."
+                call her_head("...","body_213")
                 ">You run your hands up and down Hermione's legs..."
-                call her_head(".........................","body_203")
+                call her_head(".........................","body_205")
                 ">And give her Ass a good squeeze..."
-                call her_head(".................","body_208b")
+                call her_head(".................","body_58")
                 m "Don't look away, girl. I want you to look into my eyes."
-                call her_head("I would rather not, [genie_name]...","body_208b")
-                menu:
-                    m "..."
-                    "\"Fine. Just keep on standing still then.\"":
-                        call her_head("Thank you [genie_name]...","body_208b")
-                        ">You massage her ass-cheeks lightly..."
-                        call her_head("....................","body_208b")
-                        ">And keep enjoying the sensation of her butt under your hands..."
-                        call her_head(".....................","body_208b")
-                        ">Then You give Hermione's butt one last squeeze."
-                        call her_head(".....................","body_208b")
-                    "\"Open your eyes, or you'll lose the points!\"":
-                        $ mad += 20
-                        call her_head("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
-                        m "Did you say something, [hermione_name]?"
-                        call her_head("It's nothing, [genie_name].","body_05")
-                        ">You massage her ass-cheeks lightly..."
-                        ">Hermione maintains eye contact as she's been told..."
-                        call her_head("....................","body_05")
-                        call her_head("...............................","body_203")
-                        m "What did I tell you about looking away?"
-                        call her_head("Yes, I remember...","body_208b")
-                        call her_head(".................................","body_05")
-                        call her_head("...................................","body_203")
-                        call her_head("..................................................","body_203")
-                        ">You keep enjoying the sensation of her soft buttocks under your fingertips..."
-                        call her_head(".....................","body_05")
-                        jump connection_of_rapes_02
+                call her_head("but its embarassing, [genie_name]...","body_118")
+                m "..."
+                call her_head("...fine, [genie_name]...","body_205")
+                m "you're being so quiet."
+                call her_head("....................","body_198")
+                m "not even a word..."
+                ">you  enjoy the sensation of her butt under your hands..."
+                m "as my hands explore you"
+                m "your thighs..."
+                ">your hands rub in circles from the sides of her legs to her inner thighs"
+                m "your big, firm ass"
+                ">You massage her ass-cheeks lightly..."
+                call her_head(".....................","body_136")
+                m "your loins..."
+                ">one hand circling just above her clit."
+                call her_head(".....................","body_133")
+                m "is there something you want?"
+                call her_head(".....................","body_221")
+                call her_head("...i... {size=-5}...i want you to finger me...{/size}","body_199")
+                m "Did you say something, [hermione_name]?"
+                call her_head("...it's nothing, [genie_name]...","body_196")
+                ">You massage her ass-cheeks lightly with one hand as the other continues to circle above her cunt, fingers brushing against her clit..."
+                ">Hermione maintains eye contact as she's been told..."
+                m "you're lying."
+                call her_head("I... i said i want you to finger me!","body_132")
+                ">You swiftly plunge two fingers into her drenched snatch."
+                call her_head("!!!{image=textheart}{image=textheart}","body_136")
+                ">you start to pump your fingers inside her before she can do more than gasp"
+                call her_head("...................................","body_199")
+                m "did i say you could look away?"
+                call her_head("..................................................","body_205","tears_01")
+                m "good girl"
+                ">her hips roll in rythm as you fuck her with your fingers"
+                m "do you like this?"
+                m "you like it when i finger your cunt?"
+                call her_head("i love it!{image=textheart} i love your long fingers in my tight, wet cunt!!{image=textheart}","body_134","tears_02")
+                m "well, i think we can do better."
+                ">with your other hand, you force a finger up her tight asshole."
+                call her_head("!!!","body_149")
+                call her_head("my cunt and my ass!","body_158")
+                ">you don't even need to move as she pounds herself against your fingers."
+                call her_head("fingering my cunt and ass!{image=textheart}{image=textheart}","body_133","tears_04")
+                m "no, we can still do better."
+                ">you force another finger up her ass"
+                call her_head("iloveitiloveitiloveit","body_136","tears_04")
+                m "what do you love, [hermione_name]?"
+                call her_head("ah!!{image=textheart} i love your fingers in my ass and cunt!{image=textheart}","body_48","tears_04")
+                ">her movements have become more frantic"
+                m "are you cumming, [hermione_name]?"
+                call her_head("yes!!","body_149")
+                call her_head("i'm cumming!!","body_147")
+                call her_head("i'm cumming from being fucked with your fingers!!","body_158")
+                m "look at me!"
+                m "show me your fuck-face!"
+                m "i want to see you cum from whoring yourself for fifteen points."
+                call her_head("aaaaaaaaah!!!","body_149")
+                jump ending_of_screams_of_pleasure  
     
     label ending_of_screams_of_pleasure:
     if whoring <= 5:
@@ -1979,7 +2114,7 @@ label new_request_05:
     with d5
     
     stop music fadeout 1.0
-    ">You let go of her ass..."
+    ">You release her..."
     m "This will do for now."
     
     hide screen blktone8
@@ -2007,7 +2142,7 @@ label new_request_05:
     hide screen blkfade
     with Dissolve(1)
     
-    call her_main("..................","body_29",xpos=370,ypos=0)
+    call her_main("..................","body_156",xpos=370,ypos=0)
     her "Thank you [genie_name]..."
     if daytime:
         her "Now if you don't mind I'd better go. The classes are about to start."

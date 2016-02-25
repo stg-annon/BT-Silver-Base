@@ -3,15 +3,20 @@ screen hermione_main:
     
     add hermione_base xpos hermione_xpos ypos hermione_ypos #Add the base body
     add hermione_legs xpos hermione_xpos ypos hermione_ypos
-    if not hermione_action:
-        add hermione_right_arm xpos hermione_xpos ypos hermione_ypos
-    add hermione_breasts xpos hermione_xpos ypos hermione_ypos
-    if not hermione_action:
-        add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
-    elif not h_action_show_skirt:
-        add "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_0.png" xpos hermione_xpos ypos hermione_ypos
-    add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     
+    if hermione_action and h_action_show_arms:
+        add hermione_action_right_arm xpos hermione_xpos ypos hermione_ypos
+    elif not hermione_action:
+        add hermione_right_arm xpos hermione_xpos ypos hermione_ypos
+    
+    add hermione_breasts xpos hermione_xpos ypos hermione_ypos
+    
+    if hermione_action and h_action_show_arms:
+        add hermione_action_left_arm xpos hermione_xpos ypos hermione_ypos
+    elif not hermione_action:
+        add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
+    
+    add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     add hermione_body xpos hermione_xpos ypos hermione_ypos
     add hermione_tears xpos hermione_xpos ypos hermione_ypos
     
@@ -201,6 +206,7 @@ label set_hermione_action(action = ""):
     
 label h_action(action =  ""):
     $ hermione_action = False
+    $ h_action_show_arms = False
     $ h_action_show_top = True
     $ h_action_show_skirt = True
     $ h_action_show_bra = True
@@ -215,6 +221,9 @@ label h_action(action =  ""):
     
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
+    $ h_action_left_arm = "clothes/uniform/action/00_blank.png"
+    $ h_action_right_arm = "clothes/uniform/action/00_blank.png"
+    call update_her_uniform
     
     if action == "" or action == "none" or action == 0:
         pass
@@ -236,6 +245,7 @@ label h_action(action =  ""):
             
             if action == "lift_skirt":
                 $ h_action_show_skirt = False
+                $ h_action_show_arms = True
                 if whoring <= 5:
                     $ h_action_a = "lift_skirt_1.png"
                 if whoring >= 6 and whoring <= 11:
@@ -244,8 +254,8 @@ label h_action(action =  ""):
                     $ h_action_a = "lift_skirt_3.png"
                 if whoring >= 20:
                     $ h_action_a = "lift_skirt_4.png"
-                   
-                    
+                $ h_action_left_arm = "clothes/uniform/action/lift_skirt_fix.png"
+                
             if action == "lift_top":
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
@@ -258,6 +268,11 @@ label h_action(action =  ""):
                         $ h_action_a = "lift_top_5_3.png"
                     if day_random >= 5:# shirt_05
                         $ h_action_a = "lift_top_6.png"
+                if hermione_perm_expand:
+                    $ h_action_b = "lift_top_expand_perm_overlay.png"
+                else:
+                    $ h_action_b = "lift_top_normal_overlay.png"
+            
             if action == "hold_book":
                 $ h_action_show_top = False
                 if whoring <= 3:# shirt_00
@@ -273,27 +288,56 @@ label h_action(action =  ""):
                         $ h_action_a = "hold_book_5.png"
                     if day_random >= 5:# shirt_05
                         $ h_action_a = "hold_book_6.png"
-
-            if action == "hands_behind": 
-                $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/both/behind.png"
-                $ hermione_right_arm = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-            if action == "hands_free":
-                $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
-                $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
             
+            if action == "expand_breasts" or action == "expand_all":
+                $ h_action_show_top = False
+                $ h_action_show_bra = False
+                $ h_action_show_arms = True
+                $ h_action_left_arm = "body/arms/left/left_1.png"
+                $ h_action_right_arm = "body/arms/right/right_1.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded.png" 
             
-            if not h_action_show_bra and not h_action_show_top:
-                if hermione_perm_expand:
-                    $ h_action_b = "lift_top_expand_perm_overlay.png"
+            if action == "expand_ass" or action == "expand_all":
+                $ h_action_show_skirt = False
+                $ h_action_show_panties = False
+                $ h_action_show_arms = True
+                $ h_action_left_arm = "body/arms/left/left_1.png"
+                $ h_action_right_arm = "body/arms/right/right_1.png"
+                if whoring >= h_stop_wearing_panties_lvl:
+                    $ hermione_legs = "01_hp/13_characters/hermione/body/legs/expanded_ass.png"
                 else:
-                    $ h_action_b = "lift_top_normal_overlay.png"
+                    $ hermione_legs = "01_hp/13_characters/hermione/body/legs/expanded_ass_panties.png"
+            
+            if action == "lift_breasts":
+                $ h_action_show_top = False
+                $ h_action_show_bra = False
+                $ h_action_a = "lift_breasts.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
                 
+            if action == "lift_breasts_large":
+                $ h_action_show_top = False
+                $ h_action_show_bra = False
+                $ h_action_a = "lift_breasts_large.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png" 
+                
+            if action == "hands_behind":
+                $ h_action_show_arms = True
+                $ h_action_left_arm = "body/arms/left/behind.png"
+                $ h_action_right_arm = "body/arms/right/hand_behind.png"
+                
+            if action == "hands_free":
+                $ h_action_show_arms = True
+                $ h_action_left_arm = "body/arms/left/left_1.png"
+                $ h_action_right_arm = "body/arms/right/right_1.png"
+            
+    $ hermione_action_right_arm = "01_hp/13_characters/hermione/"+str(h_action_right_arm)
+    $ hermione_action_left_arm = "01_hp/13_characters/hermione/"+(h_action_left_arm)
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
     $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
     
     if action == "hold_book":
-        $ hermiome_action_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
+        $ hermiome_action_b = hermione_hair_b
     if action == "lift_skirt" and (h_top >= 2 and h_top <= 4):
         $ hermiome_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_top_"+str(h_top)+".png"
     
@@ -333,16 +377,17 @@ label h_update_body:
     if not hermione_wear_top:
         if not hermione_wear_bra:
             if not hermione_perm_expand:
-                $ h_breasts = "breasts_2" # normal breasts
+                $ h_breasts = "breasts_normal" # normal breasts
             else:
-                $ h_breasts = "breasts_3" # expanded breasts
+                $ h_breasts = "breasts_expanded" # expanded breasts
         elif h_bra in h_bra_nip_fix:
-            $ h_breasts = "breasts_2" # normal breasts
+            $ h_breasts = "breasts_normal" # normal breasts
         else:
-            $ h_breasts = "breasts_1" # nipple corrected breasts
+            $ h_breasts = "breasts_nipfix" # nipple corrected breasts
     else:
-        $ h_breasts = "breasts_1"
+        $ h_breasts = "breasts_nipfix"
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(h_breasts)+".png"
+    $ hermione_legs = "01_hp/13_characters/hermione/body/legs/legs_1.png"
     return
     
 label h_update_hair:
@@ -709,6 +754,24 @@ label new_main_menu: # testing menu found in cheats or jumped to
                     jump new_main_menu_actions
                 "-Hold Book-":
                     call h_action("hold_book")
+                    jump new_main_menu_actions
+                "-Expand All-":
+                    call h_action("expand_all")
+                    jump new_main_menu_actions
+                "-Expand Breasts-":
+                    call h_action("expand_breasts")
+                    jump new_main_menu_actions
+                "-Expand Ass-":
+                    call h_action("expand_ass")
+                    jump new_main_menu_actions
+                "-Lift Breasts-":
+                    call h_action("lift_breasts")
+                    jump new_main_menu_actions
+                "-Lift Breasts Large-":
+                    call h_action("lift_breasts_large")
+                    jump new_main_menu_actions
+                "-Arms Behind-":
+                    call h_action("hands_behind")
                     jump new_main_menu_actions
                 "-No Action-":
                     call h_action("")

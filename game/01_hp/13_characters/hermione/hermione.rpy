@@ -20,7 +20,7 @@ label __init_variables:
     $ hermione_tears = "01_hp/13_characters/hermione/body/face/tears/00_blank.png"
     $ hermione_base = "01_hp/13_characters/hermione/body/base/hermione_base.png"
     $ hermione_legs  = "01_hp/13_characters/hermione/body/legs/legs_1.png"
-    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_1.png"
+    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png"
     $ hermione_left_arm = "01_hp/13_characters/hermione/body/arms/left/left_1.png"
     $ hermione_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
     $ hermione_emote = "01_hp/13_characters/emote/00_blank.png"
@@ -79,7 +79,7 @@ label __init_variables:
     $ hermione_badges = False
     
     
-    $ h_breasts = "breasts_1"
+    $ h_breasts = "breasts_nipfix"
     $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     
     $ hermione_perm_expand = False
@@ -101,12 +101,17 @@ label __init_variables:
     $ hermiome_action_top = hermione_top
     $ hermiome_action_skirt = hermione_skirt
     
+    $ hermione_action_left_arm = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
+    $ hermione_action_right_arm = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     
+    $ h_action_right_arm = "00_blank.png"
+    $ h_action_left_arm = "00_blank.png"
     $ h_action_a = "00_blank.png"
     $ h_action_b = "00_blank.png"
     
+    $ h_action_show_arms = False
     $ h_action_show_bra = True
     $ h_action_show_panties = True
     $ h_action_show_top = True
