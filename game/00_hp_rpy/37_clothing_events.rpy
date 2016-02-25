@@ -142,7 +142,7 @@ label equip_gryyf_stockings:
        g6 "(...What did I say?)"
        call her_main("I've always wanted a pair of these! They're warm, and they reduce unwanted attention from the boys","body_45")
        call her_main("I will be the next best thing to having a skirt that's twice as long!","body_46")
-       m "Just glad to help, [hermione_name]!
+       m "Just glad to help, [hermione_name]!"
        g4 "(hehehe... hope you remember those words after I've made you so needy and desperate you'll suck off a hundred boys just to get off once)"
        call her_main("They feel great!","body_01",xpos=120,ypos=0)
        show screen bld1
