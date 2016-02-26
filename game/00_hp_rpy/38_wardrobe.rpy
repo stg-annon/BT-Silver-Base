@@ -48,14 +48,13 @@ screen wardrobe_hair:
         text "Potions" xpos 475 ypos 100 size 15
         
 label change_hair_test:
-    $ tmp = "Perform action ROW:"+str(row_index_selected)+"  COL:"+str(column_index_selected)
+    $ tmp = "Perform action Style:"+str(hair_style_menu)+"  Color:"+str(hair_color_menu)
     "[tmp]"
     call screen wardrobe
     
 label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
-    $ h_hair_style = hair_style_menu
-    $ h_hair_color = hair_color_menu 
+    call set_h_hair(hair_style_menu,hair_color_menu)
     hide screen wardrobe_hair
     call screen wardrobe_hair
     
