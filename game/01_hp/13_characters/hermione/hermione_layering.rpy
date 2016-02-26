@@ -434,13 +434,13 @@ label update_her_uniform:
             $ h_top = "top_6"
     
     ### SKIRT
-    if whoring <= 5 and h_skirt == "base_skirt": # skirt 1
+    if whoring <= 5: # skirt 1
         $ h_skirt = "skirt_1"
-    if whoring >= 6 and whoring <= 11 and h_skirt == "base_skirt": # skirt 2
+    if whoring >= 6 and whoring <= 11: # skirt 2
         $ h_skirt = "skirt_2"
-    if whoring >= 12 and whoring <= 19 and h_skirt == "base_skirt": # skirt 3
+    if whoring >= 12 and whoring <= 19: # skirt 3
         $ h_skirt = "skirt_3"
-    if whoring >= 20 and h_skirt == "base_skirt": # skirt 4
+    if whoring >= 20: # skirt 4
         $ h_skirt = "skirt_4"
         
         
