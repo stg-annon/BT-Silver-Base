@@ -31,6 +31,7 @@ screen wardrobe_hair:
         hover "01_hp/25_mo/wardrobe_hover.png"
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        hotspot (120, 30, 67, 82) clicked Show("wardrobe_uniform")
         
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
@@ -47,17 +48,40 @@ screen wardrobe_hair:
         text "Gifts" xpos 400 ypos 100 size 15
         text "Potions" xpos 475 ypos 100 size 15
         
-label change_hair_test:
-    $ tmp = "Perform action Style:"+str(hair_style_menu)+"  Color:"+str(hair_color_menu)
-    "[tmp]"
-    call screen wardrobe
     
 label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
     call set_h_hair(hair_style_menu,hair_color_menu)
     hide screen wardrobe_hair
     call screen wardrobe_hair
+
+screen wardrobe_uniform:
     
+    tag wardrobe_menu
+    zorder hermione_main_zorder-1
+    
+    imagemap:
+        cache False
+        ground "01_hp/25_mo/wardrobe_ground.png"
+        hover "01_hp/25_mo/wardrobe_hover.png"
+
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        hotspot (120, 30, 67, 82) clicked Show("wardrobe_uniform")
+        
+        for i in range(0,6):
+            for j in range (0,6):
+                hotspot ((21+(90*i)), 140+(92*j), 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
+        
+        for i in range(0,6):
+            add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
+
+        text "Hair" xpos 45 ypos 100 size 15 
+        text "Uniform" xpos 115 ypos 100 size 15 bold 1
+        text "Costumes" xpos 200 ypos 100 size 15
+        text "Accs." xpos 310 ypos 100 size 15
+        text "Gifts" xpos 400 ypos 100 size 15
+        text "Potions" xpos 475 ypos 100 size 15
+        
     
 screen wardrobe_gifts:
     
