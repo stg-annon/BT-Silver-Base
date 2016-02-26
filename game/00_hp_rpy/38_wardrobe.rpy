@@ -28,7 +28,7 @@ screen wardrobe_hair:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
 
 
-        hotspot (20, 140, 87, 84) clicked Show("wardrobe")
+        hotspot (20, 140, 87, 84) clicked Jump("change_hair")
         hotspot (114, 140, 87, 84) clicked Show("wardrobe")
         hotspot (204, 140, 87, 84) clicked Show("wardrobe")
         hotspot (294, 140, 87, 84) clicked Show("wardrobe")
@@ -36,7 +36,7 @@ screen wardrobe_hair:
         hotspot (474, 140, 80, 84) clicked Show("wardrobe")
 
 
-        hotspot (20, 230, 87, 84) clicked Jump("wardrobe")
+        hotspot (20, 230, 87, 84) clicked Show("wardrobe")
         hotspot (114, 230, 87, 84) clicked Show("wardrobe")
         hotspot (204, 230, 87, 84) clicked Show("wardrobe")
         hotspot (294, 230, 87, 84) clicked Show("wardrobe")
@@ -44,20 +44,11 @@ screen wardrobe_hair:
         hotspot (474, 230, 80, 84) clicked Show("wardrobe") 
 
 
-        
-        add "01_hp/13_characters/hermione/body/head/A_1.png" xpos -45 ypos 105 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/A_2.png" xpos 45 ypos 105 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/A_3.png" xpos 135 ypos 105 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/A_4.png" xpos 225 ypos 105 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/A_5.png" xpos 315 ypos 105 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/A_6.png" xpos 405 ypos 105 zoom 0.35
+        $ numerals = [1,2,3,4,5,6]
 
-        add "01_hp/13_characters/hermione/body/head/B_1.png" xpos -45 ypos 205 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/B_2.png" xpos 45 ypos 205 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/B_3.png" xpos 135 ypos 205 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/B_4.png" xpos 225 ypos 205 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/B_5.png" xpos 315 ypos 205 zoom 0.35
-        add "01_hp/13_characters/hermione/body/head/B_6.png" xpos 405 ypos 205 zoom 0.35
+        for i, numeral in enumerate(numerals):
+            add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
+            add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
 
         text "Hair" xpos 45 ypos 100 size 15 bold 1
         text "Uniform" xpos 115 ypos 100 size 15
@@ -68,8 +59,8 @@ screen wardrobe_hair:
 
 
 
-
-
+label change_hair:
+    call set_h_hair_style("B")
 
 
 
