@@ -243,4 +243,8 @@ label __init_variables:
     $ luna_chibi_ypos = 400
     $ luna_speed = 2.0
     
+    
+    $ row_index_selected = 0
+    $ column_index_selected = 0
+    
     return
