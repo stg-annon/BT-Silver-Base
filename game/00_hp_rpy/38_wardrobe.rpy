@@ -33,8 +33,8 @@ screen wardrobe_hair:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         
         for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("column_index_selected",(i+1)),SetVariable("row_index_selected",1),Jump("change_hair_test")]
-            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("column_index_selected",(i+1)),SetVariable("row_index_selected",2),Jump("change_hair_test")]
+            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
+            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","B"),Jump("change_hair")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
