@@ -8,7 +8,7 @@ screen wardrobe:
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_gifts") 
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair") 
         #("wardrobe_gifts")
         #("wardrobe_hair") 
 
@@ -32,18 +32,9 @@ screen wardrobe_hair:
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         
-        $ tmp_x = 21
-        $ tmp_y = 48
-        for i in  range(1,6):
-            $ tmp_x = 21
-            $ tmp_y += 91
-            for j in range(1,7):
-                hotspot (tmp_x, tmp_y, 83, 85) clicked [SetVariable("column_index_selected",j),SetVariable("row_index_selected",i),Jump("change_hair")]
-                $ tmp_x += 90
-        
-        # for i in range(0,6):
-            # hotspot (20+(90*i), 140, 87, 84) clicked [SetVariable("hair_color_menu",i+1),SetVariable("hair_style_menu","A"),Jump("change_hair")]
-            # hotspot (20+(90*i), 232, 87, 84) clicked [SetVariable("hair_color_menu",i+1),SetVariable("hair_style_menu","B"),Jump("change_hair")]
+        for i in range(0,6):
+            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("column_index_selected",(i+1)),SetVariable("row_index_selected",1),Jump("change_hair_test")]
+            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("column_index_selected",(i+1)),SetVariable("row_index_selected",2),Jump("change_hair_test")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
@@ -78,6 +69,15 @@ screen wardrobe_gifts:
         cache False
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
+        
+        # $ tmp_x = 21
+        # $ tmp_y = 48
+        # for i in  range(1,6):
+            # $ tmp_x = 21
+            # $ tmp_y += 91
+            # for j in range(1,7):
+                # hotspot (tmp_x, tmp_y, 83, 85) clicked [SetVariable("column_index_selected",j),SetVariable("row_index_selected",i),Jump("change_hair")]
+                # $ tmp_x += 90
         
     for i in range(1,7):
         add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*i) ypos 90 zoom 0.30
