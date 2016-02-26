@@ -619,3 +619,5 @@ label cs_buy_stock(item_id = "", cost):
     else:
         m "I don't have enough."
         return
+
+        

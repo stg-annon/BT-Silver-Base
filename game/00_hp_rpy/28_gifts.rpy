@@ -1635,7 +1635,7 @@ label set_h_hair_style(hair_style = "A"):
     hide screen hermione_main
     with d5
     $ h_hair_style = hair_style
-    call h_update_body
+    call h_update_hair
     show screen hermione_main
     with d5
     return
@@ -1644,7 +1644,7 @@ label set_h_hair_color(hair_color = 0):
     hide screen hermione_main
     with d5
     $ h_hair_color = hair_color
-    call h_update_body
+    call h_update_hair
     show screen hermione_main
     with d5
     return

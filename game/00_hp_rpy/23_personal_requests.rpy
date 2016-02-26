@@ -2030,7 +2030,10 @@ label new_request_05:
                 pause
                 call her_head("[genie_name], please hurry...","body_200")
                 m "What's the problem, [hermione_name]?"
-                call her_head("I don't have long before class.","body_203")
+                if daytime:
+                    call her_head("I don't have long before class.","body_203")
+                else:
+                    call her_head("I don't have long before others notice im missing.","body_203")
                 m "do you enjoy this so much?"
                 call her_head("I wouldn't phrase it like that...","body_221")
                 call her_head("anyway, let's get started.","body_209")

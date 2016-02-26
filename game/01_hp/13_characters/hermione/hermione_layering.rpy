@@ -210,6 +210,9 @@ label h_action(action =  ""):
     $ h_action_show_top = True
     $ h_action_show_skirt = True
     $ h_action_show_bra = True
+    
+    $ override = False
+    
     if hermione_wear_panties or h_request_wear_panties or whoring < h_stop_wearing_panties_lvl:
         $ h_action_show_panties = True
     else:
@@ -321,20 +324,31 @@ label h_action(action =  ""):
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png" 
                 
             if action == "hands_behind":
+                $ h_action_show_top = False
+                $ h_action_show_skirt = False
                 $ h_action_show_arms = True
-                $ h_action_left_arm = "body/arms/left/behind.png"
-                $ h_action_right_arm = "body/arms/right/hand_behind.png"
+                $ override = True
+                $ hermiome_action_a = "01_hp/13_characters/hermione/body/arms/left/behind.png"
+                $ hermione_action_right_arm = "01_hp/13_characters/hermione/body/arms/right/hand_behind.png"
+                #$ h_action_left_arm = "body/arms/left/behind.png"
+                #$ h_action_right_arm = "body/arms/right/hand_behind.png"
+                
+            if action == "hands_cuffed":
+                $ h_action_show_top = False
+                $ h_action_show_arms = True
+                $ h_action_left_arm = "body/arms/left/cuffed.png"
                 
             if action == "hands_free":
                 $ h_action_show_arms = True
                 $ h_action_left_arm = "body/arms/left/left_1.png"
                 $ h_action_right_arm = "body/arms/right/right_1.png"
-            
-    $ hermione_action_right_arm = "01_hp/13_characters/hermione/"+str(h_action_right_arm)
-    $ hermione_action_left_arm = "01_hp/13_characters/hermione/"+(h_action_left_arm)
-    $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
-    $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
-    $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
+    
+    if not override:
+        $ hermione_action_right_arm = "01_hp/13_characters/hermione/"+str(h_action_right_arm)
+        $ hermione_action_left_arm = "01_hp/13_characters/hermione/"+(h_action_left_arm)
+        $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
+        $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
+        $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
     
     if action == "hold_book":
         $ hermiome_action_b = hermione_hair_b
@@ -772,6 +786,9 @@ label new_main_menu: # testing menu found in cheats or jumped to
                     jump new_main_menu_actions
                 "-Arms Behind-":
                     call h_action("hands_behind")
+                    jump new_main_menu_actions
+                "-Arms cuffed-":
+                    call h_action("hands_cuffed")
                     jump new_main_menu_actions
                 "-No Action-":
                     call h_action("")

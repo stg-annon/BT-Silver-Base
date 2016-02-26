@@ -385,7 +385,17 @@ label door:
                                         call set_h_hair_style("A")
                                         jump day_request_hair
                                         
-                                    "-Dye your hair-":
+                                    "-Wear your hair like powergirl -" if not h_hair_style == "powergirl" and h_hair_color == 2:
+                                        call her_main("Sure, let me just go change it.","body_01")
+                                        call set_h_hair_style("powergirl")
+                                        jump day_request_hair
+                                    
+                                    
+                                    "{color=#858585}-Dye your hair-{/color}"if h_hair_style not in h_can_color:
+                                        call cust_excuse("there are no other colors avalable for this hairstyle")
+                                        jump day_request_hair
+                                        
+                                    "-Dye your hair-" if h_hair_style in h_can_color:
                                         label day_request_hair_dye:
                                         menu:
                                             "-Dye Brown-" if not h_hair_color == 1:

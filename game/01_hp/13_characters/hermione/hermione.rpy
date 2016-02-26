@@ -82,6 +82,8 @@ label __init_variables:
     $ h_breasts = "breasts_nipfix"
     $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     
+    $ h_can_color = ["A","B"]
+    
     $ hermione_perm_expand = False
     
     ## Chibi Vars

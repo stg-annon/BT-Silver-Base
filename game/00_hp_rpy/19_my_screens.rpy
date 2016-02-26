@@ -155,7 +155,7 @@ screen cs_p1:
         hotspot (409, 312, 156, 234) clicked [SetVariable("clothes_store_selection",7),Jump("cs_select")]
         hotspot (585, 312, 156, 234) clicked [SetVariable("clothes_store_selection",8),Jump("cs_select")]
         
-        #hotspot (16, 552, 34, 34) clicked Return("left")
+        #hotspot (16, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",0),Show("cs_p0")]
         hotspot (745, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",2),Show("cs_p2")]
         hotspot (742, 11, 42, 41) clicked [SetVariable("clothes_store_selection",-1),Jump("cs_select")]
     
