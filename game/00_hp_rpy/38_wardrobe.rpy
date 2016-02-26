@@ -27,26 +27,12 @@ screen wardrobe_hair:
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
 
-
-        hotspot (20, 140, 87, 84) clicked Jump("change_hair")
-        hotspot (114, 140, 87, 84) clicked Show("wardrobe")
-        hotspot (204, 140, 87, 84) clicked Show("wardrobe")
-        hotspot (294, 140, 87, 84) clicked Show("wardrobe")
-        hotspot (384, 140, 87, 84) clicked Show("wardrobe")
-        hotspot (474, 140, 80, 84) clicked Show("wardrobe")
+        for i in range(0,6):
+            hotspot (20+(90*i), 140, 87, 84) clicked [SetVariable("hair_color_menu",i+1),SetVariable("hair_style_menu","A"),Jump("change_hair")]
+            hotspot (20+(90*i), 232, 87, 84) clicked [SetVariable("hair_color_menu",i+1),SetVariable("hair_style_menu","B"),Jump("change_hair")]
 
 
-        hotspot (20, 230, 87, 84) clicked Show("wardrobe")
-        hotspot (114, 230, 87, 84) clicked Show("wardrobe")
-        hotspot (204, 230, 87, 84) clicked Show("wardrobe")
-        hotspot (294, 230, 87, 84) clicked Show("wardrobe")
-        hotspot (384, 230, 87, 84) clicked Show("wardrobe")
-        hotspot (474, 230, 80, 84) clicked Show("wardrobe") 
-
-
-        $ numerals = [1,2,3,4,5,6]
-
-        for i, numeral in enumerate(numerals):
+        for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
             add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
 
@@ -59,8 +45,12 @@ screen wardrobe_hair:
 
 
 
-label change_hair:
-    call set_h_hair_style("B")
+label change_hair():
+    call her_main("Sure, let me just go change it.","body_01")
+    $ h_hair_style = hair_style_menu
+    $ h_hair_color = hair_color_menu 
+    hide screen wardrobe_hair
+    call screen wardrobe_hair
 
 
 

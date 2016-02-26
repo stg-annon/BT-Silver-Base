@@ -206,6 +206,11 @@ label __init_variables:
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
 
+    if not hasattr(renpy.store,'hair_style_menu'): #important!
+        $ hair_style_menu = "A"
+    if not hasattr(renpy.store,'hair_color_menu'): #important!
+        $ hair_color_menu = 1
+
     
     $ her_path = "01_hp/13_hermione_main/"
     
