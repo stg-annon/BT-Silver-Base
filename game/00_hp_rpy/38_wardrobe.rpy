@@ -62,7 +62,7 @@ screen wardrobe_hair:
     
 label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
-    call set_h_hair(hair_style_menu,wardrobe_hair_color)
+    call set_h_hair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
     call screen wardrobe_hair
 

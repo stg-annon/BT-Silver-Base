@@ -705,7 +705,7 @@ label give_her_gift(gift_id):
     $ h_xpos=370 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
     show screen hermione_main
     with d3
-    jump day_time_requests
+    return
     
     
 label display_gift(text=">Gift given", gift_id):
