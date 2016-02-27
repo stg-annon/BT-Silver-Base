@@ -8,9 +8,12 @@ screen wardrobe:
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair") 
-        #("wardrobe_gifts")
-        #("wardrobe_hair") 
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
 
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
@@ -31,7 +34,11 @@ screen wardrobe_hair:
         hover "01_hp/25_mo/wardrobe_hover.png"
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (120, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
@@ -66,7 +73,11 @@ screen wardrobe_uniform:
         hover "01_hp/25_mo/wardrobe_hover.png"
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (120, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             for j in range (0,6):
