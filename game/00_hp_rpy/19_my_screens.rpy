@@ -570,8 +570,8 @@ screen gift:
 screen letter:
     zorder 4
     add "01_hp/11_misc/letter.png" at Position(xpos=200, ypos=30)  
-    hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
-        spacing 40 xpos 270 ypos 80 xmaximum 250#отступ для текста, если надо прямо в левом углу — убираем его        
+    hbox:
+        spacing 40 xpos 270 ypos 80 xmaximum 250
         text letter_text
 screen blkfade:
     zorder 5

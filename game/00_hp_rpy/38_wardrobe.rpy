@@ -14,7 +14,7 @@ screen wardrobe:
         # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("cs_test")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
         # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
 
         text "Hair" xpos 45 ypos 100 size 15
