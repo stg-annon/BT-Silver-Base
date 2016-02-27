@@ -169,8 +169,8 @@ label __init_variables:
     $ h_player_generated_outfits = 0
     
     #if not hasattr(renpy.store,'hermione_outfit_names'): #important!
-    $ hermione_outfit_names = ["null","Maid","Griffindor Cheerleader","Slythrin Cheerleader","Heart Dancer","","","Power Girl","Mrs Marvel","Harley Quinn","Ball Dress","Christmas Girl","Lara Croft"]
-    $ hermione_outfit_id = ["null","maid","gryffindor_cheerleader","slytherin_cheerleader","heart_dancer","","","power_girl","ms_marvel","harley_quinn","ball_dress","christmas_costume","lara_croft"]
+    $ hermione_outfit_names = ["null","Maid","Griffindor Cheerleader","Slythrin Cheerleader","Heart Dancer","Silk Nightgown","Pirate","Power Girl","Mrs Marvel","Harley Quinn","Ball Dress","Christmas Girl","Lara Croft"]
+    $ hermione_outfit_id = ["null","maid","gryffindor_cheerleader","slytherin_cheerleader","heart_dancer","silk_nightgown","pirate","power_girl","ms_marvel","harley_quinn","ball_dress","christmas_costume","lara_croft"]
     
     
     #if not hasattr(renpy.store,'hermione_custom_outfit_list'): #important!
@@ -253,8 +253,8 @@ label __init_variables:
     $ hermione_custom_outfit_hair_list[7] = ("power_hair")
     $ hermione_custom_outfit_hair_list[9] = ("harley_hair")
     
-    $ hermione_custom_outfit_breast_list = ["breasts_1"] * hermione_defined_outfit_list_size
-    $ hermione_custom_outfit_breast_list[11] = "breasts_2"
+    $ hermione_custom_outfit_breast_list = ["breasts_normal"] * hermione_defined_outfit_list_size
+    $ hermione_custom_outfit_breast_list[11] = "breasts_nipfix"
     
     $ h_menu_list = [["choice a",""],["choice b","b"]]
     
