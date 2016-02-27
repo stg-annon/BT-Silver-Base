@@ -261,7 +261,7 @@ label give_her_gift(gift_id):
             call give_gift(">You give the owl to Hermione...",gift_id)
             $ h_body = "body_01"
             call happy(4)
-    if gift_id == 3:#butterbeer
+    if gift_id == 4:#butterbeer
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             call her_main("Butterbeer?","body_01")
             call her_main("Are you sure about that, [genie_name]?","body_08")
