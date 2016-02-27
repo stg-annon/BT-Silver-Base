@@ -75,12 +75,6 @@ label __init_variables:
     
     return
     
-label clothes_store_gui:
-    $ clothes_store_curr_page = 1
-    call screen cs_p1
-    label cs_select_done:
-    return
-    
 label cs_select:
     $ tmp = ((clothes_store_curr_page-1)*8) + clothes_store_selection
     #DEBUG#"You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
@@ -145,6 +139,7 @@ label clothes_menu:
 label custom_orders:
     
     call clothes_store_gui
+    
     
     #"{color=#858585}-Gryffindor Cheerleader Outfit-{/color}"if "gryffindor_cheerleader" in outfit_inventory:
     if clothes_store_order_choice == "gryffindor_cheerleader" and clothes_store_order_choice in outfit_inventory:
@@ -619,5 +614,48 @@ label cs_buy_stock(item_id = "", cost):
     else:
         m "I don't have enough."
         return
-
+    
+label clothes_store_gui:
+    $ clothes_store_curr_page = 1
+    call screen cs_gui
+    label cs_select_done:
+    return
+    
+screen cs_gui:
+    
+    tag clothes_menu
+    zorder hermione_main_zorder-1
+    
+    imagemap:
+        cache False
+        ground "01_hp/23_clothes_store/cs_gui/c_s_ground.png"
+        idle "01_hp/23_clothes_store/cs_gui/c_s_idle.png"
+        hover "01_hp/23_clothes_store/cs_gui/c_s_hover.png"
+        $ page = ((clothes_store_curr_page-1)*8)
         
+        for i in range(1,5):
+            hotspot((73+(175*(i-1))), 78, 125, 190) clicked [SetVariable("clothes_store_selection",i),Jump("cs_select")]
+        for i in range(5,9):
+            if clothes_store_curr_page != 2:
+                hotspot((73+(175*(i-5))), 333, 125, 190) clicked [SetVariable("clothes_store_selection",i),Jump("cs_select")]
+        
+        for i in range(0,4):
+            add "01_hp/23_clothes_store/cs_gui/"+str(page+(i+1))+".png" xpos 26+(175*i) ypos 31 zoom 0.40
+        for i in range(0,4):
+            if page+((i+1)+4) <= 12:
+                add "01_hp/23_clothes_store/cs_gui/"+str(page+((i+1)+4))+".png" xpos 26+(175*i) ypos 285 zoom 0.40
+        
+        if clothes_store_curr_page != 1:
+            hotspot (16, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",clothes_store_curr_page-1),Show("cs_gui")]
+        if clothes_store_curr_page != 2:
+            hotspot (745, 552, 34, 34) clicked [SetVariable("clothes_store_curr_page",clothes_store_curr_page+1),Show("cs_gui")]
+        hotspot (742, 11, 42, 41) clicked [SetVariable("clothes_store_selection",-1),Jump("cs_select")]
+    
+label cs_select:
+    if clothes_store_selection == -1 or clothes_store_inv[tmp] == "":
+        jump clothes_menu
+    $ tmp = ((clothes_store_curr_page-1)*8) + clothes_store_selection
+    "You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
+    $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ clothes_store_selection)]
+    jump cs_select_done
+

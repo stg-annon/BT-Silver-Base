@@ -200,15 +200,15 @@ label __init_variables:
     $ hermione_custom_outfit_list [3][4] = ""
     $ hermione_custom_outfit_list [4][4] = ""
     
-    $ hermione_custom_outfit_list [0][5] = "" 
+    $ hermione_custom_outfit_list [0][5] = "silk_nightgown.png"
     $ hermione_custom_outfit_list [1][5] = ""
     $ hermione_custom_outfit_list [2][5] = ""
     $ hermione_custom_outfit_list [3][5] = ""
     $ hermione_custom_outfit_list [4][5] = ""
     
-    $ hermione_custom_outfit_list [0][6] = "" 
-    $ hermione_custom_outfit_list [1][6] = ""
-    $ hermione_custom_outfit_list [2][6] = ""
+    $ hermione_custom_outfit_list [0][6] = "pirate_legs.png" 
+    $ hermione_custom_outfit_list [1][6] = "pirate_pants.png"
+    $ hermione_custom_outfit_list [2][6] = "pirate_top.png"
     $ hermione_custom_outfit_list [3][6] = ""
     $ hermione_custom_outfit_list [4][6] = ""
     
