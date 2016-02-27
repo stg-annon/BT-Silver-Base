@@ -8,11 +8,13 @@ screen wardrobe:
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
+        hotspot (742,10,42,41) clicked Jump("day_time_requests")
+        
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
         # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
 
         text "Hair" xpos 45 ypos 100 size 15
@@ -33,16 +35,18 @@ screen wardrobe_hair:
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
+        hotspot (742,10,42,41) clicked Jump("day_time_requests")
+        
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
         # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
-            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","B"),Jump("change_hair")]
+            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_style","A"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
+            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_hair_style","B"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
@@ -58,7 +62,7 @@ screen wardrobe_hair:
     
 label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
-    call set_h_hair(hair_style_menu,hair_color_menu)
+    call set_h_hair(hair_style_menu,wardrobe_hair_color)
     hide screen wardrobe_hair
     call screen wardrobe_hair
 
@@ -72,16 +76,18 @@ screen wardrobe_uniform:
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
+        hotspot (742,10,42,41) clicked Jump("day_time_requests")
+
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
         # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             for j in range (0,6):
-                hotspot ((21+(90*i)), 140+(92*j), 83, 85) clicked [SetVariable("hair_color_menu",(i+1)),SetVariable("hair_style_menu","A"),Jump("change_hair")]
+                hotspot ((21+(90*i)), 140+(92*j), 83, 85) clicked [SetVariable("",),SetVariable("",),Jump("change_hair")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
@@ -103,30 +109,47 @@ screen wardrobe_gifts:
         cache False
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
+
+        hotspot (742,10,42,41) clicked Jump("day_time_requests")
         
-        # $ tmp_x = 21
-        # $ tmp_y = 48
-        # for i in  range(1,6):
-            # $ tmp_x = 21
-            # $ tmp_y += 91
-            # for j in range(1,7):
-                # hotspot (tmp_x, tmp_y, 83, 85) clicked [SetVariable("column_index_selected",j),SetVariable("row_index_selected",i),Jump("change_hair")]
-                # $ tmp_x += 90
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
-    for i in range(1,7):
-        add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*i) ypos 90 zoom 0.30
-    for i in range(7,13):
-        add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*(i-6)) ypos 180 zoom 0.30
-    for i in range(13,18):
-        add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*(i-12)) ypos 270 zoom 0.30
+        for i in range(0,6):
+            if gift_item_inv[i+1] > 0:
+                hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_gift_item",i+1),Jump("wardrobe_give_gift")]
+        for i in range(0,6):
+            if gift_item_inv[i+7] > 0:
+                hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_gift_item",i+7),Jump("wardrobe_give_gift")]
+        for i in range(0,6):
+            if gift_item_inv[i+13] > 0:
+                hotspot ((21+(90*i)), 324, 83, 85) clicked [SetVariable("wardrobe_gift_item",i+13),Jump("wardrobe_give_gift")]
         
-    text "Hair" xpos 45 ypos 100 size 15
-    text "Uniform" xpos 115 ypos 100 size 15
-    text "Costumes" xpos 200 ypos 100 size 15
-    text "Accs." xpos 310 ypos 100 size 15
-    text "Gifts" xpos 400 ypos 100 size 15 bold 1
-    text "Potions" xpos 475 ypos 100 size 15
+        for i in range(1,7):
+            if gift_item_inv[i] > 0:
+                add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*i) ypos 90 zoom 0.30
+        for i in range(7,13):
+            if gift_item_inv[i] > 0:
+                add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*(i-6)) ypos 180 zoom 0.30
+        for i in range(13,18):
+            if gift_item_inv[i] > 0:
+                add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*(i-12)) ypos 270 zoom 0.30
+            
+        text "Hair" xpos 45 ypos 100 size 15
+        text "Uniform" xpos 115 ypos 100 size 15
+        text "Costumes" xpos 200 ypos 100 size 15
+        text "Accs." xpos 310 ypos 100 size 15
+        text "Gifts" xpos 400 ypos 100 size 15 bold 1
+        text "Potions" xpos 475 ypos 100 size 15
     
+label wardrobe_give_gift:
+    call give_her_gift(wardrobe_gift_item)
+    hide screen wardrobe_gifts
+    call screen wardrobe_gifts
     
 label day_request_wardrobe:
     menu:
