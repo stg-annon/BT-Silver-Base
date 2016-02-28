@@ -161,12 +161,7 @@ label __init_variables:
         $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
     
-    
-    
-    
     $ hermione_defined_outfit_list_size = 13
-    
-    $ h_player_generated_outfits = 0
     
     #if not hasattr(renpy.store,'hermione_outfit_names'): #important!
     $ hermione_outfit_names = ["null","Maid","Griffindor Cheerleader","Slythrin Cheerleader","Heart Dancer","Silk Nightgown","Pirate","Power Girl","Mrs Marvel","Harley Quinn","Ball Dress","Christmas Girl","Lara Croft"]
