@@ -15,7 +15,7 @@ screen wardrobe:
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
 
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
@@ -42,7 +42,7 @@ screen wardrobe_hair:
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_style","A"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
@@ -83,7 +83,7 @@ screen wardrobe_uniform:
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             for j in range (0,6):
@@ -117,7 +117,7 @@ screen wardrobe_gifts:
         # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             if gift_item_inv[i+1] > 0:
@@ -150,6 +150,48 @@ label wardrobe_give_gift:
     call give_her_gift(wardrobe_gift_item)
     hide screen wardrobe_gifts
     call screen wardrobe_gifts
+
+
+screen wardrobe_potions:
+    
+    tag wardrobe_menu
+    zorder hermione_main_zorder-1
+    
+    imagemap:
+        cache False
+        ground "01_hp/25_mo/wardrobe_ground.png"
+        hover "01_hp/25_mo/wardrobe_hover.png"
+
+        hotspot (742,10,42,41) clicked Jump("day_time_requests")
+        
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        
+        for i in range(0,6):
+            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
+
+        #for i in range(0,4):
+        #    hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_potion",i+7),Jump("wardrobe_give_potion")]
+        
+        for i in range(1,7):
+            add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
+        for i in range(7,11):
+            add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*(i-6)) ypos 225 zoom 0.8
+            
+        text "Hair" xpos 45 ypos 100 size 15
+        text "Uniform" xpos 115 ypos 100 size 15
+        text "Costumes" xpos 200 ypos 100 size 15
+        text "Accs." xpos 310 ypos 100 size 15
+        text "Gifts" xpos 400 ypos 100 size 15
+        text "Potions" xpos 475 ypos 100 size 15 bold 1
+    
+label wardrobe_give_potion:
+    hide screen wardrobe_gifts
+    $ renpy.jump("potion_scene_"+str(wardrobe_potion))
     
 label day_request_wardrobe:
     menu:
