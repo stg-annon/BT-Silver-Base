@@ -346,31 +346,7 @@ label door:
                         else:
                             jump new_personal_request
                     
-                    "-Give her a present-" if not gifted:
-                        jump her_gift_menu
-                    
-                    "-Wardrobe-" if dress_code:
-                        if mad >=1 and mad < 3:
-                            her "I'm sorry, [genie_name]. Maybe some other time..."
-                            jump day_time_requests
-                        elif mad >=3 and mad < 10:
-                            her "What's wrong with my current attire?"
-                            jump day_time_requests
-                        elif mad >=10 and mad < 20:
-                            her "No, thank you...."
-                            jump day_time_requests
-                        elif mad >=20 and mad < 30:
-                            her "I don't think so..."
-                            jump day_time_requests
-                        elif mad >=30 and mad < 40:
-                            her "No!"
-                            jump day_time_requests
-                        elif mad >=40:
-                            her "I will never let you tell me what to wear again, sir!"
-                            jump day_time_requests
-                        else:
-                            pass
-
+                    "-Inventory-" if dress_code:
                         call screen wardrobe
 
                         
