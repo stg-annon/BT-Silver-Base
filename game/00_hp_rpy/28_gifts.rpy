@@ -729,62 +729,53 @@ label give_her_existing_stock(stock_id):
         call display_gift(">You give the stockings to Hermione...\n>Fishnet stockings have been added to the wardrobe.","30")
         call her_main("Thank you, [genie_name].","body_04")
         $ cs_existing_stock_gifted.append("fishnet_stockings")
-        $ dress_code = True
         call happy(30)
     if stock_id == "gryffindor_stockings":
         call her_main("A pair of stockings?","body_03")
         call display_gift(">You give the stockings to Hermione...\n>gryffindor stockings have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("gryffindor_stockings")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "SPEW_badge":
         call her_main("A badge?","body_01")
         call display_gift(">You give the badge to Hermione...\n>The \"S.P.E.W. badge has been added to the wardrobe.","29")
         $ cs_existing_stock_gifted.append("SPEW_badge")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_06")
         call happy(30)
     if stock_id == "jeans_long":
         call her_main("A pair of jeans?","body_03")
         call display_gift(">You give the jeans to Hermione...\n>jeans have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("jeans_long")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "short_jeans":
         call her_main("A pair of daisy dukes?","body_03")
         call display_gift(">You give the daisy dukes to Hermione...\n>short jeans have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("short_jeans")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "lace_set":
         call her_main("A set of undergarments?","body_03")
         call display_gift(">You give the lace bra and panties to Hermione...\n>lace bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("lace_set")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "cup_set":
         call her_main("A set of undergarments??","body_03")
         call display_gift(">You give the cup bra and panties to Hermione...\n>cup bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("cup_set")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "silk_set":
         call her_main("A set of undergarments?","body_03")
         call display_gift(">You give the silk bra and panties to Hermione...\n>silk bra and panties have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("silk_set")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
     if stock_id == "ITEM_ID":
         call her_main("HERMIONE_QUESTIONS_ITEM?","body_03")
         call display_gift(">You give the ITEM to Hermione...\n>ITEM have been added to the wardrobe.","07")
         $ cs_existing_stock_gifted.append("ITEM_ID")
-        $ dress_code = True
         call her_main("Thank you, [genie_name].","body_04")
         call happy(30)
         
@@ -808,9 +799,6 @@ label giving_gryffindor_cheer:
     with d3
     ">You give the outfit to Hermione...\n>A Gryffindor Cheerleading outfit has been added to the wardrobe."
     hide screen gift
-    
-    $ dress_code = True
-    
     call her_main("Thank you, [genie_name], although I don't know when I'd wear it.","body_04")
     call happy
     
@@ -830,9 +818,6 @@ label giving_slytherin_cheer:
     with d3
     ">You give the outfit to Hermione...\n>A Slytherin Cheerleading outfit has been added to the wardrobe."
     hide screen gift
-
-    $ dress_code = True
-
     call her_main("Thank you, [genie_name], even though I'm not in Slytherin...","body_04")
     call happy
     
@@ -853,9 +838,6 @@ label giving_maid_outfit:
     with d3
     ">You give the outfit to Hermione...\n>A maid outfit has been added to the wardrobe."
     hide screen gift
-    
-    $ dress_code = True
-    
     call her_main("Thank you, [genie_name].","body_04")
     call happy
     
@@ -875,9 +857,6 @@ label giving_silk_nightgown:
     with d3
     ">You give the nightgown to Hermione...\n>A silk nightgown has been added to the wardrobe."
     hide screen gift
-
-    $ dress_code = True
-
     call her_main("Thank you, [genie_name].","body_04")
     call happy
     
@@ -886,7 +865,6 @@ label giving_silk_nightgown:
     
     
 label giving_skirt:
-    $ dress_code = True # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
     $ gifted = True #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
     $ have_miniskirt = False # Turns TRUE when you have the skirt in your possession.
     $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.

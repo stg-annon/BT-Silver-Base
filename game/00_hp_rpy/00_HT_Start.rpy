@@ -295,9 +295,7 @@ label start_ht:
     $ bought_miniskirt = False #Affects 15_mail.rpy
     $ have_miniskirt = False # Turns TRUE when you have the skirt in your possession.
     $ gave_miniskirt = False #Turns True when Hermione has the miniskirt.
-
-    $ dress_code = False # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
-
+    
     show image "interface/blackfade.png"
     if persistent.game_complete: # Offer for game+
         menu:
@@ -386,7 +384,6 @@ label start_ht:
 
             ### THE SKIRT ###
                 if persistent.haveskirt: # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
-                    $ dress_code = True # Turns TRUE when you gift the miniskirt. Unlocks the "dress code" button.
                     $ gave_miniskirt = True #Turns True when Hermione has the miniskirt.
                     ">School miniskirt has been added to Hermione's wardrobe."
 
