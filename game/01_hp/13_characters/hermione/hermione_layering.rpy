@@ -159,6 +159,7 @@ label set_hermione_outfit(outfit_id):
 label h_outfit(outfit_id):
     $ custom_outfit = outfit_id
     if custom_outfit == 0:
+        call update_her_uniform
         $ hermione_custom_outfit = False
     else:
         $ hermione_custom_outfit = True

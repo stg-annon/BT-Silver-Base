@@ -134,12 +134,14 @@ screen wardrobe_costumes:
                     #hovered [SetVariable("wardrobe_costume_selection",i+7),Jump("wardrobe_costume_preview")]
                     clicked [SetVariable("wardrobe_costume_selection",i+7),Jump("wardrobe_wear_costume")]
         
+        hotspot (471, 508, 83, 85) clicked [SetVariable("wardrobe_costume_selection",0),Jump("wardrobe_wear_costume")]
         
         for i in range(0,6):
             add "01_hp/23_clothes_store/cs_gui/"+str(i+1)+".png" xpos 13+(90*i) ypos 116 zoom 0.18
         for i in range(0,6):
             add "01_hp/23_clothes_store/cs_gui/"+str(i+7)+".png" xpos 13+(90*i) ypos 208 zoom 0.18
             
+        add "01_hp/23_clothes_store/cs_gui/0.png" xpos 463 ypos 484 zoom 0.18
             
         text "Hair" xpos 45 ypos 100 size 15 
         text "Uniform" xpos 115 ypos 100 size 15
