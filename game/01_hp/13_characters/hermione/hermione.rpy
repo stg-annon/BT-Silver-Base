@@ -248,8 +248,9 @@ label __init_variables:
     $ hermione_custom_outfit_hair_list[7] = ("power_hair")
     $ hermione_custom_outfit_hair_list[9] = ("harley_hair")
     
-    $ hermione_custom_outfit_breast_list = ["breasts_normal"] * hermione_defined_outfit_list_size
-    $ hermione_custom_outfit_breast_list[11] = "breasts_nipfix"
+    $ hermione_custom_outfit_breast_list = ["breasts_nipfix"] * hermione_defined_outfit_list_size
+    $ hermione_custom_outfit_breast_list[5] = "breasts_normal"
+    $ hermione_custom_outfit_breast_list[11] = "breasts_normal"
     
     $ h_menu_list = [["choice a",""],["choice b","b"]]
     
