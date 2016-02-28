@@ -119,7 +119,7 @@ screen wardrobe_costumes:
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        # hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
             if clothes_store_inv[i+1] in outfit_inventory:
@@ -223,7 +223,7 @@ screen wardrobe_potions:
         
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        # hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
