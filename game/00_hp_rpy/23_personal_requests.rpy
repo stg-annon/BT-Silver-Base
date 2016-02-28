@@ -367,7 +367,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
     $ skirt_up = True
     $ menu_x = 0.5 #Default menu position restored.
     if whoring >= 9: # NO PANTIES
-        show screen hermione_03_bhermione_03_b
+        show screen hermione_03_b
         with d3
     else:
         show screen hermione_03 #Hermione lifts her skirt
