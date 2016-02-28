@@ -346,7 +346,7 @@ label door:
                         else:
                             jump new_personal_request
                     
-                    "-Inventory-" if dress_code:
+                    "-Inventory-":
                         call screen wardrobe
 
                         
