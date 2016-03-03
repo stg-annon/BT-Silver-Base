@@ -26,40 +26,13 @@ screen hermione_main:
     if hermione_dribble:
         add "01_hp/13_characters/hermione/body/legs/dripping.png" xpos hermione_xpos ypos hermione_ypos
     
-    if not hermione_custom_outfit and not hermione_action:
-        ### SKIRT
-        if h_request_wear_panties or hermione_wear_panties:
-            add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
-            add hermione_panties_overlay xpos hermione_xpos ypos hermione_ypos
-        if hermione_wear_skirt:
-            add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
-
-        ### TOP
-        if hermione_wear_top:
-            add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
-        elif hermione_wear_bra:
-            add hermione_bra xpos hermione_xpos ypos hermione_ypos # Add the bra
-    elif hermione_custom_outfit:
-        add hermione_custom_a xpos hermione_xpos ypos hermione_ypos
-        add hermione_custom_b xpos hermione_xpos ypos hermione_ypos
-        add hermione_custom_c xpos hermione_xpos ypos hermione_ypos
-        add hermione_custom_d xpos hermione_xpos ypos hermione_ypos
-        add hermione_custom_e xpos hermione_xpos ypos hermione_ypos
-        add hermione_custom_action_a xpos hermione_xpos ypos hermione_ypos
-    
-    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
-    
+    if not hermione_costume and not hermione_action:
+        use hermione_uniform
+    if hermione_costume:
+        use hermione_costume
     if hermione_action:
-        if h_action_show_skirt:
-            add hermiome_action_skirt xpos hermione_xpos ypos hermione_ypos
-        elif h_action_show_panties or h_request_wear_panties:
-            add hermiome_action_panties xpos hermione_xpos ypos hermione_ypos
-        if h_action_show_top:
-            add hermiome_action_top xpos hermione_xpos ypos hermione_ypos
-        elif h_action_show_bra:
-            add hermiome_action_bra xpos hermione_xpos ypos hermione_ypos
-        add hermiome_action_a xpos hermione_xpos ypos hermione_ypos
-        add hermiome_action_b xpos hermione_xpos ypos hermione_ypos
+        use hermione_action
+    
     
     if uni_sperm:
         add u_sperm xpos hermione_xpos ypos hermione_ypos
@@ -68,7 +41,7 @@ screen hermione_main:
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos ypos hermione_ypos
     
-    if hermione_badges and hermione_wear_top and not hermione_custom_outfit:
+    if hermione_badges and hermione_wear_top and not hermione_costume:
         add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
         
     if hermione_wear_robe:
@@ -79,6 +52,48 @@ screen hermione_main:
     ### ZORDER
     zorder hermione_zorder
     
+screen hermione_uniform:
+    tag hermione_main
+    ### SKIRT
+    if hermione_wear_panties or h_request_wear_panties:
+        add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
+        add hermione_panties_overlay xpos hermione_xpos ypos hermione_ypos
+    if hermione_wear_skirt:
+        add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
+    ### TOP
+    if hermione_wear_top:
+        add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
+    elif hermione_wear_bra:
+        add hermione_bra xpos hermione_xpos ypos hermione_ypos # Add the bra
+    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
+    zorder hermione_zorder
+    
+screen hermione_costume:
+    tag hermione_main
+    add hermione_costume_a xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_b xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_c xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_d xpos hermione_xpos ypos hermione_ypos
+    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_e xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_action_a xpos hermione_xpos ypos hermione_ypos
+    zorder hermione_zorder
+    
+screen hermione_action:
+    tag hermione_main
+    if h_action_show_skirt:
+        add hermiome_action_skirt xpos hermione_xpos ypos hermione_ypos
+    elif h_action_show_panties or h_request_wear_panties:
+        add hermiome_action_panties xpos hermione_xpos ypos hermione_ypos
+    if h_action_show_top:
+        add hermiome_action_top xpos hermione_xpos ypos hermione_ypos
+    elif h_action_show_bra:
+        add hermiome_action_bra xpos hermione_xpos ypos hermione_ypos
+    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
+    add hermiome_action_a xpos hermione_xpos ypos hermione_ypos
+    add hermiome_action_b xpos hermione_xpos ypos hermione_ypos
+    zorder hermione_zorder
+        
 screen hermione_head:
     tag hermione_head
     
@@ -94,7 +109,7 @@ screen hermione_head:
     
   ### CLOTHES
     add hermione_stockings xpos hermione_head_xpos ypos hermione_head_ypos
-    if not hermione_custom_outfit:
+    if not hermione_costume:
         ### SKIRT
         if hermione_wear_skirt:
             add hermione_skirt xpos hermione_head_xpos ypos hermione_head_ypos # Add the skirt
@@ -106,12 +121,12 @@ screen hermione_head:
         elif hermione_wear_bra:
             add hermione_bra xpos hermione_head_xpos ypos hermione_head_ypos # Add the bra
     else:
-        add hermione_custom_a xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_custom_b xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_custom_c xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_custom_d xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_custom_e xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_custom_action_a xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_a xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_b xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_c xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_d xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_e xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_action_a xpos hermione_head_xpos ypos hermione_head_ypos
     
     add hermione_hair_b xpos hermione_head_xpos ypos hermione_head_ypos
     
@@ -160,51 +175,51 @@ label h_outfit(outfit_id):
     $ custom_outfit = outfit_id
     if custom_outfit == 0:
         call update_her_uniform
-        $ hermione_custom_outfit = False
+        $ hermione_costume = False
     else:
-        $ hermione_custom_outfit = True
+        $ hermione_costume = True
         
         call h_update_hair
         
-        if hermione_custom_outfit_list[0][custom_outfit] != "":
-            $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[0][custom_outfit]
+        if hermione_costume_list[0][custom_outfit] != "":
+            $ hermione_costume_a = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[0][custom_outfit]
         else:
-            $ hermione_custom_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            $ hermione_costume_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
         
-        if hermione_custom_outfit_list[1][custom_outfit] != "":
-            $ hermione_custom_b = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[1][custom_outfit]
+        if hermione_costume_list[1][custom_outfit] != "":
+            $ hermione_costume_b = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[1][custom_outfit]
         else:
-            $ hermione_custom_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            $ hermione_costume_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
         
-        if hermione_custom_outfit_list[2][custom_outfit] != "":
-            $ hermione_custom_c = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[2][custom_outfit]
+        if hermione_costume_list[2][custom_outfit] != "":
+            $ hermione_costume_c = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[2][custom_outfit]
         else:
-            $ hermione_custom_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            $ hermione_costume_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
         
-        if hermione_custom_outfit_list[3][custom_outfit] != "":
-            $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[3][custom_outfit]
+        if hermione_costume_list[3][custom_outfit] != "":
+            $ hermione_costume_d = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[3][custom_outfit]
         else:
-            $ hermione_custom_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            $ hermione_costume_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
             
-        if hermione_custom_outfit_list[4][custom_outfit] != "":
-            $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/"+hermione_custom_outfit_list[4][custom_outfit]
+        if hermione_costume_list[4][custom_outfit] != "":
+            $ hermione_costume_e = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[4][custom_outfit]
         else:
-            $ hermione_custom_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+            $ hermione_costume_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
         
-        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(hermione_custom_outfit_breast_list[custom_outfit])+".png"
+        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(hermione_costume_breast_list[custom_outfit])+".png"
     return
     
-label set_custom_layer(a=hermione_custom_a,b=hermione_custom_b,c=hermione_custom_c,d=hermione_custom_d,e=hermione_custom_e,breast=h_breasts):
-    if a != hermione_custom_a:
-        $ hermione_custom_a = a
-    if b != hermione_custom_b:
-        $ hermione_custom_b = b
-    if c != hermione_custom_c:
-        $ hermione_custom_c = c
-    if d != hermione_custom_d:
-        $ hermione_custom_d = d
-    if e != hermione_custom_e:
-        $ hermione_custom_e = e
+label set_custom_layer(a=hermione_costume_a,b=hermione_costume_b,c=hermione_costume_c,d=hermione_costume_d,e=hermione_costume_e,breast=h_breasts):
+    if a != hermione_costume_a:
+        $ hermione_costume_a = a
+    if b != hermione_costume_b:
+        $ hermione_costume_b = b
+    if c != hermione_costume_c:
+        $ hermione_costume_c = c
+    if d != hermione_costume_d:
+        $ hermione_costume_d = d
+    if e != hermione_costume_e:
+        $ hermione_costume_e = e
     
     $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(breast)+".png"
     
@@ -244,11 +259,12 @@ label h_action(action =  ""):
     $ h_action_left_arm = "clothes/uniform/action/00_blank.png"
     $ h_action_right_arm = "clothes/uniform/action/00_blank.png"
     call update_her_uniform
+    call h_update_body
     
     if action == "" or action == "none" or action == 0:
         pass
     else:
-        if hermione_custom_outfit:
+        if hermione_costume:
             if action == "lift_skirt":
                 pass
             if action == "lift_top":
@@ -331,13 +347,15 @@ label h_action(action =  ""):
             if action == "lift_breasts":
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
-                $ h_action_a = "lift_breasts.png"
+                $ override = True
+                $ hermiome_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts.png"
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
                 
             if action == "lift_breasts_large":
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
-                $ h_action_a = "lift_breasts_large.png"
+                $ override = True
+                $ hermiome_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts_large.png"
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png" 
                 
             if action == "hands_behind":
@@ -350,6 +368,24 @@ label h_action(action =  ""):
                 #$ h_action_left_arm = "body/arms/left/behind.png"
                 #$ h_action_right_arm = "body/arms/right/hand_behind.png"
                 
+            if action == "covering":
+                $ h_action_show_top = False
+                $ h_action_show_skirt = False
+                $ h_action_show_bra = False
+                $ h_action_show_panties = False
+                $ override = True
+                $ hermiome_action_a = "01_hp/13_characters/hermione/body/arms/both/covering.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png" 
+                
+            if action == "pinch":
+                $ h_action_show_top = False
+                $ h_action_show_skirt = False
+                $ h_action_show_bra = False
+                $ h_action_show_panties = False
+                $ override = True
+                $ hermiome_action_a = "01_hp/13_characters/hermione/body/arms/both/fingering_and_pinching.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nonips.png" 
+            
             if action == "hands_cuffed":
                 $ h_action_show_top = False
                 $ h_action_show_arms = True
@@ -365,7 +401,7 @@ label h_action(action =  ""):
         $ hermione_action_left_arm = "01_hp/13_characters/hermione/"+(h_action_left_arm)
         $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_a)
         $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/"+str(h_action_b)
-        $ hermione_custom_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
+        $ hermione_costume_action_a = "01_hp/13_characters/hermione/clothes/custom/"+str(h_action_a)
     
     if action == "hold_book":
         $ hermiome_action_b = hermione_hair_b
@@ -422,18 +458,15 @@ label h_update_body:
     return
     
 label h_update_hair:
-    if hermione_custom_outfit and hermione_custom_outfit_hair_list[custom_outfit] != "":
-        $ hermione_hair_a = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_custom_outfit_hair_list[custom_outfit])+".png"
-        $ hermione_hair_b = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_custom_outfit_hair_list[custom_outfit])+"_2.png"
+    if hermione_costume and hermione_costume_hair_list[custom_outfit] != "":
+        $ hermione_hair_a = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_costume_hair_list[custom_outfit])+".png"
+        $ hermione_hair_b = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_costume_hair_list[custom_outfit])+"_2.png"
     else:
         $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
         $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
     return
     
 label update_her_uniform:
-    call h_update_body
-    call h_update_hair
-    call update_chibi_uniform
     
     ### TOP
     if whoring <= 3:# top 1
@@ -474,7 +507,7 @@ label update_her_uniform:
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/"+str(h_skirt)+".png"
-    $ hermione_badge = "01_hp/13_characters/hermione/clothes/badges/"+str(h_badge)+".png"
+    $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/"+str(h_badge)+".png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/"+str(h_top)+".png"
     
     if custom_skirt == 1: # jeans
@@ -482,6 +515,8 @@ label update_her_uniform:
         
     if custom_skirt == 5: # short_jeans
         $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans_short.png"
+    
+    call update_chibi_uniform
     
     return
     
@@ -550,6 +585,8 @@ label reset_hermione_main:
     call h_outfit(0)
     call h_action("none")
     call update_her_uniform
+    call h_update_body
+    call h_update_hair
     return
     
     
@@ -621,38 +658,30 @@ label new_main_menu: # testing menu found in cheats or jumped to
             label new_main_menu_hair:
             menu:
                 "-Hair A-":
-                    $ h_hair_style = "A"
-                    call update_her_uniform
+                    call set_h_hair(style="A")
                     jump new_main_menu_hair
                 "-Hair B-":
-                    $ h_hair_style= "B"
-                    call update_her_uniform
+                    call set_h_hair(style="B")
                     jump new_main_menu_hair
                 "-Color-":
                     menu:
                         "-Brown-":
-                            $ h_hair_color = 1
-                            call update_her_uniform
+                            call set_h_hair(color=1)
                             jump new_main_menu_hair
                         "-Blonde-":
-                            $ h_hair_color = 2
-                            call update_her_uniform
+                            call set_h_hair(color=2)
                             jump new_main_menu_hair
                         "-Red-":
-                            $ h_hair_color = 3
-                            call update_her_uniform
+                            call set_h_hair(color=3)
                             jump new_main_menu_hair
                         "-Black-":
-                            $ h_hair_color = 4
-                            call update_her_uniform
+                            call set_h_hair(color=4)
                             jump new_main_menu_hair
                         "-Blue-":
-                            $ h_hair_color = 5
-                            call update_her_uniform
+                            call set_h_hair(color=5)
                             jump new_main_menu_hair
                         "-Orange-":
-                            $ h_hair_color = 6
-                            call update_her_uniform
+                            call set_h_hair(color=6)
                             jump new_main_menu_hair
                 "-Back-":
                     jump new_main_menu
@@ -689,6 +718,12 @@ label new_main_menu: # testing menu found in cheats or jumped to
                     jump new_main_menu_actions
                 "-Arms cuffed-":
                     call h_action("hands_cuffed")
+                    jump new_main_menu_actions
+                "-Covering-":
+                    call h_action("covering")
+                    jump new_main_menu_actions
+                "-Pinch-":
+                    call h_action("pinch")
                     jump new_main_menu_actions
                 "-No Action-":
                     call h_action("")
