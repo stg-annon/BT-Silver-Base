@@ -57,6 +57,10 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-back-":
                     jump cheats_ht
+        "-Add all costumes-":
+            $ outfit_inventory = ["gryffindor_cheerleader","slytherin_cheerleader","maid","silk_nightgown","ball_dress","ms_marvel","heart_dancer","power_girl","harley_quinn","christmas_costume","lara_croft","pirate"]#for testing only
+            "All of hermioine's costumes have been unlocked"
+            jump cheats_ht
         "-Gold (+50,000g)-":
             $ gold += 50000
             "Obtained 50,000g."
