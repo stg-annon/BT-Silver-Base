@@ -210,6 +210,7 @@ label __init_variables:
     $ wardrobe_hair_color = 1
     $ wardrobe_gift_item = 0
     $ wardrobe_costume_selection = 0
+    $ wardrobe_uniform_selection = ""
     
     
     $ her_path = "01_hp/13_hermione_main/"

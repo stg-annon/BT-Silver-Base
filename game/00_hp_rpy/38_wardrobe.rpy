@@ -11,7 +11,7 @@ screen wardrobe:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
         
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
@@ -38,7 +38,7 @@ screen wardrobe_hair:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
         
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
@@ -58,7 +58,6 @@ screen wardrobe_hair:
         text "Accs." xpos 310 ypos 100 size 15
         text "Gifts" xpos 400 ypos 100 size 15
         text "Potions" xpos 475 ypos 100 size 15
-        
     
 label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
@@ -71,6 +70,9 @@ screen wardrobe_uniform:
     tag wardrobe_menu
     zorder hermione_main_zorder-1
     
+    $ list = ["skirt_1","skirt_1_B","skirt_1_G","skirt_1_R","skirt_1_Y","jeans_long","jeans_short"]
+    $ y_pos = 13
+    
     imagemap:
         cache False
         ground "01_hp/25_mo/wardrobe_ground.png"
@@ -79,7 +81,7 @@ screen wardrobe_uniform:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
@@ -90,7 +92,15 @@ screen wardrobe_uniform:
         
         # (13,208)
         
-        # for i in range(0,6):
+        for i in range(0,len(list)):
+            hotspot ((21+(90*(i%6))), (140+(92*int(i/6))), 83, 85) clicked [SetVariable("wardrobe_uniform_selection",list[i]),Jump("change_uniform")]
+        
+        for i in range(0,len(list)):
+            add "01_hp/13_characters/hermione/clothes/uniform/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
+            if i != 0 and (i % 5) == 0:
+                $ y_pos += 100
+            
+        #for i in range(0,6):
             # for j in range (0,6):
                 # hotspot ((21+(90*i)), 140+(92*j), 83, 85) clicked [SetVariable("",),SetVariable("",),Jump("change_hair")]
         
@@ -101,6 +111,12 @@ screen wardrobe_uniform:
         text "Accs." xpos 310 ypos 100 size 15
         text "Gifts" xpos 400 ypos 100 size 15
         text "Potions" xpos 475 ypos 100 size 15
+    
+label change_uniform:
+    call her_main("Sure, let me just go change quick.","body_01")
+    call set_h_skirt(wardrobe_uniform_selection)
+    hide screen wardrobe_uniform
+    call screen wardrobe_uniform
     
 screen wardrobe_costumes:
     
@@ -115,7 +131,7 @@ screen wardrobe_costumes:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
 
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
@@ -172,7 +188,7 @@ screen wardrobe_gifts:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
         
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
@@ -224,7 +240,7 @@ screen wardrobe_potions:
         hotspot (742,10,42,41) clicked Jump("day_time_requests")
         
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        # hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
         # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")

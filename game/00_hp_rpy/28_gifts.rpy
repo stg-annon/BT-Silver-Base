@@ -1654,15 +1654,42 @@ label set_h_costume(costume_id = 0):
     with d5
     return
     
+label set_h_skirt(skirt = ""):
+    if "skirt_" in skirt:
+        $ h_skirt = "skirt_"
+        $ h_skirt_color = ""
+        if "_R" in skirt:
+            $ h_skirt_color = "_R"
+        if "_G" in skirt:
+            $ h_skirt_color = "_G"
+        if "_B" in skirt:
+            $ h_skirt_color = "_B"
+        if "_Y" in skirt:
+            $ h_skirt_color = "_Y"
+        hide screen hermione_main
+        with d5
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+        return
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_skirt = skirt
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+        return
     
-label set_h_skirt(skirt="base_skirt"):   
+label set_h_skirt_color(color = ""):
     hide screen hermione_main
     with d5
-    $ h_skirt = skirt
+    $ h_skirt_color = color
     call update_her_uniform
     show screen hermione_main
     with d5
     return
+    
 
 #$ renpy.play('sounds/door.mp3') #Sound of a door opening.
     

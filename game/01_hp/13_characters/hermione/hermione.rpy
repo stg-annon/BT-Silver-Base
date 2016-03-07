@@ -58,7 +58,8 @@ label __init_variables:
         $ h_skirt = "skirt_1"
     if not hasattr(renpy.store,'h_top'): #important!
         $ h_top = "top_1"
-    
+    if not hasattr(renpy.store,'h_skirt_color'): #important!
+        $ h_skirt_color = ""
     $ hermione_wear_bra = True
     $ hermione_wear_panties = True
     $ hermione_wear_skirt = True
