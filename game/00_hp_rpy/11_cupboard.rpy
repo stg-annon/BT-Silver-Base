@@ -252,7 +252,7 @@ label scrolls_menu:
                     jump sc_col_men
 
                 "-Never mind-":
-                    jump possessions
+                    jump scrolls_menu
         
         "-Sacred scrolls volume II-" if cataloug_found:
                     label sc_col_men2:
@@ -318,7 +318,7 @@ label scrolls_menu:
                             jump sc_col_men2
 
                         "-Never mind-":
-                            jump possessions
+                            jump scrolls_menu
         
         "-Never Mind-":
             jump day_main_menu
