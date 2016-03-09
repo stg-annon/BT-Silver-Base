@@ -11,17 +11,66 @@ screen main_menu_01:
         hover "01_hp/05_props/01_door_02.png"
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("door")]
         
- 
-        
-    imagebutton: # CUPBOARD
+    
+#    imagebutton: # CUPBOARD HAT
+#        xpos 120 
+#        ypos 280
+#        focus_mask True
+#        xanchor "center"
+#        yanchor "center"
+#        idle "01_hp/05_props/cupboard/idle_hat.png"
+#        hover "01_hp/05_props/cupboard/hover_hat.png"
+#        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
+    
+    imagebutton: # CUPBOARD SCROLL
         xpos 120 
         ypos 280
         focus_mask True
         xanchor "center"
         yanchor "center"
-        idle "01_hp/05_props/02_cupboard.png"
-        hover "01_hp/05_props/02_cupboard_02.png"
+        idle "01_hp/05_props/cupboard/idle_scroll.png"
+        hover "01_hp/05_props/cupboard/hover_scroll.png"
+        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("scrolls_menu")]
+    
+    imagebutton: # CUPBOARD CABINET
+        xpos 120 
+        ypos 280
+        focus_mask True
+        xanchor "center"
+        yanchor "center"
+        idle "01_hp/05_props/cupboard/idle_cabinet.png"
+        hover "01_hp/05_props/cupboard/hover_cabinet.png"
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
+    
+#    imagebutton: # CUPBOARD LEFT
+#        xpos 120 
+#        ypos 280
+#        focus_mask True
+#        xanchor "center"
+#        yanchor "center"
+#        idle "01_hp/05_props/cupboard/idle_lower_left.png"
+#        hover "01_hp/05_props/cupboard/hover_lower_left.png"
+#        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
+    
+#    imagebutton: # CUPBOARD RIGHT
+#        xpos 120
+#        ypos 280
+#        focus_mask True
+#        xanchor "center"
+#        yanchor "center"
+#        idle "01_hp/05_props/cupboard/idle_lower_right.png"
+#        hover "01_hp/05_props/cupboard/hover_lower_right.png"
+#        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
+        
+    # imagebutton: # OLD CUPBOARD
+        # xpos 120 
+        # ypos 280
+        # focus_mask True
+        # xanchor "center"
+        # yanchor "center"
+        # idle "01_hp/05_props/02_cupboard.png"
+        # hover "01_hp/05_props/02_cupboard_02.png"
+        # action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
         
     if package_is_here:
         imagebutton: # THE PACKAGE

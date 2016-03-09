@@ -171,73 +171,90 @@ label cupboard:
                     with d3
                     jump possessions
                 
-                "-Sacred scrolls volume I-" if cataloug_found:
-                    label sc_col_men:
-                    menu:
-                        "-S.01: [scroll_name[1]]-" if sscroll_[1] or persistent.ss_01:
-                            call disp_sacred_scrolls(1)
-                            jump sc_col_men
-                            
-                        "-S.02: [scroll_name[2]]-" if sscroll_[2] or persistent.ss_02:
-                            call disp_sacred_scrolls(2)
-                            jump sc_col_men
-                            
-                        "-S.03: [scroll_name[3]]-" if sscroll_[3] or persistent.ss_03:
-                            call disp_sacred_scrolls(3)
-                            jump sc_col_men
-                            
-                        "-S.04: [scroll_name[4]]-" if sscroll_[4] or persistent.ss_04:
-                            call disp_sacred_scrolls(4)
-                            jump sc_col_men
-                            
-                        "-S.05: [scroll_name[5]]-" if sscroll_[5] or persistent.ss_05:
-                            call disp_sacred_scrolls(5)
-                            jump sc_col_men
-                            
-                        "-S.06: [scroll_name[6]]-" if sscroll_[6] or persistent.ss_06:
-                            call disp_sacred_scrolls(6)
-                            jump sc_col_men
-                            
-                        "-S.07: [scroll_name[7]]-" if sscroll_[7] or persistent.ss_07:
-                            call disp_sacred_scrolls(7)
-                            jump sc_col_men
-                            
-                        "-S.08: [scroll_name[8]]-" if sscroll_[8] or persistent.ss_08:
-                            call disp_sacred_scrolls(8)
-                            jump sc_col_men
-                            
-                        "-S.09: [scroll_name[9]]-" if sscroll_[9] or persistent.ss_09:
-                            call disp_sacred_scrolls(9)
-                            jump sc_col_men
-                            
-                        "-S.10: [scroll_name[10]]-" if sscroll_[10] or persistent.ss_10:
-                            call disp_sacred_scrolls(10)
-                            jump sc_col_men
-                        
-                        "-S.11: [scroll_name[11]]-" if sscroll_[11] or persistent.ss_11:
-                            call disp_sacred_scrolls(11)
-                            jump sc_col_men
-                        
-                        "-S.12: [scroll_name[12]]-" if sscroll_[12] or persistent.ss_12:
-                            call disp_sacred_scrolls(12)
-                            jump sc_col_men
-                        
-                        "-S.13: [scroll_name[13]]-" if sscroll_[13] or persistent.ss_13:
-                            call disp_sacred_scrolls(13)
-                            jump sc_col_men
-                        
-                        "-S.14: [scroll_name[14]]-" if sscroll_[14] or persistent.ss_14:
-                            call disp_sacred_scrolls(14)
-                            jump sc_col_men
-                        
-                        "-S.15: [scroll_name[15]]-" if sscroll_[15] or persistent.ss_15:
-                            call disp_sacred_scrolls(15)
-                            jump sc_col_men
+                "-Never mind-":
+                    jump cupboard
+        
+        "-Potion crafting-" if shop_found:
+            jump potion_menu
+        
+        "-Change Save Name-":
+            jump custom_save
+        
+        "-Cheat-":
+            jump cheats_ht
+        
+        "-Never mind-":
+            jump day_main_menu
 
-                        "-Never mind-":
-                            jump possessions
+label scrolls_menu:
+    menu:
+        "-Sacred scrolls volume I-" if cataloug_found:
+            label sc_col_men:
+            menu:
+                "-S.01: [scroll_name[1]]-" if sscroll_[1] or persistent.ss_01:
+                    call disp_sacred_scrolls(1)
+                    jump sc_col_men
+                    
+                "-S.02: [scroll_name[2]]-" if sscroll_[2] or persistent.ss_02:
+                    call disp_sacred_scrolls(2)
+                    jump sc_col_men
+                    
+                "-S.03: [scroll_name[3]]-" if sscroll_[3] or persistent.ss_03:
+                    call disp_sacred_scrolls(3)
+                    jump sc_col_men
+                    
+                "-S.04: [scroll_name[4]]-" if sscroll_[4] or persistent.ss_04:
+                    call disp_sacred_scrolls(4)
+                    jump sc_col_men
+                    
+                "-S.05: [scroll_name[5]]-" if sscroll_[5] or persistent.ss_05:
+                    call disp_sacred_scrolls(5)
+                    jump sc_col_men
+                    
+                "-S.06: [scroll_name[6]]-" if sscroll_[6] or persistent.ss_06:
+                    call disp_sacred_scrolls(6)
+                    jump sc_col_men
+                    
+                "-S.07: [scroll_name[7]]-" if sscroll_[7] or persistent.ss_07:
+                    call disp_sacred_scrolls(7)
+                    jump sc_col_men
+                    
+                "-S.08: [scroll_name[8]]-" if sscroll_[8] or persistent.ss_08:
+                    call disp_sacred_scrolls(8)
+                    jump sc_col_men
+                    
+                "-S.09: [scroll_name[9]]-" if sscroll_[9] or persistent.ss_09:
+                    call disp_sacred_scrolls(9)
+                    jump sc_col_men
+                    
+                "-S.10: [scroll_name[10]]-" if sscroll_[10] or persistent.ss_10:
+                    call disp_sacred_scrolls(10)
+                    jump sc_col_men
                 
-                "-Sacred scrolls volume II-" if cataloug_found:
+                "-S.11: [scroll_name[11]]-" if sscroll_[11] or persistent.ss_11:
+                    call disp_sacred_scrolls(11)
+                    jump sc_col_men
+                
+                "-S.12: [scroll_name[12]]-" if sscroll_[12] or persistent.ss_12:
+                    call disp_sacred_scrolls(12)
+                    jump sc_col_men
+                
+                "-S.13: [scroll_name[13]]-" if sscroll_[13] or persistent.ss_13:
+                    call disp_sacred_scrolls(13)
+                    jump sc_col_men
+                
+                "-S.14: [scroll_name[14]]-" if sscroll_[14] or persistent.ss_14:
+                    call disp_sacred_scrolls(14)
+                    jump sc_col_men
+                
+                "-S.15: [scroll_name[15]]-" if sscroll_[15] or persistent.ss_15:
+                    call disp_sacred_scrolls(15)
+                    jump sc_col_men
+
+                "-Never mind-":
+                    jump possessions
+        
+        "-Sacred scrolls volume II-" if cataloug_found:
                     label sc_col_men2:
                     menu:
                         "-S.16: [scroll_name[16]]-" if sscroll_[16] or persistent.ss_16:
@@ -302,22 +319,10 @@ label cupboard:
 
                         "-Never mind-":
                             jump possessions
-                
-                "-Never mind-":
-                    jump cupboard
         
-        "-Potion crafting-" if shop_found:
-            jump potion_menu
-        
-        "-Change Save Name-":
-            jump custom_save
-        
-        "-Cheat-":
-            jump cheats_ht
-        
-        "-Never mind-":
+        "-Never Mind-":
             jump day_main_menu
-
+    
 label custom_save:
     $ temp_name = renpy.input("(Please enter the save name.)")
     $ temp_name = temp_name.strip()
