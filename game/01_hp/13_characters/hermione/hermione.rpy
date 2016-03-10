@@ -257,3 +257,89 @@ label __init_variables:
     
     
     return
+    
+label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermione_ypos):
+    hide screen hermione_main
+    #with d3
+    if xpos != hermione_xpos:
+        $ hermione_xpos = xpos
+    if ypos != hermione_ypos:
+        $ hermione_ypos = ypos
+    if face != h_body:
+        $ h_body = face
+        #$ hermione_body = her_path + str(face) + ".png"
+    $ h_tears = tears
+    call h_update
+    show screen hermione_main
+    with d1
+    if text != "":
+        if "[tmp_name]" in text or "[genie_name]" or "[hermione_name]" in text:
+            if "[tmp_name]" in text:
+                $ text = text.replace("[tmp_name]",tmp_name)
+            if "[genie_name]" in text:
+                $ text = text.replace("[genie_name]",genie_name)
+            if "[hermione_name]" in text:
+                $ text = text.replace("[hermione_name]",hermione_name)
+        her "[text]"
+    return
+    
+label her_head(text="",face=h_body,tears=""):
+    if face != h_body:
+        $ h_body = face
+        # $ h_body = her_path + str(face) + ".png"
+    $ h_tears = tears
+    call h_update
+    show screen hermione_head #h_head2
+    if text != "":
+        if "[tmp_name]" in text or "[genie_name]" in text:
+            if "[tmp_name]" in text:
+                $ text = text.replace("[tmp_name]",tmp_name)
+            if "[genie_name]" in text:
+                $ text = text.replace("[genie_name]",genie_name)
+            if "[hermione_name]" in text:
+                $ text = text.replace("[hermione_name]",hermione_name)
+        her2 "[text]"
+    hide screen hermione_head #h_head2
+    return
+    
+label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):
+    hide screen hermione_walk
+    hide screen hermione_walk_f
+    $ walk_xpos = pos1 #(From)
+    $ walk_xpos2 = pos2 #(To)
+    $ hermione_chibi_ypos = 250
+    $ hermione_speed = speed #Speed of walking animation. (lower = faster)
+    hide screen hermione_blink
+    hide screen hermione_blink_f
+    if pos1 > pos2: #right to left (hermione_walk)
+        show screen hermione_walk
+        $ tmp = speed - redux_pause
+        pause tmp
+        $ hermione_chibi_xpos = pos2
+        hide screen hermione_walk
+        if loiter:
+            show screen hermione_blink
+    else: #left to right (hermione_walk_f)
+        show screen hermione_walk_f
+        $ tmp = speed - redux_pause
+        pause tmp
+        $ hermione_chibi_xpos = pos2
+        hide screen hermione_walk_f
+        if loiter:
+            show screen hermione_blink_f
+    return
+    
+label her_walk_end_loiter(dissolveTime = 3):
+    if dissolveTime > 0:
+        hide screen hermione_stand
+        hide screen hermione_stand_f
+        hide screen hermione_blink
+        hide screen hermione_blink_f
+        with Dissolve((dissolveTime/10))
+    else:
+        hide screen hermione_stand
+        hide screen hermione_stand_f
+        hide screen hermione_blink
+        hide screen hermione_blink_f
+    return
+    
