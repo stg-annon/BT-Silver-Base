@@ -39,7 +39,6 @@ label __init_variables:
     if not hasattr(renpy.store,'h_hair_color'): #important!
         $ h_hair_color = 1
     
-    
     if not hasattr(renpy.store,'hermione_bra'): #important!
         $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/base_bra_white_1.png"
     if not hasattr(renpy.store,'hermione_panties'): #important!
@@ -84,6 +83,8 @@ label __init_variables:
     $ h_bra_nip_fix = ["cup_bra","silk_bra","latex_bra"]
     
     $ h_can_color = ["A","B"]
+    
+    $ hermione_tattoos = []
     
     $ hermione_perm_expand = False
     

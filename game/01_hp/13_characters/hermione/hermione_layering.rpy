@@ -16,6 +16,8 @@ screen hermione_main:
     elif not hermione_action:
         add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
     
+    use hermione_tattoo_layer
+    
     add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
     add hermione_body xpos hermione_xpos ypos hermione_ypos
     add hermione_tears xpos hermione_xpos ypos hermione_ypos
@@ -48,8 +50,13 @@ screen hermione_main:
         add hermione_robe xpos hermione_xpos ypos hermione_ypos
     add hermione_emote xpos hermione_xpos ypos hermione_ypos
     
-    
     ### ZORDER
+    zorder hermione_zorder
+    
+    
+screen hermione_tattoo_layer:
+    for i in range(0,len(hermione_tattoos)):
+        add "01_hp/13_characters/hermione/body/tattoo/"+str(hermione_tattoos[i])+".png" xpos hermione_xpos ypos hermione_ypos
     zorder hermione_zorder
     
 screen hermione_uniform:
