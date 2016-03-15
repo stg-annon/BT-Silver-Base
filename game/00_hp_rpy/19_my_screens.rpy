@@ -461,7 +461,7 @@ screen hermione_01_f: #Hermione stands still. (MIRRORED)
     zorder hermione_chibi_zorder
 
 screen hermione_02: #Hermione stands still and blinks.
-    tag hermione
+    tag hermione_chibi
     add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
     

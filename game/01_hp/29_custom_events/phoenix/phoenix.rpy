@@ -182,6 +182,7 @@ label petting:
                     call ce_her_main("What's going on?!","hermione_3")
                     m "Hell if I know"
                     call ce_her_main("Why am I wearing this? What's happening? What-!")
+                    hide screen hermione_02
                     hide screen hermione_02_b
                     hide screen custom_event_h
                     with d3

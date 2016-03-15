@@ -653,7 +653,7 @@ label cs_select:
     $ tmp = ((clothes_store_curr_page-1)*8) + clothes_store_selection
     if clothes_store_selection == -1 or clothes_store_inv[tmp] == "":
         jump clothes_menu
-    "You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
+    #"You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
     $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ clothes_store_selection)]
     jump cs_select_done
 
