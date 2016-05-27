@@ -75,16 +75,14 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
     
     m "Well?"
     if request_01 == 0 and whoring <=5: #First time this event taking place.
-        $ new_request_01_01 = True #Hearts on menu buttons.
-        $ new_request_01_heart = 1
+        $ new_request_01_heart = 1 #Event hearts level (0-3)
         call her_main("Em... very well...","body_11")
         ">Hermione is feeling confused..."
         call her_main("...................","body_12")
     if whoring >= 0 and  whoring <= 5: #LEVEL 01 and LEVEL 02
         if whoring >= 3 and whoring <= 5:
             $ level = "02"
-            $ new_request_01_02 = True #Hearts on menu buttons.
-            $ new_request_01_heart = 2
+            $ new_request_01_heart = 2 #Event hearts level (0-3)
         call her_main("My life has been quite uneventful lately to be honest...","body_12")
         her "Apart from that day when I failed that test..."
         her "Still can't believe it happened..."
@@ -151,8 +149,7 @@ label new_request_01: #LV.1 (Whoring = 0 - 2)
         call her_main("..........................","body_07")
   
     elif whoring >= 6: #LEVEL 03
-        $  new_request_01_03 = True #Hearts on menu buttons.
-        $ new_request_01_heart = 3
+        $ new_request_01_heart = 3 #Event hearts level (0-3)
         call her_main("My life has been quite uneventful lately to be honest...","body_12")
         her "Hm..."
         her "There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house."
@@ -393,8 +390,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
 
 
     if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
-        #$ new_request_02_01 =  True #Hearts.
-        $ new_request_02_heart = 1
+        $ new_request_02_heart = 1 #Event hearts level (0-3)
         
         show screen bld1
         with d3
@@ -420,8 +416,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
                
 
     elif whoring >= 3 and whoring < h_stop_wearing_panties_lvl: #LEVEL 02  <====================================================================== SECOND EVENT!
-        #$ new_request_02_02 =  True #Hearts.
-        $ new_request_02_heart = 2
+        $ new_request_02_heart = 2 #Event hearts level (0-3)
         
         show screen bld1
         with d3
@@ -448,8 +443,7 @@ label new_request_02: #SHOW ME YOUR PANTIES
                 
 
     elif whoring >= h_stop_wearing_panties_lvl: #LEVEL 06 and up. <====================================================================== FINAL EVENT! (No panties).
-        #$ new_request_02_04 =  True #Hearts.
-        $ new_request_02_heart = 4
+        $ new_request_02_heart = 3 #Event hearts level (0-3)
         
         show screen bld1
         with d3
@@ -557,8 +551,7 @@ label new_request_03: #(Whoring = 3 - 5)
     
     if request_03 == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
-        $ new_request_03_01 = True # HEARTS.
-        $ new_request_03_heart = 1
+        $ new_request_03_heart = 1 #Event hearts level (0-3)
         $ request_03 += 1
         
         call her_main("W-what?","body_11")
@@ -669,9 +662,8 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 her "And my payment?"
                 m "Of course."
         "\"How was your day, [hermione_name]?\"":
-            if  whoring <= 5: #LEVEL 02. EVENT LEVEL: 01
-                $ new_request_03_01 = True # HEARTS.
-                $ new_request_03_heart = 1
+            if  whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
+                $ new_request_03_heart = 1 #Event hearts level (0-3)
                 
                 call her_main("Oh...","body_15",xpos=120)
                 her "Quite ordinary actually..."
@@ -687,9 +679,8 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                 else:
                     call her_main("And my payment?","body_31")
                     m "Yes, yes..."
-            elif whoring >= 6 and whoring <= 8: #LEVEL 03. EVENT LEVEL 02.
-                $ new_request_03_02 = True # HEARTS.
-                $ new_request_03_heart = 2
+            elif whoring >= 6 and whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
+                $ new_request_03_heart = 2 #Event hearts level (0-3)
                 
                 call her_main("Oh...","body_15",xpos=120)
                 her "It was quite ordinary really..."
@@ -723,9 +714,8 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                             jump panties_soaked_in_cum
                         else:
                             her "And my payment."
-            elif whoring >= 9: #LEVEL 04. EVENT LEVEL 03.
-                $ new_request_03_03 = True # HEARTS.
-                $ new_request_03_heart = 3
+            elif whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
+                $ new_request_03_heart = 3 #Event hearts level (0-3)
                 
                 call her_main("Another ordinary day at hogwarts...","body_16",xpos=120)
                 her "Nothing worth mentioning happened today..."
@@ -936,9 +926,8 @@ label new_request_04:
     if whoring <=2: # LEVEL 01 # Hermione refuses.
         jump too_much
     
-    elif whoring >= 3 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. 
-        $ new_request_04_01 = True # Hearts. 
-        $ new_request_04_heart = 1
+    elif whoring >= 3 and whoring <= 5: # WHORING LVL 02 # Hermione is hesitant. 
+        $ new_request_04_heart = 1 #Event hearts level (0-3)
         hide bld1
         with d3
         m "Come closer [hermione_name]..."        
@@ -2606,7 +2595,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 ">Hermione covers up..."
                 call set_hermione_action("none")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                if if whoring >= 17:
+                if whoring >= 17:
                     call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
                 else:
                     call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_203")
@@ -2621,7 +2610,7 @@ label new_request_08: #LV.3 (Whoring = 6 - 8)
                 with d5
                 pause
                 show screen bld1
-                if if whoring >= 17:
+                if whoring >= 17:
                     call her_head("Thank you [genie_name].","body_204")
                 else:
                     call her_head("Can I have my payment now?","body_205")

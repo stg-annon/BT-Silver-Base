@@ -609,6 +609,11 @@ label new_main_menu: # testing menu found in cheats or jumped to
         "-update main-":
             call update_her_uniform
             jump new_main_menu
+        "-tattoos-":
+            $ hermione_tattoos.append("thigh/free")
+            $ hermione_tattoos.append("thigh/tribal")
+            $ hermione_tattoos.append("pubic/nocondoms")
+            jump new_main_menu
         "-robes-":
             menu:
                 "-off-":
