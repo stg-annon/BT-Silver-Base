@@ -232,6 +232,8 @@ screen wardrobe_potions:
     tag wardrobe_menu
     zorder hermione_main_zorder-1
     
+    $ potion_name = ""
+    
     imagemap:
         cache False
         ground "01_hp/25_mo/wardrobe_ground.png"
@@ -247,16 +249,16 @@ screen wardrobe_potions:
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_potions")
         
         for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
-
-        #for i in range(0,4):
-        #    hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_potion",i+7),Jump("wardrobe_give_potion")]
+            hotspot ((21+(90*i)), 140, 83, 85):
+                hovered [SetVariable("potion_name",p_potion_names[i])]
+                clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
         
         for i in range(1,7):
             add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
         for i in range(7,11):
             add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*(i-6)) ypos 225 zoom 0.8
-            
+        
+        
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
         text "Costumes" xpos 200 ypos 100 size 15
