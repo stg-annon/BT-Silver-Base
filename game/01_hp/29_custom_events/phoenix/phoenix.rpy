@@ -191,7 +191,6 @@ label petting:
                     m "Well I guess that was interesting"
                     $ fawkes_intro_done = True #Makes this non-repeatable
                     hide screen petting
-                    show screen genie
                     hide screen blktone8
                     hide screen bld1
                     with d3
