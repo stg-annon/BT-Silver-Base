@@ -42,7 +42,7 @@ if jerking_off_to_lara:
 if cum_on_the_floor:
     ">You cum on the floor."
 if cum_on_panties:
-    $ have_cum_soaced_panties = True #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ have_cum_soaked_panties = True #TRUE when you have the panties in your possession (before you return them to Hermione).
     ">You cum all over Hermione's panties, and then use them to wipe the cum off the floor..."
     ">You received the item: \"Cum-soaked panties\"."
  

@@ -56,8 +56,7 @@ label start_ht:
 
 
 ### JERKING OFF FLAGS ###
-    $ request_03 = False #True when Hermione has no panties on.
-    $ have_cum_soaced_panties = False #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ have_cum_soaked_panties = False #TRUE when you have the panties in your possession (before you return them to Hermione).
 
     $ jerking_off_to_jasmine = False #Turns TRUE when Princess Jasmine has been chosen as a target for a jerk-off session.
     $ jerking_off_to_lara = False

@@ -299,7 +299,7 @@ label new_personal_request:
         her "The Gryffindors are in the lead. I don't need to do this."
         jump day_time_requests
     
-label end_hermione_personal_request:
+label end_hg_pf:
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     
@@ -501,8 +501,8 @@ label Night_Request_Block:
         call new_request_02_b_complete
     if request_02_c:
         call new_request_02_c_complete
-    if request_03:
-        call new_request_03_complete
+    if hg_pf_PantyThief_InProgressFlag:
+        call hg_pf_PantyThief_complete
     if request_05:
         call new_request_05_complete
     if request_06:
@@ -541,7 +541,7 @@ label Night_Request_Block:
         call pub_quest_sex_teach_complete
     
     if per_q_the_gamble and per_q_the_gamble_c or per_q_the_gamble_a:
-        jump per_quest_the_gamble_complete
+        jump hg_pf_TheGamble_complete
     
     return
     
@@ -574,7 +574,7 @@ label too_much:
     call her_walk(400,610,2)
     
     call reset_hermione_main
-    jump end_hermione_personal_request
+    jump end_hg_pf
 
 label very_no:
     stop music fadeout 2.0
@@ -593,7 +593,7 @@ label very_no:
     call her_walk(400,610,2)
     
     call reset_hermione_main
-    jump end_hermione_personal_request
+    jump end_hg_pf
     
     
     

@@ -412,6 +412,6 @@ label equip_gryyf_stockings:
        ">Gryffindor stockings now equip-able!"
        #call reset_hermione_main
        
-       jump end_hermione_personal_request
+       jump end_hg_pf
     
     jump day_request_clothing

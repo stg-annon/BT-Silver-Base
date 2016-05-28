@@ -160,7 +160,7 @@ label maid_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ changeHermioneMainScreen(hg_pth+"body_01.png")
+    $ her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
@@ -234,7 +234,7 @@ label barmaid_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ changeHermioneMainScreen(hg_pth+"body_01.png")
+    $ her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
@@ -284,112 +284,83 @@ label gryffindor_cheer_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ changeHermioneMainScreen(hg_pth+"body_01.png")
+    $ her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "Hello, [hermione_name], how was your day?"
-                $ changeHermioneMainScreen(hg_pth+"body_06.png")
-                her "It was good [genie_name], I think that the team is really starting to liven up."
+                $ her_main("It was good [genie_name], I think that the team is really starting to liven up.","body_06")
                 m "How so?"
-                $ changeHermioneMainScreen(hg_pth+"body_14.png")
-                her "Well since I've started they seem to have improved their game."
-                $ changeHermioneMainScreen(hg_pth+"body_45.png")
-                her "They also seem much happier. Harry is always looking at me with a smile on his face."
+                $ her_main("Well since I've started they seem to have improved their game.","body_14")
+                $ her_main("They also seem much happier. Harry is always looking at me with a smile on his face.","body_45")
                 m "And does he look at you a lot?"
-                $ changeHermioneMainScreen(hg_pth+"body_02.png")
-                her "Of course he does, we're good friends."
+                $ her_main("Of course he does, we're good friends.","body_02")
                 m "I'm sure that must be the reason."
-                $ changeHermioneMainScreen(hg_pth+"body_06.png")
-                her "Well here's the money [genie_name]"
+                $ her_main("Well here's the money [genie_name]","body_06")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >= 3 and day_random <= 5:
                 m "Hello, [hermione_name], how was your day?"
-                $ changeHermioneMainScreen(hg_pth+"body_11.png")
-                her "Tiring. This cheering really is quite exhausting."
+                $ her_main("Tiring. This cheering really is quite exhausting.","body_11")
                 m "Anything interesting happen?"
-                $ changeHermioneMainScreen(hg_pth+"body_03.png")
-                her "Not unless you count me almost dropping my pom pom."
+                $ her_main("Not unless you count me almost dropping my pom pom.","body_03")
                 m "I don't. Well did they pay you?"
-                $ changeHermioneMainScreen(hg_pth+"body_02.png")
-                her "Of course, here you are [genie_name]"
+                $ her_main("Of course, here you are [genie_name]","body_02")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >= 6 and day_random <= 8:
                 m "Welcome back [hermione_name]."
-                $ changeHermioneMainScreen(hg_pth+"body_14.png")
-                her "Hello [genie_name]."
+                $ her_main("Hello [genie_name].","body_14")
                 m "How did you go today?"
-                $ changeHermioneMainScreen(hg_pth+"body_31.png")
-                her "Very well, all the boys said that I helped keep their spirits up."
+                $ her_main("Very well, all the boys said that I helped keep their spirits up.","body_31")
                 m "{size=-5}I'm sure that wasn't the only thing you kept up...{/size}"
-                $ changeHermioneMainScreen(hg_pth+"body_08.png")
-                her "What was that [genie_name]?"
+                $ her_main("What was that [genie_name]?","body_08")
                 m "I was just saying that I'm sure you kept them entertained."
-                $ changeHermioneMainScreen(hg_pth+"body_10.png")
-                her "I think so."
+                $ her_main("I think so.","body_10")
                 m "Well did they pay you for raising their \"spirits\"?"
-                $ changeHermioneMainScreen(hg_pth+"body_16.png")
-                her "Of course they did."
+                $ her_main("Of course they did.","body_16")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >=9 and lock_public_favors == True or whoring <= 15:
                 m "You seem very chipper today."
-                $ changeHermioneMainScreen(hg_pth+"body_45.png")
-                her "Of course I am, we won!"
+                $ her_main("Of course I am, we won!","body_45")
                 m "Won?"
-                $ changeHermioneMainScreen(hg_pth+"body_75.png")
-                her "We won! We beat Slytherin in a practice match."
+                $ her_main("We won! We beat Slytherin in a practice match.","body_75")
                 m "You seem a little over-excited for a practice match."
-                $ changeHermioneMainScreen(hg_pth+"body_46.png")
-                her "Well it was such a game. Not to mention that we got to rub it in those Slytherin faces afterwards."
+                $ her_main("Well it was such a game. Not to mention that we got to rub it in those Slytherin faces afterwards.","body_46")
                 m "Well I'm glad that you are enjoying your work."
-                $ changeHermioneMainScreen(hg_pth+"body_14.png")
-                her "I am [genie_name]. Given that most of the \"work\" I do to help the house has to be kept private, it feels good to do something public for my house."
+                $ her_main("I am [genie_name]. Given that most of the \"work\" I do to help the house has to be kept private, it feels good to do something public for my house.","body_14")
                 m "Not to mention you get paid for it..."
-                $ changeHermioneMainScreen(hg_pth+"body_13.png")
-                her "Oh, right. Here you are."
+                $ her_main("Oh, right. Here you are.","body_13")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_74")
             else:
                 m "Welcome back [hermione_name], how was your day?"
-                $ changeHermioneMainScreen(hg_pth+"body_45.png")
-                her "We won! We managed to beat Slytherin."
+                $ her_main("We won! We managed to beat Slytherin.","body_45")
                 m "That must have been very exhilarating. I'm sure your cheering gave the motivation to win."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "I think it did [genie_name]. They were all very excited to receive their reward for winning the game."
+                $ her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","body_74")
                 menu:
                     "-Reward?-":
                         m "What reward did you promise them?"
-                        $ changeHermioneMainScreen(hg_pth+"body_68.png")
-                        her "Well I was so keen for us to beat Slytherin that I may have promised them that I would give them all blowjobs if they won."
+                        $ her_main("Well I was so keen for us to beat Slytherin that I may have promised them that I would give them all blowjobs if they won.","body_68")
                         m "You gave every team member a blowjob after the game?"
-                        $ changeHermioneMainScreen(hg_pth+"body_64.png")
-                        her "And the water boy..."
+                        $ her_main("And the water boy...","body_64")
                         m "How did that even work? Did you just crawl around the room on your knees?"
-                        $ changeHermioneMainScreen(hg_pth+"body_30.png")
-                        her "Of course not, they all lined up and waited their turn."
+                        $ her_main("Of course not, they all lined up and waited their turn.","body_30")
                         m "They lined up? And then what?"
-                        $ changeHermioneMainScreen(hg_pth+"body_29.png")
-                        her "Well I sucked their cocks until they came and then I swallowed. Surely you of all people know how a blowjob works."
+                        $ her_main("Well I sucked their cocks until they came and then I swallowed. Surely you of all people know how a blowjob works.","body_29")
                         m "That's not quite what I meant."
-                        $ changeHermioneMainScreen(hg_pth+"body_46.png")
-                        her "Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow."
+                        $ her_main("Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow.","body_46")
                         m "Well I'm glad you think it was worth it. Did they pay you?"
 
                         her "Of course they did [genie_name], here you are."
@@ -400,12 +371,10 @@ label gryffindor_cheer_responses:
                 m "Well done [hermione_name], 20 points to Gryffindor."
                 her "Thank you [genie_name]."
         "-Dismiss her-":
-            $ changeHermioneMainScreen(hg_pth+"body_13.png")
-            her "Here's your payment [genie_name]."
+            $ her_main("Here's your payment [genie_name].","body_13")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
-            $ changeHermioneMainScreen(hg_pth+"body_74.png")
-            her "Thank you [genie_name]."
+            $ her_main("Thank you [genie_name].","body_74")
             $ gryffindor+= 20
             $ gold += payment
     hide screen bld1
@@ -431,129 +400,96 @@ label slytherin_cheer_responses:
     with d3
     if day_random >=9 and lock_public_favors == False:
         $ uni_sperm = True 
-        $ changeHermioneMainScreen(hg_pth+"body_78.png")
+        $ her_main("","body_78")
     else:
-        $ changeHermioneMainScreen(hg_pth+"body_01.png")
+        $ her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "How was your day today [hermione_name]?"
-                $ changeHermioneMainScreen(hg_pth+"body_04.png")
-                her "Exhausting. Those Slytherin pigs insisted that I cheer for their entire practice session."
+                $ her_main("Exhausting. Those Slytherin pigs insisted that I cheer for their entire practice session.","body_04")
                 her "They were hardly playing the game by the end. They were just standing there watching me."
                 m "Well what was your routine?"
-                $ changeHermioneMainScreen(hg_pth+"body_09.png")
-                her "Mostly star jumps while I cheered \"Go Slytherin!\"."
+                $ her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","body_09")
                 m "So you were just jumping up and down? That doesn't seem like a very intricate cheer."
-                $ changeHermioneMainScreen(hg_pth+"body_69.png")
-                her "It isn't but it's what they insisted I do."
+                $ her_main("It isn't but it's what they insisted I do.","body_69")
                 m "Well it definitely sounds like you earned your points."
                 m "30 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_16.png")
-                her "Thank you [genie_name], here's your payment."
+                $ her_main("Thank you [genie_name], here's your payment.","body_16")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 $ gryffindor+= 30
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
-                $ changeHermioneMainScreen(hg_pth+"body_08.png")
-                her "Uneventful. I completed my routine and then went back to my room."
+                $ her_main("Uneventful. I completed my routine and then went back to my room.","body_08")
                 m "You didn't talk to anyone?"
-                $ changeHermioneMainScreen(hg_pth+"body_12.png")
-                her "I make a point of trying to avoid Slytherin student as best I can. "
+                $ her_main("I make a point of trying to avoid Slytherin student as best I can. ","body_12")
                 m "Are they really that unbearable."
-                $ changeHermioneMainScreen(hg_pth+"body_04.png")
-                her "Yes."
+                $ her_main("Yes.","body_04")
                 m "Well, you earned your points."
                 m "30 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_16.png")
-                her "Thank you [genie_name], here's your payment."
+                $ her_main("Thank you [genie_name], here's your payment.","body_16")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 $ gryffindor+= 30
             elif day_random >= 6 and day_random <= 8:
                 m "Hello [hermione_name]."
-                $ changeHermioneMainScreen(hg_pth+"body_03.png")
-                her "Hello [genie_name]."
+                $ her_main("Hello [genie_name].","body_03")
                 m "How did you go today?"
-                $ changeHermioneMainScreen(hg_pth+"body_29.png")
-                her "Very well. In fact I think I might be doing too well."
+                $ her_main("Very well. In fact I think I might be doing too well.","body_29")
                 m "How so?"
-                $ changeHermioneMainScreen(hg_pth+"body_11.png")
-                her "I think that my cheering is having too positive an effect."
-                $ changeHermioneMainScreen(hg_pth+"body_10.png")
-                her "I'm not sure that I want the Slytherin team to improve, let alone because of me."
+                $ her_main("I think that my cheering is having too positive an effect.","body_11")
+                $ her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me.","body_10")
                 m "Just think about how your helping your house in other ways."
-                $ changeHermioneMainScreen(hg_pth+"body_02.png")
-                her "I suppose your right [genie_name]."
+                $ her_main("I suppose your right [genie_name].","body_02")
                 m "Of course I am, now did they pay you?"
-                $ changeHermioneMainScreen(hg_pth+"body_06.png")
-                her "Yes [genie_name]."
+                $ her_main("Yes [genie_name].","body_06")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_74.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >=9 and lock_public_favors == True:
-                $ changeHermioneMainScreen(hg_pth+"body_04.png")
-                her "[genie_name], something must be done about these Slytherin boys."
-                $ changeHermioneMainScreen(hg_pth+"body_12.png")
-                her "It's bad enough that I have to cheer for them but they are starting to become a little touchy."
+                $ her_main("[genie_name], something must be done about these Slytherin boys.","body_04")
+                $ her_main("It's bad enough that I have to cheer for them but they are starting to become a little touchy.","body_12")
                 m "Touchy?"
-                $ changeHermioneMainScreen(hg_pth+"body_30.png")
-                her "Yes, they keep groping me. It's highly inappropriate and it interrupts my routine."
+                $ her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.","body_30")
                 m "You keep dancing while they grope you?"
-                $ changeHermioneMainScreen(hg_pth+"body_04.png")
-                her "Of course, I'm there to complete a job. I won't fail at this just because of a few boys."
+                $ her_main("Of course, I'm there to complete a job. I won't fail at this just because of a few boys.","body_04")
                 m "Well what would you have me do?"
-                $ changeHermioneMainScreen(hg_pth+"body_05.png")
-                her "Speak to Professor Snape, tell him to chastise them. They'll listen to him."
+                $ her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him.","body_05")
                 m "Very well, I'll speak to him. I'm not sure it will have the effect your hoping for."
-                $ changeHermioneMainScreen(hg_pth+"body_07.png")
-                her "It better, otherwise I wont put my full effort into the routine."
+                $ her_main("It better, otherwise I wont put my full effort into the routine.","body_07")
                 m "{size=-5}I'm sure that'll show them.{/size}"
-                $ changeHermioneMainScreen(hg_pth+"body_08.png")
-                her "What was that [genie_name]?"
+                $ her_main("What was that [genie_name]?","body_08")
                 m "Nothing [hermione_name], I was just saying I'll speak to Professor Snape tonight."
-                $ changeHermioneMainScreen(hg_pth+"body_12.png")
-                her "Thank you [genie_name], here's your payment."
+                $ her_main("Thank you [genie_name], here's your payment.","body_12")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 m "Well done [hermione_name], 30 points to Gryffindor."
-                $ changeHermioneMainScreen(hg_pth+"body_16.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_16")
                 $ gryffindor+= 30
             else:#Comes back with cum on her
                 m "What the hell happened to you?"
-                $ changeHermioneMainScreen(hg_pth+"body_118.png")
-                her "I did my job [genie_name]."
+                $ her_main("I did my job [genie_name].","body_118")
                 m "What are you talking about? You were supposed to be a cheerleader."
-                $ changeHermioneMainScreen(hg_pth+"body_121.png")
-                her "I am [genie_name]. I just performed a different type of cheer today."
+                $ her_main("I am [genie_name]. I just performed a different type of cheer today.","body_121")
                 m "And that cheer included jerking off the entire Slytherin team?"
-                $ changeHermioneMainScreen(hg_pth+"body_118.png")
-                her "Well that's not how it started. I was initially just giving them a bit of a dance in the locker room."
+                $ her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room.","body_118")
                 her "And one thing led to another..."
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
-                $ changeHermioneMainScreen(hg_pth+"body_133.png")
-                her "Pay me?"
+                $ her_main("Pay me?","body_133")
                 m "You are supposed to be paid for this [hermione_name]."
-                $ changeHermioneMainScreen(hg_pth+"body_188.png")
-                her "Oh... I must have forgotten. Sorry [genie_name]"
+                $ her_main("Oh... I must have forgotten. Sorry [genie_name]","body_188")
                 m "Fine, but you aren't getting any points."
-                $ changeHermioneMainScreen(hg_pth+"body_01.png")
-                her "Of course not [genie_name]. Will that be all?"
+                $ her_main("Of course not [genie_name]. Will that be all?","body_01")
                 m "Yes, you can go now."
-                $ changeHermioneMainScreen(hg_pth+"body_128.png")
-                her "Thank you [genie_name]."
+                $ her_main("Thank you [genie_name].","body_128")
         "-Dismiss her-":
-            $ changeHermioneMainScreen(hg_pth+"body_02.png")
-            her "Here's your payment."
+            $ her_main("Here's your payment.","body_02")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 30 points to Gryffindor."
-            $ changeHermioneMainScreen(hg_pth+"body_128.png")
-            her "Thank you [genie_name]."
+            $ her_main("Thank you [genie_name].","body_128")
             $ gryffindor+= 30
             $ gold += payment
     hide screen bld1

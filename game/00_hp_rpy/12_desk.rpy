@@ -31,7 +31,7 @@ label desk:
         #         jump the_oddities
         
         
-        "-Jerk 0ff on Hermione's panties-" if request_03: #True when Hermione has no panties on.
+        "-Jerk 0ff on Hermione's panties-" if hg_pf_PantyThief_InProgressFlag: #True when Hermione has no panties on.
             jump jerk_off
         "-Doze off-" if daytime and not day == 1:
             jump night_start

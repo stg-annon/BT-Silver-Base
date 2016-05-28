@@ -269,43 +269,30 @@ label tentacle_2: #Enjoyable tentacle scene
 ###PUBLIC EVENTS (more about shaming than whoring herself off to other people) There are no points as these events are locked behind the collar event
 label public_event_1: #Walk around the school wearing only a bra (and at later levels naked)
     m "[hermione_name], what classes do you have today?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "What? Since when have you taken an interest in my education?"
+    $ her_main("What? Since when have you taken an interest in my education?","body_07")
     m "I'm your headmaster, of course I care about your studies."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Hmmmm..."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Well I have potions class with Professor Snape in the morning and then defence against the dark arts after lunch."
+    $ her_main("Hmmmm...","body_07")
+    $ her_main("Well I have potions class with Professor Snape in the morning and then defence against the dark arts after lunch.","body_07")
     m "So you have Snape as your teacher today?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Yes [genie_name]."
+    $ her_main("Yes [genie_name].","body_07")
     m "That's good. Today I have a task for you to complete."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "A task?"
+    $ her_main("A task?","body_07")
     m "Yes, I'd like you to attend class."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Is that all?"
+    $ her_main("Is that all?","body_07")
     m "Without your shirt."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "WHAT?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Why on earth would I do that?"
+    $ her_main("WHAT?","body_07")
+    $ her_main("Why on earth would I do that?","body_07")
     m "Because I asked you to."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "...but what about Snape? What about my classmates?"
+    $ her_main("...but what about Snape? What about my classmates?","body_07")
     m "Don't worry about Snape, I'm sure that he's used to your behaviour by now."
     m "And as for your classmates, is there anyone that will be surprised?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Well Ginny would be..."
+    $ her_main("Well Ginny would be...","body_07")
     m "What? Shocked to find out that her friend is a massive slut who shows herself off to anyone and everyone any chance she can get?"
     m "Look at your neck [hermione_name], look at what you are wearing. I'd be surprised if there is anyone in the school who doesn't know what a whore you are."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "..."
+    $ her_main("...","body_07")
     ">She holds back tears as she hands you her shirt."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "I suppose that you're right [genie_name]."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Well I best be off... Can't be late for class."
+    $ her_main("I suppose that you're right [genie_name].","body_07")
+    $ her_main("Well I best be off... Can't be late for class.","body_07")
     ">She leaves your office reluctantly."
 
 label public_event_1_2:#Returns to your office after being made walk around the school with no shirt
@@ -445,49 +432,33 @@ label public_event_2: #Walk around school covered in genies cum #At the moment t
 
 label public_event_2_2: #Hermione returns from her day of wearing your cum
     ">Hermione returns to your office."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "...I did it [genie_name]."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "I managed to keep it on all day."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Even though it smelled"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "and Ginny told me to wipe it off."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "I kept it on."
+    $ her_main("...I did it [genie_name].","body_07")
+    $ her_main("I managed to keep it on all day.","body_07")
+    $ her_main("Even though it smelled","body_07")
+    $ her_main("and Ginny told me to wipe it off.","body_07")
+    $ her_main("I kept it on.","body_07")
     m "Good girl."
     menu:
         "-Go back to your room-":
             m "That'll be all [hermione_name], you may go now."
-            $ changeHermioneMainScreen(hg_pth+"body_07.png")
-            her "Thank you [genie_name]"
+            $ her_main("Thank you [genie_name]","body_07")
         "-Tell me what happened-":
             pass
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Well I managed to walk to class without anyone seeing me."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "When I got there the class was lined up out the front waiting for Professor Snape."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "When Ginny saw what was on my face she immediately ran over to me and told me to clean myself up."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
+    $ her_main("Well I managed to walk to class without anyone seeing me.","body_07")
+    $ her_main("When I got there the class was lined up out the front waiting for Professor Snape.","body_07")
+    $ her_main("When Ginny saw what was on my face she immediately ran over to me and told me to clean myself up.","body_07")
+    $ her_main("","body_07")
     m "What did you do?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "I told her that I didn't know what she was talking about."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "She told me to run to the bathroom and look in the mirror."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "so I said that she was just crazy and that good girls don't miss class."
+    $ her_main("I told her that I didn't know what she was talking about.","body_07")
+    $ her_main("She told me to run to the bathroom and look in the mirror.","body_07")
+    $ her_main("so I said that she was just crazy and that good girls don't miss class.","body_07")
     m "Smooth. What happened once you got into class?"
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Well no one sat next to me, I assume because of the smell."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Apart from that though no one really acknowledged me. I think none of them really cared."
+    $ her_main("Well no one sat next to me, I assume because of the smell.","body_07")
+    $ her_main("Apart from that though no one really acknowledged me. I think none of them really cared.","body_07")
     m "They've probably come to expect it from you."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "I suppose so. Is that all [genie_name]?"
+    $ her_main("I suppose so. Is that all [genie_name]?","body_07")
     m "That's all for now [hermione_name], you may leave."
-    $ changeHermioneMainScreen(hg_pth+"body_07.png")
-    her "Thank you [genie_name]"
+    $ her_main("Thank you [genie_name]","body_07")
 
 
 
@@ -549,57 +520,41 @@ label public_event_3_1: #Snape's office
 
 ###COSTUME SCENES
 label costume_scene_1: #Maid role-play
-    $ changeHermioneMainScreen(hg_pth+"body_18.png")
-    her "A costume? What on earth do you need me to dress up for?"
+    $ her_main("A costume? What on earth do you need me to dress up for?","body_18")
     m "[hermione_name], have you ever heard of the term role-play?"
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "role-play?"
+    $ her_main("role-play?","body_64")
     m "It's where you pretend to be someone you're not."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "I gathered that much but why would I want to do that?"
+    $ her_main("I gathered that much but why would I want to do that?","body_64")
     m "Because it can be fun!"
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Hmmmm. Who would I be role-playing?"
+    $ her_main("Hmmmm. Who would I be role-playing?","body_64")
     m "Well I was thinking seeing as how I purchased you that lovely new cleaning outfit."
     m "You could play the role of my personal maid."
     if whoring < 17:
-        $ changeHermioneMainScreen(hg_pth+"body_64.png")
-        her "And how much would this \"personal maid\" be paid?"
+        $ her_main("And how much would this \"personal maid\" be paid?","body_64")
         m "35 points sounds fair."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "..."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Let me go change."
+    $ her_main("...","body_64")
+    $ her_main("Let me go change.","body_64")
     $ stockings = 1
     $ custom_outfit_old = 1
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
+    $ her_main("","body_64")
     pause
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Well?"
+    $ her_main("Well?","body_64")
     m "You certainly look the part. The question is can you act the part?"
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Act? I thought you just wanted me to clean your room?"
+    $ her_main("Act? I thought you just wanted me to clean your room?","body_64")
     m "Where's the fun in that? If I wanted a clean room, I'd just get those ugly dwarves to do it."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "House elfs."
+    $ her_main("House elfs.","body_64")
     m "Whatever. Anyway I want you to act like a sexy french maid."
     her "Why does it have to be french?"
     m "Must I explain everything?"
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Fine..."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Is there anything you need cleaned today sir?"
+    $ her_main("Fine...","body_64")
+    $ her_main("Is there anything you need cleaned today sir?","body_64")
     m "At least try to do the accent."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "..."
-    $ changeHermioneMainScreen(hg_pth+"body_207.png")
-    her "Is there anything that you need cleaned today Monsieur?"
+    $ her_main("...","body_64")
+    $ her_main("Is there anything that you need cleaned today Monsieur?","body_207")
     m "Much better."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "Thank you Monsieur."
+    $ her_main("Thank you Monsieur.","body_64")
     m "Now as for your cleaning I think that the fireplace could you a good dusting."
-    $ changeHermioneMainScreen(hg_pth+"body_64.png")
-    her "As you command Monsieur!"
+    $ her_main("As you command Monsieur!","body_64")
     ">Hermione stands on her toes to reach the mantelpiece giving you a lovely view of the top of her stockings."
     m "That's it, just a little higher."
     ">You reach under the desk and start to stroke your cock."

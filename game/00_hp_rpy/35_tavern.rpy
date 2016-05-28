@@ -9,12 +9,12 @@ label inn_menu:
             $ robeon = True
             $ stockings = 5
             $ custom_outfit_old = 5
-            $ changeHermioneMainScreen(hg_pth+"body_07.png", x_pos=140)
+            $ her_main("","body_07")
             pause
             abe "Well go on then girl, take the robe off."
             her "Fine..."
             $ robeon = False
-            $ changeHermioneMainScreen(hg_pth+"body_33.png", x_pos=140)
+            $ her_main("","body_33")
             pause
             hide screen hermione_main
             jump inn_menu

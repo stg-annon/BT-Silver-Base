@@ -95,8 +95,7 @@ $ being_mean = 0 #+1 every time you are being mean to hermione.
 $ dates = 0 #Tracks how many times Hermione been tutored.
 
 ### PATH SHORTCUTS ###
-init python:
-    hg_pth      = "01_hp/13_hermione_main/"
+$ hg_pth = "01_hp/13_characters/hermione/"
 
 ### CHITCHATS WITH SNAPE ###
 $ chitchat_event_01_happened = False
@@ -158,7 +157,63 @@ $ days_in_delivery2 = 0 # +1 day, every day since the orer has been made (when o
 $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is displayed.
 
 
-### LEVELING UP PERSONAL REQUESTS ###
+#hg = hermione granger
+#pf = personal favor (sexual)
+#pr = public request
+
+
+### LEVELING UP ###
+
+# Hermione levels
+$ hg_whoring = 0
+$ hg_whoring_lvl = 0
+
+
+
+### Personal Favor ID's ###
+$ hg_pf_TalkToMe_ID = 1        #01 Genie touches himself.
+$ hg_pf_NicePanties_ID = 2     #02 "Lift your skirt".
+$ hg_pf_PantyThief_ID = 3      #03 "Give me your panties."
+$ hg_pf_BreastMolester_ID = 4  #03 "Molest tits."
+$ hg_pf_ButtMolester_ID = 5    #04 "Molest butt."
+$ hg_pf_ShowThemToMe_ID = 6    #05 "Show me your tits."
+$ hg_pf_DanceForMe_ID = 7      #07 "Get naked."
+$ hg_pf_LetMeTouchThem_ID = 8  #08 "Let me play with your tits."
+$ hg_pf_TouchMe_ID = 9         #11 (Handjob).
+$ hg_pf_SuckIt_ID = 10         #12 (Blowjob).
+$ hg_pf_LetsHaveSex_ID = 11    #13 (Sex).
+$ hg_pf_TimeForAnal_ID = 12    #14 (Anal sex)
+
+#Personal Favor Points
+$ hg_pf_points = [0] * 12
+$ hg_pf_hearts = [0] * 12
+$ hg_pf_complete = [False] * 12
+
+#Personal Favor Flags
+$ hg_pf_PantyThief_InProgressFlag = False
+$ hg_pf_PantyThief_SoakedPantiesFlag = False
+
+
+
+### Public Request ID's ###
+$ hg_pr_FlirtClassmate_ID = 1 #01 "Flirt with 3 classmates".
+$ hg_pr_FlirtTeacher_ID = 2 #02 "Flirt with a teacher".
+$ hg_pr_ClassmateTouchYou_ID = 3 #03 "Let a classmate molest you."
+$ hg_pr_FlashClassmate_ID = 4 #04 "Flash a classmate."
+$ hg_pr_KissAGirl_ID = 5 #05 "Kiss female classmate."
+$ hg_pr_HandjobClassmate_ID = 6 #06 (Give handjob to a classmate)
+$ hg_pr_blowjobClassmate_ID = 7 #07 (Blow a classamate).
+$ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
+
+#Public Request Points
+$ hg_pr_points = [0] * 8
+$ hg_pr_complete = [False] * 8
+
+
+
+
+
+
 $ request_01 = 0 #Genie touches himself.
 $ request_02 = 0 #"Lift your skirt".
 $ request_02_b_points = 0 #"Flirt with 3 classmates".
@@ -258,7 +313,6 @@ $ custom_breast = 0
 $ custom_bra = 0
 $ pitch_open = True
 $ maid_working_unlocked = True
-$ hg_pth = "01_hp/13_hermione_main/"
 $ inn_first = True
 $ stockings = 0
 $ attic_open = False
