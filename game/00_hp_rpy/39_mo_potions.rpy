@@ -1146,7 +1146,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         m "Well done [hermione_name]. You're becoming quite the slut."
         $ her_main("Thank you [genie_name]. Is that all?","body_128")
         m "Yes, you can go now slut."
-        $ her_main("{image=textheart}"#lovehearts "","body_46")
+        $ her_main("{image=textheart}","body_46")
     $ transparency = 1
     hide screen bld1
     hide screen hermione_main

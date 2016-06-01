@@ -770,11 +770,11 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
     hide screen ctc
     with d3
     
-    $ request_03_points += 1 #Leveling up the event.
+    $ hg_pf_points[hg_pf_PantyThief_ID] += 1
+    
     $ hg_pf_PantyThief_complete = False #False when favor is not in progress
     $ have_cum_soaked_panties = False #TRUE if you jerked off in panties
     
-    $ hg_pf_points[hg_pf_PantyThief_ID] += 1
     call her_walk(400,610,2)
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -1140,9 +1140,7 @@ label hg_pf_BreastMolester:
     else:
         m "you may leave now [hermione_name]"
     
-    $ request_04_points += 1
     $ hg_pf_points[hg_pf_BreastMolester_ID] += 1
-   
    
     show screen hermione_blink #Hermione stands still.
     show screen bld1
@@ -1322,7 +1320,6 @@ label hg_pf_ButtMolester:
                                                 with Dissolve(.3)
                                                 pause.5
                                                 g4 "Tsk! (You little brat!)"
-                                                $ request_05_points += 1
                                                 $ hg_pf_points[hg_pf_ButtMolester_ID] += 1
                                                 if daytime:
                                                     $ hermione_takes_classes = True
@@ -1365,7 +1362,6 @@ label hg_pf_ButtMolester:
                                                         m "She made me do this, that brat!"
                                                         m "Acting all wounded now..."
                                                         m "I bet she actually enjoyed the slapping and just won't admit it..."
-                                                $ request_05_points += 1
                                                 $ hg_pf_points[hg_pf_ButtMolester_ID] += 1
                                                 if daytime:
                                                     $ hermione_takes_classes = True
@@ -2138,7 +2134,6 @@ label hg_pf_ButtMolester:
         m "The \"Gryffindors\" get 15 points!"
     else:
         m "good night [hermione_name]"
-    $ request_05_points += 1
     $ hg_pf_pooints[hg_pf_ButtMolester_ID] += 1
    
    
@@ -3134,7 +3129,6 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     
     if whoring <= 8:
         $ whoring +=1
-    $ request_08_points += 1
     $ hg_pf_points[hg_pf_ShowThemToMe_ID] += 1
     
     call her_walk(400,610,2)
@@ -3633,7 +3627,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         
         $ tt_xpos=330 #Defines position of the Snape's full length sprite. (Default 300). 140 - center.
         $ tt_ypos=340#(Default 0). Right bottom corner: 340
-        $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
         $ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box. Works for all full size sprites.
         show screen s_head
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
@@ -3642,7 +3636,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         
         
         sna2 "Listen, Genie. I've been thinki--"
-        $ s_sprite = "01_hp/10_snape_main/snape_11.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_11.png"
         with hpunch
         sna2 "................................................................................................................................................................................"
         with hpunch
@@ -3780,7 +3774,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                         with Dissolve(.3)
                         $ tt_xpos=180 #Defines position of the Snape's full length sprite. Default - 300
                         $ tt_ypos=0
-                        $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+                        $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
                         show screen snape_main
                         show screen ctc
                         with Dissolve(.3)
@@ -3850,7 +3844,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen clothed_dance #Hermione stands still.
                     show screen ctc
                     show screen s_c_u
-                    $ s_c_u_pic = "01_hp/09_snape_ani/snape_0130.png"
+                    $ s_c_u_pic = "01_hp/13_characters/snape/chibis/snape_0130.png"
                     $ snape_chibi_xpos = 290 #Default 360.
                     $ snape_chibi_ypos = 210
                     with fade
@@ -4092,7 +4086,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                     hide screen desk_02
                                     show screen no_shirt_no_skirt_dance
                                     show screen s_c_u
-                                    $ s_c_u_pic = "01_hp/09_snape_ani/snape_0130.png"
+                                    $ s_c_u_pic = "01_hp/13_characters/snape/chibis/snape_0130.png"
                                     $ snape_chibi_xpos = 290 #Default 360.
                                     $ snape_chibi_ypos = 210
                                     pause.3
@@ -5127,7 +5121,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
 label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen hermione_main 
     with d3
-    if request_12_points == 0:
+    if hg_pf_points[hg_pf_LetMeTouchThem_ID] == 0:
         m "{size=-4}(I feel like playing with those titties.){/size}"
     else:
         m "{size=-4}(I feel like playing with those titties again.){/size}"
@@ -5162,7 +5156,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     if whoring <=8:
         jump too_much
     
-    if request_12_points == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
+    if hg_pf_points[hg_pf_LetMeTouchThem_ID] == 0 and whoring <= 14: # LEVEL 05 (one level higher then level at which it unlocks - 04) # FIRST TIME.
         m "[hermione_name]."
         call her_main("Yes, [genie_name]?","body_01",xpos=140)
         m "How about selling me another favour today?"
@@ -5637,21 +5631,18 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     
     if whoring <= 11: # If still of level of unlocking - 04
         $ whoring +=1
-
-    $ request_12_points += 1
+    
+    $ hg_pf_points[hg_pf_LetMeTouchThem_ID] +=1
 
     if whoring >= 9 and whoring <= 11:
-        $ level = "04"
-        $ new_request_12_01 = True # HEARTS.
         $ new_request_12_heart = 1
+        $ hg_pf_hearts[hg_pf_LetMeTouchThem_ID] = 1 #Event hearts level (0-3)
     if whoring >= 12 and whoring <= 14:
-        $ level = "05"
-        $ new_request_12_02 = True # HEARTS.
         $ new_request_12_heart = 2
+        $ hg_pf_hearts[hg_pf_LetMeTouchThem_ID] = 2 #Event hearts level (0-3)
     if whoring >= 15:
-        $ level = "06"
-        $ new_request_12_03 = True # HEARTS.
         $ new_request_12_heart = 3
+        $ hg_pf_hearts[hg_pf_LetMeTouchThem_ID] = 3 #Event hearts level (0-3)
 
 
     hide screen bld1
@@ -5675,7 +5666,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
 label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     hide screen hermione_main 
     with d3
-    if request_16_points == 0:
+    if hg_pf_points[hg_pf_TouchMe_ID] == 0:
         m "{size=-4}(Should I ask her for a handjob?){/size}"
     else:
         m "{size=-4}(Should I ask the [hermione_name] to give me another handjob?){/size}"
@@ -5710,7 +5701,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     
     $ current_payout = 45 #Used when haggling about price of th favor.
     
-    if request_16_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if hg_pf_points[hg_pf_TouchMe_ID] == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]."
         call her_main("Yes, [genie_name]?","body_01",xpos=140)
         m "Do you know what a \"handjob\" is?"
@@ -5806,7 +5797,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         show screen bld1
         with d3
         g9 "Nice..."
-        if request_16_points == 0:
+        if hg_pf_points[hg_pf_TouchMe_ID] == 0:
             call her_head("!!!","body_48")
             call her_head("Are you about to finish, [genie_name]?!")
             m "About to finish?"
@@ -6193,7 +6184,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                         $ uni_sperm = False
         #her "Can I just get paid now?"
 
-    elif request_16_points == 1: # SECOND EVENT <============================================================== EVENT 02
+    elif hg_pf_points[hg_pf_TouchMe_ID] == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","body_01",xpos=140)
         m "Do you know what a \"handjob\" is?"
@@ -6242,9 +6233,9 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         jump event_01_round_02
 
 
-    elif request_16_points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
-        $ new_request_16_03 = True #  Hearts
+    elif hg_pf_points[hg_pf_TouchMe_ID] >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
         $ new_request_16_heart = 3
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 3 #Event hearts level (0-3)
         
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01",xpos=140)
@@ -6737,19 +6728,17 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     
     call her_main("Thank you, [genie_name]...","body_13")
     
-    $ request_16_points += 1
+    $ hg_pf_points[hg_pf_TouchMe_ID] += 1
     
     if whoring <= 14:
         $ whoring +=1
     
     if whoring >= 12 and whoring <= 14:
-        $ level = "05"
-        $ new_request_16_01 = True #  Hearts
         $ new_request_16_heart = 1
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 1 #Event hearts level (0-3)
     if whoring >= 15 and whoring <= 17:
-        $ level = "06"
-        $ new_request_16_02 = True #  Hearts
         $ new_request_16_heart = 2
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 2 #Event hearts level (0-3)
     
     hide screen bld1
     hide screen hermione_main
@@ -6844,7 +6833,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen hermione_main 
     with d3
     
-    if request_22_points == 0:
+    if hg_pf_points[hg_pf_SuckIt_ID] == 0:
         m "{size=-4}(Should I ask her for a blowjob?){/size}"
     else:
         m "{size=-4}(Should I ask the girl to give me another blowjob?){/size}"
@@ -6880,7 +6869,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     call set_u_ani("blowjob_ani","hand_ani",-150,10)
     $ hermione_head_ypos = her_head_tits
     
-    if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if hg_pf_points[hg_pf_SuckIt_ID] == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","body_01",xpos=140)
         m "I plan to grant \"Gryffindor\" 55 house points today..."
@@ -7191,7 +7180,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 call her_head("Can I get paid before I leave, [genie_name]?","body_44")
                 $ aftersperm = True
         
-    elif request_22_points == 1: #  <============================================================== EVENT 02
+    elif hg_pf_points[hg_pf_SuckIt_ID] == 1: #  <============================================================== EVENT 02
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01",xpos=140)
         m "How about another blowjob?"
@@ -7227,7 +7216,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
 
         jump blowjob_jumping
   
-    elif request_22_points >= 2: # <============================================================== EVENT 03
+    elif hg_pf_points[hg_pf_SuckIt_ID] >= 2: # <============================================================== EVENT 03
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course...","body_45",xpos=140)
@@ -7735,17 +7724,18 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     if whoring <= 17:
         $ whoring +=1
         
-    if request_22_points == 0:
-        $ new_request_22_01 = True #  HEARTS
+    if hg_pf_points[hg_pf_SuckIt_ID] == 0:
         $ new_request_22_heart = 1
-    if request_22_points == 1:
-        $ new_request_22_02 = True #  HEARTS
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 1 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_SuckIt_ID] == 1:
         $ new_request_22_heart = 2
-    if request_22_points >= 2:
-        $ new_request_22_03 = True #  HEARTS
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 2 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_SuckIt_ID] >= 2:
         $ new_request_22_heart = 3
+        $ hg_pf_hearts[hg_pf_TouchMe_ID] = 3 #Event hearts level (0-3)
     
-    $ request_22_points += 1
+    $ hg_pf_points[hg_pf_SuckIt_ID] += 1
+    
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     
@@ -7799,7 +7789,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     $ g_c_u_pic = "sex_ani"
     $ hermione_head_ypos = her_head_tits
     
-    if request_29_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if hg_pf_points[hg_pf_LetsHaveSex_ID] == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01")
         m "The favour I will be buying from you today..."
@@ -8065,7 +8055,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("[genie_name], you make no sense...","body_117")
                 call her_head("Can I please just get paid now...?")
     
-    elif request_29_points == 1: # SECOND EVENT <============================================================== EVENT 02
+    elif hg_pf_points[hg_pf_LetsHaveSex_ID] == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
         call her_main("[genie_name]!","body_30")
         m "Just say \"I do\" and come over here, [hermione_name]."
@@ -8074,7 +8064,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen hermione_main    
         jump your_ass
     
-    elif request_29_points >= 2: # THIRD EVENT <============================================================== EVENT 03
+    elif hg_pf_points[hg_pf_LetsHaveSex_ID] >= 2: # THIRD EVENT <============================================================== EVENT 03
         m "[hermione_name]..."
         m "Last night I had a dream..."
         g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
@@ -8398,17 +8388,17 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     if whoring <= 20: # Level 07 <
         $ whoring +=1
     
-    if request_29_points == 0:
-        $ new_request_29_01 = True # HEARTS
+    if hg_pf_points[hg_pf_LetsHaveSex_ID] == 0:
         $ new_request_29_heart = 1
-    if request_29_points == 1:
-        $ new_request_29_02 = True # HEARTS
+        $ hg_pf_hearts[hg_pf_LetsHaveSex_ID] = 3 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_LetsHaveSex_ID] == 1:
         $ new_request_29_heart = 2
-    if request_29_points >= 2:
-        $ new_request_29_03 = True # HEARTS
+        $ hg_pf_hearts[hg_pf_LetsHaveSex_ID] = 3 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_LetsHaveSex_ID] >= 2:
         $ new_request_29_heart = 3
+        $ hg_pf_hearts[hg_pf_LetsHaveSex_ID] = 3 #Event hearts level (0-3)
     
-    $ request_29_points += 1
+    $ hg_pf_points[hg_pf_LetsHaveSex_ID] += 1
     
     hide screen bld1
     hide screen hermione_main
@@ -8461,7 +8451,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     $ g_c_u_pic = "sex_slow_ani"
     $ hermione_head_ypos = her_head_tits
     
-    if request_31_points == 0: # FIRST EVENT <============================================================== EVENT 01
+    if hg_pf_points[hg_pf_TimeForAnal_ID] == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]..."
         call her_main("[genie_name]..?","body_17")
         m "How familiar you are with the term \"Anal Sex\"?"
@@ -8841,7 +8831,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 g9 "Heh... You cute, little mynx."
                 call her_head("Can I get paid now, [genie_name]?","body_138")
     
-    elif request_31_points == 1: # FIRST EVENT <============================================================== EVENT 02
+    elif hg_pf_points[hg_pf_TimeForAnal_ID] == 1: # FIRST EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_15")
         m "I will be buying another favour from you today..."
@@ -8858,7 +8848,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         with d3 
         jump lucky_guess
     
-    elif request_31_points >= 2: # FIRST EVENT <============================================================== EVENT 03
+    elif hg_pf_points[hg_pf_TimeForAnal_ID] >= 2: # FIRST EVENT <============================================================== EVENT 03
         m "How about another assfuck, [hermione_name]?"
         call her_main("Of course, [genie_name].","body_78")
         g9 "Come here, you little mynx!"
@@ -9079,18 +9069,18 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     if whoring <= 23: # Level 08 <
         $ whoring +=1
 
-    if request_31_points == 0:
-        $ new_request_31_01 = True # HEARTS.
+    if hg_pf_points[hg_pf_TimeForAnal_ID] == 0:
         $ new_request_31_heart = 1
-    if request_31_points == 1:
-        $ new_request_31_02 = True # HEARTS.
+        $ hg_pf_hearts[hg_pf_TimeForAnal_ID] = 1 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_TimeForAnal_ID] == 1:
         $ new_request_31_heart = 2
-    if request_31_points >= 2:
-        $ new_request_31_03 = True # HEARTS.
+        $ hg_pf_hearts[hg_pf_TimeForAnal_ID] = 2 #Event hearts level (0-3)
+    if hg_pf_points[hg_pf_TimeForAnal_ID] >= 2:
         $ new_request_31_heart = 3
-
-
-    $ request_31_points += 1
+        $ hg_pf_hearts[hg_pf_TimeForAnal_ID] = 3 #Event hearts level (0-3)
+    
+    $ hg_pf_points[hg_pf_TimeForAnal_ID] += 1
+    
     $ aftersperm = False #Show cum stains on Hermione's uniform.
 
     $ custom_outfit_old = temp_outfit
@@ -9251,22 +9241,23 @@ label hg_pf_TheGamble:
     m "Well. My balls are going to be the right colour for a little while..."
     show screen blkfade
     with fade
-    $ per_quest_30_points = 1
-    $ per_q_the_gamble = True
-    $ per_q_the_gamble_a = True
+    $ hg_pf_points[hg_pf_TheGamble_ID] = 1
+    $ hg_pf_TheGamble_Flag = True
+    $ hg_pf_TheGamble_FlagA = True
     jump night_start
+    
 label hg_pf_TheGamble_complete:
     
-    if per_q_the_gamble_a:
-        jump tell_snape_gamble
-    elif per_q_the_gamble_b:
+    if hg_pf_TheGamble_FlagA:
+        jump hg_pf_TheGamble_TellSnape
+    elif hg_pf_TheGamble_FlagB:
         pass
-    elif per_q_the_gamble_c:
-        jump my_slave_n
+    elif hg_pf_TheGamble_FlagC:
+        jump hg_pf_TheGamble_MySlave_n
             
         
-    if per_quest_30_points < 3:
-        if per_quest_30_points == 1:
+    if hg_pf_points[hg_pf_TheGamble_ID] < 3:
+        if hg_pf_points[hg_pf_TheGamble_ID] == 1:
             #*Scene transitions to morning. Hermione enters.*
             
             call hermione_enter
@@ -9282,8 +9273,8 @@ label hg_pf_TheGamble_complete:
             ">You cast a spell on Hermione"
             m "There you go. Until next time."
             call her_main("I-yes.","body_34")
-            $ per_quest_30_points += 1
-        elif per_quest_30_points == 2:
+            $ hg_pf_points[hg_pf_TheGamble_ID] += 1
+        elif hg_pf_points[hg_pf_TheGamble_ID] == 2:
             #*Scene transitions to morning*
             
             m "Huh. What do you know? She's late."
@@ -9319,7 +9310,7 @@ label hg_pf_TheGamble_complete:
             ">you cast the spell."
             call her_main("","body_124")
             ">Hermione glances at your groin one last time before she leaves."
-            $ per_quest_30_points += 1
+            $ hg_pf_points[hg_pf_TheGamble_ID] += 1
         
         hide screen bld1
         hide screen hermione_main
@@ -9335,12 +9326,12 @@ label hg_pf_TheGamble_complete:
         
         jump day_main_menu
     else:
-        jump my_slave
+        jump hg_pf_TheGamble_MySlave
     return
     
     
     
-    label tell_snape_gamble:
+    label hg_pf_TheGamble_TellSnape:
         #*Scene skips to Genie and Snape drinking wine by the fire.*
         show screen with_snape_animated
         play bg_sounds "sounds/fire02.mp3" fadeout 1.0 fadein 1.0 #Quiet...
@@ -9357,7 +9348,6 @@ label hg_pf_TheGamble_complete:
         
         $ fire_in_fireplace = True
         
-        
         hide screen blkfade
         with fade
         "You tell Snape about what happened."
@@ -9371,11 +9361,11 @@ label hg_pf_TheGamble_complete:
         m "With her frustration constantly building, I wouldn't give her much before she snaps. A week, week and a half, tops."
         sna_[11] "Hmm... Well, we'll just have to hope for the best."
         m "It will all work out. Just trust me."
-        $ per_q_the_gamble_a = False
-        $ per_q_the_gamble_b = True
+        $ hg_pf_TheGamble_FlagA = False
+        $ hg_pf_TheGamble_FlagB = True
         jump day_start
     
-    label my_slave:
+    label hg_pf_TheGamble_MySlave:
         #*Scene transitions to morning*
         pause 0.25
         # $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -9706,14 +9696,14 @@ label hg_pf_TheGamble_complete:
         $ g_c_u_pic = "pause_sex"
         m "Huh. She passed out. I guess having the biggest orgasms of your life after being too horny to sleep for three days will do that."
         m "Now, how to pass the time..."
-        $ per_q_the_gamble_b = False
-        $ per_q_the_gamble_c = True
+        $ hg_pf_TheGamble_FlagB = False
+        $ hg_pf_TheGamble_FlagC = True
         jump night_start
         
     #transition to nighttime menu
     #after daytime menu
         
-    label my_slave_n:
+    label hg_pf_TheGamble_MySlave_n:
         #$ hermione_chibi_xpos = 400 #Near the desk.
         #$ hermione_chibi_ypos
         #show screen hermione_blink #Hermione stands still.
@@ -9849,7 +9839,7 @@ label hg_pf_TheGamble_complete:
         m "That means I need to keep you well maintained."
         m "Now go."
         "Hermione staggers out of the room."
-        $ per_q_the_gamble = False
+        $ hg_pf_TheGamble_Flag = False
         $ per_quest_30c = False
         jump day_start
         

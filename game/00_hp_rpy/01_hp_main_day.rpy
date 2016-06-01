@@ -250,10 +250,8 @@ with fade
 
 $ day +=1
 
-### DAY EVENTS ###<============================================================================================================================================================
 
-if request_30_a: #Hermione does not show up. This sends to label where she shows up next morning.
-    call new_request_30_complete_a
+### EVENTS
 
 #NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"
 #About two-faced dude    call event_04
@@ -311,6 +309,7 @@ if collar == 5:
     jump collar_scene
 
 
+call Day_Request_Block
 
 label day_main_menu:
 

@@ -1,5 +1,5 @@
-###################REQUEST_02_b (LEVEL 01) ### FLIRT WITH CLASSMATES ###
-label new_request_02_b:
+##(Level 01) (5 pt.) (Flirt with classmates). (Available during daytime only).
+label hg_pr_FlirtClassmate:
     hide screen hermione_main
     with d3
     m "{size=-4}(Ask her to go flirt with some boys from \"Slytherin\"?){/size}"
@@ -12,7 +12,7 @@ label new_request_02_b:
     
     m "[hermione_name]?"
     call her_main("Yes?","body_13",xpos=140)
-    if request_02_b_points == 0 and whoring <= 5: ### LEVEL 01 and LEVEL 02
+    if hg_pr_points[hg_pr_FlirtClassmate_ID] == 0 and whoring <= 5: ### LEVEL 01 and LEVEL 02
         ### LEVEL 01 ### <===============================================================FIRST EVENT!
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "What is your opinion on the boys of the \"Slytherin\" house?"
@@ -58,36 +58,15 @@ label new_request_02_b:
             m "I need you to flirt with some boys of the \"Slytherin\" house today."
             her "I will see what I can do, [genie_name]."
             m "Great. I'll be expecting your report today after classes."
-            
     her "Well, I'd better go now. Classes are about to start..."
-    $ request_02_b = True
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
     
-    call her_walk(400,610,2)
+    $ hg_pr_InProgress[hg_pr_FlirtClassmate_ID] = True
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_02_b_complete:
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-    
-    show screen hermione_blink
-    with d3
+label hg_pr_FlirtClassmate_complete:
+    call hg_pr_EnterRoom_block
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
     m "Did you complete your task?"
@@ -170,7 +149,6 @@ label new_request_02_b_complete:
                             $ mad +=15
                             call her_main("But, you promised!","body_21")
                             call her_main("................","body_20")
-                            call music_block
                             jump could_not_flirt
                 
                 elif one_out_of_three == 3: ### EVENT (C)
@@ -194,7 +172,6 @@ label new_request_02_b_complete:
                         "\"Favour failed! No points for you!\"":
                             stop music fadeout 1.0
                             call her_main("I don't feel like I deserved any this time anyway...","body_12")
-                            call music_block
                             jump could_not_flirt
             
             elif whoring >= 3 and whoring <= 5: ### LEVEL 02
@@ -371,33 +348,18 @@ label new_request_02_b_complete:
     m "The \"Gryffindor\" house gets 5 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ request_02_b_points += 1
-    $ request_02_b = False 
-    $ hermione_sleeping = True
-    
-    $ p_level_02_active = True #When turns TRUE public favors of level 02 become available. 
+    $ hg_pr_points[hg_pr_FlirtClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_FlirtClassmate_ID] = False
     
     if whoring <= 2:
         $ whoring +=1
-        
-    call music_block
     
-    return        
+    call hg_pr_transition_block
+    return
     
-###################REQUEST_02_c (LEVEL02) ### FLIRT WITH TEACHERS ###
-label new_request_02_c:
+    
+##(Level 02) (15 pt.) (Flirt with teachers). (Available during daytime only).
+label hg_pr_FlirtTeacher:
     
     hide screen hermione_main 
     with d3
@@ -410,11 +372,11 @@ label new_request_02_c:
             jump new_personal_request
 
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
-    if whoring <=2 or request_02_b_points <= 1: # request_02_b_points - counts how many times Hermione was sent to flirt with boys. 
+    if whoring <=2 or hg_pr_points[hg_pr_FlirtClassmate_ID] <= 1:
         jump too_much
    
 
-    if request_02_c_points == 0 and whoring <= 8: ### up to LEVEL 03
+    if hg_pr_points[hg_pr_FlirtTeacher_ID] == 0 and whoring <= 8: ### up to LEVEL 03
     ### LEVEL 03 ### <===============================================================FIRST EVENT!
         call her_main("I will do my best, [genie_name]!","body_01",xpos=140)
         call her_main("I am glad you finally decided to act, [genie_name]!","body_02")
@@ -430,35 +392,14 @@ label new_request_02_c:
 
     
     her "Well, I'd better go now. Classes are about to start..."
-    $ request_02_c = True
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
     
-    call her_walk(400,610,2)
+    $ hg_pr_InProgress[hg_pr_FlirtTeacher_ID] = True
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-    
-    show screen hermione_blink
-    with d3
-    
+label hg_pr_FlirtTeacher_complete:
+    call hg_pr_EnterRoom_block
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
     m "Did you complete your task?"
@@ -849,34 +790,18 @@ label new_request_02_c_complete:  ### FLIRTING WITH TEACHERS COMPLETE ###
     m "The \"Gryffindors\" gets 15 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    call music_block
-    
-    $ p_level_03_active = True #When turns TRUE public favors of level 03 become available. 
+    $ hg_pr_points[hg_pr_FlirtTeacher_ID] += 1
+    $ hg_pr_InProgress[hg_pr_FlirtTeacher_ID] = False
     
     if whoring <= 5:  # (if whoring >= 3 and whoring <= 5) - LEVEL 02
         $ whoring +=1
     
-    $ request_02_c_points += 1 #Leveling up the event.
-    $ request_02_c = False 
-    $ hermione_sleeping = True
-    
+    call hg_pr_transition_block
     return
     
-###################REQUEST_10 (Level 03) (25 pt.) (Let a classmate touch you). (Available during daytime only).
-label new_request_10:
     
+##(Level 03) (25 pt.) (Let a classmate touch you). (Available during daytime only).
+label hg_pr_ClassmateTouchYou:
     hide screen hermione_main 
     with d3
     m "{size=-4}(Tell her to go get touched by one of her classmates?){/size}"
@@ -887,7 +812,7 @@ label new_request_10:
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_10_points == 0: # <================================================================================ FIRST TIME
+    if hg_pr_points[hg_pr_ClassmateTouchYou_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01",xpos=140)
         m "You do like boys your age, don't you?"
@@ -901,7 +826,7 @@ label new_request_10:
         m "Go confront that boy you fancy. The one you think is \"just so dreamy\"..."
         call her_main(".......?","body_31")
         m "And let him touch you..."
-        if whoring <=5 or request_02_c_points <= 1: # Counts how many times Hermione been sent to flirt with teachers.
+        if whoring <=5 or hg_pr_points[hg_pr_FlirtTeacher_ID] <= 1: # Counts how many times Hermione been sent to flirt with teachers.
             jump too_much
         call her_main("Let him... touch me, [genie_name]?","body_31")
         m "Yes, touch you. The way boys touch girls?"
@@ -965,31 +890,13 @@ label new_request_10:
             m "Yes. Good luck."
             hide screen hermione_main
     
-    $ request_10 = True
+    $ hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID] = True
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_10_complete: #<==========================================================================EVENING
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink
-    show screen bld1
-    with d3
-    pause.5
-    
+label hg_pr_ClassmateTouchYou_complete:
+    call hg_pr_EnterRoom_block
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
     m "Did you complete your task?"
@@ -1248,37 +1155,22 @@ label new_request_10_complete: #<===============================================
                     her "And they kissed..."
                     her "I suddenly felt like the third wheel in that situation, so I just slipped away quietly..."
                     m "I see..."
-                    
-
+    
     $ gryffindor +=25
     m "The \"Gryffindor\" house gets 25 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-
-
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
     
-    call music_block
+    $ hg_pr_points[hg_pr_ClassmateTouchYou_ID] += 1
+    $ hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID] = False
     
-    $ request_10_points += 1 
-    $ request_10 = False 
-    $ hermione_sleeping = True
+    call hg_pr_transition_block
     return
     
-###################REQUEST_15 (Level 04) (35 pt.) (Flash your tits to a boy). (Available during daytime only).
-label new_request_15: #LV.4 (Whoring = 9 - 11)
+    
+##(Level 04) (35 pt.) (Flash your tits to a boy). (Available during daytime only).
+label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
     
     hide screen hermione_main 
     with d3
@@ -1290,7 +1182,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_15_points == 0: # <================================================================================ FIRST TIME
+    if hg_pr_points[hg_pr_FlashClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
         m "I would like to award \"Gryffindor\" with 25 house points today."
         call her_main("Really?","body_01",xpos=140)
@@ -1302,7 +1194,7 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
         call her_main("...?","body_02")
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","body_48")
-        if whoring <=8 or request_10_points <= 1: # request_10_points - counts how many times Hermione been sent to let boys touch her.
+        if whoring <=8 or hg_pr_points[hg_pr_ClassmateTouchYou_ID] <= 1:
             jump too_much
         her "[genie_name]!"
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -1380,37 +1272,16 @@ label new_request_15: #LV.4 (Whoring = 9 - 11)
             call her_main("Classes are about to start... I'd better leave now.","body_45")
             her "I will see you later tonight, [genie_name]."
     
-    $ request_15 = True
+    $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = True
 
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    call music_block
-    
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_15_complete:
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+label hg_pr_FlashClassmate_complete:
+    call hg_pr_EnterRoom_block
     
     if whoring >= 9 and whoring <= 11: # LEVEL 04 <=============================================================EVENT LEVEL 01                    
         if one_out_of_three == 1: ### EVENT (A)
-                show screen hermione_blink
-                with d3
                 call her_main("Good evening, [genie_name]...","body_31",xpos=370)
                 m "[hermione_name]..."
                 m "So, how did it go?"
@@ -1428,9 +1299,7 @@ label new_request_15_complete:
                 call her_main("Thank you, [genie_name]...","body_29")
                 her "..."
                 her "I'd better go now."
-                $ request_15 = False 
-                $ hermione_sleeping = True
-                $ request_15_points += 1 
+                $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = False
                 jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         elif one_out_of_three == 2: ### EVENT (B)
@@ -1698,6 +1567,11 @@ label new_request_15_complete:
     m "The \"Gryffindor\" house gets 35 points!"
     her "Thank you, [genie_name]."
     
+    $ hg_pr_points[hg_pr_FlashClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = False
+    
+    $ hermione_sleeping = True
+    
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
@@ -1706,7 +1580,6 @@ label new_request_15_complete:
     with d3
     
     call her_walk(400,610,2)
-    
     show screen hermione_stand_f #Hermione stands still.
     pause.3
     
@@ -1730,16 +1603,13 @@ label new_request_15_complete:
     hide screen hermione_stand_f #Hermione stands still.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with d3
-    
-    $ request_15_points += 1 
-    $ request_15 = False 
-    $ hermione_sleeping = True
-    
     call music_block
+    
     return
     
-###################REQUEST_20 (Level 05) (45 pt.) (MAKE OUT WITH A GIRL). (Available during daytime only). #####################################################################################
-label new_request_20: #LV.5 (Whoring = 12 - 14)
+    
+##(Level 05) (45 pt.) (MAKE OUT WITH A GIRL). (Available during daytime only).
+label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
     
     hide screen hermione_main 
     with d3
@@ -1751,10 +1621,10 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_20_points == 0: # <================================================================================ FIRST TIME
+    if hg_pr_points[hg_pr_KissAGirl_ID] == 0: # <================================================================================ FIRST TIME
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!","body_07",xpos=140)
-        if whoring <=11 or request_15_points <= 1: # Counts how many times you sent Hermione to flash a classmate.
+        if whoring <=11 or hg_pr_points[hg_pr_FlashClassmate_ID] <= 1: # Counts how many times you sent Hermione to flash a classmate.
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         call her_main("I am not a... lesbian, [genie_name].","body_02")
@@ -1806,36 +1676,13 @@ label new_request_20: #LV.5 (Whoring = 12 - 14)
             call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","body_64")
             m "Great. See you after your classes then."
     
-    $ request_20 = True
+    $ hg_pr_InProgress[hg_pr_KissAGirl_ID] = True
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-
-    $ hermione_takes_classes = True
-    
-    call music_block 
-    
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_20_complete: # <=================================================================================================== EVENING
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-    
-    $ request_20 = False 
+label hg_pr_KissAGirl_complete:
+    call hg_pr_EnterRoom_block
     
     if whoring >= 12 and whoring <= 14: # LEVEL 05                    
         if one_out_of_three == 1: ### EVENT (A)
@@ -2226,28 +2073,15 @@ label new_request_20_complete: # <==============================================
     m "The \"Gryffindor\" house gets 45 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_points[hg_pr_KissAGirl_ID] += 1
+    $ hg_pr_InProgress[hg_pr_KissAGirl_ID] = False
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ request_20_points += 1 
-    $ request_20 = False 
-    $ hermione_sleeping = True
-    
-    call music_block
-    
+    call hg_pr_transition_block
     return
     
-###################REQUEST_23 (Level 06) (55 pt.) (Give handjob to a classmate). (Available during daytime only).#####################################################################################
-label new_request_23: #LV.6 (Whoring = 15 - 17)
+    
+##(Level 06) (55 pt.) (Give handjob to a classmate). (Available during daytime only).
+label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
     
     $ current_payout = 55 #Used when haggling about price of the favour.
     
@@ -2261,8 +2095,8 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_23_points == 0: # <================================================================================ FIRST TIME
-        if whoring <=14 or request_20_points <= 1: # Counts how many times you sent Hermione to kiss a girl.
+    if hg_pr_points[hg_pr_HandjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
+        if whoring <=14 or hg_pr_points[hg_pr_KissAGirl_ID] <= 1:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","body_07",xpos=140)
             m "I want you to give a handjob to one of your classmates."
@@ -2340,32 +2174,13 @@ label new_request_23: #LV.6 (Whoring = 15 - 17)
             m "And report back to me after your classes, as usual."
             call her_main("Of course, [genie_name].","body_74")
     
-    $ request_23 = True
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = True
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    call music_block
-    
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_23_complete: # <=================================================================================================== EVENING
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+label hg_pr_HandjobClassmate_complete:
+    call hg_pr_EnterRoom_block
     
     if whoring >= 15 and whoring <= 17: # LEVEL 06                    
         if one_out_of_three == 1: ### EVENT (A)
@@ -2405,9 +2220,7 @@ label new_request_23_complete: # <==============================================
                     m "You are free to go, [hermione_name]."
                     call her_main(".........","body_69")
                     $ mad +=9
-                    $ request_23_points += 1 
-                    $ request_23 = False 
-                    $ hermione_sleeping = True
+                    $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
                 "\"You shall only get half the payment then.\"":
                     $ current_payout = 27 #Used when haggling about price of th favour.
@@ -2525,8 +2338,7 @@ label new_request_23_complete: # <==============================================
                     call her_main("......","body_117")
                     call her_main("This is just not fair!","body_32")
                     $ mad +=20
-                    $ request_23 = False 
-                    call music_block
+                    $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
                 "\"Alright, I think I can trust you.\"":
                     call her_main("Thank you, [genie_name].","body_45")
@@ -2786,31 +2598,18 @@ label new_request_23_complete: # <==============================================
     m "The \"Gryffindor\" house gets [current_payout] points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
     
-    $ request_23_points += 1 
-    $ request_23 = False 
-    $ hermione_sleeping = True
-
-    call music_block
-
+    $ hg_pr_points[hg_pr_HandjobClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = False
+    
+    call hg_pr_transition_block
     return
     
-###################REQUEST_24 (Level 07) (65 pt.) (Blowjob to a boy). (Available during daytime only).
-label new_request_24: #LV.7 (Whoring = 18 - 20)
+    
+##(Level 07) (65 pt.) (Blowjob to a boy). (Available during daytime only).
+label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
     
     hide screen hermione_main 
     with d3
@@ -2822,7 +2621,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_24_points == 0: # <================================================================================ FIRST TIME
+    if hg_pr_points[hg_pr_BlowjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name], I will be buying another favour from you today."
         call her_main("Thank you, [genie_name]. I really appreciate it.","body_16",xpos=140)
         m "Sure, Happy to help."
@@ -2830,7 +2629,7 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
         stop music fadeout 1.0
         call her_main("!!!","body_48")
         her "...with my mouth?"
-        if whoring <=17 or request_23_points <= 1: # Counts how many times you sent Hermione to give a handjob to a boy.
+        if whoring <=17 or hg_pr_points[hg_pr_HandjobClassmate_ID] <= 1:
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "Yes, that's how it's usually done..."
@@ -2878,32 +2677,13 @@ label new_request_24: #LV.7 (Whoring = 18 - 20)
             m "Report back to me after your classes as usual..."
             call her_main("Of course...","body_69")
     
-    $ request_24 = True
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_InProgress[hg_pr_BlowjobClassmate_ID] = True
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    call music_block
-
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_24_complete:  # <=================================================================================================== EVENING
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+label hg_pr_BlowjobClassmate_complete:
+    call hg_pr_EnterRoom_block
     
     if whoring >= 18 and whoring <= 20: # LEVEL 07                    
         if one_out_of_three == 1: ### EVENT (A)
@@ -2956,10 +2736,7 @@ label new_request_24_complete:  # <=============================================
             hide screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3   
             $ display_h_tears = False
-            $ request_24_points += 1 
-            $ request_24 = False 
-            $ hermione_sleeping = True
-            call music_block
+            $ hg_pr_InProgress[hg_pr_BlowjobClassmate_ID] = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         elif one_out_of_three == 3: ### EVENT (C)
@@ -3100,34 +2877,21 @@ label new_request_24_complete:  # <=============================================
     m "The \"Gryffindor\" house gets 65 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
     $ display_h_tears = False
     $ aftersperm = False
     $ uni_sperm = False
     
     $ public_whore_ending = True #Activates "Public Whore" ending.
     
-    $ request_24_points += 1 
-    $ request_24 = False 
-    $ hermione_sleeping = True
+    $ hg_pr_points[hg_pr_BlowjobClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_BlowjobClassmate_ID] = False
     
-    call music_block
-    
+    call hg_pr_transition_block
     return
     
-label pub_quest_blowjob_teach:# "teacher blowjob" (Level 09)
     
+##(Level ??) (?? pt.) (Blowjob to a teacher). (Available during daytime only).
+label hg_pr_BlowjobTeacher:# "teacher blowjob" (Level ??)
     hide screen hermione_main 
     with d3
     m "{size=-4}(Tell her to give a blowjob to one of her teachers?){/size}"
@@ -3138,7 +2902,9 @@ label pub_quest_blowjob_teach:# "teacher blowjob" (Level 09)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if whoring >= 15:
+    if whoring < 15:
+        jump too_much
+    else:
         m "Today's favour shall be..."
         call her_main(".........",117,140)
         m "A Blowjob with Professor Snape!"
@@ -3151,36 +2917,14 @@ label pub_quest_blowjob_teach:# "teacher blowjob" (Level 09)
         m "And report back to me after your classes, as usual."
         call her_main("Of course, sir.",74)
     
-    #$ teacher_blowjob_complete = True
-    $ pub_q_blowjob_teach = True
+    $ hg_pr_InProgress[hg_pr_BlowjobTeacher_ID] = True
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    call music_block
-    
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label pub_quest_blowjob_teach_complete:
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(610,400,3,redux_pause=0.5)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+label hg_pr_BlowjobTeacher_complete:
+    call hg_pr_EnterRoom_block
     
-    show screen hermione_blink
-    with d3
     call her_main("Good evening, sir...","body_01",xpos=370,ypos=0)
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     m "You know the drill, girl. Start talking."
@@ -3238,29 +2982,16 @@ label pub_quest_blowjob_teach_complete:
     m "You can go now."
     her "Good night, sir."
     #m "Yes, good night..."
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
     
-    call her_walk(400,610,2)
+    $ hg_pr_points[hg_pr_BlowjobTeacher_ID] += 1
+    $ hg_pr_InProgress[hg_pr_BlowjobTeacher_ID] = False
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    #$ teacher_blowjob_complete = False #When False - you gave her her panties back.
-    $ pub_q_blowjob_teach = False
-    $ hermione_sleeping = True
-
-    play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-
+    call hg_pr_transition_block
     return    
     
-###################REQUEST_30 (Level 08) (75 pt.) (FUCK A CLASSMATE). (Available during daytime only).
-label new_request_30: #LV.8 (Whoring = 21 - 23)
+    
+##(Level 08) (75 pt.) (FUCK A CLASSMATE). (Available during daytime only).
+label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
 
     hide screen hermione_main 
     with d3
@@ -3272,10 +3003,10 @@ label new_request_30: #LV.8 (Whoring = 21 - 23)
         "\"(Not right now.)\"":
             jump new_personal_request
     
-    if request_30_points == 0: # <================================================================================ FIRST TIME
+    if hg_pr_points[hg_pr_SexWithClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
-        if whoring <=20 or request_24_points <= 1: # Counts how many times you sent Hermione to give blowjob to a boy.
+        if whoring <=20 or hg_pr_points[hg_pr_BlowjobClassmate_ID] <= 1:
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         call her_main("..............","body_47",xpos=140)
@@ -3292,26 +3023,13 @@ label new_request_30: #LV.8 (Whoring = 21 - 23)
         call her_main("Again, [genie_name]?","body_117",xpos=140)
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...","body_79")
-        
-    $ request_30 = True
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = True
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label new_request_30_complete: # <=================================================================================================== EVENING
     
+label hg_pr_SexWithClassmate_complete:
     # LEVEL 08+                
     if one_out_of_three == 1: ### EVENT (A)
         if fucked_ron_and_har:
@@ -3322,20 +3040,15 @@ label new_request_30_complete: # <==============================================
         m ".........."
         m "She was supposed to be here, by now..."
         m "Hm..."
-        $ request_30_points += 1 
-        $ request_30 = False 
+        $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+        $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
         $ hermione_sleeping = True
-        $ request_30_a = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+        $ hg_pr_SexWithClassmate_AltFlag = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
         return
         # NEXT MORNING
     
     elif one_out_of_three == 2: ### EVENT (B)
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        call her_walk(520,400,2)
-        show screen hermione_blink #Hermione stands still.
-        pause.5
-        show screen bld1
-        with Dissolve(.3)
+        call hg_pr_EnterRoom_block
         m "[hermione_name], did you complete your task?"
         show screen blktone
         with d3
@@ -3361,12 +3074,7 @@ label new_request_30_complete: # <==============================================
     elif one_out_of_three == 3: ### EVENT (C)
         label returns_next_morning:
             pass
-        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        call her_walk(520,400,2)
-        show screen hermione_blink #Hermione stands still.
-        pause.5
-        show screen bld1
-        with Dissolve(.3)
+        call hg_pr_EnterRoom_block
         m "[hermione_name], did you complete your task?"
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         call her_main("I did, [genie_name].","body_120",xpos=370)
@@ -3390,35 +3098,16 @@ label new_request_30_complete: # <==============================================
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ request_30_points += 1 
-    $ request_30 = False 
-    $ hermione_sleeping = True
-    
-    call music_block
-    
+    call hg_pr_transition_block
     return
-label new_request_30_complete_a: #Hermione does not show up. This is label where she shows up next morning.
-    $ request_30_a = False #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(520,400,2)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-            
+label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label where she shows up next morning.
+    $ hg_pr_SexWithClassmate_AltFlag = False #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
+    call hg_pr_EnterRoom_block
+    
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     m "[hermione_name], you missed your debriefing yesterday."
     call her_main("Yes, [genie_name], I apologize... *yawn*...","body_16",xpos=370)
@@ -3443,27 +3132,16 @@ label new_request_30_complete_a: #Hermione does not show up. This is label where
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
     
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    $ request_30_points += 1 
-    $ request_30 = False 
-    $ hermione_takes_classes = True
-    
-    call music_block 
-    
+    call hg_pr_transition_block
     return
     
-label pub_quest_sex_teach:# "teacher sex" (Level 09)
+    
+
+##(Level ??) (?? pt.) (Sex with teacher). (Available during daytime only).
+label hg_pr_SexWithTeacher:# "teacher sex" (Level 09)
     hide screen hermione_main 
     with d3
     m "{size=-4}(Tell her to have sex with one of her teachers?){/size}"
@@ -3474,7 +3152,9 @@ label pub_quest_sex_teach:# "teacher sex" (Level 09)
         "\"(Not right now.)\"":
             jump new_personal_request
             
-    if whoring >= 20:
+    if whoring < 20:
+        jump too_much
+    else:
         m "Today's favour shall be..."
         call her_main(".........","body_117",xpos=140)
         m "To have sex with Professor Snape!"
@@ -3488,36 +3168,14 @@ label pub_quest_sex_teach:# "teacher sex" (Level 09)
         m "Excellent i expect a very detailed report this evening."
         call her_main("Of course, sir.","body_74")
     
-    #$ teacher_sex_complete = True
-    $ pub_q_sex_teach = True
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
+    $ hg_pr_InProgress[hg_pr_SexWithTeacher_ID] = True
     
-    call her_walk(400,610,2)
-    
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-
-    call music_block
-    
-    $ hermione_takes_classes = True
+    call hg_pr_transition_block
     jump day_main_menu
-label pub_quest_sex_teach_complete:
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(610,400,3,redux_pause=0.5)
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+label hg_pr_SexWithTeacher_complete:
+    call hg_pr_EnterRoom_block
     
-    show screen hermione_blink
-    with d3
     call her_main("Good evening, sir...","body_01",xpos=370,ypos=0)
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     m "You're a bit late this evening."
@@ -3579,30 +3237,52 @@ label pub_quest_sex_teach_complete:
     m "You can go now."
     her "Good night, sir."
     m "Yes, good night..."
-
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
     
-    call her_walk(400,610,2)
+    $ hg_pr_points[hg_pr_SexWithTeacher_ID] += 1
+    $ hg_pr_InProgress[hg_pr_SexWithTeacher_ID] = False
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
-    
-    #$ teacher_sex_complete = False #When False - you gave her her panties back.
-    $ pub_q_sex_teach = False
-    $ hermione_sleeping = True
-
-    play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-
+    call hg_pr_transition_block
     return
     
     
     
     
+label hg_pr_transition_block:
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone
+    hide screen hermione_blink
+    hide screen ctc
+    with d3
     
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    
+    call music_block
+    
+    if daytime:
+        $ hermione_takes_classes = True
+    else:
+        $ hermione_sleeping = True
+    return
+    
+label hg_pr_EnterRoom_block:
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(520,400,2)
+    show screen hermione_blink #Hermione stands still.
+    pause.5
+    show screen bld1
+    with Dissolve(.3)
+    show screen hermione_blink
+    with d3
+    return
+    
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(520,400,2)
+    show screen hermione_blink
+    show screen bld1
+    with d3
+    pause.5
     
     

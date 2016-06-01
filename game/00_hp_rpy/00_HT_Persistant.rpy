@@ -137,6 +137,7 @@ label __init_variables:
     if not hasattr(renpy.store,'luna_wear_glasses'): #important!
         call luna_init
     
+    
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
         $ new_request_01_heart = 0
     if not hasattr(renpy.store,'new_request_02_heart'): #important!
@@ -162,18 +163,16 @@ label __init_variables:
     if not hasattr(renpy.store,'new_request_31_heart'): #important!
         $ new_request_31_heart = 0
     
-    if not hasattr(renpy.store,'pub_q_blowjob_teach'): #important!
-        $ pub_q_blowjob_teach = False
     if not hasattr(renpy.store,'pub_q_sex_teach'): #important!
         $ pub_q_sex_teach = False
-    if not hasattr(renpy.store,'per_q_the_gamble'): #important!
-        $ per_q_the_gamble = False
-    if not hasattr(renpy.store,'per_q_the_gamble_a'): #important!
-        $ per_q_the_gamble_a = False
-    if not hasattr(renpy.store,'per_q_the_gamble_b'): #important!
-        $ per_q_the_gamble_b = False
-    if not hasattr(renpy.store,'per_q_the_gamble_c'): #important!
-        $ per_q_the_gamble_c = False
+    if not hasattr(renpy.store,'hg_pf_TheGamble_Flag'): #important!
+        $ hg_pf_TheGamble_Flag = False
+    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagA'): #important!
+        $ hg_pf_TheGamble_FlagA = False
+    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagB'): #important!
+        $ hg_pf_TheGamble_FlagB = False
+    if not hasattr(renpy.store,'hg_pf_TheGamble_FlagC'): #important!
+        $ hg_pf_TheGamble_FlagC = False
     
 
     if not hasattr(renpy.store,'hair_style'): #important!

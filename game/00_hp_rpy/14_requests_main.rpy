@@ -12,37 +12,37 @@ label new_personal_request:
                 label not_now2:
                 ### LEVEL 01 ###
                 menu:
-                    "Favour: \"Talk to me\" {image=heart_0[new_request_01_heart]}   {image=interface/clothes.png}":
-                        jump new_request_01
+                    "Favour: \"Talk to me\" {image=heart_0[hg_pf_hearts[hg_pf_TalkToMe_ID]]}   {image=interface/clothes.png}":
+                        jump hg_pf_TalkToMe
 
-                    "Favour: \"Nice panties\" {image=heart_0[new_request_02_heart]}": # LEVEL 1
-                        jump new_request_02
+                    "Favour: \"Nice panties\" {image=heart_0[hg_pf_hearts[hg_pf_NicePanties_ID]]}": # LEVEL 1
+                        jump hg_pf_NicePanties
                   
                     ### LEVEL 02 ###
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Panty thief\" {image=heart_0[new_request_03_heart]}" if imagination >= 2:
-                        jump new_request_03
+                    "Favour: \"Panty thief\" {image=heart_0[hg_pf_hearts[hg_pf_PantyThief_ID]]}" if imagination >= 2:
+                        jump hg_pf_PantyThief
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Breast molester\" {image=heart_0[new_request_04_heart]}   {image=interface/clothes.png}" if imagination >= 2: 
-                        jump new_request_04
+                    "Favour: \"Breast molester\" {image=heart_0[hg_pf_hearts[hg_pf_BreastMolester_ID]]}   {image=interface/clothes.png}" if imagination >= 2: 
+                        jump hg_pf_BreastMolester
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Butt molester\" {image=heart_0[new_request_05_heart]}   {image=interface/clothes.png}" if imagination >= 2:
-                        jump new_request_05
+                    "Favour: \"Butt molester\" {image=heart_0[hg_pf_hearts[hg_pf_ButtMolester_ID]]}   {image=interface/clothes.png}" if imagination >= 2:
+                        jump hg_pf_ButtMolester
                         
                     ### LEVEL 03 ### IMAGINATION == 3
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Show them to me!\" {image=heart_0[new_request_08_heart]}   {image=interface/clothes.png}" if imagination >= 3:
-                        jump new_request_08
+                    "Favour: \"Show them to me!\" {image=heart_0[hg_pf_hearts[hg_pf_ShowThemToMe_ID]]}   {image=interface/clothes.png}" if imagination >= 3:
+                        jump hg_pf_ShowThemToMe
                         
 #                    "Favour: \"Show {size=+5}it{/size} to me! (NOT FINISHED YET)":
 #                        jump new_request_09
@@ -51,42 +51,42 @@ label new_personal_request:
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Dance for me!\" {image=heart_0[new_request_11_heart]}   {image=interface/clothes.png}" if imagination >= 3:
-                        jump new_request_11
+                    "Favour: \"Dance for me!\" {image=heart_0[hg_pf_hearts[hg_pf_DanceForMe_ID]]}   {image=interface/clothes.png}" if imagination >= 3:
+                        jump hg_pf_DanceForMe
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let me touch them!\" {image=heart_0[new_request_12_heart]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
-                        jump new_request_12
+                    "Favour: \"Let me touch them!\" {image=heart_0[hg_pf_hearts[hg_pf_LetMeTouchThem_ID]]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
+                        jump hg_pf_LetMeTouchThem
                         
                     ### LEVEL 05 ### IMAGINATION == 4
                     "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"touch me!\" {image=heart_0[new_request_16_heart]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
-                        jump new_request_16
+                    "Favour: \"touch me!\" {image=heart_0[hg_pf_hearts[hg_pf_TouchMe_ID]]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
+                        jump hg_pf_TouchMe
                         
                     ### LEVEL 06 ### IMAGINATION == 4
                     "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Suck it!\" {image=heart_0[new_request_22_heart]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 6
-                        jump new_request_22
+                    "Favour: \"Suck it!\" {image=heart_0[hg_pf_hearts[hg_pf_SuckIt_ID]]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 6
+                        jump hg_pf_SuckIt
                         
                     ### LEVEL 07 ### IMAGINATION == 5
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let's have sex!\" {image=heart_0[new_request_29_heart]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
-                        jump new_request_29
+                    "Favour: \"Let's have sex!\" {image=heart_0[hg_pf_hearts[hg_pf_LetsHaveSex_ID]]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
+                        jump hg_pf_LetsHaveSex
                     
                     ### LEVEL 08 ###
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour:  \"Time for anal!\" {image=heart_0[new_request_31_heart]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
-                        jump new_request_31
+                    "Favour:  \"Time for anal!\" {image=heart_0[hg_pf_hearts[hg_pf_TimeForAnal_ID]]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
+                        jump hg_pf_TimeForAnal
                     
                     "-Cancel-":
                         jump new_personal_request
@@ -334,9 +334,6 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
-    $ request_02_b_points += 1
-    $ request_02_b = False 
-    
     call music_block
     
     if daytime:
@@ -344,6 +341,7 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     else:
         $ hermione_sleeping = True
     return
+    
 label could_not_flirt_02: #Sent here when chose "Favour failed! No points for you!"
     hide screen bld1
     hide screen hermione_main
@@ -357,10 +355,7 @@ label could_not_flirt_02: #Sent here when chose "Favour failed! No points for yo
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
-    $ request_02_b_points += 1
-    $ request_02_b = False 
     $ hermione_sleeping = True
-    
     return   
     
     
@@ -470,6 +465,8 @@ label screams_of_pleasure:
     
 label Day_Request_Block:
     
+    if hg_pr_SexWithClassmate_AltFlag:#Hermione does not show up. This sends to label where she shows up next morning.
+        call hg_pr_SexWithClassmate_Alt
     
     return
     
@@ -497,51 +494,32 @@ label Night_Request_Block:
         jump potion_scene_3_2
     
     
-    if request_02_b:
-        call new_request_02_b_complete
-    if request_02_c:
-        call new_request_02_c_complete
     if hg_pf_PantyThief_InProgressFlag:
         call hg_pf_PantyThief_complete
-    if request_05:
-        call new_request_05_complete
-    if request_06:
-        call new_request_06_complete
-    if request_10:
-        call new_request_10_complete
-    #if request_13: # SEE THROUGH SHIRT DURING CLASS. NOT USED.
-    #    call request_13_complete
-    if request_15: #(Flash a nipple to a teacher).
-        call new_request_15_complete
-    if request_20: #(Grab a classmate's cock).
-        call new_request_20_complete
-    if request_21: #(Jerk off on tits and put the clothes back on).
-        call new_request_21_complete
-    if request_23: #(Give handjob to a classmate).
-        call new_request_23_complete
-    if request_24: #(Flash your tits to a teacher).
-        call new_request_24_complete
-    if request_25: #(Cum on face and send to class).
-        call new_request_25_complete
-    if request_26: #(Go to class with mouth full of cum).
-        call new_request_26_complete
-    if request_27: #(Blow two classmates).
-        call new_request_27_complete
-    if request_28: #(Handjob to a teacher).
-        call new_request_28_complete
-    if request_30: #(FUCK A CLASSMATE).
-        call new_request_30_complete
-    if request_32: #(Put on a slutty dress and go to classes).
-        call new_request_32_complete
-    if request_33: #(Go to classes with cum covered face).
-        call new_request_33_complete
-    if pub_q_blowjob_teach:#pub_q_blowjob_teach
-        call pub_quest_blowjob_teach_complete
-    if pub_q_sex_teach:#pub_q_sex_teach
-        call pub_quest_sex_teach_complete
-    
-    if per_q_the_gamble and per_q_the_gamble_c or per_q_the_gamble_a:
+    if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
         jump hg_pf_TheGamble_complete
+    
+    if hg_pr_InProgress[hg_pr_FlirtClassmate_ID]:
+        call hg_pr_FlirtClassmate_complete
+    if hg_pr_InProgress[hg_pr_FlirtTeacher_ID]:
+        call hg_pr_FlirtTeacher_complete
+    if hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID]:
+        call hg_pr_ClassmateTouchYou_complete
+    if hg_pr_InProgress[hg_pr_FlashClassmate_ID]:
+        call hg_pr_FlashClassmate_complete
+    if hg_pr_InProgress[hg_pr_KissAGirl_ID]:
+        call hg_pr_KissAGirl_complete
+    if hg_pr_InProgress[hg_pr_HandjobClassmate_ID]:
+        call hg_pr_HandjobClassmate_complete
+    if hg_pr_InProgress[hg_pr_BlowjobClassmate_ID]:
+        call hg_pr_BlowjobClassmate_complete
+    if hg_pr_InProgress[hg_pr_BlowjobTeacher_ID]:
+        call hg_pr_BlowjobTeacher_complete
+    if hg_pr_InProgress[hg_pr_SexWithClassmate_ID]:
+        call hg_pr_SexWithClassmate_complete
+    if hg_pr_InProgress[hg_pr_SexWithTeacher_ID]:
+        call hg_pr_SexWithTeacher_complete
+        
     
     return
     

@@ -171,102 +171,79 @@ $ hg_whoring_lvl = 0
 
 
 ### Personal Favor ID's ###
-$ hg_pf_TalkToMe_ID = 1        #01 Genie touches himself.
-$ hg_pf_NicePanties_ID = 2     #02 "Lift your skirt".
-$ hg_pf_PantyThief_ID = 3      #03 "Give me your panties."
-$ hg_pf_BreastMolester_ID = 4  #03 "Molest tits."
-$ hg_pf_ButtMolester_ID = 5    #04 "Molest butt."
-$ hg_pf_ShowThemToMe_ID = 6    #05 "Show me your tits."
-$ hg_pf_DanceForMe_ID = 7      #07 "Get naked."
-$ hg_pf_LetMeTouchThem_ID = 8  #08 "Let me play with your tits."
-$ hg_pf_TouchMe_ID = 9         #11 (Handjob).
-$ hg_pf_SuckIt_ID = 10         #12 (Blowjob).
-$ hg_pf_LetsHaveSex_ID = 11    #13 (Sex).
-$ hg_pf_TimeForAnal_ID = 12    #14 (Anal sex)
+$ hg_pf_TalkToMe_ID = 0        #00 Genie touches himself.
+$ hg_pf_NicePanties_ID = 1     #01 "Lift your skirt".
+$ hg_pf_PantyThief_ID = 2      #02 "Give me your panties."
+$ hg_pf_BreastMolester_ID = 3  #03 "Molest tits."
+$ hg_pf_ButtMolester_ID = 4    #04 "Molest butt."
+$ hg_pf_ShowThemToMe_ID = 5    #05 "Show me your tits."
+$ hg_pf_DanceForMe_ID = 6      #06 "Get naked."
+$ hg_pf_LetMeTouchThem_ID = 7  #07 "Let me play with your tits."
+$ hg_pf_TouchMe_ID = 8         #08 (Handjob).
+$ hg_pf_SuckIt_ID = 9          #09 (Blowjob).
+$ hg_pf_LetsHaveSex_ID = 10    #10 (Sex).
+$ hg_pf_TimeForAnal_ID = 11    #11 (Anal sex)
+$ hg_pf_TheGamble_ID = 12      #12 (Gamble with hg)
 
 #Personal Favor Points
-$ hg_pf_points = [0] * 12
-$ hg_pf_hearts = [0] * 12
-$ hg_pf_complete = [False] * 12
+if not hasattr(renpy.store,'hg_pf_points'): #important!
+    $ hg_pf_points = [0] * 13
+if not hasattr(renpy.store,'hg_pf_hearts'): #important!
+    $ hg_pf_hearts = [0] * 13
+if not hasattr(renpy.store,'hg_pf_complete'): #important!
+    $ hg_pf_complete = [False] * 13
 
 #Personal Favor Flags
-$ hg_pf_PantyThief_InProgressFlag = False
-$ hg_pf_PantyThief_SoakedPantiesFlag = False
+if not hasattr(renpy.store,'hg_pf_PantyThief_InProgressFlag'): #important!
+    $ hg_pf_PantyThief_InProgressFlag = False
+if not hasattr(renpy.store,'hg_pf_PantyThief_SoakedPantiesFlag'): #important!
+    $ hg_pf_PantyThief_SoakedPantiesFlag = False
 
 
 
 ### Public Request ID's ###
-$ hg_pr_FlirtClassmate_ID = 1 #01 "Flirt with 3 classmates".
-$ hg_pr_FlirtTeacher_ID = 2 #02 "Flirt with a teacher".
-$ hg_pr_ClassmateTouchYou_ID = 3 #03 "Let a classmate molest you."
-$ hg_pr_FlashClassmate_ID = 4 #04 "Flash a classmate."
-$ hg_pr_KissAGirl_ID = 5 #05 "Kiss female classmate."
-$ hg_pr_HandjobClassmate_ID = 6 #06 (Give handjob to a classmate)
-$ hg_pr_blowjobClassmate_ID = 7 #07 (Blow a classamate).
+$ hg_pr_FlirtClassmate_ID = 0 #00 "Flirt with 3 classmates".
+$ hg_pr_FlirtTeacher_ID = 1 #01 "Flirt with a teacher".
+$ hg_pr_ClassmateTouchYou_ID = 2 #02 "Let a classmate molest you."
+$ hg_pr_FlashClassmate_ID = 3 #03 "Flash a classmate."
+$ hg_pr_KissAGirl_ID = 4 #04 "Kiss female classmate."
+$ hg_pr_HandjobClassmate_ID = 5 #05 (Give handjob to a classmate)
+$ hg_pr_BlowjobClassmate_ID = 6 #06 (Blow a classamate).
+$ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
 $ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
+$ hg_pr_SexWithTeacher_ID = 9 #09 (sex with teacher)
 
 #Public Request Points
-$ hg_pr_points = [0] * 8
-$ hg_pr_complete = [False] * 8
+if not hasattr(renpy.store,'hg_pr_points'): #important!
+    $ hg_pr_points = [0] * 11
+if not hasattr(renpy.store,'hg_pr_complete'): #important!
+    $ hg_pr_complete = [False] * 11
+if not hasattr(renpy.store,'hg_pr_InProgress'): #important!
+    $ hg_pr_InProgress = [False] * 11
 
+#Public Request Flags
+if not hasattr(renpy.store,'hg_pr_SexWithClassmate_AltFlag'): #important!
+    $ hg_pr_SexWithClassmate_AltFlag = False
 
-
-
-
-
-$ request_01 = 0 #Genie touches himself.
-$ request_02 = 0 #"Lift your skirt".
-$ request_02_b_points = 0 #"Flirt with 3 classmates".
-$ request_02_c_points = 0 #"Flirt with a teacher".
-$ request_03_points = 0 #"Give me your panties."
-$ request_04_points = 0 #"Molest tits."
-$ request_05_points = 0 #"Molest butt."
-$ request_06_points = 0 #"Flash panties to a classmate."
-$ request_07_points = 0 #"Flash panties to a teacher."
-$ request_08_points = 0 #"Show me your tits."
-$ request_09_points = 0 #"Show me your pussy."
-$ request_10_points = 0 #"Flash nipple to a classmate."
-$ request_11_points = 0 #"Get naked."
-$ request_12_points = 0 #"Let me play with your tits."
-$ request_15_points = 0 #(Flash a nipple to a teacher)
-$ request_16_points = 0 #(Finger her pussy)
-$ request_17_points = 0 #(Stick a finger up her butthole.)
-$ request_18_points = 0 #(Handjob).
-$ request_19_points = 0 #(Rub dick against her cheeks.)
-$ request_20_points = 0 #(Grab a classmate's cock)
-$ request_21_points = 0 #(Cum on tits).
-$ request_22_points = 0 #(Blowjob).
-$ request_23_points = 0 #(Give handjob to a classmate)
-$ request_24_points = 0 #(Flash your tits to a teacher)
-$ request_25_points = 0 #(Cum on face and with enough whoring send to class with face covered in cum.)
-$ request_26_points = 0 #(Go to class with mouth full of cum).
-$ request_27_points = 0 #(Blow two classamates).
-$ request_28_points = 0 #(Give handjob to a teacher).
-$ request_29_points = 0 #(Sex).
-$ request_30_points = 0 #(Blow a teacher)
-$ request_31_points = 0 #(Anal sex)
-$ request_32_points = 0 #(Wear a very revealing outfit to class)
-
-###PERSONAL REQUESTS#####
-$ request_02_b = False #Flirt with 3 classmates.
-$ request_02_c = False #Flirt with a teacher.
-$ request_03 = False #Turns True when Hermione is sent on request No.3. (Goes to class without panties).
-$ request_05 = False #Turns True when Hermione is sent on request No.5. (Flash panties to a classmate).
-$ request_06 = False #Turns True when Hermione is sent on request No.6. (Flash panties to a teacher).
-$ request_10 = False #Turns True when Hermione is sent on request No.10. (Flash a nipple to a classmate).
-$ request_13 = False #Turns True when Hermione is sent on request No.13. (Wear a see-through shirt to class).
-$ request_15 = False #Turns True when Hermione is sent on request No.15. (Flash a nipple to a teacher).
-$ request_20 = False #Turns True when Hermione is sent on request No.20. (Grab a classmate's cock).
-$ request_21 = False #Turns True when Hermione is sent on request No.21. (Jerk off on tits and put the clothes back on).
-$ request_23 = False #Turns True when Hermione is sent on request No.23. (Give handjob to a classmate).
-$ request_24 = False #Turns True when Hermione is sent on request No.24. (Flash your tits to a teacher).
-$ request_25 = False #Turns True when Hermione is sent on request No.25. (Cum on face and send to class).
-$ request_26 = False #Turns True when Hermione is sent on request No.26. (Go to class with mouth full of cum).
-$ request_27 = False #Turns True when Hermione is sent on request No.27. (Blow two classamates).
-$ request_28 = False #Turns True when Hermione is sent on request No.28. (Handjob to a teacher).
-$ request_30 = False #Turns True when Hermione is sent on request No.30. (Blowjob to a teacher).
-$ request_32 = False #Turns True when Hermione is sent on request No.32. (Put on a slutty dress and go to classes).
-$ request_33 = False #Turns True when Hermione is sent on request No.33. (Go to classes with cum covered face).
+#Flirt with 3 classmates.
+#Flirt with a teacher.
+#(Goes to class without panties).
+#(Flash panties to a classmate).
+#(Flash panties to a teacher).
+#(Flash a nipple to a classmate).
+#(Wear a see-through shirt to class).
+#(Flash a nipple to a teacher).
+#(Grab a classmate's cock).
+#(Jerk off on tits and put the clothes back on).
+#(Give handjob to a classmate).
+#(Flash your tits to a teacher).
+#(Cum on face and send to class).
+#(Go to class with mouth full of cum).
+#(Blow two classamates).
+#(Handjob to a teacher).
+#(Blowjob to a teacher).
+#(Put on a slutty dress and go to classes).
+#(Go to classes with cum covered face).
 
 ###MITTY TEST VARS###
 $ request_jeans = False
@@ -376,7 +353,7 @@ screen statistics: #http://www.renpy.org/doc/html/screens.html
 
 
 
-
+jump day_start
 
 
 pause

@@ -29,8 +29,6 @@ label start_ht:
 
     $ public_whore_ending = False #If TRUE the game will end with "Public Whore Ending".
 
-    $ p_level_02_active = False #When turns TRUE public favors of level 02 become available.
-    $ p_level_03_active = False #When turns TRUE public favors of level 03 become available.
     $ p_level_04_active = False #When turns TRUE public favors of level 04 become available.
     $ p_level_05_active = False #When turns TRUE public favors of level 05 become available.
     $ p_level_06_active = False #When turns TRUE public favors of level 06 become available.
@@ -74,8 +72,6 @@ label start_ht:
     $ event14_happened = False #Turns TRUE after event_14
     $ event15_happened = False #Turns TRUE after event_15
     $ event16_happened = False #Turns TRUE after event_16
-
-    $ request_30_a = False #Turns true when hermione fails to show up after her "Fuck a classmate" favor. Runs an event next morning.
 
 ### 27_FINAL_EVENTS ###
     $ event_chairman_happened = False #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
