@@ -38,7 +38,7 @@ label event_00:
     with Dissolve(.3)
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     show screen ctc
     with Dissolve(.3)
@@ -91,7 +91,7 @@ label event_00:
             call sna_main("","snape_04")
             who2 "Albus I'm not in the mood for your... shenanigans."
         "\"Take me to your leader.\"":
-            $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+            $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
             show screen snape_main
             with d3
             who2 "What?"
@@ -102,20 +102,20 @@ label event_00:
             who2 "I would rather avoid having to deal with that bureaucrat..."
             m "Fine, never mind... How can I be of help?"
             
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     who2 "I have something important I need to discuss with you..."
     who2 "I think we need to revise our admittance policy." 
     hide screen snape_main
     with d3
     m "................?"
-    $ s_sprite = "01_hp/10_snape_main/snape_03.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"
     show screen snape_main
     with d3
     who2 "Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis."
     hide screen snape_main
     with d3
     m "................"
-    $ s_sprite = "01_hp/10_snape_main/snape_07.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_07.png"
     show screen snape_main
     who2 "Most of them belong to your precious \"gryffindor\" house of course..."
     hide screen snape_main
@@ -123,41 +123,41 @@ label event_00:
     m "......?"
     show screen snape_main
     who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
-    $ s_sprite = "01_hp/10_snape_main/snape_08.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_08.png"
     who2 "{size=+3}The Potter boy!{/size}"
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     who2 "Mark my words, Albus. The \"gryffindor house\" will become this school's undoing!"
     hide screen snape_main
     m "...................."
     show screen snape_main
     who2 "Nothing but annoying maggots, the lot of them!"
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     who2 "And if that wasn't enough, now they spread all sorts of nasty rumours about the teachers!"
     who2 "Particularly about yours truly..."
     hide screen snape_main
     m "......................"
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
     show screen snape_main
     who2 "You don't believe those rumours, do you Albus?"
     hide screen snape_main
     menu:
         m ".............."
         "\"Well, of course not!\"":
-            $ s_sprite = "01_hp/10_snape_main/snape_09.png"
+            $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
             show screen snape_main
             who2 "Good..."
             who2 "You know me better than that. I wouldn't care for such things..."
         "\"Where there's smoke, there's fire.\"":
-            $ s_sprite = "01_hp/10_snape_main/snape_10.png"
+            $ s_sprite = "01_hp/13_characters/snape/main/snape_10.png"
             show screen snape_main
             who2 "Albus?! You can't be serious!"
             who2 "Those are nothing but filthy lies, I'm telling you!"
     hide screen snape_main
     m "........................."
-    $ s_sprite = "01_hp/10_snape_main/snape_04.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"
     show screen snape_main
     who2 "Well, those wretched kids left me completely exhausted, I think I will retire for today."
-    $ s_sprite = "01_hp/10_snape_main/snape_09.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
     who2 "................"
     
     stop music fadeout 1.0
@@ -303,7 +303,7 @@ label event_03:
     m "{size=-3}(That broody guy again...){/size}"
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     with Dissolve(.3)
     who2 "Albus!"
@@ -409,7 +409,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
     with Dissolve(.3)
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     show screen ctc
     with Dissolve(.3)
@@ -497,7 +497,7 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
             ">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer."
             hide screen blktone
             with d3
-            $ s_sprite = "01_hp/10_snape_main/snape_03.png"                                                                               #SNAPE
+            $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"                                                                               #SNAPE
             show screen snape_main                                                                                                                                #SNAPE
             with d3                                                                                                                                                                  #SNAPE
             who2 "!!?"
@@ -822,7 +822,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     with Dissolve(.3)
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     show screen ctc
     with Dissolve(.3)
@@ -846,7 +846,7 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     hide screen snape_main                                                                                                                                  #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     $ tt_xpos=300 #Defines position of the Snape's full length sprite. Right - 300  # 120 - center.          #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_29.png"                                                                               #SNAPE
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"                                                                               #SNAPE
     show screen snape_main                                                                                                                                #SNAPE
     with d3                                                                                                                                                                  #SNAPE
     sna "Let's just roll with it..."
@@ -1804,7 +1804,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     her "Or, if they are lucky enough, get one meager house-point..."
     her "This is sexism in it's purest form!"
     menu:
-        "\"What you want {size=+7}me{/size} to do?\"":
+        "\"What do you want {size=+7}me{/size} to do?\"":
             her "Nothing!"
         "\"Not sure what to say...\"":
             her "You do not need to say anything anymore, professor."

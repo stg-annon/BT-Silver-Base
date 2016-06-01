@@ -17,7 +17,7 @@ label summon_snape:
     $ menu_x = 0.2 #Menu is moved to the left side. (Default menu_x = 0.5)
     $ tt_xpos=350 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_02 #Snape stands still.
     show screen bld1
     show screen snape_main

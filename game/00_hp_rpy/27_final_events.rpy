@@ -437,7 +437,7 @@ label against_the_rule:
     with Dissolve(.3)
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     with Dissolve(.3)
     
@@ -449,7 +449,7 @@ label against_the_rule:
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ tt_xpos=120 #Defines position of the Snape's full length sprite. Right - 300                      #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"                                                               #SNAPE
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"                                                               #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
     sna "You appointed the girl as the head of the \"Autumn Ball Organization Committee\"?!!"
@@ -469,7 +469,7 @@ label against_the_rule:
     m "Right, that reminds me..."
 #    hide screen snape_main                                                                                                                   #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "01_hp/10_snape_main/snape_01.png"                                                              #SNAPE
+#    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"                                                              #SNAPE
 #    show screen snape_main                                                                                                                 #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
 #    sna "Huh?"
@@ -482,14 +482,14 @@ label against_the_rule:
 #    sna ".................."
 #    hide screen snape_main                                                                                                                   #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "01_hp/10_snape_main/snape_03.png"                                                              #SNAPE
+#    $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"                                                              #SNAPE
 #    show screen snape_main                                                                                                                 #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
 #    sna "Yes! I will do it!"
 #    sna "And I shall be on my best behavior!"
 #    hide screen snape_main                                                                                                                   #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
-#    $ s_sprite = "01_hp/10_snape_main/snape_04.png"                                                              #SNAPE
+#    $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"                                                              #SNAPE
 #    show screen snape_main                                                                                                                 #SNAPE
 #    with d3                                                                                                                                                  #SNAPE
 #    sna "Yes, that'll show her!"
@@ -889,7 +889,7 @@ label good_bye_snape:
     with Dissolve(.3)
     $ tt_xpos=300 #Defines position of the Snape's full length sprite.
     $ tt_ypos=0
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     show screen snape_main
     with Dissolve(.1)
     
@@ -899,7 +899,7 @@ label good_bye_snape:
     hide screen snape_main                                                                                                                   #SNAPE
     with d3                                                                                                                                                  #SNAPE
     $ tt_xpos=120 #Defines position of the Snape's full length sprite. Right - 300                      #SNAPE
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"                                                               #SNAPE
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"                                                               #SNAPE
     show screen snape_main                                                                                                                  #SNAPE
     with d3                                                                                                                                                   #SNAPE
 #    sna "The \"Autumn Ball\" is tonight..."
@@ -945,7 +945,7 @@ label good_bye_snape:
     m "So it ends tonight then..."
     $ s_head_xpos = 330 # x = 330,
     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-    $ s_sprite = "01_hp/10_snape_main/snape_09.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
     show screen s_head2
     sna_[17] "Seems like it..."
     hide screen s_head2
@@ -954,7 +954,7 @@ label good_bye_snape:
     pause.5
 
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
     sna "In case I'm right and will never see you again..."
     hide screen s_head2
     m "Right..."
@@ -967,23 +967,23 @@ label good_bye_snape:
     show screen bld1
     with d3
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_26.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_26.png"
     sna2 "The past several month were the best months of my life, Genie..."
     sna2 "Thank you for that, you incredible traveler from another world..."
     sna "Thank you, my friend..."
     hide screen s_head2
     m "I don't know what to say, Severus..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     sna "Then don't say anything..."
     sna2 "Just move on to your next adventure..."
     sna "Our world has stalled you long enough..."
     hide screen s_head2
     m "Thank you for keeping me company and being my only friend here, Severus."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_27.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_27.png"
     sna "Thank you for being mine..." #TEARS?
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     sna "I'd better go now..."
     #Goes to the door, stops and turns around.
     
@@ -1028,54 +1028,54 @@ label good_bye_snape:
     with d5
     
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     sna "One more thing though..."
     hide screen s_head2
     m "Yes?"
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/24.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/24.png"
     sna "If it all goes well..."
     sna2 "Will I find the real Albus Dumbledore in that chair tomorrow?"
     hide screen s_head2
     m "I believe so..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_04.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"
     sna "Hm..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_03.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"
     sna2 "Albus can't know that I was aware of his absence..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     sna "Is there a way to tell you guys apart?"
     hide screen s_head2
     m ".............."
     m "How about a secret password?"
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
     sna "A password?"
     hide screen s_head2
     m "Yes... just ask me tomorrow: \"Who rules?\"."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_01.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
     sna "\"Who rules?\""
     hide screen s_head2
     g9 "\"Akabur rules!\""
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_05.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
     sna "Akuba... ehm... What does it mean?"
     hide screen s_head2
     m "Just a phrase that you will only be able to hear from the real me..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_02.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_02.png"
     sna "I understand..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     sna "Alright then..."
     sna "Have a save trip home..."
     hide screen s_head2
     m "Thank you. Have fun with hosting the ball..."
     show screen s_head2
-    $ s_sprite = "01_hp/10_snape_main/snape_06.png"
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
     sna "*Sigh*"
     hide screen s_head2
     pause.3

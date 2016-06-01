@@ -383,15 +383,15 @@ screen thought: #Thinking emotion over a chibi.
 ### SNAPE CHIBI
 screen snape_01: #Snape stands still near the door.
     tag snape
-    add "01_hp/09_snape_ani/snape_0130.png" at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
+    add "01_hp/13_characters/snape/chibis/snape_0130.png" at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
     
 screen snape_01_f: #Snape stands still near the door. (Mirrored).
     tag snape
-    add im.Flip("01_hp/09_snape_ani/snape_0130.png", horizontal=True) at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
+    add im.Flip("01_hp/13_characters/snape/chibis/snape_0130.png", horizontal=True) at Position(xpos=snape_chibi_xpos, ypos=snape_chibi_ypos)
     
 screen snape_02: #Snape stands still near the desk.
     tag snape
-    add "01_hp/09_snape_ani/snape_0130.png" at Position(xpos=360, ypos=210) 
+    add "01_hp/13_characters/snape/chibis/snape_0130.png" at Position(xpos=360, ypos=210) 
     zorder 3
     
 screen snape_walk_01: #Default Snape walk animation. 
@@ -540,7 +540,7 @@ screen snape_main: #Snape. Full size.
 ### SNAPE EMOTIONS
 screen s_emo_01: #Closed eyes and closed mouth.
     tag semo
-    add "01_hp/10_snape_main/s_emo_01.png" xpos tt_xpos ypos tt_ypos
+    add "01_hp/13_characters/snape/main/s_emo_01.png" xpos tt_xpos ypos tt_ypos
     zorder 2 #Otherwise candle light is shown on top.
 
 

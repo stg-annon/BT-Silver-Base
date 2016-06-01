@@ -3,7 +3,7 @@ label sna_main(text="",face=""):
     hide screen snape_main
     with d3
     if face != "":
-        $ s_sprite = "01_hp/10_snape_main/"+str(face)+".png"
+        $ s_sprite = "01_hp/13_characters/snape/main/"+str(face)+".png"
     show screen snape_main
     with d3
     if text != "":
@@ -21,7 +21,7 @@ label sna_head(text="",face="",xpos=s_head_xpos ,ypos=s_head_ypos):
     if ypos != s_head_ypos:
         $ s_head_ypos = ypos
     if face != "":
-        $ s_sprite = "01_hp/10_snape_main/"+str(face)+".png"
+        $ s_sprite = "01_hp/13_characters/snape/main/"+str(face)+".png"
     show screen s_head
     if text != "":
         sna2 "[text]"

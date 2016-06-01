@@ -806,24 +806,24 @@ image ch_hem blink:
     repeat
 
 image snape_walk_01: #Default Snape walk animation.
-    "01_hp/09_snape_ani/snape_02.png"
+    "01_hp/13_characters/snape/chibis/snape_02.png"
     pause.18
-    "01_hp/09_snape_ani/snape_03.png"
+    "01_hp/13_characters/snape/chibis/snape_03.png"
     pause.18
-    "01_hp/09_snape_ani/snape_02.png"
+    "01_hp/13_characters/snape/chibis/snape_02.png"
     pause.18
-    "01_hp/09_snape_ani/snape_05.png"
+    "01_hp/13_characters/snape/chibis/snape_05.png"
     pause.18
     repeat
 
 image snape_walk_01_f: #Default Snape walk animation.
-    im.Flip("01_hp/09_snape_ani/snape_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/snape/chibis/snape_02.png", horizontal=True)
     pause.18
-    im.Flip("01_hp/09_snape_ani/snape_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/snape/chibis/snape_03.png", horizontal=True)
     pause.18
-    im.Flip("01_hp/09_snape_ani/snape_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/snape/chibis/snape_02.png", horizontal=True)
     pause.18
-    im.Flip("01_hp/09_snape_ani/snape_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/snape/chibis/snape_05.png", horizontal=True)
     pause.18
     repeat
 

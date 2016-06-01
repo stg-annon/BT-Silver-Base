@@ -555,7 +555,7 @@ label shaming_night:
         with Dissolve(.3)
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/24.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/24.png"
         show screen snape_main
 
         sna "Hello 'Albus'… You called for me."
@@ -575,7 +575,7 @@ label shaming_night:
         pause 
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_11.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_11.png"
         show screen snape_main
 
         sna "I…Wha…Genie…is this a joke?"
@@ -586,7 +586,7 @@ label shaming_night:
         m "Snape!"
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_03.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"
         show screen snape_main    
            
         sna "This is an illusion. It must be."
@@ -596,14 +596,14 @@ label shaming_night:
         a4 "Don’t drag me into this."
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_05.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
         show screen snape_main  
 
         sna "What on earth was that?"
         m "Just ignore him. Now, tell me a bit about this Malfoy character."
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/24.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/24.png"
         show screen snape_main   
 
         sna "Draco Malfoy. He’s the son of a rather prominent ex-death-eater, and a dear friend of mine. A good student, if not rather… mischievous."
@@ -625,7 +625,7 @@ label shaming_night:
         hide screen hermione_02
         $ hermione_chibi_xpos = -20
         $ hermione_chibi_ypos = 75
-        $ s_sprite = "01_hp/10_snape_main/snape_26.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_26.png"
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
         show screen h_c_u
         show screen snape_main   
@@ -634,7 +634,7 @@ label shaming_night:
         m "No, she’s just cumming. Do you mind if I jerk off?"
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_20.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_20.png"
         show screen snape_main   
         sna "Not at all, I think I’ll join you."
 
@@ -698,14 +698,14 @@ label shaming_night:
         hide screen g_c_c_u
         
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_14.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_14.png"
         show screen snape_main   
 
         sna "Oh my god…"
         m "Yeah, I didn’t really expect that."
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/snape_19.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_19.png"
         show screen snape_main   
 
         sna "This is the greatest moment of my life."
@@ -714,7 +714,7 @@ label shaming_night:
         m "Yeah, brutal revenge sex is pretty incredible therapy."
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/23.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/23.png"
         show screen snape_main   
 
         hide screen chair_02
@@ -734,7 +734,7 @@ label shaming_night:
         m "I’ll hold onto it. It might come in handy for latter sessions with Miss Granger."
 
         hide screen snape_main
-        $ s_sprite = "01_hp/10_snape_main/24.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/24.png"
         show screen snape_main   
 
         sna "Of course. Do you want me to talk to Draco?"

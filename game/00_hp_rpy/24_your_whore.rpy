@@ -924,7 +924,7 @@ label your_whore:
         $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
         call sna_head("Miss Granger...?","snape_03")
         call sna_head("You decided to show up after all?","snape_04")
-        $ s_sprite = "01_hp/10_snape_main/.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/.png"
         call sna_head("What an unpleasant surprise...")
         #her "Professor..."
         call her_head("Professor...","body_162")
@@ -1231,7 +1231,7 @@ label your_whore:
         
         show screen bld1
         with d7
-        $ s_sprite = "01_hp/10_snape_main/snape_12.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_12.png"
         show screen s_head2
         sna "Quiet down everyone!"
         sna "As for you, miss Granger..."
@@ -1269,7 +1269,7 @@ label your_whore:
         cr1 "I love you, Hermione!"
         cr2 "Gryffindor rules!!!"
         
-        $ s_sprite = "01_hp/10_snape_main/snape_18.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_18.png"
         show screen s_head2
         sna "Miss Granger, I said that's enough!"
         hide screen s_head2
@@ -1280,7 +1280,7 @@ label your_whore:
         her "As you say, [genie_name]..."
         show screen bld1
         with d7
-        $ s_sprite = "01_hp/10_snape_main/snape_12.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_12.png"
         show screen s_head2
         sna "And wipe your face, girl. You look repulsive."
         hide screen s_head2
@@ -1292,7 +1292,7 @@ label your_whore:
         her "Oh, this? This is just my--"
         show screen bld1
         with d7
-        $ s_sprite = "01_hp/10_snape_main/snape_18.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_18.png"
         show screen s_head2
         sna "Don't care! Get off the stage already!"
         sna "Now!"
@@ -2268,17 +2268,17 @@ label your_whore:
     else: # Ending "Your whore".
         $ s_head_xpos = 330 # x = 330,
         $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
-        $ s_sprite = "01_hp/10_snape_main/snape_03.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"
         show screen s_head2
         sna "Miss Granger...?"
-        $ s_sprite = "01_hp/10_snape_main/snape_04.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"
         sna2 "You decided to show up after all? What an unpleasant surprise..."
         call her_head("...............................","body_169")
-        $ s_sprite = "01_hp/10_snape_main/snape_13.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_13.png"
         show screen s_head2
         sna "What happened to your face, girl?"
         call her_head(".......................................","body_170")
-        $ s_sprite = "01_hp/10_snape_main/snape_13.png"
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_13.png"
         show screen s_head2
         sna "Hm... Well, go ahead then..."
         sna "Here is the tiara..."
@@ -3449,45 +3449,45 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         dum "Good morning, Severus."
         $ s_head_xpos = 330 # x = 330,                                                                              # SNAPE
         $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.       # SNAPE
-        $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "......................................."
         hide screen s_head2              
         dum "I have the most extraordinary tale to share with you, old friend."
-        $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "......................................"
         hide screen s_head2     
         dum "But before I do..."
-        $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "........................................"
         hide screen s_head2     
         dum2 "Ehm... Severus?"
-        $ s_sprite = "01_hp/10_snape_main/snape_09.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "........................................."
-        $ s_sprite = "01_hp/10_snape_main/snape_06.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "Who rules?"
         hide screen s_head2     
         dum2 "I beg your pardon?"
-        $ s_sprite = "01_hp/10_snape_main/snape_26.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_26.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "Who rules?" # T_T
         hide screen s_head2     
         dum2 "...who rules what?"
-        $ s_sprite = "01_hp/10_snape_main/snape_26.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_26.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "A...?"
         hide screen s_head2     
         dum2 "A?"
-        $ s_sprite = "01_hp/10_snape_main/snape_27.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_27.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "Aka-a....?"
         hide screen s_head2     
         dum2 "You don't make any sense, Severus."
-        $ s_sprite = "01_hp/10_snape_main/snape_29.png"                                         # SNAPE
+        $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"                                         # SNAPE
         show screen s_head2                                                                                                 # SNAPE
         sna "Ah, bloody hell..................."
         hide screen s_head2     
