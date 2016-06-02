@@ -59,7 +59,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     $ menu_x = 0.5 #Menu is moved to the left side.
     call her_main("","body_08")
     
-    if request_01 == 0: #First time this event taking place.
+    if hg_pf_points[hg_pf_TalkToMe_ID] == 0: #First time this event taking place.
         her "Ehm... Alright..."
         her "I just stand here and talk then...? Like this?"
     else:
@@ -74,7 +74,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     pause
     
     m "Well?"
-    if request_01 == 0 and whoring <=5: #First time this event taking place.
+    if hg_pf_points[hg_pf_TalkToMe_ID] == 0 and whoring <=5: #First time this event taking place.
         $ new_request_01_heart = 1 #Event hearts level (0-3)
         $ hg_pf_hearts[hg_pf_TalkToMe_ID] = 1 #Event hearts level (0-3)
         call her_main("Em... very well...","body_11")
@@ -82,7 +82,6 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         call her_main("...................","body_12")
     if whoring >= 0 and  whoring <= 5: #LEVEL 01 and LEVEL 02
         if whoring >= 3 and whoring <= 5:
-            $ level = "02"
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_hearts[hg_pf_TalkToMe_ID] = 2 #Event hearts level (0-3)
         call her_main("My life has been quite uneventful lately to be honest...","body_12")
@@ -304,28 +303,14 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if whoring >= 0 and whoring <= 2: #LEVEL 01
             her "*sigh of relief*"
         m "Yes, you can go now."
-    if request_01 == 0:
+    if hg_pf_points[hg_pf_TalkToMe_ID] == 0:
         call her_main("Another 5 points... The Guys will be so happy.","body_01")
         her "Thank you, [genie_name]."
-
-    label request_01_done:
+    
     if whoring <= 2:
             $ whoring +=1
-    $ request_01 += 1
     
-    # hide screen bld1
-    # hide screen hermione_main
-    # hide screen blktone 
-    # hide screen ctc
-    # with Dissolve(.3)
-    
-    call reset_hermione_main
-    
-    # $ custom_outfit_old = temp_outfit
-    # $ stockings = temp_stockings
-    # $ panties = True
-    
-    call her_walk(400,610,2)
+    $ hg_pf_points[hg_pf_TalkToMe_ID] += 1
     
     jump end_hg_pf
         
@@ -344,7 +329,6 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."             
     if hg_pf_points[hg_pf_NicePanties_ID] == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
-        $ new_request_02_01 =  True #Hearts.
         call her_main("My... panties...?","body_14")
         call her_main("[genie_name]!","body_47")
         m "I know, I know, this a little weird..."
@@ -366,33 +350,18 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     call set_hermione_action("lift_skirt")
     $ skirt_up = True
     $ menu_x = 0.5 #Default menu position restored.
-    if whoring >= 9: # NO PANTIES
-        show screen hermione_03_b
-        with d3
-    else:
-        show screen hermione_03 #Hermione lifts her skirt
-        with d3
-        
+    
+    show screen hermione_chibi_lift_skirt
+    with d3
+     
     #play music "music/Under-the-Radar by PhobyAk.mp3" fadein 1 fadeout 1 
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 
     
     $ her_head_ypos = her_head_only
     
-    if whoring >= 0 and whoring <= 2: #LEVEL 01
+    if whoring >= 0 and whoring <= 2: #LEVEL 01 = Fist event.
         call her_head("........................","body_05")
-    elif whoring >= 3 and whoring < h_stop_wearing_panties_lvl: #LEVEL 02
-        call her_head(".....................","body_188")
-    elif whoring >= h_stop_wearing_panties_lvl: #LEVEL 03 and up.
-        call her_head("..........................","body_188")
-        g4 "!!?"
         
-        
-    
-
-    
-
-
-    if whoring >= 0 and whoring <= 2: #LEVEL 01   <============================= Fist event.
         $ new_request_02_heart = 1 #Event hearts level (0-3)
         $ hg_pf_hearts[hg_pf_NicePanties_ID] = 1 #Event hearts level (0-3)
         
@@ -417,9 +386,10 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 ">That's a plain girlish underwear..."
                 pause
                 call her_main(".......................","body_51")
-               
-
-    elif whoring >= 3 and whoring < h_stop_wearing_panties_lvl: #LEVEL 02  <====================================================================== SECOND EVENT!
+    
+    elif whoring >= 3 and whoring < hg_NoPanties_lvl: #LEVEL 02 = SECOND EVENT!
+        call her_head(".....................","body_188")
+        
         $ new_request_02_heart = 2 #Event hearts level (0-3)
         $ hg_pf_hearts[hg_pf_NicePanties_ID] = 2 #Event hearts level (0-3)
         
@@ -445,9 +415,11 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 her "...........................?"
                 call her_main("................................","body_56")
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
-                
-
-    elif whoring >= h_stop_wearing_panties_lvl: #LEVEL 06 and up. <====================================================================== FINAL EVENT! (No panties).
+    
+    elif whoring >= hg_NoPanties_lvl: #LEVEL 06 and up. = FINAL EVENT! (No panties).
+        call her_head("..........................","body_188")
+        g4 "!!?"
+        
         $ new_request_02_heart = 3 #Event hearts level (0-3)
         $ hg_pf_hearts[hg_pf_NicePanties_ID] = 3 #Event hearts level (0-3)
         
@@ -488,7 +460,6 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     
     stop music fadeout 4.0
     
-    label request_02_done:
     if whoring <= 8:
         $ gryffindor +=5
         m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
@@ -515,18 +486,10 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     else:
         her "It's getting pretty late, [genie_name]... I should go..."
     
-    hide screen hermione_main
-    hide screen bld1
-    hide screen blktone 
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
     if whoring <= 2:
         $ whoring +=1
+    
     $ hg_pf_points[hg_pf_NicePanties_ID] += 1
-    # $ panties = temp_panties
     
     jump end_hg_pf
         
@@ -627,23 +590,10 @@ label hg_pf_PantyThief: #(Whoring = 3 - 5)
             ">Hermione takes off her panties and hands them over to you..."
         ">Hermione's panties acquired."
         call her_main("Well, the classes are about to start, so I'd better go now...","body_15")
-
- 
-        
+    
     label hg_pf_PantyThief_ends:
         
-    hide screen bld1
-    hide screen hermione_main
-    hide screen blktone 
-    hide screen hermione_blink
-    hide screen ctc
-    with d3
-    
-    call her_walk(400,610,2)
-    
     $ hg_pf_PantyThief_InProgressFlag = True #True when Hermione has no panties on.
-    if whoring <= 5:
-        $ whoring +=1
     
     jump end_hg_pf
     
@@ -770,19 +720,15 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
     hide screen ctc
     with d3
     
-    $ hg_pf_points[hg_pf_PantyThief_ID] += 1
+    if whoring <= 5:
+        $ whoring +=1
     
-    $ hg_pf_PantyThief_complete = False #False when favor is not in progress
+    $ hg_pf_points[hg_pf_PantyThief_ID] += 1
+    $ hg_pf_PantyThief_InProgressFlag = False #False when favor is not in progress
     $ have_cum_soaked_panties = False #TRUE if you jerked off in panties
     
-    call her_walk(400,610,2)
+    jump end_hg_pf
     
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with d3
-    $ hermione_sleeping = True
-    play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-    
-    return
 label hg_pf_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
     if whoring >= 3 and whoring <= 5: # LEVEL 02
         call her_main("Hm....?","body_71",xpos=120)
@@ -1170,8 +1116,17 @@ label hg_pf_BreastMolester:
             call her_head("(I'll just ask him about it next time)","body_12")
         hide screen hermione_stand_f
     
-    call reset_hermione_main
-    jump end_hg_pf
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+        $ hermione_sleeping = True
+        jump night_main_menu
     
 ###################REQUEST_05 (Level 02) (BUTT MOLESTER).
 label hg_pf_ButtMolester:
@@ -2161,11 +2116,18 @@ label hg_pf_ButtMolester:
         show screen hermione_stand_f #Hermione stands still.
         call her_head("...........................","body_199")
         hide screen hermione_stand_f #Hermione stands still.
-    $ stockings = temp_stockings 
-    $ custom_outfit_old = temp_outfit
-    $ panties = True
         
-    jump end_hg_pf
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+        $ hermione_sleeping = True
+        jump night_main_menu
         
 ###################REQUEST_08 (Level 03) (Show me tits). #####################################################################################################################
 label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
@@ -3120,21 +3082,17 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         $ new_request_08_heart = 3
         $ hg_pf_hearts[hg_pf_ShowThemToMe_ID] = 3 #Event hearts level (0-3)
 
-    hide screen bld1
-    hide screen hermione_main
-    with Dissolve(.3)
-    $ custom_outfit_old = temp_outfit
-    $ stockings = temp_stockings
-    $ panties = True
-    
     if whoring <= 8:
         $ whoring +=1
     $ hg_pf_points[hg_pf_ShowThemToMe_ID] += 1
     
-    call her_walk(400,610,2)
+    hide screen bld1
+    hide screen hermione_main
+    with d3
     
+    call her_walk(400,610,2)
     show screen hermione_stand_f #Hermione stands still.
-    with Dissolve(.3)    
+    with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
         call her_head("(How humiliating... What have I become...?)","body_199")
     elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
@@ -3153,7 +3111,18 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     with d3
     
     $ aftersperm = False #Shows cum stains on Hermione's uniform.
-    jump end_hg_pf
+    
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+        $ hermione_sleeping = True
+        jump night_main_menu
         
 ###################REQUEST_11 (Level 04) (DANCE FOR ME AND SNAPE) (Day/Night) ################################################################
 label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)

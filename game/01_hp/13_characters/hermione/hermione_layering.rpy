@@ -252,7 +252,7 @@ label h_action(action =  ""):
     
     $ override = False
     
-    if hermione_wear_panties or h_request_wear_panties or whoring < h_stop_wearing_panties_lvl:
+    if hermione_wear_panties or h_request_wear_panties or whoring < hg_NoPanties_lvl:
         $ h_action_show_panties = True
     else:
         $ h_action_show_panties = False
@@ -344,7 +344,7 @@ label h_action(action =  ""):
                 $ h_action_show_skirt = False
                 $ h_action_show_panties = False
                 $ h_action_show_arms = True
-                if whoring >= h_stop_wearing_panties_lvl:
+                if whoring >= hg_NoPanties_lvl:
                     $ hermione_legs = "01_hp/13_characters/hermione/body/legs/expanded_ass.png"
                 else:
                     $ hermione_legs = "01_hp/13_characters/hermione/body/legs/expanded_ass_panties.png"
@@ -508,7 +508,7 @@ label update_her_uniform:
         
         
     ### PANTIES
-    if whoring >= h_stop_wearing_panties_lvl:
+    if whoring >= hg_NoPanties_lvl:
         $ hermione_wear_panties = False
     if hermione_wetpanties:
         $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/pantystain.png"

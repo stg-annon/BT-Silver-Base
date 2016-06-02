@@ -1978,7 +1978,7 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
             call her_main("No it won't! This is a catastrophe!","body_20") 
 
     call her_main("And the worst part is that I think I might be the only one who has failed...","body_21")
-    call her_main("How will it make me look like?","body_22")
+    call her_main("How will this make me look?","body_22")
     call her_main("I will know for sure when we get the results though...","body_23")
     call her_main("Yes, I'm sure everyone else failed as well...","body_13")
     call her_main("I mean, they must have, right?","body_11")

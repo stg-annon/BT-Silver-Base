@@ -5,7 +5,7 @@ label __init_variables:
     
     $ hermione_zorder = 5
     
-    $ h_stop_wearing_panties_lvl = 12
+    $ hg_NoPanties_lvl = 9
     
     if not hasattr(renpy.store,'hermione_xpos'): #important!
         $ hermione_xpos = 370

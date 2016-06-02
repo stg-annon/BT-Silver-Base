@@ -101,7 +101,6 @@ label start_ht:
     $  new_request_01_02 = False
     $  new_request_01_03 = False
 
-    $ new_request_02_01 = False #SHOW ME YOUR PANTIES
     $ new_request_02_02 = False #SHOW ME YOUR PANTIES
     $ new_request_02_03 = False #SHOW ME YOUR PANTIES
     $ new_request_02_04 = False #SHOW ME YOUR PANTIES
