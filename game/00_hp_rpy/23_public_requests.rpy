@@ -349,6 +349,7 @@ label hg_pr_FlirtClassmate_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_FlirtClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_FlirtClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_FlirtClassmate_ID] = False
     
     if whoring <= 2:
@@ -791,6 +792,7 @@ label hg_pr_FlirtTeacher_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_FlirtTeacher_ID] += 1
+    $ hg_pr_complete[hg_pr_FlirtTeacher_ID] = True
     $ hg_pr_InProgress[hg_pr_FlirtTeacher_ID] = False
     
     if whoring <= 5:  # (if whoring >= 3 and whoring <= 5) - LEVEL 02
@@ -1163,6 +1165,7 @@ label hg_pr_ClassmateTouchYou_complete:
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
     
     $ hg_pr_points[hg_pr_ClassmateTouchYou_ID] += 1
+    $ hg_pr_complete[hg_pr_ClassmateTouchYou_ID] = True
     $ hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID] = False
     
     call hg_pr_transition_block
@@ -1568,6 +1571,7 @@ label hg_pr_FlashClassmate_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_FlashClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_FlashClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = False
     
     $ hermione_sleeping = True
@@ -2074,6 +2078,7 @@ label hg_pr_KissAGirl_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_KissAGirl_ID] += 1
+    $ hg_pr_complete[hg_pr_KissAGirl_ID] = True
     $ hg_pr_InProgress[hg_pr_KissAGirl_ID] = False
     
     call hg_pr_transition_block
@@ -2602,6 +2607,7 @@ label hg_pr_HandjobClassmate_complete:
     $ aftersperm = False #Shows stains on Hermione's uniform.
     
     $ hg_pr_points[hg_pr_HandjobClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_HandjobClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = False
     
     call hg_pr_transition_block
@@ -2884,6 +2890,7 @@ label hg_pr_BlowjobClassmate_complete:
     $ public_whore_ending = True #Activates "Public Whore" ending.
     
     $ hg_pr_points[hg_pr_BlowjobClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_BlowjobClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_BlowjobClassmate_ID] = False
     
     call hg_pr_transition_block
@@ -2984,6 +2991,7 @@ label hg_pr_BlowjobTeacher_complete:
     #m "Yes, good night..."
     
     $ hg_pr_points[hg_pr_BlowjobTeacher_ID] += 1
+    $ hg_pr_complete[hg_pr_BlowjobTeacher_ID] = True
     $ hg_pr_InProgress[hg_pr_BlowjobTeacher_ID] = False
     
     call hg_pr_transition_block
@@ -3099,6 +3107,7 @@ label hg_pr_SexWithClassmate_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_SexWithClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
     call hg_pr_transition_block
@@ -3133,6 +3142,7 @@ label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label wher
     her "Thank you, [genie_name]."
     
     $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_complete[hg_pr_SexWithClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
     call hg_pr_transition_block
@@ -3239,7 +3249,9 @@ label hg_pr_SexWithTeacher_complete:
     m "Yes, good night..."
     
     $ hg_pr_points[hg_pr_SexWithTeacher_ID] += 1
+    $ hg_pr_complete[hg_pr_SexWithTeacher_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithTeacher_ID] = False
+    
     
     call hg_pr_transition_block
     return
