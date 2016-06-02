@@ -1792,13 +1792,12 @@ screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
     add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
     zorder hermione_chibi_zorder
     
-screen hermione_lift_skirt:
+screen hermione_chibi_lift_skirt:
     tag hermione_chibi
-    add "01_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350, ypos=190)
-screen hermione_lift_skirt_no_panties:
-    tag hermione_chibi
-    add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
-    
+    if whoring < hg_NoPanties_lvl:
+        add "01_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350, ypos=190)
+    else:
+        add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
     
     
     

@@ -496,13 +496,6 @@ screen hermione_chibi_robe_f: #Hermione. Chibi. Walking. Wearing a robe.
         add "ch_hem walk_robe_flip" at custom_walk_02(walk_xpos, walk_xpos2)
     zorder hermione_chibi_zorder
     
-screen hermione_chibi_lift_skirt:
-    tag hermione_chibi
-    if whoring < hg_NoPanties_lvl:
-        add "01_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350, ypos=190)
-    else:
-        add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
-    
 screen hermione_02_b: #Hermione stands still wearing a robe.
     tag hermione_chibi
     add "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png" at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
