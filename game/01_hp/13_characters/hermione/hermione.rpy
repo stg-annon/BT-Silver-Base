@@ -56,7 +56,7 @@ label __init_variables:
     if not hasattr(renpy.store,'h_skirt'): #important!
         $ h_skirt = "skirt_1"
     if not hasattr(renpy.store,'h_top'): #important!
-        $ h_top = "top_1"
+        $ h_top = 1
     if not hasattr(renpy.store,'h_skirt_color'): #important!
         $ h_skirt_color = ""
     $ hermione_wear_bra = True
@@ -100,15 +100,15 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_action'): #important!
         $ hermione_action = False
     
-    $ hermiome_action_bra = hermione_bra
-    $ hermiome_action_panties = hermione_panties
-    $ hermiome_action_top = hermione_top
-    $ hermiome_action_skirt = hermione_skirt
+    $ hermione_action_bra = hermione_bra
+    $ hermione_action_panties = hermione_panties
+    $ hermione_action_top = hermione_top
+    $ hermione_action_skirt = hermione_skirt
     
     $ hermione_action_left_arm = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     $ hermione_action_right_arm = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
-    $ hermiome_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
-    $ hermiome_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
+    $ hermione_action_a = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
+    $ hermione_action_b = "01_hp/13_characters/hermione/clothes/uniform/action/00_blank.png"
     
     $ h_action_right_arm = "00_blank.png"
     $ h_action_left_arm = "00_blank.png"
