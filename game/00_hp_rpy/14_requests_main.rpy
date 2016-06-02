@@ -3,6 +3,20 @@ label new_personal_request:
         show screen hermione_main
         $ menu_x = 0.2 #Default: 0.5
         
+        $ hg_pf_TalkToMe_MH = "interface/heart_0"+str(hg_pf_hearts[pf_TalkToMe_ID])+".png"
+        $ hg_pf_NicePanties_MH = "interface/heart_0"+str(hg_pf_hearts[pf_NicePanties_ID])+".png"
+        $ hg_pf_PantyThief_MH = "interface/heart_0"+str(hg_pf_hearts[pf_PantyThief_ID])+".png"
+        $ hg_pf_BreastMolester_MH = "interface/heart_0"+str(hg_pf_hearts[pf_BreastMolester_ID])+".png"
+        $ hg_pf_ButtMolester_MH = "interface/heart_0"+str(hg_pf_hearts[pf_ButtMolester_ID])+".png"
+        $ hg_pf_ShowThemToMe_MH = "interface/heart_0"+str(hg_pf_hearts[pf_ShowThemToMe_ID])+".png"
+        $ hg_pf_DanceForMe_MH = "interface/heart_0"+str(hg_pf_hearts[pf_DanceForMe_ID])+".png"
+        $ hg_pf_LetMeTouchThem_MH = "interface/heart_0"+str(hg_pf_hearts[pf_LetMeTouchThem_ID])+".png"
+        $ hg_pf_TouchMe_MH = "interface/heart_0"+str(hg_pf_hearts[pf_TouchMe_ID])+".png"
+        $ hg_pf_SuckIt_MH = "interface/heart_0"+str(hg_pf_hearts[pf_SuckIt_ID])+".png"
+        $ hg_pf_LetsHaveSex_MH = "interface/heart_0"+str(hg_pf_hearts[pf_LetsHaveSex_ID])+".png"
+        $ hg_pf_TimeForAnal_MH = "interface/heart_0"+str(hg_pf_hearts[pf_TimeForAnal_ID])+".png"
+        $ hg_pf_TheGamble_MH = "interface/heart_0"+str(hg_pf_hearts[pf_TheGamble_ID])+".png"
+        
         label not_now:
         menu:
             "-Custom favours-":
@@ -12,36 +26,39 @@ label new_personal_request:
                 label not_now2:
                 ### LEVEL 01 ###
                 menu:
-                    "Favour: \"Talk to me\" {image=heart_0[hg_pf_hearts[hg_pf_TalkToMe_ID]]}   {image=interface/clothes.png}":
+                    "Favour: \"Talk to me\" {image=[hg_pf_TalkToMe_MH]}   {image=interface/clothes.png}":
                         jump hg_pf_TalkToMe
 
-                    "Favour: \"Nice panties\" {image=heart_0[hg_pf_hearts[hg_pf_NicePanties_ID]]}": # LEVEL 1
+                    "Favour: \"Nice panties\" {image=[hg_pf_NicePanties_MH]}": # LEVEL 1
                         jump hg_pf_NicePanties
                   
                     ### LEVEL 02 ###
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Panty thief\" {image=heart_0[hg_pf_hearts[hg_pf_PantyThief_ID]]}" if imagination >= 2:
+                    "{color=#858585}Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}{/color}" if imagination >= 2 and not daytime:
+                        call cust_excuse("\"Panty thief\" is only available during the daytime only.")
+                        jump not_now2
+                    "Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}" if imagination >= 2 and daytime:
                         jump hg_pf_PantyThief
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Breast molester\" {image=heart_0[hg_pf_hearts[hg_pf_BreastMolester_ID]]}   {image=interface/clothes.png}" if imagination >= 2: 
+                    "Favour: \"Breast molester\" {image=[hg_pf_BreastMolester_MH]}   {image=interface/clothes.png}" if imagination >= 2: 
                         jump hg_pf_BreastMolester
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Butt molester\" {image=heart_0[hg_pf_hearts[hg_pf_ButtMolester_ID]]}   {image=interface/clothes.png}" if imagination >= 2:
+                    "Favour: \"Butt molester\" {image=[hg_pf_ButtMolester_MH]}   {image=interface/clothes.png}" if imagination >= 2:
                         jump hg_pf_ButtMolester
                         
                     ### LEVEL 03 ### IMAGINATION == 3
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Show them to me!\" {image=heart_0[hg_pf_hearts[hg_pf_ShowThemToMe_ID]]}   {image=interface/clothes.png}" if imagination >= 3:
+                    "Favour: \"Show them to me!\" {image=[hg_pf_ShowThemToMe_MH]}   {image=interface/clothes.png}" if imagination >= 3:
                         jump hg_pf_ShowThemToMe
                         
 #                    "Favour: \"Show {size=+5}it{/size} to me! (NOT FINISHED YET)":
@@ -51,41 +68,41 @@ label new_personal_request:
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Dance for me!\" {image=heart_0[hg_pf_hearts[hg_pf_DanceForMe_ID]]}   {image=interface/clothes.png}" if imagination >= 3:
+                    "Favour: \"Dance for me!\" {image=[hg_pf_DanceForMe_MH]}   {image=interface/clothes.png}" if imagination >= 3:
                         jump hg_pf_DanceForMe
                         
                     "{color=#858585}-A vague idea-{/color}" if imagination < 3:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let me touch them!\" {image=heart_0[hg_pf_hearts[hg_pf_LetMeTouchThem_ID]]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
+                    "Favour: \"Let me touch them!\" {image=[hg_pf_LetMeTouchThem_MH]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
                         jump hg_pf_LetMeTouchThem
                         
                     ### LEVEL 05 ### IMAGINATION == 4
                     "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"touch me!\" {image=heart_0[hg_pf_hearts[hg_pf_TouchMe_ID]]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
+                    "Favour: \"touch me!\" {image=[hg_pf_TouchMe_MH]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
                         jump hg_pf_TouchMe
                         
                     ### LEVEL 06 ### IMAGINATION == 4
                     "{color=#858585}-A vague idea-{/color}" if imagination < 4:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Suck it!\" {image=heart_0[hg_pf_hearts[hg_pf_SuckIt_ID]]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 6
+                    "Favour: \"Suck it!\" {image=[hg_pf_SuckIt_MH]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 6
                         jump hg_pf_SuckIt
                         
                     ### LEVEL 07 ### IMAGINATION == 5
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour: \"Let's have sex!\" {image=heart_0[hg_pf_hearts[hg_pf_LetsHaveSex_ID]]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
+                    "Favour: \"Let's have sex!\" {image=[hg_pf_LetsHaveSex_MH]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
                         jump hg_pf_LetsHaveSex
                     
                     ### LEVEL 08 ###
                     "{color=#858585}-A vague idea-{/color}" if imagination < 5:
                         call vague_idea
                         jump not_now2
-                    "Favour:  \"Time for anal!\" {image=heart_0[hg_pf_hearts[hg_pf_TimeForAnal_ID]]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
+                    "Favour:  \"Time for anal!\" {image=[hg_pf_TimeForAnal_MH]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
                         jump hg_pf_TimeForAnal
                     
                     "-Cancel-":
@@ -299,21 +316,42 @@ label new_personal_request:
         her "The Gryffindors are in the lead. I don't need to do this."
         jump day_time_requests
     
-label end_hg_pf:
+label end_hg_pf_old:
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     
-    ### MUSIC BLOCK ###
     if daytime:
         play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
-    else:
-        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
-    ### END OF BLOCK ###
-    
-    if daytime:
         $ hermione_takes_classes = True
         jump day_main_menu
     else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+        $ hermione_sleeping = True
+        jump night_main_menu
+    
+    
+label end_hg_pf:
+    hide screen blkfade
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen chair_02
+    hide screen hermione_blink
+    hide screen jerking_off_01 #Hermione topless. Genie jerking off.
+    hide screen ctc
+    show screen genie
+    with d3
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
         $ hermione_sleeping = True
         jump night_main_menu
     
@@ -330,15 +368,14 @@ label could_not_flirt: #Sent here when choose "Favour failed! No points for you!
     with d3
     
     call her_walk(400,610,2)
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     
-    call music_block
-    
     if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
         $ hermione_takes_classes = True
     else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
         $ hermione_sleeping = True
     return
     
