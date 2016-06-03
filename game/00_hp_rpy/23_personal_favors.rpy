@@ -473,7 +473,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     
     stop music fadeout 4.0
     
-    call her_main("will this be all then?","body_31",xpos=120)
+    call her_main("will this be all then?","body_31",xpos=370)
     m "Yes, you can go now."
 
     if hg_pf_points[hg_pf_NicePanties_ID] == 0: #First time.

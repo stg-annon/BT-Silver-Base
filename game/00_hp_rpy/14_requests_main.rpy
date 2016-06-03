@@ -39,7 +39,7 @@ label new_personal_request:
                         call vague_idea
                         jump not_now2
                     "{color=#858585}Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}{/color}" if imagination >= 2 and not daytime:
-                        call cust_excuse("\"Panty thief\" is only available during the daytime only.")
+                        call cust_excuse("\"Panty thief\" is available during the daytime only.")
                         jump not_now2
                     "Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}" if imagination >= 2 and daytime:
                         jump hg_pf_PantyThief
