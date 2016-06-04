@@ -1818,6 +1818,91 @@ label potion_scene_6: #Luna potion
     with d3
     $ luna_known = True
     jump day_main_menu
+
+label potion_scene_7: #hyper sensitivity potion
+    m "I'd like you to drink a potion today."
+    her "Alright then."
+    m "Just like that? No putting up a fight or demanding to know what it is?"
+    her "Would you tell me what it is?"
+    m "No, probably not."
+    her "Then why ask?"
+    m "Fair enough, here it is."
+    menu:
+        "-Drop it on her chest-":
+            jump potion_scene_7_1
+        "-Hand it to her-":
+            jump potion_scene_7_2
+        "-Drop it on her skirt-":
+            jump potion_scene_7_3
+
+label potion_scene_7_1: #Hyper sensitive breasts
+    ">You fumble with the potion, spilling it over Hermione's front, soaking her shirt through."
+    her "Professor! What were you thinking?"
+    ">You place the still half full bottle back on your desk in front of you."
+    m "It was an accident, my hands aren't what they once were."
+    her "Ughhh, now I'm going to have to go change before classes."
+    her "I expect to be compensated accordingly."
+    m "Ok, ok. How about I give you a nice massage to calm you down."
+    her "A massage? That's hardly fair compensation!"
+    m "Are you sure?"
+    her "Positive."
+    m "Ok, I'll make a bet with you then."
+    her "...{p}Go on..."
+    m "I'll start massaging you. If you don't like it after two minutes then you can tell me to stop."
+    her "And what do I get for telling you to stop?"
+    m "two hundred points."
+    her "two hundred points!"
+    m "But if you don't ask me to stop I get to massage you for as long as I like, wherever I like."
+    her "Deal."
+    m "Are you sure?"
+    her "No offense [genie_name], but I think I can resist a massage for 200 points."
+    m "you sound confident. Care to raise the stakes?"
+    her "Are you saying that I can earn more than 200 points?"
+    m "five hundred."
+    her "{size=+10}Five HUNDRED!{/size}" #size up
+    her "Deal."
+    m "I haven't even told you what happens if you lose."
+    her "it doesn't matter, For 500 points I would turn down a massage from Viktor Krum himself."
+    m "Well for the sake of the bet I'll explain anyway."
+    m "I expect you to strip naked if you want to be massaged after your two minutes are up."
+    her "Naked!"
+    m "Only if you lose."
+    her "Well I suppose that's ok then, it's not like I'll have to do it."
+    m "well are you ready?"
+    her "Yes, let's make it quick. I have to go back to the dorms and change after this. My shirt is soaked through."
+    ">Hermione walks over and stands in front of you."
+    her "So what's your plan? Do you expect me to give in just because you rub my shoulders?"
+    m "Shoulders? Who said anything about shoulders?"
+    her "Are you going to grope my butt again?"
+    m "No, no. Today we're sticking with the fundamentals."
+    ">You grab her breasts through her soaked shirt."
+    her "!!!"
+    m "There we are. I'll start the time now shall I?"
+    her "What is wrong with me?"
+    m "Nothing, apart from underestimating your elders."
+    her "My breasts... they're on fire."
+    m "If they were I think I would know."
+    ">You gently roll her nipples between your thumbs and forefingers."
+    her "Please [genie_name], you have to stop."
+    m "You're not allowed to ask me to stop until the two minutes are up."
+    m "And by my count there's still over a minute and a half to go."
+    ">You kneed her breasts firmly."
+    her "I'm calling off the bet..."
+    m "Now now, no one likes a quiter."
+    her "This isn't a joke, it feels like..."
+    her "It feels amazing..."
+    m "I told you I'm good."
+    her "No [genie_name], this is the best thing I've ever felt."
+    her ""
+
+
+    
+label potion_scene_7_2: #Hyper sensitive mouth/throat
+
+
+label potion_scene_7_3: #Hyper sensitive pussy
+
+
 ###COLLAR SCENES
 label collar_scene:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
