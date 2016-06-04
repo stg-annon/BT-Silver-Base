@@ -743,7 +743,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
                     call her_main("And my payment?","body_45")
                     m "Yes, yes..."
     label back_from_panties:
-    if whoring >= 9 and have_cum_soaced_panties == True:
+    if whoring >= 9 and whoring <= 15 and have_cum_soaced_panties == True:
         m "You can go now."
         call her_main("What about my points?","body_30")
         m "You still want points after I just gave you a gift?"
@@ -755,6 +755,17 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
         m "then say thank you for the gift"
         call her_main("Thank you, [genie_name]...","body_17")
         m "You can go now."
+        her "Good night, [genie_name]."
+    elif whoring > 15 and have_cum_soaced_panties == True:
+        $ new_request_03_heart = 3 ##Change to 4
+        m "You can go now."
+        call her_main("yes, [genie_name]","body_118")
+        m "After you say thank you. "
+        call her_main("Thank you for what?","body_122")
+        m "For my cum"
+        call her_main("...","body_124")
+        call her_main("Thank you for your cum [genie_name]...","body_123")
+        m "You may go now."
         her "Good night, [genie_name]."
     else:
         $ gryffindor +=15
@@ -774,6 +785,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     $ request_03_points += 1 #Leveling up the event.
     $ request_03 = False #When False - you gave her her panties back.
     $ have_cum_soaced_panties = False #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ cleaned_panties = False
     
     call her_walk(400,610,2)
     
@@ -785,6 +797,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
     return
 label panties_soaked_in_cum:### PANTIES SOAKED IN CUM ###
     
+    $ cleaned_panties = False
     if whoring >= 3 and whoring <= 5: # LEVEL 02
         call her_main("Hm....?","body_71",xpos=120)
         call her_main("[genie_name]? What is this?","body_05")
@@ -857,7 +870,7 @@ label panties_soaked_in_cum:### PANTIES SOAKED IN CUM ###
         with d3
         call her_main("(This feels funny...)","body_34")
         call her_main("Will this be all, [genie_name]?","body_44")
-    if whoring >= 9: #LEVEL 04+ (THIRD EVENT)
+    if whoring >= 9 and whoring <= 15: #LEVEL 04+ (THIRD EVENT)
         call her_main("My panties...","body_71")
         if request_03 >= 1:
             her "They are covered in something slimy again..."
@@ -897,6 +910,58 @@ label panties_soaked_in_cum:### PANTIES SOAKED IN CUM ###
         ">Hermione swiftly slides her drenched panties on..."
         hide screen blktone8
         with d3
+    else: ###New variant of the event
+        call her_main("My panties...","body_78")
+        if request_03 >= 1:
+            her "You came all over them again..."
+        else:
+            her "You came all over them..."
+        call her_main("Hm...","body_68")
+        her "Seems like these will require some serious cleaning before I can put them on..."
+        call her_main("Unless you want me to put them on now, [genie_name]...?","body_64")
+        menu: 
+            "\"Yes! Put them on now, [hermione_name]!\"":
+                her "Yes [genie_name]..."
+                call her_main("I am only doing this to give my house a fair chance at winning the cup this year.","body_75")
+                call her_main("I don't like how it feels at all...","body_78")
+                m "Right..."
+                hide screen hermione_main
+                with d3
+                show screen blktone8
+                with d3
+                ">Hermione swiftly slides her drenched panties on..."
+                call her_main("...","body_121")
+                hide screen blktone8
+                with d3
+            "\"Why don't you clean them now?\"":
+                $ cleaned_panties = True
+                call her_main("Clean them How? You don't have a wash basin in here.","body_31")
+                m "You're right, you'll have to use your mouth then."
+                call her_main("My mouth?!","body_72")
+                m "What's the big deal? It wouldn't be the first time you've tasted my cum."
+                call her_main("It's a bit different! I wore these panties before I gave them to you.","body_30")
+                call her_main("Not to mention that your cum is all cold and slimey...","body_32")
+                m "Well in that case hand them back."
+                call her_main("What? Can't I just put them on?","body_122") 
+                m "I'm afraid not, you clean them now or you hand them back."
+                call her_main("{size=-4}Fine...{/size}","body_118")
+                m "What was that?"
+                call her_main("I said I'll clean them ok!","body_132")
+                m "Well..."
+                call her_main("...","body_118")
+                ">Hermione reluctantly puts her cum-soaked panties in her mouth."
+                call her_main("Mmmmhhhhh!","body_42")
+                m "That's it, not as bas as you thought now is it?"
+                call her_main("...","body_222")
+                m "Make sure you get them nice and clean now..."
+                call her_main("*gulp*","body_224")
+                m "That's it. Do you think they're clean yet."
+                call her_main("*Mmmhhhmmm*","body_125")
+                m "Well then you can probably take them out of your mouth."
+                call her_main("*Ahhhhh*","body_135")
+                m "There, nice and clean."
+                call her_main("*Yes [genie_name]*","body_121")
+
 
     jump back_from_panties
         
