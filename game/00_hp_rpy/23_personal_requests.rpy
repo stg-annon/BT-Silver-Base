@@ -1767,7 +1767,7 @@ label new_request_05:
     
     elif whoring >= 24: # LEVEL 05 # <=================================================================================== THIRD EVENT.
         $ new_request_05_02 = True # HEARTS.
-        $ new_request_05_heart = 2
+        $ new_request_05_heart = 4
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
@@ -6946,6 +6946,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     
     call set_u_ani("blowjob_ani","hand_ani",-150,10)
     $ hermione_head_ypos = her_head_tits
+    $ mouth_full_of_cum = False
     
     if request_22_points == 0: # FIRST EVENT <============================================================== EVENT 01
         m "[hermione_name]?"
@@ -7294,7 +7295,7 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
 
         jump blowjob_jumping
   
-    elif request_22_points >= 2: # <============================================================== EVENT 03
+    elif request_22_points >= 2 and whoring < 20: # <============================================================== EVENT 03
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Suck my dick, [hermione_name]."
         call her_main("Of course...","body_45",xpos=140)
@@ -7774,7 +7775,418 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
                     call her_head(".............","body_17") #Smile.
                     call her_head("Fine, but my skin better look better tomorrow.")
                 $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
-    
+    elif request_22_points >= 2 and whoring >= 20: ###4th level event
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        m "Suck my dick, [hermione_name]."
+        call her_main("Of course [genie_name]...","body_78",xpos=140)
+        # Sucking.
+        
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen genie
+        hide screen hermione_blink #Hermione stands still.
+        hide screen blkfade
+        hide screen blktone
+        hide screen bld1
+        show screen chair_02
+        show screen ctc
+        with fade
+        
+        call u_play_ani
+        pause
+        show screen bld1
+        with d3
+        
+        her "*Slurp!* *Slurp!* *Gulp!*"
+        m "Yes, good girl..."
+        her "*Slurp!* *Gobble!* *Slurp!*"
+        m "lick the shaft..."
+        #">Hermione keeps sucking on your cock with a rather fierce determination."
+        #">Hermione is working hard to please you..."
+        her "*lick!* *Slurp!* *lick!*"
+        show screen blktone
+        with d3
+        ">Hermione keeps sucking on your cock like her life depends on it."
+        ">Her technique is almost perfect and she is incredibly enthusiastic."
+        hide screen blktone
+        with d3
+        m "Yes... I love your eager, little mouth slut..."
+        her "*Gobble!* *Gobble!* *Gobble!*"
+        call u_pause_ani
+        call her_head("[genie_name]?","body_59")
+        m "Hm?"
+        call her_head("How would you like me to please you today?","body_121")
+        menu:
+            "\"Pretend I am your father.\"":
+                call her_head("My father?","body_122")
+                m "Anything wrong with that?"
+                call her_head("I suppose not...","body_124")
+                call her_head("I mean it's just pretending...","body_123")
+                m "Great. Dick back in mouth then."
+                call u_play_ani
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "That's it, princess. Suck daddy's dick."
+                her "*Slurp!* *Gulp!* *Slurp!*"
+                m "Tell me how much you want it."
+                her "*Slurp!* *Gobble!* *Slurp!*"
+                call u_pause_ani
+                call her_head("So much daddy...","body_121")
+                call u_play_ani
+                her "*Slurp!* *Gobble!* *Slurp!*"
+                call u_pause_ani
+                call her_head("It's all I think about when we're together...","body_78")
+                call u_play_ani
+                her "*Gobble!* *Gulp!* *Gobble!*"
+                call u_pause_ani
+                call her_head("When we're sitting together on the couch watching T.V...","body_78")
+                call her_head("I just imagine that I am sucking your cock instead...","body_78")
+                call u_play_ani
+                her "*lick!* *Slurp!* *Slurp!*"
+                call u_pause_ani
+                call her_head("I even wish that mum left you sometimes...","body_73")
+                call u_play_ani
+                her "*Gobble!* *Slurp!* *lick!*"
+                m "Why's that?"
+                call u_pause_ani
+                call her_head("So that I'm the only one to get your dick...","body_225")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("You'll come home every day...","body_225")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("Throw me onto my bed...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("and use me...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("however you want...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("for as long as you want...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("you won't even ask...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("you'll just take me...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("even though I say no...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                m "That's it princess, Almost there..."
+                call u_pause_ani
+                call her_head("Where do you want to cum today daddy?","body_121")
+                call her_head("Are you going to cover my face?","body_121")
+                call her_head("Or make me swallow your big load?","body_123")
+                call her_head("{size=-4}Even if I don't want to...{/size}","body_123")
+                m "Let's find out shall we?"
+                call her_head("Yes daddy...","body_121")
+                call u_play_ani
+                her "*Slurp!* *Gulp!* *Slurp!*"
+                m "Yes, like that... Good girl..."
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "Do it for daddy."
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "Come on princess."
+                her "*Slurp!* *Gobble!* *Gobble!*"
+                m "Alright, [hermione_name], almost there."
+                g4 "Make daddy proud!"
+                her "!!! *Gobble-goble-slurp-goble!* !!!"
+                g4 "Yes, like that!"
+                her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+                g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
+                g4 "Ghr!!!"
+                        
+                menu:
+                    g4 "!!!"
+                    "-Cum in her mouth-":
+                        hide screen blkfade
+                        with d3
+                        g4 "Here it comes, [hermione_name]! Here comes daddy!"
+                        her "!!!"
+                        
+                        show screen ctc
+                        pause
+                        show screen blkfade
+                        with d3
+                        call set_u_ani("cum_in_mouth_ani")
+                        call u_play_ani
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "{size=+7}ARGH!{/size}"
+                        g4 "Eat my cum, slut!"
+                        #Cumming.
+                        her "*Gulp!-Gulp!-Gulp!*"
+                        with hpunch
+                        g4 "Yes! Down your fucking slut throat!"
+                        her "*Gulp-gulp-gulp-gulp-gulp!*"
+                        hide screen blkfade
+                        hide screen bld1
+                        with d3
+                        show screen ctc
+                        stop music fadeout 1.0
+                        pause
+                        hide screen ctc
+                        show screen bld1
+                        with d3
+                        m "Well, I think that's it."
+                        m "You can let go now..."
+                        call u_pause_ani
+                        call her_head("...........................","body_125")
+                        call her_head("................")
+                        call her_head("........")
+                        $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
+                        call her_head("*GULP!*","body_126")
+                        call her_head("Gua-ha...","body_115")
+                        m "How was that?"
+                        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        call her_head("So tasty...","body_123")
+                        m "Really?"
+                        call her_head("Yes daddy...","body_123")
+                        call her_head("It's always tasty with you...")
+                        m "Heh... is that so?"
+                        call her_head(".............","body_123") #Smile.
+                        ">She leans forward and gives your wilting cock a small kiss."
+                        call her_head("Thanks daddy.","body_54") #Smile.
+                        show screen ctc
+                        pause
+                        hide screen ctc
+                        show screen blkfade
+                        with d3
+                        
+                    "-Cum on her face-":
+                        show screen bld1
+                        hide screen blkfade
+                        call u_pause_ani
+                        g4 "Ready for your cum-load, princess slut?"
+                        call her_head("Yes daddy!","body_123")
+                        g4 "Here it comes then!"
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "{size=+7}Slut!{/size}"
+                        call her_head("!!?","body_226")
+                        call set_u_ani("cum_on_face_ani")
+                        call u_play_ani
+                        show screen ctc
+                        hide screen bld1
+                        with d3
+                        pause
+                        hide screen ctc
+                        show screen bld1
+                        with d3
+                        
+                        #Cumming.
+                        $ uni_sperm = True
+                        $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+                        call her_head("Daddy...","body_48")
+                        g4 "That's it princess!"
+                        call her_head("Aaah!","body_123")
+                        call set_u_ani("cum_on_face_blink_ani")
+                        m "Well, I'm done."
+                        call her_head("....................................","body_123")
+                        m "I said it's over, [hermione_name]."
+                        call her_head("Yes, I heard you daddy...","body_123")
+                        m "So... Aren't you going to clean up?"
+                        call her_head("In a minute...","body_123")
+                        call her_head("I'm just savouring the moment...") 
+                        m "Hm..."
+                        m "Take your time, [hermione_name]..."
+                        show screen blkfade
+                        with d3
+                        stop music fadeout 1.0 
+                        ">A while later."
+                        call u_pause_ani
+                        $ uni_sperm = False
+                        $ aftersperm = True
+                        call her_head("I take it you enjoyed yourself sir?","body_122")
+                        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        m "Yes I did princess."
+                        $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+            "\"Worship my cock.\"": ###IN PROGRESS
+                call her_head("Worship it?","body_122")
+                m "Worship. My. Cock."
+                call her_head("Well...","body_124")
+                call her_head("ok...","body_121")
+                m "Great. You can start by putting it back in your mouth."
+                call u_play_ani
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "Thats it.."
+                her "*Slurp!* *Gulp!* *Slurp!*"
+                m "Tell me how much you love my cock."
+                her "*Slurp!* *Gobble!* *Slurp!*"
+                call u_pause_ani
+                call her_head("So much [genie_name]...","body_121")
+                call u_play_ani
+                her "*Slurp!* *Gobble!* *Slurp!*"
+                call u_pause_ani
+                call her_head("It's all I think about when I'm in class...","body_78")
+                call u_play_ani
+                her "*Gobble!* *Gulp!* *Gobble!*"
+                if lock_public_favors == True:
+                    call u_pause_ani
+                    call her_head("Sucking your perfect dick.","body_78")
+                    call her_head("No one elses...","body_78")
+                    call u_play_ani
+                    her "*lick!* *Slurp!* *Slurp!*"
+                    call u_pause_ani
+                    call her_head("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}","body_123")
+                    call u_play_ani
+                    her "*Gobble!* *Slurp!* *lick!*"
+                else:
+                    call u_pause_ani
+                    call her_head("Even when you make me suck another boys dick...","body_78")
+                    call her_head("I still imagine that it's yours...","body_78")
+                    call u_play_ani
+                    her "*lick!* *Slurp!* *Slurp!*"
+                    call u_pause_ani
+                    call her_head("Imagine that it's your cum sliding down my throat...","body_121")
+                    call u_play_ani
+                    her "*Gobble!* *Slurp!* *lick!*"
+                    call u_pause_ani
+                    call her_head("Imagine that it's your hot load shot across my face...","body_123")
+                    call u_play_ani
+                    her "*Gobble!* *Slurp!* *lick!*"
+                m "Is that so?"
+                call u_pause_ani
+                call her_head("Yes [genie_name]...","body_225")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("Sometimes...","body_225")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("After you make me suck your perfect cock...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("I won't brush my teeth...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("just so I can go to sleep...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("with that perfect taste in my mouth...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("and when I do brush my teeth...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("Your beautiful cock is all I can think about...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                call u_pause_ani
+                call her_head("I even started to moan while brushing them...","body_123")
+                call u_play_ani
+                her "*Gobble!* *lick!* *Gobble!*"
+                m "That's it cock slut, Almost there..."
+                call u_pause_ani
+                call her_head("Where do you want to cum today [genie_name]?","body_121")
+                call her_head("I know it's greedy of me to ask...","body_118")
+                call her_head("But can you cum in my mouth?","body_122")
+                call her_head("{size=-4}Please...{/size} I promise I won't waste a drop.","body_121")
+                m "I think that can be arranged "
+                call her_head("Thank you [genie_name]!","body_80b")
+                call u_play_ani
+                ">Hermione devours your cock with renewed vigour."
+                her "*Slurp!* *Gulp!* *Slurp!*"
+                m "Yes, like that... that's a good little slut..."
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "Deeper now."
+                her "*Slurp!* *Slurp!* *Slurp!*"
+                m "Come on cock-slut."
+                her "*Slurp!* *Gobble!* *Gobble!*"
+                m "Alright, [hermione_name], almost there."
+                g4 "Deeper now!"
+                her "!!! *Gobble-goble-slurp-goble!* !!!"
+                g4 "Yes, like that!"
+                her "{size=+5}!!! *Gobble-gobble-slurp-gobble!* !!!{/size}"
+                g4 "{size=+5}Yes! Yes! Yes! Yes!{/size}"
+                g4 "Ghr!!!"
+                hide screen blkfade
+                with d3
+                g4 "Here it comes, [hermione_name]! Here's you reward!"
+                her "!!!"
+                
+                show screen ctc
+                pause
+                show screen blkfade
+                with d3
+                call set_u_ani("cum_in_mouth_ani")
+                call u_play_ani
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+7}ARGH!{/size}"
+                g4 "Eat my cum, slut!"
+                #Cumming.
+                her "*Gulp!-Gulp!-Gulp!*"
+                with hpunch
+                g4 "Yes! Down your fucking cumslut mouth!"
+                her "*Gulp-gulp-gulp-gulp-gulp!*"
+                hide screen blkfade
+                hide screen bld1
+                with d3
+                show screen ctc
+                stop music fadeout 1.0
+                pause
+                hide screen ctc
+                show screen bld1
+                with d3
+                m "Well, I think that's it."
+                m "You can let go now..."
+                call u_pause_ani
+                call her_head("...........................","body_125","tears_03")
+                call her_head("................","body_125","tears_03")
+                call her_head("........","body_125","tears_03")
+                m "How was that?"
+                call her_head("...")
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                m "Are you going to swallow?"
+                call her_head("*Shakes her head side to side*","body_125","tears_03")
+                if daytime:
+                    m "So you're going to go to class with a mouth full of my cum?"
+                else:
+                    m "So you're going to go to sleep with a mouth full of my cum?"
+                call her_head("*She nods her head up and down enthusiasctially*","body_227","tears_03") #Smile.
+                m "Good girl."
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade
+                with d3
+                $ mouth_full_of_cum = True
+                    
     $ gryffindor += current_payout #35
     call u_end_ani
     hide screen h_c_u
@@ -7797,7 +8209,10 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
         m "Yes, [hermione_name]. 55 points to \"Gryffindor\"." 
         $ gryffindor +=55
     
-    call her_main("Thank you, [genie_name]...","body_13",xpos=140)
+    if mouth_full_of_cum:
+        call her_main("...","body_227","tears_03",xpos=140)
+    else:
+        call her_main("Thank you, [genie_name]...","body_13",xpos=140)
     
     if whoring <= 17:
         $ whoring +=1
@@ -7811,6 +8226,8 @@ label new_request_22: #LV.6 (Whoring = 15 - 17)
     if request_22_points >= 2:
         $ new_request_22_03 = True #  HEARTS
         $ new_request_22_heart = 3
+    if request_22_points >= 2 and whoring >= 20:
+        $ new_request_22_heart = 4
     
     $ request_22_points += 1
     $ custom_outfit_old = temp_outfit
