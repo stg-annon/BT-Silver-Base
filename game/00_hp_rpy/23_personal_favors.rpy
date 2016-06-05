@@ -8148,7 +8148,6 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 with d3
                 $ mouth_full_of_cum = True
                 
-    
     $ gryffindor += current_payout #35
     call u_end_ani
     hide screen h_c_u
