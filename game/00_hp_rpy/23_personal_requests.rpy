@@ -757,7 +757,7 @@ label new_request_03_complete: # WHORING LEVEL 02 <=================
         m "You can go now."
         her "Good night, [genie_name]."
     elif whoring > 15 and have_cum_soaced_panties == True:
-        $ new_request_03_heart = 3 ##Change to 4
+        $ new_request_03_heart = 4 
         m "You can go now."
         call her_main("yes, [genie_name]","body_118")
         m "After you say thank you. "

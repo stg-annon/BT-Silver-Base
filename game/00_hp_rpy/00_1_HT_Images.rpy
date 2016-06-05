@@ -8,6 +8,7 @@ init:
     image heart_01 = "interface/heart_01.png"
     image heart_02 = "interface/heart_02.png"
     image heart_03 = "interface/heart_03.png"
+    image heart_04 = "interface/heart_04.png"
     
     image textheart = "interface/textheart.png"
     
