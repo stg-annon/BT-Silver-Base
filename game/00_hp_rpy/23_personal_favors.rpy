@@ -6904,6 +6904,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     
     call set_u_ani("blowjob_ani","hand_ani",-150,10)
     $ hermione_head_ypos = her_head_tits
+    $ mouth_full_of_cum = False
     
     if hg_pf_points[hg_pf_SuckIt_ID] == 0: #<=== EVENT 01   FIRST EVENT
         m "[hermione_name]?"
@@ -8169,8 +8170,10 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     if whoring <= 19:
         m "Yes, [hermione_name]. 55 points to \"Gryffindor\"." 
         $ gryffindor +=55
-    
-    call her_main("Thank you, [genie_name]...","body_13",xpos=140)
+    if mouth_full_of_cum:
+        call her_main("...","body_227","tears_03",xpos=140)
+    else:
+        call her_main("Thank you, [genie_name]...","body_13",xpos=140)
     
     if whoring <= 17:
         $ whoring +=1
