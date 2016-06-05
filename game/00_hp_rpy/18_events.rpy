@@ -1,3 +1,5 @@
+
+#First time genie meets snape
 label event_00:
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
@@ -241,14 +243,8 @@ label event_00:
     
     jump day_start
 
-
-
-
-###############################################################################################################################################################
-
-label event_01: #First event in the game. Gennie finds himself at the desk.
-    
-    
+#First event in the game. Gennie finds himself at the desk.
+label event_01: 
     show screen bld1
     with d3
     m "..................?"
@@ -272,7 +268,8 @@ label event_01: #First event in the game. Gennie finds himself at the desk.
     hide screen bld1
     with d3
     return
-###############################################################################################################################################################
+
+#owl event
 label event_02:
     $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
     #$ mail_from_her = True #Comented out because replaced with $ letters += 1 
@@ -284,8 +281,8 @@ label event_02:
     hide screen bld1
     with d3
     return
-    
-###############################################################################################################################################################
+
+#Sanpe talks to genie about hermione, snape becomes suspicious
 label event_03: 
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
@@ -386,13 +383,15 @@ label event_03:
     with Dissolve(.3)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     jump day_start
-###############################################################################################################################################################
+
+#NOT IN USE
 label event_04:
     m "Well, it's been three days now..."
     m "I wonder what has become of that two-faced dude?"
     return
-###############################################################################################################################################################    
-label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
+
+#Snape comes in, has a talk with Genie, then the duel starts.
+label event_05: 
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
@@ -646,8 +645,8 @@ label event_05: #Snape comes in, has a talk with Genie, then the duel starts.
 
     jump duel
 
-###############################################################################################################################################################
-label event_06: #THE TALK AFTER THE DUEL ENDS.
+#THE TALK AFTER THE DUEL ENDS.
+label event_06: 
     $ potions = 0 #Makes sure there are no potions left in the possessions. 
     
     #play music "music/Final Fantasy VII - Victory Fanfare.mp3" fadein 1 fadeout 1 
@@ -807,8 +806,9 @@ label event_06: #THE TALK AFTER THE DUEL ENDS.
 
     sna_[7] "(A genie? Now that's new...)"
     jump day_start
-###############################################################################################################################################################        
-label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
+
+#THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
+label event_07: 
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
@@ -961,8 +961,8 @@ label event_07: #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
     
     jump day_start
 
-###############################################################################################################################################################
-label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
+#HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
+label event_08: 
     #"EVENT_08"
     stop music fadeout 1.0
     pause 1
@@ -1245,8 +1245,7 @@ label event_08: # HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
     return
 
-### FOLLOWING EVENT IS NOT IN USE ANYMORE ###
-###############################################################################################################################################################    
+### FOLLOWING EVENT IS NOT IN USE ANYMORE ###    
 label event_08_02:
     "EVENT_08_02"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1355,7 +1354,8 @@ label event_08_02:
     pause.5
     m "I'm Starting to enjoy our meetings less and less..."
     return
-#NOT IN USE###############################################################################################################################################################    
+
+#NOT IN USE#   
 label event_08_03:
     "EVENT_08_03"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1461,11 +1461,8 @@ label event_08_03:
     
     return
 
-            
-            
-            
-##################################################################################################################
-label event_09: #Second visit from Hermione. Says she sent a letter to the Minestry. 
+#Second visit from Hermione. Says she sent a letter to the Minestry. 
+label event_09:
                 #Takes place after first special event with Snape, where he just complains about Hermione.
     
     #"EVENT_09"
@@ -1593,9 +1590,8 @@ label event_09: #Second visit from Hermione. Says she sent a letter to the Mines
     
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
     return
-    
-    
-#NOT IN USE###############################################################################################################################################################
+
+#NOT IN USE#
 label event_09_2: #Takes place after second special event with Snape, where he just complains about Hermione.
     "EVENT_09"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1715,11 +1711,7 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     $ snape_against_hermione_02 = True #Turns True after event_09. Activates second event when hanging out with Snape.
     return
 
-   
-
-
-
-#NOT IN USE###############################################################################################################################################################
+#NOT IN USE#
 label event_10: #Takes place after second special even with Snape where Ginie is worried that Hermione is still in power.
     #Hermione says that she sent the letter to the Ministry of Magic."
     "EVENT_10"
@@ -1834,8 +1826,8 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     return
 
-###############################################################################################################################################################
-label event_11: #Third visit, after second special date with Snape. Hermione complains that she almost failed a test. (EVENING EVENT!)
+#Third visit, after second special date with Snape. Hermione complains that she almost failed a test. (EVENING EVENT!)
+label event_11: 
     #"EVENT_11"
     stop music fadeout 1.0
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1944,9 +1936,8 @@ label event_11: #Third visit, after second special date with Snape. Hermione com
 
     return
 
-
-###############################################################################################################################################################
-label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!)
+#Hermione complains that she might have failed a test. (EVENING EVENT!)
+label event_12:
     #"EVENT_12"
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -2025,9 +2016,8 @@ label event_12: # Hermione complains that she did failed a test. (EVENING EVENT!
     
     call day_start
 
-
-###############################################################################################################################################################
-label event_13: # Hermione complains that she almost failed a test. (EVENING EVENT!)
+#Hermione complains that she did fail the test. (EVENING EVENT!)
+label event_13: 
     #"EVENT_13"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
@@ -2134,10 +2124,8 @@ label event_13: # Hermione complains that she almost failed a test. (EVENING EVE
     
     call day_start
 
-
-
-###############################################################################################################################################################
-label event_14: # Hermione comes after her breakdown (when she failed the test). She is asking for tutoring. Tutoring unlocked.
+#Hermione comes after her breakdown (when she failed the test). She is asking for tutoring. Tutoring unlocked.
+label event_14: 
     #"EVENT_14"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
@@ -2257,11 +2245,8 @@ label event_14: # Hermione comes after her breakdown (when she failed the test).
 
     return
 
-
-
-
-###############################################################################################################################################################
-label event_15: # Hermione comes and asks to buy a favour from her.
+#Hermione comes and asks to buy a favour from her.
+label event_15: 
     
     #"EVENT_15"
     
@@ -2621,12 +2606,11 @@ label event_15: # Hermione comes and asks to buy a favour from her.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     $ event15_happened = True #Turns TRUE after event_15
     jump day_start
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
     

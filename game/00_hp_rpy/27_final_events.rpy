@@ -1,19 +1,10 @@
+
+#hermione asks genie about who will be in-charge of the ball
 label want_to_rule:
     
     $ event_chairman_happened = True #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
-   
-    $ walk_xpos=520 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.7 
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+    
+    call hg_event_EnterRoom_block
     
     hide screen hermione_main
     with d3
@@ -419,9 +410,11 @@ label want_to_rule:
     return
     
 #==========================
-    
+
+#snape confronts genie about his ABOC decision
 label against_the_rule:
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+    
     $ snape_against_chairman_hap = True # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
     $ days_without_an_event = 0
     
@@ -595,18 +588,7 @@ label crying_about_dress:
     $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
-    $ walk_xpos=520 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.7 
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
+    call hg_event_EnterRoom_block
     
     hide screen hermione_main
     with d3
@@ -687,19 +669,7 @@ label sorry_about_hesterics:
     $ have_no_dress_hap = True #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
     $ days_without_an_event = 0
     
-    $ walk_xpos=520 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.7 
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
-    
+    call hg_event_EnterRoom_block
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     
@@ -760,7 +730,7 @@ label sorry_about_hesterics:
 label giving_thre_dress:
     $ gave_the_dress = True #Turns True when Hermione has the dress.
     $ days_without_an_event = 0
-    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    hide screen hermione_main
     with d5
     
     
@@ -1417,6 +1387,17 @@ label good_bye_snape:
     
     
     
+
+label hg_event_EnterRoom_block:
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(520,400,2)
+    show screen hermione_blink #Hermione stands still.
+    pause.5
+    show screen bld1
+    with Dissolve(.3)
+    show screen hermione_blink
+    with d3
+    return
     
     
     
