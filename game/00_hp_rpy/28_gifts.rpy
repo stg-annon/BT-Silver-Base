@@ -1609,10 +1609,10 @@ label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
     with d5
     return
     
-label set_h_hair(style="A", color=1):
+label set_h_hair(hair_style="A", color=1):
     hide screen hermione_main
     with d5
-    $ h_hair_style = style
+    $ h_hair_style = hair_style
     $ h_hair_color = color
     call h_update_hair
     show screen hermione_main
