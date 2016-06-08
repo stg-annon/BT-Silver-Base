@@ -204,7 +204,87 @@ label __init_variables:
         $ tentacle_owned = False
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
+    
+    
+    
+    
+    $ override_persistant = False
+    
+    
+    ### Personal Favor ID's ###
+    $ hg_pf_TalkToMe_ID = 0        #00 Genie touches himself.
+    $ hg_pf_NicePanties_ID = 1     #01 "Lift your skirt".
+    $ hg_pf_BreastMolester_ID = 2  #02 "Molest tits."
+    $ hg_pf_ButtMolester_ID = 3    #03 "Molest butt."
+    $ hg_pf_ShowThemToMe_ID = 4    #04 "Show me your tits."
+    $ hg_pf_DanceForMe_ID = 5      #05 "Get naked."
+    $ hg_pf_LetMeTouchThem_ID = 6  #06 "Let me play with your tits."
+    $ hg_pf_TouchMe_ID = 7         #07 (Handjob).
+    $ hg_pf_SuckIt_ID = 8          #08 (Blowjob).
+    $ hg_pf_LetsHaveSex_ID = 9     #09 (Sex).
+    $ hg_pf_TimeForAnal_ID = 10    #10 (Anal sex)
+    $ hg_pf_TheGamble_ID = 11      #11 (Gamble with hg)
 
+    #Personal Favor Points
+    if override_persistant or not hasattr(renpy.store,'hg_pf_points'): #important!
+        $ hg_pf_points = [0] * 12
+    if override_persistant or not hasattr(renpy.store,'hg_pf_hearts'): #important!
+        $ hg_pf_hearts = [0] * 12
+    if override_persistant or not hasattr(renpy.store,'hg_pf_complete'): #important!
+        $ hg_pf_complete = [False] * 12
+        
+        
+    ### Public Request ID's ###
+    $ hg_pr_FlirtClassmate_ID = 0 #00 "Flirt with 3 classmates".
+    $ hg_pr_FlirtTeacher_ID = 1 #01 "Flirt with a teacher".
+    $ hg_pr_ClassmateTouchYou_ID = 2 #02 "Let a classmate molest you."
+    $ hg_pr_FlashClassmate_ID = 3 #03 "Flash a classmate."
+    $ hg_pr_KissAGirl_ID = 4 #04 "Kiss female classmate."
+    $ hg_pr_HandjobClassmate_ID = 5 #05 (Give handjob to a classmate)
+    $ hg_pr_BlowjobClassmate_ID = 6 #06 (Blow a classamate).
+    $ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
+    $ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
+    $ hg_pr_SexWithTeacher_ID = 9 #09 (sex with teacher)
+    
+    #Public Request Points
+    if override_persistant or not hasattr(renpy.store,'hg_pr_points'): #important!
+        $ hg_pr_points = [0] * 11
+    if override_persistant or not hasattr(renpy.store,'hg_pr_complete'): #important!
+        $ hg_pr_complete = [False] * 11
+    if override_persistant or not hasattr(renpy.store,'hg_pr_InProgress'): #important!
+        $ hg_pr_InProgress = [False] * 11
+
+    #Public Request Vars.
+    if override_persistant or not hasattr(renpy.store,'hg_pr_SexWithClassmate_AltFlag'): #important!
+        $ hg_pr_SexWithClassmate_AltFlag = False
+        
+        
+    #Public Shaming
+    $ hg_ps_PantyThief_ID = 0
+    $ hg_ps_WalkOfAtonement_ID = 1
+    $ hg_ps_WearMyCum_ID = 2
+    $ hg_ps_LeashWalk_ID = 3
+
+    #Public Request Vars.
+    if override_persistant or not hasattr(renpy.store,'hg_ps_points'): #important!
+        $ hg_ps_points = [0] * 4
+    if override_persistant or not hasattr(renpy.store,'hg_ps_hearts'): #important!
+        $ hg_ps_hearts = [0] * 4
+    if override_persistant or not hasattr(renpy.store,'hg_ps_complete'): #important!
+        $ hg_ps_complete = [False] * 4
+    if override_persistant or not hasattr(renpy.store,'hg_ps_InProgress'): #important!
+        $ hg_ps_InProgress = [False] * 4
+        
+    #Public Shaming Flags
+    if override_persistant or not hasattr(renpy.store,'hg_ps_PantyThief_SoakedPantiesFlag'): #important!
+        $ hg_ps_PantyThief_SoakedPantiesFlag = False
+        
+    
+    
+    
+    
+    
+    
     $ wardrobe_hair_style = "A"
     $ wardrobe_hair_color = 1
     $ wardrobe_gift_item = 0

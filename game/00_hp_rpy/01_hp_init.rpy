@@ -160,6 +160,7 @@ $ package_is_here = False # Turns true when days_in_delivery >= 5. Package is di
 #hg = hermione granger
 #pf = personal favor (sexual)
 #pr = public request
+#ps = public shaming
 
 
 ### LEVELING UP ###
@@ -170,61 +171,7 @@ $ hg_whoring_lvl = 0
 
 
 
-### Personal Favor ID's ###
-$ hg_pf_TalkToMe_ID = 0        #00 Genie touches himself.
-$ hg_pf_NicePanties_ID = 1     #01 "Lift your skirt".
-$ hg_pf_PantyThief_ID = 2      #02 "Give me your panties."
-$ hg_pf_BreastMolester_ID = 3  #03 "Molest tits."
-$ hg_pf_ButtMolester_ID = 4    #04 "Molest butt."
-$ hg_pf_ShowThemToMe_ID = 5    #05 "Show me your tits."
-$ hg_pf_DanceForMe_ID = 6      #06 "Get naked."
-$ hg_pf_LetMeTouchThem_ID = 7  #07 "Let me play with your tits."
-$ hg_pf_TouchMe_ID = 8         #08 (Handjob).
-$ hg_pf_SuckIt_ID = 9          #09 (Blowjob).
-$ hg_pf_LetsHaveSex_ID = 10    #10 (Sex).
-$ hg_pf_TimeForAnal_ID = 11    #11 (Anal sex)
-$ hg_pf_TheGamble_ID = 12      #12 (Gamble with hg)
-
-#Personal Favor Points
-if not hasattr(renpy.store,'hg_pf_points'): #important!
-    $ hg_pf_points = [0] * 13
-if not hasattr(renpy.store,'hg_pf_hearts'): #important!
-    $ hg_pf_hearts = [0] * 13
-if not hasattr(renpy.store,'hg_pf_complete'): #important!
-    $ hg_pf_complete = [False] * 13
-
-#Personal Favor Flags
-if not hasattr(renpy.store,'hg_pf_PantyThief_InProgressFlag'): #important!
-    $ hg_pf_PantyThief_InProgressFlag = False
-if not hasattr(renpy.store,'hg_pf_PantyThief_SoakedPantiesFlag'): #important!
-    $ hg_pf_PantyThief_SoakedPantiesFlag = False
-
-
-
-### Public Request ID's ###
-$ hg_pr_FlirtClassmate_ID = 0 #00 "Flirt with 3 classmates".
-$ hg_pr_FlirtTeacher_ID = 1 #01 "Flirt with a teacher".
-$ hg_pr_ClassmateTouchYou_ID = 2 #02 "Let a classmate molest you."
-$ hg_pr_FlashClassmate_ID = 3 #03 "Flash a classmate."
-$ hg_pr_KissAGirl_ID = 4 #04 "Kiss female classmate."
-$ hg_pr_HandjobClassmate_ID = 5 #05 (Give handjob to a classmate)
-$ hg_pr_BlowjobClassmate_ID = 6 #06 (Blow a classamate).
-$ hg_pr_BlowjobTeacher_ID = 7 #07 (Blow a teacher)
-$ hg_pr_SexWithClassmate_ID = 8 #08 (sex with classamate).
-$ hg_pr_SexWithTeacher_ID = 9 #09 (sex with teacher)
-
-#Public Request Points
-if not hasattr(renpy.store,'hg_pr_points'): #important!
-    $ hg_pr_points = [0] * 11
-if not hasattr(renpy.store,'hg_pr_complete'): #important!
-    $ hg_pr_complete = [False] * 11
-if not hasattr(renpy.store,'hg_pr_InProgress'): #important!
-    $ hg_pr_InProgress = [False] * 11
-
-#Public Request Flags
-if not hasattr(renpy.store,'hg_pr_SexWithClassmate_AltFlag'): #important!
-    $ hg_pr_SexWithClassmate_AltFlag = False
-
+    
 #Flirt with 3 classmates.
 #Flirt with a teacher.
 #(Goes to class without panties).

@@ -13,7 +13,6 @@ label new_personal_request:
                 
                 $ hg_pf_TalkToMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_TalkToMe_ID])+".png"
                 $ hg_pf_NicePanties_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_NicePanties_ID])+".png"
-                $ hg_pf_PantyThief_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_PantyThief_ID])+".png"
                 $ hg_pf_BreastMolester_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_BreastMolester_ID])+".png"
                 $ hg_pf_ButtMolester_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_ButtMolester_ID])+".png"
                 $ hg_pf_ShowThemToMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_ShowThemToMe_ID])+".png"
@@ -33,17 +32,7 @@ label new_personal_request:
 
                     "Favour: \"Nice panties\" {image=[hg_pf_NicePanties_MH]}": # LEVEL 1
                         jump hg_pf_NicePanties
-                  
-                    ### LEVEL 02 ###
-                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
-                        call vague_idea
-                        jump not_now2
-                    "{color=#858585}Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}{/color}" if imagination >= 2 and not daytime:
-                        call cust_excuse("\"Panty thief\" is available during the daytime only.")
-                        jump not_now2
-                    "Favour: \"Panty thief\" {image=[hg_pf_PantyThief_MH]}" if imagination >= 2 and daytime:
-                        jump hg_pf_PantyThief
-                        
+                    
                     "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                         call vague_idea
                         jump not_now2
@@ -196,6 +185,35 @@ label new_personal_request:
                         
                         "-Cancel-":
                             jump new_personal_request
+            "{color=#858585}-Public Shaming-{/color}" if not daytime:
+                show screen blktone
+                hide screen hermione_main
+                with d3
+                ">Public Shaming events are available during the daytime only."
+                hide screen blktone
+                show screen hermione_main
+                with d3
+                jump not_now
+            "-Public Shaming-"if daytime:
+            
+                $ hg_ps_PantyThief_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_PantyThief_ID])+".png"
+                $ hg_ps_WalkOfAtonement_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_WalkOfAtonement_ID])+".png"
+                $ hg_ps_WearMyCum_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_WearMyCum_ID])+".png"
+                $ hg_ps_LeashWalk_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_LeashWalk_ID])+".png"
+                
+                label not_now4:
+                menu:
+                    "Event: \"Panty Theif\" {image=[hg_ps_PantyThief_CHK]}":
+                        jump hg_ps_PantyThief
+                    "Event: \"Walk Of Atonement\" {image=[hg_ps_WalkOfAtonement_CHK]}":
+                        jump hg_ps_WalkOfAtonement
+                    "Event: \"Wear My Cum\" {image=[hg_ps_WearMyCum_CHK]}":
+                        jump hg_ps_WearMyCum
+                    "Event: \"Time for a walk (leash)\" {image=[hg_ps_LeashWalk_CHK]}":
+                        jump hg_ps_LeashWalk
+                    "-Cancel-":
+                        jump new_personal_request
+                            
             "{color=#858585}-Potions-{/color}" if not daytime:
                 call cust_excuse("Potions are available during the daytime only.")
                 jump not_now
@@ -481,8 +499,6 @@ label Night_Request_Block:
         jump potion_scene_3_2
     
     
-    if hg_pf_PantyThief_InProgressFlag:
-        call hg_pf_PantyThief_complete
     if hg_pf_TheGamble_Flag and hg_pf_TheGamble_FlagC or hg_pf_TheGamble_FlagA:
         jump hg_pf_TheGamble_complete
     
@@ -506,6 +522,13 @@ label Night_Request_Block:
         call hg_pr_SexWithClassmate_complete
     if hg_pr_InProgress[hg_pr_SexWithTeacher_ID]:
         call hg_pr_SexWithTeacher_complete
+        
+    if hg_ps_InProgress[hg_ps_PantyThief_ID]:
+        call hg_ps_PantyThief_complete
+    if hg_ps_InProgress[hg_ps_WalkOfAtonement_ID]:
+        call hg_ps_WalkOfAtonement_complete
+    if hg_ps_InProgress[hg_ps_WearMyCum_ID]:
+        call hg_ps_WearMyCum_complete
         
     
     return

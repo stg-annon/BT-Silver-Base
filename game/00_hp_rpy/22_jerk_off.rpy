@@ -14,10 +14,10 @@ label jerk_off:
     m "How should I finish this thing?"   
     label how_to_finish:
     menu:
-        "{color=#858585}...(LOCKED)...{/color}" if not hg_pf_PantyThief_InProgressFlag:
+        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_InProgress[hg_ps_PantyThief_ID]:
             ">You lack the item required for this option."
             jump  how_to_finish
-        "-Hermione's panties-" if hg_pf_PantyThief_InProgressFlag:
+        "-Hermione's panties-" if hg_ps_InProgress[hg_ps_PantyThief_ID]:
             $ cum_on_panties = True #True when choose to cum on Hermione's panties.
         "-On the floor!-":
             $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.
@@ -39,7 +39,7 @@ if jerking_off_to_lara:
 if cum_on_the_floor:
     ">You cum on the floor."
 if cum_on_panties:
-    $ hg_pf_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ hg_ps_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
     ">You cum all over Hermione's panties, and then use them to wipe the cum off the floor..."
     ">You received the item: \"Cum-soaked panties\"."
  
