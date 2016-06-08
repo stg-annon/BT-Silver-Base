@@ -619,7 +619,7 @@ screen gift:
 
 screen letter:
     zorder 4
-    add "01_hp/11_misc/letter.png" at Position(xpos=200, ypos=30)  
+    add "01_hp/11_misc/letter.png" at Position(xpos=200+140, ypos=30)  
     hbox:
         spacing 40 xpos 270+140 ypos 80 xmaximum 250
         text letter_text
