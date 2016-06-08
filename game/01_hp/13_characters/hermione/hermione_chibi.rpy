@@ -1795,9 +1795,9 @@ screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
 screen hermione_chibi_lift_skirt:
     tag hermione_chibi
     if whoring < hg_NoPanties_lvl:
-        add "01_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350, ypos=190)
+        add "01_hp/16_hermione_chibi/panties_00.png" at Position(xpos=350+140, ypos=190)
     else:
-        add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350, ypos=190)
+        add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350+140, ypos=190)
     
     
     

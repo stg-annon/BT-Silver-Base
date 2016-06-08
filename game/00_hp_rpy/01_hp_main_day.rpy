@@ -159,8 +159,8 @@ $ wather_generator = renpy.random.randint(1, 100)
 if wather_generator >= 81 and wather_generator <= 90: # RAIN
     #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     $ raining = True
-    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
 elif wather_generator >= 1 and wather_generator <= 40: # CLEAR WEATHER.
     show screen new_window #<<<------------------------------------------!!!!!!!!!!!
     #show image "01_hp/01_bg/03_weather.png"
@@ -170,16 +170,16 @@ elif wather_generator >= 41 and wather_generator <= 60: #Floating cloud
     #show image "01_hp/01_bg/03_weather.png"
     #show cloud_01 at Position(xpos=280, ypos=215, xanchor="center", yanchor="center")
 elif wather_generator >= 61 and wather_generator <= 80: # CLOUDY WEATHER
-    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
     $ lighting_generator = renpy.random.randint(1, 2)
     if lighting_generator == 1:
-        show lightening at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
+        show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
 elif wather_generator >= 91 and wather_generator <= 100: # RAIN WITH LIGHTENING.
     #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     $ raining = True
-    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show lightening at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
-    show rain at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
 
 
 #show image im.Alpha("01_hp/01_bg/01_main_room.png", 0.5) #Transparent Background.

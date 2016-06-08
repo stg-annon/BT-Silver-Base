@@ -106,11 +106,11 @@ label door:
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
                 
-                $ hermione_xpos = 410
-                $ hermione_ypos = 0
+                $ hermione_xpos = 410+140
+                $ hermione_ypos = 0+140
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ hermione_chibi_xpos = 400 #Near the desk.
+                $ hermione_chibi_xpos = 400+140 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 show screen bld1
                 with d3

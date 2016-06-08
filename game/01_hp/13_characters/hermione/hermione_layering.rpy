@@ -1,32 +1,34 @@
 screen hermione_main:
     tag hermione_main
     
-    add hermione_base xpos hermione_xpos ypos hermione_ypos #Add the base body
-    add hermione_legs xpos hermione_xpos ypos hermione_ypos
+    $ hermione_xpos_offset = hermione_xpos+140
+    
+    add hermione_base xpos hermione_xpos_offset ypos hermione_ypos #Add the base body
+    add hermione_legs xpos hermione_xpos_offset ypos hermione_ypos
     
     if hermione_action and h_action_show_arms:
-        add hermione_action_right_arm xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_right_arm xpos hermione_xpos_offset ypos hermione_ypos
     elif not hermione_action:
-        add hermione_right_arm xpos hermione_xpos ypos hermione_ypos
+        add hermione_right_arm xpos hermione_xpos_offset ypos hermione_ypos
     
-    add hermione_breasts xpos hermione_xpos ypos hermione_ypos
+    add hermione_breasts xpos hermione_xpos_offset ypos hermione_ypos
     
     if hermione_action and h_action_show_arms:
-        add hermione_action_left_arm xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_left_arm xpos hermione_xpos_offset ypos hermione_ypos
     elif not hermione_action:
-        add hermione_left_arm xpos hermione_xpos ypos hermione_ypos
+        add hermione_left_arm xpos hermione_xpos_offset ypos hermione_ypos
     
     use hermione_tattoo_layer
     
-    add hermione_hair_a xpos hermione_xpos ypos hermione_ypos #Add the hair shadow
-    add hermione_body xpos hermione_xpos ypos hermione_ypos
-    add hermione_tears xpos hermione_xpos ypos hermione_ypos
+    add hermione_hair_a xpos hermione_xpos_offset ypos hermione_ypos #Add the hair shadow
+    add hermione_body xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_tears xpos hermione_xpos_offset ypos hermione_ypos
     
   ### CLOTHES
-    add hermione_stockings xpos hermione_xpos ypos hermione_ypos
+    add hermione_stockings xpos hermione_xpos_offset ypos hermione_ypos
     
     if hermione_dribble:
-        add "01_hp/13_characters/hermione/body/legs/dripping.png" xpos hermione_xpos ypos hermione_ypos
+        add "01_hp/13_characters/hermione/body/legs/dripping.png" xpos hermione_xpos_offset ypos hermione_ypos
     
     if not hermione_costume and not hermione_action:
         use hermione_uniform
@@ -37,18 +39,18 @@ screen hermione_main:
     
     
     if uni_sperm:
-        add u_sperm xpos hermione_xpos ypos hermione_ypos
+        add u_sperm xpos hermione_xpos_offset ypos hermione_ypos
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "01_hp/13_hermione_main/auto_02.png" xpos hermione_xpos ypos hermione_ypos
+        add "01_hp/13_hermione_main/auto_02.png" xpos hermione_xpos_offset ypos hermione_ypos
     elif aftersperm: #Shows cum stains on Hermione's uniform.
-        add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos ypos hermione_ypos
+        add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos_offset ypos hermione_ypos
     
     if hermione_badges and hermione_wear_top and not hermione_costume:
-        add hermione_badge xpos hermione_xpos ypos hermione_ypos # add badge on top
+        add hermione_badge xpos hermione_xpos_offset ypos hermione_ypos # add badge on top
         
     if hermione_wear_robe:
-        add hermione_robe xpos hermione_xpos ypos hermione_ypos
-    add hermione_emote xpos hermione_xpos ypos hermione_ypos
+        add hermione_robe xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_emote xpos hermione_xpos_offset ypos hermione_ypos
     
     ### ZORDER
     zorder hermione_zorder
@@ -56,97 +58,100 @@ screen hermione_main:
     
 screen hermione_tattoo_layer:
     for i in range(0,len(hermione_tattoos)):
-        add "01_hp/13_characters/hermione/body/tattoo/"+str(hermione_tattoos[i])+".png" xpos hermione_xpos ypos hermione_ypos
+        add "01_hp/13_characters/hermione/body/tattoo/"+str(hermione_tattoos[i])+".png" xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
 screen hermione_uniform:
     tag hermione_main
     ### SKIRT
     if hermione_wear_panties or h_request_wear_panties:
-        add hermione_panties xpos hermione_xpos ypos hermione_ypos # Add the panties
-        add hermione_panties_overlay xpos hermione_xpos ypos hermione_ypos
+        add hermione_panties xpos hermione_xpos_offset ypos hermione_ypos # Add the panties
+        add hermione_panties_overlay xpos hermione_xpos_offset ypos hermione_ypos
     if hermione_wear_skirt:
-        add hermione_skirt xpos hermione_xpos ypos hermione_ypos # Add the skirt
+        add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos # Add the skirt
     ### TOP
     if hermione_wear_top:
-        add hermione_top xpos hermione_xpos ypos hermione_ypos # Add the top
+        add hermione_top xpos hermione_xpos_offset ypos hermione_ypos # Add the top
     elif hermione_wear_bra:
-        add hermione_bra xpos hermione_xpos ypos hermione_ypos # Add the bra
-    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
+        add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos # Add the bra
+    add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
 screen hermione_costume:
     tag hermione_main
-    add hermione_costume_a xpos hermione_xpos ypos hermione_ypos
-    add hermione_costume_b xpos hermione_xpos ypos hermione_ypos
-    add hermione_costume_c xpos hermione_xpos ypos hermione_ypos
-    add hermione_costume_d xpos hermione_xpos ypos hermione_ypos
-    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
-    add hermione_costume_e xpos hermione_xpos ypos hermione_ypos
-    add hermione_costume_action_a xpos hermione_xpos ypos hermione_ypos
+    add hermione_costume_a xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_costume_b xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_costume_c xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_costume_d xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_costume_e xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_costume_action_a xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
 screen hermione_action:
     tag hermione_main
     if h_action_show_skirt:
-        add hermione_action_skirt xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_skirt xpos hermione_xpos_offset ypos hermione_ypos
     elif h_action_show_panties or h_request_wear_panties:
-        add hermione_action_panties xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_panties xpos hermione_xpos_offset ypos hermione_ypos
     if h_action_show_top:
-        add hermione_action_top xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_top xpos hermione_xpos_offset ypos hermione_ypos
     elif h_action_show_bra:
-        add hermione_action_bra xpos hermione_xpos ypos hermione_ypos
-    add hermione_hair_b xpos hermione_xpos ypos hermione_ypos
-    add hermione_action_a xpos hermione_xpos ypos hermione_ypos
-    add hermione_action_b xpos hermione_xpos ypos hermione_ypos
+        add hermione_action_bra xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_action_a xpos hermione_xpos_offset ypos hermione_ypos
+    add hermione_action_b xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
         
 screen hermione_head:
     tag hermione_head
     
-    add hermione_base xpos hermione_head_xpos ypos hermione_head_ypos #Add the base body
-    add hermione_legs xpos hermione_head_xpos ypos hermione_head_ypos
-    add hermione_right_arm xpos hermione_head_xpos ypos hermione_head_ypos
-    add hermione_breasts xpos hermione_head_xpos ypos hermione_head_ypos
-    add hermione_left_arm xpos hermione_head_xpos ypos hermione_head_ypos
-    add hermione_hair_a xpos hermione_head_xpos ypos hermione_head_ypos #Add the hair shadow
     
-    add hermione_body xpos hermione_head_xpos ypos hermione_head_ypos
-    add hermione_tears xpos hermione_head_xpos ypos hermione_head_ypos
+    $ hermione_head_xpos_offset = hermione_head_xpos+140
+    
+    add hermione_base xpos hermione_head_xpos_offset ypos hermione_head_ypos #Add the base body
+    add hermione_legs xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    add hermione_right_arm xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    add hermione_breasts xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    add hermione_left_arm xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    add hermione_hair_a xpos hermione_head_xpos_offset ypos hermione_head_ypos #Add the hair shadow
+    
+    add hermione_body xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    add hermione_tears xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
   ### CLOTHES
-    add hermione_stockings xpos hermione_head_xpos ypos hermione_head_ypos
+    add hermione_stockings xpos hermione_head_xpos_offset ypos hermione_head_ypos
     if not hermione_costume:
         ### SKIRT
         if hermione_wear_skirt:
-            add hermione_skirt xpos hermione_head_xpos ypos hermione_head_ypos # Add the skirt
+            add hermione_skirt xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the skirt
         elif hermione_wear_panties or h_request_wear_panties:
-            add hermione_panties xpos hermione_head_xpos ypos hermione_head_ypos # Add the panties
+            add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the panties
         ### TOP
         if hermione_wear_top:
-            add hermione_top xpos hermione_head_xpos ypos hermione_head_ypos # Add the top
+            add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the top
         elif hermione_wear_bra:
-            add hermione_bra xpos hermione_head_xpos ypos hermione_head_ypos # Add the bra
+            add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the bra
     else:
-        add hermione_costume_a xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_costume_b xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_costume_c xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_costume_d xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_costume_e xpos hermione_head_xpos ypos hermione_head_ypos
-        add hermione_costume_action_a xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_costume_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_c xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_d xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_e xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_action_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
-    add hermione_hair_b xpos hermione_head_xpos ypos hermione_head_ypos
+    add hermione_hair_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     if uni_sperm:
-        add u_sperm xpos hermione_head_xpos ypos hermione_head_ypos
+        add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos
     if sperm_on_tits: #Sperm on tits when Hermione pulls her shirt up.
-        add "01_hp/13_hermione_main/auto_02.png" xpos hermione_head_xpos ypos hermione_head_ypos
+        add "01_hp/13_hermione_main/auto_02.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos
     elif aftersperm: #Shows cum stains on Hermione's uniform.
-        add "01_hp/13_hermione_main/auto_03.png" xpos hermione_head_xpos ypos hermione_head_ypos
+        add "01_hp/13_hermione_main/auto_03.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     if hermione_wear_robe:
-        add hermione_robe xpos hermione_head_xpos ypos hermione_head_xpos
-    add hermione_emote xpos hermione_head_xpos ypos hermione_head_ypos
+        add hermione_robe xpos hermione_head_xpos_offset ypos hermione_head_xpos_offset
+    add hermione_emote xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     ### ZORDER
     zorder 8

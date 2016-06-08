@@ -306,6 +306,8 @@ label her_head(text="",face=h_body,tears=""):
 label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):
     hide screen hermione_walk
     hide screen hermione_walk_f
+    $ pos1 = pos1+140
+    $ pos2 = pos2+140
     $ walk_xpos = pos1 #(From)
     $ walk_xpos2 = pos2 #(To)
     $ hermione_chibi_ypos = 250

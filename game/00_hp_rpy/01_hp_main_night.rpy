@@ -37,33 +37,33 @@ hide screen cloud #THE CLOUD.
 hide screen lightening #Hide lighting so it wouldn't get stuck during clear sky weather and such.
 ###WEATHER
 if wather_generator >= 81 and wather_generator <= 90: # RAIN WITH LIGHTENING.
-    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show lightening at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
-    show rain at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
 elif wather_generator >= 1 and wather_generator <= 30: #Clear sky with stars.
-    show image "01_hp/07_weather/night_sky.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
+    show image "01_hp/07_weather/night_sky.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
 
 elif wather_generator >= 41 and wather_generator <= 50: #Clear sky with stars 02. (floating cloud during the day).
-    show image "01_hp/07_weather/night_sky.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
+    show image "01_hp/07_weather/night_sky.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
 
 elif wather_generator >= 31 and wather_generator <= 40: #CLEAR FULL MOON.
-    show image "01_hp/07_weather/night_sky_02.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
+    show image "01_hp/07_weather/night_sky_02.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")# CLEAR WEATHER.
 
 elif wather_generator >= 51 and wather_generator <= 60: #FULL MOON WITH CLOUDS
     show screen cloud_night_01
     show screen cloud_night_02
     show screen cloud_night_03
-    show image "01_hp/07_weather/night_sky_02.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")
+    show image "01_hp/07_weather/night_sky_02.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
 
 elif wather_generator >= 61 and wather_generator <= 80: #HEAVY CLOUDS.
-    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")
+    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
     $ lighting_generator = renpy.random.randint(1, 2)
     if lighting_generator == 1:
-        show lightening at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Lighting
+        show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Lighting
 
 elif wather_generator >= 91 and wather_generator <= 100: #RAIN.
-    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290, ypos=218, xanchor="center", yanchor="center") #Rain animation
+    show image "01_hp/07_weather/night_sky_04.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
 
 
 
