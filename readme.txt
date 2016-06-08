@@ -1,5 +1,8 @@
 HOW DO I INSTALL THE LATEST WT SILVER:
-	you have to download the base game from mega and download the latest build from here on git then copy replace the game folder into the base from mega https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig
+	You have two options for installing silver:
+		1. download a stable build from the following mega link https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig
+		
+		2. for an experimantal version of the game you can download the latest build from here on git then copy replace the game folder into the "shell" game from the following google drive link https://drive.google.com/folderview?id=0Bydic_JmulRMRDliYnF0VHVwVXM&usp=sharing
 
 WHAT IS SILVER?:
 	It's essentially a modpack of a few different mods and some new content. It adds some new scenes, a map, scene changes, potions, custom outfits and evolving outfits. At the moment it is in a  beta state with new content and bug fixes being added periodically.
