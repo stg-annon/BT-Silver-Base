@@ -514,8 +514,7 @@ label public_event_3_1: #Dormitories
 
 label public_event_3_2: #Great Hall
 
-label public_event_3_1: #Snape's office
-
+label public_event_3_3: #Snape's office
 
 
 ###COSTUME SCENES
