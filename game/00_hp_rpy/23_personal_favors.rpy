@@ -1740,7 +1740,7 @@ label hg_pf_ButtMolester:
         m "The \"Gryffindors\" get 15 points!"
     else:
         m "good night [hermione_name]"
-    $ hg_pf_pooints[hg_pf_ButtMolester_ID] += 1
+    $ hg_pf_points[hg_pf_ButtMolester_ID] += 1
    
    
     $ hermione_chibi_xpos = 400 #Near the desk.
