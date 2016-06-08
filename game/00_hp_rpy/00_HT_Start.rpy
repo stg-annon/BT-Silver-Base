@@ -54,8 +54,6 @@ label start_ht:
 
 
 ### JERKING OFF FLAGS ###
-    $ have_cum_soaked_panties = False #TRUE when you have the panties in your possession (before you return them to Hermione).
-
     $ jerking_off_to_jasmine = False #Turns TRUE when Princess Jasmine has been chosen as a target for a jerk-off session.
     $ jerking_off_to_lara = False
     $ cum_on_the_floor = False #TRUE when chosen to cum on the floor.

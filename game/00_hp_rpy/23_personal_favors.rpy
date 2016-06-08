@@ -612,7 +612,7 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
     menu:
         "\"Here are your panties.\"":
-            if have_cum_soaked_panties:
+            if hg_pf_PantyThief_SoakedPantiesFlag:
                 jump hg_pf_PantyThief_soaked
             else:
                 her "Thank you, [genie_name]."
@@ -632,7 +632,7 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
                 hide screen hermione_main
                 with d3
                 ">You give Hermione her panties back..."
-                if have_cum_soaked_panties:
+                if hg_pf_PantyThief_SoakedPantiesFlag:
                     jump hg_pf_PantyThief_soaked
                 else:
                     call her_main("And my payment?","body_31")
@@ -659,7 +659,7 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
                         call her_main("Can I have my payment now please?","body_66")
                         m "What about your panties?"
                         call her_main("Oh, them too of course...","body_34") 
-                        if have_cum_soaked_panties:
+                        if hg_pf_PantyThief_SoakedPantiesFlag:
                             jump hg_pf_PantyThief_soaked
                         else:
                             pass
@@ -669,7 +669,7 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
                         her "It is not my fault that the system is so corrupted..."
                         call her_main("I shall remain a symbol of righteousness to my peers, no matter what!","body_16")
                         call her_main("Can I have my panties back now, please?","body_31")
-                        if have_cum_soaked_panties:
+                        if hg_pf_PantyThief_SoakedPantiesFlag:
                             jump hg_pf_PantyThief_soaked
                         else:
                             her "And my payment."
@@ -687,13 +687,13 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
                 hide screen hermione_main
                 with d3
                 ">You give Hermione her panties back..."
-                if have_cum_soaked_panties:
+                if hg_pf_PantyThief_SoakedPantiesFlag:
                     jump hg_pf_PantyThief_soaked
                 else:
                     call her_main("And my payment?","body_45")
                     m "Yes, yes..."
     label back_from_soaked:
-    if have_cum_soaked_panties and whoring >= 9 and whoring <= 15 :
+    if hg_pf_PantyThief_SoakedPantiesFlag and whoring >= 9 and whoring <= 15 :
         m "You can go now."
         call her_main("What about my points?","body_30")
         m "You still want points after I just gave you a gift?"
@@ -737,7 +737,7 @@ label hg_pf_PantyThief_complete: # WHORING LEVEL 02 <=================
     
     $ hg_pf_points[hg_pf_PantyThief_ID] += 1
     $ hg_pf_PantyThief_InProgressFlag = False #False when favor is not in progress
-    $ have_cum_soaked_panties = False #TRUE if you jerked off in panties
+    $ hg_pf_PantyThief_SoakedPantiesFlag = False #TRUE if you jerked off in panties
     
     jump end_hg_pf
 label hg_pf_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
@@ -905,7 +905,6 @@ label hg_pf_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
                 m "There, nice and clean."
                 call her_main("*Yes [genie_name]*","body_121")
     
-    $ hg_pf_PantyThief_SoakedPantiesFlag = True
     jump back_from_soaked
     
     

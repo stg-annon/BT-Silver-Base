@@ -1,5 +1,5 @@
 label jerk_off:
-    $ cum_on_panties = True #True when choose to cum on Hermione's panties.
+#    $ cum_on_panties = True #True when choose to cum on Hermione's panties.
 #    m "Hm... Who shall be my target?"
 #    menu:
 #        "\"Princess Jasmine!\"":
@@ -11,22 +11,19 @@ label jerk_off:
 #            pass
 #        "-Cancel-":
 #            jump desk
-#    m "How should I finish this thing?"   
-#    label how_to_finish:
-#    menu:
-#        "-On the floor!-":
-#            $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.
-#            pass
-#        "-Item # 1-" if not request_03:
-#            ">You lack the item required for this option."
-#            jump  how_to_finish
-#        "{color=#858585}...(LOCKED)...{/color}" if not request_03: #True when Hermione has no panties on.:
-#            ">You lack the item required for this option."
-#            jump  how_to_finish
-#        "-Hermione's panties-" if request_03: #True when Hermione has no panties on.
-#            $ cum_on_panties = True #True when choose to cum on Hermione's panties.
-#        "-Cancel-":
-#            jump jerk_off
+    m "How should I finish this thing?"   
+    label how_to_finish:
+    menu:
+        "{color=#858585}...(LOCKED)...{/color}" if not hg_pf_PantyThief_InProgressFlag:
+            ">You lack the item required for this option."
+            jump  how_to_finish
+        "-Hermione's panties-" if hg_pf_PantyThief_InProgressFlag:
+            $ cum_on_panties = True #True when choose to cum on Hermione's panties.
+        "-On the floor!-":
+            $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.
+            pass
+        "-Cancel-":
+            jump jerk_off
 
 
 ### JERKING OFF ###
@@ -42,7 +39,7 @@ if jerking_off_to_lara:
 if cum_on_the_floor:
     ">You cum on the floor."
 if cum_on_panties:
-    $ have_cum_soaked_panties = True #TRUE when you have the panties in your possession (before you return them to Hermione).
+    $ hg_pf_PantyThief_SoakedPantiesFlag = True #TRUE when you have the panties in your possession (before you return them to Hermione).
     ">You cum all over Hermione's panties, and then use them to wipe the cum off the floor..."
     ">You received the item: \"Cum-soaked panties\"."
  
