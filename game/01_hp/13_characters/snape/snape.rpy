@@ -17,7 +17,7 @@ label sna_main(text="",face=""):
     
 label sna_head(text="",face="",xpos=s_head_xpos ,ypos=s_head_ypos):
     if xpos != s_head_xpos:
-        $ s_head_xpos = xpos
+        $ s_head_xpos = xpos+140
     if ypos != s_head_ypos:
         $ s_head_ypos = ypos
     if face != "":
@@ -31,6 +31,8 @@ label sna_head(text="",face="",xpos=s_head_xpos ,ypos=s_head_ypos):
 label snape_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = snape_speed, loiter = False,redux_pause = 0):
     hide screen snape_walk_01
     hide screen snape_walk_01_f
+    $ pos1 = pos1+140
+    $ pos2 = pos2+140
     $ walk_xpos = pos1 #(From)
     $ walk_xpos2 = pos2 #(To)
     $ snape_chibi_ypos = 250
