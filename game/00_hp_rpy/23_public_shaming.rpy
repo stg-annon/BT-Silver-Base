@@ -461,30 +461,30 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
 #WalkOfAtonement
 label hg_ps_WalkOfAtonement: #Walk around the school wearing only a bra (and at later levels naked)
     m "[hermione_name], what classes do you have today?"
-    $ her_main("What? Since when have you taken an interest in my education?","body_07")
+    call her_main("What? Since when have you taken an interest in my education?","body_07")
     m "I'm your headmaster, of course I care about your studies."
-    $ her_main("Hmmmm...","body_07")
-    $ her_main("Well I have potions class with Professor Snape in the morning and then defence against the dark arts after lunch.","body_07")
+    call her_main("Hmmmm...","body_07")
+    call her_main("Well I have potions class with Professor Snape in the morning and then defence against the dark arts after lunch.","body_07")
     m "So you have Snape as your teacher today?"
-    $ her_main("Yes [genie_name].","body_07")
+    call her_main("Yes [genie_name].","body_07")
     m "That's good. Today I have a task for you to complete."
-    $ her_main("A task?","body_07")
+    call her_main("A task?","body_07")
     m "Yes, I'd like you to attend class."
-    $ her_main("Is that all?","body_07")
+    call her_main("Is that all?","body_07")
     m "Without your shirt."
-    $ her_main("WHAT?","body_07")
-    $ her_main("Why on earth would I do that?","body_07")
+    call her_main("WHAT?","body_07")
+    call her_main("Why on earth would I do that?","body_07")
     m "Because I asked you to."
-    $ her_main("...but what about Snape? What about my classmates?","body_07")
+    call her_main("...but what about Snape? What about my classmates?","body_07")
     m "Don't worry about Snape, I'm sure that he's used to your behaviour by now."
     m "And as for your classmates, is there anyone that will be surprised?"
-    $ her_main("Well Ginny would be...","body_07")
+    call her_main("Well Ginny would be...","body_07")
     m "What? Shocked to find out that her friend is a massive slut who shows herself off to anyone and everyone any chance she can get?"
     m "Look at your neck [hermione_name], look at what you are wearing. I'd be surprised if there is anyone in the school who doesn't know what a whore you are."
-    $ her_main("...","body_07")
+    call her_main("...","body_07")
     ">She holds back tears as she hands you her shirt."
-    $ her_main("I suppose that you're right [genie_name].","body_07")
-    $ her_main("Well I best be off... Can't be late for class.","body_07")
+    call her_main("I suppose that you're right [genie_name].","body_07")
+    call her_main("Well I best be off... Can't be late for class.","body_07")
     ">She leaves your office reluctantly."
     $ hg_ps_InProgress[hg_ps_WalkOfAtonement_ID] = True
 
@@ -627,33 +627,33 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum #At the moment 
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
     ">Hermione returns to your office."
-    $ her_main("...I did it [genie_name].","body_07")
-    $ her_main("I managed to keep it on all day.","body_07")
-    $ her_main("Even though it smelled","body_07")
-    $ her_main("and Ginny told me to wipe it off.","body_07")
-    $ her_main("I kept it on.","body_07")
+    call her_main("...I did it [genie_name].","body_07")
+    call her_main("I managed to keep it on all day.","body_07")
+    call her_main("Even though it smelled","body_07")
+    call her_main("and Ginny told me to wipe it off.","body_07")
+    call her_main("I kept it on.","body_07")
     m "Good girl."
     menu:
         "-Go back to your room-":
             m "That'll be all [hermione_name], you may go now."
-            $ her_main("Thank you [genie_name]","body_07")
+            call her_main("Thank you [genie_name]","body_07")
         "-Tell me what happened-":
             pass
-    $ her_main("Well I managed to walk to class without anyone seeing me.","body_07")
-    $ her_main("When I got there the class was lined up out the front waiting for Professor Snape.","body_07")
-    $ her_main("When Ginny saw what was on my face she immediately ran over to me and told me to clean myself up.","body_07")
-    $ her_main("","body_07")
+    call her_main("Well I managed to walk to class without anyone seeing me.","body_07")
+    call her_main("When I got there the class was lined up out the front waiting for Professor Snape.","body_07")
+    call her_main("When Ginny saw what was on my face she immediately ran over to me and told me to clean myself up.","body_07")
+    call her_main("","body_07")
     m "What did you do?"
-    $ her_main("I told her that I didn't know what she was talking about.","body_07")
-    $ her_main("She told me to run to the bathroom and look in the mirror.","body_07")
-    $ her_main("so I said that she was just crazy and that good girls don't miss class.","body_07")
+    call her_main("I told her that I didn't know what she was talking about.","body_07")
+    call her_main("She told me to run to the bathroom and look in the mirror.","body_07")
+    call her_main("so I said that she was just crazy and that good girls don't miss class.","body_07")
     m "Smooth. What happened once you got into class?"
-    $ her_main("Well no one sat next to me, I assume because of the smell.","body_07")
-    $ her_main("Apart from that though no one really acknowledged me. I think none of them really cared.","body_07")
+    call her_main("Well no one sat next to me, I assume because of the smell.","body_07")
+    call her_main("Apart from that though no one really acknowledged me. I think none of them really cared.","body_07")
     m "They've probably come to expect it from you."
-    $ her_main("I suppose so. Is that all [genie_name]?","body_07")
+    call her_main("I suppose so. Is that all [genie_name]?","body_07")
     m "That's all for now [hermione_name], you may leave."
-    $ her_main("Thank you [genie_name]","body_07")
+    call her_main("Thank you [genie_name]","body_07")
 
 
 

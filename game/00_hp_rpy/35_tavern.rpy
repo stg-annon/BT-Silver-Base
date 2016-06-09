@@ -9,12 +9,12 @@ label inn_menu:
             $ robeon = True
             $ stockings = 5
             $ custom_outfit_old = 5
-            $ her_main("","body_07")
+            call her_main("","body_07")
             pause
             abe "Well go on then girl, take the robe off."
             her "Fine..."
             $ robeon = False
-            $ her_main("","body_33")
+            call her_main("","body_33")
             pause
             hide screen hermione_main
             jump inn_menu

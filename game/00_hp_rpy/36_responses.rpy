@@ -160,7 +160,7 @@ label maid_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ her_main("","body_01")
+    call her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
@@ -234,7 +234,7 @@ label barmaid_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ her_main("","body_01")
+    call her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
@@ -284,83 +284,83 @@ label gryffindor_cheer_responses:
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
-    $ her_main("","body_01")
+    call her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "Hello, [hermione_name], how was your day?"
-                $ her_main("It was good [genie_name], I think that the team is really starting to liven up.","body_06")
+                call her_main("It was good [genie_name], I think that the team is really starting to liven up.","body_06")
                 m "How so?"
-                $ her_main("Well since I've started they seem to have improved their game.","body_14")
-                $ her_main("They also seem much happier. Harry is always looking at me with a smile on his face.","body_45")
+                call her_main("Well since I've started they seem to have improved their game.","body_14")
+                call her_main("They also seem much happier. Harry is always looking at me with a smile on his face.","body_45")
                 m "And does he look at you a lot?"
-                $ her_main("Of course he does, we're good friends.","body_02")
+                call her_main("Of course he does, we're good friends.","body_02")
                 m "I'm sure that must be the reason."
-                $ her_main("Well here's the money [genie_name]","body_06")
+                call her_main("Well here's the money [genie_name]","body_06")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_74")
+                call her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >= 3 and day_random <= 5:
                 m "Hello, [hermione_name], how was your day?"
-                $ her_main("Tiring. This cheering really is quite exhausting.","body_11")
+                call her_main("Tiring. This cheering really is quite exhausting.","body_11")
                 m "Anything interesting happen?"
-                $ her_main("Not unless you count me almost dropping my pom pom.","body_03")
+                call her_main("Not unless you count me almost dropping my pom pom.","body_03")
                 m "I don't. Well did they pay you?"
-                $ her_main("Of course, here you are [genie_name]","body_02")
+                call her_main("Of course, here you are [genie_name]","body_02")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_74")
+                call her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >= 6 and day_random <= 8:
                 m "Welcome back [hermione_name]."
-                $ her_main("Hello [genie_name].","body_14")
+                call her_main("Hello [genie_name].","body_14")
                 m "How did you go today?"
-                $ her_main("Very well, all the boys said that I helped keep their spirits up.","body_31")
+                call her_main("Very well, all the boys said that I helped keep their spirits up.","body_31")
                 m "{size=-5}I'm sure that wasn't the only thing you kept up...{/size}"
-                $ her_main("What was that [genie_name]?","body_08")
+                call her_main("What was that [genie_name]?","body_08")
                 m "I was just saying that I'm sure you kept them entertained."
-                $ her_main("I think so.","body_10")
+                call her_main("I think so.","body_10")
                 m "Well did they pay you for raising their \"spirits\"?"
-                $ her_main("Of course they did.","body_16")
+                call her_main("Of course they did.","body_16")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_74")
+                call her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >=9 and lock_public_favors == True or whoring <= 15:
                 m "You seem very chipper today."
-                $ her_main("Of course I am, we won!","body_45")
+                call her_main("Of course I am, we won!","body_45")
                 m "Won?"
-                $ her_main("We won! We beat Slytherin in a practice match.","body_75")
+                call her_main("We won! We beat Slytherin in a practice match.","body_75")
                 m "You seem a little over-excited for a practice match."
-                $ her_main("Well it was such a game. Not to mention that we got to rub it in those Slytherin faces afterwards.","body_46")
+                call her_main("Well it was such a game. Not to mention that we got to rub it in those Slytherin faces afterwards.","body_46")
                 m "Well I'm glad that you are enjoying your work."
-                $ her_main("I am [genie_name]. Given that most of the \"work\" I do to help the house has to be kept private, it feels good to do something public for my house.","body_14")
+                call her_main("I am [genie_name]. Given that most of the \"work\" I do to help the house has to be kept private, it feels good to do something public for my house.","body_14")
                 m "Not to mention you get paid for it..."
-                $ her_main("Oh, right. Here you are.","body_13")
+                call her_main("Oh, right. Here you are.","body_13")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_74")
+                call her_main("Thank you [genie_name].","body_74")
             else:
                 m "Welcome back [hermione_name], how was your day?"
-                $ her_main("We won! We managed to beat Slytherin.","body_45")
+                call her_main("We won! We managed to beat Slytherin.","body_45")
                 m "That must have been very exhilarating. I'm sure your cheering gave the motivation to win."
-                $ her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","body_74")
+                call her_main("I think it did [genie_name]. They were all very excited to receive their reward for winning the game.","body_74")
                 menu:
                     "-Reward?-":
                         m "What reward did you promise them?"
-                        $ her_main("Well I was so keen for us to beat Slytherin that I may have promised them that I would give them all blowjobs if they won.","body_68")
+                        call her_main("Well I was so keen for us to beat Slytherin that I may have promised them that I would give them all blowjobs if they won.","body_68")
                         m "You gave every team member a blowjob after the game?"
-                        $ her_main("And the water boy...","body_64")
+                        call her_main("And the water boy...","body_64")
                         m "How did that even work? Did you just crawl around the room on your knees?"
-                        $ her_main("Of course not, they all lined up and waited their turn.","body_30")
+                        call her_main("Of course not, they all lined up and waited their turn.","body_30")
                         m "They lined up? And then what?"
-                        $ her_main("Well I sucked their cocks until they came and then I swallowed. Surely you of all people know how a blowjob works.","body_29")
+                        call her_main("Well I sucked their cocks until they came and then I swallowed. Surely you of all people know how a blowjob works.","body_29")
                         m "That's not quite what I meant."
-                        $ her_main("Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow.","body_46")
+                        call her_main("Well I'm glad I did. I can't wait to rub it in Astoria's face tomorrow.","body_46")
                         m "Well I'm glad you think it was worth it. Did they pay you?"
 
                         her "Of course they did [genie_name], here you are."
@@ -371,10 +371,10 @@ label gryffindor_cheer_responses:
                 m "Well done [hermione_name], 20 points to Gryffindor."
                 her "Thank you [genie_name]."
         "-Dismiss her-":
-            $ her_main("Here's your payment [genie_name].","body_13")
+            call her_main("Here's your payment [genie_name].","body_13")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 20 points to Gryffindor."
-            $ her_main("Thank you [genie_name].","body_74")
+            call her_main("Thank you [genie_name].","body_74")
             $ gryffindor+= 20
             $ gold += payment
     hide screen bld1
@@ -400,96 +400,96 @@ label slytherin_cheer_responses:
     with d3
     if day_random >=9 and lock_public_favors == False:
         $ uni_sperm = True 
-        $ her_main("","body_78")
+        call her_main("","body_78")
     else:
-        $ her_main("","body_01")
+        call her_main("","body_01")
     menu:
         "-Ask her how her day was-":
             if day_random <= 2:
                 m "How was your day today [hermione_name]?"
-                $ her_main("Exhausting. Those Slytherin pigs insisted that I cheer for their entire practice session.","body_04")
+                call her_main("Exhausting. Those Slytherin pigs insisted that I cheer for their entire practice session.","body_04")
                 her "They were hardly playing the game by the end. They were just standing there watching me."
                 m "Well what was your routine?"
-                $ her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","body_09")
+                call her_main("Mostly star jumps while I cheered \"Go Slytherin!\".","body_09")
                 m "So you were just jumping up and down? That doesn't seem like a very intricate cheer."
-                $ her_main("It isn't but it's what they insisted I do.","body_69")
+                call her_main("It isn't but it's what they insisted I do.","body_69")
                 m "Well it definitely sounds like you earned your points."
                 m "30 points to Gryffindor."
-                $ her_main("Thank you [genie_name], here's your payment.","body_16")
+                call her_main("Thank you [genie_name], here's your payment.","body_16")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 $ gryffindor+= 30
             elif day_random >= 3 and day_random <= 5:
                 m "How was your day today [hermione_name]?"
-                $ her_main("Uneventful. I completed my routine and then went back to my room.","body_08")
+                call her_main("Uneventful. I completed my routine and then went back to my room.","body_08")
                 m "You didn't talk to anyone?"
-                $ her_main("I make a point of trying to avoid Slytherin student as best I can. ","body_12")
+                call her_main("I make a point of trying to avoid Slytherin student as best I can. ","body_12")
                 m "Are they really that unbearable."
-                $ her_main("Yes.","body_04")
+                call her_main("Yes.","body_04")
                 m "Well, you earned your points."
                 m "30 points to Gryffindor."
-                $ her_main("Thank you [genie_name], here's your payment.","body_16")
+                call her_main("Thank you [genie_name], here's your payment.","body_16")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 $ gryffindor+= 30
             elif day_random >= 6 and day_random <= 8:
                 m "Hello [hermione_name]."
-                $ her_main("Hello [genie_name].","body_03")
+                call her_main("Hello [genie_name].","body_03")
                 m "How did you go today?"
-                $ her_main("Very well. In fact I think I might be doing too well.","body_29")
+                call her_main("Very well. In fact I think I might be doing too well.","body_29")
                 m "How so?"
-                $ her_main("I think that my cheering is having too positive an effect.","body_11")
-                $ her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me.","body_10")
+                call her_main("I think that my cheering is having too positive an effect.","body_11")
+                call her_main("I'm not sure that I want the Slytherin team to improve, let alone because of me.","body_10")
                 m "Just think about how your helping your house in other ways."
-                $ her_main("I suppose your right [genie_name].","body_02")
+                call her_main("I suppose your right [genie_name].","body_02")
                 m "Of course I am, now did they pay you?"
-                $ her_main("Yes [genie_name].","body_06")
+                call her_main("Yes [genie_name].","body_06")
                 ">You receive [payment] gold coins."
                 m "Well done [hermione_name], 20 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_74")
+                call her_main("Thank you [genie_name].","body_74")
                 $ gryffindor+= 20
                 $ gold += payment
             elif day_random >=9 and lock_public_favors == True:
-                $ her_main("[genie_name], something must be done about these Slytherin boys.","body_04")
-                $ her_main("It's bad enough that I have to cheer for them but they are starting to become a little touchy.","body_12")
+                call her_main("[genie_name], something must be done about these Slytherin boys.","body_04")
+                call her_main("It's bad enough that I have to cheer for them but they are starting to become a little touchy.","body_12")
                 m "Touchy?"
-                $ her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.","body_30")
+                call her_main("Yes, they keep groping me. It's highly inappropriate and it interrupts my routine.","body_30")
                 m "You keep dancing while they grope you?"
-                $ her_main("Of course, I'm there to complete a job. I won't fail at this just because of a few boys.","body_04")
+                call her_main("Of course, I'm there to complete a job. I won't fail at this just because of a few boys.","body_04")
                 m "Well what would you have me do?"
-                $ her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him.","body_05")
+                call her_main("Speak to Professor Snape, tell him to chastise them. They'll listen to him.","body_05")
                 m "Very well, I'll speak to him. I'm not sure it will have the effect your hoping for."
-                $ her_main("It better, otherwise I wont put my full effort into the routine.","body_07")
+                call her_main("It better, otherwise I wont put my full effort into the routine.","body_07")
                 m "{size=-5}I'm sure that'll show them.{/size}"
-                $ her_main("What was that [genie_name]?","body_08")
+                call her_main("What was that [genie_name]?","body_08")
                 m "Nothing [hermione_name], I was just saying I'll speak to Professor Snape tonight."
-                $ her_main("Thank you [genie_name], here's your payment.","body_12")
+                call her_main("Thank you [genie_name], here's your payment.","body_12")
                 ">You receive [payment] gold coins."
                 $ gold += payment
                 m "Well done [hermione_name], 30 points to Gryffindor."
-                $ her_main("Thank you [genie_name].","body_16")
+                call her_main("Thank you [genie_name].","body_16")
                 $ gryffindor+= 30
             else:#Comes back with cum on her
                 m "What the hell happened to you?"
-                $ her_main("I did my job [genie_name].","body_118")
+                call her_main("I did my job [genie_name].","body_118")
                 m "What are you talking about? You were supposed to be a cheerleader."
-                $ her_main("I am [genie_name]. I just performed a different type of cheer today.","body_121")
+                call her_main("I am [genie_name]. I just performed a different type of cheer today.","body_121")
                 m "And that cheer included jerking off the entire Slytherin team?"
-                $ her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room.","body_118")
+                call her_main("Well that's not how it started. I was initially just giving them a bit of a dance in the locker room.","body_118")
                 her "And one thing led to another..."
                 m "Fine, I don't want to hear it. How much did they pay you for this \"cheering\"?"
-                $ her_main("Pay me?","body_133")
+                call her_main("Pay me?","body_133")
                 m "You are supposed to be paid for this [hermione_name]."
-                $ her_main("Oh... I must have forgotten. Sorry [genie_name]","body_188")
+                call her_main("Oh... I must have forgotten. Sorry [genie_name]","body_188")
                 m "Fine, but you aren't getting any points."
-                $ her_main("Of course not [genie_name]. Will that be all?","body_01")
+                call her_main("Of course not [genie_name]. Will that be all?","body_01")
                 m "Yes, you can go now."
-                $ her_main("Thank you [genie_name].","body_128")
+                call her_main("Thank you [genie_name].","body_128")
         "-Dismiss her-":
-            $ her_main("Here's your payment.","body_02")
+            call her_main("Here's your payment.","body_02")
             ">You receive [payment] gold coins."
             m "Well done [hermione_name], 30 points to Gryffindor."
-            $ her_main("Thank you [genie_name].","body_128")
+            call her_main("Thank you [genie_name].","body_128")
             $ gryffindor+= 30
             $ gold += payment
     hide screen bld1

@@ -270,41 +270,41 @@ label tentacle_2: #Enjoyable tentacle scene
 
 ###COSTUME SCENES
 label costume_scene_1: #Maid role-play
-    $ her_main("A costume? What on earth do you need me to dress up for?","body_18")
+    call her_main("A costume? What on earth do you need me to dress up for?","body_18")
     m "[hermione_name], have you ever heard of the term role-play?"
-    $ her_main("role-play?","body_64")
+    call her_main("role-play?","body_64")
     m "It's where you pretend to be someone you're not."
-    $ her_main("I gathered that much but why would I want to do that?","body_64")
+    call her_main("I gathered that much but why would I want to do that?","body_64")
     m "Because it can be fun!"
-    $ her_main("Hmmmm. Who would I be role-playing?","body_64")
+    call her_main("Hmmmm. Who would I be role-playing?","body_64")
     m "Well I was thinking seeing as how I purchased you that lovely new cleaning outfit."
     m "You could play the role of my personal maid."
     if whoring < 17:
-        $ her_main("And how much would this \"personal maid\" be paid?","body_64")
+        call her_main("And how much would this \"personal maid\" be paid?","body_64")
         m "35 points sounds fair."
-    $ her_main("...","body_64")
-    $ her_main("Let me go change.","body_64")
+    call her_main("...","body_64")
+    call her_main("Let me go change.","body_64")
     $ stockings = 1
     $ custom_outfit_old = 1
-    $ her_main("","body_64")
+    call her_main("","body_64")
     pause
-    $ her_main("Well?","body_64")
+    call her_main("Well?","body_64")
     m "You certainly look the part. The question is can you act the part?"
-    $ her_main("Act? I thought you just wanted me to clean your room?","body_64")
+    call her_main("Act? I thought you just wanted me to clean your room?","body_64")
     m "Where's the fun in that? If I wanted a clean room, I'd just get those ugly dwarves to do it."
-    $ her_main("House elfs.","body_64")
+    call her_main("House elfs.","body_64")
     m "Whatever. Anyway I want you to act like a sexy french maid."
     her "Why does it have to be french?"
     m "Must I explain everything?"
-    $ her_main("Fine...","body_64")
-    $ her_main("Is there anything you need cleaned today sir?","body_64")
+    call her_main("Fine...","body_64")
+    call her_main("Is there anything you need cleaned today sir?","body_64")
     m "At least try to do the accent."
-    $ her_main("...","body_64")
-    $ her_main("Is there anything that you need cleaned today Monsieur?","body_207")
+    call her_main("...","body_64")
+    call her_main("Is there anything that you need cleaned today Monsieur?","body_207")
     m "Much better."
-    $ her_main("Thank you Monsieur.","body_64")
+    call her_main("Thank you Monsieur.","body_64")
     m "Now as for your cleaning I think that the fireplace could you a good dusting."
-    $ her_main("As you command Monsieur!","body_64")
+    call her_main("As you command Monsieur!","body_64")
     ">Hermione stands on her toes to reach the mantelpiece giving you a lovely view of the top of her stockings."
     m "That's it, just a little higher."
     ">You reach under the desk and start to stroke your cock."
