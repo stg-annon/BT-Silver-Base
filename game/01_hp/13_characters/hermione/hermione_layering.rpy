@@ -535,6 +535,7 @@ label update_her_uniform:
         $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans_short.png"
     
     call update_chibi_uniform
+    call h_update_body
     
     return
     
