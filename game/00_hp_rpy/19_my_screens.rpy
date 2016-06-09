@@ -1,6 +1,7 @@
 
 ### SCREENS ###
 screen main_menu_01:
+    tag room_screen
     imagebutton: # DOOR
         xpos 758+140
         ypos 315
@@ -163,25 +164,26 @@ screen room_back:
     zorder 0
     
 screen shop_screen:
+    tag room_screen
     
     zorder hermione_main_zorder-1
     
     if daytime:
-        add "01_hp/25_mo/room_bg1.png"
+        add "01_hp/25_mo/room_bg1.png" at Position(xpos=140)
     else:
-        add "01_hp/25_mo/room_bg2.png"
+        add "01_hp/25_mo/room_bg2.png" at Position(xpos=140)
     
     imagemap:
         ground "01_hp/25_mo/shop_ground.png"
         hover "01_hp/25_mo/shop_hover.png"
         # (X upper-left corner, Y upper-left corner, width, height).
-        hotspot (0+140, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
-        hotspot (0+140, 124, 268, 88) clicked Jump("sscrolls2") #Scrolls 2
-        hotspot (0+140, 215, 233, 80) clicked Jump("shop_books") #Books
-        hotspot (70+140, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
-        hotspot (0+140, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
-        hotspot (606+140, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
-        hotspot (750+140, 550, 40, 40) clicked Jump("day_main_menu") #Return Button
+        hotspot (0, 0, 266, 110) clicked Jump("sscrolls") #Scrolls 1
+        hotspot (0, 124, 268, 88) clicked Jump("sscrolls2") #Scrolls 2
+        hotspot (0, 215, 233, 80) clicked Jump("shop_books") #Books
+        hotspot (70, 340, 85, 75) clicked Jump("gifts_menu") #Gift Box
+        hotspot (0, 455, 230, 128) clicked Jump("tentacle_shop_scene") #Tentacle Scroll
+        hotspot (606+280, 0, 197, 538) clicked Jump("shop_potion_menu") #Potions
+        hotspot (750+280, 550, 40, 40) clicked [Show("main_menu_01"),Jump("day_main_menu")] #Return Button
     
 screen cg:
     add cg_image
