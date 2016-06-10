@@ -40,7 +40,7 @@ label new_custom_request:
                 #level 2:
                 #level 3:
 
-            "{color=#858585}--A vague idea-{/color}-" if imagination == 1:
+            "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                 call vague_idea
                 jump not_now_custom
             "{color=#858585}Favour: \"Show her who's in charge\"" if not daytime:
@@ -59,7 +59,7 @@ label new_custom_request:
 
             ### LEVEL 02 ###
 
-            "{color=#858585}--A vague idea-{/color}-" if imagination == 1:
+            "{color=#858585}-A vague idea-{/color}" if imagination == 1:
                 call vague_idea
                 jump not_now_custom
             "Favour: \"Use her as a Dildo Container\" {image=heart_00}" if daytime and not heretic_01 and not heretic_02 and not heretic_03:
