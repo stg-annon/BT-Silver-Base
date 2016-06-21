@@ -27,58 +27,27 @@ label cupboard:
         
         "-Your possessions-" if not day == 1:
             label possessions:
+                
             menu:
                 "-Gift Items-" if cataloug_found:
                     label possessions_gift_items:
-                    menu:
-                        "-lollipop candy-([gift_item_inv[1]])" if gift_item_inv[1] >= 1:
-                            call disp_gift_item(1)
-                        "-Chocolate-([gift_item_inv[2]])" if gift_item_inv[2] >= 1:
-                            call disp_gift_item(2)
-                        "-Plush owl-([gift_item_inv[3]])" if gift_item_inv[3] >= 1:
-                            call disp_gift_item(3)
-                        "-Butterbeer-([gift_item_inv[4]])" if gift_item_inv[4] >= 1:
-                            call disp_gift_item(4)
-                        "-Educational magazines-([gift_item_inv[5]])" if gift_item_inv[5] >= 1:
-                            call disp_gift_item(5)
-                        "-Girly magazines-([gift_item_inv[6]])" if gift_item_inv[6] >= 1:
-                            call disp_gift_item(6)
-                        "-Adult magazines-([gift_item_inv[7]])" if gift_item_inv[7] >= 1:
-                            call disp_gift_item(7)
-                        "-Porn magazines-([gift_item_inv[8]])" if gift_item_inv[8] >= 1:
-                            call disp_gift_item(8)
-                        "-Viktor Krum Poster-([gift_item_inv[9]])" if gift_item_inv[9] >= 1:
-                            call disp_gift_item(9)
-                        "-Sexy lingerie-([gift_item_inv[10]])" if gift_item_inv[10] >= 1:
-                            call disp_gift_item(10)
-                        "-A pack of condoms-([gift_item_inv[11]])" if gift_item_inv[11] >= 1:
-                            call disp_gift_item(11)
-                        "-Vibrator-([gift_item_inv[12]])" if gift_item_inv[12] >= 1:
-                            call disp_gift_item(12)
-                        "-Jar of anal lubricant-([gift_item_inv[13]])" if gift_item_inv[13] >= 1:
-                            call disp_gift_item(13)
-                        "-Ball gag and cuffs-([gift_item_inv[14]])" if gift_item_inv[14] >= 1:
-                            call disp_gift_item(14)
-                        "-Anal plugs-([gift_item_inv[15]])" if gift_item_inv[15] >= 1:
-                            call disp_gift_item(15)
-                        "-Thestral Strap-on-([gift_item_inv[16]])" if gift_item_inv[16] >= 1:
-                            call disp_gift_item(16)
-                        "-Lady Speed Stick-2000-([gift_item_inv[17]])" if gift_item_inv[17] >= 1:
-                            call disp_gift_item(17)
-                        "-Sex doll \"Joanne\"-([gift_item_inv[18]])" if gift_item_inv[18] >= 1:
-                            call disp_gift_item(18)
-                        "-Tentacle Scroll-" if tentacle_owned:
-                            ">Should I use this scroll..."
-                            menu:
-                                "\"(Yes, let's do it!)\"":
-                                    jump tentacle_scene_intro
-                                "\"(Not right now.)\"":
-                                    jump possessions
-                        "-Tentacle Scroll-" if tent_scroll and not tentacle_owned:
-                            m "It's missing the key ingredient."
+                        $ choices = []
+                        python:
+                            for i in gift_list:
+                                if gift_item_inv[i.id] > 0:
+                                    choices.append( ( ("-"+str(i.name)+"- ("+str(gift_item_inv[i.id])+")"), i) )
+                        $ choices.append(("-Never mind-", "nvm"))
+                        $ result = renpy.display_menu(choices)
+                        if result == "nvm":
                             jump possessions
-                        "-Never mind-":
-                            jump possessions
+                        else:
+                            $ the_gift = result.image
+                            show screen gift
+                            with d3
+                            ">[result.description]"
+                            hide screen gift
+                            with d3
+                            jump possessions_gift_items
                 
                 "-Clothing-"if False:
                     label possessions_clothing:
@@ -115,7 +84,18 @@ label cupboard:
                                     jump possessions_potions
                         "-Never mind-":
                             jump possessions
-                    
+                
+                "-Tentacle Scroll-" if tentacle_owned:
+                    ">Should I use this scroll..."
+                    menu:
+                        "\"(Yes, let's do it!)\"":
+                            jump tentacle_scene_intro
+                        "\"(Not right now.)\"":
+                            jump possessions
+                "-Tentacle Scroll-" if tent_scroll and not tentacle_owned:
+                    m "It's missing the key ingredient."
+                    jump possessions
+                
                 "-The Ball Dress-" if "ball_dress" in gifts12 and not gave_the_dress:
                     $ the_gift = "01_hp/18_store/01.png" # DRESS.
                     show screen gift
@@ -473,16 +453,6 @@ label rummaging:
         jump day_main_menu
     else: 
         jump night_main_menu
-        
-label disp_gift_item(item):
-    $ the_gift = "01_hp/18_store/gifts/"+str(item)+".png" # CANDY.
-    show screen gift
-    with d3
-    $ text = gift_description[item]
-    ">[text]"
-    hide screen gift
-    with d3
-    jump possessions_gift_items
     
 label disp_sacred_scrolls(scroll):
     $ the_gift = "01_hp/19_extras/"+str(scroll)+".png" # SACRED SCROLL

@@ -211,7 +211,30 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     
 label mail_02: #Packages only. <=====================================================================### PACKAGES ###=================================================== 
     
-### ITEMS ###    
+### ITEMS ###   
+    if gift_order != None:
+        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
+        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
+        
+        $ gift_item_inv[gift_order.id] += order_quantity
+        
+        $ the_gift = gift_order.image
+        show screen gift
+        with d3
+        $ tmp_str = "\""+gift_order.name
+        if order_quantity > 1:
+            $ tmp_str += "'s\""
+            ">([order_quantity]) [tmp_str] have been added to your possessions."
+        else:
+            $ tmp_str += "\""
+            ">([order_quantity]) [tmp_str] has been added to your possessions."
+        hide screen gift
+        with d3
+        $ gift_order = None
+        call screen main_menu_01
+        
+        
+ 
     if order_item != 0:
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True

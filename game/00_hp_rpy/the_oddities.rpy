@@ -309,7 +309,7 @@ label shop_books:
         "-Never mind-":
             call screen shop_screen
     
-label gifts_menu:
+label old_gifts_menu:
     show screen shop_screen
     if order_placed:
         call cust_excuse("only one order can be placed at a time")
@@ -318,7 +318,7 @@ label gifts_menu:
         #dahr "Gifts that you can gift to that special someone."
         
         "-A lollipop candy- (20 g.)":
-            call gift_block(1,20)
+            call object_gift_block(Lollipop,20)
         "-Chocolate- (40 g.)":
             call gift_block(2,40)
         "-Stuffed Owl- (35 g.)":
@@ -645,6 +645,74 @@ label gift_block(item_id, item_cost):
             hide screen gift
             call gifts_menu
     
+    
+label gifts_menu:
+    python:
+        choices = []
+        for i in gift_list:
+            if whoring < i.whoringNeeded:
+                choices.append( ("{color=#858585}-Item is out of stock-{/color}", "oos") )
+            else:
+                choices.append( ( ("-"+str(i.name)+"- ("+str(i.cost)+" g.)"), i) )
+        choices.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(choices)
+        
+    if result == "nvm":
+        jump shop_menu
+    elif result == "oos":
+        call out
+    else:
+        call object_gift_block(result)
+        
+label object_gift_block(item):
+    $ the_gift = item.image
+    show screen gift
+    with d3
+    #$ tmp = item.description
+    dahr "[item.description]"
+    $ cost2 = item.cost * 2
+    $ cost3 = item.cost * 4
+    $ cost4 = item.cost * 8
+    menu:
+        "-Buy 1 for ([item.cost] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 1
+            call object_purchase_item(item.cost)
+        "-Buy 2 for ([cost2] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 2
+            call object_purchase_item(cost2)
+        "-Buy 4 for ([cost3] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 4
+            call object_purchase_item(cost3)
+        "-Buy 8 for ([cost4] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 8
+            call object_purchase_item(cost4)
+        "-Never mind-":
+            hide screen gift
+            call gifts_menu
+            
+label object_purchase_item(order_cost):
+    if gold >= (order_cost):
+        menu:
+            "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
+                $ gold -= 15
+                $ next_day = True
+            "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
+                pass
+            "-no thanks-":
+                pass
+        $ gold -= order_cost
+        $ order_placed = True
+        call thx_4_shoping
+        jump shop_menu
+    else:
+        $ order_item = 0
+        call no_gold #Massage: m "I don't have enough gold".
+        jump gifts_menu
+            
 label purchase_item(item_id, order_cost):
     if gold >= (order_cost):
         menu:
