@@ -1,5 +1,16 @@
 
-###PUBLIC EVENTS (more about shaming than whoring herself off to other people) There are no points as these events are locked behind the collar event
+###PUBLIC EVENTS (more about shaming than whoring herself off to other people) There will be points for these events at the early stages
+
+###Here's the current list of planned public shaming events, more may be added.
+#Panty Thief - Done
+#Wear a shorter skirt
+#Wear a more revealing shirt 
+#Walk of shame 
+#Blowjob under desk in front of someone - Unsure about this one
+#Cum walk
+
+
+
 
 ################### REQUEST_03 (Level 02) (Available during daytime only). "Give me your panties" ###############################
 label hg_ps_PantyThief: #(Whoring = 3 - 5)
@@ -456,10 +467,19 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
         $ hermione_sleeping = True
         jump night_main_menu
+
+
+#Wear a shorter skirt
+label hg_ps_shorter_skirt:
+
+
+#Wear a sluttier shirt
+label hg_ps_sluttier_shirt:
+
     
-    
-#WalkOfAtonement
-label hg_ps_WalkOfAtonement: #Walk around the school wearing only a bra (and at later levels naked)
+#Walk Of Shame
+label hg_ps_WalkOfAtonement: #This will become more intense as the wear a shorter skirt and wear a sluttier shirt favours are completed
+
     m "[hermione_name], what classes do you have today?"
     call her_main("What? Since when have you taken an interest in my education?","body_07")
     m "I'm your headmaster, of course I care about your studies."
@@ -492,8 +512,70 @@ label hg_ps_WalkOfAtonement_complete:#Returns to your office after being made wa
     return
     
 #WearMyCum
-label hg_ps_WearMyCum: #Walk around school covered in genies cum #At the moment this reuses the default blowjob scene (modified) for the intro. This may change
+label hg_ps_WearMyCum: #Walk around school covered in genies cum 
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+    m "Today I have another small favor to ask of you."
+    call her_main("What is it?","body_45")
+    m "I'd like you to attend class."
+    call her_main("Of course...","body_45")
+    m "After I cum on you...."
+    if whoring < 10:
+    	jump too_much
+    elif whoring < 15: 
+    	jump hg_ps_WearMyCum_Scene_1
+    elif whoring < 20:
+    	jump hg_ps_WearMyCum_Scene_2
+    else:
+    	jump hg_ps_WearMyCum_Scene_3
+
+
+
+
+
+
+
+label hg_ps_WearMyCum_Scene_1:
+	call her_main("What?!?","body_45")
+	call her_main("You can't be serious!","body_45")
+	call her_main("It's bad enough that I let you cum on me in private!","body_45")
+	call her_main("But in public?","body_45")
+	call her_main("I think I better leave...","body_45")
+	m "Wait, wait, wait."
+	m "What about if nobody could see it?"
+	call her_main("Well I suppose that would be alright...","body_45")
+	call her_main("But what's the point if they can't see it?","body_45")
+	m "You'll know it's there."
+	call her_main("Hmmmm...","body_45")
+	call her_main("Ok, I'll do it.","body_45")
+	m "Really?"
+	her "As long as nobody can see it then I don't see the big issue."
+	m "Splendid. Care to give me a hand?"
+	her "..."
+	#Start jerk off chibis
+
+
+label hg_ps_WearMyCum_Scene_2:
+
+
+
+label hg_ps_WearMyCum_Scene_3:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ###OLD INTRO
     m "Suck my dick, [hermione_name]."
     call her_main("Of course...","body_45",xpos=140)
     # Sucking.
@@ -657,56 +739,3 @@ label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your c
 
 
 
-
-#LeashWalk
-label hg_ps_LeashWalk: #Be lead around the school on a leash (maybe add an outfit requirement to this)
-    #Make this punishment for Hermione claiming that you were the one that came on her face
-    #Will finish this scene once a suitable outfit has been made
-    m "[hermione_name] today I feel like taking an excursion around the school."
-    her "That's good to hear [genie_name]. Lately the students have been commenting about your absence around the school."
-    m "Fantastic, would you mind escorting me?"
-    her "Of course not si--"
-    m "Wearing this."
-    ">You present the leash to Hermione."
-    her "...Fine"
-    ">You attach the leash to Hermione's collar and leave the office."
-    her "Where are we going today [genie_name]?"
-label hg_ps_leash_menu:
-    menu:
-        "-Gryffindor Dormitories-":
-            her "What? Why do we have to go to my dormitory? All my friends live there."
-            her "Can't we go somewhere else?"
-            menu: 
-                "-No-":
-                    m "I said the dormitories, now let's go."
-                    jump hg_ps_LeashWalk_Dormitories
-                "-Yes-":
-                    m "Fine, we'll go somewhere else."
-                    jump hg_ps_leash_menu
-                
-        "-Great hall-":
-            her "In the middle of the day? Everyone will be there!"
-            her "Can't we go somewhere else?"
-            menu: 
-                "-No-":
-                    m "I said the great hall, now let's go."
-                    jump hg_ps_LeashWalk_GreatHall
-                "-Yes-":
-                    m "Fine, we'll go somewhere else."
-                    jump hg_ps_leash_menu
-        "-Snape's Office-":
-            her "Professor Snapes office? Not there, you know how evil he can be [genie_name]."
-            her "Can't we go somewhere else?"
-            menu: 
-                "-No-":
-                    m "I said Snape's office now let's go."
-                    jump hg_ps_LeashWalk_SnapeOffice
-                "-Yes-":
-                    m "Fine, we'll go somewhere else."
-                    jump hg_ps_leash_menu
-                    
-label hg_ps_LeashWalk_Dormitories: #Dormitories
-
-label hg_ps_LeashWalk_GreatHall: #Great Hall
-
-label hg_ps_LeashWalk_SnapeOffice: #Snape's office
