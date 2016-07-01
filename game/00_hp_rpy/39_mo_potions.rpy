@@ -432,8 +432,16 @@ label potion_scene_2_2: #ass expansion
     call her_main("And my ass, it feels so... good.","body_121")
     ">You start to notice her ass increase in size."    ###Use bigger butt from Captain Nemo
     call her_main("It feels too sensitive... I have to take my skirt off","body_119") ###changed so to too
-    pause 0.2
-    $ custom_skirt = 2
+    
+    hide screen hermione_main
+    show screen blktone 
+    show screen ctc
+    with d3
+    call h_action("expand_ass")
+    call her_main("","body_118",xpos=140,ypos=0)
+    
+    pause
+    
     call her_main("ughhh, has it gotten bigger?","body_118")
     call her_main("Is that what this potion's supposed to do? Makes my ass bigger?","body_120")
     m "Evidently."
@@ -630,7 +638,11 @@ label potion_scene_2_2: #ass expansion
             $ custom_skirt = 0
             ">Your cum is still visible on her ass."
             call her_main("...","body_127")
-
+    
+    
+    show screen blktone 
+    show screen ctc
+    with d3
 
     hide screen bld1
     hide screen hermione_main

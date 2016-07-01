@@ -57,6 +57,9 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-back-":
                     jump cheats_ht
+        "-Add all potions-":
+            $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion"] #all potions
+            jump cheats_ht
         "-Add all costumes-":
             $ outfit_inventory = ["gryffindor_cheerleader","slytherin_cheerleader","maid","silk_nightgown","ball_dress","ms_marvel","heart_dancer","power_girl","harley_quinn","christmas_costume","lara_croft","pirate"]#for testing only
             "All of hermioine's costumes have been unlocked"
