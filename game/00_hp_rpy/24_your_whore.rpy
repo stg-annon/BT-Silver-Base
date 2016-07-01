@@ -925,7 +925,7 @@ label your_whore:
         call sna_head("Miss Granger...?","snape_03")
         call sna_head("You decided to show up after all?","snape_04")
         $ s_sprite = "01_hp/13_characters/snape/main/.png"
-        call sna_head("What an unpleasant surprise...")
+        call sna_head("What an unpleasant surprise...","snape_03")
         #her "Professor..."
         call her_head("Professor...","body_162")
         call sna_head("Well, go ahead then...","snape_10")
