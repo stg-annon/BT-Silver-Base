@@ -520,13 +520,13 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
     call her_main("Of course...","body_45")
     m "After I cum on you...."
     if whoring < 10:
-    	jump too_much
+        jump too_much
     elif whoring < 15: 
-    	jump hg_ps_WearMyCum_Scene_1
+        jump hg_ps_WearMyCum_Scene_1
     elif whoring < 20:
-    	jump hg_ps_WearMyCum_Scene_2
+        jump hg_ps_WearMyCum_Scene_2
     else:
-    	jump hg_ps_WearMyCum_Scene_3
+        jump hg_ps_WearMyCum_Scene_3
 
 
 
@@ -535,23 +535,23 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
 
 
 label hg_ps_WearMyCum_Scene_1:
-	call her_main("What?!?","body_45")
-	call her_main("You can't be serious!","body_45")
-	call her_main("It's bad enough that I let you cum on me in private!","body_45")
-	call her_main("But in public?","body_45")
-	call her_main("I think I better leave...","body_45")
-	m "Wait, wait, wait."
-	m "What about if nobody could see it?"
-	call her_main("Well I suppose that would be alright...","body_45")
-	call her_main("But what's the point if they can't see it?","body_45")
-	m "You'll know it's there."
-	call her_main("Hmmmm...","body_45")
-	call her_main("Ok, I'll do it.","body_45")
-	m "Really?"
-	her "As long as nobody can see it then I don't see the big issue."
-	m "Splendid. Care to give me a hand?"
-	her "..."
-	#Start jerk off chibis
+    call her_main("What?!?","body_45")
+    call her_main("You can't be serious!","body_45")
+    call her_main("It's bad enough that I let you cum on me in private!","body_45")
+    call her_main("But in public?","body_45")
+    call her_main("I think I better leave...","body_45")
+    m "Wait, wait, wait."
+    m "What about if nobody could see it?"
+    call her_main("Well I suppose that would be alright...","body_45")
+    call her_main("But what's the point if they can't see it?","body_45")
+    m "You'll know it's there."
+    call her_main("Hmmmm...","body_45")
+    call her_main("Ok, I'll do it.","body_45")
+    m "Really?"
+    her "As long as nobody can see it then I don't see the big issue."
+    m "Splendid. Care to give me a hand?"
+    her "..."
+    #Start jerk off chibis
 
 
 label hg_ps_WearMyCum_Scene_2:
