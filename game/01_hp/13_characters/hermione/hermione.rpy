@@ -303,46 +303,4 @@ label her_head(text="",face=h_body,tears=""):
     hide screen hermione_head #h_head2
     return
     
-label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):
-    hide screen hermione_walk
-    hide screen hermione_walk_f
-    $ pos1 = pos1+140
-    $ pos2 = pos2+140
-    $ walk_xpos = pos1 #(From)
-    $ walk_xpos2 = pos2 #(To)
-    $ hermione_chibi_ypos = 250
-    $ hermione_speed = speed #Speed of walking animation. (lower = faster)
-    hide screen hermione_blink
-    hide screen hermione_blink_f
-    if pos1 > pos2: #right to left (hermione_walk)
-        show screen hermione_walk
-        $ tmp = speed - redux_pause
-        pause tmp
-        $ hermione_chibi_xpos = pos2
-        hide screen hermione_walk
-        if loiter:
-            show screen hermione_blink
-    else: #left to right (hermione_walk_f)
-        show screen hermione_walk_f
-        $ tmp = speed - redux_pause
-        pause tmp
-        $ hermione_chibi_xpos = pos2
-        hide screen hermione_walk_f
-        if loiter:
-            show screen hermione_blink_f
-    return
-    
-label her_walk_end_loiter(dissolveTime = 3):
-    if dissolveTime > 0:
-        hide screen hermione_stand
-        hide screen hermione_stand_f
-        hide screen hermione_blink
-        hide screen hermione_blink_f
-        with Dissolve((dissolveTime/10))
-    else:
-        hide screen hermione_stand
-        hide screen hermione_stand_f
-        hide screen hermione_blink
-        hide screen hermione_blink_f
-    return
     

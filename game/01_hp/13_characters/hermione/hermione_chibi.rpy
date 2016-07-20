@@ -1799,6 +1799,57 @@ screen hermione_chibi_lift_skirt:
     else:
         add "01_hp/16_hermione_chibi/panties_01.png" at Position(xpos=350+140, ypos=190)
     
+# label to be called to display the hermione chibi walking in a given direction
+#
+# @param pos1 starting position for the chibi, defaults to the value of walk_xpos
+# @param pos2 ending position for the chibi, defaults to the value of walk_xpos2
+# @param speed the the time it will take the chibi to move from pos1 to pos2 in seconds, defaults to the value of hermione_speed
+# @param loiter boolean flag to detetermine weather to show the chibi when the animation ends, defaults to False
+# @param redux_pause value to decrease the time to pause before hideing the animation early 
+label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loiter = False,redux_pause = 0):
+    hide screen hermione_walk
+    hide screen hermione_walk_f
+    $ pos1 = pos1+140
+    $ pos2 = pos2+140
+    $ walk_xpos = pos1 #(From)
+    $ walk_xpos2 = pos2 #(To)
+    $ hermione_chibi_ypos = 250
+    $ hermione_speed = speed #Speed of walking animation. (lower = faster)
+    hide screen hermione_blink
+    hide screen hermione_blink_f
+    if pos1 > pos2: #right to left (hermione_walk)
+        show screen hermione_walk
+        $ tmp = speed - redux_pause
+        pause tmp
+        $ hermione_chibi_xpos = pos2
+        hide screen hermione_walk
+        if loiter:
+            show screen hermione_blink
+    else: #left to right (hermione_walk_f)
+        show screen hermione_walk_f
+        $ tmp = speed - redux_pause
+        pause tmp
+        $ hermione_chibi_xpos = pos2
+        hide screen hermione_walk_f
+        if loiter:
+            show screen hermione_blink_f
+    return
     
+# label to be called to remove hermiones chibi from the screen
+#
+# @param dissolveTime how long to use the desolve transition for i.e.(2=d2, 3=d3)
+label her_walk_end_loiter(dissolveTime = 3):
+    if dissolveTime > 0:
+        hide screen hermione_stand
+        hide screen hermione_stand_f
+        hide screen hermione_blink
+        hide screen hermione_blink_f
+        with Dissolve((dissolveTime/10))
+    else:
+        hide screen hermione_stand
+        hide screen hermione_stand_f
+        hide screen hermione_blink
+        hide screen hermione_blink_f
+    return
     
     
