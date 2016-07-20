@@ -205,12 +205,12 @@ label new_personal_request:
                 menu:
                     "Event: \"Panty Theif\" {image=[hg_ps_PantyThief_CHK]}":
                         jump hg_ps_PantyThief
-                    "Event: \"Walk Of Atonement\" {image=[hg_ps_WalkOfAtonement_CHK]}":
-                        jump hg_ps_WalkOfAtonement
+                    #"Event: \"Walk Of Shame\" {image=[hg_ps_WalkOfAtonement_CHK]}":
+                    #    jump hg_ps_WalkOfAtonement
                     "Event: \"Wear My Cum\" {image=[hg_ps_WearMyCum_CHK]}":
                         jump hg_ps_WearMyCum
-                    "Event: \"Time for a walk (leash)\" {image=[hg_ps_LeashWalk_CHK]}":
-                        jump hg_ps_LeashWalk
+                    #"Event: \"Time for a walk (leash)\" {image=[hg_ps_LeashWalk_CHK]}":
+                    #    jump hg_ps_LeashWalk
                     "-Cancel-":
                         jump new_personal_request
                             
