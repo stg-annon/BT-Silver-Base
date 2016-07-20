@@ -1,5 +1,5 @@
 label __init_variables:
-    if not hasattr(renpy.store,'gift_item_inv'): #important!
+    if not hasattr(renpy.store,'gift_item_inv'): #important! Gift_Item.ID == Index in this array
         $ gift_item_inv = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     if not hasattr(renpy.store,'shop_found'): #important!
         $ shop_found = False
@@ -7,50 +7,6 @@ label __init_variables:
         $ bought_glasses = False
     if not hasattr(renpy.store,'sscroll_'): #important!
         $ sscroll_ = [False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False,False]
-    
-    $ store_gift_item_name = []
-    $ store_gift_item_name.append("null")
-    $ store_gift_item_name.append("lollipop candy")
-    $ store_gift_item_name.append("Chocolate")
-    $ store_gift_item_name.append("Plush owl")
-    $ store_gift_item_name.append("Butterbeer")
-    $ store_gift_item_name.append("Educational magazines")
-    $ store_gift_item_name.append("Girly magazines")
-    $ store_gift_item_name.append("Adult magazines")
-    $ store_gift_item_name.append("Porn magazines")
-    $ store_gift_item_name.append("Viktor Krum Poster")
-    $ store_gift_item_name.append("Sexy lingerie")
-    $ store_gift_item_name.append("A pack of condoms")
-    $ store_gift_item_name.append("Vibrator")
-    $ store_gift_item_name.append("Jar of anal lubricant")
-    $ store_gift_item_name.append("Ball gag and cuffs")
-    $ store_gift_item_name.append("Anal plugs")
-    $ store_gift_item_name.append("Thestral Strap-on")
-    $ store_gift_item_name.append("Lady Speed Stick-2000")
-    $ store_gift_item_name.append("Sex doll \"Joanne\"")
-    #$ store_gift_item_name.append("anal_beads")
-    
-    $ gift_description = []
-    $ gift_description.append("invalid item")
-    $ gift_description.append("A lollipop candy. An adult candy for kids or kids candy for adults?")
-    $ gift_description.append("The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
-    $ gift_description.append("a Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
-    $ gift_description.append("Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
-    $ gift_description.append("Educational magazines. \nthe Trusty companions of every social outcast.")
-    $ gift_description.append("Girly magazines. \nAll cool girls are reading these.")
-    $ gift_description.append("Your boyfriend is turning into a nice guy? \nYour husband won't abuse you anymore? \nAll you wanted to know about relationships, love and sex. Mostly about sex.")
-    $ gift_description.append("Give these to your girlfriend to test her, to your wife to shame her and to your daughter to avoid \"the talk\".")
-    $ gift_description.append("A skilled Quidditch Seeker, Viktor has been selected to play for the Bulgarian National Quidditch team despite still going to school, and is widely regarded as one of the best players in the world.")
-    $ gift_description.append("Sexy lingerie \"Fairy Godmother\". Charm your wizard in bed or empress your sisters at a Sabbath.")
-    $ gift_description.append("\"Pink unicorn condoms\". \nUnleash the one-horned beast!\n{size=-4}May contain traces of actual unicorn saliva.{/size}")
-    $ gift_description.append("A magnificent, magically enhanced vibrator made of vine wood, with a dragon heartstring core.")
-    $ gift_description.append("A Jar of anal lube, Buy this for your loved one - show that you care.")
-    $ gift_description.append("Ball gag and cuffs, Turn your soulmate into your cellmate.")
-    $ gift_description.append("Anal plugs decorated with actual tails. \nSizes vary to satisfy expert practitioners and beginner alike.")
-    $ gift_description.append("Thestral strap-on.\nWhen you see it, you'll shit bricks.")
-    $ gift_description.append("The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!")
-    $ gift_description.append("Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
-    #$ gift_description.append("Anal beads engraved with a strange inscription \"Property of L.C.\".")
     
     $ scroll_name = []
     $ scroll_name.append("null")
@@ -133,6 +89,8 @@ label shop_intro:
 label shop_menu:
     show screen shop_screen
     call screen shop_screen
+    
+    
     
 label sscrolls:
     show screen shop_screen
@@ -236,6 +194,32 @@ label sscrolls2:
         "-Never mind-":
             jump shop_menu
     
+label scroll_block(scroll_id, scroll_cost):
+    $ the_gift = "01_hp/18_store/31.png" # SACRED SCROLL.
+    show screen gift
+    with d3
+    dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
+    menu:
+        "-Buy the scroll ([scroll_cost] gold)-":
+            if gold >= scroll_cost:
+                $ gold -= scroll_cost
+                $ sscroll_[scroll_id] = True # Turns TRUE if the scroll had been bought.
+                $ renpy.play('sounds/win_04.mp3')   #Not loud.
+                ">A New scroll has been added to your sacred scrolls collection."
+                hide screen gift
+                with d3
+                call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
+                call screen shop_screen
+            else:
+                call no_gold #Massage: m "I don't have enough gold".
+                hide screen gift
+                return
+        "-Never mind-":
+            hide screen gift
+            return
+    
+    
+    
 label shop_books:
     show screen shop_screen
     sna_[1] "What type of book would you like?"
@@ -309,66 +293,37 @@ label shop_books:
         "-Never mind-":
             call screen shop_screen
     
-label old_gifts_menu:
-    show screen shop_screen
-    if order_placed:
-        call cust_excuse("only one order can be placed at a time")
-        jump shop_menu
+label book_block(book_id, book_cost):
+    if book_id in fiction_books:
+        $ the_gift = "01_hp/18_store/books/"+str(book_id)+".png"
+    else:
+        $ the_gift = "01_hp/18_store/books/1-8.png"
+    show screen gift
+    with d3
+    $ temp_str = str(book_description[book_id])
+    ">[temp_str]"
     menu:
-        #dahr "Gifts that you can gift to that special someone."
-        
-        "-A lollipop candy- (20 g.)":
-            call object_gift_block(Lollipop,20)
-        "-Chocolate- (40 g.)":
-            call gift_block(2,40)
-        "-Stuffed Owl- (35 g.)":
-            call gift_block(3,35)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-Butterbeer- (50 g.)" if whoring >= 3:
-            call gift_block(4,50)
-        
-        "-Educational magazines- (30 g.)":
-            call gift_block(5,30)
-        "-Girly magazines- (45 g.)":
-            call gift_block(6,45)
-        "-Adult magazines- (60 g.)":
-            call gift_block(7,60)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-Porn magazines- (80 g.)" if whoring >= 3:
-            call gift_block(8,80)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-A pack of condoms- (50 g.)" if whoring >= 3:
-            call gift_block(11,50)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-Vibrator- (55 g.)" if whoring >= 3:
-            call gift_block(12,55)
-        
-        "-A jar of anal lubricant- (60 g.)":
-            call gift_block(13,60)
-        "-Ball gag and cuffs- (70 g.)":
-            call gift_block(14,70)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-Anal plugs- (85 g.)" if whoring >= 3:
-            call gift_block(15,85)
-        
-        "{color=#858585}-Item is out of stock-{/color}" if whoring < 3:
-            call out # Message "Item us out of stock".
-        "-Thestral Strap-on- (200 g.)" if whoring >= 3:
-            call gift_block(16,200)
+        "-Buy the book for [book_cost] gold -":
+            if gold >= book_cost:
+                $ gold -= book_cost
+                $ books.append("book_"+str(book_id))
+                $ tmp = book_name[book_id]
+                "Book [tmp] has been added to your collection."
+                hide screen gift
+                with d3
+                # $ order_placed = True
+                # $ bought_book[book_id] = True #Affects 15_mail.rpy
+                # call thx_4_shoping #Massage that says "Thank you for shopping here!".
+                # call screen shop_screen
+                return
+            else:
+                call no_gold #Massage: m "I don't have enough gold".
+                return
         "-Never mind-":
             hide screen gift
-            with d3
-            jump shop_menu
+            return
+    
+    
     
 label shop_potion_menu:
     show screen shop_screen
@@ -456,7 +411,72 @@ label shop_potion_menu:
             call screen shop_screen
     
     
+label gifts_menu:
+    python:
+        choices = []
+        for i in gift_list:
+            if whoring < i.whoringNeeded:
+                choices.append( ("{color=#858585}-Item is out of stock-{/color}", "oos") )
+            else:
+                choices.append( ( ("-"+str(i.name)+"- ("+str(i.cost)+" g.)"), i) )
+        choices.append(("-Never mind-", "nvm"))
+        result = renpy.display_menu(choices)
+        
+    if result == "nvm":
+        jump shop_menu
+    elif result == "oos":
+        call out
+    else:
+        call object_gift_block(result)
     
+label object_gift_block(item):
+    $ the_gift = item.image
+    show screen gift
+    with d3
+    #$ tmp = item.description
+    dahr "[item.description]"
+    $ cost2 = item.cost * 2
+    $ cost3 = item.cost * 4
+    $ cost4 = item.cost * 8
+    menu:
+        "-Buy 1 for ([item.cost] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 1
+            call object_purchase_item(item.cost)
+        "-Buy 2 for ([cost2] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 2
+            call object_purchase_item(cost2)
+        "-Buy 4 for ([cost3] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 4
+            call object_purchase_item(cost3)
+        "-Buy 8 for ([cost4] galleons)-":
+            $ gift_order = item
+            $ order_quantity = 8
+            call object_purchase_item(cost4)
+        "-Never mind-":
+            hide screen gift
+            call gifts_menu
+            
+label object_purchase_item(order_cost):
+    if gold >= (order_cost):
+        menu:
+            "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
+                $ gold -= 15
+                $ next_day = True
+            "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
+                pass
+            "-no thanks-":
+                pass
+        $ gold -= order_cost
+        $ order_placed = True
+        call thx_4_shoping
+        jump shop_menu
+    else:
+        $ order_item = 0
+        call no_gold #Massage: m "I don't have enough gold".
+        jump gifts_menu
     
     
 label app:
@@ -585,174 +605,6 @@ label app:
                 jump shop_menu
     
     
-label book_block(book_id, book_cost):
-    if book_id in fiction_books:
-        $ the_gift = "01_hp/18_store/books/"+str(book_id)+".png"
-    else:
-        $ the_gift = "01_hp/18_store/books/1-8.png"
-    show screen gift
-    with d3
-    $ temp_str = str(book_description[book_id])
-    ">[temp_str]"
-    menu:
-        "-Buy the book for [book_cost] gold -":
-            if gold >= book_cost:
-                $ gold -= book_cost
-                $ books.append("book_"+str(book_id))
-                $ tmp = book_name[book_id]
-                "Book [tmp] has been added to your collection."
-                hide screen gift
-                with d3
-                # $ order_placed = True
-                # $ bought_book[book_id] = True #Affects 15_mail.rpy
-                # call thx_4_shoping #Massage that says "Thank you for shopping here!".
-                # call screen shop_screen
-                return
-            else:
-                call no_gold #Massage: m "I don't have enough gold".
-                return
-        "-Never mind-":
-            hide screen gift
-            return
-    
-label gift_block(item_id, item_cost):
-    $ the_gift = "01_hp/18_store/gifts/"+str(item_id)+".png"
-    show screen gift
-    with d3
-    $ tmp = gift_description[item_id]
-    dahr "[tmp]"
-    $ price2 = item_cost*2
-    $ price3 = item_cost*4
-    $ price4 = item_cost*8
-    menu:
-        "-Buy 1 for ([item_cost] galleons)-":
-            $ order_item = item_id
-            $ order_quantity = 1
-            call purchase_item(item_id,item_cost)
-        "-Buy 2 for ([price2] galleons)-":
-            $ order_item = item_id
-            $ order_quantity = 2
-            call purchase_item(item_id,price2)
-        "-Buy 4 for ([price3] galleons)-":
-            $ order_item = item_id
-            $ order_quantity = 4
-            call purchase_item(item_id,price3)
-        "-Buy 8 for ([price4] galleons)-":
-            $ order_item = item_id
-            $ order_quantity = 8
-            call purchase_item(item_id,price4)
-        "-Never mind-":
-            hide screen gift
-            call gifts_menu
-    
-    
-label gifts_menu:
-    python:
-        choices = []
-        for i in gift_list:
-            if whoring < i.whoringNeeded:
-                choices.append( ("{color=#858585}-Item is out of stock-{/color}", "oos") )
-            else:
-                choices.append( ( ("-"+str(i.name)+"- ("+str(i.cost)+" g.)"), i) )
-        choices.append(("-Never mind-", "nvm"))
-        result = renpy.display_menu(choices)
-        
-    if result == "nvm":
-        jump shop_menu
-    elif result == "oos":
-        call out
-    else:
-        call object_gift_block(result)
-        
-label object_gift_block(item):
-    $ the_gift = item.image
-    show screen gift
-    with d3
-    #$ tmp = item.description
-    dahr "[item.description]"
-    $ cost2 = item.cost * 2
-    $ cost3 = item.cost * 4
-    $ cost4 = item.cost * 8
-    menu:
-        "-Buy 1 for ([item.cost] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 1
-            call object_purchase_item(item.cost)
-        "-Buy 2 for ([cost2] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 2
-            call object_purchase_item(cost2)
-        "-Buy 4 for ([cost3] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 4
-            call object_purchase_item(cost3)
-        "-Buy 8 for ([cost4] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 8
-            call object_purchase_item(cost4)
-        "-Never mind-":
-            hide screen gift
-            call gifts_menu
-            
-label object_purchase_item(order_cost):
-    if gold >= (order_cost):
-        menu:
-            "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
-                $ gold -= 15
-                $ next_day = True
-            "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
-                pass
-            "-no thanks-":
-                pass
-        $ gold -= order_cost
-        $ order_placed = True
-        call thx_4_shoping
-        jump shop_menu
-    else:
-        $ order_item = 0
-        call no_gold #Massage: m "I don't have enough gold".
-        jump gifts_menu
-            
-label purchase_item(item_id, order_cost):
-    if gold >= (order_cost):
-        menu:
-            "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
-                $ gold -= 15
-                $ next_day = True
-            "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
-                pass
-            "-no thanks-":
-                pass
-        $ gold -= order_cost
-        $ order_placed = True
-        call thx_4_shoping
-        jump shop_menu
-    else:
-        $ order_item = 0
-        call no_gold #Massage: m "I don't have enough gold".
-        jump gifts_menu
-    
-label scroll_block(scroll_id, scroll_cost):
-    $ the_gift = "01_hp/18_store/31.png" # SACRED SCROLL.
-    show screen gift
-    with d3
-    dahr "A scroll containing sacred knowledge.\n(May also contain spoilers)."
-    menu:
-        "-Buy the scroll ([scroll_cost] gold)-":
-            if gold >= scroll_cost:
-                $ gold -= scroll_cost
-                $ sscroll_[scroll_id] = True # Turns TRUE if the scroll had been bought.
-                $ renpy.play('sounds/win_04.mp3')   #Not loud.
-                call sscroll_bought
-                call thx_4_shoping2 #Massage that says "Thank you for shopping here!".
-                call screen shop_screen
-            else:
-                call no_gold #Massage: m "I don't have enough gold".
-                hide screen gift
-                return
-        "-Never mind-":
-            hide screen gift
-            return
     
 ### ALREADY HAVE THIS BOOK
 label do_have_book:
@@ -762,6 +614,7 @@ label do_have_book:
     hide screen gift
     with d3
     return
+    
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
     $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
@@ -783,6 +636,7 @@ label thx_4_shoping2:
     hide screen gift
     with d3
     return
+    
 ### NOT ENOUGH GOLD ###
 label no_gold:
     m "I don't have enough gold... This is depressing..."
@@ -791,7 +645,6 @@ label no_gold:
     return
     
 ### ITEM IS OUT OF STOCK ###
-
 label out:
     show screen bld1
     with d3
@@ -800,10 +653,3 @@ label out:
     with d3
     jump gifts_menu
     
-    
-### BOUGHT SACRED SCROLL MESSAGE ###
-label sscroll_bought:
-    ">A New scroll has been added to your sacred scrolls collection."
-    hide screen gift
-    with d3
-    return
