@@ -1,222 +1,283 @@
-label new_personal_request:
+init python:
+    class silver_request(object):
+        menu_text = ""
+        start_label = ""
+        complete_label = ""
+        
+        
+    class personal_favor(silver_request):
+        hearts_level = 0
+        imagination_level = 0
+        costume_event = False
+        
+        def getMenuText(self):
+            menu_image = "interface/heart_0"+str(self.hearts_level)+".png"
+            ret_str = "Favor: \""+self.menu_text+"\" {image="+menu_image+"}"
+            if self.costume_event:
+               ret_str += "  {image=interface/clothes.png}"
+            return ret_str
+        
+    class public_request(silver_request):
+        points = 0
+        imagination_level = 0
+        complete = False
+        in_progress = False
+        
+        def getMenuText(self):
+            menu_image = "interface/check_"+str(self.complete)+".png"
+            return "Favour: \""+self.menu_text+"\" {image="+menu_image+"}"
+        
+    class public_shaming(silver_request):
+        points = 0
+        complete = False
+        in_progress = False
+        
+        def getMenuText(self):
+            menu_image = "interface/check_"+str(self.complete)+".png"
+            return "Event: "+self.menu_text+" {image="+menu_image+"}"
+    
+    
+    
+    hg_pf_TalkToMe_OBJ = personal_favor()
+    hg_pf_TalkToMe_OBJ.imagination_level = 0
+    hg_pf_TalkToMe_OBJ.menu_text = "Talk to me"
+    hg_pf_TalkToMe_OBJ.start_label = "hg_pf_TalkToMe"
+    hg_pf_TalkToMe_OBJ.costume_event = True
+    
+    hg_pf_NicePanties_OBJ = personal_favor()
+    hg_pf_NicePanties_OBJ.imagination_level = 0
+    hg_pf_NicePanties_OBJ.menu_text = "Nice panties"
+    hg_pf_NicePanties_OBJ.start_label = "hg_pf_NicePanties"
+    
+    hg_pf_BreastMolester_OBJ = personal_favor()
+    hg_pf_BreastMolester_OBJ.imagination_level = 2
+    hg_pf_BreastMolester_OBJ.menu_text = "Breast molester"
+    hg_pf_BreastMolester_OBJ.start_label = "hg_pf_BreastMolester"
+    hg_pf_BreastMolester_OBJ.costume_event = True
+    
+    hg_pf_ButtMolester_OBJ = personal_favor()
+    hg_pf_ButtMolester_OBJ.imagination_level = 2
+    hg_pf_ButtMolester_OBJ.menu_text = "Butt molester"
+    hg_pf_ButtMolester_OBJ.start_label = "hg_pf_ButtMolester"
+    hg_pf_ButtMolester_OBJ.costume_event = True
+    
+    hg_pf_ShowThemToMe_OBJ = personal_favor()
+    hg_pf_ShowThemToMe_OBJ.imagination_level = 3
+    hg_pf_ShowThemToMe_OBJ.menu_text = "Show them to me!"
+    hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ButtMolester"
+    hg_pf_ShowThemToMe_OBJ.costume_event = True
+    
+    hg_pf_DanceForMe_OBJ = personal_favor()
+    hg_pf_DanceForMe_OBJ.imagination_level = 3
+    hg_pf_DanceForMe_OBJ.menu_text = "Dance for me!"
+    hg_pf_DanceForMe_OBJ.start_label = "hg_pf_DanceForMe"
+    hg_pf_DanceForMe_OBJ.costume_event = True
+    
+    hg_pf_LetMeTouchThem_OBJ = personal_favor()
+    hg_pf_LetMeTouchThem_OBJ.imagination_level = 3
+    hg_pf_LetMeTouchThem_OBJ.menu_text = "Let me touch them!"
+    hg_pf_LetMeTouchThem_OBJ.start_label = "hg_pf_LetMeTouchThem"
+    hg_pf_LetMeTouchThem_OBJ.costume_event = True
+    
+    hg_pf_TouchMe_OBJ = personal_favor()
+    hg_pf_TouchMe_OBJ.imagination_level = 4
+    hg_pf_TouchMe_OBJ.menu_text = "Touch me!"
+    hg_pf_TouchMe_OBJ.start_label = "hg_pf_TouchMe"
+    hg_pf_TouchMe_OBJ.costume_event = True
+    
+    hg_pf_SuckIt_OBJ = personal_favor()
+    hg_pf_SuckIt_OBJ.imagination_level = 4
+    hg_pf_SuckIt_OBJ.menu_text = "Suck it!"
+    hg_pf_SuckIt_OBJ.start_label = "hg_pf_SuckIt"
+    hg_pf_SuckIt_OBJ.costume_event = True
+    
+    hg_pf_LetsHaveSex_OBJ = personal_favor()
+    hg_pf_LetsHaveSex_OBJ.imagination_level = 5
+    hg_pf_LetsHaveSex_OBJ.menu_text = "Let's have sex!"
+    hg_pf_LetsHaveSex_OBJ.start_label = "hg_pf_LetsHaveSex"
+    hg_pf_LetsHaveSex_OBJ.costume_event = True
+    
+    hg_pf_TimeForAnal_OBJ = personal_favor()
+    hg_pf_TimeForAnal_OBJ.imagination_level = 5
+    hg_pf_TimeForAnal_OBJ.menu_text = "Time for anal!"
+    hg_pf_TimeForAnal_OBJ.start_label = "hg_pf_TimeForAnal"
+    hg_pf_TimeForAnal_OBJ.costume_event = True
+    
+    hg_pf_list = []
+    hg_pf_list.append(hg_pf_TalkToMe_OBJ)
+    hg_pf_list.append(hg_pf_NicePanties_OBJ)
+    hg_pf_list.append(hg_pf_BreastMolester_OBJ)
+    hg_pf_list.append(hg_pf_ButtMolester_OBJ)
+    hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
+    hg_pf_list.append(hg_pf_DanceForMe_OBJ)
+    hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
+    hg_pf_list.append(hg_pf_TouchMe_OBJ)
+    hg_pf_list.append(hg_pf_SuckIt_OBJ)
+    hg_pf_list.append(hg_pf_LetsHaveSex_OBJ)
+    hg_pf_list.append(hg_pf_TimeForAnal_OBJ)
+    
+    
+    
+    hg_pr_FlirtClassmate_OBJ = public_request()
+    hg_pr_FlirtClassmate_OBJ.imagination_level = 0
+    hg_pr_FlirtClassmate_OBJ.menu_text = "She's a flirt"
+    hg_pr_FlirtClassmate_OBJ.start_label = "hg_pr_FlirtClassmate"
+    
+    hg_pr_FlirtTeacher_OBJ = public_request()
+    hg_pr_FlirtTeacher_OBJ.imagination_level = 2
+    hg_pr_FlirtTeacher_OBJ.menu_text = "She's bait"
+    hg_pr_FlirtTeacher_OBJ.start_label = "hg_pr_FlirtTeacher"
+    
+    hg_pr_ClassmateTouchYou_OBJ = public_request()
+    hg_pr_ClassmateTouchYou_OBJ.imagination_level = 3
+    hg_pr_ClassmateTouchYou_OBJ.menu_text = "Let a classmate molest you"
+    hg_pr_ClassmateTouchYou_OBJ.start_label = "hg_pr_ClassmateTouchYou"
+    
+    hg_pr_FlashClassmate_OBJ = public_request()
+    hg_pr_FlashClassmate_OBJ.imagination_level = 3
+    hg_pr_FlashClassmate_OBJ.menu_text = "Flash your tits to a classmate"
+    hg_pr_FlashClassmate_OBJ.start_label = "hg_pr_FlashClassmate"
+    
+    hg_pr_KissAGirl_OBJ = public_request()
+    hg_pr_KissAGirl_OBJ.imagination_level = 4
+    hg_pr_KissAGirl_OBJ.menu_text = "Kiss a girl."
+    hg_pr_KissAGirl_OBJ.start_label = "hg_pr_KissAGirl"
+    
+    hg_pr_HandjobClassmate_OBJ = public_request()
+    hg_pr_HandjobClassmate_OBJ.imagination_level = 4
+    hg_pr_HandjobClassmate_OBJ.menu_text = "Give a handjob to a classmate"
+    hg_pr_HandjobClassmate_OBJ.start_label = "hg_pr_HandjobClassmate"
+    
+    hg_pr_BlowjobClassmate_OBJ = public_request()
+    hg_pr_BlowjobClassmate_OBJ.imagination_level = 5
+    hg_pr_BlowjobClassmate_OBJ.menu_text = "Give a blowjob to a classmate"
+    hg_pr_BlowjobClassmate_OBJ.start_label = "hg_pr_BlowjobClassmate"
+    
+    hg_pr_SexWithClassmate_OBJ = public_request()
+    hg_pr_SexWithClassmate_OBJ.imagination_level = 5
+    hg_pr_SexWithClassmate_OBJ.menu_text = "Have sex with a classmate"
+    hg_pr_SexWithClassmate_OBJ.start_label = "hg_pr_SexWithClassmate"
+    
+    hg_pr_list = []
+    hg_pr_list.append(hg_pr_FlirtClassmate_OBJ)
+    hg_pr_list.append(hg_pr_FlirtTeacher_OBJ)
+    hg_pr_list.append(hg_pr_ClassmateTouchYou_OBJ)
+    hg_pr_list.append(hg_pr_FlashClassmate_OBJ)
+    hg_pr_list.append(hg_pr_KissAGirl_OBJ)
+    hg_pr_list.append(hg_pr_HandjobClassmate_OBJ)
+    hg_pr_list.append(hg_pr_BlowjobClassmate_OBJ)
+    hg_pr_list.append(hg_pr_SexWithClassmate_OBJ)
+    
+    
+    
+    hg_ps_PantyThief_OBJ = public_shaming()
+    hg_ps_PantyThief_OBJ.menu_text = "Panty Theif"
+    hg_ps_PantyThief_OBJ.start_label = "hg_ps_PantyThief"
+    hg_ps_PantyThief_OBJ.complete_label = "hg_ps_PantyThief_complete"
+    
+    hg_ps_WalkOfShame_OBJ = public_shaming()
+    hg_ps_WalkOfShame_OBJ.menu_text = "Walk Of Shame"
+    hg_ps_WalkOfShame_OBJ.start_label = "hg_ps_WalkOfShame"
+    hg_ps_WalkOfShame_OBJ.complete_label = "hg_ps_WalkOfShame_complete"
+    
+    hg_ps_WearMyCum_OBJ = public_shaming()
+    hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
+    hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
+    hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_PantyThief_complete"
+    
+    hg_ps_LeashWalk_OBJ = public_shaming()
+    hg_ps_LeashWalk_OBJ.menu_text = "Time for a walk (leash)"
+    hg_ps_LeashWalk_OBJ.start_label = "hg_ps_LeashWalk"
+    hg_ps_LeashWalk_OBJ.complete_label = "hg_ps_LeashWalk_complete"
+    
+    
+    hg_ps_list = []
+    hg_ps_list.append(hg_ps_PantyThief_OBJ)
+    #hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
+    hg_ps_list.append(hg_ps_WearMyCum_OBJ)
+    #hg_ps_list.append(hg_ps_LeashWalk_OBJ)
+
+label silver_requests:
     if slytherin > gryffindor or slytherin == gryffindor:
         show screen hermione_main
         $ menu_x = 0.2 #Default: 0.5
         
-        
-        label not_now:
+        label silver_requests_root:
         menu:
-            "-Custom favours-":
-                jump new_custom_request
-            
             "-Personal favours-":
+                label not_now_pf:
+                python:
+                    pf_menu = []
+                    for i in hg_pf_list:
+                        if i.imagination_level > imagination:
+                            pf_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                        else:
+                            pf_menu.append((i.getMenuText(),i.start_label))
+                    pf_menu.append(("-Never mind-", "nvm"))
+                    result = renpy.display_menu(pf_menu)
+                if result == "nvm":
+                    jump silver_requests_root
+                elif result == "vague":
+                    call vague_idea
+                    jump not_now_pf
+                else:
+                    $ renpy.jump(result)
                 
-                $ hg_pf_TalkToMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_TalkToMe_ID])+".png"
-                $ hg_pf_NicePanties_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_NicePanties_ID])+".png"
-                $ hg_pf_BreastMolester_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_BreastMolester_ID])+".png"
-                $ hg_pf_ButtMolester_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_ButtMolester_ID])+".png"
-                $ hg_pf_ShowThemToMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_ShowThemToMe_ID])+".png"
-                $ hg_pf_DanceForMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_DanceForMe_ID])+".png"
-                $ hg_pf_LetMeTouchThem_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_LetMeTouchThem_ID])+".png"
-                $ hg_pf_TouchMe_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_TouchMe_ID])+".png"
-                $ hg_pf_SuckIt_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_SuckIt_ID])+".png"
-                $ hg_pf_LetsHaveSex_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_LetsHaveSex_ID])+".png"
-                $ hg_pf_TimeForAnal_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_TimeForAnal_ID])+".png"
-                $ hg_pf_TheGamble_MH = "interface/heart_0"+str(hg_pf_hearts[hg_pf_TheGamble_ID])+".png"
-                
-                label not_now2:
-                ### LEVEL 01 ###
-                menu:
-                    "Favour: \"Talk to me\" {image=[hg_pf_TalkToMe_MH]}   {image=interface/clothes.png}":
-                        jump hg_pf_TalkToMe
-
-                    "Favour: \"Nice panties\" {image=[hg_pf_NicePanties_MH]}": # LEVEL 1
-                        jump hg_pf_NicePanties
-                    
-                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Breast molester\" {image=[hg_pf_BreastMolester_MH]}   {image=interface/clothes.png}" if imagination >= 2: 
-                        jump hg_pf_BreastMolester
-                        
-                    "{color=#858585}-A vague idea-{/color}" if imagination == 1:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Butt molester\" {image=[hg_pf_ButtMolester_MH]}   {image=interface/clothes.png}" if imagination >= 2:
-                        jump hg_pf_ButtMolester
-                        
-                    ### LEVEL 03 ### IMAGINATION == 3
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Show them to me!\" {image=[hg_pf_ShowThemToMe_MH]}   {image=interface/clothes.png}" if imagination >= 3:
-                        jump hg_pf_ShowThemToMe
-                        
-#                    "Favour: \"Show {size=+5}it{/size} to me! (NOT FINISHED YET)":
-#                        jump new_request_09
-                    
-                    ### LEVEL 04 ### IMAGINATION == 3
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Dance for me!\" {image=[hg_pf_DanceForMe_MH]}   {image=interface/clothes.png}" if imagination >= 3:
-                        jump hg_pf_DanceForMe
-                        
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 3:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Let me touch them!\" {image=[hg_pf_LetMeTouchThem_MH]}   {image=interface/clothes.png}" if imagination >= 3: # LEVEL 4
-                        jump hg_pf_LetMeTouchThem
-                        
-                    ### LEVEL 05 ### IMAGINATION == 4
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 4:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"touch me!\" {image=[hg_pf_TouchMe_MH]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 5
-                        jump hg_pf_TouchMe
-                        
-                    ### LEVEL 06 ### IMAGINATION == 4
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 4:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Suck it!\" {image=[hg_pf_SuckIt_MH]}   {image=interface/clothes.png}" if imagination >= 4: # LEVEL 6
-                        jump hg_pf_SuckIt
-                        
-                    ### LEVEL 07 ### IMAGINATION == 5
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 5:
-                        call vague_idea
-                        jump not_now2
-                    "Favour: \"Let's have sex!\" {image=[hg_pf_LetsHaveSex_MH]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 7
-                        jump hg_pf_LetsHaveSex
-                    
-                    ### LEVEL 08 ###
-                    "{color=#858585}-A vague idea-{/color}" if imagination < 5:
-                        call vague_idea
-                        jump not_now2
-                    "Favour:  \"Time for anal!\" {image=[hg_pf_TimeForAnal_MH]}   {image=interface/clothes.png}" if imagination >= 5: # LEVEL 8
-                        jump hg_pf_TimeForAnal
-                    
-                    "-Cancel-":
-                        jump new_personal_request
-                
-            "{color=#858585}-Public favours-{/color}" if not daytime:
+            "{color=#858585}-Public requests-{/color}" if not daytime:
                 show screen blktone
-                hide screen hermione_main
                 with d3
-                ">Public favours are available during the daytime only."
+                ">Public requests are available during the daytime only."
                 hide screen blktone
-                show screen hermione_main
                 with d3
-                jump not_now
-            "-Public favours-" if daytime:
+                jump silver_requests_root
+            "-Public requests-" if daytime:
                 if lock_public_favors:
                     her "Em... [genie_name]..."
                     her "I do not mind to keep selling you the favours..."
                     her "But only as long as we keep them private..."
-                    jump new_personal_request
+                    jump silver_requests_root
                 else:
-                    
-                    $ hg_pr_FlirtClassmate_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_FlirtClassmate_ID])+".png"
-                    $ hg_pr_FlirtTeacher_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_FlirtTeacher_ID])+".png"
-                    $ hg_pr_ClassmateTouchYou_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_ClassmateTouchYou_ID])+".png"
-                    $ hg_pr_FlashClassmate_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_FlashClassmate_ID])+".png"
-                    $ hg_pr_KissAGirl_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_KissAGirl_ID])+".png"
-                    $ hg_pr_HandjobClassmate_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_HandjobClassmate_ID])+".png"
-                    $ hg_pr_BlowjobClassmate_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_BlowjobClassmate_ID])+".png"
-                    $ hg_pr_BlowjobTeacher_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_BlowjobTeacher_ID])+".png"
-                    $ hg_pr_SexWithClassmate_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_SexWithClassmate_ID])+".png"
-                    $ hg_pr_SexWithTeacher_CHK = "interface/check_"+str(hg_pr_complete[hg_pr_SexWithTeacher_ID])+".png"
-                    
-                    label not_now3:
-                    menu:
-                        ### LEVEL 01 ### 
-                        "Favour: \"She's a flirt\" {image=[hg_pr_FlirtClassmate_CHK]}" if daytime:
-                            jump hg_pr_FlirtClassmate
-                            
-                        ### LEVEL 02 ### IMAGINATION == 2
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 2:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"She's bait\" {image=[hg_pr_FlirtTeacher_CHK]}" if daytime  and imagination >= 2:
-                            jump hg_pr_FlirtTeacher
+                    label not_now_pr:
+                    python:
+                        pr_menu = []
+                        for i in hg_pr_list:
+                            if i.imagination_level > imagination:
+                                pr_menu.append(("{color=#858585}-A vague idea-{/color}","vague"))
+                            else:
+                                pr_menu.append((i.getMenuText(),i.start_label))
+                        pr_menu.append(("-Never mind-", "nvm"))
+                        result = renpy.display_menu(pr_menu)
+                    if result == "nvm":
+                        jump silver_requests_root
+                    elif result == "vague":
+                        call vague_idea
+                        jump not_now_pr
+                    else:
+                        $ renpy.jump(result)
                         
-                        ### LEVEL 03 ### IMAGINATION == 3
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 3:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Let a classmate molest you.\" {image=[hg_pr_ClassmateTouchYou_CHK]}" if imagination >= 3: # LEVEL 3
-                            jump hg_pr_ClassmateTouchYou
-                        
-                        ### LEVEL 04 ### IMAGINATION == 3
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 3:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Flash your tits to a classmate.\" {image=[hg_pr_FlashClassmate_CHK]}" if imagination >= 3: # LEVEL 4
-                            jump hg_pr_FlashClassmate
-                        
-                        
-                        ### LEVEL 05 ### IMAGINATION == 4
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 4:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Kiss a girl.\" {image=[hg_pr_KissAGirl_CHK]}" if imagination >= 4: # LEVEL 5
-                            jump hg_pr_KissAGirl
-                            
-                        ### LEVEL 06 ### IMAGINATION == 4
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 4:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Give a handjob to a classmate.\" {image=[hg_pr_HandjobClassmate_CHK]}" if imagination >= 4: # LEVEL 6
-                            jump hg_pr_HandjobClassmate
-                            
-                        ### LEVEL 07 ### IMAGINATION == 5
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 5:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Give a blowjob to a classmate\" {image=[hg_pr_BlowjobClassmate_CHK]}" if imagination >= 5:# LEVEL 7
-                            jump hg_pr_BlowjobClassmate
-                                
-                         ### LEVEL 08 ### IMAGINATION == 5
-                        "{color=#858585}-A vague idea-{/color}" if imagination < 5:
-                            call vague_idea
-                            jump not_now3
-                        "Favour: \"Have sex with a classmate\" {image=[hg_pr_SexWithClassmate_CHK]}" if imagination >= 5:# LEVEL 8
-                            jump hg_pr_SexWithClassmate
-                        
-                        "-Cancel-":
-                            jump new_personal_request
             "{color=#858585}-Public Shaming-{/color}" if not daytime:
                 show screen blktone
-                hide screen hermione_main
                 with d3
                 ">Public Shaming events are available during the daytime only."
                 hide screen blktone
-                show screen hermione_main
                 with d3
-                jump not_now
+                jump silver_requests_root
             "-Public Shaming-"if daytime:
+                label not_now_ps:
+                python:
+                    ps_menu = []
+                    for i in hg_ps_list:
+                        ps_menu.append((i.getMenuText(),i.start_label))
+                    ps_menu.append(("-Never mind-", "nvm"))
+                    result = renpy.display_menu(ps_menu)
+                if result == "nvm":
+                    jump silver_requests_root
+                else:
+                    $ renpy.jump(result)
             
-                $ hg_ps_PantyThief_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_PantyThief_ID])+".png"
-                $ hg_ps_WalkOfAtonement_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_WalkOfAtonement_ID])+".png"
-                $ hg_ps_WearMyCum_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_WearMyCum_ID])+".png"
-                $ hg_ps_LeashWalk_CHK = "interface/check_"+str(hg_ps_complete[hg_ps_LeashWalk_ID])+".png"
-                
-                label not_now4:
-                menu:
-                    "Event: \"Panty Theif\" {image=[hg_ps_PantyThief_CHK]}":
-                        jump hg_ps_PantyThief
-                    #"Event: \"Walk Of Shame\" {image=[hg_ps_WalkOfAtonement_CHK]}":
-                    #    jump hg_ps_WalkOfAtonement
-                    "Event: \"Wear My Cum\" {image=[hg_ps_WearMyCum_CHK]}":
-                        jump hg_ps_WearMyCum
-                    #"Event: \"Time for a walk (leash)\" {image=[hg_ps_LeashWalk_CHK]}":
-                    #    jump hg_ps_LeashWalk
-                    "-Cancel-":
-                        jump new_personal_request
-                            
             "{color=#858585}-Potions-{/color}" if not daytime:
                 call cust_excuse("Potions are available during the daytime only.")
-                jump not_now
+                jump silver_requests_root
             "-Potions-" if daytime:
                 label request_potion_menu:
                 menu:
@@ -265,18 +326,8 @@ label new_personal_request:
                     ##"-Snek-" if whoring >= 3:
                     ##    jump potion_scene_5
                     "-Nevermind -":
-                        jump new_personal_request
-            "-Public Shaming-" if collar >= 1:
-                "Not coded yet. Sorry."
-                jump new_personal_request
-                ##menu:
-                    ##"-Walk naked around the school-":
-                    ##    jump public_event_1
-                    ##"-Walk around the school with cum on your face-":
-                    ##    jump public_event_2
-                    ##"-Be lead around on a leash-":
-                    ##    jump public_event_3
-                    
+                        jump silver_requests
+                        
             "-Never mind-":
                 jump day_time_requests
             

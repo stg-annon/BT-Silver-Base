@@ -94,7 +94,7 @@ label new_custom_request:
                 $ badges = badges_fixer
                 $ ne = ne_fixer
 
-                jump new_personal_request
+                jump silver_requests
 
     else:
         her "The Gryffindors are in the lead. I don't need to do this."

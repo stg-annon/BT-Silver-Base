@@ -7,7 +7,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         "\"(Yes, let's do that.)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     if "maid" in outfit_inventory or "gryffindor_cheerleader" in outfit_inventory or "slytherin_cheerleader" in outfit_inventory or "ms_marvel" in outfit_inventory or "heart_dancer" in outfit_inventory or "power_girl" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
         menu:
@@ -325,7 +325,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     call her_main("So, what will it be [genie_name]?")
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."             
@@ -506,7 +506,7 @@ label hg_pf_BreastMolester:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
 
     if "ms_marvel" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -789,7 +789,7 @@ label hg_pf_ButtMolester:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
 
     if "maid" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -1796,7 +1796,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
             
     $ hermione_head_ypos = her_head_only
     
@@ -2791,7 +2791,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
 
     if "heart_dancer" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -4755,7 +4755,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if "christmas_costume" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -5301,7 +5301,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if "gryffindor_cheerleader" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -6467,7 +6467,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if "slytherin_cheerleader" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -7805,7 +7805,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if "lara_croft" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -8467,7 +8467,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
             with d3
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if "ball_dress" in outfit_inventory:
         m "\"(Should I ask her to dress up?)\""
@@ -9155,7 +9155,7 @@ label hg_pf_TheGamble:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     show screen hermione_main

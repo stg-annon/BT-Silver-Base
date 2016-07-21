@@ -344,7 +344,7 @@ label door:
                             her "After what you did I don't feel like doing this ever again!"
                             jump day_time_requests
                         else:
-                            jump new_personal_request
+                            jump silver_requests
                     
                     "-Inventory-":
                         call screen wardrobe

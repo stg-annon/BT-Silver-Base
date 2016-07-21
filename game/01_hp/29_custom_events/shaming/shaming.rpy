@@ -59,7 +59,7 @@ label shaming:
         "\"(Fuck it, what's the worst that could happen.)\"":
             pass
         "\"(I'd rather not risk it)\"":
-            jump new_personal_request
+            jump silver_requests
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     
     call ce_her_main("","0100")

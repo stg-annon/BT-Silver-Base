@@ -33,7 +33,7 @@ label heretic:
         "\"(I've got her well trained.  Why not?)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1
     m "Alright then..."
     if heretic == 0: #First time this event taking place.

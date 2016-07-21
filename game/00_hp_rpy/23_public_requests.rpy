@@ -370,7 +370,7 @@ label hg_pr_FlirtTeacher:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
 
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
     if whoring <=2 or hg_pr_points[hg_pr_FlirtClassmate_ID] <= 1:
@@ -812,7 +812,7 @@ label hg_pr_ClassmateTouchYou:
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_ClassmateTouchYou_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]?"
@@ -1183,7 +1183,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_FlashClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
@@ -1623,7 +1623,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_KissAGirl_ID] == 0: # <================================================================================ FIRST TIME
         m "Have You ever kissed another girl, [hermione_name]?"
@@ -2098,7 +2098,7 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_HandjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
         if whoring <=14 or hg_pr_points[hg_pr_KissAGirl_ID] <= 1:
@@ -2625,7 +2625,7 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_BlowjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name], I will be buying another favour from you today."
@@ -2907,7 +2907,7 @@ label hg_pr_BlowjobTeacher:# "teacher blowjob" (Level ??)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if whoring < 15:
         jump too_much
@@ -3009,7 +3009,7 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
     
     if hg_pr_points[hg_pr_SexWithClassmate_ID] == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
@@ -3160,7 +3160,7 @@ label hg_pr_SexWithTeacher:# "teacher sex" (Level 09)
         "\"(Yes, let's do it!)\"":
             pass
         "\"(Not right now.)\"":
-            jump new_personal_request
+            jump silver_requests
             
     if whoring < 20:
         jump too_much

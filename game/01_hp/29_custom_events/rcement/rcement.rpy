@@ -7,7 +7,7 @@ label rcement:
             "\"(Yeah, sure, why not.)\"":
                     pass
             "\"(Ehh.)\"":
-                    jump new_personal_request
+                    jump silver_requests
 
     hide screen hermione_main
     hide screen hermione_02
