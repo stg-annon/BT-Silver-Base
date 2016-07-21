@@ -12,7 +12,7 @@ label hg_pr_FlirtClassmate:
     
     m "[hermione_name]?"
     call her_main("Yes?","body_13",xpos=140)
-    if hg_pr_points[hg_pr_FlirtClassmate_ID] == 0 and whoring <= 5: ### LEVEL 01 and LEVEL 02
+    if hg_pr_FlirtClassmate_OBJ.points == 0 and whoring <= 5: ### LEVEL 01 and LEVEL 02
         ### LEVEL 01 ### <===============================================================FIRST EVENT!
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "What is your opinion on the boys of the \"Slytherin\" house?"
@@ -60,7 +60,7 @@ label hg_pr_FlirtClassmate:
             m "Great. I'll be expecting your report today after classes."
     her "Well, I'd better go now. Classes are about to start..."
     
-    $ hg_pr_InProgress[hg_pr_FlirtClassmate_ID] = True
+    $ hg_pr_FlirtClassmate_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -348,9 +348,9 @@ label hg_pr_FlirtClassmate_complete:
     m "The \"Gryffindor\" house gets 5 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_FlirtClassmate_ID] += 1
-    $ hg_pr_complete[hg_pr_FlirtClassmate_ID] = True
-    $ hg_pr_InProgress[hg_pr_FlirtClassmate_ID] = False
+    $ hg_pr_FlirtClassmate_OBJ.points += 1
+    $ hg_pr_FlirtClassmate_OBJ.complete = True
+    $ hg_pr_FlirtClassmate_OBJ.inProgress = False
     
     if whoring <= 2:
         $ whoring +=1
@@ -373,11 +373,11 @@ label hg_pr_FlirtTeacher:
             jump silver_requests
 
     m "[hermione_name], I want you to be especially flirtatious with your teachers today."
-    if whoring <=2 or hg_pr_points[hg_pr_FlirtClassmate_ID] <= 1:
+    if whoring <=2 or hg_pr_FlirtClassmate_OBJ.points <= 1:
         jump too_much
    
 
-    if hg_pr_points[hg_pr_FlirtTeacher_ID] == 0 and whoring <= 8: ### up to LEVEL 03
+    if hg_pr_FlirtTeacher_OBJ.points == 0 and whoring <= 8: ### up to LEVEL 03
     ### LEVEL 03 ### <===============================================================FIRST EVENT!
         call her_main("I will do my best, [genie_name]!","body_01",xpos=140)
         call her_main("I am glad you finally decided to act, [genie_name]!","body_02")
@@ -394,7 +394,7 @@ label hg_pr_FlirtTeacher:
     
     her "Well, I'd better go now. Classes are about to start..."
     
-    $ hg_pr_InProgress[hg_pr_FlirtTeacher_ID] = True
+    $ hg_pr_FlirtTeacher_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -791,9 +791,9 @@ label hg_pr_FlirtTeacher_complete:
     m "The \"Gryffindors\" gets 15 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_FlirtTeacher_ID] += 1
-    $ hg_pr_complete[hg_pr_FlirtTeacher_ID] = True
-    $ hg_pr_InProgress[hg_pr_FlirtTeacher_ID] = False
+    $ hg_pr_FlirtTeacher_OBJ.points += 1
+    $ hg_pr_FlirtTeacher_OBJ.complete = True
+    $ hg_pr_FlirtTeacher_OBJ.inProgress = False
     
     if whoring <= 5:  # (if whoring >= 3 and whoring <= 5) - LEVEL 02
         $ whoring +=1
@@ -814,7 +814,7 @@ label hg_pr_ClassmateTouchYou:
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_ClassmateTouchYou_ID] == 0: # <================================================================================ FIRST TIME
+    if hg_pr_ClassmateTouchYou_OBJ.points == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]?"
         call her_main("[genie_name]?","body_01",xpos=140)
         m "You do like boys your age, don't you?"
@@ -828,7 +828,7 @@ label hg_pr_ClassmateTouchYou:
         m "Go confront that boy you fancy. The one you think is \"just so dreamy\"..."
         call her_main(".......?","body_31")
         m "And let him touch you..."
-        if whoring <=5 or hg_pr_points[hg_pr_FlirtTeacher_ID] <= 1: # Counts how many times Hermione been sent to flirt with teachers.
+        if whoring <=5 or hg_pr_FlirtTeacher_OBJ.points <= 1: # Counts how many times Hermione been sent to flirt with teachers.
             jump too_much
         call her_main("Let him... touch me, [genie_name]?","body_31")
         m "Yes, touch you. The way boys touch girls?"
@@ -892,7 +892,7 @@ label hg_pr_ClassmateTouchYou:
             m "Yes. Good luck."
             hide screen hermione_main
     
-    $ hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID] = True
+    $ hg_pr_ClassmateTouchYou_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -1164,9 +1164,9 @@ label hg_pr_ClassmateTouchYou_complete:
     
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
     
-    $ hg_pr_points[hg_pr_ClassmateTouchYou_ID] += 1
-    $ hg_pr_complete[hg_pr_ClassmateTouchYou_ID] = True
-    $ hg_pr_InProgress[hg_pr_ClassmateTouchYou_ID] = False
+    $ hg_pr_ClassmateTouchYou_OBJ.points +1
+    $ hg_pr_ClassmateTouchYou_OBJ.complete = True
+    $ hg_pr_ClassmateTouchYou_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -1185,7 +1185,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_FlashClassmate_ID] == 0: # <================================================================================ FIRST TIME
+    if hg_pr_FlashClassmate_OBJ.points == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
         m "I would like to award \"Gryffindor\" with 25 house points today."
         call her_main("Really?","body_01",xpos=140)
@@ -1197,7 +1197,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
         call her_main("...?","body_02")
         m "You know, flash your breasts to some boys..."
         call her_main("?!!","body_48")
-        if whoring <=8 or hg_pr_points[hg_pr_ClassmateTouchYou_ID] <= 1:
+        if whoring <=8 or hg_pr_ClassmateTouchYou_OBJ.points <= 1:
             jump too_much
         her "[genie_name]!"
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -1275,7 +1275,7 @@ label hg_pr_FlashClassmate: #LV.4 (Whoring = 9 - 11)
             call her_main("Classes are about to start... I'd better leave now.","body_45")
             her "I will see you later tonight, [genie_name]."
     
-    $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = True
+    $ hg_pr_FlashClassmate_OBJ.inProgress = True
 
     call hg_pr_transition_block
     jump day_main_menu
