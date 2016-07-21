@@ -1570,7 +1570,7 @@ label hg_pr_FlashClassmate_complete:
     m "The \"Gryffindor\" house gets 35 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_FlashClassmate_ID] += 1
+    $ hg_pr_FlashClassmate_Points += 1
     $ hg_pr_complete[hg_pr_FlashClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_FlashClassmate_ID] = False
     
@@ -1625,10 +1625,10 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_KissAGirl_ID] == 0: # <================================================================================ FIRST TIME
+    if hg_pr_KissAGirl_Points == 0: # <================================================================================ FIRST TIME
         m "Have You ever kissed another girl, [hermione_name]?"
         call her_main("?!","body_07",xpos=140)
-        if whoring <=11 or hg_pr_points[hg_pr_FlashClassmate_ID] <= 1: # Counts how many times you sent Hermione to flash a classmate.
+        if whoring <=11 or hg_pr_FlashClassmate_Points <= 1: # Counts how many times you sent Hermione to flash a classmate.
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         call her_main("I am not a... lesbian, [genie_name].","body_02")
@@ -2077,7 +2077,7 @@ label hg_pr_KissAGirl_complete:
     m "The \"Gryffindor\" house gets 45 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_KissAGirl_ID] += 1
+    $ hg_pr_KissAGirl_Points += 1
     $ hg_pr_complete[hg_pr_KissAGirl_ID] = True
     $ hg_pr_InProgress[hg_pr_KissAGirl_ID] = False
     
@@ -2100,8 +2100,8 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_HandjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
-        if whoring <=14 or hg_pr_points[hg_pr_KissAGirl_ID] <= 1:
+    if hg_pr_HandjobClassmate_Points == 0: # <================================================================================ FIRST TIME
+        if whoring <=14 or hg_pr_KissAGirl_Points <= 1:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","body_07",xpos=140)
             m "I want you to give a handjob to one of your classmates."
@@ -2606,7 +2606,7 @@ label hg_pr_HandjobClassmate_complete:
     $ uni_sperm = False  #Universal sperm.
     $ aftersperm = False #Shows stains on Hermione's uniform.
     
-    $ hg_pr_points[hg_pr_HandjobClassmate_ID] += 1
+    $ hg_pr_HandjobClassmate_Points += 1
     $ hg_pr_complete[hg_pr_HandjobClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_HandjobClassmate_ID] = False
     
@@ -2627,7 +2627,7 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_BlowjobClassmate_ID] == 0: # <================================================================================ FIRST TIME
+    if hg_pr_BlowjobClassmate_Points == 0: # <================================================================================ FIRST TIME
         m "[hermione_name], I will be buying another favour from you today."
         call her_main("Thank you, [genie_name]. I really appreciate it.","body_16",xpos=140)
         m "Sure, Happy to help."
@@ -2635,7 +2635,7 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
         stop music fadeout 1.0
         call her_main("!!!","body_48")
         her "...with my mouth?"
-        if whoring <=17 or hg_pr_points[hg_pr_HandjobClassmate_ID] <= 1:
+        if whoring <=17 or hg_pr_HandjobClassmate_Points <= 1:
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         m "Yes, that's how it's usually done..."
@@ -2889,7 +2889,7 @@ label hg_pr_BlowjobClassmate_complete:
     
     $ public_whore_ending = True #Activates "Public Whore" ending.
     
-    $ hg_pr_points[hg_pr_BlowjobClassmate_ID] += 1
+    $ hg_pr_BlowjobClassmate_Points += 1
     $ hg_pr_complete[hg_pr_BlowjobClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_BlowjobClassmate_ID] = False
     
@@ -2990,7 +2990,7 @@ label hg_pr_BlowjobTeacher_complete:
     her "Good night, sir."
     #m "Yes, good night..."
     
-    $ hg_pr_points[hg_pr_BlowjobTeacher_ID] += 1
+    $ hg_pr_BlowjobTeacher_Points += 1
     $ hg_pr_complete[hg_pr_BlowjobTeacher_ID] = True
     $ hg_pr_InProgress[hg_pr_BlowjobTeacher_ID] = False
     
@@ -3011,10 +3011,10 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if hg_pr_points[hg_pr_SexWithClassmate_ID] == 0: # <================================================================================ FIRST TIME
+    if hg_pr_SexWithClassmate_Points == 0: # <================================================================================ FIRST TIME
         m "[hermione_name]..."
         m "Today I need you to have sex with a classmate of your choice."
-        if whoring <=20 or hg_pr_points[hg_pr_BlowjobClassmate_ID] <= 1:
+        if whoring <=20 or hg_pr_BlowjobClassmate_Points <= 1:
             jump too_much
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         call her_main("..............","body_47",xpos=140)
@@ -3048,7 +3048,7 @@ label hg_pr_SexWithClassmate_complete:
         m ".........."
         m "She was supposed to be here, by now..."
         m "Hm..."
-        $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+        $ hg_pr_SexWithClassmate_Points += 1
         $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
         $ hermione_sleeping = True
         $ hg_pr_SexWithClassmate_AltFlag = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
@@ -3106,7 +3106,7 @@ label hg_pr_SexWithClassmate_complete:
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_SexWithClassmate_Points += 1
     $ hg_pr_complete[hg_pr_SexWithClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
@@ -3141,7 +3141,7 @@ label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label wher
     m "\"Gryffindor\" gets 75 points!"
     her "Thank you, [genie_name]."
     
-    $ hg_pr_points[hg_pr_SexWithClassmate_ID] += 1
+    $ hg_pr_SexWithClassmate_Points += 1
     $ hg_pr_complete[hg_pr_SexWithClassmate_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithClassmate_ID] = False
     
@@ -3248,7 +3248,7 @@ label hg_pr_SexWithTeacher_complete:
     her "Good night, sir."
     m "Yes, good night..."
     
-    $ hg_pr_points[hg_pr_SexWithTeacher_ID] += 1
+    $ hg_pr_SexWithTeacher_Points += 1
     $ hg_pr_complete[hg_pr_SexWithTeacher_ID] = True
     $ hg_pr_InProgress[hg_pr_SexWithTeacher_ID] = False
     

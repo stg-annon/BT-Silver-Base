@@ -195,8 +195,81 @@ init python:
     #hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
     hg_ps_list.append(hg_ps_WearMyCum_OBJ)
     #hg_ps_list.append(hg_ps_LeashWalk_OBJ)
-
-
+    
+label __init_variables:
+    if not hasattr(renpy.store,'hg_pf_TalkToMe_Hearts'): #important!
+        $ hg_pf_TalkToMe_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_NicePanties_Hearts'): #important!
+        $ hg_pf_NicePanties_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_BreastMolester_Hearts'): #important!
+        $ hg_pf_BreastMolester_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_ButtMolester_Hearts'): #important!
+        $ hg_pf_ButtMolester_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_ShowThemToMe_Hearts'): #important!
+        $ hg_pf_ShowThemToMe_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_DanceForMe_Hearts'): #important!
+        $ hg_pf_DanceForMe_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_Hearts'): #important!
+        $ hg_pf_LetMeTouchThem_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_TouchMe_Hearts'): #important!
+        $ hg_pf_TouchMe_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_SuckIt_Hearts'): #important!
+        $ hg_pf_SuckIt_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_LetsHaveSex_Hearts'): #important!
+        $ hg_pf_LetsHaveSex_Hearts = 0
+    if not hasattr(renpy.store,'hg_pf_TimeForAnal_Hearts'): #important!
+        $ hg_pf_TimeForAnal_Hearts = 0
+        
+    if not hasattr(renpy.store,'hg_pf_TalkToMe_Points'): #important!
+        $ hg_pf_TalkToMe_Points = 0
+    if not hasattr(renpy.store,'hg_pf_NicePanties_Points'): #important!
+        $ hg_pf_NicePanties_Points = 0
+    if not hasattr(renpy.store,'hg_pf_BreastMolester_Points'): #important!
+        $ hg_pf_BreastMolester_Points = 0
+    if not hasattr(renpy.store,'hg_pf_ButtMolester_Points'): #important!
+        $ hg_pf_ButtMolester_Points = 0
+    if not hasattr(renpy.store,'hg_pf_ShowThemToMe_Points'): #important!
+        $ hg_pf_ShowThemToMe_Points = 0
+    if not hasattr(renpy.store,'hg_pf_DanceForMe_Points'): #important!
+        $ hg_pf_DanceForMe_Points = 0
+    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_Points'): #important!
+        $ hg_pf_LetMeTouchThem_Points = 0
+    if not hasattr(renpy.store,'hg_pf_TouchMe_Points'): #important!
+        $ hg_pf_TouchMe_Points = 0
+    if not hasattr(renpy.store,'hg_pf_SuckIt_Points'): #important!
+        $ hg_pf_SuckIt_Points = 0
+    if not hasattr(renpy.store,'hg_pf_LetsHaveSex_Points'): #important!
+        $ hg_pf_LetsHaveSex_Points = 0
+    if not hasattr(renpy.store,'hg_pf_TimeForAnal_Points'): #important!
+        $ hg_pf_TimeForAnal_Points = 0
+    
+    if not hasattr(renpy.store,'hg_pr_FlirtClassmate_Points'): #important!
+        $ hg_pr_FlirtClassmate_Points = 0
+    if not hasattr(renpy.store,'hg_pr_FlirtTeacher_Points'): #important!
+        $ hg_pr_FlirtTeacher_Points = 0
+    if not hasattr(renpy.store,'hg_pr_ClassmateTouchYou_Points'): #important!
+        $ hg_pr_ClassmateTouchYou_Points = 0
+    if not hasattr(renpy.store,'hg_pr_FlashClassmate_Points'): #important!
+        $ hg_pr_FlashClassmate_Points = 0
+    if not hasattr(renpy.store,'hg_pr_KissAGirl_Points'): #important!
+        $ hg_pr_KissAGirl_Points = 0
+    if not hasattr(renpy.store,'hg_pr_HandjobClassmate_Points'): #important!
+        $ hg_pr_HandjobClassmate_Points = 0
+    if not hasattr(renpy.store,'hg_pr_BlowjobClassmate_Points'): #important!
+        $ hg_pr_BlowjobClassmate_Points = 0
+    if not hasattr(renpy.store,'hg_pr_SexWithClassmate_Points'): #important!
+        $ hg_pr_SexWithClassmate_Points = 0
+        
+    if not hasattr(renpy.store,'hg_ps_PantyThief_Points'): #important!
+        $ hg_ps_PantyThief_Points = 0
+    if not hasattr(renpy.store,'hg_ps_WalkOfShame_Points'): #important!
+        $ hg_ps_WalkOfShame_Points = 0
+    if not hasattr(renpy.store,'hg_ps_WearMyCum_Points'): #important!
+        $ hg_ps_WearMyCum_Points = 0
+    if not hasattr(renpy.store,'hg_ps_LeashWalk_Points'): #important!
+        $ hg_ps_LeashWalk_Points = 0
+    
+    
 label silver_requests:
     if slytherin > gryffindor or slytherin == gryffindor:
         show screen hermione_main
