@@ -213,6 +213,16 @@ screen wardrobe_gifts:
         for i in range(13,18):
             add "01_hp/18_store/gifts/"+str(i)+".png" xpos -150+(90*(i-12)) ypos 270 zoom 0.30
             text str(gift_item_inv[i]) xpos -70+(90*(i-12)) ypos 390 
+
+        #Adding custom one off items (Collar, dress, stockings)
+
+        #Collar
+        if collar == 0:
+            add "01_hp/13_characters/hermione/accessories/collars/collar_0.png" xpos 255 ypos 350 zoom 0.8
+            hotspot (561, 416, 83, 85) clicked [SetVariable("collar",5)]
+        else:
+            add "01_hp/13_characters/hermione/accessories/collars/collar_5.png" xpos 255 ypos 350 zoom 0.8 
+        #Dress 
             
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
