@@ -3,6 +3,7 @@ init python:
         menu_text = ""
         start_label = ""
         complete_label = ""
+        points = 0
         
         
     class personal_favor(silver_request):
@@ -18,7 +19,6 @@ init python:
             return ret_str
         
     class public_request(silver_request):
-        points = 0
         imagination_level = 0
         complete = False
         in_progress = False
@@ -28,7 +28,6 @@ init python:
             return "Favour: \""+self.menu_text+"\" {image="+menu_image+"}"
         
     class public_shaming(silver_request):
-        points = 0
         complete = False
         inProgress = False
         
