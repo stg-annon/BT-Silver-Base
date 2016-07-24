@@ -1,4 +1,15 @@
 ###COLLAR SCENES
+label start_collar_event:
+    hide screen wardrobe_gifts
+    "Are you sure you wish to start this event?"
+    menu: 
+        "Yes!":
+            $ collar = 5
+        "No.":
+            pass
+    call screen wardrobe_gifts
+
+
 label collar_scene:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(610,400,1)

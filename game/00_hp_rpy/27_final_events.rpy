@@ -727,6 +727,16 @@ label sorry_about_hesterics:
     
     
 #=========================
+label giving_the_dress:
+    hide screen wardrobe_gifts
+    "Are you sure you wish to start this event?"
+    menu: 
+        "Yes!":
+            jump giving_thre_dress
+        "No.":
+            pass
+    call screen wardrobe_gifts
+
 label giving_thre_dress:
     $ gave_the_dress = True #Turns True when Hermione has the dress.
     $ days_without_an_event = 0

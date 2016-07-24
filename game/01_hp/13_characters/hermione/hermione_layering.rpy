@@ -74,6 +74,13 @@ screen hermione_uniform:
         add hermione_top xpos hermione_xpos_offset ypos hermione_ypos # Add the top
     elif hermione_wear_bra:
         add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos # Add the bra
+    ### COLLAR 
+    if collar == 1:
+        add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
+    if collar == 2:
+        add "01_hp/13_characters/hermione/accessories/collars/collar_2.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
+    if collar == 3:  
+        add "01_hp/13_characters/hermione/accessories/collars/collar_3.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
     add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
@@ -132,6 +139,13 @@ screen hermione_head:
             add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the top
         elif hermione_wear_bra:
             add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the bra
+        ### COLLAR 
+        if collar == 1:
+            add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
+        if collar == 2:
+            add "01_hp/13_characters/hermione/accessories/collars/collar_2.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
+        if collar == 3:  
+            add "01_hp/13_characters/hermione/accessories/collars/collar_3.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
     else:
         add hermione_costume_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
         add hermione_costume_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
