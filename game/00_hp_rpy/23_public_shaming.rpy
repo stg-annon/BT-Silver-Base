@@ -40,7 +40,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     
     call her_main(xpos=120,ypos=0)
     
-    if hg_ps_PantyThief_Points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
+    if hg_ps_PantyThief_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
         $ new_request_03_heart = 1 #Event hearts level (0-3)
         $ hg_ps_hearts[hg_ps_PantyThief_ID] = 1 #Event hearts level (0-3)
@@ -94,7 +94,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         jump hg_ps_PantyThief_ends
 
     else: #<========================================================================================== FIRST EVENT!
-        if hg_ps_PantyThief_Points >= 1:
+        if hg_ps_PantyThief_OBJ.points >= 1:
             her "Again, [genie_name]?"
             m "Yes again..."
         her "Here..."
@@ -255,7 +255,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
         with d3
     elif whoring > 15: ###New variant of the event
         call her_main("My panties...","body_78")
-        if hg_ps_PantyThief_Points >= 1:
+        if hg_ps_PantyThief_OBJ.points >= 1:
             her "You came all over them again..."
         else:
             her "You came all over them..."
@@ -443,7 +443,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
     if whoring <= 5:
         $ whoring +=1
     
-    $ hg_ps_PantyThief_Points += 1
+    $ hg_ps_PantyThief_OBJ.points += 1
     $ hg_ps_InProgress[hg_ps_PantyThief_ID] = False #False when favor is not in progress
     $ hg_ps_PantyThief_SoakedPantiesFlag = False #TRUE if you jerked off in panties
     
