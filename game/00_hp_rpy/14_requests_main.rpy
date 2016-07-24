@@ -21,7 +21,7 @@ init python:
     class public_request(silver_request):
         imagination_level = 0
         complete = False
-        in_progress = False
+        inProgress = False
         
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
