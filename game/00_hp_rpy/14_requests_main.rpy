@@ -35,6 +35,8 @@ init python:
             menu_image = "interface/check_"+str(self.complete)+".png"
             return "Event: "+self.menu_text+" {image="+menu_image+"}"
      
+label __init_variables:
+python:
     
     if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ.menu_text'): #important!
         hg_pf_TalkToMe_OBJ = personal_favor()
@@ -67,7 +69,7 @@ init python:
         hg_pf_ShowThemToMe_OBJ = personal_favor()
         hg_pf_ShowThemToMe_OBJ.imagination_level = 3
         hg_pf_ShowThemToMe_OBJ.menu_text = "Show them to me!"
-        hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ButtMolester"
+        hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ShowThemToMe"
         hg_pf_ShowThemToMe_OBJ.costume_event = True
     
     if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ.menu_text'): #important!
