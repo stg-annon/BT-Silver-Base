@@ -43,7 +43,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     if hg_ps_PantyThief_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.   <===================================== ONE TIME EVENT.
         stop music fadeout 10.0
         $ new_request_03_heart = 1 #Event hearts level (0-3)
-        $ hg_ps_hearts[hg_ps_PantyThief_ID] = 1 #Event hearts level (0-3)
+        $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
         
         call her_main("W-what?","body_11")
         her "My... panties...?"
@@ -115,7 +115,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     
     label hg_ps_PantyThief_ends:
         
-    $ hg_ps_InProgress[hg_ps_PantyThief_ID] = True #True when Hermione has no panties on.
+    $ hg_ps_PantyThief_OBJ.inProgres = True #True when Hermione has no panties on.
     
     hide screen blkfade
     hide screen bld1
@@ -329,7 +329,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         "\"How was your day, [hermione_name]?\"":
             if  whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
                 $ new_request_03_heart = 1 #Event hearts level (0-3)
-                $ hg_ps_hearts[hg_ps_PantyThief_ID] = 1 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
                 
                 call her_main("Oh...","body_15",xpos=120)
                 her "Quite ordinary actually..."
@@ -347,7 +347,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                     m "Yes, yes..."
             elif whoring >= 6 and whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
                 $ new_request_03_heart = 2 #Event hearts level (0-3)
-                $ hg_ps_hearts[hg_ps_PantyThief_ID] = 2 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.hearts_level = 2 #Event hearts level (0-3)
                 
                 call her_main("Oh...","body_15",xpos=120)
                 her "It was quite ordinary really..."
@@ -383,7 +383,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                             her "And my payment."
             elif whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
                 $ new_request_03_heart = 3 #Event hearts level (0-3)
-                $ hg_ps_hearts[hg_ps_PantyThief_ID] = 3 #Event hearts level (0-3)
+                $ hg_ps_PantyThief_OBJ.hearts_level = 3 #Event hearts level (0-3)
                 
                 call her_main("Another ordinary day at hogwarts...","body_16",xpos=120)
                 her "Nothing worth mentioning happened today..."
@@ -415,7 +415,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         m "You can go now."
         her "Good night, [genie_name]."
     elif hg_ps_PantyThief_SoakedPantiesFlag and whoring > 15:
-        $ hg_ps_hearts[hg_ps_PantyThief_ID] = 4 #Event hearts level (0-4)
+        $ hg_ps_PantyThief_OBJ.hearts_level = 4 #Event hearts level (0-4)
         m "You can go now."
         call her_main("yes, [genie_name]","body_118")
         m "After you say thank you. "
@@ -444,7 +444,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         $ whoring +=1
     
     $ hg_ps_PantyThief_OBJ.points += 1
-    $ hg_ps_InProgress[hg_ps_PantyThief_ID] = False #False when favor is not in progress
+    $ hg_ps_PantyThief_OBJ.inProgres = False #False when favor is not in progress
     $ hg_ps_PantyThief_SoakedPantiesFlag = False #TRUE if you jerked off in panties
     
     hide screen blkfade
@@ -509,7 +509,7 @@ label hg_ps_WalkOfAtonement: #This will become more intense as the wear a shorte
     call her_main("I suppose that you're right [genie_name].","body_07")
     call her_main("Well I best be off... Can't be late for class.","body_07")
     ">She leaves your office reluctantly."
-    $ hg_ps_InProgress[hg_ps_WalkOfAtonement_ID] = True
+    $ hg_ps_WalkOfAtonement_OBJ.inProgres = True
 
 label hg_ps_WalkOfAtonement_complete:#Returns to your office after being made walk around the school with no shirt
     return
@@ -538,7 +538,7 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
 
 
 label hg_ps_WearMyCum_Scene_1:
-    $ hg_ps_InProgress[hg_ps_WearMyCum_ID] = True
+    $ hg_ps_WearMyCum_OBJ.inProgres = True
     call her_main("What?!?","body_48")
     call her_main("You can't be serious!","body_49")
     call her_main("It's bad enough that I let you cum on me in private!","body_50")
@@ -786,7 +786,7 @@ label hg_ps_WearMyCum_Scene_3:
 
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
-    $ hg_ps_InProgress[hg_ps_WearMyCum_ID] = False
+    $ hg_ps_WearMyCum_OBJ.inProgres = False
     jump hg_ps_WearMyCum_complete_1
 
 
