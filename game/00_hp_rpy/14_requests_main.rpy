@@ -603,6 +603,7 @@ label __init_variables:
     #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
     $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
     #$ hg_ps_list.append(hg_ps_LeashWalk_OBJ)
+    return
     
 init python:
     class silver_request(object):
