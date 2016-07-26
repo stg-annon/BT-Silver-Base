@@ -174,7 +174,7 @@ label __init_variables:
         $ hg_ps_WearMyCum_OBJ = public_shaming()
     $ hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
     $ hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
-    $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_PantyThief_complete"
+    $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_WearMyCum_complete"
     
     if not hasattr(renpy.store,'hg_ps_LeashWalk_OBJ'): #important!
         $ hg_ps_LeashWalk_OBJ = public_shaming()
