@@ -1,3 +1,196 @@
+label __init_variables:
+    if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
+        $ hg_pf_TalkToMe_OBJ = personal_favor()
+    $ hg_pf_TalkToMe_OBJ.imagination_level = 0
+    $ hg_pf_TalkToMe_OBJ.menu_text = "Talk to me"
+    $ hg_pf_TalkToMe_OBJ.start_label = "hg_pf_TalkToMe"
+    $ hg_pf_TalkToMe_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
+        $ hg_pf_NicePanties_OBJ = personal_favor()
+    $ hg_pf_NicePanties_OBJ.imagination_level = 0
+    $ hg_pf_NicePanties_OBJ.menu_text = "Nice panties"
+    $ hg_pf_NicePanties_OBJ.start_label = "hg_pf_NicePanties"
+    
+    if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
+        $ hg_pf_BreastMolester_OBJ = personal_favor()
+    $ hg_pf_BreastMolester_OBJ.imagination_level = 2
+    $ hg_pf_BreastMolester_OBJ.menu_text = "Breast molester"
+    $ hg_pf_BreastMolester_OBJ.start_label = "hg_pf_BreastMolester"
+    $ hg_pf_BreastMolester_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
+        $ hg_pf_ButtMolester_OBJ = personal_favor()
+    $ hg_pf_ButtMolester_OBJ.imagination_level = 2
+    $ hg_pf_ButtMolester_OBJ.menu_text = "Butt molester"
+    $ hg_pf_ButtMolester_OBJ.start_label = "hg_pf_ButtMolester"
+    $ hg_pf_ButtMolester_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
+        $ hg_pf_ShowThemToMe_OBJ = personal_favor()
+    $ hg_pf_ShowThemToMe_OBJ.imagination_level = 3
+    $ hg_pf_ShowThemToMe_OBJ.menu_text = "Show them to me!"
+    $ hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ShowThemToMe"
+    $ hg_pf_ShowThemToMe_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
+        $ hg_pf_DanceForMe_OBJ = personal_favor()
+    $ hg_pf_DanceForMe_OBJ.imagination_level = 3
+    $ hg_pf_DanceForMe_OBJ.menu_text = "Dance for me!"
+    $ hg_pf_DanceForMe_OBJ.start_label = "hg_pf_DanceForMe"
+    $ hg_pf_DanceForMe_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
+        $ hg_pf_LetMeTouchThem_OBJ = personal_favor()
+    $ hg_pf_LetMeTouchThem_OBJ.imagination_level = 3
+    $ hg_pf_LetMeTouchThem_OBJ.menu_text = "Let me touch them!"
+    $ hg_pf_LetMeTouchThem_OBJ.start_label = "hg_pf_LetMeTouchThem"
+    $ hg_pf_LetMeTouchThem_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
+        $ hg_pf_TouchMe_OBJ = personal_favor()
+    $ hg_pf_TouchMe_OBJ.imagination_level = 4
+    $ hg_pf_TouchMe_OBJ.menu_text = "Touch me!"
+    $ hg_pf_TouchMe_OBJ.start_label = "hg_pf_TouchMe"
+    $ hg_pf_TouchMe_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
+        $ hg_pf_SuckIt_OBJ = personal_favor()
+    $ hg_pf_SuckIt_OBJ.imagination_level = 4
+    $ hg_pf_SuckIt_OBJ.menu_text = "Suck it!"
+    $ hg_pf_SuckIt_OBJ.start_label = "hg_pf_SuckIt"
+    $ hg_pf_SuckIt_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
+        $ hg_pf_LetsHaveSex_OBJ = personal_favor()
+    $ hg_pf_LetsHaveSex_OBJ.imagination_level = 5
+    $ hg_pf_LetsHaveSex_OBJ.menu_text = "Let's have sex!"
+    $ hg_pf_LetsHaveSex_OBJ.start_label = "hg_pf_LetsHaveSex"
+    $ hg_pf_LetsHaveSex_OBJ.costume_event = True
+    
+    if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
+        $ hg_pf_TimeForAnal_OBJ = personal_favor()
+    $ hg_pf_TimeForAnal_OBJ.imagination_level = 5
+    $ hg_pf_TimeForAnal_OBJ.menu_text = "Time for anal!"
+    $ hg_pf_TimeForAnal_OBJ.start_label = "hg_pf_TimeForAnal"
+    $ hg_pf_TimeForAnal_OBJ.costume_event = True
+    
+    $ hg_pf_list = []
+    $ hg_pf_list.append(hg_pf_TalkToMe_OBJ)
+    $ hg_pf_list.append(hg_pf_NicePanties_OBJ)
+    $ hg_pf_list.append(hg_pf_BreastMolester_OBJ)
+    $ hg_pf_list.append(hg_pf_ButtMolester_OBJ)
+    $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
+    $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
+    $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
+    $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
+    $ hg_pf_list.append(hg_pf_SuckIt_OBJ)
+    $ hg_pf_list.append(hg_pf_LetsHaveSex_OBJ)
+    $ hg_pf_list.append(hg_pf_TimeForAnal_OBJ)
+    
+    
+    
+    if not hasattr(renpy.store,'hg_pr_FlirtClassmate_OBJ'): #important!
+        $ hg_pr_FlirtClassmate_OBJ = public_request()
+    $ hg_pr_FlirtClassmate_OBJ.imagination_level = 0
+    $ hg_pr_FlirtClassmate_OBJ.menu_text = "She's a flirt"
+    $ hg_pr_FlirtClassmate_OBJ.start_label = "hg_pr_FlirtClassmate"
+    $ hg_pr_FlirtClassmate_OBJ.complete_label = "hg_pr_FlirtClassmate_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_FlirtTeacher_OBJ'): #important!
+        $ hg_pr_FlirtTeacher_OBJ = public_request()
+    $ hg_pr_FlirtTeacher_OBJ.imagination_level = 2
+    $ hg_pr_FlirtTeacher_OBJ.menu_text = "She's bait"
+    $ hg_pr_FlirtTeacher_OBJ.start_label = "hg_pr_FlirtTeacher"
+    $ hg_pr_FlirtTeacher_OBJ.complete_label = "hg_pr_FlirtTeacher_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_ClassmateTouchYou_OBJ'): #important!
+        $ hg_pr_ClassmateTouchYou_OBJ = public_request()
+    $ hg_pr_ClassmateTouchYou_OBJ.imagination_level = 3
+    $ hg_pr_ClassmateTouchYou_OBJ.menu_text = "Let a classmate molest you"
+    $ hg_pr_ClassmateTouchYou_OBJ.start_label = "hg_pr_ClassmateTouchYou"
+    $ hg_pr_ClassmateTouchYou_OBJ.complete_label = "hg_pr_ClassmateTouchYou_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_FlashClassmate_OBJ'): #important!
+        $ hg_pr_FlashClassmate_OBJ = public_request()
+    $ hg_pr_FlashClassmate_OBJ.imagination_level = 3
+    $ hg_pr_FlashClassmate_OBJ.menu_text = "Flash your tits to a classmate"
+    $ hg_pr_FlashClassmate_OBJ.start_label = "hg_pr_FlashClassmate"
+    $ hg_pr_FlashClassmate_OBJ.complete_label = "hg_pr_FlashClassmate_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_KissAGirl_OBJ'): #important!
+        $ hg_pr_KissAGirl_OBJ = public_request()
+    $ hg_pr_KissAGirl_OBJ.imagination_level = 4
+    $ hg_pr_KissAGirl_OBJ.menu_text = "Kiss a girl."
+    $ hg_pr_KissAGirl_OBJ.start_label = "hg_pr_KissAGirl"
+    $ hg_pr_KissAGirl_OBJ.complete_label = "hg_pr_KissAGirl_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_HandjobClassmate_OBJ'): #important!
+        $ hg_pr_HandjobClassmate_OBJ = public_request()
+    $ hg_pr_HandjobClassmate_OBJ.imagination_level = 4
+    $ hg_pr_HandjobClassmate_OBJ.menu_text = "Give a handjob to a classmate"
+    $ hg_pr_HandjobClassmate_OBJ.start_label = "hg_pr_HandjobClassmate"
+    $ hg_pr_HandjobClassmate_OBJ.complete_label = "hg_pr_HandjobClassmate_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_BlowjobClassmate_OBJ'): #important!
+        $ hg_pr_BlowjobClassmate_OBJ = public_request()
+    $ hg_pr_BlowjobClassmate_OBJ.imagination_level = 5
+    $ hg_pr_BlowjobClassmate_OBJ.menu_text = "Give a blowjob to a classmate"
+    $ hg_pr_BlowjobClassmate_OBJ.start_label = "hg_pr_BlowjobClassmate"
+    $ hg_pr_BlowjobClassmate_OBJ.complete_label = "hg_pr_BlowjobClassmate_complete"
+    
+    if not hasattr(renpy.store,'hg_pr_SexWithClassmate_OBJ'): #important!
+        $ hg_pr_SexWithClassmate_OBJ = public_request()
+    $ hg_pr_SexWithClassmate_OBJ.imagination_level = 5
+    $ hg_pr_SexWithClassmate_OBJ.menu_text = "Have sex with a classmate"
+    $ hg_pr_SexWithClassmate_OBJ.start_label = "hg_pr_SexWithClassmate"
+    $ hg_pr_SexWithClassmate_OBJ.complete_label = "hg_pr_SexWithClassmate_complete"
+    
+    $ hg_pr_list = []
+    $ hg_pr_list.append(hg_pr_FlirtClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_FlirtTeacher_OBJ)
+    $ hg_pr_list.append(hg_pr_ClassmateTouchYou_OBJ)
+    $ hg_pr_list.append(hg_pr_FlashClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_KissAGirl_OBJ)
+    $ hg_pr_list.append(hg_pr_HandjobClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_BlowjobClassmate_OBJ)
+    $ hg_pr_list.append(hg_pr_SexWithClassmate_OBJ)
+    
+    
+    
+    if not hasattr(renpy.store,'hg_ps_PantyThief_OBJ'): #important!
+        $ hg_ps_PantyThief_OBJ = public_shaming()
+    $ hg_ps_PantyThief_OBJ.menu_text = "Panty Theif"
+    $ hg_ps_PantyThief_OBJ.start_label = "hg_ps_PantyThief"
+    $ hg_ps_PantyThief_OBJ.complete_label = "hg_ps_PantyThief_complete"
+    
+    if not hasattr(renpy.store,'hg_ps_WalkOfShame_OBJ'): #important!
+        $ hg_ps_WalkOfShame_OBJ = public_shaming()
+    $ hg_ps_WalkOfShame_OBJ.menu_text = "Walk Of Shame"
+    $ hg_ps_WalkOfShame_OBJ.start_label = "hg_ps_WalkOfShame"
+    $ hg_ps_WalkOfShame_OBJ.complete_label = "hg_ps_WalkOfShame_complete"
+    
+    if not hasattr(renpy.store,'hg_ps_WearMyCum_OBJ'): #important!
+        $ hg_ps_WearMyCum_OBJ = public_shaming()
+    $ hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
+    $ hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
+    $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_PantyThief_complete"
+    
+    if not hasattr(renpy.store,'hg_ps_LeashWalk_OBJ'): #important!
+        $ hg_ps_LeashWalk_OBJ = public_shaming()
+    $ hg_ps_LeashWalk_OBJ.menu_text = "Time for a walk (leash)"
+    $ hg_ps_LeashWalk_OBJ.start_label = "hg_ps_LeashWalk"
+    $ hg_ps_LeashWalk_OBJ.complete_label = "hg_ps_LeashWalk_complete"
+    
+    
+    $ hg_ps_list = []
+    $ hg_ps_list.append(hg_ps_PantyThief_OBJ)
+    #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
+    $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
+    #$ hg_ps_list.append(hg_ps_LeashWalk_OBJ)
+    return
+    
+    
 label silver_requests:
     if slytherin > gryffindor or slytherin == gryffindor:
         show screen hermione_main
@@ -413,197 +606,6 @@ label very_no:
     call reset_hermione_main
     jump end_hg_pf
     
-label __init_variables:
-    if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
-        $ hg_pf_TalkToMe_OBJ = personal_favor()
-    $ hg_pf_TalkToMe_OBJ.imagination_level = 0
-    $ hg_pf_TalkToMe_OBJ.menu_text = "Talk to me"
-    $ hg_pf_TalkToMe_OBJ.start_label = "hg_pf_TalkToMe"
-    $ hg_pf_TalkToMe_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
-        $ hg_pf_NicePanties_OBJ = personal_favor()
-    $ hg_pf_NicePanties_OBJ.imagination_level = 0
-    $ hg_pf_NicePanties_OBJ.menu_text = "Nice panties"
-    $ hg_pf_NicePanties_OBJ.start_label = "hg_pf_NicePanties"
-    
-    if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
-        $ hg_pf_BreastMolester_OBJ = personal_favor()
-    $ hg_pf_BreastMolester_OBJ.imagination_level = 2
-    $ hg_pf_BreastMolester_OBJ.menu_text = "Breast molester"
-    $ hg_pf_BreastMolester_OBJ.start_label = "hg_pf_BreastMolester"
-    $ hg_pf_BreastMolester_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
-        $ hg_pf_ButtMolester_OBJ = personal_favor()
-    $ hg_pf_ButtMolester_OBJ.imagination_level = 2
-    $ hg_pf_ButtMolester_OBJ.menu_text = "Butt molester"
-    $ hg_pf_ButtMolester_OBJ.start_label = "hg_pf_ButtMolester"
-    $ hg_pf_ButtMolester_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
-        $ hg_pf_ShowThemToMe_OBJ = personal_favor()
-    $ hg_pf_ShowThemToMe_OBJ.imagination_level = 3
-    $ hg_pf_ShowThemToMe_OBJ.menu_text = "Show them to me!"
-    $ hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ShowThemToMe"
-    $ hg_pf_ShowThemToMe_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
-        $ hg_pf_DanceForMe_OBJ = personal_favor()
-    $ hg_pf_DanceForMe_OBJ.imagination_level = 3
-    $ hg_pf_DanceForMe_OBJ.menu_text = "Dance for me!"
-    $ hg_pf_DanceForMe_OBJ.start_label = "hg_pf_DanceForMe"
-    $ hg_pf_DanceForMe_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
-        $ hg_pf_LetMeTouchThem_OBJ = personal_favor()
-    $ hg_pf_LetMeTouchThem_OBJ.imagination_level = 3
-    $ hg_pf_LetMeTouchThem_OBJ.menu_text = "Let me touch them!"
-    $ hg_pf_LetMeTouchThem_OBJ.start_label = "hg_pf_LetMeTouchThem"
-    $ hg_pf_LetMeTouchThem_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
-        $ hg_pf_TouchMe_OBJ = personal_favor()
-    $ hg_pf_TouchMe_OBJ.imagination_level = 4
-    $ hg_pf_TouchMe_OBJ.menu_text = "Touch me!"
-    $ hg_pf_TouchMe_OBJ.start_label = "hg_pf_TouchMe"
-    $ hg_pf_TouchMe_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
-        $ hg_pf_SuckIt_OBJ = personal_favor()
-    $ hg_pf_SuckIt_OBJ.imagination_level = 4
-    $ hg_pf_SuckIt_OBJ.menu_text = "Suck it!"
-    $ hg_pf_SuckIt_OBJ.start_label = "hg_pf_SuckIt"
-    $ hg_pf_SuckIt_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
-        $ hg_pf_LetsHaveSex_OBJ = personal_favor()
-    $ hg_pf_LetsHaveSex_OBJ.imagination_level = 5
-    $ hg_pf_LetsHaveSex_OBJ.menu_text = "Let's have sex!"
-    $ hg_pf_LetsHaveSex_OBJ.start_label = "hg_pf_LetsHaveSex"
-    $ hg_pf_LetsHaveSex_OBJ.costume_event = True
-    
-    if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
-        $ hg_pf_TimeForAnal_OBJ = personal_favor()
-    $ hg_pf_TimeForAnal_OBJ.imagination_level = 5
-    $ hg_pf_TimeForAnal_OBJ.menu_text = "Time for anal!"
-    $ hg_pf_TimeForAnal_OBJ.start_label = "hg_pf_TimeForAnal"
-    $ hg_pf_TimeForAnal_OBJ.costume_event = True
-    
-    $ hg_pf_list = []
-    $ hg_pf_list.append(hg_pf_TalkToMe_OBJ)
-    $ hg_pf_list.append(hg_pf_NicePanties_OBJ)
-    $ hg_pf_list.append(hg_pf_BreastMolester_OBJ)
-    $ hg_pf_list.append(hg_pf_ButtMolester_OBJ)
-    $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
-    $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
-    $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
-    $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
-    $ hg_pf_list.append(hg_pf_SuckIt_OBJ)
-    $ hg_pf_list.append(hg_pf_LetsHaveSex_OBJ)
-    $ hg_pf_list.append(hg_pf_TimeForAnal_OBJ)
-    
-    
-    
-    if not hasattr(renpy.store,'hg_pr_FlirtClassmate_OBJ'): #important!
-        $ hg_pr_FlirtClassmate_OBJ = public_request()
-    $ hg_pr_FlirtClassmate_OBJ.imagination_level = 0
-    $ hg_pr_FlirtClassmate_OBJ.menu_text = "She's a flirt"
-    $ hg_pr_FlirtClassmate_OBJ.start_label = "hg_pr_FlirtClassmate"
-    $ hg_pr_FlirtClassmate_OBJ.complete_label = "hg_pr_FlirtClassmate_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_FlirtTeacher_OBJ'): #important!
-        $ hg_pr_FlirtTeacher_OBJ = public_request()
-    $ hg_pr_FlirtTeacher_OBJ.imagination_level = 2
-    $ hg_pr_FlirtTeacher_OBJ.menu_text = "She's bait"
-    $ hg_pr_FlirtTeacher_OBJ.start_label = "hg_pr_FlirtTeacher"
-    $ hg_pr_FlirtTeacher_OBJ.complete_label = "hg_pr_FlirtTeacher_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_ClassmateTouchYou_OBJ'): #important!
-        $ hg_pr_ClassmateTouchYou_OBJ = public_request()
-    $ hg_pr_ClassmateTouchYou_OBJ.imagination_level = 3
-    $ hg_pr_ClassmateTouchYou_OBJ.menu_text = "Let a classmate molest you"
-    $ hg_pr_ClassmateTouchYou_OBJ.start_label = "hg_pr_ClassmateTouchYou"
-    $ hg_pr_ClassmateTouchYou_OBJ.complete_label = "hg_pr_ClassmateTouchYou_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_FlashClassmate_OBJ'): #important!
-        $ hg_pr_FlashClassmate_OBJ = public_request()
-    $ hg_pr_FlashClassmate_OBJ.imagination_level = 3
-    $ hg_pr_FlashClassmate_OBJ.menu_text = "Flash your tits to a classmate"
-    $ hg_pr_FlashClassmate_OBJ.start_label = "hg_pr_FlashClassmate"
-    $ hg_pr_FlashClassmate_OBJ.complete_label = "hg_pr_FlashClassmate_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_KissAGirl_OBJ'): #important!
-        $ hg_pr_KissAGirl_OBJ = public_request()
-    $ hg_pr_KissAGirl_OBJ.imagination_level = 4
-    $ hg_pr_KissAGirl_OBJ.menu_text = "Kiss a girl."
-    $ hg_pr_KissAGirl_OBJ.start_label = "hg_pr_KissAGirl"
-    $ hg_pr_KissAGirl_OBJ.complete_label = "hg_pr_KissAGirl_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_HandjobClassmate_OBJ'): #important!
-        $ hg_pr_HandjobClassmate_OBJ = public_request()
-    $ hg_pr_HandjobClassmate_OBJ.imagination_level = 4
-    $ hg_pr_HandjobClassmate_OBJ.menu_text = "Give a handjob to a classmate"
-    $ hg_pr_HandjobClassmate_OBJ.start_label = "hg_pr_HandjobClassmate"
-    $ hg_pr_HandjobClassmate_OBJ.complete_label = "hg_pr_HandjobClassmate_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_BlowjobClassmate_OBJ'): #important!
-        $ hg_pr_BlowjobClassmate_OBJ = public_request()
-    $ hg_pr_BlowjobClassmate_OBJ.imagination_level = 5
-    $ hg_pr_BlowjobClassmate_OBJ.menu_text = "Give a blowjob to a classmate"
-    $ hg_pr_BlowjobClassmate_OBJ.start_label = "hg_pr_BlowjobClassmate"
-    $ hg_pr_BlowjobClassmate_OBJ.complete_label = "hg_pr_BlowjobClassmate_complete"
-    
-    if not hasattr(renpy.store,'hg_pr_SexWithClassmate_OBJ'): #important!
-        $ hg_pr_SexWithClassmate_OBJ = public_request()
-    $ hg_pr_SexWithClassmate_OBJ.imagination_level = 5
-    $ hg_pr_SexWithClassmate_OBJ.menu_text = "Have sex with a classmate"
-    $ hg_pr_SexWithClassmate_OBJ.start_label = "hg_pr_SexWithClassmate"
-    $ hg_pr_SexWithClassmate_OBJ.complete_label = "hg_pr_SexWithClassmate_complete"
-    
-    $ hg_pr_list = []
-    $ hg_pr_list.append(hg_pr_FlirtClassmate_OBJ)
-    $ hg_pr_list.append(hg_pr_FlirtTeacher_OBJ)
-    $ hg_pr_list.append(hg_pr_ClassmateTouchYou_OBJ)
-    $ hg_pr_list.append(hg_pr_FlashClassmate_OBJ)
-    $ hg_pr_list.append(hg_pr_KissAGirl_OBJ)
-    $ hg_pr_list.append(hg_pr_HandjobClassmate_OBJ)
-    $ hg_pr_list.append(hg_pr_BlowjobClassmate_OBJ)
-    $ hg_pr_list.append(hg_pr_SexWithClassmate_OBJ)
-    
-    
-    
-    if not hasattr(renpy.store,'hg_ps_PantyThief_OBJ'): #important!
-        $ hg_ps_PantyThief_OBJ = public_shaming()
-    $ hg_ps_PantyThief_OBJ.menu_text = "Panty Theif"
-    $ hg_ps_PantyThief_OBJ.start_label = "hg_ps_PantyThief"
-    $ hg_ps_PantyThief_OBJ.complete_label = "hg_ps_PantyThief_complete"
-    
-    if not hasattr(renpy.store,'hg_ps_WalkOfShame_OBJ'): #important!
-        $ hg_ps_WalkOfShame_OBJ = public_shaming()
-    $ hg_ps_WalkOfShame_OBJ.menu_text = "Walk Of Shame"
-    $ hg_ps_WalkOfShame_OBJ.start_label = "hg_ps_WalkOfShame"
-    $ hg_ps_WalkOfShame_OBJ.complete_label = "hg_ps_WalkOfShame_complete"
-    
-    if not hasattr(renpy.store,'hg_ps_WearMyCum_OBJ'): #important!
-        $ hg_ps_WearMyCum_OBJ = public_shaming()
-    $ hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
-    $ hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
-    $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_PantyThief_complete"
-    
-    if not hasattr(renpy.store,'hg_ps_LeashWalk_OBJ'): #important!
-        $ hg_ps_LeashWalk_OBJ = public_shaming()
-    $ hg_ps_LeashWalk_OBJ.menu_text = "Time for a walk (leash)"
-    $ hg_ps_LeashWalk_OBJ.start_label = "hg_ps_LeashWalk"
-    $ hg_ps_LeashWalk_OBJ.complete_label = "hg_ps_LeashWalk_complete"
-    
-    
-    $ hg_ps_list = []
-    $ hg_ps_list.append(hg_ps_PantyThief_OBJ)
-    #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
-    $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
-    #$ hg_ps_list.append(hg_ps_LeashWalk_OBJ)
-    return
     
 init python:
     class silver_request(object):
