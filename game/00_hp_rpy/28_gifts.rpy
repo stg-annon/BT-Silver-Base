@@ -197,6 +197,8 @@ label __init_variables:
     $ gift_list.append(AnalPlugs)
     $ gift_list.append(ThestralStrapon)
     $ gift_list.append(SpeedStick2000)
+    #$ gift_list.append(SexDollJoanne)
+    #$ gift_list.append(AnalBeads)
     
     return
 

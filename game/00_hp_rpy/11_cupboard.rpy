@@ -371,44 +371,44 @@ label rummaging:
     
     if i_of_iv == 4: # Found something.
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
-            if one_of_tw == 20:# SEX DOLL.
-                call rum_block(18)
-            elif one_of_tw == 1 or one_of_tw == 2:# CANDY.
-                call rum_block(1)
-            elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18: # GOLD.
+            if one_of_tw == 20:
+                call rum_block(PlushOwl)
+            elif one_of_tw == 1 or one_of_tw == 2:
+                call rum_block(Lollipop)
+            elif one_of_tw >= 3 and one_of_tw <= 9  or one_of_tw == 18:
                 call rum_block("gold1")
-            elif one_of_tw >= 10 and one_of_tw <= 16: # WINE.
+            elif one_of_tw >= 10 and one_of_tw <= 16:
                 call rum_block("wine")
-            elif one_of_tw == 17: # CHOCOLATE.
-                call rum_block(2)
-            elif one_of_tw == 19: # LINGERIE.
-                call rum_block(10)
+            elif one_of_tw == 17:
+                call rum_block(Chocolate)
+            elif one_of_tw == 19:
+                call rum_block(SexyLingerie)
         
         
         ### EVENT LEVEL 02 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 6 and whoring <= 11: # Lv 3-4. 
-            if one_of_tw == 20:# SEX DOLL.
-                call rum_block(18)
-            elif one_of_tw == 1 or one_of_tw ==2:# CANDY.
-                call rum_block(1)
-            elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:# GOLD.
+            if one_of_tw == 20:
+                call rum_block(PornMagazines)
+            elif one_of_tw == 1 or one_of_tw ==2:
+                call rum_block(Lollipop)
+            elif one_of_tw >= 3 and one_of_tw <= 10 or one_of_tw == 18:
                 call rum_block("gold2")
-            elif one_of_tw >= 11 and one_of_tw <= 15:# WINE
+            elif one_of_tw >= 11 and one_of_tw <= 15:
                 call rum_block("wine")
-            elif one_of_tw == 16:# LINGERIE
-                call rum_block(10)
-            elif one_of_tw == 17:# CHOCOLATE.
-                call rum_block(2)
-            elif one_of_tw == 19:# KRUM POSTER.
-                call rum_block(9)
+            elif one_of_tw == 16:
+                call rum_block(SexyLingerie)
+            elif one_of_tw == 17:
+                call rum_block(Chocolate)
+            elif one_of_tw == 19:
+                call rum_block(ViktorKrumPoster)
         
         
         ### EVENT LEVEL 03 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 12 and whoring <= 17: # Lv 5-6.
-            if one_of_tw == 20:# SEX DOLL.
-                call rum_block(18)
+            if one_of_tw == 20:
+                call rum_block(Vibrator)
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(3)
+                call rum_block(PackOfCondoms)
             elif one_of_tw == 5 or one_of_tw == 6:
                 call rum_block(1)
             elif one_of_tw >= 7 and one_of_tw <= 14:
@@ -416,25 +416,25 @@ label rummaging:
             elif one_of_tw >= 15 and one_of_tw <= 18:
                 call rum_block("wine")
             elif one_of_tw == 19:
-                call rum_block(9)
+                call rum_block(ViktorKrumPoster)
         
         
         ### EVENT LEVEL 04 ###  ### ###  ### ###  ###  ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ### ###  ###
         if whoring >= 18: # Lv 7+  
             if one_of_tw == 20:
-                call rum_block(18)
+                call rum_block(SpeedStick2000)
             elif one_of_tw >= 1 and one_of_tw <= 4:
-                call rum_block(3)
+                call rum_block(Butterbeer)
             elif one_of_tw >= 5 and one_of_tw <= 8:
-                call rum_block(2)
+                call rum_block(Chocolate)
             elif one_of_tw >= 9 and one_of_tw <= 16:
                 call rum_block("gold4")
             elif one_of_tw == 17:
-                call rum_block(17)
+                call rum_block(AnalPlugs)
             elif one_of_tw == 18:
-                call rum_block(9)
+                call rum_block(ViktorKrumPoster)
             elif one_of_tw == 19:
-                call rum_block(10)
+                call rum_block(ThestralStrapon)
             
             
     else: #Didn't find anything.
