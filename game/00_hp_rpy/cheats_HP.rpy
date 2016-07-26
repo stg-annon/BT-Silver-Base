@@ -52,7 +52,9 @@ label cheats_ht:
                     $ cheat_reading = False
                     jump cheats_ht_books
                 "-All Books-" if day >= 16:
-                    $ books = ["book_1", "book_2", "book_3", "book_4",  "book_5", "book_6", "book_7", "book_8", "book_9", "book_10", "book_11", "book_12", "book_13", "book_14", "book_15", "book_16", "book_17"]
+                    python:
+                        for i in book_list:
+                            i.purchased = True
                     "Obtained All Books."
                     jump cheats_ht_books
                 "-back-":
