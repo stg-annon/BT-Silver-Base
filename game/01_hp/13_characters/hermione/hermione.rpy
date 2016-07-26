@@ -263,7 +263,12 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
     hide screen hermione_main
     #with d3
     if xpos != hermione_xpos:
-        $ hermione_xpos = xpos
+        if xpos == 370:
+            $ hermione_xpos = 510
+        elif xpos == 120:
+            $ hermione_xpos = 140
+        else:
+            $ hermione_xpos = xpos
     if ypos != hermione_ypos:
         $ hermione_ypos = ypos
     if face != h_body:

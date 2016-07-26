@@ -762,11 +762,11 @@ screen plus_300:
 ### HANGING WITH SNAPE ###
 
 screen with_snape:
-    add "01_hp/05_props/with_snape.png"
+    add "01_hp/05_props/with_snape.png" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape
     zorder 3
 screen with_snape_animated:
-    add "genie_toast_goblet"
+    add "genie_toast_goblet" at Position(xpos=0+140, ypos=0)
     tag hanging_with_snape
     zorder 3
 

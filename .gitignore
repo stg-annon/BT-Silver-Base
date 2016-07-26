@@ -198,6 +198,7 @@ persistent
 *.save
 *.rpyc
 *.py[cod]
+game/cache/
 
 # Packages
 *.egg

@@ -1,4 +1,5 @@
 label __init_variables:
+    
     #place save variables here
     if not hasattr(renpy.store,'request_jeans'):
         $ request_jeans = False
@@ -317,6 +318,9 @@ label __init_variables:
     $ her_head_tits = 235
     $ her_chibi_dance_xpos = 210
     $ her_chibi_dance_ypos = 180
+    
+    
+    $ hermione_chibi_zorder = 5
     
     $ s_head_xpos = 330
     $ s_head_ypos = 380

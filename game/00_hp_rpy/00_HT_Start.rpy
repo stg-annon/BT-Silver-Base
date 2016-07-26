@@ -2,6 +2,7 @@ label start_ht:
     # "this has been disabled"
     # jump start
     
+    $ daytime = True
     $ gold = 0
     $ rum_times = 0 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
     
