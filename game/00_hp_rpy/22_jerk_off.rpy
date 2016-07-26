@@ -14,10 +14,10 @@ label jerk_off:
     m "How should I finish this thing?"   
     label how_to_finish:
     menu:
-        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_InProgress[hg_ps_PantyThief_ID]:
+        "{color=#858585}...(LOCKED)...{/color}" if not hg_ps_PantyThief_OBJ.inProgress:
             ">You lack the item required for this option."
             jump  how_to_finish
-        "-Hermione's panties-" if hg_ps_InProgress[hg_ps_PantyThief_ID]:
+        "-Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress:
             $ cum_on_panties = True #True when choose to cum on Hermione's panties.
         "-On the floor!-":
             $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.

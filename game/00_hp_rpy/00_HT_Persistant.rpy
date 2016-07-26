@@ -254,28 +254,11 @@ label __init_variables:
         $ hg_pr_complete = [False] * 11
     if override_persistant or not hasattr(renpy.store,'hg_pr_InProgress'): #important!
         $ hg_pr_InProgress = [False] * 11
-
+    
     #Public Request Vars.
     if override_persistant or not hasattr(renpy.store,'hg_pr_SexWithClassmate_AltFlag'): #important!
         $ hg_pr_SexWithClassmate_AltFlag = False
-        
-        
-    #Public Shaming
-    $ hg_ps_PantyThief_ID = 0
-    $ hg_ps_WalkOfAtonement_ID = 1
-    $ hg_ps_WearMyCum_ID = 2
-    $ hg_ps_LeashWalk_ID = 3
-
-    #Public Request Vars.
-    if override_persistant or not hasattr(renpy.store,'hg_ps_points'): #important!
-        $ hg_ps_points = [0] * 4
-    if override_persistant or not hasattr(renpy.store,'hg_ps_hearts'): #important!
-        $ hg_ps_hearts = [0] * 4
-    if override_persistant or not hasattr(renpy.store,'hg_ps_complete'): #important!
-        $ hg_ps_complete = [False] * 4
-    if override_persistant or not hasattr(renpy.store,'hg_ps_InProgress'): #important!
-        $ hg_ps_InProgress = [False] * 4
-        
+    
     #Public Shaming Flags
     if override_persistant or not hasattr(renpy.store,'hg_ps_PantyThief_SoakedPantiesFlag'): #important!
         $ hg_ps_PantyThief_SoakedPantiesFlag = False

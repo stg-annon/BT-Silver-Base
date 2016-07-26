@@ -36,7 +36,7 @@ label desk:
         "-Go to sleep-" if not daytime and not day == 1:
             jump day_start
         
-        #"-Jerk 0ff on Hermione's panties-" if hg_ps_InProgress[hg_ps_PantyThief_ID]: #True when Hermione has no panties on.
+        #"-Jerk 0ff on Hermione's panties-" if hg_ps_PantyThief_OBJ.inProgress: #True when Hermione has no panties on.
         #    jump jerk_off
         "-Jerk Off-":
             jump jerk_off
