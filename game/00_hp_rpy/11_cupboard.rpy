@@ -466,33 +466,7 @@ label disp_sacred_scrolls(scroll):
     return
         
 label rum_block(item = None):
-    if "wine" in item:
-        $ renpy.play('sounds/win2.mp3')   #Not loud.
-        $ wine += 1
-        $ the_gift = "01_hp/18_store/27.png" # WINE
-        show screen gift
-        with d3
-        ">You found a bottle of wine from professor dumbledore's personal stash..." 
-        hide screen gift
-        with d3
-    elif "gold" in item:
-        if item == "gold1":
-            $ tmp_gold = gold1
-        if item == "gold2":
-            $ tmp_gold = gold2
-        if item == "gold3":
-            $ tmp_gold = gold3
-        if item == "gold4":
-            $ tmp_gold = gold4
-        $ renpy.play('sounds/win2.mp3')   #Not loud.
-        $ the_gift = "01_hp/18_store/28.png" # GOLD.
-        show screen gift
-        with d3
-        ">You found [tmp_gold] gold..." 
-        $ gold += tmp_gold
-        hide screen gift
-        with d3
-    else:
+    if isinstance(item, gift_item):
         $ renpy.play('sounds/win2.mp3')   #Not loud.
         $ gift_item_inv[item.id] += 1
         $ the_gift = item.image
@@ -502,6 +476,33 @@ label rum_block(item = None):
         ">[item.description]"
         hide screen gift
         with d3
+    else:
+        if "wine" in item:
+            $ renpy.play('sounds/win2.mp3')   #Not loud.
+            $ wine += 1
+            $ the_gift = "01_hp/18_store/27.png" # WINE
+            show screen gift
+            with d3
+            ">You found a bottle of wine from professor dumbledore's personal stash..." 
+            hide screen gift
+            with d3
+        if "gold" in item:
+            if item == "gold1":
+                $ tmp_gold = gold1
+            if item == "gold2":
+                $ tmp_gold = gold2
+            if item == "gold3":
+                $ tmp_gold = gold3
+            if item == "gold4":
+                $ tmp_gold = gold4
+            $ renpy.play('sounds/win2.mp3')   #Not loud.
+            $ the_gift = "01_hp/18_store/28.png" # GOLD.
+            show screen gift
+            with d3
+            ">You found [tmp_gold] gold..." 
+            $ gold += tmp_gold
+            hide screen gift
+            with d3
     return
         
         
