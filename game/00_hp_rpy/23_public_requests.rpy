@@ -1302,7 +1302,7 @@ label hg_pr_FlashClassmate_complete:
                 call her_main("Thank you, [genie_name]...","body_29")
                 her "..."
                 her "I'd better go now."
-                $ hg_pr_FlashClassmate_OBJ.inProgres = False
+                $ hg_pr_FlashClassmate_OBJ.inProgress = False
                 jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         elif one_out_of_three == 2: ### EVENT (B)
@@ -1572,7 +1572,7 @@ label hg_pr_FlashClassmate_complete:
     
     $ hg_pr_FlashClassmate_OBJ.points += 1
     $ hg_pr_FlashClassmate_OBJ.complete = True
-    $ hg_pr_FlashClassmate_OBJ.inProgres = False
+    $ hg_pr_FlashClassmate_OBJ.inProgress = False
     
     $ hermione_sleeping = True
     
@@ -1680,7 +1680,7 @@ label hg_pr_KissAGirl: #LV.5 (Whoring = 12 - 14)
             call her_main("I know a couple of girls who are hungry for attention and wouldn't mind putting on a little show.","body_64")
             m "Great. See you after your classes then."
     
-    $ hg_pr_KissAGirl_OBJ.inProgres = True
+    $ hg_pr_KissAGirl_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -2079,7 +2079,7 @@ label hg_pr_KissAGirl_complete:
     
     $ hg_pr_KissAGirl_OBJ.points += 1
     $ hg_pr_KissAGirl_OBJ.complete = True
-    $ hg_pr_KissAGirl_OBJ.inProgres = False
+    $ hg_pr_KissAGirl_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -2179,7 +2179,7 @@ label hg_pr_HandjobClassmate: #LV.6 (Whoring = 15 - 17)
             m "And report back to me after your classes, as usual."
             call her_main("Of course, [genie_name].","body_74")
     
-    $ hg_pr_HandjobClassmate_OBJ.inProgres = True
+    $ hg_pr_HandjobClassmate_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -2225,7 +2225,7 @@ label hg_pr_HandjobClassmate_complete:
                     m "You are free to go, [hermione_name]."
                     call her_main(".........","body_69")
                     $ mad +=9
-                    $ hg_pr_HandjobClassmate_OBJ.inProgres = False
+                    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
                 "\"You shall only get half the payment then.\"":
                     $ current_payout = 27 #Used when haggling about price of th favour.
@@ -2343,7 +2343,7 @@ label hg_pr_HandjobClassmate_complete:
                     call her_main("......","body_117")
                     call her_main("This is just not fair!","body_32")
                     $ mad +=20
-                    $ hg_pr_HandjobClassmate_OBJ.inProgres = False
+                    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
                     jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
                 "\"Alright, I think I can trust you.\"":
                     call her_main("Thank you, [genie_name].","body_45")
@@ -2608,7 +2608,7 @@ label hg_pr_HandjobClassmate_complete:
     
     $ hg_pr_HandjobClassmate_OBJ.points += 1
     $ hg_pr_HandjobClassmate_OBJ.complete = True
-    $ hg_pr_HandjobClassmate_OBJ.inProgres = False
+    $ hg_pr_HandjobClassmate_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -2683,7 +2683,7 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
             m "Report back to me after your classes as usual..."
             call her_main("Of course...","body_69")
     
-    $ hg_pr_BlowjobClassmate_OBJ.inProgres = True
+    $ hg_pr_BlowjobClassmate_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -2742,7 +2742,7 @@ label hg_pr_BlowjobClassmate_complete:
             hide screen hermione_main                                                                                                                                                                                 #HERMIONE
             with d3   
             $ display_h_tears = False
-            $ hg_pr_BlowjobClassmate_OBJ.inProgres = False
+            $ hg_pr_BlowjobClassmate_OBJ.inProgress = False
             jump could_not_flirt #Sent here when choose "Favor failed! No points for you!" (Hermione is leaving without getting any points).
         
         elif one_out_of_three == 3: ### EVENT (C)
@@ -2891,7 +2891,7 @@ label hg_pr_BlowjobClassmate_complete:
     
     $ hg_pr_BlowjobClassmate_OBJ.points += 1
     $ hg_pr_BlowjobClassmate_OBJ.complete = True
-    $ hg_pr_BlowjobClassmate_OBJ.inProgres = False
+    $ hg_pr_BlowjobClassmate_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -2924,7 +2924,7 @@ label hg_pr_BlowjobTeacher:# "teacher blowjob" (Level ??)
         m "And report back to me after your classes, as usual."
         call her_main("Of course, sir.",74)
     
-    $ hg_pr_BlowjobTeacher_OBJ.inProgres = True
+    $ hg_pr_BlowjobTeacher_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -2992,7 +2992,7 @@ label hg_pr_BlowjobTeacher_complete:
     
     $ hg_pr_BlowjobTeacher_OBJ.points += 1
     $ hg_pr_BlowjobTeacher_OBJ.complete = True
-    $ hg_pr_BlowjobTeacher_OBJ.inProgres = False
+    $ hg_pr_BlowjobTeacher_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return    
@@ -3032,7 +3032,7 @@ label hg_pr_SexWithClassmate: #LV.8 (Whoring = 21 - 23)
         m "Yes. And you will get 75 points again as well."
         call her_main("Well, alright...","body_79")
     
-    $ hg_pr_SexWithClassmate_OBJ.inProgres = True
+    $ hg_pr_SexWithClassmate_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -3049,7 +3049,7 @@ label hg_pr_SexWithClassmate_complete:
         m "She was supposed to be here, by now..."
         m "Hm..."
         $ hg_pr_SexWithClassmate_OBJ.points += 1
-        $ hg_pr_SexWithClassmate_OBJ.inProgres = False
+        $ hg_pr_SexWithClassmate_OBJ.inProgress = False
         $ hermione_sleeping = True
         $ hg_pr_SexWithClassmate_AltFlag = True #Turns True when hermione fails to show up after her "Fuck a classmate" favour. Runs an event next morning.
         return
@@ -3108,7 +3108,7 @@ label hg_pr_SexWithClassmate_complete:
     
     $ hg_pr_SexWithClassmate_OBJ.points += 1
     $ hg_pr_SexWithClassmate_OBJ.complete = True
-    $ hg_pr_SexWithClassmate_OBJ.inProgres = False
+    $ hg_pr_SexWithClassmate_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -3143,7 +3143,7 @@ label hg_pr_SexWithClassmate_Alt: #Hermione does not show up. This is label wher
     
     $ hg_pr_SexWithClassmate_OBJ.points += 1
     $ hg_pr_SexWithClassmate_OBJ.complete = True
-    $ hg_pr_SexWithClassmate_OBJ.inProgres = False
+    $ hg_pr_SexWithClassmate_OBJ.inProgress = False
     
     call hg_pr_transition_block
     return
@@ -3178,7 +3178,7 @@ label hg_pr_SexWithTeacher:# "teacher sex" (Level 09)
         m "Excellent i expect a very detailed report this evening."
         call her_main("Of course, sir.","body_74")
     
-    $ hg_pr_SexWithTeacher_OBJ.inProgres = True
+    $ hg_pr_SexWithTeacher_OBJ.inProgress = True
     
     call hg_pr_transition_block
     jump day_main_menu
@@ -3250,7 +3250,7 @@ label hg_pr_SexWithTeacher_complete:
     
     $ hg_pr_SexWithTeacher_OBJ.points += 1
     $ hg_pr_SexWithTeacher_OBJ.complete = True
-    $ hg_pr_SexWithTeacher_OBJ.inProgres = False
+    $ hg_pr_SexWithTeacher_OBJ.inProgress = False
     
     
     call hg_pr_transition_block

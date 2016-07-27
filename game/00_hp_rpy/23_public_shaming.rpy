@@ -115,7 +115,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     
     label hg_ps_PantyThief_ends:
         
-    $ hg_ps_PantyThief_OBJ.inProgres = True #True when Hermione has no panties on.
+    $ hg_ps_PantyThief_OBJ.inProgress = True #True when Hermione has no panties on.
     
     hide screen blkfade
     hide screen bld1
@@ -444,7 +444,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         $ whoring +=1
     
     $ hg_ps_PantyThief_OBJ.points += 1
-    $ hg_ps_PantyThief_OBJ.inProgres = False #False when favor is not in progress
+    $ hg_ps_PantyThief_OBJ.inProgress = False #False when favor is not in progress
     $ hg_ps_PantyThief_SoakedPantiesFlag = False #TRUE if you jerked off in panties
     
     hide screen blkfade
@@ -481,7 +481,7 @@ label hg_ps_sluttier_shirt:
 
     
 #Walk Of Shame
-label hg_ps_WalkOfAtonement: #This will become more intense as the wear a shorter skirt and wear a sluttier shirt favours are completed
+label hg_ps_WalkOfShame: #This will become more intense as the wear a shorter skirt and wear a sluttier shirt favours are completed
 
     m "[hermione_name], what classes do you have today?"
     call her_main("What? Since when have you taken an interest in my education?","body_07")
@@ -509,9 +509,9 @@ label hg_ps_WalkOfAtonement: #This will become more intense as the wear a shorte
     call her_main("I suppose that you're right [genie_name].","body_07")
     call her_main("Well I best be off... Can't be late for class.","body_07")
     ">She leaves your office reluctantly."
-    $ hg_ps_WalkOfAtonement_OBJ.inProgres = True
+    $ hg_ps_WalkOfShame_OBJ.inProgress = True
 
-label hg_ps_WalkOfAtonement_complete:#Returns to your office after being made walk around the school with no shirt
+label hg_ps_WalkOfShame_complete:#Returns to your office after being made walk around the school with no shirt
     return
     
 #WearMyCum
@@ -538,7 +538,7 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
 
 
 label hg_ps_WearMyCum_Scene_1:
-    $ hg_ps_WearMyCum_OBJ.inProgres = True
+    $ hg_ps_WearMyCum_OBJ.inProgress = True
     call her_main("What?!?","body_48")
     call her_main("You can't be serious!","body_49")
     call her_main("It's bad enough that I let you cum on me in private!","body_50")
@@ -786,7 +786,7 @@ label hg_ps_WearMyCum_Scene_3:
 
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
-    $ hg_ps_WearMyCum_OBJ.inProgres = False
+    $ hg_ps_WearMyCum_OBJ.inProgress = False
     jump hg_ps_WearMyCum_complete_1
 
 
