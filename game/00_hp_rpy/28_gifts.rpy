@@ -1729,7 +1729,7 @@ label set_h_stockings(stocking = "00_blank"):
 label set_h_costume(costume_id = 0):
     hide screen hermione_main
     with d5
-    call h_outfit(costume_id)
+    call h_outfit_OBJ(costume_id)
     show screen hermione_main
     with d5
     return

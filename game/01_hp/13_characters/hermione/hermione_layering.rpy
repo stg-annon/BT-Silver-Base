@@ -589,7 +589,7 @@ label reset_hermione_main:
     hide screen blktone 
     hide screen ctc
     with d3
-    call h_outfit(0)
+    call h_outfit_OBJ(None)
     call h_action("none")
     call update_her_uniform
     call h_update_body

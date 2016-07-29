@@ -161,7 +161,7 @@ screen wardrobe_costumes:
         text "Gifts" xpos 480 ypos 100 size 15
     
 label wardrobe_costume_preview:
-    call h_outfit(wardrobe_costume_selection)
+    call h_outfit_OBJ(wardrobe_costume_selection)
     call screen wardrobe_costumes
 
 label wardrobe_wear_costume:
