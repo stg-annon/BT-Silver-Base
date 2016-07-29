@@ -1757,7 +1757,7 @@ image ani_her_sex_cum_inside_blink_naked:
     
 screen hermione_blank_main:
     tag hermione_main
-    zorder hermione_zorder
+    zorder hermione_chibi_zorder
 screen hermione_blank_head:
     tag hermione_head
     zorder 8
