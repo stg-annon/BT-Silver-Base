@@ -37,6 +37,9 @@ screen hermione_main:
     if hermione_action:
         use hermione_action
     
+    if hermione_costume:
+        for i in hermoine_outfit_GLBL.getTopLayers():
+            add i xpos hermione_xpos_offset ypos hermione_ypos
     
     if uni_sperm:
         add u_sperm xpos hermione_xpos_offset ypos hermione_ypos
@@ -47,7 +50,7 @@ screen hermione_main:
     
     if hermione_badges and hermione_wear_top and not hermione_costume:
         add hermione_badge xpos hermione_xpos_offset ypos hermione_ypos # add badge on top
-        
+    
     if hermione_wear_robe:
         add hermione_robe xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_emote xpos hermione_xpos_offset ypos hermione_ypos
@@ -86,10 +89,8 @@ screen hermione_uniform:
     
 screen hermione_costume:
     tag hermione_main
-    add hermione_costume_a xpos hermione_xpos_offset ypos hermione_ypos
-    add hermione_costume_b xpos hermione_xpos_offset ypos hermione_ypos
-    add hermione_costume_c xpos hermione_xpos_offset ypos hermione_ypos
-    add hermione_costume_d xpos hermione_xpos_offset ypos hermione_ypos
+    for i in hermoine_outfit_GLBL.getOutfitLayers():
+        add i xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_costume_e xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_costume_action_a xpos hermione_xpos_offset ypos hermione_ypos
@@ -147,14 +148,15 @@ screen hermione_head:
         if collar == 3:  
             add "01_hp/13_characters/hermione/accessories/collars/collar_3.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
     else:
-        add hermione_costume_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
-        add hermione_costume_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
-        add hermione_costume_c xpos hermione_head_xpos_offset ypos hermione_head_ypos
-        add hermione_costume_d xpos hermione_head_xpos_offset ypos hermione_head_ypos
-        add hermione_costume_e xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        for i in hermoine_outfit_GLBL.getOutfitLayers():
+            add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
         add hermione_costume_action_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     add hermione_hair_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
+    
+    if hermione_costume:
+        for i in hermoine_outfit_GLBL.getTopLayers():
+            add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos
@@ -185,55 +187,32 @@ label h_robe(robe = ""):
         $ hermione_wear_robe = True
     return
     
-    
 ## Outfit Blocks
-label set_hermione_outfit(outfit_id):
+label set_hermione_outfit(outfit):
     show screen blkfade
     hide screen hermione_main
     with d3
-    call h_outfit(outfit_id)
+    call h_outfit_OBJ(outfit)
     pause .5
     hide screen blkfade
     with d5
     return
     
-label h_outfit(outfit_id):
-    $ custom_outfit = outfit_id
-    if custom_outfit == 0:
+label h_outfit_OBJ(outfit):
+    if outfit == None:
         call update_her_uniform
         $ hermione_costume = False
     else:
         $ hermione_costume = True
         
+        $ hermoine_outfit_GLBL = outfit
         call h_update_hair
         
-        if hermione_costume_list[0][custom_outfit] != "":
-            $ hermione_costume_a = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[0][custom_outfit]
-        else:
-            $ hermione_costume_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
+        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+outfit.breast_layer+".png"
         
-        if hermione_costume_list[1][custom_outfit] != "":
-            $ hermione_costume_b = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[1][custom_outfit]
-        else:
-            $ hermione_costume_b = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-        
-        if hermione_costume_list[2][custom_outfit] != "":
-            $ hermione_costume_c = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[2][custom_outfit]
-        else:
-            $ hermione_costume_c = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-        
-        if hermione_costume_list[3][custom_outfit] != "":
-            $ hermione_costume_d = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[3][custom_outfit]
-        else:
-            $ hermione_costume_d = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-            
-        if hermione_costume_list[4][custom_outfit] != "":
-            $ hermione_costume_e = "01_hp/13_characters/hermione/clothes/custom/"+hermione_costume_list[4][custom_outfit]
-        else:
-            $ hermione_costume_e = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
-        
-        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(hermione_costume_breast_list[custom_outfit])+".png"
     return
+    
+    
     
 label set_custom_layer(a=hermione_costume_a,b=hermione_costume_b,c=hermione_costume_c,d=hermione_costume_d,e=hermione_costume_e,breast=h_breasts):
     if a != hermione_costume_a:
@@ -292,13 +271,8 @@ label h_action(action =  ""):
         pass
     else:
         if hermione_costume:
-            if action == "lift_skirt":
-                pass
-            if action == "lift_top":
-                if custom_outfit == 2 or custom_outfit == 3:
-                    $ h_action_a = "cherr_flash.png"
-                if custom_outfit == 7:
-                    $ h_action_a = "power_costume_2.png"
+            if action in hermoine_outfit_GLBL.actions:
+                $ h_action_a = hermoine_outfit_GLBL.getActionImage(action)
         else:
             $ hermione_action = True
             $ hermione_action_bra = hermione_bra
@@ -487,9 +461,9 @@ label h_update_body:
     return
     
 label h_update_hair:
-    if hermione_costume and hermione_costume_hair_list[custom_outfit] != "":
-        $ hermione_hair_a = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_costume_hair_list[custom_outfit])+".png"
-        $ hermione_hair_b = "01_hp/13_characters/hermione/clothes/custom/"+str(hermione_costume_hair_list[custom_outfit])+"_2.png"
+    if hermione_costume and hermoine_outfit_GLBL.hair_layer != "":
+        $ hermione_hair_a = "01_hp/13_characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+".png"
+        $ hermione_hair_b = "01_hp/13_characters/hermione/clothes/custom/"+hermoine_outfit_GLBL.hair_layer+"_2.png"
     else:
         $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+".png"
         $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/"+str(h_hair_style)+"_"+str(h_hair_color)+"_2.png"
@@ -667,7 +641,7 @@ label new_main_menu: # testing menu found in cheats or jumped to
         "-outfits-":
             label new_main_menu_outfit:
             menu:
-                "-action-":
+                "-action-" if False:
                     menu:
                         "-none-":
                             call h_action("")
@@ -678,17 +652,21 @@ label new_main_menu: # testing menu found in cheats or jumped to
                         "-back-":
                             jump new_main_menu_outfit
                 "-No Outfit-":
-                    call h_outfit(0)
+                    call h_outfit_OBJ(None)
                     jump new_main_menu_outfit
                 "-Defined Outfits-":
-                    label new_main_menu_outfit_defined:
-                    call set_defined_menu_vars
-                    $ choice = renpy.display_menu(h_menu_list)
-                    if choice == -1:
+                    label defined_outfits_menu:
+                    python:
+                        def_menu = []
+                        for i in hermione_outfits_list:
+                            def_menu.append((i.getMenuText(),i))
+                        def_menu.append(("-Never mind-", "nvm"))
+                        result = renpy.display_menu(def_menu)
+                    if result == "nvm":
                         jump new_main_menu_outfit
                     else:
-                        call h_outfit(choice)
-                        jump new_main_menu_outfit_defined
+                        call h_outfit_OBJ(result)
+                        jump defined_outfits_menu
                 "-Back-":
                     jump new_main_menu
         

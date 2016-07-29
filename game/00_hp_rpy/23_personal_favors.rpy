@@ -8,47 +8,47 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
             pass
         "\"(Not right now.)\"":
             jump silver_requests
-    if "maid" in outfit_inventory or "gryffindor_cheerleader" in outfit_inventory or "slytherin_cheerleader" in outfit_inventory or "ms_marvel" in outfit_inventory or "heart_dancer" in outfit_inventory or "power_girl" in outfit_inventory:
+    if hg_maid_OBJ.purchased or hg_gryffCheer_OBJ.purchased or hg_slythCheer_OBJ.purchased or hg_msMarvel_OBJ.purchased or hg_heartDancer_OBJ.purchased or hg_powerGirl_OBJ.purchased or hg_harleyQuinn_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
                 m "[hermione_name], before I request a favor, I'd like you to dress up."
                 call her_main("As what?","body_10")
                 menu:
-                    "-A maid-" if "maid" in outfit_inventory:
+                    "-A maid-" if hg_maid_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(1)
+                        call set_hermione_outfit(hg_maid_OBJ)
                         pass
-                    "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_inventory:
+                    "-A Cheerleader-" if hg_gryffCheer_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(2)
+                        call set_hermione_outfit(hg_gryffCheer_OBJ)
                         pass
-                    "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_inventory:
+                    "-A Slytherin Cheerleader-" if hg_slythCheer_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(3)
+                        call set_hermione_outfit(hg_slythCheer_OBJ)
                         pass
-                    "-Ms Marvel-" if "ms_marvel" in outfit_inventory:
+                    "-Ms Marvel-" if hg_msMarvel_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(8)
+                        call set_hermione_outfit(hg_msMarvel_OBJ)
                         pass
-                    "-A heart dancer-" if "heart_dancer" in outfit_inventory:
+                    "-A heart dancer-" if hg_heartDancer_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(4)
+                        call set_hermione_outfit(hg_heartDancer_OBJ)
                         pass
-                    "-power girl-" if "power_girl" in outfit_inventory:
+                    "-power girl-" if hg_powerGirl_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(7)
+                        call set_hermione_outfit(hg_powerGirl_OBJ)
                         pass  
-                    "-Harley Quinn-" if "harley_quinn" in outfit_inventory:
+                    "-Harley Quinn-" if hg_harleyQuinn_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(9)
+                        call set_hermione_outfit(hg_harleyQuinn_OBJ)
                         pass
             "\"(Not right now.)\"":
                 pass
@@ -508,7 +508,7 @@ label hg_pf_BreastMolester:
         "\"(Not right now.)\"":
             jump silver_requests
 
-    if "ms_marvel" in outfit_inventory:
+    if hg_msMarvel_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -520,7 +520,7 @@ label hg_pf_BreastMolester:
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(8)
+                    call set_hermione_outfit(hg_msMarvel_OBJ)
                     pass
                 else:
                     jump too_much
@@ -791,7 +791,7 @@ label hg_pf_ButtMolester:
         "\"(Not right now.)\"":
             jump silver_requests
 
-    if "maid" in outfit_inventory:
+    if hg_maid_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -804,7 +804,7 @@ label hg_pf_ButtMolester:
                     call her_main("...","body_54")
                     call her_main("Well, if you insist...","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(1)
+                    call set_hermione_outfit(hg_maid_OBJ)
                     pass
                 else:
                     jump too_much
@@ -1803,7 +1803,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     if whoring <=5:
         jump too_much
         
-    if "gryffindor_cheerleader" in outfit_inventory or "slytherin_cheerleader" in outfit_inventory or "power_girl" in outfit_inventory:
+    if hg_gryffCheer_OBJ.purchased or hg_slythCheer_OBJ.purchased or hg_powerGirl_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -1812,23 +1812,23 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     jump too_much
                 call her_main("As what?","body_10")
                 menu:
-                    "-A Cheerleader-" if "gryffindor_cheerleader" in outfit_inventory:
+                    "-A Cheerleader-" if hg_gryffCheer_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(2)
+                        call set_hermione_outfit(hg_gryffCheer_OBJ)
                         pass
-                    "-A Slytherin Cheerleader-" if "slytherin_cheerleader" in outfit_inventory:
+                    "-A Slytherin Cheerleader-" if hg_slythCheer_OBJ.purchased:
                         her "Fine, let me go change."
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(3)
+                        call set_hermione_outfit(hg_slythCheer_OBJ)
                         pass
-                    "-Power girl-" if "power_girl" in outfit_inventory:
+                    "-Power girl-" if hg_powerGirl_OBJ.purchased:
                         call her_main("In that ridiculous costume?","body_30")
                         m "It's not that bad. It has a nice cape."
                         call her_main("...","body_34")
                         call her_main("Fine, let me go change.","body_33")
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        call set_hermione_outfit(7)
+                        call set_hermione_outfit(hg_powerGirl_OBJ)
                         pass
                 call her_main(xpos=120)
                 pause
@@ -2793,7 +2793,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         "\"(Not right now.)\"":
             jump silver_requests
 
-    if "heart_dancer" in outfit_inventory:
+    if hg_heartDancer_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -2806,7 +2806,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(4)
+                    call set_hermione_outfit(hg_heartDancer_OBJ)
                     pass
                 else:
                     jump too_much
@@ -4757,7 +4757,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if "christmas_costume" in outfit_inventory:
+    if hg_christmas_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -4770,7 +4770,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                     call her_main("...","body_58")
                     call her_main("Fine, let me go wrap myself.","body_59")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(11)
+                    call set_hermione_outfit(hg_christmas_OBJ)
                     pass
                 else:
                     jump too_much
@@ -5303,7 +5303,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if "gryffindor_cheerleader" in outfit_inventory:
+    if hg_gryffCheer_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -5316,7 +5316,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                     call her_main("...","body_44")
                     call her_main("Fine, at least it's gryffindor.","body_29")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(2)
+                    call set_hermione_outfit(hg_gryffCheer_OBJ)
                     pass
                 else:
                     jump too_much
@@ -6469,7 +6469,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if "slytherin_cheerleader" in outfit_inventory:
+    if hg_slythCheer_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -6482,7 +6482,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     call her_main("...","body_34")
                     call her_main("Fine, let me go change.","body_33")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(3)
+                    call set_hermione_outfit(hg_slythCheer_OBJ)
                     pass
                 else:
                     jump too_much
@@ -7807,7 +7807,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if "lara_croft" in outfit_inventory:
+    if hg_laraCroft_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -7820,7 +7820,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                     call her_main("...","body_73")
                     call her_main("Whatever, let me go change.","body_82")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(12)
+                    call set_hermione_outfit(hg_laraCroft_OBJ)
                     pass
                 else:
                     jump too_much
@@ -8469,7 +8469,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         "\"(Not right now.)\"":
             jump silver_requests
     
-    if "ball_dress" in outfit_inventory:
+    if hg_ballDress_OBJ.purchased:
         m "\"(Should I ask her to dress up?)\""
         menu:
             "\"(Yes, let's do it!)\"":
@@ -8483,7 +8483,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     call her_main("Of course","body_119")
                     call her_main("Let me go try it on!","body_188")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                    call set_hermione_outfit(10)
+                    call set_hermione_outfit(hg_ballDress_OBJ)
                     pass
                 else:
                     jump too_much

@@ -302,8 +302,7 @@ label __init_variables:
     $ her_chibi_dance_xpos = 210
     $ her_chibi_dance_ypos = 180
     
-    
-    $ hermione_chibi_zorder = 5
+    $ hermione_chibi_zorder = 3
     
     $ s_head_xpos = 330
     $ s_head_ypos = 380

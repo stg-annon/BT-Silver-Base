@@ -13,15 +13,6 @@ label cheats_ht:
                     $ whoring = 22
                     "Hermione is now a giant slut"
                     jump cheats_ht_hermione
-                "-Reset Clothing Scenes-":
-                    $ request_jeans = False
-                    $ hermione_dribble = False
-                    $ request_gryyf_stockings = False
-                    $ dribble_equippable = False
-                    $ hermione_wetpanties = False
-                    $ wetpanties_equippable = False
-                    "Clothing scenes reset! Try equipping the jeans or gryffindor stockings at various whoring levels"
-                    jump cheats_ht_hermione
                     
                 "-Increase Whoring-":
                     $ whoring += 1
@@ -35,6 +26,21 @@ label cheats_ht:
                     $ force_unlock_pub_favors = True
                     $ lock_public_favors = False
                     "Public favours unlocked!"
+                    jump cheats_ht_hermione
+                "-Add all costumes-":
+                    python:
+                        for i in hermione_outfits_list:
+                            i.purchased = True
+                    "All of hermioine's costumes have been unlocked"
+                    jump cheats_ht
+                "-Reset Clothing Scenes-":
+                    $ request_jeans = False
+                    $ hermione_dribble = False
+                    $ request_gryyf_stockings = False
+                    $ dribble_equippable = False
+                    $ hermione_wetpanties = False
+                    $ wetpanties_equippable = False
+                    "Clothing scenes reset! Try equipping the jeans or gryffindor stockings at various whoring levels"
                     jump cheats_ht_hermione
                 "-back-":
                     jump cheats_ht
@@ -61,10 +67,6 @@ label cheats_ht:
                     jump cheats_ht
         "-Add all potions-":
             $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion"] #all potions
-            jump cheats_ht
-        "-Add all costumes-":
-            $ outfit_inventory = ["gryffindor_cheerleader","slytherin_cheerleader","maid","silk_nightgown","ball_dress","ms_marvel","heart_dancer","power_girl","harley_quinn","christmas_costume","lara_croft","pirate"]#for testing only
-            "All of hermioine's costumes have been unlocked"
             jump cheats_ht
         "-Gold (+50,000g)-":
             $ gold += 50000

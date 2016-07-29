@@ -137,27 +137,21 @@ screen wardrobe_costumes:
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
-        for i in range(0,6):
-            if clothes_store_inv[i+1] in outfit_inventory:
-                hotspot ((21+(90*i)), 140, 83, 85):
-                    #unhovered [SetVariable("wardrobe_costume_selection",0),Jump("wardrobe_costume_preview")]
-                    #hovered [SetVariable("wardrobe_costume_selection",i+1),Jump("wardrobe_costume_preview")]
-                    clicked [SetVariable("wardrobe_costume_selection",i+1),Jump("wardrobe_wear_costume")]
-        for i in range(0,6):
-            if clothes_store_inv[i+1] in outfit_inventory:
-                hotspot ((21+(90*i)), 232, 83, 85):
-                    #unhovered [SetVariable("wardrobe_costume_selection",0),Jump("wardrobe_costume_preview")]
-                    #hovered [SetVariable("wardrobe_costume_selection",i+7),Jump("wardrobe_costume_preview")]
-                    clicked [SetVariable("wardrobe_costume_selection",i+7),Jump("wardrobe_wear_costume")]
+        $ hg_purchased_outfits = []
+        for i in hermione_outfits_list:
+            if i.purchased:
+                $ hg_purchased_outfits.append(i)
         
-        hotspot (471, 508, 83, 85) clicked [SetVariable("wardrobe_costume_selection",0),Jump("wardrobe_wear_costume")]
+        $ index = 0
+        for i in range(0,5):
+            for j in range(0,6):
+                if index < len(hg_purchased_outfits):
+                    hotspot ((21+(90*j)), (140+(92*i)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]),Jump("wardrobe_wear_costume")]
+                    add hg_purchased_outfits[index].getStoreImage() xpos (13+(90*j)) ypos (116+(92*i)) zoom 0.18
+                    $ index = index+1
         
-        for i in range(0,6):
-            add "01_hp/23_clothes_store/cs_gui/"+str(i+1)+".png" xpos 13+(90*i) ypos 116 zoom 0.18
-        for i in range(0,6):
-            add "01_hp/23_clothes_store/cs_gui/"+str(i+7)+".png" xpos 13+(90*i) ypos 208 zoom 0.18
-            
-        add "01_hp/23_clothes_store/cs_gui/0.png" xpos 463 ypos 484 zoom 0.18
+        hotspot (471, 508, 83, 85) clicked [SetVariable("wardrobe_costume_selection",None),Jump("wardrobe_wear_costume")]
+        add "01_hp/23_clothes_store/cs_gui/uniform.png" xpos 463 ypos 484 zoom 0.18
             
         text "Hair" xpos 45 ypos 100 size 15 
         text "Uniform" xpos 115 ypos 100 size 15
@@ -171,7 +165,9 @@ label wardrobe_costume_preview:
     call screen wardrobe_costumes
 
 label wardrobe_wear_costume:
-    call set_h_costume(wardrobe_costume_selection)
+    hide screen hermione_main
+    call h_outfit_OBJ(wardrobe_costume_selection)
+    show screen hermione_main
     hide screen wardrobe_costumes
     call screen wardrobe_costumes
     
@@ -222,12 +218,12 @@ screen wardrobe_gifts:
             add "01_hp/13_characters/hermione/accessories/collars/collar_0.png" xpos 255 ypos 350 zoom 0.8
         else:
             add "01_hp/13_characters/hermione/accessories/collars/collar_5.png" xpos 255 ypos 350 zoom 0.8 
-        #Dress 
-        if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
-            hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
-            add "01_hp/23_clothes_store/cs_gui/10.png" xpos 13+(90*4) ypos 484 zoom 0.18
-        else:
-            add "01_hp/23_clothes_store/cs_gui/10b.png" xpos 13+(90*4) ypos 484 zoom 0.18
+        # #Dress 
+        # if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
+            # hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
+            # add "01_hp/23_clothes_store/cs_gui/10.png" xpos 13+(90*4) ypos 484 zoom 0.18
+        # else:
+            # add "01_hp/23_clothes_store/cs_gui/10b.png" xpos 13+(90*4) ypos 484 zoom 0.18
             
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
