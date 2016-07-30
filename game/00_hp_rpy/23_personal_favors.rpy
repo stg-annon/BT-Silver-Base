@@ -467,7 +467,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         pause
     
     call reset_hermione_main
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ skirt_up = False
     show screen hermione_blink #Hermione stands still.
     with fade
@@ -720,7 +720,7 @@ label hg_pf_BreastMolester:
     hide screen chair_02 #Genie's chair.
     show screen genie
     show screen hermione_stand #Hermione stands still.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
 
     stop music fadeout 1.0
     ">You let go of Hermione's breasts..."
@@ -1743,7 +1743,7 @@ label hg_pf_ButtMolester:
     $ hg_pf_ButtMolester_OBJ.points += 1
    
    
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     hide screen blkfade
@@ -2081,7 +2081,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_chibi_xpos = 400 #Near the desk.
+                $ hermione_chibi_xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2137,7 +2137,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_chibi_xpos = 400 #Near the desk.
+                $ hermione_chibi_xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2225,7 +2225,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_chibi_xpos = 400 #Near the desk.
+                $ hermione_chibi_xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2292,7 +2292,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             hide screen blktone
             show screen genie
             show screen bld1
-            $ hermione_chibi_xpos = 400 #Near the desk.
+            $ hermione_chibi_xpos = 500 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             with d5
 
@@ -2708,7 +2708,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         m "The \"Gryffindor\" house gets [current_payout] points!"
     stop music fadeout 10.0
    
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     hide screen blkfade
@@ -3310,7 +3310,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         stop music fadeout 2.0
         call her_head("Can I just get my points now, please?","body_34")
         pause.1
-        $ hermione_chibi_xpos = 400 #Near the desk.
+        $ hermione_chibi_xpos = 500 #Near the desk.
         $ hermione_chibi_ypos = 250 #Default: 250. Another number is 180
         show screen hermione_blink #Hermione stands still.
             
@@ -3939,7 +3939,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen ctc
                                         hide screen s_c_u
                                         hide screen h_c_u
-                                        $ hermione_chibi_xpos = 400 #Near the desk.
+                                        $ hermione_chibi_xpos = 500 #Near the desk.
                                         $ hermione_chibi_ypos = 250 #Default: 250
                                         show screen hermione_blink #Hermione stands still.
                                         ">You watch Snape with his dick still hanging out and the cum-covered Hermione argue loudly about her imaginary grade."
@@ -4571,7 +4571,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                             hide screen desk_02
                                                             show screen genie
                                                             show screen bld1
-                                                            $ hermione_chibi_xpos = 400 #Near the desk.
+                                                            $ hermione_chibi_xpos = 500 #Near the desk.
                                                             $ hermione_chibi_ypos = 250 #Default: 250
                                                             show screen hermione_blink #Hermione stands still.
                                                             pause.1
@@ -4698,7 +4698,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -5232,7 +5232,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -6335,7 +6335,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -6489,7 +6489,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             "\"(Not right now.)\"":
                 pass
     
-    call set_u_ani("blowjob_ani","hand_ani",-150,10)
+    call set_u_ani("blowjob_ani","hand_ani",0,10)
     $ hermione_head_ypos = her_head_tits
     $ mouth_full_of_cum = False
     
@@ -7745,7 +7745,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -8414,7 +8414,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -9096,7 +9096,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -9253,7 +9253,7 @@ label hg_pf_TheGamble:
     with fade
     hide screen desk_03
     hide screen g_c_u
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen genie
     
@@ -9421,7 +9421,7 @@ label hg_pf_TheGamble_complete:
         # show screen hermione_walk_01 
         # with d4
         # pause 2.1
-        # $ hermione_chibi_xpos = 400 #Near the desk.
+        # $ hermione_chibi_xpos = 500 #Near the desk.
         # show screen hermione_blink #Hermione stands still.
         # with d3
         ">Hermione enters. She does not look happy"
@@ -9749,7 +9749,7 @@ label hg_pf_TheGamble_complete:
     #after daytime menu
         
     label hg_pf_TheGamble_MySlave_n:
-        #$ hermione_chibi_xpos = 400 #Near the desk.
+        #$ hermione_chibi_xpos = 500 #Near the desk.
         #$ hermione_chibi_ypos
         #show screen hermione_blink #Hermione stands still.
         #hide screen blkfade

@@ -175,6 +175,12 @@ label __init_variables:
     $ hg_ps_WearMyCum_OBJ.menu_text = "Wear My Cum"
     $ hg_ps_WearMyCum_OBJ.start_label = "hg_ps_WearMyCum"
     $ hg_ps_WearMyCum_OBJ.complete_label = "hg_ps_WearMyCum_complete"
+
+    if not hasattr(renpy.store,'hg_ps_HiddenBlowjob_OBJ'): #important!
+        $ hg_ps_HiddenBlowjob_OBJ = public_shaming()
+    $ hg_ps_HiddenBlowjob_OBJ.menu_text = "Hidden Blowjob"
+    $ hg_ps_HiddenBlowjob_OBJ.start_label = "hg_ps_HiddenBlowjob"
+    $ hg_ps_HiddenBlowjob_OBJ.complete_label = "hg_ps_HiddenBlowjob_complete"
     
     if not hasattr(renpy.store,'hg_ps_LeashWalk_OBJ'): #important!
         $ hg_ps_LeashWalk_OBJ = public_shaming()
@@ -187,6 +193,7 @@ label __init_variables:
     $ hg_ps_list.append(hg_ps_PantyThief_OBJ)
     #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
     $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
+    $ hg_ps_list.append(hg_ps_HiddenBlowjob_OBJ)
     #$ hg_ps_list.append(hg_ps_LeashWalk_OBJ)
     return
     

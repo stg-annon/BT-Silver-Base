@@ -10,7 +10,7 @@ label cheats_ht:
                     "Hermione is no longer mad at you."
                     jump cheats_ht_hermione
                 "-Max Whoring-":
-                    $ whoring = 22
+                    $ whoring = 24
                     "Hermione is now a giant slut"
                     jump cheats_ht_hermione
                     

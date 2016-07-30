@@ -128,7 +128,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     show screen genie
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     
@@ -309,7 +309,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
 label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(610,400,3)
+    call her_walk(710,500,3)
     
     show screen hermione_blink #Hermione stands still.
     pause.5
@@ -458,7 +458,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
     show screen genie
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     
@@ -565,7 +565,7 @@ label hg_ps_WearMyCum_Scene_1:
     hide screen hermione_main            
     hide screen bld1
     with d3
-    $ walk_xpos=400 #Animation of walking chibi. (From)
+    $ walk_xpos=500 #Animation of walking chibi. (From)
     $ walk_xpos2=280 #Coordinates of it's movement. (To)
     $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
     show screen hermione_walk_01 
@@ -764,7 +764,7 @@ label hg_ps_WearMyCum_Scene_1:
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_chibi_xpos = 500 #Near the desk.
     $ hermione_chibi_ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -880,8 +880,11 @@ label hg_ps_WearMyCum_complete_3:
 #Three variants, each with a differing level of exhibitionism
 #1 Hermione is as silent as possible, Luna almost completely unaware
 #2 Hermione quite loud, Luna actively aware that something is wrong
-#3 Hermione crawls out from under the desk covered in Genie's cum trying to pass it off to Luna as 
+#3 Hermione crawls out from under the desk covered in Genie's cum trying to pass it off
 label hg_ps_HiddenBlowjob:
 
 
+
+
+label hg_ps_HiddenBlowjob_complete:
 
