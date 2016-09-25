@@ -882,9 +882,19 @@ label hg_ps_WearMyCum_complete_3:
 #2 Hermione quite loud, Luna actively aware that something is wrong
 #3 Hermione crawls out from under the desk covered in Genie's cum trying to pass it off
 label hg_ps_HiddenBlowjob:
+    jump hg_ps_HiddenBlowjob_1
 
+
+label hg_ps_HiddenBlowjob_1:
+    her ""
 
 
 
 label hg_ps_HiddenBlowjob_complete:
+    jump hg_ps_HiddenBlowjob_complete_1
+
+
+label hg_ps_HiddenBlowjob_complete_1:
+
+
 
