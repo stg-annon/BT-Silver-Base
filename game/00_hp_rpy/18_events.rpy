@@ -843,12 +843,12 @@ label event_07:
     sna "Last night I gave our little.... conundrum some thought."
     sna "And I think I came up with a solution..."
     m "Really? Great! I'm listening."
-    hide screen snape_main                                                                                                                                  #SNAPE
-    with d3                                                                                                                                                                  #SNAPE
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite. Right - 300  # 120 - center.          #SNAPE
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"                                                                               #SNAPE
-    show screen snape_main                                                                                                                                #SNAPE
-    with d3                                                                                                                                                                  #SNAPE
+    hide screen snape_main
+    with d3
+    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
+    $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"
+    show screen snape_main
+    with d3
     sna "Let's just roll with it..."
     m "Excuse me?"
     call sna_main("Well what else could we do?","snape_06")
@@ -1016,8 +1016,8 @@ label event_08:
 
 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 610
-    $ hermione_chibi_ypos = 250
+    $ hermione_SC.chibi.xpos = 770
+    $ hermione_SC.chibi.ypos = 250
     show screen hermione_blink #Hermione stands still.
     with Dissolve(.5)
     pause.3
@@ -1751,7 +1751,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     show screen hermione_walk_01 
     with d4
     pause 2.5
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     pause.5
     show screen bld1
@@ -1844,7 +1844,7 @@ label event_11:
     show screen hermione_chibi_robe #Hermione. Chibi. Walking. Wearing a robe.
     with d4
     pause 1.8
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     #show screen hermione_blink #Hermione stands still.
     show screen hermione_02_b #Hermione stands still wearing a robe.
     show screen bld1
@@ -1939,19 +1939,12 @@ label event_11:
 #Hermione complains that she might have failed a test. (EVENING EVENT!)
 label event_12:
     #"EVENT_12"
-    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    
-    $ walk_xpos=570 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.1 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.8
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    call her_walk(610,400,3)
     show screen hermione_blink #Hermione stands still.
     with d3
+    
+    play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     her "Professor! I need to talk to you!"
     m "(So She doesn't even bother to knock anymore?)"
     show screen bld1
@@ -2020,28 +2013,12 @@ label event_12:
 label event_13: 
     #"EVENT_13"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    
-    $ walk_xpos=570 #Animation of walking chibi. (From)
-    $ walk_xpos2=500 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.3
-    $ hermione_chibi_xpos = 500 #Near the desk.
+    call her_walk(610,400,3)
     show screen hermione_blink #Hermione stands still.
     with d3
+    
     her "....................."
     m "???"
-    
-    $ walk_xpos=500 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
-    show screen hermione_walk_01 
-    hide screen hermione_blink #Hermione stands still.
-    pause 1.8
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    with d3
     her "............"
     m "Miss Granger?" 
     her "..............................."
@@ -2068,9 +2045,8 @@ label event_13:
     hide screen hermione_main
     with Dissolve(.3)
     
-    
     $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    $ walk_xpos2=610+140 #Coordinates of it's movement. (To)
     $ hermione_speed = 01.0 #The speed of moving the walking animation across the screen.
     hide screen bld1
     with d3
@@ -2091,7 +2067,7 @@ label event_13:
     
     
 #    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-#    $ hermione_chibi_xpos = 400 #Middle of the room.
+#    $ hermione_SC.chibi.xpos = 400 #Middle of the room.
 #    show screen hermione_stand_f #Hermione stands still.
 #    with d3
 #    her "................."
@@ -2102,7 +2078,7 @@ label event_13:
 #    pause 2
 #    hide screen hermione_walk_01_f 
 #    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-#    $ hermione_chibi_xpos = 500 #Middle of the room.
+#    $ hermione_SC.chibi.xpos = 500 #Middle of the room.
 #    show screen hermione_stand_f #Hermione stands still.
 #    with Dissolve(.3)
 #    her "................"
@@ -2138,7 +2114,7 @@ label event_14:
     show screen hermione_walk_01 
     with d4
     pause 1.8
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     with d3
     show screen bld1
@@ -2282,23 +2258,12 @@ label event_15:
             m "............................."
             her "Professor, I'm coming in..."
             m "{size=-4}(Crap!){/size}"
-
-   
-    $ walk_xpos=610 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 2.5
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    pause.5
-    show screen bld1
-    with Dissolve(.3)
     
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(610,400,3)
     show screen hermione_blink
     with d3
+    
     call her_main("Good evening, professor...","body_13",xpos=370,ypos=0)
     her "........................"
     call her_main("........................","body_29")
@@ -2608,7 +2573,12 @@ label event_15:
     jump day_start
     
     
-    
+init python:
+    class wt_silver_event(object):
+        day_wait = 0
+        completed = False
+        
+        
     
     
     

@@ -764,8 +764,8 @@ label hg_ps_WearMyCum_Scene_1:
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    $ hermione_chibi_ypos = 250 #Default: 250
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
     hide screen blkfade

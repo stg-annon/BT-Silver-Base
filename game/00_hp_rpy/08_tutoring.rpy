@@ -496,7 +496,7 @@ label tutoring:
     her "I am, Professor.  I…I really do feel something wonderful.  Would it be okay to move it faster?  I don’t want to cause a problem…"
     m "No, no.  Move it at whatever speed you think is optimizing the energy transfer you feel."
     hide screen hermione_02_wSlow
-    $hermione_chibi_ypos = 247
+    $hermione_SC.chibi.ypos = 247
     show screen hermione_02_wFast
     her "........."
     her "Oh..."
@@ -517,7 +517,7 @@ label tutoring:
     m "............."
     her "You (huh huh)....you can (hah huh hah)....you can open your..(swallow)..eyes now, I think.  (huh huhhh)"
     hide screen hermione_02_wf1
-    $hermione_chibi_ypos = 250
+    $hermione_SC.chibi.ypos = 250
     show screen hermione_02_wf2
     m "Well, Miss Granger, do you think that was a success?"
     her "Oh, heavens yes!  I never thought my wand could do something like that...I mean, store all that energy!  "

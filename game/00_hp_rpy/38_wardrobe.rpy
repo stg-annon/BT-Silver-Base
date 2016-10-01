@@ -1,4 +1,5 @@
 screen wardrobe:
+    $ hermione_SC.xpos=550
     
     tag wardrobe_menu
     zorder hermione_main_zorder-1
@@ -59,7 +60,17 @@ screen wardrobe_hair:
         text "Underwear" xpos 370 ypos 100 size 15
         text "Gifts" xpos 480 ypos 100 size 15
     
-label change_hair():
+    
+label change_hair:
+    #call her_main("Sure, let me just go change it.","body_01")
+    $ hermione_SC.setHair(wardrobe_hair_style,wardrobe_hair_color)
+    hide screen wardrobe_hair
+    call screen wardrobe_hair
+
+    
+    
+    
+label change_hair_old():
     call her_main("Sure, let me just go change it.","body_01")
     call set_h_hair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
@@ -70,7 +81,7 @@ screen wardrobe_uniform:
     tag wardrobe_menu
     zorder hermione_main_zorder-1
     
-    $ list = ["skirt_1","skirt_1_B","skirt_1_G","skirt_1_R","skirt_1_Y","jeans_long","jeans_short"]
+    $ list = ["1","color/blue/1","color/green/1","color/red/1","color/yellow/1"]
     $ y_pos = 13
     
     imagemap:
@@ -96,7 +107,7 @@ screen wardrobe_uniform:
             hotspot ((21+(90*(i%6))), (140+(92*int(i/6))), 83, 85) clicked [SetVariable("wardrobe_uniform_selection",list[i]),Jump("change_uniform")]
         
         for i in range(0,len(list)):
-            add "01_hp/13_characters/hermione/clothes/uniform/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
+            add "01_hp/13_characters/hermione/clothes/uniform/bot/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
             if i != 0 and (i % 5) == 0:
                 $ y_pos += 100
             
@@ -160,11 +171,15 @@ screen wardrobe_costumes:
         text "Underwear" xpos 370 ypos 100 size 15
         text "Gifts" xpos 480 ypos 100 size 15
     
-label wardrobe_costume_preview:
-    call h_outfit_OBJ(wardrobe_costume_selection)
-    call screen wardrobe_costumes
-
+    
 label wardrobe_wear_costume:
+    hide screen hermione_main
+    $ renpy.show_screen(hermione_SC.main_screen)
+    $ hermione_SC.setOutfit(wardrobe_costume_selection)
+    hide screen wardrobe_costumes
+    call screen wardrobe_costumes
+    
+label wardrobe_wear_costume_old:
     hide screen hermione_main
     call h_outfit_OBJ(wardrobe_costume_selection)
     show screen hermione_main

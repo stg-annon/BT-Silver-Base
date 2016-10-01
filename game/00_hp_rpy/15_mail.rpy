@@ -1,3 +1,45 @@
+init python:
+    
+    class deliveryItem(object):
+        object = None
+        transit_time = 0
+        quantity=1
+        type = ''
+        
+        def __init__(self, object,transit_time,quantity,type):
+            self.object = object
+            self.transit_time = transit_time
+            self.quantity = quantity
+            self.type = type
+        
+    class deliveryQueue(object):
+        queue = []
+        max_wait = 15
+        
+        def send(self, item, transit_time, quantity, type):
+            if transit_time > self.max_wait:
+                transit_time = self.max_wait
+            self.queue.append(deliveryItem(item, transit_time, quantity, type))
+        
+        def got_mail(self):
+            for i in self.queue:
+                i.transit_time -= 1
+            for i in self.queue:
+                if i.transit_time <= 0:
+                    return True
+            return False
+        
+        def get_mail(self):
+            delivery = []
+            for i in self.queue:
+                if i.transit_time <= 0:
+                    delivery.append(i)
+            for i in delivery:
+                self.queue.remove(i)
+            return delivery
+    
+    deliveryQ = deliveryQueue()
+    
 label mail:
     if finished_report >= 1:
         $ letters -= 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
@@ -205,9 +247,27 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
 
 
 
-
-
-
+label get_package:
+    python:
+        for item in deliveryQ.get_mail():
+            if item.type == 'Gift':
+                gift = item.object
+                gift_item_inv[gift.id] += item.quantity
+                the_gift = gift.image
+                renpy.show_screen("gift")
+                renpy.with_statement(Dissolve(0.3))
+                if item.quantity > 1:
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name)+"'s")
+                else:
+                    renpy.say(None,"You received "+str(item.quantity)+" "+str(gift.name))
+                renpy.hide_screen("gift")
+                renpy.with_statement(Dissolve(0.3))
+            
+            if item.type == 'Event_item':
+                pass
+               
+    $ package_is_here = False
+    call screen main_menu_01
     
 label mail_02: #Packages only. <=====================================================================### PACKAGES ###=================================================== 
     

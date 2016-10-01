@@ -1,4 +1,133 @@
+init python:
+    
+    class hermione_character_face(silver_character_face):
+        description = ""
+        id = 0
+        
+        eyes = ""
+        eye_color = ""
+        nose = ""
+        cheeks = ""
+        mouth = ""
+        lipstick = ""
+        tears = ""
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+    
+        def getLayers(self, parent):
+            layers = []
+            if self.cheeks != "":
+                layers.append(parent.root+"body/face/cheeks/"+self.cheeks)
+            if self.nose != "":
+                layers.append(parent.root+"body/face/nose/"+self.nose)
+            if self.mouth != "":
+                layers.append(parent.root+"body/face/mouth/"+self.lipstick+"/"+self.mouth)
+            if self.eyes != "":
+                layers.append(parent.root+"body/face/eyes/"+self.eye_color+"/"+self.eyes)
+            if self.tears != "":
+                layers.append(parent.root+"body/face/tears/"+self.tears)
+            return layers
+    
+    class hermione_character_chibi(silver_character_chibi):
+        level_ref = [
+        ["01_hp/16_hermione_chibi/walk/h_walk_n_01.png","ch_hem blink_n","ch_hem blink_n_flip","ch_hem walk_n","ch_hem walk_n_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_a_01.png","ch_hem blink_a","ch_hem blink_a_flip","ch_hem walk_a","ch_hem walk_a_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_d_01.png","ch_hem blink_d","ch_hem blink_d_flip","ch_hem walk_d","ch_hem walk_d_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_e_01.png","ch_hem blink_e","ch_hem blink_e_flip","ch_hem walk_e","ch_hem walk_e_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_f_01.png","ch_hem blink_f","ch_hem blink_f_flip","ch_hem walk_f","ch_hem walk_f_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_g_01.png","ch_hem blink_g","ch_hem blink_g_flip","ch_hem walk_g","ch_hem walk_g_flip"],
+        ["01_hp/16_hermione_chibi/walk/h_walk_h_01.png","ch_hem blink_h","ch_hem blink_h_flip","ch_hem walk_h","ch_hem walk_h_flip"]
+        ]
+        
+        def setLevel(self, level):
+            if level >= 0 and level < len(self.level_ref):
+                self.stand_img = self.level_ref[level][0]
+                self.blink_img = self.level_ref[level][1]
+                self.blink_img_f = self.level_ref[level][2]
+                self.walk_img = self.level_ref[level][3]
+                self.walk_img_f = self.level_ref[level][4]
+    
+    class hermione_character_uniform(sliver_character_uniform):
+        level_ref = [["",""],[1,1],[2,1],[3,2],[4,3],[5,4],[6,4]]
+        
+        bot_color = ""
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def setLevel(self, level):
+            if level >= 0 and level < len(self.level_ref):
+                self.top = self.level_ref[level][0]
+                self.bot = self.level_ref[level][1]
+        
+        def getLayers(self, parent):
+            layers = []
+            if self.panties != "" and self.wear_panties and not self.wear_bot:
+                layers.append(parent.root+"clothes/underwear/"+self.panties)
+            if self.bra != "" and self.wear_bra and not self.wear_top:
+                layers.append(parent.root+"clothes/underwear/"+self.bra)
+            if self.bot != "" and self.wear_bot:
+                layers.append(parent.root+"clothes/uniform/bot/"+self.bot_color+str(self.bot)+".png")
+            if self.top != "" and self.wear_top:
+                layers.append(parent.root+"clothes/uniform/top/"+str(self.top)+".png")
+            return layers
+    
+
 label __init_variables:
+    
+    $ reset_char_obj = True
+    if not hasattr(renpy.store,'hermione_SC') or reset_char_obj: #important!
+        $ hermione_SC = silver_character(
+            root = "01_hp/13_characters/hermione/",
+            
+            name = "Hermione Granger",
+            pet_name = "Miss Granger",
+            genie_name = "Professor",
+            
+            main_screen = "test_herm_obj",
+            head_screen = "test_herm_head_obj",
+            
+            chibi = hermione_character_chibi(
+                stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png",
+                blink_img = "ch_hem blink_a",
+                blink_img_f = "ch_hem blink_a_flip",
+                walk_img = "ch_hem walk_a",
+                walk_img_f = "ch_hem walk_a_flip",
+            ),
+        
+            char_ref = her,
+        
+            xpos = 370,
+            ypos = 0,
+            
+            body = sliver_character_body(
+                head = sliver_character_head(
+                    expression = None,
+                    base = "hermione_base.png",
+                    hair = "A_1.png",
+                    cheeks = "",
+                    glasses = ""
+                ),
+                left_arm = "left_1.png",
+                right_arm = "right_1.png",
+                torso = "torso.png",
+                torso_pressed = "torso_pressed.png",
+                abdomen = "abdomen.png",
+                legs = "legs_1.png"
+                
+            ),
+            
+            uniform = hermione_character_uniform(
+                top = 1,
+                bot = 1,
+                panties = "base_panties_1.png",
+                bra = "base_bra_white_1.png",
+            ),
+            acc = ""
+        )
+    $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
+    $ hermione_SC.setFace(0)
     
     $ h_whoring = 0
     $ h_reputation = 21
@@ -174,7 +303,7 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
     show screen hermione_main
     with d1
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" or "[hermione_name]" in text:
+        if "[tmp_name]" in text or "[genie_name]" in text or "[hermione_name]" in text:
             if "[tmp_name]" in text:
                 $ text = text.replace("[tmp_name]",tmp_name)
             if "[genie_name]" in text:

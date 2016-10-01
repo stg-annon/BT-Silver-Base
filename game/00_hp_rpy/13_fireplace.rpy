@@ -22,7 +22,8 @@ label fireplace:
             
             
             
-            
+        ">>>>TEST CHAR OBJ's<<<<":
+            jump test_char_objs
             
         "-Get the fire going-" if not fire_in_fireplace and not day == 1:
             #$ renpy.play('sounds/fire01.ogg')  

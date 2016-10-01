@@ -152,8 +152,8 @@ label petting:
                     faw "Maverick's not an artist"
                     g4 "No shit"
                     hide screen hermione_01
-                    $ hermione_chibi_xpos=400
-                    $ hermione_chibi_ypos=240
+                    $ hermione_SC.chibi.xpos=400
+                    $ hermione_SC.chibi.ypos=240
                     show screen hermione_02_b
                     call ce_her_main("","fawkes_5")
                     show screen ctc
@@ -319,8 +319,8 @@ label talkingfawkes:
             show screen hermione_chibi_robe
             pause 2
             hide screen hermione_chibi_robe
-            $ hermione_chibi_xpos=400
-            $ hermione_chibi_ypos=240
+            $ hermione_SC.chibi.xpos=400
+            $ hermione_SC.chibi.ypos=240
             show screen hermione_02_b
             $ tmp_robe = hermione_wear_robe
             $ hermione_wear_robe = True

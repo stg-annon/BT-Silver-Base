@@ -274,8 +274,8 @@ label want_to_rule:
                     $ wear_shirts = False
                     $ wear_skirts = False
                     
-                    $ hermione_chibi_xpos = 310 # Default 360
-                    #$ hermione_chibi_ypos = 210
+                    $ hermione_SC.chibi.xpos = 310 # Default 360
+                    #$ hermione_SC.chibi.ypos = 210
                     $  h_c_u_pic = "01_hp/16_hermione_chibi/01.png" #Hermione naked. 
                     show screen h_c_u 
                     
@@ -286,7 +286,7 @@ label want_to_rule:
                     hide screen ctc
                     
                     
-                    #add h_c_u_pic at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
+                    #add h_c_u_pic at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
                     g9 "Ni-i-i-ce!"
                     call her_main("","body_105")
                     show screen ctc
@@ -363,7 +363,7 @@ label want_to_rule:
                     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.             
                     
-    $ hermione_chibi_xpos = 360 # Default 360
+    $ hermione_SC.chibi.xpos = 360 # Default 360
     show screen hermione_blink #Hermione stands still.
     hide screen blkfade
     with d5
@@ -807,8 +807,8 @@ label giving_thre_dress:
    
 
     
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    $ hermione_chibi_ypos = 250 #Default: 250
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
     hide screen blkfade

@@ -83,7 +83,7 @@ screen main_menu_01:
                 hover "01_hp/05_props/owl_06_2.png"
                 #hovered [Show("gui_tooltip", my_picture="hoot", my_tt_xpos=250, my_tt_ypos=180) ] 
                 #unhovered [Hide("gui_tooltip")]
-                action [Hide("main_menu_01"), Hide("package"), Jump("mail_02")]
+                action [Hide("main_menu_01"), Hide("package"), Jump("get_package")]
 
 
     imagebutton: # GENIE
@@ -244,19 +244,19 @@ screen her_wand_slow:  # Hermione rubs wand slowly
 #################################################################
 screen hermione_02_w: #Hermione stands still wearing a robe.
     tag hermione
-    add "01_hp/08_animation_02/h_Wand_01s.png" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "01_hp/08_animation_02/h_Wand_01s.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 screen hermione_02_wSlow: #Hermione rubs wand between her legs slowly.
     tag hermione
-    add "rub_wand_slow_ani" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "rub_wand_slow_ani" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 screen hermione_02_wFast: #Hermione rubs wand between her legs quickly.
     tag hermione
-    add "rub_wand_fast_ani" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "rub_wand_fast_ani" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 screen hermione_02_wf1: #Hermione finishes rubbing the wand - eyes closed.
     tag hermione
-    add "01_hp/08_animation_02/h_Wand_01f.png" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "01_hp/08_animation_02/h_Wand_01f.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 screen hermione_02_wf2: #Hermione finishes rubbing the wand - eyes opened. 
     tag hermione
-    add "01_hp/08_animation_02/h_Wand_02s.png" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "01_hp/08_animation_02/h_Wand_02s.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 ##################################################################
 screen paperwork: #GENIE DOING PAPERWORK BEHIND HIS DESK.
     add "paperwork_02" xpos 84+140 ypos 205
@@ -457,17 +457,17 @@ screen luna_02_b: #Luna stands still wearing a robe.
 
 screen hermione_01: #Hermione stands still.
     tag hermione_chibi
-    add hermione_chibi_stand at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add hermione_chibi_stand at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
     zorder hermione_chibi_zorder
 
 screen hermione_01_f: #Hermione stands still. (MIRRORED)
     tag hermione_chibi
-    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
     zorder hermione_chibi_zorder
 
 screen hermione_02: #Hermione stands still and blinks.
     tag hermione_chibi
-    add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add hermione_chibi_blink at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
     zorder hermione_chibi_zorder
     
 screen hermione_walk_01:
@@ -503,7 +503,7 @@ screen hermione_chibi_robe_f: #Hermione. Chibi. Walking. Wearing a robe.
     
 screen hermione_02_b: #Hermione stands still wearing a robe.
     tag hermione_chibi
-    add "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png" at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png" at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
     
 screen hermione_03: #Hermione lifts her skirt
     tag hermione_chibi
@@ -521,7 +521,9 @@ screen hermione_04_b: #Hermione lifts her shirt. Showing tits. CLOSER TO THE DES
     tag hermione_chibi
     add "01_hp/16_hermione_chibi/tits_00.png" at Position(xpos=250+140, ypos=190)
 
-
+screen universal_walk:
+    tag chibi_walk
+    add universal_walk_image at universal_chibi_walk(u_walk_x, u_walk_x2, u_walk_speed, u_walk_y)
     
     
 ### GENIE CHIBI ###
@@ -2033,7 +2035,7 @@ screen no_shirt_no_skirt_dance: #Hermione stands still.
 ### HERMIONE CHIBI UNIVERSAL SCREEN ###
 screen h_c_u: 
     tag hermione_chibi
-    add h_c_u_pic at Position(xpos=hermione_chibi_xpos+140, ypos=hermione_chibi_ypos)
+    add h_c_u_pic at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
 
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u: 

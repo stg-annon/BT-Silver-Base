@@ -144,6 +144,9 @@ label __init_variables:
     return
     
 init python:
+    class outfit_list(list):
+        list = []
+    
     class hermione_outfit(object):
         name = ""
         purchased = False

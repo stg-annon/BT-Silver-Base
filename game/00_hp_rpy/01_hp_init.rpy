@@ -346,6 +346,10 @@ init -2:
 
     $ config.autoreload = False
     
+    transform universal_chibi_walk(x,x2,speed,y): #Universal transform for all chibis
+        xpos x
+        ypos y
+        linear speed xpos x2 # linear
     
     transform custom_walk_02(x,x2): #Same custom walk but for Hermione.
         xpos x

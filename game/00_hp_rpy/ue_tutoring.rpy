@@ -1537,7 +1537,7 @@ label l_tutoring:
         $ badges = True
         $ wear_shirts = True
         ##call her_pose()
-        $ hermione_chibi_xpos = 610
+        $ hermione_SC.chibi.xpos = 610
         ##show screen hermione_stand_f
         show screen genie
         hide screen blkfade
@@ -1586,7 +1586,7 @@ label l_tutoring:
         hide screen g_c_u
         hide screen chair_02
         show screen genie
-        $ hermione_chibi_xpos = 300
+        $ hermione_SC.chibi.xpos = 300
         show screen hermione_blink
         hide screen blkfade
 
@@ -1704,7 +1704,7 @@ label l_tutoring:
         with d5
         ">Hermione slowly slides down her robe."
         hide screen hermione_blink
-        $ hermione_chibi_xpos = 300
+        $ hermione_SC.chibi.xpos = 300
         show screen ctc
         with d1
         hide screen blkfade

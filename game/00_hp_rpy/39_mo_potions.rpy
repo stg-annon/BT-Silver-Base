@@ -66,7 +66,7 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
 
 label potion_scene_1_2: #Scene where Hermione comes back after classes angry and confused at being given cat ears and a tail.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
@@ -130,8 +130,8 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     with d3
     m "Good god what is with your tongue?! It feels like velcro."
     her "*Slurp?*"    
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ hermione_SC.chibi.xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ hermione_SC.chibi.ypos = 10
     $ h_c_u_pic = "hand_ani"
     show screen h_c_u
     hide screen g_c_u
@@ -237,7 +237,7 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     hide screen ctc
     with d3
     $ hermione_sleeping = True
-    $ hermione_chibi_ypos = 250
+    $ hermione_SC.chibi.ypos = 250
     jump night_main_menu
     
     
@@ -537,7 +537,7 @@ label potion_scene_2_2: #ass expansion
             show screen hermione_blink
             show screen genie
             with d1
-            $ hermione_chibi_xpos = 400 #Near the desk.
+            $ hermione_SC.chibi.xpos = 400 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             show screen bld1
             hide screen blkfade
@@ -623,7 +623,7 @@ label potion_scene_2_2: #ass expansion
             show screen hermione_blink
             show screen genie
             with d1
-            $ hermione_chibi_xpos = 400 #Near the desk.
+            $ hermione_SC.chibi.xpos = 400 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             show screen bld1
             hide screen blkfade
@@ -709,7 +709,7 @@ label potion_scene_3: #cum addiction - work in progress, has some scenes adjuste
 
 label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (replace sucking noises with actual text)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
@@ -750,8 +750,8 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     $ hermione_main_zorder = 8
     ">As soon as you remove your cock from your robe Hermione is on top of you."
     call her_main("","body_66")
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ hermione_SC.chibi.xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ hermione_SC.chibi.ypos = 10
     $ h_c_u_pic = "hand_ani"
     show screen h_c_u
     hide screen g_c_u
@@ -1025,8 +1025,8 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     show screen genie
     show screen bld1
     hide screen blkfade
-    $ hermione_chibi_xpos = 400 #Near the desk.
-    $ hermione_chibi_ypos = 250 #Default: 250
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
     $ addicted = False
     $ uni_sperm = False
     $ aftersperm = False
@@ -1084,7 +1084,7 @@ label potion_scene_4: #Transparent uniform
 
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3

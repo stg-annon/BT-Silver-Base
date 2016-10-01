@@ -110,7 +110,7 @@ label door:
                 $ hermione_ypos = 0
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ hermione_chibi_xpos = 400+140 #Near the desk.
+                $ hermione_SC.chibi.xpos = 400+140 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 show screen bld1
                 with d3

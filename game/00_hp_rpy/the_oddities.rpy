@@ -299,6 +299,11 @@ label purchase_book(BookOBJ):
 label shop_potion_menu:
     show screen shop_screen
     menu:
+    
+        "Send loll":
+            $ deliveryQ.send(Lollipop,1,5,'Gift')
+            "sent"
+            jump shop_potion_menu
         "-Questions acquiring items-":
             menu:
                 "-Knotgrass-":
@@ -411,41 +416,43 @@ label object_gift_block(item):
     $ cost4 = item.cost * 8
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 1
-            call object_purchase_item(item.cost)
+            call object_purchase_item(item, 1)
         "-Buy 2 for ([cost2] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 2
-            call object_purchase_item(cost2)
+            call object_purchase_item(item, 2)
         "-Buy 4 for ([cost3] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 4
-            call object_purchase_item(cost3)
+            call object_purchase_item(item, 4)
         "-Buy 8 for ([cost4] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 8
-            call object_purchase_item(cost4)
+            call object_purchase_item(item, 8)
         "-Never mind-":
             hide screen gift
             call gifts_menu
             
-label object_purchase_item(order_cost):
+label object_purchase_item(item, quantity):
+    $ transit_time = renpy.random.randint(1, 5)
+    $ order_cost = item.cost*quantity
     if gold >= (order_cost):
         menu:
             "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
                 $ gold -= 15
-                $ next_day = True
+                $ transit_time = 1
+                # $ next_day = True
             "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
                 pass
             "-no thanks-":
                 pass
         $ gold -= order_cost
-        $ order_placed = True
-        call thx_4_shoping
+        $ deliveryQ.send(item,transit_time,quantity,'Gift')
+        # $ gift_order = item
+        # $ order_placed = True
+        if transit_time ==  1:
+            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
+        else:
+            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
+        hide screen gift
+        with d3
         jump shop_menu
     else:
-        $ order_item = 0
+        $ gift_order = None
         call no_gold #Massage: m "I don't have enough gold".
         jump gifts_menu
     
@@ -588,8 +595,8 @@ label do_have_book:
     
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
-    $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
-
+    # $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
+    
     if one_of_five ==  1:
         dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         hide screen gift
