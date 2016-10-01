@@ -6489,7 +6489,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             "\"(Not right now.)\"":
                 pass
     
-    call set_u_ani("blowjob_ani","hand_ani",-150,10)
+    call set_u_ani("blowjob_ani","hand_ani",0,10)
     $ hermione_head_ypos = her_head_tits
     $ mouth_full_of_cum = False
     

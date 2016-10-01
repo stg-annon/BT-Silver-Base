@@ -45,45 +45,28 @@ label __init_variables:
 label shop_intro:
     show screen shop_screen
     if shop_found:
-        sna_[1] "Hey Genie, what would you like to buy?"
+        twi "Hello Professor! What would you like to buy?"
         jump shop_menu
     else:
         $ show_clothes_store = True
         $ shop_found = True
-        sna_[1] "Genie? What the hell are you doing here? I thought I told you not to leave your office."
-        sna_[1] "What if someone sees you?"
-        m "You expected me to stay cramped office for months? Besides, I look like Dumbdoor, no one will be able to tell the difference"
-        sna_[1] "It's Dumbledore and stuff like that is exactly why you have to stay in your office."
-        sna_[1] "You have no idea what you are talking about. Any student will be able to tell that you're an imposter."
-        m "Fine, fine, I'll go back to my office. Let's talk a bit first though, being stuck in that office is making me go crazy."
-        sna_[1] "Alright, how's Miss Granger going?"
-        m "She's coming along. So what are you doing here? This looks like some sort of shop."
-        sna_[1] "As head of potions it's my job to run the potions cupboard for an hour each afternoon."
-        m "Why? Surely people can get their own ingredients?"
-        sna_[1] "It's not that simple. A lot of ingredients that are essential for standard potions also have more nefarious uses."
-        sna_[1] "If left unregulated students could brew some very dangerous concoctions."
-        m "Well I guess that makes sense. Is that all you sell?"
-        sna_[1] "I also brew potions and sell scrolls and textbooks to potions."
-        m "What sort of potions do you make?"
-        sna_[1] "Most of the time I just make the bases to potions."
-        m "Bases?"
-        sna_[1] "Essentially I make most of a potion and then it is finished by adding a few ingredients."
-        sna_[1] "It helps preserve the potion as well as allows for the user to change the effect."
-        m "Well that's all pretty dull. Do you sell anything \"Interesting\"?"
-        sna_[1] "Interesting?"
-        m "You know, sex potions, stuff that would help us corrupt Miss Granger."
-        sna_[1] "Ah, well I know a few potions that you might like."
-        m "Such as?"
-        sna_[1] "Well, I don't have a the ingredients to make stronger potions but I can make you a potion that will change her hair color."
-        m "Hmmmm, you don't have anything better?"
-        sna_[1] "Not at the moment. I'll have to order the ingredients in."
-        m "How long will that take."
-        sna_[1] "It depends on the items. Some of them are very hard to come by."
-        sna_[1] "As a result I will have to charge you for them, but from what I've heard that shouldn't be a problem."
-        m "Fair enough. Before I buy though are there any other stores on campus?"
-        sna_[1] "Only a tailor, why?"
-        m "Just making sure that there isn't a cheaper alternative."
-        sna_[1] "There isn't, now are you going to buy anything or not?"
+        fre "Professor Dumbledore? What are you doing here? I thought you didn't leave your office anymore."
+        ger "You're not here to shut us down are you?"
+        m "Shut you down? What for?"
+        fre "NOTHING!"
+        ger "We certainly aren't selling potions that we stole from Snape"
+        fre "No sir! No prohibited goods being sold here."
+        ger "None at all!"
+        fre "But if we did sell them-"
+        ger "Which we don't"
+        fre "They would be sold at the best prices in the school"
+        ger "Unbeatable"
+        m "Hmmmm. What sort of potions are you \'not\' selling?"
+        fre "Well we aren't selling polyjuice potion"
+        ger "Not at all"
+        m "Well do you sell anything else"
+        ger "We also sell books, treats and knick knacks."
+        fre "Take a look."
         jump shop_menu
     
 label shop_menu:
@@ -221,7 +204,7 @@ label scroll_block(scroll_id, scroll_cost):
     
 label shop_books:
     show screen shop_screen
-    sna_[1] "What type of book would you like?"
+    twi "What type of book would you like?"
     label shop_book_menu:
     menu:
         "-Educational Books-":
@@ -246,8 +229,8 @@ label shop_books:
                 else:
                     call purchase_book(result)
         "-Fiction books-":
-            sna_[1] "These books are mostly light erotica..." 
-            sna_[20] "Some of the girls insisted that I order them in."
+            twi "These books are mostly light erotica..." 
+            ger "Some of the girls insisted that I order them in."
             label fiction_menu:
                 python:
                     fic_menu = []
@@ -308,19 +291,19 @@ label shop_potion_menu:
             menu:
                 "-Knotgrass-":
                     m "Do you know where I can find \"Knotgrass\""
-                    sna_[6] "You can sometimge find Knotgrass by the forbidden forest"
+                    fre "You can sometimge find Knotgrass by the forbidden forest"
                     jump shop_potion_menu
                 "-Root of Aconite-":
                     m "Do you know where I can find \"Root of Aconite\""
-                    sna_[6] "Root of Aconite can be found down by the lake"
+                    ger "Root of Aconite can be found down by the lake"
                     jump shop_potion_menu
                 "-Wormwood-":
                     m "Do you know where I can find \"Wormwood\""
-                    sna_[6] "Wormwood is sometimes found in the forbidden forest"
+                    ger "Wormwood is sometimes found in the forbidden forest"
                     jump shop_potion_menu
                 "-Niffler's Fancy-":
                     m "Do you know where I can find \"Niffler's Fancy\""
-                    sna_[6] "hmm i think i heard that it's found by the lake"
+                    fre "hmm i think i heard that it's found by the lake"
                     jump shop_potion_menu
                 
         "{color=#858585}-Polyjuice Potion-{/color}" if whoring < 5:

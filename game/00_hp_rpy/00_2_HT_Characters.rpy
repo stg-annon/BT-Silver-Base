@@ -41,6 +41,9 @@ init python:
     hoo = Character('Madam Hooch', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     abe = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     lun = Character('Luna', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    twi = Character('Fred and George', color="#402313", show_two_window=True, show_side_image=Image("01_hp/13_characters/weasley_twins/base_01.png", xalign=1.0, yalign=0.0), ctc="ctc3", ctc_position="fixed", window_right_padding=450)
+    fre = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed")
+    ger = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed")
     
     
     
