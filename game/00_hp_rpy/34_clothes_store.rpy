@@ -1,6 +1,8 @@
 label __init_variables:
     if not hasattr(renpy.store,'cs_stock_inventory'): #important!
         $ cs_stock_inventory = []
+    if not hasattr(renpy.store,'outfit_inventory'): #important!
+        $ outfit_inventory = []
     if not hasattr(renpy.store,'outfit_order'): #important!
         $ outfit_order = "null"
     if not hasattr(renpy.store,'outfit_wait_time'): #important!
@@ -312,6 +314,7 @@ label place_outfit_order:
         $ outfit_wait_time = outfit_OBJ.wait_time
         $ outfit_order = clothes_store_order_choice
         $ outfit_order_placed = True
+        maf "I'll send you an owl when it's done."
         jump clothes_menu
     else:
         m "I don't have [cost] gold."
