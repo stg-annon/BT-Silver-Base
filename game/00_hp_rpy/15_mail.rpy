@@ -6,7 +6,7 @@ init python:
         quantity=1
         type = ''
         
-        def __init__(self, object,transit_time,quantity,type):
+        def __init__(self,object,transit_time,quantity,type):
             self.object = object
             self.transit_time = transit_time
             self.quantity = quantity
@@ -228,22 +228,6 @@ if work_unlock: # Send a letter that will unlock an ability to write reports
     hide screen blktone8
     with d3
     call screen main_menu_01
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

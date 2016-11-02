@@ -96,7 +96,8 @@ label __init_variables:
                 walk_img_f = "ch_hem walk_a_flip",
             ),
         
-            char_ref = her,
+            char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
+            h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
         
             xpos = 370,
             ypos = 0,

@@ -135,6 +135,7 @@ init python:
         faces = None
         
         char_ref = None
+        h_char_ref = None
         
         body = None
         outfit = None
@@ -172,20 +173,22 @@ init python:
         def say(self, string):
             renpy.say(self.char_ref,string)
         
-        def say(self, text, face=None, blush=False, emote=""):
+        # Say w/ sprite
+        def sayS(self, text, face=None, blush=False, emote="", tears=""):
             if face != None:
                 renpy.hide_screen(self.screen)
                 self.setFace(face,blush,emote)
             renpy.show_screen(self.screen)
             renpy.with_statement(Dissolve(0.3),always=True)
             renpy.say(self.char_ref,text)
-            
-            
-        def sayHead(self, string):
+        
+        #Say w/ Head
+        def sayH(self, string):
+            #set face here
             renpy.show_screen(self.head_screen)
-            self.say(string)
+            renpy.say(self.h_char_ref,string)
             renpy.hide_screen(self.head_screen)
-            
+        
         def getActionLayers(self):
             return
             
@@ -233,8 +236,9 @@ init python:
     class silver_face_lib(object):
         lib = []
         def getFace(self,id):
-            for face in lib if face.id == id:
-                return face
+            for face in lib:
+                if face.id == id:
+                    return face
         
     class silver_face(object):
         id = ""
