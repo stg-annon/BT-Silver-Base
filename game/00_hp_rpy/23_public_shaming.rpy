@@ -953,7 +953,6 @@ label hg_ps_WearMyCum_Scene_2:
             call her_head("...","body_72")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_head("...","body_88")
-            ">Hermione keeps jerking you off while keepin."
             ">You erupt onto her face, dousing her in your spunk."
             show screen white 
             pause.1
