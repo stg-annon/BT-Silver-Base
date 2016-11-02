@@ -483,9 +483,9 @@ label book_complete(bookOBJ = None):
         
     if bookOBJ in fiction_book_list:
         $ imagination += 1
-    if bookOBJ in speed_reading_books:
+    if bookOBJ in speed_read_books:
         $ s_reading_lvl += 1
-    if bookOBJ in speed_writing_books:
+    if bookOBJ in speed_write_books:
         $ speedwriting += 1
         $ concentration += 1
     
