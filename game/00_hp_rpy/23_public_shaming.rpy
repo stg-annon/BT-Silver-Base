@@ -527,9 +527,9 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
     elif whoring < 15: 
         jump hg_ps_WearMyCum_Scene_1
     elif whoring < 20:
-        jump hg_ps_WearMyCum_Scene_1 #This is 1 until I write 2
+        jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 2
     else:
-        jump hg_ps_WearMyCum_Scene_1 #This is 1 until I write 3
+        jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 3
 
 
 
@@ -588,7 +588,7 @@ label hg_ps_WearMyCum_Scene_1:
     m "What do you mean?"
     call her_head("Why are you making me jerk you off...","body_118")
     call her_head("So that you can cum on me...","body_121")
-    call her_head("And make me where it around the school?","body_131")
+    call her_head("And make me wear it around the school?","body_131")
     m "I'm not making you do anything."
     m "You're doing this because I asked you to."
     call her_head("But if I don't, Gryffindor will lose the house cup.","body_132")
@@ -778,7 +778,254 @@ label hg_ps_WearMyCum_Scene_1:
 
 
 label hg_ps_WearMyCum_Scene_2:
+    $ hg_ps_WearMyCum_OBJ.inProgress = True
+    call her_main("Again?","body_48")
+    call her_main("You can not be serious!","body_49")
+    call her_main("I already let you do this to me once, isn't that enough?","body_50")
+    m "It's enough when I say it's enough."
+    m "Besides, was it really such an issue last time?"
+    call her_main("Well I guess not...","body_82")
+    call her_main("But will it still be hidden this time?","body_29")
+    m "That's up to you."
+    call her_main("Hmmmm...","body_12") #Haggle here
+    call her_main("How much will I be paid this time then?","body_17") 
+    m "20 points."
+    call her_main("20! we agreed on 50 last time!","body_32") 
+    m "40."
+    call her_main("70!","body_30") 
+    m "50 points, final offer."
+    call her_main("80 and I'll let people see it.","body_58")
+    m "Really?"
+    call her_main("As long as it isn't too obvious.","body_59")
+    m "Deal."
+    call her_main("...","body_124")
+    #Start jerk off chibis
+    hide screen hermione_main            
+    hide screen bld1
+    with d3
+    $ walk_xpos=500 #Animation of walking chibi. (From)
+    $ walk_xpos2=280 #Coordinates of it's movement. (To)
+    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+    show screen hermione_walk_01 
+    pause.1
+    show screen blkfade
+    with Dissolve(1)
+    pause.3
 
+    hide screen genie
+    $ genie_chibi_xpos = 60 #-185 behind the desk.
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "handjob_ani"
+    show screen chair_02
+    show screen g_c_u
+    show screen desk_02
+    hide screen blktone
+    hide screen hermione_walk_01 
+    hide screen blkfade
+    call her_head("Why are you asking me to do this [genie_name]?","body_117")
+    m "This question again?"
+    m "Let me answer your question with one of my own."
+    call her_head("Ok...","body_118")
+    m "Why are you jerking me off [hermione_name]?"
+    call her_head("Because you asked me to...","body_121")
+    m "And is that the only reason?"
+    call her_head("No...","body_131")
+    m "Are you sure?"
+    m "What is your other reason then?"
+    call her_head("if I don't, Gryffindor will lose the house cup.","body_132")
+    m "That lie again?"
+    call her_head("It's not a lie...","body_28")
+    m "So you'd rather win the house cup than make me happy?"
+    call her_head("Maybe... Can't I do both?","body_29")
+    m "You can..."
+    call her_head("Good","body_53")
+    m "But I want you to be honest."
+    m "So I'm going to give you a choice."
+    m "You can stop jerking me off right now, leave the room and I'll give you the 80 points. However, I'll be very upset."
+    call her_head("or?","body_31")
+    m "Or, you can keep jerking me off, wear my cum around the school and get no points."
+    call her_head("NO POINTS?","body_32")
+    m "None. You will make an old man very happy though."
+    call her_head("Can't you just pay me for wearing your cum?","body_34")
+    m "No."
+    ">You fell her hands tense around your cock."
+    call her_head("You're making me choose? Between getting 80 points for doing nothing.","body_50")
+    call her_head("Or getting paid nothing for wearing your cum around the school.","body_51")
+    m "Indeed I am [hermione_name]."
+    call her_head("{size=-5}Ok...{/size}","body_85")
+    m "Well hurry up [hermione_name], classes will start soon, best make your decision."
+    ">She starts jerking your cock with renewed vigour."
+    call her_head("...","body_17")
+    call her_head("You better appreciate this.","body_12")
+    m "Oh I'm appreciating it!"
+    call her_head("Really?","body_14")
+    g9 "You're about to see how much I'm appreciating it!"
+    call her_head("What, Already? Where should I-","body_119")
+    menu:
+        "-Stay Silent-": # Legs
+            $ cum_location = 4
+            ">Hermionely keeps jerking your cock, her eyes darting between it and herself."
+            g4 "Get ready slut, here it comes!"
+            call her_head("Wait, where am I supposed to-","body_28")
+            g9 "{size=+5}ARGH! YES!!!{/size}"
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_13.png"
+            $ uni_sperm = True
+            call her_main("!!!!!!!!!!!","body_48") 
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            m "That's it, all over your milky thighs."
+            call her_main("...","body_71") 
+            pause
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call her_main("Will that be all [genie_name].","body_70") 
+            m "I don't suppose you could kiss it for good luck?"
+            call her_main("...{p}...","body_78") 
+            $ g_c_u_pic = "kiss_ani"
+            $ renpy.play('sounds/kiss.mp3') 
+            with kissiris
+            pause
+            show screen blkfade
+            with d3
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            hide screen blkfade
+            with d3
+            m "Good girl."
+
+        "\"Just keep on jerking [hermione_name]!\"": # Cum on shirt front 
+            $ cum_location = 5
+            ">Hermionely keeps jerking your cock, her eyes focused intently on it."
+            g4 "Get ready whore, here i come!"
+            call her_head("...","body_28")
+            g9 "{size=+5}ARGH! YES!!! RIGHT ON THOSE TITS!{/size}"
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+            $ uni_sperm = True
+            call her_main("!!!!!!!!!!!","body_48") 
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            m "That's it, all over you slut."
+            call her_main("...","body_71") 
+            pause
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call her_main("It's all over me.","body_70") 
+            m "That it is."
+            call her_main("I think I should go now...","body_71") 
+
+        "\"Take it on your face slut!\"":
+            $ cum_location = 6
+            ">Hermione bends down and place your cock in front of her face."
+            m "Get ready slut, here it comes!"
+            call her_head("...","body_72")
+            g9 "{size=+5}ARGH! YES!!!{/size}"
+            call her_head("...","body_88")
+            ">You erupt onto her face, dousing her in your spunk."
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+            $ uni_sperm = True
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            call her_main("!!!!!!!!!!!","body_48") 
+            m "Yes... I Feel so much better now..."
+            call her_main("..............","body_33") 
+            pause
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call her_main("How could you!","body_32") 
+            m "How could I?"
+            call her_main("You came all over my face!","body_30") 
+            m "I did."
+            call her_main("Why would you ask me to do that!","body_20") 
+            call her_main("I'm completely covered in your cum!","body_21") 
+            m "You didn't have to listen to me."
+            call her_main("...","body_28") 
+            m "I only said that you had to have my cum on you."
+            m "I never said where."
+            call her_main("You told me to do it though...","body_29") 
+
+    show screen hermione_stand 
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    hide screen g_c_u
+    $ her_head_ypos = her_head_tits
+    hide screen blkfade
+    with d5
+    ">You tuck your cock back into your robe."
+    m "Oh and one last thing before you head to class."
+    call her_main("Yes...","body_121")
+    m "If you return to this office after classes without any cum on you, I'll be very upset." 
+    call her_main("Yes [genie_name].","body_78") 
+    m "Have fun. Say hi to your friends for me."
+    call her_main("...","body_84") 
+
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_chibi_xpos = 500 #Near the desk.
+    $ hermione_chibi_ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    hide screen blkfade
+    with d3
+
+
+    jump end_hg_pf
 
 
 label hg_ps_WearMyCum_Scene_3:
@@ -787,7 +1034,10 @@ label hg_ps_WearMyCum_Scene_3:
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
     $ hg_ps_WearMyCum_OBJ.inProgress = False
-    jump hg_ps_WearMyCum_complete_1
+    if cum_location <= 3:
+        jump hg_ps_WearMyCum_complete_1
+    else:
+        jump hg_ps_WearMyCum_complete_2
 
 
 label hg_ps_WearMyCum_complete_1:
@@ -870,7 +1120,87 @@ label hg_ps_WearMyCum_complete_1:
 
 
 label hg_ps_WearMyCum_complete_2:
-    
+    if cum_location == 4: #Cum on legs
+        $ u_sperm = "01_hp/13_hermione_main/auto_13.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office, your cum still visible on her legs."
+        call her_main("...I did it [genie_name].","body_53")
+        call her_main("I kept your cum on me all day.","body_54")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you [genie_name], will that be all?","body_55")
+                m "Yes [hermione_name], you may leave now. "
+            "\"Tell me about your day.\"":
+                call her_main("It was a pretty normal day, well, except for Luna...","body_16")
+                m "Luna?"
+                call her_main("Luna Lovegood, sir.","body_15")
+                m "What happened with miss Lovegood?"
+                call her_main("She kept trying to tell me that a Cornish pixie had given me a present.","body_69")
+                m "A cornish pixie had given you a present?"
+                call her_main("I didn't know what she was talking about either. Cornish pixies are nasty little things that would never do anything nice.","body_66")
+                m "Well what happened after that?"
+                call her_main("Well I asked her what she was talking about and then she ran her finger up my leg, scooping up some of your cum!","body_64")
+                m "Really?"
+                call her_main("That's not the worst part. She then proceded to taste it!","body_65")
+                m "I don't believe you."
+                call her_main("I was as shocked as you were.","body_16")
+                m "Well you have certainly made this old man very happy."
+                call her_main("Thank you [genie_name]. if that's all I might head to bed.","body_87")
+                m "Very well, goodnight [hermione_name]."
+                call her_main("Good night [genie_name].","body_83")
+    elif cum_location == 5: #Cum on shirt 
+        $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office, her shirt still covered in cum."
+        call her_main("...I did it [genie_name].","body_33")
+        call her_main("I kept your cum on me all day.","body_34")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you [genie_name], will that be all?","body_29")
+                m "Yes [hermione_name], you may leave now. "
+            "\"Tell me about your day.\"":
+                call her_main("It was a pretty normal day, I had Defense against the dark arts class and then herbology.","body_29")
+                m "And do you think that anyone noticed?"
+                call her_main("I think most people did [genie_name]. I'm not sure if they all knew it was cum though.","body_57b")
+                m "And how did you feel?"
+                call her_main("Excited. Getting to see everyone's faces as they realised what it was...","body_59")
+                m "So you don't mind them knowing?"
+                call her_main("I suppose not... As long as it makes you happy.","body_87")
+                m "Very well, goodnight [hermione_name]."
+                call her_main("Good night [genie_name].","body_83")
+    else: #Cum on face
+        $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office."
+        call her_main("...I did it [genie_name].","body_91b","tears_03")
+        call her_main("I kept your cum on me {p}all day.","body_91b","tears_03")
+        menu:
+            "\"Good Work!\"":
+                call her_main("...","body_91b","tears_03a")
+                m "Well [hermione_name], you may leave now."
+                call her_main("Did I at least make you happy?","body_92","tears_03a")
+                m "You did."
+                call her_main("Good.","body_90","tears_03a")
+            "\"Tell me about your day.\"":
+                call her_main("My day...","body_33","tears_03a")
+                call her_main("It was completely normal.","body_32","tears_03a")
+                m "Really? Nothing strange happened at all?"
+                call her_main("No. Everyone treated me how I deserved to be treated.","body_30","tears_03a")
+                m "And how's that?"
+                call her_main("Like a slut.","body_29","tears_03a")
+                call her_main("Boys cat called me.","body_12","tears_03a")
+                call her_main("Put me down.","body_20","tears_03a")
+                call her_main("Snape made me stand out the front of the class During defense against the dark arts.","body_21","tears_03a")
+                m "What did he make you do in front of the class?"
+                call her_main("Nothing, I just had to stand there for the whole lesson.","body_27","tears_03a")
+                m "Did your friends say anything?"
+                call her_main("Nothing.","body_28","tears_03a")
+                call her_main("...","body_27","tears_03a")
+                call her_main("Did I{p}make you happy?","body_92","tears_03a")
+                m "You did."
+                call her_main("Good night [genie_name].","body_33","tears_03a")
+
+    jump end_hg_pf
 
 label hg_ps_WearMyCum_complete_3:
 
@@ -886,7 +1216,105 @@ label hg_ps_HiddenBlowjob:
 
 
 label hg_ps_HiddenBlowjob_1:
-    her ""
+    m "[hermione_name], I have an interesting proposition for you today."
+    her "Is it sex?"
+    m "Not quite."
+    her "Then what is it?"
+    m "Well it involves you bringing in a friend."
+    her "A friend?!"
+    her "I can't let one of my friends find out what we do here!"
+    m "Don't worry, this isn't about them finding out."
+    her "Then what is it about?"
+    m "It's about you learning to be more comfortable with yourself around your peers."
+    her "Comfortable with myself?"
+    m "Yes. To do this I'll need you to bring a friend of yours to my office."
+    her "What for?"
+    m "So I can talk to them."
+    her "That doesn't sound too bad..."
+    m "While you suck me off."
+    her "What?! There's no way I'm doing that!"
+    m "Why not?"
+    her "Why not? Because my reputation would be ruined! I'm not blowing you in front of other students, let alone one of my friends!"
+    m "What if they didn't know you were there?"
+    her "How so? I can't just be hidden behind you while you look at a cupboard."
+    m "Well, the area under my desk is quite spacious."
+    her "Hmmmmm, I'm not sure, what if they overheard us?"
+    m "Just do it quietly"
+    her "I can't I'm going to do it properly."
+    #Needs more dialogue where Genie convinces her to accept, and Hermione agrees.
+    m "Well surely you can think of someone that'll be suitable for the position?"
+    her "Hmmmmm"
+    her "Bingo!"
+    m "Have you suddenly remembered that one of your friends is a deaf mute?"
+    her "Better [genie_name], Luna Lovegood."
+    m "Lovegood? That can't be a real name."
+    her "It is."
+    m "Well then why her?"
+    her "Let's just say that people are less likely to believe her if she tries to spread rumours."
+    m "Hmmm, I'm not sure if I agree with-"
+    her "She's also a blonde with big tits."
+    m "Perfect! Tell her to drop by my office."
+    her "As soon as you tell me, what to tell her, what you want to see her for."
+    m "Tell her I'd like to discuss the behaviour of certain students at the school"
+    her "Ok, I'll tell her to come to your office in about 10 minutes."
+    her "That should give me time to get back here first."
+    #Hermione walks out fade to black
+    her "It's tiny under here!"
+    m "What are you talking about, there's tons of space!"
+    her "Not with your legs either side of me."
+    "*Knock* *Knock* *Knock*"
+    m "{size=-5}Shhhh, she's here!{/size}"
+    her "What should I do?"
+    m "Come in!"
+    #Luna walks in
+    "As Luna walks in you grab the back of Hermione's head and force it down the length of your cock."
+    her "!!!!"
+    lun "Hello Professor, Hermione Granger said that you wanted to see me?"
+    m "Ah yes, Miss Lovegood (pffft), right on time."
+    "You ease off on Hermione, allowing her to move at her own pace."
+    her "mmmmm"
+    lun "What did you want to talk to me about sir?"
+
+    m "I'd like to talk to you about a series of uniform changes that are taking place in the school."
+    lun "Are you referring to Miss Granger, Professor?"
+    "You feel Hermione tense up under the desk."
+    m "Indeed I am."
+    "You slide your hips forward, pinning Hermione's head between your cock and the back of the desk."
+    m "Have you noticed any difference in the uniform of Miss Granger?"
+    lun "I have sir."
+    m "Please, describe these changes to me in detail, I have a feeling that she may change what she wears when she visits me."
+    lun "Well for one her skirt is ridiculously short!"
+    m "How short?"
+    lun "You can see her panties sir!"
+    "You start thrusting into hermiones mouth"
+    m "Is that so?"
+    lun "It is, though only some of the time."
+    her "*glck*"
+    m "Some of the time?"
+    lun "Well other times she doesn't even wear them."
+    "You feel Hermione start to speed up."
+    m "Really?" 
+    lun "really. Don't even get me started on her tops."
+    "You reach under the desk and grab the back of Hermione's head."
+    lun "Is everything ok sir?"
+    m "Yes, yes, just scratching my leg, Please, go on."
+    lun "Well sometimes she only wears her school vest."
+    m "And can you see anything innapropriate?"
+    lun "She's showing off a lot of cleavage sir."
+    m "That would be problematic."
+    "You pull her forward, until you can feel her nose press into your crotch."
+    her "!!!"
+    m "And how do you think Ms Granger should be punished?"
+    "You let hermione slide back."
+    her "*slurp*"
+    lun "Well she ties it in a knot so it's barely even there!"
+    m ""
+
+    #Hermione says goodbye bla bla bla
+    "Hermione leaves your office."
+
+    jump hg_ps_HiddenBlowjob_complete
+
 
 
 
@@ -896,5 +1324,5 @@ label hg_ps_HiddenBlowjob_complete:
 
 label hg_ps_HiddenBlowjob_complete_1:
 
-
+    jump end_hg_pf
 

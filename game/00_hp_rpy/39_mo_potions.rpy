@@ -1387,5 +1387,71 @@ label potion_scene_7_2: #Hyper sensitive mouth/throat
 label potion_scene_7_3: #Hyper sensitive pussy
     
     
+label potion_scene_8: #Bimbo/Hypno potion
+    m "[hermione_name], I have another special potion for you today."
+    call her_main("Who are you even buying these off?","body_07")
+    m "A good magician never tells."
+    call her_main("Magician? You're a wizard, and this better not have any long term effects.","body_07")
+    call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","body_07")
+    m "Of course not, now would you kindly drink the potion."
+    call her_main("...","body_12")
+    show screen ch_potion
+    with d3
+    hide screen hermione_blink
+    ">Hermione cautiously starts drinking the potion."
+    call her_main("","body_126")
+    pause .5
+    hide screen ch_potion
+    with d3
+    show screen hermione_blink
+    call her_main("This isn't bad at all.","body_53")
+    call her_main("I feel...","body_74")
+    m "You feel what?"
+    call her_main("I-I feel gre...","body_71")
+    ">Hermione's eyes go blank and she stares forward blankly."
+    call her_main("What am I?","body_123b")
+label potion_scene_8_choice:
+    menu:
+        "-\"You're an airheaded bimbo\"-":
+            jump potion_scene_8_1
+        "-\"You're a first year student\"-":
+            "Not implemented yet. Sorry. :("
+            jump potion_scene_8_choice
+
+
+label potion_scene_8_1:
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
+    $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
+    $ hermione_wear_panties = False
+    call set_h_hair(color=2)
+    call her_main("I am an airheaded bimbo...","body_123b")
+    m "You are addicted to the taste of my cum."
+    $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/cum_badge.png"
+    $ hermione_badges = True
+    call her_main("I am addicted to the taste of your cum...","body_123b")
+    m "You're breasts are incredibly sensitive to pleasure."
+    call her_main("My breasts are incredibly sensitive to pleasure......","body_123b")
+    ">Hermione closes her eyes and appears to nod off."
+    call her_main("......","body_84")
+    call her_main("My breasts are incredibly sensitive to pleasure......","body_123b")
+
+
+
+
+
+
+
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
     
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    
+    $ hermione_badges = False
+    $ hermione_takes_classes = True
+    jump day_main_menu
     

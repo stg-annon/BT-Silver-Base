@@ -154,7 +154,7 @@ screen hermione_costume:
     for i in hermoine_outfit_GLBL.getOutfitLayers():
         add i xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
-    add hermione_costume_e xpos hermione_xpos_offset ypos hermione_ypos
+    #add hermione_costume_e xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_costume_action_a xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
@@ -264,6 +264,7 @@ label h_outfit_OBJ(outfit):
     if outfit == None:
         call update_her_uniform
         $ hermione_costume = False
+        call h_update_hair
     else:
         $ hermione_costume = True
         

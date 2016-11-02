@@ -13,7 +13,7 @@ init python:
     her_ = [""]
     for i in range(1,43):
         her_.append("")
-        her_[i] = Character("Hermione", color="#402313", window_right_padding=270, show_side_image=Image("01_hp/15_hermione_head/" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
+        her_[i] = Character("Hermione", color="#402313", window_right_padding=400, show_side_image=Image("01_hp/15_hermione_head/" + str(i) + ".png", xalign=1.0, yalign=0.0), show_two_window=True, show_who_xalign=0.5, ctc="ctc3", ctc_position="fixed")
 
 
     fem = Character('Female Student', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
@@ -27,8 +27,8 @@ init python:
      
     
     ###HARRY POTTER CHARACTERS###
-    her = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed")
-    her2 = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
+    her = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
+    her2 = Character('Hermione', color="#402313", window_right_padding=320, show_two_window=True, ctc="ctc3", ctc_position="fixed") #Text box used for "head only" speech. (Because it has padding).
     sna = Character('Severus Snape', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     sna2 = Character('Severus Snape', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed")  #Text box used for "head only" speech. (Because it has padding).
     vol = Character('Lord Voldemort', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
@@ -42,8 +42,8 @@ init python:
     abe = Character('Aberforth', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     lun = Character('Luna', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     twi = Character('Fred and George', color="#402313", show_two_window=True, show_side_image=Image("01_hp/13_characters/weasley_twins/base_01.png", xalign=1.0, yalign=0.0), ctc="ctc3", ctc_position="fixed", window_right_padding=450)
-    fre = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed")
-    ger = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed")
+    fre = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
+    ger = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
     
     
     
