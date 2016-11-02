@@ -332,7 +332,7 @@ label shop_potion_menu:
                 "-Nevermind-":
                     call screen shop_screen
         "{color=#858585}-Expanding Elixir-{/color}" if whoring < 8:
-            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
             call screen shop_screen
         "-Expanding Elixir-" if whoring >= 8:
             menu:
@@ -347,7 +347,7 @@ label shop_potion_menu:
                 "-Nevermind-":
                     call screen shop_screen
         "{color=#858585}-Moreish Mead-{/color}" if whoring < 14:
-            call cust_excuse("Hermione mus be \"Trained\" more before you can purchase this.")
+            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
             call screen shop_screen
         "-Moreish Mead-" if whoring >= 14:
             menu:
@@ -356,6 +356,21 @@ label shop_potion_menu:
                         $ gold -= 200
                         $ p_inv.append("Moreish Mead")
                         m "Moreish Mead aquired, although it's missing a key ingredient..."
+                    else:
+                        m "I don't have enough gold."
+                    call screen shop_screen
+                "-Nevermind-":
+                    call screen shop_screen
+        "{color=#858585}-Imperius Potation-{/color}" if whoring < 14:
+            call cust_excuse("Hermione must be \"Trained\" more before you can purchase this.")
+            call screen shop_screen
+        "-Imperius Potation-" if whoring >= 14:
+            menu:
+                "-Buy the potion for 300 Gold-":
+                    if gold >= 300:
+                        $ gold -= 300
+                        $ p_inv.append("Imperius Potation")
+                        m "Imperius Potation aquired, although it's missing a key ingredient..."
                     else:
                         m "I don't have enough gold."
                     call screen shop_screen
