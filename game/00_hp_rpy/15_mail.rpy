@@ -216,7 +216,7 @@ label mail_02: #Packages only. <================================================
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         
-        $ gift_item_inv[gift_order.id] += order_quantity
+        $ gift_item_inv[gift_order.id+1] += order_quantity
         
         $ the_gift = gift_order.image
         show screen gift
