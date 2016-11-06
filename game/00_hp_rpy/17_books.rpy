@@ -341,7 +341,7 @@ label handle_book_selection(BookOBJ):
         else:
             ">You already finished this one."
         hide screen gift
-        jump test_new_book
+        jump books_list
     else:
         menu:
             "-Read the book-":
@@ -370,7 +370,7 @@ label check_book_order(bookOBJ = None):
             call reading_book(BookOBJ)
     
     m "Reading books out of order won't do me any good."
-    jump test_new_book
+    jump books_list
     
     
 label reading_book(bookID = None):
