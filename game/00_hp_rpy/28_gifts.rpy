@@ -104,7 +104,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'PackOfCondoms'): #important!
         $ PackOfCondoms = gift_item()
-    $ PackOfCondoms.id = 0
+    $ PackOfCondoms.id = 10
     $ PackOfCondoms.cost = 50
     $ PackOfCondoms.whoringNeeded = 3
     $ PackOfCondoms.name = "A pack of condoms"
@@ -113,7 +113,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'Vibrator'): #important!
         $ Vibrator = gift_item()
-    $ Vibrator.id = 10
+    $ Vibrator.id = 11
     $ Vibrator.cost = 55
     $ Vibrator.whoringNeeded = 3
     $ Vibrator.name = "Vibrator"
@@ -122,7 +122,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'JarOfLube'): #important!
         $ JarOfLube = gift_item()
-    $ JarOfLube.id = 11
+    $ JarOfLube.id = 12
     $ JarOfLube.cost = 60
     $ JarOfLube.name = "Jar of anal lubricant"
     $ JarOfLube.image = "01_hp/18_store/gifts/13.png"
@@ -130,7 +130,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'BallGagAndCuffs'): #important!
         $ BallGagAndCuffs = gift_item()
-    $ BallGagAndCuffs.id = 12
+    $ BallGagAndCuffs.id = 13
     $ BallGagAndCuffs.cost = 70
     $ BallGagAndCuffs.name = "Ball gag and cuffs"
     $ BallGagAndCuffs.image = "01_hp/18_store/gifts/14.png"
@@ -138,7 +138,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'AnalPlugs'): #important!
         $ AnalPlugs = gift_item()
-    $ AnalPlugs.id = 13
+    $ AnalPlugs.id = 14
     $ AnalPlugs.cost = 85
     $ AnalPlugs.whoringNeeded = 3
     $ AnalPlugs.name = "Anal plugs"
@@ -147,7 +147,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'ThestralStrapon'): #important!
         $ ThestralStrapon = gift_item()
-    $ ThestralStrapon.id = 14
+    $ ThestralStrapon.id = 15
     $ ThestralStrapon.cost = 200
     $ ThestralStrapon.whoringNeeded = 3
     $ ThestralStrapon.name = "Thestral Strap-on"
@@ -156,7 +156,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'SpeedStick2000'): #important!
         $ SpeedStick2000 = gift_item()
-    $ SpeedStick2000.id = 15
+    $ SpeedStick2000.id = 16
     $ SpeedStick2000.cost = 500
     $ SpeedStick2000.name = "Lady Speed Stick-2000"
     $ SpeedStick2000.image = "01_hp/18_store/gifts/17.png"
@@ -164,7 +164,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'SexDollJoanne'): #important!
         $ SexDollJoanne = gift_item()
-    $ SexDollJoanne.id = 16
+    $ SexDollJoanne.id = 17
     $ SexDollJoanne.cost = 350
     $ SexDollJoanne.name = "Sex doll \"Joanne\""
     $ SexDollJoanne.image = "01_hp/18_store/gifts/18.png"
@@ -172,7 +172,7 @@ label __init_variables:
     
     if not hasattr(renpy.store,'AnalBeads'): #important!
         $ AnalBeads = gift_item()
-    $ AnalBeads.id = 17
+    $ AnalBeads.id = 18
     $ AnalBeads.cost = 65 #placeholder number
     $ AnalBeads.name = "Anal beads"
     $ AnalBeads.image = "01_hp/18_store/gift_anal_beads.png"

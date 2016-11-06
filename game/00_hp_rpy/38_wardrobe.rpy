@@ -192,7 +192,7 @@ screen wardrobe_gifts:
         
         # note that gift_items are indices (starting with 0) but the
         # image files are starting with/off by 1.
-        for i in range(0,17):
+        for i in range(0,18):
             $ row = i // 6
             $ col = i % 6
             if gift_item_inv[i] > 0:
