@@ -216,7 +216,7 @@ label mail_02: #Packages only. <================================================
         $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
         $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
         
-        $ gift_item_inv[gift_order.id+1] += order_quantity
+        $ gift_item_inv[gift_order.id] += order_quantity
         
         $ the_gift = gift_order.image
         show screen gift
@@ -231,29 +231,6 @@ label mail_02: #Packages only. <================================================
         hide screen gift
         with d3
         $ gift_order = None
-        call screen main_menu_01
-        
-        
- 
-    if order_item != 0:
-        $ package_is_here = False # Turns True when days_in_delivery >= 5. Package is displayed.
-        $ days_in_delivery = 0 #Count's +1 every day when order_placed = True
-        
-        $ gift_item_inv[order_item] += order_quantity
-
-        $ the_gift = "01_hp/18_store/gifts/"+str(order_item)+".png" # CONDOMS.
-        show screen gift
-        with d3
-        $ tmp_str = "\""+store_gift_item_name[order_item]
-        if order_quantity > 1:
-            $ tmp_str += "'s\""
-            ">([order_quantity]) [tmp_str] have been added to your possessions."
-        else:
-            $ tmp_str += "\""
-            ">([order_quantity]) [tmp_str] has been added to your possessions."
-        hide screen gift
-        with d3
-        $ order_item = 0
         call screen main_menu_01
         
     
