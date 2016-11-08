@@ -1412,11 +1412,12 @@ label potion_scene_8: #Hypno potion
     call her_main("What am I?","body_123b")
 label potion_scene_8_choice:
     menu:
-        "-\"You're an airheaded bimbo\"-":
+        "-\"You're an airheaded bimbo who only wants to make people happy\"-":
             jump potion_scene_8_1
         "-\"You're a first year student\"-":
             "Not implemented yet. Sorry. :("
             jump potion_scene_8_choice
+            #jump potion_scene_8_2
 
 
 label potion_scene_8_1: #Bimbo choice
@@ -1424,11 +1425,11 @@ label potion_scene_8_1: #Bimbo choice
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
     $ hermione_wear_panties = False
     call set_h_hair(hair_style="B",color=2)
-    call her_main("I am an airheaded bimbo...","body_123b")
-    m "You are addicted to the taste of my cum."
+    call her_main("I am an airheaded bimbo who only wants to make people happy...","body_123b")
+    m "You love being covered in my cum."
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/cum_badge.png"
     $ hermione_badges = True
-    call her_main("I am addicted to the taste of your cum...","body_123b")
+    call her_main("I love being covered in your cum...","body_123b")
     m "You're breasts are incredibly sensitive to pleasure."
     call her_main("My breasts are incredibly sensitive to pleasure......","body_123b")
     ">Hermione closes her eyes and appears to nod off."
@@ -1437,8 +1438,136 @@ label potion_scene_8_1: #Bimbo choice
     m "You're in my office."
     call her_main("I am?","body_44b")
     call her_main("How did I get here?","body_44b")
-    m "I assume you walked."
+    m "You walked in here about 2 minutes ago."
+    her "Huh, I must have forgotten, silly old me."
+    her "So professor, what am I doing here?"
+    m "I'm just going to ask you a few questions."
+    her "They're not going to be hard questions are they?"
+    her "I don't like hard questions."
+    m "Don't worry they'll be nice and easy for you."
+    her "yay!"
+    m "First question, Who are you?"
+    her "That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!"
+    m "And what are your hobbies?"
+    her "Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!"
+    m "Dressing happy?"
+    her "You know, wearing nice things to make other people happy!{image=textheart}"
+    m "You like making people happy?"
+    her "Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!"
+    her "Once I finish school I want to get a job where all I do is make people happy{image=textheart}!"
+    m "Ok, final question;"
+    m "How would you like to make yourself happy?"
+    her "Make myself happy? But I'm already happy, silly!"
+    m "Even happier."
+    her "Even happier? {size=+10}YAY!{/size}"
+    her "So how am I going to be happier? Am I going to get naked?"
+    m "That'd be a good start."
+    her "{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}"
+    ">Hermione starts slowly stripping, removing her top first."
+    #remove top
+    her "You know they don't let us walk around naked at school?"
+    m "Really? I can't imagine why not."
+    her "I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked."
+    ">Hermione removes her skirt"
+    her "I know everyone who sees me naked is happy!"
+    m "You've certainly made me happy."
+    her "Thanks mistah professor sir! That makes me happy{image=textheart}!"
+    m "(I don't think I can stand her saying the word happy much more...)"
+    m "Now Hermione, I want you to touch your breasts."
+    ">Hermione moves her hands up to her breasts"
+    #Grab tits
+    her "Like this? This feels sooooo gooood!"
+    her "It's like mah hands are moving on their own..."
+    her "It's soooo goodd but It's weeeiiird... I need something... anything..."
+    m "Would you like to touch yourself down there?"
+    her "Yes mistah [genie_name]. please."
+    menu:
+        "-make her beg-":
+            m "I want you to beg."
+            her "Please mistah sir..."
+            m "Please what?"
+            her "Ohmigawd Please let me touch myself down there... I'll do anything..."
+            m "Anything?"
+            her "Anything. I just need to feel happy..."
+            m "Tell me what you are and I'll let you."
+            her "I'm Hermione, the school slut."
+            m "More."
+            her "geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy..."
+            m "And what makes you happy?"
+            her "Making you happy{image=textheart} [genie_name]."
+            m "Good girl."
+        "-let her touch herself-":
+            m "Go on then."
+            her "Thank you soooo{image=textheart} much [genie_name]!"
+    #hermione touching herself
+    her "This is soooo goood"
+    her "Mistah [genie_name] can you please do something for me?"
+    m "What's that?"
+    her "If it's not tooo much trouble could you..."
+    ">Hermione starts pinching her nipple."
+    #change to pinch
+    her "could you please cum on me?"
+    m "Well if it makes you happy."
+    ">you stand up and head towards her."
+    her "thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}"
+    ">You take out your cock and start stroking it."
+    her "..."
+    her "I don't know how other girls do it..."
+    m "Do what?"
+    her "Stop themselves from coming here and getting you to cover them in yummy cummy!"
+    her "I mean I can barely stop mahself coming here everyday!"
+    m "That's it..."
+    her "Hmmm, I luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}"
+    her "They're just so soft..."
+    her "And they feel soo good. They're really sensi--"
+    her "Sensi---"
+    her "What's the word?"
+    m "Sensitive."
+    her "That's right they're really sensitive!"
+    m "So am I..."
+    her "Are you going to cum?"
+    her "Please do it on my face!"
+    her "No wait my tits..."
+    her "No wait my face!"
+    menu:
+        "-Cum on her face-":
+            g4 "Here it comes slut!"
+            her "{image=textheart}!!!{image=textheart}"
+            g4 "that's it, all over your face."
+            her "...{image=textheart}{image=textheart}{image=textheart}"
+        "-Cum on her tits-":
+            g4 "Here it comes fuckbunny!"
+            her "{image=textheart}{image=textheart}{image=textheart}"
+            g4 "All over your tits."
+            her "It's so warm...{image=textheart}{image=textheart}{image=textheart}"
+        "-cover her in cum-":
+            g4 "Here it comes whore!"
+            her "{image=textheart}{image=textheart}{image=textheart}"
+            g4 "that's right slut, All over you."
+            her "{image=textheart}{image=textheart}{image=textheart}"
+    her "..."
+    her "That felt {size=+5}SOOOOO!{/size} good!"
+    her "Can we do it again! Please! Pretty please! Pretty please with cum on top!"
+    m "Not today."
+    ">You return to your chair"
+    her "Awwwwww."
+    her "Well ok... I suppose I'll head to class then."
+    m "About that. I think it'd be better if you went back to your dorm."
+    her "Why's that mistah [genie_name] sir?"
+    m "I think you need to have a little nap and let this wear off."
+    her "whatever you say sir!"
+    her "And thanks again!{image=textheart} You're the best!"
+
+
     
+    #have genie give her the potion
+    #have 
+    #have genie explain where she is
+    #have her realise how tight and arousing her clothes are
+    #pleasure herself in front of genie leading into blowjob
+    #cum on her face and have her walk to class covered in cum or cum in her mouth and make her swallow it
+    #no night time events
+    #Finish event by having her turn back into normal
 
 
 
@@ -1460,3 +1589,32 @@ label potion_scene_8_1: #Bimbo choice
     $ hermione_takes_classes = True
     jump day_main_menu
     
+label potion_scene_8_2: #Loli Hermione choice
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
+    $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
+    $ hermione_wear_panties = False
+    call set_h_hair(hair_style="B",color=1)
+    call her_main("I am a first year student...","body_123b")
+    
+
+    
+    #Not sure on the plan of this scene yet
+
+
+
+
+
+
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    
+    $ hermione_badges = False
+    $ hermione_takes_classes = True
+    jump day_main_menu
