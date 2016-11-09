@@ -35,7 +35,7 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     m "No. Hmmmm, it mustn't have worked."
     call her_main("What was it supposed to do?","body_70")
     m "There's no point in telling you now. It was going to be a surprise."
-    m "Damn Snape must've conned me."
+    m "Damn Twins must've conned me."
     call her_main("Is that all [genie_name]?","body_15")
     m "Yes, [hermione_name], 20 points to Gryffindor."
     call her_main("Thank you [genie_name].","body_06")
