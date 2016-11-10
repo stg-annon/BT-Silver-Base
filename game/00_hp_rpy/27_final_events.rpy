@@ -147,8 +147,7 @@ label want_to_rule:
                     show screen bld1
                     with d3
                     
-                    $ lift_shirt = True
-                    $ badges = False
+                    call set_hermione_action("lift_top")
                     
                     call her_main("","body_82")
                     show screen ctc
@@ -165,13 +164,14 @@ label want_to_rule:
                     show screen blkfade 
                     with d5
                     pause.7
-                    $ lift_shirt = False
-                    $ badges = True
+                    call reset_hermione_main
                 elif d_flag_02: # SHOW ME PUSSY
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                     
+                    call set_hermione_action("lift_skirt")
                     $ skirt_up = True
-                    $ panties = False
+                    $ h_request_wear_panties = False
+                    $ h_action_show_panties = False
                     
                     hide screen blkfade
                     with d3
@@ -199,7 +199,7 @@ label want_to_rule:
                     with hpunch
                     g4 "What are you doing, girl?!"
                     g4 "I am your headmaster! Do you have no shame?!"
-                    call her_main("What?! But--","191")
+                    call her_main("What?! But--","body_191")
                     g9 "He-he... Relax, girl. I'm just kidding."
                     #her "Professor, that was just mean."
                     call her_main("[genie_name], that was just mean.","body_62")
@@ -215,8 +215,11 @@ label want_to_rule:
                     show screen blkfade 
                     with d5
                     pause.7
+                    call reset_hermione_main
+                    $ hermione_chibi_xpos = 500 #Near the desk.
                     $ skirt_up = False
-                    $ panties = True
+                    $ h_action_show_panties = True
+                    $ h_request_wear_panties = True
                 
                 elif d_flag_03: # STRIP NAKED
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
@@ -270,9 +273,7 @@ label want_to_rule:
                     
                     
                     hide screen hermione_main
-                    $ badges = False # Turns off badges layer.
-                    $ wear_shirts = False
-                    $ wear_skirts = False
+                    call h_action("covering")
                     
                     $ hermione_SC.chibi.xpos = 310 # Default 360
                     #$ hermione_SC.chibi.ypos = 210
@@ -307,24 +308,27 @@ label want_to_rule:
                     her "I can't help it! *Sob!*"
                     m "Are you sure that you are ok with this?"
                     call her_main("Yes, yes, sir, please.... *Sob!*","body_101","tears_04")
-                    call her_main("Please keep on looking at my naked body... *Sob!*","body_104")
+                    call her_main("Please keep on looking at my naked body... *Sob!*","body_104","tears_04")
+                    call h_action("lift_breasts")
+                    $ h_action_show_skirt = False
                     g4 "(What the...?)"
-                    call her_main("Sir, I am begging you!","body_191")
+                    call her_main("Sir, I am begging you!","body_191","tears_04")
                     m "Kind of sounds like an order--"       
-                    call her_main("I need it!","body_192")
+                    call her_main("I need it!","body_192","tears_04")
                     her "...I need to shamelessly present my naked body before you like this!"
                     m ".............?"
-                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","body_193")
-                    call her_main("The fate of the \"Autumn ball\" depends on this...","body_194")
+                    call her_main("I need to feel this embarrassment and humiliation! *SOB!*","body_193","tears_04")
+                    call her_main("The fate of the \"Autumn ball\" depends on this...","body_194","tears_04")
                     her "So, sir, please..."
-                    call her_main("Keep looking at my naked breasts, and my pussy...","body_195")
+                    call her_main("Keep looking at my naked breasts, and my pussy...","body_195","tears_04")
                     show screen ctc
                     pause
                     hide screen ctc
-                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","body_196")
+                    call her_main("Yes! Make my skin burn with shame, sir... *Sob!*","body_196","tears_04")
                     m "Ehm... right... Ok..."
                     m "Listen, I think this will do..."
-                    call her_main("Are you sure, sir?","body_191")
+                    call h_action("pinch")
+                    call her_main("Are you sure, sir?","body_191","tears_04")
                     her "Are you sure that you humiliated me enough, sir?"
                     m "...................."
                     m "(Is she getting off on this? Is she being sarcastic? I don't get it...)"
@@ -333,7 +337,7 @@ label want_to_rule:
                     pause
                     hide screen ctc
                     m "Just put your clothes back on, Miss Granger. You're making me feel uncomfortable."
-                    call her_main("As you wish, sir...","body_103")
+                    call her_main("As you wish, sir...","body_103","tears_04")
                     
                     show screen ctc
                     pause 
@@ -347,6 +351,8 @@ label want_to_rule:
                     hide screen ctc
                     
                     $  u_tears_pic = "01_hp/13_hermione_main/tears_03.png"
+                    $ h_action_show_skirt = True
+                    call h_action("")
                     show screen blkfade 
                     with d5
                     pause.7

@@ -7766,15 +7766,15 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         
     if hg_pf_SuckIt_OBJ.points == 0:
         $ new_request_22_heart = 1
-        $ hg_pf_TouchMe_OBJ.hearts_level = 1 #Event hearts level (0-4)
+        $ hg_pf_SuckIt_OBJ.hearts_level = 1 #Event hearts level (0-4)
     if hg_pf_SuckIt_OBJ.points == 1:
         $ new_request_22_heart = 2
-        $ hg_pf_TouchMe_OBJ.hearts_level = 2 #Event hearts level (0-4)
+        $ hg_pf_SuckIt_OBJ.hearts_level = 2 #Event hearts level (0-4)
     if hg_pf_SuckIt_OBJ.points >= 2:
         $ new_request_22_heart = 3
-        $ hg_pf_TouchMe_OBJ.hearts_level = 3 #Event hearts level (0-4)
+        $ hg_pf_SuckIt_OBJ.hearts_level = 3 #Event hearts level (0-4)
     if hg_pf_SuckIt_OBJ.points >= 2 and whoring >= 20:
-        $ hg_pf_TouchMe_OBJ.hearts_level = 4 #Event hearts level (0-4)
+        $ hg_pf_SuckIt_OBJ.hearts_level = 4 #Event hearts level (0-4)
     
     $ hg_pf_SuckIt_OBJ.points += 1
     

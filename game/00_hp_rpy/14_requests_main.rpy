@@ -336,6 +336,13 @@ label silver_requests:
                         else:
                             m "I don't have this potion..."
                             jump request_potion_menu
+                    "-Hypno potion-" if "Hypno Potion" in p_inv:
+                        if p_potion_names[7] in p_inv:
+                            $ p_inv.remove(p_potion_names[7])
+                            jump potion_scene_8
+                        else:
+                            m "I don't have this potion..."
+                            jump request_potion_menu
                     ##"-Snek-" if whoring >= 3:
                     ##    jump potion_scene_5
                     "-Nevermind -":

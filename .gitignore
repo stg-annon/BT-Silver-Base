@@ -1,3 +1,12 @@
+# ignore game files not in the repository, but needed for
+# execution such as: renpy, lib, game music, and executables
+WT Silver.exe
+WT Silver.py
+lib/
+renpy/
+game/music/
+
+
 #################
 ## Eclipse
 #################
@@ -5,7 +14,6 @@
 *.pydevproject
 .project
 .metadata
-game/music/
 bin/
 tmp/
 *.mp3

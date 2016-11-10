@@ -35,7 +35,7 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     m "No. Hmmmm, it mustn't have worked."
     call her_main("What was it supposed to do?","body_70")
     m "There's no point in telling you now. It was going to be a surprise."
-    m "Damn Snape must've conned me."
+    m "Damn Twins must've conned me."
     call her_main("Is that all [genie_name]?","body_15")
     m "Yes, [hermione_name], 20 points to Gryffindor."
     call her_main("Thank you [genie_name].","body_06")
@@ -1387,13 +1387,13 @@ label potion_scene_7_2: #Hyper sensitive mouth/throat
 label potion_scene_7_3: #Hyper sensitive pussy
     
     
-label potion_scene_8: #Bimbo/Hypno potion
+label potion_scene_8: #Hypno potion
     m "[hermione_name], I have another special potion for you today."
     call her_main("Who are you even buying these off?","body_07")
     m "A good magician never tells."
-    call her_main("Magician? You're a wizard, and this better not have any long term effects.","body_07")
+    call her_main("Magician? You're a wizard, and this better not have any long term side effects.","body_07")
     call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","body_07")
-    m "Of course not, now would you kindly drink the potion."
+    m "Of course it won't, now would you kindly drink the potion."
     call her_main("...","body_12")
     show screen ch_potion
     with d3
@@ -1412,29 +1412,260 @@ label potion_scene_8: #Bimbo/Hypno potion
     call her_main("What am I?","body_123b")
 label potion_scene_8_choice:
     menu:
-        "-\"You're an airheaded bimbo\"-":
+        "-\"You're an airheaded bimbo who only wants to make people happy\"-":
             jump potion_scene_8_1
         "-\"You're a first year student\"-":
             "Not implemented yet. Sorry. :("
             jump potion_scene_8_choice
+            #jump potion_scene_8_2
 
 
-label potion_scene_8_1:
+label potion_scene_8_1: #Bimbo choice
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
     $ hermione_wear_panties = False
-    call set_h_hair(color=2)
-    call her_main("I am an airheaded bimbo...","body_123b")
-    m "You are addicted to the taste of my cum."
+    call set_h_hair(hair_style="B",color=2)
+    call her_main("I am an airheaded bimbo who only wants to make people happy...","body_225b")
+    m "You love being covered in my cum."
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/cum_badge.png"
     $ hermione_badges = True
-    call her_main("I am addicted to the taste of your cum...","body_123b")
+    call her_main("I love being covered in your cum...","body_225b")
     m "You're breasts are incredibly sensitive to pleasure."
-    call her_main("My breasts are incredibly sensitive to pleasure......","body_123b")
+    call her_main("My breasts are incredibly sensitive to pleasure......","body_225b")
     ">Hermione closes her eyes and appears to nod off."
     call her_main("......","body_84")
-    call her_main("My breasts are incredibly sensitive to pleasure......","body_123b")
+    call her_main("Where am I?","body_44b")
+    m "You're in my office."
+    call her_main("I am?","body_44b")
+    call her_main("How did I get here?","body_44b")
+    m "You walked in here about 2 minutes ago."
+    call her_main("Huh, I must have forgotten, silly old me.","body_53b")
+    call her_main("So professor, what am I doing here?","body_54b")
+    m "I'm just going to ask you a few questions."
+    call her_main("They're not going to be hard questions are they?","body_57")
+    call her_main("I don't like hard questions.","body_57b")
+    m "Don't worry they'll be nice and easy for you."
+    call her_main("yay!","body_75")
+    m "First question, Who are you?"
+    call her_main("That's an easy one! I'm Hermione Granger, the prettiest girl in the whole school!","body_80")
+    m "And what are your hobbies?"
+    call her_main("Doing my makeup{image=textheart}, dancing{image=textheart} and dressing happy{image=textheart}!","body_74")
+    m "Dressing happy?"
+    call her_main("You know, wearing nice things to make other people happy!{image=textheart}","body_78")
+    m "You like making people happy?"
+    call her_main("Of course mistah professor, making people happy{image=textheart} makes me happy{image=textheart}!","body_75")
+    call her_main("Once I finish school I want to get a job where all I do is make people happy{image=textheart}!","body_74")
+    m "Ok, final question;"
+    m "How would you like to make yourself happy?"
+    call her_main("Make myself happy?","body_73b")
+    call her_main("But I'm already happy, silly!","body_74")
+    m "Even happier."
+    call her_main("Even happier? {size=+10}YAY!{/size}","body_80")
+    call her_main("So how am I going to be happier? Am I going to get naked?","body_68b")
+    m "That'd be a good start."
+    call her_main("{image=textheart}AAAAAAWWWEEESOOOOOOOOMMME!{image=textheart}","body_106")
+    ">Hermione starts slowly stripping, removing her top first."
+    $ hermione_wear_top = False
+    $ hermione_wear_bra = False
+    $ wear_shirts = False
+    call update_her_uniform
+    call update_chibi_uniform
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
+    call her_main("You know they don't let us walk around naked at school?","body_103b")
+    m "Really? I can't imagine why not."
+    call her_main("I know right? It's like so dumb! Everyone would just be happier{image=textheart} if they got to be naked.","body_121")
+    ">Hermione removes her skirt"
+    $ hermione_wear_skirt = False
+    call update_chibi_uniform
+    call her_main("I know everyone who sees me naked is happy!","body_128b")
+    m "You've certainly made me happy."
+    call her_main("Thanks mistah professor sir! That makes me so happy{image=textheart}!","body_57b")
+    m "(I don't think I can stand her saying the word happy much more...)"
+    m "Now Hermione, I want you to touch your breasts."
+    ">Hermione moves her hands up to her breasts"
+    call h_action("lift_breasts")
+    $ h_action_show_skirt = False
+    call her_main("Like this? This feels sooooo gooood!","body_59b")
+    call her_main("It's like mah hands are moving on their own...","body_121")
+    call her_main("It's soooo goodd but It's weeeiiird... I need something... anything...","body_131")
+    m "Would you like to touch yourself down there?"
+    call her_main("Yes mistah [genie_name]. please.","body_132")
+    menu:
+        "-make her beg-":
+            m "I want you to beg."
+            call her_main("Please mistah sir...","body_132", "blush")
+            m "Please what?"
+            call her_main("Ohmigawd Please let me touch myself down there... I'll do anything...","body_140b", "blush")
+            m "Anything?"
+            call her_main("Anything. I just need to feel happy...","body_138b", "blush")
+            m "Tell me what you are and I'll let you."
+            call her_main("I'm Hermione, the school slut.","body_136", "blush")
+            m "More."
+            call her_main("geez, I'm a dumb bimbo fuckbunny... that just wants to feel happy...","body_134", "blush")
+            m "And what makes you happy?"
+            call her_main("Making you happy{image=textheart} [genie_name].","body_133b", "blush")
+            m "Good girl."
+        "-let her touch herself-":
+            m "Go on then."
+            call her_main("Thank you soooo{image=textheart} much [genie_name]!","body_134", "blush")
+    call h_action("covering")
+    call her_main("This is soooo goood","body_136", "blush")
+    call her_main("Mistah [genie_name] can you please do something for me?","body_209b", "blush")
+    m "What's that?"
+    call her_main("If it's not tooo much trouble could you...","body_134", "blush")
+    ">Hermione starts pinching her nipple."
+    call h_action("pinch")
+    call her_main("could you please cum on me?","body_219", "blush")
+    m "Well if it makes you happy."
+    ">you stand up and head towards her."
+    call her_main("thank you, thank you thank you! You're the best headmaster {size=+5}EVER!{/size}","body_80", "blush")
+    hide screen genie
+    $ genie_chibi_xpos = 5 #-185 behind the desk.
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "jerking_off_02_ani"
+    show screen chair_02
+    show screen g_c_u
+    show screen desk_02
 
+    hide screen blkfade
+    hide screen blktone
+    hide screen bld1
+    show screen ctc
+    with fade
+    call h_action("covering")
+    call her_main("...","body_78", "blush")
+    call h_action("pinch")
+    call her_main("I don't know how other girls do it...","body_71b", "blush")
+    m "Do what?"
+    call her_main("Stop themselves from coming here and getting you to cover them in yummy cummy!","body_73b", "blush")
+    call h_action("covering")
+    call her_main("I mean I can barely stop mahself coming here everyday!","body_75", "blush")
+    m "That's it..."
+    call h_action("pinch")
+    call her_main("Hmmm, I just luv playin' with mah boobies{image=textheart}{image=textheart}{image=textheart}","body_78", "blush")
+    call her_main("They're just so soft...","body_196", "blush")
+    call h_action("covering")
+    call her_main("And they feel soo good. They're really sensi--","body_205", "blush")
+    call her_main("Sensi---","body_213", "blush")
+    call h_action("pinch")
+    call her_main("What's the word?","body_214", "blush")
+    m "Sensitive."
+    call h_action("covering")
+    call her_main("That's right they're really sensitive!","body_212", "blush")
+    m "So am I..."
+    call her_main("Are you going to cum?","body_219", "blush")
+    call h_action("pinch")
+    call her_main("Please do it on my face!","body_219", "blush")
+    call her_main("No wait my tits...","body_216", "blush")
+    call h_action("covering")
+    call her_main("No wait my face!","body_212", "blush")
+    menu:
+        "-Cum on her face-":
+            g4 "Here it comes slut!"
+            call her_main("{image=textheart}!!!{image=textheart}","body_211b", "blush")
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+            $ uni_sperm = True
+            g4 "that's it, all over your face."
+            call h_action("pinch")
+            call her_main("...{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+        "-Cum on her tits-":
+            g4 "Here it comes fuckbunny!"
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_211b", "blush")
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            $ u_sperm = "01_hp/13_hermione_main/auto_02.png"
+            $ uni_sperm = True
+            g4 "All over your tits."
+            call h_action("pinch")
+            call her_main("It's so warm...{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+        "-cover her in cum-":
+            g4 "Here it comes whore!"
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_211b", "blush")
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            $ u_sperm = "01_hp/13_hermione_main/auto_05.png"
+            $ uni_sperm = True
+            g4 "that's right slut, All over you."
+            call h_action("pinch")
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+    $ genie_chibi_xpos = 5 #-185 behind the desk.
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "jerking_off_02_ani"
+    call her_main("...","body_136")
+    $ hermione_dribble = True
+    call her_main("That felt {size=+5}SOOOOO!{/size} good!","body_134", "blush")
+    call h_action("lift_breasts")
+    $ h_action_show_skirt = False
+    call her_main("Can we do it again! Please! Pretty please! Pretty please with cum on top!","body_133b", "blush")
+    m "Not today."
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    hide screen g_c_u
+    hide screen blkfade
+    with d5
+    call her_main("Awwwwww.","body_132", "blush")
+    call her_main("Well ok... I suppose I'll head to class then.","body_87b", "blush")
+    m "About that. I think it'd be better if you went back to your dorm."
+    call her_main("Why's that mistah [genie_name] sir?","body_82b", "blush")
+    m "I think you need to have a little nap and let this wear off."
+    call her_main("whatever you say sir!","body_83", "blush")
+    call h_action("")
+    call her_main("And thanks again!{image=textheart} You're the best!","body_80", "blush")
+
+
+
+    
+    #have genie give her the potion
+    #have 
+    #have genie explain where she is
+    #have her realise how tight and arousing her clothes are
+    #pleasure herself in front of genie leading into blowjob
+    #cum on her face and have her walk to class covered in cum or cum in her mouth and make her swallow it
+    #no night time events
+    #Finish event by having her turn back into normal
+
+
+
+
+
+
+
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    m "(Maybe I should have told her to get dressed first...)"
+    
+    $ hermione_badges = False
+    $ hermione_dribble = False
+    $ hermione_takes_classes = True
+    $ hermione_wear_skirt = True
+    $ hermione_wear_top = True
+    $ hermione_wear_bra = True
+    $ wear_shirts = True
+    jump day_main_menu
+    
+label potion_scene_8_2: #Loli Hermione choice
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
+    $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
+    $ hermione_wear_panties = False
+    call set_h_hair(hair_style="B",color=1)
+    call her_main("I am a first year student...","body_123b")
+    
+
+    
+    #Not sure on the plan of this scene yet
 
 
 
@@ -1454,4 +1685,3 @@ label potion_scene_8_1:
     $ hermione_badges = False
     $ hermione_takes_classes = True
     jump day_main_menu
-    

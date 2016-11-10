@@ -1164,7 +1164,7 @@ label hg_pr_ClassmateTouchYou_complete:
     
     $ touched_by_boy = True #Makes sure that Public favours do not get locked after reaching Whoring level 05.
     
-    $ hg_pr_ClassmateTouchYou_OBJ.points +1
+    $ hg_pr_ClassmateTouchYou_OBJ.points += 1
     $ hg_pr_ClassmateTouchYou_OBJ.complete = True
     $ hg_pr_ClassmateTouchYou_OBJ.inProgress = False
     

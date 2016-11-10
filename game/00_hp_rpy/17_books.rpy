@@ -341,7 +341,7 @@ label handle_book_selection(BookOBJ):
         else:
             ">You already finished this one."
         hide screen gift
-        jump test_new_book
+        jump books_list
     else:
         menu:
             "-Read the book-":
@@ -370,7 +370,7 @@ label check_book_order(bookOBJ = None):
             call reading_book(BookOBJ)
     
     m "Reading books out of order won't do me any good."
-    jump test_new_book
+    jump books_list
     
     
 label reading_book(bookID = None):
@@ -483,9 +483,9 @@ label book_complete(bookOBJ = None):
         
     if bookOBJ in fiction_book_list:
         $ imagination += 1
-    if bookOBJ in speed_reading_books:
+    if bookOBJ in speed_read_books:
         $ s_reading_lvl += 1
-    if bookOBJ in speed_writing_books:
+    if bookOBJ in speed_write_books:
         $ speedwriting += 1
         $ concentration += 1
     

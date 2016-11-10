@@ -2,7 +2,7 @@ label __init_variables:
     if not hasattr(renpy.store,'p_inv'): #important!
         $ p_inv = []
     
-    $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction"] #base potion names
+    $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction", "Imperius Potation"] #base potion names
     $ p_items = ["Wormwood", "Knotgrass", "Root of Aconite", "Niffler's fancy", "Cat Hair", "Luna's Hair", "Basilisk Scale"] #item names
     
     $ p_potion_names = []
@@ -13,6 +13,7 @@ label __init_variables:
     $ p_potion_names.append("Luna Transformation Potion")
     $ p_potion_names.append("Lamia Transformation Potion")
     $ p_potion_names.append("Transparency Potion")
+    $ p_potion_names.append("Hypno Potion")
     
     $ p_cum_addiction = ["Wormwood","Moreish Mead"]
     $ p_ass_expansion = ["Knotgrass","Expanding Elixir"]
@@ -21,6 +22,7 @@ label __init_variables:
     $ p_luna_transformation = ["Luna's Hair","Polyjuice Potion"]
     $ p_lamia_transformation = ["Basilisk Scale","Polyjuice Potion"]
     $ p_transparency = ["Niffler's fancy","Transparent Tincture"]
+    $ p_hypno = ["Root of Aconite","Imperius Potation"]
     
     $ p_ingredients = [[0 for i in xrange(3)] for i in xrange(8)]
     $ p_ingredients[0] = ["Wormwood","Moreish Mead"]
@@ -30,6 +32,7 @@ label __init_variables:
     $ p_ingredients[4] = ["Luna's Hair","Polyjuice Potion"]
     $ p_ingredients[5] = ["Basilisk Scale","Polyjuice Potion"]
     $ p_ingredients[6] = ["Niffler's fancy","Transparent Tincture"]
+    $ p_ingredients[7] = ["Root of Aconite","Imperius Potation"]
     
     return
 
@@ -115,6 +118,16 @@ label potion_menu:
             jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[6]]\"-{/color}" if not set(p_transparency).issubset(set(p_inv)):
             call p_lack_materials(6)
+            jump potion_menu
+        "-craft: \"[p_potion_names[7]]-" if set(p_hypno).issubset(set(p_inv)):
+            ">You mix the {i}[p_hypno[0]]{/i} with the {i}[p_hypno[1]]{/i}"
+            ">You received the item: \"[p_potion_names[7]]\"."
+            $ p_inv.remove(p_hypno[0])
+            $ p_inv.remove(p_hypno[1])
+            $ p_inv.append(p_potion_names[7])
+            jump potion_menu
+        "{color=#858585}-craft: \"[p_potion_names[7]]\"-{/color}" if not set(p_hypno).issubset(set(p_inv)):
+            call p_lack_materials(7)
             jump potion_menu
         "-Never mind-":
             jump cupboard
