@@ -99,44 +99,56 @@ label door:
                 jump night_main_menu
                 
             else:
-                call update_her_uniform
+                $ wt_herm = hermione_SC
+                # call update_her_uniform
                 
                 #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
                 #stop music fadeout 2.0
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
                 
-                $ hermione_xpos = 410+140
+                $ wt_herm.xpos = 550
+                $ wt_herm.ypos = 0
+                
+                $ hermione_xpos = 550
                 $ hermione_ypos = 0
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ hermione_SC.chibi.xpos = 400+140 #Near the desk.
+                $ hermione_SC.chibi.xpos = 540 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
-                    call her_main("","body_03")
+                    #call her_main("","body_03")
+                    $ wt_herm.setFace(3)
                     ">Looks like Hermione is still a little upset with you..."
                 elif mad >=3 and mad < 10:
-                    call her_main("","body_03")
+                    #call her_main("","body_03")
+                    $ wt_herm.setFace(3)
                     ">Hermione is upset with you."
                 elif mad >=10 and mad < 20:
-                    call her_main("","body_09")
+                    #call her_main("","body_09")
+                    $ wt_herm.setFace(9)
                     ">Hermione is very upset with you."
                 elif mad >=20 and mad < 40:
-                    call her_main("","body_05")
+                    #call her_main("","body_05")
+                    $ wt_herm.setFace(5)
                     ">Hermione is mad at you."
                 elif mad >=40 and mad < 50:
-                    call her_main("","body_47")
+                    #call her_main("","body_47")
+                    $ wt_herm.setFace(47)
                     ">Hermione is very mad at you."
                 elif mad >=50 and mad < 60:
-                    call her_main("","body_47")
+                    #call her_main("","body_47")
+                    $ wt_herm.setFace(47)
                     ">Hermione is furious at you."
                 elif mad >=60:
-                    call her_main("","body_47")
+                    #call her_main("","body_47")
+                    $ wt_herm.setFace(47)
                     ">Hermione hates your guts."
                 else:
-                    call her_main("Yes, [genie_name]?","body_01")
+                    $ wt_herm.say("Yes, [genie_name]?",1)
+                    # call her_main("Yes, [genie_name]?","body_01")
                 
                 label day_time_requests:
                 menu:
@@ -148,7 +160,8 @@ label door:
                                 if mad <= 7:
                                     jump chit_chat
                                 else:
-                                    her "I have nothing to say to you sir..."    
+                                    $ wt_herm.say("I have nothing to say to you sir...")
+                                    # her "I have nothing to say to you sir..."
                                     jump hermione_talk
                             
                             "-Working-":

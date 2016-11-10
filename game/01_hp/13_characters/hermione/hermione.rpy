@@ -14,7 +14,10 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
-    
+        
+        def set(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
         def getLayers(self, parent):
             layers = []
             if self.cheeks != "":
@@ -24,7 +27,7 @@ init python:
             if self.mouth != "":
                 layers.append(parent.root+"body/face/mouth/"+self.lipstick+"/"+self.mouth)
             if self.eyes != "":
-                layers.append(parent.root+"body/face/eyes/"+self.eye_color+"/"+self.eyes)
+                layers.append(parent.root+"body/face/eyes/"+parent.eye_color+"/"+self.eyes)
             if self.tears != "":
                 layers.append(parent.root+"body/face/tears/"+self.tears)
             return layers
@@ -102,6 +105,8 @@ label __init_variables:
             xpos = 370,
             ypos = 0,
             
+            eye_color = "brown",
+            
             body = sliver_character_body(
                 head = sliver_character_head(
                     expression = None,
@@ -128,7 +133,7 @@ label __init_variables:
             acc = ""
         )
     $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
-    $ hermione_SC.setFace(0)
+    $ hermione_SC.setFace(1)
     
     $ h_whoring = 0
     $ h_reputation = 21
@@ -283,6 +288,22 @@ label __init_variables:
         $ hermione_costume_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
     return
+    
+label her_main_new(text="",face=h_body, xpos = hermione_xpos, ypos = hermione_ypos):
+    $ wt_herm = hermione_SC
+    hide screen test_herm_obj
+    if xpos != wt_herm.xpos:
+        $ wt_herm.xpos = xpos
+    if ypos != wt_herm.ypos:
+        $ wt_herm.ypos = ypos
+    if face != wt_herm.body.head.face.id:
+        $ wt_herm.setFace(face)
+    show screen test_herm_obj
+    with d2
+    if text != "":
+        $ renpy.say(her, text)
+    return
+    
     
 label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermione_ypos):
     hide screen hermione_main

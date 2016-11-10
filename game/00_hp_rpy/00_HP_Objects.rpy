@@ -30,7 +30,7 @@ init python:
         walk_img_f = ""
         zorder = 3
         xpos = 0
-        ypos = 0
+        ypos = 250
         
         def walk(self, x, x2, speed, y=250):
             if x > x2: #right to left
@@ -123,14 +123,16 @@ init python:
         pet_name = ""
         genie_name = "Professor"
         
-        main_screen = ""
-        head_screen = ""
+        screen = ""
+        screen_head = ""
         
         chibi = None
         
         xpos = 0
         ypos = 0
         zorder = 5
+        
+        eye_color = ""
         
         faces = None
         
@@ -147,8 +149,14 @@ init python:
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
-        def setFaceFromIDX(self, index):
-            self.body.head.face = self.faces[index]
+        def setFace(self, index):
+            self.body.head.face = self.faces[index-1]
+            for face in self.faces:
+                if face.id == index:
+                    renpy.say(None,face.id+" "+face)
+            
+        def setNewFace(self, faceOBJ):
+            self.body.head.face = faceOBJ
         
         def setHair(self, style, color):
             if style != None and color != None:
@@ -169,25 +177,22 @@ init python:
         def setUniformLevel(self, level):
             self.uniform.setLevel(level)
             self.chibi.setLevel(level)
-            
-        def say(self, string):
-            renpy.say(self.char_ref,string)
         
         # Say w/ sprite
-        def sayS(self, text, face=None, blush=False, emote="", tears=""):
+        def say(self, text, face=None):
             if face != None:
                 renpy.hide_screen(self.screen)
-                self.setFace(face,blush,emote)
+                self.setFace(face)
             renpy.show_screen(self.screen)
             renpy.with_statement(Dissolve(0.3),always=True)
             renpy.say(self.char_ref,text)
         
         #Say w/ Head
-        def sayH(self, string):
+        def sayHead(self, string):
             #set face here
-            renpy.show_screen(self.head_screen)
+            renpy.show_screen(self.screen_head)
             renpy.say(self.h_char_ref,string)
-            renpy.hide_screen(self.head_screen)
+            renpy.hide_screen(self.screen_head)
         
         def getActionLayers(self):
             return
@@ -328,8 +333,8 @@ label __init_variables:
             pet_name = "Miss Granger",
             genie_name = "Professor",
             
-            main_screen = "test_herm_obj",
-            head_screen = "test_herm_head_obj",
+            screen = "test_herm_obj",
+            screen_head = "test_herm_head_obj",
             
             chibi = hermione_character_chibi(
                 stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png",
@@ -481,6 +486,20 @@ label test_char_objs:
                     jump uni_char_obj_root
         "Layers":
             menu uni_char_layers:
+                "-Eye Color-":
+                    menu:
+                        "-Blue-":
+                            $ uni_char.body.head.face.eye_color = "blue"
+                            jump uni_char_layers
+                        "-Brown-":
+                            $ uni_char.body.head.face.eye_color = "brown"
+                            jump uni_char_layers
+                        "-Green-":
+                            $ uni_char.body.head.face.eye_color = "green"
+                            jump uni_char_layers
+                        "-Pink-":
+                            $ uni_char.body.head.face.eye_color = "pink"
+                            jump uni_char_layers
                 "-Toggle top-":
                     if uni_char.uniform.wear_top:
                         $ uni_char.uniform.wear_top = False
