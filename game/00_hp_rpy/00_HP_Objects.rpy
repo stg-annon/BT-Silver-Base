@@ -194,6 +194,15 @@ init python:
             renpy.say(self.h_char_ref,string)
             renpy.hide_screen(self.screen_head)
         
+        def showScreen(self, dissolve=0):
+            renpy.show_screen(self.screen)
+            if dissolve > 0:
+                renpy.with_statement(Dissolve(dissolve/10),always=True)
+        def hideScreen(self, dissolve=0):
+            renpy.hide_screen(self.screen)
+            if dissolve > 0:
+                renpy.with_statement(Dissolve(dissolve/10),always=True)
+        
         def getActionLayers(self):
             return
             
@@ -324,59 +333,8 @@ init python:
     
     
 label __init_variables:
-    $ reset_char_obj = True
-    if not hasattr(renpy.store,'hermione_SC') or reset_char_obj: #important!
-        $ hermione_SC = silver_character(
-            root = "01_hp/13_characters/hermione/",
-            
-            name = "Hermione Granger",
-            pet_name = "Miss Granger",
-            genie_name = "Professor",
-            
-            screen = "test_herm_obj",
-            screen_head = "test_herm_head_obj",
-            
-            chibi = hermione_character_chibi(
-                stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png",
-                blink_img = "ch_hem blink_a",
-                blink_img_f = "ch_hem blink_a_flip",
-                walk_img = "ch_hem walk_a",
-                walk_img_f = "ch_hem walk_a_flip",
-            ),
-        
-            char_ref = her,
-        
-            xpos = 370,
-            ypos = 0,
-            
-            body = sliver_character_body(
-                head = sliver_character_head(
-                    expression = None,
-                    base = "hermione_base.png",
-                    hair = "A_1.png",
-                    cheeks = "",
-                    glasses = ""
-                ),
-                left_arm = "left_1.png",
-                right_arm = "right_1.png",
-                torso = "torso.png",
-                torso_pressed = "torso_pressed.png",
-                abdomen = "abdomen.png",
-                legs = "legs_1.png"
-                
-            ),
-            
-            uniform = hermione_character_uniform(
-                top = 1,
-                bot = 1,
-                panties = "base_panties_1.png",
-                bra = "base_bra_white_1.png",
-            ),
-            acc = ""
-        )
-    $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
-    $ hermione_SC.setFace(0)
     
+    $ reset_char_obj = True
     if not hasattr(renpy.store,'luna_SC') or reset_char_obj: #important!
         $ luna_SC = silver_character(
             root = "01_hp/13_characters/luna/",
@@ -385,6 +343,8 @@ label __init_variables:
             pet_name = "Miss Lovegood",
             genie_name = "Professor",
             
+            screen = "test_luna_obj",
+            screen_head = "test_luna_head_obj",
             
             
             chibi = silver_character_chibi(
@@ -423,7 +383,7 @@ label __init_variables:
             acc = ""
         )
     $ luna_SC.faces = getCharacterFaces('luna_face',luna_character_face)
-    $ luna_SC.setFace(0)
+    $ luna_SC.setFace(1)
     
     
     return
@@ -435,7 +395,7 @@ screen test_herm_obj:
             add im.Flip(layer, horizontal=True) xpos char.xpos ypos char.ypos
         else:
             add layer xpos char.xpos ypos char.ypos
-    zorder 8
+    zorder 4
     
 screen test_herm_head_obj:
     $ char = hermione_SC
@@ -450,11 +410,18 @@ screen test_luna_obj:
             add im.Flip(layer, horizontal=True) xpos char.xpos ypos char.ypos
         else:
             add layer xpos char.xpos ypos char.ypos
+    zorder 4
+    
+screen test_luna_head_obj:
+    $ char = luna_SC
+    for layer in char.getLayers():
+        add layer xpos 650 ypos 235
     zorder 8
+        
     
 label test_char_objs:
-    show screen test_herm_obj
-    show screen test_luna_obj
+    $ hermione_SC.showScreen()
+    $ luna_SC.showScreen()
     menu char_obj_menu_root:
         "-Test Walk-":
             $ hermione_SC.chibi.walk(600,200,4)
@@ -464,8 +431,8 @@ label test_char_objs:
         "-Luna-":
             $ uni_char = luna_SC
         "-Exit-":
-            hide screen test_herm_obj
-            hide screen test_luna_obj
+            $ hermione_SC.hideScreen()
+            $ luna_SC.hideScreen()
             jump day_main_menu
     menu uni_char_obj_root:
         "-Position-":

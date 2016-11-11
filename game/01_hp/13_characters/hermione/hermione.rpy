@@ -84,12 +84,17 @@ label __init_variables:
         $ hermione_SC = silver_character(
             root = "01_hp/13_characters/hermione/",
             
+            xpos = 370,
+            ypos = 0,
+            
             name = "Hermione Granger",
             pet_name = "Miss Granger",
             genie_name = "Professor",
             
-            main_screen = "test_herm_obj",
-            head_screen = "test_herm_head_obj",
+            eye_color = "brown",
+        
+            screen = "test_herm_obj",
+            screen_head = "test_herm_head_obj",
             
             chibi = hermione_character_chibi(
                 stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png",
@@ -98,14 +103,9 @@ label __init_variables:
                 walk_img = "ch_hem walk_a",
                 walk_img_f = "ch_hem walk_a_flip",
             ),
-        
-            char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
-            h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
-        
-            xpos = 370,
-            ypos = 0,
             
-            eye_color = "brown",
+            char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
+            h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
             
             body = sliver_character_body(
                 head = sliver_character_head(
