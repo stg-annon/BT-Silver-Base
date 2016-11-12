@@ -1676,14 +1676,17 @@ label potion_scene_9: #Clone potion
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
-    
+    $ hermione_takes_classes = True
     jump day_main_menu
 
 label potion_scene_10: #Time stop potion
     m "Do you ever feel conflicted about what we do in here [hermione_name]?"
 
-    #Paralyse/time stop Hermione
-    #Have her 
+    #Paralyze/time stop Hermione
+    #Have genie molest her
+    #Have options to molest breast/ass/pussy (required to do all 3)
+    #Have her resume time and lose her mind from the cumulative amount of pleasure she felt
+    #Have genie carry her back to her dorm in a semi-conscious state. 
 
 
 
@@ -1705,5 +1708,5 @@ label potion_scene_10: #Time stop potion
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
-    
+    $ hermione_takes_classes = True
     jump day_main_menu
