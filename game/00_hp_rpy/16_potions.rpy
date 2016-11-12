@@ -14,6 +14,7 @@ label __init_variables:
     $ p_potion_names.append("Lamia Transformation Potion")
     $ p_potion_names.append("Transparency Potion")
     $ p_potion_names.append("Hypno Potion")
+    $ p_potion_names.append("Clone Potion")
     
     $ p_cum_addiction = ["Wormwood","Moreish Mead"]
     $ p_ass_expansion = ["Knotgrass","Expanding Elixir"]
@@ -23,8 +24,9 @@ label __init_variables:
     $ p_lamia_transformation = ["Basilisk Scale","Polyjuice Potion"]
     $ p_transparency = ["Niffler's fancy","Transparent Tincture"]
     $ p_hypno = ["Root of Aconite","Imperius Potation"]
+    $ p_clone = ["Polyjuice Potion","Imperius Potation"]
     
-    $ p_ingredients = [[0 for i in xrange(3)] for i in xrange(8)]
+    $ p_ingredients = [[0 for i in xrange(3)] for i in xrange(9)]
     $ p_ingredients[0] = ["Wormwood","Moreish Mead"]
     $ p_ingredients[1] = ["Knotgrass","Expanding Elixir"]
     $ p_ingredients[2] = ["Root of Aconite","Expanding Elixir"]
@@ -33,6 +35,7 @@ label __init_variables:
     $ p_ingredients[5] = ["Basilisk Scale","Polyjuice Potion"]
     $ p_ingredients[6] = ["Niffler's fancy","Transparent Tincture"]
     $ p_ingredients[7] = ["Root of Aconite","Imperius Potation"]
+    $ p_ingredients[8] = ["Polyjuice Potion","Imperius Potation"]
     
     return
 
@@ -128,6 +131,16 @@ label potion_menu:
             jump potion_menu
         "{color=#858585}-craft: \"[p_potion_names[7]]\"-{/color}" if not set(p_hypno).issubset(set(p_inv)):
             call p_lack_materials(7)
+            jump potion_menu
+        "-craft: \"[p_potion_names[8]]-" if set(p_clone).issubset(set(p_inv)):
+            ">You mix the {i}[p_clone[0]]{/i} with the {i}[p_clone[1]]{/i}"
+            ">You received the item: \"[p_potion_names[8]]\"."
+            $ p_inv.remove(p_clone[0])
+            $ p_inv.remove(p_clone[1])
+            $ p_inv.append(p_potion_names[8])
+            jump potion_menu
+        "{color=#858585}-craft: \"[p_potion_names[8]]\"-{/color}" if not set(p_clone).issubset(set(p_inv)):
+            call p_lack_materials(8)
             jump potion_menu
         "-Never mind-":
             jump cupboard

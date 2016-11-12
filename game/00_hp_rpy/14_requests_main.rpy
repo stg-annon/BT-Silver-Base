@@ -343,6 +343,13 @@ label silver_requests:
                         else:
                             m "I don't have this potion..."
                             jump request_potion_menu
+                    "-Clone potion-" if "Clone Potion" in p_inv:
+                        if p_potion_names[8] in p_inv:
+                            $ p_inv.remove(p_potion_names[8])
+                            jump potion_scene_9
+                        else:
+                            m "I don't have this potion..."
+                            jump request_potion_menu
                     ##"-Snek-" if whoring >= 3:
                     ##    jump potion_scene_5
                     "-Nevermind -":

@@ -119,6 +119,40 @@ screen hermione_main_obj:
     
     ### ZORDER
     zorder hermione_zorder
+
+screen hermione_clone:
+    tag hermione_clone
+    
+    $ hermione_clone_xpos = 500
+    
+    add hermione_base xpos hermione_clone_xpos ypos hermione_ypos #Add the base body
+    add hermione_legs xpos hermione_clone_xpos ypos hermione_ypos
+    
+    if hermione_action and h_action_show_arms:
+        add hermione_action_right_arm xpos hermione_clone_xpos ypos hermione_ypos
+    elif not hermione_action:
+        add hermione_right_arm xpos hermione_clone_xpos ypos hermione_ypos
+    
+    add hermione_breasts xpos hermione_clone_xpos ypos hermione_ypos
+    
+    if hermione_action and h_action_show_arms:
+        add hermione_action_left_arm xpos hermione_clone_xpos ypos hermione_ypos
+    elif not hermione_action:
+        add hermione_left_arm xpos hermione_clone_xpos ypos hermione_ypos
+    
+    add "01_hp/13_characters/hermione/body/head/B_2.png" xpos hermione_clone_xpos ypos hermione_ypos #Add the hair shadow
+    add hermione_body xpos hermione_clone_xpos ypos hermione_ypos
+    add hermione_tears xpos hermione_clone_xpos ypos hermione_ypos
+    
+  ### CLOTHES
+    add "01_hp/13_characters/hermione/clothes/stockings/fishnet_a.png" xpos hermione_clone_xpos ypos hermione_ypos
+    
+    add "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png" xpos hermione_clone_xpos ypos hermione_ypos
+    add "01_hp/13_characters/hermione/clothes/uniform/top_5.png" xpos hermione_clone_xpos ypos hermione_ypos
+
+    add "01_hp/13_characters/hermione/body/head/B_2_2.png" xpos hermione_clone_xpos ypos hermione_ypos #Add the hair shadow
+    ### ZORDER
+    zorder hermione_zorder
     
     
 screen hermione_tattoo_layer:
