@@ -311,9 +311,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Polyjuice Potion-" if whoring >= 5:
             menu:
-                "-Buy the potion for 100 Gold-":
-                    if gold >= 100:
-                        $ gold -= 100
+                "-Buy the potion for 40 Gold-":
+                    if gold >= 40:
+                        $ gold -= 40
                         $ p_inv.append("Polyjuice Potion")
                         m "Polyjuice potion aquired, although it's missing a key ingredient..."
                     else:
@@ -326,9 +326,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Transparent Tincture-" if whoring >= 3:
             menu:
-                "-Buy the potion for 75 Gold-":
-                    if gold >= 75:
-                        $ gold -= 75
+                "-Buy the potion for 20 Gold-":
+                    if gold >= 20:
+                        $ gold -= 20
                         $ p_inv.append("Transparent Tincture")
                         m "Transparent Tincture aquired, although it's missing a key ingredient..."
                     else:
@@ -341,9 +341,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Expanding Elixir-" if whoring >= 8:
             menu:
-                "-Buy the potion for 150 Gold-":
-                    if gold >= 150:
-                        $ gold -= 150
+                "-Buy the potion for 30 Gold-":
+                    if gold >= 30:
+                        $ gold -= 30
                         $ p_inv.append("Expanding Elixir")
                         m "Expanding Elixir aquired, although it's missing a key ingredient..."
                     else:
@@ -356,9 +356,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Moreish Mead-" if whoring >= 14:
             menu:
-                "-Buy the potion for 200 Gold-":
-                    if gold >= 200:
-                        $ gold -= 200
+                "-Buy the potion for 60 Gold-":
+                    if gold >= 60:
+                        $ gold -= 60
                         $ p_inv.append("Moreish Mead")
                         m "Moreish Mead aquired, although it's missing a key ingredient..."
                     else:
@@ -371,9 +371,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Imperius Potation-" if whoring >= 14:
             menu:
-                "-Buy the potion for 300 Gold-":
-                    if gold >= 300:
-                        $ gold -= 300
+                "-Buy the potion for 45 Gold-":
+                    if gold >= 45:
+                        $ gold -= 45
                         $ p_inv.append("Imperius Potation")
                         m "Imperius Potation aquired, although it's missing a key ingredient..."
                     else:
@@ -501,19 +501,19 @@ label app:
                 "-Never mind-":
                     hide screen gift
                     jump app            
-        "-Fishnet stokings (800 gold)-" if not nets == 7:
+        "-Fishnet stokings (120 gold)-" if not nets == 7:
             $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
             show screen gift
             with d3
             call nets_text
             menu:
-                "-Buy the item (800 gold)-":
+                "-Buy the item (120 gold)-":
                     if nets == 7 or nets == 1: # == 7 means "gifted already"
                         call do_have_book # "I already own this one."
                         jump app
                     else:
-                        if gold >= 800:
-                            $ gold -= 800
+                        if gold >= 120:
+                            $ gold -= 120
                             $ order_placed = True
                             $ bought_nets = True #Affects 15_mail.rpy
                             call thx_4_shoping #Massage that says "Thank you for shopping here!".
