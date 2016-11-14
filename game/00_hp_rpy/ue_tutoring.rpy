@@ -2018,8 +2018,6 @@ label l_tutoring:
         call her_head("{size=-4}(I doubt Prince Charming could fuck me half as well as he can!){/size}","head_exp/38")
         show screen hermione_stand_f
         with d3
-        
-        $ v_tutoring = 14
         jump l_tutoring_end
 
 label l_tutoring_end:
