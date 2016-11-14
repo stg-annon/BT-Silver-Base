@@ -37,7 +37,7 @@ label l_tutoring_check:
         jump l_tutoring
     elif v_tutoring == 12 and whoring >= 23:
         jump l_tutoring
-    elif v_tutoring == 13 and whoring >= 23:
+    elif v_tutoring >= 13 and whoring >= 23:
         jump l_tutoring
     else:
         m "Not the right time. Soon..."
