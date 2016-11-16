@@ -1410,10 +1410,10 @@ label l_tutoring:
         call her_main("{size=-2}({b}My{/b} old pervert){/size}","body_182")
         show screen blkfade
         if custom_bra >=1 and badges and custom_outfit_old <= 0:
-            ">She want only removes her shirt and bra."
+            ">She wantonly removes her shirt and bra."
             ##$ v_her_bra = 0
         else:
-            ">She want only removes her shirt."
+            ">She wantonly removes her shirt."
         hide screen hermione_main
         hide screen hermione_blink
         pause.5
