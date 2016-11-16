@@ -1,6 +1,9 @@
 
 ### HERMIONE ANIMATIONS
 
+# TenchiMuyo1984 comment:
+# Why is here "pause x" and "pause.x"?
+
 image ch_hem walk_a:    #shirt 00
     "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08

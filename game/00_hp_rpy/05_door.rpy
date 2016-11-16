@@ -83,6 +83,8 @@ label door:
                 jump night_main_menu
         
         "-Summon Hermione-" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
+            # Comment by TenchiMuyo1984:
+            # I'm not shure, but the following if elif makes nothing, because in line before must be booth variables = false
             if hermione_takes_classes:
                 show screen bld1
                 with d3
@@ -99,6 +101,8 @@ label door:
                 jump night_main_menu
                 
             else:
+                # Comment by TenchiMuyo1984
+                # The following change display of hermione didn't go away. It is allways displayed! Please test it.
                 $ wt_herm = hermione_SC
                 # call update_her_uniform
                 
@@ -327,6 +331,7 @@ label door:
                         elif mad >=3 and mad < 10:
                             her "I am not in the mood today..."
                             jump day_time_requests
+                            # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
                         elif mad >=20:
                             her "After what you did, [genie_name]?"
                             her "I don't think so..."
@@ -338,21 +343,21 @@ label door:
                         if mad >=1 and mad < 3:
                             her "I'm sorry, [genie_name], Maybe some other time..."
                             jump day_time_requests
-                        elif mad >=3 and mad < 10:
+                        elif mad >=  3 and mad < 10:
                             her "I don't feel like it today..."
                             her "Maybe in a couple of days..."
                             jump day_time_requests
-                        elif mad >=10 and mad < 20:
+                        elif mad >= 10 and mad < 20:
                             her "No thank you...."
                             jump day_time_requests
-                        elif mad >=20 and mad < 30:
+                        elif mad >= 20 and mad < 30:
                             her "After what you did, [genie_name]?"
                             her "I don't think so..."
                             jump day_time_requests
-                        elif mad >=30 and mad < 40:
+                        elif mad >= 30 and mad < 40:
                             her "You can't be serious!"
                             jump day_time_requests
-                        elif mad >=40:
+                        elif mad >= 40:
                             her "Is this some twisted joke to you, sir?!"
                             her "After what you did I don't feel like doing this ever again!"
                             jump day_time_requests
@@ -375,7 +380,7 @@ label door:
                         $ menu_x = 0.5 #Menu position is back to default. (Center).
                         if daytime:
                             $ hermione_takes_classes = True
-                            if mad >=3 and mad <= 6:
+                            if mad >=3 and mad < 7:
                                 her "..............................."
                             elif mad >=7:
                                 her "*Humph!*..."
@@ -389,7 +394,7 @@ label door:
                             with d3
                             jump day_main_menu
                         else:
-                            if mad >=3 and mad <= 6:
+                            if mad >=3 and mad < 7:
                                 her "..............................."
                             elif mad >=7:
                                 her "Tch..."

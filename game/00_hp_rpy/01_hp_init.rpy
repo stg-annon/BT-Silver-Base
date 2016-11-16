@@ -94,6 +94,10 @@ $ being_mean = 0 #+1 every time you are being mean to hermione.
 
 $ dates = 0 #Tracks how many times Hermione been tutored.
 
+### default position of table ###
+$ table_position_x = 0
+$ table_position_y = 0
+
 ### PATH SHORTCUTS ###
 $ hg_pth = "01_hp/13_characters/hermione/"
 
