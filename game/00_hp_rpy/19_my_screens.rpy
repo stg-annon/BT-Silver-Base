@@ -198,7 +198,7 @@ screen animation_feather: #Falling feather animation
 screen rum_screen: #Rummaging through the cumpboard.
     add "01_hp/05_props/02_cupboard_03.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
     add "01_hp/05_props/04_chair_02.png" at Position(xpos=192+140, ypos=300, xanchor="center", yanchor="center")
-    add "01_hp/05_props/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center") 
+    add "01_hp/05_props/09_table.png" at Position(xpos=220+141, ypos=331, xanchor="center", yanchor="center") 
     add "rum" xpos 20+140 ypos 110
     zorder 1
     
