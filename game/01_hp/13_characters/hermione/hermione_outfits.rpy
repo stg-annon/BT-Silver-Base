@@ -71,12 +71,8 @@ label __init_variables:
     $ hg_powerGirl_OBJ.wait_time = 3
     $ hg_powerGirl_OBJ.store_image = "power.png"
     $ hg_powerGirl_OBJ.outfit_layers = []
-    $ hg_powerGirl_OBJ.outfit_layers.append("power_costume.png")
+    $ hg_powerGirl_OBJ.outfit_layers.extend(("power_cape.png","power_top.png","power_gloves.png","power_belt.png"))
     $ hg_powerGirl_OBJ.hair_layer = "power_hair"
-    $ hg_powerGirl_OBJ.actions = []
-    $ hg_powerGirl_OBJ.action_images = []
-    $ hg_powerGirl_OBJ.actions.append("lift_top")
-    $ hg_powerGirl_OBJ.action_images.append("power_costume_2.png")
     
     if not hasattr(renpy.store,'hg_msMarvel_OBJ'):
         $ hg_msMarvel_OBJ = hermione_outfit()
