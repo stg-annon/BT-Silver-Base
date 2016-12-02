@@ -83,8 +83,6 @@ label door:
                 jump night_main_menu
         
         "-Summon Hermione-" if summoning_hermione_unlocked and not hermione_takes_classes and not hermione_sleeping:
-            # Comment by TenchiMuyo1984:
-            # I'm not shure, but the following if elif makes nothing, because in line before must be booth variables = false
             if hermione_takes_classes:
                 show screen bld1
                 with d3
@@ -101,18 +99,12 @@ label door:
                 jump night_main_menu
                 
             else:
-                # Comment by TenchiMuyo1984
-                # The following change display of hermione didn't go away. It is allways displayed! Please test it.
-                $ wt_herm = hermione_SC
-                # call update_her_uniform
+                call update_her_uniform
                 
                 #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
                 #stop music fadeout 2.0
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
-                
-                $ wt_herm.xpos = 550
-                $ wt_herm.ypos = 0
                 
                 $ hermione_xpos = 550
                 $ hermione_ypos = 0
@@ -123,36 +115,28 @@ label door:
                 show screen bld1
                 with d3
                 if mad >=1 and mad < 3:
-                    #call her_main("","body_03")
-                    $ wt_herm.setFace(3)
+                    call her_main("","body_03")
                     ">Looks like Hermione is still a little upset with you..."
                 elif mad >=3 and mad < 10:
-                    #call her_main("","body_03")
-                    $ wt_herm.setFace(3)
+                    call her_main("","body_03")
                     ">Hermione is upset with you."
                 elif mad >=10 and mad < 20:
-                    #call her_main("","body_09")
-                    $ wt_herm.setFace(9)
+                    call her_main("","body_09")
                     ">Hermione is very upset with you."
                 elif mad >=20 and mad < 40:
-                    #call her_main("","body_05")
-                    $ wt_herm.setFace(5)
+                    call her_main("","body_05")
                     ">Hermione is mad at you."
                 elif mad >=40 and mad < 50:
-                    #call her_main("","body_47")
-                    $ wt_herm.setFace(47)
+                    call her_main("","body_47")
                     ">Hermione is very mad at you."
                 elif mad >=50 and mad < 60:
-                    #call her_main("","body_47")
-                    $ wt_herm.setFace(47)
+                    call her_main("","body_47")
                     ">Hermione is furious at you."
                 elif mad >=60:
-                    #call her_main("","body_47")
-                    $ wt_herm.setFace(47)
+                    call her_main("","body_47")
                     ">Hermione hates your guts."
                 else:
-                    $ wt_herm.say("Yes, [genie_name]?",1)
-                    # call her_main("Yes, [genie_name]?","body_01")
+                    call her_main("Yes, [genie_name]?","body_01")
                 
                 label day_time_requests:
                 menu:
@@ -164,8 +148,7 @@ label door:
                                 if mad <= 7:
                                     jump chit_chat
                                 else:
-                                    $ wt_herm.say("I have nothing to say to you sir...")
-                                    # her "I have nothing to say to you sir..."
+                                    her "I have nothing to say to you sir..."    
                                     jump hermione_talk
                             
                             "-Working-":
