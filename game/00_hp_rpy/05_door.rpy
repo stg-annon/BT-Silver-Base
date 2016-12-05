@@ -154,22 +154,34 @@ label door:
                             "-Working-":
                                 label working_menu:
                                 menu:
-                                    "-Work as a maid-" if "maid" in outfit_inventory and daytime:
+                                    "-Work as a maid-" if daytime and hg_maid_OBJ.purchased:
                                         jump job_1
+
+                                    "-Work as a maid-" if daytime and not hg_maid_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                         
-                                    "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_inventory:
+                                    "{color=#858585}-Work as a maid-{/color}" if not daytime:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_inventory:
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.purchased:
                                         jump job_3
+
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                     
                                     "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_inventory:
+                                    "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.purchased:
                                         jump job_4
+
+                                    "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                     
                                     "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                                         "This job is only available during the day."
