@@ -61,7 +61,7 @@ screen wardrobe_hair:
         text "Gifts" xpos 480 ypos 100 size 15
     
     
-label change_hair:
+label change_hair_new:
     #call her_main("Sure, let me just go change it.","body_01")
     $ hermione_SC.setHair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
@@ -70,7 +70,7 @@ label change_hair:
     
     
     
-label change_hair_old():
+label change_hair():
     call her_main("Sure, let me just go change it.","body_01")
     call set_h_hair(wardrobe_hair_style,wardrobe_hair_color)
     hide screen wardrobe_hair
@@ -172,14 +172,14 @@ screen wardrobe_costumes:
         text "Gifts" xpos 480 ypos 100 size 15
     
     
-label wardrobe_wear_costume:
+label wardrobe_wear_costume_new:
     hide screen hermione_main
     $ renpy.show_screen(hermione_SC.main_screen)
     $ hermione_SC.setOutfit(wardrobe_costume_selection)
     hide screen wardrobe_costumes
     call screen wardrobe_costumes
     
-label wardrobe_wear_costume_old:
+label wardrobe_wear_costume:
     hide screen hermione_main
     call h_outfit_OBJ(wardrobe_costume_selection)
     show screen hermione_main

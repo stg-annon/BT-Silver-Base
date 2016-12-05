@@ -476,36 +476,55 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     stop music fadeout 4.0
     
     call her_main("will this be all then?","body_31",xpos=370)
-    menu:
-        "-Let she go-":
-            m "Yes, you can go now."
+    if whoring >= 13:
+        menu:
+            "-Let her go-":
+                m "Yes, you can go now."
 
-            if hg_pf_NicePanties_OBJ.points == 0: #First time.
-                call her_main("Another 5 points...","body_13")
-                her "Can't wait to tell the guys!"
-                call her_main("Only that I can't actually tell them about any of this...","body_12")
-    
-            if daytime:
-                her "Well, my classes are about to start..."
-            else:
-                her "It's getting pretty late, [genie_name]... I should go..."
-    
-            if whoring <= 2:
-                $ whoring +=1
-    
-            $ hg_pf_NicePanties_OBJ.points += 1
-    
-            jump end_hg_pf
-        "-Ask about more favours-":
-            m "Are you interest in some additional points?"    
-            her "Why not. What do you think about?"
-            m "Perfect! I want..."
+                if hg_pf_NicePanties_OBJ.points == 0: #First time.
+                    call her_main("Another 5 points...","body_13")
+                    her "Can't wait to tell the guys!"
+                    call her_main("Only that I can't actually tell them about any of this...","body_12")
+        
+                if daytime:
+                    her "Well, my classes are about to start..."
+                else:
+                    her "It's getting pretty late, [genie_name]... I should go..."
+        
+                if whoring <= 2:
+                    $ whoring +=1
+        
+                $ hg_pf_NicePanties_OBJ.points += 1
+        
+                jump end_hg_pf
+            "-Ask about more favours-":
+                m "Are you interested in some additional points?"    
+                her "Why not. What are you thinking about?"
+                m "Hmmmm, I want..."
 
-            if whoring <= 2:
-                $ whoring +=1
-    
-            $ hg_pf_NicePanties_OBJ.points += 1
-            jump silver_requests_root
+                if whoring <= 2:
+                    $ whoring +=1
+        
+                $ hg_pf_NicePanties_OBJ.points += 1
+                jump silver_requests_root
+    else:
+        m "Yes, you can go now."
+        if hg_pf_NicePanties_OBJ.points == 0: #First time.
+            call her_main("Another 5 points...","body_13")
+            her "Can't wait to tell the guys!"
+            call her_main("Only that I can't actually tell them about any of this...","body_12")
+
+        if daytime:
+            her "Well, my classes are about to start..."
+        else:
+            her "It's getting pretty late, [genie_name]... I should go..."
+
+        if whoring <= 2:
+            $ whoring +=1
+
+        $ hg_pf_NicePanties_OBJ.points += 1
+
+        jump end_hg_pf
 
     
 ###################REQUEST_04 (Level 02) (Touch tits's through fabric.)###############################
