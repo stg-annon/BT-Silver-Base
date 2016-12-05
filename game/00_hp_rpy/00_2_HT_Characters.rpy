@@ -45,6 +45,7 @@ init python:
     fre = Character('Fred', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/fred_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
     ger = Character('George', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/weasley_twins/george_01.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
     lher = Character('Hermini', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
+    herA = Character('Prude Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     
     
     

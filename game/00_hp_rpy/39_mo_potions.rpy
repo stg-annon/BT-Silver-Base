@@ -1631,7 +1631,20 @@ label potion_scene_8: #Hypno potion
     jump day_main_menu
 
 label potion_scene_9: #Clone potion
-    m "Work in progress"
+    m "Do you ever feel conflicted about what we do in here [hermione_name]?"
+    her "Conflicted? I suppose I do... why do you ask?"
+    m "because I have a new potion that can help you come to terms with this internal conflict."
+    her "What? How?"
+    m "It splits your mind into two parts, allowing you to confront yourself and address the problem."
+    her "Splits my mind?! That doesn't sound very safe!"
+    m "It only splits your mind metaphorically. I ensure you it's as safe as can be."
+    her "Well if you made it yourself then I trust it. I mean it's not like the weasley twins made it."
+    m "Of course not... Now if you'd kindly drink it we can get to the bottom of your conflicted nature."
+    her "..."
+    her "Well here goes..."
+    ">Hermione drinks the potion."
+    her "Mmmmmm it's so sweet..."
+    herA "Ughhhh, it's so sour..."
 
     #Hermione split into two versions of herself, one slutty, one prudish
     #Slutty one wants to have sex with Genie 
