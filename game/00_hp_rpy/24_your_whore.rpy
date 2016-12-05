@@ -146,6 +146,9 @@ label your_whore:
     m "(There she is!)"
     
     mal "Hermione, hey..."
+    call set_hermione_outfit(hg_ballDress_OBJ)
+    $ hermione_hair_a = "01_hp/13_characters/hermione/body/head/B_1.png"
+    $ hermione_hair_b = "01_hp/13_characters/hermione/body/head/B_1_2.png"
     $ her_head_ypos = her_head_tits
     call her_head("Oh, hello.","body_159")     
     mal "You look... so beautiful tonight, Hermione."

@@ -224,12 +224,12 @@ screen wardrobe_gifts:
             add "01_hp/13_characters/hermione/accessories/collars/collar_0.png" xpos 255 ypos 350 zoom 0.8
         else:
             add "01_hp/13_characters/hermione/accessories/collars/collar_5.png" xpos 255 ypos 350 zoom 0.8 
-        # #Dress 
-        # if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
-            # hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
-            # add "01_hp/23_clothes_store/cs_gui/10.png" xpos 13+(90*4) ypos 484 zoom 0.18
-        # else:
-            # add "01_hp/23_clothes_store/cs_gui/10b.png" xpos 13+(90*4) ypos 484 zoom 0.18
+        #Dress 
+        if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
+            hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
+            add "01_hp/23_clothes_store/cs_gui/ball_dress.png" xpos 13+(90*4) ypos 484 zoom 0.18
+        else:
+            add "01_hp/23_clothes_store/cs_gui/ball_dress_b.png" xpos 13+(90*4) ypos 484 zoom 0.18
             
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15

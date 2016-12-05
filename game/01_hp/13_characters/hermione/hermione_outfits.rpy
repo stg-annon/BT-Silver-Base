@@ -96,7 +96,7 @@ label __init_variables:
     if not hasattr(renpy.store,'hg_ballDress_OBJ'):
         $ hg_ballDress_OBJ = hermione_outfit()
     $ hg_ballDress_OBJ.name = "Ball Dress"
-    $ hg_ballDress_OBJ.cost = 15000
+    $ hg_ballDress_OBJ.cost = 1500
     $ hg_ballDress_OBJ.wait_time = 7
     $ hg_ballDress_OBJ.store_image = "ball_dress.png"
     $ hg_ballDress_OBJ.outfit_layers = []

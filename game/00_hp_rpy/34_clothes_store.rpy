@@ -260,7 +260,7 @@ label place_outfit_order:
         maf "I'll send you an owl when it's done."
         jump clothes_menu
     else:
-        m "I don't have [cost] gold."
+        m "I don't have [outfit_OBJ.cost] gold."
         m "Well this is depressing."
         jump clothes_menu
 return
