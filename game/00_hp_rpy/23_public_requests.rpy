@@ -574,7 +574,7 @@ label hg_pr_FlirtTeacher_complete:
                                     with d3
                                     show screen blktone8
                                     with d5
-                                    call her_head("Here....","head_exp\12")
+                                    call her_head("Here....","head_exp/12")
                                     m "Hm..."
                                     hide screen blktone8 
                                     with d5
