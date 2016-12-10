@@ -22,15 +22,15 @@ label luna_init:
     $ luna_arrousal = 0
     $ luna_corruption = 0
 
-    $ luna_base = "01_hp/13_characters/luna/base/base_01.png" 
-    $ luna_cheeks = "01_hp/13_characters/luna/base/cheeks_01.png"
-    $ luna_hair = "01_hp/13_characters/luna/base/hair_01.png" 
-    $ luna_xpos = 300
+    $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
+    $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
+    $ luna_hair = "01_hp/13_characters/luna/body/head/hair_01.png" 
+    $ luna_xpos = 600
     $ luna_ypos = 0
-    $ luna_mouth = "01_hp/13_characters/luna/mouth/mouth_01.png" 
-    $ luna_eye = "01_hp/13_characters/luna/eye/eye_01.png" 
-    $ luna_eyebrow = "01_hp/13_characters/luna/eye/eyebrow_01.png" 
-    $ luna_pupil = "01_hp/13_characters/luna/eye/pupil_01.png" 
+    $ luna_mouth = "01_hp/13_characters/luna/body/face/mouth/mouth_1.png" 
+    $ luna_eye = "01_hp/13_characters/luna/body/face/eye/eye_1.png" 
+    $ luna_eyebrow = "01_hp/13_characters/luna/body/face/eyebrow/eyebrow_1.png" 
+    $ luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_1.png" 
     $ luna_glasses = "01_hp/13_characters/luna/misc/glasses.png" 
     $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top.png" 
     $ luna_acc = "01_hp/13_characters/luna/misc/jewel.png" 
