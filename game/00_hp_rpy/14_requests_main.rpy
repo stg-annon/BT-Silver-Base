@@ -1,79 +1,91 @@
 label __init_variables:
     if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
-        $ hg_pf_TalkToMe_OBJ = personal_favor()
-    $ hg_pf_TalkToMe_OBJ.imagination_level = 0
-    $ hg_pf_TalkToMe_OBJ.menu_text = "Talk to me"
-    $ hg_pf_TalkToMe_OBJ.start_label = "hg_pf_TalkToMe"
-    $ hg_pf_TalkToMe_OBJ.costume_event = True
+        $ hg_pf_TalkToMe_OBJ = personal_favor(
+            imagination_level = 0,
+            menu_text = "Talk to me",
+            start_label = "hg_pf_TalkToMe",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
-        $ hg_pf_NicePanties_OBJ = personal_favor()
-    $ hg_pf_NicePanties_OBJ.imagination_level = 0
-    $ hg_pf_NicePanties_OBJ.menu_text = "Nice panties"
-    $ hg_pf_NicePanties_OBJ.start_label = "hg_pf_NicePanties"
+        $ hg_pf_NicePanties_OBJ = personal_favor(    
+            imagination_level = 0,
+            menu_text = "Nice panties",
+            start_label = "hg_pf_NicePanties"
+        )
     
     if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
-        $ hg_pf_BreastMolester_OBJ = personal_favor()
-    $ hg_pf_BreastMolester_OBJ.imagination_level = 2
-    $ hg_pf_BreastMolester_OBJ.menu_text = "Breast molester"
-    $ hg_pf_BreastMolester_OBJ.start_label = "hg_pf_BreastMolester"
-    $ hg_pf_BreastMolester_OBJ.costume_event = True
+        $ hg_pf_BreastMolester_OBJ = personal_favor(
+            imagination_level = 2,
+            menu_text = "Breast molester",
+            start_label = "hg_pf_BreastMolester",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
-        $ hg_pf_ButtMolester_OBJ = personal_favor()
-    $ hg_pf_ButtMolester_OBJ.imagination_level = 2
-    $ hg_pf_ButtMolester_OBJ.menu_text = "Butt molester"
-    $ hg_pf_ButtMolester_OBJ.start_label = "hg_pf_ButtMolester"
-    $ hg_pf_ButtMolester_OBJ.costume_event = True
+        $ hg_pf_ButtMolester_OBJ = personal_favor(
+            imagination_level = 2,
+            menu_text = "Butt molester",
+            start_label = "hg_pf_ButtMolester",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
-        $ hg_pf_ShowThemToMe_OBJ = personal_favor()
-    $ hg_pf_ShowThemToMe_OBJ.imagination_level = 3
-    $ hg_pf_ShowThemToMe_OBJ.menu_text = "Show them to me!"
-    $ hg_pf_ShowThemToMe_OBJ.start_label = "hg_pf_ShowThemToMe"
-    $ hg_pf_ShowThemToMe_OBJ.costume_event = True
+        $ hg_pf_ShowThemToMe_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Show them to me!",
+            start_label = "hg_pf_ShowThemToMe",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
-        $ hg_pf_DanceForMe_OBJ = personal_favor()
-    $ hg_pf_DanceForMe_OBJ.imagination_level = 3
-    $ hg_pf_DanceForMe_OBJ.menu_text = "Dance for me!"
-    $ hg_pf_DanceForMe_OBJ.start_label = "hg_pf_DanceForMe"
-    $ hg_pf_DanceForMe_OBJ.costume_event = True
+        $ hg_pf_DanceForMe_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Dance for me!",
+            start_label = "hg_pf_DanceForMe",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
-        $ hg_pf_LetMeTouchThem_OBJ = personal_favor()
-    $ hg_pf_LetMeTouchThem_OBJ.imagination_level = 3
-    $ hg_pf_LetMeTouchThem_OBJ.menu_text = "Let me touch them!"
-    $ hg_pf_LetMeTouchThem_OBJ.start_label = "hg_pf_LetMeTouchThem"
-    $ hg_pf_LetMeTouchThem_OBJ.costume_event = True
+        $ hg_pf_LetMeTouchThem_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Let me touch them!",
+            start_label = "hg_pf_LetMeTouchThem",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
-        $ hg_pf_TouchMe_OBJ = personal_favor()
-    $ hg_pf_TouchMe_OBJ.imagination_level = 4
-    $ hg_pf_TouchMe_OBJ.menu_text = "Touch me!"
-    $ hg_pf_TouchMe_OBJ.start_label = "hg_pf_TouchMe"
-    $ hg_pf_TouchMe_OBJ.costume_event = True
+        $ hg_pf_TouchMe_OBJ = personal_favor(
+            imagination_level = 4,
+            menu_text = "Touch me!",
+            start_label = "hg_pf_TouchMe",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
-        $ hg_pf_SuckIt_OBJ = personal_favor()
-    $ hg_pf_SuckIt_OBJ.imagination_level = 4
-    $ hg_pf_SuckIt_OBJ.menu_text = "Suck it!"
-    $ hg_pf_SuckIt_OBJ.start_label = "hg_pf_SuckIt"
-    $ hg_pf_SuckIt_OBJ.costume_event = True
+        $ hg_pf_SuckIt_OBJ = personal_favor(
+            imagination_level = 4,
+            menu_text = "Suck it!",
+            start_label = "hg_pf_SuckIt",
+            costume_event = True
+        )
     
     if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
-        $ hg_pf_LetsHaveSex_OBJ = personal_favor()
-    $ hg_pf_LetsHaveSex_OBJ.imagination_level = 5
-    $ hg_pf_LetsHaveSex_OBJ.menu_text = "Let's have sex!"
-    $ hg_pf_LetsHaveSex_OBJ.start_label = "hg_pf_LetsHaveSex"
-    $ hg_pf_LetsHaveSex_OBJ.costume_event = True
-    
+        $ hg_pf_LetsHaveSex_OBJ = personal_favor(
+            imagination_level = 5,
+            menu_text = "Let's have sex!",
+            start_label = "hg_pf_LetsHaveSex",
+            costume_event = True
+        )
+            
     if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
-        $ hg_pf_TimeForAnal_OBJ = personal_favor()
-    $ hg_pf_TimeForAnal_OBJ.imagination_level = 5
-    $ hg_pf_TimeForAnal_OBJ.menu_text = "Time for anal!"
-    $ hg_pf_TimeForAnal_OBJ.start_label = "hg_pf_TimeForAnal"
-    $ hg_pf_TimeForAnal_OBJ.costume_event = True
+        $ hg_pf_TimeForAnal_OBJ = personal_favor(
+            imagination_level = 5,
+            menu_text = "Time for anal!",
+            start_label = "hg_pf_TimeForAnal",
+            costume_event = True
+        )
+    
     
     $ hg_pf_list = []
     $ hg_pf_list.append(hg_pf_TalkToMe_OBJ)
@@ -328,6 +340,13 @@ label silver_requests:
                         if p_potion_names[7] in p_inv:
                             $ p_inv.remove(p_potion_names[7])
                             jump potion_scene_8
+                        else:
+                            m "I don't have this potion..."
+                            jump request_potion_menu
+                    "-Clone potion-" if "Clone Potion" in p_inv:
+                        if p_potion_names[8] in p_inv:
+                            $ p_inv.remove(p_potion_names[8])
+                            jump potion_scene_9
                         else:
                             m "I don't have this potion..."
                             jump request_potion_menu
@@ -634,6 +653,9 @@ init python:
         imagination_level = 0
         costume_event = False
         
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
         def getMenuText(self):
             menu_image = "interface/heart_0"+str(self.hearts_level)+".png"
             ret_str = "Favor: \""+self.menu_text+"\" {image="+menu_image+"}"
@@ -657,3 +679,4 @@ init python:
         def getMenuText(self):
             menu_image = "interface/check_"+str(self.complete)+".png"
             return "Event: "+self.menu_text+" {image="+menu_image+"}"
+    

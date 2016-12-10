@@ -1537,7 +1537,7 @@ label l_tutoring:
         $ badges = True
         $ wear_shirts = True
         ##call her_pose()
-        $ hermione_chibi_xpos = 610
+        $ hermione_SC.chibi.xpos = 610
         ##show screen hermione_stand_f
         show screen genie
         hide screen blkfade
@@ -1586,7 +1586,7 @@ label l_tutoring:
         hide screen g_c_u
         hide screen chair_02
         show screen genie
-        $ hermione_chibi_xpos = 300
+        $ hermione_SC.chibi.xpos = 300
         show screen hermione_blink
         hide screen blkfade
 
@@ -1704,7 +1704,7 @@ label l_tutoring:
         with d5
         ">Hermione slowly slides down her robe."
         hide screen hermione_blink
-        $ hermione_chibi_xpos = 300
+        $ hermione_SC.chibi.xpos = 300
         show screen ctc
         with d1
         hide screen blkfade
@@ -2095,70 +2095,70 @@ define sd_win2 = "sounds/win2.mp3"
 # Screens
 screen genie_and_hermione: #Genie sitting, Hermione stands right in front of him (behind the desk even).
     tag favor
-    add "01_hp/05_props/genie_and_hermione_01.png" at Position(xpos=-200, ypos=10)
+    add "01_hp/05_props/genie_and_hermione_01.png" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen groping_05:
     tag favor
-    add "groping_05" at Position(xpos=-200, ypos=10)
-    add "groping_05_blinking" at Position(xpos=-200, ypos=10)
+    add "groping_05" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen groping_05b:
     tag favor
-    add "groping_05b" at Position(xpos=-200, ypos=10)
-    add "groping_05_blinking" at Position(xpos=-200, ypos=10)
+    add "groping_05b" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen no_groping_05:
     tag favor
-    add "01_hp/animation/grope_d_05.png" at Position(xpos=-200, ypos=10)
-    add "groping_05_blinking" at Position(xpos=-200, ypos=10)
+    add "01_hp/animation/grope_d_05.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_05_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen no_groping_05_desk:
     tag favor
-    add "01_hp/animation/grope_d_06.png" at Position(xpos=-200, ypos=10)
+    add "01_hp/animation/grope_d_06.png" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen no_groping_06: #Facing Genie.
     tag favor
-    add "01_hp/animation/grope_e_05.png" at Position(xpos=-200, ypos=10)
-    add "groping_06_blinking" at Position(xpos=-200, ypos=10)
+    add "01_hp/animation/grope_e_05.png" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen groping_06:
     tag favor
-    add "groping_06" at Position(xpos=-200, ypos=10)
-    add "groping_06_blinking" at Position(xpos=-200, ypos=10)
+    add "groping_06" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen groping_06b:
     tag favor
-    add "groping_06b" at Position(xpos=-200, ypos=10)
-    add "groping_06_blinking" at Position(xpos=-200, ypos=10)
+    add "groping_06b" at Position(xpos = table_position_x -84, ypos = 10)
+    add "groping_06_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen no_groping_laying_01:
     tag favor
-    add "01_hp/animation/grope_laying_01.png" at Position(xpos=-200, ypos=10)
+    add "01_hp/animation/grope_laying_01.png" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen no_groping_laying_02:
     tag favor
-    add "01_hp/animation/grope_laying_b_01.png" at Position(xpos=-200, ypos=10)
+    add "01_hp/animation/grope_laying_b_01.png" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen scr_her_fingering_naked(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_fingering_slow_naked" at Position(xpos=-200, ypos=10)
+        add "ani_her_fingering_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
     else:
-        add "ani_her_fingering_naked" at Position(xpos=-200, ypos=10)
-    add "ani_her_fingering_blinking" at Position(xpos=-200, ypos=10)
+        add "ani_her_fingering_naked" at Position(xpos = table_position_x -84, ypos = 10)
+    add "ani_her_fingering_blinking" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen scr_her_sex(speed="normal"):
     tag favor
     if speed == "slow":
-        add "ani_her_sex_slow_naked" at Position(xpos=-200, ypos=10)
+        add "ani_her_sex_slow_naked" at Position(xpos = table_position_x -84, ypos = 10)
     elif speed == "normal":
-        add "ani_her_sex_naked" at Position(xpos=-200, ypos=10)
+        add "ani_her_sex_naked" at Position(xpos = table_position_x -84, ypos = 10)
     elif speed == "fast":
-        add "ani_her_sex_fast_naked" at Position(xpos=-200, ypos=10)
+        add "ani_her_sex_fast_naked" at Position(xpos = table_position_x -84, ypos = 10)
 
 screen scr_her_sex_cum_outside(blink=0):
     tag favor
-    add "ani_her_sex_cum_outside_naked" at Position(xpos=-200, ypos=10)
+    add "ani_her_sex_cum_outside_naked" at Position(xpos = table_position_x -84, ypos = 10)
 
 image groping_06: #Genie groping Hermione under her skirt. Hermione is facing Genie.
     "01_hp/animation/grope_e_01.png"

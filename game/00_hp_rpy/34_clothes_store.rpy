@@ -1,16 +1,20 @@
 label __init_variables:
-    if not hasattr(renpy.store,'cs_stock_inventory'): #important!
-        $ cs_stock_inventory = []
-    if not hasattr(renpy.store,'outfit_inventory'): #important!
-        $ outfit_inventory = []
-    if not hasattr(renpy.store,'outfit_order'): #important!
-        $ outfit_order = "null"
-    if not hasattr(renpy.store,'outfit_wait_time'): #important!
-        $ outfit_wait_time = 0
-    if not hasattr(renpy.store,'outfit_ready'): #important!
-        $ outfit_ready = False
+    if not hasattr(renpy.store,'clothes_intro_done'): #important!
+        $ clothes_intro_done = False
     if not hasattr(renpy.store,'outfit_order_placed'): #important!
         $ outfit_order_placed = False
+    if not hasattr(renpy.store,'outfit_ready'): #important!
+        $ outfit_ready = False
+    if not hasattr(renpy.store,'outfit_wait_time'): #important!
+        $ outfit_wait_time = 0
+    if not hasattr(renpy.store,'outfit_order'): #important!
+        $ outfit_order = None
+    
+    $ clothes_store_order_choice = None
+    $ clothes_store_selection = None
+    
+    if not hasattr(renpy.store,'cs_stock_inventory'): #important!
+        $ cs_stock_inventory = []
     if not hasattr(renpy.store,'micro_skirt'): #important!
         $ micro_skirt = False
     if not hasattr(renpy.store,'glasses'): #important!
@@ -21,16 +25,6 @@ label __init_variables:
         $ wear_skirts = True
     if not hasattr(renpy.store,'gave_tinyminiskirt'): #important!
         $ gave_tinyminiskirt = False
-    if not hasattr(renpy.store,'clothes_intro_done'): #important!
-        $ clothes_intro_done = False
-    if not hasattr(renpy.store,'custom_outfit_1_bought'): #important!
-        $ custom_outfit_1_bought = False
-    if not hasattr(renpy.store,'custom_outfit_2_bought'): #important!
-        $ custom_outfit_2_bought = False
-    if not hasattr(renpy.store,'custom_outfit_3_bought'): #important!
-        $ custom_outfit_3_bought = False
-    if not hasattr(renpy.store,'custom_outfit_4_bought'): #important!
-        $ custom_outfit_4_bought = False
     if not hasattr(renpy.store,'cs_accessories'): #important!
         $ cs_accessories = [False,False,False]
     if not hasattr(renpy.store,'cs_existing_stock'): #important!
@@ -38,54 +32,8 @@ label __init_variables:
     if not hasattr(renpy.store,'cs_existing_stock_gifted'): #important!
         $ cs_existing_stock_gifted = []
     
-    $ clothes_store_order_choice = "null"
-    $ clothes_store_curr_page = 1
-    $ clothes_store_selection = 0
-    
-    $ cs_gui_OBJ = cs_gui_class()
-    
-    $ clothes_store_inv = []
-    $ clothes_store_inv.append("null")#buffer for index 0
-    $ clothes_store_inv.append("gryffindor_cheerleader")#start page 1
-    $ clothes_store_inv.append("slytherin_cheerleader")
-    $ clothes_store_inv.append("maid")
-    $ clothes_store_inv.append("silk_nightgown")
-    $ clothes_store_inv.append("ball_dress")
-    $ clothes_store_inv.append("ms_marvel")
-    $ clothes_store_inv.append("heart_dancer")
-    $ clothes_store_inv.append("power_girl")#end page 1
-    ###########################################
-    $ clothes_store_inv.append("harley_quinn")#start page 2
-    $ clothes_store_inv.append("christmas_costume")
-    $ clothes_store_inv.append("lara_croft")
-    $ clothes_store_inv.append("pirate")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")#end page 2
-    ###########################################
-    $ clothes_store_inv.append("")#start page 3
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")
-    $ clothes_store_inv.append("")#end page 3
     
     return
-    
-label cs_select:
-    $ tmp = ((clothes_store_curr_page-1)*8) + clothes_store_selection
-    #DEBUG#"You picked page [clothes_store_curr_page] item [clothes_store_selection]!  ([tmp])"
-    if clothes_store_inv[tmp] == "wip":
-        call cust_excuse("Sorry this outfit is currently a work in progress and unavalable at this time.")
-        jump clothes_menu
-    if clothes_store_selection == -1 or clothes_store_inv[tmp] == "":
-        jump clothes_menu
-    
-    $ clothes_store_order_choice = clothes_store_inv[(((clothes_store_curr_page-1)*8)+ clothes_store_selection)]
-    jump cs_select_done
     
 label clothes_store:
     if outfit_ready:
@@ -95,30 +43,27 @@ label clothes_store:
         maf "..."
         maf "here you are"
         call pickup_outfit
-    if clothes_intro_done == False:
-        jump clothes_intro
+        if clothes_intro_done == False:
+            ">You enter to see an old woman busy sewing together too pieces of long dark fabric."
+            ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
+            m "Hello."
+            maf "Hello Professor Dumbledore."
+            maf "What can I do for you? Would you like a new cloak or do you require some alterations to an existing item?"
+            m "Neither thank you, I'm just here to make a few enquiries."
+            maf "Of course sir, what could I help you with."
+            m "Firstly, what type of items do you sell?"
+            maf "Well, I'm a tailor. I make uniforms for the staff and students."
+            maf "I also perform alterations to existing items. This is mainly when a student goes through a growth spurt or gets a hole in their cloak."
+            m "I see. Do you ever make custom orders?"
+            maf "Not really, although it is my passion. Most of what I'm asked to make are standard black robes."
+            m "So you're interested in making unique outfits?"
+            maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
+            maf "What did you have in mind?"
+            m "A few things. Haven't decided on anything specific yet."
+            m "Well, while your making up your mind, feel free to browse the store."
+            $ clothes_intro_done = True
+            jump clothes_menu
     maf "Well what can I get for you today?"
-    jump clothes_menu
-    
-label clothes_intro:
-    ">You enter to see an old woman busy sewing together too pieces of long dark fabric."
-    ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
-    m "Hello."
-    maf "Hello Professor Dumbledore."
-    maf "What can I do for you? Would you like a new cloak or do you require some alterations to an existing item?"
-    m "Neither thank you, I'm just here to make a few enquiries."
-    maf "Of course sir, what could I help you with."
-    m "Firstly, what type of items do you sell?"
-    maf "Well, I'm a tailor. I make uniforms for the staff and students."
-    maf "I also perform alterations to existing items. This is mainly when a student goes through a growth spurt or gets a hole in their cloak."
-    m "I see. Do you ever make custom orders?"
-    maf "Not really, although it is my passion. Most of what I'm asked to make are standard black robes."
-    m "So you're interested in making unique outfits?"
-    maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
-    maf "What did you have in mind?"
-    m "A few things. Haven't decided on anything specific yet."
-    m "Well, while your making up your mind, feel free to browse the store."
-    $ clothes_intro_done = True
     jump clothes_menu
     
 label clothes_menu:
@@ -135,11 +80,9 @@ label clothes_menu:
             maf "You're welcome sir. Come back any time."
             jump day_main_menu
    
-    
 label custom_orders:
     
     call clothes_store_gui
-    
     
     if isinstance(clothes_store_order_choice,hermione_outfit):
         if clothes_store_order_choice.purchased:
@@ -298,7 +241,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_pirate_OBJ and not hg_pirate_OBJ.purchased:
+            if clothes_store_order_choice == hg_pirate_OBJ:
                 m "I want a pirate outfit"
                 maf "ok"
                 call place_outfit_order
@@ -317,7 +260,7 @@ label place_outfit_order:
         maf "I'll send you an owl when it's done."
         jump clothes_menu
     else:
-        m "I don't have [cost] gold."
+        m "I don't have [outfit_OBJ.cost] gold."
         m "Well this is depressing."
         jump clothes_menu
 return
@@ -516,7 +459,8 @@ label cs_buy_stock(item_id = "", cost):
 label clothes_store_gui:
     $ cs_gui_OBJ = cs_gui_class()
     call screen cs_gui
-    label cs_select:
+
+label cs_select:
     if clothes_store_selection == "EXIT":
         jump clothes_menu
     #"You picked page [cs_gui_OBJ.current_page] item [clothes_store_selection.name]!"
@@ -562,19 +506,9 @@ init python:
         current_page = 0
         
         def getListOfItems(self):
-            list = []
-            start_range = self.current_page*8
-            list.extend(hermione_outfits_list[start_range:start_range+8])
-            return list
-            
+            return hermione_outfits_list[(self.current_page*8):min((self.current_page*8)+8, len(hermione_outfits_list))]
         def getNamesOfItems(self):
-            list = []
-            start_range = self.current_page*8
-            list.extend(hermione_outfits_list[start_range:start_range+8])
-            name_list = []
-            for i in list:
-                name_list.append(i.name)
-            return name_list
+            return [i.name for i in self.getListOfItems()]
         def getTotalPages(self):
             return len(hermione_outfits_list)/8
             

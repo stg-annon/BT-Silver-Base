@@ -282,6 +282,11 @@ label purchase_book(BookOBJ):
 label shop_potion_menu:
     show screen shop_screen
     menu:
+    
+        "Send loll":
+            $ deliveryQ.send(Lollipop,1,5,'Gift')
+            "sent"
+            jump shop_potion_menu
         "-Questions acquiring items-":
             menu:
                 "-Knotgrass-":
@@ -306,9 +311,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Polyjuice Potion-" if whoring >= 5:
             menu:
-                "-Buy the potion for 100 Gold-":
-                    if gold >= 100:
-                        $ gold -= 100
+                "-Buy the potion for 40 Gold-":
+                    if gold >= 40:
+                        $ gold -= 40
                         $ p_inv.append("Polyjuice Potion")
                         m "Polyjuice potion aquired, although it's missing a key ingredient..."
                     else:
@@ -321,9 +326,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Transparent Tincture-" if whoring >= 3:
             menu:
-                "-Buy the potion for 75 Gold-":
-                    if gold >= 75:
-                        $ gold -= 75
+                "-Buy the potion for 20 Gold-":
+                    if gold >= 20:
+                        $ gold -= 20
                         $ p_inv.append("Transparent Tincture")
                         m "Transparent Tincture aquired, although it's missing a key ingredient..."
                     else:
@@ -336,9 +341,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Expanding Elixir-" if whoring >= 8:
             menu:
-                "-Buy the potion for 150 Gold-":
-                    if gold >= 150:
-                        $ gold -= 150
+                "-Buy the potion for 30 Gold-":
+                    if gold >= 30:
+                        $ gold -= 30
                         $ p_inv.append("Expanding Elixir")
                         m "Expanding Elixir aquired, although it's missing a key ingredient..."
                     else:
@@ -351,9 +356,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Moreish Mead-" if whoring >= 14:
             menu:
-                "-Buy the potion for 200 Gold-":
-                    if gold >= 200:
-                        $ gold -= 200
+                "-Buy the potion for 60 Gold-":
+                    if gold >= 60:
+                        $ gold -= 60
                         $ p_inv.append("Moreish Mead")
                         m "Moreish Mead aquired, although it's missing a key ingredient..."
                     else:
@@ -366,9 +371,9 @@ label shop_potion_menu:
             call screen shop_screen
         "-Imperius Potation-" if whoring >= 14:
             menu:
-                "-Buy the potion for 300 Gold-":
-                    if gold >= 300:
-                        $ gold -= 300
+                "-Buy the potion for 45 Gold-":
+                    if gold >= 45:
+                        $ gold -= 45
                         $ p_inv.append("Imperius Potation")
                         m "Imperius Potation aquired, although it's missing a key ingredient..."
                     else:
@@ -409,38 +414,40 @@ label object_gift_block(item):
     $ cost4 = item.cost * 8
     menu:
         "-Buy 1 for ([item.cost] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 1
-            call object_purchase_item(item.cost)
+            call object_purchase_item(item, 1)
         "-Buy 2 for ([cost2] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 2
-            call object_purchase_item(cost2)
+            call object_purchase_item(item, 2)
         "-Buy 4 for ([cost3] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 4
-            call object_purchase_item(cost3)
+            call object_purchase_item(item, 4)
         "-Buy 8 for ([cost4] galleons)-":
-            $ gift_order = item
-            $ order_quantity = 8
-            call object_purchase_item(cost4)
+            call object_purchase_item(item, 8)
         "-Never mind-":
             hide screen gift
             call gifts_menu
             
-label object_purchase_item(order_cost):
+label object_purchase_item(item, quantity):
+    $ transit_time = renpy.random.randint(1, 5)
+    $ order_cost = item.cost*quantity
     if gold >= (order_cost):
         menu:
             "-add next day delivery (15 galleons)-" if gold >= order_cost + 15:
                 $ gold -= 15
-                $ next_day = True
+                $ transit_time = 1
+                # $ next_day = True
             "{color=#858585}-add next day delivery (15 galleons)-{/color}" if gold < order_cost + 15:
                 pass
             "-no thanks-":
                 pass
         $ gold -= order_cost
-        $ order_placed = True
-        call thx_4_shoping
+        $ deliveryQ.send(item,transit_time,quantity,'Gift')
+        # $ gift_order = item
+        # $ order_placed = True
+        if transit_time ==  1:
+            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
+        else:
+            dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered in 1 to [transit_time] days."
+        hide screen gift
+        with d3
         jump shop_menu
     else:
         call no_gold #Massage: m "I don't have enough gold".
@@ -494,19 +501,19 @@ label app:
                 "-Never mind-":
                     hide screen gift
                     jump app            
-        "-Fishnet stokings (800 gold)-" if not nets == 7:
+        "-Fishnet stokings (120 gold)-" if not nets == 7:
             $ the_gift = "01_hp/18_store/30.png" # FISHNETS.
             show screen gift
             with d3
             call nets_text
             menu:
-                "-Buy the item (800 gold)-":
+                "-Buy the item (120 gold)-":
                     if nets == 7 or nets == 1: # == 7 means "gifted already"
                         call do_have_book # "I already own this one."
                         jump app
                     else:
-                        if gold >= 800:
-                            $ gold -= 800
+                        if gold >= 120:
+                            $ gold -= 120
                             $ order_placed = True
                             $ bought_nets = True #Affects 15_mail.rpy
                             call thx_4_shoping #Massage that says "Thank you for shopping here!".
@@ -585,8 +592,8 @@ label do_have_book:
     
 ### THANK YOU FOR shopping here.
 label thx_4_shoping:
-    $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
-
+    # $ days_in_delivery2 = one_of_five  #Generating one number out of three for various porpoises.
+    
     if one_of_five ==  1:
         dahr "Thank your for shopping at \"Dahr's oddities\". Your order shall be delivered tomorrow."
         hide screen gift

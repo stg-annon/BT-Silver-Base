@@ -21,9 +21,7 @@ label fireplace:
             
             
             
-            
-            
-            
+        
         "-Get the fire going-" if not fire_in_fireplace and not day == 1:
             #$ renpy.play('sounds/fire01.ogg')  
             #play bg_sounds "sounds/fire01.ogg" fadeout 1.0 fadein 1.0 #LOUD!

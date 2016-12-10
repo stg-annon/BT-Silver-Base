@@ -12,8 +12,8 @@ $ chitchated_with_her = False #Prevents you from chitchatting with Hermione more
 $ chitchated_with_snape = False #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
 
 $ hermione_main_zorder = 5 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box.
-$ gifted = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
-$ searched = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
+$ gifted    = False #Prevents you from giving Hermione a several gifts in a row. Turns back to False every night and every morning.
+$ searched  = False #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
 $ temp_name = "Day - "+str(day)+"\nWhoring - "+str(whoring)
 $ save_name = temp_name
 
@@ -22,12 +22,12 @@ $ menu_x = 0.5 #Just to make sure that menu is displayed in the center of the sc
 
 ### RESETING STUFF ###
 call luna_day_flags
-$ only_upper = False #When true, legs are not displayed in the hermione_main screen.
-$ autograph = False #Displays professor Lockhart's autograph on Hermione's leg.
-$ no_blinking = False #When True - blinking animation is not displayed.
+$ only_upper    = False #When true, legs are not displayed in the hermione_main screen.
+$ autograph     = False #Displays professor Lockhart's autograph on Hermione's leg.
+$ no_blinking   = False #When True - blinking animation is not displayed.
 $ sperm_on_tits = False #Sperm on tits when Hermione pulls her shirt up.
-$ aftersperm = False #Shows cum stains on Hermione's uniform.
-$ uni_sperm = False
+$ aftersperm    = False #Shows cum stains on Hermione's uniform.
+$ uni_sperm     = False
 
 $ phoenix_is_feed = False #At the beginning of every new day Phoenix is not fed.
 $ only_upper = False #When False legs are displayed in the hermione_main acreen.
@@ -50,30 +50,30 @@ hide screen cloud_night_02 #NIGHT CLOUDS.
 hide screen cloud_night_03 #NIGHT CLOUDS.
 hide screen bld1 #You know what this is. Just making sure it doesn't get stuck.
 
-if whoring >= 0 and whoring <= 2:
+if whoring >=  0 and whoring <  3:
     $ level = "01"
-if whoring >= 3 and whoring <= 5:
+if whoring >=  3 and whoring <  6:
     $ level = "02"
-if whoring >= 6 and whoring <= 8:
+if whoring >=  6 and whoring <  9:
     $ level = "03"
-if whoring >= 9 and whoring <= 11:
+if whoring >=  9 and whoring < 12:
     $ level = "04"
-if whoring >= 12 and whoring <= 14:
+if whoring >= 12 and whoring < 15:
     $ level = "05"
 
-if whoring >= 15 and whoring <= 17:
+if whoring >= 15 and whoring < 18:
     $ level = "06"
 
-if whoring >= 18 and whoring <= 20:
+if whoring >= 18 and whoring < 21:
     $ level = "07"
 
-if whoring >= 21 and whoring <= 23:
+if whoring >= 21 and whoring < 24:
     $ level = "08"
 
-if whoring >= 24 and whoring <= 26:
+if whoring >= 24 and whoring < 27:
     $ level = "09"
 
-if whoring >= 27 and whoring <= 29:
+if whoring >= 27 and whoring < 30:
     $ level = "10"
 
 if whoring >= 12 and not touched_by_boy and not force_unlock_pub_favors: #Turns true if sent Hermione to get touched by a boy at least once.
@@ -137,14 +137,17 @@ if mad >= 1:
 #        $ order_placed = False
 
 
+if deliveryQ.got_mail():
+    $ package_is_here = True
+
 
 ### MUGGLE ODDITIES RELATED FLAGS ### VERSION TWO. This one randomizes delivery waiting days.
-if order_placed: #TRUE when and order has been placed on an item.
-    $ days_in_delivery2 -=1
-    if days_in_delivery2 <= 0 or next_day:
-        $ next_day = False
-        $ package_is_here = True
-        $ order_placed = False
+# if order_placed: #TRUE when and order has been placed on an item.
+    # $ days_in_delivery2 -=1
+    # if days_in_delivery2 <= 0 or next_day:
+        # $ next_day = False
+        # $ package_is_here = True
+        # $ order_placed = False
 
 
 
@@ -156,25 +159,25 @@ hide screen cloud #THE CLOUD.
 
 $ wather_generator = renpy.random.randint(1, 100)
 #$ wather_generator = 99 #THIS LINE IS FOR TESTING. 99 = Rain.
-if wather_generator >= 81 and wather_generator <= 90: # RAIN
-    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
-    $ raining = True
-    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
-    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-elif wather_generator >= 1 and wather_generator <= 40: # CLEAR WEATHER.
+if wather_generator >=  1 and wather_generator < 41: # CLEAR WEATHER.
     show screen new_window #<<<------------------------------------------!!!!!!!!!!!
     #show image "01_hp/01_bg/03_weather.png"
-elif wather_generator >= 41 and wather_generator <= 60: #Floating cloud
+elif wather_generator >= 41 and wather_generator < 61: # Floating cloud
     show screen new_window #<<<------------------------------------------!!!!!!!!!!!
     show screen cloud #THE CLOUD.
     #show image "01_hp/01_bg/03_weather.png"
     #show cloud_01 at Position(xpos=280, ypos=215, xanchor="center", yanchor="center")
-elif wather_generator >= 61 and wather_generator <= 80: # CLOUDY WEATHER
+elif wather_generator >= 61 and wather_generator < 81: # CLOUDY WEATHER
     show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
     $ lighting_generator = renpy.random.randint(1, 2)
     if lighting_generator == 1:
         show lightening at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
-elif wather_generator >= 91 and wather_generator <= 100: # RAIN WITH LIGHTENING.
+elif wather_generator >= 81 and wather_generator < 91: # RAIN
+    #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
+    $ raining = True
+    show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background
+    show rain at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Rain animation
+elif wather_generator >= 91 and wather_generator < 101: # RAIN WITH LIGHTENING.
     #play weather "sounds/rain.mp3" fadeout 1.0 fadein 1.0 #Quiet...
     $ raining = True
     show image "01_hp/07_weather/cloudy.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center") #Cloudy background

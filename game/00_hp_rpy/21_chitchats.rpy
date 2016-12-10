@@ -609,20 +609,366 @@ label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tuto
     
     jump day_main_menu
 
-
-
-
-
-
-
-
-
-
-
 ### CHITCHAT WITH HERMIONE ###
 label chit_chat:
     $ one_of_ten = renpy.random.randint(1, 10) #Generating one number out of three for various porpoises.
     
+    if whoring >= 0 and whoring <= 2: # WHORING LEVEL 01.
+        if one_of_ten == 1:
+            $ wt_herm.say("Maybe, if I'd work harder, I could squeeze a few more classes into my schedule...",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 2:
+            $ wt_herm.say("Actually I don't mind it to be called a \"know-it-all\".",4)
+            $ wt_herm.say("I think it's rather flattering...")
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 3:
+            $ wt_herm.say("The basilisk, also known as the king of serpents.",4)
+            $ wt_herm.say("Herpo the Foul was the first to breed a Basilisk.")
+            $ wt_herm.say("He accomplished that by--")
+            $ wt_herm.say("Oh, I'm sorry, professor, we have another test tomorrow...",10)
+            $ wt_herm.say("I Just want to make sure that I'm ready...")
+            $ wt_herm.setFace(1)
+        elif one_of_ten == 4:
+            $ wt_herm.say("If my body wouldn't require sleep...",10)
+            $ wt_herm.say("I would be able to spend twice as much time with studying!?",18)
+            $ wt_herm.say("I wonder if there's a spell for that...",14)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 5:
+            $ wt_herm.say("So far professor Trelawney did not taught me a single piece of any actual knowledge, sir.",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 6:
+            $ wt_herm.say("If only more students were honest, responsible and diligent like me.",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 7:
+            $ wt_herm.say("Personally, I think that every single one of us should work harder to make our world a better place.")
+            $ wt_herm.say("How can some people be so ignorant to the world's problems?",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 8:
+            $ wt_herm.say("It's been raining quite a lot lately...",10)
+            $ wt_herm.setFace(1)
+        elif one_of_ten == 9:
+            $ wt_herm.say("Very few people know this...",10)
+            $ wt_herm.say("...But I really like chocolate.",6)
+            $ wt_herm.setFace(1)
+        elif one_of_ten == 10:
+            $ wt_herm.say("I am sorry sir, but I don't really have time for idle chat chats...",6)
+            $ wt_herm.setFace(3)
+        
+        
+    if whoring >= 3 and whoring <= 5: # WHORING LEVEL 02
+        if one_of_ten == 1:
+            $ wt_herm.say("I read somewhere that a full moon often makes it easier to concentrate at a task at hand...",4)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 2:
+            $ wt_herm.say("I love nothing more than to curl up by a fireplace during a rainstorm with a good book...",6)
+            $ wt_herm.setFace(1)
+            
+        elif one_of_ten == 3:
+            $ wt_herm.say("A peculiar rumour concerning professor Snape has been circulating in the school lately...",10)
+            $ wt_herm.say("No, I probably shouldn't...",15)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 4:
+            $ wt_herm.say("Despite the questionable nature of the favours you have been buying from me lately, sir...",4)
+            $ wt_herm.say("I am grateful to you for your help...")
+            $ wt_herm.say("Gryffindor needs those points now more than ever...",9)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 5:
+            $ wt_herm.say("Why Quidditch is so popular among the girls is simply beyond me...",4)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 6:
+            $ wt_herm.say("The \"Men's Rights Movement\" is steadily gaining popularity.",4)
+            $ wt_herm.say("It's very fulfilling to know that you are helping to improve our society.")
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 7:
+            $ wt_herm.say("The Hogwarts school library is considered to be quite extensive...",4)
+            $ wt_herm.say("Still, I can't help but wish that it'd be bigger...",8)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 8:
+            $ wt_herm.say("As one of the top students in this school I have a reputation to keep...",10)
+            $ wt_herm.say("People look up to me...")
+            $ wt_herm.say("...So, your discretion is very appreciated, sir.",31)
+            $ wt_herm.setFace(29)
+            
+        elif one_of_ten == 9:
+            $ wt_herm.say("That favour I sold you the other say, sir...",11)
+            $ wt_herm.say(".......",33)
+            $ wt_herm.say("I only agreed to it because the needs of my house always come first.",87)
+            $ wt_herm.say("I just wanted you to know that, sir...",120)
+            
+        elif one_of_ten == 10:
+            $ wt_herm.say("The \"Autumn Ball\" is still several months away...",4)
+            $ wt_herm.say("But some girls are already discussing what kind of dress they are going to wear...",11)
+            $ wt_herm.setFace(185)
+    if whoring >= 6 and whoring <= 8: # WHORING LEVEL 03.
+        if one_of_ten == 1:
+            $ wt_herm.say("Do you remember when you asked me to show you my panties for the first time sir?",4)
+            $ wt_herm.say("I was so furious with you then...")
+            $ wt_herm.say("Now I see that I was just being selfish...",9)
+            $ wt_herm.say("After all, the honour of my house is at stake here...")
+            $ wt_herm.say("And that shall be my one and only concern!",7)
+            
+        elif one_of_ten == 2:
+            $ wt_herm.say("The rate at which the Slytherin house has been gaining points lately is simply ridiculous.",4)
+            $ wt_herm.say("I think professor Snape might be behind it.",5)
+            $ wt_herm.say("You should look into this, sir.",4)
+            $ wt_herm.setFace(3)
+            
+        elif one_of_ten == 3:
+            $ wt_herm.say("Ashwinder eggs, rose thorns, moonstone...",10)
+            $ wt_herm.say("Huh? Am I thinking out loud again?",11)
+            $ wt_herm.say("I apologize...",24)
+            $ wt_herm.say("It's just that we have another test soon...",13)
+        elif one_of_ten == 4:
+            $ wt_herm.say("I dislike the entire house of Slytherin with all my heart, sir.",77)
+            
+        elif one_of_ten == 5:
+            $ wt_herm.say("Hogwarts has really become a second home to me lately...",16)
+            $ wt_herm.say("I don't even miss my parents nearly as much anymore...",71)
+            $ wt_herm.say("Come to think of it I don't miss them at all...",18)
+            $ wt_herm.say("I'm an awful daughter...",118)
+        elif one_of_ten == 6:
+            $ wt_herm.say("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...",70)
+            $ wt_herm.say("It don't think it's working though.... *Yawn!*",73)
+        elif one_of_ten == 7:
+            $ wt_herm.say("Even after I graduate from Hogwarts I plan to keep on working hard.",4)
+            $ wt_herm.say("If I give it my all I can make this world a better place, I know it!",2)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 8:
+            $ wt_herm.say("Somehow I have the feeling that this year will become a pivotal turning point in my life...",11)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 9:
+            $ wt_herm.say("Some of the less traveled school corridors are not very well lit and rather dusty...",4)
+            $ wt_herm.say("Please take care of this, sir...")
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 10:
+            $ wt_herm.say("I've read about this thing called \"Time-Turner\".",14)
+            $ wt_herm.say("It allows the user to control the flow of time...")
+            $ wt_herm.say("Having a device like that would do wonders for my schedule...",16)
+            $ wt_herm.setFace(17)
+        
+
+    if whoring >= 9 and whoring <= 11: # WHORING LEVEL 04.
+        if one_of_ten == 1:
+            $ wt_herm.say("My \"men's rights movement\" has been losing its popularity lately...",11)
+            $ wt_herm.say("It's as if people don't even care!",12)
+        elif one_of_ten == 2:
+            $ wt_herm.say("Thank you for buying all those favours from me, sir.",4)
+            $ wt_herm.say("Some of them were borderline inappropriate, sure...",7)
+            $ wt_herm.say("But I don't mind sacrificing my dignity if it will allow Gryffindor to compete with Slytherin on equal ground.",4)
+            $ wt_herm.setFace(3)
+
+        elif one_of_ten == 3:
+            $ wt_herm.say("Quidditch is stupid!",77)
+            $ wt_herm.say("There. I said it.",17)
+        elif one_of_ten == 4:
+            $ wt_herm.say("Sir, there is something about professor Snape that I think you should know...",2)
+            $ wt_herm.say(".................",10)
+            $ wt_herm.say(".........................",9)
+            $ wt_herm.say("uhm... Never mind...",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 5:
+            $ wt_herm.say("Some of the Slytherin girls sell sexual favours almost openly these days...",4)
+            $ wt_herm.say("You need to put an end to such practices, sir.",2)
+            $ wt_herm.say("(I can barely keep up...)",69)
+        elif one_of_ten == 6:
+            $ wt_herm.say("Life works in mysterious ways...",10)
+            $ wt_herm.say("Wouldn't you agree, sir?",8)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 7:
+            $ wt_herm.say("Slytherins...",76)
+            $ wt_herm.setFace(77)
+        elif one_of_ten == 8:
+            $ wt_herm.say("I've been spending so much time in your office lately, sir...",10)
+            $ wt_herm.say("If I'm not careful some people may think that I have become your pet...",11)
+            $ wt_herm.say("I meant to say the teacher's pet...",34)
+            $ wt_herm.setFace(33)
+        elif one_of_ten == 9:
+            $ wt_herm.say("My favourite colours?",2)
+            $ wt_herm.say("scarlet and gold of course!",2)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 10:
+            $ wt_herm.say("Is it weird that my best friends are boys?",10)
+            $ wt_herm.setFace(1)
+    if whoring >= 12 and whoring <= 14: # WHORING LEVEL 05.
+        if one_of_ten == 1:
+            $ wt_herm.say("Sir, with all due respect...",7)
+            $ wt_herm.say("Professor Snape's debauchery is getting out of hand!")
+            $ wt_herm.say("You must do something, sir.",11)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 2:
+            $ wt_herm.say("I am willing to go to great lengths to insure the superiority of my house...",4)
+            $ wt_herm.say("But that does not mean that I take pleasure in selling myself out to you in exchange for house points, sir.")
+            $ wt_herm.say("{size=-4}(Like some sort of prostitute-witch...){/size}",118)
+        elif one_of_ten == 3:
+            $ wt_herm.say("What will it be today, sir?",79)
+        elif one_of_ten == 4:
+            $ wt_herm.say("lately I have not been studying nearly as much as I used to...",11)
+            $ wt_herm.say("Am I losing my motivation?",10)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 5:
+            $ wt_herm.say("My least favourite subject?",8)
+            $ wt_herm.say("Divination.",9)
+        elif one_of_ten == 6:
+            $ wt_herm.say("My father used to say: \"Magic is just science we don't understand yet\".",14)
+            $ wt_herm.say("He could't be more wrong of course...",10)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 7:
+            $ wt_herm.say("Despite everything...",4)
+            $ wt_herm.say("I am thankful that you keep on buying favours from me, sir...",10)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 8:
+            $ wt_herm.say("It's quite cold outside today, isn't it?",14)
+            $ wt_herm.setFace(15)
+        elif one_of_ten == 9:
+            $ wt_herm.say("The \"Autumn Ball\" will be soon...",14)
+            $ wt_herm.setFace(15)
+        elif one_of_ten == 10:
+            $ wt_herm.say("People hardly show up for my \"men's rights movement\" meetings at all anymore...",10)
+            $ wt_herm.setFace(13)
+    if whoring >= 15 and whoring <= 17:  # WHORING LEVEL 06.
+        if one_of_ten == 1:
+            $ wt_herm.say("Would you like me to show you my breasts today, sir?",87)
+            $ wt_herm.say("Yes... I would willingly expose myself to you, professor...",78)
+            $ wt_herm.say("That's how selfless I am!",79)
+        elif one_of_ten == 2:
+            $ wt_herm.say("I can't help but feel bad for the house elves who do my laundry...",14)
+            $ wt_herm.say("I mean, all those dreadful semen stains...",87)
+            $ wt_herm.setFace(118)
+        elif one_of_ten == 3:
+            $ wt_herm.say("it Doesn't matter how many times you ask me this, sir...",2)
+            $ wt_herm.say("The answer shall remain the same...")
+            $ wt_herm.say("I have nothing but resentment for the \"Slytherins\"!",47)
+            $ wt_herm.setFace(69)
+        elif one_of_ten == 4:
+            $ wt_herm.say("When I think about all the favours I sold you over these last months, sir...",2)
+            $ wt_herm.say("Although I do feel a little bit embarrassed...",87)
+            $ wt_herm.say("I also feel very proud of myself.",120)
+        elif one_of_ten == 5:
+            $ wt_herm.say("I still dedicate a lot of my time to studying...",14)
+            $ wt_herm.say("But not nearly as much of it as I used to...")
+            $ wt_herm.say("Somehow I just don't enjoy studying at all anymore...",11)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 6:
+            $ wt_herm.say("Gryffindor shall get the house cup this year!",4)
+            $ wt_herm.say("{size=-4}(Even if it should cost me my dignity...){/size}",118)
+            $ wt_herm.setFace(120)
+        elif one_of_ten == 7:
+            $ wt_herm.say("I don't mind the autumn weather...",14)
+            $ wt_herm.say("But my favourite season is winter.",16)
+            $ wt_herm.setFace(15)
+        elif one_of_ten == 8:
+            $ wt_herm.say("I used to look down on girls who spend too much time with worrying about the way they look...",14)
+            $ wt_herm.say("But I was wrong to do so...")
+            $ wt_herm.say("I am starting to understand how important it really is for a girl to look pretty.")
+            $ wt_herm.say("...............",29)
+            $ wt_herm.say("I've been on a diet lately...",122)
+            $ wt_herm.setFace(34)
+            $ wt_herm.setFace(33)
+        elif one_of_ten == 9:
+            $ wt_herm.say("Lately I've been feeling rather confident around the boys...",14)
+            $ wt_herm.say("I think I have you to thank for that, sir.",6)
+        elif one_of_ten == 10:
+            $ wt_herm.say("My favourite subject?",14)
+            $ wt_herm.say("Hm...",13)
+            $ wt_herm.say("I suppose that would be \"charms\"...",14)
+            $ wt_herm.setFace(15)
+    if whoring >= 18 and whoring <= 20: # WHORING LEVEL 07.
+        if one_of_ten == 1:
+            $ wt_herm.say("Just let me know what will be required of me today, sir.",4)
+            $ wt_herm.setFace(3)
+        elif one_of_ten == 2:
+            $ wt_herm.say("I barely study at all anymore...",11)
+            $ wt_herm.say("Despite that my popularity among the other students seems to be growing...")
+            $ wt_herm.say("Hm...",13)
+        elif one_of_ten == 3:
+            $ wt_herm.say("I wouldn't say \"no\" to a bottle of butterbeer right about now...",64)
+            $ wt_herm.setFace(68)
+        elif one_of_ten == 4:
+            $ wt_herm.say("What is it sir? Do you have another present for me?",6)
+            $ wt_herm.say("Oh... I see...",12)
+        elif one_of_ten == 5:
+            $ wt_herm.say("I am doing well, thank you for asking.",6)
+        elif one_of_ten == 6:
+            $ wt_herm.say("Do I look fat to you sir?",11)
+            $ wt_herm.say("I wonder if the diet is working...",29)
+        elif one_of_ten == 7:
+            $ wt_herm.say("I remember that I used to say that books were my friends...",16)
+            $ wt_herm.say("Now that sounds so lame.",24)
+            $ wt_herm.setFace(15)
+        elif one_of_ten == 8:
+            $ wt_herm.say("Add ashwinder egg to cauldron...",4)
+            $ wt_herm.say("Then add horseshoe reddish and heat...")
+            $ wt_herm.say("Then juice a squill bulb...")
+            $ wt_herm.say("Or was it a dash of thyme first?",10)
+            $ wt_herm.say("..............",13)
+            $ wt_herm.say("Oh, who cares?",24)
+            $ wt_herm.setFace(6)
+        elif one_of_ten == 9:
+            $ wt_herm.say("Do You think I am wearing enough makeup, sir?",14)
+            $ wt_herm.say("Wearing too much would look vulgar...")
+            $ wt_herm.say("But wearing too little would make me look plain...",13)
+            $ wt_herm.say("I don't want to look plain!",12)
+        elif one_of_ten == 10:
+            $ wt_herm.say("Would you like to see my tits today, sir?",64)
+            $ wt_herm.say("25 house points, please.",111)
+            $ wt_herm.setFace(120)
+    if whoring >= 21: # WHORING LEVEL 08+.
+        if one_of_ten == 1:
+            $ wt_herm.say("Do You have any adult magazines you don't need, sir?",189)
+            $ wt_herm.setFace(188)
+        elif one_of_ten == 2:
+            $ wt_herm.say("I am sorry to bother you with this, sir...",31)
+            $ wt_herm.say("But do you have any condoms?")
+            $ wt_herm.say("This is not for me of course... I'm asking for a friend...",34)
+        elif one_of_ten == 3:
+            $ wt_herm.say("It's been getting so cold lately...",14)
+            $ wt_herm.say("I hope it's going to start snowing soon...",6)
+        elif one_of_ten == 4:
+            $ wt_herm.say("Jump and scream for the Gryffindor team!",127)
+            $ wt_herm.say("So daring and bold, sporting red and gold!",80)
+            $ wt_herm.setFace(6)
+        elif one_of_ten == 5:
+            $ wt_herm.say("I hope the ball goes smoothly...",10)
+            $ wt_herm.setFace(13)
+        elif one_of_ten == 6:
+            $ wt_herm.say("I wonder what Ginny is going to wear for the ball...",6)
+        elif one_of_ten == 7:
+            $ wt_herm.say("Considering the nature of the favours you keep buying from me sir...",16)
+            $ wt_herm.say("I seldom bother to put on underwear at all anymore...",11)
+        elif one_of_ten == 8:
+            $ wt_herm.say("Sir, could you put your penis in my mouth?",117)
+            $ wt_herm.say("Sir, I am begging you...",135)
+            $ wt_herm.say("Fifty five points, please!",111)
+            $ wt_herm.setFace(122)
+        elif one_of_ten == 9:
+            $ wt_herm.say("A read this one article about the positive effects of semen on a woman's skin...",127)
+            $ wt_herm.say("I wonder where their information is coming from...",128)
+            $ wt_herm.say("Did the magazine conduct research of some sort?",122)
+            $ wt_herm.setFace(128)
+        elif one_of_ten == 10:
+            $ wt_herm.say("It goes like this...",127)
+            $ wt_herm.say("First Gryffindor, then Ravenclaw, then Hufflepuff...")
+            $ wt_herm.say("And Slytherin is not even on the list!",186)
+            $ wt_herm.setFace(120)
+
+
+
+    jump day_time_requests
+
+#    if daytime:
+#        jump night_main_menu
+#    else:
+#        $ hermione_sleeping = True
+#        jump day_main_menu            
+    
+### CHITCHAT WITH HERMIONE ###
+label chit_chat_old:
     
     if whoring >= 0 and whoring <= 2: # WHORING LEVEL 01.
         if one_of_ten == 1:
@@ -655,8 +1001,8 @@ label chit_chat:
             call her_main("","body_03")
       
         elif one_of_ten == 7:
-            call her_main("How can some people be so ignorant to the world's problems?","body_04")
             her "Personally, I think that every single one of us should work harder to make our world a better place."
+            call her_main("How can some people be so ignorant to the world's problems?","body_04")
             call her_main("","body_03")
             
         elif one_of_ten == 8:
@@ -671,8 +1017,7 @@ label chit_chat:
         elif one_of_ten == 10:
             call her_main("I am sorry sir, but I don't really have time for idle chat chats...","body_06")
             call her_main("","body_03")
-
-
+    
     if whoring >= 3 and whoring <= 5: # WHORING LEVEL 02
         if one_of_ten == 1:
             call her_main("I read somewhere that a full moon often makes it easier to concentrate at a task at hand...","body_04")
@@ -723,8 +1068,7 @@ label chit_chat:
             call her_main("The \"Autumn Ball\" is still several months away...","body_04")
             call her_main("But some girls are already discussing what kind of dress they are going to wear...","body_11")
             call her_main("","body_185")
-
-  
+    
     if whoring >= 6 and whoring <= 8: # WHORING LEVEL 03.
         if one_of_ten == 1:
             call her_main("Do you remember when you asked me to show you my panties for the first time sir?","body_04")
@@ -744,7 +1088,6 @@ label chit_chat:
             call her_main("Huh? Am I thinking out loud again?","body_11")
             call her_main("I apologize...","body_24")
             call her_main("It's just that we have another test soon...","body_13")
-
         elif one_of_ten == 4:
             call her_main("I dislike the entire house of Slytherin with all my heart, sir.","body_77")
             
@@ -753,37 +1096,30 @@ label chit_chat:
             call her_main("I don't even miss my parents nearly as much anymore...","body_71")
             call her_main("Come to think of it I don't miss them at all...","body_18")
             call her_main("I'm an awful daughter...","body_118")
-
         elif one_of_ten == 6:
             call her_main("*Yawn!* I read about this technique that supposedly allows you to cut your sleep time in half...","body_70")
             call her_main("It don't think it's working though.... *Yawn!*","body_73")
-
         elif one_of_ten == 7:
             call her_main("Even after I graduate from Hogwarts I plan to keep on working hard.","body_04")
             call her_main("If I give it my all I can make this world a better place, I know it!","body_02")
             call her_main("","body_03")
-           
         elif one_of_ten == 8:
             call her_main("Somehow I have the feeling that this year will become a pivotal turning point in my life...","body_11")
             call her_main("","body_13")
-  
         elif one_of_ten == 9:
             call her_main("Some of the less traveled school corridors are not very well lit and rather dusty...","body_04")
             her "Please take care of this, sir..."
             call her_main("","body_03")
-       
         elif one_of_ten == 10:
             call her_main("I've read about this thing called \"Time-Turner\".","body_14")
             her "It allows the user to control the flow of time..."
             call her_main("Having a device like that would do wonders for my schedule...","body_16")
             call her_main("","body_17")
-        
-
+    
     if whoring >= 9 and whoring <= 11: # WHORING LEVEL 04.
         if one_of_ten == 1:
             call her_main("My \"men's rights movement\" has been losing its popularity lately...","body_11")
             call her_main("It's as if people don't even care!","body_12")
-
         elif one_of_ten == 2:
             call her_main("Thank you for buying all those favours from me, sir.","body_04")
             call her_main("Some of them were borderline inappropriate, sure...","body_07")
@@ -793,137 +1129,104 @@ label chit_chat:
         elif one_of_ten == 3:
             call her_main("Quidditch is stupid!","body_77")
             call her_main("There. I said it.","body_17")
-            
         elif one_of_ten == 4:
             call her_main("Sir, there is something about professor Snape that I think you should know...","body_02")
             call her_main(".................","body_10")
             call her_main(".........................","body_09")
             call her_main("uhm... Never mind...","body_04")
             call her_main("","body_03")
- 
         elif one_of_ten == 5:
             call her_main("Some of the Slytherin girls sell sexual favours almost openly these days...","body_04")
             call her_main("You need to put an end to such practices, sir.","body_02")
             call her_main("(I can barely keep up...)","body_69")
-
         elif one_of_ten == 6:
             call her_main("Life works in mysterious ways...","body_10")
             call her_main("Wouldn't you agree, sir?","body_08")
             call her_main("","body_13")
-
         elif one_of_ten == 7:
             call her_main("Slytherins...","body_76")
             call her_main("","body_77")
-            
         elif one_of_ten == 8:
             call her_main("I've been spending so much time in your office lately, sir...","body_10")
             call her_main("If I'm not careful some people may think that I have become your pet...","body_11")
             call her_main("I meant to say the teacher's pet...","body_34")
             call her_main("","body_33")
-
         elif one_of_ten == 9:
             call her_main("My favourite colours?","body_02")
             call her_main("scarlet and gold of course!","body_02")
             call her_main("","body_03")
-       
         elif one_of_ten == 10:
             call her_main("Is it weird that my best friends are boys?","body_10")
             call her_main("","body_01")
-        
-
-        
+    
     if whoring >= 12 and whoring <= 14: # WHORING LEVEL 05.
         if one_of_ten == 1:
             call her_main("Sir, with all due respect...","body_07")
             her "Professor Snape's debauchery is getting out of hand!"
             call her_main("You must do something, sir.","body_11")
             call her_main("","body_03")
-
         elif one_of_ten == 2:
             call her_main("I am willing to go to great lengths to insure the superiority of my house...","body_04")
             her "But that does not mean that I take pleasure in selling myself out to you in exchange for house points, sir."
             call her_main("{size=-4}(Like some sort of prostitute-witch...){/size}","body_118")
-
         elif one_of_ten == 3:
             call her_main("What will it be today, sir?","body_79")
-            
         elif one_of_ten == 4:
             call her_main("lately I have not been studying nearly as much as I used to...","body_11")
             call her_main("Am I losing my motivation?","body_10")
             call her_main("","body_13")
-            
         elif one_of_ten == 5:
             call her_main("My least favourite subject?","body_08")
             call her_main("Divination.","body_09") 
-            
         elif one_of_ten == 6:
             call her_main("My father used to say: \"Magic is just science we don't understand yet\".","body_14")
             call her_main("He could't be more wrong of course...","body_10")
             call her_main("","body_13")
-            
         elif one_of_ten == 7:
             call her_main("Despite everything...","body_04")
             call her_main("I am thankful that you keep on buying favours from me, sir...","body_10")
             call her_main("","body_13")
-            
         elif one_of_ten == 8:
             call her_main("It's quite cold outside today, isn't it?","body_14")
             call her_main("","body_15")
-            
         elif one_of_ten == 9:
             call her_main("The \"Autumn Ball\" will be soon...","body_14")
             call her_main("","body_15")
-            
         elif one_of_ten == 10:
             call her_main("People hardly show up for my \"men's rights movement\" meetings at all anymore...","body_10")
             call her_main("","body_13")
     
-    
-    
-    
-    
-    
-        
     if whoring >= 15 and whoring <= 17:  # WHORING LEVEL 06.
         if one_of_ten == 1:
             call her_main("Would you like me to show you my breasts today, sir?","body_87")
             call her_main("Yes... I would willingly expose myself to you, professor...","body_78")
             call her_main("That's how selfless I am!","body_79")
-           
         elif one_of_ten == 2:
             call her_main("I can't help but feel bad for the house elves who do my laundry...","body_14")
             call her_main("I mean, all those dreadful semen stains...","body_87")
             call her_main("","body_118")
-
         elif one_of_ten == 3:
             call her_main("it Doesn't matter how many times you ask me this, sir...","body_02")
             her "The answer shall remain the same..."
             call her_main("I have nothing but resentment for the \"Slytherins\"!","body_47")
             call her_main("","body_69")
-        
-        
         elif one_of_ten == 4:
             call her_main("When I think about all the favours I sold you over these last months, sir...","body_02")
             call her_main("Although I do feel a little bit embarrassed...","body_87")
             call her_main("I also feel very proud of myself.","body_120")
-            
         elif one_of_ten == 5:
             call her_main("I still dedicate a lot of my time to studying...","body_14")
             her "But not nearly as much of it as I used to..."
             call her_main("Somehow I just don't enjoy studying at all anymore...","body_11")
             call her_main("","body_13")
-        
         elif one_of_ten == 6:
             call her_main("Gryffindor shall get the house cup this year!","body_04")
             call her_main("{size=-4}(Even if it should cost me my dignity...){/size}","body_118")
             call her_main("","body_120")
-           
-           
         elif one_of_ten == 7:
             call her_main("I don't mind the autumn weather...","body_14")
             call her_main("But my favourite season is winter.","body_16")
             call her_main("","body_15")
-        
         elif one_of_ten == 8:
             call her_main("I used to look down on girls who spend too much time with worrying about the way they look...","body_14")
             her "But I was wrong to do so..."
@@ -932,65 +1235,38 @@ label chit_chat:
             call her_main("I've been on a diet lately...","body_122")
             call her_main("","body_34")
             call her_main("","body_33")
-       
         elif one_of_ten == 9:
             call her_main("Lately I've been feeling rather confident around the boys...","body_14")
             call her_main("I think I have you to thank for that, sir.","body_06")
-            
         elif one_of_ten == 10:
             call her_main("My favourite subject?","body_14")
             call her_main("Hm...","body_13")
             call her_main("I suppose that would be \"charms\"...","body_14")
             call her_main("","body_15")
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+    
     if whoring >= 18 and whoring <= 20: # WHORING LEVEL 07.
         if one_of_ten == 1:
             call her_main("Just let me know what will be required of me today, sir.","body_04")
             call her_main("","body_03")
-           
         elif one_of_ten == 2:
             call her_main("I barely study at all anymore...","body_11")
             her "Despite that my popularity among the other students seems to be growing..."
             call her_main("Hm...","body_13")
-                 
         elif one_of_ten == 3:
             call her_main("I wouldn't say \"no\" to a bottle of butterbeer right about now...","body_64")
             call her_main("","body_68")
-        
         elif one_of_ten == 4:
             call her_main("What is it sir? Do you have another present for me?","body_06")
             call her_main("Oh... I see...","body_12")
-
         elif one_of_ten == 5:
             call her_main("I am doing well, thank you for asking.","body_06")
-
         elif one_of_ten == 6:
             call her_main("Do I look fat to you sir?","body_11")
             call her_main("I wonder if the diet is working...","body_29")
-           
         elif one_of_ten == 7:
             call her_main("I remember that I used to say that books were my friends...","body_16")
             call her_main("Now that sounds so lame.","body_24")
             call her_main("","body_15")
-        
         elif one_of_ten == 8:
             call her_main("Add ashwinder egg to cauldron...","body_04")
             her "Then add horseshoe reddish and heat..."
@@ -999,77 +1275,55 @@ label chit_chat:
             call her_main("..............","body_13")
             call her_main("Oh, who cares?","body_24")
             call her_main("","body_06")
-       
         elif one_of_ten == 9:
             call her_main("Do You think I am wearing enough makeup, sir?","body_14") 
             her "Wearing too much would look vulgar..."
             call her_main("But wearing too little would make me look plain...","body_13")
             call her_main("I don't want to look plain!","body_12")
-            
         elif one_of_ten == 10:
             call her_main("Would you like to see my tits today, sir?","body_64") 
             call her_main("25 house points, please.","body_111")
             call her_main("","body_120")
     
-   
     if whoring >= 21: # WHORING LEVEL 08+.
-        
         if one_of_ten == 1:
             call her_main("Do You have any adult magazines you don't need, sir?","body_189")
             call her_main("","body_188")
-
         elif one_of_ten == 2:
             call her_main("I am sorry to bother you with this, sir...","body_31")
             her "But do you have any condoms?"
             call her_main("This is not for me of course... I'm asking for a friend...","body_34")
-                 
         elif one_of_ten == 3:
             call her_main("It's been getting so cold lately...","body_14")
             call her_main("I hope it's going to start snowing soon...","body_06")
-        
         elif one_of_ten == 4:
             call her_main("Jump and scream for the Gryffindor team!","body_127")
             call her_main("So daring and bold, sporting red and gold!","body_80")
             call her_main("","body_06")
-
         elif one_of_ten == 5:
             call her_main("I hope the ball goes smoothly...","body_10")
             call her_main("","body_13")
-
         elif one_of_ten == 6:
             call her_main("I wonder what Ginny is going to wear for the ball...","body_06")
-        
         elif one_of_ten == 7:
             call her_main("Considering the nature of the favours you keep buying from me sir...","body_16")
             call her_main("I seldom bother to put on underwear at all anymore...","body_11")
-        
         elif one_of_ten == 8:
             call her_main("Sir, could you put your penis in my mouth?","body_117")
             call her_main("Sir, I am begging you...","body_135")
             call her_main("Fifty five points, please!","body_111")
             call her_main("","body_122")
-
         elif one_of_ten == 9:
             call her_main("A read this one article about the positive effects of semen on a woman's skin...","body_127")
             call her_main("I wonder where their information is coming from...","body_128")
             call her_main("Did the magazine conduct research of some sort?","body_122")
             call her_main("","body_128")
-
         elif one_of_ten == 10:
             call her_main("It goes like this...","body_127")
             her "First Gryffindor, then Ravenclaw, then Hufflepuff..."
             call her_main("And Slytherin is not even on the list!","body_186")
             call her_main("","body_120")
-
-
-
+            
     jump day_time_requests
 
-#    if daytime:
-#        jump night_main_menu
-#    else:
-#        $ hermione_sleeping = True
-#        jump day_main_menu            
-    
-    
-    
+

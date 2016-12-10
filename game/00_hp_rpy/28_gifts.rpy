@@ -1,22 +1,83 @@
 init python:
     
-    class gift_item(object):
-        id = 0
+    class silver_item(object):
         cost = 0
         name = ""
         image = ""
         description = ""
-        whoringNeeded = 0
-        users = [] # characters that can use this item
-        
-        def canUse(character_name):
-            return character_name in users
-        
-        def costOf(number_of_item):
-            return cost * number_of_item
     
+    class gift_item(silver_item):
+        id = 0
+        whoringNeeded = 0
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def costOf(self, number_of_item):
+            return self.cost * number_of_item
     
 label __init_variables:
+    
+    
+    # $ gift_list = []
+    
+    # gift_list.append(cost=20, name="Lollipop candy", users=["hermione"],
+        # description="A lollipop candy. An adult candy for kids or kids candy for adults?")
+    
+    # gift_list.append(cost=40, name="Chocolate",
+        # description="The recipe for this delicious milk chocolate is kept a secret. (Rumoured to contain dried faeries).")
+    
+    # gift_list.append(cost=35, name="Plush owl",
+        # description="a Toy owl stuffed with feathers of an actual owl. It's so cuddly!")
+    
+    # gift_list.append(cost=50, name="Butterbeer", whoringNeeded=3,
+        # description="Girls can't resist this beverage's buttery texture. Therefore it's always in high demand among the boys. \n{size=-4}Warning: no underage drinking is allowed without adults present.{/size}")
+    
+    # gift_list.append(cost=30, name="Educational magazines",
+        # description="Educational magazines. \nthe Trusty companions of every social outcast.")
+    
+    # gift_list.append(cost=45, name="Girly magazines",
+        # description="Girly magazines. \nAll cool girls are reading these.")
+    
+    # gift_list.append(cost=60, name="Adult magazines",
+        # description="Your boyfriend is turning into a nice guy? \nYour husband won't abuse you anymore? \nAll you wanted to know about relationships, love and sex. Mostly about sex.")
+    
+    # gift_list.append(cost=80, name="Porn magazines", whoringNeeded=3,
+        # description="Give these to your girlfriend to test her, to your wife to shame her and to your daughter to avoid \"the talk\".")
+    
+    # gift_list.append(cost=25, name="Viktor Krum Poster",
+        # description="A skilled Quidditch Seeker, Viktor has been selected to play for the Bulgarian National Quidditch team despite still going to school, and is widely regarded as one of the best players in the world.")
+    
+    # gift_list.append(cost=75, name="Sexy lingerie",
+        # description="Sexy lingerie \"Fairy Godmother\". Charm your wizard in bed or empress your sisters at a Sabbath.")
+    
+    # gift_list.append(cost=50, name="A pack of condoms", whoringNeeded=3,
+        # description="\"Pink unicorn condoms\". \nUnleash the one-horned beast!\n{size=-4}May contain traces of actual unicorn saliva.{/size}")
+    
+    # gift_list.append(cost=55, name="Vibrator", whoringNeeded=3,
+        # description="A magnificent, magically enhanced vibrator made of vine wood, with a dragon heartstring core.")
+    
+    # gift_list.append(cost=60, name="Jar of anal lubricant",
+        # description="A Jar of anal lube, Buy this for your loved one - show that you care.")
+    
+    # gift_list.append(cost=70, name="Ball gag and cuffs",
+        # description="Ball gag and cuffs, Turn your soulmate into your cellmate.")
+
+    # gift_list.append(cost=85, name="Anal plugs", whoringNeeded=3,
+        # description="Anal plugs decorated with actual tails. \nSizes vary to satisfy expert practitioners and beginner alike.")
+
+    # gift_list.append(cost=200, name="Thestral Strap-on", whoringNeeded=3,
+        # description="Thestral strap-on.\nWhen you see it, you'll shit bricks.")
+
+    # gift_list.append(cost=500, name="Lady Speed Stick-2000",
+        # description="The \"Lady Speed Stick-2000\", an elegant way of transportation for passionate witches. The trademarked saddle guarantees full satisfaction. Get one for your witch and she won't use her boring old broom ever again!")
+
+    # gift_list.append(cost=350, name="Sex doll \"Joanne\"",
+        # description="Sex doll \"Joanne\"... It's so realistic. Almost looks like a real human under the influence of a spell of some sort.")
+
+    # gift_list.append(cost=65, name="Anal beads",image="01_hp/18_store/gift_anal_beads.png",
+        # description="Anal beads engraved with a strange inscription \"Property of L.C.\".")
+    
     
     if not hasattr(renpy.store,'Lollipop'): #important!
         $ Lollipop = gift_item()
@@ -25,7 +86,6 @@ label __init_variables:
     $ Lollipop.name = "lollipop candy"
     $ Lollipop.image = "01_hp/18_store/gifts/1.png"
     $ Lollipop.description = "A lollipop candy. An adult candy for kids or kids candy for adults?"
-    $ Lollipop.users = ["hermione"]
     
     
     if not hasattr(renpy.store,'Chocolate'): #important!
@@ -1665,13 +1725,13 @@ label set_h_skirt(skirt = ""):
         $ h_skirt = "skirt_"
         $ h_skirt_color = ""
         if "_R" in skirt:
-            $ h_skirt_color = "_R"
+            $ h_skirt_color = "color/red/"
         if "_G" in skirt:
-            $ h_skirt_color = "_G"
+            $ h_skirt_color = "color/green/"
         if "_B" in skirt:
-            $ h_skirt_color = "_B"
+            $ h_skirt_color = "color/blue/"
         if "_Y" in skirt:
-            $ h_skirt_color = "_Y"
+            $ h_skirt_color = "color/yellow/"
         hide screen hermione_main
         with d5
         call update_her_uniform

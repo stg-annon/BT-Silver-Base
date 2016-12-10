@@ -1,3 +1,13 @@
+init python:
+    class hermione_job(object):
+        inProgress = False
+        responses = ""
+        
+        def checkProgress(self):
+            if self.inProgress:
+                renpy.jump(self.responses)
+
+
 ###MAP LOCATIONS AND RESPONSES
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
@@ -153,10 +163,11 @@ label return_office:
 
 label maid_responses:
     $ payment = renpy.random.randint(10, 25)
+    $ hermione_SC.outfitFromList("Maid")
     $ stockings = 1
     $ custom_outfit_old = 1
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
@@ -230,7 +241,7 @@ label barmaid_responses:
     $ stockings = 5
     $ custom_outfit_old = 5
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
@@ -280,7 +291,7 @@ label gryffindor_cheer_responses:
     $ stockings = 2
     $ custom_outfit_old = 2
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3
@@ -394,7 +405,7 @@ label slytherin_cheer_responses:
     $ stockings = 4
     $ custom_outfit_old = 3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ hermione_chibi_xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     with d3

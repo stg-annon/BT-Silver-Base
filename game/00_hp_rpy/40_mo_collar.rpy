@@ -58,8 +58,8 @@ label slut_scene: #Locked to her being your slut
     hide screen genie
     $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ hermione_SC.chibi.xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ hermione_SC.chibi.ypos = 10
     $ g_c_u_pic = "blowjob_ani"
     $ h_c_u_pic = "hand_ani"
     show screen chair_02
@@ -321,7 +321,7 @@ label whore_scene: #(locked behind the public whoring flag)
     hide screen chair_02
     hide screen g_c_u
     show screen hermione_blink #Hermione stands still.
-    $ hermione_chibi_xpos = 400
+    $ hermione_SC.chibi.xpos = 400
     hide screen blkfade
     with d3
     $ hermione_main_zorder = 5
@@ -487,8 +487,8 @@ label slave_scene:
     hide screen hermione_main
     $ genie_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
     $ genie_chibi_ypos = 10
-    $ hermione_chibi_xpos = -150 #-185 behind the desk. (Also 5 is something).
-    $ hermione_chibi_ypos = 10
+    $ hermione_SC.chibi.xpos = -150 #-185 behind the desk. (Also 5 is something).
+    $ hermione_SC.chibi.ypos = 10
     $ h_c_u_pic = "hand_ani"
     hide screen g_c_u
     show screen h_c_u
@@ -523,7 +523,7 @@ label slave_scene:
     hide screen g_c_u
     hide screen h_c_u
     show screen hermione_blink #Hermione stands still.
-    $ hermione_chibi_xpos = 400
+    $ hermione_SC.chibi.xpos = 400
     hide screen blkfade
     with d3
     $ hermione_main_zorder = 5

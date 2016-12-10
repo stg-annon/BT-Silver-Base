@@ -106,11 +106,11 @@ label door:
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
                 
-                $ hermione_xpos = 410+140
+                $ hermione_xpos = 550
                 $ hermione_ypos = 0
                 
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                $ hermione_chibi_xpos = 400+140 #Near the desk.
+                $ hermione_SC.chibi.xpos = 540 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 show screen bld1
                 with d3
@@ -154,22 +154,34 @@ label door:
                             "-Working-":
                                 label working_menu:
                                 menu:
-                                    "-Work as a maid-" if "maid" in outfit_inventory and daytime:
+                                    "-Work as a maid-" if daytime and hg_maid_OBJ.purchased:
                                         jump job_1
+
+                                    "-Work as a maid-" if daytime and not hg_maid_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                         
-                                    "{color=#858585}-Work as a maid-{/color}" if not daytime and "maid" in outfit_inventory:
+                                    "{color=#858585}-Work as a maid-{/color}" if not daytime:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Gryffindor-" if daytime and "gryffindor_cheerleader" in outfit_inventory:
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.purchased:
                                         jump job_3
+
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                     
                                     "{color=#858585}-Work as a cheerleader for Gryffindor-{/color}" if not daytime:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Slytherin-" if daytime and "slytherin_cheerleader" in outfit_inventory:
+                                    "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.purchased:
                                         jump job_4
+
+                                    "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.purchased:
+                                        m "(I'll need an outfit for hermione if I want her to work.)"
+                                        jump working_menu
                                     
                                     "{color=#858585}-Work as a cheerleader for Slytherin-{/color}" if not daytime:
                                         "This job is only available during the day."
@@ -314,6 +326,7 @@ label door:
                         elif mad >=3 and mad < 10:
                             her "I am not in the mood today..."
                             jump day_time_requests
+                            # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
                         elif mad >=20:
                             her "After what you did, [genie_name]?"
                             her "I don't think so..."
@@ -325,21 +338,21 @@ label door:
                         if mad >=1 and mad < 3:
                             her "I'm sorry, [genie_name], Maybe some other time..."
                             jump day_time_requests
-                        elif mad >=3 and mad < 10:
+                        elif mad >=  3 and mad < 10:
                             her "I don't feel like it today..."
                             her "Maybe in a couple of days..."
                             jump day_time_requests
-                        elif mad >=10 and mad < 20:
+                        elif mad >= 10 and mad < 20:
                             her "No thank you...."
                             jump day_time_requests
-                        elif mad >=20 and mad < 30:
+                        elif mad >= 20 and mad < 30:
                             her "After what you did, [genie_name]?"
                             her "I don't think so..."
                             jump day_time_requests
-                        elif mad >=30 and mad < 40:
+                        elif mad >= 30 and mad < 40:
                             her "You can't be serious!"
                             jump day_time_requests
-                        elif mad >=40:
+                        elif mad >= 40:
                             her "Is this some twisted joke to you, sir?!"
                             her "After what you did I don't feel like doing this ever again!"
                             jump day_time_requests
@@ -362,7 +375,7 @@ label door:
                         $ menu_x = 0.5 #Menu position is back to default. (Center).
                         if daytime:
                             $ hermione_takes_classes = True
-                            if mad >=3 and mad <= 6:
+                            if mad >=3 and mad < 7:
                                 her "..............................."
                             elif mad >=7:
                                 her "*Humph!*..."
@@ -376,7 +389,7 @@ label door:
                             with d3
                             jump day_main_menu
                         else:
-                            if mad >=3 and mad <= 6:
+                            if mad >=3 and mad < 7:
                                 her "..............................."
                             elif mad >=7:
                                 her "Tch..."

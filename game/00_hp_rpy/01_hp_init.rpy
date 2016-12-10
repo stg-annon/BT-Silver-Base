@@ -94,6 +94,10 @@ $ being_mean = 0 #+1 every time you are being mean to hermione.
 
 $ dates = 0 #Tracks how many times Hermione been tutored.
 
+### default position of table ###
+$ table_position_x = 0
+$ table_position_y = 0
+
 ### PATH SHORTCUTS ###
 $ hg_pth = "01_hp/13_characters/hermione/"
 
@@ -346,6 +350,10 @@ init -2:
 
     $ config.autoreload = False
     
+    transform universal_chibi_walk(x,x2,speed,y): #Universal transform for all chibis
+        xpos x
+        ypos y
+        linear speed xpos x2 # linear
     
     transform custom_walk_02(x,x2): #Same custom walk but for Hermione.
         xpos x

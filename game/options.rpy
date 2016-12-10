@@ -108,7 +108,7 @@ init -1 python hide:v
     ## is not drawn.
 
     # style.window.left_margin = 6
-    # style.window.right_margin = 6
+    style.window.right_margin = 280
     # style.window.top_margin = 6
     # style.window.bottom_margin = 6
 

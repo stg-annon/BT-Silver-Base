@@ -1,762 +1,765 @@
 
 ### HERMIONE ANIMATIONS
 
+# TenchiMuyo1984 comment:
+# Why is here "pause x" and "pause.x"?
+
 image ch_hem walk_a:    #shirt 00
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_04.png"
     pause.08
     repeat
 image ch_hem walk_a_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_a:
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_a_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_a_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png"
     pause 3
     repeat
 image ch_hem blink_a_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_a_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_a_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_b:    #shirt 00.1
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_04.png"
     pause.08
     repeat
 image ch_hem walk_b_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_b:
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_b_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_b_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_b_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png"
     pause 3
     repeat
 image ch_hem blink_b_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_b_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_b_01.png", horizontal=True)
     pause 3
     repeat
 
 image ch_hem walk_c:    #shirt 00.2
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_04.png"
     pause.08
     repeat
 image ch_hem walk_c_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_c:
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_c_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_c_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_c_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png"
     pause 3
     repeat
 image ch_hem blink_c_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_c_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_c_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_d:    #shirt 01
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_04.png"
     pause.08
     repeat
 image ch_hem walk_d_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_d:
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_d_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_d_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png"
     pause 3
     repeat
 image ch_hem blink_d_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_d_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_d_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_e:    #shirt 02
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_04.png"
     pause.08
     repeat
 image ch_hem walk_e_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_e:
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_e_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_e_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png"
     pause 3
     repeat
 image ch_hem blink_e_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_e_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_e_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_f:    #shirt 03
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_04.png"
     pause.08
     repeat
 image ch_hem walk_f_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_f:
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_f_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_f_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png"
     pause 3
     repeat
 image ch_hem blink_f_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_f_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_f_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_g:    #shirt 04
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_04.png"
     pause.08
     repeat
 image ch_hem walk_g_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_g:
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_g_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_g_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png"
     pause 3
     repeat
 image ch_hem blink_g_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_g_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_g_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_h:    #shirt 05
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_04.png"
     pause.08
     repeat
 image ch_hem walk_h_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_h:
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_h_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_h_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png"
     pause 3
     repeat
 image ch_hem blink_h_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_h_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_h_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_n:    #no shirt
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_04.png"
     pause.08
     repeat
 image ch_hem walk_n_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_n:
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png"
     pause 3
     repeat
 image ch_hem blink_n_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_n_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_robe: #hermione walking in robe
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_04.png"
     pause.08
     repeat
 image ch_hem walk_robe_flip: #hermione walking in robe flip
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_robe_blink:
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png"
     pause 3
     repeat
 image ch_hem blink_robe_blink_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_01.png", horizontal=True)
     pause 3
     repeat
     
 image ch_hem walk_robe_n: #hermione walking in robe naked
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_03.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_03.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_02.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_02.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_04.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_05.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_05.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_04.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_04.png"
     pause.08
     repeat
 image ch_hem walk_robe_n_flip: #hermione walking in robe naked flip
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_03.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_03.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_02.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_02.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_04.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_05.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_05.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_04.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_04.png", horizontal=True)
     pause.08
     repeat
 image ch_hem blink_robe_n:
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause 2
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause 5
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png"
     pause.08
-    "01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png"
+    "01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png"
     pause 3
     repeat
 image ch_hem blink_robe_n_flip:
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause 2
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause 5
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_06.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_06.png", horizontal=True)
     pause.08
-    im.Flip("01_hp/16_hermione_chibi/walk/h_walk_robe_n_01.png", horizontal=True)
+    im.Flip("01_hp/13_characters/hermione/chibis/walk/h_walk_robe_n_01.png", horizontal=True)
     pause 3
     repeat
 
@@ -1757,40 +1760,40 @@ image ani_her_sex_cum_inside_blink_naked:
     
 screen hermione_blank_main:
     tag hermione_main
-    zorder hermione_chibi_zorder
+    zorder hermione_SC.zorder
 screen hermione_blank_head:
     tag hermione_head
     zorder 8
 screen hermione_blank_chibi:
     tag hermione_chibi
-    zorder hermione_chibi_zorder
+    zorder hermione_SC.chibi.zorder
     
     
 ### HERMIONE CHIBI ###
 screen hermione_walk:
     tag hermione_chibi
     add hermione_chibi_walk at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
+    zorder hermione_SC.chibi.zorder
 screen hermione_walk_f:  #Hermione walking animation. facing right. (Leaving tower).
     tag hermione_chibi
     add hermione_chibi_walk_f at custom_walk_02(walk_xpos, walk_xpos2)
-    zorder hermione_chibi_zorder
+    zorder hermione_SC.chibi.zorder
 screen hermione_blink:   #Hermione stands still and blinks.
     tag hermione_chibi
-    add hermione_chibi_blink at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
+    add hermione_chibi_blink at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
 screen hermione_blink_f: #Hermione stands still and blinks facing right. (Leaving tower).
     tag hermione_chibi
-    add hermione_chibi_blink_f at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
+    add hermione_chibi_blink_f at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
 screen hermione_stand:   #Hermione stands still
     tag hermione_chibi
-    add hermione_chibi_stand at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
+    add hermione_chibi_stand at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
 screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
     tag hermione_chibi
-    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_chibi_xpos, ypos=hermione_chibi_ypos)
-    zorder hermione_chibi_zorder
+    add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
     
 screen hermione_chibi_lift_skirt:
     tag hermione_chibi
@@ -1813,7 +1816,7 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loit
     $ pos2 = pos2+140
     $ walk_xpos = pos1 #(From)
     $ walk_xpos2 = pos2 #(To)
-    $ hermione_chibi_ypos = 250
+    $ hermione_SC.chibi.ypos = 250
     $ hermione_speed = speed #Speed of walking animation. (lower = faster)
     hide screen hermione_blink
     hide screen hermione_blink_f
@@ -1821,7 +1824,7 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loit
         show screen hermione_walk
         $ tmp = speed - redux_pause
         pause tmp
-        $ hermione_chibi_xpos = pos2
+        $ hermione_SC.chibi.xpos = pos2
         hide screen hermione_walk
         if loiter:
             show screen hermione_blink
@@ -1829,7 +1832,7 @@ label her_walk(pos1 = walk_xpos, pos2 = walk_xpos2, speed = hermione_speed, loit
         show screen hermione_walk_f
         $ tmp = speed - redux_pause
         pause tmp
-        $ hermione_chibi_xpos = pos2
+        $ hermione_SC.chibi.xpos = pos2
         hide screen hermione_walk_f
         if loiter:
             show screen hermione_blink_f

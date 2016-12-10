@@ -208,8 +208,8 @@ label shaming_night:
         call ce_her_main("","2600")
         
         hide screen hermione_04
-        $ hermione_chibi_xpos = 400
-        #$ hermione_chibi_ypos = 0
+        $ hermione_SC.chibi.xpos = 400
+        #$ hermione_SC.chibi.ypos = 0
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/03_no_shirt_01.png"
         show screen h_c_u
         
@@ -263,8 +263,8 @@ label shaming_night:
             "For a second you thought you could hear a low moan."
             "But Hermione's face still looks distressed."
         hide screen h_c_u
-        $ hermione_chibi_xpos = 400
-        #$ hermione_chibi_ypos = 0
+        $ hermione_SC.chibi.xpos = 400
+        #$ hermione_SC.chibi.ypos = 0
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
         call ce_her_main("","3400")   
@@ -485,8 +485,8 @@ label shaming_night:
         
         call ce_her_main("","6300")
         hide screen hermione_02_b
-        $ hermione_chibi_xpos = 400
-        #$ hermione_chibi_ypos = 0
+        $ hermione_SC.chibi.xpos = 400
+        #$ hermione_SC.chibi.ypos = 0
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
         show screen ctc
@@ -548,7 +548,7 @@ label shaming_night:
         show screen hermione_chibi_robe
         with d4
         pause 1.7 
-        $ hermione_chibi_xpos = 400 #Near the desk.
+        $ hermione_SC.chibi.xpos = 400 #Near the desk.
         show screen hermione_02_b #Hermione stands still.
         pause.5
         show screen bld1
@@ -568,7 +568,7 @@ label shaming_night:
         "Without a complaint, Hermione eagerly sheds her robe and pulls her bikini aside to reveal a massive dildo shaped like a dog’s dick lodged in her snatch."
 
         hide screen hermione_02_b
-        $ hermione_chibi_xpos = 400
+        $ hermione_SC.chibi.xpos = 400
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_01.png"
         show screen h_c_u
         call ce_her_main("","6900",280)
@@ -623,8 +623,8 @@ label shaming_night:
         
         hide screen snape_main
         hide screen hermione_02
-        $ hermione_chibi_xpos = -20
-        $ hermione_chibi_ypos = 75
+        $ hermione_SC.chibi.xpos = -20
+        $ hermione_SC.chibi.ypos = 75
         $ s_sprite = "01_hp/13_characters/snape/main/snape_26.png"
         $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
         show screen h_c_u
@@ -746,7 +746,7 @@ label shaming_night:
         hide screen custom_event_h
         hide screen h_c_u
 
-    $ hermione_chibi_ypos = 250
+    $ hermione_SC.chibi.ypos = 250
     $ shaming += 1
     $ shaming_busy = False    
     $ shaming_02 = True
