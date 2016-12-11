@@ -276,7 +276,10 @@ label purchase_book(BookOBJ):
                     jump education_menu
         "-Never mind-":
             hide screen gift
-            return
+            if BookOBJ in fiction_book_list:
+                jump fiction_menu
+            else:
+                jump education_menu
     
     
 label shop_potion_menu:
