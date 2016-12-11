@@ -1755,6 +1755,112 @@ image ani_her_sex_cum_inside_blink_naked:
     "01_hp/08_animation_02/23_cum_n_19.png"
     pause 2
     repeat
+
+image titjob_ani:    #titjob 
+    "01_hp/13_characters/hermione/chibis/titjob/tj_sex_01.png"
+    pause.3
+    "01_hp/13_characters/hermione/chibis/titjob/tj_sex_02.png"
+    pause.3
+    "01_hp/13_characters/hermione/chibis/titjob/tj_sex_03.png"
+    pause.3
+    "01_hp/13_characters/hermione/chibis/titjob/tj_sex_04.png"
+    pause.3
+    repeat
+
+image titjob_ani_pause:    #titjob 
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_01.png"
+
+image titjob_chest_ani:    #titjob cum on chest
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_01.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_02.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_03.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_04.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_05.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_06.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_07.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_08.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_09.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_10.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_11.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_12.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_13.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_14.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_15.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_16.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_17.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_18.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_19.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_20.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_21.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_22.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_23.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_24.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_chest_25.png"
+    pause.2
+    repeat
+
+image titjob_mouth_ani:    #titjob cum in mouth
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_01.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_02.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_03.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_04.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_05.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_06.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_07.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_08.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_09.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_10.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_11.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_12.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_13.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_14.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_15.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_16.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_17.png"
+    pause.2
+    "01_hp/13_characters/hermione/chibis/titjob/tj_cum_mouth_18.png"
+    pause.2
+    repeat
     
 ### SCREENS
     

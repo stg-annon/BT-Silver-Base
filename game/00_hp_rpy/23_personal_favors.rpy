@@ -6481,7 +6481,971 @@ label hg_pf_TouchMe_KissSuck: #Jumps here after event #03 and if WHORING >= LEVE
     her "...Can I just get paid now, please, [genie_name]?"
     jump done_with_handjob #^^^ (<-That's to a smiley. That's a arrow up).
     
+###################REQUEST_22 (Level 06) (45 pt.) (Blowjob). 
+label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
+    hide screen hermione_main 
+    with d3
+    if hg_pf_TitJob_OBJ.points == 0:
+        m "{size=-4}(Should I ask her for a titjob?){/size}"
+    else:
+        m "{size=-4}(Should I ask the [hermione_name] to give me another titjob?){/size}"
+    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+    menu:
+        "\"(Yes, let's do it!)\"":
+            show screen blktone
+            with d3
+            pass
+        "\"(Not right now.)\"":
+            jump silver_requests
     
+    if hg_powerGirl_OBJ.purchased:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                call her_main("As what?","body_10")
+                m "Power Girl."
+                if whoring >= 18:
+                    call her_main("A super hero?","body_50")
+                    m "Do you have a problem with that?"
+                    call her_main("...","body_44")
+                    call her_main("I suppose not, I mean if it keeps my uniform clean...","body_29")
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    call set_hermione_outfit(hg_powerGirl_OBJ)
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
+    
+    $ current_payout = 45 #Used when haggling about price of th favor.
+    
+    if hg_pf_TitJob_OBJ.points == 0: # FIRST EVENT <============================================================== EVENT 01
+        m "Now [hermione_name]."
+        call her_main("Yes, [genie_name]?","body_01",xpos=140)
+        m "Have you ever given someone a titjob?"
+        if whoring <=14:
+            jump too_much
+        call her_main("A titjob?","body_79")
+        m "It's where you wrap those fat tits of your around a cock and then shake them up and down and up and..."
+        call her_main("[genie_name]!","body_47")
+        m "So have you ever given a boy a titjob?"
+        call her_main("......","body_66")
+        call her_main("{size=-7}No...{/size}","body_34")
+        m "Hmmm? What was that?"
+        call her_main("No!!!","body_32")
+        m "Well today is your lucky day!"
+        call her_main("Lucky? How would you call this lucky?","body_66")
+        m "it's not every day you learn something new."
+        call her_main("I'm in school! It's my job to learn something new everyday!","body_30")
+        m "At least this is something you'll be able to use in the real world."
+        call her_main("......","body_66")
+        call her_main("{size=-7}I want 100 points...{/size}","body_34")
+        m "Speak up [hermione_name]."
+        call her_main("I want 100 points!","body_32")
+        label back_to_titjob_choices:
+        menu:
+            m "..."
+            "\"You will get 15 house points and I promise not to cum on you.\"":
+                $ mad +=7
+                call her_main("You expect me to give you a titjob for 15 points!","body_69")
+                her "I don't know who you think I am but I am not going to do this for 15 measly points!"
+                call her_main("(Besides, I don't really mind being covered in his sticky load...)","body_69")
+                jump back_to_titjob_choices
+            "\"you will get 45 house points.\"":
+                call her_main(".....","body_69")
+                call her_main("45 house points...?","body_87")
+                her "This could put \"Gryffindor\" back in the lead..."
+                m "Is that a \"yes\"?"
+                call her_main("Yes, yes it is, [genie_name].","body_79")
+                m "Great!"
+            "\"you will get 100 house points.\"":
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                $ current_payout = 100 #Used when haggling about price of th favor.
+                $ mad = 0
+                call her_main("100 house points?!","body_72")
+                her "This will definitely put \"Gryffindor\" in the lead!"
+                m "SO that's a yes?"
+                call her_main("Of course!","body_75")
+                call her_main("For 100 points I'll give you the best damn titjob of your life!","body_80")
+        # GENIE STANDS WITH HIS COCK OUT
+       
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen hermione_blink
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        
+
+        hide screen blkfade
+        hide screen blktone
+        hide screen bld1
+        show screen ctc
+        with fade
+        pause
+        show screen bld1
+        with d3
+        $ her_head_ypos = her_head_tits
+        call her_head("...........","body_31")
+        call her_head("(it's so big...)","body_59")
+        m "Get to it [hermione_name]."
+        call her_head("Right...","body_34")
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        hide screen hermione_walk_01 
+        pause.3
+        label titjob_round_2:
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        ">Hermione clumsily wraps her tits around your cock..."
+        m "That's a start. Now, up and down..."
+        call her_head("Alright...","body_34") 
+        #Stroking the cock.
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani"
+        hide screen blkfade
+        with d3
+        show screen ctc
+        pause
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        hide screen ctc
+        show screen bld1
+        with d3
+        g9 "mmmm..."
+        if hg_pf_TitJob_OBJ.points == 0:
+            call her_head("...","body_52")
+            call her_head("Does it... feel good?","body_53")
+            m "Good?"
+            m "It feels amazing."
+            call her_head("Oh...","body_53")
+            call her_head("......")
+            call her_head("Thank you [genie_name]","body_54") 
+        call her_head("[genie_name]...?","body_55")    
+        m "What is it?"
+        call set_hermione_action("lift_top")
+        call her_head("Promise me you won't cum on my... face...","body_44")
+        $ d_flag_01 = False #If TRUE Genie promised to warn her.
+        menu:
+            m "..."
+            "\"I promise not to cover that sweet little face of yours...\"":
+                $ d_flag_01 = True #If TRUE Genie promised to warn her.
+                call her_head("Thank you, [genie_name].","body_53") 
+            "\"Hmmmm... We'll see how I feel later...\"":
+                call her_head("Hmmmmph.","body_50")
+                call her_head("At least avoid my hair...","body_33") 
+        call her_head("........","body_31") 
+        m "............."
+        call her_head(".............","body_33")
+        call her_head("Err... [genie_name]?") 
+        m "Yes, what is it?"
+        call her_head("Are you almost there?","body_31") 
+        m "Why?"
+        if daytime:
+            call her_head("Well, it's just that my classes are about to start...","body_44")
+        else: 
+            call her_head("Well, it's just that I promised Ginny that we'd hang out tonight...","body_44")
+            call her_head("She's pretty upset that I'm spending so much time in here...")
+        m "Do you need the points or not?"
+        call her_head("I do, [genie_name]! I'm sorry...","body_57b")
+        call her_head("I'll just keep on stroking it then...")
+        m "Well, you could make this finish up a little faster..."
+        call her_head("Really? What can I do [genie_name]?","body_54") 
+        menu:
+            m "..."
+            "\"Tell me how much you love your tits.\"":
+                call her_head("What?","body_44")
+                call her_head("My breasts?")
+                m "you know, How good they feel..."
+                m "The looks that you get because of them."
+                call her_head("Oh, alright then...","body_45") 
+                call her_head("There was this one time in the library...","body_46")
+                call her_head("It was empty apart from this first year boy sitting across from me...")
+                m "Heh... good. Go on."
+                call her_head("Well it was so hot that I'd taken my vest off...","body_53") 
+                m "I bet it was hot..."
+                call her_head("He was trying to act sly but I could tell that he kept sneaking glances at them...","body_54")
+                call her_head("So I started undoing the buttons... Slowly at first, not enough for him to suspect anything....","body_58")
+                m "mmmmm, you little slut."
+                call her_head("By the third button he couldn't take his eyes off of me.","body_59")
+                call her_head("As I slowly undid the fourth he moved his hands under the desk...")
+                m "Really?"
+                call her_head("Really... I could almost hear him stroking it...","body_78")
+                call her_head("When I undid the fifth button he could almost see my nipples...","body_107") 
+                g9 "Do you have no shame?"
+                call her_head("[genie_name]! I was just trying to cool down...","body_124") 
+                m "I'm just kidding, keep going."
+                call her_head(".....","body_128")
+                call her_head("By the sixth button almost nothing was hidden...")
+                call her_head("He could see my naked tits...","body_129")
+                call her_head("and he just stared at them... not even trying to hide what he was doing...")
+                call her_head("when I undid the final button it was too much for him...")
+                call her_head("He shot his cum under the table, covering my legs and feet in his hot cum!","body_134") 
+                g4 "!!!"
+                call her_head("Come on [genie_name] cover me as well! Cum all over my tits!","body_136")
+                hide screen ctc
+                with hpunch
+                g4 "{size=-4}(Here it comes! Where should I aim for?){/size}"
+            
+            "\"Stick your tongue out tilt you head down!\"":
+                call her_head("What?","body_45") 
+                m "Just do it, slut."
+                call her_head("Like this?","body_38") 
+                m "Yes, good. Tilt your head down as far as it'll go."
+                call her_head(".....................","body_115") 
+                m "Yes... Good..."
+                call her_head("...........","body_115")
+                call her_head("...........")
+                call her_head("I can't keep my mouth open for so long, [genie_name]. I will start to drool...","body_31") 
+                m "But I want you to drool... all over those perfect tits of yours"
+                call her_head("What? You think they're perfect?","body_31") 
+                m "As perfect as any mortal, [hermione_name]!"
+                call her_head(".......","body_78") 
+                m "Now stick it back out again and try to get it as close to the tip of my cock as you can"
+                call her_head("............","body_33")
+                call her_head("A-ha.....","body_115") 
+                m "Good, [hermione_name]."
+                call her_head("..............","body_115") 
+                m "Yes, keep on stroking my cock."
+                ">You thrust up as she pushes her tits down causing the tip of your cock to touch her wet tongue."
+                call her_head("..................","body_115")
+                g4 "Oh that's good..."
+                call her_head(".................","body_115") 
+                ">You thrust into her tongue again."
+                m "That's it slut taste it!"
+                call her_head(".....................","body_40") 
+                m "Yes, you big titted whore!"
+                call her_head("......................","body_116") 
+                m "I want to cum in that little slutty mouth of yours..."
+                call her_head("................","body_116") 
+                with hpunch
+                g4 "{size=-4}(Here it comes! Where should I aim for?){/size}"
+        menu:
+            m "..."
+            "-cum in her mouth-":
+                $ mad =+ 3
+                g4 "Here it comes, [hermione_name]! You better be ready!"
+                call her_head("What? already?!","body_48") 
+                g4 "{size=+5}Yeah, your tits felt great!!!{/size}"
+                g4 "{size=+5}You little whore!!!{/size}"
+                hide screen bld1
+                with d3
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade 
+                with d5
+                call her_head("No, [genie_name], wait, not on my fa--","body_117") 
+                g4 "{size=+5}Open wide slut!!{/size}"
+                call her_head("Not in my mou-","body_130")       
+                ">You grab the back of Hermione's head and force your cock into her open mouth..."
+                call her_head("!!!!!!!","body_132") 
+                ">The sensation of her warm mouth any squirming tongue overwhelm you and you start cumming like crazy"
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!! Take it slut{/size}"
+              
+                
+                
+                
+                
+                
+                call her_head("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_mouth_ani"
+                hide screen blkfade
+                with d3
+                stop music fadeout 1.0
+                pause 
+                        
+                $ her_head_ypos = her_head_only
+                call her_head(".......................","body_224")                
+                m "mmmmmm that felt great...."
+                call her_head(".......................","body_224")    
+                m "How are you feeling?"
+                call her_head(".......................","body_224")    
+                m "[hermione_name]?"
+                show screen bld1
+                with d3
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                $ g_c_u_pic = "titjob_ani_pause"
+                ">Hermione opens her mouth, letting your cum fall out onto her tits."
+                call her_head("*ptui*","body_116b")
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                call her_head("Why on earth did you cum in my mouth!","body_34")
+                m "well you did say not to cum on your face."
+                call her_head("Ughhh... you came so much! I had to swallow most of it!","body_34")
+                m "That's you fault for doing such a great job..."
+                call her_head("I don't want to hear it...","body_34")
+                if daytime:
+                    call her_head("My classes are about to start and now I'm covered in your sperm...","body_34") 
+                else:
+                    call her_head("At this hour The \"Gryffindor\" common room will be full of people...","body_34")
+                    call her_head("And now I'm going to have to go there, smelling like... spunk...")
+                    call her_head("Maybe if I just run to bed no one will be able to tell...","body_117") 
+                    
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade
+                with d7
+                ">Hermione releases your still pulsating cock."
+                
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                show screen genie
+                hide screen g_c_u
+                $ her_head_ypos = her_head_tits
+                m "You could have swallowed..."
+                m "Then there wouldn't have been any clean up."
+                call her_head("Swallow all of that?","body_118")
+                call her_head("I don't think I have enough room in my stomach...")
+                call her_main("Is that all [genie_name]?","body_83")
+                $ aftersperm = True
+                
+                
+#                g4 "You whore! You little nasty wore!"
+#                g4 "There! Allover your fucking belly and tits!"
+#                her "Ah! It's so hot!"
+#                #                g4 "Oh, yes, this is so good!"
+#                her "Ah..."
+#                #                m "..............."
+#                her "............"
+#                #                m "I think I'm done..."
+#                her "Oh..."
+#                ">Hermione releases your still pulsating cock."
+#                her "Ew... Your sperm, [genie_name]..."
+#                her "It's everywhere under my uniform..."
+#                #                m "What possessed you to put my cock there, [hermione_name]?"
+                
+
+            "-cover her tits-":
+                hide screen ctc
+                with hpunch
+                g4 "ARGH!"
+                show screen blkfade
+                with d3
+                call her_head("WHAT?!","body_48")               
+                g4 "Take this slut!"
+
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+                
+                
+                
+                  
+                call her_head("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_chest_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                hide screen bld1
+                with d3
+                pause
+                show screen bld1
+                with d3
+                        
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                $ her_head_ypos = her_head_only
+                call her_head(".......................","body_119")          
+                m "Yes... That's it..."
+                pause
+                
+                hide screen hermione_main
+                with d3
+                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+                
+                call her_main("","body_19")
+                pause
+                her ".........."
+                m "Well, I think that's about it..."
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                hide screen g_c_u
+                show screen genie
+                
+                if daytime:
+                    call her_main("[genie_name]! How could you cum so much?!","body_32")
+                    call her_main("It's like you dumped a bucket of spunk over my chest!","body_69")
+                    call her_main("My classes are about to start and I can't go looking like this!","body_87")
+                    m "Of course you can, just wipe it off or something..."
+                    m "Nobody will even notice... Except for the smell maybe..."
+                    call her_main("...I would like to get paid now.","body_79")
+                    hide screen hermione_main     
+                    with d3
+                    $ uni_sperm = False
+                else:
+                    call her_main("How can one person cum so much!","body_69")
+                    her "how Am I supposed to go back to the \"Gryffindor\" common room looking like this?!"
+                    m "Just wipe it off or something."
+                    m "It's not like it'll be the first time you've gone to bed smelling like cum."
+                    call her_main("...I would like to get paid now.","body_79")
+                    hide screen hermione_main     
+                    with d3
+                    $ uni_sperm = False
+                $ aftersperm = True
+        #her "Can I just get paid now?"
+
+    elif hg_pf_TitJob_OBJ.points == 1: # SECOND EVENT <============================================================== EVENT 02
+        m "[hermione_name]?"
+        call her_main("Yes, [genie_name]?","body_01",xpos=140)
+        m "How do you feel about wrapping those nice tits of yours around my cock again?"
+        call her_main("Only nice?","body_120")
+        m "Fine, fine."
+        m "How do you feel about wrapping those perfect tits of yours around my cock again?"
+        call her_main("Of course, [genie_name].","body_58")
+        m "You like it when I call them perfect don't you?"
+        call her_main(".............","body_59")
+        g9 "you don't have to say anything, just bring those perfect tits over here."
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_60")
+        call her_main("yes [genie_name]","body_68")
+        stop music fadeout 4.0
+        
+
+        hide screen hermione_main            
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        pause.3
+
+        
+                                                                                                                                                                               #HERMIONE
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen blktone
+        hide screen hermione_walk_01 
+
+        jump titjob_round_2
+
+
+    elif hg_pf_TitJob_OBJ.points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
+        m "[hermione_name]?"
+        call her_main("[genie_name]?","body_01",xpos=140)
+        m "You don't mind wrapping those perfect tits of yours around my cock again, do you?"
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_78")
+        if whoring <= 19:
+            call her_main("As long as I am getting paid...","body_105")
+            m "Well, come here then. Time to earn those points."
+        else:
+            call her_main("Of course not [genie_name]...","body_107")
+            m "Well, come here then."
+        
+        
+        hide screen hermione_main            
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        pause.3
+
+        hide screen hermione_walk_01 
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen blktone 
+        
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        ">Hermione wraps her plump tits around your cock..."
+        $ her_head_ypos = her_head_only
+        stop music fadeout 3.0
+        call her_head("Do you like it when I do it like this, [genie_name]?","body_68")
+        ">Hermione starts alternating her breasts as she titfucks you."
+        g9 "Actually, yes! Very nice!"
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+        #Stroking the cock.
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani"
+        hide screen blkfade
+        with d7
+        show screen ctc
+        pause
+        hide screen ctc
+        show screen bld1
+        with d3
+
+        m "Yes, yes, like that..."
+        m "Hm... You are getting pretty good at this."
+        call her_head("Thank you, [genie_name].","body_74")
+        call her_head("I figured with how nice you've been it's the least I could do...")
+        m "Hm..."
+        menu:
+            m "..."
+            "\"What do you think of my cock?\"":
+                call her_head("Huh?","body_31")
+                call her_head("Your cock?","body_34")         
+                m "What do you think abo-"
+                call her_head("It's amazing....","body_120")         
+                m "go on..."
+                call her_head("If I have the perfect tits then this...","body_121")   
+                ">She squeezes her tits around your cock."
+                call her_head("This is the perfect cock","body_123")         
+                m "Perfect?"
+                call her_head("Perfect.","body_123b")      
+                call her_head("Perfect size...","body_124")
+                call her_head("Perfect shape...")
+                "Hermione tilts her head down and licks the tip of your cock."
+                call her_head("...","body_121")  
+                call her_head("Perfect taste...","body_121")         
+                m "..."
+                call her_head("I think your perfect cock should be shared around the school. ","body_30")         
+                m "Well, I wouldn't go that far--"
+                call her_head("Listen to me, [genie_name]!","body_121")
+                call her_head("I think your perfect cock should be worshipped as part of the school curriculem!")
+                call her_head("Girls will be required to come in and bask in it's glory!")
+                m "OK, I think I've heard enough."
+                call her_head("Too much?","body_122")         
+                m "Yeah, just a bit."
+                call her_head("Sorry [genie_name], I got a bit carried away...","body_34")         
+                m "No biggie. Just keep on massaging it with those big tits of yours."
+                call her_head(".................","body_121")  
+                show screen blktone
+                with d3
+                ">Hermione keeps on stroking your cock."
+                ">She spits on it to help lubricate it."  
+                hide screen blktone
+                with d3
+                m "Yes, yes... That's it slut."
+                
+            "\"Call yourself a big titted whore!\"":
+                call her_head("Excuse me?","body_31")
+                call her_head("Oh... I am a big tittedwhore!","body_121")  
+                m "Good. Glad we established that."
+                m "Now I want you to say..."
+                menu:
+                    m "..."
+                    "\"I am a shameless cumslut!\"":
+                        call her_head("Of course.","body_124")
+                        call her_head("I am a shameless cumslut.","body_121")
+                        call her_head("A dirty little slut who's addicted to the the taste of my headmaster's cum...","body_123")
+                        m "Yes! Good!"
+                    "\"I love being covered in cum!\"":
+                        call her_head("I love being covered in cum!","body_121")
+                        call her_head("hot...")
+                        call her_head("sticky...")
+                        call her_head("smelly...")
+                        call her_head("cum...")
+                        call her_head("...................................","body_123")
+                        call her_head("How was that, [genie_name]?","body_122")  
+                        m "Perfect." 
+            "\"This is really good. Did you practice?\"":
+                call her_head("Hm?","body_74")
+                call her_head("Sort of... Well not on another cock...","body_122")
+                m "On what then?"
+                call her_head("Well I spoke to Ginny...","body_68")    
+                m "A friend of yours?"
+                call her_head("yes. I asked if she had any tips for this sort of thing...","body_54")
+                call her_head("She said the best way to improve was practice...","body_53")
+                m "Practice on what?"
+                call her_head("On Ginny","body_46") 
+                call her_head("Well... on her... arm.","body_122")    
+                m "You titfucked your friends arm?"
+                call her_head("Just as practice!","body_57")
+                call her_head("She even game me some tips...")
+                call her_head("How does this feel?","body_59")
+                m "mmmmm... Yes, this feels quite good."
+                call her_head("Does it?","body_122")
+                call her_head("Ginny seemed to enjoy it a lot as well...","body_78")
+                g4 "She enjoyed it?"
+                call her_head("Of course she did!","body_74")    
+                call her_head("Who wouldn't love feeling my perfect tits...","body_84")
+                call her_head("Although I think she might have enjoyed it...","body_87")
+                call her_head("A little too much...","body_105")
+                m "How so?"
+                call her_head("Well...","body_105")
+                call her_head("She might have started...")
+                call her_head("Playing with herself...","body_106")
+                with hpunch
+                with kissiris
+                g4 "Yes, keep going slut"
+                call her_head("As I was \"Practicing\" on her arm she might have...","body_107")
+                call her_head("cum...","body_121")    
+                g4 "[hermione_name], you little slut!"
+                call her_head("It was just practice!","body_57")
+                call her_head("Err... I mean...","body_122")
+                call her_head("It's not like I enjoyed it as well...","body_118")
+                m "Yes, yes... you're not a slut at all..."
+                m "Mmmmm, why don't you spit on it a little..."
+                m "Oh, yes..."
+                call her_head("...............","body_124")
+        m "Yes... Keep stroking it."
+        call her_head("..............","body_122")
+        m "Now I want you to say..."
+        menu:
+            m "..."
+            "{size=-4}\"I love teasing my father with my big tits.\"{/size}":
+                call her_head("I do not!","body_118")
+                m "I know. Just say it."
+                call her_head("My father? That's gross, [genie_name]! How could you suggest that I want to fu-","body_121")
+                m "Come on... Just make something up."
+                call her_head("...........","body_122")
+                call her_head("Well...","body_87")
+                call her_head("Sometimes when I hug him...")
+                call her_head(".......")
+                m "Go on [hermione_name]..."
+                call her_head("I press my tits into him...","body_121")
+                m "Do you think he enjoys it?"
+                call her_head("I'm not sure...","body_82")
+                call her_head("I think so...","body_105")
+                call her_head("He always tries to cover his croutch afterwards...","body_84")
+                call her_head("He even says I'm too old for hugs...","body_83")
+                call her_head("But I make sure to give him a big one every night before I go to bed...")
+                call her_head("So that he'll think of me...","body_124")
+                call her_head("And how good I felt...","body_123")
+                call her_head("Pressing into him...","body_121")
+                m "That's it slut."
+                call her_head("Then I give him a kiss on the forehead...","body_105")
+                call her_head("Making sure that he can see down my blouse...","body_24")
+                call her_head("{image=textheart}{image=textheart}{image=textheart}")
+                call her_head("But all of that is not true of course!","body_31")
+                call her_head("None of that happens! It was just for you to imagine!")
+                m "Right..."
+            "{size=-4}\"I love teasing my schoolmates with my perfect tits.\"{/size}":
+                call her_head("I love teasing my schoolmates with my perfect tits...","body_121")
+                m "Of course you do..."
+                call her_head("I love the jealous looks from the other girls...","body_124")
+                m "I bet they're jealous..."
+                call her_head("I love teasing ron and harry during breakfast...","body_128")
+                call her_head("Sometimes I'll walk around with only one button done up...","body_129")
+                call her_head("Other times I'll just wear my vest with nothing on underneath...")
+                m "And how do you feel..."
+                call her_head("So good...","body_133")
+                call her_head("One time when I was walking back from your office at night I was barely covering them...","body_122")
+                call her_head("And as I rounded a corner...","body_121")
+                call her_head("A second year boy ran head first into them...","body_136")
+                m "Head first into your tits?"
+                call her_head("All I could see was the top of his head...","body_123")
+                m "What did he do?"
+                call her_head("He tried to pull away...")
+                m "Tried?"
+                call her_head("Well I may have held him there...","body_128")
+                call her_head("Just for a little bit...","body_124")
+                call her_head("Just to tell him it was alright...","body_129")
+                m "You little slut."
+                call her_head("I think I might've broken him though...","body_124")
+                call her_head("Because when I let him go he said nothing. He just stepped back slowly and walked away.","body_121")
+                m "I bet I know where he went..."
+                call her_head("so do i...","body_121")
+        
+        #CUMMING
+        m "Hm..."
+        m "I love your slutty tits.!"
+        call her_head("Thank you [genie_name].","body_121")
+        call her_head("Shall I rub them some more then?")
+        show screen blkfade
+        with d3
+        ">Hermione presses her tits together against your cock and starts rubbing it very quickly..."
+        m "Oh yes!!!"
+        stop music fadeout 1.0
+        g4 "{size=-5}(Almost there! where should I aim?){/size}"
+        menu:
+            m "..."
+            "\"(In her mouth).\"":
+                g4 "Take this whore"
+                ">You grab Hermione by the back of her head, tilting it down "
+                call her_head("What are you-","body_122")
+                ">You thrust up into her wet mouth, the sensation of it driving you over the edge."
+               
+                
+                
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+              
+                
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                
+                
+                
+                call her_head("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_mouth_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                pause 
+                        
+                $ her_head_ypos = her_head_only
+                
+
+                
+                
+                g4 "Argh! You whore!"
+                call her_head("{image=textheart}{image=textheart}{image=textheart}","body_125")       
+                g4 "Argh! you big titted slut! Take it all!"
+                #Cuming.
+                call her_head("......","body_125")
+                m "............"
+                m "Ok, I think I am done..."
+                call her_head("..............","body_125")
+                call her_head("........","body_125")
+                call her_head("...","body_125")
+                $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
+                call her_head("*GULP*","body_126") #play noise here
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade
+                with d5
+                ">Hermione releases your cock from between her tits and gets dressed."
+                
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                show screen genie
+                hide screen g_c_u
+                $ her_head_ypos = her_head_tits
+                hide screen blkfade
+                with d5
+                
+               
+                
+                
+                
+                $ hermione_wear_top = True
+                $ hermione_wear_bra = True
+                call update_her_uniform
+                if hermione_costume:
+                    call set_hermione_action("none")
+                if daytime:
+                    call her_head("Well, I think I'd better go now... my Classes are about to start.","body_45")
+                else:
+                    call her_head("Well, I think I'd better go now... It's getting late.","body_45")       
+                m "So you're alright with swallowing now?"
+                call her_head("What?","body_87")
+                call her_head("Oh. I suppose so...","body_68")
+                call her_head("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.","body_74")    
+                m "Hm... Are you sure you don't want people seeing your tits covered in cum..."
+                call her_head("What? walk around school covered in your cum [genie_name]?","body_122")    
+                m "it Would keep your clothes clean."
+                if whoring <= 20:
+                    call her_head("With all due respect [genie_name]...","body_120")
+                    call her_head("I don't plan on getting a reputation as a cum loving whore...","body_122")
+                    call her_head("Not like those \"Slytherin\" girls...")
+                else:
+                    call her_head("Hmmmmm...","body_105")
+                    call her_head("Maybe if you ask nicely...","body_105")  
+                call her_main("Is that all [genie_name]?","body_83")  
+                
+
+            "\"(On her tits).\"":
+                g4 "Here! Take this you bit titted whore!"
+                with hpunch
+                g4 "ARGH!"
+                show screen blkfade
+                with d3
+                call her_head("What? Already?!","body_48")               
+                g4 "Yeah, you're tits felt great slut!"
+
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+                
+                
+                
+                  
+                call her_head("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_chest_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                hide screen bld1
+                with d3
+                pause
+                show screen bld1
+                with d3
+                        
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                $ her_head_ypos = her_head_only
+                call her_head(".......................","body_119")          
+                m "Aghhh... I Feel so much better now..."
+                pause
+                
+                hide screen hermione_main
+                with d3
+                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+                
+                call her_main("","body_120")
+                pause
+                her ".........."
+                m "Well, I think that's about it..."
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                hide screen g_c_u
+                show screen genie
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                call her_main("[genie_name]!","body_103")
+                m "What?"
+                call her_main("You covered my chest in cum [genie_name]...","body_97")
+                call her_main("There's so much...","body_107")
+                m "It's your fault, [hermione_name]!"
+                call her_main("My fault?","body_117")
+                m "Yes! It's those perfect tits of yours..."
+                m "They just felt too good..."     
+                call her_main("Oh...","body_104")
+                her "Well, I suppose it's not too bad then..."
+                call her_main("I'll just wipe it off and hope that nobody notices...","body_120")
+                m "you could lick them clean."
+                call her_main("You want me to lick your cum off of my tits?","body_121")
+                call her_main("I don't think so [genie_name]...","body_121")
+                her "{size=-5}Maybe next time...{/size}"
+                call her_main("Is that all [genie_name]?","body_122")
+                $ aftersperm = True
+                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+                with d3   
+    
+    label done_with_titjob:
+                
+    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    $ hermione_wear_top = True
+    $ hermione_wear_bra = True
+    if hermione_costume:
+        call set_hermione_action("none")
+    call update_her_uniform
+    $ gryffindor += current_payout #35
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    hide screen blkfade
+    with d3
+    
+    m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"." 
+    $ gryffindor +=current_payout
+    
+    hide screen hermione_stand_f #Hermione stands still.
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3   
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    
+    call her_main("Thank you, [genie_name]...","body_13")
+    
+    $ hg_pf_TitJob_OBJ.points += 1
+    
+    if whoring <= 17:
+        $ whoring +=1
+    
+    if hg_pf_TitJob_OBJ.points <= 3:
+        $ hg_pf_TitJob_OBJ.hearts_level = hg_pf_TitJob_OBJ.points
+    
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    
+    $ custom_outfit_old = temp_outfit
+    $ stockings = temp_stockings
+    $ panties = True
+    call her_walk(400,610,2)
+    
+    call reset_hermione_main
+    jump end_hg_pf         
+
+
 ###################REQUEST_22 (Level 06) (55 pt.) (Blowjob). 
 label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen hermione_main 
@@ -8138,7 +9102,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen hermione_main    
         jump your_ass
     
-    elif hg_pf_LetsHaveSex_OBJ.points == 2 or whoring < 24: # THIRD EVENT <============================================================== EVENT 03
+    elif hg_pf_LetsHaveSex_OBJ.points >= 2: # THIRD EVENT <============================================================== EVENT 03 (change to enable luna variant)
         m "[hermione_name]..."
         m "Last night I had a dream..."
         g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
