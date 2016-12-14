@@ -1048,7 +1048,7 @@ label hg_ps_WearMyCum_complete_1:
         call her_main("I kept your cum on me all day.","body_54")
         menu:
             "\"50 Points to gryffindor!\"":
-                $ gryffindor =+ 50
+                $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?","body_55")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
@@ -1058,7 +1058,7 @@ label hg_ps_WearMyCum_complete_1:
                 m "And what did you tell her?"
                 call her_main("I just said that I spilled some Wiggenweld potion on myself in potions class.","body_14")
                 m "Very cunning of you. 50 points to Gryffindor."
-                $ gryffindor =+ 50
+                $ gryffindor += 50
                 call her_main("Thank you [genie_name], if that's all I might head to bed.","body_55")
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].","body_06")
@@ -1070,7 +1070,7 @@ label hg_ps_WearMyCum_complete_1:
         call her_main("I kept your cum on me all day.","body_34")
         menu:
             "\"50 Points to gryffindor!\"":
-                $ gryffindor =+ 50
+                $ gryffindor += 50
                 call her_main("Thank you [genie_name], will that be all?","body_29")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
@@ -1080,7 +1080,7 @@ label hg_ps_WearMyCum_complete_1:
                 m "And how did you feel?"
                 call her_main("Excited. I just wish that they knew why I was doing this.","body_59")
                 m "Speaking of that, 50 points to Gryffindor."
-                $ gryffindor =+ 50
+                $ gryffindor += 50
                 call her_main("Oh, right the points, Thank you [genie_name]. if that's all I might head to bed.","body_87")
                 m "Very well, goodnight [hermione_name]."
                 call her_main("Good night [genie_name].","body_83")
@@ -1092,7 +1092,7 @@ label hg_ps_WearMyCum_complete_1:
         call her_main("I kept your cum on me {p}all day.","body_27","tears_03")
         menu:
             "\"50 Points to gryffindor!\"":
-                $ gryffindor =+ 50
+                $ gryffindor += 50
                 $ mad =+ 5
                 call her_main("...","body_50","tears_03a")
                 m "Well [hermione_name], you may leave now."
