@@ -6743,7 +6743,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         menu:
             m "..."
             "-cum in her mouth-":
-                $ mad =+ 3
+                $ mad += 3
                 g4 "Here it comes, [hermione_name]! You better be ready!"
                 call her_head("What? already?!","body_48") 
                 g4 "{size=+5}Yeah, your tits felt great!!!{/size}"

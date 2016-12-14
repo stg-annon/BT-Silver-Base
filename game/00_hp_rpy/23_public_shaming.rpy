@@ -1093,12 +1093,12 @@ label hg_ps_WearMyCum_complete_1:
         menu:
             "\"50 Points to gryffindor!\"":
                 $ gryffindor += 50
-                $ mad =+ 5
+                $ mad += 5
                 call her_main("...","body_50","tears_03a")
                 m "Well [hermione_name], you may leave now."
                 call her_main("Hmmmphh...","body_51","tears_03a")
             "\"Tell me about your day.\"":
-                $ mad =+ 10
+                $ mad += 10
                 call her_main("My day...","body_33","tears_03a")
                 call her_main("This was the worst day of my life!","body_32","tears_03a")
                 call her_main("I've never been so ashamed!","body_34","tears_03a")
