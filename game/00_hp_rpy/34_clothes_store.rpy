@@ -437,6 +437,50 @@ label existing_stock:
                             jump accessories
                         "-Never mind-":
                             jump accessories
+                "{color=#858585}-Tiara-{/color}"if "tiara" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-Tiara-" if "Tiara" not in cs_existing_stock:
+                    maf "A lovely Tiara, fit for a princess."
+                    menu:
+                        "-Buy the item (200 gold)-":
+                            call cs_buy_stock("tiara",200)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "{color=#858585}-Freckles-{/color}"if "freckles" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-Freckles-" if "Freckles" not in cs_existing_stock:
+                    maf "Some lovely freckle paint. Now non-toxic!"
+                    menu:
+                        "-Buy the item (50 gold)-":
+                            call cs_buy_stock("freckles",50)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "{color=#858585}-reading glasses-{/color}"if "reading_glasses" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-reading glasses-" if "reading_glasses" not in cs_existing_stock:
+                    maf "I wish I only needed fake reading glasses."
+                    menu:
+                        "-Buy the item (75 gold)-":
+                            call cs_buy_stock("reading_glasses",75)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "{color=#858585}-vintage glasses-{/color}"if "vintage_glasses" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-vintage glasses-" if "vintage_glasses" not in cs_existing_stock:
+                    maf "These old glasses used to be quite fashionable."
+                    menu:
+                        "-Buy the item (60 gold)-":
+                            call cs_buy_stock("vintage_glasses",60)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
                 "-Never mind-":
                     jump existing_stock
         "-Return-":

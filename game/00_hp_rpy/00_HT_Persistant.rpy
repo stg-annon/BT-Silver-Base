@@ -205,6 +205,18 @@ label __init_variables:
         $ tentacle_owned = False
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
+
+    ### Accesory Variables
+    if not hasattr(renpy.store,'hermione_wear_glasses'): #important!
+        $ hermione_wear_glasses = False
+    if not hasattr(renpy.store,'hermione_glasses'): #important!
+        $ hermione_glasses = "01_hp/13_characters/hermione/accessories/head/reading_glasses.png"
+    if not hasattr(renpy.store,'hermione_hats'): #important!
+        $ hermione_hats = False
+    if not hasattr(renpy.store,'hermione_hat'): #important!
+        $ hermione_hat = "01_hp/13_characters/hermione/accessories/head/tiara.png"
+    if not hasattr(renpy.store,'hermione_freckles'): #important!
+        $ hermione_freckles = False
     
     
     
@@ -262,6 +274,7 @@ label __init_variables:
     #Public Shaming Flags
     if override_persistant or not hasattr(renpy.store,'hg_ps_PantyThief_SoakedPantiesFlag'): #important!
         $ hg_ps_PantyThief_SoakedPantiesFlag = False
+
         
     
     

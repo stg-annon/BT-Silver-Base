@@ -50,6 +50,15 @@ screen hermione_main:
     
     if hermione_badges and hermione_wear_top and not hermione_costume:
         add hermione_badge xpos hermione_xpos_offset ypos hermione_ypos # add badge on top
+
+    if hermione_wear_glasses:
+        add hermione_glasses xpos hermione_xpos_offset ypos hermione_ypos # add glasses
+
+    if hermione_hats:
+        add hermione_hat xpos hermione_xpos_offset ypos hermione_ypos # add glasses
+
+    if hermione_freckles:
+        add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos hermione_xpos_offset ypos hermione_ypos # add freckles
     
     if hermione_wear_robe:
         add hermione_robe xpos hermione_xpos_offset ypos hermione_ypos

@@ -14,7 +14,7 @@ screen wardrobe:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
 
@@ -41,7 +41,7 @@ screen wardrobe_hair:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
@@ -94,7 +94,7 @@ screen wardrobe_uniform:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
@@ -144,7 +144,7 @@ screen wardrobe_costumes:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
@@ -201,7 +201,7 @@ screen wardrobe_gifts:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
@@ -242,6 +242,57 @@ label wardrobe_give_gift:
     call give_her_gift(wardrobe_gift_item)
     hide screen wardrobe_gifts
     call screen wardrobe_gifts
+
+screen wardrobe_accessories:
+    
+    tag wardrobe_menu
+    zorder hermione_main_zorder-1
+    
+    imagemap:
+        cache False
+        ground "01_hp/25_mo/wardrobe_ground.png"
+        hover "01_hp/25_mo/wardrobe_hover.png"
+
+        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
+        
+        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
+        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
+        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
+        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
+        
+        if "SPEW_badge" in cs_existing_stock:
+            hotspot (21, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",0),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/badges/spew_badge.png" xpos -185 ypos -125
+        if "CUM_badge" in cs_existing_stock:
+            hotspot (21+90, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",1),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/badges/cum_badge.png" xpos -95 ypos -125
+        if "tiara" in cs_existing_stock:
+            hotspot (21+180, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",2),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/tiara.png" xpos -55 ypos 50
+        if "freckles" in cs_existing_stock:
+            hotspot (21+270, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",3),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos 50 ypos -25
+        if "reading_glasses" in cs_existing_stock:
+            hotspot (21+360, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",4),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/reading_glasses.png" xpos 140 ypos -30
+        if "vintage_glasses" in cs_existing_stock:
+            hotspot (21+450, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",5),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/vintage_glasses.png" xpos 230 ypos -20
+
+
+        text "Hair" xpos 45 ypos 100 size 15
+        text "Uniform" xpos 115 ypos 100 size 15
+        text "Costumes" xpos 200 ypos 100 size 15
+        text "Accs." xpos 310 ypos 100 size 15 bold 1
+        text "Underwear" xpos 370 ypos 100 size 15
+        text "Gifts" xpos 480 ypos 100 size 15 
+    
+label wardrobe_give_acc:
+    call give_her_acc(wardrobe_acc_item)
+    hide screen wardrobe_accessories
+    call screen wardrobe_accessories
     
 screen wardrobe_underwear:
     
@@ -262,7 +313,7 @@ screen wardrobe_underwear:
         hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
         hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
         hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
+        hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
@@ -297,7 +348,7 @@ label wardrobe_wear_underwear:
     call screen wardrobe_underwear
     
     
-screen wardrobe_potions:
+screen wardrobe_potions: #(Removed)
     
     tag wardrobe_menu
     zorder hermione_main_zorder-1

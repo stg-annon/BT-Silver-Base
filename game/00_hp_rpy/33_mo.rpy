@@ -25,7 +25,7 @@ label tentacle_shop_scene:
     m "A plant? Why would I want to be a plant?"
     ger "This is no ordinary plant, it has fast and powerful limbs that are incredibly sensitive"
     m "So it's a tentacle monster?"
-    ger "Pretty much. I'm not sure where it lives however. The real Dumbledore always kept it's location a secret from me."
+    ger "Pretty much. I'm not sure where it lives however."
     m "Well who does know?"
     ger "Apparently three students have encountered it."
     m "Do you know their names?"

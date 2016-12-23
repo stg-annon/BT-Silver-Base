@@ -1905,4 +1905,162 @@ label nets_take:
     show screen hermione_main
     with d3
     jump day_time_requests
+
+
+label give_her_acc(acc_id):
+    hide screen hermione_main
+    with d5
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    
+    if acc_id == 0:#SPEW BADGE
+        if not hermione_badges or h_badge != "SPEW_badge":
+            call her_main("A S.P.E.W. badge?","body_01")
+            call her_main("I'll wear this with pride [genie_name].","body_16")
+            call h_badge_on(badge = "SPEW_badge")
+        else:
+            call her_main("You want me to take it off?","body_01")
+            call her_main("Alright [genie_name].","body_01")
+            call h_badge_off(badge = "SPEW_badge")
+    elif acc_id == 1:#CUM BADGE
+        if not hermione_badges or h_badge != "CUM_badge":
+            if whoring <= 7:
+                jump too_much
+            elif whoring <= 15:
+                call her_main("An I love cum badge...?","body_11")
+                call her_main("You cannot be serious, [genie_name]!","body_31")
+                m "What's wrong?"
+                call her_main("[genie_name] I am not going to wear a badge that says that I love cum!","body_07")
+                call her_main("I absolutely refuse!","body_09")
+                $ mad += 5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("An I love cum badge?","body_17")
+                call her_main("{size=-5}(I suppose that it's not a complete lie...){/size}","body_59")
+                call her_main("Ok, i'll wear it...","body_58")
+                call h_badge_on(badge = "CUM_badge")
+        else:
+            call her_main("You want me to take it off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            call h_badge_off(badge = "CUM_badge")
+    elif acc_id == 2:#Tiara
+        if not hermione_hats:
+            if whoring <= 15:
+                call her_main("A tiara...?","body_11")
+                call her_main("Hmmmmm","body_07")
+                call her_main("I suppose I can wear it...","body_09")
+                hide screen hermione_main
+                with d5
+                $ hermione_hats = True
+                $ hermione_hat = "01_hp/13_characters/hermione/accessories/head/tiara.png"
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("A Tiara?","body_17")
+                call her_main("let me just go put it on...","body_58")
+                hide screen hermione_main
+                with d5
+                $ hermione_hats = True
+                $ hermione_hat = "01_hp/13_characters/hermione/accessories/head/tiara.png"
+                show screen hermione_main
+                with d5
+        else:
+            call her_main("You want me to take it off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ hermione_hats = False
+            show screen hermione_main
+            with d5
+    elif acc_id == 3:#Freckles
+        if not hermione_freckles:
+            if whoring <= 15:
+                call her_main("Face paint...?","body_11")
+                call her_main("Hmmmmm","body_07")
+                call her_main("I suppose I can put a few dots on...","body_09")
+                hide screen hermione_main
+                with d5
+                $ hermione_freckles = True
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("Face paint?","body_17")
+                call her_main("alright then, let me just go put it on...","body_58")
+                hide screen hermione_main
+                with d5
+                $ hermione_freckles = True
+                show screen hermione_main
+                with d5
+        else:
+            call her_main("You want me to wipe it off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ hermione_freckles = False
+            show screen hermione_main
+            with d5
+    elif acc_id == 4:#Reading glasses
+        if not hermione_wear_glasses or hermione_glasses != "01_hp/13_characters/hermione/accessories/head/reading_glasses.png":
+            if whoring <= 15:
+                call her_main("Reading glasses...?","body_11")
+                call her_main("But I can see fine.","body_07")
+                m "Don't worry, they're fake lenses."
+                call her_main("well I suppose I can wear them then...","body_09")
+                hide screen hermione_main
+                with d5
+                $ hermione_wear_glasses = True
+                $ hermione_glasses = "01_hp/13_characters/hermione/accessories/head/reading_glasses.png"
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("Reading glasses?","body_17")
+                call her_main("let me just go put them on...","body_58")
+                hide screen hermione_main
+                with d5
+                $ hermione_wear_glasses = True
+                $ hermione_glasses = "01_hp/13_characters/hermione/accessories/head/reading_glasses.png"
+                show screen hermione_main
+                with d5
+        else:
+            call her_main("You want me to take them off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ hermione_wear_glasses = False
+            show screen hermione_main
+            with d5
+    elif acc_id == 5:#Dirty Hipster glasses
+        if not hermione_wear_glasses or hermione_glasses != "01_hp/13_characters/hermione/accessories/head/vintage_glasses.png":
+            if whoring <= 15:
+                call her_main("Old glasses...?","body_11")
+                call her_main("But I can see fine... Plus these are a bit old looking","body_07")
+                m "Don't worry, they're back in fashion now."
+                call her_main("well I suppose I can wear them then...","body_09")
+                hide screen hermione_main
+                with d5
+                $ hermione_wear_glasses = True
+                $ hermione_glasses = "01_hp/13_characters/hermione/accessories/head/vintage_glasses.png"
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("Glasses?","body_17")
+                call her_main("let me just go put them on...","body_58")
+                hide screen hermione_main
+                with d5
+                $ hermione_wear_glasses = True
+                $ hermione_glasses = "01_hp/13_characters/hermione/accessories/head/vintage_glasses.png"
+                show screen hermione_main
+                with d5
+        else:
+            call her_main("You want me to take them off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ hermione_wear_glasses = False
+            show screen hermione_main
+            with d5
+
     
