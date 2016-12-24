@@ -325,14 +325,7 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
     show screen hermione_main
     with d1
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" in text or "[hermione_name]" in text:
-            if "[tmp_name]" in text:
-                $ text = text.replace("[tmp_name]",tmp_name)
-            if "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
-            if "[hermione_name]" in text:
-                $ text = text.replace("[hermione_name]",hermione_name)
-        her "[text]"
+        $ renpy.say(her,text)
     return
     
 label her_head(text="",face=h_body,tears=""):
@@ -343,14 +336,7 @@ label her_head(text="",face=h_body,tears=""):
     call h_update
     show screen hermione_head #h_head2
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" in text:
-            if "[tmp_name]" in text:
-                $ text = text.replace("[tmp_name]",tmp_name)
-            if "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
-            if "[hermione_name]" in text:
-                $ text = text.replace("[hermione_name]",hermione_name)
-        her2 "[text]"
+        $ renpy.say(her2,text)
     hide screen hermione_head #h_head2
     return
     
