@@ -440,7 +440,7 @@ label existing_stock:
                 "{color=#858585}-Tiara-{/color}"if "tiara" in cs_existing_stock:
                     call cust_excuse("You already own this.")
                     jump accessories
-                "-Tiara-" if "Tiara" not in cs_existing_stock:
+                "-Tiara-" if "tiara" not in cs_existing_stock:
                     maf "A lovely Tiara, fit for a princess."
                     menu:
                         "-Buy the item (200 gold)-":
@@ -451,7 +451,7 @@ label existing_stock:
                 "{color=#858585}-Freckles-{/color}"if "freckles" in cs_existing_stock:
                     call cust_excuse("You already own this.")
                     jump accessories
-                "-Freckles-" if "Freckles" not in cs_existing_stock:
+                "-Freckles-" if "freckles" not in cs_existing_stock:
                     maf "Some lovely freckle paint. Now non-toxic!"
                     menu:
                         "-Buy the item (50 gold)-":
