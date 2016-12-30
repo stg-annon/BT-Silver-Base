@@ -225,6 +225,7 @@ label __init_variables:
     
     ## Chibi Vars
     $ hermione_chibi_stand       = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
+    $ hermione_chibi_stand_nude  = "01_hp/16_hermione_chibi/walk/h_walk_n_01.png"
     $ hermione_chibi_blink       = "ch_hem blink_a"
     $ hermione_chibi_blink_f     = "ch_hem blink_a_flip"
     $ hermione_chibi_walk        = "ch_hem walk_a"

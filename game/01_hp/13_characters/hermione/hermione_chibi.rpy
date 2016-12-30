@@ -1900,7 +1900,15 @@ screen hermione_stand_f: #Hermione stands still facing right. (Leaving tower).
     tag hermione_chibi
     add im.Flip(hermione_chibi_stand, horizontal=True) at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
     zorder hermione_SC.chibi.zorder
-    
+screen hermione_stand_nude: #Hermione stands naked
+    tag hermione_chibi
+    add hermione_chibi_stand_nude at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
+screen hermione_stand_f_nude: #Hermione stands still facing right. (Leaving tower).
+    tag hermione_chibi
+    add im.Flip(hermione_chibi_stand_nude, horizontal=True) at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    zorder hermione_SC.chibi.zorder
+
 screen hermione_chibi_lift_skirt:
     tag hermione_chibi
     if whoring < hg_NoPanties_lvl:

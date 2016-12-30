@@ -1442,7 +1442,17 @@ image spell_ani:
     "01_hp/08_animation_02/spell17.png"
     pause.1
    
-    
+image groping_ass_ani: #Genie groping Hermione's ass
+    "01_hp/08_animation_02/06_groping_01.png"
+    pause.6
+    "01_hp/08_animation_02/06_groping_02.png"
+    pause.6
+    "01_hp/08_animation_02/06_groping_03.png"
+    pause.6
+    "01_hp/08_animation_02/06_groping_04.png"
+    pause.6
+    repeat
+
 image jerking_off_02_ani: #Genie jerking off in front of dancing on a desk Hermione. (Difference is that the dick is aimed higher.)
     "01_hp/08_animation_02/06_jerking_01.png"
     pause.2

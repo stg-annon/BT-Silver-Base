@@ -45,6 +45,14 @@ label __init_variables:
             start_label = "hg_pf_DanceForMe",
             costume_event = True
         )
+
+    if not hasattr(renpy.store,'hg_pf_ShowMeYourAss_OBJ'): #important!
+        $ hg_pf_ShowMeYourAss_OBJ = personal_favor(
+            imagination_level = 3,
+            menu_text = "Show me that ass!",
+            start_label = "hg_pf_ShowMeYourAss",
+            costume_event = False
+        )
     
     if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
         $ hg_pf_LetMeTouchThem_OBJ = personal_favor(
@@ -102,6 +110,7 @@ label __init_variables:
     $ hg_pf_list.append(hg_pf_ButtMolester_OBJ)
     $ hg_pf_list.append(hg_pf_ShowThemToMe_OBJ)
     $ hg_pf_list.append(hg_pf_DanceForMe_OBJ)
+    $ hg_pf_list.append(hg_pf_ShowMeYourAss_OBJ)
     $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
     $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
     $ hg_pf_list.append(hg_pf_TitJob_OBJ)

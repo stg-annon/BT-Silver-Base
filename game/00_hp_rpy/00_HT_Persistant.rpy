@@ -206,6 +206,9 @@ label __init_variables:
     if not hasattr(renpy.store,'tent_scroll'): #important!
         $ tent_scroll = False
 
+    if not hasattr(renpy.store,'hermione_ass_cum'): #important!
+        $ hermione_ass_cum = False
+
     ### Accesory Variables
     if not hasattr(renpy.store,'hermione_wear_glasses'): #important!
         $ hermione_wear_glasses = False

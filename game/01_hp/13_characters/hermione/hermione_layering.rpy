@@ -66,6 +66,14 @@ screen hermione_main:
     
     ### ZORDER
     zorder hermione_zorder
+
+screen hermione_ass:
+    tag hermione_ass
+
+    add "01_hp/13_characters/hermione/body/ass/hermione_ass_01.png" xpos 500 ypos 0
+    if hermione_ass_cum:
+        add "01_hp/13_characters/hermione/body/ass/ass_cum_01.png" xpos 500 ypos 0
+    zorder hermione_zorder
     
 screen hermione_main_obj:
     tag hermione_main

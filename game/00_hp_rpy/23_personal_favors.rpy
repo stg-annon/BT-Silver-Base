@@ -1493,7 +1493,6 @@ label hg_pf_ButtMolester:
                 ">You keep on playing with Hermione's ass..."
                 ">And continue sliding your hands up and down her inner tighs..."
                 call her_head("................","body_188")
-                label connection_of_rapes_02:
                 menu:
                     "-Slide your hands between her legs-":
                         ">You slowly slide one of your hands towards her crotch..."
@@ -4770,7 +4769,1062 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     call reset_hermione_main
     jump end_hg_pf
     
+label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
+    hide screen hermione_main 
+    with d3
+    if hg_pf_ShowMeYourAss_OBJ.points == 0:
+        m "{size=-4}(I feel like checking out that ass.){/size}"
+    else:
+        m "{size=-4}(I feel like checking out that ass again.){/size}"
+    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+    menu:
+        "\"(Yes, let's do it!)\"":
+            show screen blktone
+            with d3
+            pass
+        "\"(Not right now.)\"":
+            jump silver_requests
+            
+    $ hermione_head_ypos = her_head_only
     
+    if whoring <=8:
+        jump too_much
+    
+    $ current_payout = 50 #Used when haggling about price of th favor.
+    
+    if hg_pf_ShowMeYourAss_OBJ.points == 0 and whoring <= 14: # LEVEL 04 # FIRST TIME.
+        m "[hermione_name]?"
+        call her_main("Yes, [genie_name]...","body_03",xpos=370,ypos=0)
+        m "How much will it cost for you to get naked and show me that perfect ass of yours?"
+        stop music fadeout 1.0
+        call her_main("get naked and show you my...?","body_14")
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+        call her_main("[genie_name]!","body_30")
+        m "Come on..."
+        m "It's not like you haven't shown me it all before."
+        call her_main("......","body_31")
+        call her_main(".............","body_29")
+        call her_main("50 house points, [genie_name].","body_33")
+        m "So if I give you 50 house points, [hermione_name]..."
+        m "You will shamelessly strip naked and present your lovely ass to me?"
+        call her_main("[genie_name]! There's no reason to be so detestable!","body_47")
+        her "I think I want 70 points now..."
+        menu:
+            "\"Fine. 70 points are yours. Show me!\"":
+                $ current_payout = 70 #Used when haggling about price of th favor.
+                call her_main("Really?","body_14")
+                m "Well?"
+                call her_main("...","body_29")
+                her "You have to promise me not to touch me, [genie_name]..."
+                m "Sure, sure..."
+                call her_main("And you most certainly must not touch yourself!","body_32")
+
+            "\"I will give you 50 points to see your ass.\"":
+                call her_main("Fifty?","body_09")
+                call her_main("Well alright then...","body_12")
+                call her_main("but if you expect to touch me it'll cost you extra...","body_73")
+                call her_main("at least one hundred points","body_69")
+                menu:
+                    "\"Fine. 100 it is! strip already!":
+                        $ current_payout = 100 #Used when haggling about price of th favor.
+                        her "................."
+                        call her_main("(I didn't think he'd agree to this...)","body_29")
+                        call her_main("Well alright then...","body_33")
+                    "\"50 house points it is then\"":
+                        her "Well, so be it."
+                        call her_main("but you better keep your hands you yourself...","body_69")
+            "\"Fine, leave. I don't care...\"":
+                $mad = +12
+                her "Tsk!"
+                call music_block
+                jump could_not_flirt
+                
+                
+        hide screen blktone
+        hide screen bld1
+        hide screen hermione_main
+        show screen blkfade
+        with d5
+        $ menu_x = 0.5 #Default menu position restored.
+        show screen ctc
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        show screen hermione_stand_nude
+        with fade
+        show screen bld1
+        with d3
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        $ hermione_wear_skirt = False
+        $ hermione_wear_panties = False
+        call update_her_uniform
+        show screen hermione_stand_nude
+        call her_head("{size=-5}(I can't believe I'm going to strip for him...){/size}","body_199")
+        m "That's it [hermione_name], now your skirt..."
+        call her_head("............","body_203")
+        
+        hide screen bld1
+        with d3
+
+        hide screen blkfade #Completely black screen.
+        with Dissolve(1)
+
+        show screen ctc
+        with d1
+        hide screen blkfade
+        with d5
+        pause
+        show screen bld1
+        with d3
+        call her_main("............","body_200")
+        m "Very nice..."
+        call her_main(".....","body_203")
+        m "Now turn around..."
+        
+        
+        show screen blkfade
+        with d3
+        call her_main("","body_81",xpos=140)
+        pause
+        her "...................................."
+        show screen hermione_stand_f_nude
+        hide screen hermione_main
+        with d3
+        show screen hermione_ass
+        with d3
+        pause
+
+        hide screen blkfade
+        with d3
+        
+    else:
+        hide screen hermione_main
+        with d3
+        if whoring >= 9 and whoring <= 15: # LEVEL 03 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
+            m "[hermione_name]?"
+            call her_head("Yes, [genie_name]?","body_12")
+            m "I need to see your ass again."
+            call her_head("............","body_203")
+            call her_head("Do you promise not to touch, [genie_name]?","body_203")
+            m "Of course."
+            hide screen blktone
+            with d3
+            hide screen bld1
+            with d3
+            hide screen hermione_main
+            with d5
+            show screen blkfade #Completely black screen.
+            $ menu_x = 0.5 #Default menu position restored.
+            show screen ctc
+            pause
+            with fade
+            pause
+            show screen bld1
+            with d3
+            m "Hm..."
+            m "That's it [hermione_name], now the skirt..."
+            hide screen bld1
+            with d3
+            with Dissolve(1)
+            pause.5
+            $ hermione_wear_top = False
+            $ hermione_wear_bra = False
+            $ hermione_wear_skirt = False
+            $ hermione_wear_panties = False
+            call update_her_uniform
+            hide screen bld1
+            with d3
+
+            hide screen blkfade #Completely black screen.
+            with Dissolve(1)
+            show screen hermione_stand_nude
+
+            show screen ctc
+            with d1
+            hide screen blkfade
+            with d5
+            pause
+            show screen bld1
+            with d3
+            call her_main("............","body_200")
+            m "Very nice..."
+            call her_main(".....","body_203")
+            m "Now turn around..."
+            
+            
+            show screen blkfade
+            with d3
+            call her_main("","body_81",xpos=140)
+            pause
+            her "...................................."
+            show screen hermione_stand_f_nude
+            hide screen hermione_main
+            with d3
+            show screen hermione_ass
+            with d3
+            pause
+
+            hide screen blkfade
+            with d3
+            
+        elif whoring >= 16: # LEVEL 04 and higher# <=================================================================================== SECOND EVENT and THIRD EVENT. (HERMIONE IS INDIFFERENT) 
+            m "I need to see your ass, [hermione_name]."
+            if whoring >= 19:
+                call her_head("anything for you [genie_name]","body_213")
+            else:
+                call her_head("Are you only going to watch, [genie_name]?","body_208b")
+                m "Of course..."
+            hide screen blktone
+            with d3
+            hide screen bld1
+            with d3
+            hide screen hermione_main
+            with d5
+            show screen blkfade
+            with d3
+            m "Hm..."
+            m "That's it [hermione_name], now the skirt..."
+            $ hermione_wear_top = False
+            $ hermione_wear_bra = False
+            $ hermione_wear_skirt = False
+            $ hermione_wear_panties = False
+            call update_her_uniform
+            show screen hermione_stand_nude
+            hide screen bld1
+            with d3
+            with Dissolve(1)
+            pause.5
+            with d1
+            show screen hermione_stand_f_nude
+            hide screen hermione_main
+            with d3
+            hide screen blkfade
+            with d5
+            show screen hermione_ass
+            with d3
+            show screen bld1
+            with d3
+            m "Very nice..."
+
+            call her_head("","body_84")
+            pause
+            her "...................................."
+            play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+    menu:
+        "\"Grab her ass!\"":
+            if whoring <= 11 and current_payout < 100: # LEVEL 03 # <=================================================================================== FIRST EVENT. HERMIONE OUTRAGED.
+                hide screen hermione_main
+                $ only_upper = False #No lower body displayed. 
+                with d3
+                show screen blkfade
+                with d3
+                ">You walk over to hermione, reach out and dig your fingers into the girl's soft flesh..."
+                call her_head("[genie_name], what are you doing?","body_206")
+                hide screen blkfade
+                hide screen blktone8
+                hide screen blktone
+                show screen desk
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 80
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "groping_ass_ani"
+                show screen g_c_u
+                with fade
+                pause
+                show screen bld1
+                with d3
+                
+                m "Relax, [hermione_name]. Just stand still!"
+                m "Oh... This is a nice ass you've got here..."
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                call her_head("No, [genie_name], please! You mustn't do this...","body_132")
+                m "This won't take long, just stand still and look forward."
+                call her_head("[genie_name], I didn't agree to this!","body_187")
+                with hpunch
+                call her_head("You must let go of me now!!!","body_218")
+                show screen blkfade
+                with d5
+                ">Hermione pulls away from you and covers up hastily."
+                call set_hermione_action("none")
+                call her_head("I think I'd better go...","body_208b")
+                hide screen blkfade
+                hide screen chair_02 #Genie's chair.
+                hide screen desk_02
+                hide screen g_c_u
+                hide screen bld1
+                show screen genie
+                hide screen hermione_ass
+                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                show screen hermione_blink #Hermione stands still.
+                with d5
+                pause
+                show screen bld1
+                m "Go ahead, [hermione_name]. You've earned your points.'"
+                call her_head("Hmmmph...","body_208b")
+                call her_head("You'd have gotten a better look if you could just keep your hands to yourself...","body_187")
+                m "That will be all [hermione_name]..."
+                call her_head("......","body_208b")
+                call her_head("{size=-5}(I guess letting him grab me isn't too bad...{/size}","body_208b")
+                $ mad += 7
+            elif whoring <= 13: # LEVEL 04 # <=================================================================================== SECOND EVENT. A BIT ANGRY.
+                hide screen hermione_main
+                with d3
+                $ only_upper = False #No lower body displayed. 
+                show screen blkfade
+                with d3
+                ">You reach out and dig your fingers into the girl's soft ass..."
+                call her_head("[genie_name], what are you doing?","body_206")
+                hide screen blkfade
+                hide screen blktone8
+                hide screen blktone
+                hide screen bld1
+                show screen desk_02
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 80
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "groping_ass_ani"
+                show screen g_c_u
+                with fade
+                pause
+                show screen bld1
+                with d3
+                m "Relax, [hermione_name]. Just stand still. Eyes front."
+                if current_payout < 100:
+                    call her_head("I didn't agree to this, [genie_name]...","body_203")
+                else:
+                    call her_head("I know I agreed to this [genie_name]...","body_203")
+                    call her_head("But as the headmaster of this school...","body_203")
+                call her_head("I don't know if you should be...","body_203")
+                m "Don't you like it...?"
+                call her_head("What?","body_199")
+                m "Don't you like it how I squeeze and pull your cheeks?"
+                call her_head("...............","body_199")
+                m "Admit it, you like it a little bit..."
+                m "Maybe even a lot..."
+                call her_head("{size=-5}(It feels so weird to let him grope me){/size}","body_199")
+                call her_head("[genie_name], I am letting you do this to me to help my house!","body_132")
+                call her_head("It doesn't matter how good it feels...","body_132")
+                m "So you admit that it does feel good."
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                call her_head("Please, let go of me now!","body_203")
+                show screen blkfade
+                with d5
+                ">Hermione pulls away from you suddenly and covers up."
+                call set_hermione_action("none")
+                if current_payout < 100:
+                    call her_head("You promised not to grab me, [genie_name]...","body_203")
+                    m "It was hard to resist..."
+                else:
+                    call her_head("Even though I agreed to let you grab me, [genie_name]...","body_203")
+                    call her_head("you didn't need to be so rough...","body_203")
+                    m "sorry, It was hard to resist..."
+                    call her_head("..........","body_84")
+                hide screen blkfade
+                hide screen chair_02 #Genie's chair.
+                hide screen desk
+                hide screen g_c_u
+                hide screen hermione_ass
+                hide screen bld1
+                show screen genie
+                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                show screen hermione_blink #Hermione stands still.
+                with d5
+                pause
+                show screen bld1
+                if current_payout < 100:
+                    call her_head("well if you wanted to touch you should have offered to pay me more.","body_200")
+                    call her_head("speaking of which Can I get paid now please?","body_208")
+                else:
+                    call her_head("I'd like to get paid now please [genie_name].","body_208")
+                m "Sure..."
+                if current_payout < 100:
+                    $ mad += 3
+            elif whoring >= 14: # LEVEL 05 # <=================================================================================== THIRD EVENT. ENJOYS A LITTLE.
+                hide screen hermione_main
+                with d3
+                $ only_upper = False #No lower body displayed. 
+                show screen blkfade
+                with d3
+                ">You reach out and dig your fingers into the girl's soft little ass..."
+                call her_head("[genie_name], what are you doing?","body_206")
+                hide screen blkfade
+                hide screen blktone8
+                hide screen blktone
+                hide screen bld1
+                show screen desk_02
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 80
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "groping_ass_ani"
+                show screen g_c_u
+                with fade
+                pause
+                show screen bld1
+                with d3
+                m "Relax, [hermione_name]. Just stand still..."
+                call her_head("But...","body_199")
+                call her_head("ah...{image=textheart}","body_132")
+                if current_payout < 100:
+                    call her_head("I didn't agree to this...","body_199")
+                else:
+                    call her_head("please [genie_name], not so rough...{image=textheart}","body_132")
+                m "But you like it, don't you?"
+                if whoring >= 17:
+                    call her_head("I love it [genie_name]!{image=textheart}","body_204")
+                else:
+                    call her_head("maybe... [genie_name]{image=textheart}","body_132")
+                show screen blktone
+                with d3
+                ">You give her cheeks a couple of firm squeezes..."
+                hide screen blktone
+                with d3
+                if whoring >= 17 or current_payout == 100:
+                    if current_payout < 100:
+                        call her_head("[genie_name], you promised not to touch...","body_188")
+                        m "I know, I know... but admit it, you wanted me to..."
+                        call her_head(".................{image=textheart}{image=textheart}{image=textheart}","body_205")
+                    else:
+                        call her_head("[genie_name], please...{image=textheart}","body_188")
+                else:
+                    call her_head("[genie_name], you promised not to touch...","body_208b")
+                    m "I know, I know... but admit it, you wanted me to..."
+                    call her_head("ah{image=textheart}... of course not [genie_name]{image=textheart}","body_187")
+                call her_head("mmmm.......................{image=textheart}","body_205")
+                call her_head("[genie_name], you need to stop now...","body_205")
+                m "Just a bit longer..."
+                show screen blktone8
+                with d3
+                ">You keep on groping her ass cheeks..."
+                hide screen blktone8
+                with d3
+                call her_head("[genie_name]... please, stop this...","body_196")
+                m "Why? Because you like it too much?"
+                call her_head("No it's not that...","body_188")
+                call her_head("I mean...","body_204")
+                show screen blktone8
+                with d3
+                ">You pull the cheeks apart in opposite directions and then squish them together..."
+                hide screen blktone8
+                with d3
+                call her_head("Ah...{image=textheart} [genie_name], I really need to go... before I-","body_213")
+                if daytime:
+                    call her_head("am late for class... they're about to start...","body_204")
+                else:
+                    call her_head("am late to bed... It is getting very... late...","body_204")
+                m "Well, alright..."
+                show screen blkfade
+                with d5
+                ">You let go of the girl's ass..."
+                ">Hermione covers up..."
+                call set_hermione_action("none")
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                if current_payout < 100:
+                    if whoring >= 17:
+                        call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
+                        call her_head("I expect you to make it up to me later...","body_188")
+                    else:
+                        call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_203")
+                    m "Right..."
+                hide screen blkfade
+                hide screen chair_02 #Genie's chair.
+                hide screen desk_02
+                hide screen g_c_u
+                hide screen hermione_ass
+                hide screen bld1
+                show screen genie
+                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                show screen hermione_blink #Hermione stands still.
+                with d5
+                pause
+                show screen bld1
+                if whoring >= 17:
+                    call her_head("...{image=textheart}","body_188")
+                else:
+                    call her_head("Can I have my payment now?","body_205")
+                    if current_payout < 100:
+                        $ mad +=7
+   
+        "\"Keep your hands to yourself, Just look.\"":
+            ">You take a long look at Hermione's naked ass..."
+            if whoring >= 9 and whoring <= 10: # LEVEL 03 # <=================================================================================== FIRST EVENT.
+                pause
+                menu:
+                    "-\"You have a fantastic ass girl\"-":
+                        m "you should start wearing shorter skirts to show it off a little..."
+                        call her_head(".....................","body_84")
+                    "-\"You're ass is alright...\"-":
+                        ">You Look at her ass some more whilst making some disapproving tuts..."
+                        call her_head(".....................","body_09")
+            elif whoring >= 11 and whoring <= 13: # LEVEL 04 # <=================================================================================== SECOND EVENT.
+                pause
+                menu:
+                    "\"Nice little ass you got there.\"":
+                        call her_head("","body_83")
+                        pause
+                        call her_head("Thank you [genie_name].","body_84") 
+                        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        call her_head("(Maybe you should grab it next time...)","body_81")
+                        
+                    "\"Hm... I've seen better.\"":
+                        $ mad += 3
+                        her "Tsk..."
+                        her "well in that case Are we done?"
+            elif whoring >= 14: # LEVEL 05 # <=================================================================================== THIRD EVENT.
+                pause
+                menu:
+                    "\"You have an amazing ass, [hermione_name].\"":
+                        call her_head("You really think so [genie_name]?","body_82")
+                        call her_head("I am glad you like it, [genie_name]...","body_84")
+                    "\"Your ass is ok... I suppose...\"":
+                        call her_head("Huh?","body_82")
+                        call her_head("Does this mean you don't like it, [genie_name]?","body_82")
+                        call her_head("I'm sorry... I'll try to work out some more.","body_85")
+            ">You stare at her ass for a while longer..."
+            pause
+            m "Alright, you can get dressed now [hermione_name]..."
+            call her_head(".............","body_82")
+            hide screen hermione_main
+            with d3
+            $ only_upper = False #No lower body displayed. 
+            show screen blkfade
+            with d3
+            ">Hermione covers up..."
+            # $ badges = True # Shows layer with badges.
+            # $ lift_shirt = False
+            hide screen chair_02 #Genie's chair.
+            hide screen desk
+            hide screen g_c_u
+            hide screen hermione_ass
+            hide screen bld1
+            hide screen blktone
+            show screen genie
+            show screen bld1
+            $ hermione_SC.chibi.xpos = 400 #Near the desk.
+            show screen hermione_blink #Hermione stands still.
+            with d5
+
+        "\"Start jerking off.\"":
+            if whoring >= 9 and whoring <= 11: # LEVEL 03 # <=================================================================================== FIRST EVENT.
+                $ mad += 2
+                hide screen hermione_main
+                with d3
+                ">You take your cock out and start stroking it..."
+                show screen blkfade
+                hide screen bld1
+                with d3
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                call her_head("are you enjoying the view [genie_name]","body_119")
+                m "yes I am [hermione_name]. just stand still and let me look a little longer..."
+                hide screen bld1
+                show screen desk_02
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 20
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "jerking_off_02_ani"
+                show screen g_c_u
+                with fade
+                hide screen blktone
+                hide screen blkfade
+                with d5
+                pause
+                
+                show screen bld1
+                with d3
+                ">You stare at Hermione's ass with hunger..."
+                call her_head("[genie_name], how much longer do I have to stand here?","body_132")
+                ">You keep stroking your hard cock..."
+                m "Not too much longer now..."
+                call her_head("[genie_name]...","body_199")
+                call her_head("You're not... touching yourself are you...?","body_199")
+                m "ah... of course not [hermione_name]. you know I'd never do... such a thing..."
+                call her_head("hmmm.....","body_208b")
+                call her_head("well if you did do such a thing...","body_187")
+                call her_head("I'd hope that you would make the right decision...'","body_208b")
+                call her_head("and not... {size=-5}cum...{/size} on me...","body_208b")
+                menu:
+                    "\"Of course not\"":
+                        call her_head("good.","body_210")
+                        call her_head("I mean seeing as how I stripped naked and showed you my...","body_210")
+                        call her_head("..........","body_203")
+                        call her_head("not {size=-5}cumming{/size} on me is the least you could do...","body_187")
+                        show screen blkfade
+                        with d3
+                        ">Hermione starts looking at you from the corner of her eye ..."
+                        call her_head("are you ready to...","body_141")
+                        g4 "almost there [hermione_name]!"
+                        call her_head("do it, [genie_name]... cum for me...","body_145")
+                    "-Start jerking your cock faster-":
+                        ">You start jerking your cock furiously!"
+                        call her_head("...","body_218")
+                        ">You jerk it even faster!"
+                        call her_head("you're going to do it aren't you...","body_203")
+                        g4 "almost there slut!"
+                        show screen blkfade
+                        with d3
+                        call her_head("make me stand here...","body_141")
+                        call her_head("while you cum all over me!","body_141")
+            elif whoring >= 12 and whoring <= 14: # LEVEL 04 # <=================================================================================== SECOND EVENT.
+                hide screen hermione_main
+                with d3
+                ">You take your cock out and start stroking it..."
+                show screen blkfade
+                hide screen bld1
+                with d3
+                call her_head("are you enjoying the view [genie_name]","body_119")
+                ">You stare at Hermione's ass with hunger..."
+                hide screen genie
+                hide screen bld1
+                show screen desk
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 20
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "jerking_off_02_ani"
+                show screen g_c_u
+                with fade
+                hide screen blkfade
+                with d5
+                pause
+                
+                show screen bld1
+                with d3
+                m "I'm enjoying it immensely"
+                call her_head("[genie_name], are you... touching yourself...","body_132")
+                m "don't blame me [hermione_name]..."
+                call her_head("well who am I supposed to blame, [genie_name]?","body_132")
+                ">You pick up the pace..."
+                m "blame yourself [hermione_name]..."
+                m "or rather, blame that perfect little ass of yours!"
+                call her_head("..................","body_132")
+                call her_head("(his cock is so big...)","body_199")
+                m "Yes... Yes, like that..."
+                m "try shaking it a little..."
+                call her_head("..............","body_199")
+                call her_head("well, so be it...","body_204")
+                call her_head("You can keep touching yourself, [genie_name]...","body_204")
+                call her_head("But you must promise me not to...","body_200")
+                call her_head("Not to... em...","body_204")
+                call her_head("Not to cum...","body_203")
+                call her_head("Not on me, [genie_name]...","body_05")
+                m "are you sure..."
+                m "I bet you'd love to have your ass covered in my cum, wouldn't you!"
+                call her_head(".......................","body_208b")
+                ">You start to stroke your cock even harder..."
+                g4 "Yes, I know you want this! Yes!"
+                call her_head("................","body_208b")
+                show screen blkfade 
+                with d3
+                ">You are about to cum..."
+                menu:
+                    "-cum on the floor-":
+                        g4 "Argh! You fat assed slut!"
+                        call her_head("Proff-- ??","body_210")
+                        call cum_block
+                        g4 "Argh! YES!"
+                        hide screen bld1
+                        with d3
+                        $ no_blinking = True #When True - blinking animation is not displayed. 
+                        hide screen blkfade
+                        hide screen bld1
+                        with d3
+                        pause
+                        show screen bld1
+                        with d3
+                        call her_head("[genie_name]!","body_218")
+                        g4 "Oh, that's better..."
+                        $ no_blinking = False #When True - blinking animation is not displayed. 
+                        hide screen jerking_off_cum
+                        with d3
+                        call her_head("[genie_name], you came so much...","body_141")
+                        m "Oh, this was quite amazing..."
+                        show screen blktone8
+                        with d3
+                        call her_main("","body_85")
+                        pause
+                        her "the floor..."
+                        her "It's covered...."
+                        m "all because of your ass [hermione_name]."
+                        her "................"
+                        her "I need to get dressed..."
+                        
+                        hide screen hermione_main
+                        with d3
+                        call set_hermione_action("none")
+                        
+                        show screen blkfade
+                        show screen genie
+                        show screen hermione_blink
+                        hide screen jerking_off_01
+                        hide screen chair_02
+                        with d3
+                        
+                        hide screen blkfade
+                        with d5
+                        call her_main("","body_47")
+                        pause
+                        #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        hide screen hermione_main
+                        with d3
+                    "-cum on her ass-":
+                        #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        g4 "Argh! You fat assed whore!"
+                        call her_head("Proff-- ??","body_210")
+                        call cum_block
+                        g4 "Argh! YES!"
+                        hide screen bld1
+                        with d3
+                        $ genie_chibi_xpos = 20
+                        $ genie_chibi_ypos = 10
+                        $ genie_cum_chibi_xpos = 20
+                        $ genie_cum_chibi_ypos  = 10
+                        $ g_c_c_u_pic = "genie_cum_03"
+                        show screen g_c_c_u
+                        hide screen blkfade
+                        hide screen bld1
+                        with d3
+                        pause
+                        show screen bld1
+                        with d3
+                        $ hermione_ass_cum = True
+                        call her_head("[genie_name], no, you promised!","body_218")
+                        g4 "Oh, this is great, yes..."
+                        $ no_blinking = False #When True - blinking animation is not displayed. 
+                        hide screen jerking_off_cum
+                        with d3
+                        call her_head("[genie_name], how could you...?","body_141")
+                        m "Oh, this was quite amazing..."
+                        show screen blktone8
+                        with d3
+                        call her_main("","body_85")
+                        pause
+                        her "My ass..."
+                        her "It's covered...."
+                        m "Don't worry, I will give you your house points, [hermione_name]."
+                        m "You did good."
+                        her "................"
+                        her "I need to clean myself up..."
+                        
+                        hide screen hermione_main
+                        with d3
+                        call set_hermione_action("none")
+                        $ sperm_on_tits = False
+                        $ aftersperm = True
+                        
+                        show screen blkfade
+                        show screen genie
+                        show screen hermione_blink
+                        hide screen jerking_off_01
+                        hide screen chair_02
+                        with d3
+                        
+                        hide screen blkfade
+                        with d5
+                        call her_main("","body_47")
+                        pause
+                        #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                        her "How could you do this to mr, [genie_name]?!"
+                        her "my ass is covered in cum!"
+                        hide screen hermione_main
+                        with d3
+                        $ mad += 10
+            elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT.
+                hide screen hermione_main
+                with d3
+                ">You take your cock out and start stroking it..."
+                show screen blkfade
+                hide screen bld1
+                with d3
+                call her_head("[genie_name]?","body_205")
+                ">You stare at Hermione's ass with hunger..."
+                hide screen bld1
+                show screen desk
+                show screen chair_02
+                hide screen genie
+                $ genie_chibi_xpos = 20
+                $ genie_chibi_ypos = 10
+                $ g_c_u_pic = "jerking_off_02_ani"
+                show screen g_c_u
+                hide screen blkfade
+                with d5
+                pause
+                
+                show screen bld1
+                with d3
+                if whoring >= 17:
+                    call her_head("ah...","body_213")
+                    ">Hermione looks back and sees you stroking your cock."
+                    call her_head("It's so big...","body_204")
+                    call her_head("You just couldn't help yourself, could you [genie_name]?","body_188")
+                    call her_head("..................","body_213")
+                    m "Yes... Yes, like that..."
+                    m "Yes, shake that ass [hermione_name]..."
+                    call her_head("..............","body_213")
+                    call her_head("well, so be it...","body_204")
+                    call her_head("But you must promise me not to...","body_200")
+                    call her_head("Not to... ehm...","body_204")
+                    call her_head("Not to cum... on me, [genie_name]...","body_205")
+                    m "Fine, whatever..."
+                    m "Oh, you little slut. You nasty little slut!"
+                    call her_head(".......................","body_213")
+                    ">You start to stroke your cock even harder..."
+                    g4 "Yes, I know you want this! Yes!"
+                    call her_head("................","body_213")
+                    show screen blkfade 
+                    with d3
+                    # SAME AS PREVIOUS EVENT^^^
+                else:
+                    call her_head("[genie_name], actually I never agreed to this...","body_132")
+                    m "What are you complaining about, [hermione_name]?"
+                    m "I'm not even touching your ass..."
+                    call her_head("Yes, but you are... touching yourself, [genie_name].","body_132")
+                    #">You pick up the pace..."
+                    m "Just stand still, you fat assed bitch."
+                    m "It will be over soon."
+                    call her_head("..................","body_132")
+                    m "Yes... Yes, like that..."
+                    m "Yes, with your ass all naked..."
+                    call her_head("..............","body_199")
+                    call her_head("well, so be it...","body_204")
+                    call her_head("But you must promise me not to...","body_200")
+                    call her_head("Not to... ehm...","body_204")
+                    call her_head("Not to discharge...","body_203")
+                    call her_head("Not on me, [genie_name]...","body_203")
+                    m "Fine, whatever..."
+                    m "Oh, you little slut. You nasty little slut!"
+                    call her_head(".......................","body_199")
+                    ">You start to stroke your cock even harder..."
+                    g4 "Yes, I know you want this! Yes!"
+                    call her_head("................","body_199")
+                    show screen blkfade 
+                    with d3
+                    # SAME AS PREVIOUS EVENT^^^
+            menu:
+                g4 "Argh! (I'm about to cum!)"
+                "-Hold it in-":
+                    g4 "Oh, alright..."
+                    g4 "I'd better stop now I suppose..."
+                    call her_head("...............","body_199")
+                    call her_head("Ehm... I mean I know I said not to cum on me...","body_199")
+                    m "Huh?"
+                    call her_head("but I wouldn't mind if you ...","body_132")
+                    call her_head("came...","body_199")
+                    call her_head("on my ass--","body_188")
+                    g4 "Argh! You whore!"
+                    call her_head("???","body_206")
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    g4 "Argh! YES!"
+                    hide screen bld1
+                    with d3
+                    $ genie_chibi_xpos = 20
+                    $ genie_chibi_ypos = 10
+                    $ genie_cum_chibi_xpos = 20
+                    $ genie_cum_chibi_ypos  = 10
+                    $ g_c_c_u_pic = "genie_cum_03"
+                    show screen g_c_c_u
+                    hide screen blkfade
+                    hide screen bld1
+                    with d3
+                    pause
+                    show screen bld1
+                    with d3
+                    $ hermione_ass_cum = True
+                    call her_head("that's it [genie_name], release your... semen on me...","body_208")
+                    g4 "Oh, this is great, yes..."
+                    $ no_blinking = False #When True - blinking animation is not displayed. 
+                    hide screen jerking_off_cum
+                    with d3
+                    call her_head("ah{image=textheart}, what's done is done I suppose...","body_188")
+                    m "Oh, this was quite amazing..."
+                    show screen blktone8
+                    with d3
+                    hide screen hermione_ass
+                    hide screen g_c_c_u
+                    call her_main("","body_85")
+                    pause
+                    her "My ass is covered though..."
+                    m "Don't worry, it still looks great, [hermione_name]."
+                    m "Maybe even better now..."
+                    call her_main("Thank you [genie_name].","body_84")
+                    call her_main("Now I need to clean myself up...","body_83")
+                    pause
+                    hide screen hermione_main
+                    with d3
+                    hide screen blkfade
+                    show screen blkfade
+                    with d3
+                    show screen genie
+                    hide screen g_c_u
+                    show screen hermione_blink
+                    with d5
+                    call her_main("","body_45")
+                    pause
+                    her "Well, this should do for now..."
+                    hide screen hermione_main
+                    with d3
+                "-Just start cumming-":
+                    g4 "Argh! You fat assed whore!"
+                    call her_head("???","body_206")
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    g4 "Argh! YES!"
+                    hide screen bld1
+                    with d3
+                    $ genie_chibi_xpos = 20
+                    $ genie_chibi_ypos = 10
+                    $ genie_cum_chibi_xpos = 20
+                    $ genie_cum_chibi_ypos  = 10
+                    $ g_c_c_u_pic = "genie_cum_03"
+                    show screen g_c_c_u
+                    hide screen blkfade
+                    $ hermione_ass_cum = True
+                    pause
+                    show screen bld1
+                    with d3
+                    call her_head("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
+                    call her_head("there's so much...{image=textheart}","body_208")
+                    g4 "Oh, this is great, yes..."
+                    call her_head("ah...{image=textheart}","body_208")
+                    hide screen g_c_c_u
+                    with d3
+                    call her_head("Well, what's done is done I suppose...","body_208b")
+                    m "Oh, this was quite amazing..."
+                    show screen blktone8
+                    with d3
+                    hide screen hermione_ass
+                    call her_main("","body_85")
+                    pause
+                    her "My ass is covered though..."
+                    m "Don't worry, it still looks great, [hermione_name]."
+                    m "Maybe even better now..."
+                    call her_main("Thank you [genie_name].","body_84")
+                    call her_main("although I do need to clean myself up...","body_83")
+                    pause
+                    hide screen hermione_main
+                    with d3
+                    show screen blkfade
+                    with d3
+                    show screen genie
+                    hide screen g_c_u
+                    hide screen chair_02
+                    hide screen desk
+                    show screen hermione_blink
+                    hide screen blkfade
+                    with d5
+                    $ badges = True # Hides any badges from hermione_main screen.
+                    call her_main("","body_45")
+                    pause
+                    her "Well, this should do for now..."
+                    hide screen hermione_main
+                    with d3
+                        
+    
+    $ badges = True # Hides any badges from hermione_main screen.
+    $ lift_shirt = False
+    $ hermione_wear_top = True
+    $ hermione_wear_bra = True
+    $ hermione_wear_skirt = True
+    $ hermione_wear_panties = True
+    $ hermione_ass_cum = False
+    call update_her_uniform
+    hide screen jerking_off_01                   
+    hide screen blktone8
+    hide screen ctc
+    hide screen bld1
+    hide screen groping_01
+    hide screen groping_02
+    show screen hermione_blink
+    show screen genie
+    with fade
+    
+    hide screen blkfade
+    with d3
+
+    if whoring <= 16:
+        $ gryffindor +=current_payout
+        m "The \"Gryffindor\" house gets [current_payout] points!"
+    stop music fadeout 10.0
+   
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    show screen hermione_blink #Hermione stands still.
+    show screen bld1
+    hide screen blkfade
+    with Dissolve(1)
+    
+    if whoring <= 16:
+        call her_main("..................","body_29",xpos=370,ypos=0)
+    else:
+        call her_main("..................","body_74",xpos=370,ypos=0)
+    her "Thank you [genie_name]..."
+    if daytime:
+        her "Now if you don't mind I'd better go. my classes are about to start."
+    else:
+        her "I'd better go now then. It's getting pretty late..."
+    
+    if whoring >= 6 and whoring <= 8:
+        $ new_request_08_heart = 1
+        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 1 #Event hearts level (0-3)
+    if whoring >= 9 and whoring <= 11:
+        $ new_request_08_heart = 2
+        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 2 #Event hearts level (0-3)
+    if whoring >= 12:
+        $ new_request_08_heart = 3
+        $ hg_pf_ShowMeYourAss_OBJ.hearts_level = 3 #Event hearts level (0-3)
+
+    if whoring <= 11:
+        $ whoring +=1
+    $ hg_pf_ShowMeYourAss_OBJ.points += 1
+    
+    hide screen bld1
+    hide screen hermione_main
+    with d3
+    
+    call her_walk(400,610,2)
+    show screen hermione_stand_f #Hermione stands still.
+    with d3
+    if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
+        call her_head("(How degrading... why do i keep agreeing to this...?)","body_199")
+    elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
+        call her_head("........................","body_199")
+    elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT.
+        call her_head("{size=-5}(That was so exhilerating...){/size}","body_205")
+        call her_head("{size=-5}(No, Hermione, you silly girl!){/size}","body_187")
+        call her_head("{size=-5}(it was shameful! good girls don't get turned on by stripping for their headmaster!){/size}","body_187")
+        call her_head(".................................","body_213")
+    elif whoring >= 17 and aftersperm: # LEVEL 05 # <=================================================================================== THIRD EVENT.
+        call her_head("{size=-5}(That was so exhilarating...){/size}","body_205")
+        call her_head("{size=-5}(i wonder what he'll ask me to do next...?){/size}","body_196")
+    hide screen hermione_stand_f #Hermione stands still.
+    with d3
+    
+    $ aftersperm = False #Shows cum stains on Hermione's uniform.
+    
+    $ renpy.play('sounds/door.mp3') #Sound of a door.
+    with Dissolve(.3)
+    
+    if daytime:
+        play music "music/Brittle Rille.mp3" fadein 1 fadeout 1 # DAY MUSIC
+        $ hermione_takes_classes = True
+        jump day_main_menu
+    else:
+        play music "music/Music for Manatees.mp3" fadein 1 fadeout 1 # NIGHT MUSIC
+        $ hermione_sleeping = True
+        jump night_main_menu
 ###################REQUEST_12 (Level 04) (Play with her tits.) (Day/Night) ############################################################################
 label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen hermione_main 

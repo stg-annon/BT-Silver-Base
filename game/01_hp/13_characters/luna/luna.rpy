@@ -140,7 +140,7 @@ label luna_favour_luna:
         "-Never mind-":
             jump luna_door
 
-label luna_favour_luna:
+label luna_favour_genie:
     menu:
         "-Talk to me-":
             jump luna_favour_2
