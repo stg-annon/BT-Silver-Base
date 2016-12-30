@@ -311,6 +311,7 @@ label custom_save:
     $ save_name = temp_name
     "Done."
     jump cupboard
+
 label rummaging:  
     
     $ searched = True #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
@@ -488,13 +489,13 @@ label rum_block(item = None):
             with d3
         if "gold" in item:
             if item == "gold1":
-                $ tmp_gold = gold1
+                $ tmp_gold = renpy.random.randint(1, 10)  # Whoring Level: 1-2.
             if item == "gold2":
-                $ tmp_gold = gold2
+                $ tmp_gold = renpy.random.randint(10, 40) # Whoring Level: 3-4.
             if item == "gold3":
-                $ tmp_gold = gold3
+                $ tmp_gold = renpy.random.randint(20, 50) # Whoring Level: 5-6.
             if item == "gold4":
-                $ tmp_gold = gold4
+                $ tmp_gold = renpy.random.randint(30, 90) # Whoring Level: 7+.
             $ renpy.play('sounds/win2.mp3')   #Not loud.
             $ the_gift = "01_hp/18_store/28.png" # GOLD.
             show screen gift
