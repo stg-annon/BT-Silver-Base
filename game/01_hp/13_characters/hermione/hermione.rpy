@@ -1,4 +1,100 @@
 init python:
+    class hermione_character(silver_character):
+        eye_color = ""
+        
+        faces = None
+        
+        outfit = None
+        uniform = None
+        
+        use_action = False
+        use_outfit = False
+        
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def setNewFace(self, faceOBJ):
+            self.body.head.face = faceOBJ
+        
+        def setHair(self, style, color):
+            if style != None and color != None:
+                self.body.head.hair = str(style)+"_"+str(color)+".png"
+            
+        def setOutfit(self, outfit):
+            if outfit == None:
+                self.use_outfit = False
+            else:
+                self.use_outfit = True
+            self.outfit = outfit
+        
+        def outfitFromList(self, id):
+            for outfit in hermione_outfits_list:
+                if outfit.name == id:
+                    self.setOutfit(outfit)
+        
+        def setUniformLevel(self, level):
+            self.uniform.setLevel(level)
+            self.chibi.setLevel(level)
+        
+        def setFace(self, index):
+            self.body.head.face = self.faces[index-1]
+            for face in self.faces:
+                if face.id == index:
+                    renpy.say(None,face.id+" "+face)
+                    
+        # Say w/ sprite
+        def say(self, text, face=None):
+            if face != None:
+                renpy.hide_screen(self.screen)
+                self.setFace(face)
+            renpy.show_screen(self.screen)
+            renpy.with_statement(Dissolve(0.3),always=True)
+            renpy.say(self.char_ref,text)
+        
+        def getActionLayers(self):
+            return
+            
+        def getOutfitLayers(self):
+            layers = []
+            if self.outfit.hair_layer != "":
+                self.body.head.noHair = True
+                layers.append(self.root+"clothes/custom/"+self.outfit.hair_layer+".png")
+            if self.body != None:
+                layers.extend(self.body.getLayers(self))
+            if self.outfit.breast_layer != "":
+                self.body.noTorso = True
+                layers.append(self.root+"body/breasts/"+self.outfit.breast_layer+".png")
+            if self.outfit != None:
+                layers.extend([self.root+"clothes/custom/"+o_layer for o_layer in self.outfit.outfit_layers])
+            if self.outfit.hair_layer != "":
+                layers.append(self.root+"clothes/custom/"+self.outfit.hair_layer+"_2.png")
+            elif self.body.head.hair != "":
+                layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
+            if self.outfit != None:
+                for layer in self.outfit.top_layers:
+                    layers.append(self.root+"clothes/custom/"+layer)
+            return layers
+    
+        def getUniformLayers(self):
+            layers = []
+            if self.body != None:
+                layers.extend(self.body.getLayers(self))
+            if self.uniform != None:
+                layers.extend(self.uniform.getLayers(self))
+            if self.body.head.hair != "":
+                layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
+            return layers
+            
+        def getLayers(self):
+            layers = []
+            self.body.head.noHair = False
+            self.body.noTorso = False
+            if self.use_outfit:
+                layers.extend(self.getOutfitLayers())
+            else:
+                layers.extend(self.getUniformLayers())
+            return layers
+        
     
     class hermione_character_face(silver_character_face):
         description = ""
@@ -81,7 +177,7 @@ label __init_variables:
     
     $ reset_char_obj = True
     if not hasattr(renpy.store,'hermione_SC') or reset_char_obj: #important!
-        $ hermione_SC = silver_character(
+        $ hermione_SC = hermione_character(
             root = "01_hp/13_characters/hermione/",
             
             xpos = 370,
@@ -104,8 +200,8 @@ label __init_variables:
                 walk_img_f = "ch_hem walk_a_flip",
             ),
             
-            char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
-            h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
+            char_ref = Character('Hermione', color="#402313", ctc="ctc3", ctc_position="fixed", show_two_window=True, window_left_padding=85, window_right_padding=250),
+            h_char_ref = Character('Hermione', color="#402313", ctc="ctc3", ctc_position="fixed", show_two_window=True, window_right_padding=220),
             
             body = sliver_character_body(
                 head = sliver_character_head(
@@ -147,7 +243,7 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_ypos'          ): #important!
         $ hermione_ypos         = 0
     if not hasattr(renpy.store,'hermione_head_xpos'     ): #important!
-        $ hermione_head_xpos    = 390
+        $ hermione_head_xpos    = 640
     if not hasattr(renpy.store,'hermione_head_ypos'     ): #important!
         $ hermione_head_ypos    = 235
     
@@ -323,16 +419,9 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
     $ h_tears = tears
     call h_update
     show screen hermione_main
-    with d1
+    #with d1
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" in text or "[hermione_name]" in text:
-            if "[tmp_name]" in text:
-                $ text = text.replace("[tmp_name]",tmp_name)
-            if "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
-            if "[hermione_name]" in text:
-                $ text = text.replace("[hermione_name]",hermione_name)
-        her "[text]"
+        $ renpy.say(her,text)
     return
     
 label her_head(text="",face=h_body,tears=""):
@@ -343,14 +432,40 @@ label her_head(text="",face=h_body,tears=""):
     call h_update
     show screen hermione_head #h_head2
     if text != "":
-        if "[tmp_name]" in text or "[genie_name]" in text:
-            if "[tmp_name]" in text:
-                $ text = text.replace("[tmp_name]",tmp_name)
-            if "[genie_name]" in text:
-                $ text = text.replace("[genie_name]",genie_name)
-            if "[hermione_name]" in text:
-                $ text = text.replace("[hermione_name]",hermione_name)
-        her2 "[text]"
+        $ renpy.say(her2,text)
     hide screen hermione_head #h_head2
     return
     
+init python:
+    def her_main(text="",face=None,tears="", xpos = None, ypos = None):
+        global hermione_xpos
+        global hermione_ypos
+        global h_body
+        global h_tears
+        renpy.hide_screen("hermione_main")
+        if xpos != None:
+            if xpos == 370:
+                hermione_xpos = 510
+            elif xpos == 120:
+                hermione_xpos = 140
+            else:
+                hermione_xpos = xpos
+        if ypos != None:
+            hermione_ypos = ypos
+        if face != None:
+            h_body = face
+        h_tears = tears
+        #renpy.call("h_update")
+        renpy.show_screen("hermione_main")
+        renpy.say(her,text)
+    
+    def her_head(text="",face=None,tears=""):
+        global h_body
+        global h_tears
+        if face != None:
+            h_body = face
+        h_tears = tears
+        #renpy.call("h_update")
+        renpy.show_screen("hermione_head")
+        renpy.say(her,text)
+        renpy.hide_screen("hermione_head")
