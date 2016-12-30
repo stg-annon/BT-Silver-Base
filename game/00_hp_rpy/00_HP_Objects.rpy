@@ -22,6 +22,25 @@ init python:
     
     
 ##### Base Classes
+    class silver_face_lib(object):
+        lib = []
+        def getFace(self,id):
+            for face in lib:
+                if face.id == id:
+                    return face
+        
+    class silver_face(object):
+        id = ""
+        description = ""
+        layers = []
+    
+    import xml.etree.ElementTree as ET
+    character_faces = ET.parse(renpy.loader.transfn('character_faces.xml')).getroot()
+    
+    def getCharacterFaces(tag=None, character_face=None):
+        if tag != None and character_face!=None:
+            return [character_face(**face.attrib) for face in character_faces.findall(tag)]
+    
     class silver_character_chibi(object):
         stand_img = ""
         blink_img = ""
@@ -32,6 +51,9 @@ init python:
         xpos = 0
         ypos = 250
         
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
         def walk(self, x, x2, speed, y=250):
             if x > x2: #right to left
                 chibiWalk(self.walk_img, x, x2, speed, y)
@@ -39,8 +61,6 @@ init python:
                 chibiWalk(self.walk_img_f, x, x2, speed, y)
             self.xpos = x2
         
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
     
     class silver_character_face(object):
         description = ""
@@ -115,10 +135,12 @@ init python:
     
     class silver_character(object):
         root = ""
+        
         flip = False
         busy = False
         known = False
         unlocked = False
+        
         name = ""
         pet_name = ""
         genie_name = "Professor"
@@ -132,57 +154,19 @@ init python:
         ypos = 0
         zorder = 5
         
-        eye_color = ""
-        
-        faces = None
-        
         char_ref = None
         h_char_ref = None
         
         body = None
-        outfit = None
-        uniform = None
-        
-        use_action = False
-        use_outfit = False
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
-        def setFace(self, index):
-            self.body.head.face = self.faces[index-1]
-            for face in self.faces:
-                if face.id == index:
-                    renpy.say(None,face.id+" "+face)
-            
-        def setNewFace(self, faceOBJ):
-            self.body.head.face = faceOBJ
-        
-        def setHair(self, style, color):
-            if style != None and color != None:
-                self.body.head.hair = str(style)+"_"+str(color)+".png"
-            
-        def setOutfit(self, outfit):
-            if outfit == None:
-                self.use_outfit = False
-            else:
-                self.use_outfit = True
-            self.outfit = outfit
-        
-        def outfitFromList(self, id):
-            for outfit in hermione_outfits_list:
-                if outfit.name == id:
-                    self.setOutfit(outfit)
-        
-        def setUniformLevel(self, level):
-            self.uniform.setLevel(level)
-            self.chibi.setLevel(level)
-        
         # Say w/ sprite
-        def say(self, text, face=None):
-            if face != None:
+        def say(self, text, image=None):
+            if image != None:
                 renpy.hide_screen(self.screen)
-                self.setFace(face)
+                self.body = image
             renpy.show_screen(self.screen)
             renpy.with_statement(Dissolve(0.3),always=True)
             renpy.say(self.char_ref,text)
@@ -194,6 +178,9 @@ init python:
             renpy.say(self.h_char_ref,string)
             renpy.hide_screen(self.screen_head)
         
+        def sayText(self, text):
+            renpy.say(self.char_ref,text)
+        
         def showScreen(self, dissolve=0):
             renpy.show_screen(self.screen)
             if dissolve > 0:
@@ -202,73 +189,27 @@ init python:
             renpy.hide_screen(self.screen)
             if dissolve > 0:
                 renpy.with_statement(Dissolve(dissolve/10),always=True)
-        
-        def getActionLayers(self):
-            return
-            
-        def getOutfitLayers(self):
-            layers = []
-            if self.outfit.hair_layer != "":
-                self.body.head.noHair = True
-                layers.append(self.root+"clothes/custom/"+self.outfit.hair_layer+".png")
-            if self.body != None:
-                layers.extend(self.body.getLayers(self))
-            if self.outfit.breast_layer != "":
-                self.body.noTorso = True
-                layers.append(self.root+"body/breasts/"+self.outfit.breast_layer+".png")
-            if self.outfit != None:
-                layers.extend([self.root+"clothes/custom/"+o_layer for o_layer in self.outfit.outfit_layers])
-            if self.outfit.hair_layer != "":
-                layers.append(self.root+"clothes/custom/"+self.outfit.hair_layer+"_2.png")
-            elif self.body.head.hair != "":
-                layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
-            if self.outfit != None:
-                for layer in self.outfit.top_layers:
-                    layers.append(self.root+"clothes/custom/"+layer)
-            return layers
-    
-        def getUniformLayers(self):
-            layers = []
-            if self.body != None:
-                layers.extend(self.body.getLayers(self))
-            if self.uniform != None:
-                layers.extend(self.uniform.getLayers(self))
-            if self.body.head.hair != "":
-                layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
-            return layers
             
         def getLayers(self):
             layers = []
-            self.body.head.noHair = False
-            self.body.noTorso = False
-            if self.use_outfit:
-                layers.extend(self.getOutfitLayers())
-            else:
-                layers.extend(self.getUniformLayers())
+            if self.body not in ["",None]:
+                layers.extend(self.root+self.body)
             return layers
     
-    class silver_face_lib(object):
-        lib = []
-        def getFace(self,id):
-            for face in lib:
-                if face.id == id:
-                    return face
-        
-    class silver_face(object):
-        id = ""
-        description = ""
-        layers = []
-    
-    import xml.etree.ElementTree as ET
-    character_faces = ET.parse(renpy.loader.transfn('character_faces.xml')).getroot()
-    
-    def getCharacterFaces(tag=None, character_face=None):
-        if tag != None and character_face!=None:
-            return [character_face(**face.attrib) for face in character_faces.findall(tag)]
     
     
     
 ###### Luna
+    class luna_character(silver_character):
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+            
+        def setFace(self, index):
+            self.body.head.face = self.faces[index-1]
+            for face in self.faces:
+                if face.id == index:
+                    renpy.say(None,face.id+" "+face)
+
     class luna_character_face(silver_character_face):
         description = ""
         
@@ -336,7 +277,7 @@ label __init_variables:
     
     $ reset_char_obj = True
     if not hasattr(renpy.store,'luna_SC') or reset_char_obj: #important!
-        $ luna_SC = silver_character(
+        $ luna_SC = luna_character(
             root = "01_hp/13_characters/luna/",
             
             name = "Luna Lovegood",

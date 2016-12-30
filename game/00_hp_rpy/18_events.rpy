@@ -1,24 +1,127 @@
+    
+label day_event_check:
+    #NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"
+    #About two-faced dude    call event_04
+
+    if day == 8:
+        call event_08 #Hermione shows up for the first time.
+    if day >= 9 and hermione_is_waiting_01 and not event09:
+        call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry.
+                      #Takes place after first special event with Snape, where he just complains about Hermione.
+    if event13_happened and not event14_happened:
+        call event_14
+    if whoring >= 15 and not event_chairman_happened: #Turns True after an event where Hermione comes and says that she wants to be in the Autumn Ball committee.
+        call want_to_rule
+    if whoring >= 15 and event_chairman_happened and days_without_an_event >= 2 and not snape_against_chairman_hap: # Turns TRUE after Snape comes and complains that appointing Hermione in the Autumn Ball committee was a mistake.
+        call against_the_rule
+    if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap and not have_no_dress_hap: #Turns TRUE after Hermione comes and cries about having no proper dress for the Ball.
+        call crying_about_dress # 27_final_events
+    if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
+        call sorry_about_hesterics
+    #if day == 10:
+    #    call event_08_02 #Hermione shows up for the second time. (Shorter skirts notion).
+    #if day == 11:
+    #    call event_08_03 #Hermione shows up for the third time. (Rules for teachers noton).
+    if day >= 12 and not event09 and hermione_is_waiting_01:
+        call event_09 #Visit from Hermione after first Special event with Snape (Where Genie proposes plan against her).
+    #if day >= 13 and not event10 and hermione_is_waiting_02:
+    #    call event_10 #Hermione shows up for the third time. Says that she started "MRM" and sent letter to the ministry.
+    if event13_happened and not event14_happened:
+        call event_14
+    if day == 1 and not bird_examined and not desk_examined and not cupboard_examined and not door_examined and not fireplace_examined:
+        call event_01
+    return
+    
+label night_event_check:
+    ### NIGHT EVENTS ###
+    if day == 1:
+        call event_02
+    if day == 2:
+        call event_03
+    if day == 4:
+        call event_05
+    if day == 5:
+        call event_07
+    if days_without_an_event == 1 and hermione_is_waiting_02 and not event11_happened:
+    #if day == 6:
+        call event_11
+    if days_without_an_event == 1 and event11_happened and not event12_happened:
+    #if day == 7:
+        call event_12
+    if days_without_an_event == 1 and event12_happened and not event13_happened:
+    #if day == 8:
+        call event_13
+    if day >= 15 and day <=20 and not event15_happened:
+    #if day == 9:
+        call event_15
+    return
+    
+    
+    
+    
+#### GENIE EVENTS ####
+
+#First event in the game. Gennie finds himself at the desk.
+label event_01: 
+    show screen bld1
+    with d3
+    m "..................?"
+    m "Your majesty?"
+    m "......................................................."
+    g4 "I did it again, didn't I?"
+    g4 "Teleported myself to who knows where..."
+    m "What's with those ingredients?"
+    m "They seem to be way more potent that I thought."
+    m "Well, whatever this place is I have no business here..."
+    m "Better undo the spell and return to the shop before the princess gets angry with me again..."
+    m "....................."
+    m "Although..."
+    m "There is something odd about this place... it's..."
+    m "It's almost brimming with...."
+    g4 "{size=+5}MAGIC?!{/size}"
+    m "Yes... magic, I can feel it. So powerful and yet somehow..."
+    m "....alien."
+    m "Interesting..."
+    m "I think I will stick around for a little bit..."
+    hide screen bld1
+    with d3
+    return
+    
+#owl event
+label event_02:
+    $ letterQ.send("{size=-7}From: Hermione Granger\nTo: Professor Dumbledore\n\n{/size}{size=-4}I am sure that you remember the reason why I'm writing you this letter from my last one, sir.\n\nI beg of you, please hear my plea this time. This injustice simply cannot go on...\nNot in this day and age, not in our school.\n\nPlease take action.\n\n{size=-3}With deepest respect,\nHermione Granger{/size}","hermione_letter_1")
+    play sound "sounds/owl.mp3"  #Quiet...
+    show screen owl
+    show screen bld1
+    with d3
+    m "What? An owl?"
+    hide screen bld1
+    with d3
+    return
+    
+    
+    
+    
+#### SNAPE EVENTS ####
 
 #First time genie meets snape
-label event_00:
+label event_02_1:
+    $ snape_SC.xpos = 550 #Defines position of the Snape's full length sprite.
+    $ snape_SC.ypos = 0
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
-    
-    
-    #show screen snape_01 #OWL SITTING ON A PACKAGE.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen snape_01 #Snape stands still.
-    with Dissolve(.5)
+    $ snape_SC.chibi.xpos = 750
+    show screen snape_chibi_standing #Snape stands still.
+    with d5
     pause.3
     show screen bld1
     with d3
     g4 "{size=-3}(An Indigenous life form!?){/size}"
     hide screen bld1
     with d3
-    $ tt_xpos=650
-    $ tt_ypos=180
-    show screen thought 
-    with Dissolve(.3)
+    show screen thought(snape_SC.chibi.xpos+40, snape_SC.chibi.ypos-30)
+    with d3
     pause 1
     show screen bld1
     with d3
@@ -26,27 +129,25 @@ label event_00:
     m "{size=-3}(Maybe if I just act cool he'll leave...?){/size}"
     hide screen bld1
     with d3
-    hide screen thought 
-    with Dissolve(.3)
+    hide screen snape_chibi_standing
+    hide screen thought
+    with d3
     
-    $ walk_xpos=610 #Animation of walking chibi. (From) 610
-    $ walk_xpos2=360 #Coordinates of it's movement. (To) 360
-    $ snape_speed = 04.0 #The speed of moving the walking animation across the screen.
-    show screen snape_walk_01 
-    pause 4
-    show screen snape_02 #Snape stands still.
+    $ snape_SC.chibi.walk(750,500,4)
+    show screen snape_chibi_standing
     pause.5
     show screen bld1
-    with Dissolve(.3)
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ tt_ypos=0
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-    show screen snape_main
+    with d3
+    
+    $ snape_SC.name = "??? ???"
+    $ snape_SC.body = "snape_01"
+    $ snape_SC.showScreen()
     show screen ctc
-    with Dissolve(.3)
+    with d3
     pause
-    who2 "Albus... Do you have a moment?"
-    hide screen snape_main
+    
+    $ snape_SC.say("Albus... Do you have a moment?")
+    $ snape_SC.hideScreen()
     hide screen ctc
     
 #    show screen ctc
@@ -83,98 +184,66 @@ label event_00:
     menu:
         m "..."
         "\"Actually I'm a bit busy.\"":
-            call sna_main("","snape_04")
-            who2 "Well, aren't you always, Albus?"
+            $ snape_SC.say("Well, aren't you always, Albus?","snape_04")
         "\"Of course. What is it?\"":
             pass
         "\"And Albus to you too.\"":
-            call sna_main("","snape_05")
-            who2 "What?"
-            call sna_main("","snape_04")
-            who2 "Albus I'm not in the mood for your... shenanigans."
+            $ snape_SC.say("What?","snape_05")
+            $ snape_SC.say("Albus I'm not in the mood for your... shenanigans.","snape_04")
         "\"Take me to your leader.\"":
-            $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-            show screen snape_main
-            with d3
-            who2 "What?"
-            call sna_main("","snape_01")
-            who2 "Hm...?"
-            who2 "You mean the minster of magic?"
-            call sna_main("","snape_03")
-            who2 "I would rather avoid having to deal with that bureaucrat..."
+            $ snape_SC.say("What?")
+            $ snape_SC.say("Hm...?")
+            $ snape_SC.say("You mean the minster of magic?")
+            $ snape_SC.say("I would rather avoid having to deal with that bureaucrat...","snape_03")
             m "Fine, never mind... How can I be of help?"
             
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
-    who2 "I have something important I need to discuss with you..."
-    who2 "I think we need to revise our admittance policy." 
-    hide screen snape_main
+    $ snape_SC.say("I have something important I need to discuss with you...","snape_06")
+    $ snape_SC.say("I think we need to revise our admittance policy.")
+    $ snape_SC.hideScreen()
     with d3
     m "................?"
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"
-    show screen snape_main
-    with d3
-    who2 "Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis."
-    hide screen snape_main
+    $ snape_SC.say("Half of my... so-called \"pupils\" are nothing but annoying maggots that make my life miserable on a daily basis.","snape_03")
+    $ snape_SC.hideScreen()
     with d3
     m "................"
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_07.png"
-    show screen snape_main
-    who2 "Most of them belong to your precious \"gryffindor\" house of course..."
-    hide screen snape_main
+    $ snape_SC.say("Most of them belong to your precious \"gryffindor\" house of course...","snape_07")
+    $ snape_SC.hideScreen()
     with d3
     m "......?"
-    show screen snape_main
-    who2 "The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe...."
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_08.png"
-    who2 "{size=+3}The Potter boy!{/size}"
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-    who2 "Mark my words, Albus. The \"gryffindor house\" will become this school's undoing!"
-    hide screen snape_main
+    $ snape_SC.say("The wretched Weasley family, that noisy Granger girl and of course the hero of all the juvenile delinquents around the globe....")
+    $ snape_SC.say("{size=+3}The Potter boy!{/size}","snape_08")
+    $ snape_SC.say("Mark my words, Albus. The \"gryffindor house\" will become this school's undoing!","snape_01")
+    $ snape_SC.hideScreen()
     m "...................."
-    show screen snape_main
-    who2 "Nothing but annoying maggots, the lot of them!"
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_06.png"
-    who2 "And if that wasn't enough, now they spread all sorts of nasty rumours about the teachers!"
-    who2 "Particularly about yours truly..."
-    hide screen snape_main
+    $ snape_SC.say("Nothing but annoying maggots, the lot of them!")
+    $ snape_SC.say("And if that wasn't enough, now they spread all sorts of nasty rumours about the teachers!","snape_06")
+    $ snape_SC.say("Particularly about yours truly...")
+    $ snape_SC.hideScreen()
     m "......................"
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"
-    show screen snape_main
-    who2 "You don't believe those rumours, do you Albus?"
-    hide screen snape_main
+    $ snape_SC.say("You don't believe those rumours, do you Albus?","snape_05")
+    $ snape_SC.hideScreen()
     menu:
         m ".............."
         "\"Well, of course not!\"":
-            $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
-            show screen snape_main
-            who2 "Good..."
-            who2 "You know me better than that. I wouldn't care for such things..."
+            $ snape_SC.say("Good...","snape_09")
+            $ snape_SC.say("You know me better than that. I wouldn't care for such things...")
         "\"Where there's smoke, there's fire.\"":
-            $ s_sprite = "01_hp/13_characters/snape/main/snape_10.png"
-            show screen snape_main
-            who2 "Albus?! You can't be serious!"
-            who2 "Those are nothing but filthy lies, I'm telling you!"
-    hide screen snape_main
+            $ snape_SC.say("Albus?! You can't be serious!","snape_10")
+            $ snape_SC.say("Those are nothing but filthy lies, I'm telling you!")
+    $ snape_SC.hideScreen()
     m "........................."
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"
-    show screen snape_main
-    who2 "Well, those wretched kids left me completely exhausted, I think I will retire for today."
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
-    who2 "................"
+    $ snape_SC.say("Well, those wretched kids left me completely exhausted, I think I will retire for today.","snape_04")
+    $ snape_SC.say("................","snape_09")
     
     stop music fadeout 1.0
     
-    hide screen snape_main
+    $ snape_SC.hideScreen()
     hide screen bld1
     with d3
-    $ walk_xpos=360 #Animation of walking chibi. (From desk) 360 
-    $ walk_xpos2=610 #Coordinates of it's movement. (To the door) 610
-    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen. Default - .03
-    show screen snape_walk_01_f 
-    pause 3
+    
+    hide screen snape_chibi_standing
+    $ snape_SC.chibi.walk(500,750,3)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    hide screen snape_walk_01_f 
-    with d4
     pause.5
     show screen bld1
     with d3
@@ -243,290 +312,189 @@ label event_00:
     
     jump day_start
 
-#First event in the game. Gennie finds himself at the desk.
-label event_01: 
-    show screen bld1
-    with d3
-    m "..................?"
-    m "Your majesty?"
-    m "......................................................."
-    g4 "I did it again, didn't I?"
-    g4 "Teleported myself to who knows where..."
-    m "What's with those ingredients?"
-    m "They seem to be way more potent that I thought."
-    m "Well, whatever this place is I have no business here..."
-    m "Better undo the spell and return to the shop before the princess gets angry with me again..."
-    m "....................."
-    m "Although..."
-    m "There is something odd about this place... it's..."
-    m "It's almost brimming with...."
-    g4 "{size=+5}MAGIC?!{/size}"
-    m "Yes... magic, I can feel it. So powerful and yet somehow..."
-    m "....alien."
-    m "Interesting..."
-    m "I think I will stick around for a little bit..."
-    hide screen bld1
-    with d3
-    return
-
-#owl event
-label event_02:
-    $ letters += 1 #Adds one letter in waiting list to be read. Displays owl with envelope.
-    #$ mail_from_her = True #Comented out because replaced with $ letters += 1 
-    play sound "sounds/owl.mp3"  #Quiet...
-    show screen owl
-    show screen bld1
-    with d3
-    m "What? An owl?"
-    hide screen bld1
-    with d3
-    return
-
 #Sanpe talks to genie about hermione, snape becomes suspicious
 label event_03: 
-    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
+    $ snape_SC.xpos = 550 #Defines position of the Snape's full length sprite.
+    $ snape_SC.ypos = 0
     
+    play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ walk_xpos=470 #Animation of walking chibi. (From)
-    $ walk_xpos2=360 #Coordinates of it's movement. (To)
-    show screen snape_walk_01 
-    with d3
+    $ snape_SC.chibi.walk(750,500,2)
     pause 1.5
-    show screen snape_02 #Snape stands still.
+    show screen snape_chibi_standing #Snape stands still.
     pause.1
     show screen bld1
-    with Dissolve(.3)
+    with d3
     m "{size=-3}(That broody guy again...){/size}"
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ tt_ypos=0
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-    show screen snape_main
-    with Dissolve(.3)
-    who2 "Albus!"
+    $ snape_SC.say("Albus!","snape_01")
     m "Hey.......... you..."
-    who2 "You need to do something about that Granger girl..."
-    call sna_main("","snape_06")
-    who2 "Honestly... I'm running out of ways to punish that... that..."
-    call sna_main("","snape_04")
-    who2 "That little witch!"
+    $ snape_SC.say("You need to do something about that Granger girl...")
+    $ snape_SC.say("","snape_06")
+    $ snape_SC.say("Honestly... I'm running out of ways to punish that... that...")
+    $ snape_SC.say("","snape_04")
+    $ snape_SC.say("That little witch!")
     menu:
         m "..."
         "\"Granger? Hermione Granger, right?\"":
-            who2 "Yes, her..."
-            who2 " She also happens to be a part of the \"Potter gang\"."
+            $ snape_SC.say("Yes, her...")
+            $ snape_SC.say(" She also happens to be a part of the \"Potter gang\".")
         "\"I got your back, Jack, witches be crazy!\"":
-            who2 "What...? Albus you behave oddly lately."
-            who2 "Is everything alright?"
+            $ snape_SC.say("What...? Albus you behave oddly lately.")
+            $ snape_SC.say("Is everything alright?")
             menu:
                 m "..."
                 "\"Yes, I'm fine. Go on.\"":
-                    who2 "If you say so..."
+                    $ snape_SC.say("If you say so...")
                 "\"You know me. I love my shenanigans.\"":
-                    who2 "Hm....."
-
+                    $ snape_SC.say("Hm.....")
         "\".....................................................\"":
-            pass        
-    who2 "Remember how back in the days they used to publicly flog the students?"
-    who2 "I swear if we could bring that back all of our problems would be solved..."
-    who2 "Yes... I would gladly tie that girl to a flogging pole in front of the entire school..."
-    call sna_main("","snape_20")
-    who2 "Then lift her skirt up, and..."
-    call sna_main("","snape_12")
-    who2 "*Khem!* Sadly, nowadays we teachers are severely limited in the disciplinary measures we have at our disposal..."
-    who2 "I know you are just as powerless as I am in this matter, but I'm telling you, that girl should better stop testing my patience."
+            pass
+    $ snape_SC.say("Remember how back in the days they used to publicly flog the students?")
+    $ snape_SC.say("I swear if we could bring that back all of our problems would be solved...")
+    $ snape_SC.say("Yes... I would gladly tie that girl to a flogging pole in front of the entire school...")
+    $ snape_SC.say("Then lift her skirt up, and...","snape_20")
+    $ snape_SC.say("*Khem!* Sadly, nowadays we teachers are severely limited in the disciplinary measures we have at our disposal...","snape_12")
+    $ snape_SC.say("I know you are just as powerless as I am in this matter, but I'm telling you, that girl should better stop testing my patience.")
     menu:
         m "..."
-
         "\"I'll take care of that little whore!\"":
-            call sna_main("","snape_05")
-            who2 "...?!"
-            who2 "Albus..."
-            who2 "You are acting strange lately..."
+            $ snape_SC.say("...?!","snape_05")
+            $ snape_SC.say("Albus...")
+            $ snape_SC.say("You are acting strange lately...")
         "\"Nobody ever said this job would be easy.\"":
-            call sna_main("","snape_06")
-            who2 "Sometimes I feel like I would rather deal with a classroom full of Dementors..."
+            $ snape_SC.say("Sometimes I feel like I would rather deal with a classroom full of Dementors...","snape_06")
         "\"You will feel better tomorrow.\"":
-            call sna_main("","snape_06")
-            who2 "You are probably right..."
-    who2 "Hm..."
-    call sna_main("","snape_06")
-    who2 "Perhaps I'd better go get some sleep."
-    who2 "I need to be in my top shape every morning..."
-    who2 "You can't show weakness to those kids or they will swallow you whole..."
-    call sna_main("","24")
-    who2 "Good night, Albus."
+            $ snape_SC.say("You are probably right...","snape_06")
+    $ snape_SC.say("Hm...")
+    $ snape_SC.say("Perhaps I'd better go get some sleep.","snape_06")
+    $ snape_SC.say("I need to be in my top shape every morning...")
+    $ snape_SC.say("You can't show weakness to those kids or they will swallow you whole...")
+    $ snape_SC.say("Good night, Albus.","24")
     
     
-    hide screen snape_main
+    $ snape_SC.hideScreen()
     hide screen bld1
     with d3
-    $ walk_xpos=360 #Animation of walking chibi. (From desk)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen snape_walk_01_f 
-    pause 3
-    hide screen snape_walk_01_f
     
-    show screen snape_01_f #Snape stands still. (Mirrored).
+    hide screen snape_chibi_standing
+    $ snape_SC.chibi.walk(500,750,3)
+    show screen snape_chibi_standing_f #Snape stands still. (Mirrored).
     pause.2
-    who2 "................."
-    who2 "One more thing..."
+    $ snape_SC.say(".................")
+    $ snape_SC.say("One more thing...")
     show screen bld1
-    show screen snape_main
-    with Dissolve(.3)
-    who2 "You should ignore any lies you hear about me and those slytherin girls..."
+    with d3
+    $ snape_SC.say("You should ignore any lies you hear about me and those slytherin girls...")
     m "Got it."
     hide screen bld1
-    hide screen snape_main
-    hide screen snape_01_f #Snape stands still. (Mirrored).
-    with Dissolve(.3)
+    $ snape_SC.hideScreen()
+    hide screen snape_chibi_standing_f #Snape stands still. (Mirrored).
+    with d3
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     jump day_start
 
-#NOT IN USE
-label event_04:
-    m "Well, it's been three days now..."
-    m "I wonder what has become of that two-faced dude?"
-    return
-
 #Snape comes in, has a talk with Genie, then the duel starts.
 label event_05: 
+    $ snape_SC.xpos = 550 #Defines position of the Snape's full length sprite.
+    $ snape_SC.ypos = 0
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
-    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    
-    $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ walk_xpos=470 #Animation of walking chibi. (From)
-    $ walk_xpos2=360 #Coordinates of it's movement. (To)
-    show screen snape_walk_01 
-    with d3
-    pause 1.5
-    show screen snape_02 #Snape stands still.
+    $ snape_SC.chibi.walk(750,500,2)
+    show screen snape_chibi_standing #Snape stands still.
     show screen bld1
-    with Dissolve(.3)
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ tt_ypos=0
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-    show screen snape_main
+    with d3
+    
+    $ snape_SC.body = "snape_01"
+    $ snape_SC.showScreen()
     show screen ctc
-    with Dissolve(.3)
-    who2 "Good evening, Albus."
-    who2 "I want to talk to you about those damn kids again..."
-    who2 "But first I want to ask you something..."
-    call sna_main("","snape_05")
-    who2 "Did you notice anything strange going on around here lately?"
+    with d3
+    
+    $ snape_SC.say("Good evening, Albus.")
+    $ snape_SC.say("I want to talk to you about those damn kids again...")
+    $ snape_SC.say("But first I want to ask you something...")
+    $ snape_SC.say("Did you notice anything strange going on around here lately?","snape_05")
     menu:
         m "..."
         "{size=-2}\"Like you being especially whiny?\"{/size}":
-            who2 "What? B-but... Those kids..."
-            call sna_main("","snape_06")
-            who2 "Well, perhaps you are right..."
+            $ snape_SC.say("What? B-but... Those kids...")
+            $ snape_SC.say("Well, perhaps you are right...","snape_06")
         "{size=-2}\"That owl is fetching may mail, man!\"{/size}":
-            who2 "An owl? What about it?"
-            call sna_main("","snape_25")
-            who2 "That's not what I mean..."
-            call sna_main("","snape_29")
-            who2 "Well, never mind..."
+            $ snape_SC.say("An owl? What about it?")
+            $ snape_SC.say("That's not what I mean...","snape_25")
+            $ snape_SC.say("Well, never mind...","snape_29")
 #        "\"I Saw a dude with two faces the other day.\"":
 #            who2 "?!"
 #            who2 "What's that supposed to mean...?"
         "{size=-2}\"No, not really. It's just business as usual.\"{/size}":
-            who2 "Hm... Maybe I'm just being paranoid..."
-    call sna_main("","24")
-    who2 "The reason why I'm here today is the \"Potter Gang\""
-    call sna_main("","snape_01")
-    who2 "There are only so many points I can subtract from the Gryffindor house, you know..."
-    who2 "And the Granger girl became the worst of them lately..."
-    call sna_main("","snape_06")
-    who2 "She practically leads the onslaught."
-    call sna_main("","snape_05")
-    who2 "Speaking of which, has she been sending you any letters lately?"
+            $ snape_SC.say("Hm... Maybe I'm just being paranoid...")
+    $ snape_SC.say("The reason why I'm here today is the \"Potter Gang\"","24")
+    $ snape_SC.say("There are only so many points I can subtract from the Gryffindor house, you know...","snape_01")
+    $ snape_SC.say("And the Granger girl became the worst of them lately...")
+    $ snape_SC.say("She practically leads the onslaught.","snape_06")
+    $ snape_SC.say("Speaking of which, has she been sending you any letters lately?","snape_05")
     menu:
         m "..."
         "\"Hermione Granger? No, Nothing from her.\"":
-            who2 "I see... So she's been bluffing then."
-            call sna_main("","snape_16")
-            who2 "What an annoying young witch."
+            $ snape_SC.say("I see... So she's been bluffing then.")
+            $ snape_SC.say("What an annoying young witch.","snape_16")
         "\"Yes... Every damn day...\"":
-            who2 "Really now?"
-            who2 "Any lies about me in particular?"
-            who2 "I hope you know better than to listen to the likes of her..."
+            $ snape_SC.say("Really now?")
+            $ snape_SC.say("Any lies about me in particular?")
+            $ snape_SC.say("I hope you know better than to listen to the likes of her...")
     
-    call sna_main("","snape_03")
-    who2 "She would never admit it, but I know she's been spreading those nasty rumours about me around the school..."
-    call sna_main("","snape_29")
-    who2 "Tsk... Noisy little...... witch."
-    call sna_main("","snape_09")
-    who2 "I would never stoop so low as to trade house points in exchange for sexual favours..."
-    who2 "I mean, sure, we use house points to motivate students, but that's completely different..."
-    who2 "I can't speak for the rest of the staff though..."
-    call sna_main("","snape_13")
-    who2 "The stories I hear about Minerva McGonagall and those poor Gryffindor freshmen may be true..."
-    call sna_main("","snape_01")
-    who2 "Well, I just wanted to make sure that you take those rumours about me for what they are..."
-    who2 "Nasty lies made up by a bunch of spoiled kids."
-    
-
-    who2 "Oh.... Before I go..."
-    who2 "There is one thing I meant to ask you for a while now..."
-    call sna_main("","snape_09")
-    who2 "........................."
-    call sna_main("","snape_05")
-    who2 "What is my name?"
+    $ snape_SC.say("She would never admit it, but I know she's been spreading those nasty rumours about me around the school...","snape_03")
+    $ snape_SC.say("Tsk... Noisy little...... witch.","snape_29")
+    $ snape_SC.say("I would never stoop so low as to trade house points in exchange for sexual favours...","snape_09")
+    $ snape_SC.say("I mean, sure, we use house points to motivate students, but that's completely different...")
+    $ snape_SC.say("I can't speak for the rest of the staff though...")
+    $ snape_SC.say("The stories I hear about Minerva McGonagall and those poor Gryffindor freshmen may be true...","snape_13")
+    $ snape_SC.say("Well, I just wanted to make sure that you take those rumours about me for what they are...","snape_01")
+    $ snape_SC.say("Nasty lies made up by a bunch of spoiled kids.")
+    $ snape_SC.say("Oh.... Before I go...")
+    $ snape_SC.say("There is one thing I meant to ask you for a while now...")
+    $ snape_SC.say(".........................","snape_09")
+    $ snape_SC.say("What is my name?","snape_05")
     menu:
         m "..."
         "\"What? What kind of question is that?\"":
-            call sna_main("","snape_06")
-            who2 "You are right..."
-            who2 "Forgive me... I'm just being paranoid I suppose..."
-            call sna_main("","snape_05")
-            who2 "But you can never be too cautious with rumours about  \"you know who\" still being alive and all..."
+            $ snape_SC.say("You are right...","snape_06")
+            $ snape_SC.say("Forgive me... I'm just being paranoid I suppose...")
+            $ snape_SC.say("But you can never be too cautious with rumours about  \"you know who\" still being alive and all...","snape_05")
         "\"Tall broody guy?\"":
-            call sna_main("","snape_06")
-            who2 "Albus, lately you adopted a peculiar sense of humor, that I do not care for in a slightest..."
-            who2 "Maybe you should spend a little less time in the company of that big oaf Hagrid."
+            $ snape_SC.say("Albus, lately you adopted a peculiar sense of humor, that I do not care for in a slightest...","snape_06")
+            $ snape_SC.say("Maybe you should spend a little less time in the company of that big oaf Hagrid.")
         "-\{Use magic to get the right answer\}-":
-            $ d_flag_01 = True
-            hide screen snape_main
+            $ snape_SC.hideScreen()
             with d3
+            
             show screen blktone
             with d3
             ">You use your phenomenal cosmic powers to peek into the very fabric of the universe and get the correct answer."
             hide screen blktone
             with d3
-            $ s_sprite = "01_hp/13_characters/snape/main/snape_03.png"                                                                               #SNAPE
-            show screen snape_main                                                                                                                                #SNAPE
-            with d3                                                                                                                                                                  #SNAPE
-            who2 "!!?"
+            
+            $ snape_SC.say("!!?","snape_03")
             m "What kind of question is this, Severus?"
-            who2 "Forgive me... I'm just being paranoid I suppose..."
+            $ d_flag_01 = True
+            $ snape_SC.name = "Severus Snape"
+            $ snape_SC.say("Forgive me... I'm just being paranoid I suppose...")
 
 
-    call sna_main("","snape_06")
-    who2 "Well, good night, Albus."
-    hide screen snape_main
+    $ snape_SC.say("Well, good night, Albus.","snape_06")
+    $ snape_SC.hideScreen()
     hide screen bld1
     with d3
-    $ walk_xpos=360 #Animation of walking chibi. (From desk)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen snape_walk_01_f 
-    pause 3
-    hide screen snape_walk_01_f 
-    show screen snape_01_f #Snape stands still. (Mirrored).
+    
+    hide screen snape_chibi_standing
+    $ snape_SC.chibi.walk(500,750,3)
+    show screen snape_chibi_standing_f #Snape stands still. (Mirrored).
     pause.2
     
-    
-    
-    
     stop music fadeout 1.0
-    who2 "........................"
-    hide screen snape_01_f
+    $ snape_SC.sayText("........................")
+    hide screen snape_chibi_standing_f
     hide screen bld1
-    hide screen snape_main
-    hide screen snape_02 #Snape stands still. 
     #hide screen genie
     show screen blkfade
     with d3
@@ -539,30 +507,28 @@ label event_05:
     with d3
     show screen ctc
     
-    
-    
     play music "music/hitman.mp3" fadein 1 fadeout 1 # TENSE THEME 
-    
     
     pause
     hide screen ctc
     show screen bld1
     with d3
     if d_flag_01:
-        sna_[6] "Who are you, scum!"
+        $ snape_SC.say_H("Who are you, scum!","head_6")
         g4 "What? It's me... uhm... Abius! I mean, Albus!"
-        sna_[4] "You cannot fool me."
-        sna_[4] "Just now, you used some sort of alien magic!"
-        sna_[6] "Reveal your true self to me now, fiend! Who are you?!"
+        $ snape_SC.say_H("You cannot fool me.","head_4")
+        $ snape_SC.say_H("Just now, you used some sort of alien magic!","head_4")
+        $ snape_SC.say_H("Reveal your true self to me now, fiend! Who are you?!","head_6")
     else:
-        sna_[1] "My name is Severus Snape!"
-        sna_[1] "Now, who might you be...?"
+        $ snape_SC.say_H("My name is Severus Snape!","head_1")
+        $ snape_SC.name = "Severus Snape"
+        $ snape_SC.say_H("Now, who might you be...?","head_1")
         
     g4 "!!!"
-    sna_[1] "Easy now... Just answer my question."
+    $ snape_SC.say_H("Easy now... Just answer my question.","head_1")
     
     m "Alright, alright, just calm down, would you...?"
-    sna_[1] "........"
+    $ snape_SC.say_H("........","head_1")
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -573,22 +539,22 @@ label event_05:
         "\"I am not your enemy.\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_[1] "That the first thing an enemy would say."
+            $ snape_SC.say_H("That the first thing an enemy would say.","head_1")
         "\"I'm just a tourist. I'll be leaving now.\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_[1] "You are not going anywhere."
+            $ snape_SC.say_H("You are not going anywhere.","head_1")
         "\"I work for Albis Doombldore!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_[1] "It's Albus Dumbledore, you moron!"
+            $ snape_SC.say_H("It's Albus Dumbledore, you moron!","head_1")
     if d_points == 2:
         pass
     else:
         jump no_wait
 
-    sna_[1] "Who sent you here? What did you do with the real Albus?"
-    sna_[1] "Shed your disguise and reveal your true self at once, this is your last warning!"
+    $ snape_SC.say_H("Who sent you here? What did you do with the real Albus?","head_1")
+    $ snape_SC.say_H("Shed your disguise and reveal your true self at once, this is your last warning!","head_1")
     $ d_points = 0
     $ d_flag_01 = False
     $ d_flag_02 = False
@@ -600,18 +566,18 @@ label event_05:
         "\"I can't. It's hard to explain...\"" if not d_flag_01:
             $ d_flag_01 = True
             $ d_points +=1
-            sna_[1] "I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!"
+            $ snape_SC.say_H("I have no interest in your explanations. I wouldn't believe a single word you'd say anyway!","head_1")
         "\"Stop threatening me, human!\"" if not d_flag_02:
             $ d_flag_02 = True
             $ d_points +=1
-            sna_[1] "\"Human\"?"
-            sna_[1] "Are you implying that you are {size=+5}not{/size} one?"
-            sna_[1] "What are you then?! Dispell your cloaking charm immediately or else!"
+            $ snape_SC.say_H("\"Human\"?","head_1")
+            $ snape_SC.say_H("Are you implying that you are {size=+5}not{/size} one?","head_1")
+            $ snape_SC.say_H("What are you then?! Dispell your cloaking charm immediately or else!","head_1")
         "\"I mean you no harm, I swear!\"" if not d_flag_03:
             $ d_flag_03 = True
             $ d_points +=1
-            sna_[1] "Is that so?"
-            sna_[1] "Prove it then. Dispel your cloaking charm now!"
+            $ snape_SC.say_H("Is that so?","head_1")
+            $ snape_SC.say_H("Prove it then. Dispel your cloaking charm now!","head_1")
 
     if d_points == 2:
         pass
@@ -620,10 +586,10 @@ label event_05:
 
             
             
-    sna_[1] "I've heard enough!"
+    $ snape_SC.say_H("I've heard enough!","head_1")
     g4 "By the great desert sands! Would you let me explain, human?!"
-    sna_[1] "There is nothing left to explain!"
-    sna_[1] "Since you refuse to cooperate, I'll be taking you into custody by force!"
+    $ snape_SC.say_H("There is nothing left to explain!","head_1")
+    $ snape_SC.say_H("Since you refuse to cooperate, I'll be taking you into custody by force!","head_1")
     g4 "What?! Wait!"
     
     if skip_duel == True:
@@ -641,10 +607,8 @@ label event_05:
     pause 3
 
     
-    
-
     jump duel
-
+    
 #THE TALK AFTER THE DUEL ENDS.
 label event_06: 
     $ potions = 0 #Makes sure there are no potions left in the possessions. 
@@ -653,7 +617,7 @@ label event_06:
     stop music fadeout 2.0
     g4 "*Panting*"
     g4 "Ready to talk now?!"
-    sna_[8] "(...i-impossible...)"
+    $ snape_SC.say_H("(...i-impossible...)","head_8")
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
@@ -664,53 +628,53 @@ label event_06:
     show screen bld1
     with d3
     m "You did give me a good run for my money though..."
-    sna_[1] "The way you conjure the spells with your bare hands..."
-    sna_[1] "No human could do that... who--"
-    sna_[4] "{size=+5}What are you?{/size}"
-    sna_[1] "Some sort of shape-shifting demon summoned by \"you know who\"?"
+    $ snape_SC.say_H("The way you conjure the spells with your bare hands...","head_1")
+    $ snape_SC.say_H("No human could do that... who--","head_1")
+    $ snape_SC.say_H("{size=+5}What are you?{/size}","head_4")
+    $ snape_SC.say_H("Some sort of shape-shifting demon summoned by \"you know who\"?","head_1")
     m "Summoned by whom?"
-    sna_[2] "By \"you know who\"!"
+    $ snape_SC.say_H("By \"you know who\"!","head_2")
     m "What?"
-    sna_[7] "......................"
+    $ snape_SC.say_H("......................","head_7")
     m "............................"
     m "Listen, I'm not a demon..."
     m "And I sure as heck don't work for \"I don't know who\"!"
-    sna_[1] "............................."
+    $ snape_SC.say_H(".............................","head_1")
     m "I've been ehm..."
     m "...Conducting an experiment back in my world, during which something went wrong and I ended up here."
     m "That's all..."
-    sna_[1] ".........................."
-    sna_[1] "What became of to the real Albus Dumbledore then?"
+    $ snape_SC.say_H("..........................","head_1")
+    $ snape_SC.say_H("What became of to the real Albus Dumbledore then?","head_1")
     m "I'm sure he is fine."
     m "He's Probably feeling as surprised about finding himself in my world as I am about finding myself here..."
-    sna_[1] "...................................."
-    sna_[1] "When did this happen?"
+    $ snape_SC.say_H("....................................","head_1")
+    $ snape_SC.say_H("When did this happen?","head_1")
     m "Four days ago..."
-    sna_[1] "Can you go back?"
+    $ snape_SC.say_H("Can you go back?","head_1")
     m "I think so..."
-    sna_[2] "Why didn't you then?"
+    $ snape_SC.say_H("Why didn't you then?","head_2")
     m "Not sure..."
     m "The Magic of this world is so bizarre... Perhaps I just got curious."
-    sna_[1] "..................."
-    sna_[1] "You need to fix this..."
+    $ snape_SC.say_H("...................","head_1")
+    $ snape_SC.say_H("You need to fix this...","head_1")
     m "Fix what?"
-    sna_[4] "Everything. You need to bring back Albus and leave our world."
+    $ snape_SC.say_H("Everything. You need to bring back Albus and leave our world.","head_4")
     menu:
         m "..."
 
         "\"Yes, yes, I know. Off I go then.\"":
             m "Yes, yes, I know..."
             m "Well, off I go then. Sorry for the ruckus."
-            sna_[1] "No harm done..."
+            $ snape_SC.say_H("No harm done...","head_1")
         "\"But I like it here! Can't I stay?\"":
-            sna_[1] "Absolutely not."
-            sna_[1] "Whoever you are, you are not from this plane of existence."
-            sna_[1] "Your very presence here upsets the natural order of things."
-            sna_[1] "And these days this school needs a proper headmaster more than ever."
-    sna_[1] "Have a save trip home now."
+            $ snape_SC.say_H("Absolutely not.","head_1")
+            $ snape_SC.say_H("Whoever you are, you are not from this plane of existence.","head_1")
+            $ snape_SC.say_H("Your very presence here upsets the natural order of things.","head_1")
+            $ snape_SC.say_H("And these days this school needs a proper headmaster more than ever.","head_1")
+    $ snape_SC.say_H("Have a save trip home now.","head_1")
     m "Ehm... Thank you, mr. Severus. Good luck with your students and the \"potter gang\"."
-    sna_[1] "\"The potter gang\"?"
-    sna_[7] "Oh, right, those buggers..."
+    $ snape_SC.say_H("\"The potter gang\"?","head_1")
+    $ snape_SC.say_H("Oh, right, those buggers...","head_7")
     menu:
         "-Undo the spell-":
             pass
@@ -721,23 +685,23 @@ label event_06:
         "-Undo the spell-":
             pass
 
-    sna_[1] "Did it work? Albus, is that really you?"
+    $ snape_SC.say_H("Did it work? Albus, is that really you?","head_1")
     menu:
         m "..."
         "\"Yeah, that's me. So good to be back!\"":
-            sna_[1] "Glad to have you back, old friend. Are you alright?"
+            $ snape_SC.say_H("Glad to have you back, old friend. Are you alright?","head_1")
             m "I'm fine, Severus, thank you."
-            sna_[1] "How was it, in that other world?"
+            $ snape_SC.say_H("How was it, in that other world?","head_1")
             m "A lot of sand and very hot, but other than that quite pleasant."
-            sna_[1] "I see... Did you miss your brother?"
+            $ snape_SC.say_H("I see... Did you miss your brother?","head_1")
             menu:
                 m "..."
                 "\"Yes, I missed you so much!\"":
-                    sna_[1] "......................."
-                    sna_[1] "Yeah, right...."
+                    $ snape_SC.say_H(".......................","head_1")
+                    $ snape_SC.say_H("Yeah, right....","head_1")
                 "\"I don't have a brother, Severus.\"":
-                     sna_[1] "........................"
-                     sna_[1] "You may not have one, but the real Albus Dumbledore does."
+                     $ snape_SC.say_H("........................","head_1")
+                     $ snape_SC.say_H("You may not have one, but the real Albus Dumbledore does.","head_1")
                 "-Use magic to get the right answer-":
                     show screen bld1
                     with d3
@@ -745,223 +709,212 @@ label event_06:
                     hide screen bld1
                     with d3
                     m "My little brother Aberforth? Why would I miss him?"
-                    sna_[1] "I can feel it whenever you use your alien magic..."
+                    $ snape_SC.say_H("I can feel it whenever you use your alien magic...","head_1")
         "\"Nope. It's still me. The non-human guy.\"":
             pass
 
 
-    sna_[1] "Why are you still here, creature?"
+    $ snape_SC.say_H("Why are you still here, creature?","head_1")
     m "I'm not sure... I tried to undo the spell but nothing happened..."
 
 
-    sna_[7] "Marvelous..."
-    sna_[1] "What does this mean? So You're staying here for good?"
+    $ snape_SC.say_H("Marvelous...","head_7")
+    $ snape_SC.say_H("What does this mean? So You're staying here for good?","head_1")
     m "Of course not..."
     m "Me being here at all is only possible because the spell is compensating for the unbalance caused by itself..."
     m "said spell will wear off eventually and I shall be pulled back into my world."
     m "Likewise, your Dumbledore-friend shall be pulled back here."
-    sna_[1] "I see..."
-    sna_[1] "How long until the spell wears off?"
+    $ snape_SC.say_H("I see...","head_1")
+    $ snape_SC.say_H("How long until the spell wears off?","head_1")
     menu:
         m "..."
         "\"A couple of days.\"":
-            sna_[1] "I see..."
+            $ snape_SC.say_H("I see...","head_1")
         "\"A week or so...\"":
-            sna_[1] "Hm.... A week, huh..."
+            $ snape_SC.say_H("Hm.... A week, huh...","head_1")
         "\"Could be months...\"":
-             sna_[1] "That long?"
-             sna_[1] "Now isn't that just \"perfect\"?"
+             $ snape_SC.say_H("That long?","head_1")
+             $ snape_SC.say_H("Now isn't that just \"perfect\"?","head_1")
         "\"I have no clue...\"":
-            sna_[1] "....................."
-            sna_[2] "Splendid..."
+            $ snape_SC.say_H(".....................","head_1")
+            $ snape_SC.say_H("Splendid...","head_2")
 
     m "Alright, to be honest I'm not sure where to go from here..."
     m "All this time I thought I could undo the spell whenever I want to..."
-    sna_[1] "..................................................."
-    sna_[1] ".................................."
-    sna_[1] "..................."
+    $ snape_SC.say_H("...................................................","head_1")
+    $ snape_SC.say_H("..................................","head_1")
+    $ snape_SC.say_H("...................","head_1")
     m "Snape?"
-    sna_[1] "..................................................."
+    $ snape_SC.say_H("...................................................","head_1")
     m "Severus?"
-    sna_[6] "Yes, yes..."
-    sna_[1] "Listen, it's very late, and too much happened already..."
-    sna_[7] "I need to process all of this."
-    sna_[1] "I will come to see you tomorrow, after my classes."
-    sna_[6] "Until then, keep your true identity and our conversation a secret, alright?"
+    $ snape_SC.say_H("Yes, yes...","head_6")
+    $ snape_SC.say_H("Listen, it's very late, and too much happened already...","head_1")
+    $ snape_SC.say_H("I need to process all of this.","head_7")
+    $ snape_SC.say_H("I will come to see you tomorrow, after my classes.","head_1")
+    $ snape_SC.say_H("Until then, keep your true identity and our conversation a secret, alright?","head_6")
     m "Not a problem."
-    sna_[1] "Alright then..."
-    sna_[1] "But before I go, I have one more question..."
+    $ snape_SC.say_H("Alright then...","head_1")
+    $ snape_SC.say_H("But before I go, I have one more question...","head_1")
     m "I'm listening..."
-    sna_[2] "........"
-    sna_[1] "If you are not a human, then..."
-    sna_[7] "What are you?"
+    $ snape_SC.say_H("........","head_2")
+    $ snape_SC.say_H("If you are not a human, then...","head_1")
+    $ snape_SC.say_H("What are you?","head_7")
     m "...I'm a genie."
-    sna_[1] "A genie?"
+    $ snape_SC.say_H("A genie?","head_1")
     m "Yes, I possess phenomenal cosmic powers and all that..."
-    sna_[1] "Seriously?"
+    $ snape_SC.say_H("Seriously?","head_1")
     m "Oh, yes."
-    sna_[1] "Unbelievable..."
-    sna_[1] "Well, I'll see you tomorrow.... genie."
+    $ snape_SC.say_H("Unbelievable...","head_1")
+    $ snape_SC.say_H("Well, I'll see you tomorrow.... genie.","head_1")
     m "I'll be here..."
 
-    sna_[7] "(A genie? Now that's new...)"
+    $ snape_SC.say_H("(A genie? Now that's new...)","head_7")
     jump day_start
-
+    
 #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
 label event_07: 
+    $ snape_SC.xpos = 550 #Defines position of the Snape's full length sprite.
+    $ snape_SC.ypos = 0
+    
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ walk_xpos=470 #Animation of walking chibi. (From)
-    $ walk_xpos2=360 #Coordinates of it's movement. (To)
-    show screen snape_walk_01 
-    with d3
-    pause 1.5
-    show screen snape_02 #Snape stands still.
+    $ snape_SC.chibi.walk(750,500,2)
+    show screen snape_chibi_standing #Snape stands still.
     show screen bld1
-    with Dissolve(.3)
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ tt_ypos=0
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-    show screen snape_main
+    with d3
+    
     show screen ctc
-    with Dissolve(.3)
-    sna "..................."
-    hide screen snape_main
+    with d3
+    
+    $ snape_SC.say("...................","snape_01")
+    $ snape_SC.hideScreen()
     with d3
     m "Good evening..."
-    show screen snape_main
-    with d3
-    sna "Is the spell still in effect?"
-    hide screen snape_main
+    $ snape_SC.say("Is the spell still in effect?")
+    $ snape_SC.hideScreen()
     with d3
     m "Yes. very much so."
-    show screen snape_main
-    with d3
-
-    sna "I see..."
-    sna "Last night I gave our little.... conundrum some thought."
-    sna "And I think I came up with a solution..."
+    $ snape_SC.say("I see...")
+    $ snape_SC.say("Last night I gave our little.... conundrum some thought.")
+    $ snape_SC.say("And I think I came up with a solution...")
     m "Really? Great! I'm listening."
-    hide screen snape_main
-    with d3
-    $ tt_xpos=300 #Defines position of the Snape's full length sprite.
-    $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"
-    show screen snape_main
-    with d3
-    sna "Let's just roll with it..."
+    $ snape_SC.say("Let's just roll with it...","snape_29")
     m "Excuse me?"
-    call sna_main("Well what else could we do?","snape_06")
-    sna "Normally I would alert the ministry of magic and let them take care of this mess..."
-    sna "But I'd rather avoid any dealings with those rotten bureaucrats this time..."
-    call sna_main("Also, losing a headmaster, even temporarily could hurt the school's reputation...","snape_10")
-    sna "And what if your spell wears out tomorrow, or even tonight?"
-    call sna_main("I see no reason to start a commotion...","snape_09")
+    $ snape_SC.say("Well what else could we do?","snape_06")
+    $ snape_SC.say("Normally I would alert the ministry of magic and let them take care of this mess...")
+    $ snape_SC.say("But I'd rather avoid any dealings with those rotten bureaucrats this time...")
+    $ snape_SC.say("Also, losing a headmaster, even temporarily could hurt the school's reputation...","snape_10")
+    $ snape_SC.say("And what if your spell wears out tomorrow, or even tonight?")
+    $ snape_SC.say("I see no reason to start a commotion...","snape_09")
     m "Hm..."
-    call sna_main("So we shall keep the charade going for now...","snape_03")
+    $ snape_SC.say("So we shall keep the charade going for now...","snape_03")
 
     m "By doing what exactly?"
-    call sna_main("Just act like Albus always does: never leave this tower and try to avoid any human contact...","snape_05") 
+    $ snape_SC.say("Just act like Albus always does: never leave this tower and try to avoid any human contact...","snape_05") 
     m "That...."
     m "Sounds..."
     g4 "Incredibly boring!"
     g4 "What am I supposed to do here?"
-    call sna_main("You are a Genie. Conjure up some sort of entertainment for yourself.","snape_01")
+    $ snape_SC.say("You are a Genie. Conjure up some sort of entertainment for yourself.","snape_01")
     m "My magic does not working properly here for some reason..."
     m "And my lamp is literally worlds away..."
-    call sna_main("Well, what do you expect me to about that?","snape_03")
-    sna "Send you a couple of girls from Slytherin maybe?"
+    $ snape_SC.say("Well, what do you expect me to about that?","snape_03")
+    $ snape_SC.say("Send you a couple of girls from Slytherin maybe?")
     g9 "No idea what \"Slytherin\" is but I think that would work..."
-    call sna_main("That was a joke, obviously.","snape_04")
-    call sna_main("Although...","snape_09")
-    sna "Hm..."
-    call sna_main("Well, in any case I don't see how entertaining {size=+7}you{/size} is {size=+7}my{/size} problem.","snape_01")
+    $ snape_SC.say("That was a joke, obviously.","snape_04")
+    $ snape_SC.say("Although...","snape_09")
+    $ snape_SC.say("Hm...")
+    $ snape_SC.say("Well, in any case I don't see how entertaining {size=+7}you{/size} is {size=+7}my{/size} problem.","snape_01")
     m "Oh, but it is!"
     m "I'm immortal and all-powerful..."
     m "Being bored is like the worst thing that could happen to me!"
     g4 "And I have a thing against being cooped up in small spaces with nothing to do!"
     g4 "I may lose my mind..."
     g4 "Oh! Ah! I think it's happening already!"
-    call sna_main(".......","snape_03")
+    $ snape_SC.say(".......","snape_03")
     g4 "I'm losing my mind! It's getting hard to breathe!"
-    call sna_main("....","snape_04")
+    $ snape_SC.say("....","snape_04")
     g4 "It's so dark..."
     g4 "Are you still here?"
-    call sna_main("....","snape_03")
+    $ snape_SC.say("....","snape_03")
     m "........."
-    call sna_main("Are you done?","snape_10")
+    $ snape_SC.say("Are you done?","snape_10")
     m "Yes..."
     m "Seriously though, I don't see how this whole affair benefits me at all."
-    call sna_main("Do you have any choice?","snape_01")
+    $ snape_SC.say("Do you have any choice?","snape_01")
     m "I do..."
     m "Instead of sitting here on my ass all day and being quiet I could explore your world..."
-    call sna_main("Hm...","snape_03")
-    call sna_main("Well, alright, what do you want?","snape_01") 
+    $ snape_SC.say("Hm...","snape_03")
+    $ snape_SC.say("Well, alright, what do you want?","snape_01") 
     m "Teach me your magic..."
-    call sna_main("My magic?","snape_05")
+    $ snape_SC.say("My magic?","snape_05")
     m "Yes... The way you conjure up your spells is..."
     m "Intriguing..."
-    call sna_main("Hm...","snape_04")
-    call sna_main("So be it...","snape_06")
+    $ snape_SC.say("Hm...","snape_04")
+    $ snape_SC.say("So be it...","snape_06")
     m "Oh, and send me some of those \"Slytherin\" girls as well.."
-    call sna_main("...............","snape_05")
-    sna "........................."
-    call sna_main("Ha-ha-ha!!!","snape_28")
+    $ snape_SC.say("...............","snape_05")
+    $ snape_SC.say(".........................")
+    $ snape_SC.say("Ha-ha-ha!!!","snape_28")
     m "What? What did I say?"
-    call sna_main("A-ha-ha-ha-ha...","snape_28")
-    call sna_main("No, no, my apologies...","snape_02")
-    sna "It's just that to me you still look and sound like Albus..."
-    sna "To hear Professor Dumbledore say things like \"Send me those girls up\"..."
-    call sna_main("It's hysterical... ","snape_22")
-    call sna_main("But you would't understand...","snape_09")
+    $ snape_SC.say("A-ha-ha-ha-ha...","snape_28")
+    $ snape_SC.say("No, no, my apologies...","snape_02")
+    $ snape_SC.say("It's just that to me you still look and sound like Albus...")
+    $ snape_SC.say("To hear Professor Dumbledore say things like \"Send me those girls up\"...")
+    $ snape_SC.say("It's hysterical... ","snape_22")
+    $ snape_SC.say("But you would't understand...","snape_09")
     m "Heh..."
     g9 "Send those whores up, Severus. I'm feeling lonely tonight."
-    call sna_main("Ha-ha-ha! Stop it, you're killing me!","snape_28")
-    sna "A-Ha-ha-ha!"
+    $ snape_SC.say("Ha-ha-ha! Stop it, you're killing me!","snape_28")
+    $ snape_SC.say("A-Ha-ha-ha!")
     m "No, I'm serious... Is it possible?"
-    call sna_main("Hm...","snape_02")
-    sna "We'll see..."
-    sna "You being our new headmaster sure presents me with interesting possibilities..."
-    sna "I need some time to figure out how to use our situation for my advantage."
+    $ snape_SC.say("Hm...","snape_02")
+    $ snape_SC.say("We'll see...")
+    $ snape_SC.say("You being our new headmaster sure presents me with interesting possibilities...")
+    $ snape_SC.say("I need some time to figure out how to use our situation for my advantage.")
     m "You mean {size=+7}our{/size} advantage, right?"
-    call sna_main("Oh, yes, yes, of course...","snape_06")
-    sna "Well, I think we are done for today..."
-    call sna_main("Good night... genie.","24")
+    $ snape_SC.say("Oh, yes, yes, of course...","snape_06")
+    $ snape_SC.say("Well, I think we are done for today...")
+    $ snape_SC.say("Good night... genie.","24")
     m "Yes, good night, Severus."
 
-    hide screen snape_main
+    $ snape_SC.hideScreen()
     hide screen ctc
     hide screen bld1
     with d3
-    $ walk_xpos=360 #Animation of walking chibi. (From desk)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To the door)
-    $ snape_speed = 03.0 #The speed of moving the walking animation across the screen.
-    show screen snape_walk_01_f 
-    pause 3
-    hide screen snape_walk_01_f 
-    show screen snape_01_f #Snape stands still. (Mirrored).
-    pause.2
     
-    call sna_head(".................","snape_06",xpos=330,ypos=380)
-    call sna_head("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
+    hide screen snape_chibi_standing #Snape stands still.
+    $ sna_walk(500,750,3)
+    show screen snape_chibi_standing_f #Snape stands still. (Mirrored).
+    pause.2
+    $ sna_head(".................","snape_06")
+    $ sna_head("\"Send those whores up, Severus!\" Ha-ha-ha..","snape_28")
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    hide screen snape_01_f #Snape stands still. (Mirrored).
+    hide screen snape_chibi_standing_f #Snape stands still. (Mirrored).
     with d3
     m "Hm... "
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
+    
     show screen notes
     $ renpy.play('sounds/win2.mp3') 
+    
     show screen blktone
     with d3
     ">You've unlocked the ability to summon Severus Snape to your office."
     hide screen blktone
     with d3
+    
     $ hanging_with_snape = True
     
     jump day_start
-
-#HERMONE SHOWS UP FOR THE FIRST TIME. IN USE.
+    
+    
+    
+    
+#### HERMONE EVENT ####
+    
+### (DAY) GENIE MEETS HERMONE - IN USE.
 label event_08: 
     #"EVENT_08"
     stop music fadeout 1.0
@@ -1245,7 +1198,7 @@ label event_08:
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
     return
 
-### FOLLOWING EVENT IS NOT IN USE ANYMORE ###    
+###(DAY) HERMIONE TALKS DRESS CODE - NOT IN USE
 label event_08_02:
     "EVENT_08_02"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1355,7 +1308,7 @@ label event_08_02:
     m "I'm Starting to enjoy our meetings less and less..."
     return
 
-#NOT IN USE#   
+###(DAY) HERMIONE DEMANDS ACTION - NOT IN USE
 label event_08_03:
     "EVENT_08_03"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1461,7 +1414,7 @@ label event_08_03:
     
     return
 
-#Second visit from Hermione. Says she sent a letter to the Minestry. 
+###(DAY) HERMIONE SENDS LETTER TO MINESTRY - IN USE
 label event_09:
                 #Takes place after first special event with Snape, where he just complains about Hermione.
     
@@ -1591,8 +1544,8 @@ label event_09:
     play music "music/Brittle Rille.mp3" fadein 1 fadeout 1
     return
 
-#NOT IN USE#
-label event_09_2: #Takes place after second special event with Snape, where he just complains about Hermione.
+###(DAY) HERMIONE MAKES THREATS - NOT IN USE
+label event_09_2:
     "EVENT_09"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
     "*Knock-knock-knock!*"
@@ -1711,8 +1664,8 @@ label event_09_2: #Takes place after second special event with Snape, where he j
     $ snape_against_hermione_02 = True #Turns True after event_09. Activates second event when hanging out with Snape.
     return
 
-#NOT IN USE#
-label event_10: #Takes place after second special even with Snape where Ginie is worried that Hermione is still in power.
+###(DAY) HERMIONE TAKES MATTERS INTO HER OWN HANDS - NOT IN USE
+label event_10:
     #Hermione says that she sent the letter to the Ministry of Magic."
     "EVENT_10"
     $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
@@ -1826,7 +1779,7 @@ label event_10: #Takes place after second special even with Snape where Ginie is
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     return
 
-#Third visit, after second special date with Snape. Hermione complains that she almost failed a test. (EVENING EVENT!)
+###(NIGHT) HERMIONE ALMOST FAILED A TEST - IN USE
 label event_11: 
     #"EVENT_11"
     stop music fadeout 1.0
@@ -1936,7 +1889,7 @@ label event_11:
 
     return
 
-#Hermione complains that she might have failed a test. (EVENING EVENT!)
+###(NIGHT) HERMIONE MIGHT HAVE FAILED A TEST - IN USE
 label event_12:
     #"EVENT_12"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -2009,7 +1962,7 @@ label event_12:
     
     call day_start
 
-#Hermione complains that she did fail the test. (EVENING EVENT!)
+###(NIGHT) HERMIONE DID FAIL A TEST [BREAKDOWN] - IN USE
 label event_13: 
     #"EVENT_13"
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -2100,28 +2053,20 @@ label event_13:
     
     call day_start
 
-#Hermione comes after her breakdown (when she failed the test). She is asking for tutoring. Tutoring unlocked.
+###(DAY) HERMIONE APOLOGIES FOR BREAKDOWN [START TUTORING] - IN USE
 label event_14: 
     #"EVENT_14"
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-
-    $ walk_xpos=570 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
-    $ hermione_speed = 02.1 #The speed of moving the walking animation across the screen.
-    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    show screen hermione_walk_01 
-    with d4
-    pause 1.8
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
-    show screen hermione_blink #Hermione stands still.
-    with d3
-    show screen bld1
-    with Dissolve(.3)
     
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call her_walk(610,400,3)
     show screen hermione_blink
     with d3
+    
+    show screen bld1
+    with d3
+    
     call her_main("Good morning, Professor.","body_01",xpos=370,ypos=0)
     m "How can I help you today, miss Granger?"
     call her_main("Well, first of all I am terribly sorry about yesterday's display, sir...","body_04")
@@ -2191,12 +2136,12 @@ label event_14:
     
     hide screen bld1
     hide screen hermione_main
-    with Dissolve(.3)
+    with d3
     
     call her_walk(400,610,2)
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    with Dissolve(.3)
+    with d3
     pause.5
     
     stop music fadeout 1.0
@@ -2221,7 +2166,7 @@ label event_14:
 
     return
 
-#Hermione comes and asks to buy a favour from her.
+###() HERMIONE ASKS TO BUY POINTS [START FAVOURS]
 label event_15: 
     
     #"EVENT_15"
@@ -2320,35 +2265,31 @@ label event_15:
 
     her "Em..."
     her "How many house points will I get for that...?"
-    $ d_flag_05 = False # 20 Points.
-    $ d_flag_06 = False # 40 Points.
-    $ d_flag_07 = False # 10 Points.
-    $ d_flag_08 = False # 1 Point.
+    
+    $ current_payout = 0
     menu:
         "\"1 point.\"":
-            if d_flag_02: #Stand there.
-                $ d_flag_08 = True # 1 Point.
-                pass
+            if d_flag_02: #STAND THERE
+                $ current_payout = 1
             else:
                 her "I don't think it's worth it then..."
                 jump choose_favor_agagin
         "\"10 points.\"":
-            if d_flag_02: #Stand there.
-                $ d_flag_07 = True # 10 Points.
-                pass
+            if d_flag_02: #STAND THERE
+                $ current_payout = 10
             else:
                 her "I don't think it's worth it then..."
                 jump choose_favor_agagin
         "\"20 points.\"":
-            $ d_flag_05 = True
+            $ current_payout = 20
             her "So little...?"
             pass
         "\"40 points.\"":
-            $ d_flag_06 = True
+            $ current_payout = 40
             pass
     
     call her_main("Em, alright...",xpos=140)
-    if d_flag_01: #Show me your tongue.
+    if d_flag_01: #SHOW TONGUE
         call her_main("M-my... tongue, sir?","body_24")
         m "Yes, girl, open your mouth and show me your tongue."
         call her_main("{size=-7}(What a weirdo...){/size}","body_12")
@@ -2373,8 +2314,7 @@ label event_15:
                 her "...................................................................."
                 call her_main(".......................................................................................................","body_40")
 
-    if d_flag_02: #Stand still...
-#    if d_flag_01: #STAND STILL.
+    if d_flag_02: #STAND THERE
         call her_main("So, I just have to stand here then...?","body_06")
         m "Good... Now turn around... slowly."
         her "uhm... alright..."
@@ -2411,8 +2351,6 @@ label event_15:
         show screen bld1
         with d3
         her "................."
-   
-    
     
 #    if d_flag_02: #Pretend to be a monkey.
 #        her "A monkey then..."
@@ -2422,6 +2360,7 @@ label event_15:
 #        her "ooh ooh ooh...."
 #        her "ooh ooh ooh... eee eee eee aah aah aah..."
 #        m "Very well..."
+    
     if d_flag_03: #STUPID FACE
         call her_main("A silly face then...","body_24")
         her "Let's see..."
@@ -2429,21 +2368,21 @@ label event_15:
         call her_main("How about this one?","body_41")
         menu:
             "\"Good! Very stupid! I mean, silly.\"":
-                jump stupid_enogh
+                jump event_15_done
             "\"Not stupid enough.\"":
                 pass
         call her_main(".........","body_12")
         call her_main("What about this one then?","body_43")
         menu:
             "\"Ha-ha! You look like an idiot!\"":
-                jump stupid_enogh
+                jump event_15_done
             "\"No, not stupid enough.\"":
                 pass
         call her_main(".........","body_12")
         call her_main("What if I do it like this?","body_42")
         menu:
             "\"Good! Very stupid.\"":
-                jump stupid_enogh
+                jump event_15_done
             "\"Not stupid enough.\"":
                 jump stupid_faces
     
@@ -2488,19 +2427,9 @@ label event_15:
                 m "{size=-5}(Too early for this... I need to reel her in first.){/size}"
                 jump to_early_for_sucking_cocks
     
-    label stupid_enogh:
-    if d_flag_05:
-        m "20 points to the \"Gryffindor\" house."
-        $ gryffindor +=20
-    elif d_flag_06:
-        m "40 points to the \"Gryffindor\" house."
-        $ gryffindor +=40
-    elif d_flag_07:
-        m "10 points to the \"Gryffindor\" house."
-        $ gryffindor +=10
-    elif d_flag_08:
-        m "1 point to the \"Gryffindor\" house."
-        $ gryffindor +=1
+    label event_15_done:
+    m "[current_payout] points to the \"Gryffindor\" house."
+    $ gryffindor += current_payout
     
     call her_main("Yay!..............","body_24",xpos=140)
     her "This was quite easy..."
@@ -2535,7 +2464,6 @@ label event_15:
         her "{size=-4}(Although that's usually when the teacher is not looking...){/size}"
         her "{size=-4}(But there is nothing wrong with what I did today...){/size}"
         her "{size=-4}(I earned my house extra points...){/size}"
-        
     if d_flag_02: #Stand still...
         her "{size=-4}(I can just stand there and let the professor look at me...){/size}"
         her "{size=-4}(There is nothing wrong with that... nothing at all...){/size}"
@@ -2550,16 +2478,12 @@ label event_15:
         her "{size=-4}(I am very bad...){/size}"
         her "{size=-4}(Yes, I can say things like that easily...){/size}"
         her "{size=-4}(There is nothing wrong with that... nothing at all...){/size}"
-
-
+    
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     hide screen hermione_stand_f #Hermione stands still.
     with d3
-
-
-    $ event15_happened = True #Allows next event to start. This one stops looping when you not let Hermione in.
-    $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     stop music fadeout 1.0
+    
     show screen blktone
     with d3
     show screen notes
@@ -2567,11 +2491,21 @@ label event_15:
     ">You unlocked an ability to buy sexual favours from Hermione Granger."
     hide screen blktone
     with d3
+    
     $ buying_favors_from_hermione_unlocked = True 
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     $ event15_happened = True #Turns TRUE after event_15
     jump day_start
     
+    
+    
+    
+#### LEGACY/UNUSED EVENT ####
+label event_04: # NOT IN USE
+    m "Well, it's been three days now..."
+    m "I wonder what has become of that two-faced dude?"
+    return
+
     
 init python:
     class wt_silver_event(object):
