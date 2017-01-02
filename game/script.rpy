@@ -48,7 +48,7 @@ init:
     $ teleport = ImageDissolve("id_teleport.png", 1.0, 0)
     
     $ renpy.music.register_channel("bg_sounds", "sfx", True)
-    $ renpy.music.register_channel("weather", "sfx", True)
+    $ renpy.music.register_channel("weather_sound", "sfx", True)
 
     # Define some new transitions here.
     $ flashbulb = Fade(0.2, 0.0, 0.8, color='#fff')
