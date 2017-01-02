@@ -3,7 +3,7 @@
 screen main_menu_01:
     tag room_screen
     imagebutton: # DOOR
-        xpos 758+140
+        xpos 898
         ypos 315
         focus_mask True
         xanchor "center"
@@ -14,7 +14,7 @@ screen main_menu_01:
         
     
 #    imagebutton: # CUPBOARD HAT
-#        xpos 120+140
+#        xpos 260
 #        ypos 280
 #        focus_mask True
 #        xanchor "center"
@@ -24,7 +24,7 @@ screen main_menu_01:
 #        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
     
     imagebutton: # CUPBOARD SCROLL
-        xpos 120+140
+        xpos 260
         ypos 280
         focus_mask True
         xanchor "center"
@@ -34,7 +34,7 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("scrolls_menu")]
     
     imagebutton: # CUPBOARD CABINET
-        xpos 120+140
+        xpos 260
         ypos 280
         focus_mask True
         xanchor "center"
@@ -44,7 +44,7 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
     
 #    imagebutton: # CUPBOARD LEFT
-#        xpos 120+140
+#        xpos 260
 #        ypos 280
 #        focus_mask True
 #        xanchor "center"
@@ -54,7 +54,7 @@ screen main_menu_01:
 #        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
     
 #    imagebutton: # CUPBOARD RIGHT
-#        xpos 120+140
+#        xpos 260
 #        ypos 280
 #        focus_mask True
 #        xanchor "center"
@@ -64,7 +64,7 @@ screen main_menu_01:
 #        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("cupboard")]
         
     # imagebutton: # OLD CUPBOARD
-        # xpos 120+140
+        # xpos 260
         # ypos 280
         # focus_mask True
         # xanchor "center"
@@ -75,7 +75,7 @@ screen main_menu_01:
         
     if deliveryQ.got_mail():
         imagebutton: # THE PACKAGE
-                xpos 260+140
+                xpos 400
                 ypos 235
                 xanchor "center"
                 yanchor "center"
@@ -87,7 +87,7 @@ screen main_menu_01:
 
 
     imagebutton: # GENIE
-        xpos 230+140
+        xpos 370
         ypos 336
         focus_mask True
         xanchor "center"
@@ -100,7 +100,7 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("desk")]
     
     imagebutton: # PHOENIX
-        xpos 400+140
+        xpos 540
         ypos 225
         #focus_mask True
         xanchor "center"
@@ -113,7 +113,7 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("phoenix")]
         
     imagebutton: # FIREPLACE
-        xpos 553+140
+        xpos 693
         ypos 277
         #focus_mask True
         xanchor "center"
@@ -124,7 +124,7 @@ screen main_menu_01:
      
     if letterQ.got_mail(): #Adds one letter in waiting list to be read. Displays owl with envelope.:
         imagebutton: # OWL
-            xpos 315+140
+            xpos 455
             ypos 270
             focus_mask True
             xanchor "center"
@@ -219,7 +219,8 @@ screen sad_phoenix: #SAD SMILEY THAT SHOWS WHEN YOU PET THE BIRD.
     zorder 1
     
 screen notes: #A bunch of notes poping out with a "win" sound effect.
-    add "notes" xpos 320+140 ypos 330
+    tag win_notes
+    add "notes" xpos 460 ypos 330
     zorder 1
 #################################################################
 #########JJ  Flower production/dismissal  #######################
@@ -368,6 +369,7 @@ screen room: #MAIN ROOM BG.
         use package
     if letterQ.got_mail():
         use owl
+    zorder 0
         
 screen room_night: #MAIN ROOM NIGHT BG. 
     add "01_hp/01_bg/01_main_room_02.png"
@@ -586,7 +588,7 @@ screen letter:
         spacing 40 xpos 270+140 ypos 80 xmaximum 250
         text letter_text
 screen blkfade:
-    zorder 10
+    zorder 6
     add "interface/blackfade.png"
     
 screen blktone:
@@ -713,16 +715,6 @@ screen plus_300:
 
 
 
-### HANGING WITH SNAPE ###
-
-screen with_snape:
-    add "01_hp/05_props/with_snape.png" at Position(xpos=0+140, ypos=0)
-    tag hanging_with_snape
-    zorder 3
-screen with_snape_animated:
-    add "genie_toast_goblet" at Position(xpos=0+140, ypos=0)
-    tag hanging_with_snape
-    zorder 3
 
 screen c_scene: #Custom Scenes
     tag gc
@@ -843,45 +835,58 @@ screen genie_and_tits_01: #Genie sitting, looking ar naked tits. Hermione stands
 ### HERMIONE DANCING FULLY CLOTHED ###
 screen clothed_dance: #Hermione stands still.
     tag hermione_chibi
-    add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "clothed_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 screen clothed_dance_pause: #Hermione stands still.
     tag hermione_chibi
-    add "ch_hem blink_a" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "ch_hem blink_a" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
 
 ### HERMIONE DANCING NO VEST ###
 screen no_vest_dance: #Hermione stands still.
     tag hermione_chibi
-    add "no_vest_dance_ani" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "no_vest_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO VEST ###
 screen no_skirt_dance: #Hermione stands still.
     tag hermione_chibi
-    add "no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO VEST ###
 screen no_shirt_dance: #Hermione stands still.
     tag hermione_chibi
-    add "no_shirt_dance_ani" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "no_shirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE DANCING NO SKIRT NO SHIRT ###
 screen no_shirt_no_skirt_dance: #Hermione stands still.
     tag hermione_chibi
-    add "no_shirt_no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos+140, ypos=her_chibi_dance_ypos)
+    add "no_shirt_no_skirt_dance_ani" at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
+    
+screen hermione_sits_dance:
+    tag hermione_chibi
+    add "01_hp/16_hermione_chibi/dance/08_sits.png" at Position(xpos=-70, ypos=10)
+    
+screen hermione_sits_02_dance:
+    tag hermione_chibi
+    add "01_hp/16_hermione_chibi/dance/08_sits_02.png" at Position(xpos=-70, ypos=10)
+    
+### HERMIONE DANCE CHIBI UNIVERSAL SCREEN ###
+screen h_d_c_u:
+    tag hermione_chibi
+    add h_d_c_u_pic at Position(xpos=her_chibi_dance_xpos, ypos=her_chibi_dance_ypos)
     
 ### HERMIONE CHIBI UNIVERSAL SCREEN ###
 screen h_c_u: 
     tag hermione_chibi
-    add h_c_u_pic at Position(xpos=hermione_SC.chibi.xpos+140, ypos=hermione_SC.chibi.ypos)
-
+    add h_c_u_pic at Position(xpos=hermione_SC.chibi.xpos, ypos=hermione_SC.chibi.ypos)
+    
 ###  GENIE CHIBI UNIVERSAL SCREEN ###
 screen g_c_u: 
     tag genie
     add g_c_u_pic at Position(xpos=genie_chibi_xpos+140, ypos=genie_chibi_ypos)
     
 ###  SNAPE CHIBI UNIVERSAL SCREEN ###
-screen s_c_u: 
-    tag snape
+screen s_c_u:
+    tag snape_chibi
     add s_c_u_pic at Position(xpos=snape_chibi_xpos+140, ypos=snape_chibi_ypos) # (xpos=360, ypos=210) 
     zorder 3
       

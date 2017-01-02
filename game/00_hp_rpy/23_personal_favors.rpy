@@ -361,7 +361,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     $ her_head_ypos = her_head_only
     
     if whoring >= 0 and whoring <= 2: #LEVEL 01 = Fist event.
-        call her_head("........................","body_05")
+        $ her_SC.sayHead("........................","body_05")
         
         $ new_request_02_heart = 1 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 1 #Event hearts level (0-3)
@@ -389,7 +389,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 call her_main(".......................","body_51")
     
     elif whoring >= 3 and whoring < hg_NoPanties_lvl: #LEVEL 02 = SECOND EVENT!
-        call her_head(".....................","body_188")
+        $ her_SC.sayHead(".....................","body_188")
         
         $ new_request_02_heart = 2 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 2 #Event hearts level (0-3)
@@ -418,7 +418,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
     
     elif whoring >= hg_NoPanties_lvl: #LEVEL 06 and up. = FINAL EVENT! (No panties).
-        # call her_head("..........................","body_188")
+        # $ her_SC.sayHead("..........................","body_188")
         call her_main("..........................","body_188") # TenchiMuyo1984 Modification
         g4 "!!?"
         
@@ -569,7 +569,7 @@ label hg_pf_BreastMolester:
         hide bld1
         with d3
         m "Come closer [hermione_name]..."        
-        call her_head("Ehm... alright...","body_12")
+        $ her_SC.sayHead("Ehm... alright...","body_12")
         hide screen bld1
         hide screen hermione_blink
         with d3
@@ -579,32 +579,32 @@ label hg_pf_BreastMolester:
         with d2
         pause.5
         
-        call her_head("[genie_name].....?","body_12")
+        $ her_SC.sayHead("[genie_name].....?","body_12")
         menu: 
             m "..."
             "\"I'm gonna molest your tits now.\"":
-                call her_head("What? What do you mean, [genie_name]--?","body_202")
+                $ her_SC.sayHead("What? What do you mean, [genie_name]--?","body_202")
                 ">Hermione takes a hesitant step back..."
                 ">You reach out swiftly and grab both of her tits through her uniform..."
             "-Just reach out and grab her tits.-":
                 ">You reach out with both of your hands and grab the [hermione_name]'s tits!"
         stop music fadeout 1.0
         with hpunch
-        call her_head("!!!?","body_206")
-        call her_head("[genie_name]?!","body_205")
+        $ her_SC.sayHead("!!!?","body_206")
+        $ her_SC.sayHead("[genie_name]?!","body_205")
         ">Hermione tries to pull away from you, but you hold her firmly by her breasts..."
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        call her_head("[genie_name], what are you--?","body_208")
+        $ her_SC.sayHead("[genie_name], what are you--?","body_208")
         ">She tries to pull away again."
         ">You squeeze her tits like a vice."
-        call her_head("[genie_name], you're hurting me!","body_141")
+        $ her_SC.sayHead("[genie_name], you're hurting me!","body_141")
         g4 "Then stand still, [hermione_name]!"
-        call her_head("B-but...","body_202")
+        $ her_SC.sayHead("B-but...","body_202")
         m "All I want to do is squeeze your tits a little, then you will get your points!"
-        call her_head("B-but... this is...","body_199")
+        $ her_SC.sayHead("B-but... this is...","body_199")
         m "Just stand still..."
         m "go to your happy place or something..."
-        call her_head("M-my happy place...?","body_122")
+        $ her_SC.sayHead("M-my happy place...?","body_122")
         ">You feel the girl's shapely breasts in your palms..."
         show screen ctc
         show screen bld1
@@ -615,40 +615,40 @@ label hg_pf_BreastMolester:
         hide screen blkfade
         with d5
         pause
-        call her_head("............................","body_132")
+        $ her_SC.sayHead("............................","body_132")
         menu:
             "-Squeeze her tits with all of your strength-":
                 show screen blktone
                 with d5
                 ">You put strength into your hold..."
-                call her_head("my...........","body_199")
+                $ her_SC.sayHead("my...........","body_199")
                 ">You squeeze her tits even harder..."
-                call her_head("[genie_name], you're hurting them...","body_132")
+                $ her_SC.sayHead("[genie_name], you're hurting them...","body_132")
                 m "Be quiet [hermione_name]..."
-                call her_head("aw..............","body_199")
+                $ her_SC.sayHead("aw..............","body_199")
                 ">You squeeze her ample tits with all your strength."
-                call her_head("Ah! It hurts!","body_141")
-                call her_head("They're gonna burst! Please stop it!","body_141")
+                $ her_SC.sayHead("Ah! It hurts!","body_141")
+                $ her_SC.sayHead("They're gonna burst! Please stop it!","body_141")
                 m "They are not going to burst, you silly girl..."
                 ">You losen your grip a little..."
-                call her_head("It hurts...","body_132")
+                $ her_SC.sayHead("It hurts...","body_132")
                 m "You will be fine..."
-                call her_head(".........","body_203")
+                $ her_SC.sayHead(".........","body_203")
 
             "-Give her tits a tender massage-":
                 show screen blktone
                 with d5
                 ">You start massaging Hermione's beasts through her uniform..."
-                call her_head("[genie_name]...?","body_132")
+                $ her_SC.sayHead("[genie_name]...?","body_132")
                 m "The points, [hermione_name]... You need the points. Concentrate on that."
-                call her_head("Yes...","body_203")
-                call her_head("Yes, for the honour of the \"gryffindor\" house...","body_208b")
+                $ her_SC.sayHead("Yes...","body_203")
+                $ her_SC.sayHead("Yes, for the honour of the \"gryffindor\" house...","body_208b")
                 "*Squeeze-squeeze!*"
                 ">You keep massaging her tits..."
                 ">You give one of her breasts a few pinches trying to locate the nipple..."
-                call her_head("[genie_name]... you're pinching me...?","body_132")
+                $ her_SC.sayHead("[genie_name]... you're pinching me...?","body_132")
                 ">Your attempts prove to be fruitless though. The fabric of the uniform is quite thick..."
-                call her_head("\"gryffindor\" ............","body_208b")
+                $ her_SC.sayHead("\"gryffindor\" ............","body_208b")
 
             "-Let her go and give her the points-":
                 show screen blktone
@@ -657,11 +657,11 @@ label hg_pf_BreastMolester:
                 show screen blkfade
                 with d5
                 ">You unhand the girl's breasts..."
-                call her_head("Really?","body_188")
+                $ her_SC.sayHead("Really?","body_188")
                 m "Yes, yes... I will even give you your points..."
-                call her_head("Err... thank you, [genie_name]...","body_188")
+                $ her_SC.sayHead("Err... thank you, [genie_name]...","body_188")
                 m "But you didn't earn them today..."
-                call her_head("Aw.........","body_199")
+                $ her_SC.sayHead("Aw.........","body_199")
 
     if whoring >= 6: # LEVEL 03 and higher # Hermione doesn't mind. <============================================================================EVENT LEVEL: 03
         if whoring >= 6 and whoring <= 8: # LEVEL 03.
@@ -685,7 +685,7 @@ label hg_pf_BreastMolester:
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         ">Hermione is starting to pull her uniform up..."
         m "No, leave it on. I want to massage them while you are fully dressed..."
-        call her_head("Oh, I see...","body_188")
+        $ her_SC.sayHead("Oh, I see...","body_188")
         ">Hermione stands in front of you expectantly..."
         ">You reach out for her ample breasts..."
         ">And start massaging them firmly..."
@@ -702,38 +702,38 @@ label hg_pf_BreastMolester:
         pause
 
         "*squeeze-squeeze-squeeze*"
-        call her_head("................","body_213")
+        $ her_SC.sayHead("................","body_213")
         menu:
             "\"Do you enjoy this, [hermione_name]?\"":
-                call her_head("What...?","body_188")
-                call her_head("Oh, I don't mind it...","body_188")
+                $ her_SC.sayHead("What...?","body_188")
+                $ her_SC.sayHead("Oh, I don't mind it...","body_188")
                 "*squeeze-squeeze-squeeze*"
                 ">You keep massaging her soft tits..."
                 if whoring <= 12:
-                    call her_head("I mean, this is not a big deal, as long as I am getting paid...","body_213")
+                    $ her_SC.sayHead("I mean, this is not a big deal, as long as I am getting paid...","body_213")
                     ">You keep on massaging her tits through her uniform..."
-                    call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
+                    $ her_SC.sayHead("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
                     m "Really? It seems to me as if you love it"
-                    call her_head("I wouldn't say that I love it","body_213")
+                    $ her_SC.sayHead("I wouldn't say that I love it","body_213")
                     ">You keep on massaging her tits through her uniform..."
                     m "What would you say then [hermione_name]?"
-                    call her_head("I just like it, {size=-4}a lot{image=textheart}{/size}","body_205")
+                    $ her_SC.sayHead("I just like it, {size=-4}a lot{image=textheart}{/size}","body_205")
             "-Pull on them abruptly with force-":
                 show screen blktone8
                 with d3
                 ">You give Hermione's tits a sudden but firm pull..."
                 with vpunch
-                call her_head("Ouch....","body_208")
+                $ her_SC.sayHead("Ouch....","body_208")
                 ">You pull on her tits again. This time much stronger."
                 with vpunch
-                call her_head("Ouch! [genie_name], what are you trying to do...?","body_208")
+                $ her_SC.sayHead("Ouch! [genie_name], what are you trying to do...?","body_208")
                 ">You jerk the girl down by her tits with all your strength..."
                 with vpunch
                 with vpunch
                 ">Hermione almost loses balance..."
-                call her_head("*Panting* What are you doing, [genie_name]...?","body_204")
-                call her_head("You don't need to be so rough with me....{image=textheart}","body_188")
+                $ her_SC.sayHead("*Panting* What are you doing, [genie_name]...?","body_204")
+                $ her_SC.sayHead("You don't need to be so rough with me....{image=textheart}","body_188")
     
     if whoring <= 5:
         $ whoring +=1
@@ -756,7 +756,7 @@ label hg_pf_BreastMolester:
     stop music fadeout 1.0
     ">You let go of Hermione's breasts..."
     m "This will do for now."
-    call her_head("................","body_203")
+    $ her_SC.sayHead("................","body_203")
     
     hide screen blkfade 
     with d3
@@ -790,11 +790,11 @@ label hg_pf_BreastMolester:
     
     if whoring >= 13:
         show screen hermione_stand_f
-        call her_head("(What about my points?)","body_199")
+        $ her_SC.sayHead("(What about my points?)","body_199")
         if whoring >= 20:
-            call her_head("(eh, who cares)","body_213")
+            $ her_SC.sayHead("(eh, who cares)","body_213")
         else:
-            call her_head("(I'll just ask him about it next time)","body_12")
+            $ her_SC.sayHead("(I'll just ask him about it next time)","body_12")
         hide screen hermione_stand_f
     
     $ renpy.play('sounds/door.mp3') #Sound of a door.
@@ -856,29 +856,29 @@ label hg_pf_ButtMolester:
             jump too_much
         if hg_pf_ButtMolester_OBJ.points == 0 and whoring <= 5: #First time
             stop music fadeout 5.0
-            call her_head("[genie_name]!?","body_206")
+            $ her_SC.sayHead("[genie_name]!?","body_206")
             m "Relax, [hermione_name]. It will be the easiest 15 points you've ever made, I promise."
-            call her_head("But....","body_05")
+            $ her_SC.sayHead("But....","body_05")
             m "All I am going to do is squeeze your little butt a couple of times..."
-            call her_head("This is inappropriate, [genie_name]................","body_203")
+            $ her_SC.sayHead("This is inappropriate, [genie_name]................","body_203")
             m "Nobody needs to know how exactly you got the points..."
-            call her_head("(These 15 points could really make a difference...)","body_199")
-            call her_head("(Darn it.....!)","body_208b")
+            $ her_SC.sayHead("(These 15 points could really make a difference...)","body_199")
+            $ her_SC.sayHead("(Darn it.....!)","body_208b")
         else:
-            call her_head("Again.....?","body_203")
+            $ her_SC.sayHead("Again.....?","body_203")
         hide screen bld1
         with d3
         call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
-        call her_head("..................","body_203")
-        call her_head("Do you want me to turn around then, [genie_name]?","body_203")
+        $ her_SC.sayHead("..................","body_203")
+        $ her_SC.sayHead("Do you want me to turn around then, [genie_name]?","body_203")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         menu:
             m "Hm..."
             "\"Yes. Turn around, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_203")
+                $ her_SC.sayHead("As you say, [genie_name]...","body_203")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_02
@@ -886,11 +886,11 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head(".............","body_203")
-                call her_head("...........................","body_203")
-                call her_head("[genie_name], I would like to be done with this sooner rather then later...","body_203")
+                $ her_SC.sayHead(".............","body_203")
+                $ her_SC.sayHead("...........................","body_203")
+                $ her_SC.sayHead("[genie_name], I would like to be done with this sooner rather then later...","body_203")
                 m "Don't rush me [hermione_name]... Let me savour the moment..."
-                call her_head(".............................","body_203")
+                $ her_SC.sayHead(".............................","body_203")
                 menu:
                     m "Hm..."
                     "-Give her butt a squeeze-":
@@ -902,11 +902,11 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("!!!!!!!!!!!!!","body_210")
-                        call her_head("[genie_name]!!?","body_210")
+                        $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                        $ her_SC.sayHead("[genie_name]!!?","body_210")
                         menu:
                             "\"Fine, fine... I just couldn't resist....\"":
-                                call her_head(".......................","body_203")
+                                $ her_SC.sayHead(".......................","body_203")
                                 pass
                             "-Give her butt another slap-":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -915,12 +915,12 @@ label hg_pf_ButtMolester:
                                 pause.08
                                 hide screen white
                                 show screen bld1
-                                call her_head("!!!!!!!!!!!!!","body_210")
-                                call her_head("[genie_name], what are you doing!?","body_208b")
-                                call her_head("You said all you were going to do is touch!","body_208b")
+                                $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                                $ her_SC.sayHead("[genie_name], what are you doing!?","body_208b")
+                                $ her_SC.sayHead("You said all you were going to do is touch!","body_208b")
                                 menu:
                                     "\"Fine, fine... I just couldn't resist....\"":
-                                        call her_head(".......................","body_203")
+                                        $ her_SC.sayHead(".......................","body_203")
                                         pass
                                     "-Give her butt another slap-":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -929,24 +929,24 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("Ouch! It hurts!","body_208b")
-                                        call her_head("This is so demeaning!","body_187")
-                                        call her_head("You said all you were going to do is touch...","body_187")
-                                        #call her_head("Why are you doing this, [genie_name]?","body_187")
+                                        $ her_SC.sayHead("Ouch! It hurts!","body_208b")
+                                        $ her_SC.sayHead("This is so demeaning!","body_187")
+                                        $ her_SC.sayHead("You said all you were going to do is touch...","body_187")
+                                        #$ her_SC.sayHead("Why are you doing this, [genie_name]?","body_187")
                                         g4 "Just stand still, [hermione_name]!"
-                                        call her_head("I don't think so, [genie_name]!","body_208b")
-                                        call her_head("No amount of points are worth this humiliation!","body_287")
-                                        call her_head("You are abusing your power, [genie_name]!","body_218")
+                                        $ her_SC.sayHead("I don't think so, [genie_name]!","body_208b")
+                                        $ her_SC.sayHead("No amount of points are worth this humiliation!","body_287")
+                                        $ her_SC.sayHead("You are abusing your power, [genie_name]!","body_218")
                                         g4 "What?"
-                                        call her_head("I'm leaving!","body_208b")
+                                        $ her_SC.sayHead("I'm leaving!","body_208b")
                                         menu:
                                             g4 "Tsk..."
                                             "\"I... I apologize...\"":
-                                                call her_head("Just don't do this anymore, [genie_name]...","body_203")
+                                                $ her_SC.sayHead("Just don't do this anymore, [genie_name]...","body_203")
                                                 pass
                                             "\"You are not getting any points for this!\"":
                                                 $ mad += 30
-                                                call her_head("Ha! See if I care, [genie_name]!","body_187")
+                                                $ her_SC.sayHead("Ha! See if I care, [genie_name]!","body_187")
                                                 ### Takes place aftre you refuse to pay her the points.
                                                 hide screen no_groping_02
                                                 hide screen bld1
@@ -966,15 +966,15 @@ label hg_pf_ButtMolester:
                                                     jump night_main_menu
                                             "\"I'm subtracting points from you then!\"":
                                                 $ mad += 20
-                                                call her_head("You can't be serious!?","body_210")
+                                                $ her_SC.sayHead("You can't be serious!?","body_210")
                                                 $ gryffindor -=10
                                                 g4 "The \"Gryffindor\" house, minus 10 points!"
                                                 g4 "There! It's done!"
-                                                call her_head("Gr...........","body_187")
-                                                call her_head("........................","body_187")
-                                                call her_head("This is not fair...","body_145")
+                                                $ her_SC.sayHead("Gr...........","body_187")
+                                                $ her_SC.sayHead("........................","body_187")
+                                                $ her_SC.sayHead("This is not fair...","body_145")
                                                 m "What? Hey, wait, don't you start crying on me..."
-                                                call her_head("I hate you, [genie_name]! I hate you!","body_147")
+                                                $ her_SC.sayHead("I hate you, [genie_name]! I hate you!","body_147")
                                                 
                                                 $ walk_xpos=300 #Animation of walking chibi. (From)
                                                 $ walk_xpos2=610 #Coordinates of it's movement. (To)
@@ -1010,56 +1010,56 @@ label hg_pf_ButtMolester:
                 pause
                 show screen groping_02
                 with d7
-                call her_head("!!!!!!?","body_206")
+                $ her_SC.sayHead("!!!!!!?","body_206")
                 m "What is it, [hermione_name]?"
-                call her_head("It's nothing [genie_name]...","body_208b")
-                call her_head("It's just... ","body_208b")
-                call her_head("I can't believe this is really happening...","body_208b")
-                call her_head("This is so... inappropriate...","body_208b")
+                $ her_SC.sayHead("It's nothing [genie_name]...","body_208b")
+                $ her_SC.sayHead("It's just... ","body_208b")
+                $ her_SC.sayHead("I can't believe this is really happening...","body_208b")
+                $ her_SC.sayHead("This is so... inappropriate...","body_208b")
                 m "Relax, [hermione_name]. It's not like you are enjoying this..."
-                call her_head("What? Of course not! This is depraved...","body_208b")
-                call her_head("I am making this sacrifice for the the honour of my house...","body_208b")
+                $ her_SC.sayHead("What? Of course not! This is depraved...","body_208b")
+                $ her_SC.sayHead("I am making this sacrifice for the the honour of my house...","body_208b")
                 m "Yes, concentrate on that..."
-                call her_head("....................","body_187")
+                $ her_SC.sayHead("....................","body_187")
                 show screen bld1
                 with d3
                 pause
-                call her_head("But, [genie_name]...","body_204")
-                call her_head("Why are {size=+7}you{/size} doing this?","body_204")
+                $ her_SC.sayHead("But, [genie_name]...","body_204")
+                $ her_SC.sayHead("Why are {size=+7}you{/size} doing this?","body_204")
                 menu: 
                     m "Hm..."
                     "\"I have my reasons...\"":
-                        call her_head("Oh...","body_199")
-                        call her_head("Hm...","body_203")
+                        $ her_SC.sayHead("Oh...","body_199")
+                        $ her_SC.sayHead("Hm...","body_203")
                     "\"In the name of science of course!\"":
-                        call her_head("Really?!","body_202")
-                        call her_head("Is this research of some kind?","body_202")
+                        $ her_SC.sayHead("Really?!","body_202")
+                        $ her_SC.sayHead("Is this research of some kind?","body_202")
                         m "Yeah, sure, I'm researching ehm... er..."
                         m "Well, you wouldn't understand, this is some pretty advanced wizardry stuff..."
-                        call her_head("I see...","body_202")
-                        call her_head("Well, if it is for research then I am glad to be of help...","body_12")
+                        $ her_SC.sayHead("I see...","body_202")
+                        $ her_SC.sayHead("Well, if it is for research then I am glad to be of help...","body_12")
                     "-Just squeeze her butt cheeks tighter-":
                         ">You give Hermione's butt cheeks a couple of extra firm squeezes."
-                        call her_head("....................","body_204")
-                        call her_head("(Shall I just be quiet, then.....?)","body_199")
+                        $ her_SC.sayHead("....................","body_204")
+                        $ her_SC.sayHead("(Shall I just be quiet, then.....?)","body_199")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's buttocks..."
                 ">You slide your hands up and down her inner tighs..."
-                call her_head("................","body_208b")
+                $ her_SC.sayHead("................","body_208b")
                 label connection_of_rapes:
                 menu:
                     "-Slide your hands under her panties-":
                         ">You slowly slide one of your hands under the fabric of the girl's panties..."
-                        call her_head("[genie_name]... What are you...?","body_206")
+                        $ her_SC.sayHead("[genie_name]... What are you...?","body_206")
                         m "That's alright, just think about those 15 points your house is about to receive..."
-                        call her_head(".............","body_199")
+                        $ her_SC.sayHead(".............","body_199")
                         menu:
                             "-Prod her pussy with one of your fingers-":
                                 show screen blkfade
                                 with d3
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
-                                call her_head("[genie_name]? No! What are you...?","body_206")
+                                $ her_SC.sayHead("[genie_name]? No! What are you...?","body_206")
                                 ">Hermione tries to pull away from you..."
                                 menu:
                                     "-Force your finger into her pussy!-":
@@ -1073,13 +1073,13 @@ label hg_pf_ButtMolester:
                                 show screen blkfade
                                 with d3
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
-                                call her_head("[genie_name]? No! What are you doing!?","body_206")
+                                $ her_SC.sayHead("[genie_name]? No! What are you doing!?","body_206")
                                 ">Hermione tries to pull away from you..."
                                 menu:
                                     "-Force your thumb into her butt-hole-":
                                         ">You force one of your thumbs into her little butt-hole..."
                                         with hpunch
-                                        call her_head("!!?","body_119")
+                                        $ her_SC.sayHead("!!?","body_119")
                                         ">It's very tight and warm inside..."
                                         jump screams_of_rapings
                                     "-Let the girl go...-":
@@ -1089,7 +1089,7 @@ label hg_pf_ButtMolester:
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_203")
+                $ her_SC.sayHead("As you say, [genie_name]...","body_203")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_01
@@ -1097,55 +1097,55 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head("[genie_name], please hurry up, before someone discovers us like this...","body_200")
+                $ her_SC.sayHead("[genie_name], please hurry up, before someone discovers us like this...","body_200")
                 m "What is the problem, [hermione_name]?"
                 m "You know you are doing this for your house."
-                call her_head("I do know.","body_203")
-                call her_head("But not everyone would see it that way...","body_203")
-                call her_head("So let us be done with this as quick as possible...","body_203")
-                call her_head("Please...","body_204")
+                $ her_SC.sayHead("I do know.","body_203")
+                $ her_SC.sayHead("But not everyone would see it that way...","body_203")
+                $ her_SC.sayHead("So let us be done with this as quick as possible...","body_203")
+                $ her_SC.sayHead("Please...","body_204")
                 m "Well, if you insist..."
                 show screen groping_01
                 with d7
-                call her_head("!!!","body_206")
+                $ her_SC.sayHead("!!!","body_206")
                 m "What is it?"
-                call her_head("It's nothing, [genie_name]. Your hands are cold, that's all...","body_204")
+                $ her_SC.sayHead("It's nothing, [genie_name]. Your hands are cold, that's all...","body_204")
                 show screen bld1 
                 with d3
                 show screen blktone8
                 with d3
                 ">You run your hands up and down Hermione's legs..."
-                call her_head(".........................","body_203")
+                $ her_SC.sayHead(".........................","body_203")
                 ">You give her buttocks a good squeeze..."
-                call her_head(".................","body_208b")
+                $ her_SC.sayHead(".................","body_208b")
                 m "Don't look away, [hermione_name]. I want you to look into my eyes."
-                call her_head("I would rather not, [genie_name]...","body_208b")
+                $ her_SC.sayHead("I would rather not, [genie_name]...","body_208b")
                 menu:
                     m "..."
                     "\"Fine. Just keep standing still then.\"":
-                        call her_head("Thank you [genie_name]...","body_208b")
+                        $ her_SC.sayHead("Thank you [genie_name]...","body_208b")
                         ">You massage her buttocks lightly..."
-                        call her_head("....................","body_208b")
+                        $ her_SC.sayHead("....................","body_208b")
                         ">And keep enjoying the sensation of her ass under your hands..."
-                        call her_head(".....................","body_208b")
+                        $ her_SC.sayHead(".....................","body_208b")
                         ">Then you give Hermione's butt one last squeeze."
-                        call her_head(".....................","body_208b")
+                        $ her_SC.sayHead(".....................","body_208b")
                     "\"Open your eyes, or lose the points!\"":
                         $ mad += 7
-                        call her_head("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
+                        $ her_SC.sayHead("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
                         m "Did you say something, [hermione_name]?"
-                        call her_head("It's nothing, [genie_name].","body_05")
+                        $ her_SC.sayHead("It's nothing, [genie_name].","body_05")
                         ">You massage her buttocks lightly..."
                         ">Hermione maintains the eye contact as she's been told..."
-                        call her_head("....................","body_05")
-                        call her_head("...............................","body_203")
+                        $ her_SC.sayHead("....................","body_05")
+                        $ her_SC.sayHead("...............................","body_203")
                         m "What did I tell you about looking away?"
-                        call her_head("Yes, I remember...","body_208b")
-                        call her_head(".................................","body_05")
-                        call her_head("...................................","body_203")
-                        call her_head("..................................................","body_203")
+                        $ her_SC.sayHead("Yes, I remember...","body_208b")
+                        $ her_SC.sayHead(".................................","body_05")
+                        $ her_SC.sayHead("...................................","body_203")
+                        $ her_SC.sayHead("..................................................","body_203")
                         ">You keep on enjoying the sensation of her soft ass-cheeks under your fingertips..."
-                        call her_head(".....................","body_05")
+                        $ her_SC.sayHead(".....................","body_05")
                         jump connection_of_rapes
         
     elif whoring >= 6 and whoring <= 15: # LEVEL 04 # Hermione is hesitant. <=================================================================================== SECOND EVENT.
@@ -1154,19 +1154,19 @@ label hg_pf_ButtMolester:
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
-        call her_head("If I must...","body_204")
+        $ her_SC.sayHead("If I must...","body_204")
         hide screen bld1
         with d3
         call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
-        call her_head("Do you want me to turn around then, [genie_name]?","body_188")
+        $ her_SC.sayHead("Do you want me to turn around then, [genie_name]?","body_188")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         menu:
             m "Hm..."
             "\"Yes. Turn around, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_188")
+                $ her_SC.sayHead("As you say, [genie_name]...","body_188")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_02
@@ -1174,7 +1174,7 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head(".............","body_205")
+                $ her_SC.sayHead(".............","body_205")
                 menu:
                     m "Hm..."
                     "-Give her butt a squeeze-":
@@ -1186,11 +1186,11 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("!!!!!!!!!!!!!","body_210")
-                        call her_head("[genie_name]....?","body_188")
+                        $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                        $ her_SC.sayHead("[genie_name]....?","body_188")
                         menu:
                             "\"Fine, fine... I just couldn't resist....\"":
-                                call her_head("It's Ok...","body_188")
+                                $ her_SC.sayHead("It's Ok...","body_188")
                                 pass
                             "-Give her butt another slap-":
                                 $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1199,12 +1199,12 @@ label hg_pf_ButtMolester:
                                 pause.08
                                 hide screen white
                                 show screen bld1
-                                call her_head("!!!!!!!!!!!!!","body_210")
-                                call her_head("[genie_name], what are you doing!?","body_188")
-                                call her_head("You said all you are going to do is touch!","body_188")
+                                $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                                $ her_SC.sayHead("[genie_name], what are you doing!?","body_188")
+                                $ her_SC.sayHead("You said all you are going to do is touch!","body_188")
                                 menu:
                                     "\"Fine, fine... I just couldn't resist....\"":
-                                        call her_head("It's not a big deal...","body_188")
+                                        $ her_SC.sayHead("It's not a big deal...","body_188")
                                         pass
                                     "-Give her butt another slap-":
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
@@ -1213,43 +1213,43 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("[genie_name], not so loud, please...","body_212")
-                                        call her_head("What if somebody hears us?","body_212")
+                                        $ her_SC.sayHead("[genie_name], not so loud, please...","body_212")
+                                        $ her_SC.sayHead("What if somebody hears us?","body_212")
                                         m "Alright, alright... proceeding with groping then..."
-                                        call her_head("................","body_188")
+                                        $ her_SC.sayHead("................","body_188")
 
                 pause
                 show screen groping_02
                 with d7
-                call her_head("...................","body_188")
+                $ her_SC.sayHead("...................","body_188")
                 m "You are being awfully quiet today, [hermione_name]."
-                call her_head("Am I...?","body_188")
+                $ her_SC.sayHead("Am I...?","body_188")
                 if whoring <= 13:
-                    call her_head("Well, you know me, [genie_name]...","body_205")
-                    call her_head("I'm just happy to be able to do my part for the \"Gryffindor\" house....","body_205")
-                call her_head("Please don't mind it and continue...","body_205")
-                call her_head("(...to grope me...)","body_188")
+                    $ her_SC.sayHead("Well, you know me, [genie_name]...","body_205")
+                    $ her_SC.sayHead("I'm just happy to be able to do my part for the \"Gryffindor\" house....","body_205")
+                $ her_SC.sayHead("Please don't mind it and continue...","body_205")
+                $ her_SC.sayHead("(...to grope me...)","body_188")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's ass..."
                 ">And continue sliding your hands up and down her inner tighs..."
-                call her_head("................","body_188")
+                $ her_SC.sayHead("................","body_188")
                 label connection_of_rapes_02:
                 menu:
                     "-Slide your hands under her panties-":
                         ">You slowly slide one of your hands under the fabric of the girl's panties..."
-                        call her_head("[genie_name]... What are you...?","body_204")
+                        $ her_SC.sayHead("[genie_name]... What are you...?","body_204")
                         if whoring <= 13:
                             m "It's alright, just think about those 15 points your house is about to receive..."
                         else:
                             m "It's alright, just try to relax and enjoy yourself"
-                        call her_head("As you say...","body_204")
+                        $ her_SC.sayHead("As you say...","body_204")
                         menu:
                             "-Prod her pussy with one of your fingers-":
                                 show screen blkfade
                                 with d3
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
-                                call her_head("[genie_name]?","body_188") 
+                                $ her_SC.sayHead("[genie_name]?","body_188") 
                                 menu:
                                     "-Force your finger into her pussy!-":
                                         ">You force one of your fingers into her little pussy..."
@@ -1262,12 +1262,12 @@ label hg_pf_ButtMolester:
                                 show screen blkfade
                                 with d3
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
-                                call her_head("[genie_name]? What are planning on doing?","body_188")
+                                $ her_SC.sayHead("[genie_name]? What are planning on doing?","body_188")
                                 menu:
                                     "-Force your thumb into her butt-hole-":
                                         ">You force one of your thumbs into her little butt-hole..."
                                         with hpunch
-                                        call her_head("ah... your finger is up my...","body_138")
+                                        $ her_SC.sayHead("ah... your finger is up my...","body_138")
                                         ">It's very tight and warm inside..."
                                         jump screams_of_pleasure
                                     "-Let the girl go...-":
@@ -1277,7 +1277,7 @@ label hg_pf_ButtMolester:
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_203")
+                $ her_SC.sayHead("As you say, [genie_name]...","body_203")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_01
@@ -1285,55 +1285,55 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head("[genie_name], please hurry up, before someone discovers us like this...","body_200")
+                $ her_SC.sayHead("[genie_name], please hurry up, before someone discovers us like this...","body_200")
                 m "What's the problem, [hermione_name]?"
                 m "You know you are doing this for your house."
-                call her_head("I do know.","body_203")
-                call her_head("But not everyone would see it that way...","body_203")
-                call her_head("So let us be done with this as quick as possible...","body_203")
-                call her_head("Please...","body_204")
+                $ her_SC.sayHead("I do know.","body_203")
+                $ her_SC.sayHead("But not everyone would see it that way...","body_203")
+                $ her_SC.sayHead("So let us be done with this as quick as possible...","body_203")
+                $ her_SC.sayHead("Please...","body_204")
                 m "Well, if you insist..."
                 show screen groping_01
                 with d7
-                call her_head("!!!","body_206")
+                $ her_SC.sayHead("!!!","body_206")
                 m "What is it?"
-                call her_head("nothing, [genie_name]. Your hands are cold, that's all...","body_204")
+                $ her_SC.sayHead("nothing, [genie_name]. Your hands are cold, that's all...","body_204")
                 show screen bld1 
                 with d3
                 show screen blktone8
                 with d3
                 ">You run your hands up and down Hermione's legs..."
-                call her_head(".........................","body_203")
+                $ her_SC.sayHead(".........................","body_203")
                 ">And give her Ass a good squeeze..."
-                call her_head(".................","body_208b")
+                $ her_SC.sayHead(".................","body_208b")
                 m "Don't look away, girl. I want you to look into my eyes."
-                call her_head("I would rather not, [genie_name]...","body_208b")
+                $ her_SC.sayHead("I would rather not, [genie_name]...","body_208b")
                 menu:
                     m "..."
                     "\"Fine. Just keep on standing still then.\"":
-                        call her_head("Thank you [genie_name]...","body_208b")
+                        $ her_SC.sayHead("Thank you [genie_name]...","body_208b")
                         ">You massage her ass-cheeks lightly..."
-                        call her_head("....................","body_208b")
+                        $ her_SC.sayHead("....................","body_208b")
                         ">And keep enjoying the sensation of her butt under your hands..."
-                        call her_head(".....................","body_208b")
+                        $ her_SC.sayHead(".....................","body_208b")
                         ">Then You give Hermione's butt one last squeeze."
-                        call her_head(".....................","body_208b")
+                        $ her_SC.sayHead(".....................","body_208b")
                     "\"Open your eyes, or you'll lose the points!\"":
                         $ mad += 20
-                        call her_head("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
+                        $ her_SC.sayHead("Tsk! {size=-5}(You perverted old--{/size}","body_208b")
                         m "Did you say something, [hermione_name]?"
-                        call her_head("It's nothing, [genie_name].","body_05")
+                        $ her_SC.sayHead("It's nothing, [genie_name].","body_05")
                         ">You massage her ass-cheeks lightly..."
                         ">Hermione maintains eye contact as she's been told..."
-                        call her_head("....................","body_05")
-                        call her_head("...............................","body_203")
+                        $ her_SC.sayHead("....................","body_05")
+                        $ her_SC.sayHead("...............................","body_203")
                         m "What did I tell you about looking away?"
-                        call her_head("Yes, I remember...","body_208b")
-                        call her_head(".................................","body_05")
-                        call her_head("...................................","body_203")
-                        call her_head("..................................................","body_203")
+                        $ her_SC.sayHead("Yes, I remember...","body_208b")
+                        $ her_SC.sayHead(".................................","body_05")
+                        $ her_SC.sayHead("...................................","body_203")
+                        $ her_SC.sayHead("..................................................","body_203")
                         ">You keep enjoying the sensation of her soft buttocks under your fingertips..."
-                        call her_head(".....................","body_05")
+                        $ her_SC.sayHead(".....................","body_05")
                         jump connection_of_rapes_02  
     
     elif whoring >= 16: # LEVEL 05 # <=================================================================================== THIRD EVENT.
@@ -1342,19 +1342,19 @@ label hg_pf_ButtMolester:
         hide screen bld1
         with d3
         m "Come closer, [hermione_name]. Let me molest your butt a little."
-        call her_head("If I must...","body_204")
+        $ her_SC.sayHead("If I must...","body_204")
         hide screen bld1
         with d3
         call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
-        call her_head("Do you want me to turn around then, [genie_name]?","body_188")
+        $ her_SC.sayHead("Do you want me to turn around then, [genie_name]?","body_188")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         menu:
             m "Hm..."
             "\"Yes. Turn around, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","body_188")
+                $ her_SC.sayHead("As you say, [genie_name]...","body_188")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_02
@@ -1362,7 +1362,7 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head(".............","body_205")
+                $ her_SC.sayHead(".............","body_205")
                 menu:
                     m "Hm..."
                     "-Give her butt a squeeze-":
@@ -1374,17 +1374,17 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("!!!!!!!!!!!!!","body_210")
-                        call her_head("[genie_name]....?","body_188")
+                        $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                        $ her_SC.sayHead("[genie_name]....?","body_188")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("!!!!!!!!!!!!!","body_210")
-                        call her_head("[genie_name], what are you doing!?","body_138")
-                        call her_head("You said all you are going to do is touch!","body_138")
+                        $ her_SC.sayHead("!!!!!!!!!!!!!","body_210")
+                        $ her_SC.sayHead("[genie_name], what are you doing!?","body_138")
+                        $ her_SC.sayHead("You said all you are going to do is touch!","body_138")
                         m "do you want me to stop, [hermione_name]?"
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1392,15 +1392,15 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("ahh!!","body_212")
-                        call her_head("...I-","body_199")
+                        $ her_SC.sayHead("ahh!!","body_212")
+                        $ her_SC.sayHead("...I-","body_199")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("no!!","body_130")
+                        $ her_SC.sayHead("no!!","body_130")
                         m "then what do you want me to do?"
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1408,7 +1408,7 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("to keep slapping me!!","body_212")
+                        $ her_SC.sayHead("to keep slapping me!!","body_212")
                         m "and what do you want me to slap?"
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1416,8 +1416,8 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("my ass!!","body_134")
-                        call her_head("slap my slutty ass!!","body_219")
+                        $ her_SC.sayHead("my ass!!","body_134")
+                        $ her_SC.sayHead("slap my slutty ass!!","body_219")
                         m "you'll have to speak up. I couldn't quite hear you."
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1425,7 +1425,7 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("slap my slutty ass harder!!{image=textheart}{image=textheart}","body_135")
+                        $ her_SC.sayHead("slap my slutty ass harder!!{image=textheart}{image=textheart}","body_135")
                         m "you're being rather loud today."
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1433,8 +1433,8 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("yess!!","body_219")
-                        call her_head("harder!!","body_134")
+                        $ her_SC.sayHead("yess!!","body_219")
+                        $ her_SC.sayHead("harder!!","body_134")
                         m "what if someone hears?"
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
@@ -1442,149 +1442,149 @@ label hg_pf_ButtMolester:
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("i don't care!!","body_211")
+                        $ her_SC.sayHead("i don't care!!","body_211")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("yes!!!","body_212")
+                        $ her_SC.sayHead("yes!!!","body_212")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("just a little-","body_136")
+                        $ her_SC.sayHead("just a little-","body_136")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("i'm gunna","body_133")
+                        $ her_SC.sayHead("i'm gunna","body_133")
                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                         show screen white
                         with hpunch
                         pause.08
                         hide screen white
                         show screen bld1
-                        call her_head("cumcumcummingcumming","body_134")
-                        call her_head("i'm cumming!!!{image=textheart}{image=textheart}","body_135")
+                        $ her_SC.sayHead("cumcumcummingcumming","body_134")
+                        $ her_SC.sayHead("i'm cumming!!!{image=textheart}{image=textheart}","body_135")
                         ">you take a moment watch her spasms"
                         m "well, then... proceeding with groping..."
-                        call her_head("................","body_78")
+                        $ her_SC.sayHead("................","body_78")
                 pause
                 show screen groping_02
                 with d7
-                call her_head("-wait i juuuus-!!!","body_188")
+                $ her_SC.sayHead("-wait i juuuus-!!!","body_188")
                 ">her voice trails off to a squeak as you start to knead her big, round ass"
                 m "hm? what's that? i couldn't hear you, [hermione_name]."
-                call her_head("you bastard{image=textheart}","body_194")
+                $ her_SC.sayHead("you bastard{image=textheart}","body_194")
                 ">hermione's body quivers as her hips roll"
                 m "well, someone's enjoying herself."
-                call her_head("Well, you know me, [genie_name]...","body_205")
-                call her_head("I'm just happy to be able to do my part","body_205")
-                call her_head("Please don't mind it and continue...","body_205")
-                call her_head("(...to grope me...)","body_133")
+                $ her_SC.sayHead("Well, you know me, [genie_name]...","body_205")
+                $ her_SC.sayHead("I'm just happy to be able to do my part","body_205")
+                $ her_SC.sayHead("Please don't mind it and continue...","body_205")
+                $ her_SC.sayHead("(...to grope me...)","body_133")
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's ass..."
                 ">And continue sliding your hands up and down her inner tighs..."
-                call her_head("................","body_188")
+                $ her_SC.sayHead("................","body_188")
                 label connection_of_rapes_02:
                 menu:
                     "-Slide your hands between her legs-":
                         ">You slowly slide one of your hands towards her crotch..."
-                        call her_head("[genie_name]... What are you...?","body_205")
+                        $ her_SC.sayHead("[genie_name]... What are you...?","body_205")
                         m "something you'll enjoy."
                         m "just relax and leave everything to me."
-                        call her_head("As you say...","body_205")
+                        $ her_SC.sayHead("As you say...","body_205")
                         menu:
                             "-Prod her pussy with one of your fingers-":
                                 ">You slide one of your fingers down and place it against the girl's little slit..."
-                                call her_head("[genie_name]?","body_205") 
+                                $ her_SC.sayHead("[genie_name]?","body_205") 
                                 menu:
                                     "-Force your finger into her pussy!-":
                                         ">You force one of your fingers into her little pussy..."
                                         ">It's very tight and warm..."
                                         ">it is quite wet as well...  Seems like Hermione's taking pleasure in this..."
-                                        call her_head("ah... your finger is in my...","body_134")
-                                        call her_head("ah... wait-","body_142")
+                                        $ her_SC.sayHead("ah... your finger is in my...","body_134")
+                                        $ her_SC.sayHead("ah... wait-","body_142")
                                         ">you slowly start to pump your fingers"
-                                        call her_head("-only fifteen poin-","body_143")
+                                        $ her_SC.sayHead("-only fifteen poin-","body_143")
                                         ">you speed up slightly"
-                                        call her_head("{image=textheart}-my duty-{image=textheart}","body_144")
+                                        $ her_SC.sayHead("{image=textheart}-my duty-{image=textheart}","body_144")
                                         ">you start rubbing her clit"
-                                        call her_head("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
+                                        $ her_SC.sayHead("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
                                         m "we can, of course, stop right here, unfulfilled. if that's what you really want."
-                                        call her_head("...","body_142")
+                                        $ her_SC.sayHead("...","body_142")
                                         m "well?"
-                                        call her_head("...keep going...","body_143")
+                                        $ her_SC.sayHead("...keep going...","body_143")
                                         m "hm?"
-                                        call her_head("keep fingering my pussy!!","body_148")
+                                        $ her_SC.sayHead("keep fingering my pussy!!","body_148")
                                         m "you want me to keep fingering your cunt? is that what your saying?"
-                                        call her_head("Yes!{image=textheart} fuck my cunt with your fingers!{image=textheart}","body_135","tears_04")
+                                        $ her_SC.sayHead("Yes!{image=textheart} fuck my cunt with your fingers!{image=textheart}","body_135","tears_04")
                                         ">her hips roll and slam into your fingers."
-                                        call her_head("shove them deep in my slutty fuckhole!!{image=textheart}","body_133","tears_04")
+                                        $ her_SC.sayHead("shove them deep in my slutty fuckhole!!{image=textheart}","body_133","tears_04")
                                         m "hm... i don't think my fingers are up to this task after all..."
                                         ">you take your fingers out of the girl's gushing cunt."
-                                        call her_head("what!!? no, don't st-","body_137")
+                                        $ her_SC.sayHead("what!!? no, don't st-","body_137")
                                         ">...so you can take the dildo out of your desk."
-                                        call her_head("oh, god yes!!","body_158")
+                                        $ her_SC.sayHead("oh, god yes!!","body_158")
                                         m "this is a much better fit isn't it?"
-                                        call her_head("aah!{image=textheart}","body_133","tears_04")
+                                        $ her_SC.sayHead("aah!{image=textheart}","body_133","tears_04")
                                         m "you're far too much of slut to be satisfied by fingers, aren't you?"
-                                        call her_head("yesfinewhatever!","body_148")
-                                        call her_head("i don't care!","body_149")
-                                        call her_head("just don't stop!","body_134","tears_04")
+                                        $ her_SC.sayHead("yesfinewhatever!","body_148")
+                                        $ her_SC.sayHead("i don't care!","body_149")
+                                        $ her_SC.sayHead("just don't stop!","body_134","tears_04")
                                         ">her hips meet your every thrust, nearly tearing the toy from your grip."
-                                        call her_head("donstopdonstopdonstop-","body_158")
-                                        call her_head("pleasepleasepleaseplease-","body_147")
+                                        $ her_SC.sayHead("donstopdonstopdonstop-","body_158")
+                                        $ her_SC.sayHead("pleasepleasepleaseplease-","body_147")
                                         m "are you enjoying yourself, [hermione_name]?"
-                                        call her_head("yes! I love how you spank me!","body_158")
-                                        call her_head("I love how you grope me!","body_137")
-                                        call her_head("I love how you play with my little fuckholes!","body_194","tears_04")
-                                        call her_head("ohgodohgodohgod","body_149")
+                                        $ her_SC.sayHead("yes! I love how you spank me!","body_158")
+                                        $ her_SC.sayHead("I love how you grope me!","body_137")
+                                        $ her_SC.sayHead("I love how you play with my little fuckholes!","body_194","tears_04")
+                                        $ her_SC.sayHead("ohgodohgodohgod","body_149")
                                         ">Hermione tries to scream as her body bucks and the orgasm takes her, but can't get enough air to do more then moan."
-                                        call her_head("oooooooh...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_135")
+                                        $ her_SC.sayHead("oooooooh...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_135")
                                         jump ending_of_screams_of_pleasure
                                     "-Let the girl go...-":
                                         pass
                             "-Prod her butt-hole instead-":
                                 ">You place your one of your thumbs against the girl's little butt-hole..."
-                                call her_head("[genie_name]? you're not planning t-","body_204")
+                                $ her_SC.sayHead("[genie_name]? you're not planning t-","body_204")
                                 menu:
                                     "-Force your thumb into her butt-hole-":
                                         ">You force one of your thumbs into her little butt-hole..."
                                         with hpunch
-                                        call her_head("ah... your finger is up my...","body_134")
+                                        $ her_SC.sayHead("ah... your finger is up my...","body_134")
                                         ">It's very tight and warm inside..."
-                                        call her_head("ah... wait-","body_142")
+                                        $ her_SC.sayHead("ah... wait-","body_142")
                                         ">you slowly start to pump your thumb"
-                                        call her_head("-only fifteen poin-","body_143")
+                                        $ her_SC.sayHead("-only fifteen poin-","body_143")
                                         ">you speed up slightly"
-                                        call her_head("{image=textheart}-my duty-{image=textheart}","body_144")
+                                        $ her_SC.sayHead("{image=textheart}-my duty-{image=textheart}","body_144")
                                         ">you rotate thumb as you go"
-                                        call her_head("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
+                                        $ her_SC.sayHead("!!{image=textheart}-gryffindor-{image=textheart}","body_145")
                                         m "we can, of course, stop right here, unfulfilled. if that's what you really want."
-                                        call her_head("...","body_142")
+                                        $ her_SC.sayHead("...","body_142")
                                         m "well?"
-                                        call her_head("...keep going...","body_143")
+                                        $ her_SC.sayHead("...keep going...","body_143")
                                         m "hm?"
-                                        call her_head("keep fingering my ass!!","body_148")
+                                        $ her_SC.sayHead("keep fingering my ass!!","body_148")
                                         ">you pull your thumb out of her tight little asshole..."
-                                        call her_head("w-what!?","body_149")
-                                        call her_head("why w-","body_148")
+                                        $ her_SC.sayHead("w-what!?","body_149")
+                                        $ her_SC.sayHead("why w-","body_148")
                                         ">...and replace it with two fingers"
-                                        call her_head("Aaah!","body_149")
-                                        call her_head("B-Bastard!{image=textheart}","body_147")
-                                        call her_head("Y-you teasing b-bastard!{image=textheart}{image=textheart}","body_158")
+                                        $ her_SC.sayHead("Aaah!","body_149")
+                                        $ her_SC.sayHead("B-Bastard!{image=textheart}","body_147")
+                                        $ her_SC.sayHead("Y-you teasing b-bastard!{image=textheart}{image=textheart}","body_158")
                                         m "do you like this, [hermione_name]?"
-                                        call her_head("yes!!!","body_142")
+                                        $ her_SC.sayHead("yes!!!","body_142")
                                         m "do you love it?"
-                                        call her_head("oh, god, yes!!!","body_134","tears_04")
+                                        $ her_SC.sayHead("oh, god, yes!!!","body_134","tears_04")
                                         m "tell me what you love!"
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1592,7 +1592,7 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("aaah!!{image=textheart}{image=textheart}{image=textheart}","body_149")
+                                        $ her_SC.sayHead("aaah!!{image=textheart}{image=textheart}{image=textheart}","body_149")
                                         m "I asked you a question."
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1600,8 +1600,8 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("when you finger my ass!","body_147")
-                                        call her_head("i love it when you fuck my ass with your fingers!","body_158")
+                                        $ her_SC.sayHead("when you finger my ass!","body_147")
+                                        $ her_SC.sayHead("i love it when you fuck my ass with your fingers!","body_158")
                                         m "what else do you love?"
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1609,14 +1609,14 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("when you slap my slutty ass!","body_147")
+                                        $ her_SC.sayHead("when you slap my slutty ass!","body_147")
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
                                         with hpunch
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("a-again! i'm c-c","body_149")
+                                        $ her_SC.sayHead("a-again! i'm c-c","body_149")
                                         m "you're cumming again?"
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1624,7 +1624,7 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("yes!","body_146")
+                                        $ her_SC.sayHead("yes!","body_146")
                                         m "you're cumming from being spanked again?"
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1632,7 +1632,7 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("yes!!","body_147")
+                                        $ her_SC.sayHead("yes!!","body_147")
                                         m "you're cumming from having your headmaster's fingers shoved up your tight little asshole?"
                                         $ renpy.play('sounds/slap_02.mp3') #SLAP!
                                         show screen white
@@ -1640,14 +1640,14 @@ label hg_pf_ButtMolester:
                                         pause.08
                                         hide screen white
                                         show screen bld1
-                                        call her_head("yes!!!{image=textheart}","body_149")
+                                        $ her_SC.sayHead("yes!!!{image=textheart}","body_149")
                                         ">Hermione's body starts to buck wildly."
                                         ">you grab herby the hair with your free hand to keep her on the desk even as you frantically pump your fingers into her big, tight ass"
-                                        call her_head("ohgodohgodohgod","body_149")
+                                        $ her_SC.sayHead("ohgodohgodohgod","body_149")
                                         m "what are you cumming from, little whore?"
-                                        call her_head("!!!!","body_206","tears_04")
+                                        $ her_SC.sayHead("!!!!","body_206","tears_04")
                                         m "where's all this pleasure coming from?!"
-                                        call her_head("my aaaaaaaass!{image=textheart}","body_135","tears_04")
+                                        $ her_SC.sayHead("my aaaaaaaass!{image=textheart}","body_135","tears_04")
                                         ">with one last spasm,hermione collapses to the desk. even after fainting, her Body still twitches, and her hips keep rolling."
                                         jump ending_of_screams_of_pleasure
                                     "-Let the girl go...-":
@@ -1655,7 +1655,7 @@ label hg_pf_ButtMolester:
                     "-No. That's enough for today. Dismiss her-":
                         pass
             "\"No. Just stand still, [hermione_name].\"":
-                call her_head("As you say, [genie_name]...","crstart")
+                $ her_SC.sayHead("As you say, [genie_name]...","crstart")
                 hide screen genie
                 show screen ctc
                 show screen no_groping_01
@@ -1663,35 +1663,35 @@ label hg_pf_ButtMolester:
                 hide screen blkfade
                 with d5
                 pause
-                call her_head("[genie_name], please hurry...","body_200")
+                $ her_SC.sayHead("[genie_name], please hurry...","body_200")
                 m "What's the problem, [hermione_name]?"
                 if daytime:
-                    call her_head("I don't have long before class.","body_203")
+                    $ her_SC.sayHead("I don't have long before class.","body_203")
                 else:
-                    call her_head("I don't have long before others notice im missing.","body_203")
+                    $ her_SC.sayHead("I don't have long before others notice im missing.","body_203")
                 m "do you enjoy this so much?"
-                call her_head("I wouldn't phrase it like that...","body_221")
-                call her_head("anyway, let's get started.","body_209")
+                $ her_SC.sayHead("I wouldn't phrase it like that...","body_221")
+                $ her_SC.sayHead("anyway, let's get started.","body_209")
                 ">you raise an eyebrow"
-                call her_head("Please...","body_208")
+                $ her_SC.sayHead("Please...","body_208")
                 m "Well, since you asked so nicely..."
                 show screen groping_01
                 with d7
-                call her_head("!!!","body_206")
+                $ her_SC.sayHead("!!!","body_206")
                 m "What is it?"
-                call her_head("nothing, [genie_name].","body_205")
+                $ her_SC.sayHead("nothing, [genie_name].","body_205")
                 m "it didn't sound like nothing."
-                call her_head("...","body_213")
+                $ her_SC.sayHead("...","body_213")
                 ">You run your hands up and down Hermione's legs..."
-                call her_head(".........................","body_205")
+                $ her_SC.sayHead(".........................","body_205")
                 ">And give her Ass a good squeeze..."
-                call her_head(".................","body_58")
+                $ her_SC.sayHead(".................","body_58")
                 m "Don't look away, girl. I want you to look into my eyes."
-                call her_head("but its embarassing, [genie_name]...","body_118")
+                $ her_SC.sayHead("but its embarassing, [genie_name]...","body_118")
                 m "..."
-                call her_head("...fine, [genie_name]...","body_205")
+                $ her_SC.sayHead("...fine, [genie_name]...","body_205")
                 m "you're being so quiet."
-                call her_head("....................","body_198")
+                $ her_SC.sayHead("....................","body_198")
                 m "not even a word..."
                 ">you  enjoy the sensation of her butt under your hands..."
                 m "as my hands explore you"
@@ -1699,50 +1699,50 @@ label hg_pf_ButtMolester:
                 ">your hands rub in circles from the sides of her legs to her inner thighs"
                 m "your big, firm ass"
                 ">You massage her ass-cheeks lightly..."
-                call her_head(".....................","body_136")
+                $ her_SC.sayHead(".....................","body_136")
                 m "your loins..."
                 ">one hand circling just above her clit."
-                call her_head(".....................","body_133")
+                $ her_SC.sayHead(".....................","body_133")
                 m "is there something you want?"
-                call her_head(".....................","body_221")
-                call her_head("...i... {size=-5}...i want you to finger me...{/size}","body_199")
+                $ her_SC.sayHead(".....................","body_221")
+                $ her_SC.sayHead("...i... {size=-5}...i want you to finger me...{/size}","body_199")
                 m "Did you say something, [hermione_name]?"
-                call her_head("...it's nothing, [genie_name]...","body_196")
+                $ her_SC.sayHead("...it's nothing, [genie_name]...","body_196")
                 ">You massage her ass-cheeks lightly with one hand as the other continues to circle above her cunt, fingers brushing against her clit..."
                 ">Hermione maintains eye contact as she's been told..."
                 m "you're lying."
-                call her_head("I... i said i want you to finger me!","body_132")
+                $ her_SC.sayHead("I... i said i want you to finger me!","body_132")
                 ">You swiftly plunge two fingers into her drenched snatch."
-                call her_head("!!!{image=textheart}{image=textheart}","body_136")
+                $ her_SC.sayHead("!!!{image=textheart}{image=textheart}","body_136")
                 ">you start to pump your fingers inside her before she can do more than gasp"
-                call her_head("...................................","body_199")
+                $ her_SC.sayHead("...................................","body_199")
                 m "did i say you could look away?"
-                call her_head("..................................................","body_205","tears_01")
+                $ her_SC.sayHead("..................................................","body_205","tears_01")
                 m "good girl"
                 ">her hips roll in rythm as you fuck her with your fingers"
                 m "do you like this?"
                 m "you like it when i finger your cunt?"
-                call her_head("i love it!{image=textheart} i love your long fingers in my tight, wet cunt!!{image=textheart}","body_134","tears_02")
+                $ her_SC.sayHead("i love it!{image=textheart} i love your long fingers in my tight, wet cunt!!{image=textheart}","body_134","tears_02")
                 m "well, i think we can do better."
                 ">with your other hand, you force a finger up her tight asshole."
-                call her_head("!!!","body_149")
-                call her_head("my cunt and my ass!","body_158")
+                $ her_SC.sayHead("!!!","body_149")
+                $ her_SC.sayHead("my cunt and my ass!","body_158")
                 ">you don't even need to move as she pounds herself against your fingers."
-                call her_head("fingering my cunt and ass!{image=textheart}{image=textheart}","body_133","tears_04")
+                $ her_SC.sayHead("fingering my cunt and ass!{image=textheart}{image=textheart}","body_133","tears_04")
                 m "no, we can still do better."
                 ">you force another finger up her ass"
-                call her_head("iloveitiloveitiloveit","body_136","tears_04")
+                $ her_SC.sayHead("iloveitiloveitiloveit","body_136","tears_04")
                 m "what do you love, [hermione_name]?"
-                call her_head("ah!!{image=textheart} i love your fingers in my ass and cunt!{image=textheart}","body_48","tears_04")
+                $ her_SC.sayHead("ah!!{image=textheart} i love your fingers in my ass and cunt!{image=textheart}","body_48","tears_04")
                 ">her movements have become more frantic"
                 m "are you cumming, [hermione_name]?"
-                call her_head("yes!!","body_149")
-                call her_head("i'm cumming!!","body_147")
-                call her_head("i'm cumming from being fucked with your fingers!!","body_158")
+                $ her_SC.sayHead("yes!!","body_149")
+                $ her_SC.sayHead("i'm cumming!!","body_147")
+                $ her_SC.sayHead("i'm cumming from being fucked with your fingers!!","body_158")
                 m "look at me!"
                 m "show me your fuck-face!"
                 m "i want to see you cum from whoring yourself for fifteen points."
-                call her_head("aaaaaaaaah!!!","body_149")
+                $ her_SC.sayHead("aaaaaaaaah!!!","body_149")
                 jump ending_of_screams_of_pleasure  
     
     label ending_of_screams_of_pleasure:
@@ -1796,7 +1796,7 @@ label hg_pf_ButtMolester:
     
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         show screen hermione_stand_f #Hermione stands still.
-        call her_head("...........................","body_199")
+        $ her_SC.sayHead("...........................","body_199")
         hide screen hermione_stand_f #Hermione stands still.
         
     $ renpy.play('sounds/door.mp3') #Sound of a door.
@@ -1934,9 +1934,9 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         show screen bld1
         with d3
         m "Hm..."
-        call her_head("{size=-5}(My breasts are completely exposed...){/size}","body_199")
+        $ her_SC.sayHead("{size=-5}(My breasts are completely exposed...){/size}","body_199")
         m "Come closer [hermione_name], let me take a better look..."
-        call her_head("............","body_203")
+        $ her_SC.sayHead("............","body_203")
         
         hide screen bld1
         with d3
@@ -1957,9 +1957,9 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         pause
         show screen bld1
         with d3
-        call her_head("............","body_200")
+        $ her_SC.sayHead("............","body_200")
         m "Very good..."
-        call her_head(".....","body_203")
+        $ her_SC.sayHead(".....","body_203")
         
         
         show screen blktone
@@ -1973,10 +1973,10 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         with d3
         if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
             m "[hermione_name]?"
-            call her_head("Yes, [genie_name]?","body_12")
+            $ her_SC.sayHead("Yes, [genie_name]?","body_12")
             m "I need to see your tits."
-            call her_head("............","body_203")
-            call her_head("Do you promise not to touch, [genie_name]?","body_203")
+            $ her_SC.sayHead("............","body_203")
+            $ her_SC.sayHead("Do you promise not to touch, [genie_name]?","body_203")
             m "Of course."
             hide screen blktone
             with d3
@@ -2025,9 +2025,9 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         elif whoring >= 9: # LEVEL 04 and higher# <=================================================================================== SECOND EVENT and THIRD EVENT. (HERMIONE IS INDIFFERENT) 
             m "I need to see your tits, [hermione_name]."
             if whoring >= 17:
-                call her_head("Of course [genie_name]","body_213")
+                $ her_SC.sayHead("Of course [genie_name]","body_213")
             else:
-                call her_head("Are you only going to watch, [genie_name]?","body_208b")
+                $ her_SC.sayHead("Are you only going to watch, [genie_name]?","body_208b")
                 m "Of course..."
             hide screen blktone
             with d3
@@ -2082,7 +2082,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","body_206")
+                $ her_SC.sayHead("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2097,16 +2097,16 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 m "Relax, [hermione_name]. Just stand still!"
                 m "Oh... Those are some nice titties you've got..."
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("No, [genie_name], please! You mustn't do this...","body_132")
+                $ her_SC.sayHead("No, [genie_name], please! You mustn't do this...","body_132")
                 m "This won't take long, just stand still."
-                call her_head("[genie_name], I didn't agree to this!","body_187")
+                $ her_SC.sayHead("[genie_name], I didn't agree to this!","body_187")
                 with hpunch
-                call her_head("You must unhand me now!!!","body_218")
+                $ her_SC.sayHead("You must unhand me now!!!","body_218")
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you and covers up hastily."
                 call set_hermione_action("none")
-                call her_head("I think I'd better go...","body_208b")
+                $ her_SC.sayHead("I think I'd better go...","body_208b")
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
                 hide screen groping_naked_tits
@@ -2118,12 +2118,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 pause
                 show screen bld1
                 m "Go ahead, [hermione_name]. You are not getting paid if you do..."
-                call her_head("But I showed you my...","body_208b")
-                call her_head("And you touched me...","body_187")
-                call her_head("And I am getting nothing?","body_218")
+                $ her_SC.sayHead("But I showed you my...","body_208b")
+                $ her_SC.sayHead("And you touched me...","body_187")
+                $ her_SC.sayHead("And I am getting nothing?","body_218")
                 m "You are dismissed, [hermione_name]..."
-                call her_head("Gr..................","body_208b")
-                call her_head("{size=-5}(Burn in hell, you wretched old---{/size}","body_208b")
+                $ her_SC.sayHead("Gr..................","body_208b")
+                $ her_SC.sayHead("{size=-5}(Burn in hell, you wretched old---{/size}","body_208b")
                 $ mad += 22
                 call music_block
                 jump could_not_flirt
@@ -2134,7 +2134,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","body_206")
+                $ her_SC.sayHead("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2146,22 +2146,22 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 m "Relax, [hermione_name]. Just stand still!"
-                call her_head("I didn't agree to this, [genie_name]...","body_203")
-                call her_head("I don't think you should...","body_203")
+                $ her_SC.sayHead("I didn't agree to this, [genie_name]...","body_203")
+                $ her_SC.sayHead("I don't think you should...","body_203")
                 m "Don't you like it...?"
-                call her_head("What?","body_199")
+                $ her_SC.sayHead("What?","body_199")
                 m "Don't you like it how I squeeze and pull on your breasts?"
-                call her_head("...............","body_199")
+                $ her_SC.sayHead("...............","body_199")
                 m "Admit it, you like it a little bit..."
-                call her_head("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","body_199")
-                call her_head("[genie_name], I am letting you do this to me to help my house out, nothing more!","body_132")
+                $ her_SC.sayHead("{size=-5}(So strange to see my breasts in someone else's hands...){/size}","body_199")
+                $ her_SC.sayHead("[genie_name], I am letting you do this to me to help my house out, nothing more!","body_132")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("Please, unhand me now!","body_203")
+                $ her_SC.sayHead("Please, unhand me now!","body_203")
                 show screen blkfade
                 with d5
                 ">Hermione pulls away from you suddenly and covers up."
                 call set_hermione_action("none")
-                call her_head("You promised not to touch, [genie_name]...","body_203")
+                $ her_SC.sayHead("You promised not to touch, [genie_name]...","body_203")
                 m "It was hard to resist..."
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
@@ -2173,8 +2173,8 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 with d5
                 pause
                 show screen bld1
-                call her_head(".............","body_200")
-                call her_head("Can I get paid now please?","body_208")
+                $ her_SC.sayHead(".............","body_200")
+                $ her_SC.sayHead("Can I get paid now please?","body_208")
                 m "Sure..."
                 $ mad += 9
             elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT. ENJOYS A LITTLE.
@@ -2184,7 +2184,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 with d3
                 ">You reach out and dig your fingers into the girl's ample flesh..."
-                call her_head("[genie_name], what are you doing?","body_206")
+                $ her_SC.sayHead("[genie_name], what are you doing?","body_206")
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
@@ -2196,49 +2196,49 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 m "Relax, [hermione_name]. Just stand still!"
-                call her_head("But...","body_199")
-                call her_head("ah...{image=textheart}","body_132")
-                call her_head("I didn't agree to this...","body_199")
+                $ her_SC.sayHead("But...","body_199")
+                $ her_SC.sayHead("ah...{image=textheart}","body_132")
+                $ her_SC.sayHead("I didn't agree to this...","body_199")
                 m "But you like it, don't you?"
                 if whoring >= 17:
-                    call her_head("I love it [genie_name]!{image=textheart}","body_204")
+                    $ her_SC.sayHead("I love it [genie_name]!{image=textheart}","body_204")
                 else:
-                    call her_head("I do not, [genie_name]!{image=textheart}","body_132")
+                    $ her_SC.sayHead("I do not, [genie_name]!{image=textheart}","body_132")
                 show screen blktone
                 with d3
                 ">You give her tits a couple of firm squeezes..."
                 hide screen blktone
                 with d3
                 if whoring >= 17:
-                    call her_head("[genie_name], you promised not to touch...","body_188")
+                    $ her_SC.sayHead("[genie_name], you promised not to touch...","body_188")
                     m "I know, I know... But it's hard to resist..."
-                    call her_head(".................","body_205")
+                    $ her_SC.sayHead(".................","body_205")
                 else:
-                    call her_head("[genie_name], you promised not to touch...","body_208b")
+                    $ her_SC.sayHead("[genie_name], you promised not to touch...","body_208b")
                     m "I know, I know... But it's hard to resist..."
-                    call her_head(".................","body_187")
-                call her_head("....................ah...{image=textheart}","body_205")
-                call her_head("[genie_name], you need to stop now...","body_205")
+                    $ her_SC.sayHead(".................","body_187")
+                $ her_SC.sayHead("....................ah...{image=textheart}","body_205")
+                $ her_SC.sayHead("[genie_name], you need to stop now...","body_205")
                 m "Just a bit longer..."
                 show screen blktone8
                 with d3
                 ">You keep on massaging the girl's breasts..."
                 hide screen blktone8
                 with d3
-                call her_head("[genie_name]... please, stop this...","body_196")
+                $ her_SC.sayHead("[genie_name]... please, stop this...","body_196")
                 m "Why? Because you like it too much?"
-                call her_head("No it's not that...","body_188")
-                call her_head("I mean...","body_204")
+                $ her_SC.sayHead("No it's not that...","body_188")
+                $ her_SC.sayHead("I mean...","body_204")
                 show screen blktone8
                 with d3
                 ">You pull the tits in opposite directions and then squish them together..."
                 hide screen blktone8
                 with d3
-                call her_head("Ah...{image=textheart} [genie_name], I really need to go...","body_213")
+                $ her_SC.sayHead("Ah...{image=textheart} [genie_name], I really need to go...","body_213")
                 if daytime:
-                    call her_head("That's right... the classes are about to start...","body_204")
+                    $ her_SC.sayHead("That's right... the classes are about to start...","body_204")
                 else:
-                    call her_head("It is getting late...","body_204")
+                    $ her_SC.sayHead("It is getting late...","body_204")
                 m "Well, alright..."
                 show screen blkfade
                 with d5
@@ -2247,9 +2247,9 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 call set_hermione_action("none")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 if whoring >= 17:
-                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
+                    $ her_SC.sayHead("Please don't think I forgot that you broke your promise, [genie_name].","body_188")
                 else:
-                    call her_head("Please don't think I forgot that you broke your promise, [genie_name].","body_203")
+                    $ her_SC.sayHead("Please don't think I forgot that you broke your promise, [genie_name].","body_203")
                 m "Right..."
                 hide screen blkfade
                 hide screen chair_02 #Genie's chair.
@@ -2262,9 +2262,9 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 pause
                 show screen bld1
                 if whoring >= 17:
-                    call her_head("Thank you [genie_name].","body_204")
+                    $ her_SC.sayHead("Thank you [genie_name].","body_204")
                 else:
-                    call her_head("Can I have my payment now?","body_205")
+                    $ her_SC.sayHead("Can I have my payment now?","body_205")
                     $ mad +=7
    
         "\"Keep promise. Admire visually.\"":
@@ -2337,7 +2337,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen bld1
                 with d3
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("[genie_name]?!!","body_119")
+                $ her_SC.sayHead("[genie_name]?!!","body_119")
                 m "Just stand still, [hermione_name]..."
                 hide screen genie
                 hide screen bld1
@@ -2351,30 +2351,30 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 ">You stare at Hermione's breasts with hunger..."
-                call her_head("[genie_name], what are you...?","body_132")
+                $ her_SC.sayHead("[genie_name], what are you...?","body_132")
                 ">You keep stroking your hard cock..."
-                call her_head("[genie_name], no...","body_199")
-                call her_head("You must... Put it away...","body_199")
+                $ her_SC.sayHead("[genie_name], no...","body_199")
+                $ her_SC.sayHead("You must... Put it away...","body_199")
                 m "Stop whining [hermione_name]. I'm not touching you, am I?"
-                call her_head("But...","body_208b")
-                call her_head("But I didn't agree to this!","body_187")
-                call her_head("I...","body_208b")
-                call her_head("I think I'd better leave now!","body_208b")
+                $ her_SC.sayHead("But...","body_208b")
+                $ her_SC.sayHead("But I didn't agree to this!","body_187")
+                $ her_SC.sayHead("I...","body_208b")
+                $ her_SC.sayHead("I think I'd better leave now!","body_208b")
                 menu:
                     "\"Leave now, and you'll get no points!\"":
                         $ only_upper = False
-                        call her_head("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","body_210")
-                        call her_head("I showed you my...","body_210")
-                        call her_head("..........","body_203")
-                        call her_head("I am not going to sell you a single favour anymore, [genie_name]!","body_187")
+                        $ her_SC.sayHead("After {size=+5}this{/size}? Are you kidding me, [genie_name]?","body_210")
+                        $ her_SC.sayHead("I showed you my...","body_210")
+                        $ her_SC.sayHead("..........","body_203")
+                        $ her_SC.sayHead("I am not going to sell you a single favour anymore, [genie_name]!","body_187")
                         show screen blkfade
                         with d3
                         ">Hermione pulls away from you and covers up..."
                         call set_hermione_action("none")
                         g4 "Don't you dare to leave me in this state, [hermione_name]!"
-                        call her_head("I am not setting a foot into your office ever again, [genie_name]!","body_141")
+                        $ her_SC.sayHead("I am not setting a foot into your office ever again, [genie_name]!","body_141")
                         g4 "Come on, now. Just say something dirty! I'm almost there!"
-                        call her_head("You are a horrible person, [genie_name]...","body_145")
+                        $ her_SC.sayHead("You are a horrible person, [genie_name]...","body_145")
                         $ mad += 30
                         call music_block
                         jump could_not_flirt
@@ -2386,14 +2386,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         $ mad += 35
                         $ only_upper = False
                         ">You start jerking your cock furiously!"
-                        call her_head("No, [genie_name], stop!","body_218")
+                        $ her_SC.sayHead("No, [genie_name], stop!","body_218")
                         ">You jerk it even faster!"
-                        call her_head("[genie_name], think I will be leaving now...","body_203")
+                        $ her_SC.sayHead("[genie_name], think I will be leaving now...","body_203")
                         g4 "No, wait, I'm almost there!"
                         show screen blkfade
                         with d3
-                        call her_head("Ew! [genie_name]!","body_141")
-                        call her_head("I'm leaving!","body_141")
+                        $ her_SC.sayHead("Ew! [genie_name]!","body_141")
+                        $ her_SC.sayHead("I'm leaving!","body_141")
                         call set_hermione_action("none")
                         call music_block
                         jump could_not_flirt
@@ -2404,7 +2404,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 hide screen bld1
                 with d3
-                call her_head("[genie_name]?","body_119")
+                $ her_SC.sayHead("[genie_name]?","body_119")
                 ">You stare at Hermione's breasts with hunger..."
                 hide screen genie
                 hide screen bld1
@@ -2417,30 +2417,30 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 
                 show screen bld1
                 with d3
-                call her_head("[genie_name], I didn't agree to this...","body_132")
+                $ her_SC.sayHead("[genie_name], I didn't agree to this...","body_132")
                 m "What are you complaining about, [hermione_name]?"
                 m "I'm not even touching you..."
-                call her_head("Yes, but you are... touching yourself, [genie_name].","body_132")
+                $ her_SC.sayHead("Yes, but you are... touching yourself, [genie_name].","body_132")
                 ">You pick up the pace..."
                 m "just stand still, [hermione_name]."
                 m "It will be over soon."
-                call her_head("..................","body_132")
-                call her_head("(It's so big...)","body_199")
+                $ her_SC.sayHead("..................","body_132")
+                $ her_SC.sayHead("(It's so big...)","body_199")
                 m "Yes... Yes, like this..."
                 m "Yes, with your tits all naked..."
-                call her_head("..............","body_199")
-                call her_head("well, so be it...","body_204")
-                call her_head("You can keep touching yourself, [genie_name]...","body_204")
-                call her_head("But you must promise me not to...","body_200")
-                call her_head("Not to... em...","body_204")
-                call her_head("Not to discharge...","body_203")
-                call her_head("Not in front of me, [genie_name]...","body_05")
+                $ her_SC.sayHead("..............","body_199")
+                $ her_SC.sayHead("well, so be it...","body_204")
+                $ her_SC.sayHead("You can keep touching yourself, [genie_name]...","body_204")
+                $ her_SC.sayHead("But you must promise me not to...","body_200")
+                $ her_SC.sayHead("Not to... em...","body_204")
+                $ her_SC.sayHead("Not to discharge...","body_203")
+                $ her_SC.sayHead("Not in front of me, [genie_name]...","body_05")
                 m "Fine, whatever..."
                 m "Oh, you little slut. You nasty little slut!"
-                call her_head(".......................","body_208b")
+                $ her_SC.sayHead(".......................","body_208b")
                 ">You start to stroke your cock even harder..."
                 g4 "Yes, I know you want this! Yes!"
-                call her_head("................","body_208b")
+                $ her_SC.sayHead("................","body_208b")
                 show screen blkfade 
                 with d3
                 ">You are about to cum..."
@@ -2448,13 +2448,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     "-Hold it as promised-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        call her_head("...............","body_208b")
+                        $ her_SC.sayHead("...............","body_208b")
                         ">Hermione covers up..."
                         call set_hermione_action("none")
                     "-Just start cumming-":
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         g4 "Argh! You whore!"
-                        call her_head("Proff-- ??","body_210")
+                        $ her_SC.sayHead("Proff-- ??","body_210")
                         call cum_block
                         g4 "Argh! YES!"
                         hide screen bld1
@@ -2468,12 +2468,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         show screen bld1
                         with d3
                         $ sperm_on_tits = True
-                        call her_head("[genie_name], no, you promised!","body_218")
+                        $ her_SC.sayHead("[genie_name], no, you promised!","body_218")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        call her_head("[genie_name], how could you...?","body_141")
+                        $ her_SC.sayHead("[genie_name], how could you...?","body_141")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -2516,7 +2516,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen blkfade
                 hide screen bld1
                 with d3
-                call her_head("[genie_name]?","body_205")
+                $ her_SC.sayHead("[genie_name]?","body_205")
                 ">You stare at Hermione's breasts with hunger..."
                 hide screen genie
                 hide screen bld1
@@ -2530,49 +2530,49 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 show screen bld1
                 with d3
                 if whoring >= 17:
-                    call her_head("ah...","body_213")
-                    call her_head("It's so big...","body_204")
-                    call her_head("You just couldn't help yourself, could you [genie_name]?","body_188")
-                    call her_head("..................","body_213")
+                    $ her_SC.sayHead("ah...","body_213")
+                    $ her_SC.sayHead("It's so big...","body_204")
+                    $ her_SC.sayHead("You just couldn't help yourself, could you [genie_name]?","body_188")
+                    $ her_SC.sayHead("..................","body_213")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    call her_head("..............","body_213")
-                    call her_head("well, so be it...","body_204")
-                    call her_head("But you must promise me not to...","body_200")
-                    call her_head("Not to... ehm...","body_204")
-                    call her_head("Not to cum on me, [genie_name]...","body_205")
+                    $ her_SC.sayHead("..............","body_213")
+                    $ her_SC.sayHead("well, so be it...","body_204")
+                    $ her_SC.sayHead("But you must promise me not to...","body_200")
+                    $ her_SC.sayHead("Not to... ehm...","body_204")
+                    $ her_SC.sayHead("Not to cum on me, [genie_name]...","body_205")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    call her_head(".......................","body_213")
+                    $ her_SC.sayHead(".......................","body_213")
                     ">You start to stroke your cock even harder..."
                     g4 "Yes, I know you want this! Yes!"
-                    call her_head("................","body_213")
+                    $ her_SC.sayHead("................","body_213")
                     show screen blkfade 
                     with d3
                     # SAME AS PREVIOUS EVENT^^^
                 else:
-                    call her_head("[genie_name], actually I never agreed to this...","body_132")
+                    $ her_SC.sayHead("[genie_name], actually I never agreed to this...","body_132")
                     m "What are you complaining about, [hermione_name]?"
                     m "I'm not even touching you..."
-                    call her_head("Yes, but you are... touching yourself, [genie_name].","body_132")
+                    $ her_SC.sayHead("Yes, but you are... touching yourself, [genie_name].","body_132")
                     #">You pick up the pace..."
                     m "Just stand still, bitch."
                     m "It will be over soon."
-                    call her_head("..................","body_132")
+                    $ her_SC.sayHead("..................","body_132")
                     m "Yes... Yes, like this..."
                     m "Yes, with your tits all naked..."
-                    call her_head("..............","body_199")
-                    call her_head("well, so be it...","body_204")
-                    call her_head("But you must promise me not to...","body_200")
-                    call her_head("Not to... ehm...","body_204")
-                    call her_head("Not to discharge...","body_203")
-                    call her_head("Not in front of me, [genie_name]...","body_203")
+                    $ her_SC.sayHead("..............","body_199")
+                    $ her_SC.sayHead("well, so be it...","body_204")
+                    $ her_SC.sayHead("But you must promise me not to...","body_200")
+                    $ her_SC.sayHead("Not to... ehm...","body_204")
+                    $ her_SC.sayHead("Not to discharge...","body_203")
+                    $ her_SC.sayHead("Not in front of me, [genie_name]...","body_203")
                     m "Fine, whatever..."
                     m "Oh, you little slut. You nasty little slut!"
-                    call her_head(".......................","body_199")
+                    $ her_SC.sayHead(".......................","body_199")
                     ">You start to stroke your cock even harder..."
                     g4 "Yes, I know you want this! Yes!"
-                    call her_head("................","body_199")
+                    $ her_SC.sayHead("................","body_199")
                     show screen blkfade 
                     with d3
                     # SAME AS PREVIOUS EVENT^^^
@@ -2581,14 +2581,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                     "-Hold it in-":
                         g4 "Oh, alright..."
                         g4 "I'd better stop now I suppose..."
-                        call her_head("...............","body_199")
-                        call her_head("Ehm... I read that that is bad for you, [genie_name]...","body_199")
+                        $ her_SC.sayHead("...............","body_199")
+                        $ her_SC.sayHead("Ehm... I read that that is bad for you, [genie_name]...","body_199")
                         m "Huh?"
-                        call her_head("It is bad for your health to just hold it in like this...","body_132")
-                        call her_head("Em...","body_199")
-                        call her_head("If you want to you can--","body_188")
+                        $ her_SC.sayHead("It is bad for your health to just hold it in like this...","body_132")
+                        $ her_SC.sayHead("Em...","body_199")
+                        $ her_SC.sayHead("If you want to you can--","body_188")
                         g4 "Argh! You whore!"
-                        call her_head("???","body_206")
+                        $ her_SC.sayHead("???","body_206")
                         show screen white 
                         pause.1
                         hide screen white
@@ -2609,12 +2609,12 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         show screen bld1
                         with d3
                         $ sperm_on_tits = True
-                        call her_head("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...","body_208")
+                        $ her_SC.sayHead("[genie_name], I didn't mean that you can release your... semen on me, [genie_name]...","body_208")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        call her_head("Well, what's done is done I suppose...","body_188")
+                        $ her_SC.sayHead("Well, what's done is done I suppose...","body_188")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -2651,7 +2651,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         with d3
                     "-Just start cumming-":
                         g4 "Argh! You whore!"
-                        call her_head("???","body_206")
+                        $ her_SC.sayHead("???","body_206")
                         show screen white 
                         pause.1
                         hide screen white
@@ -2672,13 +2672,13 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         show screen bld1
                         with d3
                         $ sperm_on_tits = True
-                        call her_head("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
-                        call her_head("[genie_name], you promised...","body_208")
+                        $ her_SC.sayHead("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
+                        $ her_SC.sayHead("[genie_name], you promised...","body_208")
                         g4 "Oh, this is great, yes..."
                         $ no_blinking = False #When True - blinking animation is not displayed. 
                         hide screen jerking_off_cum
                         with d3
-                        call her_head("Well, what's done is done I suppose...","body_208b")
+                        $ her_SC.sayHead("Well, what's done is done I suppose...","body_208b")
                         m "Oh, this was quite amazing..."
                         show screen blktone8
                         with d3
@@ -2735,7 +2735,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     with d3
 
     if whoring <= 16:
-        $ gryffindor +=current_payout
+        $ gryffindor += current_payout
         m "The \"Gryffindor\" house gets [current_payout] points!"
     stop music fadeout 10.0
    
@@ -2777,19 +2777,19 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     show screen hermione_stand_f #Hermione stands still.
     with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
-        call her_head("(How humiliating... What have I become...?)","body_199")
+        $ her_SC.sayHead("(How humiliating... What have I become...?)","body_199")
     elif whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== SECOND EVENT.
-        call her_head("........................","body_199")
+        $ her_SC.sayHead("........................","body_199")
     elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT.
-        call her_head("{size=-5}(That was so humiliating...){/size}","body_205")
-        call her_head("{size=-5}(No, Hermione, you silly girl!){/size}","body_187")
-        call her_head("{size=-5}(We are doing this to protect the honour of our house!){/size}","body_187")
-        call her_head(".................................","body_213")
+        $ her_SC.sayHead("{size=-5}(That was so humiliating...){/size}","body_205")
+        $ her_SC.sayHead("{size=-5}(No, Hermione, you silly girl!){/size}","body_187")
+        $ her_SC.sayHead("{size=-5}(We are doing this to protect the honour of our house!){/size}","body_187")
+        $ her_SC.sayHead(".................................","body_213")
     elif whoring >= 17 and aftersperm: # LEVEL 05 # <=================================================================================== THIRD EVENT.
-        call her_head("{size=-5}(That was so exhilarating...){/size}","body_205")
-        call her_head("{size=-5}(I wonder if anyone will notice my uniform!){/size}","body_196")
-        call her_head("{size=-5}(What will people think of me?){/size}","body_196")
-        call her_head(".................................","body_213")
+        $ her_SC.sayHead("{size=-5}(That was so exhilarating...){/size}","body_205")
+        $ her_SC.sayHead("{size=-5}(I wonder if anyone will notice my uniform!){/size}","body_196")
+        $ her_SC.sayHead("{size=-5}(What will people think of me?){/size}","body_196")
+        $ her_SC.sayHead(".................................","body_213")
     hide screen hermione_stand_f #Hermione stands still.
     with d3
     
@@ -2813,6 +2813,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     hide screen hermione_main 
     with d3
    
+    
     m "{size=-4}(Ask her to dance for me?){/size}"
 
     $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
@@ -2845,12 +2846,12 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 pass
 
     $ current_payout = 35 #Because will have option to pay extra.
-
+    
     if hg_pf_DanceForMe_OBJ.points == 0: #<==============================EVENT 01
         
         m "[hermione_name], I need you to dance for me a little."
-        call her_main("You want me to...","body_11")
-        call her_main("...dance for you, [genie_name]?","body_10")
+        $ her_SC.say("You want me to...","body_11")
+        $ her_SC.say("...dance for you, [genie_name]?","body_10")
         
         if whoring <=8:
             jump too_much
@@ -2858,17 +2859,18 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         $ her_head_ypos = her_head_only
         $ new_request_11_heart = 1
         $ hg_pf_DanceForMe_OBJ.hearts_level = 1 #Event hearts level (0-3)
+        
         m "Yes... You think you could manage that?"
         her "Ehm... I suppose so..."
-        call her_main("Is this your official wish, [genie_name]?","body_11")
+        $ her_SC.say("Is this your official wish, [genie_name]?","body_11")
         with hpunch
         g4 "What did you just say!?"
         stop music fadeout 1.0
-        call her_main("I mean, favour. Is this an official favour [genie_name]?","body_12")
+        $ her_SC.say("I mean, favour. Is this an official favour [genie_name]?","body_12")
         show screen whitetone8
         hide screen blktone
         with Dissolve(1)
-        hide screen hermione_main
+        $ her_SC.hideScreen()
         with Dissolve(1)
         g4 "(\"Is this your official wish, master....?\")"
         m "(Man, this sure brings back memories...)"
@@ -2876,21 +2878,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         m "(A pre-akabur era of my life...)"
         m "(Simpler times...)"
         g4 "(The bastard ruined my life!)"
-        her "Em... [genie_name]?"
+        $ her_SC.sayText("Em... [genie_name]?")
         hide screen whitetone8
         with Dissolve(1)
-        show screen hermione_main
-        with d3
         call music_block
-        her "[genie_name]..?"
+        $ her_SC.say("[genie_name]..?")
         m "Hermione, right..."
         m "Got lost in my thoughts for a moment there..."
-        her "So am I getting paid for this?"
+        $ her_SC.say("So am I getting paid for this?")
         m "Of course, [hermione_name]!"
-        call her_main("So... Just a little dancing then...","body_29")
+        $ her_SC.say("So... Just a little dancing then...","body_29")
         m "Whenever you're ready..."
-        her "................."
-        hide screen hermione_main
+        $ her_SC.say(".................")
+        $ her_SC.hideScreen()
         with d3
         ">Hermione starts dancing..."
         stop music fadeout 1.0
@@ -2898,47 +2898,48 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         show screen clothed_dance #Hermione stands still.
         with fade
         m "Hm..."
-        call her_head("{size=-5}(...........................................){/size}","body_199")
-        call her_head( "{size=-5}(This is silly...){/size}","body_203")
+        $ her_SC.sayHead("{size=-5}(...........................................){/size}","body_199")
+        $ her_SC.sayHead("{size=-5}(This is silly...){/size}","body_203")
         ">Hermione looks embarrassed but she keeps on \"dancing\"..."
         m "..................."
-        call her_head( "{size=-5}(...........................................){/size}","body_203")
+        $ her_SC.sayHead("{size=-5}(...........................................){/size}","body_203")
         m "Alright, you can start undressing now."
         show screen clothed_dance_pause #Hermione stands still.
         with hpunch
-        call her_head( "??!","body_206")
-        call her_head( "I thought all I had to do was dance?","body_05")
+        $ her_SC.sayHead("??!","body_206")
+        $ her_SC.sayHead("I thought all I had to do was dance?","body_05")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "Really? That's adorable."
         m "Now start taking off those clothes."
-        call her_head("You want me to... strip for you...?","body_199")
+        $ her_SC.sayHead("You want me to... strip for you...?","body_199")
         m "Yes. And I expect you to do it today, [hermione_name]."
-        call her_head("[genie_name]!","body_208b")
+        $ her_SC.sayHead("[genie_name]!","body_208b")
         m "don't you raise your voice at me, [hermione_name]!"
-        call her_head(".....!!?","body_206")
+        $ her_SC.sayHead(".....!!?","body_206")
         m "Nobody is forcing you to do this."
         m "I am doing you a favour!"
         m "If you don't need the points, please feel free to leave."
-        call her_head(".....................","body_05")
-        call her_head(".......................................","body_199")
+        $ her_SC.sayHead(".....................","body_05")
+        $ her_SC.sayHead(".......................................","body_199")
         ">Hermione is starting to dance again..."
         show screen clothed_dance #Hermione stands still.
         with fade
-        call her_head("{size=-5}(...........................................){/size}","body_208b")
+        $ her_SC.sayHead("{size=-5}(...........................................){/size}","body_208b")
         m "What are you waiting for then?"
         m "Start with the vest."
-        call her_head(".............................................................","body_199")
+        $ her_SC.sayHead(".............................................................","body_199")
         ">Hermione gives you a confused look and then takes off her vest..."
         show screen ctc
         pause
+        $ her_SC.uniform.set(top=2)
         show screen no_vest_dance
         with d3
         pause
-        call her_head("{size=-5}(Am I really going to do this?){/size}","body_208b")
+        $ her_SC.sayHead("{size=-5}(Am I really going to do this?){/size}","body_208b")
         menu:
             m "......................."
             "\"Now get rid of your skirt!\"":
-                call her_head(".................................","body_208b")
+                $ her_SC.sayHead(".................................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione starts to unzip her skirt..."
@@ -2946,8 +2947,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 ">Finally the zipper is undone and she has no choice but to take the skirt off..."
                 hide screen blktone
                 with d3
-                call her_head("{size=-5}(Here it comes then...){/size}","body_208b")
-                call her_head("{size=-5}(For the honour of the \"Gryffindor\"....){/size}","body_187")
+                $ her_SC.sayHead("{size=-5}(Here it comes then...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(For the honour of the \"Gryffindor\"....){/size}","body_187")
                 ">Hermione takes of her  skirt..."
                 show screen ctc
                 pause
@@ -2955,10 +2956,10 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 with d3
                 pause
                 m "..............."
-                call her_head("{size=-5}(.........................................){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(.........................................){/size}","body_208b")
                 ">Hermione keeps on dancing..."
                 m "Alright, your shirt is next!"
-                call her_head("My shirt....?","body_187")
+                $ her_SC.sayHead("My shirt....?","body_187")
                 show screen blktone
                 with d3
                 ">Hermione looks extremely embarrassed..."
@@ -2966,19 +2967,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 hide screen blktone
                 with d3
                 m "What's the problem, [hermione_name]?"
-                call her_head("I'm sorry, [genie_name]...","body_208b")
-                call her_head("It's stuck...","body_208b")
-                call her_head("It won't budge...","body_208b")
-                call her_head("Why won't it budge?! *sob*","body_144")
-                call her_head("No, I can't do this, [genie_name]! *sob*","body_144")
+                $ her_SC.sayHead("I'm sorry, [genie_name]...","body_208b")
+                $ her_SC.sayHead("It's stuck...","body_208b")
+                $ her_SC.sayHead("It won't budge...","body_208b")
+                $ her_SC.sayHead("Why won't it budge?! *sob*","body_144")
+                $ her_SC.sayHead("No, I can't do this, [genie_name]! *sob*","body_144")
                 m "What?"
-                call her_head("I thought I could, but...","body_144")
-                call her_head("Stripping for you, [genie_name]?","body_144")
-                call her_head("People look up to me in this school!","body_144")
-                call her_head("I have a reputation...*sob*","body_144")
-                call her_head("And if I do this...","body_147")
+                $ her_SC.sayHead("I thought I could, but...","body_144")
+                $ her_SC.sayHead("Stripping for you, [genie_name]?","body_144")
+                $ her_SC.sayHead("People look up to me in this school!","body_144")
+                $ her_SC.sayHead("I have a reputation...*sob*","body_144")
+                $ her_SC.sayHead("And if I do this...","body_147")
             "\"Now take off your shirt!\"":
-                call her_head(".................................","body_208b")
+                $ her_SC.sayHead(".................................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione starts to unbutton her shirt..."
@@ -2986,11 +2987,12 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 ">Finally the last button is undone and she has no choice but to take the shirt off..."
                 hide screen blktone
                 with d3
-                call her_head("{size=-5}(Alright, here it comes...){/size}","body_208b")
-                call her_head("{size=-5}(For the honour of the \"Gryffindor\"!){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(Alright, here it comes...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(For the honour of the \"Gryffindor\"!){/size}","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione takes off her shirt..."
+                $ her_SC.uniform.set(wear_top=False,wear_bra=False)
                 hide screen blktone
                 with d3
                 show screen ctc
@@ -2998,12 +3000,12 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 show screen no_shirt_dance
                 with d3
                 pause
-                call her_head("{size=-5}(I actually did it...){/size}","body_208b")
-                call her_head("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}","body_208b")
-                call her_head("{size=-5}(This is so demeaning...){/size}","body_208b")
-                call her_head("{size=-5}(But I am doing this for my house...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(I actually did it...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}([genie_name] can see my breasts while I'm dancing for him...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(This is so demeaning...){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(But I am doing this for my house...){/size}","body_208b")
                 m "Not bad...."
-                call her_head("{size=-5}(.........................................){/size}","body_208b")
+                $ her_SC.sayHead("{size=-5}(.........................................){/size}","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione is topless now..."
@@ -3012,7 +3014,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 hide screen blktone
                 with d3
                 m "Alright, your skirt is next!"
-                call her_head("....................","body_208b")
+                $ her_SC.sayHead("....................","body_208b")
                 show screen blktone
                 with d3
                 ">Hermione looks extremely embarrassed..."
@@ -3020,42 +3022,44 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 with d3
                 ">She fumbles with the zipper of her skirt..."
                 m "What's the problem, [hermione_name]?"
-                call her_head("I'm sorry, [genie_name]...","body_208b")
-                call her_head("It's stuck...","body_208b")
-                call her_head("It won't budge...","body_208b")
-                call her_head("Why won't it budge?! *sob*","body_208b")
-                call her_head("No, I can't do this, [genie_name]! *sob*","body_144")
+                $ her_SC.sayHead("I'm sorry, [genie_name]...","body_208b")
+                $ her_SC.sayHead("It's stuck...","body_208b")
+                $ her_SC.sayHead("It won't budge...","body_208b")
+                $ her_SC.sayHead("Why won't it budge?! *sob*","body_208b")
+                $ her_SC.sayHead("No, I can't do this, [genie_name]! *sob*","body_144")
                 m "What?"
-                call her_head("I thought I could, but...","body_141")
-                call her_head("Stripping for points, [genie_name]?","body_141")
-                call her_head("People look up to me in this school!","body_141")
-                call her_head("I have reputation...*sob*","body_141")
-                call her_head("And If I do this...","body_148")
+                $ her_SC.sayHead("I thought I could, but...","body_141")
+                $ her_SC.sayHead("Stripping for points, [genie_name]?","body_141")
+                $ her_SC.sayHead("People look up to me in this school!","body_141")
+                $ her_SC.sayHead("I have reputation...*sob*","body_141")
+                $ her_SC.sayHead("And If I do this...","body_148")
                 
         show screen blkfade 
         with d3
         hide screen blktone8    
         ">Hermione quickly puts her uniform back on..."
+        $ her_SC.uniform.reset()
         stop music fadeout 1.0
+        $ her_SC.chibi.xpos = 440
         show screen hermione_blink #Hermione stands still.
         hide screen blkfade
         with d3
-        call her_head("[genie_name], I think I'd better go now... *Sob!*","body_145")
+        $ her_SC.sayHead("[genie_name], I think I'd better go now... *Sob!*","body_145")
         
         $ her_head_ypos = her_head_only
         
         menu:
             "\"Alright. I had fun. Here are your points.\"":
-                call her_head("Really? I didn't ruin it completely then?","body_13")
+                $ her_SC.sayHead("Really? I didn't ruin it completely then?","body_13")
             "\"Sure. You will receive no points though.\"":
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("[genie_name]... I may not be very good at this...","body_02")
-                call her_head("But I did my best... I think I deserve some--")
+                $ her_SC.sayHead("[genie_name]... I may not be very good at this...","body_02")
+                $ her_SC.sayHead("But I did my best... I think I deserve some--")
                 m "Just make sure you try harder next time, [hermione_name]."
-                call her_head("Next time?!","body_31")
-                call her_head("I assure you, [genie_name], there will be no next time...","body_47")
+                $ her_SC.sayHead("Next time?!","body_31")
+                $ her_SC.sayHead("I assure you, [genie_name], there will be no next time...","body_47")
                 m "We'll see..."
-                call her_head("Tsk!","body_66")
+                $ her_SC.sayHead("Tsk!","body_66")
                 $ mad += 35
                 call music_block
                 jump could_not_flirt
@@ -3068,35 +3072,32 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         $ h_xpos=140
         
         m "[hermione_name], I need you to dance for me."
-        call her_main("That again, [genie_name]...?","body_66")
+        $ her_SC.say("That again, [genie_name]...?","body_66")
         m "You will get paid accordingly of course..."
-        call her_main("............................","body_69")
-        call her_main("And you expect me to... ehm...","body_69")
+        $ her_SC.say("............................","body_69")
+        $ her_SC.say("And you expect me to... ehm...","body_69")
         m "Take your clothes off. Naturally."
         stop music fadeout 1.0
-        call her_main("......................","body_69")
+        $ her_SC.say("......................","body_69")
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-        call her_main("Well, why not?","body_66")
-        call her_main("Yes, I don't see why not!","body_86")
+        $ her_SC.say("Well, why not?","body_66")
+        $ her_SC.say("Yes, I don't see why not!","body_86")
         m "Hm...? {size=-4}(Look at her, so eager all of a sudden...){/size}"
-        call her_main("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!","body_30")
+        $ her_SC.say("After all, as a pupil I am meant to obey your every order, isn't that right, [genie_name]?!","body_30")
         m "...................."
-        call her_main("If the Headmaster tells me to strip for him, Then I shall strip!!!","body_30")
-        call her_main("Do I find this extremely inappropriate, disgraceful and humiliating?","body_47")
-        call her_main("Of course not. What nonsense!","body_30")
+        $ her_SC.say("If the Headmaster tells me to strip for him, Then I shall strip!!!","body_30")
+        $ her_SC.say("Do I find this extremely inappropriate, disgraceful and humiliating?","body_47")
+        $ her_SC.say("Of course not. What nonsense!","body_30")
         m ".............."
-        call her_main("Ha! Might as well do this the proper way!","body_47")
-        hide screen hermione_main
+        $ her_SC.say("Ha! Might as well do this the proper way!","body_47")
+        $ her_SC.hideScreen()
         with d3
         hide screen blktone 
         with d3
         m "??!"
         hide screen bld1
         with d3
-        $ walk_xpos=400 #Animation of walking chibi. (From)
-        $ walk_xpos2=280 #Coordinates of it's movement. (To)
-        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-        show screen hermione_walk_01 
+        $ her_SC.chibi.walk(550,440,3)
         pause 1
         show screen blkfade
         with Dissolve(1)
@@ -3105,8 +3106,10 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         g4 "!!!!!!"
         ">To your surprise Hermione just hops onto your desk and starts dancing franticly..."
         hide screen blkfade
-        $ hermione_SC.chibi.xpos = 210 #Near the desk: 400.
-        $ hermione_SC.chibi.ypos = 180 #Default: 250
+        # $ hermione_SC.chibi.xpos = 210 #Near the desk: 400.
+        # $ hermione_SC.chibi.ypos = 180 #Default: 250
+        $ her_chibi_dance_xpos = 350
+        $ her_chibi_dance_ypos = 180
         show screen clothed_dance #Hermione stands still.
         show screen ctc
         with fade
@@ -3117,20 +3120,21 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         
         $ her_head_ypos = her_head_only
     
-        call her_head("If I must degrade myself in order to protect the honour of my house...","body_30")
+        $ her_SC.sayHead("If I must degrade myself in order to protect the honour of my house...","body_30")
         ">Hermione is starting to take off her vest..."
-        call her_head("So be it then!","body_86")
-        call her_head("Just...","body_87")
-        call her_head("*groan*","body_88")
+        $ her_SC.sayHead("So be it then!","body_86")
+        $ her_SC.sayHead("Just...","body_87")
+        $ her_SC.sayHead("*groan*","body_88")
         
         show screen blktone8
         hide screen blktone
         with d3
         
         ">Her vest seems to be stuck somehow, but the girl keeps pulling on at the fabric with anger..."
-        call her_head("Why won't it....?!")
-        call her_head("There!","body_81")
+        $ her_SC.sayHead("Why won't it....?!")
+        $ her_SC.sayHead("There!","body_81")
         ">Hermione finally manages to untangle herself and sends the vest flying to the other side of the room..."
+        $ her_SC.uniform.set(top=2)
         
         hide screen blktone8
         with d3
@@ -3145,21 +3149,21 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         with d3
         hide screen ctc
         
-        call her_head("The skirt is next, right?","body_30")
+        $ her_SC.sayHead("The skirt is next, right?","body_30")
         menu:
             m "..."
             "\"Yes, that's right. Take it off!\"":
-                call her_head("Of course!")
-                call her_head("Here it goes!","body_87")
+                $ her_SC.sayHead("Of course!")
+                $ her_SC.sayHead("Here it goes!","body_87")
                 pause.1
                 show screen blktone8
                 with d3
                 ">Hermione sends her skirt flying across the room, just like she did with her vest a moment earlier..."
             "\"You need to calm down, [hermione_name]. \"":
-                call her_head("Well, {size=+7}EXCUSE ME{/size}, [genie_name]!")
-                call her_head("You told me to strip for you, but you never told me your preferences in regards to the pace!")
+                $ her_SC.sayHead("Well, {size=+7}EXCUSE ME{/size}, [genie_name]!")
+                $ her_SC.sayHead("You told me to strip for you, but you never told me your preferences in regards to the pace!")
                 m "Well, I'm telling you now, [hermione_name]!"
-                call her_head("Too late!")
+                $ her_SC.sayHead("Too late!")
                 pause.1
                 show screen blktone8
                 with d3
@@ -3177,12 +3181,13 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         hide screen ctc
         m "{size=-4}(Wow, she is getting really worked up over this...){/size}"
         m "{size=-4}(Maybe it was still too early to--{/size}"
-        call her_head("My shirt?!!","body_66")
-        call her_head("{size=+9}I don't need it!{/size}","body_86")
+        $ her_SC.sayHead("My shirt?!!","body_66")
+        $ her_SC.sayHead("{size=+9}I don't need it!{/size}","body_86")
         pause.1
         show screen blktone8
         with d5
         ">Hermione's shirt suddenly hits the floor."
+        $ her_SC.uniform.set(wear_bra=False,wear_top=False)
         g4 "{size=-4}(When did she??!){/size}"
         hide screen blktone8
         with d3
@@ -3196,11 +3201,11 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         show screen bld1
         with d3
         hide screen ctc
-        call her_head("Do you enjoy this, [genie_name]?")
-        call her_head("Shall I shake my breasts for you like one of those harlots?","body_30")
+        $ her_SC.sayHead("Do you enjoy this, [genie_name]?")
+        $ her_SC.sayHead("Shall I shake my breasts for you like one of those harlots?","body_30")
         m "Well---"
-        call her_head("Of course! Why wouldn't I degrade myself for your pleasure?!")
-        call her_head("This is completely {size=+7}acceptable!{/size}","body_86")
+        $ her_SC.sayHead("Of course! Why wouldn't I degrade myself for your pleasure?!")
+        $ her_SC.sayHead("This is completely {size=+7}acceptable!{/size}","body_86")
         pause.1
         show screen blktone
         with d3
@@ -3229,73 +3234,66 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         
         $ her_head_ypos = her_head_tits
         
-        call her_head("(Dancing naked in front of the headmaster...)","body_89")
-        call her_head("(If my parents knew about this they would lose their minds...)")
-        call her_head("(Especially my father...)","body_90")
+        $ her_SC.sayHead("(Dancing naked in front of the headmaster...)","body_89")
+        $ her_SC.sayHead("(If my parents knew about this they would lose their minds...)")
+        $ her_SC.sayHead("(Especially my father...)","body_90")
         ">Hermione is starting to shake her tits again...)"
-        call her_head("(Hermione Granger - the stripper...)")
-        call her_head("(Forgive me father...)","body_91")
+        $ her_SC.sayHead("(Hermione Granger - the stripper...)")
+        $ her_SC.sayHead("(Forgive me father...)","body_91")
         pause.1
         show screen blktone8
         hide screen blktone
         with d3
         ">Hermione puts her hands on her tits and starts squeezing them..."
         ">You can only assume that she means to look seductive, but she just looks awkward and ashamed."
-        call her_head("(I used to be a top student... Used to have standards...)")
+        $ her_SC.sayHead("(I used to be a top student... Used to have standards...)")
         ">Hermione clutches her tits even harder and then gives them a couple of twists..."
         ">It almost looks as if she is mad at her own breasts and trying to punish them..."
         ">You find the thought strangely arousing..."
-        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
-        show screen h_c_u
-        call her_head("Well, I hope you enjoyed yourself, [genie_name]!","body_92")
+        $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
+        show screen h_d_c_u
+        $ her_SC.sayHead("Well, I hope you enjoyed yourself, [genie_name]!","body_92")
         m "What?"
-        call her_head("I would like to get paid now...","body_93")
+        $ her_SC.sayHead("I would like to get paid now...","body_93")
         m "Aren't you forgetting something, [hermione_name]?"
-        call her_head("[genie_name]...?","body_92")
+        $ her_SC.sayHead("[genie_name]...?","body_92")
         m "Your panties...?"
-        call her_head("My panties?","body_94")
-        call her_head("But, they always leave them on!")
+        $ her_SC.sayHead("My panties?","body_94")
+        $ her_SC.sayHead("But, they always leave them on!")
         m "Who exactly are \"they\"?"
         m "Strippers in kid's cartoons?"
         m "Stripping is stripping, [hermione_name]!"
         m "Now take off your panties!"
-        call her_head("................","body_95")
+        $ her_SC.sayHead("................","body_95")
         ">Hermione looks horror-struck. All of her anger is gone..."
-        call her_head(".................","body_90")
+        $ her_SC.sayHead(".................","body_90")
         ">Without saying another word..."
         ">She starts to pull down her panties..."
         g9 "......................................."
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-        $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-        $ walk_xpos=470 #Animation of walking chibi. (From)
-        $ walk_xpos2=360 #Coordinates of it's movement. (To)
         hide screen blktone8
         hide screen bld1
-        show screen snape_walk_01 
         with d3
-        pause 1.5
+        $ snape_SC.chibi.walk(750,550,2)
         stop music 
         $ renpy.play('sounds/scratch.wav')
-        show screen snape_02 #Snape stands still.
+        show screen snape_chibi_standing #Snape stands still.
         
-        $ tt_xpos=330 #Defines position of the Snape's full length sprite. (Default 300). 140 - center.
-        $ tt_ypos=340#(Default 0). Right bottom corner: 340
-        $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-        $ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box. Works for all full size sprites.
-        show screen s_head
-        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
-        show screen h_c_u
+        # $ tt_xpos=330 #Defines position of the Snape's full length sprite. (Default 300). 140 - center.
+        # $ tt_ypos=340#(Default 0). Right bottom corner: 340
+        # $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
+        # $ hermione_main_zorder = 8 #Zorder of the screen hermione_main. 5 puts it on top of everything but behind the speech box. Works for all full size sprites.
+        # show screen s_head
+        $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/05_panties_01.png"
+        show screen h_d_c_u
         
-        
-        
-        sna2 "Listen, Genie. I've been thinki--"
-        $ s_sprite = "01_hp/13_characters/snape/main/snape_11.png"
+        $ snape_SC.sayHead("Listen, Genie. I've been thinki--","snape_01")
         with hpunch
-        sna2 "................................................................................................................................................................................"
+        $ snape_SC.sayHead("................................................................................................................................................................................","snape_11")
         with hpunch
-        call her_head("(Professor Snape???????!)","body_96")
-        call sna_head("Miss Granger?","snape_12")
-        call her_head("(No, no... This is not happening. Please...)")
+        $ her_SC.sayHead("(Professor Snape???????!)","body_96")
+        $ snape_SC.sayHead("Miss Granger?","snape_12")
+        $ her_SC.sayHead("(No, no... This is not happening. Please...)")
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         m "...................................."
         show screen bld1
@@ -3303,45 +3301,45 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         menu:
             m "..."
             "\"Severus, I am busy right now.\"":
-                call sna_head("Yes... I can see that...","snape_13")
-                call her_head("{size=-7}(I want to die!){/size}","body_97")
-                call sna_head("I shall postpone our conversation for later then, Geni-- *khem!* Albus.","snape_12")
-                call sna_head("Miss Granger...","snape_13")
-                call her_head("..........................................","body_97")
+                $ snape_SC.sayHead("Yes... I can see that...","snape_13")
+                $ her_SC.sayHead("{size=-7}(I want to die!){/size}","body_97")
+                $ snape_SC.sayHead("I shall postpone our conversation for later then, Geni-- *khem!* Albus.","snape_12")
+                $ snape_SC.sayHead("Miss Granger...","snape_13")
+                $ her_SC.sayHead("..........................................","body_97")
             "\"Severus! Please, come join us.\"":
                 $ mad += 37
                 $ snape_invated_to_watch = True #Turns TRUE when Hermione is stripping and Snape walks in on you. Allows to invite him to watch her strip next time.
-                call sna_head("Seriously?","snape_14")
-                call her_head("([genie_name], no, please.............................)","body_97")
-                call sna_head("A very tempting offer indeed...","snape_13")
-                call her_head("!!!!!!.......","body_95")
-                call sna_head("Well, maybe some other time...","snape_13")
-                call her_head("{size=-5}(There will be no other time!){/size}","body_99")
-                call her_head("{size=-5}(I will stop selling favours from now on, I swear!){/size}")
-                call sna_head("I shall postpone our conversation then, Geni-- *khem!* Albus.","snape_12")
-                call sna_head("Miss Granger...","snape_13")
-                call her_head(".................................","body_97")
+                $ snape_SC.sayHead("Seriously?","snape_14")
+                $ her_SC.sayHead("([genie_name], no, please.............................)","body_97")
+                $ snape_SC.sayHead("A very tempting offer indeed...","snape_13")
+                $ her_SC.sayHead("!!!!!!.......","body_95")
+                $ snape_SC.sayHead("Well, maybe some other time...","snape_13")
+                $ her_SC.sayHead("{size=-5}(There will be no other time!){/size}","body_99")
+                $ her_SC.sayHead("{size=-5}(I will stop selling favours from now on, I swear!){/size}")
+                $ snape_SC.sayHead("I shall postpone our conversation then, Geni-- *khem!* Albus.","snape_12")
+                $ snape_SC.sayHead("Miss Granger...","snape_13")
+                $ her_SC.sayHead(".................................","body_97")
+        
         show screen blkfade 
         with d3
-        hide screen snape_walk_01 
-        hide screen snape_02 #Snape stands still.
+        hide screen snape_chibi_standing #Snape stands still.
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         pause 1.5
-
         
         ">Snape leaves..."
         ">Hermione hastily hops off your desk."
         ">She starts putting her clothes back on rather frantically..."
-        call her_head("My shirt! Where is my shirt?!","body_98")
+        $ her_SC.sayHead("My shirt! Where is my shirt?!","body_98")
         m "It's over there, by the fireplace..."
-        call her_head("................................","body_85")
+        $ her_SC.sayHead("................................","body_85")
         pause 2
+        $ her_SC.uniform.reset()
         $ badges = True # Turns the badges layer back ON.
-        call her_head("........................","body_33")
+        $ her_SC.sayHead("........................","body_33")
         stop music fadeout 2.0
-        call her_head("Can I just get my points now, please?","body_34")
+        $ her_SC.sayHead("Can I just get my points now, please?","body_34")
         pause.1
-        $ hermione_SC.chibi.xpos = 400 #Near the desk.
+        $ hermione_SC.chibi.xpos = 440 #Near the desk.
         $ hermione_SC.chibi.ypos = 250 #Default: 250. Another number is 180
         show screen hermione_blink #Hermione stands still.
             
@@ -3398,37 +3396,26 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                         ">...................{w}...................{w}...................{w}..................."
                         hide screen blkfade
                         with d5
-                        $ walk_xpos=610 #Animation of walking chibi. (From)
-                        $ walk_xpos2=360 #Coordinates of it's movement. (To)
-                        $ snape_speed = 04.0 #The speed of moving the walking animation across the screen.
-                        show screen snape_walk_01 
-                        
-                        pause 4
-                        show screen snape_02 #Snape stands still.
-
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-                        $ hermione_SC.chibi.xpos = 610
+                        $ snape_SC.chibi.walk(750,550,4)
+                        show screen snape_chibi_standing
+                        
+                        $ hermione_SC.chibi.xpos = 750
                         $ hermione_SC.chibi.ypos = 250
                         show screen hermione_blink #Hermione stands still.
                         with Dissolve(.5)
                         pause.3
                         
-                        $ walk_xpos=610 #Animation of walking chibi. (From)
-                        $ walk_xpos2=500 #Coordinates of it's movement. (To) 400 - near desk.
-                        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
-                        show screen hermione_walk_01 
-                        pause 3
-                        $ hermione_SC.chibi.xpos = 500 #Near the desk - 400
+                        hide screen hermione_blink #Hermione stands still.
+                        $ her_SC.chibi.walk(750,640,3)
                         show screen hermione_blink #Hermione stands still.
                         pause.5
                         show screen ctc
                         pause
                         show screen bld1
                         with Dissolve(.3)
-                        $ tt_xpos=180 #Defines position of the Snape's full length sprite. Default - 300
-                        $ tt_ypos=0
-                        $ s_sprite = "01_hp/13_characters/snape/main/snape_01.png"
-                        show screen snape_main
+                        $ snape_SC.body = "snape_01"
+                        $ snape_SC.showScreen()
                         show screen ctc
                         with Dissolve(.3)
                         
@@ -3463,16 +3450,16 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     
                     sna "Genie... err, I mean Albus, you wanted to see me?"
                     m "Yes. Are you in the mood for a little striptease?"
-                    call sna_main("Oh...?","snape_05")
+                    $ snape_SC.say("Oh...?","snape_05")
                     sna "Miss Granger here will be performing I assume?"
-                    call her_main("..............","body_34")
+                    $ her_SC.say("..............","body_34")
                     m "Yes, our little mynx is more than happy to take off her clothes for our entertainment."
-                    call her_main("............","body_34")
+                    $ her_SC.say("............","body_34")
                     m "Aren't you [hermione_name]?"
-                    call her_main("Yes, [genie_name].","body_34")
+                    $ her_SC.say("Yes, [genie_name].","body_34")
                     m "Let's get started then!"
-                    hide screen hermione_main
-                    hide screen snape_main
+                    $ her_SC.hideScreen()
+                    $ snape_SC.hideScreen()
                     
                     pause
                     
@@ -3482,11 +3469,9 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     pause 1
                     
                     $ her_head_ypos = her_head_only
-                    call her_head(".............","body_16")
+                    $ her_SC.sayHead(".............","body_16")
                     
-                    $ tt_xpos = 330 # x = 330,
-                    $ tt_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.
-                    call sna_head("......................","snape_05")
+                    $ snape_SC.sayHead("......................","snape_05")
                     
                     m ".........................."
                     
@@ -3506,19 +3491,20 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     with d3
                     m "So... Severus... How's life?"
                     
-                    call sna_head("Well, you know... same old, same old...","snape_09")
-                    call sna_head(" The Students are causing me grief...","snape_06")
-                    call sna_head("In fact, miss Granger here managed to cause me more stress than any other student...","snape_03")
-                    call her_head("...............................","body_68")
+                    $ snape_SC.sayHead("Well, you know... same old, same old...","snape_09")
+                    $ snape_SC.sayHead(" The Students are causing me grief...","snape_06")
+                    $ snape_SC.sayHead("In fact, miss Granger here managed to cause me more stress than any other student...","snape_03")
+                    $ her_SC.sayHead("...............................","body_68")
                     m "Oh, I am sure she is very sorry about that..."
-                    call her_head("{size=-4}(Not even a little bit!){/size}","body_74")
+                    $ her_SC.sayHead("{size=-4}(Not even a little bit!){/size}","body_74")
                     m "And will make up for it today, won't you [hermione_name]?"
-                    call her_head("Uhm... Yes, [genie_name].","body_53")
+                    $ her_SC.sayHead("Uhm... Yes, [genie_name].","body_53")
                     hide screen ctc
                     pause.2
                     show screen blktone
                     with d3
                     ">Hermione takes her vest off and starts to sway her hips seductively."
+                    $ her_SC.uniform.set(top=2)
                     hide screen blktone
                     with d3
 
@@ -3532,66 +3518,66 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen bld1
                     hide screen ctc
                     with d3
-                    call her_head("...................","body_87")
-                    call sna_head("Hm... You are being suspiciously quiet [hermione_name].","snape_05")
-                    call her_head("{size=-4}(Oh no! Is he onto us?){/size}","body_48")
-                    call her_head("I am just doing what the headmaster told me, [genie_name]...","body_57")
-                    call sna_head("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day?","snape_03")
+                    $ her_SC.sayHead("...................","body_87")
+                    $ snape_SC.sayHead("Hm... You are being suspiciously quiet [hermione_name].","snape_05")
+                    $ her_SC.sayHead("{size=-4}(Oh no! Is he onto us?){/size}","body_48")
+                    $ her_SC.sayHead("I am just doing what the headmaster told me, [genie_name]...","body_57")
+                    $ snape_SC.sayHead("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day?","snape_03")
                     m "Severus..."
-                    call sna_head("No, Albus I want to hear little miss perfect's answer.","snape_03")
-                    call her_head("I just want you to have a good time, [genie_name]...","body_57")
-                    call sna_head("Oh! It's \"[genie_name]\" now, is it?","snape_03")
-                    call sna_head("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
+                    $ snape_SC.sayHead("No, Albus I want to hear little miss perfect's answer.","snape_03")
+                    $ her_SC.sayHead("I just want you to have a good time, [genie_name]...","body_57")
+                    $ snape_SC.sayHead("Oh! It's \"[genie_name]\" now, is it?","snape_03")
+                    $ snape_SC.sayHead("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
                     g9 "{size=-5}( \"snape'o'doodle\, heh... that's funny.){/size}"
-                    call her_head(".............","body_57")
-                    call sna_head("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
-                    call her_head("Well, maybe that's because you deserve it... [genie_name].","body_86")
-                    call sna_head("What?!","snape_10")
-                    call sna_head("How dare you....?")
-                    call sna_head("Who do you think you are? You filthy mu--","snape_15")
-                    call her_head("[genie_name], one of your staff is verbally abusing me!","body_62")
-                    call her_head("Are you going to allow this?")
-                    call sna_head("Verbally abusing...?! You have some nerve, girl!","snape_08")
-                    call sna_head("Albus, will you allow her to talk back to a teacher like that?","snape_10")
-                    call her_head("[genie_name]!","body_62")
-                    call sna_head("Albus!","snape_10")
+                    $ her_SC.sayHead(".............","body_57")
+                    $ snape_SC.sayHead("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
+                    $ her_SC.sayHead("Well, maybe that's because you deserve it... [genie_name].","body_86")
+                    $ snape_SC.sayHead("What?!","snape_10")
+                    $ snape_SC.sayHead("How dare you....?")
+                    $ snape_SC.sayHead("Who do you think you are? You filthy mu--","snape_15")
+                    $ her_SC.sayHead("[genie_name], one of your staff is verbally abusing me!","body_62")
+                    $ her_SC.sayHead("Are you going to allow this?")
+                    $ snape_SC.sayHead("Verbally abusing...?! You have some nerve, girl!","snape_08")
+                    $ snape_SC.sayHead("Albus, will you allow her to talk back to a teacher like that?","snape_10")
+                    $ her_SC.sayHead("[genie_name]!","body_62")
+                    $ snape_SC.sayHead("Albus!","snape_10")
                     menu:
                         m "..."
                         "\"[hermione_name], show some respect!\"":
                             $ mad += 9
-                            call her_head("What?","body_61")
-                            call her_head("But [genie_name]!")
+                            $ her_SC.sayHead("What?","body_61")
+                            $ her_SC.sayHead("But [genie_name]!")
                             m "Young lady, you {size=+4}will{/size} calm down now."
-                            call her_head("Tsk!","body_66")
+                            $ her_SC.sayHead("Tsk!","body_66")
                             m "And take off your skirt already, would you?"
-                            call her_head(".......","body_69")
-                            call sna_head("...........","snape_13")
+                            $ her_SC.sayHead(".......","body_69")
+                            $ snape_SC.sayHead("...........","snape_13")
                         "\"Severus, you started this.\"":
-                            call sna_head("What? Me?!","snape_10")
-                            call her_head("Thank you, [genie_name].","body_52")
-                            call sna_head("Albus, you are spoiling the girl! She must be taught a lesson!","snape_08")
+                            $ snape_SC.sayHead("What? Me?!","snape_10")
+                            $ her_SC.sayHead("Thank you, [genie_name].","body_52")
+                            $ snape_SC.sayHead("Albus, you are spoiling the girl! She must be taught a lesson!","snape_08")
                             m "...............Severus."
                             g4 "Did you hit your head?!"
-                            call sna_head("I beg your pardon?","snape_03")
+                            $ snape_SC.sayHead("I beg your pardon?","snape_03")
                             g4 "The girl is already stripping for you!"
                             g4 "What punishment are you talking about?"
-                            call sna_head("Tsk... How about a flogging?","snape_16")
+                            $ snape_SC.sayHead("Tsk... How about a flogging?","snape_16")
                             g4 "Severus!"
-                            call sna_head("Alright, alright, I see your point...","snape_17")
+                            $ snape_SC.sayHead("Alright, alright, I see your point...","snape_17")
                             m "[hermione_name], are you going to strip or are you going to climb on my desk to give us a better view?"
-                            call her_head("Ehm...","body_87")
+                            $ her_SC.sayHead("Ehm...","body_87")
                             m "Take of your skirt, [hermione_name]!"
-                            call her_head("Yes, [genie_name]...","body_55")
+                            $ her_SC.sayHead("Yes, [genie_name]...","body_55")
                         "\"Both of you, calm the fuck down.\"":
                             m "You, tall-dark-and-handsome, calm down a bit, would you?"
-                            call sna_head("I beg your pardon?","snape_03")
-                            call her_head("Yes! You tell him profess--","body_69")
+                            $ snape_SC.sayHead("I beg your pardon?","snape_03")
+                            $ her_SC.sayHead("Yes! You tell him profess--","body_69")
                             m "You as well, you perverted little mynx!"
                             m "Calm down and take your skirt off already."
-                            call her_head("I am not perverted...","body_79")
+                            $ her_SC.sayHead("I am not perverted...","body_79")
                             m "The skirt, [hermione_name]!"
-                            call her_head("......","body_69")
-                            call sna_head(".............","snape_13")
+                            $ her_SC.sayHead("......","body_69")
+                            $ snape_SC.sayHead(".............","snape_13")
                             show screen blktone
                     with d3
                     ">Hermione swiftly takes off her \"Hogwarts\" skirt..."
@@ -3608,9 +3594,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen bld1
                     hide screen ctc
                     with d3
-                    show screen s_head2
-                    sna "Hm..."
-                    call her_head("........................","body_87")
+                    $ snape_SC.sayHead("Hm...")
+                    $ her_SC.sayHead("........................","body_87")
                     m "Yes, much better!"
                     show screen blktone
                     with d3
@@ -3618,52 +3603,53 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     menu:
                         m "..."
                         "\"Severus, what about that Potter boy?\"":
-                            call her_head("(.....?)","body_55")
-                            call sna_head("What about him?","snape_09")
+                            $ her_SC.sayHead("(.....?)","body_55")
+                            $ snape_SC.sayHead("What about him?","snape_09")
                             m "Is he still causing you grief?"
-                            call sna_head("Oh...","snape_09")
-                            call sna_head("Not really, no...")
-                            call sna_head("To be honest I never really had a problem with the boy himself...","snape_06")
+                            $ snape_SC.sayHead("Oh...","snape_09")
+                            $ snape_SC.sayHead("Not really, no...")
+                            $ snape_SC.sayHead("To be honest I never really had a problem with the boy himself...","snape_06")
                             sna2 "Although I did plan to make his life here miserable because of his father..."
-                            call sna_head("But lately I have way more interesting projects to occupy myself with...","snape_02")
-                            call her_head("...................","body_55")
+                            $ snape_SC.sayHead("But lately I have way more interesting projects to occupy myself with...","snape_02")
+                            $ her_SC.sayHead("...................","body_55")
                         "\"Severus, what about the Weasleys?\"":
-                            call sna_head("What about them?","snape_09")
+                            $ snape_SC.sayHead("What about them?","snape_09")
                             m "Are they still causing you trouble?"
-                            call sna_head("Yes... More than ever.","snape_09")
+                            $ snape_SC.sayHead("Yes... More than ever.","snape_09")
                             m "Hm...?"
                             m "You seem surprisingly indifferent about that..."
-                            call sna_head("That's because I know that they will get what they deserve eventually...","snape_05")
+                            $ snape_SC.sayHead("That's because I know that they will get what they deserve eventually...","snape_05")
                             m "Revenge? Cool! What do you have in mind?"
-                            call her_head("!!!","body_55")
-                            call sna_head("Hm... Can't discuss this with \"the enemy\" present.","snape_06")
-                            call her_head("Tsk!","body_69")
-                            call sna_head("All I can say is that it involves their beloved little sister Ginny...","snape_13")
+                            $ her_SC.sayHead("!!!","body_55")
+                            $ snape_SC.sayHead("Hm... Can't discuss this with \"the enemy\" present.","snape_06")
+                            $ her_SC.sayHead("Tsk!","body_69")
+                            $ snape_SC.sayHead("All I can say is that it involves their beloved little sister Ginny...","snape_13")
                             m "Ginny? Hm... What a curious name for a girl..."
                             m "............."
                             m "So, you plan to fuck her then?"
-                            call sna_head("!!?","snape_08")
-                            call sna_head("Albus, please, not in front of the girl!","snape_17")
+                            $ snape_SC.sayHead("!!?","snape_08")
+                            $ snape_SC.sayHead("Albus, please, not in front of the girl!","snape_17")
                             m "Alright, alright..."
-                            call her_head("{size=-5}(Ginny...){/size}","body_87")
+                            $ her_SC.sayHead("{size=-5}(Ginny...){/size}","body_87")
                         "\"How would you grade Hermione's butt?\"":
-                            call sna_head("miss Hermione's buttocks?","snape_05") 
-                            call her_head("!!!............","body_69")
+                            $ snape_SC.sayHead("miss Hermione's buttocks?","snape_05") 
+                            $ her_SC.sayHead("!!!............","body_69")
                             m "Sure! As you would grade a paper."
-                            call sna_head("Hm...","snape_13")
+                            $ snape_SC.sayHead("Hm...","snape_13")
                             pause.1
                             ">Professor Snape gives Hermione's buttocks an appraising look..."
-                            call her_head(".........?","body_44")
-                            call sna_head("I would say...","snape_13")
-                            call her_head("............?!","body_59")
-                            call sna_head("Yes... \"{size=+5}F-{/size}\".","snape_09")
-                            call her_head("(What?!)","body_48")
-                            call sna_head("Unsatisfactory...","snape_09")
+                            $ her_SC.sayHead(".........?","body_44")
+                            $ snape_SC.sayHead("I would say...","snape_13")
+                            $ her_SC.sayHead("............?!","body_59")
+                            $ snape_SC.sayHead("Yes... \"{size=+5}F-{/size}\".","snape_09")
+                            $ her_SC.sayHead("(What?!)","body_48")
+                            $ snape_SC.sayHead("Unsatisfactory...","snape_09")
                             sna2 "Look at that pitiful thing. Tiny and skinny... That's a boy's butt."
-                            call her_head("!!!!!!!!!!","body_51")
+                            $ her_SC.sayHead("!!!!!!!!!!","body_51")
                             show screen blktone
                     with d3
                     ">One after another, Hermione undoes the buttons of her shirt and then takes it off..."
+                    $ her_SC.uniform.set(wear_bra=False,wear_top=False,wear_panties=False,wear_bot=False)
                     hide screen blktone
                     with d3
                    
@@ -3678,13 +3664,13 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     hide screen ctc
                     with d3
                     m "Alright! We Finally get to the good stuff!"
-                    call sna_head("Hm...","snape_13")
+                    $ snape_SC.sayHead("Hm...","snape_13")
                     
                     if custom_outfit_old == 0:
                         $ badges = False # Hides the layer with badges.
                     
                     $ her_head_ypos = her_head_tits
-                    call her_head("........","body_90")
+                    $ her_SC.sayHead("........","body_90")
                     menu:
                         m "..."
                         "-Start jerking off-":
@@ -3696,12 +3682,12 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             pause
                             show screen blkfade
                             with d6
-                            call her_head("[genie_name]?!","body_94")
+                            $ her_SC.sayHead("[genie_name]?!","body_94")
                             m "It's alright, [hermione_name]. Don't mind me..."
-                            call sna_head("Oh, we're doing it like this then?","snape_12")
-                            call sna_head("Well, don't mind if I do...","snape_12")
+                            $ snape_SC.sayHead("Oh, we're doing it like this then?","snape_12")
+                            $ snape_SC.sayHead("Well, don't mind if I do...","snape_12")
                             $ s_head_ypos = 380 #Right bottom corner: y = 340. y = 380 - no hand.
-                            call her_head("!!!")
+                            $ her_SC.sayHead("!!!")
                             hide screen genie
                             hide screen no_shirt_no_skirt_dance
                             $ genie_chibi_xpos = -185
@@ -3719,17 +3705,17 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             pause
                             show screen bld1
                             with d3
-                            call her_head("No, guys... err I mean, sirs... Ehm, professors!","body_95")
+                            $ her_SC.sayHead("No, guys... err I mean, sirs... Ehm, professors!","body_95")
                             m "Don't you mind us [hermione_name], just keep on doing your thing."
-                            call her_head("But...")
-                            call her_head("No! I refuse to dance with those things pointed at me!","body_99")
-                            call her_head("You need to put them away or the dance is over!")
+                            $ her_SC.sayHead("But...")
+                            $ her_SC.sayHead("No! I refuse to dance with those things pointed at me!","body_99")
+                            $ her_SC.sayHead("You need to put them away or the dance is over!")
                             m "You aren't in any position to give us orders, [hermione_name]."
-                            call her_head("that was not an order, [genie_name]. It was an ultimatum.","body_110")
+                            $ her_SC.sayHead("that was not an order, [genie_name]. It was an ultimatum.","body_110")
                             menu:
                                 m "..."
                                 "\"Alright Severus, let's be civil...\"":
-                                    call sna_head("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
+                                    $ snape_SC.sayHead("I see Miss Granger manages to remain exceptionally stubborn in any situation...","snape_03")
                                     show screen blkfade
                                     with d3
                                     hide screen no_shirt_no_skirt_dance
@@ -3749,13 +3735,13 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                     
                                 "\"(Pst! Remember why we are doing this!)\"":
                                     if whoring >= 15: #LEVEL 06. You jerk off your cock and Hermione is OK with it.
-                                        call her_head("Oh, right...","body_104")
-                                        call sna_head("What was that?","snape_05")
-                                        call her_head("Please don't mind what I just said...","body_108")
-                                        call sna_head("Hm...?","snape_05")
-                                        call her_head("I do not mind you touching yourself in front of me...","body_108")
-                                        call her_head("Yes, I do not mind it at all...")
-                                        call her_head("I will just keep on dancing then...")
+                                        $ her_SC.sayHead("Oh, right...","body_104")
+                                        $ snape_SC.sayHead("What was that?","snape_05")
+                                        $ her_SC.sayHead("Please don't mind what I just said...","body_108")
+                                        $ snape_SC.sayHead("Hm...?","snape_05")
+                                        $ her_SC.sayHead("I do not mind you touching yourself in front of me...","body_108")
+                                        $ her_SC.sayHead("Yes, I do not mind it at all...")
+                                        $ her_SC.sayHead("I will just keep on dancing then...")
                                         hide screen ctc
                                         pause.1
                                         show screen blktone
@@ -3767,19 +3753,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen blktone8
                                         with d3
                                         m "Yes, [hermione_name]. Very good."
-                                        call sna_head("*Khem!* Acceptable performance, miss Granger.","snape_12")
-                                        call her_head("....................","body_97")
+                                        $ snape_SC.sayHead("*Khem!* Acceptable performance, miss Granger.","snape_12")
+                                        $ her_SC.sayHead("....................","body_97")
                                         m "Heh..."
                                         m "How would you grade her tits then?"
-                                        call her_head("......","body_94")
-                                        call sna_head("Hm......","snape_13")
-                                        call her_head("........","body_103")
-                                        call sna_head("\"B+\"!","snape_12")
-                                        call her_head("!!!","body_94")
+                                        $ her_SC.sayHead("......","body_94")
+                                        $ snape_SC.sayHead("Hm......","snape_13")
+                                        $ her_SC.sayHead("........","body_103")
+                                        $ snape_SC.sayHead("\"B+\"!","snape_12")
+                                        $ her_SC.sayHead("!!!","body_94")
                                         m "Really?"
-                                        call sna_head("Yes. I do give credit where credit is due.","snape_12")
-                                        call her_head("(Professor...)","body_90")
-                                        call her_head("(Time for my finishing act then!)","body_102")
+                                        $ snape_SC.sayHead("Yes. I do give credit where credit is due.","snape_12")
+                                        $ her_SC.sayHead("(Professor...)","body_90")
+                                        $ her_SC.sayHead("(Time for my finishing act then!)","body_102")
                                         pause.1
                                         show screen blktone8
                                         with d3
@@ -3796,9 +3782,9 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         show screen ctc
                                         pause
-                                        $ h_c_u_pic = "no_panties_dance_ani"
+                                        $ h_d_c_u_pic = "no_panties_dance_ani"
                                         hide screen no_shirt_no_skirt_dance
-                                        show screen h_c_u
+                                        show screen h_d_c_u
                                         with d3
                                         pause
                                         show screen bld1
@@ -3806,28 +3792,28 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         show screen blktone
                                         with d3
                                         
-                                        call sna_head("Yes... Yes!!!","snape_18")
-                                        call sna_head("Now shake those B+ titties for me, you harlot!")
-                                        call her_head(".......","body_99")
+                                        $ snape_SC.sayHead("Yes... Yes!!!","snape_18")
+                                        $ snape_SC.sayHead("Now shake those B+ titties for me, you harlot!")
+                                        $ her_SC.sayHead(".......","body_99")
                                         hide screen ctc
                                         pause.1
                                         show screen blktone8
                                         with d3
                                         ">Hermione suddenly breaks into a series of rather complex pirouettes."
-                                        call sna_head("Yes, such grace...","snape_19")
-                                        call sna_head("That lithe young body!","snape_20")
-                                        call her_head(".........","body_106")
-                                        call sna_head("Oh, yes!","snape_20")
-                                        call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_106")
+                                        $ snape_SC.sayHead("Yes, such grace...","snape_19")
+                                        $ snape_SC.sayHead("That lithe young body!","snape_20")
+                                        $ her_SC.sayHead(".........","body_106")
+                                        $ snape_SC.sayHead("Oh, yes!","snape_20")
+                                        $ her_SC.sayHead("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_106")
                                         pause.1
                                         show screen blktone8
                                         with d3
                                         ">Hermione seems very focused on her dancing routine..."
                                         hide screen blktone8
                                         with d3
-                                        call sna_head("Yes, and now another pirouette!","snape_19")
-                                        call sna_head("Magnificent!")
-                                        call sna_head("I would applaud you but one of my hands is very busy at the moment.","snape_13")
+                                        $ snape_SC.sayHead("Yes, and now another pirouette!","snape_19")
+                                        $ snape_SC.sayHead("Magnificent!")
+                                        $ snape_SC.sayHead("I would applaud you but one of my hands is very busy at the moment.","snape_13")
                                         m "{size=-4}(Was that an attempt at a joke?){/size}"
                                         m "{size=-4}(Man, horny Snape is weird...){/size}"
                                         show screen blktone8
@@ -3836,9 +3822,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         ">Gives a little curtsy bow to the imaginary public..."
                                         show screen blkfade
                                         with d3
-                                        $ hermione_SC.chibi.xpos = -210 #400 = Near the desk.
-                                        $ hermione_SC.chibi.ypos = 10
-                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                                        show screen hermione_sits_dance
                                         ">And then slumps down on her butt exhausted."
                                         
                                         hide screen blktone
@@ -3851,7 +3835,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         show screen ctc
                                         pause
-                                        call her_head("Whew... This was--","body_102")
+                                        $ her_SC.sayHead("Whew... This was--","body_102")
                                         with hpunch
                                         g4 "ARGH! YOU FUCKING WHORE!"
                                         hide screen hermione_main
@@ -3869,15 +3853,14 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         $ genie_cum_chibi_xpos =  -210
                                         $ genie_cum_chibi_ypos  = 10
                                         $ g_c_c_u_pic = "genie_cum_03"
-                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits_02.png"
+                                        show screen hermione_sits_02_dance
                                         show screen g_c_c_u
                                         pause
-                                        $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
-                                        $ u_sperm = "01_hp/13_hermione_main/auto_04.png"
-                                        call her_head("??!!!","body_104")
-                                        call her_head(" ","body_97")
-                                        call sna_head("Good job, you harlot!","snape_18")
-                                        call sna_head("Here is your reward!","snape_21")
+                                        $ her_SC.sperm = ["auto_04"]
+                                        $ her_SC.sayHead("??!!!","body_104")
+                                        $ her_SC.sayHead(" ","body_97")
+                                        $ snape_SC.sayHead("Good job, you harlot!","snape_18")
+                                        $ snape_SC.sayHead("Here is your reward!","snape_21")
                                         show screen white 
                                         pause.1
                                         hide screen white
@@ -3893,39 +3876,38 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         $ s_c_c_u_pic = "snape_cum_01"
                                         show screen s_c_c_u
                                         pause
-                                        $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
-                                        $ u_sperm = "01_hp/13_hermione_main/auto_05.png"
-                                        call her_head("!!!!!!!!!!!","body_104")
-                                        call sna_head("Oh... Yes...","snape_21")
+                                        $ her_SC.sperm = ["auto_05"]
+                                        $ her_SC.sayHead("!!!!!!!!!!!","body_104")
+                                        $ snape_SC.sayHead("Oh... Yes...","snape_21")
                                         g4 "Little slut!"
-                                        call her_head("...............................","body_106")
+                                        $ her_SC.sayHead("...............................","body_106")
                                 
                                         $ s_c_c_u_pic = "01_hp/08_animation_02/11_cum_18.png"
                                         $ g_c_c_u_pic = "01_hp/08_animation_02/09_cum_18.png"
-                                        call sna_head("Ha-ha-ha! This is magnificent!","snape_21")
+                                        $ snape_SC.sayHead("Ha-ha-ha! This is magnificent!","snape_21")
                                         g9 "I know, right!?"
                                         show screen bld1
                                         with d3
                                         $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png" # Genie stands still with his dick in hand.
                                         $ s_c_u_pic = "01_hp/08_animation_02/10_jerking_01.png" # Snape stands still with his dick in hand.
-                                        call sna_head("Yes... We should do this more often.","snape_22")
-                                        call her_head(".................","body_106")
-                                        call sna_head("Your performance was acceptable, miss Granger...","snape_20")
-                                        call her_head("Thank you................","body_91")
-                                        call sna_head("But if I were to grade it...","snape_19")
-                                        call her_head("...........","body_91")
-                                        call sna_head("Hm....","snape_22")
-                                        call her_head("............","body_91")
-                                        call sna_head("\"{size=+5}F+{/size}\"!","snape_10")
+                                        $ snape_SC.sayHead("Yes... We should do this more often.","snape_22")
+                                        $ her_SC.sayHead(".................","body_106")
+                                        $ snape_SC.sayHead("Your performance was acceptable, miss Granger...","snape_20")
+                                        $ her_SC.sayHead("Thank you................","body_91")
+                                        $ snape_SC.sayHead("But if I were to grade it...","snape_19")
+                                        $ her_SC.sayHead("...........","body_91")
+                                        $ snape_SC.sayHead("Hm....","snape_22")
+                                        $ her_SC.sayHead("............","body_91")
+                                        $ snape_SC.sayHead("\"{size=+5}F+{/size}\"!","snape_10")
                                         stop music
-                                        call her_head("{size=+5}WHAT?!!!{/size}","body_112")
-                                        call sna_head("Yes... Quite a few things could use some improvement actually.","snape_09")
+                                        $ her_SC.sayHead("{size=+5}WHAT?!!!{/size}","body_112")
+                                        $ snape_SC.sayHead("Yes... Quite a few things could use some improvement actually.","snape_09")
                                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                                        call her_head("I cannot believe this!","body_110")
+                                        $ her_SC.sayHead("I cannot believe this!","body_110")
                                         pause
                                         show screen blkfade 
                                         with d3
-                                        hide screen h_c_u 
+                                        hide screen hermione_sits_02_dance
                                         hide screen s_c_c_u
                                         hide screen g_c_c_u
                                         show screen genie
@@ -3935,32 +3917,30 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen chair_02
                                         hide screen g_c_u
                                         hide screen desk_02
-                                        $ hermione_SC.chibi.xpos = 300 #Near the desk: 400. (210 - standing on desk.)
+                                        $ hermione_SC.chibi.xpos = 440 #Near the desk: 400. (210 - standing on desk.)
                                         $ hermione_SC.chibi.ypos = 260#Default: 250. (180- standing on desk.)
+                                        $ h_c_u_pic = im.Flip("01_hp/16_hermione_chibi/dance/07_dance_03.png",horizontal=True)
                                         show screen h_c_u 
-                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/07_dance_03.png"
                                         ">Hermione furiously jumps off your desk."
                                         hide screen blkfade
                                         with d3
                                         hide screen bld1
                                         with d3
                                         pause
-                                        $ flip = True # Flips hermione_main screen.
-                                        $ u_sperm = "01_hp/13_hermione_main/auto_05.png"
-                                        $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
                                         if custom_outfit_old == 0:
                                             $ only_upper = True #No legs shown.
                                         show screen bld1
                                         with d5
-                                        call her_main("","body_101")
                                         pause
                                         hide screen ctc
-                                        her "I demand a higher grade than that!"
-                                        call sna_head("You do not demand a grade miss Granger, you earn it.","snape_09")
-                                        call her_main("I did earn it!","body_107")
-                                        call her_main("And could you at least have the decency to stop touching yourself, professor!","body_103")
-                                        call sna_head("Tch...","snape_12")
-                                        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+                                        $ her_SC.xpos = 280
+                                        $ her_SC.flip = True
+                                        $ her_SC.say("I demand a higher grade than that!","body_101")
+                                        $ snape_SC.sayHead("You do not demand a grade miss Granger, you earn it.","snape_09")
+                                        $ her_SC.say("I did earn it!","body_107")
+                                        $ her_SC.say("And could you at least have the decency to stop touching yourself, professor!","body_103")
+                                        $ snape_SC.sayHead("Tch...","snape_12")
+                                        $ her_SC.hideScreen()
                                         with d3   
                                         m "(Are they for real?)"
                                         show screen ctc
@@ -3969,8 +3949,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d7
                                         hide screen ctc
                                         hide screen s_c_u
-                                        hide screen h_c_u
-                                        $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                                        hide screen h_d_c_u
+                                        $ hermione_SC.chibi.xpos = 440 #Near the desk.
                                         $ hermione_SC.chibi.ypos = 250 #Default: 250
                                         show screen hermione_blink #Hermione stands still.
                                         ">You watch Snape with his dick still hanging out and the cum-covered Hermione argue loudly about her imaginary grade."
@@ -3978,40 +3958,42 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         ">Then he beats a hasty retreat before Hermione has a chance to start another argument..."
                                         hide screen blkfade
                                         with d5
-                                        $ flip = False # Flips hermione_main
+                                        $ her_SC.flip = False
+                                        $ her_SC.sperm = ["auto_03"]
                                         $ only_upper = False #Show legs.
                                         $ aftersperm = True #Show cum stains.
                                         $ uni_sperm = False #Don't show cum.
                                         $ badges = True
-                                        call her_main("Well...","body_29")
-                                        her "Was our mission a success, [genie_name]?"
+                                        $ her_SC.say("Well...","body_29")
+                                        $ her_SC.say("Was our mission a success, [genie_name]?")
                                         menu:
                                             m "..."
                                             "\"Huh? What mission?\"":
                                                 $ mad += 7
-                                                call her_main("I only agreed to this so that you could catch professor Snape in the act, [genie_name]!","body_32")
-                                                call her_main("So that we would have definite proof that he is \"dirty\"!","body_33")
+                                                $ her_SC.say("I only agreed to this so that you could catch professor Snape in the act, [genie_name]!","body_32")
+                                                $ her_SC.say("So that we would have definite proof that he is \"dirty\"!","body_33")
                                                 m "Oh, that mission..."
                                                 m "Yes. Mission accomplished!"
                                             "\"Yes! Thanks to you!\"":
                                                 pass
                                         m "Good job. [hermione_name]."
-                                        call her_main("I am happy to have been of help, [genie_name]!","body_33")
-                                        call her_main("...Can I get paid now, please?","body_34")
+                                        $ her_SC.say("I am happy to have been of help, [genie_name]!","body_33")
+                                        $ her_SC.say("...Can I get paid now, please?","body_34")
                                     else:
-                                        call her_head("Oh...","body_94")
-                                        call her_head("No, I can't! This is just not worth it!","body_97")
+                                        $ her_SC.sayHead("Oh...","body_94")
+                                        $ her_SC.sayHead("No, I can't! This is just not worth it!","body_97")
                                         hide screen ctc
                                         pause.1
                                         show screen blkfade
                                         with d5
                                         ">Hermione jumps off the desk and starts to put her clothes back on."
-                                        call sna_head("Well, this was awfully anticlimactic...","snape_03")
+                                        $ her_SC.uniform.reset()
+                                        $ snape_SC.sayHead("Well, this was awfully anticlimactic...","snape_03")
                                         g4 "You don't say..."
-                                        call sna_head("May as well leave now I suppose. I will talk to you later, Albus.","snape_03")
+                                        $ snape_SC.sayHead("May as well leave now I suppose. I will talk to you later, Albus.","snape_03")
                                         m "Yes, later, Severus."
-                                        call sna_head("Miss Granger...","snape_04")
-                                        call her_head("Professor...","body_99")
+                                        $ snape_SC.sayHead("Miss Granger...","snape_04")
+                                        $ her_SC.sayHead("Professor...","body_99")
                                         # her "I would like to get paid now."
                                         show screen ctc
                                         pause.4
@@ -4019,16 +4001,16 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen ctc
                                         ">Professor Snape leaves..."
                                         stop music fadeout 1.0
-                                        call her_head("....................","body_91")
+                                        $ her_SC.sayHead("....................","body_91")
                                         pause.5
                                         ">.................{w}.................{w}.................{w}................."
                                         $ badges = True # Turns badges back on.
-                                        call her_head("...Can I get paid now... [genie_name]...?","body_33")
+                                        $ her_SC.sayHead("...Can I get paid now... [genie_name]...?","body_33")
                         "-Just keep on watching-":
                             label civil_with_snape:
                                 play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
                             # JUST WATCHING.
-                            call her_head("I will just keep on dancing then...","body_102")
+                            $ her_SC.sayHead("I will just keep on dancing then...","body_102")
                             hide screen ctc
                             pause.1
                             show screen blktone8
@@ -4037,19 +4019,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             hide screen blktone8
                             with d3
                             m "Yes, [hermione_name]. Very good."
-                            call sna_head("*Khem!* Acceptable performance, miss Granger.","snape_12")
-                            call her_head("....","body_102")
+                            $ snape_SC.sayHead("*Khem!* Acceptable performance, miss Granger.","snape_12")
+                            $ her_SC.sayHead("....","body_102")
                             m "Heh..."
                             m "How would you grade her tits then?"
-                            call her_head("......","body_90")
-                            call sna_head("Hm......","snape_20")
-                            call her_head("........","body_90")
-                            call sna_head("\"B+\"!","snape_12")
-                            call her_head("!!!","body_94")
+                            $ her_SC.sayHead("......","body_90")
+                            $ snape_SC.sayHead("Hm......","snape_20")
+                            $ her_SC.sayHead("........","body_90")
+                            $ snape_SC.sayHead("\"B+\"!","snape_12")
+                            $ her_SC.sayHead("!!!","body_94")
                             m "Really?"
-                            call sna_head("Yes. I do give credit where it's due.","snape_12")
-                            call her_head("(Professor...)","body_95")
-                            call her_head("(Time for my finishing act then!)","body_102")
+                            $ snape_SC.sayHead("Yes. I do give credit where it's due.","snape_12")
+                            $ her_SC.sayHead("(Professor...)","body_95")
+                            $ her_SC.sayHead("(Time for my finishing act then!)","body_102")
                             pause.1
                             show screen blktone8
                             with d3
@@ -4058,18 +4040,18 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             ">But a pretty pussy is always a welcome sight nonetheless..."
                             hide screen blktone
                             with d3
-                            call sna_head("Yes... Yes...","snape_20")
+                            $ snape_SC.sayHead("Yes... Yes...","snape_20")
                             sna2 "Now shake those B+ titties for me, you harlot!"
-                            call her_head(".......","body_99")
+                            $ her_SC.sayHead(".......","body_99")
                             show screen blktone8
                             with d3
                             ">Hermione suddenly breaks into a series of rather complex pirouettes."
-                            call sna_head("Yes, such grace...","snape_19")
-                            call sna_head("That lithe, young body!","snape_20")
-                            call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
+                            $ snape_SC.sayHead("Yes, such grace...","snape_19")
+                            $ snape_SC.sayHead("That lithe, young body!","snape_20")
+                            $ her_SC.sayHead("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
                             ">Hermione seems very focused on her dancing routine..."
-                            call sna_head("Yes, and now another pirouette!","snape_19")
-                            call sna_head("Magnificent!")
+                            $ snape_SC.sayHead("Yes, and now another pirouette!","snape_19")
+                            $ snape_SC.sayHead("Magnificent!")
                             show screen blkfade
                             with d3
                             ">Hermione performs another set of movements and pirouettes..."
@@ -4077,25 +4059,25 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             ">And then slumps down on her butt exhausted."
                             $ hermione_SC.chibi.xpos = -210 #400 = Near the desk.
                             $ hermione_SC.chibi.ypos = 10
-                            $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
-                            show screen h_c_u
+                            $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                            show screen h_d_c_u
                             hide screen blkfade
                             with d3
                             hide screen blktone8
                             with d3
-                            call sna_head("Good job, you harlot!","snape_22")
-                            call her_head(".............","body_105")
+                            $ snape_SC.sayHead("Good job, you harlot!","snape_22")
+                            $ her_SC.sayHead(".............","body_105")
                             if daytime:
-                                call sna_head("Well, my class is about to start so I will be leaving now.","snape_22")
+                                $ snape_SC.sayHead("Well, my class is about to start so I will be leaving now.","snape_22")
                                 sna2 "Don't you have potion class with me today, MIss Granger?"
-                                call her_head("Yes, [genie_name]...","body_91")
-                                call sna_head("Well, don't be late, girl...","snape_22")
+                                $ her_SC.sayHead("Yes, [genie_name]...","body_91")
+                                $ snape_SC.sayHead("Well, don't be late, girl...","snape_22")
                             else:
-                                call sna_head("Well, it is getting rather late. I think I will be leaving now.","snape_22")
+                                $ snape_SC.sayHead("Well, it is getting rather late. I think I will be leaving now.","snape_22")
                                 sna2 "Good night, Albus."
                                 m "Severus."
-                                call sna_head("Harlot.","snape_22")
-                                call her_head("Professor...","body_91")
+                                $ snape_SC.sayHead("Harlot.","snape_22")
+                                $ her_SC.sayHead("Professor...","body_91")
                                 show screen ctc
                             pause
                             show screen blkfade
@@ -4104,11 +4086,11 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             with d5
                             ">Professor Snape leaves..."
                             stop music fadeout 1.0
-                            call her_head("....................","body_91")
+                            $ her_SC.sayHead("....................","body_91")
                             pause.5
                             ">.................{w}.................{w}.................{w}................."
                             $ badges = True
-                            call her_head("May I... may get paid now... [genie_name]...?","body_33")
+                            $ her_SC.sayHead("May I... may get paid now... [genie_name]...?","body_33")
                 "\"Nah... That's not a good idea...\"":
                     label no_snape_watching:  
                     hide screen blktone
@@ -4139,9 +4121,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     
                     #Locks the door
                     pause.5
-                    $ tt_xpos=670
-                    $ tt_ypos=200
-                    show screen thought 
+                    show screen thought(670,200)
                     with Dissolve(.3)
                     pause.5
                     hide screen thought
@@ -4172,16 +4152,17 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     pause 5
                     $ her_head_ypos = her_head_only
                     
-                    call her_head("Just for the record...","body_16")
-                    call her_head("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","body_17")
+                    $ her_SC.sayHead("Just for the record...","body_16")
+                    $ her_SC.sayHead("I still consider this a highly inappropriate favour to be buying from one of your students, [genie_name].","body_17")
                     m "Right. And an equally inappropriate favour to be selling to your headmaster. Woulnd't you agree?"
-                    call her_head("..........","body_69")
+                    $ her_SC.sayHead("..........","body_69")
                     hide screen blkfade
                     hide screen bld1
                     show screen clothed_dance #Hermione stands still.
                     show screen ctc
                     with fade
                     pause
+                    $ her_SC.uniform.set(top=2)
                     show screen no_vest_dance
                     with d3
                     pause
@@ -4190,34 +4171,34 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     with d3
                     
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                    call her_head("..............","body_87")
-                    call her_head("What if my parents were to find out about this, [genie_name]?","body_85")
-                    call her_head("Mother would never understand...")
-                    call her_head("As for my father...","body_44")
+                    $ her_SC.sayHead("..............","body_87")
+                    $ her_SC.sayHead("What if my parents were to find out about this, [genie_name]?","body_85")
+                    $ her_SC.sayHead("Mother would never understand...")
+                    $ her_SC.sayHead("As for my father...","body_44")
                     menu:
                         m "..."
                         "{size=-3}\"Your father would be proud of you!\"{/size}":
-                            call her_head("I doubt it...")
-                            call her_head("Yes, I am doing this for the right reasons, but...")
-                            call her_head("He would never see it that way...","body_61")
-                            call her_head("He must never know about this...")
+                            $ her_SC.sayHead("I doubt it...")
+                            $ her_SC.sayHead("Yes, I am doing this for the right reasons, but...")
+                            $ her_SC.sayHead("He would never see it that way...","body_61")
+                            $ her_SC.sayHead("He must never know about this...")
                         "{size=-3}\"Your father would spank you hard!\"{/size}":
-                            call her_head("He would not!","body_48")
-                            call her_head("And I am too old for that anyways...","body_44")
+                            $ her_SC.sayHead("He would not!","body_48")
+                            $ her_SC.sayHead("And I am too old for that anyways...","body_44")
                             g9 "I would say that you are in the perfect age for that..."
-                            call her_head("Huh?")
-                            call her_head("I do not know what you mean, [genie_name].","body_57")
+                            $ her_SC.sayHead("Huh?")
+                            $ her_SC.sayHead("I do not know what you mean, [genie_name].","body_57")
                         "{size=-3}\"Your father would disown you!\"{/size}":
-                            call her_head("You are probably right, [genie_name]...","body_34")
-                            call her_head("(Oh father, I am so sorry...)","body_22")
-                            call her_head("he must never find out...","body_21")
+                            $ her_SC.sayHead("You are probably right, [genie_name]...","body_34")
+                            $ her_SC.sayHead("(Oh father, I am so sorry...)","body_22")
+                            $ her_SC.sayHead("he must never find out...","body_21")
                         "{size=-3}\"Your father love to would watch you strip!\"{/size}":
-                            call her_head("He would not! He would be ashamed of me!","body_33")
+                            $ her_SC.sayHead("He would not! He would be ashamed of me!","body_33")
                             m "Are you sure about that?"
-                            call her_head("absolutely! My father is a man of integrity!","body_32")
+                            $ her_SC.sayHead("absolutely! My father is a man of integrity!","body_32")
                             m "But he {size=+4}is{/size} a {size=+4}man{/size}, right?"
-                            call her_head(".....................","body_50")
-                            call her_head("My father must never know about this...","body_29")
+                            $ her_SC.sayHead(".....................","body_50")
+                            $ her_SC.sayHead("My father must never know about this...","body_29")
                     show screen blktone
                     with d3
                     ">Hermione is starting to sway her hips rather seductively while she slides her skirt down..."
@@ -4234,60 +4215,61 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen bld1
                     with d3
                     
-                    call her_head("[genie_name]?","body_31")
+                    $ her_SC.sayHead("[genie_name]?","body_31")
                     m "Huh?"
-                    call her_head("Can I ask you a question?","body_44")
+                    $ her_SC.sayHead("Can I ask you a question?","body_44")
                     m "Go ahead..."
-                    call her_head("...............","body_33")
-                    call her_head("Have you ever been in love...?","body_57")
+                    $ her_SC.sayHead("...............","body_33")
+                    $ her_SC.sayHead("Have you ever been in love...?","body_57")
                     menu:
                         m "..."
                         "\"Don't be ridiculous! Love is a lie!\"":
-                            call her_head("I am sorry you think that way, [genie_name]!","body_29")
-                            call her_head("But you couldn't be more wrong!","body_50")
-                            call her_head("I believe that true love is what makes the earth turn!","body_54")
+                            $ her_SC.sayHead("I am sorry you think that way, [genie_name]!","body_29")
+                            $ her_SC.sayHead("But you couldn't be more wrong!","body_50")
+                            $ her_SC.sayHead("I believe that true love is what makes the earth turn!","body_54")
                             m "Actually the conservation of angular momentum is responsible for that."
-                            call her_head("Huh?","body_44")
+                            $ her_SC.sayHead("Huh?","body_44")
                             m "Never mind. Just take off your shirt already?"
-                            call her_head("............","body_50")      
+                            $ her_SC.sayHead("............","body_50")      
                         "\"Be quiet and keep on dancing!\"":
-                            call her_head("But you said I could ask you a question...","body_50")
+                            $ her_SC.sayHead("But you said I could ask you a question...","body_50")
                             m "And you did, didn't you?"
-                            call her_head("!!!............","body_31")
-                            call her_head("....................................","body_50")
+                            $ her_SC.sayHead("!!!............","body_31")
+                            $ her_SC.sayHead("....................................","body_50")
                             m "Now, hush and take your shirt off."
-                            call her_head("........","body_69")
+                            $ her_SC.sayHead("........","body_69")
                         "\"Yes... a very long time ago...\"":
                             m "Yes... a very long time ago..."
-                            call her_head("!!!!!??..............................","body_31")
+                            $ her_SC.sayHead("!!!!!??..............................","body_31")
                             m "Her name was Eden..."
-                            call her_head("Was she beautiful?","body_45")
+                            $ her_SC.sayHead("Was she beautiful?","body_45")
                             m "She was so much more than that..."
                             m "She was smart, green and perfect..."
-                            call her_head("She was... \"green\"...?","body_87")
-                            call her_head("Are you making fun of me, [genie_name]?","body_47")
+                            $ her_SC.sayHead("She was... \"green\"...?","body_87")
+                            $ her_SC.sayHead("Are you making fun of me, [genie_name]?","body_47")
                             m "Oh, you humans know nothing of true love..."
-                            call her_head(".....................................?","body_55")
+                            $ her_SC.sayHead(".....................................?","body_55")
                             m "Err... I mean, take off that shirt, [hermione_name]!"
-                            call her_head(".................","body_69")
+                            $ her_SC.sayHead(".................","body_69")
                         "\"I feel like I'm in love right now!\"":
-                            call her_head("You don't have to be vulgar, [genie_name].","body_69")
+                            $ her_SC.sayHead("You don't have to be vulgar, [genie_name].","body_69")
                             m "Oh, but I mean it!"
-                            call her_head("[genie_name], please!","body_66")
-                            call her_head("I am one of your students!","body_55")
-                            call her_head("And you are older than my father!","body_57")
+                            $ her_SC.sayHead("[genie_name], please!","body_66")
+                            $ her_SC.sayHead("I am one of your students!","body_55")
+                            $ her_SC.sayHead("And you are older than my father!","body_57")
                             m "{size=-4}(You have no idea, girl.){/size}"
-                            call her_head("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...","body_55")
-                            call her_head("And when a man is experiencing sexual arousal, the same type of hormones--","body_16")
+                            $ her_SC.sayHead("Although some scientists insist that what we consider \"love\" is actually nothing but a chemical reaction...","body_55")
+                            $ her_SC.sayHead("And when a man is experiencing sexual arousal, the same type of hormones--","body_16")
                             m "[hermione_name]!"
-                            call her_head("Yes, [genie_name]?","body_15")
+                            $ her_SC.sayHead("Yes, [genie_name]?","body_15")
                             m "Did you forget where you are?"
-                            call her_head("Oh, my apologies, [genie_name]... I get distracted sometimes.","body_24")
+                            $ her_SC.sayHead("Oh, my apologies, [genie_name]... I get distracted sometimes.","body_24")
                             m "Take off your shirt already, would you?!"
-                            call her_head("Right...","body_29")
+                            $ her_SC.sayHead("Right...","body_29")
                     show screen blktone
                     with d3
                     ">Hermione undoes the last button of her shirt and takes it off somewhat gracefully..."
+                    $ her_SC.uniform.set(wear_bra=False,wear_top=False)
                     hide screen blktone
                     with d3
                     hide screen bld1
@@ -4307,7 +4289,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     
                     $ her_head_ypos = her_head_tits
                     
-                    call her_head("Must you be so vulgar, [genie_name]?","body_90")
+                    $ her_SC.sayHead("Must you be so vulgar, [genie_name]?","body_90")
                     menu: 
                         "-Take your cock out, start jerking off-":
                             hide screen bld1
@@ -4316,7 +4298,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             pause
                             show screen blkfade
                             with d6
-                            call her_head("[genie_name]?!","body_94")
+                            $ her_SC.sayHead("[genie_name]?!","body_94")
                             m "It's alright, [hermione_name]. Don't mind me..."
                             
                             
@@ -4334,42 +4316,42 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             pause
                             show screen bld1
                             with d3
-                            call her_head("B-but...","body_95")
-                            call her_head("Your...")
+                            $ her_SC.sayHead("B-but...","body_95")
+                            $ her_SC.sayHead("Your...")
                             m "Yes... Ah, yes, this is good..."
-                            call her_head("[genie_name]!!!","body_98")
-                            call her_head("I must insist that you put away your...","body_99")
-                            call her_head("...thing.")
+                            $ her_SC.sayHead("[genie_name]!!!","body_98")
+                            $ her_SC.sayHead("I must insist that you put away your...","body_99")
+                            $ her_SC.sayHead("...thing.")
                             menu:
                                 m "..."
                                 "\"I said, keep on dancing, [hermione_name]!\"":
                                     if whoring >= 15: #LEVEL 06. You jerk off your cock and Hermione is OK with it.
-                                        call her_head("But...","body_99")
-                                        call her_head(".............................")
-                                        call her_head("Well, alright, but only if you will promise me not to....finish, [genie_name].","body_101")
+                                        $ her_SC.sayHead("But...","body_99")
+                                        $ her_SC.sayHead(".............................")
+                                        $ her_SC.sayHead("Well, alright, but only if you will promise me not to....finish, [genie_name].","body_101")
                                         menu:
                                             m "..."
                                             "-Promise her to hold it-":
                                                     $ d_flag_07 = True #Promised to hold it.
-                                                    call her_head("Well, alright then...","body_102")
+                                                    $ her_SC.sayHead("Well, alright then...","body_102")
                                             "-Give her no such promise-":
                                                 $ d_flag_07 = False #Did not promise to hold it.
                                                 m "\"Not to finish\"? That would be like torture!"
                                                 m "Please keep your sadistic urges to yourself, [hermione_name]."
-                                                call her_head("I don't have any... sadistic urges, [genie_name]!","body_103")
-                                                call her_head("I just don't want to...")
+                                                $ her_SC.sayHead("I don't have any... sadistic urges, [genie_name]!","body_103")
+                                                $ her_SC.sayHead("I just don't want to...")
                                                 g9 "Yes... Those are some nice tits you have..."
-                                                call her_head("............","body_97")
+                                                $ her_SC.sayHead("............","body_97")
                                                 g9 "A-ah... Yes..."
-                                                call her_head("..........","body_97")
-                                                call her_head("Fine! Have it your way, [genie_name]!","body_99")
-                                                call her_head("{size=-5}(As usual...){/size}","body_103")
+                                                $ her_SC.sayHead("..........","body_97")
+                                                $ her_SC.sayHead("Fine! Have it your way, [genie_name]!","body_99")
+                                                $ her_SC.sayHead("{size=-5}(As usual...){/size}","body_103")
                                         show screen blktone
                                         with d3
                                         ">You keep on wanking while you watch Hermione's dance..."
-                                        call her_head("Time for the finishing act I suppose...","body_90")
+                                        $ her_SC.sayHead("Time for the finishing act I suppose...","body_90")
                                         m "Yes, [hermione_name]! Take them off!"
-                                        call her_head("........","body_91")
+                                        $ her_SC.sayHead("........","body_91")
                                         show screen blktone8
                                         with d3
                                         ">Hermione bends over slightly and slides her panties down..."
@@ -4381,9 +4363,9 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen bld1
                                         with d3
                                         pause
-                                        $ h_c_u_pic = "no_panties_dance_ani"
+                                        $ h_d_c_u_pic = "no_panties_dance_ani"
                                         hide screen no_shirt_no_skirt_dance
-                                        show screen h_c_u
+                                        show screen h_d_c_u
                                         with d3
                                         pause
                                         show screen bld1
@@ -4392,7 +4374,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         ">Nonetheless you decide to show her some appreciation..."
                                         ">By stroking your cock even faster!"
-                                        call her_head("..........","body_91")
+                                        $ her_SC.sayHead("..........","body_91")
                                         show screen blktone8
                                         with d3
                                         ">Suddenly Hermione breaks into a whole series of rather complex pirouettes..."
@@ -4401,7 +4383,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         m "{size=-4}(Did she practice this?){/size}"
                                         g9 "Oh, what do I care?"
                                         ">You stroke your diamond-hard cock furiously."
-                                        call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
+                                        $ her_SC.sayHead("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
                                         ">Hermione performs another set of movements that could be considered classy..."
                                         ">if not for her naked tits bouncing all over the place..."
                                         g9 "Yes, yes, you little whore!"
@@ -4410,7 +4392,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         $ hermione_SC.chibi.xpos = -210 #400 = Near the desk.
                                         $ hermione_SC.chibi.ypos = 10
-                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                                        $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                         ">And then Hermione slumps on her butt, completely exhausted."
                                         hide screen blktone
                                         with d3
@@ -4421,7 +4403,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen bld1 
                                         with d3
                                         pause
-                                        call her_head("Whew... This was--","body_102")
+                                        $ her_SC.sayHead("Whew... This was--","body_102")
                                         with hpunch
                                         g4 "ARGH! YOU FUCKING CUNT!"
                                         hide screen hermione_main
@@ -4439,27 +4421,27 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         $ genie_cum_chibi_xpos =  -210
                                         $ genie_cum_chibi_ypos  = 10
                                         $ g_c_c_u_pic = "genie_cum_03"
-                                        $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits_02.png"
+                                        $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits_02.png"
                                         show screen g_c_c_u
                                         pause
                                         $ uni_sperm = True #Triggers universal sperm to show on hermione_main screen.
                                         $ u_sperm = "01_hp/13_hermione_main/auto_04.png"
                                         
-                                        call her_head("??!!!","body_104")
+                                        $ her_SC.sayHead("??!!!","body_104")
                                         show screen bld1
                                         with d3
-                                        call her_head("[genie_name]!!!","body_97")
+                                        $ her_SC.sayHead("[genie_name]!!!","body_97")
                                         $ g_c_c_u_pic = "01_hp/08_animation_02/09_cum_18.png"
                                         if d_flag_07: #Promised to hold it.
-                                            call her_head("No, [genie_name]! You promised!","body_97")
+                                            $ her_SC.sayHead("No, [genie_name]! You promised!","body_97")
                                             g4 "Oh, man... This was pretty intense..."
-                                            call her_head("You went back on your word, [genie_name]!","body_98")
+                                            $ her_SC.sayHead("You went back on your word, [genie_name]!","body_98")
                                             m "Huh? What are you talking about?"
-                                            call her_head("How could you do this to me, [genie_name]?","body_113")
+                                            $ her_SC.sayHead("How could you do this to me, [genie_name]?","body_113")
                                             m "Oh, calm down, [hermione_name]."
                                             m "You earned your points today."
                                             m "Now, just get dressed and leave before somebody discovers you like this."
-                                            call her_head("*sob!*........................","body_114")
+                                            $ her_SC.sayHead("*sob!*........................","body_114")
                                             $ mad += 50
                                             show screen blkfade 
                                             with d3
@@ -4467,38 +4449,38 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                             $ aftersperm = True #Aftersperm layer is displayed. 
                                             stop music fadeout 5.0
                                             ">.................{w}.................{w}.................{w}................."
-                                            call her_head("...Can I just get paid now, [genie_name]... please?","body_12")
+                                            $ her_SC.sayHead("...Can I just get paid now, [genie_name]... please?","body_12")
                                             jump done_with_dancing
                                         else:
-                                            call her_head("it's so hot...","body_97")
+                                            $ her_SC.sayHead("it's so hot...","body_97")
                                             $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png" # Genie stands still with his dick in hand.
                                             m "Aha... Yeah... This feels great..."
-                                            call her_head("You came all over me...","body_105")
-                                            call her_head("I am your pupil and...")
-                                            call her_head("You just came on me...","body_106")
+                                            $ her_SC.sayHead("You came all over me...","body_105")
+                                            $ her_SC.sayHead("I am your pupil and...")
+                                            $ her_SC.sayHead("You just came on me...","body_106")
                                             g9 "I know! Pretty exciting stuff, huh?!"
-                                            call her_head("Nothing of that sort!","body_107")
+                                            $ her_SC.sayHead("Nothing of that sort!","body_107")
                                             #her "You should not have done this, [genie_name]!"
-                                            call her_head("You should have restrained yourself like a proper headmaster would!")
+                                            $ her_SC.sayHead("You should have restrained yourself like a proper headmaster would!")
                                             m "Really? What did you expect me to do?"
                                             m "Aim at the wall or just put it back in my pants and start cumming?"
-                                            call her_head("........","body_105")
-                                            call her_head("Still, you should not have...","body_101")
-                                            call her_head("I agreed to perform a striptease for you...","body_102")
-                                            call her_head("But I didn't agree to be defiled like this.")
+                                            $ her_SC.sayHead("........","body_105")
+                                            $ her_SC.sayHead("Still, you should not have...","body_101")
+                                            $ her_SC.sayHead("I agreed to perform a striptease for you...","body_102")
+                                            $ her_SC.sayHead("But I didn't agree to be defiled like this.")
                                             m "I think I know where this is going..."
-                                            call her_head("I demand to be paid extra!","body_100")
+                                            $ her_SC.sayHead("I demand to be paid extra!","body_100")
                                             m "Of course you do..."
                                             menu:
                                                 m "..."
                                                 "\"You get 1 extra point.\"":
                                                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                                                    call her_head("One extra point?","body_101")
-                                                    call her_head("One meagre extra point for letting you do this to me?","body_98")
-                                                    call her_head("Now, that is just insulting, [genie_name]!","body_101")
+                                                    $ her_SC.sayHead("One extra point?","body_101")
+                                                    $ her_SC.sayHead("One meagre extra point for letting you do this to me?","body_98")
+                                                    $ her_SC.sayHead("Now, that is just insulting, [genie_name]!","body_101")
                                                     m "One extra point, [hermione_name]. Take it or leave it."
-                                                    call her_head(".............","body_103")
-                                                    call her_head("I'll take it.","body_101")
+                                                    $ her_SC.sayHead(".............","body_103")
+                                                    $ her_SC.sayHead("I'll take it.","body_101")
                                                     $ mad += 30
                                                     $ current_payout = 36
                                                     hide screen bld1
@@ -4511,11 +4493,11 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                     jump done_with_dancing
                                                 "\"You get 10 extra points.\"":
                                                     $ current_payout = 45
-                                                    call her_head("Ten extra points [genie_name]?","body_101")
-                                                    call her_head("But that is not even nearly enough!")
+                                                    $ her_SC.sayHead("Ten extra points [genie_name]?","body_101")
+                                                    $ her_SC.sayHead("But that is not even nearly enough!")
                                                     m "Ten extra points. Take'em or leave'em [hermione_name]."
-                                                    call her_head("...............","body_103")
-                                                    call her_head("Well, alright... Better than nothing I suppose...","body_101")
+                                                    $ her_SC.sayHead("...............","body_103")
+                                                    $ her_SC.sayHead("Well, alright... Better than nothing I suppose...","body_101")
                                                     $ mad += 11
                                                     hide screen bld1
                                                     with d3
@@ -4527,10 +4509,10 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                     jump done_with_dancing
                                                 "\"You get 25 extra points.\"":
                                                     $ current_payout = 60
-                                                    call her_head("Yes, I believe this would be an appropriate amount.","body_102")
+                                                    $ her_SC.sayHead("Yes, I believe this would be an appropriate amount.","body_102")
                                                     m "are we good then?"
-                                                    call her_head("Yes, [genie_name]. Thank you [genie_name].","body_102")
-                                                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                                                    $ her_SC.sayHead("Yes, [genie_name]. Thank you [genie_name].","body_102")
+                                                    $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                                     hide screen bld1
                                                     with d3
                                                     pause
@@ -4541,16 +4523,16 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                     jump done_with_dancing
                                                 "\"You get 50 extra points.\"":
                                                     $ current_payout = 85
-                                                    call her_head("Seriously?!","body_95")
-                                                    call her_head("Oh, I don't know what to say...","body_94")
+                                                    $ her_SC.sayHead("Seriously?!","body_95")
+                                                    $ her_SC.sayHead("Oh, I don't know what to say...","body_94")
                                                     m "I enjoyed your performance [hermione_name]."
-                                                    call her_head("Thank you [genie_name]...","body_109")
+                                                    $ her_SC.sayHead("Thank you [genie_name]...","body_109")
                                                     m "I also enjoyed plastering your agile little body with cum..."
-                                                    call her_head("[genie_name]......","body_108")
+                                                    $ her_SC.sayHead("[genie_name]......","body_108")
                                                     m "So, just allow me to show my appreciation."
                                                     m "Fifty extra points. Well deserved, [hermione_name]."
-                                                    call her_head("Thank very much, [genie_name].","body_108")
-                                                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                                                    $ her_SC.sayHead("Thank very much, [genie_name].","body_108")
+                                                    $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                                                     hide screen bld1
                                                     with d3
                                                     pause
@@ -4561,12 +4543,12 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                     jump done_with_dancing
                                                 "\"You're not getting shit!\"":
                                                     stop music fadeout 1.0
-                                                    call her_head("What? Not even my usual pay?","body_104")
+                                                    $ her_SC.sayHead("What? Not even my usual pay?","body_104")
                                                     menu:
                                                         m "..."
                                                         "\"Oh, no, you are still getting that.\"":
                                                             $ mad += 30
-                                                            call her_head("How generous of you, [genie_name].","body_101")
+                                                            $ her_SC.sayHead("How generous of you, [genie_name].","body_101")
                                                             hide screen bld1
                                                             with d3
                                                             pause
@@ -4577,16 +4559,16 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                             jump done_with_dancing
                                                         "\"No, not even that!\"":
                                                             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                                                            call her_head("!!!?","body_104")
-                                                            call her_head("I danced for you, [genie_name]...")
-                                                            call her_head("I degraded myself for your amusement...","body_105")
-                                                            call her_head("I let you cum on me...","body_107")
+                                                            $ her_SC.sayHead("!!!?","body_104")
+                                                            $ her_SC.sayHead("I danced for you, [genie_name]...")
+                                                            $ her_SC.sayHead("I degraded myself for your amusement...","body_105")
+                                                            $ her_SC.sayHead("I let you cum on me...","body_107")
                                                             with hpunch
-                                                            call her_head("And I get NOTHING?!","body_110")
+                                                            $ her_SC.sayHead("And I get NOTHING?!","body_110")
                                                             m "You are dismissed, [hermione_name]!"
-                                                            call her_head("Oh, this is a new low even for you, [genie_name]!","body_101")
+                                                            $ her_SC.sayHead("Oh, this is a new low even for you, [genie_name]!","body_101")
                                                             m "I said you are dismissed."
-                                                            call her_head("*GROAN!*","body_110")
+                                                            $ her_SC.sayHead("*GROAN!*","body_110")
                                                             $ mad += 90
                                                             hide screen bld1
                                                             with d3
@@ -4594,7 +4576,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                             show screen blkfade
                                                             with d7
                                                             pause.5
-                                                            hide screen h_c_u
+                                                            hide screen h_d_c_u
                                                             hide screen g_c_u
                                                             hide screen g_c_c_u # Genie's sperm. Universal.
                                                             hide screen ctc
@@ -4615,23 +4597,24 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                     else: # You jerk off your cock and Hermione is NOT OK with it.
                                         stop music fadeout 1.0
                                         
-                                        call her_head("No, [genie_name]!","body_103")
+                                        $ her_SC.sayHead("No, [genie_name]!","body_103")
                                         m "Huh?"
                                         show screen blkfade
                                         with d7
                                         ">Hermione jumps off your desk and starts to put her clothes back on while glaring at you..."
+                                        $ her_SC.uniform.reset()
                                         m "Oh, come on! Don't leave me like that!"
                                         $ her_head_ypos = her_head_only
                                         
-                                        call her_head("The dance is over [genie_name]!","body_101")
+                                        $ her_SC.sayHead("The dance is over [genie_name]!","body_101")
                                         pause 1
-                                        call her_head("I would like to get paid now!","body_79")
+                                        $ her_SC.sayHead("I would like to get paid now!","body_79")
                                         m "Stubborn [hermione_name]..."
                                         ">You reluctantly put your cock away..."
-                                        call her_head("I would like to get paid now.","body_79")
+                                        $ her_SC.sayHead("I would like to get paid now.","body_79")
                                         jump done_with_dancing
                                 "\"Fine. There is no need for drama!\"": 
-                                    call her_head("......................","body_103")
+                                    $ her_SC.sayHead("......................","body_103")
                                     pause.1
                                     hide screen no_shirt_no_skirt_dance
                                     show screen genie
@@ -4651,21 +4634,21 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen blktone
                     with d3
                     ">You watch Hermione Dance..."
-                    call her_head("(Time for the finishing act I suppose...)","body_97")
+                    $ her_SC.sayHead("(Time for the finishing act I suppose...)","body_97")
                     m "Yes, [hermione_name]! Take them off!"
-                    call her_head("........","body_90")
+                    $ her_SC.sayHead("........","body_90")
                     show screen blktone8
                     with d3
                     ">Hermione bends over slightly and slides her panties down..."
                     ">You can see that she is doing her best to be graceful..."
                     ">But she looks rather ridiculous in her attempts to act like a professional stripper..."
-                    call her_head("..........","body_109")
+                    $ her_SC.sayHead("..........","body_109")
                     ">Suddenly Hermione breaks into a whole series of rather complex pirouettes..."
                     m "{size=-4}(This looks quite impressive actually...){/size}"
                     ">Hermione gives her breasts a squeeze followed by another series of rather complex (and naughty) movements..."
                     m "{size=-4}(Did she practice this?){/size}"
                     g9 "Oh, why would I care?"
-                    call her_head("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
+                    $ her_SC.sayHead("{size=-5}(Three-two-one... Three-two-one... And step!){/size}","body_102")
                     ">Hermione performs another set of movements that could be considered classy if not for her naked tits bouncing all over the place..."
                     g9 "Yes, yes, you little harlot!"
                     
@@ -4673,9 +4656,9 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     with d3
                     $ hermione_SC.chibi.xpos = -210 #400 = Near the desk.
                     $ hermione_SC.chibi.ypos = 10
-                    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                    $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                     ">A few more movements, a couple of gestures and a little curtsy bow to the imaginary audience and Hermione slumps on her butt completely exhausted."
-                    show screen h_c_u
+                    show screen h_d_c_u
                     hide screen blktone
                     with d3
                     hide screen blktone8
@@ -4688,21 +4671,21 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     show screen bld1
                     with d3
                     
-                    call her_head("Whew... This was rather exciting...","body_108")
+                    $ her_SC.sayHead("Whew... This was rather exciting...","body_108")
                     menu:
                         m "..."
                         "{size=-3}\"Good job, [hermione_name]! You sure know how to dance!\"{/size}":
                             m "Good job [hermione_name]!"
-                            call her_head("Really?","body_109")
+                            $ her_SC.sayHead("Really?","body_109")
                             m "Yes! You have a lot of talent for this!"
-                            call her_head("Thank you [genie_name].","body_108")
+                            $ her_SC.sayHead("Thank you [genie_name].","body_108")
                         "{size=-3}\"Hm... This was quite awful...\"{/size}":
-                            call her_head("Oh... I'm sorry...","body_105")
+                            $ her_SC.sayHead("Oh... I'm sorry...","body_105")
                             m "That's OK... You just need to practice more..."
-                            call her_head("Em... I will keep that in mind, [genie_name]...","body_107")
+                            $ her_SC.sayHead("Em... I will keep that in mind, [genie_name]...","body_107")
                         "{size=-3}\".................................................\"{/size}":
-                            call her_head(".......................","body_108")
-                            $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
+                            $ her_SC.sayHead(".......................","body_108")
+                            $ h_d_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
                     hide screen bld1
                     show screen ctc
                     with d3
@@ -4719,9 +4702,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         
         
     label done_with_dancing:
-    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
-    hide screen h_c_u
+    hide screen h_d_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ctc
@@ -4729,7 +4711,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ her_SC.uniform.reset()
+    $ hermione_SC.chibi.xpos = 440 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -4744,7 +4727,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     hide screen hermione_stand_f #Hermione stands still.
     with d3
     
-    call her_main("Thank you, [genie_name]...","body_13")
+    $ her_SC.say("Thank you, [genie_name]...","body_13")
     
     if whoring <= 11:
         $ whoring +=1
@@ -4755,17 +4738,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     $ uni_sperm = False
     
     hide screen bld1
+    $ her_SC.hideScreen()
     hide screen hermione_main
     hide screen hermione_blink
     hide screen blktone 
     hide screen ctc
     with d3
     
+    $ her_SC.sperm = []
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
     
-    call her_walk(400,610,2)
+    #call her_walk(440,750,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -4914,38 +4899,38 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
             if whoring >= 9 and whoring <= 14: # LEVEL 04 AND LEVEL 05 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
 
                 $ her_head_ypos = her_head_only
-                call her_head("..............................","body_118")    
+                $ her_SC.sayHead("..............................","body_118")    
                 m "You have great tits, [hermione_name]..."
-                call her_head("....................................","body_118") 
+                $ her_SC.sayHead("....................................","body_118") 
                 m "You like it when I squeeze them like this?"
-                call her_head("Excuse me, [genie_name], but you are confusing me with one of those lowly harlots again...","body_120")
-                call her_head("I am only letting you fondle me because I am getting paid for it...","body_120")
-                call her_head("Not because I enjoy it...","body_120")
+                $ her_SC.sayHead("Excuse me, [genie_name], but you are confusing me with one of those lowly harlots again...","body_120")
+                $ her_SC.sayHead("I am only letting you fondle me because I am getting paid for it...","body_120")
+                $ her_SC.sayHead("Not because I enjoy it...","body_120")
                 m "I see..."
                 m "So, you're more like a prostitute then..."
-                call her_head("[genie_name]!","body_119")
-                call her_head("Prostitutes are getting paid to have sex with men...","body_119")
-                call her_head("I'd never do something like that!","body_120") 
+                $ her_SC.sayHead("[genie_name]!","body_119")
+                $ her_SC.sayHead("Prostitutes are getting paid to have sex with men...","body_119")
+                $ her_SC.sayHead("I'd never do something like that!","body_120") 
                 show screen blktone
                 with d3
                 ">You squeeze one of the girl's tits tightly and give the other a couple of firm tugs."
                 hide screen blktone
                 with d3
-                call her_head("Ah...","body_131") 
+                $ her_SC.sayHead("Ah...","body_131") 
                 m "Enjoying yourself, [hermione_name]?"
                 if whoring >= 9 and whoring <= 11: # LEVEL 04 #  <=================================================================================== FIRST EVENT.
-                    call her_head("[genie_name], I am only doing this--","body_120") 
+                    $ her_SC.sayHead("[genie_name], I am only doing this--","body_120") 
                     show screen blktone
                     with d3
                     ">You squeeze both of her tits with force..."
                     hide screen blktone
                     with d3
-                    call her_head("ah...","body_132") 
+                    $ her_SC.sayHead("ah...","body_132") 
                     m "Tell me you like this, [hermione_name]!"
-                    call her_head("[genie_name], I am only letting you do this to me because--","body_131") 
+                    $ her_SC.sayHead("[genie_name], I am only letting you do this to me because--","body_131") 
                     m "I know, know..."
                     m "You are starting to sound like a broken record."
-                    call her_head("....","body_79") 
+                    $ her_SC.sayHead("....","body_79") 
                     show screen blktone
                     with d3
                     show screen blkfade
@@ -4959,46 +4944,46 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
             
                     ">You let go of the girl's breasts..."
                 else:  # LEVEL 05 # <=================================================================================== SECOND EVENT.
-                    call her_head("Ah...","body_87")
+                    $ her_SC.sayHead("Ah...","body_87")
                     show screen blktone
                     with d3
                     ">You squeeze her tits a few more times, then give them a firm tug..."
                     hide screen blktone
                     with d3
-                    call her_head("Ah... [genie_name]...","body_31")
+                    $ her_SC.sayHead("Ah... [genie_name]...","body_31")
                     m "What? You do enjoy this, don't you?"
-                    call her_head("No... I...","body_31")
+                    $ her_SC.sayHead("No... I...","body_31")
                     m "Don't you lie to your headmaster, [hermione_name]!"
                     show screen blktone
                     with d3
                     ">You squeeze her tits again..."
                     hide screen blktone 
                     with d3
-                    call her_head("Ah...","body_87")
-                    call her_head("I am not lying, [genie_name]...","body_87")
-                    call her_head("Why would I enjoy this?","body_31")
+                    $ her_SC.sayHead("Ah...","body_87")
+                    $ her_SC.sayHead("I am not lying, [genie_name]...","body_87")
+                    $ her_SC.sayHead("Why would I enjoy this?","body_31")
                     m "I don't know [hermione_name]. You tell me."
                     show screen blktone
                     with d3
                     ">You keep massaging her breasts..."
                     hide screen blktone
                     with d3
-                    call her_head("Ah... I...","body_31")
+                    $ her_SC.sayHead("Ah... I...","body_31")
                     m "Yes, what is it?"
-                    call her_head("It's... It's nothing, [genie_name]...","body_117")
+                    $ her_SC.sayHead("It's... It's nothing, [genie_name]...","body_117")
                     m "Oh, I think it's something."
                     m "I think you like me squeezing your tits like this."
-                    call her_head("[genie_name], please...","body_118")
+                    $ her_SC.sayHead("[genie_name], please...","body_118")
                     if daytime:
-                        call her_head("Classes are about to start...","body_118")
+                        $ her_SC.sayHead("Classes are about to start...","body_118")
                     else: 
-                        call her_head("It's getting late...","body_118")
-                    call her_head("Can I go now, [genie_name]? Please?","body_117")
+                        $ her_SC.sayHead("It's getting late...","body_118")
+                    $ her_SC.sayHead("Can I go now, [genie_name]? Please?","body_117")
                     show screen blkfade 
                     with d3
                     m "Sure, go ahead..."
-                    call her_head("...............","body_118")
-                    call her_head("[genie_name], your are still... Holding me...","body_117")
+                    $ her_SC.sayHead("...............","body_118")
+                    $ her_SC.sayHead("[genie_name], your are still... Holding me...","body_117")
                     m "Oh, right... my bad...."
                     ">You let go of Hermione's breasts..."
                     
@@ -5010,72 +4995,72 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
             elif whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
                
                 $ her_head_ypos = her_head_only
-                call her_head("Ah...","body_121")
+                $ her_SC.sayHead("Ah...","body_121")
                 m "A bit sensitive today, aren't you?"
-                call her_head("I suppose...","body_128")
-                call her_head("Ah...","body_131")
+                $ her_SC.sayHead("I suppose...","body_128")
+                $ her_SC.sayHead("Ah...","body_131")
                 m "You like it when I squeeze them like this?"
-                call her_head("I do, [genie_name]... Ah...","body_128")
+                $ her_SC.sayHead("I do, [genie_name]... Ah...","body_128")
                 m "Heh..."
                 m "What if I pinch your nipples?"
                 show screen blktone
                 with d5
-                call her_head("!!!","body_117")
-                call her_head("Ah! [genie_name]...","body_131")
+                $ her_SC.sayHead("!!!","body_117")
+                $ her_SC.sayHead("Ah! [genie_name]...","body_131")
                 m "And what if I do this?"
                 show screen blktone8
                 with d3
                 ">You grab the girl by her hard nipples and start pulling..."
                 hide screen blktone8
                 with d3
-                call her_head("Ah... Ah... Ah... [genie_name]...","body_132")
+                $ her_SC.sayHead("Ah... Ah... Ah... [genie_name]...","body_132")
                 m "What if I pull even harder?"
-                call her_head("Ah... [genie_name], please...","body_130")
+                $ her_SC.sayHead("Ah... [genie_name], please...","body_130")
                 show screen blktone8
                 with d3
                 ">Hermione clutches the edge of your desk to keep herself form taking a step towards you..."
                 hide screen blktone8
                 with d3
                 m "Good girl..."
-                call her_head("*Panting heavily*","body_123")
+                $ her_SC.sayHead("*Panting heavily*","body_123")
                 m "Do you enjoy this?"
-                call her_head("You are hurting me, [genie_name]...","body_139")
+                $ her_SC.sayHead("You are hurting me, [genie_name]...","body_139")
                 m "But do you enjoy it?"
                 if whoring <= 17:
-                    call her_head("Ah... Yes, [genie_name]... I don't know why, but I do...","body_140")
+                    $ her_SC.sayHead("Ah... Yes, [genie_name]... I don't know why, but I do...","body_140")
                 else:
-                    call her_head("Ah... Yes, [genie_name]... I love it...","body_138")
+                    $ her_SC.sayHead("Ah... Yes, [genie_name]... I love it...","body_138")
                 m "Good girl..."
                 show screen blktone8
                 with d3
                 ">You let go of her nipples..."
                 hide screen blktone8
                 with d3
-                call her_head("Ah...","body_138")
+                $ her_SC.sayHead("Ah...","body_138")
                 show screen blkfade
                 with d5
                 m "This will be all for today, [hermione_name]..."
-                call her_head("Oh...?","body_139")
+                $ her_SC.sayHead("Oh...?","body_139")
                 m "What is it? You look disappointed."
                 m "I will pay you of course..."
-                call her_head("That's not it, [genie_name]...","body_141")
-                call her_head("It's...","body_141")
+                $ her_SC.sayHead("That's not it, [genie_name]...","body_141")
+                $ her_SC.sayHead("It's...","body_141")
                 if daytime:
-                    call her_head("It's just that I still have some time left before I have to leave for the classes and...","body_139")
+                    $ her_SC.sayHead("It's just that I still have some time left before I have to leave for the classes and...","body_139")
                 else:
-                    call her_head("It's not really that late yet, is it?","body_139")
-                call her_head("uhm...","body_141")
-                call her_head("...................","body_141")
+                    $ her_SC.sayHead("It's not really that late yet, is it?","body_139")
+                $ her_SC.sayHead("uhm...","body_141")
+                $ her_SC.sayHead("...................","body_141")
                 m "You want me to hurt you some more, don't you?"
                 if whoring <= 17:
-                    call her_head("I don't \"want to\"... ","body_139")
-                    call her_head("But if you insist [genie_name]...","body_138")
+                    $ her_SC.sayHead("I don't \"want to\"... ","body_139")
+                    $ her_SC.sayHead("But if you insist [genie_name]...","body_138")
                     m "Well, I do insist... apparently."
                 else:
-                    call her_head("Yes please [genie_name]","body_139")
-                    call her_head("I'll even let you do it for free...","body_139")
+                    $ her_SC.sayHead("Yes please [genie_name]","body_139")
+                    $ her_SC.sayHead("I'll even let you do it for free...","body_139")
                     m "Well, in that case"
-                call her_head("Ah...","body_138")
+                $ her_SC.sayHead("Ah...","body_138")
                 hide screen blkfade
                 with d5
                 
@@ -5104,13 +5089,13 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
             hide screen white
             show screen bld1
             if whoring >= 9 and whoring <= 11: # LEVEL 04 # <=================================================================================== FIRST EVENT. (HERMIONE IS UNWILLING).
-                call her_head("!!!","182")
-                call her_head("Ouch! It hurts! *SOB!*","183")
+                $ her_SC.sayHead("!!!","182")
+                $ her_SC.sayHead("Ouch! It hurts! *SOB!*","183")
                 m "Did you like it though?"
-                call her_head("Did I... \"like it\, [genie_name]..?","body_81")
-                call her_head("What girl in her right mind would like to be treated this way?")
+                $ her_SC.sayHead("Did I... \"like it\, [genie_name]..?","body_81")
+                $ her_SC.sayHead("What girl in her right mind would like to be treated this way?")
                 stop music fadeout 1.0
-                call her_head("You are a mean and demented old man!","184")
+                $ her_SC.sayHead("You are a mean and demented old man!","184")
                 hide screen hermione_main                                                                                                                                                                                 #HERMIONE
                 with d3
                 show screen blkfade
@@ -5130,14 +5115,14 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 
                     
             elif whoring >= 12 and whoring <= 14: # LEVEL 05 # <=================================================================================== SECOND EVENT.
-                call her_head("!!!","182")
-                call her_head("Ouch!","183")
-                call her_head("[genie_name], what did you do this for?")
+                $ her_SC.sayHead("!!!","182")
+                $ her_SC.sayHead("Ouch!","183")
+                $ her_SC.sayHead("[genie_name], what did you do this for?")
                 m "Dunno... Seemed like a good idea..."
                 m "Did you like it?"
-                call her_head("...Of course, not, [genie_name].","body_83")
+                $ her_SC.sayHead("...Of course, not, [genie_name].","body_83")
                 m "Let's try this again, then."
-                call her_head("What?","body_82")
+                $ her_SC.sayHead("What?","body_82")
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3   
                 $ renpy.play('sounds/slap.mp3') #SLAP!
@@ -5145,24 +5130,24 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 with hpunch
                 pause.08
                 hide screen white
-                call her_head("!!!","182")
-                call her_head("Ouch! Stop hurting me!")
+                $ her_SC.sayHead("!!!","182")
+                $ her_SC.sayHead("Ouch! Stop hurting me!")
                 m "Admit that you enjoy it and I will."
-                call her_head("But I don't...","body_85")
-                call her_head("And if you plan to keep on doing this to me, [genie_name]...")
-                call her_head("...then I think I should leave.","body_81")
+                $ her_SC.sayHead("But I don't...","body_85")
+                $ her_SC.sayHead("And if you plan to keep on doing this to me, [genie_name]...")
+                $ her_SC.sayHead("...then I think I should leave.","body_81")
                 m "Fine, fine..."
                 hide screen hermione_main
                 with d3
                 jump no_smacking_tits #Jumps to usual tits molesting scene.
 
             elif whoring >= 15: # LEVEL 06 and higher # <=================================================================================== THIRD EVENT. 
-                call her_head("Ah!!!","182")
-                call her_head("[genie_name], why did you do that?","185")
+                $ her_SC.sayHead("Ah!!!","182")
+                $ her_SC.sayHead("[genie_name], why did you do that?","185")
                 m "Dunno... Seemed like a good idea..."
                 m "Did you like it?"
-                call her_head("..........","body_82")
-                call her_head("I am not a pervert...")
+                $ her_SC.sayHead("..........","body_82")
+                $ her_SC.sayHead("I am not a pervert...")
                 hide screen hermione_main
                 with d3
                 show screen blktone8
@@ -5175,7 +5160,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 with hpunch
                 pause.08
                 hide screen white
-                call her_head("A-ah!!!","186")
+                $ her_SC.sayHead("A-ah!!!","186")
                 m "Tell me you like it!"
                 her "[genie_name]... I..."
                 hide screen hermione_main
@@ -5204,9 +5189,9 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 ">Hermione's tits bounce allover the place, completely out of control"
                 hide screen blktone8
                 with d5
-                call her_head("A-ah!!! Ah!!! A-a-aha!!!","187")
+                $ her_SC.sayHead("A-ah!!! Ah!!! A-a-aha!!!","187")
                 m "You enjoy this. Admit it."
-                call her_head("...........","188")
+                $ her_SC.sayHead("...........","188")
                 hide screen hermione_main
                 hide screen ctc
                 with d3
@@ -5229,8 +5214,8 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 pause.05
                 hide screen white
                 pause.3
-                call her_head("A-ah! Yes! I do, I do! A-ah...","187")
-                call her_head("...does this mean I'm a pervert, [genie_name]?","184")
+                $ her_SC.sayHead("A-ah! Yes! I do, I do! A-ah...","187")
+                $ her_SC.sayHead("...does this mean I'm a pervert, [genie_name]?","184")
                 m "What?"
                 m "Stop being silly, [hermione_name]."
                 m "It is completely natural for a girl to enjoy her tits getting smacked around a little."
@@ -5246,7 +5231,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 pause.05
                 hide screen white
                 pause.3
-                call her_head("A-ah... Yes... Thank you, [genie_name].","187")
+                $ her_SC.sayHead("A-ah... Yes... Thank you, [genie_name].","187")
                 hide screen hermione_main
                 with d3
                 m "Well... Enough with the slapping for now..."
@@ -5255,6 +5240,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ gryffindor += current_payout #35
+    hide screen h_c_u_flip
     hide screen h_c_u
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
@@ -5421,9 +5407,9 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         show screen bld1
         with d3
         $ her_head_ypos = her_head_tits
-        call her_head("...........","body_31")
+        $ her_SC.sayHead("...........","body_31")
         m "Whenever you're ready, [hermione_name]."
-        call her_head("Right...","body_34")
+        $ her_SC.sayHead("Right...","body_34")
         hide screen bld1
         with d3
         $ walk_xpos=400 #Animation of walking chibi. (From)
@@ -5438,7 +5424,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         label event_01_round_02:
         ">Hermione puts her slender hands on your cock..."
         m "Good. Now stroke it."
-        call her_head("Right...","body_34") 
+        $ her_SC.sayHead("Right...","body_34") 
         #Stroking the cock.
         $ genie_chibi_xpos = 60 #-185 behind the desk.
         $ genie_chibi_ypos = 10
@@ -5453,120 +5439,120 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         with d3
         g9 "Nice..."
         if hg_pf_TouchMe_OBJ.points == 0:
-            call her_head("!!!","body_48")
-            call her_head("Are you about to finish, [genie_name]?!")
+            $ her_SC.sayHead("!!!","body_48")
+            $ her_SC.sayHead("Are you about to finish, [genie_name]?!")
             m "About to finish?"
             m "Don't be ridiculous [hermione_name], we are just getting started."
-            call her_head("Oh...","body_34")
-            call her_head("......")
-            call her_head("You will give me a warning though, won't you, [genie_name]?","body_44") 
+            $ her_SC.sayHead("Oh...","body_34")
+            $ her_SC.sayHead("......")
+            $ her_SC.sayHead("You will give me a warning though, won't you, [genie_name]?","body_44") 
         else:
-            call her_head("[genie_name]...?","body_34")    
+            $ her_SC.sayHead("[genie_name]...?","body_34")    
             m "What is it?"
-            call her_head("Will you warn me before... uhm... you now...","body_34")
+            $ her_SC.sayHead("Will you warn me before... uhm... you now...","body_34")
         $ d_flag_01 = False #If TRUE Genie promised to warn her.
         menu:
             m "..."
             "\"Of course I'll let you know when it's time.\"":
                 $ d_flag_01 = True #If TRUE Genie promised to warn her.
-                call her_head("Thank you, [genie_name].","body_33") 
+                $ her_SC.sayHead("Thank you, [genie_name].","body_33") 
             "\"I myself don't always know when...\"":
-                call her_head("Really? But I thought...","body_31")
-                call her_head("Well, never mind then...","body_33") 
-        call her_head("........","body_31") 
+                $ her_SC.sayHead("Really? But I thought...","body_31")
+                $ her_SC.sayHead("Well, never mind then...","body_33") 
+        $ her_SC.sayHead("........","body_31") 
         m "............."
-        call her_head(".............","body_33")
-        call her_head("Err... [genie_name]?") 
+        $ her_SC.sayHead(".............","body_33")
+        $ her_SC.sayHead("Err... [genie_name]?") 
         m "Yes, what is it?"
-        call her_head("How long do you think this will take?","body_31") 
+        $ her_SC.sayHead("How long do you think this will take?","body_31") 
         m "Why?"
         if daytime:
-            call her_head("Well, it's just that my classes are about to start...","body_44")
+            $ her_SC.sayHead("Well, it's just that my classes are about to start...","body_44")
         else: 
-            call her_head("Well, it's just that I have this paper that I need to finish...","body_44")
-            call her_head("It's due tomorrow, and it's getting pretty late...")
+            $ her_SC.sayHead("Well, it's just that I have this paper that I need to finish...","body_44")
+            $ her_SC.sayHead("It's due tomorrow, and it's getting pretty late...")
         m "Do you need the points or not?"
-        call her_head("I do, [genie_name]! I'm sorry...","body_74")
-        call her_head("I will just keep on stroking it then...")
+        $ her_SC.sayHead("I do, [genie_name]! I'm sorry...","body_74")
+        $ her_SC.sayHead("I will just keep on stroking it then...")
         m "Well, there is something you could do to speed up the process..."
-        call her_head("Really? What is it [genie_name]?","body_45") 
+        $ her_SC.sayHead("Really? What is it [genie_name]?","body_45") 
         menu:
             m "..."
             "\"Tell me how much of a whore you are!\"":
-                call her_head("What?","body_47")
-                call her_head("But I'm not...")
+                $ her_SC.sayHead("What?","body_47")
+                $ her_SC.sayHead("But I'm not...")
                 m "No need to be honest, [hermione_name]."
                 m "Just make things up."
-                call her_head("Really?","body_44") 
+                $ her_SC.sayHead("Really?","body_44") 
                 m "Sure. Just have fun with it."
-                call her_head("Well, in that case...","body_87")
-                call her_head("I am a... whore.")
+                $ her_SC.sayHead("Well, in that case...","body_87")
+                $ her_SC.sayHead("I am a... whore.")
                 m "Heh... good. Go on."
-                call her_head("I am a big whore...","body_87") 
+                $ her_SC.sayHead("I am a big whore...","body_87") 
                 m "Yes, you are."
-                call her_head("I am the biggest whore in England!","body_79")
-                call her_head("I try to act innocent, but in truth all I think about is cock!")
+                $ her_SC.sayHead("I am the biggest whore in England!","body_79")
+                $ her_SC.sayHead("I try to act innocent, but in truth all I think about is cock!")
                 m "Yes, you little slut!"
-                call her_head("Yes! I am a slut!","body_69")
-                call her_head("I crave cock all the time.")
+                $ her_SC.sayHead("Yes! I am a slut!","body_69")
+                $ her_SC.sayHead("I crave cock all the time.")
                 m "Very nice!"
                 m "But, like I said, you don't have to be honest."
-                call her_head("What?","body_48")
-                call her_head("[genie_name], those things I say are not true!","body_44") 
+                $ her_SC.sayHead("What?","body_48")
+                $ her_SC.sayHead("[genie_name], those things I say are not true!","body_44") 
                 g9 "Heh... I know. I'm just messing with you."
-                call her_head("[genie_name]!","body_66") 
+                $ her_SC.sayHead("[genie_name]!","body_66") 
                 m "You are doing a great job, though. Keep at it!"
-                call her_head(".....","body_87")
-                call her_head("I love cock...")
-                call her_head("And I love... spunk...","body_88")
-                call her_head("And semen... and sperm...")
-                call her_head("I love to drink sperm...")
-                call her_head("I want you to feed me your sperm, [genie_name]!","body_65") 
+                $ her_SC.sayHead(".....","body_87")
+                $ her_SC.sayHead("I love cock...")
+                $ her_SC.sayHead("And I love... spunk...","body_88")
+                $ her_SC.sayHead("And semen... and sperm...")
+                $ her_SC.sayHead("I love to drink sperm...")
+                $ her_SC.sayHead("I want you to feed me your sperm, [genie_name]!","body_65") 
                 g4 "!!!"
-                call her_head("Or better yet, pump me full of it, [genie_name]!","body_64")
+                $ her_SC.sayHead("Or better yet, pump me full of it, [genie_name]!","body_64")
                 hide screen ctc
                 with hpunch
                 g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
             
             "\"Stick your tongue out and look at me!\"":
-                call her_head("What?","body_45") 
+                $ her_SC.sayHead("What?","body_45") 
                 m "Just do it, slut."
-                call her_head("Like this?","body_38") 
+                $ her_SC.sayHead("Like this?","body_38") 
                 m "Yes, good. Keep looking into my eyes and stroke my cock."
-                call her_head(".....................","body_115") 
+                $ her_SC.sayHead(".....................","body_115") 
                 m "Yes... Good..."
-                call her_head("...........","body_115")
-                call her_head("...........")
-                call her_head("I can't keep my mouth open for so long, [genie_name]. I will start to drool...","body_31") 
+                $ her_SC.sayHead("...........","body_115")
+                $ her_SC.sayHead("...........")
+                $ her_SC.sayHead("I can't keep my mouth open for so long, [genie_name]. I will start to drool...","body_31") 
                 m "But I want you to drool..."
-                call her_head("What? But I will look silly!","body_31") 
+                $ her_SC.sayHead("What? But I will look silly!","body_31") 
                 m "That's the point, [hermione_name]!"
-                call her_head(".......","body_29") 
+                $ her_SC.sayHead(".......","body_29") 
                 m "Don't you want to be done with this as soon as possible?"
-                call her_head("............","body_33")
-                call her_head("A-ha.....","body_115") 
+                $ her_SC.sayHead("............","body_33")
+                $ her_SC.sayHead("A-ha.....","body_115") 
                 m "Good, [hermione_name]."
-                call her_head("..............","body_115") 
+                $ her_SC.sayHead("..............","body_115") 
                 m "Yes, keep on stroking my cock."
-                call her_head("..................","body_115")
+                $ her_SC.sayHead("..................","body_115")
                 g4 "Oh... I just want to slide my cock into that wet hole of a mouth of yours!"
-                call her_head(".................","body_40") 
+                $ her_SC.sayHead(".................","body_40") 
                 m "No, keep on looking at me!"
-                call her_head(".....................","body_115") 
+                $ her_SC.sayHead(".....................","body_115") 
                 m "Yes, you little slut!"
-                call her_head("......................","body_116") 
+                $ her_SC.sayHead("......................","body_116") 
                 m "I want to cum in that mouth, yes..."
-                call her_head("................","body_116") 
+                $ her_SC.sayHead("................","body_116") 
                 with hpunch
                 g4 "{size=-4}(Here it comes! Should I warn her?){/size}"
             "\"Give my cock a kiss!\"":
-                call her_head("Excuse me?","body_47") 
+                $ her_SC.sayHead("Excuse me?","body_47") 
                 m "You know, just a little kiss, right on the tip."
-                call her_head(".............","body_47")
-                call her_head("...with my lips?","body_48") 
+                $ her_SC.sayHead(".............","body_47")
+                $ her_SC.sayHead("...with my lips?","body_48") 
                 m "Sure... That will speed things up, I'm telling you."
-                call her_head("*sigh!*..............","body_87")
-                call her_head("Well, I might as well, I suppose...")
+                $ her_SC.sayHead("*sigh!*..............","body_87")
+                $ her_SC.sayHead("Well, I might as well, I suppose...")
                 ">Hermione gives the tip of your engorged cock a tender kiss."
                 
                 $ g_c_u_pic = "kiss_ani"
@@ -5579,13 +5565,13 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 hide screen blkfade
                 with d3
 
-                call her_head("Like this?","body_87") 
+                $ her_SC.sayHead("Like this?","body_87") 
                 m "Wasn't that bad, was it?"
-                call her_head("No, I suppose not...","body_44") 
+                $ her_SC.sayHead("No, I suppose not...","body_44") 
                 m "Can you do it again, then?"
-                call her_head("I could...","body_33") 
+                $ her_SC.sayHead("I could...","body_33") 
                 m "Do it!"
-                call her_head("Well, alright...","body_31")
+                $ her_SC.sayHead("Well, alright...","body_31")
                 ">Hermione gives your cock another kiss..."
                 $ g_c_u_pic = "kiss_ani"
                 $ renpy.play('sounds/kiss.mp3') 
@@ -5599,17 +5585,17 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 with d3
 
                 m "Good... Now do it again and just stay there for a while."
-                call her_head("You mean with my lips touching your... cock, [genie_name]?","body_31")
-                call her_head("No, I will look stupid...","body_29") 
+                $ her_SC.sayHead("You mean with my lips touching your... cock, [genie_name]?","body_31")
+                $ her_SC.sayHead("No, I will look stupid...","body_29") 
                 m "Don't be silly, [hermione_name]. Nobody is watching."
-                call her_head("You are, [genie_name].","body_87") 
+                $ her_SC.sayHead("You are, [genie_name].","body_87") 
                 m "But that's the whole point!"
-                call her_head("......","body_79") 
+                $ her_SC.sayHead("......","body_79") 
                 m "It will make me cum in no time!"
-                call her_head("...............","body_69") 
+                $ her_SC.sayHead("...............","body_69") 
                 m "And then you can just get out and and take care of your business today."
-                call her_head(".............","body_66")
-                call her_head("Well, alright then....","body_87")
+                $ her_SC.sayHead(".............","body_66")
+                $ her_SC.sayHead("Well, alright then....","body_87")
                 ">Hermione reaches down with her lips again..."
                 ">She touches the tip of your cock with her lips and keeps them there..."
                 $ g_c_u_pic = "kiss_ani"
@@ -5632,14 +5618,14 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 $ g_c_u_pic = "handjob_ani"
                 hide screen blkfade
                 with d3
-                call her_head("So, did it work? Are you ready to... finish, [genie_name]?","body_87") 
+                $ her_SC.sayHead("So, did it work? Are you ready to... finish, [genie_name]?","body_87") 
                 g4 "{size=-4}(Surprisingly, yes! I'm about to cum! Should I warn her?){/size}"
                 hide screen blktone
         menu:
             m "..."
             "-Give her a warning-":
                 g4 "Here it comes, [hermione_name]! You better be ready!"
-                call her_head("What? So soon?!","body_48") 
+                $ her_SC.sayHead("What? So soon?!","body_48") 
                 g4 "{size=+5}Yeah, you did a great job!!!{/size}"
                 g4 "{size=+5}You little whore!!!{/size}"
                 hide screen bld1
@@ -5649,9 +5635,9 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 hide screen ctc
                 show screen blkfade 
                 with d5
-                call her_head("No, [genie_name], wait, I--","body_117") 
+                $ her_SC.sayHead("No, [genie_name], wait, I--","body_117") 
                 g4 "{size=+5}Too late for that, slut!{/size}"
-                call her_head("*whimper*","body_118")       
+                $ her_SC.sayHead("*whimper*","body_118")       
                 ">Hermione suddenly slides your already dripping cock under her shirt..."
                 g4 "?!!"
                 ">The sensation of her warm skin against your cock overwhelms you and you begin to ejaculate like a mad-man."
@@ -5670,7 +5656,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                 
-                call her_head("!!!!!!!!!!!","body_48") 
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
                 
                 
 
@@ -5684,29 +5670,29 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                         
                 $ aftersperm = True
                 $ her_head_ypos = her_head_only
-                call her_head(".......................","body_119")                
+                $ her_SC.sayHead(".......................","body_119")                
                 m "..........................."
-                call her_head(".......................","body_119")    
+                $ her_SC.sayHead(".......................","body_119")    
                 m "....................?"
-                call her_head(".......................","body_118")    
+                $ her_SC.sayHead(".......................","body_118")    
                 m "...What the fuck just happened?"
                 show screen bld1
                 with d3
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("I don't know... I suppose I just panicked...","body_34")
+                $ her_SC.sayHead("I don't know... I suppose I just panicked...","body_34")
                 if daytime:
-                    call her_head("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","body_34") 
+                    $ her_SC.sayHead("My classes are about to start and I didn't want you to ruin my uniform, [genie_name]...","body_34") 
                     m "So you'll go to classes like this now?"
                     m "With your clothes all sperm-soaked from the inside?"
-                    call her_head("What choice do I have?","body_118")
-                    call her_head("I can't just skip a class...")
+                    $ her_SC.sayHead("What choice do I have?","body_118")
+                    $ her_SC.sayHead("I can't just skip a class...")
                 else:
-                    call her_head("At this hour The \"Gryffindor\" common room will be full of people...","body_34")
-                    call her_head("I didn't want to have to return there all covered in your... spunk, [genie_name].")
-                    call her_head("Oh, it's getting pretty late...","body_117") 
+                    $ her_SC.sayHead("At this hour The \"Gryffindor\" common room will be full of people...","body_34")
+                    $ her_SC.sayHead("I didn't want to have to return there all covered in your... spunk, [genie_name].")
+                    $ her_SC.sayHead("Oh, it's getting pretty late...","body_117") 
                     m "So you will go like this, instead?"
                     m "With your clothes all sperm-soaked from the inside?"
-                    call her_head("What choice do I have?","body_118")     
+                    $ her_SC.sayHead("What choice do I have?","body_118")     
                     
                 show screen ctc
                 pause
@@ -5721,11 +5707,11 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 show screen genie
                 hide screen g_c_u
                 $ her_head_ypos = her_head_tits
-                call her_head("Ew... Your sperm, [genie_name]...","body_118")
-                call her_head("It's everywhere under my uniform...","body_117")          
+                $ her_SC.sayHead("Ew... Your sperm, [genie_name]...","body_118")
+                $ her_SC.sayHead("It's everywhere under my uniform...","body_117")          
                 m "Just put it in your mouth next time."
-                call her_head("I... don't think so, [genie_name].","body_79")
-                call her_head("I really need to go. Can I just get paid now?")
+                $ her_SC.sayHead("I... don't think so, [genie_name].","body_79")
+                $ her_SC.sayHead("I really need to go. Can I just get paid now?")
                 
                 
 #                g4 "You whore! You little nasty wore!"
@@ -5749,7 +5735,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 g4 "ARGH!"
                 show screen blkfade
                 with d3
-                call her_head("WHAT?!","body_48")               
+                $ her_SC.sayHead("WHAT?!","body_48")               
                 g4 "Take this!"
 
                 show screen white 
@@ -5765,7 +5751,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                   
-                call her_head("!!!!!!!!!!!","body_48") 
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
                 
                 
 
@@ -5783,7 +5769,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                         
                 $ aftersperm = True
                 $ her_head_ypos = her_head_only
-                call her_head(".......................","body_119")          
+                $ her_SC.sayHead(".......................","body_119")          
                 m "Yes... I Feel so much better now..."
                 pause
                 
@@ -5929,7 +5915,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         ">Hermione puts her slender hands on your cock..."
         $ her_head_ypos = her_head_only
         stop music fadeout 3.0
-        call her_head("Do you like it when I do it like this, [genie_name]?","body_68")
+        $ her_SC.sayHead("Do you like it when I do it like this, [genie_name]?","body_68")
         g9 "Actually, yes! Very nice!"
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         #Stroking the cock.
@@ -5946,40 +5932,40 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
 
         m "Yes, yes, like that..."
         m "Hm... You are getting pretty good at this."
-        call her_head("Thank you, [genie_name].","body_74")
-        call her_head("I figured the better I do this, the sooner it'll be over.")
+        $ her_SC.sayHead("Thank you, [genie_name].","body_74")
+        $ her_SC.sayHead("I figured the better I do this, the sooner it'll be over.")
         m "Hm..."
         menu:
             m "..."
             "\"What do you think of my cock?\"":
-                call her_head("Huh?","body_31")
-                call her_head("Oh, that's right...")
-                call her_head("I need to compliment your penis! I completely forgot about that!","body_34")         
+                $ her_SC.sayHead("Huh?","body_31")
+                $ her_SC.sayHead("Oh, that's right...")
+                $ her_SC.sayHead("I need to compliment your penis! I completely forgot about that!","body_34")         
                 m "Well, you don't have to--"
-                call her_head("[genie_name], let me be honest with you...","body_120")         
+                $ her_SC.sayHead("[genie_name], let me be honest with you...","body_120")         
                 m "Yes?"
-                call her_head("You have the biggest penis I have ever seen!","body_111")         
+                $ her_SC.sayHead("You have the biggest penis I have ever seen!","body_111")         
                 m "Well I suppo--"
-                call her_head("Not done yet!","body_30")         
+                $ her_SC.sayHead("Not done yet!","body_30")         
                 m "Apologies."
-                call her_head("Your penis is so big it almost scares me!","body_118")      
+                $ her_SC.sayHead("Your penis is so big it almost scares me!","body_118")      
                 g9 "You little mynx. You know exactly what to say..."
-                call her_head("And yet I lust for it...","body_121")
-                call her_head("Any woman would be happy to have your huge penis inside of her!")
+                $ her_SC.sayHead("And yet I lust for it...","body_121")
+                $ her_SC.sayHead("Any woman would be happy to have your huge penis inside of her!")
                 m "...you're good!"
-                call her_head("There is more!","body_30")         
+                $ her_SC.sayHead("There is more!","body_30")         
                 m "By all means..."
-                call her_head("I think your magnificent cock is a blessing to this world!","body_30")         
+                $ her_SC.sayHead("I think your magnificent cock is a blessing to this world!","body_30")         
                 m "Well, I wouldn't go that far--"
-                call her_head("Listen to me, [genie_name]!","body_30")
-                call her_head("I think a statue dedicated to your magnificent penis shall be erected in every city!")
-                call her_head("So that people of the world could worship your phallus freely!")
+                $ her_SC.sayHead("Listen to me, [genie_name]!","body_30")
+                $ her_SC.sayHead("I think a statue dedicated to your magnificent penis shall be erected in every city!")
+                $ her_SC.sayHead("So that people of the world could worship your phallus freely!")
                 m "OK, I think I've heard enough."
-                call her_head("Too much?","body_122")         
+                $ her_SC.sayHead("Too much?","body_122")         
                 m "Yeah, just a bit."
-                call her_head("Sorry...","body_34")         
+                $ her_SC.sayHead("Sorry...","body_34")         
                 m "No biggie. Just keep on stroking it."
-                call her_head(".................","body_121")  
+                $ her_SC.sayHead(".................","body_121")  
                 show screen blktone
                 with d3
                 ">Hermione keeps on stroking your cock."
@@ -5989,138 +5975,138 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 m "Yes, yes... Like that."
                 
             "\"Call yourself a whore, [hermione_name]!\"":
-                call her_head("Excuse me?","body_31")
-                call her_head("Oh, that's right! I'm supposed to degrade myself, right?","body_17")  
+                $ her_SC.sayHead("Excuse me?","body_31")
+                $ her_SC.sayHead("Oh, that's right! I'm supposed to degrade myself, right?","body_17")  
                 m "Well, you don't have to, but..."
-                call her_head("That's alright, I don't mind.","body_120")
-                call her_head("Alright then! I am a whore!","body_45")  
+                $ her_SC.sayHead("That's alright, I don't mind.","body_120")
+                $ her_SC.sayHead("Alright then! I am a whore!","body_45")  
                 m "Good. Glad we established that."
                 m "Now I want you to say..."
                 menu:
                     m "..."
                     "\"I am a worthless slut!\"":
-                        call her_head("Of course.","body_122")
-                        call her_head("I am a worthless slut.","body_121")
-                        call her_head("A dirty little slut, that's what I am.")
+                        $ her_SC.sayHead("Of course.","body_122")
+                        $ her_SC.sayHead("I am a worthless slut.","body_121")
+                        $ her_SC.sayHead("A dirty little slut, that's what I am.")
                         m "Yes! Good!"
                     "\"I live to suck cock!\"":
-                        call her_head("Em...","body_122")
-                        call her_head("I live to suck penis, er... I mean cock...","body_45")  
+                        $ her_SC.sayHead("Em...","body_122")
+                        $ her_SC.sayHead("I live to suck penis, er... I mean cock...","body_45")  
                         m "Really? Well why don't you suck on this one then?"
-                        call her_head("[genie_name], I am just repeating after you...","body_111")  
+                        $ her_SC.sayHead("[genie_name], I am just repeating after you...","body_111")  
                         m "Really? Could've fooled me...."
-                        call her_head("....................","body_122")
+                        $ her_SC.sayHead("....................","body_122")
                         m ".................."
                     "\"I love to swallow cum!\"":
-                        call her_head("I love to... ehm... swallow cum.","body_122")  
+                        $ her_SC.sayHead("I love to... ehm... swallow cum.","body_122")  
                         m "You hesitated there for a moment."
-                        call her_head("Yes, I know....","body_122")
-                        call her_head("Let me try again...")
-                        call her_head("I love to swallow cum!","body_121")
-                        call her_head("It is truly the best to swallow cum!")
-                        call her_head("I love it!")
-                        call her_head("...................................","body_123")
-                        call her_head("How was that, [genie_name]?","body_122")  
+                        $ her_SC.sayHead("Yes, I know....","body_122")
+                        $ her_SC.sayHead("Let me try again...")
+                        $ her_SC.sayHead("I love to swallow cum!","body_121")
+                        $ her_SC.sayHead("It is truly the best to swallow cum!")
+                        $ her_SC.sayHead("I love it!")
+                        $ her_SC.sayHead("...................................","body_123")
+                        $ her_SC.sayHead("How was that, [genie_name]?","body_122")  
                         m "Perfect." 
             "\"This is really good. Did you practice?\"":
-                call her_head("Hm?","body_74")
-                call her_head("Sort of... Well not really...")
-                call her_head("I had a talk with the girls, and...","body_122")
+                $ her_SC.sayHead("Hm?","body_74")
+                $ her_SC.sayHead("Sort of... Well not really...")
+                $ her_SC.sayHead("I had a talk with the girls, and...","body_122")
                 m "About handjobs?"
-                call her_head("Among other things...","body_80")    
+                $ her_SC.sayHead("Among other things...","body_80")    
                 m "So those girls of yours, they know a lot about such things?"
-                call her_head("Actually, yes. I was surprised myself.","body_48")
-                call her_head("All sorts of weird sexual things seem to be happening lately in our school...","body_68")
-                call her_head("Can't say I approve of that...")
-                call her_head("But they did teach me quite a few... tricks.","body_74")    
+                $ her_SC.sayHead("Actually, yes. I was surprised myself.","body_48")
+                $ her_SC.sayHead("All sorts of weird sexual things seem to be happening lately in our school...","body_68")
+                $ her_SC.sayHead("Can't say I approve of that...")
+                $ her_SC.sayHead("But they did teach me quite a few... tricks.","body_74")    
                 m "Really? Like what?"
-                call her_head("Well, let's see...","body_124")
-                call her_head("If I put one of my hands here...")
-                call her_head("And another one here...")
+                $ her_SC.sayHead("Well, let's see...","body_124")
+                $ her_SC.sayHead("If I put one of my hands here...")
+                $ her_SC.sayHead("And another one here...")
                 m "Oh, I see... Yes, this feels quite good."
-                call her_head("Does it?","body_122")
-                call her_head("So Ginny was right about this one...","body_68")
+                $ her_SC.sayHead("Does it?","body_122")
+                $ her_SC.sayHead("So Ginny was right about this one...","body_68")
                 g4 "What did you just say?"
-                call her_head("Ginny Weasley, she taught me this one.","body_74")    
+                $ her_SC.sayHead("Ginny Weasley, she taught me this one.","body_74")    
                 m "Oh, right..."
-                call her_head("She said any boy would fall in love with me if I did this to him...","body_124")
-                call her_head("There is also this thing when I form a ring with my fingers...")
-                call her_head("And then I put one finger here...")
+                $ her_SC.sayHead("She said any boy would fall in love with me if I did this to him...","body_124")
+                $ her_SC.sayHead("There is also this thing when I form a ring with my fingers...")
+                $ her_SC.sayHead("And then I put one finger here...")
                 m "Hm... I don't feel anything..."
-                call her_head("Really?","body_118")
-                call her_head("Hm...")
-                call her_head("Oh! That's right!","body_124")
-                call her_head("The finger goes here! Silly me!")
+                $ her_SC.sayHead("Really?","body_118")
+                $ her_SC.sayHead("Hm...")
+                $ her_SC.sayHead("Oh! That's right!","body_124")
+                $ her_SC.sayHead("The finger goes here! Silly me!")
                 with hpunch
                 with kissiris
                 g4 "Oh!!! By the great desert sands, yes!"
-                call her_head("Really? That good?","body_80")
-                call her_head("What if I keep doing this but stick my finger here and press a little...","body_124")    
+                $ her_SC.sayHead("Really? That good?","body_80")
+                $ her_SC.sayHead("What if I keep doing this but stick my finger here and press a little...","body_124")    
                 g4 "[hermione_name], you are killing me!"
-                call her_head("Really? Really?!","body_80")
-                call her_head("This is actually quite fun!")
-                call her_head("Err... I mean...","body_122")
-                call her_head("I am only doing this to help my house of course...")
+                $ her_SC.sayHead("Really? Really?!","body_80")
+                $ her_SC.sayHead("This is actually quite fun!")
+                $ her_SC.sayHead("Err... I mean...","body_122")
+                $ her_SC.sayHead("I am only doing this to help my house of course...")
                 m "Yes, yes... The \"Gryffindor\" honour and all that."
                 m "You just keep massaging that spot..."
                 m "Oh, yes..."
-                call her_head("...............","body_124")
+                $ her_SC.sayHead("...............","body_124")
         m "Yes... Keep stroking it."
-        call her_head("..............","body_122")
+        $ her_SC.sayHead("..............","body_122")
         m "Now I want you to say..."
         menu:
             m "..."
             "{size=-4}\"I fantasize about being raped by my father.\"{/size}":
                 $ mad += 11
-                call her_head("I do not!","body_77")
+                $ her_SC.sayHead("I do not!","body_77")
                 m "I know. Just say it."
-                call her_head("My father? That's disgusting, [genie_name]!","body_76")
+                $ her_SC.sayHead("My father? That's disgusting, [genie_name]!","body_76")
                 m "Humour me."
-                call her_head("...........","body_79")
-                call her_head("Well...","body_87")
-                call her_head("Sometimes I fantasize about being raped...")
-                call her_head(".......")
+                $ her_SC.sayHead("...........","body_79")
+                $ her_SC.sayHead("Well...","body_87")
+                $ her_SC.sayHead("Sometimes I fantasize about being raped...")
+                $ her_SC.sayHead(".......")
                 m "I see. And in those fantasies of yours..."
                 m "Who is doing the raping?"
-                call her_head("My father...?","body_117")
+                $ her_SC.sayHead("My father...?","body_117")
                 m "Do you enjoy it?"
-                call her_head("No. I cry and beg for him to stop!","body_118")
+                $ her_SC.sayHead("No. I cry and beg for him to stop!","body_118")
                 m "Heh... Nice."
-                call her_head(".......","body_118")
+                $ her_SC.sayHead(".......","body_118")
                 m "Well, this wasn't that hard, was--"
-                call her_head("I scream for my Mommy but she is still at work...","body_67")
+                $ her_SC.sayHead("I scream for my Mommy but she is still at work...","body_67")
                 m "Huh?"
-                call her_head("My daddy takes me to my room...","body_33")
-                call her_head("He throws me on my bed!")
-                call her_head("I cry \"No, daddy, please, I'm still a virgin!\"","body_32")
+                $ her_SC.sayHead("My daddy takes me to my room...","body_33")
+                $ her_SC.sayHead("He throws me on my bed!")
+                $ her_SC.sayHead("I cry \"No, daddy, please, I'm still a virgin!\"","body_32")
                 $ g_c_u_pic= "01_hp/08_animation_02/12_handjob_01.png"
-                call her_head("But He doesn't listen! He rips my panties off!","body_123")
-                call her_head("I beg him to stop! I scream and I scream!","body_22")
+                $ her_SC.sayHead("But He doesn't listen! He rips my panties off!","body_123")
+                $ her_SC.sayHead("I beg him to stop! I scream and I scream!","body_22")
                 m "Uhm, [hermione_name]?"
-                call her_head("Yes?","body_21")
+                $ her_SC.sayHead("Yes?","body_21")
                 m "You are not stroking my cock anymore..."
-                call her_head("Oh, I am sorry, [genie_name].","body_24")
-                call her_head("I got lost in thought...")
+                $ her_SC.sayHead("Oh, I am sorry, [genie_name].","body_24")
+                $ her_SC.sayHead("I got lost in thought...")
                 $ g_c_u_pic = "handjob_ani"
-                call her_head("But everything I just said is not true of course!","body_31")
-                call her_head("I never have fantasies like that!")
+                $ her_SC.sayHead("But everything I just said is not true of course!","body_31")
+                $ her_SC.sayHead("I never have fantasies like that!")
                 m "Right."
             "{size=-4}\"Sometimes I get lonely and let my dog mount me.\"{/size}":
-                call her_head("What?!","body_18")
-                call her_head("That's disgusting.","body_17")
-                call her_head("Dogs carry {size=+5}STD{/size}s, [genie_name].","body_16")
+                $ her_SC.sayHead("What?!","body_18")
+                $ her_SC.sayHead("That's disgusting.","body_17")
+                $ her_SC.sayHead("Dogs carry {size=+5}STD{/size}s, [genie_name].","body_16")
                 m "Actually, human and canine {size=+5}STD{/size}s are species specific..."
                 m "Means that they can only be spread to the same species."
-                call her_head("............","body_08")
+                $ her_SC.sayHead("............","body_08")
                 m "Also I hear that many women do enjoy getting \"knotted\" quite a bit."
-                call her_head("What does getting \"knotted\" mean?","body_07")
+                $ her_SC.sayHead("What does getting \"knotted\" mean?","body_07")
                 m "Ehm... Well..."
                 m "Ah, it doesn't matter."
                 m "Just say the thing!"
-                call her_head("Fine!","body_03")
-                call her_head("Sometimes I get lonely and let my dog mount me.","body_08")
+                $ her_SC.sayHead("Fine!","body_03")
+                $ her_SC.sayHead("Sometimes I get lonely and let my dog mount me.","body_08")
                 m "That sounded so fake..."
-                call her_head("Because we don't even own a dog!","body_07")
+                $ her_SC.sayHead("Because we don't even own a dog!","body_07")
                 m "Fine, whatever, let's just move on then..."
             "{size=-4}\"-Manual user input-\"{/size}":
 
@@ -6136,34 +6122,34 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 #  choose a suitable one for them:
                 if tmp_name == "":
                     $ tmp_name="I'm a whore."
-                    call her_head("Hm...?","body_29")
-                    call her_head("Should I just say \"I'm a whore\" as usual?")
+                    $ her_SC.sayHead("Hm...?","body_29")
+                    $ her_SC.sayHead("Should I just say \"I'm a whore\" as usual?")
                 if one_out_of_three == 1:
-                    call her_head("I don't want to say that...","body_29")
+                    $ her_SC.sayHead("I don't want to say that...","body_29")
                     m "Oh, just do it, [hermione_name]."
-                    call her_head("...........","body_29")
-                    call her_head("[tmp_name]","body_30")
+                    $ her_SC.sayHead("...........","body_29")
+                    $ her_SC.sayHead("[tmp_name]","body_30")
                     g9 "He-he..."
                 elif one_out_of_three == 2:
-                    call her_head("Huh?","body_29")
-                    call her_head("What does That have to do with anything?")
+                    $ her_SC.sayHead("Huh?","body_29")
+                    $ her_SC.sayHead("What does That have to do with anything?")
                     m "Just say it."
-                    call her_head("......","body_29")
+                    $ her_SC.sayHead("......","body_29")
                     m "Come on, humour me."
-                    call her_head("[tmp_name]","body_30")
+                    $ her_SC.sayHead("[tmp_name]","body_30")
                     g9 "He-he..."
                 elif one_out_of_three == 3:
-                    call her_head("...........","body_29")
-                    call her_head("Do I really have to?")
+                    $ her_SC.sayHead("...........","body_29")
+                    $ her_SC.sayHead("Do I really have to?")
                     m "Just say it."
-                    call her_head("[tmp_name]","body_30")
+                    $ her_SC.sayHead("[tmp_name]","body_30")
                     g9 "He-he..."
         
         #CUMMING
         m "Hm..."
         m "I love that thing you do with the palm of your hand!"
-        call her_head("You noticed...?","body_122")
-        call her_head("Shall I do it some more then?")
+        $ her_SC.sayHead("You noticed...?","body_122")
+        $ her_SC.sayHead("Shall I do it some more then?")
         show screen blkfade
         with d3
         ">Hermione presses her palm against the tip of your pulsating cock and starts rubbing it very gently..."
@@ -6201,7 +6187,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                 
-                call her_head("!!!!!!!!!!!","body_48") 
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
                 
                 
 
@@ -6220,18 +6206,18 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                 g4 "Argh! You whore!"
-                call her_head("Yes, [genie_name]! Just let it out!","body_124")       
+                $ her_SC.sayHead("Yes, [genie_name]! Just let it out!","body_124")       
                 g4 "Argh! Fucking slut!"
                 #Cuming.
-                call her_head("Ah!! It's so hot!","body_64")
-                call her_head("And it's getting everywhere! So much of it!","body_121")
-                call her_head("...[genie_name].")
+                $ her_SC.sayHead("Ah!! It's so hot!","body_64")
+                $ her_SC.sayHead("And it's getting everywhere! So much of it!","body_121")
+                $ her_SC.sayHead("...[genie_name].")
                 g4 "Argh!!!"
                 m "............"
                 m "I think I am done..."
-                call her_head("Ah, alright...","body_122")
-                call her_head("..............","body_124")
-                call her_head("You came so much this time, [genie_name]...","body_121")    
+                $ her_SC.sayHead("Ah, alright...","body_122")
+                $ her_SC.sayHead("..............","body_124")
+                $ her_SC.sayHead("You came so much this time, [genie_name]...","body_121")    
                 show screen ctc
                 pause
                 hide screen ctc
@@ -6254,23 +6240,23 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                 if daytime:
-                    call her_head("Well, I think I'd better go now... my Classes are about to start.","body_45")
+                    $ her_SC.sayHead("Well, I think I'd better go now... my Classes are about to start.","body_45")
                 else:
-                    call her_head("Well, I think I'd better go now...  It's getting late.","body_45")       
+                    $ her_SC.sayHead("Well, I think I'd better go now...  It's getting late.","body_45")       
                 m "Will you be alright in those clothes?"
-                call her_head("What?","body_87")
-                call her_head("Oh. Yes, I will be fine...","body_68")
-                call her_head("It may soak through a little here and there, but I doubt that anyone will notice.","body_74")    
+                $ her_SC.sayHead("What?","body_87")
+                $ her_SC.sayHead("Oh. Yes, I will be fine...","body_68")
+                $ her_SC.sayHead("It may soak through a little here and there, but I doubt that anyone will notice.","body_74")    
                 m "Hm... You could just put it in your mouth next time, and avoid the trouble..."
-                call her_head("And swallow your hot spunk like that, [genie_name]?","body_122")    
+                $ her_SC.sayHead("And swallow your hot spunk like that, [genie_name]?","body_122")    
                 m "Would keep your clothes clean."
                 if whoring <= 15:
-                    call her_head("With all due respect [genie_name]...","body_120")
-                    call her_head("Not for the meagre 45 points...","body_122")
-                    call her_head("Speaking of which. Can I get may payment now please?")
+                    $ her_SC.sayHead("With all due respect [genie_name]...","body_120")
+                    $ her_SC.sayHead("Not for the meagre 45 points...","body_122")
+                    $ her_SC.sayHead("Speaking of which. Can I get may payment now please?")
                 else:
-                    call her_head("Maybe next time...","body_122")
-                    call her_head("Can I get may payment now please?","body_122")    
+                    $ her_SC.sayHead("Maybe next time...","body_122")
+                    $ her_SC.sayHead("Can I get may payment now please?","body_122")    
                 
 
             "\"(Nah... no need).\"":
@@ -6283,7 +6269,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 g4 "ARGH!"
                 show screen blkfade
                 with d3
-                call her_head("WHAT?!","body_48")               
+                $ her_SC.sayHead("WHAT?!","body_48")               
                 g4 "Take this!"
 
                 show screen white 
@@ -6299,7 +6285,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 
                 
                   
-                call her_head("!!!!!!!!!!!","body_48") 
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
                 
                 
 
@@ -6317,7 +6303,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                         
                 $ aftersperm = True
                 $ her_head_ypos = her_head_only
-                call her_head(".......................","body_119")          
+                $ her_SC.sayHead(".......................","body_119")          
                 m "Yes... I Feel so much better now..."
                 pause
                 $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
@@ -6481,7 +6467,971 @@ label hg_pf_TouchMe_KissSuck: #Jumps here after event #03 and if WHORING >= LEVE
     her "...Can I just get paid now, please, [genie_name]?"
     jump done_with_handjob #^^^ (<-That's to a smiley. That's a arrow up).
     
+###################REQUEST_22 (Level 06) (45 pt.) (Blowjob). 
+label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
+    hide screen hermione_main 
+    with d3
+    if hg_pf_TitJob_OBJ.points == 0:
+        m "{size=-4}(Should I ask her for a titjob?){/size}"
+    else:
+        m "{size=-4}(Should I ask the [hermione_name] to give me another titjob?){/size}"
+    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+    menu:
+        "\"(Yes, let's do it!)\"":
+            show screen blktone
+            with d3
+            pass
+        "\"(Not right now.)\"":
+            jump silver_requests
     
+    if hg_powerGirl_OBJ.purchased:
+        m "\"(Should I ask her to dress up?)\""
+        menu:
+            "\"(Yes, let's do it!)\"":
+                m "[hermione_name], before I request a favor, I'd like you to dress up."
+                call her_main("As what?","body_10")
+                m "Power Girl."
+                if whoring >= 18:
+                    call her_main("A super hero?","body_50")
+                    m "Do you have a problem with that?"
+                    call her_main("...","body_44")
+                    call her_main("I suppose not, I mean if it keeps my uniform clean...","body_29")
+                    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+                    call set_hermione_outfit(hg_powerGirl_OBJ)
+                    pass
+                else:
+                    jump too_much
+            "\"(Not right now.)\"":
+                pass
+    
+    $ current_payout = 45 #Used when haggling about price of th favor.
+    
+    if hg_pf_TitJob_OBJ.points == 0: # FIRST EVENT <============================================================== EVENT 01
+        m "Now [hermione_name]."
+        call her_main("Yes, [genie_name]?","body_01",xpos=140)
+        m "Have you ever given someone a titjob?"
+        if whoring <=14:
+            jump too_much
+        call her_main("A titjob?","body_79")
+        m "It's where you wrap those fat tits of your around a cock and then shake them up and down and up and..."
+        call her_main("[genie_name]!","body_47")
+        m "So have you ever given a boy a titjob?"
+        call her_main("......","body_66")
+        call her_main("{size=-7}No...{/size}","body_34")
+        m "Hmmm? What was that?"
+        call her_main("No!!!","body_32")
+        m "Well today is your lucky day!"
+        call her_main("Lucky? How would you call this lucky?","body_66")
+        m "it's not every day you learn something new."
+        call her_main("I'm in school! It's my job to learn something new everyday!","body_30")
+        m "At least this is something you'll be able to use in the real world."
+        call her_main("......","body_66")
+        call her_main("{size=-7}I want 100 points...{/size}","body_34")
+        m "Speak up [hermione_name]."
+        call her_main("I want 100 points!","body_32")
+        label back_to_titjob_choices:
+        menu:
+            m "..."
+            "\"You will get 15 house points and I promise not to cum on you.\"":
+                $ mad +=7
+                call her_main("You expect me to give you a titjob for 15 points!","body_69")
+                her "I don't know who you think I am but I am not going to do this for 15 measly points!"
+                call her_main("(Besides, I don't really mind being covered in his sticky load...)","body_69")
+                jump back_to_titjob_choices
+            "\"you will get 45 house points.\"":
+                call her_main(".....","body_69")
+                call her_main("45 house points...?","body_87")
+                her "This could put \"Gryffindor\" back in the lead..."
+                m "Is that a \"yes\"?"
+                call her_main("Yes, yes it is, [genie_name].","body_79")
+                m "Great!"
+            "\"you will get 100 house points.\"":
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                $ current_payout = 100 #Used when haggling about price of th favor.
+                $ mad = 0
+                call her_main("100 house points?!","body_72")
+                her "This will definitely put \"Gryffindor\" in the lead!"
+                m "SO that's a yes?"
+                call her_main("Of course!","body_75")
+                call her_main("For 100 points I'll give you the best damn titjob of your life!","body_80")
+        # GENIE STANDS WITH HIS COCK OUT
+       
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen hermione_blink
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        
+
+        hide screen blkfade
+        hide screen blktone
+        hide screen bld1
+        show screen ctc
+        with fade
+        pause
+        show screen bld1
+        with d3
+        $ her_head_ypos = her_head_tits
+        $ her_SC.sayHead("...........","body_31")
+        $ her_SC.sayHead("(it's so big...)","body_59")
+        m "Get to it [hermione_name]."
+        $ her_SC.sayHead("Right...","body_34")
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        hide screen hermione_walk_01 
+        pause.3
+        label titjob_round_2:
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        ">Hermione clumsily wraps her tits around your cock..."
+        m "That's a start. Now, up and down..."
+        $ her_SC.sayHead("Alright...","body_34") 
+        #Stroking the cock.
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani"
+        hide screen blkfade
+        with d3
+        show screen ctc
+        pause
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        hide screen ctc
+        show screen bld1
+        with d3
+        g9 "mmmm..."
+        if hg_pf_TitJob_OBJ.points == 0:
+            $ her_SC.sayHead("...","body_52")
+            $ her_SC.sayHead("Does it... feel good?","body_53")
+            m "Good?"
+            m "It feels amazing."
+            $ her_SC.sayHead("Oh...","body_53")
+            $ her_SC.sayHead("......")
+            $ her_SC.sayHead("Thank you [genie_name]","body_54") 
+        $ her_SC.sayHead("[genie_name]...?","body_55")    
+        m "What is it?"
+        call set_hermione_action("lift_top")
+        $ her_SC.sayHead("Promise me you won't cum on my... face...","body_44")
+        $ d_flag_01 = False #If TRUE Genie promised to warn her.
+        menu:
+            m "..."
+            "\"I promise not to cover that sweet little face of yours...\"":
+                $ d_flag_01 = True #If TRUE Genie promised to warn her.
+                $ her_SC.sayHead("Thank you, [genie_name].","body_53") 
+            "\"Hmmmm... We'll see how I feel later...\"":
+                $ her_SC.sayHead("Hmmmmph.","body_50")
+                $ her_SC.sayHead("At least avoid my hair...","body_33") 
+        $ her_SC.sayHead("........","body_31") 
+        m "............."
+        $ her_SC.sayHead(".............","body_33")
+        $ her_SC.sayHead("Err... [genie_name]?") 
+        m "Yes, what is it?"
+        $ her_SC.sayHead("Are you almost there?","body_31") 
+        m "Why?"
+        if daytime:
+            $ her_SC.sayHead("Well, it's just that my classes are about to start...","body_44")
+        else: 
+            $ her_SC.sayHead("Well, it's just that I promised Ginny that we'd hang out tonight...","body_44")
+            $ her_SC.sayHead("She's pretty upset that I'm spending so much time in here...")
+        m "Do you need the points or not?"
+        $ her_SC.sayHead("I do, [genie_name]! I'm sorry...","body_57b")
+        $ her_SC.sayHead("I'll just keep on stroking it then...")
+        m "Well, you could make this finish up a little faster..."
+        $ her_SC.sayHead("Really? What can I do [genie_name]?","body_54") 
+        menu:
+            m "..."
+            "\"Tell me how much you love your tits.\"":
+                $ her_SC.sayHead("What?","body_44")
+                $ her_SC.sayHead("My breasts?")
+                m "you know, How good they feel..."
+                m "The looks that you get because of them."
+                $ her_SC.sayHead("Oh, alright then...","body_45") 
+                $ her_SC.sayHead("There was this one time in the library...","body_46")
+                $ her_SC.sayHead("It was empty apart from this first year boy sitting across from me...")
+                m "Heh... good. Go on."
+                $ her_SC.sayHead("Well it was so hot that I'd taken my vest off...","body_53") 
+                m "I bet it was hot..."
+                $ her_SC.sayHead("He was trying to act sly but I could tell that he kept sneaking glances at them...","body_54")
+                $ her_SC.sayHead("So I started undoing the buttons... Slowly at first, not enough for him to suspect anything....","body_58")
+                m "mmmmm, you little slut."
+                $ her_SC.sayHead("By the third button he couldn't take his eyes off of me.","body_59")
+                $ her_SC.sayHead("As I slowly undid the fourth he moved his hands under the desk...")
+                m "Really?"
+                $ her_SC.sayHead("Really... I could almost hear him stroking it...","body_78")
+                $ her_SC.sayHead("When I undid the fifth button he could almost see my nipples...","body_107") 
+                g9 "Do you have no shame?"
+                $ her_SC.sayHead("[genie_name]! I was just trying to cool down...","body_124") 
+                m "I'm just kidding, keep going."
+                $ her_SC.sayHead(".....","body_128")
+                $ her_SC.sayHead("By the sixth button almost nothing was hidden...")
+                $ her_SC.sayHead("He could see my naked tits...","body_129")
+                $ her_SC.sayHead("and he just stared at them... not even trying to hide what he was doing...")
+                $ her_SC.sayHead("when I undid the final button it was too much for him...")
+                $ her_SC.sayHead("He shot his cum under the table, covering my legs and feet in his hot cum!","body_134") 
+                g4 "!!!"
+                $ her_SC.sayHead("Come on [genie_name] cover me as well! Cum all over my tits!","body_136")
+                hide screen ctc
+                with hpunch
+                g4 "{size=-4}(Here it comes! Where should I aim for?){/size}"
+            
+            "\"Stick your tongue out tilt you head down!\"":
+                $ her_SC.sayHead("What?","body_45") 
+                m "Just do it, slut."
+                $ her_SC.sayHead("Like this?","body_38") 
+                m "Yes, good. Tilt your head down as far as it'll go."
+                $ her_SC.sayHead(".....................","body_115") 
+                m "Yes... Good..."
+                $ her_SC.sayHead("...........","body_115")
+                $ her_SC.sayHead("...........")
+                $ her_SC.sayHead("I can't keep my mouth open for so long, [genie_name]. I will start to drool...","body_31") 
+                m "But I want you to drool... all over those perfect tits of yours"
+                $ her_SC.sayHead("What? You think they're perfect?","body_31") 
+                m "As perfect as any mortal, [hermione_name]!"
+                $ her_SC.sayHead(".......","body_78") 
+                m "Now stick it back out again and try to get it as close to the tip of my cock as you can"
+                $ her_SC.sayHead("............","body_33")
+                $ her_SC.sayHead("A-ha.....","body_115") 
+                m "Good, [hermione_name]."
+                $ her_SC.sayHead("..............","body_115") 
+                m "Yes, keep on stroking my cock."
+                ">You thrust up as she pushes her tits down causing the tip of your cock to touch her wet tongue."
+                $ her_SC.sayHead("..................","body_115")
+                g4 "Oh that's good..."
+                $ her_SC.sayHead(".................","body_115") 
+                ">You thrust into her tongue again."
+                m "That's it slut taste it!"
+                $ her_SC.sayHead(".....................","body_40") 
+                m "Yes, you big titted whore!"
+                $ her_SC.sayHead("......................","body_116") 
+                m "I want to cum in that little slutty mouth of yours..."
+                $ her_SC.sayHead("................","body_116") 
+                with hpunch
+                g4 "{size=-4}(Here it comes! Where should I aim for?){/size}"
+        menu:
+            m "..."
+            "-cum in her mouth-":
+                $ mad += 3
+                g4 "Here it comes, [hermione_name]! You better be ready!"
+                $ her_SC.sayHead("What? already?!","body_48") 
+                g4 "{size=+5}Yeah, your tits felt great!!!{/size}"
+                g4 "{size=+5}You little whore!!!{/size}"
+                hide screen bld1
+                with d3
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade 
+                with d5
+                $ her_SC.sayHead("No, [genie_name], wait, not on my fa--","body_117") 
+                g4 "{size=+5}Open wide slut!!{/size}"
+                $ her_SC.sayHead("Not in my mou-","body_130")       
+                ">You grab the back of Hermione's head and force your cock into her open mouth..."
+                $ her_SC.sayHead("!!!!!!!","body_132") 
+                ">The sensation of her warm mouth any squirming tongue overwhelm you and you start cumming like crazy"
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!! Take it slut{/size}"
+              
+                
+                
+                
+                
+                
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_mouth_ani"
+                hide screen blkfade
+                with d3
+                stop music fadeout 1.0
+                pause 
+                        
+                $ her_head_ypos = her_head_only
+                $ her_SC.sayHead(".......................","body_224")                
+                m "mmmmmm that felt great...."
+                $ her_SC.sayHead(".......................","body_224")    
+                m "How are you feeling?"
+                $ her_SC.sayHead(".......................","body_224")    
+                m "[hermione_name]?"
+                show screen bld1
+                with d3
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                $ g_c_u_pic = "titjob_ani_pause"
+                ">Hermione opens her mouth, letting your cum fall out onto her tits."
+                $ her_SC.sayHead("*ptui*","body_116b")
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                $ her_SC.sayHead("Why on earth did you cum in my mouth!","body_34")
+                m "well you did say not to cum on your face."
+                $ her_SC.sayHead("Ughhh... you came so much! I had to swallow most of it!","body_34")
+                m "That's you fault for doing such a great job..."
+                $ her_SC.sayHead("I don't want to hear it...","body_34")
+                if daytime:
+                    $ her_SC.sayHead("My classes are about to start and now I'm covered in your sperm...","body_34") 
+                else:
+                    $ her_SC.sayHead("At this hour The \"Gryffindor\" common room will be full of people...","body_34")
+                    $ her_SC.sayHead("And now I'm going to have to go there, smelling like... spunk...")
+                    $ her_SC.sayHead("Maybe if I just run to bed no one will be able to tell...","body_117") 
+                    
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade
+                with d7
+                ">Hermione releases your still pulsating cock."
+                
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                show screen genie
+                hide screen g_c_u
+                $ her_head_ypos = her_head_tits
+                m "You could have swallowed..."
+                m "Then there wouldn't have been any clean up."
+                $ her_SC.sayHead("Swallow all of that?","body_118")
+                $ her_SC.sayHead("I don't think I have enough room in my stomach...")
+                call her_main("Is that all [genie_name]?","body_83")
+                $ aftersperm = True
+                
+                
+#                g4 "You whore! You little nasty wore!"
+#                g4 "There! Allover your fucking belly and tits!"
+#                her "Ah! It's so hot!"
+#                #                g4 "Oh, yes, this is so good!"
+#                her "Ah..."
+#                #                m "..............."
+#                her "............"
+#                #                m "I think I'm done..."
+#                her "Oh..."
+#                ">Hermione releases your still pulsating cock."
+#                her "Ew... Your sperm, [genie_name]..."
+#                her "It's everywhere under my uniform..."
+#                #                m "What possessed you to put my cock there, [hermione_name]?"
+                
+
+            "-cover her tits-":
+                hide screen ctc
+                with hpunch
+                g4 "ARGH!"
+                show screen blkfade
+                with d3
+                $ her_SC.sayHead("WHAT?!","body_48")               
+                g4 "Take this slut!"
+
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+                
+                
+                
+                  
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_chest_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                hide screen bld1
+                with d3
+                pause
+                show screen bld1
+                with d3
+                        
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                $ her_head_ypos = her_head_only
+                $ her_SC.sayHead(".......................","body_119")          
+                m "Yes... That's it..."
+                pause
+                
+                hide screen hermione_main
+                with d3
+                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+                
+                call her_main("","body_19")
+                pause
+                her ".........."
+                m "Well, I think that's about it..."
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                hide screen g_c_u
+                show screen genie
+                
+                if daytime:
+                    call her_main("[genie_name]! How could you cum so much?!","body_32")
+                    call her_main("It's like you dumped a bucket of spunk over my chest!","body_69")
+                    call her_main("My classes are about to start and I can't go looking like this!","body_87")
+                    m "Of course you can, just wipe it off or something..."
+                    m "Nobody will even notice... Except for the smell maybe..."
+                    call her_main("...I would like to get paid now.","body_79")
+                    hide screen hermione_main     
+                    with d3
+                    $ uni_sperm = False
+                else:
+                    call her_main("How can one person cum so much!","body_69")
+                    her "how Am I supposed to go back to the \"Gryffindor\" common room looking like this?!"
+                    m "Just wipe it off or something."
+                    m "It's not like it'll be the first time you've gone to bed smelling like cum."
+                    call her_main("...I would like to get paid now.","body_79")
+                    hide screen hermione_main     
+                    with d3
+                    $ uni_sperm = False
+                $ aftersperm = True
+        #her "Can I just get paid now?"
+
+    elif hg_pf_TitJob_OBJ.points == 1: # SECOND EVENT <============================================================== EVENT 02
+        m "[hermione_name]?"
+        call her_main("Yes, [genie_name]?","body_01",xpos=140)
+        m "How do you feel about wrapping those nice tits of yours around my cock again?"
+        call her_main("Only nice?","body_120")
+        m "Fine, fine."
+        m "How do you feel about wrapping those perfect tits of yours around my cock again?"
+        call her_main("Of course, [genie_name].","body_58")
+        m "You like it when I call them perfect don't you?"
+        call her_main(".............","body_59")
+        g9 "you don't have to say anything, just bring those perfect tits over here."
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_60")
+        call her_main("yes [genie_name]","body_68")
+        stop music fadeout 4.0
+        
+
+        hide screen hermione_main            
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        pause.3
+
+        
+                                                                                                                                                                               #HERMIONE
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen blktone
+        hide screen hermione_walk_01 
+
+        jump titjob_round_2
+
+
+    elif hg_pf_TitJob_OBJ.points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
+        m "[hermione_name]?"
+        call her_main("[genie_name]?","body_01",xpos=140)
+        m "You don't mind wrapping those perfect tits of yours around my cock again, do you?"
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_78")
+        if whoring <= 19:
+            call her_main("As long as I am getting paid...","body_105")
+            m "Well, come here then. Time to earn those points."
+        else:
+            call her_main("Of course not [genie_name]...","body_107")
+            m "Well, come here then."
+        
+        
+        hide screen hermione_main            
+        hide screen bld1
+        with d3
+        $ walk_xpos=400 #Animation of walking chibi. (From)
+        $ walk_xpos2=280 #Coordinates of it's movement. (To)
+        $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+        show screen hermione_walk_01 
+        pause.1
+        show screen blkfade
+        with Dissolve(1)
+        pause.3
+
+        hide screen hermione_walk_01 
+        hide screen genie
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani_pause"
+        show screen chair_02
+        show screen g_c_u
+        show screen desk_02
+        hide screen blktone 
+        
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        call update_her_uniform
+        if hermione_costume:
+            call set_hermione_action("lift_top")
+        ">Hermione wraps her plump tits around your cock..."
+        $ her_head_ypos = her_head_only
+        stop music fadeout 3.0
+        $ her_SC.sayHead("Do you like it when I do it like this, [genie_name]?","body_68")
+        ">Hermione starts alternating her breasts as she titfucks you."
+        g9 "Actually, yes! Very nice!"
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+        #Stroking the cock.
+        $ genie_chibi_xpos = 300 #-185 behind the desk.
+        $ genie_chibi_ypos = 200
+        $ g_c_u_pic = "titjob_ani"
+        hide screen blkfade
+        with d7
+        show screen ctc
+        pause
+        hide screen ctc
+        show screen bld1
+        with d3
+
+        m "Yes, yes, like that..."
+        m "Hm... You are getting pretty good at this."
+        $ her_SC.sayHead("Thank you, [genie_name].","body_74")
+        $ her_SC.sayHead("I figured with how nice you've been it's the least I could do...")
+        m "Hm..."
+        menu:
+            m "..."
+            "\"What do you think of my cock?\"":
+                $ her_SC.sayHead("Huh?","body_31")
+                $ her_SC.sayHead("Your cock?","body_34")         
+                m "What do you think abo-"
+                $ her_SC.sayHead("It's amazing....","body_120")         
+                m "go on..."
+                $ her_SC.sayHead("If I have the perfect tits then this...","body_121")   
+                ">She squeezes her tits around your cock."
+                $ her_SC.sayHead("This is the perfect cock","body_123")         
+                m "Perfect?"
+                $ her_SC.sayHead("Perfect.","body_123b")      
+                $ her_SC.sayHead("Perfect size...","body_124")
+                $ her_SC.sayHead("Perfect shape...")
+                "Hermione tilts her head down and licks the tip of your cock."
+                $ her_SC.sayHead("...","body_121")  
+                $ her_SC.sayHead("Perfect taste...","body_121")         
+                m "..."
+                $ her_SC.sayHead("I think your perfect cock should be shared around the school. ","body_30")         
+                m "Well, I wouldn't go that far--"
+                $ her_SC.sayHead("Listen to me, [genie_name]!","body_121")
+                $ her_SC.sayHead("I think your perfect cock should be worshipped as part of the school curriculem!")
+                $ her_SC.sayHead("Girls will be required to come in and bask in it's glory!")
+                m "OK, I think I've heard enough."
+                $ her_SC.sayHead("Too much?","body_122")         
+                m "Yeah, just a bit."
+                $ her_SC.sayHead("Sorry [genie_name], I got a bit carried away...","body_34")         
+                m "No biggie. Just keep on massaging it with those big tits of yours."
+                $ her_SC.sayHead(".................","body_121")  
+                show screen blktone
+                with d3
+                ">Hermione keeps on stroking your cock."
+                ">She spits on it to help lubricate it."  
+                hide screen blktone
+                with d3
+                m "Yes, yes... That's it slut."
+                
+            "\"Call yourself a big titted whore!\"":
+                $ her_SC.sayHead("Excuse me?","body_31")
+                $ her_SC.sayHead("Oh... I am a big tittedwhore!","body_121")  
+                m "Good. Glad we established that."
+                m "Now I want you to say..."
+                menu:
+                    m "..."
+                    "\"I am a shameless cumslut!\"":
+                        $ her_SC.sayHead("Of course.","body_124")
+                        $ her_SC.sayHead("I am a shameless cumslut.","body_121")
+                        $ her_SC.sayHead("A dirty little slut who's addicted to the the taste of my headmaster's cum...","body_123")
+                        m "Yes! Good!"
+                    "\"I love being covered in cum!\"":
+                        $ her_SC.sayHead("I love being covered in cum!","body_121")
+                        $ her_SC.sayHead("hot...")
+                        $ her_SC.sayHead("sticky...")
+                        $ her_SC.sayHead("smelly...")
+                        $ her_SC.sayHead("cum...")
+                        $ her_SC.sayHead("...................................","body_123")
+                        $ her_SC.sayHead("How was that, [genie_name]?","body_122")  
+                        m "Perfect." 
+            "\"This is really good. Did you practice?\"":
+                $ her_SC.sayHead("Hm?","body_74")
+                $ her_SC.sayHead("Sort of... Well not on another cock...","body_122")
+                m "On what then?"
+                $ her_SC.sayHead("Well I spoke to Ginny...","body_68")    
+                m "A friend of yours?"
+                $ her_SC.sayHead("yes. I asked if she had any tips for this sort of thing...","body_54")
+                $ her_SC.sayHead("She said the best way to improve was practice...","body_53")
+                m "Practice on what?"
+                $ her_SC.sayHead("On Ginny","body_46") 
+                $ her_SC.sayHead("Well... on her... arm.","body_122")    
+                m "You titfucked your friends arm?"
+                $ her_SC.sayHead("Just as practice!","body_57")
+                $ her_SC.sayHead("She even game me some tips...")
+                $ her_SC.sayHead("How does this feel?","body_59")
+                m "mmmmm... Yes, this feels quite good."
+                $ her_SC.sayHead("Does it?","body_122")
+                $ her_SC.sayHead("Ginny seemed to enjoy it a lot as well...","body_78")
+                g4 "She enjoyed it?"
+                $ her_SC.sayHead("Of course she did!","body_74")    
+                $ her_SC.sayHead("Who wouldn't love feeling my perfect tits...","body_84")
+                $ her_SC.sayHead("Although I think she might have enjoyed it...","body_87")
+                $ her_SC.sayHead("A little too much...","body_105")
+                m "How so?"
+                $ her_SC.sayHead("Well...","body_105")
+                $ her_SC.sayHead("She might have started...")
+                $ her_SC.sayHead("Playing with herself...","body_106")
+                with hpunch
+                with kissiris
+                g4 "Yes, keep going slut"
+                $ her_SC.sayHead("As I was \"Practicing\" on her arm she might have...","body_107")
+                $ her_SC.sayHead("cum...","body_121")    
+                g4 "[hermione_name], you little slut!"
+                $ her_SC.sayHead("It was just practice!","body_57")
+                $ her_SC.sayHead("Err... I mean...","body_122")
+                $ her_SC.sayHead("It's not like I enjoyed it as well...","body_118")
+                m "Yes, yes... you're not a slut at all..."
+                m "Mmmmm, why don't you spit on it a little..."
+                m "Oh, yes..."
+                $ her_SC.sayHead("...............","body_124")
+        m "Yes... Keep stroking it."
+        $ her_SC.sayHead("..............","body_122")
+        m "Now I want you to say..."
+        menu:
+            m "..."
+            "{size=-4}\"I love teasing my father with my big tits.\"{/size}":
+                $ her_SC.sayHead("I do not!","body_118")
+                m "I know. Just say it."
+                $ her_SC.sayHead("My father? That's gross, [genie_name]! How could you suggest that I want to fu-","body_121")
+                m "Come on... Just make something up."
+                $ her_SC.sayHead("...........","body_122")
+                $ her_SC.sayHead("Well...","body_87")
+                $ her_SC.sayHead("Sometimes when I hug him...")
+                $ her_SC.sayHead(".......")
+                m "Go on [hermione_name]..."
+                $ her_SC.sayHead("I press my tits into him...","body_121")
+                m "Do you think he enjoys it?"
+                $ her_SC.sayHead("I'm not sure...","body_82")
+                $ her_SC.sayHead("I think so...","body_105")
+                $ her_SC.sayHead("He always tries to cover his croutch afterwards...","body_84")
+                $ her_SC.sayHead("He even says I'm too old for hugs...","body_83")
+                $ her_SC.sayHead("But I make sure to give him a big one every night before I go to bed...")
+                $ her_SC.sayHead("So that he'll think of me...","body_124")
+                $ her_SC.sayHead("And how good I felt...","body_123")
+                $ her_SC.sayHead("Pressing into him...","body_121")
+                m "That's it slut."
+                $ her_SC.sayHead("Then I give him a kiss on the forehead...","body_105")
+                $ her_SC.sayHead("Making sure that he can see down my blouse...","body_24")
+                $ her_SC.sayHead("{image=textheart}{image=textheart}{image=textheart}")
+                $ her_SC.sayHead("But all of that is not true of course!","body_31")
+                $ her_SC.sayHead("None of that happens! It was just for you to imagine!")
+                m "Right..."
+            "{size=-4}\"I love teasing my schoolmates with my perfect tits.\"{/size}":
+                $ her_SC.sayHead("I love teasing my schoolmates with my perfect tits...","body_121")
+                m "Of course you do..."
+                $ her_SC.sayHead("I love the jealous looks from the other girls...","body_124")
+                m "I bet they're jealous..."
+                $ her_SC.sayHead("I love teasing ron and harry during breakfast...","body_128")
+                $ her_SC.sayHead("Sometimes I'll walk around with only one button done up...","body_129")
+                $ her_SC.sayHead("Other times I'll just wear my vest with nothing on underneath...")
+                m "And how do you feel..."
+                $ her_SC.sayHead("So good...","body_133")
+                $ her_SC.sayHead("One time when I was walking back from your office at night I was barely covering them...","body_122")
+                $ her_SC.sayHead("And as I rounded a corner...","body_121")
+                $ her_SC.sayHead("A second year boy ran head first into them...","body_136")
+                m "Head first into your tits?"
+                $ her_SC.sayHead("All I could see was the top of his head...","body_123")
+                m "What did he do?"
+                $ her_SC.sayHead("He tried to pull away...")
+                m "Tried?"
+                $ her_SC.sayHead("Well I may have held him there...","body_128")
+                $ her_SC.sayHead("Just for a little bit...","body_124")
+                $ her_SC.sayHead("Just to tell him it was alright...","body_129")
+                m "You little slut."
+                $ her_SC.sayHead("I think I might've broken him though...","body_124")
+                $ her_SC.sayHead("Because when I let him go he said nothing. He just stepped back slowly and walked away.","body_121")
+                m "I bet I know where he went..."
+                $ her_SC.sayHead("so do i...","body_121")
+        
+        #CUMMING
+        m "Hm..."
+        m "I love your slutty tits.!"
+        $ her_SC.sayHead("Thank you [genie_name].","body_121")
+        $ her_SC.sayHead("Shall I rub them some more then?")
+        show screen blkfade
+        with d3
+        ">Hermione presses her tits together against your cock and starts rubbing it very quickly..."
+        m "Oh yes!!!"
+        stop music fadeout 1.0
+        g4 "{size=-5}(Almost there! where should I aim?){/size}"
+        menu:
+            m "..."
+            "\"(In her mouth).\"":
+                g4 "Take this whore"
+                ">You grab Hermione by the back of her head, tilting it down "
+                $ her_SC.sayHead("What are you-","body_122")
+                ">You thrust up into her wet mouth, the sensation of it driving you over the edge."
+               
+                
+                
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+              
+                
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                
+                
+                
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_mouth_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                pause 
+                        
+                $ her_head_ypos = her_head_only
+                
+
+                
+                
+                g4 "Argh! You whore!"
+                $ her_SC.sayHead("{image=textheart}{image=textheart}{image=textheart}","body_125")       
+                g4 "Argh! you big titted slut! Take it all!"
+                #Cuming.
+                $ her_SC.sayHead("......","body_125")
+                m "............"
+                m "Ok, I think I am done..."
+                $ her_SC.sayHead("..............","body_125")
+                $ her_SC.sayHead("........","body_125")
+                $ her_SC.sayHead("...","body_125")
+                $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
+                $ her_SC.sayHead("*GULP*","body_126") #play noise here
+                show screen ctc
+                pause
+                hide screen ctc
+                show screen blkfade
+                with d5
+                ">Hermione releases your cock from between her tits and gets dressed."
+                
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                show screen genie
+                hide screen g_c_u
+                $ her_head_ypos = her_head_tits
+                hide screen blkfade
+                with d5
+                
+               
+                
+                
+                
+                $ hermione_wear_top = True
+                $ hermione_wear_bra = True
+                call update_her_uniform
+                if hermione_costume:
+                    call set_hermione_action("none")
+                if daytime:
+                    $ her_SC.sayHead("Well, I think I'd better go now... my Classes are about to start.","body_45")
+                else:
+                    $ her_SC.sayHead("Well, I think I'd better go now... It's getting late.","body_45")       
+                m "So you're alright with swallowing now?"
+                $ her_SC.sayHead("What?","body_87")
+                $ her_SC.sayHead("Oh. I suppose so...","body_68")
+                $ her_SC.sayHead("I mean it doesn't taste that bad and it means that I don't have to clean up afterwards.","body_74")    
+                m "Hm... Are you sure you don't want people seeing your tits covered in cum..."
+                $ her_SC.sayHead("What? walk around school covered in your cum [genie_name]?","body_122")    
+                m "it Would keep your clothes clean."
+                if whoring <= 20:
+                    $ her_SC.sayHead("With all due respect [genie_name]...","body_120")
+                    $ her_SC.sayHead("I don't plan on getting a reputation as a cum loving whore...","body_122")
+                    $ her_SC.sayHead("Not like those \"Slytherin\" girls...")
+                else:
+                    $ her_SC.sayHead("Hmmmmm...","body_105")
+                    $ her_SC.sayHead("Maybe if you ask nicely...","body_105")  
+                call her_main("Is that all [genie_name]?","body_83")  
+                
+
+            "\"(On her tits).\"":
+                g4 "Here! Take this you bit titted whore!"
+                with hpunch
+                g4 "ARGH!"
+                show screen blkfade
+                with d3
+                $ her_SC.sayHead("What? Already?!","body_48")               
+                g4 "Yeah, you're tits felt great slut!"
+
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "{size=+5}ARGH! YES!!!{/size}"
+                
+                
+                
+                  
+                $ her_SC.sayHead("!!!!!!!!!!!","body_48") 
+                
+                
+
+                $ genie_chibi_xpos = 300 #-185 behind the desk.
+                $ genie_chibi_ypos = 200
+                $ g_c_u_pic = "titjob_chest_ani"
+                hide screen blkfade
+                with d3
+                show screen ctc
+                hide screen bld1
+                with d3
+                pause
+                show screen bld1
+                with d3
+                        
+                $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+                $ uni_sperm = True
+                $ her_head_ypos = her_head_only
+                $ her_SC.sayHead(".......................","body_119")          
+                m "Aghhh... I Feel so much better now..."
+                pause
+                
+                hide screen hermione_main
+                with d3
+                $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+                
+                call her_main("","body_120")
+                pause
+                her ".........."
+                m "Well, I think that's about it..."
+                show screen hermione_stand 
+                hide screen chair_02
+                hide screen desk_02
+                hide screen g_c_u
+                show screen genie
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                call her_main("[genie_name]!","body_103")
+                m "What?"
+                call her_main("You covered my chest in cum [genie_name]...","body_97")
+                call her_main("There's so much...","body_107")
+                m "It's your fault, [hermione_name]!"
+                call her_main("My fault?","body_117")
+                m "Yes! It's those perfect tits of yours..."
+                m "They just felt too good..."     
+                call her_main("Oh...","body_104")
+                her "Well, I suppose it's not too bad then..."
+                call her_main("I'll just wipe it off and hope that nobody notices...","body_120")
+                m "you could lick them clean."
+                call her_main("You want me to lick your cum off of my tits?","body_121")
+                call her_main("I don't think so [genie_name]...","body_121")
+                her "{size=-5}Maybe next time...{/size}"
+                call her_main("Is that all [genie_name]?","body_122")
+                $ aftersperm = True
+                hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+                with d3   
+    
+    label done_with_titjob:
+                
+    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    $ hermione_wear_top = True
+    $ hermione_wear_bra = True
+    if hermione_costume:
+        call set_hermione_action("none")
+    call update_her_uniform
+    $ gryffindor += current_payout #35
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    hide screen blkfade
+    with d3
+    
+    m "Yes, [hermione_name]. [current_payout] to \"Gryffindor\"." 
+    $ gryffindor +=current_payout
+    
+    hide screen hermione_stand_f #Hermione stands still.
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3   
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    
+    call her_main("Thank you, [genie_name]...","body_13")
+    
+    $ hg_pf_TitJob_OBJ.points += 1
+    
+    if whoring <= 17:
+        $ whoring +=1
+    
+    if hg_pf_TitJob_OBJ.points <= 3:
+        $ hg_pf_TitJob_OBJ.hearts_level = hg_pf_TitJob_OBJ.points
+    
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    
+    $ custom_outfit_old = temp_outfit
+    $ stockings = temp_stockings
+    $ panties = True
+    call her_walk(400,610,2)
+    
+    call reset_hermione_main
+    jump end_hg_pf         
+
+
 ###################REQUEST_22 (Level 06) (55 pt.) (Blowjob). 
 label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen hermione_main 
@@ -6574,12 +7524,12 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             "\"Whatever happened to your \"MRM\" thing?\"":
                 her "*Slurp?*"
                 call u_pause_ani
-                call her_head("Oh, well...","body_118")
-                call her_head("We are still active, but...")
+                $ her_SC.sayHead("Oh, well...","body_118")
+                $ her_SC.sayHead("We are still active, but...")
                 call u_play_ani
                 her "*Slurp!* *Gobble!*"
                 call u_pause_ani
-                call her_head("But we are not getting as popular and as much support as I thought we would...","body_122")
+                $ her_SC.sayHead("But we are not getting as popular and as much support as I thought we would...","body_122")
                 call u_play_ani
                 her "*Slurp!* *Gulp!* *Gulp!*"
                 m "Oh... This is good..."
@@ -6592,53 +7542,53 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "You perverted, little hypocrite."
                 her "*Gulp--"
                 call u_pause_ani
-                call her_head("That's not what we stand for, [genie_name].","body_117")
+                $ her_SC.sayHead("That's not what we stand for, [genie_name].","body_117")
                 m "What do you mean?"
-                call her_head("The \"MRM\" is about gender equality.","body_16")
-                call her_head("We are not as much against selling sexual favours to the teachers...")
-                call her_head("As we are against the gender inequality that the selling of sexual favour creates...")
+                $ her_SC.sayHead("The \"MRM\" is about gender equality.","body_16")
+                $ her_SC.sayHead("We are not as much against selling sexual favours to the teachers...")
+                $ her_SC.sayHead("As we are against the gender inequality that the selling of sexual favour creates...")
                 m "Hm..."
                 m "This conversation is starting to bore me..."
                 m "Suck on my cock some more before we continue."
-                call her_head("Of course, [genie_name].","body_121")
+                $ her_SC.sayHead("Of course, [genie_name].","body_121")
                 call u_play_ani
                 her "*Gobble!* *Slurp!* *Slurp!*"
                 m "Yes, much better..."
                 m "But you still disapprove of selling the favours, right?"
                 her "*Slurp--"
                 call u_pause_ani
-                call her_head("Yes, it is frowned upon...","body_120")
+                $ her_SC.sayHead("Yes, it is frowned upon...","body_120")
                 m "And yet, you are the biggest offender by far."
-                call her_head("But what choice do I have?","body_120")
-                call her_head("I've been put in a very difficult position...")
+                $ her_SC.sayHead("But what choice do I have?","body_120")
+                $ her_SC.sayHead("I've been put in a very difficult position...")
                 m "The cock, [hermione_name]."
-                call her_head("Right, sorry...","body_120")
+                $ her_SC.sayHead("Right, sorry...","body_120")
                 call u_play_ani
                 her "*Slurp!* *Gulp!* *Gltch!*"
                 her "*Slurp--"
                 call u_pause_ani
-                call her_head("This one time we had a meeting right after I sold you another favour, [genie_name].","body_117")
-                call her_head("I had to give a speech with my uniform all messy and stained.")
-                call her_head("It felt awful that I had to do that...")
+                $ her_SC.sayHead("This one time we had a meeting right after I sold you another favour, [genie_name].","body_117")
+                $ her_SC.sayHead("I had to give a speech with my uniform all messy and stained.")
+                $ her_SC.sayHead("It felt awful that I had to do that...")
                 m "You did enjoy it a little bit though..."
-                call her_head("Well...","body_118")
+                $ her_SC.sayHead("Well...","body_118")
                 m "Just admit it."
-                call her_head("...............","body_117")
+                $ her_SC.sayHead("...............","body_117")
                 m "Yes, I knew it. You took pleasure in it, you little perv."
-                call her_head("I suppose it was embarrassing and exciting at the same time...","body_118")
-                call her_head("And it made me feel even worse about myself.")
+                $ her_SC.sayHead("I suppose it was embarrassing and exciting at the same time...","body_118")
+                $ her_SC.sayHead("And it made me feel even worse about myself.")
                 m "You poor thing."
                 m "Cock back in the mouth."
-                call her_head("Yes, [genie_name].","body_117")
+                $ her_SC.sayHead("Yes, [genie_name].","body_117")
                 call u_play_ani
                 
             "\"Your parents must be proud of you...\"":
                 her "*Slurp--"
                 call u_pause_ani
-                call her_head("Yes, I believe they are...","body_75")
-                call her_head("With me being an excellent student despite being muggle-born and all...","body_74")
-                call her_head("Although at first they were against sending me to some \"Bogus boarding school\".","body_117")
-                call her_head("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","body_74")
+                $ her_SC.sayHead("Yes, I believe they are...","body_75")
+                $ her_SC.sayHead("With me being an excellent student despite being muggle-born and all...","body_74")
+                $ her_SC.sayHead("Although at first they were against sending me to some \"Bogus boarding school\".","body_117")
+                $ her_SC.sayHead("Took some effort to convince them that \"Hogwarts\" is a respectable institution.","body_74")
                 m "Yes, a respectable institution indeed."
                 m "Cock back in your mouth [hermione_name]."
                 call u_play_ani
@@ -6649,11 +7599,11 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "So, what would your folks say if they were to see you now, [hermione_name]?"
                 her "*Slurp--"
                 call u_pause_ani
-                call her_head("They would not understand of course...","body_87")
-                call her_head("But I do not care.")
-                call her_head("I am not afraid to \"get my hands dirty\" and do what needs to be done.","body_120")
+                $ her_SC.sayHead("They would not understand of course...","body_87")
+                $ her_SC.sayHead("But I do not care.")
+                $ her_SC.sayHead("I am not afraid to \"get my hands dirty\" and do what needs to be done.","body_120")
                 m "A bit rebellious, aren't you?"
-                call her_head("Hm... I suppose I am.","body_122")
+                $ her_SC.sayHead("Hm... I suppose I am.","body_122")
                 m "Back to sucking then. Teach your folks a lesson."
                 call u_play_ani
                 her "*Slurp!* *Slurp!* *Slurp!*"
@@ -6661,7 +7611,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             "\"Tell me about the \"Gryffindor\" house.\"":
                 her "*Slurp--"
                 call u_pause_ani
-                call her_head("What can I say that you don't already know, [genie_name]?","body_13")
+                $ her_SC.sayHead("What can I say that you don't already know, [genie_name]?","body_13")
                 m "Yes... Ehm... I know everything of course."
                 m "But I want to see how much you know."
                 m "To test your knowledge on the subject."
@@ -6670,28 +7620,28 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 ">As soon as you mention \"test\" Hermone's eyes light up with excitement."
                 hide screen blktone
                 with d3
-                call her_head("OK. But I need a moment gather my thoughts...","body_80")
+                $ her_SC.sayHead("OK. But I need a moment gather my thoughts...","body_80")
                 call u_play_ani
                 her "*Slurp!* *Slurp!* *Gulp!*"
                 m "Oh, yes... Take as much time as you need, [hermione_name]."
                 her "*Slurp!* *Gulp!* *Slurp!*"
                 her "*Gulp--"
                 call u_pause_ani
-                call her_head("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","body_87")
-                call her_head("The heraldic animal of \"Gryffindor\" is the lion...")
-                call her_head("And it's colors are red and gold.","body_127")
+                $ her_SC.sayHead("The \"Gryffindor\" house was founded by Godric Gryffindor, thus the name.","body_87")
+                $ her_SC.sayHead("The heraldic animal of \"Gryffindor\" is the lion...")
+                $ her_SC.sayHead("And it's colors are red and gold.","body_127")
                 call u_play_ani
                 her "*Gulp!* *Slurp!* *Slurp!*"
                 call u_pause_ani
-                call her_head("Professor Minerva McGonagall is the headmaster of our house.","body_127")
-                call her_head("The \"Gryffindor\" house emphasizes the traits of courage...")
-                call her_head("As well as \"daring, nerve and chivalry\"...")
-                call her_head("And thus its members are generally regarded as brave but reckless...")
+                $ her_SC.sayHead("Professor Minerva McGonagall is the headmaster of our house.","body_127")
+                $ her_SC.sayHead("The \"Gryffindor\" house emphasizes the traits of courage...")
+                $ her_SC.sayHead("As well as \"daring, nerve and chivalry\"...")
+                $ her_SC.sayHead("And thus its members are generally regarded as brave but reckless...")
                 call u_play_ani
                 her "*Slurp!* *Slurp!* *Slurp!*"
                 call u_pause_ani
-                call her_head("\"Gryffindor\" corresponds roughly to the element of fire...","body_127")
-                call her_head("And for that reason the colours of red and gold were chosen.")
+                $ her_SC.sayHead("\"Gryffindor\" corresponds roughly to the element of fire...","body_127")
+                $ her_SC.sayHead("And for that reason the colours of red and gold were chosen.")
                 call u_play_ani
                 her "*Slurp!* *Gulp!* *Slurp!*"
                 m "Hm..."
@@ -6700,11 +7650,11 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "Well, with your house representing courage and righteousness and such..."
                 m "And you being a nasty slut..."
                 call u_pause_ani
-                call her_head("[genie_name]!","body_86")
+                $ her_SC.sayHead("[genie_name]!","body_86")
                 m "But to be honest..."
                 m "\"Daring, nerve, fire, recklessness\"..."
                 m "That sort of describes your personality quite well..."
-                call her_head("[genie_name]...","body_45")
+                $ her_SC.sayHead("[genie_name]...","body_45")
                 call u_play_ani
                 her "*Gobble!!* *Gltch!!* *Gobble!!!*"
                 m "Good girl..."
@@ -6715,26 +7665,26 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         her "*Slurp!* *Slurp!* *Slurp!*"
         her "*Slurp--"
         call u_pause_ani
-        call her_head("[genie_name]... I am a... whore.","body_87")
+        $ her_SC.sayHead("[genie_name]... I am a... whore.","body_87")
         m "What?"
         call u_play_ani
         her "*Slurp-Slurp-Slurp!*"
         call u_pause_ani
-        call her_head("I truly am a slut and deeply enjoy sucking your cock.","body_117")
+        $ her_SC.sayHead("I truly am a slut and deeply enjoy sucking your cock.","body_117")
         m "Oh, yes, yes... Say more things like that."
         call u_play_ani
         her "*Slurp!* *Gulp!* *Slurp!*"
         call u_pause_ani
-        call her_head("Please, [genie_name]. Cum for me.","body_121")
+        $ her_SC.sayHead("Please, [genie_name]. Cum for me.","body_121")
         with hpunch
         g4 "Argh! You little...!!!"
         g4 "{size=-4}(Here it comes. Should I give her a warning?){/size}"
         menu:
             m "..."
             "-Warn her-":
-                call her_head("Yes, I love to suck and --","body_121")
+                $ her_SC.sayHead("Yes, I love to suck and --","body_121")
                 g4 "Heads up, [hermione_name]! Here it comes!"
-                call her_head("!!!","body_18")
+                $ her_SC.sayHead("!!!","body_18")
                 show screen ctc
                 pause
                 show screen blkfade
@@ -6759,34 +7709,34 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 with d3
                 m "Well, I think that's it."
                 call u_pause_ani
-                call her_head("..............","body_126")
+                $ her_SC.sayHead("..............","body_126")
                 m "Are you alright there, [hermione_name]?"
-                call her_head("Yes, [genie_name]...","body_123")
-                call her_head("You came so much...")
+                $ her_SC.sayHead("Yes, [genie_name]...","body_123")
+                $ her_SC.sayHead("You came so much...")
                 m "You managed to swallow it all though."
-                call her_head("Yes... I thought I would choke...","body_123")
-                call her_head("But I made a promise to myself that I won't let go of your penis no matter what!")
+                $ her_SC.sayHead("Yes... I thought I would choke...","body_123")
+                $ her_SC.sayHead("But I made a promise to myself that I won't let go of your penis no matter what!")
                 m "Good girl."
-                call her_head("Thank you, [genie_name].","body_123")
-                call her_head("But, still... You came so much...")
-                call her_head("I almost feel as if I just got fed...","body_121")
-                call her_head("My stomach is so full...")
+                $ her_SC.sayHead("Thank you, [genie_name].","body_123")
+                $ her_SC.sayHead("But, still... You came so much...")
+                $ her_SC.sayHead("I almost feel as if I just got fed...","body_121")
+                $ her_SC.sayHead("My stomach is so full...")
                 g9 "Yes, I fed you with my cum!"
                 if daytime:
-                    call her_head("I think I may skip the meal and go straight to class today.","body_121")
+                    $ her_SC.sayHead("I think I may skip the meal and go straight to class today.","body_121")
                 else:
-                    call her_head("Yes. I think I may skip supper tonight...","body_121")
-                call her_head("Can I get paid now?","body_122")
+                    $ her_SC.sayHead("Yes. I think I may skip supper tonight...","body_121")
+                $ her_SC.sayHead("Can I get paid now?","body_122")
                 show screen ctc
                 pause
                 hide screen ctc
                 show screen blkfade
                 with d3
             "-Don't bother-":
-                call her_head("Yes, I love to suck and --","body_121")
+                $ her_SC.sayHead("Yes, I love to suck and --","body_121")
                 call cum_block
                 g4 "{size=+7}Whore!{/size}"
-                call her_head("!!?","body_48")
+                $ her_SC.sayHead("!!?","body_48")
                 call set_u_ani("cum_on_face_ani")
                 call u_play_ani
                 show screen ctc
@@ -6800,27 +7750,27 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 #Cumming.
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-                call her_head("[genie_name]...","body_48")
+                $ her_SC.sayHead("[genie_name]...","body_48")
                 g4 "Don't you move now, [hermione_name]."
                 g4 "Yes, just be still and take it."
                 g4 "Argh! You little slut! You make me cum hard, [hermione_name]!"
-                call her_head("..............","body_21")
+                $ her_SC.sayHead("..............","body_21")
                 m "Whew..."
                 call set_u_ani("cum_on_face_blink_ani")
-                call her_head("..............","body_33")
+                $ her_SC.sayHead("..............","body_33")
                 m "Alright, I'm done..."
-                call her_head(".................","body_31")
+                $ her_SC.sayHead(".................","body_31")
                 if daytime:
                     her "My classes are about to start..."
                 else:
                     pass
                 m "Just wipe it off and you'll be alright."
-                call her_head("............","body_31")
+                $ her_SC.sayHead("............","body_31")
                 m "Unless, you don't want to."
-                call her_head("Huh?","body_34")
+                $ her_SC.sayHead("Huh?","body_34")
                 m "And would rather go outside looking like this."
                 m "Let everyone see what a nasty little slut you are."
-                call her_head("Of course not, [genie_name]!","body_34")
+                $ her_SC.sayHead("Of course not, [genie_name]!","body_34")
                 show screen ctc
                 pause
                 hide screen ctc
@@ -6831,8 +7781,8 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     m "You better go before you are late for your classes..."
                 else:
                     m "It's getting late..."
-                    call her_head("Yes...","body_34")
-                call her_head("Can I get paid before I leave, [genie_name]?","body_44")
+                    $ her_SC.sayHead("Yes...","body_34")
+                $ her_SC.sayHead("Can I get paid before I leave, [genie_name]?","body_44")
                 $ aftersperm = True
         
     elif hg_pf_SuckIt_OBJ.points == 1: #<=== EVENT 02
@@ -6907,17 +7857,17 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             m "Who could that be at this hour?"
         call u_pause_ani
         if not luna_known:
-            call her_head("([genie_name], what should I do?)","body_48")
+            $ her_SC.sayHead("([genie_name], what should I do?)","body_48")
             m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
             sna "Albus? Are you there? I need to talk to you."
-            call her_head("(It's professor Snape!)","body_117")
-            call her_head("([genie_name], please, send him away, I beg you!)")
+            $ her_SC.sayHead("(It's professor Snape!)","body_117")
+            $ her_SC.sayHead("([genie_name], please, send him away, I beg you!)")
             menu:
                 m "..."
                 "\"Please, come on in, Severus.\"":
                     $ mad = 30
                     stop music fadeout 1.0
-                    call her_head("([genie_name], no!)","body_76")
+                    $ her_SC.sayHead("([genie_name], no!)","body_76")
                     show screen blktone
                     with d3
                     with hpunch
@@ -6941,43 +7891,43 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     $ s_head_ypos = 340 #Right bottom corner: y = 340. y = 380 - no hand.
                     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
                     
-                    call sna_head("Good, you are here.","snape_01")
+                    $ snape_SC.sayHead("Good, you are here.","snape_01")
                     call u_play_ani
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call sna_head("Listen, there is something I want to discuss...","snape_06")
-                    call sna_head("Hm...?","snape_05")
-                    call sna_head("Genie? Are you alright?")
+                    $ snape_SC.sayHead("Listen, there is something I want to discuss...","snape_06")
+                    $ snape_SC.sayHead("Hm...?","snape_05")
+                    $ snape_SC.sayHead("Genie? Are you alright?")
                     her "{size=-4}(Ginny!!? Is she here as well?!){/size}"
                     her "{size=-4}(No, please! I will die of shame!){/size}"
                     m "Yes, Severus, I am fine..."
                     her "{size=-4}(What? *Slurp...?* *Slurp...?* *Gulp...?*){/size}"
-                    call sna_head("What are you... looking at?","snape_05")
+                    $ snape_SC.sayHead("What are you... looking at?","snape_05")
                     m "Ehm... Just admiring...{w} the cupboard."
                     m "Please continue..."
-                    call sna_head("...............","snape_05")
+                    $ snape_SC.sayHead("...............","snape_05")
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
                     m "Did you want to discuss something?"
-                    call sna_head("Yes. That Hermione girl.","snape_06")
+                    $ snape_SC.sayHead("Yes. That Hermione girl.","snape_06")
                     her "{size=-4}(*Slurp...!* *Gobble...!* *Gulp...!*){/size}"
                     m "Oh... What about her?"
-                    call sna_head("You promised that you would take care of the little witch.","snape_04")
+                    $ snape_SC.sayHead("You promised that you would take care of the little witch.","snape_04")
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call sna_head("But she is still being a major pain in my arse!","snape_04")
-                    call sna_head("Her tactics have changed...")
-                    call sna_head("But the amount of grief she manages to bring me is the same...","snape_03")
+                    $ snape_SC.sayHead("But she is still being a major pain in my arse!","snape_04")
+                    $ snape_SC.sayHead("Her tactics have changed...")
+                    $ snape_SC.sayHead("But the amount of grief she manages to bring me is the same...","snape_03")
                     m "I see... ah..."
-                    call sna_head("I swear, that girl is driving me crazy!","snape_10")
+                    $ snape_SC.sayHead("I swear, that girl is driving me crazy!","snape_10")
                     g4 "Yeah, she is driving me crazy as well... ah..."
                     her "{size=-4}(*Slurp...* *Slurp...* *Gulp...*){/size}"
-                    call sna_head("Will you take care of this then?","snape_04")
+                    $ snape_SC.sayHead("Will you take care of this then?","snape_04")
                     m "Yes. She'll get what she deserves."
-                    call sna_head("Good. That is all I wanted to hear.","snape_06")
+                    $ snape_SC.sayHead("Good. That is all I wanted to hear.","snape_06")
                     if daytime:
                         m "Well, have a good day, Severus."
-                        call sna_head("Yes, thank you.","snape_06")
+                        $ snape_SC.sayHead("Yes, thank you.","snape_06")
                     else:
                         m "Good night, Severus."
-                        call sna_head("Right...","snape_06")
+                        $ snape_SC.sayHead("Right...","snape_06")
                     # SNAPE LEAVES
                     hide screen ctc
                     
@@ -7006,7 +7956,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     #jump blowjob_cum_scene
                     
                 "\"I am busy right now, Severus.\"":
-                    call her_head("(Thank you, [genie_name].)","body_117")
+                    $ her_SC.sayHead("(Thank you, [genie_name].)","body_117")
                     sna "Busy? With what?"
                     sna "All you do is sit on you arse all day."
                     sna "I really need to talk to you about something."
@@ -7015,17 +7965,17 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     sna "Oh... You mean \"Busy\" busy? Gotcha!"
                     sna "Well, I'll talk to you later then."
         else:
-            call her_head("([genie_name], what should I do?)","body_48")
+            $ her_SC.sayHead("([genie_name], what should I do?)","body_48")
             m "Just keep sucking my cock, [hermione_name]. This doesn't concern you."
             lun "[l_genie_name]? Are you there? I need to talk to you."
-            call her_head("(It's Luna Lovegood!)","body_117")
-            call her_head("([genie_name], please, send her away, I beg you!)")
+            $ her_SC.sayHead("(It's Luna Lovegood!)","body_117")
+            $ her_SC.sayHead("([genie_name], please, send her away, I beg you!)")
             menu:
                 m "..."
                 "\"Please, come on in, [luna_name].\"":
                     $ mad += 5
                     stop music fadeout 1.0
-                    call her_head("([genie_name], no!)","body_76")
+                    $ her_SC.sayHead("([genie_name], no!)","body_76")
                     hide screen bld1
                     with d3
                     # SNAPE COMES IN
@@ -7117,7 +8067,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                     ">Hermione doesn't say a thing. Her face is crimson due to a mix of embarrassment, guilt and excitement."
                     
                 "\"I am busy right now, [luna_name].\"":
-                    call her_head("(Thank you, [genie_name].)","body_117")
+                    $ her_SC.sayHead("(Thank you, [genie_name].)","body_117")
                     lun "Busy? How so?"
                     lun "Are you helping another student fight off the wrackspurts?"
                     m "Yes, that's exactly what I'm doing."
@@ -7135,44 +8085,44 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
             m "Yes... I love your eager, little mouth girl..."
             her "*Gobble!* *Gobble!* *Gobble!*"
             call u_pause_ani
-            call her_head("[genie_name]?","body_121")
+            $ her_SC.sayHead("[genie_name]?","body_121")
             m "Hm?"
-            call her_head("Are you going to cum on my face today?","body_121")
-            call her_head("Or do you plan to cum in my mouth?")
+            $ her_SC.sayHead("Are you going to cum on my face today?","body_121")
+            $ her_SC.sayHead("Or do you plan to cum in my mouth?")
             menu:
                 "\"I Plan to splatter your face with cum!\"":
-                    call her_head("I see...","body_121")
+                    $ her_SC.sayHead("I see...","body_121")
                     m "Why do you ask?"
-                    call her_head("Oh... I just read in a book that semen contains a lot of antioxidants...","body_123")
-                    call her_head("It's good for the skin...")
+                    $ her_SC.sayHead("Oh... I just read in a book that semen contains a lot of antioxidants...","body_123")
+                    $ her_SC.sayHead("It's good for the skin...")
                     m "Great. One facial coming up."
                     m "Back to work now."
                 "\"I Plan to fill your mouth with cum!\"":
-                    call her_head("I see...","body_123")
+                    $ her_SC.sayHead("I see...","body_123")
                     m "Why do you ask?"
-                    call her_head("Well, I am trying to watch my calorie-intake...","body_121")
-                    call her_head("I just wonder how much calories your load contains, [genie_name].")
-                    call her_head("Maybe I should skip my next meal...")
+                    $ her_SC.sayHead("Well, I am trying to watch my calorie-intake...","body_121")
+                    $ her_SC.sayHead("I just wonder how much calories your load contains, [genie_name].")
+                    $ her_SC.sayHead("Maybe I should skip my next meal...")
                     m "[hermione_name]."
-                    call her_head("Yes?","body_121")
+                    $ her_SC.sayHead("Yes?","body_121")
                     m "Dick back in the mouth."
                 "\"I don't plan so far ahead.\"":
-                    call her_head("I see...","body_121")
+                    $ her_SC.sayHead("I see...","body_121")
                     m "Don't you like surprises?"
-                    call her_head("Not really...","body_121")
-                    call her_head("I rather enjoy planning ahead actually...")
+                    $ her_SC.sayHead("Not really...","body_121")
+                    $ her_SC.sayHead("I rather enjoy planning ahead actually...")
                     m "Well some things in life are just unpredictable."
                     m "There is only one way to find out for sure."
                     
                 "\"What would you like?\"":
-                    call her_head("If it is all the same to you, [genie_name]...","body_121")
+                    $ her_SC.sayHead("If it is all the same to you, [genie_name]...","body_121")
                     if generating_points == 1:
-                        call her_head("I would like you to cum on my face, [genie_name].","body_123")
-                        call her_head("I read that it's good for the skin.")
+                        $ her_SC.sayHead("I would like you to cum on my face, [genie_name].","body_123")
+                        $ her_SC.sayHead("I read that it's good for the skin.")
                     else:
-                        call her_head("I would like you to cum in my mouth.","body_123")
-                        call her_head("You usually cum so much so I think I will be able to just skip my next meal...")
-                        call her_head("And do some homework instead.")
+                        $ her_SC.sayHead("I would like you to cum in my mouth.","body_123")
+                        $ her_SC.sayHead("You usually cum so much so I think I will be able to just skip my next meal...")
+                        $ her_SC.sayHead("And do some homework instead.")
                     m "Well, we'll see about that."
                     m "Back to sucking now."
                     
@@ -7185,28 +8135,28 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         her "*Slurp--?"
         call u_pause_ani
         if whoring <= 20:
-            call her_head("uhm...","body_118")
-            call her_head("I eat cockroaches?","body_117")
+            $ her_SC.sayHead("uhm...","body_118")
+            $ her_SC.sayHead("I eat cockroaches?","body_117")
             m "What the fuck?"
-            call her_head("T-they are pretty nasty, [genie_name]...","body_117")
+            $ her_SC.sayHead("T-they are pretty nasty, [genie_name]...","body_117")
             m "No, [hermione_name], I mean something dirty!"
             m "And don't you dare to say \"mud\"!"
             m "I mean dirty in a sexual way!"
-            call her_head("Oh... Ehm...","body_118")
+            $ her_SC.sayHead("Oh... Ehm...","body_118")
             m "Ah, never mind, the moment is gone..."
-            call her_head("Ehm... I'm sorry, [genie_name].","body_117")
+            $ her_SC.sayHead("Ehm... I'm sorry, [genie_name].","body_117")
             m "Yeah, whatever. Make it up to me by sucking my cock harder."
-            call her_head("Of course, [genie_name].","body_120")
+            $ her_SC.sayHead("Of course, [genie_name].","body_120")
         else:
-            call her_head("I'm a slut [genie_name].","body_129")
-            call her_head("A slut for your cum.","body_128")
+            $ her_SC.sayHead("I'm a slut [genie_name].","body_129")
+            $ her_SC.sayHead("A slut for your cum.","body_128")
             m "That's it [hermione_name]."
-            call her_head("It's all I can think about [genie_name].","body_124")
-            call her_head("Sucking your dirty old cock...")
+            $ her_SC.sayHead("It's all I can think about [genie_name].","body_124")
+            $ her_SC.sayHead("Sucking your dirty old cock...")
             m "Well you better get back to it then [hermione_name]"
-            call her_head("Thank you [genie_name].","body_123")
+            $ her_SC.sayHead("Thank you [genie_name].","body_123")
             m "You're welcome cumslut."
-            call her_head("...","body_78")
+            $ her_SC.sayHead("...","body_78")
         call u_play_ani
         her "*Slurp!* *Gulp!* *Slurp!*"
         m "Yes, like this... Good..."
@@ -7264,28 +8214,28 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "Well, I think that's it."
                 m "You can let go now..."
                 call u_pause_ani
-                call her_head("...........................","body_125")
-                call her_head("................")
-                call her_head("........")
+                $ her_SC.sayHead("...........................","body_125")
+                $ her_SC.sayHead("................")
+                $ her_SC.sayHead("........")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                call her_head("*GULP!*","body_126")
-                call her_head("Gua-ha...","body_115")
+                $ her_SC.sayHead("*GULP!*","body_126")
+                $ her_SC.sayHead("Gua-ha...","body_115")
                 m "You alright?"
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                call her_head("Yes, [genie_name]...","body_123")
+                $ her_SC.sayHead("Yes, [genie_name]...","body_123")
                 m "Going to skip your next meal?"
-                call her_head("I think so...","body_123")
-                call her_head("You always cum so much, [genie_name]...")
+                $ her_SC.sayHead("I think so...","body_123")
+                $ her_SC.sayHead("You always cum so much, [genie_name]...")
                 m "Heh... And who's fault is that??"
-                call her_head(".............","body_123") #Smile.
-                call her_head("Can I get paid now?")
+                $ her_SC.sayHead(".............","body_123") #Smile.
+                $ her_SC.sayHead("Can I get paid now?")
                 if whoring >= 20:
                     if daytime:
                         m "What, even after I just gave you lunch?"
                     else:
                         m "What, even after I fed you dinner"
-                    call her_head(".............","body_17") #Smile.
-                    call her_head("Fine, I suppose this was worth a meal")
+                    $ her_SC.sayHead(".............","body_17") #Smile.
+                    $ her_SC.sayHead("Fine, I suppose this was worth a meal")
                 show screen ctc
                 pause
                 hide screen ctc
@@ -7297,7 +8247,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 hide screen blkfade
                 call u_pause_ani
                 g4 "Ready for your facial, [hermione_name]?"
-                call her_head("Yes [genie_name]!","body_123")
+                $ her_SC.sayHead("Yes [genie_name]!","body_123")
                 g4 "Here it comes then!"
                 show screen white 
                 pause.1
@@ -7308,7 +8258,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 hide screen white
                 with hpunch
                 g4 "{size=+7}Whore!{/size}"
-                call her_head("!!?","body_48")
+                $ her_SC.sayHead("!!?","body_48")
                 call set_u_ani("cum_on_face_ani")
                 call u_play_ani
                 show screen ctc
@@ -7322,17 +8272,17 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 #Cumming.
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-                call her_head("[genie_name]...","body_48")
+                $ her_SC.sayHead("[genie_name]...","body_48")
                 g4 "All over your fucking face!"
-                call her_head("Aaah!","body_123")
+                $ her_SC.sayHead("Aaah!","body_123")
                 call set_u_ani("cum_on_face_blink_ani")
                 m "Well, I'm done."
-                call her_head("....................................","body_123")
+                $ her_SC.sayHead("....................................","body_123")
                 m "I said it's over, [hermione_name]."
-                call her_head("Yes, I heard you [genie_name]...","body_123")
+                $ her_SC.sayHead("Yes, I heard you [genie_name]...","body_123")
                 m "So... Aren't you going to clean up?"
-                call her_head("In a moment...","body_123")
-                call her_head("I'm giving my skin time to soak in the anti-oxidants...") 
+                $ her_SC.sayHead("In a moment...","body_123")
+                $ her_SC.sayHead("I'm giving my skin time to soak in the anti-oxidants...") 
                 m "Hm... I find this quite hot..."
                 m "Take your time, [hermione_name]..."
                 show screen blkfade
@@ -7342,15 +8292,15 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 call u_pause_ani
                 $ uni_sperm = False
                 $ aftersperm = True
-                call her_head("I take it you enjoyed yourself [genie_name]?","body_122")
+                $ her_SC.sayHead("I take it you enjoyed yourself [genie_name]?","body_122")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 m "Yes I did, [hermione_name]."
-                call her_head("Good, so Can I get paid now?","body_123")
+                $ her_SC.sayHead("Good, so Can I get paid now?","body_123")
                 if whoring >= 20:
                     m "What, even after I just gave you a salon treatment?"
                     m "Women pay a lot of money for a good facial."
-                    call her_head(".............","body_17") #Smile.
-                    call her_head("Fine, but my skin better look better tomorrow.")
+                    $ her_SC.sayHead(".............","body_17") #Smile.
+                    $ her_SC.sayHead("Fine, but my skin better look better tomorrow.")
                 $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     
     elif hg_pf_SuckIt_OBJ.points >= 2 and whoring >= 20: ###4th level event
@@ -7391,15 +8341,15 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
         m "Yes... I love your eager, little mouth slut..."
         her "*Gobble!* *Gobble!* *Gobble!*"
         call u_pause_ani
-        call her_head("[genie_name]?","body_59")
+        $ her_SC.sayHead("[genie_name]?","body_59")
         m "Hm?"
-        call her_head("How would you like me to please you today?","body_121")
+        $ her_SC.sayHead("How would you like me to please you today?","body_121")
         menu:
             "\"Pretend I am your father.\"":
-                call her_head("My father?","body_122")
+                $ her_SC.sayHead("My father?","body_122")
                 m "Anything wrong with that?"
-                call her_head("I suppose not...","body_124")
-                call her_head("I mean it's just pretending...","body_123")
+                $ her_SC.sayHead("I suppose not...","body_124")
+                $ her_SC.sayHead("I mean it's just pretending...","body_123")
                 m "Great. Dick back in mouth then."
                 call u_play_ani
                 her "*Slurp!* *Slurp!* *Slurp!*"
@@ -7408,67 +8358,67 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "Tell me how much you want it."
                 her "*Slurp!* *Gobble!* *Slurp!*"
                 call u_pause_ani
-                call her_head("So much daddy...","body_121")
+                $ her_SC.sayHead("So much daddy...","body_121")
                 call u_play_ani
                 her "*Slurp!* *Gobble!* *Slurp!*"
                 call u_pause_ani
-                call her_head("It's all I think about when we're together...","body_78")
+                $ her_SC.sayHead("It's all I think about when we're together...","body_78")
                 call u_play_ani
                 her "*Gobble!* *Gulp!* *Gobble!*"
                 call u_pause_ani
-                call her_head("When we're sitting together on the couch watching T.V...","body_78")
-                call her_head("I just imagine that I am sucking your cock instead...","body_78")
+                $ her_SC.sayHead("When we're sitting together on the couch watching T.V...","body_78")
+                $ her_SC.sayHead("I just imagine that I am sucking your cock instead...","body_78")
                 call u_play_ani
                 her "*lick!* *Slurp!* *Slurp!*"
                 call u_pause_ani
-                call her_head("I even wish that mum left you sometimes...","body_73")
+                $ her_SC.sayHead("I even wish that mum left you sometimes...","body_73")
                 call u_play_ani
                 her "*Gobble!* *Slurp!* *lick!*"
                 m "Why's that?"
                 call u_pause_ani
-                call her_head("So that I'm the only one to get your dick...","body_225")
+                $ her_SC.sayHead("So that I'm the only one to get your dick...","body_225")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("You'll come home every day...","body_225")
+                $ her_SC.sayHead("You'll come home every day...","body_225")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("Throw me onto my bed...","body_123")
+                $ her_SC.sayHead("Throw me onto my bed...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("and use me...","body_123")
+                $ her_SC.sayHead("and use me...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("however you want...","body_123")
+                $ her_SC.sayHead("however you want...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("for as long as you want...","body_123")
+                $ her_SC.sayHead("for as long as you want...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("you won't even ask...","body_123")
+                $ her_SC.sayHead("you won't even ask...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("you'll just take me...","body_123")
+                $ her_SC.sayHead("you'll just take me...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("even though I say no...","body_123")
+                $ her_SC.sayHead("even though I say no...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 m "That's it princess, Almost there..."
                 call u_pause_ani
-                call her_head("Where do you want to cum today daddy?","body_121")
-                call her_head("Are you going to cover my face?","body_121")
-                call her_head("Or make me swallow your big load?","body_123")
-                call her_head("{size=-4}Even if I don't want to...{/size}","body_123")
+                $ her_SC.sayHead("Where do you want to cum today daddy?","body_121")
+                $ her_SC.sayHead("Are you going to cover my face?","body_121")
+                $ her_SC.sayHead("Or make me swallow your big load?","body_123")
+                $ her_SC.sayHead("{size=-4}Even if I don't want to...{/size}","body_123")
                 m "Let's find out shall we?"
-                call her_head("Yes daddy...","body_121")
+                $ her_SC.sayHead("Yes daddy...","body_121")
                 call u_play_ani
                 her "*Slurp!* *Gulp!* *Slurp!*"
                 m "Yes, like that... Good girl..."
@@ -7526,22 +8476,22 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                         m "Well, I think that's it."
                         m "You can let go now..."
                         call u_pause_ani
-                        call her_head("...........................","body_125")
-                        call her_head("................")
-                        call her_head("........")
+                        $ her_SC.sayHead("...........................","body_125")
+                        $ her_SC.sayHead("................")
+                        $ her_SC.sayHead("........")
                         $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                        call her_head("*GULP!*","body_126")
-                        call her_head("Gua-ha...","body_115")
+                        $ her_SC.sayHead("*GULP!*","body_126")
+                        $ her_SC.sayHead("Gua-ha...","body_115")
                         m "How was that?"
                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                        call her_head("So tasty...","body_123")
+                        $ her_SC.sayHead("So tasty...","body_123")
                         m "Really?"
-                        call her_head("Yes daddy...","body_123")
-                        call her_head("It's always tasty with you...")
+                        $ her_SC.sayHead("Yes daddy...","body_123")
+                        $ her_SC.sayHead("It's always tasty with you...")
                         m "Heh... is that so?"
-                        call her_head(".............","body_123") #Smile.
+                        $ her_SC.sayHead(".............","body_123") #Smile.
                         ">She leans forward and gives your wilting cock a small kiss."
-                        call her_head("Thanks daddy.","body_54") #Smile.
+                        $ her_SC.sayHead("Thanks daddy.","body_54") #Smile.
                         show screen ctc
                         pause
                         hide screen ctc
@@ -7553,7 +8503,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                         hide screen blkfade
                         call u_pause_ani
                         g4 "Ready for your cum-load, princess slut?"
-                        call her_head("Yes daddy!","body_123")
+                        $ her_SC.sayHead("Yes daddy!","body_123")
                         g4 "Here it comes then!"
                         show screen white 
                         pause.1
@@ -7564,7 +8514,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                         hide screen white
                         with hpunch
                         g4 "{size=+7}Slut!{/size}"
-                        call her_head("!!?","body_226")
+                        $ her_SC.sayHead("!!?","body_226")
                         call set_u_ani("cum_on_face_ani")
                         call u_play_ani
                         show screen ctc
@@ -7578,17 +8528,17 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                         #Cumming.
                         $ uni_sperm = True
                         $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
-                        call her_head("Daddy...","body_48")
+                        $ her_SC.sayHead("Daddy...","body_48")
                         g4 "That's it princess!"
-                        call her_head("Aaah!","body_123")
+                        $ her_SC.sayHead("Aaah!","body_123")
                         call set_u_ani("cum_on_face_blink_ani")
                         m "Well, I'm done."
-                        call her_head("....................................","body_123")
+                        $ her_SC.sayHead("....................................","body_123")
                         m "I said it's over, [hermione_name]."
-                        call her_head("Yes, I heard you daddy...","body_123")
+                        $ her_SC.sayHead("Yes, I heard you daddy...","body_123")
                         m "So... Aren't you going to clean up?"
-                        call her_head("In a minute...","body_123")
-                        call her_head("I'm just savouring the moment...") 
+                        $ her_SC.sayHead("In a minute...","body_123")
+                        $ her_SC.sayHead("I'm just savouring the moment...") 
                         m "Hm..."
                         m "Take your time, [hermione_name]..."
                         show screen blkfade
@@ -7598,15 +8548,15 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                         call u_pause_ani
                         $ uni_sperm = False
                         $ aftersperm = True
-                        call her_head("I take it you enjoyed yourself sir?","body_122")
+                        $ her_SC.sayHead("I take it you enjoyed yourself sir?","body_122")
                         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                         m "Yes I did princess."
                         $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
             "\"Worship my cock.\"": ###IN PROGRESS
-                call her_head("Worship it?","body_122")
+                $ her_SC.sayHead("Worship it?","body_122")
                 m "Worship. My. Cock."
-                call her_head("Well...","body_124")
-                call her_head("ok...","body_121")
+                $ her_SC.sayHead("Well...","body_124")
+                $ her_SC.sayHead("ok...","body_121")
                 m "Great. You can start by putting it back in your mouth."
                 call u_play_ani
                 her "*Slurp!* *Slurp!* *Slurp!*"
@@ -7615,82 +8565,82 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "Tell me how much you love my cock."
                 her "*Slurp!* *Gobble!* *Slurp!*"
                 call u_pause_ani
-                call her_head("So much [genie_name]...","body_121")
+                $ her_SC.sayHead("So much [genie_name]...","body_121")
                 call u_play_ani
                 her "*Slurp!* *Gobble!* *Slurp!*"
                 call u_pause_ani
-                call her_head("It's all I think about when I'm in class...","body_78")
+                $ her_SC.sayHead("It's all I think about when I'm in class...","body_78")
                 call u_play_ani
                 her "*Gobble!* *Gulp!* *Gobble!*"
                 if lock_public_favors == True:
                     call u_pause_ani
-                    call her_head("Sucking your perfect dick.","body_78")
-                    call her_head("No one elses...","body_78")
+                    $ her_SC.sayHead("Sucking your perfect dick.","body_78")
+                    $ her_SC.sayHead("No one elses...","body_78")
                     call u_play_ani
                     her "*lick!* *Slurp!* *Slurp!*"
                     call u_pause_ani
-                    call her_head("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}","body_123")
+                    $ her_SC.sayHead("Just your {p}perfect, {p}beautiful {p}{size=-4}cock{/size}","body_123")
                     call u_play_ani
                     her "*Gobble!* *Slurp!* *lick!*"
                 else:
                     call u_pause_ani
-                    call her_head("Even when you make me suck another boys dick...","body_78")
-                    call her_head("I still imagine that it's yours...","body_78")
+                    $ her_SC.sayHead("Even when you make me suck another boys dick...","body_78")
+                    $ her_SC.sayHead("I still imagine that it's yours...","body_78")
                     call u_play_ani
                     her "*lick!* *Slurp!* *Slurp!*"
                     call u_pause_ani
-                    call her_head("Imagine that it's your cum sliding down my throat...","body_121")
+                    $ her_SC.sayHead("Imagine that it's your cum sliding down my throat...","body_121")
                     call u_play_ani
                     her "*Gobble!* *Slurp!* *lick!*"
                     call u_pause_ani
-                    call her_head("Imagine that it's your hot load shot across my face...","body_123")
+                    $ her_SC.sayHead("Imagine that it's your hot load shot across my face...","body_123")
                     call u_play_ani
                     her "*Gobble!* *Slurp!* *lick!*"
                 m "Is that so?"
                 call u_pause_ani
-                call her_head("Yes [genie_name]...","body_225")
+                $ her_SC.sayHead("Yes [genie_name]...","body_225")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("Sometimes...","body_225")
+                $ her_SC.sayHead("Sometimes...","body_225")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("After you make me suck your perfect cock...","body_123")
+                $ her_SC.sayHead("After you make me suck your perfect cock...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("I won't brush my teeth...","body_123")
+                $ her_SC.sayHead("I won't brush my teeth...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("just so I can go to sleep...","body_123")
+                $ her_SC.sayHead("just so I can go to sleep...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("with that perfect taste in my mouth...","body_123")
+                $ her_SC.sayHead("with that perfect taste in my mouth...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("and when I do brush my teeth...","body_123")
+                $ her_SC.sayHead("and when I do brush my teeth...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("Your beautiful cock is all I can think about...","body_123")
+                $ her_SC.sayHead("Your beautiful cock is all I can think about...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 call u_pause_ani
-                call her_head("I even started to moan while brushing them...","body_123")
+                $ her_SC.sayHead("I even started to moan while brushing them...","body_123")
                 call u_play_ani
                 her "*Gobble!* *lick!* *Gobble!*"
                 m "That's it cock slut, Almost there..."
                 call u_pause_ani
-                call her_head("Where do you want to cum today [genie_name]?","body_121")
-                call her_head("I know it's greedy of me to ask...","body_118")
-                call her_head("But can you cum in my mouth?","body_122")
-                call her_head("{size=-4}Please...{/size} I promise I won't waste a drop.","body_121")
+                $ her_SC.sayHead("Where do you want to cum today [genie_name]?","body_121")
+                $ her_SC.sayHead("I know it's greedy of me to ask...","body_118")
+                $ her_SC.sayHead("But can you cum in my mouth?","body_122")
+                $ her_SC.sayHead("{size=-4}Please...{/size} I promise I won't waste a drop.","body_121")
                 m "I think that can be arranged "
-                call her_head("Thank you [genie_name]!","body_80b")
+                $ her_SC.sayHead("Thank you [genie_name]!","body_80b")
                 call u_play_ani
                 ">Hermione devours your cock with renewed vigour."
                 her "*Slurp!* *Gulp!* *Slurp!*"
@@ -7745,19 +8695,19 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
                 m "Well, I think that's it."
                 m "You can let go now..."
                 call u_pause_ani
-                call her_head("...........................","body_125","tears_03")
-                call her_head("................","body_125","tears_03")
-                call her_head("........","body_125","tears_03")
+                $ her_SC.sayHead("...........................","body_125","tears_03")
+                $ her_SC.sayHead("................","body_125","tears_03")
+                $ her_SC.sayHead("........","body_125","tears_03")
                 m "How was that?"
-                call her_head("...")
+                $ her_SC.sayHead("...")
                 play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                 m "Are you going to swallow?"
-                call her_head("*Shakes her head side to side*","body_125","tears_03")
+                $ her_SC.sayHead("*Shakes her head side to side*","body_125","tears_03")
                 if daytime:
                     m "So you're going to go to class with a mouth full of my cum?"
                 else:
                     m "So you're going to go to sleep with a mouth full of my cum?"
-                call her_head("*She nods her head up and down enthusiasctially*","body_227","tears_03") #Smile.
+                $ her_SC.sayHead("*She nods her head up and down enthusiasctially*","body_227","tears_03") #Smile.
                 m "Good girl."
                 show screen ctc
                 pause
@@ -7890,17 +8840,17 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         with d7
         stop music fadeout 1.0
         
-        call her_head(".............","body_120")
-        call her_head("!!!!!!!!!!!!!!!","body_119")
+        $ her_SC.sayHead(".............","body_120")
+        $ her_SC.sayHead("!!!!!!!!!!!!!!!","body_119")
         m "Relax, [hermione_name]. I'm Just gonna take off your panties."
-        call her_head("..............","body_49")
+        $ her_SC.sayHead("..............","body_49")
         m "Are you ready?"
-        call her_head("No...","body_50")
+        $ her_SC.sayHead("No...","body_50")
         m "Good girl."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
+        $ her_SC.sayHead("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
         
         hide screen genie
         show screen chair_02
@@ -7919,115 +8869,115 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         
         #FUCKING
         g4 "Your pussy... It's so tight."
-        call her_head("................","body_33")
+        $ her_SC.sayHead("................","body_33")
         m "You alright?"
-        call her_head("A-ha... It's too big...","body_21")
-        call her_head("You will rip me apart, [genie_name]!")
+        $ her_SC.sayHead("A-ha... It's too big...","body_21")
+        $ her_SC.sayHead("You will rip me apart, [genie_name]!")
         m "Nonsense! My cock is of a regular size."
         m "It's not my fault that you are so tiny."
-        call her_head("......................","body_33")
+        $ her_SC.sayHead("......................","body_33")
         hide screen ctc
         menu:
             "\"You should be ashamed of yourself!\"":
-                call her_head("I am not ashamed, [genie_name]!","body_33")
-                call her_head("I am doing this for the sake my house!")
-                call her_head("To help my--")
-                call her_head("ah-ha-a...","body_131")
-                call her_head("My classmates depend on me... ah-a...")
+                $ her_SC.sayHead("I am not ashamed, [genie_name]!","body_33")
+                $ her_SC.sayHead("I am doing this for the sake my house!")
+                $ her_SC.sayHead("To help my--")
+                $ her_SC.sayHead("ah-ha-a...","body_131")
+                $ her_SC.sayHead("My classmates depend on me... ah-a...")
                 m "Are you sure that's the only reason?"
-                call her_head("I don't know--","body_33")
-                call her_head("ah-a...","body_131")
-                call her_head("I don't know what you mean, [genie_name].","body_118")
+                $ her_SC.sayHead("I don't know--","body_33")
+                $ her_SC.sayHead("ah-a...","body_131")
+                $ her_SC.sayHead("I don't know what you mean, [genie_name].","body_118")
                 m "It seems to me that you are enjoying this a little bit too much."
-                call her_head("I'm not, [genie_name]!","body_118")
+                $ her_SC.sayHead("I'm not, [genie_name]!","body_118")
                 m "Really?"
-                call her_head("......................","body_33")
+                $ her_SC.sayHead("......................","body_33")
                 m "Then why is your pussy so wet?"
-                call her_head("....................a-ha.{image=textheart}","body_131")
+                $ her_SC.sayHead("....................a-ha.{image=textheart}","body_131")
                 m "Admit it, you enjoy getting fucked by your [genie_name]!"
-                call her_head("I do not!","body_33")
+                $ her_SC.sayHead("I do not!","body_33")
                 m "Stubborn girl..."
-                call her_head("Aha...{image=textheart}","body_131") 
+                $ her_SC.sayHead("Aha...{image=textheart}","body_131") 
             "\"So... What's new in your life?\"":
-                call her_head("...[genie_name]?","body_31")
+                $ her_SC.sayHead("...[genie_name]?","body_31")
                 m "Just trying to have a polite conversation."
-                call her_head("Ah-ah... But... ah...","body_31")
+                $ her_SC.sayHead("Ah-ah... But... ah...","body_31")
                 m "Any news from your folks?"
-                call her_head("My parents?","body_34")
-                call her_head("[genie_name], please, I cannot talk...","body_131")
+                $ her_SC.sayHead("My parents?","body_34")
+                $ her_SC.sayHead("[genie_name], please, I cannot talk...","body_131")
                 m "Why not? Enjoying this too much?"
-                call her_head("I am not... ah...{image=textheart}","body_131")
+                $ her_SC.sayHead("I am not... ah...{image=textheart}","body_131")
                 m "I think you are."
-                call her_head("I am only doing this for the points, [genie_name]...","body_131")
+                $ her_SC.sayHead("I am only doing this for the points, [genie_name]...","body_131")
                 m "Oh, I see..."
                 m "So you are like a prostitute then."
-                call her_head("What?","body_117")
+                $ her_SC.sayHead("What?","body_117")
                 m "Well I pay you to have sex with me. How would you call that?"
-                call her_head("...........","body_118")
-                call her_head("I am not a prostitute...","body_131")
-                call her_head("Why are you being so mean to me, [genie_name]?","body_21")
+                $ her_SC.sayHead("...........","body_118")
+                $ her_SC.sayHead("I am not a prostitute...","body_131")
+                $ her_SC.sayHead("Why are you being so mean to me, [genie_name]?","body_21")
                 m "I think you like it when I'm mean."
-                call her_head("I do not!","body_67")
+                $ her_SC.sayHead("I do not!","body_67")
                 m "Really? Then why is your pussy so wet?"
-                call her_head("Not because of that!","body_118")
+                $ her_SC.sayHead("Not because of that!","body_118")
                 m "If you say so..."
-                call her_head("A-ah...{image=textheart}","body_131")
-                call her_head("I am... ah...{image=textheart} not a prostitute...","body_132")            
+                $ her_SC.sayHead("A-ah...{image=textheart}","body_131")
+                $ her_SC.sayHead("I am... ah...{image=textheart} not a prostitute...","body_132")            
             "\"......................................................\"":
-                call her_head("A-ha... ah...","body_131")
+                $ her_SC.sayHead("A-ha... ah...","body_131")
                 m "*Panting!*"
-                call her_head("Ah... ha-aha...","body_131")
+                $ her_SC.sayHead("Ah... ha-aha...","body_131")
                 m "Oh..."
-                call her_head("Ah-ah...","body_131")
+                $ her_SC.sayHead("Ah-ah...","body_131")
                 m "......................"
-                call her_head("Ah... ah...","body_131")
-                call her_head("Ah... [genie_name]?","body_31")
+                $ her_SC.sayHead("Ah... ah...","body_131")
+                $ her_SC.sayHead("Ah... [genie_name]?","body_31")
                 m "What is it?"
-                call her_head("Ah... Do you.... like it?","body_131")
+                $ her_SC.sayHead("Ah... Do you.... like it?","body_131")
                 m "Do I like drilling your super-tight pussy?"
                 m "Very much so, [hermione_name]. Why?"
-                call her_head(".....................","body_33")
-                call her_head("Ah... You just got so quiet...","body_131")
+                $ her_SC.sayHead(".....................","body_33")
+                $ her_SC.sayHead("Ah... You just got so quiet...","body_131")
                 m "Just enjoying the moment, [hermione_name]."
                 m "What about you? You alright?"
-                call her_head("Ah... yes...","body_131")
-                call her_head("It hurts a little though, ah...","body_31")
-                call her_head("Your penis is too big... ah...","body_131")
+                $ her_SC.sayHead("Ah... yes...","body_131")
+                $ her_SC.sayHead("It hurts a little though, ah...","body_31")
+                $ her_SC.sayHead("Your penis is too big... ah...","body_131")
                 m "Hm..."
                 m "You need me to slow down or something?"
-                call her_head("No, [genie_name]... You don't have to...","body_31")
-                call her_head("Please, don't mind me... Enjoy your moment.","body_33")
-                call her_head("I will... ah... Get used to it eventually... ah...")
+                $ her_SC.sayHead("No, [genie_name]... You don't have to...","body_31")
+                $ her_SC.sayHead("Please, don't mind me... Enjoy your moment.","body_33")
+                $ her_SC.sayHead("I will... ah... Get used to it eventually... ah...")
                 m "As you say, [hermione_name]."
-                call her_head("Ah-a...{image=textheart}","body_131")
+                $ her_SC.sayHead("Ah-a...{image=textheart}","body_131")
                 m "Yes, this is great!"
-        call her_head("Ah-ah...{image=textheart}","body_131")
+        $ her_SC.sayHead("Ah-ah...{image=textheart}","body_131")
         if daytime:
             m "Going to classes after this?"
         else:
             m "Going to bed after this?"
-        call her_head("Yes, ah...{image=textheart}","body_131")
-        call her_head("If I'll be able to walk...")
+        $ her_SC.sayHead("Yes, ah...{image=textheart}","body_131")
+        $ her_SC.sayHead("If I'll be able to walk...")
         g4 "Ght! {image=textheart} Yes, you always say the right things, [hermione_name]!"
-        call her_head("Ah...{image=textheart} ah...{image=textheart}{image=textheart}","body_132")
+        $ her_SC.sayHead("Ah...{image=textheart} ah...{image=textheart}{image=textheart}","body_132")
         with hpunch
-        call her_head("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}","body_130")
+        $ her_SC.sayHead("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}","body_130")
         m "Huh? You alright?"
         show screen blktone8
         with d3
         ">Hermione's legs are shaking..."
         m "[hermione_name]?"
-        call her_head("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}","body_130")
+        $ her_SC.sayHead("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}","body_130")
         g9 "Tch... You nasty slut!"
-        call her_head("AAH! I can't hold it!","body_133")
+        $ her_SC.sayHead("AAH! I can't hold it!","body_133")
         g4 "You need to be punished for being such a slut!"
         ">You tighten your grip on Hermione's buttocks and start to fuck her fiercely!"
         $ g_c_u_pic = "sex2_ani"
         with hpunch
-        call her_head("NO! STOP! PLEASE!","body_130")
+        $ her_SC.sayHead("NO! STOP! PLEASE!","body_130")
         g4 "Who told you you could cum, slut? This is your punishment!"
-        call her_head("[genie_name], no, ah-a!{image=textheart}","body_131")
-        call her_head("Ah-a...{image=textheart}I will go insane!{image=textheart}{image=textheart}{image=textheart}","body_134")
+        $ her_SC.sayHead("[genie_name], no, ah-a!{image=textheart}","body_131")
+        $ her_SC.sayHead("Ah-a...{image=textheart}I will go insane!{image=textheart}{image=textheart}{image=textheart}","body_134")
         g4 "{size=+7}Grragh!{/size}"
         hide screen blktone8
         with d3
@@ -8038,8 +8988,8 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen ctc
         show screen bld1
         with d3
-        call her_head("No...{image=textheart} ah...{image=textheart}","body_134")
-        call her_head("I think I will...{image=textheart} pass out...{image=textheart}")
+        $ her_SC.sayHead("No...{image=textheart} ah...{image=textheart}","body_134")
+        $ her_SC.sayHead("I think I will...{image=textheart} pass out...{image=textheart}")
         g4 "ARGH! YOU WHORE!"
         menu:
             "-Cum all over Hermione-":
@@ -8055,7 +9005,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8066,10 +9016,10 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call set_u_ani("sex_cum_out_blink_ani")
                 $ g_c_u_pic = "sex_cum_out_blink_ani"
                 m "Well, that was rather intense..."
-                call her_head("*heavy panting*","body_135")
+                $ her_SC.sayHead("*heavy panting*","body_135")
                 m "You alright?"
-                call her_head("Ah... yes...","body_133")
-                call her_head("My legs are still shaking...")
+                $ her_SC.sayHead("Ah... yes...","body_133")
+                $ her_SC.sayHead("My legs are still shaking...")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8078,14 +9028,14 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 show screen blkfade
                 with d7
                 if daytime:
-                    call her_head("But I think I will be able to make it to my classes...","body_133")
+                    $ her_SC.sayHead("But I think I will be able to make it to my classes...","body_133")
                 else:
-                    call her_head("But I think I will be able to make it to the common room...","body_133")
+                    $ her_SC.sayHead("But I think I will be able to make it to the common room...","body_133")
                 m "Good."
                 m "Did you enjoy getting fucked by your [genie_name]?"
-                call her_head("[genie_name], I am only doing this for my house.","body_136")
+                $ her_SC.sayHead("[genie_name], I am only doing this for my house.","body_136")
                 m "Seriously? Still?"
-                call her_head("Could I just get paid now... please?","body_131")
+                $ her_SC.sayHead("Could I just get paid now... please?","body_131")
             "-Cum inside Hermione-":
                 with hpunch
                 g4 "{size=+7}Argh!!!{/size}"
@@ -8099,7 +9049,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8108,7 +9058,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 show screen bld1
                 with d3
                 $ g_c_u_pic = "01_hp/08_animation_02/23_cum_19.png"
-                call her_head("You came inside of me...","body_133")
+                $ her_SC.sayHead("You came inside of me...","body_133")
                 g9 "I sure did."
                 hide screen bld1
                 with d3
@@ -8117,17 +9067,17 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 show screen blkfade
                 with d7
-                call her_head("But...","body_133")
+                $ her_SC.sayHead("But...","body_133")
                 m "What?"
-                call her_head("What if I get pregnant?","body_132")
+                $ her_SC.sayHead("What if I get pregnant?","body_132")
                 m "Nah, you will be alright..."
-                call her_head("How do you know, [genie_name]?","body_132")
+                $ her_SC.sayHead("How do you know, [genie_name]?","body_132")
                 m "We witchers are infertile."
-                call her_head("Witchers?","body_131")
+                $ her_SC.sayHead("Witchers?","body_131")
                 m "Sure... You are a witch, that make me a witcher, right?"
                 m "And everyone knows that witchers are infertile..."
-                call her_head("[genie_name], you make no sense...","body_117")
-                call her_head("Can I please just get paid now...?")
+                $ her_SC.sayHead("[genie_name], you make no sense...","body_117")
+                $ her_SC.sayHead("Can I please just get paid now...?")
     
     elif hg_pf_LetsHaveSex_OBJ.points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
@@ -8138,7 +9088,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen hermione_main    
         jump your_ass
     
-    elif hg_pf_LetsHaveSex_OBJ.points >= 2: # THIRD EVENT <============================================================== EVENT 03
+    elif hg_pf_LetsHaveSex_OBJ.points >= 2: # THIRD EVENT <============================================================== EVENT 03 (change to enable luna variant)
         m "[hermione_name]..."
         m "Last night I had a dream..."
         g9 "You were lying on my desk and I was fucking your tight pussy like a madman..."
@@ -8163,7 +9113,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
+        $ her_SC.sayHead("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
         hide screen genie
         
@@ -8184,13 +9134,13 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen bld1
         with d3    
         
-        call her_head("Ah...{image=textheart}","body_131")
+        $ her_SC.sayHead("Ah...{image=textheart}","body_131")
         m "Your pussy feels a bit looser today..."
-        call her_head("Does it...{image=textheart} ah...?{image=textheart}","body_131")
-        call her_head("That's all because of you [genie_name]...{image=textheart}","body_132")
-        call her_head("You are ruining my little pussy with your monstrous penis...{image=textheart}","body_134")
+        $ her_SC.sayHead("Does it...{image=textheart} ah...?{image=textheart}","body_131")
+        $ her_SC.sayHead("That's all because of you [genie_name]...{image=textheart}","body_132")
+        $ her_SC.sayHead("You are ruining my little pussy with your monstrous penis...{image=textheart}","body_134")
         g4 "Agh, you whore!"
-        call her_head("Ah...{image=textheart}{image=textheart}","body_134")
+        $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}","body_134")
 #        if not ask_me_once: #Turns true after Hermione asks you about your true identity, during sex.
 #            $ ask_me_once = True #Turns true after Hermione asks you about your true identity, during sex.
 #            her "[genie_name], can I ask you something?"
@@ -8219,25 +9169,25 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
 #                    her "Ah-ah-a..."
 #                "\"You got me... The truth is...\"":
         m "Yes! Do you like it when I fuck you like this?"
-        call her_head("Yes, [genie_name]...","body_128")
+        $ her_SC.sayHead("Yes, [genie_name]...","body_128")
         menu:
             g4 "..."
             "\"Be sweet but passionate.\"":
                 m "Yes, you're liking this?"
-                call her_head("I do, [genie_name]... ah...{image=textheart}","body_127")
+                $ her_SC.sayHead("I do, [genie_name]... ah...{image=textheart}","body_127")
                 m "Good girl!"
                 m "Just relax and take my cock!"
-                call her_head("Yes... ah...{image=textheart}","body_127")
+                $ her_SC.sayHead("Yes... ah...{image=textheart}","body_127")
                 m "All the way in... all the way..."
-                call her_head("Ah...{image=textheart}{image=textheart}","body_131")
+                $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}","body_131")
                 m "Yes, my little princess..."
-                call her_head("What?","body_119")
-                call her_head("No, please don't call me that... ah...{image=textheart}","body_118")
-                call her_head("My daddy used to call me his little princess when I was little...")
+                $ her_SC.sayHead("What?","body_119")
+                $ her_SC.sayHead("No, please don't call me that... ah...{image=textheart}","body_118")
+                $ her_SC.sayHead("My daddy used to call me his little princess when I was little...")
                 m "Well, right now I am your daddy!"
-                call her_head("Ah...{image=textheart} ah-ah...{image=textheart}{image=textheart}","body_121")
+                $ her_SC.sayHead("Ah...{image=textheart} ah-ah...{image=textheart}{image=textheart}","body_121")
                 m "And you are my little princess-slut!"
-                call her_head("Ah...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_123")
+                $ her_SC.sayHead("Ah...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_123")
             "\"Be mean to her!\"":
                 m "Yes, you slut!"
                 m "I bet you love every second of this!"
@@ -8247,17 +9197,17 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 ">You pick up the pace."
                 hide screen blktone
                 with d3
-                call her_head("Ah...{image=textheart} [genie_name]...","body_131")
+                $ her_SC.sayHead("Ah...{image=textheart} [genie_name]...","body_131")
                 m "You nasty slut!"
-                call her_head("Ah...{image=textheart} ah-a...{image=textheart}","body_132")
+                $ her_SC.sayHead("Ah...{image=textheart} ah-a...{image=textheart}","body_132")
                 m "You are a disgrace, [hermione_name]!"
-                call her_head("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","body_132")
+                $ her_SC.sayHead("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","body_132")
                 m "Your parents sent you here to study, not to screw your teachers, you disgusting cunt!"
-                call her_head("Ah-a...{image=textheart} But I am only doing this--","body_132")
+                $ her_SC.sayHead("Ah-a...{image=textheart} But I am only doing this--","body_132")
                 m "Nobody cares why you are doing this, cocksucker!"
                 m "Look at what you've become!"
                 m "Butt-naked, on your professor's old cock, like a cheap whore!"
-                call her_head("Ah...{image=textheart} No...{image=textheart} stop saying...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_134")
+                $ her_SC.sayHead("Ah...{image=textheart} No...{image=textheart} stop saying...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_134")
                 show screen blktone
                 with d3
                 ">You pick up the pace some more."
@@ -8267,16 +9217,16 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 with d3
                 m "You let me molest you... You suck my cock..."
                 m "What are you after that I ask you!?"
-                call her_head("................","body_123")
-                call her_head("Ah...{image=textheart} ah....{image=textheart}{image=textheart}{image=textheart}","body_132")
-                call her_head(".......................","body_118")
-                call her_head("{size=-5}I am a whore...{/size}")
+                $ her_SC.sayHead("................","body_123")
+                $ her_SC.sayHead("Ah...{image=textheart} ah....{image=textheart}{image=textheart}{image=textheart}","body_132")
+                $ her_SC.sayHead(".......................","body_118")
+                $ her_SC.sayHead("{size=-5}I am a whore...{/size}")
                 #her "{size=-5}I am a whore... ah...{\size}"
                 m "Yes! That's exactly what you are!"
-        call her_head("Ah... ah... ah...","body_118")
-        call her_head("[genie_name], you think you could... ah...")
+        $ her_SC.sayHead("Ah... ah... ah...","body_118")
+        $ her_SC.sayHead("[genie_name], you think you could... ah...")
         m "What?"
-        call her_head("Could you spank me a little... ah...?","body_138")
+        $ her_SC.sayHead("Could you spank me a little... ah...?","body_138")
         g4 "Gladly!"
         
         $ renpy.play('sounds/slap.mp3')
@@ -8285,21 +9235,21 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen white
         with hpunch
 
-        call her_head("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}","body_139")
+        $ her_SC.sayHead("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}","body_139")
         m "You liked that one, huh?"
         $ renpy.play('sounds/slap.mp3')
         show screen white 
         pause.1
         hide screen white
         with hpunch
-        call her_head("Ah..!{image=textheart} Yes!{image=textheart}{image=textheart}{image=textheart}","body_138")
+        $ her_SC.sayHead("Ah..!{image=textheart} Yes!{image=textheart}{image=textheart}{image=textheart}","body_138")
         m "And some more!"
         $ renpy.play('sounds/slap.mp3')
         show screen white 
         pause.1
         hide screen white
         with hpunch
-        call her_head("Ahh! Yes!","body_138")
+        $ her_SC.sayHead("Ahh! Yes!","body_138")
         show screen blktone
         with d3
         ">You notice that every time you slap the girl's butt, her pussy clutches your cock tightly for a second..."
@@ -8331,20 +9281,20 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         pause.1
         hide screen white
         with hpunch
-        call her_head("Aah!!!{image=textheart}{image=textheart}{image=textheart} IT HURTS!{image=textheart}{image=textheart}{image=textheart}","body_138")
-        call her_head("It hurts...{image=textheart}{image=textheart}{image=textheart} It hurts...{image=textheart}{image=textheart}{image=textheart}","body_134")
+        $ her_SC.sayHead("Aah!!!{image=textheart}{image=textheart}{image=textheart} IT HURTS!{image=textheart}{image=textheart}{image=textheart}","body_138")
+        $ her_SC.sayHead("It hurts...{image=textheart}{image=textheart}{image=textheart} It hurts...{image=textheart}{image=textheart}{image=textheart}","body_134")
         m "Hm?"
         m "Why your legs are shaking, [hermione_name]?"
         m "Are you cumming?"
-        call her_head("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_133")
+        $ her_SC.sayHead("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_133")
         m "Well, I think I will follow your example then."
-        call her_head("..............","body_133")
+        $ her_SC.sayHead("..............","body_133")
         show screen blktone 
         with d3
         ">You start fucking Hermione with renewed determination!"
         hide screen blktone 
         with d3
-        call her_head("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_139")
+        $ her_SC.sayHead("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_139")
         m "Shut it whore!"
         g4 "Argh!"
         menu:
@@ -8360,12 +9310,12 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("!!!","body_133")
-                call her_head("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}")
+                $ her_SC.sayHead("!!!","body_133")
+                $ her_SC.sayHead("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}")
                 g4 "I'm Not done yet, bitch!"
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
                 call cum_block
-                call her_head("AH! MY BELLY!","body_139")
+                $ her_SC.sayHead("AH! MY BELLY!","body_139")
                 g4 "{size=+5}SLUT!{/size}"
                 
                 hide screen bld1
@@ -8382,22 +9332,22 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 with d7
                 
                 m "Well, this was pretty great..."
-                call her_head("Ah...{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah...{image=textheart}","body_133")
                 m "You alright there, slut? Ehm, I mean, [hermione_name]."
-                call her_head("Yes... I...","body_133")
-                call her_head("I feel so full...","body_135")
-                call her_head("!!!","body_130")
-                call her_head("You came inside of me, [genie_name]!")
+                $ her_SC.sayHead("Yes... I...","body_133")
+                $ her_SC.sayHead("I feel so full...","body_135")
+                $ her_SC.sayHead("!!!","body_130")
+                $ her_SC.sayHead("You came inside of me, [genie_name]!")
                 m "I sure did."
-                call her_head("You shouldn't have...","body_131")
+                $ her_SC.sayHead("You shouldn't have...","body_131")
                 m "Didn't you enjoy it?"
-                call her_head("....maybe.","body_123")
-                call her_head("I think I came several times...","body_121")
+                $ her_SC.sayHead("....maybe.","body_123")
+                $ her_SC.sayHead("I think I came several times...","body_121")
                 show screen blkfade
                 with d3
-                call her_head("Maybe you are right, [genie_name], and I shouldn't worry so much.","body_122")
+                $ her_SC.sayHead("Maybe you are right, [genie_name], and I shouldn't worry so much.","body_122")
                 if whoring <= 23:
-                    call her_head("Can I get my payment now?")
+                    $ her_SC.sayHead("Can I get my payment now?")
             "-Cum all over Hermione-":
                 with hpunch
                 g4 "{size=+7}Argh!!!{/size}"
@@ -8410,9 +9360,9 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 g4 "{size=+5}You whore! Take this!{/size}"
-                call her_head("{size=+5}!!!{/size}","body_138")
+                $ her_SC.sayHead("{size=+5}!!!{/size}","body_138")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8422,20 +9372,232 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 with d3
                 $ g_c_u_pic = "sex_cum_out_blink_ani"
                 m "Well, that was pretty great..."
-                call her_head("Ah...{image=textheart}","body_138")
+                $ her_SC.sayHead("Ah...{image=textheart}","body_138")
                 m "You alright there, slut?"
-                call her_head("Yes... I...","body_133")
+                $ her_SC.sayHead("Yes... I...","body_133")
                 m "Didn't you enjoy this?"
-                call her_head("....I think so...","body_123")
+                $ her_SC.sayHead("....I think so...","body_123")
                 show screen ctc
                 pause
                 hide screen ctc
                 show screen blkfade
                 with d3
-                call her_head("I think I came several times, [genie_name]...","body_121")
+                $ her_SC.sayHead("I think I came several times, [genie_name]...","body_121")
                 if whoring <= 23:
-                    call her_head("Can I get my payment now?","body_122")
+                    $ her_SC.sayHead("Can I get my payment now?","body_122")
                 $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+
+    elif hg_pf_LetsHaveSex_OBJ.points >= 3: # FOURTH EVENT <============================================================== EVENT 04
+        m "[hermione_name]..."
+        m "I have a favour to ask of you..."
+        call her_main("Is it sex? {size=-2}Please let it be sex...{/size}","body_46")
+        m "You certainly seem eager."
+        call her_main(".......","body_58")
+        call her_main("Well I may have made some plans...","body_59")
+        her "but I can't tell you what..."
+        m "well as long as your bent over my desk I don't really care..."
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_59")
+        stop music fadeout 1.0
+        hide screen hermione_main
+        show screen blkfade
+        with d3
+        # SEX
+        
+        $ renpy.play('sounds/gltch.mp3')
+        with hpunch
+        with kissiris
+        $ her_SC.sayHead("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
+        hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+        hide screen genie
+        
+        $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
+        $ genie_chibi_ypos = 10
+        $ g_c_u_pic = "sex_ani"
+        show screen chair_02
+        show screen g_c_u
+        
+        hide screen hermione_blink #Hermione stands still.
+        hide screen blkfade
+        hide screen blktone
+        hide screen bld1
+        show screen ctc
+        with fade
+        pause
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        show screen bld1
+        with d3    
+        
+        $ her_SC.sayHead("Ah...{image=textheart}","body_131")
+        m "Your pussy feels drenched today..."
+        $ her_SC.sayHead("Does it...{image=textheart} ah...{image=textheart}","body_131")
+        $ her_SC.sayHead("That's all because of you [genie_name]...{image=textheart}","body_132")
+        if daytime:
+            $ her_SC.sayHead("I've been... looking forward to this all morning...{image=textheart}","body_134")
+        else:
+            $ her_SC.sayHead("I've been... looking forward to this all day...{image=textheart}","body_134")
+        g4 "Agh, you whore!"
+        $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}","body_134")
+#        if not ask_me_once: #Turns true after Hermione asks you about your true identity, during sex.
+#            $ ask_me_once = True #Turns true after Hermione asks you about your true identity, during sex.
+#            her "[genie_name], can I ask you something?"
+#            m "What is it, [hermione_name]?"
+#            her "Ah... Oh, not so deep please..."
+#            her "Ah... I... Ah..."
+#            her "?!!"
+#            her "[genie_name]? Why did you stop?"
+#            m "What did you want to ask me, [hermione_name]?"
+#            her "But I think I was about to cum..."
+#            m "So soon? Good think I did stop then."
+#            her "[genie_name], please..."
+#            her "I want to ask you this question while..."
+#            her "While you are fucking me..."
+#            her "Ah..."
+#            her "[genie_name], I just want to know..."
+#            her "Are you really [genie_name]?"
+#            g4 "WHAT!?"
+#            menu:
+#                m "!!!"
+#                "\"Yes! Albus Dumbledore! That's me!\"":
+#                    her "Oh..."
+#                    her "You just been acting so unlike yourself lately..."
+#                    g4 "You whore! Your little pussy is the best!"
+#                    her "I suppose that was just my imagination then..."
+#                    her "Ah-ah-a..."
+#                "\"You got me... The truth is...\"":
+        m "Yes! Do you like it when I fuck you like this?"
+        $ her_SC.sayHead("Yes, [genie_name]...","body_128")
+        menu:
+            ">You hear a knock at the door."
+            "\"Who is it?\"":
+                m "(Who would be knocking at a time like this?)"
+                lun "It's Luna Lovegood sir."
+                m "{size=-3}Who's that again, [hermione_name]?{/size}"
+                $ her_SC.sayHead("the crazy blonde... ah...{image=textheart}... with the nice breasts...","body_127")
+                m "Come in!"
+            "-Tell them to go away.-":
+                m "Go aw-!"
+                $ her_SC.sayHead("no [genie_name]... let them in...","body_131")
+                m "You want to get caught?!"
+                $ her_SC.sayHead("Ah...{image=textheart} yes...{image=textheart}","body_132")
+                m "You are a such a little whore, [hermione_name]!"
+                $ her_SC.sayHead("Ah-ah...{image=textheart} let them in... please...","body_132")
+                m "You asked for it!"
+                $ her_SC.sayHead("Ah-a...{image=textheart}{image=textheart}{image=textheart}","body_132")
+                m "Come in!"
+        ">The door opens as Luna Lovegood walks in."
+        $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+        call luna_init
+        $ luna_chibi("stand", 540, 250)
+        $ changeLuna(1, 1, 4, 1)
+        lun "Hello Professor!"
+        #Stop sex
+        m "....."
+        $ her_SC.sayHead("......","body_132")
+
+        lun "I wanted to talk to you about the school uniform."
+        m "The uniform?"
+        lun "Yes, I have some ideas about some necessary changes and I'd like you to listen."
+        m "{size=-3}What's going on here, [hermione_name]?{/size}"
+
+        $ her_SC.sayHead("I may have given her a suggestibility serum...","body_134")
+        m "{size=-3}A suggestibility serum?{/size}"
+        lun "Who are you talking to sir?"
+        m "Oh, um.... no one, just ignore me..."
+        lun "Ok then, I'll ignore you..."
+        $ her_SC.sayHead("I may have suggested that she come here...","body_134")
+        $ her_SC.sayHead("And that she be unable to see me...","body_134")
+        lun "As I was saying sir, the school uniform simply cannot stay as it is."
+
+        show screen blktone
+        with d3
+        ">You pick up the pace some more."
+        $ g_c_u_pic = "sex2_ani"
+        ">The room fills up with rhythmical sound of a flesh hitting flesh..."
+        $ her_SC.sayHead("Ah... ah... ah...","body_118")
+        m "{size=-3}So let me get this straight.{/size}"
+        m "{size=-3}You drugged your class mate...{/size}"
+        m "{size=-3}Just so she would come in here and watch you have sex with your headmaster.{/size}"
+        $ her_SC.sayHead("Ah... yes...{image=textheart}{image=textheart}{image=textheart}")
+        lun "The girls uniform is far too conservative!"
+        m "conservative?"
+        lun "Indeed! Ms Granger is the only student that is dressing appropriately."
+        $ her_SC.sayHead("ah...","body_138")
+        m "{size=-3}What else did you do to her?{/size}"
+        $ her_SC.sayHead("I may have told her to... ah...{image=textheart}","body_138")
+        $ her_SC.sayHead("act like the biggest slut she knows...{image=textheart}","body_138")
+        m "{size=-3}So you then?{/size}"
+        $ her_SC.sayHead("yessss...{image=textheart}","body_138")
+        lun "Sir please, pay attention."
+        m "Sorry Miss Lovesgood, go on."
+        lun "Thank you. As I was saying I think you need to enact several new policies regarding the girls school uniform."
+        lun "Everyone should strive to achieve the same level of perfection as Miss granger."
+        $ her_SC.sayHead("{image=textheart}","body_138")
+        lun "I've come up with several rules that will help with this and I'd like you to enforce them."
+        m "alright..."
+        lun "rule number one: shirts must reveal a minimum of 3 inches of cleavage."
+        $ her_SC.sayHead("{image=textheart}","body_138")
+        lun "Rule number two: No skirt over 5 inches in length my be worn."
+        $ her_SC.sayHead("{image=textheart}{image=textheart}","body_138")
+        lun "rule number three: No bras to be worn at anytime."
+        $ her_SC.sayHead("{image=textheart}{image=textheart}{image=textheart}","body_138")
+        lun "And finally, rule number four: No panties to be worn at anytime."
+        $ her_SC.sayHead("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_138")
+
+        m "Why your legs are shaking, [hermione_name]?"
+        m "Are you cumming? In front of your classmate?"
+        $ her_SC.sayHead("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_133")
+        m "Well, I think I will follow your example then."
+        $ her_SC.sayHead("..............","body_133")
+        show screen blktone 
+        with d3
+        ">You start fucking Hermione with renewed determination!"
+        hide screen blktone 
+        with d3
+        $ her_SC.sayHead("Ah! No! I can't...{image=textheart} not in front of...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_139")
+        m "Shut it whore!"
+        lun "Yes sir."
+        g4 "Argh!"
+        with hpunch
+        g4 "{size=+7}Argh!!!{/size}"
+        call cum_block
+        g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+        $ g_c_u_pic = "sex_cum_out_ani"
+        call cum_block
+        show screen ctc
+        pause
+        hide screen ctc
+        $ uni_sperm = True
+        $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+        $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
+        g4 "{size=+5}You whore! Take this!{/size}"
+        $ her_SC.sayHead("{size=+5}!!!{/size}","body_138")
+        hide screen bld1
+        with d3
+        show screen ctc
+        pause
+        hide screen ctc
+        show screen bld1
+        with d3
+        $ g_c_u_pic = "sex_cum_out_blink_ani"
+        m "Well, that was pretty great..."
+        $ her_SC.sayHead("Ah...{image=textheart}","body_138")
+        m "You alright there, slut?"
+        $ her_SC.sayHead("Yes... I...","body_133")
+        m "Didn't you enjoy this?"
+        $ her_SC.sayHead("....I think so...","body_123")
+        show screen ctc
+        pause
+        hide screen ctc
+        show screen blkfade
+        with d3
+        $ her_SC.sayHead("I think I came several times, [genie_name]...","body_121")
+        m "Well that'll do for now. You two best head to class."
+        $ her_SC.sayHead("yes sir...","body_123")
+        $ her_SC.sayHead("Come on Luna let's go.","body_123")
+        lun "Hermione! WHen did you get here?"
+        lun "And what are you covered in?"
+        $ her_SC.sayHead("It doesn't matter...","body_121")
+        $ her_SC.sayHead("{size=-7}You can lick it off later...{/size}","body_121")
     
     hide screen h_c_u
     hide screen g_c_u
@@ -8476,6 +9638,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     
     hide screen bld1
     hide screen hermione_main
+    hide screen luna
     hide screen blktone 
     hide screen ctc
     with d3
@@ -8545,17 +9708,17 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         with d3
         stop music fadeout 1.0
         
-        call her_head("...........","body_29")
+        $ her_SC.sayHead("...........","body_29")
         m "Let's see..."
-        call her_head(".................","body_34")
+        $ her_SC.sayHead(".................","body_34")
         m "Hm..."
-        call her_head("!!!","body_18")
+        $ her_SC.sayHead("!!!","body_18")
         g4 "Oh, come on!"
-        call her_head("Ouch!","body_20")
+        $ her_SC.sayHead("Ouch!","body_20")
         m "Just try to loosen up a little, would you?"
-        call her_head("I'm trying!","body_21")
+        $ her_SC.sayHead("I'm trying!","body_21")
         m "Ok, what if I do this..?"
-        call her_head("Ouch! What are you doing, [genie_name]?","body_20")
+        $ her_SC.sayHead("Ouch! What are you doing, [genie_name]?","body_20")
         m "Yeah, this won't work either..."
         m "Hm..."
         m "Alright, I think I know what we should do."
@@ -8563,40 +9726,40 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
             m "..."
             "\"I think I'll spit on it and just force it in!\"":
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                call her_head("Force it in, [genie_name]?!","body_18")
+                $ her_SC.sayHead("Force it in, [genie_name]?!","body_18")
                 $ renpy.play('sounds/spit.mp3') #Sound of spiting. 
                 g3 "*SPIT!*"
-                call her_head("Eeeeeew!","body_32")
-                call her_head("No, [genie_name], wait! Maybe if I just relax--","body_31")
+                $ her_SC.sayHead("Eeeeeew!","body_32")
+                $ her_SC.sayHead("No, [genie_name], wait! Maybe if I just relax--","body_31")
                 m "No need, here I come!"
                 with hpunch
-                call her_head("ARGH!","body_22")
-                call her_head("Ouch! Ouch! Ouch!","body_20")
+                $ her_SC.sayHead("ARGH!","body_22")
+                $ her_SC.sayHead("Ouch! Ouch! Ouch!","body_20")
                 g4 "Almost in!"
-                call her_head("No, you're hurting me! You are hurting me!","body_32")
+                $ her_SC.sayHead("No, you're hurting me! You are hurting me!","body_32")
                 g4 "Almost! Almost!"
-                call her_head("Ah! It hurts!","body_32")
+                $ her_SC.sayHead("Ah! It hurts!","body_32")
                 g4 "Shut it, [hermione_name]! I'm doing you a favour!"
                 g4 "Your anus is so tight it's completely un-fuckable!"
-                call her_head("Then stop, please!","body_20")
+                $ her_SC.sayHead("Then stop, please!","body_20")
                 m "No! We need to loosen up your asshole a little!"
-                call her_head("But I don't want you to!","body_20")
+                $ her_SC.sayHead("But I don't want you to!","body_20")
                 m "Really? How do you expect people to fuck you up your ass then?"
-                call her_head("What people?","body_132")
+                $ her_SC.sayHead("What people?","body_132")
                 g4 "You know... people."
                 g4 "Argh, dammit... My dick is hurting too now."
-                call her_head("Stop then! Stop, [genie_name]!","body_131")
-                call her_head("I've changed my mind! I don't need 90 points!")
+                $ her_SC.sayHead("Stop then! Stop, [genie_name]!","body_131")
+                $ her_SC.sayHead("I've changed my mind! I don't need 90 points!")
                 g4 "I think I'm almost..."
                 
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_head("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
+                $ her_SC.sayHead("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
                 g4 "YES!!!"
-                call her_head("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","body_130")
+                $ her_SC.sayHead("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAARGH!","body_130")
                 g4 "Let us pump this little asshole full of semen then, shall we?"
-                call her_head("Yes... Please, I just want this to end...","body_137")
+                $ her_SC.sayHead("Yes... Please, I just want this to end...","body_137")
                 
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 hide screen genie
@@ -8620,21 +9783,21 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 
                 g4 "Agh... You want this to end sooner?"
                 g4 "Help me out then!"
-                call her_head("*sob!* How?","body_139")
+                $ her_SC.sayHead("*sob!* How?","body_139")
                 g4 "You know..."
-                call her_head("Oh...","body_139")
-                call her_head("I am a whore??","body_140")
+                $ her_SC.sayHead("Oh...","body_139")
+                $ her_SC.sayHead("I am a whore??","body_140")
                 g9 "Yes you are!"
-                call her_head("*Sob!* I am a whore...","body_141")
-                call her_head("I love to suck cock...")
-                call her_head("And now my tiny asshole is getting ripped to pieces... *Sob!*","body_142")
+                $ her_SC.sayHead("*Sob!* I am a whore...","body_141")
+                $ her_SC.sayHead("I love to suck cock...")
+                $ her_SC.sayHead("And now my tiny asshole is getting ripped to pieces... *Sob!*","body_142")
                 g4 "Yes! Yes!"
                 g4 "Agrh! Yes!"
-                call her_head("No! Is it getting bigger?! I'm scared!","body_144")
+                $ her_SC.sayHead("No! Is it getting bigger?! I'm scared!","body_144")
                 g4 "ARGH!"
                 
             "\"Suck me off first. Lubricate my cock!\"":
-                call her_head("Oh... Alright...","body_31")
+                $ her_SC.sayHead("Oh... Alright...","body_31")
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                 
                 #SUCKING
@@ -8667,20 +9830,20 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 with d3
                 
                 #ON THE DESK
-                call her_head(".............","body_31")
+                $ her_SC.sayHead(".............","body_31")
                 g4 "Yes! Almost!"
-                call her_head("Ouch!","body_32")
+                $ her_SC.sayHead("Ouch!","body_32")
                 m "Relax. Almost in."
                 
                 $ renpy.play('sounds/gltch.mp3')
                 with hpunch
                 with kissiris
-                call her_head("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
+                $ her_SC.sayHead("{size=+5}AAAAAAAAhhhhh!!!{/size}","body_130")
                 g4 "YES!!!"
-                call her_head("My... my...","body_130")
-                call her_head("It hurts!","body_132")
+                $ her_SC.sayHead("My... my...","body_130")
+                $ her_SC.sayHead("It hurts!","body_132")
                 g4 "Let's pump this little asshole full of semen then, shall we?"
-                call her_head(".....................","body_141")
+                $ her_SC.sayHead(".....................","body_141")
                 # SEX
                 
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -8702,18 +9865,18 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 with d3    
 
 
-                call her_head(".....................","body_139")
+                $ her_SC.sayHead(".....................","body_139")
                 m "You alright there, slut?"
-                call her_head("Ah... You are... stretching me out from the inside... [genie_name].","body_140")
-                call her_head("And it still hurts...","body_141")
+                $ her_SC.sayHead("Ah... You are... stretching me out from the inside... [genie_name].","body_140")
+                $ her_SC.sayHead("And it still hurts...","body_141")
                 m "Hm..."
                 m "Maybe not enough lubrication...?"
                 m "Come on down, [hermione_name]. Suck my dick some more."
-                call her_head("What? But...","body_140")
-                call her_head("But it's dirty... It's been inside already.","body_139")
+                $ her_SC.sayHead("What? But...","body_140")
+                $ her_SC.sayHead("But it's dirty... It's been inside already.","body_139")
                 m "Yes, it's been inside, but that doesn't mean it's dirty now."
                 m "Come one, [hermione_name]. Suck my cock some more."
-                call her_head("...........","body_139")
+                $ her_SC.sayHead("...........","body_139")
                 show screen blkfade
                 with d3
                 
@@ -8767,38 +9930,38 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 show screen bld1
                 with d3    
                 
-                call her_head("Ah...","body_139")
+                $ her_SC.sayHead("Ah...","body_139")
                 m "Better now?"
-                call her_head("It still hurts...","body_140")
-                call her_head("But I think I will be fine...")
+                $ her_SC.sayHead("It still hurts...","body_140")
+                $ her_SC.sayHead("But I think I will be fine...")
                 m "I'll take it slow for now..."
-                call her_head("Ah... thank you, [genie_name].","body_141")
+                $ her_SC.sayHead("Ah... thank you, [genie_name].","body_141")
                 m "Oh... yes... this feels great..."
-                call her_head("...........","body_139")
+                $ her_SC.sayHead("...........","body_139")
                 m "Oh... So tight..."
-                call her_head("................","body_143")
+                $ her_SC.sayHead("................","body_143")
                 m "Why are you being so quiet [hermione_name]?"
-                call her_head("Because this is painful...","body_140")
-                call her_head("And I just want you to cum sooner, [genie_name]...")
+                $ her_SC.sayHead("Because this is painful...","body_140")
+                $ her_SC.sayHead("And I just want you to cum sooner, [genie_name]...")
                 m "So you stifle your cries of pain?"
-                call her_head("yes [genie_name]. *Sob!*","body_142")
+                $ her_SC.sayHead("yes [genie_name]. *Sob!*","body_142")
                 m "Don't do that."
                 m "Sob, scream and cry as much as you wish!"
-                call her_head("B-but--","body_140")
+                $ her_SC.sayHead("B-but--","body_140")
                 m "That will make me cum sooner."
-                call her_head("Really? *Sob!*","body_142")
-                call her_head("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*","body_139")
+                $ her_SC.sayHead("Really? *Sob!*","body_142")
+                $ her_SC.sayHead("*Sob!* It hurts! *Sob!* It hurts so much! *Sob!*","body_139")
                 m "Yes, yes..."
-                call her_head("*SOB!*","body_145")
+                $ her_SC.sayHead("*SOB!*","body_145")
                 m "You poor little kid..."
                 m "A Big, evil man is raping your asshole!"
-                call her_head("*SOB!* Yeees! *SOB!*","body_146")
+                $ her_SC.sayHead("*SOB!* Yeees! *SOB!*","body_146")
                 g4 "Argh!"
-                call her_head("No, I'm scared! *SOB!*","body_147")
+                $ her_SC.sayHead("No, I'm scared! *SOB!*","body_147")
         menu:
             "-Fill Hermione up with cum-":
                 g4 "Argh!"
-                call her_head("No! AH!","body_130")
+                $ her_SC.sayHead("No! AH!","body_130")
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
                 $ g_c_u_pic = "sex_cum_in_ani"
@@ -8810,28 +9973,28 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}","body_144")
+                $ her_SC.sayHead("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}","body_144")
                 g4 "Yes, you whore! Yes!"
-                call her_head("It hurts, it hurts!","body_145")
+                $ her_SC.sayHead("It hurts, it hurts!","body_145")
                 g4 "Shut up!"
                 with hpunch
-                call her_head("No, I am already full! Stop cumming, you bastard!","body_149")
+                $ her_SC.sayHead("No, I am already full! Stop cumming, you bastard!","body_149")
                 g4 "Shut the fuck up, slut! I am not done yet!"
-                call her_head("No! Please! My stomach! I will explode!","body_146")
+                $ her_SC.sayHead("No! Please! My stomach! I will explode!","body_146")
                 g4 "ARGH!"
-                call her_head("No, I think I will throw up...","body_144")
+                $ her_SC.sayHead("No, I think I will throw up...","body_144")
                 with hpunch
                 play sound "sounds/burp.mp3"
-                call her_head("{size=+7}*BURP!*!!!!!{/size}","body_150")
-                call her_head(".......................","body_151")
-                call her_head(".............")
+                $ her_SC.sayHead("{size=+7}*BURP!*!!!!!{/size}","body_150")
+                $ her_SC.sayHead(".......................","body_151")
+                $ her_SC.sayHead(".............")
                 $ renpy.play('sounds/gulp.mp3') #Sound of gulping down a liquid.
-                call her_head("{size=+7}*GULP!*{/size}","body_126")
-                call her_head("*SOB!* I HATE YOU...","body_145")
-                call her_head("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}","body_148")
-                call her_head("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
+                $ her_SC.sayHead("{size=+7}*GULP!*{/size}","body_126")
+                $ her_SC.sayHead("*SOB!* I HATE YOU...","body_145")
+                $ her_SC.sayHead("{size=+5}I HATE YOU AND YOUR NASTY OLD COCK?{/size}","body_148")
+                $ her_SC.sayHead("{size=+5}I HATE YOU! YOU HEAR ME?!{/size}")
                 g4 "Agh...Shut it, whore!"
-                call her_head("*sob!* *Sob!*...","body_145")
+                $ her_SC.sayHead("*sob!* *Sob!*...","body_145")
                 # AFTER CUM INSIDE
                 
                 hide screen bld1
@@ -8842,14 +10005,14 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 show screen bld1
                 with d3
                 $ g_c_u_pic = "ani_her_sex_cum_inside_blink"
-                call her_head("*Sob!*...","body_142")
+                $ her_SC.sayHead("*Sob!*...","body_142")
                 m "Whew!... I think that was the last of it."
                 m "You alright?"
-                call her_head("Yes... *Sob!*","body_142")
+                $ her_SC.sayHead("Yes... *Sob!*","body_142")
                 m "Are You crying?"
-                call her_head("My butt hurts, but I am alright, [genie_name]...","body_142")
+                $ her_SC.sayHead("My butt hurts, but I am alright, [genie_name]...","body_142")
                 m "Well, you took my dick stoically, I must say..."
-                call her_head("Thank you [genie_name]...","body_142")
+                $ her_SC.sayHead("Thank you [genie_name]...","body_142")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8857,23 +10020,23 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 show screen blkfade
                 with d7
-                call her_head("I apologize for saying that I hate you, [genie_name]...","body_152")
-                call her_head("And your cock is not nasty...")
-                call her_head("I don't know what's gotten into me...","body_153")
+                $ her_SC.sayHead("I apologize for saying that I hate you, [genie_name]...","body_152")
+                $ her_SC.sayHead("And your cock is not nasty...")
+                $ her_SC.sayHead("I don't know what's gotten into me...","body_153")
                 g9 "My dick!"
-                call her_head("I suppose it's as when you call me a \"whore\". I know you actually don't mean it...","body_153")
+                $ her_SC.sayHead("I suppose it's as when you call me a \"whore\". I know you actually don't mean it...","body_153")
                 m "Yeah, sure..."
                 m "Does it still hurt?"
-                call her_head("A little...","body_154")
-                call her_head("I also feel full and warm inside...","body_155")
+                $ her_SC.sayHead("A little...","body_154")
+                $ her_SC.sayHead("I also feel full and warm inside...","body_155")
                 m "You plan to keep it in? My cum I mean."
-                call her_head("Yes...","body_156")
+                $ her_SC.sayHead("Yes...","body_156")
                 if daytime:
-                    call her_head("I hope it won't start leaking during my classes...")
+                    $ her_SC.sayHead("I hope it won't start leaking during my classes...")
                 else:
-                    call her_head("I hope it won't start leaking before I get to my room...")
+                    $ her_SC.sayHead("I hope it won't start leaking before I get to my room...")
                 m "Well, good luck on your journey."
-                call her_head("Can I get paid now please?","body_155")
+                $ her_SC.sayHead("Can I get paid now please?","body_155")
             "-Pull out and cum on Hermione-":
                 $ g_c_u_pic = "sex_cum_out_ani"
                 call cum_block
@@ -8882,9 +10045,9 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 g4 "Yes!!! Allover your ass!"
-                call her_head("Ah... It's so hot!","body_134")
+                $ her_SC.sayHead("Ah... It's so hot!","body_134")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -8897,14 +10060,14 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 with d7
                 
                 m "Well, I'm done... You can get off my desk now."
-                call her_head("Yes, [genie_name]...","body_138")
+                $ her_SC.sayHead("Yes, [genie_name]...","body_138")
                 m "You feeling alright?"
-                call her_head("Yes, [genie_name]. It still hurts a little, but...","body_139")
+                $ her_SC.sayHead("Yes, [genie_name]. It still hurts a little, but...","body_139")
                 m "But what?"
-                call her_head("But in a good way... [genie_name].","body_138")
+                $ her_SC.sayHead("But in a good way... [genie_name].","body_138")
                 m "In a good way, huh?"
                 g9 "Heh... You cute, little mynx."
-                call her_head("Can I get paid now, [genie_name]?","body_138")
+                $ her_SC.sayHead("Can I get paid now, [genie_name]?","body_138")
     
     elif hg_pf_TimeForAnal_OBJ.points == 1: # FIRST EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
@@ -8934,18 +10097,18 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         
         stop music fadeout 1.0
         
-        call her_head("........","body_29")
+        $ her_SC.sayHead("........","body_29")
         m "Hm..."
-        call her_head("...........","body_31")
+        $ her_SC.sayHead("...........","body_31")
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
-        call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
+        $ her_SC.sayHead("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
         g4 "Oh, ye-es!"
-        call her_head("Ah...","body_121")
+        $ her_SC.sayHead("Ah...","body_121")
         m "It seems like your butthole became a bit more welcoming, [hermione_name]."
-        call her_head("Ah... It still hurts a little.","body_128")
-        call her_head("And please, just call me \"whore\", [genie_name].","body_129")
+        $ her_SC.sayHead("Ah... It still hurts a little.","body_128")
+        $ her_SC.sayHead("And please, just call me \"whore\", [genie_name].","body_129")
         g4 "Agh! You slut! You always get me with your words!"
         
         hide screen hermione_main                                                                                                                                                                                   #HERMIONE
@@ -8969,83 +10132,83 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         
         # INSERTION
-        call her_head("Ah... Ah...","body_127")
-        call her_head("Ah...")
-        call her_head("[genie_name]?","body_128")
+        $ her_SC.sayHead("Ah... Ah...","body_127")
+        $ her_SC.sayHead("Ah...")
+        $ her_SC.sayHead("[genie_name]?","body_128")
         m "Yes, whore?"
-        call her_head("Em...","body_117")
+        $ her_SC.sayHead("Em...","body_117")
         hide screen ctc
-        call her_head("Would you marry me, [genie_name]?","body_118")
+        $ her_SC.sayHead("Would you marry me, [genie_name]?","body_118")
         with hpunch
         g4 "{size=+9} WHAT?!{/size}"
         g4 "Don't tell me you're pregnant, [hermione_name]!"
-        call her_head("I Couldn't get pregnant the way we are doing it, [genie_name]...","body_122")
+        $ her_SC.sayHead("I Couldn't get pregnant the way we are doing it, [genie_name]...","body_122")
         m "What is this talk of marriage then?"
-        call her_head("You misunderstood me [genie_name].","body_117")
-        call her_head("I meant to say, would you marry a girl {size=+5}like{/size} me?","body_118")
-        call her_head("I would never propose to a man with his cock in my ass, [genie_name]...","body_34")
+        $ her_SC.sayHead("You misunderstood me [genie_name].","body_117")
+        $ her_SC.sayHead("I meant to say, would you marry a girl {size=+5}like{/size} me?","body_118")
+        $ her_SC.sayHead("I would never propose to a man with his cock in my ass, [genie_name]...","body_34")
         m "Good. Because I don't think any man would be able to say \"no\" to then."
-        call her_head("Ah{image=textheart}...","body_127")
-        call her_head("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","body_118")
+        $ her_SC.sayHead("Ah{image=textheart}...","body_127")
+        $ her_SC.sayHead("What I meant... ah{image=textheart} {w} ...to say was ah{image=textheart}... {w}...do you think someone would ever ah{image=textheart}... {w} ...want to marry a girl like me?","body_118")
         m "Huh?"
-        call her_head("I mean, with all that was happening lately... ah{image=textheart}...","body_118")
-        call her_head("I can't help but feel unclean... damaged even.")
-        call her_head("And in a no way innocent...")
-        call her_head("Who would want a wife like that?","body_117")
+        $ her_SC.sayHead("I mean, with all that was happening lately... ah{image=textheart}...","body_118")
+        $ her_SC.sayHead("I can't help but feel unclean... damaged even.")
+        $ her_SC.sayHead("And in a no way innocent...")
+        $ her_SC.sayHead("Who would want a wife like that?","body_117")
         menu:
             m "..."
             "\"I would marry you in a heartbeat!\"":
-                call her_head("What?","body_31")
+                $ her_SC.sayHead("What?","body_31")
                 m "Well, hypothetically speaking of course..."
-                call her_head("...of course...{image=textheart}","body_54")
-                call her_head("..............","body_53")
-                call her_head("But why do you say that, [genie_name]?","body_55")
+                $ her_SC.sayHead("...of course...{image=textheart}","body_54")
+                $ her_SC.sayHead("..............","body_53")
+                $ her_SC.sayHead("But why do you say that, [genie_name]?","body_55")
                 m "Huh?"
                 m "What do you mean \"why\", whore?"
                 m "You are young and attractive..."
                 m "Tight asshole, full tits and wet little pussy..."
-                call her_head("Ah...{image=textheart}","body_127")
+                $ her_SC.sayHead("Ah...{image=textheart}","body_127")
                 m "You will make some lucky guy a very happy man one day, whore."
                 m "Ehm, I mean, [hermione_name]."
-                call her_head("No, \"whore\" is good. Call me that, [genie_name].","body_134")
+                $ her_SC.sayHead("No, \"whore\" is good. Call me that, [genie_name].","body_134")
                 m "There, you see? You are a great catch, I'm telling you, whore."
-                call her_head("Ah...{image=textheart} Thank you, [genie_name].","body_142")
+                $ her_SC.sayHead("Ah...{image=textheart} Thank you, [genie_name].","body_142")
                 m "Huh?"
                 m "Are you crying?"
                 label among_other_things:
-                call her_head("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Among other things, [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 m "Among other things?"
-                call her_head("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_135")
+                $ her_SC.sayHead("I'm cumming [genie_name]...{image=textheart}{image=textheart}{image=textheart}","body_135")
                 g4 "Agh! My cock!" 
                 g4 "Relax your muscles a little, would you?"
-                call her_head("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","body_131")
+                $ her_SC.sayHead("BUT I'M CUMMING!{image=textheart}{image=textheart}{image=textheart}","body_131")
                 g4 "Fine! Have it your way whore!"
                 with hpunch
-                call her_head("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","body_130")
+                $ her_SC.sayHead("{size=+7}Ah-ah-aha!!! I'm cumming!!!{/size}","body_130")
                 g4 "{size=+7}Argh!{/size}"
                 
             "\"Marriage is out of the picture for you.\"":
-                call her_head("That's what I thought...","body_143")
+                $ her_SC.sayHead("That's what I thought...","body_143")
                 m "Oh... I just love that little asshole of yours!"
-                call her_head(".....................","body_142")
-                call her_head("Yes... After all the things I had to do for my house...")
-                call her_head("...no one will ever want me...","body_145")
+                $ her_SC.sayHead(".....................","body_142")
+                $ her_SC.sayHead("Yes... After all the things I had to do for my house...")
+                $ her_SC.sayHead("...no one will ever want me...","body_145")
                 m "Oh, they will want you alright!"
-                call her_head("What? But you said...","body_144")
+                $ her_SC.sayHead("What? But you said...","body_144")
                 m "Marriage, [hermione_name]. Marriage is impossible for you."
                 m "But as a man-pleaser you are a great catch!"
-                call her_head("Really?","body_144")
+                $ her_SC.sayHead("Really?","body_144")
                 m "Are you kidding me?!"
                 m "Young, hot and slutty. You could have any man you want!"
                 m "Or a wizard or whatever you are into..."
-                call her_head("I think you may be right, [genie_name].","body_157")
+                $ her_SC.sayHead("I think you may be right, [genie_name].","body_157")
                 m "I know I am right, whore."
                 m "Now wiggle that little ass of yours a little."
-                call her_head("Like this?","body_138")
+                $ her_SC.sayHead("Like this?","body_138")
                 m  "Yes, that's a good whore."
-                call her_head("I am a whore, aren't I?","body_133")
+                $ her_SC.sayHead("I am a whore, aren't I?","body_133")
                 m "You just sold me your asshole for 90 house points. How would you call that?"
-                call her_head("Yes, yes...{image=textheart} I am a whore...{image=textheart}","body_138")
+                $ her_SC.sayHead("Yes, yes...{image=textheart} I am a whore...{image=textheart}","body_138")
                 m "Are you crying?"
                 jump among_other_things
                 
@@ -9059,15 +10222,15 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("!!!","body_130")
+                $ her_SC.sayHead("!!!","body_130")
                 m "Yes! Argh!"
-                call her_head("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}","body_134")
+                $ her_SC.sayHead("Ah!{image=textheart} It's filling me up!{image=textheart} I can feel it!{image=textheart}","body_134")
                 m "Shut up, whore!"
-                call her_head("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}","body_137")
+                $ her_SC.sayHead("Ah! I AM A WHORE!!!!{image=textheart}{image=textheart}{image=textheart}","body_137")
                 m "Agh!"
-                call her_head("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}","body_144")
+                $ her_SC.sayHead("Ah...{image=textheart} your cum, [genie_name]...{image=textheart}","body_144")
                 m "Yes, yes..."
-                call her_head("Ah...{image=textheart}","body_145")
+                $ her_SC.sayHead("Ah...{image=textheart}","body_145")
                 m "......"
                 hide screen bld1
                 with d3
@@ -9086,14 +10249,14 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-                call her_head("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}","body_133")
+                $ her_SC.sayHead("Ah-aha! You're cumming! {image=textheart}{image=textheart}{image=textheart}","body_133")
                 g4 "{size=+7}Yes I do, whore!{/size}"
-                call her_head("Ah, me too! Me too!","body_147")
+                $ her_SC.sayHead("Ah, me too! Me too!","body_147")
                 g4 "{size=+7}FUCKING SLUT!{/size}"
-                call her_head("Ah...{image=textheart} your cum...{image=textheart}","body_142")
-                call her_head("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
+                $ her_SC.sayHead("Ah...{image=textheart} your cum...{image=textheart}","body_142")
+                $ her_SC.sayHead("I'm so full...{image=textheart}{image=textheart}{image=textheart}")
                 g4 "Yes!!! All over your ass!"
-                call her_head("Ah... It's so hot!","body_134")
+                $ her_SC.sayHead("Ah... It's so hot!","body_134")
                 hide screen bld1
                 with d3
                 show screen ctc
@@ -9107,12 +10270,12 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 
         #Ending
         m "Well, this was intense..."
-        call her_head("Ah-ha...{image=textheart} ah...{image=textheart}","body_158")
+        $ her_SC.sayHead("Ah-ha...{image=textheart} ah...{image=textheart}","body_158")
         m "Are You alright, [hermione_name]?"
-        call her_head("I think so... I'm not sure...","body_158")
-        call her_head("I think I may still be cumming, [genie_name].","body_158")
-        call her_head("Or maybe not...","body_158")
-        call her_head("Everything is in a daze... and my legs feel so weak...")
+        $ her_SC.sayHead("I think so... I'm not sure...","body_158")
+        $ her_SC.sayHead("I think I may still be cumming, [genie_name].","body_158")
+        $ her_SC.sayHead("Or maybe not...","body_158")
+        $ her_SC.sayHead("Everything is in a daze... and my legs feel so weak...")
         if whoring <= 23:
             her "Can I just get paid now, [genie_name]?"
         stop music fadeout 1.0
@@ -9222,15 +10385,15 @@ label hg_pf_TheGamble:
     show screen bld1
     hide screen hermione_main
     
-    call her_head("...fine. Just let me... there we...","body_04")#253
+    $ her_SC.sayHead("...fine. Just let me... there we...","body_04")#253
 
     #*Penetration transition*
     $ renpy.play('sounds/gltch.mp3')
     with hpunch
     with kissiris
     
-    call her_head("OOOOOOOHH! {image=textheart}","body_235")#254
-    call her_head("Yes...","body_236")#255
+    $ her_SC.sayHead("OOOOOOOHH! {image=textheart}","body_235")#254
+    $ her_SC.sayHead("Yes...","body_236")#255
     
     hide screen hermione_main
     hide screen genie
@@ -9244,7 +10407,7 @@ label hg_pf_TheGamble:
     
     ">Hermione begins to slowly slide up and down your dick."
     m "You can do better than this! Pick up the pace whore!"
-    call her_head("Ah... ah...{image=textheart}","body_237")#256
+    $ her_SC.sayHead("Ah... ah...{image=textheart}","body_237")#256
     "She moves a little faster..."
     $ g_c_u_pic = "bounce_ani"
     show screen g_c_u
@@ -9255,28 +10418,28 @@ label hg_pf_TheGamble:
     m "Faster."
     call soft_slaps
     #">You punctuate each word with a slap to her ass."
-    call her_head("AAAH! {image=textheart} {image=textheart} {image=textheart}","body_219")#257
+    $ her_SC.sayHead("AAAH! {image=textheart} {image=textheart} {image=textheart}","body_219")#257
     "She starts to move much faster."
     $ g_c_u_pic = "bounce_ani_f"
     show screen g_c_u
-    call her_head("Yes! Harder!","body_232")#258
+    $ her_SC.sayHead("Yes! Harder!","body_232")#258
     m "Honestly."
     ">You reach under her shirt with one hand and start to twist and pull on one of her nipples."
     ">You spank even harder with the other."
     call hard_slaps
-    call her_head("IT HUUURTS! {image=textheart} {image=textheart}","body_220")#259
+    $ her_SC.sayHead("IT HUUURTS! {image=textheart} {image=textheart}","body_220")#259
     m "Even now, I still have to take the initiative, you self-deluding whore!"
-    call her_head("I- AH! {image=textheart} I'm n- Ah-a!","body_235")#260
+    $ her_SC.sayHead("I- AH! {image=textheart} I'm n- Ah-a!","body_235")#260
     m "You're still claiming this is all just for the house points? Even while you're bouncing yourself up and down on my cock? "
-    call her_head("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236")#261
+    $ her_SC.sayHead("I-i-it i-i-i-isss- Ah! {image=textheart}","body_236")#261
     m "All right, fine. Prove it. If you can go {i}ONE FULL MONTH{/i} without any form of sexual relief;" 
     m "I'll award \"Gryffindor\" {i}ONE THOUSAND{/i} points and double the points of any favours you choose to take thereafter."
-    call her_head("!!!! REALLY?! (Oh god, I'm getting so close...)","body_202")#262
+    $ her_SC.sayHead("!!!! REALLY?! (Oh god, I'm getting so close...)","body_202")#262
     m "Yes. BUT. If you can't, you belong to me. No more house points. You'll be my personal fucktoy from then on. Do we have a deal?"
-    call her_head("Yessss...","body_236")#263
+    $ her_SC.sayHead("Yessss...","body_236")#263
     m "Answer me clearly, whore! Do we have a deal?"
-    call her_head("OH GOD! YES! YES WE HAVE A DEAL!","body_234")#264
-    call her_head("I! I'M-","body_234")#265
+    $ her_SC.sayHead("OH GOD! YES! YES WE HAVE A DEAL!","body_234")#264
+    $ her_SC.sayHead("I! I'M-","body_234")#265
     stop music fadeout 1 
     m "Good."
     
@@ -9289,7 +10452,7 @@ label hg_pf_TheGamble:
     show screen genie
     
     ">You lift Hermione off of you."
-    call her_head("!!! W-what are you-","body_211")#266
+    $ her_SC.sayHead("!!! W-what are you-","body_211")#266
     m "We did just make an agreement. Of course if you wish to forfeit already..."
     
     
@@ -9537,10 +10700,10 @@ label hg_pf_TheGamble_complete:
         hide screen h_c_u # NOT SUCKING
         
         #her "Please- Give- Need- Please!"
-        call her_head("Please- Give- Need- Please!","body_209")
+        $ her_SC.sayHead("Please- Give- Need- Please!","body_209")
         m "So much for a month! You couldn't even last a week!"
         #her "Need- Please-"
-        call her_head("Need- Please-","body_210")
+        $ her_SC.sayHead("Need- Please-","body_210")
         #">She scrambles to stand as you lift her by her hair and half toss her onto the desk."
         ">Hermione scrambles to stand as you lift her by her hair and half toss her onto the desk."
         m "Well, since you asked so nicely."
@@ -9561,19 +10724,19 @@ label hg_pf_TheGamble_complete:
         
         
         #her "AAAAAAAAAAHHH! Biiiiiiig!!!!!"
-        call her_head("AAAAAAAAAAHHH! Biiiiiiig!!!!!","body_219")
+        $ her_SC.sayHead("AAAAAAAAAAHHH! Biiiiiiig!!!!!","body_219")
         m "Has your pussy actually gotten tighter?"
         #her "AAAAH! NO! NO! STILL NEEEEED!!!"
-        call her_head("AAAAH! NO! NO! STILL NEEEEED!!!","body_206")
+        $ her_SC.sayHead("AAAAH! NO! NO! STILL NEEEEED!!!","body_206")
         m "Oh, right the spell. Well, you'll just have to wait till I'm ready to cum myself."
         #her "!!!"
-        call her_head("!!!","body_207")
+        $ her_SC.sayHead("!!!","body_207")
         ">Hermione starts slamming herself against you with abandon."
         $ g_c_u_pic = "sex2_ani"
         show screen g_c_u
         with hpunch
         #her "GIVE! GIVE! GIVE! GIVE! GIVE!"
-        call her_head("GIVE! GIVE! GIVE! GIVE! GIVE!","body_213")
+        $ her_SC.sayHead("GIVE! GIVE! GIVE! GIVE! GIVE!","body_213")
         ">With every thrust she seems to get tighter."
         m "FUCK! ALMOST. ALMOST! HERE WE GO!"
         ">You undo the spell as you flood Hermione's cunt with your cum."
@@ -9611,7 +10774,7 @@ label hg_pf_TheGamble_complete:
         $ g_c_u_pic = "pause_sex"
         
         #her "!!!!"
-        call her_head("!!!!","body_234")
+        $ her_SC.sayHead("!!!!","body_234")
         ">Hermione tries to scream but can only manage to gasp and convulse as she finally gets her release."
         ">You watch her and wait for her spasms to die down."
         
@@ -9623,11 +10786,11 @@ label hg_pf_TheGamble_complete:
         ">Hermione's eyes are still glassy but she nods."
         m "Good. A deal is a deal. You belong to me now. Understand?"
         #her "Yesss."
-        call her_head("Yesss.","body_199")
+        $ her_SC.sayHead("Yesss.","body_199")
         m "Ready for more?"
         ">Still twitching on the ground, she speaks slowly, as though her thoughts are traveling through molasses."
         #her "I... but... class..."
-        call her_head("I... but... class...","body_211")
+        $ her_SC.sayHead("I... but... class...","body_211")
         m "Oh, you're not going to class."
         m "I'm going to thoroughly enjoy my first day as your owner."
         ">You walk to the door and send for Snape."
@@ -9635,55 +10798,55 @@ label hg_pf_TheGamble_complete:
         ">You walk over to Hermione and lift her. Keeping her back to your chest and your hands under her thighs, you hold her up with her legs spread."
         m "Now put your hands around the back of my neck and tell me what you are."
         #her "Your whore."
-        call her_head("Your whore.","body_209")
+        $ her_SC.sayHead("Your whore.","body_209")
         m "Wrong."
         #her "?"
-        call her_head("?","body_210")
+        $ her_SC.sayHead("?","body_210")
         m "You see, whores get paid. Whores are people."
         m "You don't get paid. You stopped being a person when you sold yourself to me for release."
         m "You are my slave now. My toy. My pretty little fucktoy."
         m "SAY IT."
         #her "I'm your fucktoy."
-        call her_head("I'm your fucktoy.","body_199")
+        $ her_SC.sayHead("I'm your fucktoy.","body_199")
         m "Now, what does a fucktoy want?"
         ">You lower her, teasing her asshole with the tip of your cock."
         #her "N-Nothing. A toy w-wants nothing. It's just used by its owner."
-        call her_head("N-Nothing. A toy w-wants nothing. It's just used by its owner.","body_215")
+        $ her_SC.sayHead("N-Nothing. A toy w-wants nothing. It's just used by its owner.","body_215")
         m "VERY good."
         ">You drop her onto your dick."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY AAASS!!!"
-        call her_head("MY AAASS!!!","body_219")
+        $ her_SC.sayHead("MY AAASS!!!","body_219")
         m "Whose ass?"
         ">You lift her off your dick."
         #her "YOURS! YOUR FUCKTOY'S ASS!"
-        call her_head("YOURS! YOUR FUCKTOY'S ASS!","body_225")
+        $ her_SC.sayHead("YOURS! YOUR FUCKTOY'S ASS!","body_225")
         ">Desperate tears form in her eyes."
         m "Since it is your first day, I'll be nice."
         m "I'll give you a few choices."
         m "Do you want me to fuck your ass?"
         #her "Yes."215
-        call her_head("Yes.","body_215")
+        $ her_SC.sayHead("Yes.","body_215")
         m "How?"
         #her "Haaard. Pound me. Fill me with your cum!"
-        call her_head("Haaard. Pound me. Fill me with your cum!","body_213")
+        $ her_SC.sayHead("Haaard. Pound me. Fill me with your cum!","body_213")
         m "As you wish!"
         ">You drop her back onto your dick and start pounding her ass, your dick is harder than it's ever been."
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
         #her "MY ASS!!! YOU'LL BREAK IT!!"
-        call her_head("MY ASS!!! YOU'LL BREAK IT!!","body_219")
+        $ her_SC.sayHead("MY ASS!!! YOU'LL BREAK IT!!","body_219")
         ">You lift her up slowly, making the threat clear."
         #her "AHH!! BREAK IT!! BREAK ME!! HARDER!!"
-        call her_head("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
+        $ her_SC.sayHead("AHH!! BREAK IT!! BREAK ME!! HARDER!!","body_236")
         call snape_enter
         sna_[1] "What did you-"
         sna_[8] "!!!"
         #her "CUMMING!! MY ASS IS CUMMING!!"
-        call her_head("CUMMING!! MY ASS IS CUMMING!!","body_236")
+        $ her_SC.sayHead("CUMMING!! MY ASS IS CUMMING!!","body_236")
         m "As you can see, Miss Granger will be indisposed."
         ">Hermione's grip slips and she catches herself on your desk. She quivers as you adapt and start pounding her from behind."
        
@@ -9694,18 +10857,18 @@ label hg_pf_TheGamble_complete:
         
         m "Can you arrange an excuse for the next day? Or three?"
         #her "AAAAH! OH GOD!"
-        call her_head("AAAAH! OH GOD!","body_238")
+        $ her_SC.sayHead("AAAAH! OH GOD!","body_238")
         sna_[18] "Ha! Of course!"
         #her "AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}"
-        call her_head("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
+        $ her_SC.sayHead("AGAIN!! CUMMING AGAIN!! {image=textheart} {image=textheart}","body_237")
         sna_[21] "(This might be the happiest day of my life!)"
         call snape_leave
         ">Hermione kept screaming and shaking her ass on your dick. You're fairly certain she didn't notice the conversation."
         #her "I'm going insane! Your dick is driving your fucktoy insane!"
-        call her_head("I'm going insane! Your dick is driving your fucktoy insane!","body_236")
+        $ her_SC.sayHead("I'm going insane! Your dick is driving your fucktoy insane!","body_236")
         m "You and your way with words!"
         #her "CUMMING! STILL CUMMING!"
-        call her_head("CUMMING! STILL CUMMING!","body_234")
+        $ her_SC.sayHead("CUMMING! STILL CUMMING!","body_234")
         m "Here, let me JOIN YOU!"
         
         show screen white 
@@ -9734,12 +10897,12 @@ label hg_pf_TheGamble_complete:
         
         
         #her "MY ASS! SO HOT!"
-        call her_head("MY ASS! SO HOT!","body_235")
+        $ her_SC.sayHead("MY ASS! SO HOT!","body_235")
         #her "FILLING MY ASS!"
-        call her_head("FILLING MY ASS!","body_236")
+        $ her_SC.sayHead("FILLING MY ASS!","body_236")
         m "YOU LIKE IT?"
         #her "YES!!!! {image=textheart} {image=textheart}"
-        call her_head("YES!!!! {image=textheart} {image=textheart}","body_234")
+        $ her_SC.sayHead("YES!!!! {image=textheart} {image=textheart}","body_234")
         m "HAVE SOME MORE!"
         ">Hermione tries to scream as you flood her ass but once again can only manage gasps as she collapses to your desk, quivering."
         
