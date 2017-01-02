@@ -10,6 +10,8 @@ init python:
         use_action = False
         use_outfit = False
         
+        sperm = []
+        
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
         
@@ -36,12 +38,12 @@ init python:
             self.uniform.setLevel(level)
             self.chibi.setLevel(level)
         
-        def setFace(self, index):
-            self.body.head.face = self.faces[index-1]
+        def setFace(self, face_id=""):
+            face_id = face_id.replace("body_","")
             for face in self.faces:
-                if face.id == index:
-                    renpy.say(None,face.id+" "+face)
-                    
+                if face_id == face.id:
+                    self.body.head.face = face
+        
         # Say w/ sprite
         def say(self, text, face=None):
             if face != None:
@@ -51,6 +53,16 @@ init python:
             renpy.with_statement(Dissolve(0.3),always=True)
             renpy.say(self.char_ref,text)
         
+        def sayText(self, text, face=None):
+            renpy.say(self.char_ref,text)
+            
+        def sayHead(self, string, face=None):
+            if face != None:
+                self.setFace(face)
+            renpy.show_screen(self.screen_head)
+            renpy.say(self.h_char_ref,string)
+            renpy.hide_screen(self.screen_head)
+            
         def getActionLayers(self):
             return
             
@@ -93,6 +105,11 @@ init python:
                 layers.extend(self.getOutfitLayers())
             else:
                 layers.extend(self.getUniformLayers())
+            if self.sperm != []:
+                for layer in self.sperm:
+                    layers.append(self.root+"overlays/{}.png".format(layer))
+            if self.body.head.face.emote != "":
+                layers.append(self.root+"emote/{}.png".format(self.body.head.face.emote))
             return layers
         
     
@@ -107,6 +124,7 @@ init python:
         mouth = ""
         lipstick = ""
         tears = ""
+        emote = ""
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -146,6 +164,23 @@ init python:
                 self.blink_img_f = self.level_ref[level][2]
                 self.walk_img = self.level_ref[level][3]
                 self.walk_img_f = self.level_ref[level][4]
+        
+        def show(self,img="",flip=False):
+            global hermione_chibi_u_img
+            if img == "stand":
+                if flip:
+                    hermione_chibi_u_img = im.Flip(self.stand_img, horizontal=True)
+                else:
+                    hermione_chibi_u_img = self.stand_img
+            if img == "blink":
+                if flip:
+                    hermione_chibi_u_img = self.blink_img_f
+                else:
+                    hermione_chibi_u_img = self.blink_img
+            renpy.show_screen("u_hermione_chibi")
+            
+        def hide(self):
+            renpy.hide_screen("u_hermione_chibi")
     
     class hermione_character_uniform(sliver_character_uniform):
         level_ref = [["",""],[1,1],[2,1],[3,2],[4,3],[5,4],[6,4]]
@@ -154,6 +189,19 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
+            
+        def set(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def reset(self):
+            self.wear_top = True
+            self.wear_bot = True
+            self.wear_bra = True
+            self.wear_panties = True
+            self.top = 1
+            self.bot = 1
+            self.bra = "base_bra_white_1.png"
+            self.panties = "base_panties_1.png"
         
         def setLevel(self, level):
             if level >= 0 and level < len(self.level_ref):
@@ -174,6 +222,9 @@ init python:
     
 
 label __init_variables:
+    
+    $ her_chibi_dance_xpos = 350
+    $ her_chibi_dance_ypos = 180
     
     $ reset_char_obj = True
     if not hasattr(renpy.store,'hermione_SC') or reset_char_obj: #important!
@@ -229,7 +280,9 @@ label __init_variables:
             acc = ""
         )
     $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
-    $ hermione_SC.setFace(1)
+    $ hermione_SC.setFace("1")
+    
+    $ her_SC = hermione_SC
     
     $ h_whoring = 0
     $ h_reputation = 21
@@ -384,6 +437,10 @@ label __init_variables:
         $ hermione_costume_action_a = "01_hp/13_characters/hermione/clothes/custom/00_blank.png"
     
     return
+    
+screen u_hermione_chibi:
+    zorder hermione_SC.chibi.zorder
+    add hermione_chibi_u_img xpos hermione_SC.chibi.xpos ypos hermione_SC.chibi.ypos
     
 label her_main_new(text="",face=h_body, xpos = hermione_xpos, ypos = hermione_ypos):
     $ wt_herm = hermione_SC
