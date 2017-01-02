@@ -621,8 +621,7 @@ label event_06:
     
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
-    hide ch_gen
-    show image "01_hp/04_duel/no_magic.png" at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    $ duel_OBJ.genie = "no_magic"
     
     m "I told you you are no match for me..."
     show screen bld1
@@ -767,8 +766,9 @@ label event_06:
     $ snape_SC.say_H("Unbelievable...","head_1")
     $ snape_SC.say_H("Well, I'll see you tomorrow.... genie.","head_1")
     m "I'll be here..."
-
     $ snape_SC.say_H("(A genie? Now that's new...)","head_7")
+    
+    hide screen duel
     jump day_start
     
 #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
@@ -1960,7 +1960,7 @@ label event_12:
     $ event12_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     
-    call day_start
+    return #call day_start
 
 ###(NIGHT) HERMIONE DID FAIL A TEST [BREAKDOWN] - IN USE
 label event_13: 
@@ -2051,7 +2051,7 @@ label event_13:
     $ event13_happened = True #Allows next event to start.
     $ days_without_an_event = 0 #Resets the counter. This counts how many days have passed since this event happened.
     
-    call day_start
+    return#call day_start
 
 ###(DAY) HERMIONE APOLOGIES FOR BREAKDOWN [START TUTORING] - IN USE
 label event_14: 
