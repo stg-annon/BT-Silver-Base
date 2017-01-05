@@ -329,16 +329,18 @@ screen candlefire_02:
     
     
 screen phoenix_food: #Phoenix's food.
-    add "01_hp/05_props/06_phoenix_food.png" xpos 350+140 ypos 49 
+    add "01_hp/05_props/06_phoenix_food.png" xpos 490 ypos 49 
     zorder 3
     
 screen fireplace_fire: #FIREPLACE FIRE.
-    add "fireplace_fire" xpos 436+140 ypos 141
+    add "fireplace_fire" xpos 576 ypos 141
     zorder 3
     
-    
+screen room_night: #MAIN ROOM NIGHT BG. 
+    add "01_hp/01_bg/01_main_room_02.png"
     
 screen room: #MAIN ROOM BG.
+    zorder 0
     if daytime:
         add "01_hp/01_bg/01_main_room.png"
         use door
@@ -361,18 +363,13 @@ screen room: #MAIN ROOM BG.
         use candlefire_01
         use candle_02
         use candlefire_02
-    if fire_in_fireplace:
-        use fireplace_fire
     if phoenix_is_feed:
         use phoenix_food
     if deliveryQ.got_mail():
         use package
     if letterQ.got_mail():
         use owl
-    zorder 0
         
-screen room_night: #MAIN ROOM NIGHT BG. 
-    add "01_hp/01_bg/01_main_room_02.png"
     
     
 $ width_offset = 140
