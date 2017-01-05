@@ -1,5 +1,8 @@
 label cheats_ht:
     menu:
+        "-cause error-":
+            $ nothing = askdasdfkljabsdgfhabsdkhgbaskdjhgf
+            jump cheats_ht
         "-Test new main-":
             jump new_main_menu
         "-Hermione Cheats-":
@@ -59,7 +62,7 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-All Books-" if day >= 16:
                     python:
-                        for i in book_list:
+                        for i in books_OBJ.get_all():
                             i.purchased = True
                     "Obtained All Books."
                     jump cheats_ht_books
