@@ -1,9 +1,13 @@
 init python:
     class hermione_character(silver_character):
+        
+        badge = ""
+        
         eye_color = ""
         
         faces = None
         
+        action = None
         outfit = None
         uniform = None
         
@@ -29,6 +33,13 @@ init python:
                 self.use_outfit = True
             self.outfit = outfit
         
+        def setAction(self, action=""):
+            global herm_actions
+            for act in herm_actions:
+                if act.name == action:
+                    self.action = act
+                    self.use_action = True
+        
         def outfitFromList(self, id):
             for outfit in hermione_outfits_list:
                 if outfit.name == id:
@@ -38,17 +49,20 @@ init python:
             self.uniform.setLevel(level)
             self.chibi.setLevel(level)
         
-        def setFace(self, face_id=""):
+        def setFace(self, face_id="",blush=False):
+            self.body.head.cheeks = ""
+            if blush:
+                self.body.head.cheeks = "blush.png"
             face_id = face_id.replace("body_","")
             for face in self.faces:
                 if face_id == face.id:
                     self.body.head.face = face
         
         # Say w/ sprite
-        def say(self, text, face=None):
+        def say(self, text, face=None, blush=False):
             if face != None:
                 renpy.hide_screen(self.screen)
-                self.setFace(face)
+                self.setFace(face,blush)
             renpy.show_screen(self.screen)
             renpy.with_statement(Dissolve(0.3),always=True)
             renpy.say(self.char_ref,text)
@@ -64,7 +78,31 @@ init python:
             renpy.hide_screen(self.screen_head)
             
         def getActionLayers(self):
-            return
+            layers = []
+            if self.body.head != None:
+                layers.append(self.root+"body/head/"+self.body.head.hair)
+            if self.action.right_arm != "":
+                layers.append(self.root+"body/arms/right/"+self.action.right_arm)
+            if self.body.legs != "":
+                layers.append(self.root+"body/legs/"+self.body.legs)
+            if self.body.abdomen != "":
+                layers.append(self.root+"body/abdomen/"+self.body.abdomen)
+            if self.action.left_arm != "":
+                layers.append(self.root+"body/arms/left/"+self.action.left_arm)
+            if self.body.torso != "":
+                if False and self.action.full_torso:
+                    layers.append(self.root+"body/torso/"+self.body.torso)
+                else:
+                    layers.append(self.root+"body/torso/"+self.body.torso_pressed)
+            for tattoo in self.body.tattoos:
+                layers.append(self.root+"body/tattoo/"+tattoo)
+            if self.body.head != None:
+                layers.extend(self.body.head.getLayers(self))
+            if self.action.layers != None:
+                layers.extend(self.action.getLayers(self))
+            if self.body.head.hair != "":
+                layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
+            return layers
             
         def getOutfitLayers(self):
             layers = []
@@ -93,6 +131,8 @@ init python:
                 layers.extend(self.body.getLayers(self))
             if self.uniform != None:
                 layers.extend(self.uniform.getLayers(self))
+            if self.badge != "" and self.uniform.wear_top:
+                layers.append(self.root+"accessories/badges/{}.png".format(self.badge))
             if self.body.head.hair != "":
                 layers.append(self.root+"body/head/"+self.body.head.hair.replace(".png","_2.png"))
             return layers
@@ -103,6 +143,8 @@ init python:
             self.body.noTorso = False
             if self.use_outfit:
                 layers.extend(self.getOutfitLayers())
+            elif self.use_action:
+                layers.extend(self.getActionLayers())
             else:
                 layers.extend(self.getUniformLayers())
             if self.sperm != []:
@@ -114,17 +156,14 @@ init python:
         
     
     class hermione_character_face(silver_character_face):
-        description = ""
         id = 0
         
         eyes = ""
         eye_color = ""
         nose = ""
-        cheeks = ""
         mouth = ""
         lipstick = ""
         tears = ""
-        emote = ""
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -134,8 +173,6 @@ init python:
         
         def getLayers(self, parent):
             layers = []
-            if self.cheeks != "":
-                layers.append(parent.root+"body/face/cheeks/"+self.cheeks)
             if self.nose != "":
                 layers.append(parent.root+"body/face/nose/"+self.nose)
             if self.mouth != "":
@@ -233,6 +270,9 @@ label __init_variables:
             
             xpos = 370,
             ypos = 0,
+            
+            xpos_center = 260,
+            xpos_right = 600,
             
             name = "Hermione Granger",
             pet_name = "Miss Granger",
