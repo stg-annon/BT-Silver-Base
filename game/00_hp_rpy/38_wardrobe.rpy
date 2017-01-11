@@ -2,286 +2,189 @@ screen wardrobe:
     $ hermione_SC.xpos=550
     
     tag wardrobe_menu
-    zorder hermione_main_zorder-1
+    zorder 4
     
     imagemap:
         cache False
         ground "01_hp/25_mo/wardrobe_ground.png"
         hover "01_hp/25_mo/wardrobe_hover.png"
 
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
+        hotspot (1022,10,42,41) clicked Jump("day_time_requests")
         
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-
-        text "Hair" xpos 45 ypos 100 size 15
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 375 ypos 100 size 15
-        text "Gifts" xpos 480 ypos 100 size 15
-
-
-screen wardrobe_hair:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
+        hotspot (37, 30, 67, 82) clicked [SetVariable("wardrobe_tab","hair"),Show("wardrobe")]
+        hotspot (123, 30, 67, 82) clicked [SetVariable("wardrobe_tab","uniform"),Show("wardrobe")]
+        hotspot (212, 30, 67, 82) clicked [SetVariable("wardrobe_tab","costumes"),Show("wardrobe")]
+        # hotspot (301, 30, 67, 82) clicked [SetVariable("wardrobe_tab","accs"),Show("wardrobe")]
+        hotspot (391, 30, 67, 82) clicked [SetVariable("wardrobe_tab","underwear"),Show("wardrobe")]
+        hotspot (480, 30, 67, 82) clicked [SetVariable("wardrobe_tab","gifts"),Show("wardrobe")]
         
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_style","A"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
-            hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_hair_style","B"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
-        
-        for i in range(0,6):
-            add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
-            add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
-
-        text "Hair" xpos 45 ypos 100 size 15 bold 1
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 370 ypos 100 size 15
-        text "Gifts" xpos 480 ypos 100 size 15
-    
-    
-label change_hair_new:
-    #call her_main("Sure, let me just go change it.","body_01")
-    $ hermione_SC.setHair(wardrobe_hair_style,wardrobe_hair_color)
-    hide screen wardrobe_hair
-    call screen wardrobe_hair
-
-    
-    
-    
-label change_hair():
-    call her_main("Sure, let me just go change it.","body_01")
-    call set_h_hair(wardrobe_hair_style,wardrobe_hair_color)
-    hide screen wardrobe_hair
-    call screen wardrobe_hair
-
-screen wardrobe_uniform:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    $ list = ["1","color/blue/1","color/green/1","color/red/1","color/yellow/1"]
-    $ y_pos = 13
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
-
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        
-        # (13,116) (13+90,116)
-        
-        # (13,208)
-        
-        for i in range(0,len(list)):
-            hotspot ((21+(90*(i%6))), (140+(92*int(i/6))), 83, 85) clicked [SetVariable("wardrobe_uniform_selection",list[i]),Jump("change_uniform")]
-        
-        for i in range(0,len(list)):
-            add "01_hp/13_characters/hermione/clothes/uniform/bot/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
-            if i != 0 and (i % 5) == 0:
-                $ y_pos += 100
+        if wardrobe_tab == "hair":
             
-        #for i in range(0,6):
-            # for j in range (0,6):
-                # hotspot ((21+(90*i)), 140+(92*j), 83, 85) clicked [SetVariable("",),SetVariable("",),Jump("change_hair")]
-        
-        
-        text "Hair" xpos 45 ypos 100 size 15 
-        text "Uniform" xpos 115 ypos 100 size 15 bold 1
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 370 ypos 100 size 15
-        text "Gifts" xpos 480 ypos 100 size 15
-    
-label change_uniform:
-    call her_main("Sure, let me just go change quick.","body_01")
-    call set_h_skirt(wardrobe_uniform_selection)
-    hide screen wardrobe_uniform
-    call screen wardrobe_uniform
-    
-screen wardrobe_costumes:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
-
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        $ hg_purchased_outfits = []
-        for i in hermione_outfits_list:
-            if i.purchased:
-                $ hg_purchased_outfits.append(i)
-        
-        $ index = 0
-        for i in range(0,5):
-            for j in range(0,6):
-                if index < len(hg_purchased_outfits):
-                    hotspot ((21+(90*j)), (140+(92*i)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]),Jump("wardrobe_wear_costume")]
-                    add hg_purchased_outfits[index].getStoreImage() xpos (13+(90*j)) ypos (116+(92*i)) zoom 0.18
-                    $ index = index+1
-        
-        hotspot (471, 508, 83, 85) clicked [SetVariable("wardrobe_costume_selection",None),Jump("wardrobe_wear_costume")]
-        add "01_hp/23_clothes_store/cs_gui/uniform.png" xpos 463 ypos 484 zoom 0.18
+            for i in range(0,6):
+                hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_choice","A_"+str(i+1)),Jump("wardrobe_change_hair")]
+                hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_hair_choice","B_"+str(i+1)),Jump("wardrobe_change_hair")]
             
-        text "Hair" xpos 45 ypos 100 size 15 
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15 bold 1
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 370 ypos 100 size 15
-        text "Gifts" xpos 480 ypos 100 size 15
+            for i in range(0,6):
+                add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
+                add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
+            
+            text "Hair" xpos 45 ypos 100 size 15 bold 1
+        else:
+            text "Hair" xpos 45 ypos 100 size 15
+            
+            
+        if wardrobe_tab == "uniform":
+            
+            $ list = ["1","color/blue/1","color/green/1","color/red/1","color/yellow/1"]
+            $ color = ["","blue","green","red","yellow"]
+            $ y_pos = 13
+            
+            for i in range(0,len(list)):
+                hotspot ((21+(90*(i%6))), (140+(92*int(i/6))), 83, 85) clicked [SetVariable("wardrobe_uniform_selection",color[i]),Jump("wardrobe_change_uniform")]
+            
+            for i in range(0,len(list)):
+                add "01_hp/13_characters/hermione/clothes/uniform/bot/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
+                if i != 0 and (i % 5) == 0:
+                    $ y_pos += 100
+            
+            text "Uniform" xpos 115 ypos 100 size 15 bold 1
+        else:
+            text "Uniform" xpos 115 ypos 100 size 15
+            
+            
+        if wardrobe_tab == "costumes":
+        
+            $ hg_purchased_outfits = []
+            for i in hermione_outfits_list:
+                if i.purchased:
+                    $ hg_purchased_outfits.append(i)
+            
+            $ index = 0
+            for i in range(0,5):
+                for j in range(0,6):
+                    if index < len(hg_purchased_outfits):
+                        hotspot ((21+(90*j)), (140+(92*i)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]),Jump("wardrobe_wear_costume")]
+                        add hg_purchased_outfits[index].getStoreImage() xpos (13+(90*j)) ypos (116+(92*i)) zoom 0.18
+                        $ index = index+1
+            
+            hotspot (471, 508, 83, 85) clicked [SetVariable("wardrobe_costume_selection",None),Jump("wardrobe_wear_costume")]
+            add "01_hp/23_clothes_store/cs_gui/uniform.png" xpos 463 ypos 484 zoom 0.18
+                
+            text "Costumes" xpos 200 ypos 100 size 15 bold 1
+        else:
+            text "Costumes" xpos 200 ypos 100 size 15
+            
+            
+        if wardrobe_tab == "accs":
+            text "Accs." xpos 310 ypos 100 size 15 bold 1
+        else:
+            text "Accs." xpos 310 ypos 100 size 15
+            
+            
+        if wardrobe_tab == "underwear":
+            
+            $ wardrobe_underwear_selection = ""
+            $ wardrobe_underwear_images = ["base_bra_white_1","lace_bra","cup_bra","silk_bra","latex_bra"]
+            
+            for i in range(0,4):
+                hotspot ((21+(90*i)), 140, 83, 85):
+                    clicked [SetVariable("wardrobe_underwear_selection",i),Jump("wardrobe_wear_underwear")]
+            
+            for i in range(0,4):
+                add "01_hp/13_characters/hermione/clothes/underwear/"+str(wardrobe_underwear_images[i])+".png" xpos -105+(90*i) ypos 0 zoom 0.6
+            
+            text "Underwear" xpos 375 ypos 100 size 15 bold 1
+        else:
+            text "Underwear" xpos 375 ypos 100 size 15
+            
+            
+        if wardrobe_tab == "gifts":
+            
+            # note that gift_items are indices (starting with 0) but the
+            # image files are starting with/off by 1.
+            for i in range(0,18):
+                $ row = i // 6
+                $ col = i % 6
+                if gift_item_inv[i] > 0:
+                    hotspot ((21+(90*col)), (140+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",i),Jump("wardrobe_give_gift")]
+                add "01_hp/18_store/gifts/"+str(i+1)+".png" xpos -60+(90*col) ypos (90+(90*row)) zoom 0.30
+                text str(gift_item_inv[i]) xpos 20+(90*col) ypos (210+(90*row))
+                
+            #Adding custom one off items (Collar, dress, stockings)
+            
+            #Collar
+            if collar == 0 and whoring >= 24:
+                hotspot (470, 508, 83, 85) clicked [Jump("start_collar_event")]
+                add "01_hp/13_characters/hermione/accessories/collars/collar_0.png" xpos 255 ypos 350 zoom 0.8
+            else:
+                add "01_hp/13_characters/hermione/accessories/collars/collar_5.png" xpos 255 ypos 350 zoom 0.8 
+            #Dress 
+            if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
+                hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
+                add "01_hp/23_clothes_store/cs_gui/ball_dress.png" xpos 13+(90*4) ypos 484 zoom 0.18
+            else:
+                add "01_hp/23_clothes_store/cs_gui/ball_dress_b.png" xpos 13+(90*4) ypos 484 zoom 0.18
+            
+            text "Gifts" xpos 480 ypos 100 size 15 bold 1
+        else:
+            text "Gifts" xpos 480 ypos 100 size 15
+        
+        if wardrobe_tab == "potions":
+            for i in range(0,6):
+                hotspot ((21+(90*i)), 140, 83, 85):
+                    hovered [SetVariable("potion_name",p_potion_names[i])]
+                    clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
+            
+            for i in range(1,7):
+                add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
+            for i in range(7,11):
+                add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*(i-6)) ypos 225 zoom 0.8
+        
+        
+        
+        
+        
+label wardrobe_change_hair:
+    $ her_SC.say("Sure, let me just go change it.","body_01")
+    $ her_SC.hideScreen()
+    with d2
+    $ her_SC.setHair(wardrobe_hair_choice)
+    $ her_SC.showScreen()
+    with d2
+    call screen wardrobe
     
     
-label wardrobe_wear_costume_new:
-    hide screen hermione_main
-    $ renpy.show_screen(hermione_SC.main_screen)
-    $ hermione_SC.setOutfit(wardrobe_costume_selection)
-    hide screen wardrobe_costumes
-    call screen wardrobe_costumes
+label wardrobe_change_uniform:
+    $ her_SC.say("Sure, let me just go change it.","body_01")
+    $ her_SC.hideScreen()
+    with d2
+    $ her_SC.setUnioformColor(wardrobe_uniform_selection)
+    $ her_SC.showScreen()
+    with d2
+    call screen wardrobe
+    
     
 label wardrobe_wear_costume:
-    hide screen hermione_main
-    call h_outfit_OBJ(wardrobe_costume_selection)
-    show screen hermione_main
-    hide screen wardrobe_costumes
-    call screen wardrobe_costumes
+    $ her_SC.say("Sure, let me just go change it.","body_01")
+    $ her_SC.hideScreen()
+    with d2
+    $ hermione_SC.setOutfit(wardrobe_costume_selection)
+    $ her_SC.setUnioformColor(wardrobe_uniform_selection)
+    $ her_SC.showScreen()
+    with d2
+    call screen wardrobe
     
-screen wardrobe_gifts:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
-        
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        # note that gift_items are indices (starting with 0) but the
-        # image files are starting with/off by 1.
-        for i in range(0,18):
-            $ row = i // 6
-            $ col = i % 6
-            if gift_item_inv[i] > 0:
-                hotspot ((21+(90*col)), (140+(92*row)), 83, 85) clicked [SetVariable("wardrobe_gift_item",i),Jump("wardrobe_give_gift")]
-            add "01_hp/18_store/gifts/"+str(i+1)+".png" xpos -60+(90*col) ypos (90+(90*row)) zoom 0.30
-            text str(gift_item_inv[i]) xpos 20+(90*col) ypos (210+(90*row))
-
-
-        #Adding custom one off items (Collar, dress, stockings)
-
-        #Collar
-        if collar == 0 and whoring >= 24:
-            hotspot (470, 508, 83, 85) clicked [Jump("start_collar_event")]
-            add "01_hp/13_characters/hermione/accessories/collars/collar_0.png" xpos 255 ypos 350 zoom 0.8
-        else:
-            add "01_hp/13_characters/hermione/accessories/collars/collar_5.png" xpos 255 ypos 350 zoom 0.8 
-        #Dress 
-        if whoring >= 24 and have_no_dress_hap and not gave_the_dress:
-            hotspot (380, 508, 83, 85) clicked [Jump("giving_the_dress")]
-            add "01_hp/23_clothes_store/cs_gui/ball_dress.png" xpos 13+(90*4) ypos 484 zoom 0.18
-        else:
-            add "01_hp/23_clothes_store/cs_gui/ball_dress_b.png" xpos 13+(90*4) ypos 484 zoom 0.18
-            
-        text "Hair" xpos 45 ypos 100 size 15
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 370 ypos 100 size 15
-        text "Gifts" xpos 480 ypos 100 size 15 bold 1
     
 label wardrobe_give_gift:
     call give_her_gift(wardrobe_gift_item)
-    hide screen wardrobe_gifts
-    call screen wardrobe_gifts
-    
-screen wardrobe_underwear:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    $ wardrobe_underwear_selection = ""
-    $ wardrobe_underwear_images = ["base_bra_white_1","lace_bra","cup_bra","silk_bra","latex_bra"]
-    
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
-        
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        for i in range(0,4):
-            hotspot ((21+(90*i)), 140, 83, 85):
-                clicked [SetVariable("wardrobe_underwear_selection",i),Jump("wardrobe_wear_underwear")]
-        
-        for i in range(0,4):
-            add "01_hp/13_characters/hermione/clothes/underwear/"+str(wardrobe_underwear_images[i])+".png" xpos -105+(90*i) ypos 0 zoom 0.6
-        
-        text "Hair" xpos 45 ypos 100 size 15
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Underwear" xpos 370 ypos 100 size 15 bold 1
-        text "Gifts" xpos 480 ypos 100 size 15
+    call screen wardrobe
     
     
 label wardrobe_wear_underwear:
+    "SET"
+    call screen wardrobe
+
+label wardrobe_wear_underwear_old:
     if wardrobe_underwear_selection == 0:
         call set_h_underwear("base_bra_white_1", "base_panties_1")
     elif wardrobe_underwear_selection == 1:
@@ -296,49 +199,10 @@ label wardrobe_wear_underwear:
     hide screen wardrobe_underwear
     call screen wardrobe_underwear
     
-    
-screen wardrobe_potions:
-    
-    tag wardrobe_menu
-    zorder hermione_main_zorder-1
-    
-    $ potion_name = ""
-    
-    imagemap:
-        cache False
-        ground "01_hp/25_mo/wardrobe_ground.png"
-        hover "01_hp/25_mo/wardrobe_hover.png"
-
-        hotspot (742+280,10,42,41) clicked Jump("day_time_requests")
-        
-        hotspot (37, 30, 67, 82) clicked Show("wardrobe_hair")
-        hotspot (123, 30, 67, 82) clicked Show("wardrobe_uniform")
-        hotspot (212, 30, 67, 82) clicked Show("wardrobe_costumes")
-        # hotspot (301, 30, 67, 82) clicked Show("wardrobe_accessories")
-        # hotspot (391, 30, 67, 82) clicked Show("wardrobe_gifts")
-        hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
-        
-        for i in range(0,6):
-            hotspot ((21+(90*i)), 140, 83, 85):
-                hovered [SetVariable("potion_name",p_potion_names[i])]
-                clicked [SetVariable("wardrobe_potion",i+1),Jump("wardrobe_give_potion")]
-        
-        for i in range(1,7):
-            add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*i) ypos 135 zoom 0.8
-        for i in range(7,11):
-            add "01_hp/25_mo/potion_"+str(i)+".png" xpos -80+(90*(i-6)) ypos 225 zoom 0.8
-        
-        
-        text "Hair" xpos 45 ypos 100 size 15
-        text "Uniform" xpos 115 ypos 100 size 15
-        text "Costumes" xpos 200 ypos 100 size 15
-        text "Accs." xpos 310 ypos 100 size 15
-        text "Gifts" xpos 375 ypos 100 size 15
-        text "Potions" xpos 475 ypos 100 size 15 bold 1
-    
 label wardrobe_give_potion:
     hide screen wardrobe_gifts
     $ renpy.jump("potion_scene_"+str(wardrobe_potion))
+    
     
 label day_request_wardrobe:
     menu:
