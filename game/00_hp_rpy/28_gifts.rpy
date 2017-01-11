@@ -303,6 +303,543 @@ label her_gift_menu:
         call give_her_gift(result)
     
 label give_her_gift(gift_id):
+    $ her_SC.hideScreen()
+    with d5
+    $ prev_xpos = her_SC.xpos
+    $ her_SC.setXPos("center")
+    
+    if gift_id == 0:#candy
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A lollipop?","body_01")
+            call give_gift(">You give the candy to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_06")
+            call happy(5)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Candy?","body_03")
+            $ her_SC.say("Candy is for kids, [genie_name].","body_02")
+            call give_gift(">You give the candy to Hermione...",gift_id)
+            $ her_SC.say("Thank you...","body_29")
+            call happy(5)
+            $ her_SC.say("","body_06")
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Candy?","body_03")
+            call give_gift(">You give the candy to Hermione...",gift_id)
+            $ her_SC.say("Ehm... Sure, thanks...","body_08")
+            call happy(5)
+            $ her_SC.say("","body_06")
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("A lollipop?","body_06")
+            $ her_SC.say("Clever girls use candy like this as a \"weapon\".","body_46")
+            call give_gift(">You give the candy to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_74")
+            call happy(5)
+            $ her_SC.say("","body_128")
+    if gift_id == 1:#chocolate
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A chocolate bar?","body_01")
+            call give_gift(">You give the chocolate to Hermione...", gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_06")
+            call happy(10)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("A chocolate bar?","body_03")
+            $ her_SC.say("Hm...","body_09")
+            $ her_SC.say("That thing about fairies...")
+            $ her_SC.say("That is a joke of some sort, right?","body_11")
+            call give_gift(">You give the chocolate to Hermione...", gift_id)
+            $ her_SC.say("Thank you...","body_15")
+            call happy(10)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A chocolate bar?","body_03")
+            $ her_SC.say("I just like the way it crunches, [genie_name]! N-not the taste...","body_24")
+            call give_gift(">You give the chocolate to Hermione...", gift_id)
+            $ her_SC.say("Ehm... Sure, thanks...","body_01")
+            call happy(10)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("A chocolate bar?","body_06")
+            $ her_SC.say("You spoil me, [genie_name].","body_111")
+            call give_gift(">You give the chocolate to Hermione...", gift_id)
+            $ her_SC.say("Thank you.","body_129")
+            call happy(10)
+    if gift_id == 2:#plush owl
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A stuffed owl?","body_01")
+            $ her_SC.say("It's cute...","body_06")
+            call give_gift(">You give the owl to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_01")
+            call happy(7)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("A plush toy?","body_11")
+            $ her_SC.say("I like it!","body_06")
+            call give_gift(">You give the owl to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_01")
+            call happy(10)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A toy?","body_01")
+            $ her_SC.say("Toys are for kids, [genie_name].","body_02")
+            $ her_SC.say("But I'll take it...","body_29")
+            call give_gift(">You give the owl to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_01")
+            call happy(15)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("This is one of those adult toys isn't it?","body_66")
+            $ her_SC.say("There's got to be a switch or a button somewhere...","body_87")
+            $ her_SC.say("So... Does it vibrate or something?","body_124")
+            $ her_SC.say("Oh...?","body_190")
+            $ her_SC.say("So it is really just a plush toy then?")
+            $ her_SC.say("Shame...","body_118")
+            $ her_SC.say("I mean, thank you, [genie_name].","body_34")
+            call give_gift(">You give the owl to Hermione...",gift_id)
+            call happy(4)
+            $ her_SC.say("","body_01")
+    if gift_id == 3:#butterbeer
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Butterbeer?","body_01")
+            $ her_SC.say("Are you sure about that, [genie_name]?","body_08")
+            $ her_SC.say("It does contain alcohol, you know...","body_06")
+            call give_gift(">You give the bottle to Hermione...",gift_id)
+            $ her_SC.say("Thank you.","body_01")
+            call happy(3)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Butterbeer, [genie_name]?","body_11")
+            $ her_SC.say("To let you in on a little secret, [genie_name]...","body_14")
+            $ her_SC.say("I'm a big fan of this completely harmless beverage.","body_06")
+            call give_gift(">You give the bottle to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_01")
+            call happy(10)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Butterbeer?","body_01")
+            $ her_SC.say("Thank you, [genie_name].","body_24")
+            call give_gift(">You give the bottle to Hermione...",gift_id)
+            $ her_SC.say("I shall drink this with the girls later.","body_06")
+            call happy(15)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("Butterbeer...?","body_06")
+            $ her_SC.say("Thank you, [genie_name].","body_01")
+            call give_gift(">You give the bottle to Hermione...",gift_id)
+            $ her_SC.say("I shall drink this later with the boys.","body_06")
+            $ her_SC.say("Err... I meant to say with the girls, of course.","body_189")
+            call happy(20)
+            $ her_SC.say("","body_01")
+    if gift_id == 4:#edu mags
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("\"Popular magic\" magazines?","body_01")
+            call give_gift(">You give an assortment of educational magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name]!","body_06")
+            $ her_SC.say("I will use them for my research!")
+            call happy(15)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Sometimes I find information in magazines that I could never find in a book...","body_01")
+            call give_gift(">You give an assortment of educational magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name]!","body_06")
+            $ her_SC.say("I will use them for my research!")
+            call happy(10)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Oh...","body_02")
+            $ her_SC.say("Yes, I used to read magazines like that a lot...","body_06")
+            $ her_SC.say("Lately not so much though...","body_10")
+            call give_gift(">You give an assortment of educational magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name]!","body_06")
+            call happy(3)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("Ehm...","body_10")
+            $ her_SC.say("To be honest, magazines like that lost their appeal to me completely lately...","body_08")
+            $ her_SC.say("But I don't mind taking them off you hands anyway, [genie_name].","body_11")
+            call give_gift(">You give an assortment of educational magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you.","body_13")
+            call no_change 
+    if gift_id == 5:#girl mags
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Hm?","body_15")
+            $ her_SC.say("This is the sort of press some \"slytherin\" bimbo would appreciate.","body_17")
+            $ her_SC.say("I am way above silly magazines like that, [genie_name].","body_16")
+            call no_change
+            $ her_SC.say("","body_01")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("I don't read magazines of that nature, [genie_name]...","body_04")
+            $ her_SC.say("................","body_13")
+            $ her_SC.say("But I could give it a try just to humour you I suppose...","body_04")
+            call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name]!","body_08")
+            call happy(5)
+            $ her_SC.say("","body_06")
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("I ashamed to admit this, but...","body_10")
+            $ her_SC.say("I really enjoy reading magazines like that lately...","body_24")
+            call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_08")
+            call happy(15)
+            $ her_SC.say("","body_06")
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("The Latest edition of \"Girlz\"?!","body_18")
+            $ her_SC.say("I can't have enough of that brilliant magazine!","body_24")
+            call give_gift(">You give an assortment of rather girly magazines to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_08")
+            call happy(15)
+            $ her_SC.say("","body_06")
+    if gift_id == 6:#adult mags
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Are that...?","body_02")
+            $ her_SC.say("Adult magazines, [genie_name]?","body_31")
+            $ her_SC.say("Given to me by An esteemed wizard of your status?","body_69")
+            $ her_SC.say("[genie_name], surely you could find a more productive way to spend your free time.","body_66")
+            $ her_SC.say("And I most definitely would not have use for those...","body_47")
+            call upset(7)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Adult magazines?","body_05")
+            $ her_SC.say("[genie_name], I have no interest in things like that.","body_69")
+            $ her_SC.say("And how is this an appropriate present for one of your students, [genie_name]?","body_47")
+            call upset(3)
+            $ her_SC.say("","body_29")
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Adult magazines?","body_31")
+            $ her_SC.say("[genie_name], this is such an inappropriate present for a girl my age...","body_34")
+            call give_gift(">You give an assortment of adult magazines to Hermione...",gift_id)
+            $ her_SC.say("I shall throw these away myself...","body_79")
+            call happy(8)
+            $ her_SC.say("","body_120")
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("The New edition of \"L.o.v.e.\"!!!","body_75")
+            $ her_SC.say("Err.. I mean, adult magazines?","body_122")
+            $ her_SC.say("This is a little inappropriate...")
+            $ her_SC.say("But I will take them...","body_74")
+            call give_gift(">You give an assortment of adult magazines to Hermione...",gift_id)
+            $ her_SC.say("thank you, [genie_name].","body_74")
+            call happy(15)
+    if gift_id == 7:#porn mags
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Hm... What is this?","body_01")
+            $ her_SC.say("[genie_name], those are porn magazines!","body_130")
+            $ her_SC.say("Shame on you, [genie_name]!","body_187")
+            call upset(15)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Porn magazines?","body_48")
+            $ her_SC.say("[genie_name], what do you expect me to do with those?","body_87")
+            $ her_SC.say("Research them?","body_79")
+            $ her_SC.say("Despicable!","body_86")
+            call upset(8)
+            $ her_SC.say("","body_120")
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("That's hardcore porn, [genie_name].","body_31")
+            $ her_SC.say("Which is a completely inappropriate gift for a girl my age!","body_34")
+            $ her_SC.say("..............","body_118")
+            $ her_SC.say("But I will take them...","body_117")
+            call give_gift(">You give an assortment of porn magazines to Hermione...",gift_id)
+            $ her_SC.say("And I shall throw them in the trash, where they and... girls who like these things belong...","body_79")
+            call no_change
+            $ her_SC.say("","body_120")
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("Pornography?","body_48")
+            $ her_SC.say("................","body_118")
+            $ her_SC.say("How can women even agree to do things like that, [genie_name]?","body_117")
+            $ her_SC.say(".................","body_118")
+            $ her_SC.say("Alright, I shall accept them...","body_120")
+            $ her_SC.say("Solely for research purposes of course...","body_189")
+            call give_gift(">You give an assortment of porn magazines to Hermione...",gift_id)
+            call happy(15)
+            $ her_SC.say("","body_45")
+    if gift_id == 8:#krum poster
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A Quidditch poster?","body_73")
+            $ her_SC.say("What am I supposed to do with it, [genie_name]?","body_185")
+            $ her_SC.say("No, thank you.","body_184")
+            call no_change
+            $ her_SC.say("","body_71")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("A Quidditch poster?","body_73")
+            $ her_SC.say("Hm...","body_185")
+            $ her_SC.say("I think I saw this player once or twice...","body_71")
+            $ her_SC.say("He is that Durmstrang student, right?","body_06")
+            call give_gift(">You give the poster to Hermione...",gift_id)
+            call happy(5)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A Viktor Krum poster, [genie_name]?","body_73")
+            $ her_SC.say("Can't say that I care much for Quidditch, but...","body_08")
+            $ her_SC.say("I can see why the girls find the brutish physique of some players appealing...","body_87")
+            call give_gift(">You give the poster to Hermione...",gift_id)
+            call happy(15)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("A Viktor Krum poster?!","body_72")
+            $ her_SC.say("Thank you, [genie_name]!","body_24")
+            call give_gift(">You give the poster to Hermione...",gift_id)
+            $ her_SC.say("Can't wait to hang it over my bed!","body_46")
+            $ her_SC.say("The girls will go green with envy...","body_64")
+            call happy(25)
+    if gift_id == 9:#lingerie
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("lingerie?","body_118")
+            $ her_SC.say("[genie_name], I cannot accept a gift like this from you...","body_120")
+            call upset(10)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("sexy lingerie?","body_118")
+            $ her_SC.say("You know I cannot possibly accept a gift like that from you, [genie_name].","body_117")
+            $ her_SC.say("(It's pretty though).........","body_118")
+            call no_change
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("sexy lingerie?","body_124")
+            $ her_SC.say("[genie_name] that is so inappropriate...","body_122")
+            call give_gift(">You give the lingerie to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_188")
+            call happy(7)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("sexy lingerie?","body_124")
+            $ her_SC.say("Do You think it will make me look like one of the witches in those adult magazines, [genie_name]?","body_123")
+            $ her_SC.say("Oh... I mean, thank you, [genie_name].","body_122")
+            call give_gift(">You give the lingerie to Hermione...",gift_id)
+            call happy(15)
+    if gift_id == 10:#condoms
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Condoms?!","body_18")
+            $ her_SC.say("[genie_name], I wouldn't even know what to do with them...","body_30")
+            call upset(6)
+            $ her_SC.say("","body_03")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("...Condoms?","body_07")
+            $ her_SC.say("Ehm... Is this a part of some new Hogwarts sex ed program or something?","body_04")
+            $ her_SC.say("No, [genie_name]... It feels wrong to accept a thing like this from you...","body_189")
+            call no_change
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A pack of condoms?","body_03")
+            $ her_SC.say("[genie_name], what possible use could I have for those?")
+            $ her_SC.say("Well, I shall accept them simply because it is rude to refuse a gift...","body_04")
+            call give_gift(">You give a pack of condoms to Hermione...", gift_id)
+            call happy(3)
+            $ her_SC.say("","body_29")
+        if whoring >= 18: # Lv 7+
+            $ her_SC.say("A pack of condoms?","body_08")
+            $ her_SC.say("I appreciate your concern, [genie_name]. Thank you.","body_128")
+            call give_gift(">You give a pack of condoms to Hermione...", gift_id)
+            call happy(4)
+            $ her_SC.say("","body_45")
+    if gift_id == 11:#vibrator
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A magic wand?","body_01")
+            $ her_SC.say("No, it doesn't look like--","body_15")
+            $ her_SC.say(".........?")
+            $ her_SC.say("!!!","body_18")
+            $ her_SC.say("[genie_name]!","body_187")
+            $ her_SC.say("This is just beyond inappropriate!","body_30")
+            call upset(10)
+            $ her_SC.say("","body_120")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Is this what I think it is?","body_118")
+            $ her_SC.say("[genie_name], let me remind you that I belong to the noble house of \"Gryffindor\".","body_186")
+            $ her_SC.say("A present like that would be appropriate for a girl from \"Slytherin\", [genie_name].","body_120")
+            call upset(10)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Is that a... vibrator?","body_118")
+            $ her_SC.say("The design...")
+            $ her_SC.say("it reminds me of my wand...")
+            $ her_SC.say("Did you have this custom made for me [genie_name]?","body_118")
+            $ her_SC.say("This is inappropriate...","body_30")
+            $ her_SC.say("But I shall take it nonetheless...","body_29")
+            call give_gift(">You give the vibrator to Hermione...",gift_id)
+            call no_change
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("This vibrator...","body_11")
+            $ her_SC.say("It's... calling out for me...","body_10")
+            $ her_SC.say("But not in a dirty way, [genie_name].","body_66")
+            call give_gift(">You give the vibrator to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_124")
+            call happy(10)
+    if gift_id == 12:#anal lube
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("I don't know what this is...","body_02")
+            $ her_SC.say("But I have the feeling that the jar is full of something vile and inappropriate...","body_05")
+            $ her_SC.say("No, thank you, [genie_name].")
+            call upset(6)
+            $ her_SC.say("","body_03")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("Hm...","body_73")
+            $ her_SC.say("I think I know what this is...","body_66")
+            $ her_SC.say("But why would you give something like this to one of your pupils, [genie_name]?")
+            $ her_SC.say("No, thank you.","body_69")
+            call upset(2)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Anal lubricant?","body_118")
+            $ her_SC.say("Ehm.. well... I know this girl...","body_189")
+            $ her_SC.say("I mean I don't know her, she is a friend of a friend...")
+            $ her_SC.say("Yes, I will take this for her...")
+            call give_gift(">You give the jar to Hermione...", gift_id, 0)
+            $ her_SC.say("Still, I think you should not give presents like this to your pupils, [genie_name].","body_186")
+            call no_change
+            $ her_SC.say("","body_79")
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("Anal lubricant, [genie_name]?","body_124")
+            $ her_SC.say("I know a couple of girls who would do anything for a commodity like that.","body_186")
+            $ her_SC.say("Thank for looking out for us, [genie_name].","body_128")
+            call give_gift(">You give the jar to Hermione...", gift_id)
+            call happy(5)
+    if gift_id == 13:#gag and cuffs
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("What is this?","body_118")
+            $ her_SC.say("Is this like one of those adult toys?","body_141")
+            $ her_SC.say("What woman in her right mind would subject herself to a humiliation like that?","body_30")
+            $ her_SC.say("And what possible use could I have for such objects?","body_186")
+            $ her_SC.say("This is just insulting, [genie_name]...","body_187")                                                                                                                                                                                                              
+            call upset(10)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("[genie_name], do you not realize how inappropriate it would be for me to accept a present like that?","body_186")
+            $ her_SC.say("And I would not even know what to do with them anyway...","body_189")
+            $ her_SC.say("I mean these fluffy things are obviously handcuffs...","body_118")
+            $ her_SC.say("But this ball... ehm...")
+            $ her_SC.say("[genie_name], please...","body_120")
+            $ her_SC.say("Just put them away.")
+            call upset(5)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A month ago I would've felt insulted to receive a gift like this...","body_120")
+            $ her_SC.say("But by now I know that some girls really do find pleasure in toys like...","body_118")
+            $ her_SC.say("But I assure you that I am not one of them, [genie_name].","body_120")
+            $ her_SC.say("But I know a girl who knows a girl who is into things like...","body_189")
+            $ her_SC.say("Yes, I shall take these to her...","body_188")
+            call give_gift(">You give the ball gag and cuffs to Hermione...",gift_id)
+            call happy(9)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("A ball gag and handcuffs?","body_190")
+            $ her_SC.say("This is completely inappropriate, [genie_name].","body_122") # :)
+            $ her_SC.say("But a gift is a gift, right?","body_129")
+            call give_gift(">You give the ball gag and cuffs to Hermione...",gift_id)
+            call happy(15)
+    if gift_id == 14:#anal plugs
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Hm...?","body_01")
+            $ her_SC.say("Are those like key-chain toys?","body_15")
+            call give_gift(">You give the anal plugs to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_185")
+            call happy(8)
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("[genie_name], are those adult toys of some sort?","body_186")
+            $ her_SC.say("those are some of those anal things, aren't they?","body_187")
+            $ her_SC.say("[genie_name] this is nothing but a weapon meant to oppress women!")
+            $ her_SC.say("Despicable!","body_120")
+            call upset(15)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("Yes, I know that some girls have uhm...","body_120")
+            $ her_SC.say("Have use for things such as these...","body_186")
+            $ her_SC.say("But not me, [genie_name].")
+            $ her_SC.say("No, thank you.","body_120")
+            call no_change
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("Anal plugs?","body_118")
+            $ her_SC.say("I have no use for things like that, [genie_name]...","body_117")
+            $ her_SC.say("They are so pretty though...","body_122")
+            $ her_SC.say(".....................","body_118")
+            $ her_SC.say("Well, alright. I shall take them off your hands if I must, [genie_name].","body_121")
+            call give_gift(">You give the anal plugs to Hermione...",gift_id)
+            $ her_SC.say("But I shall never use them of course...","body_127")
+            $ her_SC.say("................","body_124")
+            call happy(10)
+    if gift_id == 15:#strap on
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("What is that?","body_18")
+            $ her_SC.say("An artifact of some sort or a trophy?","body_14")
+            $ her_SC.say("So well-crafted...","body_01")
+            $ her_SC.say("Are you sure that it's alright for me to have it, [genie_name]?","body_06")
+            call give_gift(">You give the strap-on to Hermione...",gift_id)
+            $ her_SC.say("Thank you very much, [genie_name]. I promise to take good care of it.","body_16")
+            call happy(20)
+            $ her_SC.say("","body_15")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("!!!","body_18")
+            $ her_SC.say("That is...","body_118")
+            $ her_SC.say("But it doesn't even look... human...")
+            $ her_SC.say("I mean...","body_69")
+            $ her_SC.say("[genie_name], do you have no shame?!","body_86")
+            $ her_SC.say("Presenting a thing like that to a pupil?!")
+            $ her_SC.say("..................","body_87")
+            $ her_SC.say("Please put it away, [genie_name].","body_47")
+            call upset(15)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("That thing...","body_118")
+            $ her_SC.say("Is that the actual size of the... of the real \"thing\"?","body_117")
+            $ her_SC.say("I mean...","body_189")
+            $ her_SC.say(".......................","body_118")
+            $ her_SC.say("Is this like a party prank prop?","body_117")
+            $ her_SC.say("It's so well-crafted though...","body_118")
+            $ her_SC.say("I will take it...","body_33")
+            call give_gift(">You give the strap-on to Hermione...",gift_id)
+            call happy(10)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("It's... It's magnificent, [genie_name]...","body_48")
+            $ her_SC.say("Is it really modeled after a thestral?","body_189")
+            $ her_SC.say("But the creatures are invisible...","body_190")
+            $ her_SC.say("..................","body_118")
+            $ her_SC.say("Breathtaking...","body_123")
+            $ her_SC.say("Not in the way you think, [genie_name]...","body_120")
+            $ her_SC.say("I am merely admiring the craftsmanship...","body_127")
+            call give_gift(">You give the strap-on to Hermione...",gift_id)
+            $ her_SC.say("Thank you for the gift, [genie_name].","body_129")
+            call happy(30)
+    if gift_id == 16:#speed stick
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("A broom...?","body_01")
+            $ her_SC.say("Hm...","body_03")
+            $ her_SC.say("What is that silly-looking thing attached to it?","body_07")
+            $ her_SC.say("Is it like a saddle...?","body_08")
+            call give_gift(">You give the broom to Hermione...",gift_id)
+            $ her_SC.say("Thank you for the gift, [genie_name].","body_11")
+            call happy(20)
+            $ her_SC.say("","body_06")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("A broom...?","body_01")
+            $ her_SC.say("Hm...","body_07")
+            $ her_SC.say("It's a sex-toy of some sort, isn't it?","body_05")
+            $ her_SC.say("But it is so well crafted...","body_87")
+            call give_gift(">You give the broom to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_120")
+            call happy(20)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A broom...?","body_118")
+            $ her_SC.say("Hm...")
+            $ her_SC.say("What kind of saddle is that...?","body_66")
+            $ her_SC.say("Well, doesn't matter.","body_127")
+            $ her_SC.say("Refusing an expensive gift like that would be rude...")
+            call give_gift(">You give the broom to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_120")
+            call happy(30)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("A broom...","body_124")
+            $ her_SC.say("Hm...")
+            $ her_SC.say("That saddle, [genie_name]...","body_189")
+            $ her_SC.say("It was designed especially for witches, was it not?","body_190")
+            $ her_SC.say("I am not sure whether this is inappropriate or clever...","body_185")
+            $ her_SC.say("But this is a brilliant piece of engineering eitherway...","body_129")
+            call give_gift(">You give the broom to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_128")
+            call happy(30)
+    if gift_id == 17:#sex doll
+        if whoring >= 0 and whoring <= 5: # Lv 1-2.
+            $ her_SC.say("Is this...","body_48")
+            $ her_SC.say("A sex doll?!","body_34")
+            $ her_SC.say("[genie_name]!!!","body_32")
+            call upset(20)
+            $ her_SC.say("","body_33")
+        if whoring >= 6 and whoring <= 11: # Lv 3-4.
+            $ her_SC.say("A sex doll?","body_48")
+            $ her_SC.say("This is just so unbecoming for an esteemed wizard such as yourself, [genie_name]...","body_120")
+            call upset(20)
+        if whoring >= 12 and whoring <= 17: # Lv 5-6.
+            $ her_SC.say("A sex doll...","body_118")
+            $ her_SC.say("This is a little inappropriate...","body_120")
+            $ her_SC.say("But maybe we could use it for a prank or something...","body_124")
+            call give_gift(">You give the blow-up doll to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_124")
+            call happy(10)
+        if whoring >= 18: # Lv 7+  
+            $ her_SC.say("the Joanne sex doll?","body_73")
+            $ her_SC.say("I Can't say that I approve of this...","body_189")
+            $ her_SC.say("But I know Harry would love to have a go at it...","body_124")
+            call give_gift(">You give the blow-up doll to Hermione...",gift_id)
+            $ her_SC.say("Thank you, [genie_name].","body_188")
+            call happy(30)
+    
+    $ her_SC.xpos = prev_xpos
+    $ her_SC.showScreen()
+    with d3
+    return
+    
+    
+    
+label give_her_gift_old(gift_id):
     hide screen hermione_main
     with d5
     $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
@@ -837,6 +1374,7 @@ label give_her_gift(gift_id):
     return
     
 label give_gift(text = "", gift = 0):
+    $ her_SC.hideScreen()
     hide screen hermione_main
     with d3
     # note that gift is the index (starting with 0), while the image
