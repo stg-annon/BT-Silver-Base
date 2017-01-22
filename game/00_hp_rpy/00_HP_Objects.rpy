@@ -60,7 +60,10 @@ init python:
             else: #left to right
                 chibiWalk(self.walk_img_f, x, x2, speed, y)
             self.xpos = x2
-        
+    
+    class silver_character_action(object):
+        name = ""
+    
     
     class silver_character_face(object):
         description = ""
