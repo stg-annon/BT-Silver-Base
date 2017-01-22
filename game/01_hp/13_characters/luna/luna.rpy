@@ -51,12 +51,12 @@ label luna_init:
 return
 
 label luna_day_flags:
-    $ luna_cheeks = "01_hp/13_characters/luna/base/cheeks_01.png"
+    $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png"
     $ luna_busy = False
 return
 
 label luna_night_flags:
-    $ luna_cheeks = "01_hp/13_characters/luna/base/cheeks_01.png"
+    $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
     $ luna_busy = False
 return
 
