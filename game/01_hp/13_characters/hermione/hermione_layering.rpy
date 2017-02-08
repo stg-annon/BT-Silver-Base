@@ -179,17 +179,18 @@ screen hermione_tattoo_layer:
     
 screen hermione_uniform:
     tag hermione_main
-    ### SKIRT
+    ### PANTIES
     if hermione_wear_panties or h_request_wear_panties:
         add hermione_panties xpos hermione_xpos_offset ypos hermione_ypos # Add the panties
         add hermione_panties_overlay xpos hermione_xpos_offset ypos hermione_ypos
-    if hermione_wear_skirt:
-        add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos # Add the skirt
     ### TOP
     if hermione_wear_top:
         add hermione_top xpos hermione_xpos_offset ypos hermione_ypos # Add the top
     elif hermione_wear_bra:
         add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos # Add the bra
+    ### SKIRT
+    if hermione_wear_skirt:
+        add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos # Add the skirt
     ### COLLAR 
     if collar == 1:
         add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar

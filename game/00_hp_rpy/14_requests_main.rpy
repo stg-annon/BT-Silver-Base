@@ -217,14 +217,22 @@ label __init_variables:
     $ hg_ps_LeashWalk_OBJ.menu_text = "Time for a walk (leash)"
     $ hg_ps_LeashWalk_OBJ.start_label = "hg_ps_LeashWalk"
     $ hg_ps_LeashWalk_OBJ.complete_label = "hg_ps_LeashWalk_complete"
+
+    if not hasattr(renpy.store,'hg_ps_Buttplug_OBJ'): #important!
+        $ hg_ps_Buttplug_OBJ = public_shaming()
+    $ hg_ps_Buttplug_OBJ.menu_text = "Wear A Buttplug"
+    $ hg_ps_Buttplug_OBJ.start_label = "hg_ps_Buttplug"
+    $ hg_ps_Buttplug_OBJ.complete_label = "hg_ps_Buttplug_complete"
     
     
     $ hg_ps_list = []
     $ hg_ps_list.append(hg_ps_PantyThief_OBJ)
     #$ hg_ps_list.append(hg_ps_WalkOfShame_OBJ)
+    $ hg_ps_list.append(hg_ps_Buttplug_OBJ)
     $ hg_ps_list.append(hg_ps_WearMyCum_OBJ)
     #$ hg_ps_list.append(hg_ps_HiddenBlowjob_OBJ)
     #$ hg_ps_list.append(hg_ps_LeashWalk_OBJ)
+
     return
     
     
