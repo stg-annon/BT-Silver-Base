@@ -1672,7 +1672,7 @@ label hg_ps_Buttplug_complete:
             call her_main("plus the look on their faces when they noticed it...","body_123")
             call her_main("they could barely hide their...","body_121")
             m "So you like being seen then?"
-            call her_main("...well as long as I'm earning points while it happens...","body_118")
+            call her_main("well...","body_107")
             m "Well done, [hermione_name]."
             call her_main("","body_124")
     
