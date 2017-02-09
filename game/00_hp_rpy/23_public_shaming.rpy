@@ -1344,11 +1344,11 @@ label hg_ps_Buttplug:
         if whoring <=10:
             m "[hermione_name], I want you to do something different today..."
             call her_main("...?","body_07",xpos=140)
-            m "I want you to give wear a buttplug around the school."
+            m "I want you to wear a buttplug around the school."
             jump too_much
         m "[hermione_name], I want you to do something different today..."
         call her_main("...........","body_15",xpos=370)
-        ">You pull a large size buttplug out from under your desk and place it on in front of her."
+        ">You pull a large size buttplug out from under your desk and place it in front of her."
         call her_main("and what is that supposed to be? Some sort of animals tail?","body_08")
         m "Not exactly, it's a buttplug. I want you to put it in while you attend class today."
         stop music
@@ -1365,7 +1365,7 @@ label hg_ps_Buttplug:
         call her_main("I most certainly will not, [genie_name]! That thing is beyond absurd!","body_30")
         m "Alright, fine, maybe I underestimated how large it is..."
         call her_main("You think [genie_name]?! I'd like to see you try and fit it up your-","body_47")
-        m "alright alright..."
+        m "alright, alright..."
         call her_main(".........","body_79")
         m "How about we try one a little less... ambitious."
         call her_main("............","body_120")
@@ -1447,7 +1447,7 @@ label hg_ps_Buttplug_complete:
             call her_main("I've never been so uncomfortable in my life [genie_name]!","body_66")
             call her_main("I wasn't able to focus on anything all day!","body_81")
             m "Why's that?"
-            call her_main("Whenever I was sitting down in class it just keep prodding me...","body_69")
+            call her_main("Whenever I was sitting down in class it just kept prodding me...","body_69")
             her "So naturally I had to adjust the way I was sitting, [genie_name]..."
             call her_main("but that just made it worse...","body_69")
             m "Do you think anyone else noticed you?"
@@ -1473,9 +1473,9 @@ label hg_ps_Buttplug_complete:
             m "What happened?"
             call her_main("I was walking down the hall, on my way to potions class...","body_127")
             call her_main("And suddenly a gust of wind came and blew my skirt up...","body_44")
-            m "A gust of wind inside?"
+            m "A gust of wind? inside?"
             call her_main("It must have been from a window...","body_13")
-            call her_main("Anyway the three girls walking beind me may have... seen it.","body_87")
+            call her_main("Anyway the three girls walking behind me may have... seen it.","body_87")
             m "Did they say anything to you?"
             call her_main("No... But I did hear them giggling afterwards...","body_88")
             m "Well, it sounds like a job well done..."
@@ -1638,13 +1638,13 @@ label hg_ps_Buttplug_complete:
             call her_main("I even made him promise not to show anyone the photo...","body_87")
             her "But in exchange I did have to let him take a few more..."
             her "but he insisted that he wouldn't show anyone else..."
-            m "Any you believe him?"
+            m "And you believe him?"
             call her_main("Of course [genie_name], he's a Gryffindor.","body_83")
             call her_main("Although the thought did cross my mind.","body_87")
             call her_main("What if he were to distribute the photos around the school.","body_88")
-            call her_main("Imagine every looking at photos of me...","body_107")
+            call her_main("Imagine everyone looking at photos of me...","body_107")
             her "Everyone would know what I was wearing..."
-            call her_main("Any time someone saw me they'd think about what whether or not it was in...","body_124")
+            call her_main("Any time someone saw me they'd think about whether or not it was in...","body_124")
             m "That's quite the thought process."
             call her_main("Yes, well I certainly don't want that happening...","body_129")
             m "I'm sure..."
@@ -1672,7 +1672,7 @@ label hg_ps_Buttplug_complete:
             call her_main("plus the look on their faces when they noticed it...","body_123")
             call her_main("they could barely hide their...","body_121")
             m "So you like being seen then?"
-            call her_main("...yes.","body_118")
+            call her_main("...well as long as I'm earning points while it happens...","body_118")
             m "Well done, [hermione_name]."
             call her_main("","body_124")
     
