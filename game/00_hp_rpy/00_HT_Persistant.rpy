@@ -220,6 +220,10 @@ label __init_variables:
         $ hermione_hat = "01_hp/13_characters/hermione/accessories/head/tiara.png"
     if not hasattr(renpy.store,'hermione_freckles'): #important!
         $ hermione_freckles = False
+
+    ###Tutoring fix
+    if not hasattr(renpy.store,'table_position_x'): #important!
+        $ table_position_x = 20
     
     
     

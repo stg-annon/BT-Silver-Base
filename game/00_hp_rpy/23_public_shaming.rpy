@@ -1623,7 +1623,7 @@ label hg_ps_Buttplug_complete:
             m "...?"
             call her_main("Well, I might have gotten a bit more attention than I had hoped for...","body_85")
             call her_main("...............","body_88")
-            m "tell me what happened, [hermione_name]."
+            m "Tell me what happened, [hermione_name]."
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
             call her_main("I might have had a few photos taken...","body_87")
             m "Photos..."
@@ -1636,7 +1636,7 @@ label hg_ps_Buttplug_complete:
             m "You let your photo be taken?!"
             call her_main("I didn't let anything of the sort happen! It was without my consent!","body_86")
             call her_main("I even made him promise not to show anyone the photo...","body_87")
-            her "But in exchange I did have to let him take a few more..."
+            her "...in exchange I did have to let him take a few more..."
             her "but he insisted that he wouldn't show anyone else..."
             m "And you believe him?"
             call her_main("Of course [genie_name], he's a Gryffindor.","body_83")

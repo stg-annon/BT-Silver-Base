@@ -1624,14 +1624,14 @@ label l_tutoring:
         pause 2
         play sound sd_door
         pause.3
-        ##call her_pose("naked")
-        ##call her_pose("robe")
-        ##$ v_her_robe = "robe1"
-        $ robe = 1
-        $ badges = False
-        $ wear_shirts = False
-        $ panties = False
-        $ custom_outfit_old = 20
+        ###MAKE HER WEAR JUST A ROBE
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_shirt_none.png"
+        $ hermione_wear_robe = True
+        $ hermione_wear_top = False
+        $ hermione_wear_bra = False
+        $ hermione_wear_skirt = False
+        $ hermione_wear_panties = False
+        call update_her_uniform
         hide screen blkfade
         $ walk_xpos = 600
         $ walk_xpos2 = 400
@@ -1649,8 +1649,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
         ">Hermione opens up her cloak a little."
-        ##$ v_her_robe = "robe1_gap"
-        $ robe = 2
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_gap.png"
         $ h_body = "01_hp/13_hermione_main/body_205.png"
         show screen hermione_main
         pause
@@ -1659,8 +1658,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
         ">Hermione rolls her eyes and pulls the gap wider"
-        ##$ v_her_robe = "robe1_gap_wide"
-        $ robe = 3
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_gap_wide.png"
         $ h_body = "01_hp/13_hermione_main/body_208b.png"
         show screen hermione_main
         pause
@@ -1702,15 +1700,16 @@ label l_tutoring:
         pause 1
         show screen blkfade
         with d5
+        hide screen hermione_walk_01
         ">Hermione slowly slides down her robe."
-        hide screen hermione_blink
-        $ hermione_SC.chibi.xpos = 300
+        show screen hermione_blink
+        $ hermione_SC.chibi.xpos = 400
         show screen ctc
         with d1
         hide screen blkfade
         with d5
-        ##$ v_her_robe = "robe1_off"
-        $ robe = 4
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_off.png"
+        call update_her_uniform
         $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         pause
@@ -1741,13 +1740,14 @@ label l_tutoring:
         hide screen her_naked
         hide screen hermione_main
         hide screen genie
+        hide screen hermione_blink
         show screen no_groping_laying_02
         show screen ctc
         with d1
         hide screen blkfade
         with d5
-        ##$ v_her_robe = 0
-        $ robe = 0 
+        $ hermione_wear_robe = False
+        call update_her_uniform
         $ h_body = "01_hp/13_hermione_main/body_182.png"
         show screen hermione_main
         pause
@@ -1801,8 +1801,8 @@ label l_tutoring:
         g9 "Glad to hear it."
         show screen blkfade
         ">After a while, she makes herself somewhat presentable."
-        ##call her_pose()
-        $ robe = 1
+        $ hermione_wear_robe = True
+        $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/gryff_robe_shirt_none.png"
         hide screen no_groping_laying_02
         show screen genie
         show screen hermione_blink
@@ -1831,6 +1831,11 @@ label l_tutoring:
         with d3
         
         $ v_tutoring = 13
+        $ hermione_wear_robe = False
+        $ hermione_wear_top = True
+        $ hermione_wear_bra = True
+        $ hermione_wear_skirt = True
+        $ hermione_wear_panties = True
         jump l_tutoring_end
 
     elif v_tutoring == 13:
