@@ -1567,6 +1567,9 @@ label hg_ps_Buttplug:
     $ hg_ps_Buttplug_OBJ.inProgress = True
     
     call hg_pr_transition_block
+    if buttplug_size == 2:
+        $ hermione_buttplugs = True
+        $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_b_on.png"
     jump day_main_menu
     
 label hg_ps_Buttplug_complete:
