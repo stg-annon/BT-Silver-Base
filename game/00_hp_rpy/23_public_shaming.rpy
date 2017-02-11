@@ -1524,29 +1524,55 @@ label hg_ps_Buttplug:
             m "Fantastic! See you after class."
         
         elif whoring <= 23 and buttplug_size == 2: # LEVEL 07
-            ">You pull out the buttplug."
-            m "Ready to try out the phoenix again?"
-            call her_main("Oh, I suppose so...","body_72",xpos=370)
-            call her_main("But is it alright if I ask you something first?","body_30")
-            m "What's that [hermione_name]"
-            call her_main("Don't you worry about us getting caught?","body_80")
-            m "Why would I?"
-            call her_main("Well it's just that making me wear something like this is drawing a lot of attention...","body_84")
-            call her_main("and what if someone realises that it's you who's making me do all this...","body_107")
-            m "and who is going to suspect the great albis dumbledorf?"
-            call her_main("...I suppose no one...","body_72")
-            m "Then don't worry about it. If anyone asks just tell them you're going through an exhibitionist stage."
-            m "Speaking of which..."
-            ">You hand her the buttplug."
-            call her_main("Oh... right...","body_46")
-            ">Hermione lifts her skirt and pushes it in gently, taking her time."
-            $ hermione_buttplugs = True
-            $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_b_on.png"
-            call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","body_106")
-            call her_main("i better... head to class... now...","body_105")
-            m "See you tonight [hermione_name]."
-            call her_main("{size=-5}({image=textheart}it's... so... big...{image=textheart}){/size}","body_106")
-        
+            if buttplug_2_question == False:
+                $ buttplug_2_question = True
+                ">You pull out the buttplug."
+                m "Ready to try out the phoenix again?"
+                call her_main("Oh, I suppose so...","body_72",xpos=370)
+                call her_main("But is it alright if I ask you something first?","body_30")
+                m "What's that [hermione_name]"
+                call her_main("Don't you worry about us getting caught?","body_80")
+                m "Why would I?"
+                call her_main("Well it's just that making me wear something like this is drawing a lot of attention...","body_84")
+                call her_main("and what if someone realises that it's you who's making me do all this...","body_107")
+                m "and who is going to suspect the great albis dumbledorf?"
+                call her_main("...I suppose no one...","body_72")
+                m "Then don't worry about it. If anyone asks just tell them you're going through an exhibitionist stage."
+                m "Speaking of which..."
+                ">You hand her the buttplug."
+                call her_main("Oh... right...","body_46")
+                ">Hermione lifts her skirt and pushes it in gently, taking her time."
+                $ hermione_buttplugs = True
+                $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_b_on.png"
+                call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","body_106")
+                call her_main("i better... head to class... now...","body_105")
+                m "See you tonight [hermione_name]."
+                call her_main("{size=-5}({image=textheart}it's... so... big...{image=textheart}){/size}","body_106")
+            else:
+                ">You pull out the buttplug."
+                m "Ready for the phoenix again?"
+                call her_main("Oh, alright then...","body_72",xpos=370)
+                call her_main("but if you pay me and additional 5 points I'll turn around as I put it in...","body_30")
+                menu:
+                    "\"Done\"":
+                        $ current_payout += 5
+                        call her_main("thank you [genie_name], you won't regret it...","body_30")
+                    "\"Fifty five is all I can do.\"":
+                        m "Any more and people might get suspicious."
+                        call her_main("hmmmm I suppose you're right...","body_30")
+                        call her_main("Well i'm going to show you anyway...","body_30")
+                        call her_main("but you better appreciate it...","body_30")
+                        m "I'm sure I will."
+                ">You hand her the buttplug."
+                call her_main("well... here goes...","body_46")
+                ">Hermione turns around, lifts her skirt and pushes it in gently, taking her time."
+                $ hermione_buttplugs = True
+                $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_b_on.png"
+                call her_main("{image=textheart}{image=textheart}{image=textheart}ah{image=textheart}{image=textheart}{image=textheart}...","body_106")
+                call her_main("i better... head to class... now...","body_105")
+                m "See you tonight [hermione_name]."
+                call her_main("{size=-5}({image=textheart}it's... so... good...{image=textheart}){/size}","body_106")
+            
         elif whoring >= 24 and buttplug_size == 2: # LEVEL 08+
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "[hermione_name]..."
@@ -1933,7 +1959,7 @@ label hg_ps_Buttplug_complete:
             call her_main("And she just played with it so aggressively...","body_128")
             her "I was a mess afterwards..."
             g9 "And did you return the favour?"
-            if touched_by_boy = True:
+            if touched_by_boy == True:
                 call her_main("Err... maybe...","body_190")
                 m "What did you do?"
                 call her_main("well I don't want to say too much [genie_name].","body_188") # :)

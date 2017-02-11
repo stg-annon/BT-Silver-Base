@@ -230,6 +230,8 @@ label __init_variables:
         $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_a_on.png"
     if not hasattr(renpy.store,'buttplug_magic_known'): #important!
         $ buttplug_magic_known = False
+    if not hasattr(renpy.store,'buttplug_2_question'): #important!
+        $ buttplug_2_question = False
 
     ###Tutoring fix
     if not hasattr(renpy.store,'table_position_x'): #important!
