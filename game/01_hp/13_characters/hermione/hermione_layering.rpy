@@ -2,6 +2,9 @@ screen hermione_main:
     tag hermione_main
     
     $ hermione_xpos_offset = hermione_xpos+140
+
+    if hermione_buttplugs:
+        add hermione_buttplug xpos hermione_xpos_offset ypos hermione_ypos # add glasses
     
     add hermione_base xpos hermione_xpos_offset ypos hermione_ypos #Add the base body
     add hermione_legs xpos hermione_xpos_offset ypos hermione_ypos
