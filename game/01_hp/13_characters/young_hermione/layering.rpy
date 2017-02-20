@@ -4,9 +4,9 @@ screen hermini_main:
     
     $ hermini_xpos = 500
     $ hermini_ypos = 0
-    $ hermini_xpos_diff = 5
-    $ hermini_ypos_diff = 66
-    $ hermini_zoom_diff = 0.97
+    $ hermini_xpos_diff = 27
+    $ hermini_ypos_diff = 82
+    $ hermini_zoom_diff = 0.9
 
     add "01_hp/13_characters/young_hermione/body/head_1.png" xpos hermini_xpos+hermini_xpos_diff ypos hermini_ypos+hermini_ypos_diff zoom hermini_zoom_diff#Add the hair base    
     add "01_hp/13_characters/young_hermione/body/base.png" xpos hermini_xpos ypos hermini_ypos #Add the base body

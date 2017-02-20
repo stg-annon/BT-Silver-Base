@@ -20,10 +20,10 @@ label phoenix_menu:
         "-Feed the bird-" if not phoenix_is_feed and bird_examined:
             $ phoenix_is_feed = True
             jump feeding
-        "-Pet the bird-" if bird_examined:
-            jump petting
-        "-Talk to the bird-" if bird_examined and fawkes_intro_done: #FIXED CODE DUPLICATION HERE
-            jump talkingfawkes
+        #"-Pet the bird-" if bird_examined:
+        #    jump petting
+        #"-Talk to the bird-" if bird_examined and fawkes_intro_done: #FIXED CODE DUPLICATION HERE
+        #    jump talkingfawkes
         "-Never mind-":
             call screen main_menu_01
         

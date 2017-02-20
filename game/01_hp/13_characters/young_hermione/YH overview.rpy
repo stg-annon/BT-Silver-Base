@@ -184,6 +184,6 @@
 #			Say yes - let her in
 #		Hermione reacts based off of her whoring level
 #			Low - Shocked and outraged. Extremely mad, threatens genie
-#			Medium - Shocked, but not surptised/mad. Leaves soon after. slightly curious
+#			Medium - Shocked, but not surprised/mad. Leaves soon after. slightly curious
 #			High - Not shocked. Waits until the end before leaving. Mocks/shames young-hermione
-#			Max - Shames young hermione, calling her a slut, etc.
+#			Max - Shames young hermione, calling her a slut, etc. Visibly aroused, slightly jealous
