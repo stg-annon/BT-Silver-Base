@@ -66,7 +66,7 @@ label cheats_ht:
                 "-back-":
                     jump cheats_ht
         "-Add all potions-":
-            $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion"] #all potions
+            $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
             jump cheats_ht
         "-Gold (+50,000g)-":
             $ gold += 50000
