@@ -26,28 +26,3 @@ You have two options for installing silver:
 	
 ## Bugs:
 please submit any bugs as an issue for this project [here] (https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
-	
-### Potion Combinations:
-| Potion              | Ingredients                            | Location      |
-| ------------------- | -------------------------------------- | ------------- |
-| Cat Potion          | Polyjuice + Cat hair                   | (Dormitories) |
-| Luna Potion         | Polyjuice + Blonde hair                | (Dormitories) |
-| Ass Expansion       | Expanding Elixir + Knotgrass           | (Forest)      |
-| Breast Expansion    | Expanding Elixir + Root of Aconite     | (Lake)        |
-| Cum Addiction       | Moreish mead + Wormwood                | (Forest)      |
-| Transparency Potion | Transparent tincture + Niffler's Fancy | (Lake)        |
-| Bimbo Potion        | Imperius Potation + Root of Aconite    | (Lake)        |
-
-### Private Favour Costumes:
-- Talk to me: Harley Quinn
-- Nice Panties: School Uniform
-- Panty Thief: School Uniform
-- Breast Molester: Ms Marvel
-- Butt Molester: Maid
-- Show them to me: Power Girl
-- Dance for me: Heart Dancer
-- Let me touch them: Christmas
-- Touch me: Gryffindor Cheerleader 
-- Suck it: Slytherin Cheerleader
-- Sex: Lara Croft
-- Anal: Ball Dress
