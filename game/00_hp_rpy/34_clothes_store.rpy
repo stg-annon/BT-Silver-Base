@@ -89,7 +89,7 @@ label custom_orders:
             call cust_excuse("You already own this outfit.")
             jump custom_orders
         else:
-            if clothes_store_order_choice == hg_gryffCheer_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_gryffCheer_OBJ"):
                 m "I'd like to order a cheerleader outfit."
                 maf "A cheerleader outfit? Those horribly crass things popular in America?"
                 maf "Why on earth would you want to buy that?"
@@ -103,7 +103,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_slythCheer_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_slythCheer_OBJ"):
                 m "I'd like to order another cheerleader outfit."
                 maf "Another cheerleader outfit? I thought you said that it was only a one person trial?"
                 m "It was at first but due to the success of the Gryffindor cheerleader Slytherin demanded one aswell."
@@ -115,7 +115,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_maid_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_maid_OBJ"):
                 m "I'd like to order a maid outfit."
                 maf "A maid costume, what on earth for? Surely the cleaning elves keep your office tidy."
                 m "It's going to be a present."
@@ -130,7 +130,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_silkNightgown_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_silkNightgown_OBJ"):
                 m "I'd like to order another custom outfit today."
                 maf "Certainly Sir. These outfits have started to become the highlight of my job. Everything else seems quite conservative by comparison."
                 m "Well I can assure you that this outfit is not conservative."
@@ -148,10 +148,10 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_ballDress_OBJ and not sorry_for_hesterics:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_ballDress_OBJ") and not sorry_for_hesterics:
                 call cust_excuse("You cannot purchase this outfit... yet.")
                 jump custom_orders
-            if clothes_store_order_choice == hg_ballDress_OBJ and sorry_for_hesterics:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_ballDress_OBJ") and sorry_for_hesterics:
                 m "Do you sell Ball Dresses?"
                 maf "Hmmm, we do although they're nothing special. Why?"
                 m "A 'girl' approached me with a problem. Apparently she's unable to aquire a dress for this years autumn ball."
@@ -168,7 +168,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_msMarvel_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_msMarvel_OBJ"):
                 m "Tell me Madam Mafkin, have you ever heard of super-heroes?"
                 maf "Yes yes, those people in the comic books. My grandson is quite fond of them."
                 m "Fantastic, I was wondering if it would be possible for you to make me a costume."
@@ -181,7 +181,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_heartDancer_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_heartDancer_OBJ"):
                 m "Have you ever seen a burlesque show Madam?"
                 maf "I've done more than that, I've designed a few of the outfits for them!"
                 m "Splendid, I was wondering if I could commision one."
@@ -193,7 +193,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_powerGirl_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_powerGirl_OBJ"):
                 m "I was wondering if it would be possible for you to make me a super hero costume."
                 maf "Certainly, who did you have in mind?"
                 m "Do you know Power Girl?"
@@ -204,7 +204,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_harleyQuinn_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_harleyQuinn_OBJ"):
                 m "I was wondering if it would be possible for you to make me a super villain costume."
                 maf "Certainly, who did you have in mind?"
                 m "Do you know Harley Quinn?"
@@ -215,7 +215,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_laraCroft_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_laraCroft_OBJ"):
                 m "I was wondering if it would be possible for you to make me another costume."
                 maf "Certainly, what are you after?"
                 m "I don't suppose that you know Lara croft?"
@@ -228,7 +228,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_christmas_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_christmas_OBJ"):
                 m "I was wondering if it would be possible for you to make me a festive costume."
                 maf "Certainly, what what holiday are you looking to \"celebrate\"?"
                 m "Christmas."
@@ -241,7 +241,7 @@ label custom_orders:
                 call place_outfit_order
                 jump clothes_menu
             
-            if clothes_store_order_choice == hg_pirate_OBJ:
+            if clothes_store_order_choice == hermione_outfits_list.get("hg_pirate_OBJ"):
                 m "I want a pirate outfit"
                 maf "ok"
                 call place_outfit_order

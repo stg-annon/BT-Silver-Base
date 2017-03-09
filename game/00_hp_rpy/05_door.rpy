@@ -154,10 +154,10 @@ label door:
                             "-Working-":
                                 label working_menu:
                                 menu:
-                                    "-Work as a maid-" if daytime and hg_maid_OBJ.purchased:
+                                    "-Work as a maid-" if daytime and hermione_outfits_list.purchased("maid"):
                                         jump job_1
 
-                                    "-Work as a maid-" if daytime and not hg_maid_OBJ.purchased:
+                                    "-Work as a maid-" if daytime and not hermione_outfits_list.purchased("maid"):
                                         m "(I'll need an outfit for hermione if I want her to work.)"
                                         jump working_menu
                                         
@@ -165,10 +165,10 @@ label door:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Gryffindor-" if daytime and hg_gryffCheer_OBJ.purchased:
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and hermione_outfits_list.purchased("griffindor_cheerleader"):
                                         jump job_3
 
-                                    "-Work as a cheerleader for Gryffindor-" if daytime and not hg_gryffCheer_OBJ.purchased:
+                                    "-Work as a cheerleader for Gryffindor-" if daytime and not hermione_outfits_list.purchased("griffindor_cheerleader"):
                                         m "(I'll need an outfit for hermione if I want her to work.)"
                                         jump working_menu
                                     
@@ -176,10 +176,10 @@ label door:
                                         "This job is only available during the day."
                                         jump working_menu
                                     
-                                    "-Work as a cheerleader for Slytherin-" if daytime and hg_slythCheer_OBJ.purchased:
+                                    "-Work as a cheerleader for Slytherin-" if daytime and hermione_outfits_list.purchased("slythrin_cheerleader"):
                                         jump job_4
 
-                                    "-Work as a cheerleader for Slytherin-" if daytime and not hg_slythCheer_OBJ.purchased:
+                                    "-Work as a cheerleader for Slytherin-" if daytime and not hermione_outfits_list.purchased("slythrin_cheerleader"):
                                         m "(I'll need an outfit for hermione if I want her to work.)"
                                         jump working_menu
                                     
