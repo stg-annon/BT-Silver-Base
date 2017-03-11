@@ -202,14 +202,14 @@ init python:
         def getFullPath(self, passed_list):
             list = []
             for i in passed_list:
-                list.append("01_hp/13_characters/hermione/clothes/custom/"+i)
+                list.append(self.root+i)
             return list
         def getOutfitLayers(self):
             return self.getFullPath(self.outfit_layers)
         def getTopLayers(self):
             return self.getFullPath(self.top_layers)
         def getStoreImage(self):
-           return "01_hp/23_clothes_store/cs_gui/"+self.store_image
+            return self.root+"gui/"+self.store_image
         
         def hasAction(self,action):
             for act in self.actions:
