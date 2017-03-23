@@ -1,10 +1,10 @@
 ## How do I install the latest WT Silver?:
 You have two options for installing silver:
-  1. Download a stable build from the following [mega link] (https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig)
-  2. For an experimantal version of the game you can download the latest build from here on git then copy replace the game folder into the "shell" game from the following [google drive link] (https://drive.google.com/folderview?id=0Bydic_JmulRMRDliYnF0VHVwVXM&usp=sharing)
+  1. Download a stable build from the following [mega link](https://mega.nz/#F!pFI1EKyA!KLf9DamlGnXGw6qQAyG7Ig)
+  2. For an experimantal version of the game you can download the latest build from here on git then copy replace the game folder into the "shell" game from the following [google drive link](https://drive.google.com/folderview?id=0Bydic_JmulRMRDliYnF0VHVwVXM&usp=sharing)
 
 ## What is WT Silver?:
-- Silver is an unofficial mod/addition to [Akabur's] (https://www.patreon.com/akabur) Game Witch Trainer.
+- Silver is an unofficial mod/addition to [Akabur's](https://www.patreon.com/akabur) Game Witch Trainer.
 - It's a modpack of a few different mods and some new content. It adds some new scenes, a map, scene changes, potions, custom outfits and evolving outfits. At the moment it is in a  beta state with new content and bug fixes being added periodically.
   * Cheats are in the closet
 
@@ -25,4 +25,4 @@ You have two options for installing silver:
 - *(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)*
 	
 ## Bugs:
-please submit any bugs as an issue for this project [here] (https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
+please submit any bugs as an issue for this project [here](https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
