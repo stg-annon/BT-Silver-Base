@@ -1740,6 +1740,15 @@ label set_h_skirt_color(color = ""):
     show screen hermione_main
     with d5
     return
+
+label set_h_top(top = ""):
+    hide screen hermione_main
+    with d5
+    $ h_top = top[-1:]
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
     
 
 #$ renpy.play('sounds/door.mp3') #Sound of a door opening.

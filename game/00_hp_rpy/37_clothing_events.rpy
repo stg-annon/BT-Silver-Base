@@ -22,6 +22,24 @@ label equip_bot(item = ""):
     elif item == "skirt_6":
         #call equip_skirt_6
         call set_h_skirt(item)
+    elif item == "top_1":
+        #call equip_skirt_1
+        call set_h_top(item)
+    elif item == "top_2":
+        #call equip_skirt_2
+        call set_h_top(item)
+    elif item == "top_3":
+        #call equip_skirt_3
+        call set_h_top(item)
+    elif item == "top_4":
+        #call equip_skirt_4
+        call set_h_top(item)
+    elif item == "top_5":
+        #call equip_skirt_5
+        call set_h_top(item)
+    elif item == "top_6":
+        #call equip_skirt_6
+        call set_h_top(item)
     return
 label equip_jeans_long:
 

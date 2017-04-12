@@ -571,19 +571,19 @@ label h_update_hair:
 label update_her_uniform:
     
     ### TOP
-    if whoring <= 3:# top 1
-        $ h_top = 1
-    elif whoring >= 4 and whoring <= 7:# top 2
-        $ h_top = 2
-    elif whoring >= 8 and whoring <= 14:# top 3
-        $ h_top = 3
-    elif whoring >= 15 and whoring <= 20:# top 4
-        $ h_top = 4
-    elif whoring >= 21:
-        if day_random <= 4:# top 5
-            $ h_top = 5
-        if day_random >= 5:# top 6
-            $ h_top = 6
+    #if whoring <= 3:# top 1
+    #    $ h_top = 1
+    #elif whoring >= 4 and whoring <= 7:# top 2
+    #    $ h_top = 2
+    #elif whoring >= 8 and whoring <= 14:# top 3
+    #    $ h_top = 3
+    #elif whoring >= 15 and whoring <= 20:# top 4
+    #    $ h_top = 4
+    #elif whoring >= 21:
+    #    if day_random <= 4:# top 5
+    #        $ h_top = 5
+    #    if day_random >= 5:# top 6
+    #        $ h_top = 6
     
     ### SKIRT  - Removed to accomodate the custom skirt levels
     #if "skirt_" in h_skirt:

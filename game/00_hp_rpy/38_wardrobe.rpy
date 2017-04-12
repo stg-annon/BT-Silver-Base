@@ -48,10 +48,12 @@ screen wardrobe_hair:
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_style","A"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
             hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_hair_style","B"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
+            #hotspot ((21+(90*i)), 324, 83, 85) clicked [SetVariable("wardrobe_hair_style","C"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
             add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
+            #add "01_hp/13_characters/hermione/body/head/C_"+str(i+1)+".png" xpos -45+(90*i) ypos 285 zoom 0.35
 
         text "Hair" xpos 45 ypos 100 size 15 bold 1
         text "Uniform" xpos 115 ypos 100 size 15
@@ -112,6 +114,13 @@ screen wardrobe_uniform:
         
         for i in range(0,len(list)):
             add "01_hp/13_characters/hermione/clothes/uniform/bot/"+list[i]+".png" xpos -40+(90*(i%6)) ypos y_pos zoom 0.35
+            if i != 0 and (i % 5) == 0:
+                $ y_pos += 100
+
+        $ y_pos += 80
+        for i in range(len(list), len(list)+6): #Shirts
+            hotspot ((21+(90*(i%6))), (140+(92*int(i/6))), 83, 85) clicked [SetVariable("wardrobe_uniform_selection",("top_"+str(i+1-len(list)))),Jump("change_uniform")]
+            add "01_hp/13_characters/hermione/clothes/uniform/top_"+str(i+1-len(list))+".png" xpos -10+(90*(i%6)) ypos y_pos zoom 0.25
             if i != 0 and (i % 5) == 0:
                 $ y_pos += 100
             
