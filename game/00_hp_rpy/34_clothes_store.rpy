@@ -361,57 +361,72 @@ label existing_stock:
                             jump existing_stock_stockings
                         "-Never mind-":
                             jump existing_stock_stockings
+                "{color=#858585}-Lace Stockings- (30 Gold)-{/color}"if "lace_stockings" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump existing_stock_stockings
+                "-Lace Stockings- (30 Gold)" if "lace_stockings" not in cs_existing_stock:
+                    "A pair of black lace stockings."
+                    menu:
+                        "-Buy the item (30 gold)-":
+                            call cs_buy_stock("lace_stockings", 30)
+                            jump existing_stock_stockings
+                        "-Never mind-":
+                            jump existing_stock_stockings
                 "-Return-":
                     jump existing_stock
-        "-Bras and Panties-":
-            label existing_stock_bras_panties:
-            menu:
-                "{color=#858585}-Lace Bra and Panties- (50 Gold){/color}"if "lace_set" in cs_existing_stock:
-                    call cust_excuse("You already own this.")
-                    jump existing_stock_bras_panties
-                "-Lace Bra and Panties- (50 Gold)" if "lace_set" not in cs_existing_stock:
-                    "A lovely lace bra and panty set."
-                    menu:
-                        "-Buy the item (50 gold)-":
-                            call cs_buy_stock("lace_set", 50)
-                            jump existing_stock_bras_panties
-                        "-Never mind-":
-                            jump existing_stock_bras_panties
-                "{color=#858585}-Cup-less Lace Bra and panties- (125 Gold){/color}"if "cup_set" in cs_existing_stock:
-                    call cust_excuse("You already own this.")
-                    jump existing_stock_bras_panties
-                "-Cup-less Lace Bra and panties- (125 Gold)" if "cup_set" not in cs_existing_stock:
-                    "A revealing piece of clothing that only serves to highlight the wearer's breasts."
-                    menu:
-                        "-Buy the item (125 gold)-":
-                            call cs_buy_stock("cup_set", 125)
-                            jump existing_stock_bras_panties
-                        "-Never mind-":
-                            jump existing_stock_bras_panties
-                "{color=#858585}-Silk Bra and Panties- (150 Gold){/color}"if "silk_set" in cs_existing_stock:
-                    call cust_excuse("You already own this.")
-                    jump existing_stock_bras_panties
-                "-Silk Bra and Panties- (150 Gold)" if "silk_set" not in cs_existing_stock:
-                    "A smooth and comfortable lace bra and panty set."
-                    menu:
-                        "-Buy the item (150 gold)-":
-                            call cs_buy_stock("silk_set", 150)
-                            jump existing_stock_bras_panties
-                        "-Never mind-":
-                            jump existing_stock_bras_panties
-                "{color=#858585}-Latex Bra and Panties- (150 Gold){/color}"if "latex_set" in cs_existing_stock:
-                    call cust_excuse("You already own this.")
-                    jump existing_stock_bras_panties
-                "-Latex Bra and Panties- (150 Gold)" if "latex_set" not in cs_existing_stock:
-                    "A tight and shiny lace bra and panty set."
-                    menu:
-                        "-Buy the item (150 gold)-":
-                            call cs_buy_stock("latex_set", 150)
-                            jump existing_stock_bras_panties
-                        "-Never mind-":
-                            jump existing_stock_bras_panties
-                "-Never Mind-":
-                    jump existing_stock
+        
+        #"-Bras and Panties-":    ###Taken out as bra/panties not really needed
+        #    label existing_stock_bras_panties:
+        #    menu:
+        #        "{color=#858585}-Lace Bra and Panties- (50 Gold){/color}"if "lace_set" in cs_existing_stock:
+        #            call cust_excuse("You already own this.")
+        #            jump existing_stock_bras_panties
+        #        "-Lace Bra and Panties- (50 Gold)" if "lace_set" not in cs_existing_stock:
+        #            "A lovely lace bra and panty set."
+        #            menu:
+        #                "-Buy the item (50 gold)-":
+        #                    call cs_buy_stock("lace_set", 50)
+        #                    jump existing_stock_bras_panties
+        #                "-Never mind-":
+        #                    jump existing_stock_bras_panties
+        #        "{color=#858585}-Cup-less Lace Bra and panties- (125 Gold){/color}"if "cup_set" in cs_existing_stock:
+        #            call cust_excuse("You already own this.")
+        #            jump existing_stock_bras_panties
+        #        "-Cup-less Lace Bra and panties- (125 Gold)" if "cup_set" not in cs_existing_stock:
+        #            "A revealing piece of clothing that only serves to highlight the wearer's breasts."
+        #            menu:
+        #                "-Buy the item (125 gold)-":
+        #                    call cs_buy_stock("cup_set", 125)
+        #                    jump existing_stock_bras_panties
+        #                "-Never mind-":
+        #                    jump existing_stock_bras_panties
+        #        "{color=#858585}-Silk Bra and Panties- (150 Gold){/color}"if "silk_set" in cs_existing_stock:
+        #            call cust_excuse("You already own this.")
+        #            jump existing_stock_bras_panties
+        #        "-Silk Bra and Panties- (150 Gold)" if "silk_set" not in cs_existing_stock:
+        #            "A smooth and comfortable lace bra and panty set."
+        #            menu:
+        #                "-Buy the item (150 gold)-":
+        #                    call cs_buy_stock("silk_set", 150)
+        #                    jump existing_stock_bras_panties
+        #                "-Never mind-":
+        #                    jump existing_stock_bras_panties
+        #        "{color=#858585}-Latex Bra and Panties- (150 Gold){/color}"if "latex_set" in cs_existing_stock:
+        #            call cust_excuse("You already own this.")
+        #            jump existing_stock_bras_panties
+        #        "-Latex Bra and Panties- (150 Gold)" if "latex_set" not in cs_existing_stock:
+        #            "A tight and shiny lace bra and panty set."
+        #            menu:
+        #                "-Buy the item (150 gold)-":
+        #                    call cs_buy_stock("latex_set", 150)
+        #                    jump existing_stock_bras_panties
+        #                "-Never mind-":
+        #                    jump existing_stock_bras_panties
+        #        "-Never Mind-":
+        #            jump existing_stock
+        
+
+
         "-Accessories-":
             label accessories:
             menu:

@@ -585,17 +585,17 @@ label update_her_uniform:
         if day_random >= 5:# top 6
             $ h_top = 6
     
-    ### SKIRT
-    if "skirt_" in h_skirt:
-        if whoring <= 5: # skirt 1
-            $ h_skirt = "skirt_1"
-        if whoring >= 6 and whoring <= 11: # skirt 2
-            $ h_skirt = "skirt_2"
-        if whoring >= 12 and whoring <= 19: # skirt 3
-            $ h_skirt = "skirt_3"
-        if whoring >= 20: # skirt 4
-            $ h_skirt = "skirt_4"
-            
+    ### SKIRT  - Removed to accomodate the custom skirt levels
+    #if "skirt_" in h_skirt:
+    #    if whoring <= 5: # skirt 1
+    #        $ h_skirt = "skirt_1"
+    #    if whoring >= 6 and whoring <= 11: # skirt 2
+    #        $ h_skirt = "skirt_2"
+    #    if whoring >= 12 and whoring <= 19: # skirt 3
+    #        $ h_skirt = "skirt_3"
+    #    if whoring >= 20: # skirt 4
+    #        $ h_skirt = "skirt_4"
+    #        
         #$ h_skirt += h_skirt_color
         
         

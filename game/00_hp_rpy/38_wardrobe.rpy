@@ -81,8 +81,12 @@ screen wardrobe_uniform:
     tag wardrobe_menu
     zorder hermione_main_zorder-1
     
-    $ list = ["1","color/blue/1","color/green/1","color/red/1","color/yellow/1"]
+    $ list = ["skirt_1","skirt_2","skirt_3", "skirt_4", "skirt_5"]
     $ y_pos = 13
+    if "jeans_long" in cs_existing_stock:
+        $ list.append("jeans_long")
+    if "jeans_short" in cs_existing_stock:
+        $ list.append("jeans_short")
     
     imagemap:
         cache False
@@ -124,8 +128,7 @@ screen wardrobe_uniform:
         text "Gifts" xpos 480 ypos 100 size 15
     
 label change_uniform:
-    call her_main("Sure, let me just go change quick.","body_01")
-    call set_h_skirt(wardrobe_uniform_selection)
+    call equip_bot(wardrobe_uniform_selection)
     hide screen wardrobe_uniform
     call screen wardrobe_uniform
     
@@ -299,8 +302,13 @@ screen wardrobe_underwear:
     tag wardrobe_menu
     zorder hermione_main_zorder-1
     
-    $ wardrobe_underwear_selection = ""
-    $ wardrobe_underwear_images = ["base_bra_white_1","lace_bra","cup_bra","silk_bra","latex_bra"]
+    $ wardrobe_underwear_selection = []
+    if "gryffindor_stockings" in cs_existing_stock:
+        $ wardrobe_underwear_selection.append("gryffindor_stockings")
+    if "fishnet_stockings" in cs_existing_stock:
+        $ wardrobe_underwear_selection.append("fishnet_stockings")
+    if "lace_stockings" in cs_existing_stock:
+        $ wardrobe_underwear_selection.append("lace_stockings")
     
     
     imagemap:
@@ -317,12 +325,12 @@ screen wardrobe_underwear:
         hotspot (391, 30, 67, 82) clicked Show("wardrobe_underwear")
         hotspot (480, 30, 67, 82) clicked Show("wardrobe_gifts")
         
-        for i in range(0,4):
+        for i in range(0,len(wardrobe_underwear_selection)):
             hotspot ((21+(90*i)), 140, 83, 85):
-                clicked [SetVariable("wardrobe_underwear_selection",i),Jump("wardrobe_wear_underwear")]
+                clicked [SetVariable("wardrobe_underwear_selection",wardrobe_underwear_selection[i]),Jump("wardrobe_wear_underwear")]
         
-        for i in range(0,4):
-            add "01_hp/13_characters/hermione/clothes/underwear/"+str(wardrobe_underwear_images[i])+".png" xpos -105+(90*i) ypos 0 zoom 0.6
+        for i in range(0,len(wardrobe_underwear_selection)):
+            add "01_hp/13_characters/hermione/clothes/stockings/"+str(wardrobe_underwear_selection[i])+".png" xpos -105+(90*i) ypos -135 zoom 0.6
         
         text "Hair" xpos 45 ypos 100 size 15
         text "Uniform" xpos 115 ypos 100 size 15
@@ -333,16 +341,7 @@ screen wardrobe_underwear:
     
     
 label wardrobe_wear_underwear:
-    if wardrobe_underwear_selection == 0:
-        call set_h_underwear("base_bra_white_1", "base_panties_1")
-    elif wardrobe_underwear_selection == 1:
-        call set_h_underwear("lace_bra","lace_panties")
-    elif wardrobe_underwear_selection == 2:
-        call set_h_underwear("cup_bra","cup_panties")
-    elif wardrobe_underwear_selection == 3:
-        call set_h_underwear("silk_bra","silk_panties")
-    elif wardrobe_underwear_selection == 4:
-        call set_h_underwear("latex_bra","latex_panties")
+    call set_h_stockings(wardrobe_underwear_selection)
     
     hide screen wardrobe_underwear
     call screen wardrobe_underwear

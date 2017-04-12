@@ -1706,7 +1706,10 @@ label set_h_hair_color(hair_color = 1):
 label set_h_stockings(stocking = "00_blank"):
     hide screen hermione_main
     with d5
-    $ h_stocking = stocking
+    if stocking == h_stocking:
+        $ h_stocking = "00_blank"
+    else:
+        $ h_stocking = stocking
     call update_her_uniform
     show screen hermione_main
     with d5
@@ -1721,31 +1724,13 @@ label set_h_costume(costume_id = 0):
     return
     
 label set_h_skirt(skirt = ""):
-    if "skirt_" in skirt:
-        $ h_skirt = "skirt_"
-        $ h_skirt_color = ""
-        if "_R" in skirt:
-            $ h_skirt_color = "color/red/"
-        if "_G" in skirt:
-            $ h_skirt_color = "color/green/"
-        if "_B" in skirt:
-            $ h_skirt_color = "color/blue/"
-        if "_Y" in skirt:
-            $ h_skirt_color = "color/yellow/"
-        hide screen hermione_main
-        with d5
-        call update_her_uniform
-        show screen hermione_main
-        with d5
-        return
-    else:
-        hide screen hermione_main
-        with d5
-        $ h_skirt = skirt
-        call update_her_uniform
-        show screen hermione_main
-        with d5
-        return
+    hide screen hermione_main
+    with d5
+    $ h_skirt = skirt
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
     
 label set_h_skirt_color(color = ""):
     hide screen hermione_main
