@@ -157,6 +157,9 @@ init python:
         ypos = 0
         zorder = 5
         
+        xpos_center = 0
+        xpos_right = 0
+        
         char_ref = None
         h_char_ref = None
         
@@ -164,6 +167,15 @@ init python:
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
+        
+        def setXPos(self,pos):
+            if isinstance(pos,str):
+                if pos == "center":
+                    self.xpos = self.xpos_center
+                if pos == "right":
+                    self.xpos = self.xpos_right
+            if isinstance(pos,int):
+                self.xpos = pos
         
         # Say w/ sprite
         def say(self, text, image=None):
