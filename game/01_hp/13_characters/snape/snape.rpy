@@ -2,6 +2,8 @@ init python:
     class snape_character(silver_character):
         root = "01_hp/13_characters/snape/"
         
+        friendship = 0
+        
         xpos = 550
         ypos = 0
         
@@ -13,7 +15,6 @@ init python:
         screen_head = "snape_head_obj_scr"
         
         body = "snape_01"
-        head = "head_1"
         
         def __init__(self, **kwargs):
             self.__dict__.update(**kwargs)
@@ -24,6 +25,13 @@ init python:
                 self.head = image
             char = Character(self.name, color="#402313", window_right_padding=270, show_side_image=Image("{}head/{}.png".format(self.root,self.head), xalign=1.0, yalign=0.0), show_who_xalign=0.5, show_two_window=True, ctc="ctc3", ctc_position="fixed")
             renpy.say(char,string)
+        
+        def sayHead(self, string, image=None):
+            if image != None:
+                self.body = image
+            renpy.show_screen(self.screen_head)
+            renpy.say(self.h_char_ref,string)
+            renpy.hide_screen(self.screen_head)
         
         def getLayers(self):
             layers = []
@@ -68,7 +76,6 @@ init python:
     
     
 label __init_variables:
-    $ reset_char_obj = True
     if not hasattr(renpy.store,'snape_SC') or reset_char_obj: #important!
         $ snape_SC = snape_character(
             chibi = snape_character_chibi(
@@ -158,6 +165,31 @@ screen snape_walk_f: #Default Snape walk animation. (Mirrored).
     zorder 4
     
     
+### HANGING WITH SNAPE ###
+image genie_toast_goblet: #Genie and Snape sitting in front of fireplace...
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_01.png"
+    pause 2
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_02.png"
+    pause.2
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_03.png"
+    pause.2
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_04.png"
+    pause 1
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_03.png"
+    pause.2
+    "01_hp/13_characters/snape/chibis/hanging_with_snape_01.png"
+    pause 3
+    repeat
+    
+screen with_snape:
+    add "01_hp/13_characters/snape/chibis/with_snape.png" at Position(xpos=140, ypos=0)
+    tag hanging_with_snape
+    zorder 3
+    
+screen with_snape_animated:
+    add "genie_toast_goblet" at Position(xpos=140, ypos=0)
+    tag hanging_with_snape
+    zorder 3
     
     
     
