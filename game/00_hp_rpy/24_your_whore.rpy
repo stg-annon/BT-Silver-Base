@@ -3644,8 +3644,8 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     $ persistent.sscroll_ = sscroll_
     
     # outfit invintory 
-    $ persistent.outfit_inventory = []
-    $ persistent.outfit_inventory = outfit_inventory
+    #$ persistent.outfit_inventory = []
+    #$ persistent.outfit_inventory = outfit_inventory
     
     # books
     $ persistent.book_progress = []

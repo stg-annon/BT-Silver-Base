@@ -636,43 +636,42 @@ label update_chibi_uniform:
         $ hermione_chibi_walk_f = "ch_hem walk_n_flip"
         
         
-    elif whoring <= 3:# shirt_00
+    elif h_top == '1':# shirt_00
         $ hermione_chibi_blink = "ch_hem blink_a"
         $ hermione_chibi_blink_f = "ch_hem blink_a_flip"
         $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
         $ hermione_chibi_walk = "ch_hem walk_a"
         $ hermione_chibi_walk_f = "ch_hem walk_a_flip"
-    elif whoring >= 4 and whoring <= 7:# shirt_01
+    elif h_top == '2':# shirt_01
         $ hermione_chibi_blink = "ch_hem blink_d"
         $ hermione_chibi_blink_f = "ch_hem blink_d_flip"
         $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_d_01.png"
         $ hermione_chibi_walk = "ch_hem walk_d"
         $ hermione_chibi_walk_f = "ch_hem walk_d_flip"
-    elif whoring >= 8 and whoring <= 14:# shirt_02
+    elif h_top == '3':# shirt_02
         $ hermione_chibi_blink = "ch_hem blink_e"
         $ hermione_chibi_blink_f = "ch_hem blink_e_flip"
         $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_e_01.png"
         $ hermione_chibi_walk = "ch_hem walk_e"
         $ hermione_chibi_walk_f = "ch_hem walk_e_flip"
-    elif whoring >= 15 and whoring <= 20:# shirt_03
+    elif h_top == '4':# shirt_03
         $ hermione_chibi_blink = "ch_hem blink_f"
         $ hermione_chibi_blink_f = "ch_hem blink_f_flip"
         $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_f_01.png"
         $ hermione_chibi_walk = "ch_hem walk_f"
         $ hermione_chibi_walk_f = "ch_hem walk_f_flip"
-    elif whoring >= 21:
-        if day_random <= 4:# shirt_04
-            $ hermione_chibi_blink = "ch_hem blink_g"
-            $ hermione_chibi_blink_f = "ch_hem blink_g_flip"
-            $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
-            $ hermione_chibi_walk = "ch_hem walk_g"
-            $ hermione_chibi_walk_f = "ch_hem walk_g_flip"
-        if day_random >= 5:# shirt_05
-            $ hermione_chibi_blink = "ch_hem blink_h"
-            $ hermione_chibi_blink_f = "ch_hem blink_h_flip"
-            $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
-            $ hermione_chibi_walk = "ch_hem walk_h"
-            $ hermione_chibi_walk_f = "ch_hem walk_h_flip"
+    elif h_top == '5':# shirt_04
+        $ hermione_chibi_blink = "ch_hem blink_g"
+        $ hermione_chibi_blink_f = "ch_hem blink_g_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_g_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_g"
+        $ hermione_chibi_walk_f = "ch_hem walk_g_flip"
+    elif h_top == '6':# shirt_05
+        $ hermione_chibi_blink = "ch_hem blink_h"
+        $ hermione_chibi_blink_f = "ch_hem blink_h_flip"
+        $ hermione_chibi_stand = "01_hp/16_hermione_chibi/walk/h_walk_h_01.png"
+        $ hermione_chibi_walk = "ch_hem walk_h"
+        $ hermione_chibi_walk_f = "ch_hem walk_h_flip"
         
     return
     

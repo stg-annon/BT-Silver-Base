@@ -277,7 +277,7 @@ label pickup_outfit:
     
     if outfit_order_placed: # OUTFIT
         $ outfit_order.purchased = True
-        $ outfit_inventory.append(outfit_order)
+        #$ outfit_inventory.append(outfit_order)
         call display_package(">A "+outfit_order.name+R" outfit has been added to your possessions.")
         call receive_package
         call screen main_menu_01

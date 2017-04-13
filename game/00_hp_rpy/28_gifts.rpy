@@ -1745,6 +1745,7 @@ label set_h_top(top = ""):
     hide screen hermione_main
     with d5
     $ h_top = top[-1:]
+    call update_chibi_uniform
     call update_her_uniform
     show screen hermione_main
     with d5
