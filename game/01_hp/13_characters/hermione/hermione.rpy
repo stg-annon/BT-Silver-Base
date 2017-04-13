@@ -33,12 +33,23 @@ init python:
                 self.use_outfit = True
             self.outfit = outfit
         
-        def setAction(self, action=""):
+        def setAction(self, action):
+            if isinstance(action,str):
+                action = self.getActionFromList(action)
+            else:
+                action = action
+            if action == None:
+                self.use_action = False
+                self.action = action
+            else:
+                self.action = action
+                self.use_action = True
+        
+        def getActionFromList(self, action):
             global herm_actions
             for act in herm_actions:
                 if act.name == action:
-                    self.action = act
-                    self.use_action = True
+                    return act
         
         def outfitFromList(self, id):
             for outfit in hermione_outfits_list:
@@ -49,11 +60,14 @@ init python:
             self.uniform.setLevel(level)
             self.chibi.setLevel(level)
         
-        def setFace(self, face_id="",blush=False):
+        def setFace(self, face_id=None,blush=False):
             self.body.head.cheeks = ""
             if blush:
                 self.body.head.cheeks = "blush.png"
-            face_id = face_id.replace("body_","")
+            if isinstance(face_id,int):
+                face_id = str(face_id)
+            if isinstance(face_id,str):
+                face_id = face_id.replace("body_","")
             for face in self.faces:
                 if face_id == face.id:
                     self.body.head.face = face
@@ -65,7 +79,8 @@ init python:
                 self.setFace(face,blush)
             renpy.show_screen(self.screen)
             renpy.with_statement(Dissolve(0.3),always=True)
-            renpy.say(self.char_ref,text)
+            if text != "":
+                renpy.say(self.char_ref,text)
         
         def sayText(self, text, face=None):
             renpy.say(self.char_ref,text)
@@ -153,7 +168,7 @@ init python:
             if self.body.head.face.emote != "":
                 layers.append(self.root+"emote/{}.png".format(self.body.head.face.emote))
             return layers
-        
+            
     
     class hermione_character_face(silver_character_face):
         id = 0
@@ -272,7 +287,7 @@ label __init_variables:
             ypos = 0,
             
             xpos_center = 260,
-            xpos_right = 600,
+            xpos_right = 650,
             
             name = "Hermione Granger",
             pet_name = "Miss Granger",
@@ -481,6 +496,9 @@ label __init_variables:
 screen u_hermione_chibi:
     zorder hermione_SC.chibi.zorder
     add hermione_chibi_u_img xpos hermione_SC.chibi.xpos ypos hermione_SC.chibi.ypos
+    
+    
+    
     
 label her_main_new(text="",face=h_body, xpos = hermione_xpos, ypos = hermione_ypos):
     $ wt_herm = hermione_SC
