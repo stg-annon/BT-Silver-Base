@@ -179,7 +179,7 @@ label equip_jeans_short:
        with d3
        show screen blktone
        with d3
-       call set_h_skirt("jeans_long")
+       call set_h_skirt("jeans_short")
        call her_main("","body_58",xpos=120,ypos=0)
        show screen ctc
        with d3
@@ -199,7 +199,7 @@ label equip_jeans_short:
        with d3
        show screen blktone
        with d3
-       call set_h_skirt("jeans_long")
+       call set_h_skirt("jeans_short")
        show screen ctc
        with d3
        call her_main("*humph* ... (These are so stuffy... How am i supposed to get my hands into...)","body_12",xpos=120)
@@ -225,7 +225,7 @@ label equip_jeans_short:
         with d3
         show screen blktone
         with d3
-        call set_h_skirt("jeans_long")
+        call set_h_skirt("jeans_short")
         call her_main("","body_209",xpos=120,ypos=0)
         show screen ctc
         with d3
