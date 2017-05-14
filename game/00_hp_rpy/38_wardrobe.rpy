@@ -48,12 +48,12 @@ screen wardrobe_hair:
         for i in range(0,6):
             hotspot ((21+(90*i)), 140, 83, 85) clicked [SetVariable("wardrobe_hair_style","A"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
             hotspot ((21+(90*i)), 232, 83, 85) clicked [SetVariable("wardrobe_hair_style","B"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
-            #hotspot ((21+(90*i)), 324, 83, 85) clicked [SetVariable("wardrobe_hair_style","C"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
+            hotspot ((21+(90*i)), 324, 83, 85) clicked [SetVariable("wardrobe_hair_style","C"),SetVariable("wardrobe_hair_color",(i+1)),Jump("change_hair")]
         
         for i in range(0,6):
             add "01_hp/13_characters/hermione/body/head/A_"+str(i+1)+".png" xpos -45+(90*i) ypos 105 zoom 0.35
             add "01_hp/13_characters/hermione/body/head/B_"+str(i+1)+".png" xpos -45+(90*i) ypos 205 zoom 0.35
-            #add "01_hp/13_characters/hermione/body/head/C_"+str(i+1)+".png" xpos -45+(90*i) ypos 285 zoom 0.35
+            add "01_hp/13_characters/hermione/body/head/C_"+str(i+1)+".png" xpos -45+(90*i) ypos 285 zoom 0.35
 
         text "Hair" xpos 45 ypos 100 size 15 bold 1
         text "Uniform" xpos 115 ypos 100 size 15
@@ -292,6 +292,9 @@ screen wardrobe_accessories:
         if "vintage_glasses" in cs_existing_stock:
             hotspot (21+450, 140, 83, 85) clicked [SetVariable("wardrobe_acc_item",5),Jump("wardrobe_give_acc")]
             add "01_hp/13_characters/hermione/accessories/head/vintage_glasses.png" xpos 230 ypos -20
+        if "fake_cum" in cs_existing_stock:
+            hotspot (21, 230, 83, 85) clicked [SetVariable("wardrobe_acc_item",6),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/cum_icon.png" xpos -215 ypos 120
 
 
         text "Hair" xpos 45 ypos 100 size 15

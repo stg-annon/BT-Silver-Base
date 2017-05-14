@@ -496,6 +496,17 @@ label existing_stock:
                             jump accessories
                         "-Never mind-":
                             jump accessories
+                "{color=#858585}-fake cum-{/color}"if "fake_cum" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-fake cum-" if "fake_cum" not in cs_existing_stock:
+                    maf "it's Just a little bit of margarita mix..."
+                    menu:
+                        "-Buy the item (100 gold)-":
+                            call cs_buy_stock("fake_cum",100)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
                 "-Never mind-":
                     jump existing_stock
         "-Return-":

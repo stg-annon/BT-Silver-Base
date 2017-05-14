@@ -220,6 +220,8 @@ label __init_variables:
         $ hermione_hat = "01_hp/13_characters/hermione/accessories/head/tiara.png"
     if not hasattr(renpy.store,'hermione_freckles'): #important!
         $ hermione_freckles = False
+    if not hasattr(renpy.store,'hermione_cum'): #important!
+        $ hermione_cum = False
 
     ##Shaming favour
     if not hasattr(renpy.store,'buttplug_2_worn'): #important!

@@ -403,6 +403,17 @@ label door:
                             with d3
                             $ hermione_sleeping = True
                             jump night_main_menu
+
+        "{color=#858585}-Summon Luna-{/color}" if luna_known and luna_busy:
+            ">Luna is unavailable."
+            if daytime:
+                jump day_main_menu
+            else: 
+                jump night_main_menu
+            
+        "-Summon Luna-" if luna_known and not luna_busy:
+            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+            jump luna_door
                             
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
             ">Professor Snape is unavailable."

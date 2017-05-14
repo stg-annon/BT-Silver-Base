@@ -1,16 +1,10 @@
 #LUNA PLOT
-#Luna is misinterpreting her own teenage arousal as a result of a group of wrackspurts that have decided to terrorise her.
-#Genie is able to determine the true cause of her arousal and informs her that they only cure for her arousal is to perform certain activites together
-
+#Turned into a bitchy Slytherin by the sorting hat. 
 
 #Don't forget to incorporate the quibbler
 
 #LUNA MECHANICS
-#Functions on a different mechanic from hermione. She still has a 'whoring' stat but instead of anger she has arousal
-#Certain activities will cause Luna to gain arousal and others will cause her to lose it
-#Any favors that focus on her will lose arousal as she will achieve a 'release'
-#Any favors that focus on genie will cause her to gain arousal
-#If her arousal is too high she won't do the genie favors and conversely if it is too low then she will not do the favors that focus on her
+
 
 label luna_init:
     $ luna_busy = False
@@ -164,7 +158,7 @@ label luna_favour_genie:
             jump luna_door
 
 label luna_summon:
-    $ changeLuna(1, 1, 4, 1)
+    $ changeLuna(8, 2, 3, 3)
 return
 
 label luna_away:

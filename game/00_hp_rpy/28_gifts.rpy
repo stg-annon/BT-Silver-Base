@@ -2057,5 +2057,39 @@ label give_her_acc(acc_id):
             $ hermione_wear_glasses = False
             show screen hermione_main
             with d5
+    elif acc_id == 6:#Fake cum
+        if not hermione_cum:
+            if whoring <= 10:
+                jump too_much
+            elif whoring <= 17:
+                call her_main("Fake cum...?","body_11")
+                call her_main("You cannot be serious, [genie_name]!","body_31")
+                m "What's wrong? It's not real..."
+                call her_main("[genie_name] I am not going to smear myself with cum, real or not, and then parade around the school!","body_07")
+                call her_main("I absolutely refuse!","body_09")
+                $ mad += 8
+            elif whoring <=23:
+                call her_main("Fake cum...?","body_15")
+                call her_main("...","body_17")
+                call her_main("well as long as it's not real...","body_58")
+                hide screen hermione_main
+                with d5
+                $ hermione_cum = True
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("YOu want me to cover myself in fake cum?","body_17")
+                call her_main("{size=-5}(It's a shame it's not real...){/size}","body_59")
+                call her_main("Ok, i'll do it...","body_58")
+                $ hermione_cum = True
+        else:
+            call her_main("You want me to take it off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ hermione_cum = False
+            show screen hermione_main
+            with d5
 
     

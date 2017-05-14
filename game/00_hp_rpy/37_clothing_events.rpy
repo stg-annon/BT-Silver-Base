@@ -4,41 +4,10 @@ label equip_bot(item = ""):
         call equip_jeans_long
     elif item == "jeans_short":
         call equip_jeans_short
-    elif item == "skirt_1":
-        #call equip_skirt_1
-        call set_h_skirt(item)
-    elif item == "skirt_2":
-        #call equip_skirt_2
-        call set_h_skirt(item)
-    elif item == "skirt_3":
-        #call equip_skirt_3
-        call set_h_skirt(item)
-    elif item == "skirt_4":
-        #call equip_skirt_4
-        call set_h_skirt(item)
-    elif item == "skirt_5":
-        #call equip_skirt_5
-        call set_h_skirt(item)
-    elif item == "skirt_6":
-        #call equip_skirt_6
-        call set_h_skirt(item)
-    elif item == "top_1":
-        #call equip_skirt_1
-        call set_h_top(item)
-    elif item == "top_2":
-        #call equip_skirt_2
-        call set_h_top(item)
-    elif item == "top_3":
-        #call equip_skirt_3
-        call set_h_top(item)
-    elif item == "top_4":
-        #call equip_skirt_4
-        call set_h_top(item)
-    elif item == "top_5":
-        #call equip_skirt_5
-        call set_h_top(item)
-    elif item == "top_6":
-        #call equip_skirt_6
+    elif (item[:1]) == "s": #set skirt
+        call equip_skirt(item[-1:])
+    elif (item[:1]) == "t": #Set top
+        #call equip_top(item[-1:]) TODO
         call set_h_top(item)
     return
 label equip_jeans_long:
@@ -538,3 +507,165 @@ label equip_gryyf_stockings:
        jump end_hg_pf
     
     jump day_request_clothing
+
+
+label equip_skirt(skirt = '1'): 
+    
+    hide screen hermione_main 
+    with d3
+    m "{size=-4}(Tell her to wear this skirt?){/size}"
+    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+    menu:
+        "\"(Yes, let's do it!)\"":
+            pass
+        "\"(Not right now.)\"":
+            return
+
+    if skirt == '1':
+        if whoring < 13:
+            m "[hermione_name]..."
+            call her_main("yes, [genie_name]?","body_01")
+            m "I'd like you to wear your normal skirt."
+            call her_main("really?","body_82")
+            m "Sure, why not?"
+            call her_main("Thank you [genie_name]. I'll go change now.","body_16")
+        else:
+            m "[hermione_name]..."
+            call her_main("yes, [genie_name]?","body_01")
+            m "I'd like you to wear your normal skirt."
+            call her_main("...that old thing?","body_69")
+            m "Sure, is that a problem?"
+            call her_main("..........","body_70")
+            call her_main("I suppose not...","body_71")
+            call her_main("It's just so plain...","body_69")
+
+    elif skirt == '2':
+        if whoring < 10:
+            m "[hermione_name]..."
+            m "I would like you to wear a shorter skirt today."
+            ">You hand her the skirt."
+            call her_main("What?","body_48")
+            call her_main("And break school uniform?","body_48")
+            jump too_much
+        elif whoring <= 18:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("What?","body_50")
+            call her_main("But it's not proper school uniform...","body_28")
+            m "Well as your headmaster I think I can decide what is and isn't school uniform..."
+            call her_main("I suppose you're right...","body_29")
+            m "Of course I am."
+            call her_main("But what if I'm a bad influence on the other students?","body_11")
+            m "I'm sure it'll be fine..."
+            call her_main("...","body_29")
+            call her_main("(It's not too short...)","body_33")
+            call her_main("Alright I'll do it.","body_61")
+            m "Fantastic!"
+            call her_main("................","body_69")
+            call her_main("Let me just go change...","body_66")
+        else:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("What?","body_72")
+            call her_main("But it's so long...","body_71")
+            call her_main("Can't I wear something a little shorter?","body_69")
+            call her_main("Just a bit shorter please...","body_97")
+            m "I've made up my mind [hermione_name]."
+            call her_main("Fine.","body_103")
+            call her_main("Let me go change...","body_120")
+
+    elif skirt == '3':
+        if whoring < 15:
+            m "[hermione_name]..."
+            m "I would like you to wear this little skirt from now on."
+            ">You hand her the skirt."
+            call her_main("What?","body_48")
+            call her_main("You want me to wear that... thing?","body_48")
+            jump too_much
+        elif whoring <= 20:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("What?","body_77")
+            call her_main("That's not even a skirt!","body_76")
+            m "Of course it is."
+            call her_main("It's barely more than a rag!","body_62")
+            m "Well if you wear it I might be inclined to give \"Gryffindor\" 15 points..."
+            call her_main("...","body_50")
+            call her_main("(I mean It's not too short...)","body_29")
+            call her_main("Fine... but I want 20 points","body_32")
+            m "Fantastic! 20 points to Gryffindor!"
+            $ gryffindor += 20
+            call her_main("................","body_50")
+            call her_main("Let me just go change...","body_66")
+        else:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("...","body_88")
+            call her_main("(It's so short... it'll barely cover anything...)","body_87")
+            call her_main("ok...","body_69")
+            m "really, you'll wear it?"
+            call her_main("Of course [genie_name].","body_105")
+            call her_main("just Let me go get changed...","body_107")
+
+    elif skirt == '4':
+        if whoring < 16:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt to classes from now on."
+            ">You hand her the skirt."
+            jump too_much
+        elif whoring <= 20:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt to classes from now on."
+            ">You hand her the skirt."
+            call her_main("What?!?","body_62")
+            call her_main("This doesn't cover anything!","body_61")
+            call her_main("You cannot expect me to wear this around the school!","body_49")
+            m "40 points..."
+            call her_main("...","body_50")
+            call her_main("(It's not like I have any reputation left to protect...)","body_71")
+            call her_main("Alright... I'll do it...","body_79")
+            m "Fantastic! 40 points to Gryffindor!"
+            $ gryffindor += 40
+            call her_main("................","body_66")
+            call her_main("Let me just go change...","body_69")
+        else:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("{size=-4}(Everyone will be able to see... everything...){/size}","body_88")
+            call her_main("Alright [genie_name].","body_107")
+            call her_main("just Let me go get changed...","body_107")
+            call her_main("{size=-4}(..........){/size}","body_105")
+
+    elif skirt == '5':
+        if whoring < 20:
+            m "[hermione_name]..."
+            m "I would like you to wear a shorter skirt today."
+            ">You hand her the skirt."
+            jump too_much
+        elif whoring <= 23:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("You expect me to wear this to class?","body_50")
+            m "That I do [hermione_name]."
+            call her_main("{size=-4}(What have I become?){/size}","body_88")
+            call her_main("................","body_105")
+            call her_main("Let me just go change...","body_107")
+        else:
+            m "[hermione_name]..."
+            m "I would like you to wear this skirt from now on."
+            ">You hand her the skirt."
+            call her_main("...","body_122")
+            call her_main("Can't I wear something a little shorter?","body_189")
+            m "I don't think they make anything shorter."
+            call her_main("I guess This will just have to do then...","body_196")
+            call her_main("Let me go change...","body_205")
+            
+    call set_h_skirt(item) 
+    return
+    

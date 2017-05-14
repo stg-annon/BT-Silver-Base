@@ -51,17 +51,17 @@ screen hermione_main:
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos hermione_xpos_offset ypos hermione_ypos
     
+    # ACCESORIES
     if hermione_badges and hermione_wear_top and not hermione_costume:
         add hermione_badge xpos hermione_xpos_offset ypos hermione_ypos # add badge on top
-
     if hermione_wear_glasses:
         add hermione_glasses xpos hermione_xpos_offset ypos hermione_ypos # add glasses
-
     if hermione_hats:
         add hermione_hat xpos hermione_xpos_offset ypos hermione_ypos # add glasses
-
     if hermione_freckles:
         add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos hermione_xpos_offset ypos hermione_ypos # add freckles
+    if hermione_cum:
+        add "01_hp/13_hermione_main/auto_14.png" xpos hermione_xpos_offset ypos hermione_ypos # add fake cum   
     
     if hermione_wear_robe:
         add hermione_robe xpos hermione_xpos_offset ypos hermione_ypos
@@ -130,8 +130,18 @@ screen hermione_main_obj:
     elif aftersperm: #Shows cum stains on Hermione's uniform.
         add "01_hp/13_hermione_main/auto_03.png" xpos x ypos y
     
+    # ACCESORIES
     if hermione_badges and hermione_wear_top and not hermione_costume:
         add hermione_badge xpos x ypos y # add badge on top
+    if hermione_wear_glasses:
+        add hermione_glasses xpos x ypos y # add glasses
+    if hermione_hats:
+        add hermione_hat xpos x ypos y # add glasses
+    if hermione_freckles:
+        add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos x ypos y # add freckles
+    if hermione_cum:
+        add "01_hp/13_hermione_main/auto_14.png" xpos x ypos y # add fake cum   
+
     
     if hermione_wear_robe:
         add hermione_robe xpos x ypos y
@@ -274,6 +284,18 @@ screen hermione_head:
     if hermione_costume:
         for i in hermoine_outfit_GLBL.getTopLayers():
             add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
+
+    # ACCESORIES
+    if hermione_badges and hermione_wear_top and not hermione_costume:
+        add hermione_badge xpos hermione_head_xpos_offset ypos hermione_head_ypos # add badge on top
+    if hermione_wear_glasses:
+        add hermione_glasses xpos hermione_head_xpos_offset ypos hermione_head_ypos # add glasses
+    if hermione_hats:
+        add hermione_hat xpos hermione_head_xpos_offset ypos hermione_head_ypos # add glasses
+    if hermione_freckles:
+        add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add freckles
+    if hermione_cum:
+        add "01_hp/13_hermione_main/auto_14.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add fake cum   
     
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos
