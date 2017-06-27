@@ -1,5 +1,5 @@
 label hat_intro:
-
+    $ hat_known = True
     who2 "Hey."
     m "What? who said that?"
     menu:
@@ -20,7 +20,7 @@ label hat_intro:
     g4 "(The hat is talking!)"
     m "(Wait, is it supposed to talk? Is this normal?)"
     m "What do you want...{p} hat?"
-    hat "I'm the {size+=5}sorting{/size} hat, and I Just want to talk."
+    hat "I'm the {size=+5}sorting{/size} hat, and I Just want to talk."
     m "Well go ahead then, it's not like I've got anything better to do in this room."
     hat "So, about what you've been doing to Hermione Granger..."
     m "Oh, that, Ummmmmm... It's not what it-"
@@ -29,8 +29,8 @@ label hat_intro:
     hat "I want to help you corrupt another girl."
     m "Another girl?"
     hat "Well it wouldn't be much fun messing around with the Granger girl anymore, she's too far gone."
-    m "so What's in it for you?"
-    hat "Entertainment. Do you understand how boring it is to sit in this room all day with nothing to do..."
+    m "so What's in it for you hat?"
+    hat "Entertainment. Do you understand how boring it is to sit in this room all day, staring at the wall with nothing to do..."
     m "..."
     hat "Oh, yeah... Well you should appreciate my offer to fight off the boredom for you then."
     m "And how do you plan to \'corrupt a girl\' from up there on the shelf?"
@@ -42,14 +42,24 @@ label hat_intro:
     m "and how does that help us?"
     hat "Well I can do more than just read personalities, I can alter them as well."
     g9 "Really?"
-    hat "Well I mean in theory. The real Dumbledore hasn't ever let me try it. not Even on \'him\'."
-    m "So you're saying if I get a student in here you can turn them into whatever I want?"
+    hat "Well I mean in theory... The real Dumbledore never let me try it out. Not even on \'him\'."
+    g9 "So you're saying if I get a student in here you can turn them into whatever I want?"
     hat "To an extent."
     m "what's that supposed to mean?"
+    hat "I can change what house their in, and their personalities will change to suit that, but I can't completely alter a person's mind."
+    m "So I still have to do all the hard work?"
+    hat "If you call sexually harassing teens hard work..."
+    m "I'll think about it."
+    hat "Go ahead, I'm sure you'll have plenty of time to think it over while you sit there by yourself..."
+    hat "But... {p}if you want to have some real fun, get that brat Miss Granger to bring one of her slutty little friends up here."
+    hat "Until then..."
+    m "What?"
+    hat "zzz..."
+    m "Oh."
+
     
 
-
-
+label hat_intro_2: #Bringing in Hermione
 
 
 

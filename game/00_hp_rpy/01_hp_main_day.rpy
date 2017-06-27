@@ -279,7 +279,9 @@ if whoring >= 18 and days_without_an_event >= 5 and snape_against_chairman_hap a
 if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_without_an_event >= 1: # Turns TRUE after Hermione comes and apologizes for the day (event) before.
     call sorry_about_hesterics
 
-
+#HAT EVENT
+if whoring >= 21 and not hat_known:
+    call hat_intro
 
 ### NOT IN USE
 #if day == 10:

@@ -11309,7 +11309,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                 with d3
                 show screen blkfade
                 with d7
-            "-Cum allover Hermione-":
+            "-Cum all over Hermione-":
                 $ g_c_u_pic = "sex_cum_out_ani"
                 call cum_block
                 show screen ctc

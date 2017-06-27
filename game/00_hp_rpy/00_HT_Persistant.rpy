@@ -296,7 +296,9 @@ label __init_variables:
     if override_persistant or not hasattr(renpy.store,'hg_ps_PantyThief_SoakedPantiesFlag'): #important!
         $ hg_ps_PantyThief_SoakedPantiesFlag = False
 
-        
+    #HAT stuff
+    if not hasattr(renpy.store,'hat_known'):
+        $ hat_known = False
     
     
     
