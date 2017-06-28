@@ -140,6 +140,10 @@ label door:
                 
                 label day_time_requests:
                 menu:
+                    "-Ask for a new student-" if hat_known and not luna_known:
+                        call luna_init
+                        $ luna_known = True
+                        jump hat_intro_2
                     "-Talk-":
                         label hermione_talk:
                         menu:
@@ -412,7 +416,7 @@ label door:
                 jump night_main_menu
             
         "-Summon Luna-" if luna_known and not luna_busy:
-            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # SNAPE'S THEME
+            play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # LUNA'S THEME (placeholder probably)
             jump luna_door
                             
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:

@@ -27,6 +27,14 @@ screen luna:
 screen luna_chibi:
     add luna_chibi_image xpos luna_chibi_xpos ypos luna_chibi_ypos
 
+
+label luna_main(text="",eye=None, pupil=None, eyebrow=None, mouth=None):
+    if eye!=None and pupil!=None and eyebrow!=None and mouth!=None:
+        $ changeLuna(eye, pupil, eyebrow, mouth)
+    if text != "":
+        $ renpy.say(lun, text)
+    return
+
 init python: ###Method Definition for new characters
     def luna_chibi( l_chibi=None, 
                     l_xpos=None,
@@ -109,4 +117,4 @@ init python: ###Method Definition for new characters
             
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("luna")
-        renpy.with_statement(Dissolve(0.5))
+        renpy.with_statement(Dissolve(0.3))

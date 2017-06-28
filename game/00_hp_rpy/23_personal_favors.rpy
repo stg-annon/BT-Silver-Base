@@ -93,7 +93,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 hide screen hermione_main
                 hide screen blktone
                 with d3
-                ">You reach under the desk and crab your cock..."
+                ">You reach under the desk and grab your cock..."
                 hide screen blktone8
                 with d3
                 hide screen genie

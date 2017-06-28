@@ -56,10 +56,40 @@ label hat_intro:
     m "What?"
     hat "zzz..."
     m "Oh."
+    return
 
     
 
 label hat_intro_2: #Bringing in Hermione
+    m "[hermione_name], I wanted to talk to you about something."
+    call her_main("Whats that [genie_name]?","body_14")
+    m "Do you feel that any of your friends are in the wrong house?"
+    call her_main("What do you mean In the wrong house?","body_15")
+    m "well, do you know anyone who'd be better suited being in a different house?"
+    call her_main("That's a weird question [genie_name].","body_02")
+    call her_main("I suppose that Neville Longbottom isn't very courageous, Maybe he'd be better off in \"Hufflepuff\"...","body_08")
+    m "(Probably don't want him...)"
+    m "Anyone else come to mind?"
+    call her_main("I don't think so...","body_10")
+    m "Oh well, just-"
+    call her_main("Wait, I know! Luna Lovegood!","body_30")
+    m "And why is that?"
+    call her_main("Well surely you've seen her grades [genie_name]...","body_16")
+    call her_main("Suffice to say, she's hardly \"Ravenclaw\" material. She'd probably be better suited to \"Hufflepuff\" as well.","body_17")
+    m "Fantastic. Could you please tell her to come to my office later this afternoon?"
+    call her_main("Why? You're not going to ask her for favours are you?","body_50")
+    m "Nothing of the sort. This is strictly school business."
+    call her_main("...","body_50")
+    call her_main("Fine... Just don't do anything too bad...","body_17")
+    m "Scouts honor!"
+    call her_main("Well if that's all then [genie_name], I better head to class.","body_16")
+
+    jump end_hg_pf
+
+label hat_intro_3: #Luna change scene TODO
+
+
+
 
 
 
