@@ -307,7 +307,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
     
     jump back_from_soaked
 label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
-    
+    $ hg_ps_PantyThief_OBJ.complete = True
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     call her_walk(710,500,3)
     
@@ -1034,6 +1034,7 @@ label hg_ps_WearMyCum_Scene_3:
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
     $ hg_ps_WearMyCum_OBJ.inProgress = False
+    $ hg_ps_WearMyCum_OBJ.complete = True
     if cum_location <= 3:
         jump hg_ps_WearMyCum_complete_1
     else:
