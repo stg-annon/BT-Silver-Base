@@ -152,6 +152,10 @@ if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turn
     jump good_bye_snape
 
 
+if luna_known and not luna_unlocked:
+    call hat_intro_3
+
+
 
 
 

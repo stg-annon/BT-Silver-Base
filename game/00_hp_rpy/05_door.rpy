@@ -408,14 +408,14 @@ label door:
                             $ hermione_sleeping = True
                             jump night_main_menu
 
-        "{color=#858585}-Summon Luna-{/color}" if luna_known and luna_busy:
+        "{color=#858585}-Summon Luna-{/color}" if luna_known and luna_unlocked and luna_busy:
             ">Luna is unavailable."
             if daytime:
                 jump day_main_menu
             else: 
                 jump night_main_menu
             
-        "-Summon Luna-" if luna_known and not luna_busy:
+        "-Summon Luna-" if luna_known and luna_unlocked and not luna_busy:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # LUNA'S THEME (placeholder probably)
             jump luna_door
                             

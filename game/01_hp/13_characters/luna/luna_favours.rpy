@@ -2,9 +2,8 @@
 
 label luna_favour_1: ###TALK TO ME
     m "{size=-4}(All I'll do is have a nice little conversation with her...){/size}"
-    if luna_corruption <= 1:
-        $ luna_corruption += 1
     if luna_corruption == 0: #FIRST TIME
+            $ luna_corruption += 1
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
             m "Ok then..."
             m "Tell me a little about yourself, [luna_name]."
@@ -141,240 +140,466 @@ label luna_favour_1: ###TALK TO ME
 
 
 
-    elif luna_corruption >= 1: #SECOND TIME 
-            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-            m "Alright then..."
-            m "How's school going, [luna_name]."
-            call luna_main("aren't we going to discuss how much you'll be paying me first, [l_genie_name].", 7, 1, 2, 2)
-            menu:
-                "-10 gold-": #just conversation (very short)
-                    $ current_payout = 10
-                    m "How does 10 gold sound?"
-                    call luna_main("*Hmph* Fine...", 3, 3, 1, 2)
-                    m "so about your school life..."
-                    call luna_main("School is boring. All I do is go to classes.", 1, 1, 2, 3)
-                    call luna_main("Can I leave now?", 1, 2, 2, 2)
-                    g9 "What? That was barely a sentence!"
-                    call luna_main("And ten gold is barely a payment!", 1, 2, 2, 2)
-                    m "I'd say it's a fair payment for a little bit of idle chit chat."
-                    call luna_main("That's what you got. If you want more, pay more...", 1, 1, 3, 2)
-                "-20 gold-": #Slightly flirty, still short
-                    $ current_payout = 20
-                    m "Will twenty gold be enough for you, [luna_name]?"
-                    call luna_main("I suppose so...", 6, 1, 1, 2)
-                    call luna_main("Just don't expect to get to touch yourself...", 7, 2, 2, 3)
-                    m "How much would that cost?"
-                    call luna_main("...{p}More than twenty gold...", 7, 2, 2, 3)
-                    m "Well I might take you up on that at a later date, For now tell me about school."
-                    call luna_main("School is boring...", 1, 1, 2, 3)
-                    m "..."
-                    call luna_main("but there are a few interesting things happening... ", 5, 1, 5, 1)
-                    m "go on..."
-                    call luna_main("Well there are some rumours about Peeves the ghost...", 5, 2, 5, 1)
-                    m "What sort?"
-                    call luna_main("Well I've heard that he's been touching some of the girls...", 5, 1, 4, 2)
-                    m "How haven't I heard a complaint?"
-                    call luna_main("Well from what I hear... the girls don't have any complaints afterwards...", 5, 1, 5, 1)
-                    m "Ah... Anything else?"
-                    call luna_main("Hmmm... nothing comes to mind.", 6, 3, 2, 2)
-                    m "fair enough, well I think that was worth your twenty gold."
-                "-100 gold-": #JOI
-                    $ current_payout = 100
-                    m "How about one hundred gold?"
-                    call luna_main("Fine...", 5, 2, 2, 2)
-                    call luna_main("...", 6, 1, 2, 2)
-                    call luna_main("......", 6, 1, 5, 3)
-                    call luna_main("Well are you going to start?", 8, 2, 3, 3)
-                    m "Start what? You're the one who's supposed to be talking."
-                    call luna_main("Oh please... You expect me to believe you're willing to pay your students 100 gold just to talk?", 7, 1, 5, 3)
-                    m "Well I suppose that-"
-                    call luna_main("Just start stroking your cock already [l_genie_name].", 5, 1, 1, 2)
-                    hide screen blktone
-                    with d3
-                    ">You reach under the desk and grab your cock..."
-                    hide screen blktone8
-                    with d3
-                    hide screen genie
-                    show screen genie_jerking_off
-                    with d3
-                    pause  
-                    call luna_main("Isn't that better?", 5, 1, 5, 1)
-                    m "..."
-                    call luna_main("So do you pay anyone else to watch you sit there and jerk your filthy old cock?", 5, 1, 2, 3)
-                    m "{size=-4}(I guess I don't really pay hermione...){/size}"
-                    m "ah... no..."
-                    call luna_main("good...", 5, 2, 1, 1)
-                    m "Good?"
-                    call luna_main("Well... we can't have you wasting your money on any of those other little tarts can we?", 8, 1, 3, 3)
-                    menu:
-                        "-Play along-": #act submissive
-                            $ luna_dom = 1
-                            $ current_payout = 150
-                            m "ah... of course not..."
-                            call luna_main("That's right... why bother with them when I'm here to talk with you...", 8, 1, 3, 1)
-                            m "{size=-4}(Yes...){/size}"
-                            call luna_main("That's it, keep stroking it for me [l_genie_name].", 6, 1, 2, 2)
-                            m "{size=-4}(Yes... yes...){/size}"
-                            call luna_main("It's probably I good thing that I watch you drain your balls.", 6, 2, 2, 2)
-                            call luna_main("Otherwise, who knows who you might call up here to watch you do it...", 7, 1, 2, 4)
-                            m "{size=-4}(mmmm... yes...){/size}"
-                            call luna_main("You'd probably even do it in front of a first year, wouldn't you?", 9, 1, 2, 1)
-                            ">You stop stroking your cock."
-                            m "I'd never do any-"
-                            call luna_main("Do you even know how old I am?", 9, 1, 5, 1)
-                            m "of course..."
-                            call luna_main("*Hmph* Are you sure about that?", 9, 1, 5, 14)
-                            m "..."
-                            call luna_main("Back to stroking it [l_genie_name]...", 9, 1, 3, 1)
-                            ">You start stroking your cock again."
-                            call luna_main("Doesn't that feel better?", 9, 2, 3, 1)
-                            m "{size=-4}(argh... yes...){/size}"
-                            call luna_main("Say it outloud.", 8, 1, 3, 1)
-                            m "{size=-4}yes...{/size}"
-                            call luna_main("Good. Now cum for me.", 9, 1, 2, 1)
-                            m "{size=-2}(What?){/size}"
-                            call luna_main("come on...", 9, 1, 4, 1)
-                            g4 "{size=+4}(agh... almost there...){/size}"
-                            call luna_main("come for your little girl...", 9, 1, 3, 14)
-                            g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-                            hide screen luna
-                            with d3
-                            show screen white 
-                            pause.1
-                            hide screen white
-                            pause.2
-                            show screen white 
-                            pause .1
-                            hide screen white
-                            with hpunch
-                            g4 "Argh! YES!"
-                            hide screen luna
-                            with d3
-                            hide screen bld1
-                            with d3
-                            show screen genie_jerking_sperm
-                            with d3
-                            show screen bld1
-                            with d3
-                            call luna_main("That's it, [l_genie_name] just like that...", 5, 1, 1, 1)
-                            show screen genie_jerking_sperm_02
-                            with d3
-                            g4 "What? No, I was thinking about... ah, shit, this feels too good..."
-                            show screen genie
-                            hide screen bld1
-                            #show screen genie_jerking_off
-                            with d3
-                            call luna_main("Your a nasty old man, aren't you.", 5, 2, 5, 1)
-                            m "ah..."
-                            call luna_main("Don't worry, I won't tell anyone...", 5, 1, 5, 1)
-                            m "Thank you..."
-                            call luna_main("I expect to be fairly compensated however...", 7, 2, 2, 1)
-                            m "Don't worry, I'll add an extra 50 gold to your payment."
-                            call luna_main("That's the least you could do [l_genie_name]...", 9, 2, 5, 1)
+    elif luna_corruption == 1: #SECOND TIME 
+        if luna_corruption <= 1:
+            $ luna_corruption += 1
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+        m "Alright then..."
+        m "How's school going, [luna_name]."
+        call luna_main("aren't we going to discuss how much you'll be paying me first, [l_genie_name].", 7, 1, 2, 2)
+        menu:
+            "-10 gold-": #just conversation (very short)
+                $ current_payout = 10
+                m "How does 10 gold sound?"
+                call luna_main("*Hmph* Fine...", 3, 3, 1, 2)
+                m "so about your school life..."
+                call luna_main("School is boring. All I do is go to classes.", 1, 1, 2, 3)
+                call luna_main("Can I leave now?", 1, 2, 2, 2)
+                g9 "What? That was barely a sentence!"
+                call luna_main("And ten gold is barely a payment!", 1, 2, 2, 2)
+                m "I'd say it's a fair payment for a little bit of idle chit chat."
+                call luna_main("That's what you got. If you want more, pay more...", 1, 1, 3, 2)
+            "-20 gold-": #Slightly flirty, still short
+                $ current_payout = 20
+                m "Will twenty gold be enough for you, [luna_name]?"
+                call luna_main("I suppose so...", 6, 1, 1, 2)
+                call luna_main("Just don't expect to get to touch yourself...", 7, 2, 2, 3)
+                m "How much would that cost?"
+                call luna_main("...{p}More than twenty gold...", 7, 2, 2, 3)
+                m "Well I might take you up on that at a later date, For now tell me about school."
+                call luna_main("School is boring...", 1, 1, 2, 3)
+                m "..."
+                call luna_main("but there are a few interesting things happening... ", 5, 1, 5, 1)
+                m "go on..."
+                call luna_main("Well there are some rumours about Peeves the ghost...", 5, 2, 5, 1)
+                m "What sort?"
+                call luna_main("Well I've heard that he's been touching some of the girls...", 5, 1, 4, 2)
+                m "How haven't I heard a complaint?"
+                call luna_main("Well from what I hear... the girls don't have any complaints afterwards...", 5, 1, 5, 1)
+                m "Ah... Anything else?"
+                call luna_main("Hmmm... nothing comes to mind.", 6, 3, 2, 2)
+                m "fair enough, well I think that was worth your twenty gold."
+            "-100 gold-": #JOI
+                $ current_payout = 100
+                m "How about one hundred gold?"
+                call luna_main("Fine...", 5, 2, 2, 2)
+                call luna_main("...", 6, 1, 2, 2)
+                call luna_main("......", 6, 1, 5, 3)
+                call luna_main("Well are you going to start?", 8, 2, 3, 3)
+                m "Start what? You're the one who's supposed to be talking."
+                call luna_main("Oh please... You expect me to believe you're willing to pay your students 100 gold just to talk?", 7, 1, 5, 3)
+                m "Well I suppose that-"
+                call luna_main("Just start stroking your cock already [l_genie_name].", 5, 1, 1, 2)
+                hide screen blktone
+                with d3
+                ">You reach under the desk and grab your cock..."
+                hide screen blktone8
+                with d3
+                hide screen genie
+                show screen genie_jerking_off
+                with d3
+                pause  
+                call luna_main("Isn't that better?", 5, 1, 5, 1)
+                m "..."
+                call luna_main("So do you pay anyone else to watch you sit there and jerk your filthy old cock?", 5, 1, 2, 3)
+                m "{size=-4}(I guess I don't really pay hermione...){/size}"
+                m "ah... no..."
+                call luna_main("good...", 5, 2, 1, 1)
+                m "Good?"
+                call luna_main("Well... we can't have you wasting your money on any of those other little tarts can we?", 8, 1, 3, 3)
+                menu:
+                    "-Play along-": #act submissive
+                        $ luna_dom = 1
+                        $ current_payout = 150
+                        m "ah... of course not..."
+                        call luna_main("That's right... why bother with them when I'm here to talk with you...", 8, 1, 3, 1)
+                        m "{size=-4}(Yes...){/size}"
+                        call luna_main("That's it, keep stroking it for me [l_genie_name].", 6, 1, 2, 2)
+                        m "{size=-4}(Yes... yes...){/size}"
+                        call luna_main("It's probably I good thing that I watch you drain your balls.", 6, 2, 2, 2)
+                        call luna_main("Otherwise, who knows who you might call up here to watch you do it...", 7, 1, 2, 4)
+                        m "{size=-4}(mmmm... yes...){/size}"
+                        call luna_main("You'd probably even do it in front of a first year, wouldn't you?", 9, 1, 2, 1)
+                        ">You stop stroking your cock."
+                        m "I'd never do any-"
+                        call luna_main("Do you even know how old I am?", 9, 1, 5, 1)
+                        m "of course..."
+                        call luna_main("*Hmph* Are you sure about that?", 9, 1, 5, 14)
+                        m "..."
+                        call luna_main("Back to stroking it [l_genie_name]...", 9, 1, 3, 1)
+                        ">You start stroking your cock again."
+                        call luna_main("Doesn't that feel better?", 9, 2, 3, 1)
+                        m "{size=-4}(argh... yes...){/size}"
+                        call luna_main("Say it outloud.", 8, 1, 3, 1)
+                        m "{size=-4}yes...{/size}"
+                        call luna_main("Good. Now cum for me.", 9, 1, 2, 1)
+                        m "{size=-2}(What?){/size}"
+                        call luna_main("come on...", 9, 1, 4, 1)
+                        g4 "{size=+4}(agh... almost there...){/size}"
+                        call luna_main("come for your little girl...", 9, 1, 3, 14)
+                        g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                        hide screen luna
+                        with d3
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "Argh! YES!"
+                        hide screen luna
+                        with d3
+                        hide screen bld1
+                        with d3
+                        show screen genie_jerking_sperm
+                        with d3
+                        show screen bld1
+                        with d3
+                        call luna_main("That's it, [l_genie_name] just like that...", 5, 1, 1, 1)
+                        show screen genie_jerking_sperm_02
+                        with d3
+                        g4 "What? No, I was thinking about... ah, shit, this feels too good..."
+                        show screen genie
+                        hide screen bld1
+                        #show screen genie_jerking_off
+                        with d3
+                        call luna_main("Your a nasty old man, aren't you.", 5, 2, 5, 1)
+                        m "ah..."
+                        call luna_main("Don't worry, I won't tell anyone...", 5, 1, 5, 1)
+                        m "Thank you..."
+                        call luna_main("I expect to be fairly compensated however...", 7, 2, 2, 1)
+                        m "Don't worry, I'll add an extra 50 gold to your payment."
+                        call luna_main("That's the least you could do [l_genie_name]...", 9, 2, 5, 1)
 
 
 
-                        "-Let her know her place-": #note that he could get more for less from those tarts
-                            $ luna_dom = 0
-                            m "well now that you mention it I'm sure those tarts would probably charge a lot less for a conversation..."
-                            call luna_main("*Hmph* You get what you pay for...", 7, 2, 3, 3)
-                            m "And what exactly am I getting from you for my payment?"
-                            call luna_main("Getting to Look at me while you stroke your filthy old cock should be payment enough.", 7, 1, 3, 2)
-                            m "Well you'll have to excuse my old eyes because I can barely see you..."
-                            menu: 
-                                "-Ask her to open her top-":
-                                    m "Perhaps you should undo a button or two so I can get a better look."
-                                    call luna_main("Are you serious? You expect me to flaunt myself like some cheap tart?", 8, 1, 2, 2)
-                                    m "No, I expect you to flaunt yourself like the princess you claim to be..."
-                                    call luna_main("...", 7, 2, 2, 2)
-                                    m "I'm waiting..."
-                                    call luna_main("... {size=-8}(fine...){/size}", 6, 3, 4, 3)
-                                    ">Luna removes her tie and opens her top slightly..."
-                                    hide screen luna 
-                                    with d3
-                                    $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_2.png"
-                                    show screen luna 
-                                    with d3 
-                                    m "Why don't you keep you're shirt like that from now on..."
-                                    call luna_main("...", 6, 2, 4, 3)
-                                "-Ask her to come closer-":
-                                    m "Perhaps you should come stand a little closer."
-                                    call luna_main("Really? You want me to come closer while you...?", 6, 1, 3, 2)
-                                    m "Well I am so \"old\"..."
-                                    call luna_main("...", 7, 2, 2, 2)
-                                    m "I'm waiting..."
-                                    call luna_main("... {size=-8}(fine...){/size}", 6, 3, 4, 3)
-                                    hide screen luna_chibi
-                                    with d3
-                                    ">Luna walks towards you, standing in front of the table..."
-                                    $ luna_chibi_xpos = 450
-                                    show screen luna_chibi 
-                                    with d3 
-                                    m "Very good... Maybe you should stand this close from now on..."
-                                    call luna_main("...", 6, 2, 4, 3)
+                    "-Let her know her place-": #note that he could get more for less from those tarts
+                        $ luna_dom = 0
+                        m "well now that you mention it I'm sure those tarts would probably charge a lot less for a conversation..."
+                        call luna_main("*Hmph* You get what you pay for...", 7, 2, 3, 3)
+                        m "And what exactly am I getting from you for my payment?"
+                        call luna_main("Getting to Look at me while you stroke your filthy old cock should be payment enough.", 7, 1, 3, 2)
+                        m "Well you'll have to excuse my old eyes because I can barely see you..."
+                        menu: 
+                            "-Ask her to open her top-":
+                                m "Perhaps you should undo a button or two so I can get a better look."
+                                call luna_main("Are you serious? You expect me to flaunt myself like some cheap tart?", 8, 1, 2, 2)
+                                m "No, I expect you to flaunt yourself like the princess you claim to be..."
+                                call luna_main("...", 7, 2, 2, 2)
+                                m "I'm waiting..."
+                                call luna_main("... {size=-8}(fine...){/size}", 6, 3, 4, 3)
+                                ">Luna removes her tie and opens her top slightly..."
+                                hide screen luna 
+                                with d3
+                                $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_2.png"
+                                show screen luna 
+                                with d3 
+                                m "Why don't you keep you're shirt like that from now on..."
+                                call luna_main("...", 6, 2, 4, 3)
+                            "-Ask her to come closer-":
+                                m "Perhaps you should come stand a little closer."
+                                call luna_main("Really? You want me to come closer while you...?", 6, 1, 3, 2)
+                                m "Well I am so \"old\"..."
+                                call luna_main("...", 7, 2, 2, 2)
+                                m "I'm waiting..."
+                                call luna_main("... {size=-8}(fine...){/size}", 6, 3, 4, 3)
+                                hide screen luna_chibi
+                                with d3
+                                ">Luna walks towards you, standing in front of the table..."
+                                $ luna_chibi_xpos = 450
+                                show screen luna_chibi 
+                                with d3 
+                                m "Very good... Maybe you should stand this close from now on..."
+                                call luna_main("...", 6, 2, 4, 3)
 
 
-                            call luna_main("Is this what you want?", 6, 3, 4, 3)
-                            call luna_main("To humiliate me...", 6, 1, 3, 3)
-                            m "{size=-4}(mmmm... yes...){/size}"
-                            call luna_main("You love this, don't you...", 7, 1, 2, 2)
-                            ">You start stroking faster."
-                            call luna_main("What I'm forced to do...", 7, 3, 3, 2)
-                            call luna_main("Just to survive...", 6, 3, 4, 3)
-                            m "..."
-                            call luna_main("Well don't worry about that...", 8, 1, 3, 2)
-                            call luna_main("Just keep stroking it.", 8, 2, 3, 1)
-                            m "{size=-4}(argh... yes...){/size}"
-                            call luna_main("You nasty old man", 8, 1, 3, 1)
-                            m "{size=-4}yes...{/size}"
-                            call luna_main("Get your moneys worth...", 9, 1, 3, 3)
-                            m "{size=-2}(mmmm...){/size}"
-                            call luna_main("come on...", 9, 1, 2, 1)
-                            g4 "{size=+4}(agh... almost there...){/size}"
-                            call luna_main("come for your poor student...", 9, 1, 4, 1)
-                            g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-                            hide screen luna
-                            with d3
-                            show screen white 
-                            pause.1
-                            hide screen white
-                            pause.2
-                            show screen white 
-                            pause .1
-                            hide screen white
-                            with hpunch
-                            g4 "Argh! YES!"
-                            hide screen luna
-                            with d3
-                            hide screen bld1
-                            with d3
-                            show screen genie_jerking_sperm
-                            with d3
-                            show screen bld1
-                            with d3
-                            call luna_main("That's it, just let it out...", 8, 1, 3, 3)
-                            show screen genie_jerking_sperm_02
-                            with d3
-                            g4 "good work, slut... ah, shit, this feels so good..."
-                            show screen genie
-                            hide screen bld1
-                            #show screen genie_jerking_off
-                            with d3
-                            call luna_main("Your a nasty old man, aren't you.", 9, 1, 5, 1)
-                            m "ah..."
-                            call luna_main("Forcing me to watch you do this...", 9, 2, 3, 1)
-                            m "Ah... I'm not forcing you to do anything..."
-                            call luna_main("Hmph well I expect to be paid now...", 8, 1, 2, 2)
-                            m "Don't worry, I'll give you your hundred gold."
-                            call luna_main("*Hmph* Fine...{p}(Nothing extra...?)", 8, 2, 2, 3)
+                        call luna_main("Is this what you want?", 6, 3, 4, 3)
+                        call luna_main("To humiliate me...", 6, 1, 3, 3)
+                        m "{size=-4}(mmmm... yes...){/size}"
+                        call luna_main("You love this, don't you...", 7, 1, 2, 2)
+                        ">You start stroking faster."
+                        call luna_main("What I'm forced to do...", 7, 3, 3, 2)
+                        call luna_main("Just to survive...", 6, 3, 4, 3)
+                        m "..."
+                        call luna_main("Well don't worry about that...", 8, 1, 3, 2)
+                        call luna_main("Just keep stroking it.", 8, 2, 3, 1)
+                        m "{size=-4}(argh... yes...){/size}"
+                        call luna_main("You nasty old man", 8, 1, 3, 1)
+                        m "{size=-4}yes...{/size}"
+                        call luna_main("Get your moneys worth...", 9, 1, 3, 3)
+                        m "{size=-2}(mmmm...){/size}"
+                        call luna_main("come on...", 9, 1, 2, 1)
+                        g4 "{size=+4}(agh... almost there...){/size}"
+                        call luna_main("come for your poor student...", 9, 1, 4, 1)
+                        g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                        hide screen luna
+                        with d3
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "Argh! YES!"
+                        hide screen luna
+                        with d3
+                        hide screen bld1
+                        with d3
+                        show screen genie_jerking_sperm
+                        with d3
+                        show screen bld1
+                        with d3
+                        call luna_main("That's it, just let it out...", 8, 1, 3, 3)
+                        show screen genie_jerking_sperm_02
+                        with d3
+                        g4 "good work, slut... ah, shit, this feels so good..."
+                        show screen genie
+                        hide screen bld1
+                        #show screen genie_jerking_off
+                        with d3
+                        call luna_main("Your a nasty old man, aren't you.", 9, 1, 5, 1)
+                        m "ah..."
+                        call luna_main("Forcing me to watch you do this...", 9, 2, 3, 1)
+                        m "Ah... I'm not forcing you to do anything..."
+                        call luna_main("Hmph well I expect to be paid now...", 8, 1, 2, 2)
+                        m "Don't worry, I'll give you your hundred gold."
+                        call luna_main("*Hmph* Fine...{p}(Nothing extra...?)", 8, 2, 2, 3)
 
 
-    call luna_main("Speaking of which...", 5, 1, 2, 2)    
-    m "Alright, alright. Here's your gold."
-    $ gold -= current_payout
-    ">You hand Luna [current_payout] gold."
-    call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)     
-    ">Luna leaves your office."  
+        call luna_main("Speaking of which...", 5, 1, 2, 2)    
+        m "Alright, alright. Here's your gold."
+        $ gold -= current_payout
+        ">You hand Luna [current_payout] gold."
+        call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)     
+        ">Luna leaves your office."  
+
+    elif luna_corruption >= 2: #THIRD TIME 
+        if luna_corruption <= 2:
+            $ luna_corruption += 1
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+        m "Tell me [luna_name]..."
+        m "How's you're home life going?"
+        call luna_main("My home life?", 7, 2, 5, 2)
+        call luna_main("In one word, [l_genie_name], inadequate.", 7, 1, 2, 4)
+        m "inadequate?"
+        call luna_main("Yes! Someone such as myself should be showered with gifts and gold.", 8, 2, 2, 4)
+        call luna_main("Instead I live in a chess piece while my stupid, worthless father struggles to sell 10 copies of his dumb paper!", 8, 3, 3, 3)
+        m "Surely he sells more than 10 copies?"
+        call luna_main("Barely...", 7, 2, 2, 2)
+        call luna_main("He's struggling to get any institutions to stock it these days... ever since the ministry stopped buying it.", 6, 2, 2, 2)
+        menu:
+            "-Say nothing-": #act submissive
+                $ luna_dom = 2
+                $ current_payout = 150
+                call luna_main("Wait... that's it!", 5, 1, 2, 1)
+                m "what's it?"
+                call luna_main("Why don't you start buying the quibbler [l_genie_name]?.", 5, 1, 1, 1)
+                m "I hardly think one more person is going to turn things around."
+                call luna_main("Not you personally [l_genie_name], hogwarts!", 8, 1, 2, 2)
+                call luna_main("Just imagine how many copies the entire school would buy!", 1, 2, 2, 11)
+                m "Hmmm, I'll think about it..."
+                call luna_main("You'll {size=+4}think{/size} about it?", 9, 1, 3, 3)
+                call luna_main("*Hmph* Maybe I'll just have to {size=+4}think{/size} about getting my father to write a story...", 9, 2, 3, 3)
+                call luna_main("involving a perverted old headmaster who likes to lure young girls into his office...", 9, 2, 5, 3)
+                call luna_main("Just to leer at them while he strokes his filthy old cock...", 9, 1, 2, 3)
+                m "..."
+                call luna_main("I'm sure that would sell some extra copies...", 8, 2, 5, 3)
+                call luna_main("Well?", 9, 1, 3, 2)
+                m "Fine, fine. I'll get someone to start ordering some extra copies for the library."
+                call luna_main("There, isn't that easy?", 5, 2, 2, 1)
+                m "yes..."
+                call luna_main("Good. Now as a reward, I'll let you touch that filthy old cock of yours.", 7, 1, 2, 1)
+                m "..."
+                call luna_main("come on [l_genie_name]...", 9, 1, 4, 1)
+                hide screen blktone
+                with d3
+                ">You reach under the desk and grab your cock..."
+                hide screen blktone8
+                with d3
+                hide screen genie
+                show screen genie_jerking_off
+                with d3
+                pause  
+                call luna_main("That's better isn't it?", 9, 1, 2, 1)
+                call luna_main("Just listen to my voice while you stroke yourself...", 9, 2, 2, 1)
+                m "..."
+                call luna_main("Just think about how happy I'll be once father becomes a respectable member of society.", 8, 1, 3, 1)
+                call luna_main("Think about how much you enjoy making me happy...", 8, 2, 3, 1)
+                m "{size=-4}(argh... yes...){/size}"
+                call luna_main("You love making me happy don't you [l_genie_name]...", 8, 1, 3, 1)
+                m "{size=-4}yes...{/size}"
+                call luna_main("say it louder...", 8, 1, 3, 1)
+                m "yes..."
+                call luna_main("It makes you feel so good doesn't it...", 9, 1, 3, 1)
+                m "{size=-2}(mmmm...){/size}"
+                m "{size=+2}yes...{/size}"
+                call luna_main("maybe i'll even make you kiss my feet... that would make me very happy", 9, 1, 2, 1)
+                g4 "{size=+4}(agh...){/size}"
+                g4 "{size=+4}yes...{/size}"
+                call luna_main("that's it [l_genie_name], cum for your princess...", 9, 1, 4, 1)
+                g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                g4 "{size=+4}(agh... almost there...){/size}"
+                call luna_main("cum...", 9, 1, 3, 14)
+                call luna_main("{size=+4}cum!{/size}", 9, 1, 3, 14)
+                g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                hide screen luna
+                with d3
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "Argh! YES!"
+                hide screen luna
+                with d3
+                hide screen bld1
+                with d3
+                show screen genie_jerking_sperm
+                with d3
+                show screen bld1
+                with d3
+                call luna_main("That's it, [l_genie_name] just like that...", 8, 1, 2, 2)
+                show screen genie_jerking_sperm_02
+                with d3
+                g4 "ah, shit, why does this feels so good..."
+                show screen genie
+                hide screen bld1
+                #show screen genie_jerking_off
+                with d3
+                call luna_main("Disgusting...", 5, 2, 1, 6)
+                m "ah..."
+                call luna_main("...", 8, 1, 2, 2)
+                m "Thank you..."
+                call luna_main("Thank you...?", 9, 1, 3, 3)
+                m "Thank you princess..."
+                if luna_name == "Miss Lovegood":
+                    $ luna_name = "Princess"
+                call luna_main("That's better [l_genie_name]...", 7, 1, 2, 1)
+                call luna_main("Now as a princess I expect a present for having to look at such a filthy act...", 7, 2, 2, 1)
+
+            "-Make an offer-": #exchange quibbler purchase
+                $ luna_dom = -1
+                $ current_payout = 50
+                m "well I'm sure that I could have a few words with the library staff about stocking it..."
+                call luna_main("Really? You'd do that?", 4, 1, 1, 1)
+                m "Of course."
+                if l_genie_name == "Old man":
+                    $ l_genie_name = "Professor"
+                call luna_main("Thank you so much [l_genie_name]!", 2, 1, 1, 1)
+                m "I was thinking you could thank me for my generous offer another way..."
+                call luna_main("Oh...{p}", 7, 2, 3, 3)
+                m "That's not a problem is it [luna_name]?"
+                call luna_main("Of course not... What did you have in mind?", 6, 3, 4, 2)
+                m "well for starters..."
+                hide screen blktone
+                with d3
+                ">You reach under the desk and grab your cock..."
+                hide screen blktone8
+                with d3
+                hide screen genie
+                show screen genie_jerking_off
+                with d3
+                pause  
+                menu: 
+                    "-Ask her to shorten her skirt-":
+                        m "lets talk about that skirt of yours..."
+                        call luna_main("What about it?", 8, 1, 2, 2)
+                        m "have you ever considered wearing it a little... shorter?"
+                        call luna_main("...", 7, 2, 2, 2)
+                        m "I'm waiting..."
+                        call luna_main("...how short?", 6, 3, 4, 3)
+                        m "Just an inch or so higher."
+                        call luna_main("...", 6, 3, 4, 3)
+                        call luna_main("(my father better appreciate this...)", 6, 3, 4, 3)
+                        ">Luna pulls up her skirt slightly and then folds it over at the top..."
+                        hide screen luna 
+                        with d3
+                        $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_2.png"
+                        show screen luna 
+                        with d3 
+                        m "{size=-4}(mmmm... yes...){/size}"
+                        m "Why don't you wear it like that from now on..."
+                        call luna_main("yes, [l_genie_name].", 6, 2, 4, 3)
+
+                    "-Make her call you sir-":
+                        $ l_genie_name = "Sir"
+                        m "How about you start giving me the respect I deserve."
+                        call luna_main("...", 6, 1, 3, 2)
+                        m "I want you to refer to me as sir from now on."
+                        call luna_main("...", 7, 2, 2, 2)
+                        m "Is that clear?"
+                        call luna_main("...Yes...{size=-8}sir{/size}", 6, 3, 4, 3)
+                        m "Speak up [luna_name]..."
+                        call luna_main("Yes sir...", 6, 2, 4, 3)
+                        m "{size=-4}(yes...){/size}"
+
+
+                call luna_main("You know this is wrong don't you?", 6, 3, 4, 3)
+                call luna_main("What you're forcing me to do...", 6, 1, 3, 3)
+                m "{size=-4}(mmmm... yes...){/size}"
+                m "I don't recall forcing you into anything [luna_name]..."
+                call luna_main("*hmph*...", 7, 1, 2, 2)
+                ">You start stroking faster."
+                call luna_main("well...", 7, 3, 3, 2)
+                call luna_main("just get it over with...", 6, 3, 4, 3)
+                m "{size=-4}ah...{/size}"
+                call luna_main("Just keep touching yourself in front of me...", 8, 1, 3, 2)
+                m "{size=-4}(argh... yes...){/size}"
+                call luna_main("let it all out front of me...", 8, 1, 3, 5)
+                m "{size=-4}yes...{/size}"
+                call luna_main("Your student...", 9, 1, 3, 3)
+                m "{size=-2}(mmmm...){/size}"
+                call luna_main("come on...", 9, 1, 2, 1)
+                g4 "{size=+4}(agh... almost there...){/size}"
+                call luna_main("come for your little princess...", 9, 1, 4, 1)
+                g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                hide screen luna
+                with d3
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "Argh! YES!"
+                hide screen luna
+                with d3
+                hide screen bld1
+                with d3
+                show screen genie_jerking_sperm
+                with d3
+                show screen bld1
+                with d3
+                call luna_main("ugh... there's so much...", 8, 1, 3, 3)
+                show screen genie_jerking_sperm_02
+                with d3
+                g4 "good work, slut... ah, shit, this feels so good..."
+                show screen genie
+                hide screen bld1
+                #show screen genie_jerking_off
+                with d3
+                call luna_main("The floor...", 7, 3, 2, 2)
+                call luna_main("it's covered...", 7, 2, 2, 2)
+                m "Ah... you did good [luna_name]..."
+                call luna_main("Hmph well I expect to be paid now...", 8, 1, 2, 2)
+
+
+        m "Alright, alright. Here's your gold."
+        $ gold -= current_payout
+        ">You hand Luna [current_payout] gold."
+        call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 2) 
+        if current_payout <= 50:
+            call luna_main("(only [current_payout]?) *hmph*", 8, 2, 2, 3) 
+        ">Luna leaves your office."  
     hide screen genie_jerking_sperm_02     
     jump luna_away
 label luna_favour_2: ###STRIP FOR ME

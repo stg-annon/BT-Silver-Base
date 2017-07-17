@@ -96,6 +96,7 @@ label luna_walk_end_loiter(dissolveTime = 3):
     return
 
 label luna_door:
+    $ renpy.play('sounds/door.mp3')
     $ luna_chibi("stand")
     call luna_main("[l_genie_name]...", 8, 2, 3, 3)
 
@@ -132,7 +133,7 @@ return
 
 label luna_away:
     $ luna_busy = True
-    $ renpy.play('sounds/door.mp3')
+    $ renpy.play('sounds/door2.mp3')
     hide screen luna
     hide screen luna_chibi
     with d3

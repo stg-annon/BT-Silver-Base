@@ -346,8 +346,8 @@ label __init_variables:
     $ snape_chibi_ypos=210
     $ snape_speed = 2.0
     
-    $ luna_chibi_xpos = 400
-    $ luna_chibi_ypos = 400
+    $ luna_chibi_xpos = 500
+    $ luna_chibi_ypos = 250
     $ luna_speed = 2.0
     
     

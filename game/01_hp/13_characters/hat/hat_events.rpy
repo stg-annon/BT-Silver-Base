@@ -52,10 +52,11 @@ label hat_intro:
     m "I'll think about it."
     hat "Go ahead, I'm sure you'll have plenty of time to think it over while you sit there by yourself..."
     hat "But... {p}if you want to have some real fun, get that brat Miss Granger to bring one of her slutty little friends up here."
+    hat "then you Put me on their head and we'll have some fun."
     hat "Until then..."
     m "What?"
-    hat "zzz..."
-    m "Oh."
+    hat "{size=+5}z{/size}{size=+4}z{/size}{size=+3}z{/size}{size=+2}z{/size}{size=+1}z{/size}"
+    m "Oh..."
     return
 
     
@@ -86,7 +87,70 @@ label hat_intro_2: #Bringing in Hermione
 
     jump end_hg_pf
 
-label hat_intro_3: #Luna change scene TODO
+label hat_intro_3: #Luna change scene 
+    $ renpy.play('sounds/knocking.mp3')
+    "*knock* *knock* *knock*"
+    lun "It's Luna Lovegood sir..."
+    m "come in, come in..."
+    $ renpy.play('sounds/door.mp3')
+    ">Luna stands in front of you."
+    $ luna_chibi("stand")
+    call luna_main("Hermione said you wanted to see me?", 1, 2, 1, 2)
+    m "Yes. It's about your school house."
+    call luna_main("Ravenclaw?", 1, 1, 5, 2)
+    m "Yes. I've been speaking with the sorting hat recently and I've been worried that he may have gotten a few student's houses wrong over the years."
+    call luna_main("Really? So am I going to have to change house?", 1, 1, 4, 3)
+    m "Of course not!"
+    call luna_main("*Phew*!", 2, 1, 1, 1)
+    m "I just wanted to put the hat on your head to see if he made the right choice."
+    call luna_main("oh, alright then!", 1, 2, 1, 1)
+    ">You turn around and reach for the hat."
+    m "Almost there... Just grab the edge of it..."
+    hat "Careful!"
+    ">You pull the heavy hat down of the cupboard."
+    hat "*Psst*{size=-5}Nice work! Now just put me on her head.{/size}"
+    m "Here we are Miss Lovegood..."
+    ">You place the hat gingerly on her head."
+    call luna_main("...", 1, 2, 1, 3)
+    call luna_main("Is it-", 1, 2, 5, 3)
+    hat "{size=+5}HMMMM{/size}yes... {size=-5}yes...{/size} I see. Very interesting... {size=+5}Very{/size}{p} {size=+5}interesting...{/size}"
+    call luna_main("What's interesting?", 1, 1, 5, 2)
+    hat "What? Oh nothing, nothing. Just close your eyes, try and get a bit of sleep..."
+    call luna_main("Sleep?", 6, 2, 5, 2)
+    call luna_main("Why would I... want{p} to...", 3, 1, 4, 2)
+    call luna_main("...", 1, 6, 4, 2) #hypno eyes
+    m "is she alright?"
+    hat "She's fine. Just having a bit of a rest. Now about that personality..."
+    hat "Oh yes... Hmmmm, {p}well I suppose that could work..."
+    hat "{size=-5}yes... I'm sure salazar would be proud...{/size}"
+    hat "Just a little longer..."
+    call luna_main("...", 1, 6, 4, 2) #hypno eyes
+    call luna_main("...", 1, 6, 1, 2) #hypno eyes
+    $ luna_unlocked = True
+    call luna_main("...", 1, 6, 1, 2) #hypno eyes
+    m "Wait what happened?! Her eyes just changed color!"
+    hat "Really? Hmmm... didn't expect that... what color are they?"
+    m "Green."
+    hat "Well that seems rather fitting."
+    m "Why, what did you do to her personality?"
+    hat "Not much, just made it a bit more Snake like..."
+    m "What now."
+    hat "Well she's going to be a little... out of sorts..."
+    hat "It would probably be in your best interests to send her to her room and let her sleep it off."
+    m "Will she be able to hear me?"
+    hat "Yes, she's in a fairly... lucid state..."
+    ">You take the hat off of Luna's head."
+    m "Thank you very much Miss Lovegood. I think you better be off to bed now "
+    call luna_main("yes... bed...", 1, 6, 1, 2) #hypno eyes
+    call luna_away
+
+    ">You place the hat back on the cupboard"
+    m "So what did you do to her personality?"
+    hat "Now now... no sense ruining the fun. You'll just have to wait..."
+    m "Hmmph"
+    $ luna_busy = True
+    ">Luna can now be summoned from the door!"
+    return
 
 
 
