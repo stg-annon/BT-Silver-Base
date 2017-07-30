@@ -12,33 +12,32 @@ label tentacle_shop_scene:
         ger "Too bad."
         call screen shop_screen
     m "What's this scroll?"
-    ger "This is the recipe for a powerful and forbidden potion."
+    fre "This is the recipe for a powerful and forbidden potion."
+    ger "Acquired completely legitimately I might add!"
     m "What does it do?" 
     fre "It transforms you into any magical creature you desire."
     m "Like what?"
     fre "Anything you can secure a sample of."
     ger "A powerful phoenix, a terrifying gorgon, a deadly basilisk or an awe inspiring dragon."
-    m "Not sure I'd really want to transform into any of those, I am trying to keep my presence here a secret after all."
+    m "Not sure I'd really want to transform into any of those..."
     ger "Well then perhaps there is a creature that would suit you and your \"Hobbies\"."
     m "Such as?"
-    fre "There are rumours of a plant hidden somewhere on the school grounds"
+    fre "There are rumors of a \"plant\" hidden somewhere on the school grounds"
     m "A plant? Why would I want to be a plant?"
     ger "This is no ordinary plant, it has fast and powerful limbs that are incredibly sensitive"
     m "So it's a tentacle monster?"
-    ger "Pretty much. I'm not sure where it lives however."
-    m "Well who does know?"
-    ger "Apparently three students have encountered it."
-    m "Do you know their names?"
-    fre "No sorry, I was busy attending to other \"matters\" when it happened. You'll have to ask around, try the inn."
+    ger "Pretty much. We're not sure where it lives however."
+    fre "No idea!"
+    ger "Certainly not in the attic!"
     m "Ok, well how much is the scroll?"
-    ger "250 gold coins."
-    m "250! Why on earth is it so expensive?"
-    fre "Forbidden magic is quite a risky and expensive endeavor Professor, I'll sell it for no less than 250."
+    ger "300 gold coins."
+    m "300! Why on earth is it so expensive?"
+    fre "Forbidden magic is quite a risky and expensive endeavor Professor, We'll sell it for no less than 300."
     menu:
-        "-Buy the scroll- (250)" if gold >= 250:
+        "-Buy the scroll- (300)" if gold >= 300:
             m "Fine, here's the money"
             ger "Thank you very much"
-            $ gold -= 250
+            $ gold -= 300
             $ tent_scroll = True
             $ attic_open = True
             call screen shop_screen

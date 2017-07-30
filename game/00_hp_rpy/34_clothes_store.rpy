@@ -507,6 +507,30 @@ label existing_stock:
                             jump accessories
                         "-Never mind-":
                             jump accessories
+                "{color=#858585}-Cat ears-{/color}"if "cat_ears" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-Cat Ears-" if "cat_ears" not in cs_existing_stock:
+                    maf "it's a pair of cat ears..."
+                    maf "and it even comes with a clip on tail..."
+                    menu:
+                        "-Buy the item (70 gold)-":
+                            call cs_buy_stock("cat_ears",70)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
+                "{color=#858585}-transparent clothes-{/color}"if "transparency" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-transparent clothes-" if "transparency" not in cs_existing_stock:
+                    maf "This renders the users clothes slightly see through."
+                    maf "I'd save this for private occasions if I was you..."
+                    menu:
+                        "-Buy the item (130 gold)-":
+                            call cs_buy_stock("transparency",130)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
                 "-Never mind-":
                     jump existing_stock
         "-Return-":

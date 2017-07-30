@@ -596,7 +596,7 @@ label Night_Request_Block:
     if ears == True:
         jump potion_scene_1_2
 
-    if transparency < 1:
+    if transparency < 1 and transparent_quest:
         jump potion_scene_4_2
 
     if addicted == True:

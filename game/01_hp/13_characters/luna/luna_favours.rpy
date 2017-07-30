@@ -134,6 +134,7 @@ label luna_favour_1: ###TALK TO ME
             call luna_main("Speaking of which...", 5, 1, 2, 2)    
             m "Alright, alright. Here's your gold."
             $ gold -= current_payout
+            $ luna_gold += current_payout
             ">You hand Luna [current_payout] gold."
             call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)     
             ">Luna leaves your office."  
@@ -209,7 +210,7 @@ label luna_favour_1: ###TALK TO ME
                 call luna_main("Well... we can't have you wasting your money on any of those other little tarts can we?", 8, 1, 3, 3)
                 menu:
                     "-Play along-": #act submissive
-                        $ luna_dom = 1
+                        $ luna_dom += 1
                         $ current_payout = 150
                         m "ah... of course not..."
                         call luna_main("That's right... why bother with them when I'm here to talk with you...", 8, 1, 3, 1)
@@ -276,7 +277,7 @@ label luna_favour_1: ###TALK TO ME
 
 
                     "-Let her know her place-": #note that he could get more for less from those tarts
-                        $ luna_dom = 0
+                        $ luna_sub += 1
                         m "well now that you mention it I'm sure those tarts would probably charge a lot less for a conversation..."
                         call luna_main("*Hmph* You get what you pay for...", 7, 2, 3, 3)
                         m "And what exactly am I getting from you for my payment?"
@@ -284,6 +285,7 @@ label luna_favour_1: ###TALK TO ME
                         m "Well you'll have to excuse my old eyes because I can barely see you..."
                         menu: 
                             "-Ask her to open her top-":
+                                $ luna_sub += 1
                                 m "Perhaps you should undo a button or two so I can get a better look."
                                 call luna_main("Are you serious? You expect me to flaunt myself like some cheap tart?", 8, 1, 2, 2)
                                 m "No, I expect you to flaunt yourself like the princess you claim to be..."
@@ -293,9 +295,8 @@ label luna_favour_1: ###TALK TO ME
                                 ">Luna removes her tie and opens her top slightly..."
                                 hide screen luna 
                                 with d3
-                                $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_2.png"
-                                show screen luna 
-                                with d3 
+                                $ luna_top_level = 2
+                                call luna_main("...", 6, 3, 4, 2)
                                 m "Why don't you keep you're shirt like that from now on..."
                                 call luna_main("...", 6, 2, 4, 3)
                             "-Ask her to come closer-":
@@ -373,6 +374,7 @@ label luna_favour_1: ###TALK TO ME
         call luna_main("Speaking of which...", 5, 1, 2, 2)    
         m "Alright, alright. Here's your gold."
         $ gold -= current_payout
+        $ luna_gold += current_payout
         ">You hand Luna [current_payout] gold."
         call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)     
         ">Luna leaves your office."  
@@ -393,7 +395,8 @@ label luna_favour_1: ###TALK TO ME
         call luna_main("He's struggling to get any institutions to stock it these days... ever since the ministry stopped buying it.", 6, 2, 2, 2)
         menu:
             "-Say nothing-": #act submissive
-                $ luna_dom = 2
+                if luna_dom <= 1:
+                    $ luna_dom += 1
                 $ current_payout = 150
                 call luna_main("Wait... that's it!", 5, 1, 2, 1)
                 m "what's it?"
@@ -485,7 +488,8 @@ label luna_favour_1: ###TALK TO ME
                 call luna_main("Now as a princess I expect a present for having to look at such a filthy act...", 7, 2, 2, 1)
 
             "-Make an offer-": #exchange quibbler purchase
-                $ luna_dom = -1
+                if luna_sub <= 1:
+                    $ luna_sub += 1
                 $ current_payout = 50
                 m "well I'm sure that I could have a few words with the library staff about stocking it..."
                 call luna_main("Really? You'd do that?", 4, 1, 1, 1)
@@ -509,6 +513,8 @@ label luna_favour_1: ###TALK TO ME
                 pause  
                 menu: 
                     "-Ask her to shorten her skirt-":
+                        if luna_sub <= 2:
+                            $ luna_sub += 1
                         m "lets talk about that skirt of yours..."
                         call luna_main("What about it?", 8, 1, 2, 2)
                         m "have you ever considered wearing it a little... shorter?"
@@ -521,9 +527,8 @@ label luna_favour_1: ###TALK TO ME
                         ">Luna pulls up her skirt slightly and then folds it over at the top..."
                         hide screen luna 
                         with d3
-                        $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_2.png"
-                        show screen luna 
-                        with d3 
+                        $ luna_skirt_level = 2
+                        call luna_main("...", 6, 3, 4, 3)
                         m "{size=-4}(mmmm... yes...){/size}"
                         m "Why don't you wear it like that from now on..."
                         call luna_main("yes, [l_genie_name].", 6, 2, 4, 3)
@@ -595,6 +600,7 @@ label luna_favour_1: ###TALK TO ME
 
         m "Alright, alright. Here's your gold."
         $ gold -= current_payout
+        $ luna_gold += current_payout
         ">You hand Luna [current_payout] gold."
         call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 2) 
         if current_payout <= 50:
@@ -602,8 +608,321 @@ label luna_favour_1: ###TALK TO ME
         ">Luna leaves your office."  
     hide screen genie_jerking_sperm_02     
     jump luna_away
-label luna_favour_2: ###STRIP FOR ME
+
+
+
+
+
+
+
+
+
+
+label luna_favour_2: ###SIT ON MY LAP
+    m "{size=-4}(I'll just ask her to sit on my lap...){/size}"
+    if luna_corruption <= 4: #FIRST TIME 
+        if luna_corruption <= 3:
+            $ luna_corruption += 1
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+        m "Before we get started, Would you like a seat [luna_name]?"
+        call luna_main("I would, but there's no chair [l_genie_name]...", 7, 1, 5, 2) 
+        m "Well how about you come sit on my lap then?"
+        call luna_main("...", 9, 1, 2, 3)
+        m "Come on, it'll be just like santa claus."
+        call luna_main("...", 9, 2, 2, 3)
+        call luna_main("You better make this worth it [l_genie_name]...", 8, 2, 2, 3) 
+        m "Don't worry, I'm sure you'll be very happy with your \'reward\'."
+        call luna_main("...", 6, 1, 2, 3)
+        show screen blkfade
+        with d3 
+        ">Luna walks around the desk and stands in front of you."
+        #chibi stuff
+        $ luna_flip = -1
+        $ luna_xpos = 120
+        $ luna_chibi_xpos = 300
+        hide screen blkfade
+        with d3 
+        menu:
+            "-Pull her onto your lap-" if luna_sub >= 2:
+                if luna_sub <= 3:
+                    $ luna_sub += 1
+                $ luna_grope = True
+                call luna_main("...", 6, 2, 2, 3) 
+                call luna_main("Actually, I'm not sure if...", 8, 2, 1, 2) 
+                ">You grab Luna around the waist and pull her onto your lap."
+                call luna_main("Professor! What are you doing?", 4, 2, 5, 3) 
+                m "just giving you a helping hand..."
+                ">you start slowly rubbing your crouch against her soft ass."
+                m "mmm that's it..."
+                call luna_main("...", 6, 3, 4, 2) 
+                call luna_main("(this is so humiliating...)", 6, 3, 4, 3) 
+
+                jump luna_lap_dance
+
+            "-Tell her to sit down-":
+                $ luna_grope = False
+                m "go on [luna_name]..."
+                call luna_main("...", 8, 2, 2, 3) 
+                call luna_main("Do I really have to do this?", 8, 2, 2, 3) 
+                m "just Sit down [luna_name]..."
+                call luna_main("...", 8, 2, 2, 3) 
+                ">Luna softly takes a seat on your lap ."
+                m "mmmmm..."
+                call luna_main("...", 6, 2, 4, 2) 
+                call luna_main("(ugh, he's so hard...)", 6, 3, 4, 6) 
+
+                label luna_lap_dance:
+                    m "That's it, now just start moving your waist."
+                ">Luna gradually starts grinding her ass against you."
+                m "ughh, that's it."
+                call luna_main("...", 8, 3, 2, 3) 
+                call luna_main("are you happy now?", 8, 2, 3, 3) 
+                m "Very..."
+                call luna_main("Can I leave yet?", 8, 1, 2, 3) 
+                m "What? We just started!"
+                call luna_main("Well I don't have all day.", 8, 2, 2, 3)
+                m "Hmmm, well I'll see what I can do to speed this up..." 
+                menu:
+                    "-Grab her waist-":
+                        ">You take a hold of her waist."
+                        call luna_main("!!!", 4, 1, 1, 6)
+                        call luna_main("I don't think touching was part of the arrangement [l_genie_name]...", 7, 2, 3, 7)
+                        $ current_payout = 75
+                        m "Don't worry [luna_name], you'll be compensated fairly."
+                        ">You pull her hard against your crouch, rubbing your cock between her cheeks."
+                        call luna_main("...", 6, 3, 4, 5)
+                        m "That's it [luna_name], not much longer now."
+                        call luna_main(".......", 8, 2, 2, 3)
+                        m "mmmm, almost there..."
+                        call luna_main("What?!!!", 4, 2, 3, 3)
+                        show screen blkfade
+                        with d3 
+                        "Luna quickly pulls away from you and stands up."
+                        #chibi stuff
+                        $ luna_flip = 1
+                        $ luna_xpos = 600
+                        $ luna_chibi_xpos = 500
+                        hide screen blkfade
+                        with d3 
+                        call luna_main("Professor!", 9, 1, 3, 14)
+                        m "What on earth did you stop for?"
+                        call luna_main("Sitting on your lap is one thing.", 8, 2, 2, 3)
+                        call luna_main("But letting you do that...", 9, 1, 3, 2)
+                        call luna_main("I simply refuse!", 8, 2, 3, 6)
+                        m "fine fine."
+                        call luna_main("Honestly [l_genie_name], who do you think I am?", 7, 1, 2, 2)
+                        call luna_main("I think I'd like to be paid now...", 7, 2, 2, 2)
+                    "-Grope her-" if luna_grope:
+                        ">You start running your hands along the outside of her thighs, up to her waist and then over her belly."
+                        call luna_main("!!!", 4, 1, 1, 6)
+                        m "mmmm, lovely."
+                        ">You keep grinding your cock against her butt checks."
+                        m "yes, just like that [luna_name]."
+                        $ current_payout = 40
+                        call luna_main("......", 6, 3, 4, 6)
+                        m "gods you've got such a nice ass."
+                        ">You Start moving your hands slowly up towards her breasts"
+                        call luna_main(".........", 6, 2, 4, 3)
+                        m "That's it [luna_name], just enjoy it."
+                        call luna_main("..................", 6, 2, 4, 2)
+                        ">your hands are about an inch below her breasts..."
+                        m "mmmm, almost there..."
+                        call luna_main("..........................", 4, 2, 4, 2)
+                        ">Your about to reach her ample tits......"
+                        call luna_main("!!!!", 4, 1, 3, 6)
+                        show screen blkfade
+                        with d3 
+                        "Luna quickly pulls away from you and stands up."
+                        $ luna_flip = 1
+                        $ luna_xpos = 600
+                        $ luna_chibi_xpos = 500
+                        hide screen blkfade
+                        with d3 
+                        call luna_main("Professor!", 4, 1, 3, 7)
+                        m "What on earth did you stop for?"
+                        call luna_main("Sitting on your lap is one thing?", 9, 1, 2, 3)
+                        call luna_main("But letting you touch me there...", 8, 2, 3, 2)
+                        call luna_main("I won't do it!", 8, 2, 2, 3)
+                        m "alright fine."
+                        call luna_main("Honestly [l_genie_name], you really need to learn some self control.", 8, 1, 3, 9)
+                        call luna_main("I think I'd like to be paid now...", 8, 2, 2, 3)
+
+
+
+            "-Do nothing-" if luna_dom < 2:
+                call luna_main("...", 7, 2, 2, 2)
+                call luna_main("......", 8, 2, 2, 3)
+                call luna_main("I guess I'll start then...", 6, 2, 2, 2)
+                ">Luna lightly sits on your lap."
+                m "mmmm"
+                call luna_main("...", 7, 1, 2, 2)
+                call luna_main("......", 8, 2, 2, 3)
+                call luna_main(".........", 8, 2, 3, 3)
+                call luna_main("Alright, time's up!", 1, 2, 1, 2)
+                ">Luna stands up from your lap"
+                m "What, you barely even sat down!"
+                call luna_main("*hmph* You should consider yourself lucky you got what you did [l_genie_name]!", 8, 2, 2, 3)
+                m "You could have at least moved around a little."
+                call luna_main("What? Who do you think I am? Some sort of harlot who'll let you grind yourself against them for as long as you want?", 9, 2, 2, 6)
+                m "well I expected at least a few minutes."
+                call luna_main("Well if your that desperate...", 5, 2, 1, 1)
+                ">Luna slams her ass into your crouch"
+                m "ah..."
+                call luna_main("pathetic...", 5, 2, 2, 3)
+                ">She starts rocking back and forward on your lap"
+                call luna_main("You really are disgusting [l_genie_name]...", 5, 2, 1, 14)
+                m "mmmm"
+                call luna_main("begging your students for a lap dance...", 8, 2, 3, 3)
+                m "yes, yes..."
+                call luna_main("well you better pay extra for this...", 7, 2, 1, 2)
+                m "of course..."
+                call luna_main("...", 5, 3, 1, 2)
+                ">luna starts rolling her hips a little faster."
+                call luna_main("a lot extra...", 9, 2, 3, 3)
+                m "of course [luna_name]..."
+                call luna_main("that's it [l_genie_name]. just enjoy it...", 5, 2, 1, 1)
+                m "mmm, just a little more..."
+                call luna_main("...", 8, 3, 5, 3)
+                m "yes... almost..."
+                call luna_main("Times up!", 5, 2, 2, 1)
+                show screen blkfade
+                with d3 
+                ">Luna quickly stands up."
+                $ luna_flip = 1
+                $ luna_xpos = 600
+                $ luna_chibi_xpos = 500
+                hide screen blkfade
+                with d3 
+                m "What!"
+                call luna_main("Times{p}up...", 8, 1, 2, 2)
+                m "Ugh, fine."
+                call luna_main("Glad you understand,{p} now about my payment...", 8, 2, 2, 3)
+                $ current_payout = 120
+
+
+            "-Do nothing-" if luna_dom >= 2:
+                if luna_dom <= 3:
+                    $ luna_dom += 1
+                call luna_main("...", 7, 1, 2, 2)
+                call luna_main("......", 8, 2, 2, 3)
+                call luna_main("I guess I'll start then...", 6, 2, 2, 2)
+                ">Luna lightly sits on your lap."
+                m "mmmm"
+                ">You start to feel yourself get hard against her ass"
+                call luna_main("...", 5, 2, 1, 1)
+                call luna_main("You're pathetic...", 5, 2, 2, 3)
+                call luna_main("THe worlds greatest wizard...", 5, 2, 1, 1)
+                call luna_main("More like the worlds greatest pervert.", 9, 2, 2, 3)
+                if l_genie_name == "Old man":
+                    $ l_genie_name = "Pervert"
+                ">Luna stands bouncing slowly on your lap, lifting her weight on and off your crouch."
+                m "yes... that's it."
+                call luna_main("*hmph* You're not even ashamed are you?", 5, 2, 1, 14)
+                m "of what?"
+                call luna_main("What? begging your student for a lap dance.", 8, 2, 2, 3)
+                m "I don't recall begging."
+                call luna_main("Hmmm...", 7, 2, 1, 2)
+                ">Luna stands up slowly."
+                call luna_main("Well then...", 8, 2, 2, 3)
+                m "what?"
+                call luna_main("beg...", 5, 2, 3, 3)
+                menu:
+                    "-Beg-":
+                        pass
+                    "-Refuse-":
+                        m "I don't think so [luna_name]."
+                        call luna_main("*hmph* Fine...", 9, 2, 2, 4)
+                        show screen blkfade
+                        with d3
+                        ">Luna walks around to the front of the desk."
+                        $ luna_flip = 1
+                        $ luna_xpos = 600
+                        $ luna_chibi_xpos = 500
+                        hide screen blkfade
+                        with d3 
+                        call luna_main("I'd like to be paid now [l_genie_name]...", 8, 1, 3, 3)
+                        $ current_payout = 100
+                        m "Alright, alright. Here's your gold."
+                        $ gold -= current_payout
+                        $ luna_gold += current_payout
+                        ">You hand Luna [current_payout] gold."
+                        call luna_main("Thank you, [l_genie_name].", 7, 2, 2, 2)     
+                        ">Luna leaves your office."
+                m "Please..."
+                call luna_main("Please what?", 5, 2, 1, 2)
+                m "Please keep going [luna_name]..."
+                ">Luna slowly places herself back on your lap."
+                call luna_main("That's better isn't it?", 7, 2, 2, 1)
+                ">She starts rocking back and forward on your lap"
+                call luna_main("You're so hard...", 5, 3, 1, 2)
+                m "mmmm"
+                call luna_main("I bet you'd cum if I kept going wouldn't you...", 5, 2, 5, 2)
+                m "yes..."
+                call luna_main("well you better be prepared to pay extra for the privilige...", 7, 2, 2, 2)
+                m "of course..."
+                call luna_main("...", 8, 2, 2, 3)
+                ">luna starts rocking her hips forward and backwards, your cock pressed between her cheeks."
+                m "ah..."
+                call luna_main("a {size=+5}lot{/size} extra...", 5, 2, 3, 3)
+                m "of course [luna_name]..."
+                call luna_main("Good. just enjoy yourself then...", 2, 2, 1, 1)
+                m "mmm, just a little more..."
+                call luna_main("...[l_genie_name]", 5, 2, 2, 2)
+                ">Luna starts rubbing hard against your lap."
+                m "{size=-2}(mmmm...){/size}"
+                call luna_main("come on...", 9, 1, 2, 1)
+                g4 "{size=+4}(agh... almost there...){/size}"
+                call luna_main("come for your little girl...", 9, 1, 4, 1)
+                g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                ">You start shooting your load against the inside of your cloak."
+                hide screen luna
+                with d3
+                show screen white 
+                pause.1
+                hide screen white
+                pause.2
+                show screen white 
+                pause .1
+                hide screen white
+                with hpunch
+                g4 "Argh! YES!"
+                call luna_main("ugh... pathetic...", 5, 2, 3, 1)
+                call luna_main("...", 8, 2, 2, 3)
+                call luna_main("......", 8, 3, 5, 2)
+                call luna_main(".........", 8, 3, 3, 3)
+                call luna_main("Alright, time's up!", 5, 2, 2, 1)
+                ">Luna stands up from your lap"
+                $ luna_flip = 1
+                $ luna_xpos = 600
+                $ luna_chibi_xpos = 500
+                hide screen blkfade
+                with d3 
+                call luna_main("*hmph* You [l_genie_name]!", 9, 1, 2, 2)
+                m "You can hardly blame me for this."
+                call luna_main("What? You're the one who begged for it, of course it's your fault.", 7, 2, 3, 3)
+                m "well you didn't have to be so good at it."
+                call luna_main("I was just making sure that I earned my reward.", 8, 1, 2, 3)
+                call luna_main("Speaking of which...", 5, 2, 1, 1)
+                $ current_payout = 200
+
+
+  
+        m "Alright, alright. Here's your gold."
+        $ gold -= current_payout
+        $ luna_gold += current_payout
+        ">You hand Luna [current_payout] gold."
+        if current_payout <= 50:
+            call luna_main("(only [current_payout]?) *hmph*", 8, 2, 2, 3) 
+            call luna_main("Thank you, [l_genie_name].", 6, 2, 2, 2)   
+        else:
+            call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)  
+        ">Luna leaves your office."  
+
+
     jump luna_away
+
+
+
 label luna_favour_3: 
     jump luna_away
 label luna_favour_4:

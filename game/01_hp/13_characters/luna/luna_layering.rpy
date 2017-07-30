@@ -1,31 +1,32 @@
 screen luna:
     ### BASE IMAGE
-    add luna_base xpos luna_xpos ypos luna_ypos #Add the base body
-    add luna_cheeks xpos luna_xpos ypos luna_ypos #Add her blush to base
-    add luna_hair xpos luna_xpos ypos luna_ypos #Add the hair shadow
+    add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the base body
+    add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add her blush to base
+    add luna_hair xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the hair shadow
     ### EMOTIONS
-    add luna_mouth xpos luna_xpos ypos luna_ypos #Add the mouth
-    add "01_hp/13_characters/luna/body/face/eye_white.png"  xpos luna_xpos ypos luna_ypos
-    add luna_pupil xpos luna_xpos ypos luna_ypos #Add the pupil
-    add luna_eye xpos luna_xpos ypos luna_ypos #Add the eye outline
-    add luna_eyebrow xpos luna_xpos ypos luna_ypos #Add the eyebrow
+    add luna_mouth xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the mouth
+    add "01_hp/13_characters/luna/body/face/eye_white.png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip
+    add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the pupil
+    add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eye outline
+    add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eyebrow
     ### CLOTHES 
     if luna_wear_glasses:
-        add luna_glasses xpos luna_xpos ypos luna_ypos # Add the glasses
+        add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the glasses
     if luna_wear_bra:
-        add luna_bra xpos luna_xpos ypos luna_ypos # Add the bra
+        add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the bra
     if luna_wear_panties:
-        add luna_panties xpos luna_xpos ypos luna_ypos # Add the panties
+        add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the panties
     if luna_wear_skirt:
-        add luna_skirt xpos luna_xpos ypos luna_ypos # Add the skirt
+        add luna_skirt xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the skirt
     if luna_wear_top:
-        add luna_top xpos luna_xpos ypos luna_ypos # Add the top
+        add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
     #add luna_acc xpos luna_xpos ypos luna_ypos # Add the accessory
     ### ZORDER
     zorder luna_zorder
 
 screen luna_chibi:
-    add luna_chibi_image xpos luna_chibi_xpos ypos luna_chibi_ypos
+    add luna_chibi_image xpos luna_chibi_xpos ypos luna_chibi_ypos xzoom luna_flip  
+    zorder luna_chibi_zorder
 
 
 label luna_main(text="",eye=None, pupil=None, eyebrow=None, mouth=None):
@@ -82,9 +83,15 @@ init python: ###Method Definition for new characters
         global luna_eyebrow
         global luna_mouth
         global luna_eyebrow
+        global luna_skirt 
+        global luna_top
         ###HIDE OLD SCREEN
         renpy.hide_screen("luna")
         renpy.with_statement(Dissolve(0.5))
+        ###UPDATE UNIFORM
+        luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_"+str(luna_skirt_level)+".png" 
+        luna_top = "01_hp/13_characters/luna/clothes/uniform/top_"+str(luna_top_level)+".png" 
+
         ###MANUAL POSITION CONTROL
         if x_pos is not None:
             luna_xpos = x_pos

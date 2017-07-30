@@ -53,14 +53,6 @@ label potion_scene_1: #catears (keep in mind Genie is trying to transform her in
     with Dissolve(.3)
     
     $ ears = True
-    if hair_color == 5:
-        $ hair_color = 0
-    elif hair_color == 6:
-        $ hair_color = 1
-    elif hair_color == 7:
-        $ hair_color = 3
-    elif hair_color == 8:
-        $ hair_color = 4
     $ hermione_takes_classes = True
     jump day_main_menu
 
@@ -286,7 +278,6 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     m "Is it? Well I prefer my version."
     call her_main("Well how big are they supposed to-","body_118")
     ">Her breast swell up again."
-    $ custom_breast = 4
     call her_main("You can't be serious. At this rate they're going to rip my shirt.","body_119")
     m "Well they should stop there."
     call her_main("Good, they're big enough as is.","body_47")
@@ -346,7 +337,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     call her_main("...yes","body_121")
     ">You continue massaging them gently through her shirt. Pulling them apart and then pressing them into one another."
     call her_main("...It feels like they're getting-","body_118")
-    $ custom_breast =2
+    call h_action("expand_breasts")
+    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png" 
     $ custom_outfit_old = 20
     "*RIIIP*"
     call her_main("!!!","body_119")
@@ -395,6 +387,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     hide screen ctc
     show screen genie
     with Dissolve(.3)
+    $ h_action_show_top = False
+    $ h_action_show_bra = False
     
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -548,6 +542,7 @@ label potion_scene_2_2: #ass expansion
             call her_main("Oh... right, the points. Thank you.","body_123")
             ">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it."
             $ custom_skirt = 0
+            $ h_action_show_skirt = True
             call her_main("...","body_87")
         "-Hot dog her-" if whoring >= 17:
             m "Bend over [hermione_name]."
@@ -635,7 +630,7 @@ label potion_scene_2_2: #ass expansion
             $ gryffindor += 20
             call her_main("Oh... right, the points. Thank you.","body_136")
             ">Hermione picks up her skirt and attempts to put it on. Her ass is so huge that it barely covers half of it."
-            $ custom_skirt = 0
+            $ h_action_show_skirt = True
             ">Your cum is still visible on her ass."
             call her_main("...","body_127")
     
@@ -658,6 +653,8 @@ label potion_scene_2_2: #ass expansion
     hide screen groping_02
     hide screen hermione_main
     hide screen no_groping_02
+    hide screen blktone
+    call update_her_uniform
 
     jump day_main_menu
         #will add this later
@@ -1025,6 +1022,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     show screen genie
     show screen bld1
     hide screen blkfade
+    hide screen blktone
     $ hermione_SC.chibi.xpos = 400 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     $ addicted = False
@@ -1080,9 +1078,12 @@ label potion_scene_4: #Transparent uniform
         $ transparency = 0.4
     else:
         $ transparency = 0.2
+    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png"
+    $ transparent_quest = True
     jump day_main_menu
 
 label potion_scene_4_2: #Scene where Hermione comes back after classes angry and confused at having her uniform made transparent
+    $ transparent_quest = False
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ hermione_SC.chibi.xpos = 400 #Near the desk.
     show screen hermione_blink #Hermione stands still.
@@ -1097,6 +1098,7 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Tell you about what happened? I'm never speaking to you again.","body_21")
         $ mad += 20
         $ transparency = 1
+        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+outfit.breast_layer+".png"
     elif whoring <= 13: #Mildly aggravated
         ">Hermione comes into your office quickly without knocking."
         call her_main("Again?","body_34")
@@ -1159,12 +1161,13 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Thank you [genie_name]. Is that all?","body_128")
         m "Yes, you can go now slut."
         call her_main("{image=textheart}","body_46")
-    $ transparency = 1
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
     hide screen ctc
     with Dissolve(.3)
+    $ transparency = 1
+    call update_her_uniform
     
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -1303,7 +1306,6 @@ label potion_scene_6: #Luna potion
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     hide screen luna_chibi
     with d3
-    $ luna_known = True
     jump day_main_menu
     
 label potion_scene_7: #hyper sensitivity potion
@@ -1628,6 +1630,8 @@ label potion_scene_8: #Hypno potion
     $ hermione_wear_top = True
     $ hermione_wear_bra = True
     $ wear_shirts = True
+    call update_her_uniform
+    call update_chibi_uniform
     jump day_main_menu
 
 label potion_scene_9: #Clone potion

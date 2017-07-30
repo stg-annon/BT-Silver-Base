@@ -2091,5 +2091,76 @@ label give_her_acc(acc_id):
             $ hermione_cum = False
             show screen hermione_main
             with d5
+    elif acc_id == 7:#Cat ears
+        if not cat_ears:
+            if whoring <= 5:
+                jump too_much
+            elif whoring <= 17:
+                call her_main("cat ears...?","body_11")
+                call her_main("Really, [genie_name]!","body_31")
+                m "What's wrong? They're cute..."
+                call her_main("Fine...","body_69")
+                $ cat_ears = True
+            elif whoring <=23:
+                call her_main("Cat ears...?","body_15")
+                call her_main("...","body_17")
+                call her_main("well I suppose they are a little cute...","body_58")
+                hide screen hermione_main
+                with d5
+                $ cat_ears = True
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("Cat ears?","body_17")
+                call her_main("{size=-5}(At least they match my hair...){/size}","body_59")
+                call her_main("Alright then...","body_58")
+                $ cat_ears = True
+        else:
+            call her_main("You want me to take them off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ cat_ears = False
+            show screen hermione_main
+            with d5
+    elif acc_id == 8:#Transparent
+        if transparency == 1:
+            if whoring <= 15:
+                jump too_much
+            call her_main("You want me to make my clothes see through?","body_33")
+            call her_main("Really, [genie_name]!","body_30")
+            m "Just a little bit."
+            call her_main("Fine...","body_08")
+            call her_main("How much should I drink...","body_29")
+            menu: 
+                "-A little bit-":
+                    $ transparency_amount = 0.8
+                    call her_main("(at least This shouldn't be too noticable.","body_33")
+                "-A fair bit-" if whoring >= 20:
+                    $ transparency_amount = 0.5
+                    call her_main("(Hopefully it's not too bad","body_29")
+                "-A lot-" if whoring >= 23:
+                    $ transparency_amount = 0.3
+                    call her_main("(...)","body_59")
+                "-All of it-" if whoring == 24:
+                    $ transparency_amount = 0.1
+                    call her_main("...","body_68")
+
+            call her_main("Alright then...","body_73")
+            hide screen hermione_main
+            with d5
+            $ transparency = transparency_amount
+            $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png"
+            show screen hermione_main
+            with d5
+        else:
+            call her_main("You want me to wear new clothes?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ transparency = 1
+            show screen hermione_main
+            with d5
 
     

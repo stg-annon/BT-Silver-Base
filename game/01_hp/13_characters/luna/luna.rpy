@@ -13,8 +13,11 @@ label luna_init:
     $ l_genie_name = "Old man"
     $ luna_name = "Miss Lovegood"
 
-    $ luna_arrousal = 0
-    $ luna_corruption = 0
+    $ luna_dom = 0
+    $ luna_sub = 0
+    $ luna_gold = 0
+    $ luna_skirt_level = 1
+    $ luna_top_level = 1
 
     $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
     $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
@@ -26,16 +29,18 @@ label luna_init:
     $ luna_eyebrow = "01_hp/13_characters/luna/body/face/eyebrow/eyebrow_1.png" 
     $ luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_1.png" 
     $ luna_glasses = "01_hp/13_characters/luna/misc/glasses.png" 
-    $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top.png" 
+    $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_0.png" 
     $ luna_acc = "01_hp/13_characters/luna/misc/jewel.png" 
-    $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt.png" 
+    $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_0.png" 
     $ luna_panties = "01_hp/13_characters/luna/clothes/underwear/panties.png" 
     $ luna_bra = "01_hp/13_characters/luna/clothes/underwear/bra.png" 
     $ luna_zorder = 5
+    $ luna_flip = 1
 
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
     $ luna_chibi_xpos = 500
     $ luna_chibi_ypos = 250
+    $ luna_chibi_ypos = 5
 
     $ luna_wear_glasses = False
     $ luna_wear_bra = True
@@ -103,9 +108,12 @@ label luna_door:
 label luna_door_menu:
     menu:
         "-Chit Chat-":
-            "To be done."
+            call luna_chitchat
             jump luna_door_menu
         "-favours-":
+            if gold <= 100:
+                m "Hmmm, I probably need a bit more gold if I want to ask for any favours..."
+                jump luna_door_menu
             jump luna_favour_menu
         "-Never mind-":
             jump luna_away
@@ -114,9 +122,9 @@ label luna_favour_menu:
     menu:
         "-Talk to me-":
             jump luna_favour_1
-        #"-Strip for me-":
+        "-Sit on my lap-" if luna_corruption >= 3:
             jump luna_favour_2
-        #"-Give me a Lap Dance-":
+        #"-Strip for me-":
             jump luna_favour_3
         #"-Touch me-":
             jump luna_favour_4
@@ -132,6 +140,7 @@ label luna_summon:
 return
 
 label luna_away:
+    call luna_reset
     $ luna_busy = True
     $ renpy.play('sounds/door2.mp3')
     hide screen luna
@@ -139,9 +148,25 @@ label luna_away:
     with d3
     jump day_main_menu
 
+label luna_reset:
+    $ luna_flip = 1
+    $ luna_xpos = 600
+    $ luna_ypos = 0
+    $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
+    $ luna_chibi_xpos = 500
+    $ luna_chibi_ypos = 250
+    return
+
 label luna_no_money:
     call luna_main("You expect me to do it for free?", 8, 2, 3, 3)
     call luna_main("Hmph!", 8, 2, 3, 3)
     jump luna_away
 
 ###CHIBIS###------------------------------------------------------
+
+
+
+
+###PLOT###--------------------------------------------------------
+#After the sex favour, Luna will either return to normal if you choose the sub route or she will become a slytherin dom if you go the dom route
+#All the private favours will then have a 4th level unlocked, tailored to either the sub or dom option
