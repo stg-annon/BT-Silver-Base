@@ -248,6 +248,9 @@ screen hermione_head:
     
     
     $ hermione_head_xpos_offset = hermione_head_xpos+140
+
+    if ears or cat_ears:
+        add "01_hp/25_mo/ears_"+str(h_hair_color-1)+"_"+str(h_hair_style)+".png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add cat ears
     
     add hermione_base xpos hermione_head_xpos_offset ypos hermione_head_ypos #Add the base body
     add hermione_legs xpos hermione_head_xpos_offset ypos hermione_head_ypos
@@ -264,14 +267,14 @@ screen hermione_head:
     if not hermione_costume:
         ### SKIRT
         if hermione_wear_skirt:
-            add hermione_skirt xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the skirt
+            add hermione_skirt xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the skirt
         elif hermione_wear_panties or h_request_wear_panties:
-            add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the panties
+            add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the panties
         ### TOP
         if hermione_wear_top:
-            add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the top
+            add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the top
         elif hermione_wear_bra:
-            add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the bra
+            add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         ### COLLAR 
         if collar == 1:
             add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
@@ -300,7 +303,9 @@ screen hermione_head:
     if hermione_freckles:
         add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add freckles
     if hermione_cum:
-        add "01_hp/13_hermione_main/auto_14.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add fake cum   
+        add "01_hp/13_hermione_main/auto_14.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add fake cum 
+    if ears or cat_ears:
+        add "01_hp/25_mo/ears_"+str(h_hair_color-1)+"_2_"+str(h_hair_style)+".png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add cat ears  
     
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos
