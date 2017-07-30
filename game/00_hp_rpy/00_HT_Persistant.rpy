@@ -135,7 +135,7 @@ label __init_variables:
         $ temp_outfit = custom_outfit_old
 
     ###Define Luna variables
-    if not hasattr(renpy.store,'luna_skirt_level'): #important!
+    if not hasattr(renpy.store,'luna_chibi_zorder'): #important!
         $ hat_known = False
         call luna_init
     

@@ -40,7 +40,7 @@ label luna_init:
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
     $ luna_chibi_xpos = 500
     $ luna_chibi_ypos = 250
-    $ luna_chibi_ypos = 5
+    $ luna_chibi_zorder = 5
 
     $ luna_wear_glasses = False
     $ luna_wear_bra = True
