@@ -18,6 +18,7 @@ label luna_init:
     $ luna_gold = 0
     $ luna_skirt_level = 1
     $ luna_top_level = 1
+    $ luna_corruption = 0
 
     $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
     $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
