@@ -138,6 +138,9 @@ label __init_variables:
     if not hasattr(renpy.store,'luna_chibi_zorder') or not hasattr(renpy.store,'luna_corruption'): #important!
         $ hat_known = False
         call luna_init
+
+    if not hasattr(renpy.store,'luna_tears'): #important!
+        $ luna_tears = 0
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!

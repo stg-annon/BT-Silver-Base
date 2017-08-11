@@ -35,7 +35,7 @@ label feeding:
     with Dissolve(0.3)
     pause 1
     show screen phoenix_food
-    $ genie_speaks = renpy.random.randint(1, 3) #Determines what phrase if any Genie will use.
+    $ genie_speaks = 1 #Determines what phrase if any Genie will use.
     if genie_speaks == 1:
         m "There you go..."
     elif genie_speaks == 2 and fawkes_intro_done:

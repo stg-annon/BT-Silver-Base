@@ -1491,7 +1491,7 @@ label hg_pf_ButtMolester:
                 show screen blktone8
                 with d3
                 ">You keep on playing with Hermione's ass..."
-                ">And continue sliding your hands up and down her inner tighs..."
+                ">And continue sliding your hands up and down her inner thighs..."
                 call her_head("................","body_188")
                 menu:
                     "-Slide your hands between her legs-":

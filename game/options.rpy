@@ -193,7 +193,7 @@ init -1 python hide:v
 
     ## Music that is played while the user is at the main menu.
 
-    config.main_menu_music = "interface/cliffcore.mp3"
+    config.main_menu_music = "music/01 Prologue.mp3"
 
 
     #########################################

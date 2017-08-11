@@ -9,6 +9,8 @@ screen luna:
     add luna_pupil xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the pupil
     add luna_eye xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eye outline
     add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eyebrow
+    add "01_hp/13_characters/luna/body/face/tears/tears_"+str(luna_tears)+".png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip
+    add "01_hp/13_characters/luna/body/head/hair_01_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip #add the hair overlayer
     ### CLOTHES 
     if luna_wear_glasses:
         add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the glasses

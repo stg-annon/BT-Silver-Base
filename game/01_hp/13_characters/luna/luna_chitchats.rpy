@@ -82,23 +82,6 @@ label luna_chitdom_3_3:
 
 ###########################SUB RESPONSES###########################
 
-#sub 0 - Base level Luna
-label luna_chitsub_0_1:
-    m "How have you been [luna_name]?"
-    call luna_main("Well enough [l_genie_name]...", 8, 2, 2, 3) 
-    call luna_main("But I could certainly be better!", 9, 1, 2, 2) 
-    return
-label luna_chitsub_0_2:
-    m "How have you been [luna_name]?"
-    call luna_main("Well enough [l_genie_name]...", 8, 2, 2, 3) 
-    call luna_main("But I could certainly be better!", 9, 1, 2, 2) 
-    return
-label luna_chitsub_0_3: 
-    m "How have you been [luna_name]?"
-    call luna_main("Well enough [l_genie_name]...", 8, 2, 2, 3) 
-    call luna_main("But I could certainly be better!", 9, 1, 2, 2) 
-    return
-
 #sub 1 - Very Slightly subby
 label luna_chitsub_1_1:
     m "How have you been [luna_name]?"
