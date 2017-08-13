@@ -105,7 +105,10 @@ label luna_walk_end_loiter(dissolveTime = 3):
 label luna_door:
     $ renpy.play('sounds/door.mp3')
     $ luna_chibi("stand")
-    call luna_main("[l_genie_name]...", 8, 2, 3, 3)
+    if luna_dom >= luna_sub:
+        call luna_main("[l_genie_name]...", 8, 2, 3, 3)
+    else:
+        call luna_main("[l_genie_name]...", 1, 1, 4, 2)
 
 label luna_door_menu:
     menu:
@@ -157,6 +160,9 @@ label luna_reset:
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
     $ luna_chibi_xpos = 500
     $ luna_chibi_ypos = 250
+    $ luna_tears = 0
+    $ luna_wear_skirt = True
+    $ luna_wear_top = True
     return
 
 label luna_no_money:
