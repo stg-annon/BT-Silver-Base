@@ -531,6 +531,18 @@ label existing_stock:
                             jump accessories
                         "-Never mind-":
                             jump accessories
+                "{color=#858585}-elf ears-{/color}"if "elf_ears" in cs_existing_stock:
+                    call cust_excuse("You already own this.")
+                    jump accessories
+                "-elf ears-" if "elf_ears" not in cs_existing_stock:
+                    maf "A pair of fake elf ears."
+                    maf "The real ones are much harder to import..."
+                    menu:
+                        "-Buy the item (80 gold)-":
+                            call cs_buy_stock("elf_ears",80)
+                            jump accessories
+                        "-Never mind-":
+                            jump accessories
                 "-Never mind-":
                     jump existing_stock
         "-Return-":

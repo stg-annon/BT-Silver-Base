@@ -2162,5 +2162,41 @@ label give_her_acc(acc_id):
             $ transparency = 1
             show screen hermione_main
             with d5
+    elif acc_id == 9:#Elf ears
+        if not elf_ears:
+            if whoring <= 5:
+                jump too_much
+            elif whoring <= 17:
+                call her_main("elf ears...?","body_11")
+                call her_main("Really, [genie_name]!","body_31")
+                m "What's wrong? don't you support the house elves or something..."
+                call her_main("Fine...","body_69")
+                $ elf_ears = True
+            elif whoring <=23:
+                call her_main("Elf ears...?","body_15")
+                call her_main("...","body_17")
+                call her_main("well I suppose they're not too noticable...","body_58")
+                hide screen hermione_main
+                with d5
+                $ elf_ears = True
+                show screen hermione_main
+                with d5
+            else:
+                call her_main("Hm...?","body_15")
+                call her_main("Elf ears?","body_17")
+                call her_main("{size=-5}(They are kind of cute...){/size}","body_59")
+                call her_main("Alright then...","body_58")
+                $ elf_ears = True
+        else:
+            call her_main("You want me to take them off?","body_70")
+            call her_main("Oh... alright then [genie_name].","body_71")
+            hide screen hermione_main
+            with d5
+            $ elf_ears = False
+            show screen hermione_main
+            with d5
+
+    
+
 
     

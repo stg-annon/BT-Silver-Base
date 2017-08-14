@@ -308,6 +308,8 @@ label __init_variables:
         $ cat_ears = False
         $ transparent_quest = False
     
+    if not hasattr(renpy.store,'elf_ears'):
+        $ elf_ears = False
     
     
     

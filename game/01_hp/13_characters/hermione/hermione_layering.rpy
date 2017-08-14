@@ -67,6 +67,8 @@ screen hermione_main:
         add "01_hp/13_hermione_main/auto_14.png" xpos hermione_xpos_offset ypos hermione_ypos # add fake cum   
     if ears or cat_ears:
         add "01_hp/25_mo/ears_"+str(h_hair_color-1)+"_2_"+str(h_hair_style)+".png" xpos hermione_xpos_offset ypos hermione_ypos # add cat ears
+    if elf_ears and h_hair_style == "B":
+        add "01_hp/13_characters/hermione/accessories/head/elf_ears.png" xpos hermione_xpos_offset ypos hermione_ypos # add elf ears  
     
     if hermione_wear_robe:
         add hermione_robe xpos hermione_xpos_offset ypos hermione_ypos
@@ -146,6 +148,8 @@ screen hermione_main_obj:
         add "01_hp/13_characters/hermione/accessories/head/freckles.png" xpos x ypos y # add freckles
     if hermione_cum:
         add "01_hp/13_hermione_main/auto_14.png" xpos x ypos y # add fake cum   
+    if elf_ears and h_hair_style == "B":
+        add "01_hp/13_characters/hermione/accessories/head/elf_ears.png" xpos x ypos y # add elf ears  
 
     
     if hermione_wear_robe:
@@ -306,6 +310,8 @@ screen hermione_head:
         add "01_hp/13_hermione_main/auto_14.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add fake cum 
     if ears or cat_ears:
         add "01_hp/25_mo/ears_"+str(h_hair_color-1)+"_2_"+str(h_hair_style)+".png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add cat ears  
+    if elf_ears and h_hair_style == "B":
+        add "01_hp/13_characters/hermione/accessories/head/elf_ears.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # add elf ears  
     
     if uni_sperm:
         add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos
