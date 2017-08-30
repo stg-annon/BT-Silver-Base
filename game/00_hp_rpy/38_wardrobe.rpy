@@ -302,8 +302,8 @@ screen wardrobe_accessories:
             hotspot (21+180, 230, 83, 85) clicked [SetVariable("wardrobe_acc_item",8),Jump("wardrobe_give_acc")]
             add "01_hp/13_characters/hermione/accessories/head/potion.png" xpos 195 ypos 225 zoom 0.8
         if "elf_ears" in cs_existing_stock:
-            hotspot (21+180, 230, 83, 85) clicked [SetVariable("wardrobe_acc_item",9),Jump("wardrobe_give_acc")]
-            add "01_hp/13_characters/hermione/accessories/head/elf_ears.png" xpos -15 ypos 120 zoom 0.8
+            hotspot (21+270, 230, 83, 85) clicked [SetVariable("wardrobe_acc_item",9),Jump("wardrobe_give_acc")]
+            add "01_hp/13_characters/hermione/accessories/head/elf_ears.png" xpos 65 ypos 120 zoom 0.8
 
 
         text "Hair" xpos 45 ypos 100 size 15

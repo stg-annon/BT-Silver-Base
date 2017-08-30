@@ -935,7 +935,7 @@ label hg_pf_ButtMolester:
                                         #call her_head("Why are you doing this, [genie_name]?","body_187")
                                         g4 "Just stand still, [hermione_name]!"
                                         call her_head("I don't think so, [genie_name]!","body_208b")
-                                        call her_head("No amount of points are worth this humiliation!","body_287")
+                                        call her_head("No amount of points are worth this humiliation!","body_218")
                                         call her_head("You are abusing your power, [genie_name]!","body_218")
                                         g4 "What?"
                                         call her_head("I'm leaving!","body_208b")

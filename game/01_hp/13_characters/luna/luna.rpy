@@ -106,7 +106,10 @@ label luna_door:
     $ renpy.play('sounds/door.mp3')
     $ luna_chibi("stand")
     if luna_dom >= luna_sub:
-        call luna_main("[l_genie_name]...", 8, 2, 3, 3)
+        if luna_dom >= 4:
+            call luna_main("[l_genie_name]...", 9, 2, 2, 2)
+        else:
+            call luna_main("[l_genie_name]...", 8, 2, 3, 3)
     else:
         call luna_main("[l_genie_name]...", 1, 1, 4, 2)
 
