@@ -247,7 +247,7 @@ label door:
                                     "-Custom Input-":
                                         $ temp_name = renpy.input("(Please enter the name.)")
                                         $ temp_name = temp_name.strip()
-                                        if hermione_name == "":
+                                        if temp_name == "":
                                             $ genie_name = "Sir"
                                         if whoring >=20:
                                             $ genie_name = temp_name

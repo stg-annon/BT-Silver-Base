@@ -1823,7 +1823,7 @@ label luna_favour_2: ###SIT ON MY LAP
 
 
 
-label luna_favour_3: 
+label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options for each path. 
     jump luna_away
 label luna_favour_4:
     jump luna_away

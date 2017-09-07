@@ -285,11 +285,6 @@ label purchase_book(BookOBJ):
 label shop_potion_menu:
     show screen shop_screen
     menu:
-    
-        "Send loll":
-            $ deliveryQ.send(Lollipop,1,5,'Gift')
-            "sent"
-            jump shop_potion_menu
         "-Questions acquiring items-":
             menu:
                 "-Knotgrass-":
