@@ -121,6 +121,15 @@ screen main_menu_01:
         idle "01_hp/05_props/03_fireplace_02.png" 
         hover "01_hp/05_props/03_fireplace_03.png"
         action [Hide("main_menu_01"), Jump("fireplace")]
+
+    imagebutton: # STAT MENU
+        xpos 540
+        ypos 19
+        xanchor "center"
+        yanchor "center"
+        idle "01_hp/11_misc/points_03.png"
+        hover "01_hp/11_misc/points_04.png"
+        action [Hide("main_menu_01"), Show("hermione_main"), Jump("stat_hermione")]
      
     if letters >= 1: #Adds one letter in waiting list to be read. Displays owl with envelope.:
         imagebutton: # OWL
@@ -138,6 +147,73 @@ screen main_menu_01:
 
 
 ###MO SCREENS
+label stat_hermione:
+    $ hermione_xpos=490
+    call updateHermioneWords
+    call screen stat_screen_hermione
+    jump day_main_menu
+
+screen stat_screen_hermione:
+    zorder hermione_main_zorder-1
+
+    #add "01_hp/25_mo/stat_base.png" xpos 275
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos -175+30
+    add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos -175+30
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 0+30
+    add LiveCrop((0, 0, 750-(madValue*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos 0+30
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 175+30 
+    add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos 175+30
+
+    text "-Whoring-" xalign 0.485 ypos 50+38 size 30 bold 0.2
+    text "-Mood-" xalign 0.485 ypos 225+38 size 30 bold 0.2
+    text "-Reputation-" xalign 0.485 ypos 400+38 size 30 bold 0.2
+
+    text "-"+whoringWord+"-" xalign 0.485 ypos 50+110 size 20 
+    text "-"+moodWord+"-" xalign 0.485 ypos 225+110 size 20
+    text "-"+reputationWord+"-" xalign 0.485 ypos 400+110 size 20 
+
+    #text "[hermione_name]" xalign 0.9 ypos 80 size 20 
+
+    imagebutton: # X
+        xpos 1013
+        ypos 13
+        idle "01_hp/25_mo/close_ground.png"
+        hover "01_hp/25_mo/close_hover.png"
+        action [Hide("stat_screen_hermione"), Hide("hermione_main"), Jump("day_main_menu")]
+
+screen stat_screen_luna:
+    zorder hermione_main_zorder-1
+    $ renpy.show_screen('luna')
+    imagemap:
+        ground "01_hp/25_mo/stat_base.png"
+
+
+
+label updateHermioneWords:
+    $ whoringWords = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut"] 
+    $ madWords = ["Happy", "Slightly upset", "annoyed", "upset", "very upset", "mad", "angry", "hateful", "despises you", "Furious"] 
+    $ whoreWords = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor's whore", "school cumdump"] 
+    $ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's cumdump"]
+
+    $ whoringWord = whoringWords[int(whoring/2.4)-1]
+
+    if mad > 9:
+        $ moodWord = "Blind rage"
+        $ madValue = 10
+    else:
+        $ moodWord = madWords[mad]
+        $ madValue = mad
+
+    if lock_public_favors:
+        $ reputationWord = slutWords[int(whoring/2.4)-1]
+    else:
+        $ reputationWord = whoreWords[int(whoring/2.4)-1]
+
+    return
+
 screen map_screen:
     zorder hermione_main_zorder-1
     
@@ -584,17 +660,9 @@ screen points: #House points screen.
     hbox: 
         spacing 10 xpos 37+140 ypos 11
         text "{size=-5}[ravenclaw]{/size}" 
-##########################################################################################
-#######   JJ  addition of Hermione Whoring/Mad level   ###################################
-    hbox:
-        spacing 10 xpos 490+140 ypos 11
-        text "{size=-5}{color=#0033CC}W[whoring]{color=#A00000}  M[mad]{/color}{/size}"
-##########################################################################################
-
     hbox: ### DAYS COUNTER ###
         spacing 10 xpos 630+140 ypos 10
-        text "{size=-3}[day]{/size}" 
-    
+        text "{size=-3}[day]{/size}"     
     hbox: ### DGOLD COUNTER ###
         spacing 10 xpos 734+140 ypos 10
         text "{size=-4}[gold]{/size}" 

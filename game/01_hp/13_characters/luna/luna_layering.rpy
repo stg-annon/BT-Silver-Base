@@ -14,7 +14,7 @@ screen luna:
     ### CLOTHES 
     if luna_wear_glasses:
         add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the glasses
-    if luna_wear_bra:
+    if luna_wear_bra and not luna_wear_top:
         add luna_bra xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the bra
     if luna_wear_panties:
         add luna_panties xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the panties
