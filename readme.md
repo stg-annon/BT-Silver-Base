@@ -23,6 +23,9 @@ You have two options for installing silver:
 - **Techy**:		Outfit
 - **Akabur**:		Making Witch Trainer
 - *(If you feel that you contributed to this project and would like recognition or your work removed please email me at slavetrainermod@gmail.com)*
-	
+
+## More Info:
+for more information see [the pastebin](https://pastebin.com/KY3RGQei)
+
 ## Bugs:
 please submit any bugs as an issue for this project [here](https://github.com/stg-trainer-annon/BT-Silver-Base/issues)
