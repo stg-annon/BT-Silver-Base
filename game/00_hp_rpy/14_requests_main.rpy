@@ -61,6 +61,14 @@ label __init_variables:
             start_label = "hg_pf_LetMeTouchThem",
             costume_event = True
         )
+
+    if not hasattr(renpy.store,'hg_pf_TouchYourself_OBJ'): #important!
+        $ hg_pf_TouchYourself_OBJ = personal_favor(
+            imagination_level = 4,
+            menu_text = "Touch Yourself!",
+            start_label = "hg_pf_TouchYourself",
+            costume_event = False
+        )
     
     if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
         $ hg_pf_TouchMe_OBJ = personal_favor(
@@ -114,6 +122,7 @@ label __init_variables:
     $ hg_pf_list.append(hg_pf_LetMeTouchThem_OBJ)
     $ hg_pf_list.append(hg_pf_TouchMe_OBJ)
     $ hg_pf_list.append(hg_pf_TitJob_OBJ)
+    $ hg_pf_list.append(hg_pf_TouchYourself_OBJ)
     $ hg_pf_list.append(hg_pf_SuckIt_OBJ)
     $ hg_pf_list.append(hg_pf_LetsHaveSex_OBJ)
     $ hg_pf_list.append(hg_pf_TimeForAnal_OBJ)

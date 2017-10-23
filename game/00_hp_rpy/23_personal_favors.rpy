@@ -4801,7 +4801,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
         call her_main("[genie_name]!","body_30")
         m "Come on..."
-        m "It's not like you haven't shown me it all before."
+        m "It's not like I haven't seen it all before."
         call her_main("......","body_31")
         call her_main(".............","body_29")
         call her_main("50 house points, [genie_name].","body_33")
@@ -4829,7 +4829,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                         $ current_payout = 100 #Used when haggling about price of th favor.
                         her "................."
                         call her_main("(I didn't think he'd agree to this...)","body_29")
-                        call her_main("Well alright then...","body_33")
+                        call her_main("W-Well alright then...","body_33")
                     "\"50 house points it is then\"":
                         her "Well, so be it."
                         call her_main("but you better keep your hands you yourself...","body_69")
@@ -12151,5 +12151,710 @@ label hg_pf_TheGamble_complete:
         jump day_start
         
         
+label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
+    hide screen hermione_main 
+    with d3
+    if hg_pf_TouchYourself_OBJ.points == 0:
+        m "{size=-4}(Should I ask her to masturbate?){/size}"
+    else:
+        m "{size=-4}(Should I ask [hermione_name] to play with herself again?){/size}"
+    $ menu_x = 0.5 #Default position of the menu (0.5). Version B is $ menu_x = 0.2
+    menu:
+        "\"(Yes, let's do it!)\"":
+            show screen blktone
+            with d3
+            pass
+        "\"(Not right now.)\"":
+            jump silver_requests
+    
+    $ current_payout = 45 #Used when haggling about price of the favor.
+    
+    if hg_pf_TouchYourself_OBJ.points == 0: # FIRST EVENT <============================================================== EVENT 01
+        $ hg_pf_TouchYourself_OBJ.hearts_level = 1
+        m "[hermione_name]..."
+        call her_main("Yes, [genie_name]?","body_01")
+        m "Do you ever touch yourself?"
+        if whoring <=7:
+            jump too_much
+        call her_main("What? why?","body_44")
+        m "Do you?"
+        call her_main("[genie_name]!","body_32")
+        m "It's a simple question [hermione_name]..."
+        call her_main("......","body_33")
+        call her_main("{size=-5}I do...{/size}","body_34")
+        m "Huh? What was that?"
+        call her_main("I said that I do alright!!!","body_32")
+        m "Hmmmm, I'm not sure I believe you..."
+        call her_main("What? why would I lie?","body_29")
+        m "I'm not sure..."
+        m "But don't worry, I'm sure a quick little demonstration will erase any doubts..."
+        call her_main("...{p}And how much will this demonstration earn me?","body_17")
+        menu:
+            "\"You will get 20 house points.\"":
+                $ current_payout = 20
+                call her_main("......","body_69")
+                call her_main("well I suppose I could.","body_87")
+                call her_main("But you better keep your hands to yourself...","body_87")
+                m "Witcher's promise."
+                call her_main("...","body_17")
+            "\"you will get 40 house points.\"":
+                $ current_payout = 40
+                call her_main(".....","body_45")
+                call her_main("40 house points...?","body_13")
+                her "That could put \"Gryffindor\" back on top..."
+                m "so Is that a \"yes\"?"
+                call her_main("Yes, it is, [genie_name].","body_53")
+                m "fantastic!"
+            "\"you will get 80 house points!\"":
+                play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                $ current_payout = 80 #Used when haggling about price of th favor.
+                $ mad = 0
+                call her_main("80 house points?!","body_72")
+                m "Is that enough?"
+                call her_main("Of course [genie_name]!","body_75")
+                call her_main("If it's 80 points for Gryffindor then I don't mind giving you a little... show.","body_80")
+       
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        show screen bld1
+        with d3
+        call her_main("...........","body_44", xpos=140)
+        call her_main("so Do you want me to... start?","body_44")
+        m "Maybe take off your top first..."
+        call her_main("...","body_34")
+        call her_main("You want me to strip for you as well as...","body_34")
+        m "There's an extra 10 points for \"gryffindor\" in it for you."
+        $ current_payout += 10
+        call her_main("alright... {p}but I'm leaving my skirt on...","body_44")
+        hide screen bld1
+        with d3
+        ">Hermione slowly lifts her top..."
+        call set_hermione_action("lift_top")
+        call her_main("...........","body_44")
+        m "Mmmm, that's it [hermione_name]..."
+        show screen blkfade
+        call set_hermione_action("covering_top")
+        call her_main("(I can't believe I'm going to do this...)","body_33") 
+        hide screen blkfade
+        with d3
+        show screen ctc
+        pause
+        $ wear_shirts = False
+        call update_chibi_uniform
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        ">Hermione slowly starts grinding her mound against her hand."
+        hide screen ctc
+        show screen bld1
+        with d3
+        g9 "Nice..."
+        call her_main("........","body_44") 
+        m "............."
+        call her_main(".............","body_33")
+        call her_main("umm... [genie_name]?") 
+        m "Yes, what is it?"
+        call her_main("How long do I have to keep doing this?","body_31") 
+        m "Until you finish [hermione_name]..."
+        if daytime:
+            call her_main("What? my classes are about to start [genie_name]...","body_44")
+        else: 
+            call her_main("What? it's getting pretty late [genie_name]...","body_44")
+        call her_main("I'm not sure if I'll be able to finish... in time.","body_44")
+        m "Do you need the points or not?"
+        call her_main("I do, [genie_name]! I'm sorry...","body_87")
+        call her_main("I'll just keep ...going...","body_85")
+        m "(Hmmm, I might have to give her a little encouragement.)"
         
+        #MAIN FAVOUR MENU
+        label TouchYourself_menu:
+        menu:
+            m "..."
+            "\"That's it slut, keep going.\"":
+                call her_main("[genie_name]!!!","body_47")
+                call her_main("How dare you!")
+                m "what?"
+                call her_main("I hardly think that language is appropriate.","body_44") 
+                m "And masturbating in front of your headmaster is?"
+                call her_main("Well... this is different.","body_87")
+                call her_main("I'm doing this for the honor of \"gryffindor\"...")
+                call her_main("To help my--")
+                ">YOu notice hermione start grinding her hips a little faster."
+                $ hermione_dribble = True
+                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","body_121")
+                call her_main("My classmates win the house cup...","body_122")
+                m "Are you sure that's the only reason slut?"
+                call her_main("I don't know--","body_33")
+                call her_main("ah-a{image=textheart}...","body_131")
+                call her_main("I don't know what you mean, [genie_name]...","body_118")
+                m "It seems to me that you might be enjoying this a little too much..."
+                call her_main("I am not, [genie_name]!","body_131")
+                m "Really?"
+                call her_main("......................","body_33")
+                m "Then why is your pussy so wet slut?"
+                pause
+                call her_main("ah...{image=textheart}","body_131")
+                m "ha! just Admit it, you enjoy being called a slut!"
+                call her_main("I do not!","body_33")
+                call her_main("Aha...{image=textheart}","body_131") 
+                call her_main("I'm just thinking about how happy everyone will be when we win!","body_132")
+                m "and what if they find out how you earned the points?"
+                call her_main("what?!","body_104")
+                m "then it wouldn't just be me degrading you..."
+                call her_main("...","body_105")
+                m "It would be the whole school."
+                call her_main("ah...{image=textheart}","body_133")
+                m "Little. miss. slut."
+                call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","body_106")
+                call her_main("[genie_name], please... don't tell anyone...","body_122") 
+                ">Hermione keeps grinding her hips against her hand with hunger..."
+                call her_main("they can't find out...","body_117")
+                call her_main("if harry and ron knew...","body_118")
+                call her_main("i'd... ah...{image=textheart}","body_121")
+                m "You'd what [hermione_name]?"
+                call her_main("I'd...","body_131")
+                call her_main("I'd...{image=textheart}","body_132")
+                call her_main("I...{image=textheart}{image=textheart}{image=textheart}","body_136")
+            
+            "\"Play with your breasts\"" if hg_pf_TouchYourself_OBJ.points > 0:
+                call her_main("my breasts...","body_87", "blush")
+                call h_action("covering_top")
+                call her_main("I'm not sure if I shoul-","body_88", "blush")
+                m "There's another 10 points for \"gryffindor\" in it for you..."
+                $ current_payout += 10
+                call her_main("...","body_105", "blush")
+                call her_main("......","body_105", "blush")
+                call h_action("lift_breasts")
+                call her_main("ah...{image=textheart}","body_107", "blush")
+                m "There... Isn't that better?"
+                $ hermione_dribble = True
+                call her_main("Ah... y-yes...{image=textheart}","body_106", "blush")
+                call h_action("covering_top")
+                call her_main("Mmmm...","body_75", "blush")
+                m "That's it..."
+                call h_action("lift_breasts")
+                call her_main("[genie_name], do you mind...","body_78", "blush")
+                m "What [hermione_name]?"
+                call her_main("Could you... Call me names...","body_196", "blush")
+                m "Such as?"
+                call h_action("covering_top")
+                call her_main("...{p}{size=-5}Slut...{/size}{p}Only if it's not too much...","body_205", "blush")
+                m "You little whore..."
+                call her_main("Ah...{image=textheart}{image=textheart}","body_106", "blush")
+                m "What would your parents think if they saw this?"
+                call her_main("i-{image=textheart}","body_213", "blush")
+                call h_action("lift_breasts")
+                call her_main("Ah...{image=textheart} I don't know...","body_205", "blush")
+                call her_main("To be perfectly honest [genie_name]... I don't think I care...{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+                m "Really?"
+                call h_action("covering_top")
+                call her_main("Really...{image=textheart}","body_212", "blush")
+                m "Would you at least stop?"
+                call her_main("Ah...{image=textheart}","body_219", "blush")
+                call h_action("lift_breasts")
+                call her_main("Maybe....","body_219", "blush")
+                call her_main("I'm not sure...","body_204", "blush")
+                call h_action("covering_top")
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+
+            "\"Take off your skirt\"" if hg_pf_TouchYourself_OBJ.points > 0:
+                call her_main("Excuse me?","body_202") 
+                m "You heard me [hermione_name]..."
+                call her_main("........","body_203")
+                call her_main("............","body_199") 
+                call her_main("*sigh!*..............","body_196")
+                call her_main("Well, I might as well, I suppose...")
+                ">Hermione stops masturbating and slowly pulls down her skirt."
+                show screen blkfade 
+                with d3
+                $ hermione_wear_skirt = False
+                hide screen blkfade 
+                with d3
+                call h_action("covering")
+                call her_main("...","body_87") 
+                m "That's not so bad now, is it?"
+                call her_main("No, I suppose not...","body_44") 
+                m "Well, back to work..."
+                call her_main("...","body_33") 
+                call her_main("Well, alright...","body_205")
+                m "Good... Just keep playing with that slutty little pussy of yours!"
+                call her_main("[genie_name]!","body_207")
+                m "What?"
+                $ hermione_dribble = True
+                call her_main("It's not {size=-5}slutty...{/size}","body_203") 
+                m "Are you sure? Because from where I'm sitting it looks nice and wet."
+                call her_main("Ah...{image=textheart}","body_205") 
+                call her_main("It's just sweat [genie_name]...","body_204") 
+                m "Whatever you say..."
+                call her_main("...............","body_213") 
+                m "{size=-5}Slut.{/size}"
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","body_212", "blush")
+                call her_main("Sir... please...","body_189", "blush")
+                call h_action("pinch")
+                ">Hermione starts gently fingering herself."
+                m "Very good..."
+                call her_main("...{image=textheart}","body_212", "blush")
+                call her_main("Ah...{image=textheart}","body_219", "blush")
+                m "That's it slut. Try going a little deeper...."
+                call her_main("...","body_219", "blush")
+                call h_action("covering")
+                call her_main("Mmmm...{image=textheart}","body_216", "blush")
+
+
+
+
+
+
+        if hg_pf_TouchYourself_OBJ.points == 0: #HERMIONE DOESN'T CUM
+                call her_main("Ah...","body_139")
+                m "almost there [hermione_name]?"
+                call her_main("a-almost...","body_140")
+                call her_main("I just need a bit longer...")
+                m "well you better hurry..."
+                call her_main("Ah... i know, [genie_name].","body_20")
+                call her_main("...........","body_139")
+                m "is everything alright?"
+                call her_main("................","body_143")
+                m "Why are you being so quiet [hermione_name]?"
+                call her_main("......","body_140")
+                call her_main("[genie_name]... I don't think I can...")
+                m "what?"
+                call her_main("...finish...","body_142")
+                menu:
+                    "-Chastise her-":
+                        m "Well then I guess \"Slytherin\" will have to win the house cup this year."
+                        call her_main("B-but--","body_130")
+                        m "now, now [hermione_name], a deals a deal."
+                        call her_main("Really?","body_131")
+                        call her_main("but I'm trying [genie_name]...","body_132")
+                        m "try harder..."
+                        ">Hermione starts grinding furiously against hand"
+                        call her_main("*SOB!* i can't...","body_143")
+                        m "well then, 0 points to \"Gryffindor\"..."
+                        call her_main("{size=-5}After all...{/size} Really [genie_name]?","body_140")
+                        call her_main("After I stood here and...","body_148")
+                        call her_main("..........","body_145")
+                        ">Hermione wipes the tears from her eyes."
+                        call her_main("I am not going to sell you a single favour anymore, [genie_name]!","body_187")
+                        show screen blkfade
+                        with d3
+                        ">Hermione pulls away from you and covers up..."
+                        $ mad += 15
+                        call set_hermione_action("none")
+                        call music_block
+                        jump end_touch_yourself
+                    "-Forgive her-":
+                        m "It's alright, [hermione_name]."
+                        call her_main("Really?","body_144")
+                        m "I'm sure you're just a little nervous."
+                        call her_main("Thank you [genie_name].","body_140")
+                        call her_main("I promise to try harder next time.","body_147")
+        else: #HERMIONE CUMS
+            $ hg_pf_TouchYourself_OBJ.hearts_level = 2
+            call her_main("A-ha... {image=textheart}ah...","body_131", "blush")
+            call her_main("Ah... {image=textheart}-aha...","body_131", "blush")
+            m "..."
+            call her_main("Ah-ah...","body_131", "blush")
+            m "......................"
+            call her_main("Ah... ah...{image=textheart}","body_131", "blush")
+            call her_main("Ah... [genie_name]?","body_105", "blush")
+            m "What is it?"
+            call her_main("Ah... Do you.... like this?","body_131", "blush")
+            m "Do I like watching you finger your slutty little pussy?"
+            m "Very much so, [hermione_name]. Why?"
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_33", "blush")
+            call her_main("Ah... You're just so quiet...","body_131", "blush")
+            m "Do you need a little more encouragement?"
+            call her_main("Ah... yes... please....{image=textheart}","body_131", "blush")
+            m "Tch... You nasty whore!"
+            call her_main("yes [genie_name], ah...{image=textheart}","body_194", "blush")
+            call her_main("please... ah... more...{image=textheart}","body_195", "blush")
+            g4 "You need to be punished for being such a slut!"
+            call her_main("yes, [genie_name]... punish me...","body_196", "blush")
+            call her_main("make me you're little slut....","body_196", "blush")
+            call her_main("I will... ah... {image=textheart}do anything... ah...{image=textheart}","body_133", "blush")
+            m "Anything [hermione_name]?"
+            call her_main("Ah-a...{image=textheart} yessss...","body_212", "blush")
+            m "Cum."
+            $ hermione_squirt = True
+            call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","body_133b", "blush")
+            show screen white 
+            pause
+            hide screen white
+            with hpunch
+            $ hermione_squirt = False
+            call her_main("Ah...{image=textheart}...{image=textheart}","body_136", "blush")
+            call her_main("Ah... ah...{image=textheart}","body_134", "blush")
+            call her_main("...{image=textheart}{image=textheart}{image=textheart}","body_136", "blush")
+            call her_main("*heavy panting*","body_135", "blush")
+            call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}", "body_135", "blush")
+            call her_main(".............","body_121", "blush")
+            ">Hermione takes a minute to collect herself"
+            m "You feeling alright?"
+            call her_main("Yes, [genie_name]... I just need a little longer...","body_139")
+            m "take your time."
+            call her_main("ah... {image=textheart}","body_138")
+
+
+    elif hg_pf_TouchYourself_OBJ.points == 1: # SECOND EVENT
+        m "[hermione_name]?"
+        call her_main("Yes, [genie_name]?","body_01")
+        m "Are you feeling horny?"
+        call her_main("maybe A little, [genie_name].","body_128")
+        m "Ah, well perhaps we can fix that..."
+        call her_main("[genie_name]...","body_131")
+        m "[hermione_name], I would like to buy yet another favour from you today."
+        call her_main("Of course, [genie_name].","body_124")
+        g9 "The favour being you playing with that slutty little pussy of yours!"
+        call her_main("{image=textheart}{image=textheart}{image=textheart}","body_136")
+        call her_main(".............","body_121")
+        call her_main("Alright...","body_124", xpos=140)
+        ">Hermione slowly lifts her top..."
+        call set_hermione_action("lift_top")
+        call her_main("...........","body_44")
+        m "Mmmm, that's it [hermione_name]..."
+        show screen blkfade
+        call set_hermione_action("covering_top")
+        call her_main("(I can't believe I'm going to do this... again...)","body_118") 
+        hide screen blkfade
+        with d3
+        show screen ctc
+        pause
+        play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+        ">Hermione slowly starts grinding her mound against her hand."
+        hide screen ctc
+        show screen bld1
+        with d3
+        g9 "Nice..."
+        call her_main("........","body_106") 
         
+
+        jump TouchYourself_menu
+
+
+    elif hg_pf_TouchYourself_OBJ.points >= 2: # THIRD EVENT <========================================================================================================= EVENT 03
+        $ hg_pf_TouchYourself_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        
+        m "[hermione_name]?"
+        call her_main("[genie_name]?","body_01")
+        m "You don't mind pleasuring yourself in front of me, do you?"
+        if whoring <= 16:
+            call her_main("So long as I am being paid...","body_68")
+            m "Well, come on then. Time to earn those points."
+        else:
+            call her_main("I mean I have done it once today already...","body_68")
+            m "Once more for good luck then!"
+            call her_main("If you insist...{image=textheart}","body_189")
+        
+        hide screen hermione_main
+        hide screen bld1
+        show screen blkfade
+        with Dissolve(1)
+        pause.5  
+        
+
+        call set_hermione_action("lift_top")
+        ">Hermione slowly lifts her top..."
+        call her_main("(I can't believe I'm doing this... again...)","body_188") 
+        m "Now the skirt."
+        call set_hermione_action("lift_skirt_naked")
+        call her_main("...","body_128") 
+        call set_hermione_action("covering")
+        $ wear_shirts = False
+        call update_chibi_uniform
+        hide screen blkfade
+        with d3
+
+        stop music fadeout 3.0
+        call her_main("Do you like it when I do it like this, [genie_name]?","body_68")
+        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+
+        m "Yes, yes, like that..."
+        m "Try going a little deeper with your fingers."
+        call her_main("Alright [genie_name]...","body_74")
+        $ hermione_dribble = True
+        call her_main("Ah... ah...{image=textheart}","body_131")
+        call her_main("Ah... [genie_name]...{image=textheart}","body_131")
+        menu:
+            m "..."
+            "\"What are you thinking about?\"":
+                call her_main("Huh?","body_182")
+                call her_main("Oh, um... nothing...","body_182b")      
+                m "[hermione_name]..."
+                call her_main("[genie_name], please, it's too embarrassing...","body_199")         
+                g4 "Well now I have to hear it."
+                call her_main("OK... but you have to promise not to tell anyone!","body_189")         
+                m "Wicher's honor."
+                call her_main("......","body_81")         
+                m "[hermione_name]..."
+                call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","body_87")      
+                m "....."
+                call her_main("ah...{image=textheart}","body_121")
+                call h_action("pinch")
+                call her_main("It was ah... {image=textheart} in front of the entire class as well.")
+                call h_action("covering")
+                call her_main("He refused to let me answer any questions for a week after that.","body_124")       
+                call her_main("But it was worth it...","body_105")      
+                call her_main("The look on his face when he realised he was wrong...{image=textheart}","body_121")
+                call h_action("pinch")
+                call her_main("a-ah...{image=textheart}")
+                call h_action("covering")
+                call her_main("It just felt so good!{image=textheart}","body_123") 
+                m "OK, I think that's enough..."
+                call her_main("Was it too much?","body_122")            
+                m "Let's just get back to business shall we?"
+                call her_main(".................","body_121")  
+                show screen blktone
+                with d3
+                ">Hermione keeps on plunging her fingers into herself."
+                ">She is doing a great job of it too."  
+                hide screen blktone
+                with d3
+                m "Yes, yes... Like that."
+                
+            "\"You really are a shameless slut, aren't you?\"":
+                call her_main("Yes...","body_121")
+                call h_action("pinch")
+                call her_main("ah... {image=textheart}","body_133") 
+                call her_main("I don't know if it's the time I'm spending with you...{image=textheart}","body_122")
+                call her_main("Or if i've always been this way...{image=textheart}","body_118")
+                call her_main("But... {image=textheart} ah... {image=textheart} I'm a slut [genie_name]...{image=textheart}","body_121", "blush") 
+                call her_main("A shameless slut...","body_123", "blush")
+                call her_main("That pleasures herself...{image=textheart} ah...","body_121", "blush")
+                call her_main("Just to make her headmaster happy...","body_123", "blush")
+                m "Oh, yes..."
+                call her_main("That's it [genie_name]...","body_124", "blush")
+                call her_main("Enjoy yourself while I stand here...","body_133", "blush")
+                call her_main("Ah...{image=textheart}","body_135", "blush")
+                call her_main("Fingering my pussy...","body_134", "blush")
+                call her_main("Ah... ah...{image=textheart}","body_136", "blush")
+                call her_main("Ah... Do you.... like this [genie_name]?","body_132", "blush")
+                call her_main("Watching me Ah...{image=textheart} degrade myself?","body_133", "blush")
+                m "Very much, [hermione_name]. Just keep going..."
+                call her_main("{image=textheart}{image=textheart}{image=textheart}","body_133", "blush")
+                
+            "\"Play with your tits some more!\"":
+                call her_main("Hm?","body_121")
+                call her_main("alright... if you insist...","body_189")
+                call h_action("pinch")
+                call her_main("ah...{image=textheart}","body_122")
+                m "Now lift them up."
+                call her_main("[genie_name]...","body_190")    
+                m "do it [hermione_name]."
+                call her_main("...","body_189")
+                call h_action("lift_breasts_naked")
+                call her_main("Mmmm...","body_194", "blush")
+                m "That's it..."
+                ">You stare at Hermione's breasts with hunger..."
+                call her_main("ah...","body_133", "blush")
+                m "So do you like playing with those tits of yours [hermione_name]?"
+                call her_main("I do, [genie_name]... ah...{image=textheart}","body_121")
+                call her_main("I don't know why...","body_188")
+                call h_action("pinch")
+                call her_main("But I love it...{image=textheart}{image=textheart}","body_124")
+                m "You nasty slut!"
+                call her_main("Ah...{image=textheart} ah-a...{image=textheart}","body_135")
+                call her_main("I am...")
+                call her_main("A nasty slut... Ah...{image=textheart}", "body_133")
+                m "You are a disgrace, [hermione_name]!"
+                call her_main("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","body_135")
+        m "Why don't you come a little closer?"
+        call her_main("...","body_124")
+        ">Hermione slowly walks towards your desk and stands in front of you."
+        hide screen blkfade
+        hide screen blktone8
+        hide screen blktone
+        show screen desk
+        show screen chair_02
+        hide screen genie
+        $ genie_chibi_xpos = -217
+        $ genie_chibi_ypos = 13
+        $ g_c_u_pic = "01_hp/animation/grope_e_01.png"
+        hide screen hermione_blink
+        show screen g_c_u
+        with fade
+        pause
+        show screen bld1
+        with d3
+        call h_action("lift_breasts_naked")
+        call her_main("..............","body_205")
+        menu:
+            m "..."
+            "-Grab her tits-":
+                ">You reach forward and grab a hold of her supple breasts."
+                $ g_c_u_pic = "groping_naked_tits_ani"
+                call h_action("fingering")
+                call her_main("[genie_name]!","body_132")
+                call her_main("This wasn't part of the deal!","body_131")
+                call her_main("I don't think we should...","body_203")
+                m "Don't worry [hermione_name], You can keep playing with yourself."
+                m "This is just to hurry things along."
+                call her_main("Ah...{image=textheart} Well, as long as it's just to make this end faster...","body_196")
+                call her_main("I suppose I can... ah{image=textheart} allow it...","body_188")
+                ">You give her tits a couple of firm squeezes..."
+                m "Just admit that you love it."
+                call her_main("Ah... fine...{image=textheart}","body_182")
+                call her_main("{size=-5}I like it...{/size}","body_121")
+                m "What was that [hermione_name]?"
+                call her_main(".......")
+                call her_main("I love this...","body_123")
+                call her_main("Standing here... playing with myself...","body_124")
+                call her_main("Ah... while you play with me...{image=textheart}","body_194")
+                m "Heh... Nice."
+                call her_main("Ah...{image=textheart}","body_196")
+                call her_main("I sometimes wish I could spend all day in here...","body_195")
+                m "Mmmm"
+                ">You keep on massaging the girl's breasts..."
+                call her_main(".......")
+                call her_main("[genie_name]... I know it's greedy of me...","body_188")
+                call her_main("ah...{image=textheart}","body_124")
+                call her_main("but could you touch me... down there...","body_190")
+                m "What's was that [hermione_name]? You'll have to speak up."
+                call her_main("Please finger me...","body_196")
+                m "Once more, a little louder this time."
+                call her_main("Ah...{image=textheart} {size=+5}please finger my cunt!{/size}","body_194")
+                $ g_c_u_pic = "groping_06"
+                ">You swiftly plunge two fingers into her dripping pussy."
+                call h_action("lift_breasts_naked")
+                call her_main("{image=textheart}{image=textheart}{size=+5}!!!{/size}{image=textheart}{image=textheart}","body_134", "blush")
+            "-Finger her-":
+                $ g_c_u_pic = "groping_06"
+                ">You run your hands up and down Hermione's legs..."
+                call her_main("!!!","body_131")
+                ">And slowly move your hands towards her pussy..."
+                call her_main(".................","body_133")
+                m "That's it [hermione_name]..."
+                call her_main("{size=-7}[genie_name]...{/size}","body_121")
+                m "Shhh. Just play with your tits."
+                call her_main("...fine, [genie_name]...","body_205")
+                m "Good girl."
+                call her_main("....................","body_198", "blush")
+                m "Just be quiet..."
+                ">you enjoy the sensation of gently stroking the inside of her thighs..."
+                m "as my hands explore you"
+                m "your thighs..."
+                ">your start kneading the flesh of her thighs, moving ever closer to her dripping cunt"
+                m "your big, firm ass"
+                ">You move around and squeeze her ass gently..."
+                call her_main(".....................","body_136", "blush")
+                m "your loins..."
+                ">You move one hand back around, and start circling just above her clit."
+                call her_main(".....................{size=-8}[genie_name]...{/size}","body_133", "blush")
+                m "What was that, [hermione_name]?"
+                call her_main(".....................","body_221", "blush")
+                call her_main("...i... {size=-5}...i need you... inside of me...{/size}","body_199")
+                m "You'll have to speak up if you expect me to hear you..."
+                call her_main("I... ah...{image=textheart} need...","body_196", "blush")
+                ">You swiftly plunge two fingers into her drenched snatch."
+                call her_main("!!!{image=textheart}{image=textheart}","body_136", "blush")
+                ">you start to pump your fingers inside her before she can do more than gasp"
+                call her_main("{size=+10}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{/size}","body_133", "blush")
+                m "That's it [hermione_name]. Just enjoy yourself."
+                call her_main("..................................................","body_205", "blush")
+                m "do you like this?"
+                m "you like it when i finger your cunt?"
+                call her_main("i love it!{image=textheart} i love your fingers in my tight, wet pussy!!{image=textheart}","body_134", "blush")
+                m "well, i think we can do better."
+                ">with your other hand, you start rubbing the base of your palm against her clit."
+                call her_main("{size=+10}!!!{/size}","body_196", "blush")
+
+
+        ">you don't even need to move as she pounds herself against your fingers."
+        call her_main("ah...{image=textheart} please...{image=textheart} keep...{image=textheart}","body_133","blush")
+        call her_main("fingering my cunt!{image=textheart}{image=textheart}","body_134","blush")
+        g9 "As you command!"
+        ">you force another finger into her pussy!"
+        call her_main("ah yes... {image=textheart}iloveitiloveitiloveit","body_136","blush")
+        m "what do you love, [hermione_name]?"
+        call her_main("ah!!{image=textheart} i love your fingers in my pussy [genie_name]!{image=textheart}","body_135","blush")
+        ">her movements are becoming more frantic"
+        m "are you cumming, [hermione_name]?"
+        call her_main("ah...{image=textheart} yes!!","body_136", "blush")
+        call her_main("i'm cumming [genie_name]!!{image=textheart}","body_123", "blush")
+        call her_main("i'm cumming from being fucked with your fingers!!{image=textheart}{image=textheart}","body_194", "blush")
+        m "show me your tits [hermione_name]!"
+        m "i want to see you cum while you play with them."
+        $ hermione_squirt = True
+        call her_main("{image=textheart}{image=textheart}{image=textheart}!!!{image=textheart}{image=textheart}{image=textheart}","body_133b", "blush")
+        show screen white 
+        pause
+        hide screen white
+        with hpunch
+        $ hermione_squirt = False
+        call her_main("Ah...{image=textheart}...{image=textheart}","body_136", "blush")
+        call her_main("Ah... ah...{image=textheart}","body_134", "blush")
+        call her_main("...........","body_134", "blush")
+        call her_main("........................","body_134", "blush")
+        ">You release her..."
+        $ g_c_u_pic = "01_hp/animation/grope_e_01.png"
+        m "This will do for now [hermione_name]."
+    
+    show screen blkfade
+    with d3
+    ">Hermione quickly puts her clothes back on."
+    
+    call h_action("none")
+    $ hermione_wear_skirt = True
+    $ wear_shirts = True
+    $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
+    $ gryffindor += current_payout #35
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_SC.chibi.xpos = 450 #Near the desk.
+    $ hermione_SC.chibi.ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    call update_her_uniform
+    hide screen blkfade
+    with d3
+
+    hide screen blkfade
+    with d3
+
+    if whoring < 19:
+        call her_main("Now about my payment.","body_149")
+        m "Yes, yes, [hermione_name]. [current_payout] to \"Gryffindor\"." 
+        $ gryffindor +=current_payout
+    
+    hide screen hermione_stand_f #Hermione stands still.
+    hide screen hermione_main                                                                                                                                                                                   #HERMIONE
+    with d3   
+    $ h_xpos=140 #Defines position of the Hermione's full length sprite. (Default 370). (Center: 140)
+    
+    call her_main("Thank you, [genie_name]...","body_13", xpos=370)
+    
+label end_touch_yourself:
+    $ hg_pf_TouchYourself_OBJ.points += 1
+    
+    if whoring <= 14:
+        $ whoring +=1
+    
+    if whoring >= 12 and whoring <= 14:
+        $ new_request_16_heart = 1
+        $ hg_pf_TouchYourself_OBJ.hearts_level = 1 #Event hearts level (0-3)
+    if whoring >= 15 and whoring <= 17:
+        $ new_request_16_heart = 2
+        $ hg_pf_TouchYourself_OBJ.hearts_level = 2 #Event hearts level (0-3)
+    
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    $ aftersperm = False #Show cum stains on Hermione's uniform.
+    
+    $ custom_outfit_old = temp_outfit
+    $ stockings = temp_stockings
+    $ panties = True
+    call her_walk(400,610,2)
+
+    $ hermione_dribble = False
+
+    
+    call reset_hermione_main
+    jump end_hg_pf         
+    

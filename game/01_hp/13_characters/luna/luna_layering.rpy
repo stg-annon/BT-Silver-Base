@@ -23,6 +23,9 @@ screen luna:
     if luna_wear_top:
         add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
     #add luna_acc xpos luna_xpos ypos luna_ypos # Add the accessory
+
+    if luna_wear_cum:
+        add "01_hp/13_characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
     ### ZORDER
     zorder luna_zorder
 
@@ -62,6 +65,8 @@ init python: ###Method Definition for new characters
                 luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
             if l_chibi == "stand_topless":
                 luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand_topless.png" 
+            if l_chibi == "stand_naked":
+                luna_chibi_image = "01_hp/13_characters/luna/chibis/walk/l_walk_n_01.png" 
             else:
                 luna_chibi_image = luna_chibi_image
 

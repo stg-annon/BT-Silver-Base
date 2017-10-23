@@ -35,6 +35,8 @@ label luna_init:
     $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_0.png" 
     $ luna_panties = "01_hp/13_characters/luna/clothes/underwear/panties.png" 
     $ luna_bra = "01_hp/13_characters/luna/clothes/underwear/bra.png" 
+    $ luna_cum = 1
+    $ luna_wear_cum = False
     $ luna_tears = 0
     $ luna_zorder = 5
     $ luna_flip = 1

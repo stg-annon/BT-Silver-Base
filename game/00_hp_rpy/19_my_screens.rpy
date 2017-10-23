@@ -193,12 +193,12 @@ screen stat_screen_luna:
 
 
 label updateHermioneWords:
-    $ whoringWords = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut"] 
-    $ madWords = ["Happy", "Slightly upset", "annoyed", "upset", "very upset", "mad", "angry", "hateful", "despises you", "Furious"] 
-    $ whoreWords = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor's whore", "school cumdump"] 
-    $ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's cumdump"]
+    $ whoringWords = ["Pure", "Naive", "Curious", "Naughty", "Perverse", "Immoral", "Slutty", "Shameless", "Cumslut", "Total Cumslut", "Shameless Cumslut"] 
+    $ madWords = ["Happy", "Slightly upset", "annoyed", "upset", "very upset", "mad", "angry", "hateful", "despises you", "Furious", "Absolutely Furious"] 
+    $ whoreWords = ["Teacher's pet", "School star", "good girl", "minx", "slutty schoolgirl", "easy lay", "whore", "slut for sex", "gryffindor whore", "school cumdump", "mudblood cumdump"] 
+    $ slutWords = ["Teacher's pet", "School star", "good girl", "principal's pet", "slutty schoolgirl", "slut", "principal's slut", "daddy's girl", "gryffindor slut", "Dumbledore's whore", "Dumbledore's cumdump"]
 
-    $ whoringWord = whoringWords[int(whoring/2.4)-1]
+    $ whoringWord = whoringWords[int(whoring/2.4)]
 
     if mad > 9:
         $ moodWord = "Blind rage"
@@ -208,9 +208,9 @@ label updateHermioneWords:
         $ madValue = mad
 
     if lock_public_favors:
-        $ reputationWord = slutWords[int(whoring/2.4)-1]
+        $ reputationWord = slutWords[int(whoring/2.4)]
     else:
-        $ reputationWord = whoreWords[int(whoring/2.4)-1]
+        $ reputationWord = whoreWords[int(whoring/2.4)]
 
     return
 

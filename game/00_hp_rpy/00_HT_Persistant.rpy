@@ -141,6 +141,10 @@ label __init_variables:
 
     if not hasattr(renpy.store,'luna_tears'): #important!
         $ luna_tears = 0
+
+    if not hasattr(renpy.store,'luna_wear_cum'): #important!
+        $ luna_wear_cum = False
+        $ luna_cum = 1
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
@@ -242,6 +246,13 @@ label __init_variables:
     ###Tutoring fix
     if not hasattr(renpy.store,'table_position_x'): #important!
         $ table_position_x = 20
+
+    ###MISC
+    if not hasattr(renpy.store,'hermione_action_under'): #important!
+        $ hermione_action_under = False
+
+    if not hasattr(renpy.store,'hermione_squirt'): #important!
+        $ hermione_squirt = False
     
     
     

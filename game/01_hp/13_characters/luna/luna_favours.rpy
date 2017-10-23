@@ -1824,469 +1824,1012 @@ label luna_favour_2: ###SIT ON MY LAP
 
 
 label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options for each path. 
-    if luna_corruption <= 6:
+    if luna_corruption <= 8:
         $ luna_corruption += 1
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-    if luna_sub > luna_dom and luna_corruption < 5:
-        m "Have you ever been naked in front of another person [luna_name]?"
-        call luna_main("What?", 1, 3, 4, 2) 
-        call luna_main("Well... um... not really, I suppose.", 1, 2, 4, 2) 
-        m "Well then there's a first time for everything!"
-        call luna_main("...", 1, 3, 4, 3) 
-    elif luna_sub > luna_dom :
-        m "How would you like to step out of those restrictive clothes [luna_name]?"
-        call luna_main("...", 1, 3, 4, 2) 
-        call luna_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}", 1, 2, 4, 2) 
-        m "..."
-        call luna_main("alright then [l_genie_name]...", 1, 3, 4, 3) 
-        hide screen luna
-        with d3
-        $ luna_xpos = 270
-        ">Luna positions herself directly in front of your desk."
-        call luna_main("...", 1, 2, 4, 3)  
-    else:
-        m "You don't mind taking some of your clothes of do you [luna_name]?"
-        call luna_main("I suppose not...", 1, 2, 2, 2) 
-        call luna_main("So long as your prepared to show some {i}appreciation...{/i}", 7, 1, 2, 2)
-        m "yes, [luna_name]..."
-        call luna_main("...pervert...", 7, 2, 2, 2) 
-        hide screen luna
-        with d3
-        $ luna_xpos = 270
-        ">Luna positions herself directly in front of your desk."
-        call luna_main("...", 7, 2, 2, 2) 
-    menu:
-        "\"Take off your skirt.\"" if luna_sub >= 5:
-            $ luna_choice = 1
-            call luna_main("you want me to take of my skirt!", 4, 1, 4, 4) 
-            m "Yes... You think you could manage that?"
-            call luna_main("of course I can manag-", 7, 2, 4, 2) 
-            m "Fantastic! Why don't you pop it off then so we can take a look..."
-            call luna_main("...", 3, 3, 4, 2) 
-            call luna_main("Fine... (I hope he doesn't expect me to take off my panties as well)", 7, 3, 4, 4) 
-            hide screen luna
-            show screen blkfade
-            with d3
-            $ luna_wear_skirt = False
-            ">Luna slowly starts to unzip her skirt..."
-            ">She seems very hesitant and takes her time..."
-            ">Finally the zipper is undone and she has no choice but to take the skirt off..."
-            ">Luna slowly steps out of her skirt and places it on your desk."
-            show screen luna
-            hide screen blkfade
-            with d3
-            call luna_main("There... are you happy now [l_genie_name]?", 8, 3, 4, 3) 
-            m "Almost... take off your shirt next."
-            call luna_main("...alright...", 6, 2, 4, 6)
-            hide screen luna
-            show screen blkfade
-            with d3
-            $ luna_wear_top = False
-            ">Luna starts to unbutton her shirt..."
-            ">She slowly fumbles with the buttons until Finally the last button is undone..."
-            ">Luna begrudgingly takes off her shirt and places it on top of her skirt."
-            show screen luna
-            hide screen blkfade
-            with d3
-
-        "\"Take off your shirt.\"" if luna_sub > luna_dom:
-            $ luna_choice = 2
-            call luna_main("my shirt?", 7, 1, 4, 2)
-            m "Did I stutter [luna_name]?"
-            call luna_main("no...", 8, 2, 4, 2)
-            m "well Why don't you take it off then so we can take a look..."
-            call luna_main("...", 9, 3, 4, 3)
-            call luna_main("Fine... (I hope he doesn't expect me to take off my bra as well)", 7, 2, 4, 2)
-            hide screen luna
-            show screen blkfade
-            with d3
-            $ luna_wear_top = False
-            ">Luna starts to unbutton her shirt..."
-            ">She slowly fumbles with the buttons until Finally the last button is undone..."
-            ">Luna begrudgingly takes off her shirt and places it on top of your desk."
-            show screen luna
-            hide screen blkfade
-            with d3
-            pause
-            call luna_main("There... are you happy now [l_genie_name]?", 9, 1, 4, 2)
-            m "Almost... take off your skirt next."
-            call luna_main("...fine...", 7, 2, 4, 2)
-            hide screen luna
-            show screen blkfade
-            with d3
-            $ luna_wear_skirt = False
-            ">Luna slowly starts to unzip her skirt..."
-            ">She seems very hesitant and takes her time..."
-            ">Finally the zipper is undone and she has no choice but to take the skirt off..."
-            ">Luna slowly steps out of her skirt and places it on top of her shirt."
-            show screen luna
-            hide screen blkfade
-            with d3
-
-        "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
-            $ luna_choice = 3
-            call luna_main("...", 5, 2, 1, 1)
-            call luna_main("......", 8, 2, 2, 1)
-            call luna_main("well seeing as how you said the magic word I suppose it's only fair...", 6, 2, 1, 1)
-            m "thank you [luna_name]."
-            call luna_main("(Who'd have thought it'd be the easy...)", 7, 2, 1, 1) 
-            call luna_main("close your eyes...", 8, 1, 2, 2) 
-            hide screen luna
-            show screen blkfade
-            with d3
-            $ luna_wear_top = False
-            ">you can hear the soft ruffle of clothes being removed..."
-            ">You hear her softly place her shirt and vest on the table..."
+    if luna_corruption < 8:
+        if luna_sub > luna_dom and luna_corruption < 5:
+            m "Have you ever been naked in front of another person [luna_name]?"
+            call luna_main("What?", 1, 3, 4, 2) 
+            call luna_main("Well... um... not really, I suppose.", 1, 2, 4, 2) 
+            m "Well then there's a first time for everything!"
+            call luna_main("...", 1, 3, 4, 3) 
+        elif luna_sub > luna_dom :
+            m "How would you like to step out of those restrictive clothes [luna_name]?"
+            call luna_main("...", 1, 3, 4, 2) 
+            call luna_main("Well... {size=-3}they're{/size} {size=-4}not{/size} {size=-5}really{/size} {size=-6}that{/size} {size=-7}restrictive.{/size}", 1, 2, 4, 2) 
             m "..."
-            m "Can I open my eyes yet [luna_name]?"
-            lun "just a second..."
-            lun "Alright, go ahead."
-            show screen luna
-            hide screen blkfade
-            with d3 
-            pause
-
-        "\"Please take off your skirt [luna_name]...\"" if luna_dom >= 5:
-            $ luna_choice = 4
-            call luna_main("...", 5, 2, 1, 1)
-            call luna_main("......", 8, 2, 2, 1)
-            call luna_main("well seeing as how you said the magic word I suppose it's only fair...", 6, 2, 1, 1)
-            m "thank you [luna_name]."
-            call luna_main("(Who'd have thought it'd be the easy...)", 7, 2, 1, 1) 
-            call luna_main("well... close your eyes...",8, 1, 2, 2)
+            call luna_main("alright then [l_genie_name]...", 1, 3, 4, 3) 
             hide screen luna
-            show screen blkfade
             with d3
-            $ luna_wear_skirt = False
-            ">you can hear the soft ruffle of clothes and zips..."
-            ">You hear her softly place her skirt on the table..."
-            m "..."
-            m "Can I open my eyes yet [luna_name]?"
-            lun "just a second..."
-            lun "Alright, go ahead."
-            show screen luna
-            hide screen blkfade
-            with d3 
-            pause
-
-    if luna_choice <= 2: #luna sub choices
-        if luna_dom <= 5:
-            $ luna_dom += 1
-        m "Good... now your underwear..."
-        call luna_main("!!!", 4, 1, 4, 2)
-        call luna_main("You're not serious are you?", 7, 2, 4, 2)
-        m "I am. And I expect you to do it now, [luna_name]."
-        call luna_main("[l_genie_name]!", 8, 1, 3, 3)
-        m "don't you raise your voice at me, [luna_name]!"
-        call luna_main(".....!!?", 7, 2, 4, 2)
-        m "Nobody is forcing you to do this."
-        call luna_main("but-", 5, 2, 4, 2)
-        m "I am doing you and your family a favour!"
-        m "so If you don't think your father needs help with his failing magazine, please feel free to leave."
-        call luna_main(".....................", 6, 2, 4, 3) 
-        call luna_main(".......................................", 7, 3, 4, 2) 
-        $ luna_tears = 1
-        call luna_main("please [genie_name]...", 8, 1, 4, 2)
-        call luna_main("isn't there anything else I can do...", 9, 2, 4, 2)
+            $ luna_xpos = 270
+            ">Luna positions herself directly in front of your desk."
+            call luna_main("...", 1, 2, 4, 3)  
+        else:
+            m "You don't mind taking some of your clothes of do you [luna_name]?"
+            call luna_main("I suppose not...", 1, 2, 2, 2) 
+            call luna_main("So long as your prepared to show some {i}appreciation...{/i}", 7, 1, 2, 2)
+            m "yes, [luna_name]..."
+            call luna_main("...pervert...", 7, 2, 2, 2) 
+            hide screen luna
+            with d3
+            $ luna_xpos = 270
+            ">Luna positions herself directly in front of your desk."
+            call luna_main("...", 7, 2, 2, 2) 
         menu:
-            "-Make her strip-" if luna_choice == 1:
-                $ current_payout = 40
-                m "Take off your underwear now [luna_name]..."
-                call luna_main("{size=-5}(Should I really do this?){/size}", 9, 3, 4, 2)
-                call luna_main("[l_genie_name] I don't know about this... ", 8, 1, 4, 2)
-                if daytime:
-                    m "Come on [luna_name], just a little peek and then you'll be off to class."
-                else:
-                    m "Come on [luna_name], just a little peek and then you'll be off to bed."
-                call luna_main("Alright [l_genie_name]... ", 9, 3, 4, 2)
-                call luna_main("(Stripping for the headmaster...)", 9, 2, 4, 2)   
-                call luna_main("(imagine if daddy found out...)", 9, 3, 4, 2) 
-                call luna_main("......", 9, 1, 4, 2)
+            "\"Take off your skirt.\"" if luna_sub >= 5:
+                $ luna_choice = 1
+                call luna_main("you want me to take of my skirt!", 4, 1, 4, 4) 
+                m "Yes... You think you could manage that?"
+                call luna_main("of course I can manag-", 7, 2, 4, 2) 
+                m "Fantastic! Why don't you pop it off then so we can take a look..."
+                call luna_main("...", 3, 3, 4, 2) 
+                call luna_main("Fine... (I hope he doesn't expect me to take off my panties as well)", 7, 3, 4, 4) 
                 hide screen luna
                 show screen blkfade
                 with d3
-                $ luna_wear_bra = False
-                ">Luna slowly unlatches her bra and places it on your desk."  
+                $ luna_wear_skirt = False
+                ">Luna slowly starts to unzip her skirt..."
+                ">She seems very hesitant and takes her time..."
+                ">Finally the zipper is undone and she has no choice but to take the skirt off..."
+                ">Luna slowly steps out of her skirt and places it on your desk."
                 show screen luna
                 hide screen blkfade
                 with d3
-                m "Mmmm, very nice [luna_name]."
-                m "Now for your panties..."
-                $ luna_tears = 2
-                call luna_main("yes [l_genie_name]... ", 8, 2, 4, 3)
+                call luna_main("There... are you happy now [l_genie_name]?", 8, 3, 4, 3) 
+                m "Almost... take off your shirt next."
+                call luna_main("...alright...", 6, 2, 4, 6)
                 hide screen luna
                 show screen blkfade
                 with d3
-                $ luna_wear_panties = False
-                ">Luna slightly turns to the side so you can't quite make out her crouch..."
-                ">She's very hesitant and takes her time pulling down her panties..."
-                ">Luna slowly steps out of her panties and places them on top of the pile of clothes on your desk." 
+                $ luna_wear_top = False
+                ">Luna starts to unbutton her shirt..."
+                ">She slowly fumbles with the buttons until Finally the last button is undone..."
+                ">Luna begrudgingly takes off her shirt and places it on top of her skirt."
+                show screen luna
+                hide screen blkfade
+                with d3
+
+            "\"Take off your shirt.\"" if luna_sub > luna_dom:
+                $ luna_choice = 2
+                call luna_main("my shirt?", 7, 1, 4, 2)
+                m "Did I stutter [luna_name]?"
+                call luna_main("no...", 8, 2, 4, 2)
+                m "well Why don't you take it off then so we can take a look..."
+                call luna_main("...", 9, 3, 4, 3)
+                call luna_main("Fine... (I hope he doesn't expect me to take off my bra as well)", 7, 2, 4, 2)
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_top = False
+                ">Luna starts to unbutton her shirt..."
+                ">She slowly fumbles with the buttons until Finally the last button is undone..."
+                ">Luna begrudgingly takes off her shirt and places it on top of your desk."
                 show screen luna
                 hide screen blkfade
                 with d3
                 pause
-                call luna_main("...", 9, 3, 4, 3)
-                m "Very nice..."
-                call luna_main("c-can I get dressed now... it's a bit cold in here.", 9, 2, 4, 2)
-                m "mmmm... so I can see."
-                call luna_main("!!!", 4, 1, 2, 3)
-                call luna_main("That's enough! I refuse to stand here any longer!", 9, 1, 3, 2)
+                call luna_main("There... are you happy now [l_genie_name]?", 9, 1, 4, 2)
+                m "Almost... take off your skirt next."
+                call luna_main("...fine...", 7, 2, 4, 2)
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_skirt = False
+                ">Luna slowly starts to unzip her skirt..."
+                ">She seems very hesitant and takes her time..."
+                ">Finally the zipper is undone and she has no choice but to take the skirt off..."
+                ">Luna slowly steps out of her skirt and places it on top of her shirt."
+                show screen luna
+                hide screen blkfade
+                with d3
 
-            "-start touching yourself-":
-                $ current_payout = 65
-                m "anything..."
-                hide screen blktone
+            "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
+                $ luna_choice = 3
+                call luna_main("...", 5, 2, 1, 1)
+                call luna_main("......", 8, 2, 2, 1)
+                call luna_main("well seeing as how you said the magic word I suppose it's only fair...", 6, 2, 1, 1)
+                m "thank you [luna_name]."
+                call luna_main("(Who'd have thought it'd be the easy...)", 7, 2, 1, 1) 
+                call luna_main("close your eyes...", 8, 1, 2, 2) 
+                hide screen luna
+                show screen blkfade
                 with d3
-                ">You reach under the desk and grab your cock..."
-                hide screen blktone8
+                $ luna_wear_top = False
+                ">you can hear the soft ruffle of clothes being removed..."
+                ">You hear her softly place her shirt and vest on the table..."
+                m "..."
+                m "Can I open my eyes yet [luna_name]?"
+                lun "just a second..."
+                lun "Alright, go ahead."
+                show screen luna
+                hide screen blkfade
+                with d3 
+                pause
+
+            "\"Please take off your skirt [luna_name]...\"" if luna_dom >= 5:
+                $ luna_choice = 4
+                call luna_main("...", 5, 2, 1, 1)
+                call luna_main("......", 8, 2, 2, 1)
+                call luna_main("well seeing as how you said the magic word I suppose it's only fair...", 6, 2, 1, 1)
+                m "thank you [luna_name]."
+                call luna_main("(Who'd have thought it'd be the easy...)", 7, 2, 1, 1) 
+                call luna_main("well... close your eyes...",8, 1, 2, 2)
+                hide screen luna
+                show screen blkfade
                 with d3
-                hide screen genie
-                show screen genie_jerking_off
-                with d3
-                pause 
-                m "Is this better [luna_name]?"
-                call luna_main("{size=-3}I suppose so...{/size}", 6, 3, 4, 3)
-                m "Well if it makes you happy..."
-                ">You start stroking faster."
-                call luna_main("...", 6, 3, 4, 3)
-                m "Yes... Ah, yes, this is good..."
-                $ luna_tears = 3
-                call luna_main("Fine! Have it your way, [l_genie_name]!", 6, 3, 4, 3)
-                call luna_main("enjoy stroking your filthy old cock while you force me stand here...", 6, 1, 3, 3)
-                m "{size=-4}(mmmm... yes...){/size}"
-                m "well seeing as how you are standing there... why don't you give those nice little tits of yours a good shake?"
-                call luna_main("*hmph*...", 7, 1, 2, 2)
-                ">Luna sways her chest side to side ever so slightly."
-                call luna_main("well...", 7, 3, 3, 2)
-                ">You keep on wanking while you gaze at Luna's milky tits..."
-                m "just a little bit faster..."
-                call luna_main("*hmph*... just hurry up get it over with [l_genie_name]...", 6, 3, 4, 3)
-                ">Luna starts shaking her chest a little faster"
-                m "{size=-4}ah...{/size}"
-                m "that's it slut... keep going..."
-                call luna_main("........", 8, 1, 3, 2)
-                m "{size=-4}(argh... yes...){/size}"
-                call luna_main("(he's going to shoot it all out front of me...)", 7, 3, 4, 2)
-                m "{size=-4}yes...{/size}"
-                call luna_main("(Should I stop.)", 9, 2, 4, 3)
-                g4 "{size=+2}mmmm... thats it keep shaking those milky tits...{/size}"
-                call luna_main(".........", 5, 1, 4, 1)
-                g4 "{size=+4}(agh... almost there...){/size}"
-                call luna_main("(too late...)", 9, 3, 4, 1)
+                $ luna_wear_skirt = False
+                ">you can hear the soft ruffle of clothes and zips..."
+                ">You hear her softly place her skirt on the table..."
+                m "..."
+                m "Can I open my eyes yet [luna_name]?"
+                lun "just a second..."
+                lun "Alright, go ahead."
+                show screen luna
+                hide screen blkfade
+                with d3 
+                pause
+
+        if luna_choice <= 2: #luna sub choices
+            if luna_sub <= 5:
+                $ luna_sub += 1
+            m "Good... now your underwear..."
+            call luna_main("!!!", 4, 1, 4, 2)
+            call luna_main("You're not serious are you?", 7, 2, 4, 2)
+            m "I am. And I expect you to do it now, [luna_name]."
+            call luna_main("[l_genie_name]!", 8, 1, 3, 3)
+            m "don't you raise your voice at me, [luna_name]!"
+            call luna_main(".....!!?", 7, 2, 4, 2)
+            m "Nobody is forcing you to do this."
+            call luna_main("but-", 5, 2, 4, 2)
+            m "I am doing you and your family a favour!"
+            m "so If you don't think your father needs help with his failing magazine, please feel free to leave."
+            call luna_main(".....................", 6, 2, 4, 3) 
+            call luna_main(".......................................", 7, 3, 4, 2) 
+            $ luna_tears = 1
+            call luna_main("please [genie_name]...", 8, 1, 4, 2)
+            call luna_main("isn't there anything else I can do...", 9, 2, 4, 2)
+            menu:
+                "-Make her strip-" if luna_choice == 1:
+                    $ current_payout = 40
+                    m "Take off your underwear now [luna_name]..."
+                    call luna_main("{size=-5}(Should I really do this?){/size}", 9, 3, 4, 2)
+                    call luna_main("[l_genie_name] I don't know about this... ", 8, 1, 4, 2)
+                    if daytime:
+                        m "Come on [luna_name], just a little peek and then you'll be off to class."
+                    else:
+                        m "Come on [luna_name], just a little peek and then you'll be off to bed."
+                    call luna_main("Alright [l_genie_name]... ", 9, 3, 4, 2)
+                    call luna_main("(Stripping for the headmaster...)", 9, 2, 4, 2)   
+                    call luna_main("(imagine if daddy found out...)", 9, 3, 4, 2) 
+                    call luna_main("......", 9, 1, 4, 2)
+                    hide screen luna
+                    show screen blkfade
+                    with d3
+                    $ luna_wear_bra = False
+                    ">Luna slowly unlatches her bra and places it on your desk."  
+                    show screen luna
+                    hide screen blkfade
+                    with d3
+                    m "Mmmm, very nice [luna_name]."
+                    m "Now for your panties..."
+                    $ luna_tears = 2
+                    call luna_main("yes [l_genie_name]... ", 8, 2, 4, 3)
+                    hide screen luna
+                    show screen blkfade
+                    with d3
+                    $ luna_wear_panties = False
+                    ">Luna slightly turns to the side so you can't quite make out her crouch..."
+                    ">She's very hesitant and takes her time pulling down her panties..."
+                    ">Luna slowly steps out of her panties and places them on top of the pile of clothes on your desk." 
+                    show screen luna
+                    hide screen blkfade
+                    with d3
+                    pause
+                    call luna_main("...", 9, 3, 4, 3)
+                    m "Very nice..."
+                    call luna_main("c-can I get dressed now... it's a bit cold in here.", 9, 2, 4, 2)
+                    m "mmmm... so I can see."
+                    call luna_main("!!!", 4, 1, 2, 3)
+                    call luna_main("That's enough! I refuse to stand here any longer!", 9, 1, 3, 2)
+
+                "-start touching yourself-":
+                    $ current_payout = 65
+                    m "anything..."
+                    hide screen blktone
+                    with d3
+                    ">You reach under the desk and grab your cock..."
+                    hide screen blktone8
+                    with d3
+                    hide screen genie
+                    show screen genie_jerking_off
+                    with d3
+                    pause 
+                    m "Is this better [luna_name]?"
+                    call luna_main("{size=-3}I suppose so...{/size}", 6, 3, 4, 3)
+                    m "Well if it makes you happy..."
+                    ">You start stroking faster."
+                    call luna_main("...", 6, 3, 4, 3)
+                    m "Yes... Ah, yes, this is good..."
+                    $ luna_tears = 3
+                    call luna_main("Fine! Have it your way, [l_genie_name]!", 6, 3, 4, 3)
+                    call luna_main("enjoy stroking your filthy old cock while you force me stand here...", 6, 1, 3, 3)
+                    m "{size=-4}(mmmm... yes...){/size}"
+                    m "well seeing as how you are standing there... why don't you give those nice little tits of yours a good shake?"
+                    call luna_main("*hmph*...", 7, 1, 2, 2)
+                    ">Luna sways her chest side to side ever so slightly."
+                    call luna_main("well...", 7, 3, 3, 2)
+                    ">You keep on wanking while you gaze at Luna's milky tits..."
+                    m "just a little bit faster..."
+                    call luna_main("*hmph*... just hurry up get it over with [l_genie_name]...", 6, 3, 4, 3)
+                    ">Luna starts shaking her chest a little faster"
+                    m "{size=-4}ah...{/size}"
+                    m "that's it slut... keep going..."
+                    call luna_main("........", 8, 1, 3, 2)
+                    m "{size=-4}(argh... yes...){/size}"
+                    call luna_main("(he's going to shoot it all out front of me...)", 7, 3, 4, 2)
+                    m "{size=-4}yes...{/size}"
+                    call luna_main("(Should I stop.)", 9, 2, 4, 3)
+                    g4 "{size=+2}mmmm... thats it keep shaking those milky tits...{/size}"
+                    call luna_main(".........", 5, 1, 4, 1)
+                    g4 "{size=+4}(agh... almost there...){/size}"
+                    call luna_main("(too late...)", 9, 3, 4, 1)
+                    g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                    hide screen luna
+                    with d3
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    g4 "Argh! YES!"
+                    hide screen luna
+                    with d3
+                    hide screen bld1
+                    with d3
+                    show screen genie_jerking_sperm
+                    with d3
+                    show screen bld1
+                    with d3
+                    call luna_main("ugh... there's so much...", 8, 3, 4, 2)
+                    call luna_main("{size=-5}(As usual...){/size}", 8, 2, 4, 1)
+                    show screen genie_jerking_sperm_02
+                    with d3
+                    g4 "good work, slut... ah, shit, this feels so good..."
+                    show screen genie
+                    hide screen bld1
+                    #show screen genie_jerking_off
+                    with d3
+                    call luna_main("......", 7, 1, 4, 2)
+                    m "Ah... you did good [luna_name]..."
+
+            hide screen luna
+            show screen blkfade
+            with d3
+            $ luna_wear_skirt = True
+            $ luna_wear_top = True
+            $ luna_wear_bra = True
+            $ luna_wear_panties = True
+            ">Luna quickly picks her clothes up off your desk and gets dressed."
+            show screen luna
+            hide screen blkfade
+            with d3
+            call luna_main("I think I'd like to leave now [l_genie_name]...", 7, 3, 4, 2)
+            m "You're free to leave whenever you like [luna_name]."
+            call luna_main("Well I'm certainly not leaving until you pay me!", 9, 1, 2, 3)
+
+
+        else:
+            call luna_main("There... is this what you wanted to see [l_genie_name]?", 7, 1, 2, 2) 
+            g4 "gods yes!"
+            if luna_dom <= 5:
+                $ luna_dom += 1
+            call luna_main("well... seeing as how you seem to be enjoying yourself so much...", 5, 1, 2, 1)
+            m "what?"
+            call luna_main("why don't you start ...touching... yourself [l_genie_name]...", 5, 3, 2, 1)
+            m "I'm not sure if-"
+            call luna_main("that wasn't a question [l_genie_name]...", 8, 1, 2, 2)
+            hide screen blktone
+            with d3
+            ">You reach under the desk and grab your cock..."
+            hide screen blktone8
+            with d3
+            hide screen genie
+            show screen genie_jerking_off
+            with d3
+            pause  
+            call luna_main("there we are...", 8, 1, 4, 1)
+            call luna_main("don't you feel better now?", 8, 2, 4, 1)
+            m "mmmm... yes..."
+            call luna_main("Hmmm, I'm not sure if I believe you.", 9, 1, 4, 3)
+            call luna_main("maybe you need a little encouragement...", 9, 2, 4, 1)
+            m "encouragement?"
+            call luna_main("close your eyes [l_genie_name]...", 9, 1, 4, 1)
+            hide screen luna
+            show screen blkfade
+            with d3
+            $ luna_chibi("stand_naked")
+            if luna_wear_top:
+                $ luna_wear_panties = False
+            else:
+                $ luna_wear_bra = False
+            ">you can hear the soft ruffle of clothes being taken off..."
+            ">You feel something light get thrown against your chest..."
+            m "???"
+            m "Can I open my eyes yet [luna_name]?"
+            lun "Go ahead [l_genie_name]..."
+            show screen luna
+            hide screen blkfade
+            with d3 
+            g9 "!!!"
+            call luna_main("like what you see?", 9, 2, 4, 1)
+            g9 "..."
+            ">You start stroking your cock with renewed vigor."
+            call luna_main("I'll take that as a yes...", 8, 1, 2, 1)
+            g9 "Aha... Yeah... This feels great..."
+            call luna_main("good... just work up a nice big load for me...", 9, 1, 2, 1)
+            if luna_wear_panties:
+                call luna_main("if you're a good boy I might even let you shoot it all over my bra...", 8, 2, 2, 1)
+            else:
+                call luna_main("if you're a good boy I might even let you shoot it all over my panties...", 8, 2, 2, 1)
+            g9 "Yes, [luna_name]!"
+            call luna_main("I bet you'd love that wouldn't you?", 7, 1, 2, 1)
+            m "yes..."
+            call luna_main("Shooting your filthy old cum all over my underwear...", 8, 3, 4, 1)
+            m "..."
+            call luna_main("well come on then [l_genie_name]...", 9, 1, 4, 1)
+            call luna_main("keep stroking that disgusting cock of yours...", 9, 1, 2, 1)
+            m "{size=-4}(argh... yes...){/size}"
+            call luna_main("do you need a little more encouragement [l_genie_name]...", 8, 1, 3, 1)
+            m "{size=-4}yes...{/size}"
+            call luna_main("say it louder...", 8, 1, 3, 1)
+            g9 "{size=+4}yes{/size}"
+            call luna_main("well close your eyes...", 9, 1, 3, 1)
+            hide screen luna
+            show screen blkfade
+            with d3
+            if luna_wear_panties:
+                $ luna_wear_skirt = False
+            else:
+                $ luna_wear_top = False
+            ">you can once more hear the soft ruffle of clothes..."
+            m "{size=-2}(mmmm...){/size}"
+            lun "open wide [l_genie_name]..."
+            show screen luna
+            hide screen blkfade
+            with d3 
+            pause
+            m "{size=+2}yes...{/size}"
+            call luna_main("you love this don't you...", 9, 1, 2, 1)
+            g4 "{size=+4}(agh...){/size}"
+            ">you start stroking your cock even faster!"
+            g4 "{size=+4}yes...{/size}"
+            call luna_main("that's it [l_genie_name], cum for your princess...", 9, 1, 4, 1)
+            g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+            g4 "{size=+4}(agh... almost there...){/size}"
+            call luna_main("cum...", 9, 1, 3, 14)
+            if luna_wear_panties:
+                call luna_main("{size=+4}cum all over my bra!{/size}", 9, 1, 3, 14)
                 g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                ">You grab Luna's bra and start stroking your cock into it."
+            else:
+                call luna_main("{size=+4}cum all over my panties!{/size}", 9, 1, 3, 14)
+                g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                ">You grab Luna's panties and start stroking your cock into them."
+            hide screen luna
+            with d3
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white 
+            pause .1
+            hide screen white
+            with hpunch
+            g4 "Argh! YES!"
+            hide screen luna
+            with d3
+            hide screen bld1
+            with d3
+            show screen genie_jerking_sperm
+            with d3
+            show screen bld1
+            with d3
+            call luna_main("That's it, [l_genie_name], make sure you cover them...", 9, 1, 3, 1)
+            show screen genie_jerking_sperm_02
+            with d3
+            g4 "ah, shit they're so soft, why does this feels so good..."
+            show screen genie
+            hide screen bld1
+            #show screen genie_jerking_off
+            with d3
+            call luna_main("mmm...", 8, 1, 3, 1)
+            m "ah..."
+            call luna_main("keep going... make sure you get every last drop out.", 8, 3, 4, 1)
+            m "ah... Thank you..."
+            call luna_main("Thank you...?", 9, 1, 5, 3)
+            m "Thank you princess..."
+            $ luna_name = "Princess"
+            call luna_main("*hmph*", 9, 2, 2, 2)
+            call luna_main("Well seeing as how you've ...finished... I suppose I better get dressed.", 7, 2, 2, 2)
+
+            hide screen luna
+            with d3
+
+            if luna_wear_panties:
+                ">Luna quickly picks her clothes up off your desk and gets dressed except for her cum covered bra."
+            else:
+                ">Luna quickly picks her clothes up off your desk and gets dressed except for her cum covered panties."
+            $ luna_wear_skirt = True
+            $ luna_wear_top = True
+            $ luna_wear_bra = True
+            $ luna_wear_panties = True
+            show screen luna
+            with d3
+            m "aren't you going to put those on as well?"
+            call luna_main("What? and risk contaminating the evidence?", 9, 1, 5, 3)
+            m "Evidence..."
+            call luna_main("Oh don't worry, I just needed some ...insurance...", 7, 2, 4, 1)
+            m "insurance? Against what?"
+            call luna_main("well if I tried to tell the ministry of magic what was going on here I'd get laughed out of the room.", 8, 1, 5, 1)
+            call luna_main("but this?", 7, 1, 2, 1)
+            ">She dangles the cum soaked underwear in front of you."
+            call luna_main("This says otherwise.", 7, 3, 2, 1)
+            m "How will they know it's mine? That could be anyone's cum!"
+            call luna_main("Please... we're taught identification spells in second year. even neville longbottom would know it's yours.", 9, 1, 3, 1)
+            m "So you're going to tell them everything?"
+            call luna_main("What? of course not.", 9, 2, 1, 1)
+            call luna_main("As long as you behave yourself...", 9, 1, 1, 1)
+            m "And what does that entail?"
+            call luna_main("Well first things first we're going to talk about how much I'm going to be paid.", 9, 2, 1, 1)
+            call luna_main("300 gold sounds fair to me... {p}how about you?", 9, 1, 2, 1)
+            m "It sounds... fair..."
+            call luna_main("I'm glad we could come to an agreement.", 8, 2, 4, 1)
+            m "yes [luna_name]..."
+            call luna_main("Good boy... now, speaking of payment...", 9, 1, 2, 2)
+            $ current_payout = 300
+    
+
+    else: ###THIRD TIME EVENT IS RUN
+        if luna_sub > luna_dom :
+            m "You don't mind taking your clothes off again do you [luna_name]?"
+            call luna_main("...", 1, 2, 4, 2) 
+            call luna_main("Well... {size=-3}I {size=-4}mean {size=-2}I {size=-2}do {size=-2}mind.", 1, 3, 4, 2) 
+            m "..."
+            call luna_main("...", 1, 1, 4, 2) 
+            call luna_main("alright then [l_genie_name]...", 1, 2, 4, 1) 
+            hide screen luna
+            with d3
+            $ luna_xpos = 270
+            ">Luna positions herself directly in front of your desk."
+            call luna_main("(Why can't I stand up for myself?)", 1, 2, 4, 3)  
+            call luna_main("...", 1, 3, 4, 4)  
+        else:
+            m "If it's not too much trouble-"
+            call luna_main("...", 1, 2, 2, 2) 
+            m "Could you please take your clothes off?"
+            call luna_main("*hmph* {p}Well seeing as how you seemed to have learned some manners.", 7, 1, 2, 2)
+            m "yes, [luna_name]..."
+            call luna_main("I suppose there's no harm in it...", 5, 2, 2, 1) 
+            hide screen luna
+            with d3
+            $ luna_xpos = 270
+            ">Luna positions herself directly in front of your desk."
+            call luna_main("...", 9, 1, 2, 1) 
+        menu:
+            "\"Take off your skirt.\"" if luna_sub >= 5:
+                $ luna_choice = 1
+                call luna_main("My skirt?", 4, 1, 4, 4) 
+                m "Yes..."
+                call luna_main("...", 7, 2, 4, 2) 
+                call luna_main(".......", 7, 2, 4, 2) 
+                call luna_main("{size=-7}Alright...{/size}", 7, 2, 4, 1) 
+                m "Mmmm, someone's eager today."
+                call luna_main("[l_genie_name]...", 3, 3, 4, 2) 
+                call luna_main("...", 1, 2, 4, 1) 
                 hide screen luna
+                show screen blkfade
                 with d3
-                show screen white 
-                pause.1
-                hide screen white
-                pause.2
-                show screen white 
-                pause .1
-                hide screen white
-                with hpunch
-                g4 "Argh! YES!"
+                $ luna_wear_skirt = False
+                ">Luna slowly starts to unzip her skirt..."
+                ">She doesn't hesitate however, quickly placing the skirt on your desk..."
+                show screen luna
+                hide screen blkfade
+                with d3
+                call luna_main("There... Is that all [l_genie_name]?", 8, 2, 4, 3) 
+                m "Not quite..."
+                call luna_main("(Surely he doesn't want me to take off my panties?)", 6, 2, 2, 3)
+                call luna_main("[l_genie_name] please...", 7, 1, 4, 2)
+                m "Now now [luna_name], a deal's a deal..."
+                call luna_main("...", 6, 2, 4, 3)
+                $ luna_tears = 1
+                call luna_main("At least close your eyes...", 7, 1, 4, 2)
+                m "As you wi- {p}command..."
                 hide screen luna
+                show screen blkfade
                 with d3
-                hide screen bld1
+                $ luna_wear_panties = False
+                ">You hear the soft rustle of clothes..."
+                ">Suddenly something is gently placed on your desk"
+                show screen luna
+                hide screen blkfade
                 with d3
-                show screen genie_jerking_sperm
-                with d3
-                show screen bld1
-                with d3
-                call luna_main("ugh... there's so much...", 8, 3, 4, 2)
-                call luna_main("{size=-5}(As usual...){/size}", 8, 2, 4, 1)
-                show screen genie_jerking_sperm_02
-                with d3
-                g4 "good work, slut... ah, shit, this feels so good..."
-                show screen genie
-                hide screen bld1
-                #show screen genie_jerking_off
-                with d3
-                call luna_main("......", 7, 1, 4, 2)
-                m "Ah... you did good [luna_name]..."
+                call luna_main("There... are you happy now!", 5, 2, 2, 2)
+                g9 "Of course!"
+                g9 "I only expected you to take your shirt off!"
+                call luna_main("What!", 4, 1, 2, 15)
+                call luna_main("Please! let me put them back on!", 4, 1, 4, 2)
+                ">Luna scrambles to pick her panties back up off your desk but you're too fast for her, quickly snatching them up."
+                m "Ah ah ah miss lovegood."
+                call luna_main("You're so... You're so mean!", 8, 2, 4, 2)
+                m "Don't complain too much, I was hoping you'd take those off anyway."
+                call luna_main("*hmph*", 6, 1, 1, 3)
+                m "Well seeing as how we've already crossed this line, how about you take off your top anyway."
+                call luna_main("You can't be serious! I think you've seen enough [l_genie_name]!", 7, 1, 2, 3)
 
-        hide screen luna
-        show screen blkfade
-        with d3
-        $ luna_wear_skirt = True
-        $ luna_wear_top = True
-        $ luna_wear_bra = True
-        $ luna_wear_panties = True
-        ">Luna quickly picks her clothes up off your desk and gets dressed."
-        show screen luna
-        hide screen blkfade
-        with d3
-        call luna_main("I think I'd like to leave now [l_genie_name]...", 7, 3, 4, 2)
-        m "You're free to leave whenever you like [luna_name]."
-        call luna_main("Well I'm certainly not leaving until you pay me!", 9, 1, 2, 3)
+            "\"Take off your shirt.\"" if luna_sub > luna_dom:
+                $ luna_choice = 2
+                call luna_main("my shirt?", 7, 1, 4, 2)
+                m "That's not too much is it [luna_name]?"
+                call luna_main("no...", 8, 2, 4, 2)
+                m "..."
+                call luna_main("...", 9, 3, 4, 3)
+                call luna_main("ugh, Fine... (I hope he doesn't expect me to take off my bra as well)", 7, 2, 4, 2)
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_top = False
+                ">Luna starts to unbutton her shirt..."
+                ">She gently undoes the buttons, letting it slide off her shoulders before placing it on your desk."
+                show screen luna
+                hide screen blkfade
+                with d3
+                pause
+                call luna_main("There... is that all [l_genie_name]?", 9, 1, 4, 2)
+                m "Almost... take off your bra next."
+                call luna_main("[l_genie_name], I really don't-", 7, 2, 4, 2)
+                m "[luna_name]..."
+                call luna_main("...{p}fine...", 7, 2, 4, 1)
+                call luna_main("But you have to close your eyes.", 7, 1, 4, 2)
+                m "done."
+                call luna_main("...", 9, 3, 4, 1)
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_bra = False
+                ">You hear the soft rustle of clothes..."
+                ">You can hear something being placed softly onto your desk"
+                show screen luna
+                hide screen blkfade
+                with d3
+                m "Very nice..."
+                m "Now you're skirt."
+                call luna_main("You can't be serious! I think you've seen enough [l_genie_name]!", 7, 1, 2, 3)
 
 
-    else:
-        call luna_main("There... is this what you wanted to see [l_genie_name]?", 7, 1, 2, 2) 
-        g4 "gods yes!"
-        if luna_dom <= 5:
-            $ luna_dom += 1
-        call luna_main("well... seeing as how you seem to be enjoying yourself so much...", 5, 1, 2, 1)
-        m "what?"
-        call luna_main("why don't you start ...touching... yourself [l_genie_name]...", 5, 3, 2, 1)
-        m "I'm not sure if-"
-        call luna_main("that wasn't a question [l_genie_name]...", 8, 1, 2, 2)
-        hide screen blktone
-        with d3
-        ">You reach under the desk and grab your cock..."
-        hide screen blktone8
-        with d3
-        hide screen genie
-        show screen genie_jerking_off
-        with d3
-        pause  
-        call luna_main("there we are...", 8, 1, 4, 1)
-        call luna_main("don't you feel better now?", 8, 2, 4, 1)
-        m "mmmm... yes..."
-        call luna_main("Hmmm, I'm not sure if I believe you.", 9, 1, 4, 3)
-        call luna_main("maybe you need a little encouragement...", 9, 2, 4, 1)
-        m "encouragement?"
-        call luna_main("close your eyes [l_genie_name]...", 9, 1, 4, 1)
-        hide screen luna
-        show screen blkfade
-        with d3
-        if luna_wear_top:
+            "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
+                $ luna_choice = 3
+                call luna_main("...", 5, 2, 1, 1)
+                call luna_main("......", 8, 2, 2, 1)
+                call luna_main("well seeing as how you asked so {i}nicely{/i}...", 6, 1, 1, 1)
+                m "thank you [luna_name]."
+                call luna_main("(I can't believe people think that this is the greatest wizard ever...)", 7, 2, 1, 1) 
+                call luna_main("close your eyes...", 8, 1, 2, 1) 
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_panties = False
+                $ luna_wear_bra = False
+                $ luna_wear_skirt = False
+                $ luna_wear_top = False
+                ">you can hear the soft ruffle of clothes being removed..."
+                m "..."
+                m "Can I open my eyes yet [luna_name]?"
+                lun "you can open then when I tell you..."
+                ">You hear her softly place something on the table..."
+                lun "..."
+                m "..."
+                lun "Alright, go ahead."
+                show screen luna
+                hide screen blkfade
+                with d3 
+
+            "\"Please take off your skirt [luna_name]...\"" if luna_dom >= 5:
+                $ luna_choice = 4
+                call luna_main("...", 5, 2, 1, 1)
+                call luna_main("......", 8, 2, 2, 1)
+                call luna_main("well seeing as how you said the magic word I suppose it's only fair...", 6, 1, 1, 1)
+                m "thank you [luna_name]."
+                call luna_main("(I've got him wrapped around my finger...)", 7, 2, 1, 1) 
+                call luna_main("well... close your eyes...",8, 1, 2, 2)
+                hide screen luna
+                show screen blkfade
+                with d3
+                $ luna_wear_panties = False
+                $ luna_wear_bra = False
+                $ luna_wear_skirt = False
+                $ luna_wear_top = False
+                ">you can hear the soft ruffle of clothes and zips..."
+                m "..."
+                m "Can I open my eyes yet [luna_name]?"
+                lun "wait..."
+                m "..."
+                ">You hear her softly place something on the table..."
+                lun "Alright, you can open them now..."
+                show screen luna
+                hide screen blkfade
+                with d3 
+
+        if luna_choice <= 2: #luna sub choices
+            if luna_sub <= 6:
+                $ luna_sub += 1
+            m "I am. And I expect you to do it now, [luna_name]."
+            call luna_main("[l_genie_name]... please...", 5, 1, 4, 2)
+            m "Hmmm, well seeing as how I'm in a generous mood how about we make another deal?"
+            call luna_main("...", 7, 2, 4, 2)
+            $ luna_tears = 0
+            call luna_main("Really? What sort?", 7, 2, 4, 2)
+            m "what's the closest school to Howgsmorts?"
+            call luna_main("?...{p}Um, probably Beauxbatons Academy of Magic [l_genie_name]...", 5, 2, 4, 2)
+            m "Well, how about I send a glowing letter of recommendation to them concerning your father's magazine?"
+            m "I'm sure that will probably boost sales."
+            call luna_main("Really sir? You'd do that?", 4, 1, 1, 1) 
+            call luna_main("And all I have to do is stand here and...", 5, 2, 4, 2) 
+            if luna_wear_skirt == False:
+                call luna_main("take off my top...", 7, 3, 4, 2) 
+                m "and your bra."
+            else:
+                call luna_main("take off my skirt...", 7, 3, 4, 2) 
+                m "and your panties."
+            call luna_main("......", 8, 1, 4, 2)
+            call luna_main("..........", 9, 2, 4, 2)
+            call luna_main("Alright... but you have to close your eyes...", 9, 1, 4, 2)
+            m "Done."
+            hide screen luna
+            hide screen luna_chibi
+            show screen blkfade
+            with d3
             $ luna_wear_panties = False
-        else:
             $ luna_wear_bra = False
-        ">you can hear the soft ruffle of clothes being taken off..."
-        ">You feel something light get thrown against your chest..."
-        m "???"
-        m "Can I open my eyes yet [luna_name]?"
-        lun "Go ahead [l_genie_name]..."
-        show screen luna
-        hide screen blkfade
-        with d3 
-        m "!!!"
-        call luna_main("like what you see?", 9, 2, 4, 1)
-        m "..."
-        ">You start stroking your cock with renewed vigor."
-        call luna_main("I'll take that as a yes...", 8, 1, 2, 1)
-        m "Aha... Yeah... This feels great..."
-        call luna_main("good... just work up a nice big load for me...", 9, 1, 2, 1)
-        if luna_wear_panties:
-            call luna_main("if you're a good boy I might even let you shoot it all over my bra...", 8, 2, 2, 1)
-        else:
-            call luna_main("if you're a good boy I might even let you shoot it all over my panties...", 8, 2, 2, 1)
-        m "Yes, [luna_name]!"
-        call luna_main("I bet you'd love that wouldn't you?", 7, 1, 2, 1)
-        m "yes..."
-        call luna_main("Shooting your filthy old cum all over my underwear...", 8, 3, 4, 1)
-        m "..."
-        call luna_main("well come on then [l_genie_name]...", 9, 1, 4, 1)
-        call luna_main("keep stroking that disgusting cock of yours...", 9, 1, 2, 1)
-        m "{size=-4}(argh... yes...){/size}"
-        call luna_main("do you need a little more encouragement [l_genie_name]...", 8, 1, 3, 1)
-        m "{size=-4}yes...{/size}"
-        call luna_main("say it louder...", 8, 1, 3, 1)
-        m "{size=+4}yes{/size}"
-        call luna_main("well close your eyes...", 9, 1, 3, 1)
-        hide screen luna
-        show screen blkfade
-        with d3
-        if luna_wear_panties:
             $ luna_wear_skirt = False
-        else:
             $ luna_wear_top = False
-        ">you can once more hear the soft ruffle of clothes..."
-        m "{size=-2}(mmmm...){/size}"
-        lun "open wide [l_genie_name]..."
-        show screen luna
-        hide screen blkfade
-        with d3 
-        pause
-        m "{size=+2}yes...{/size}"
-        call luna_main("you love this don't you...", 9, 1, 2, 1)
-        g4 "{size=+4}(agh...){/size}"
-        ">you start stroking your cock even faster!"
-        g4 "{size=+4}yes...{/size}"
-        call luna_main("that's it [l_genie_name], cum for your princess...", 9, 1, 4, 1)
-        g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-        g4 "{size=+4}(agh... almost there...){/size}"
-        call luna_main("cum...", 9, 1, 3, 14)
-        if luna_wear_panties:
-            call luna_main("{size=+4}cum all over my bra!{/size}", 9, 1, 3, 14)
-            g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-            ">You grab Luna's bra and start stroking your cock into it."
+            ">You hear the soft rustle of clothes..."
+            ">Suddenly something is gently placed on your desk"
+            $ luna_chibi("stand_naked")
+            show screen luna
+            show screen luna_chibi
+            hide screen blkfade
+            with d3
+            call luna_main("......", 8, 3, 4, 2)
+            g9 "looking good [luna_name]!"
+            g9 "So good in fact I think I need a closer look!"
+            ">You stand up and walk in front of luna, towering over her."
+            hide screen bld1
+            hide screen genie
+            show screen chair_02
+            show screen desk_02
+            $ genie_chibi_xpos = -20
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "groping_ass_ani"
+            show screen g_c_u
+            with fade
+            hide screen blktone
+            hide screen blkfade
+            with d5
+            pause
+            m "mmmm"
+            call luna_main("......", 8, 2, 4, 2)
+            menu:
+                "-Grab her tits!-":
+                    $ current_payout = 40
+                    show screen blkfade
+                    hide screen genie
+                    $ genie_chibi_xpos = 40
+                    $ genie_chibi_ypos = 10
+                    $ g_c_u_pic = "groping_ass_ani"
+                    show screen g_c_u
+                    with fade
+                    ">You reach out swiftly and grab both of her creamy tits..."
+                    hide screen blkfade
+                    call luna_main("!!!", 4, 1, 3, 3)
+                    ">YOu start gently kneading her breasts."
+                    m "Mmmm that's it [luna_name]..."
+                    call luna_main("{size=-5}(What is he doing?){/size}", 9, 2, 4, 2)
+                    call luna_main("[l_genie_name] you really have to stop... ", 8, 1, 4, 3)
+                    if daytime:
+                        m "Come on [luna_name], just a little more then you'll be off to class."
+                    else:
+                        m "Come on [luna_name], just a little more then you'll be off to bed."
+                    $ luna_tears = 2
+                    call luna_main("[l_genie_name]... no...", 9, 3, 4, 2)
+                    call luna_main("(I should stop him...)", 9, 2, 4, 2)   
+                    call luna_main("(before he gets too excited...)", 9, 3, 4, 2) 
+                    ">Luna pushes shoves you back."
+                    call luna_main("......", 9, 1, 4, 2)
+                    ">You let her go and tack a step back."
+                    $ genie_chibi_xpos = 20
+                    call luna_main("...", 9, 3, 4, 3)
+                    m "Sorry..."
+                    call luna_main("It-it's alright [l_genie_name]...", 9, 2, 4, 2)
+                    call luna_main("You just got a little over excited...", 9, 3, 4, 2)
+                    call luna_main("Just, please, try and control yourself next time...", 9, 2, 4, 1)
+                    g9 "With tits like that I'm not so sure!"
+                    call luna_main("...", 9, 2, 4, 2)
+
+
+                "-start touching yourself-"if luna_choice == 1:
+                    $ current_payout = 100
+                    m "mmmm..."
+                    call luna_main("......", 8, 1, 4, 2)
+                    hide screen blktone
+                    show screen blkfade
+                    with d3
+                    ">You reach into your robe and pull out your cock..."
+                    ">You spit on your hand to lube it before you start stroking..."
+                    hide screen genie
+                    $ genie_chibi_xpos = -20
+                    $ genie_chibi_ypos = 10
+                    $ g_c_u_pic = "jerking_off_02_ani"
+                    show screen g_c_u
+                    hide screen blkfade
+                    with fade
+                    call luna_main("!!!", 4, 1, 3, 3)
+                    call luna_main("(Am I just going to let him do this?)", 9, 2, 2, 3)
+                    call luna_main("Sir I really thin-", 8, 1, 2, 3)
+                    m "Shhhh..."
+                    ">You start stroking faster."
+                    call luna_main("...", 5, 2, 4, 3)
+                    call luna_main("(I can't just let him...)", 6, 3, 4, 3)
+                    m "Yes... Ah, yes, this is good..."
+                    $ luna_tears = 2
+                    call luna_main("sir... please... don't...", 6, 3, 4, 3)
+                    m "I said shhhh [luna_name]..."
+                    call luna_main("Sir... I-I'll leave if y-you don't stop...", 6, 2, 4, 3)
+                    m "If you leave, you can say goodbye to the squibbler or whatever it's called."
+                    call luna_main("(I can't do that to daddy...)", 7, 3, 4, 3)
+                    call luna_main("Fine! I hope your happy!", 7, 1, 4, 3)
+                    call luna_main("enjoy stroking that filthy old cock while you force me stand here...", 7, 3, 4, 3)
+                    g9 "{size=-4}(mmmm... yes...){/size}"
+                    g9 "Oh I am!"
+                    call luna_main("*hmph*...", 7, 1, 2, 2)
+                    ">Luna tosses her hair over her shoulder in frustration."
+                    call luna_main("You're disgusting...", 7, 3, 3, 2)
+                    ">You keep on wanking while you gaze at Luna's milky tits..."
+                    m "mmmm that's it [luna_name]..."
+                    $ luna_tears = 3
+                    call luna_main("*hmph*... just hurry up get it over with [l_genie_name]...", 6, 3, 4, 3)
+                    call luna_main("I'm sick of looking at that... thing...", 7, 2, 4, 2)
+                    m "{size=-4}ah...{/size}"
+                    m "that's it slut... keep looking..."
+                    call luna_main("Professor!", 8, 3, 2, 2)
+                    m "{size=-4}(argh... yes...){/size}"
+                    call luna_main("I really don't-", 5, 3, 4, 2)
+                    m "{size=-4}yes...{/size}"
+                    call luna_main("-think that-", 9, 3, 4, 3)
+                    g4 "{size=+2}mmmm... thats it keep going...{/size}"
+                    call luna_main("-we should be-", 5, 3, 4, 1)
+                    g4 "{size=+4}(agh... almost there...){/size}"
+                    call luna_main("doing thi-", 9, 3, 4, 1)
+                    g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+                    $ genie_cum_chibi_xpos = -20
+                    $ genie_cum_chibi_ypos  = 10
+                    $ g_c_c_u_pic = "genie_cum_03" 
+                    show screen g_c_c_u
+                    $ luna_wear_cum = True
+                    $ luna_cum = 5
+                    hide screen luna
+                    with d3
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    g4 "Argh! YES!"
+                    hide screen luna
+                    with d3
+                    hide screen bld1
+                    with d3
+                    show screen bld1
+                    with d3
+                    $ g_c_u_pic = "jerking_off_02_ani"
+                    hide screen g_c_c_u
+                    call luna_main("ugh... there's so much...", 8, 3, 4, 2)
+                    call luna_main("{size=-5}(I can't believe this...){/size}", 8, 2, 4, 2)
+                    call luna_main("ugh... {size=-5}(it stinks as well...){/size}", 8, 3, 2, 2)
+                    with d3
+                    g4 "argh... good work, slut... ah, shit, this feels so good..."
+                    show screen genie
+                    hide screen bld1
+                    hide screen g_c_u
+                    #show screen genie_jerking_off
+                    with d3
+                    call luna_main("......", 7, 1, 4, 2)
+                    m "Ah... you did good [luna_name]..."
+
+            hide screen luna
+            show screen blkfade
+            with d3
+            show screen genie
+            hide screen g_c_u
+            $ luna_wear_skirt = True
+            $ luna_wear_top = True
+            $ luna_wear_bra = True
+            $ luna_wear_panties = True
+            $ luna_cum = 2
+            hide screen chair_02
+            hide screen desk_02
+            ">Luna quickly picks her clothes up off your desk and gets dressed, putting on her shirt over the cum."
+            show screen luna
+            hide screen blkfade
+            with d3
+            call luna_main("I think I'd like to leave now [l_genie_name]...", 7, 3, 4, 2)
+            m "You're free to leave whenever you like [luna_name]."
+            call luna_main("Well I'm certainly not leaving until you pay me!", 9, 1, 2, 3)
+
+
         else:
-            call luna_main("{size=+4}cum all over my panties!{/size}", 9, 1, 3, 14)
+            $ luna_chibi("stand_naked")
+            call luna_main("...", 7, 1, 1, 1) 
+            pause
+            g9 "mmmm"
+            if luna_dom <= 5:
+                $ luna_dom += 1
+            call luna_main("Like what you see [l_genie_name]?", 5, 2, 1, 1) 
+            g9 "Yes... Yes..."
+            call luna_main("well... why don't you come take a closer look?...", 5, 1, 2, 1)
+            m "what?"
+            call luna_main("why don't you stand up and take a good look [l_genie_name]...", 8, 1, 3, 1)
+            m "I don't think that-"
+            call luna_main("shhh...", 9, 1, 2, 14)
+            call luna_main("just stand up sir.....", 7, 1, 2, 1)
+            m "..."
+            ">You stand up and walk in front of luna, feeling the pressure of her gaze."
+            hide screen bld1
+            hide screen genie
+            show screen chair_02
+            show screen desk_02
+            $ genie_chibi_xpos = -20
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png" 
+            show screen g_c_u
+            with fade
+            hide screen blktone
+            hide screen blkfade
+            with d5
+            pause
+            call luna_main("there we are...", 8, 1, 4, 1)
+            call luna_main("Isn't that better?", 8, 2, 4, 1)
+            m "mmmm... yes..."
+            call luna_main("Hmmm, that's it just keep looking...", 8, 2, 3, 1)
+            ">Luna gives her tits a little shake."
+            g9 "!!!"
+            call luna_main("See something you like?...", 9, 2, 4, 1)
+            m "ah, gods yes..."
+            call luna_main("mmmmm... why don't you take it out [l_genie_name]...", 9, 1, 4, 1)
+            m "..."
+            call luna_main("be a good boy....", 5, 1, 4, 1)
+            show screen blkfade
+            ">You take your cock out and start stroking it..."
+            hide screen genie
+            $ genie_chibi_xpos = -20
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "jerking_off_02_ani"
+            show screen g_c_u
+            hide screen blkfade
+            with fade
+            call luna_main("that's it [l_genie_name]...", 9, 1, 4, 1)
+            ">you stare at her soft milky tits..."
+            m "Mmmm..."
+            call luna_main("Mmmm, isn't that better?", 9, 2, 4, 1)
+            g9 "yes..."
+            ">You start stroking your cock with renewed vigor."
+            call luna_main("Aren't you keen today?", 8, 1, 2, 1)
+            g9 "Aha... Yeah... This really great..."
+            call luna_main("good... make sure you work up a nice big load for me...", 9, 1, 2, 1)
+            call luna_main("if you're a really good boy I might even let you shoot it... on me...", 5, 2, 4, 1)
+            g9 "Yes!"
+            call luna_main("I bet you'd love that wouldn't you?", 7, 1, 2, 1)
+            g9 "gods yes..."
+            call luna_main("Shooting your filthy old cum all over me...", 9, 3, 2, 1)
+            g9 "!!!"
+            call luna_main("come on then [l_genie_name]...", 9, 1, 2, 1)
+            call luna_main("stroke it faster...", 5, 1, 4, 1)
+            m "{size=-4}(argh... yes...){/size}"
+            call luna_main("get that nasty cum ready for me...", 8, 1, 3, 1)
+            m "{size=-4}yes...{/size}"
+            call luna_main("mmm...", 8, 1, 3, 1)
+            m "{size=+2}yes...{/size}"
+            call luna_main("you really love this don't you...", 9, 1, 2, 1)
+            g4 "{size=+4}(agh...){/size}"
+            ">you start stroking your cock even faster!"
+            g4 "{size=+4}yes...{/size}"
+            call luna_main("Is this why you became a teacher...", 9, 1, 4, 1)
+            call luna_main("Just to cover young students in your filthy cum...", 5, 1, 2, 1)
             g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
-            ">You grab Luna's panties and start stroking your cock into them."
-        hide screen luna
-        with d3
-        show screen white 
-        pause.1
-        hide screen white
-        pause.2
-        show screen white 
-        pause .1
-        hide screen white
-        with hpunch
-        g4 "Argh! YES!"
-        hide screen luna
-        with d3
-        hide screen bld1
-        with d3
-        show screen genie_jerking_sperm
-        with d3
-        show screen bld1
-        with d3
-        call luna_main("That's it, [l_genie_name], make sure you cover them...", 9, 1, 3, 1)
-        show screen genie_jerking_sperm_02
-        with d3
-        g4 "ah, shit they're so soft, why does this feels so good..."
-        show screen genie
-        hide screen bld1
-        #show screen genie_jerking_off
-        with d3
-        call luna_main("mmm...", 8, 1, 3, 1)
-        m "ah..."
-        call luna_main("keep going... make sure you get every last drop out.", 8, 3, 4, 1)
-        m "ah... Thank you..."
-        call luna_main("Thank you...?", 9, 1, 5, 3)
-        m "Thank you princess..."
-        call luna_main("*hmph*", 9, 2, 2, 2)
-        call luna_main("Well seeing as how you've ...finished... I suppose I better get dressed.", 7, 2, 2, 2)
+            call luna_main("well?", 9, 1, 4, 1)
+            g4 "{size=+4}(agh... almost there...){/size}"
+            call luna_main("do it...", 7, 1, 2, 1)
+            call luna_main("{size=+4}cum all over me!{/size}", 7, 1, 2, 11)
+            g4 "{size=+4}(YES! YES! YES!) *Argh!*{/size}"
+            $ genie_cum_chibi_xpos = -20
+            $ genie_cum_chibi_ypos  = 10
+            $ g_c_c_u_pic = "genie_cum_03" 
+            show screen g_c_c_u
+            $ luna_wear_cum = True
+            $ luna_cum = 5
+            hide screen luna
+            with d3
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white 
+            pause .1
+            hide screen white
+            with hpunch
+            call luna_main("...", 5, 3, 1, 1)
+            g4 "Argh! YES!"
+            hide screen luna
+            with d3
+            hide screen bld1
+            with d3
+            show screen bld1
+            with d3
+            $ g_c_u_pic = "jerking_off_02_ani"
+            hide screen g_c_c_u
+            hide screen bld1
+            call luna_main("That's it, [l_genie_name], make sure you cover me...", 9, 1, 3, 1)
+            show screen genie_jerking_sperm_02
+            with d3
+            g4 "ah, shit... ah... this is too good..."
+            call luna_main("mmm...", 8, 1, 3, 1)
+            m "ah..."
+            call luna_main("keep going... make sure you get every last drop out.", 8, 3, 4, 1)
+            m "ah... Thank you..."
+            call luna_main("Good boy...", 5, 2, 2, 1)
+            call luna_main("Well seeing as how you've ...finished... I suppose I better get dressed.", 7, 2, 2, 2)
 
-        hide screen luna
-        with d3
-        $ luna_wear_skirt = True
-        $ luna_wear_top = True
-        $ luna_wear_bra = True
-        $ luna_wear_panties = True
-        if luna_wear_panties:
-            ">Luna quickly picks her clothes up off your desk and gets dressed except for her cum covered bra."
-        else:
-            ">Luna quickly picks her clothes up off your desk and gets dressed except for her cum covered panties."
-        show screen luna
-        with d3
-        m "aren't you going to put that on as well?"
-        call luna_main("What? and risk contaminating the evidence?", 9, 1, 5, 3)
-        m "Evidence..."
-        call luna_main("Oh don't worry, I just needed some ...insurance...", 7, 2, 4, 1)
-        m "insurance? Against what?"
-        call luna_main("well if I tried to tell the ministry of magic what was going on here I'd get laughed out of the room.", 8, 1, 5, 1)
-        call luna_main("but this?", 7, 1, 2, 1)
-        ">She dangles the cum soaked underwear in front of you."
-        call luna_main("This says otherwise.", 7, 3, 2, 1)
-        m "How will they know it's mine? That could be anyone's cum!"
-        call luna_main("Please... we're taught identification spells in second year. even neville longbottom would know it's yours.", 9, 1, 3, 1)
-        m "So you're going to tell them everything?"
-        call luna_main("What? of course not.", 9, 2, 1, 1)
-        call luna_main("So long as you behave yourself...", 9, 1, 1, 1)
-        m "And what does that entail?"
-        call luna_main("Well first things first we're going to talk about how much I'm going to be paid.", 9, 2, 1, 1)
-        call luna_main("300 gold sounds fair to me... {p}how about you?", 9, 1, 2, 1)
-        m "It sounds... fair."
-        call luna_main("I'm glad we could come to an agreement.", 8, 2, 4, 1)
-        m "yes [luna_name]..."
-        call luna_main("Good boy... now, speaking of payment...", 9, 1, 2, 2)
-        $ current_payout = 300
+            hide screen luna
+            with d3
+            ">Luna quickly picks her clothes up off your desk and gets dressed, putting her shirt on over her cum covered chest."
+            $ luna_wear_skirt = True
+            $ luna_wear_top = True
+            $ luna_wear_bra = True
+            $ luna_wear_panties = True
+            $ luna_cum = 2
+            show screen genie
+            hide screen chair_02
+            hide screen desk_02
+            hide screen g_c_u
+            show screen luna
+            with d3
+            m "That was... amazing"
+            call luna_main("I'm glad you enjoyed yourself...", 1, 1, 1, 1)
+            m "I have to ask though. why did you-"
+            call luna_main("Do this?", 5, 2, 2, 2)
+            m "yes."
+            call luna_main("Don't worry about that...", 8, 1, 2, 1)
+            call luna_main("THe only thing you have to worry about...", 7, 1, 2, 1)
+            ">She runs her finger down the front of her shirt."
+            call luna_main("Is keeping that cock of yours in check...", 7, 3, 2, 1)
+            m "What?"
+            call luna_main("I know you're probably leering after some other students sir...", 9, 1, 3, 1)
+            call luna_main("But if I find out that you've buying favours from other students.", 9, 2, 1, 1)
+            call luna_main("well...", 9, 1, 1, 1)
+            m "..."
+            call luna_main("let's just say I wouldn't let that happen if I were you...", 9, 2, 1, 1)
+            call luna_main("Now forget about that, let's discuss payment. 100 gold sounds fair to me... {p}how about you?", 9, 1, 2, 1)
+            m "It sounds... surprisingly fair..."
+            call luna_main("I'm glad we could come to a happy agreement.", 8, 2, 4, 1)
+            m "yes [luna_name]..."
+            call luna_main("Good boy... now, speaking of payment...", 9, 1, 2, 2)
+            $ current_payout = 100
 
 
 
@@ -2294,8 +2837,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
 
-
-
+    hide screen bld1
     if luna_dom >= luna_sub:
         m "Alright, alright. Here's your gold."
     else:
@@ -2309,6 +2851,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
     else:
         call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)  
     ">Luna leaves your office."  
+    $ luna_wear_cum = False
     hide screen genie_jerking_sperm_02    
 
     jump luna_away
