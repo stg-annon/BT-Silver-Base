@@ -24,6 +24,7 @@ label cheats_ht:
                     jump cheats_ht_hermione
                 "-force public requests-":
                     $ force_unlock_pub_favors = True
+                    $ touched_by_boy = True
                     $ lock_public_favors = False
                     "Public favours unlocked!"
                     jump cheats_ht_hermione
