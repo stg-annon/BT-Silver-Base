@@ -122,6 +122,16 @@ label __init_variables:
     $ hg_laraCroft_OBJ.store_image = "lara.png"
     $ hg_laraCroft_OBJ.outfit_layers = []
     $ hg_laraCroft_OBJ.outfit_layers.extend(("lara_pants.png","lara_top.png","lara_gloves.png"))
+
+    if not hasattr(renpy.store,'hg_tifa_OBJ'):
+        $ hg_tifa_OBJ = hermione_outfit()
+    $ hg_tifa_OBJ.name = "Tifa"
+    $ hg_tifa_OBJ.cost = 220
+    $ hg_tifa_OBJ.wait_time = 2
+    $ hg_tifa_OBJ.store_image = "tifa.png"
+    $ hg_tifa_OBJ.outfit_layers = []
+    $ hg_tifa_OBJ.outfit_layers.extend(("tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"))
+    $ hg_tifa_OBJ.hair_layer = "tifa_hair"
     
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
@@ -136,6 +146,7 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_ballDress_OBJ)
     $ hermione_outfits_list.append(hg_christmas_OBJ)
     $ hermione_outfits_list.append(hg_laraCroft_OBJ)
+    $ hermione_outfits_list.append(hg_tifa_OBJ)
     
     return
     
