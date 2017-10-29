@@ -33,7 +33,7 @@ init -1 python hide:v
     # These control the name and version of the game, that are reported
     # with tracebacks and other debugging logs.
     config.name = "WT Silver"
-    config.version = "1.18b"
+    config.version = "1.19"
 
     #########################################
     # Themes
@@ -336,7 +336,7 @@ init python:
     ## The name that's used for directories and archive files. For example, if
     ## this is 'mygame-1.0', the windows distribution will be in the
     ## directory 'mygame-1.0-win', in the 'mygame-1.0-win.zip' file.
-    build.directory_name = "WT_Silver_1.18"
+    build.directory_name = "WT_Silver_1.19"
 
     ## The name that's uses for executables - the program that users will run
     ## to start the game. For example, if this is 'mygame', then on Windows,
