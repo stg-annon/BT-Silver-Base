@@ -2251,6 +2251,15 @@ screen snape_facial:
 screen snape_sex:
     add "01_hp/28_cg/scene_04.png"
     zorder hermione_main_zorder
+
+screen sccg:
+    add "interface/blackfade.png"
+    add sc_cg_base xpos sccgxpos ypos sccgypos
+    add sc_cg_image_1 xpos sccgxpos ypos sccgypos
+    add sc_cg_image_2 xpos sccgxpos ypos sccgypos
+    add sc_cg_image_3 xpos sccgxpos ypos sccgypos 
+    
+    zorder hermione_main_zorder
     
 init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
     def changeHermioneMainScreen(   image_name,
@@ -2308,4 +2317,31 @@ init python:###THANKS TO CLEANZO FOR WRITING THIS CODE
             cg_image = image
         ###DISPLAY THE UPDATED SCREEEN
         renpy.show_screen("cg")
+        renpy.with_statement(Dissolve(0.5))
+
+    def sc34CG(scene=None, image1=None, image2=None, image3=None):
+        global sc_cg_base
+        global sc_cg_image_1
+        global sc_cg_image_2
+        global sc_cg_image_3
+        ###HIDE OLD SCREEN
+        renpy.hide_screen("sccg")
+        renpy.hide_screen("blkfade")
+        #renpy.with_statement(Dissolve(0.5))
+        if scene is not None:
+            sc_cg_base = "01_hp/28_cg/sc34/"+str(scene)+"/base_1.png"
+        if image1 is not None:
+            sc_cg_image_1 = "01_hp/28_cg/sc34/"+str(scene)+"/A_"+str(image1)+".png"
+        else:
+            sc_cg_image_1 = "00_blank.png"
+        if image2 is not None:
+            sc_cg_image_2 = "01_hp/28_cg/sc34/"+str(scene)+"/B_"+str(image2)+".png"
+        else:
+            sc_cg_image_2 = "00_blank.png"
+        if image3 is not None:
+            sc_cg_image_3 = "01_hp/28_cg/sc34/"+str(scene)+"/C_"+str(image3)+".png"
+        else:
+            sc_cg_image_3 = "00_blank.png"
+        ###DISPLAY THE UPDATED SCREEEN
+        renpy.show_screen("sccg")
         renpy.with_statement(Dissolve(0.5))

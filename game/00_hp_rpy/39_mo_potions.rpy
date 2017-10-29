@@ -348,8 +348,11 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     menu: #Will add titfuck here
         #"-Suck her nipples-":
             #"asd"
-        #"-Titfuck her-":
-            #"asd"
+        "-Titfuck her-":
+            m "Well come here then!"
+            hide screen groping_naked_tits
+            $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_xlarge.png"
+            jump start_titfuck
         "-Play with her nipples-":
             pass
     ">You take her exposed breasts back into your hands and continue massaging"

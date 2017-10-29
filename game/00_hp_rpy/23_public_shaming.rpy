@@ -330,13 +330,15 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
             if  whoring <= 5: #WHORING LVL 02. EVENT LEVEL: 01
                 $ new_request_03_heart = 1 #Event hearts level (0-3)
                 $ hg_ps_PantyThief_OBJ.hearts_level = 1 #Event hearts level (0-3)
-                
+                $ sc34CG(1, 10)
                 call her_main("Oh...","body_15",xpos=120)
                 her "Quite ordinary actually..."
                 call her_main("Although I could not help but worry that somebody would notice somehow...","body_13")
                 call her_main(".....","body_29")
                 call her_main("Can I have my panties back now?","body_31")
                 m "Of course..."
+                hide screen sccg 
+                with d3
                 hide screen hermione_main
                 with d3
                 ">You give Hermione her panties back..."
@@ -348,13 +350,15 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
             elif whoring >= 6 and whoring <= 8: #WHORING LVL 03. EVENT LEVEL 02.
                 $ new_request_03_heart = 2 #Event hearts level (0-3)
                 $ hg_ps_PantyThief_OBJ.hearts_level = 2 #Event hearts level (0-3)
-                
+                $ sc34CG(1, 5)
                 call her_main("Oh...","body_15",xpos=120)
                 her "It was quite ordinary really..."
                 her "I spent some time with my classmates..."
                 her "And we had a short \"MRM\" meeting after that..."
                 call her_main("I gave a short speech on \"Why it is wrong to sell sexual favours in exchange for house points\"...","body_16")
                 call her_main("I felt bad that I had to give the speech without any underwear on...","body_12")
+                hide screen sccg
+                with d3
                 menu:
                     "\"You little hypocrite!\"":
                         $ mad +=5
@@ -384,13 +388,15 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
             elif whoring >= 9: #WHORING LVL 04. EVENT LEVEL 03.
                 $ new_request_03_heart = 3 #Event hearts level (0-3)
                 $ hg_ps_PantyThief_OBJ.hearts_level = 3 #Event hearts level (0-3)
-                
+                $ sc34CG(1, 11)
                 call her_main("Another ordinary day at hogwarts...","body_16",xpos=120)
                 her "Nothing worth mentioning happened today..."
                 call her_main("Although I have to admit...","body_29")
                 her "It was oddly empowering to have no underwear on..."
                 her "Hm..."
                 call her_main("Can I have my panties back now please?","body_45")
+                hide screen sccg
+                with d3
                 m "Of course..."
                 hide screen hermione_main
                 with d3
@@ -1608,6 +1614,7 @@ label hg_ps_Buttplug_complete:
             show screen blktone
             with d3
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ sc34CG(1, 8)
             call her_main("It was awful... of course...","body_09",xpos=370)
             m "Just tell me what happened, [hermione_name]..."
             call her_main("I've never been so uncomfortable in my life [genie_name]!","body_66")
@@ -1615,17 +1622,23 @@ label hg_ps_Buttplug_complete:
             m "Why's that?"
             call her_main("Whenever I was sitting down in class it just kept prodding me...","body_69")
             her "So naturally I had to adjust the way I was sitting, [genie_name]..."
+            $ sc34CG(1, 9)
             call her_main("but that just made it worse...","body_69")
             m "Do you think anyone else noticed you?"
             call her_main("I've got no idea...","body_79")
+            $ sc34CG(1, 10)
             call her_main("I could hardly think straight... Let alone notice other people.","body_79")
             m "So it felt good then?"
             call her_main("Good?","body_31")
+            $ sc34CG(1, 12)
             call her_main("If you call getting your... butt teased all day good...","body_73")
             call her_main("Then yes, I suppose it did...","body_70")
+            $ sc34CG(1, 13)
             call her_main("Still... being this distracted during class could really damage my grades...","body_117")
             m "I wouldn't worry about that. Just think of Gryffindor!"
             call her_main("Speaking of that...","body_81")
+            hide screen sccg
+            with d3
             m "Oh yes, quite right."
         
         elif one_out_of_three == 2: ### EVENT (B)
@@ -1699,52 +1712,70 @@ label hg_ps_Buttplug_complete:
             m "[hermione_name], did you complete your task?"
             show screen blktone
             with d3
+            $ sc34CG(1, 9, 1)
             call her_main("I did, [genie_name]...","body_16",xpos=370)
             call her_main("Although I am still not sure how I feel about all of this...","body_29")
+            $ sc34CG(1, 11, 1)
             call her_main("It's starting to really affect my grades...","body_29")
             call her_main("I couldn't even tell you what potions we were taught today...","body_31")
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
             call her_main("Me, Hermione Granger...","body_87")
+            $ sc34CG(1, 12, 1)
             call her_main("Not learning in class...","body_118")
             m "Well you could try relieving yourself in between lessons."
+            $ sc34CG(1, 13, 1)
             call her_main("Oh, i've tried that... but it doesn't work...","body_117")
             her "It just makes the next class harder..."
+            $ sc34CG(1, 12, 1)
             call her_main("today, After potions I went to my room to... calm myself...","body_107")
             call her_main("But it just made herbology worse...","body_87")
+            $ sc34CG(1, 11, 1)
             call her_main("I was forced into touching myself in the middle of class...","body_88")
             call her_main("Do you think anyone noticed, [genie_name]?","body_190")
+            $ sc34CG(1, 9, 1)
             menu:
                 "\"What? Of course not, [hermione_name]!\"":
+                    $ sc34CG(1, 8, 2)
                     call her_main("..............","body_188")
                     call her_main("You are right, [genie_name]...","body_124")
                     her "I was very discreet..."
+                    $ sc34CG(1, 12, 3)
                     call her_main("very quiet...","body_121")
                     call her_main("barely making a sound...","body_68")
                     call her_main("[genie_name], can I get paid now, please?","body_58")
                     her "......"
                 "\"Of course they did!\"":
+                    $ sc34CG(1, 13, 2)
                     m "Do you honestly believe that no one noticed you touching yourself?"
                     call her_main("I was afraid that you would say that, [genie_name]...","body_20")
                     m "You were surrounded by people!"
                     call her_main("........","body_20")
                     call her_main("[genie_name], can I get paid now, please?","body_21")
+            hide screen sccg
+            with d3
             m "Certainly."
         
         elif one_out_of_three == 3: ### EVENT (C)
             m "[hermione_name], did you complete your task?"
             show screen blktone
             with d3
+            $ sc34CG(1, 11)
             call her_main("Yes, [genie_name]. I did.","body_16",xpos=370)
             m "Great. Tell me more."
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
             call her_main("Well, there's not much to tell...","body_14")
+            $ sc34CG(1, 12)
             her "I attended classes..."
             her "tried to take notes."
             her "all in all it was a fairly regular day..."
+            $ sc34CG(1, 13)
             call her_main("Well as regular as it could have been with a plug up my butt.","body_69")
             m "and Nobody noticed?"
             call her_main("I don't think so, [genie_name].","body_79")
+            $ sc34CG(1, 11)
             m "Well I suppose something interesting can't happen everyday."
+            hide screen sccg
+            with d3
             
     
     elif whoring >= 21 and buttplug_size == 1: # LEVEL 08+                    
@@ -1757,6 +1788,7 @@ label hg_ps_Buttplug_complete:
             call her_main("great, [genie_name]...","body_78")
             m "go on..."
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+            $ sc34CG(1, 14, 1)
             call her_main("Well I've worked out how to deal with this thing being in me all day...","body_105")
             m "Really? And how is that?"
             call her_main("before now I've been going around it the wrong way...","body_107")
@@ -1764,21 +1796,30 @@ label hg_ps_Buttplug_complete:
             her "and pay attention in class..."
             call her_main("But that didn't work at all...","body_44")
             call her_main("I was just too... distracted...","body_59")
+            $ sc34CG(1, 15, 2)
             call her_main("So I thought to myself that I've just got to focus on it...","body_78")
+            $ sc34CG(1, 16, 3)
             call her_main("block out everything else...","body_124")
+            $ sc34CG(1, 17, 2)
             call her_main("...embrace it...","body_123")
             m "and how did you do that?"
             call her_main("well if I rock my hips while I'm sitting in class it's almost enough...","body_128")
+            $ sc34CG(1, 16, 3)
             call her_main("but if I sit of the edge of my chair while I rock my hips...","body_129")
+            $ sc34CG(1, 17, 2)
             call her_main("{image=textheart}{image=textheart}{image=textheart}","body_121")
             m "So you worked out how to pleasure yourself in class."
             call her_main("I did [genie_name].","body_124")
             her "Although I worry that it will really start to affect my grades..."
             m "Well I'm sure that missing one class a day is something you can catch up on."
+            $ sc34CG(1, 15, 2)
             call her_main("only One?","body_122")
             m "You mean to say that you spent all your class time pleasuring yourself?"
+            $ sc34CG(1, 17, 2)
             call her_main("..........","body_121")
             m "Nice work, [hermione_name]."
+            hide screen sccg
+            with d3
         
         elif one_out_of_three == 2: ### EVENT (B)
             m "[hermione_name], did you complete your task?"

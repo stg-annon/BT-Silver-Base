@@ -8041,7 +8041,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
             call her_main("Of course not [genie_name]...","body_107")
             m "Well, come here then."
         
-        
+label start_titfuck:
         hide screen hermione_main            
         hide screen bld1
         with d3
@@ -8441,7 +8441,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 hide screen hermione_main                                                                                                                                                                                   #HERMIONE
                 with d3   
     
-    label done_with_titjob:
+label done_with_titjob:
                 
     $ uni_sperm = False #Sperm layer is not displayed in hermione screen.
     $ hermione_wear_top = True

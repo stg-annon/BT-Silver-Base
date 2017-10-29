@@ -253,6 +253,15 @@ label __init_variables:
 
     if not hasattr(renpy.store,'hermione_squirt'): #important!
         $ hermione_squirt = False
+
+    #SC34 update 2 stuff, thanks akabur.
+    if not hasattr(renpy.store,'sc_cg_base'): #important!
+        $ sc_cg_base = "01_hp/28_cg/sc34/1/base_1.png"
+        $ sc_cg_image_1 = "01_hp/28_cg/sc34/1/A_1.png"
+        $ sc_cg_image_2 = "01_hp/28_cg/sc34/2/B_1.png"
+        $ sc_cg_image_3 = "01_hp/28_cg/sc34/2/C_1.png"
+        $ sccgxpos = 200
+        $ sccgypos = 50
     
     
     

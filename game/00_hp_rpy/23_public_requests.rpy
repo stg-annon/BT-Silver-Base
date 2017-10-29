@@ -264,6 +264,7 @@ label hg_pr_FlirtClassmate_complete:
             elif whoring >= 6: # LEVEL 03 and higher.
                 if one_out_of_three == 1: ### EVENT (A)
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+                    $ sc34CG(2, 7, 1, 1)
                     call her_main("Eleven boys, [genie_name]!","body_75",xpos=370)
                     m "Eleven? Really? Your personal best, [hermione_name]."
                     call her_main("Yes.","body_74")
@@ -276,10 +277,12 @@ label hg_pr_FlirtClassmate_complete:
                     call her_main("And finally this last guy that walked me right to your tower, [genie_name]...","body_75")
                     m "So, eleven then?"
                     m "Those \"Slytherin\" boys are really starting to like you, huh?"
+                    $ sc34CG(2, 7, 1, 2)
                     call her_main("I suppose so...","body_74")
                     call her_main("Well, not all of them were nice to me at first...","body_73")
                     call her_main("But I use this trick to \"tame\" them.","body_64")
                     m "A trick?"
+                    $ sc34CG(2, 6, 1, 1)
                     call her_main("Yes... Whenever a boy from \"Slytherin\" is being mean to me or calls me a name...","body_74")
                     her "I just swallow my pride and smile in response."
                     m "Hm..."
@@ -288,6 +291,8 @@ label hg_pr_FlirtClassmate_complete:
                     m "Yeah, I'm sure that wins them over."
                     m "Great job, [hermione_name]."
                     call her_main("","body_68")
+                    hide screen sccg
+                    with d3
                     
                 elif one_out_of_three == 2: ### EVENT (B)
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -1094,21 +1099,29 @@ label hg_pr_ClassmateTouchYou_complete:
                     m "What happened then?"
                     call her_main("Nothing...","body_87")
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
+                    $ sc34CG(2, 19, 6, 5)
                     her "But when the class was over..."
-                    her "Those three nasty-looking boys from \"Slytherin\" cornered me..."
+                    her "These two nasty-looking boys from \"Slytherin\" cornered me..."
                     her "Actually they weren't mean to me or anything..."
                     her "So we just waited for everyone to leave the classroom..."
+                    $ sc34CG(2, 16, 6, 9)
                     call her_main("And then I let them touch me...","body_117")
+                    $ sc34CG(2, 17, 6, 9)
                     her "They touched me everywhere, [genie_name]..."
                     m "\"Everywhere\", huh?"
                     her "Yes... Everywhere, [genie_name]..."
                     call her_main("There were hands under my skirt, under my shirt...","body_128")
+                    $ sc34CG(2, 16, 6, 9)
                     her "And then I started to breathe heavily..."
                     call her_main("So one of them just put his hand over my mouth...","body_121")
                     her "And their hands were so... thorough..." 
+                    $ sc34CG(2, 17, 6, 9)
                     her "My head started to spin..."
+                    $ sc34CG(2, 16, 6, 9)
                     call her_main("It was most exhilarating, [genie_name].","body_128")
                     m "Very good, [hermione_name]. Very good indeed."
+                    hide screen sccg
+                    with d3
                 
                 if one_out_of_three == 2: ### EVENT (B)
                     call her_main("Actually something quite unexpected happened to me today, [genie_name]...","body_01")
@@ -1340,22 +1353,33 @@ label hg_pr_FlashClassmate_complete:
             m "[hermione_name], did you complete your task?"
             show screen blktone
             with d3
+            $ sc34CG(3, 5)
             call her_main("Yes I did, [genie_name].","body_29",xpos=370)
             m "Good. Tell me more."
+            $ sc34CG(3, 4)
             call her_main("Ehm... There is not much to tell, really...","body_31")
             her "I spent the first half of the day with studying in the library..."
             her "It is usually quite deserted during that time..."
             her "Apart from me there was only one student..."
+            $ sc34CG(3, 6)
             call her_main("Some boy from \"Ravenclaw\"...","body_120")
             her "So I waved to him and when he looked up at me..."
+            $ sc34CG(3, 7)
             call her_main("I quickly pulled my shirt up...","body_117")
             m "Good job."
             m "How did he react to the sight of your naked tits?"
+            $ sc34CG(3, 8)
             call her_main("I'm not sure...","body_118")
+            $ sc34CG(3, 9)
             call her_main("He looked rather shocked I suppose...","body_117")
+            $ sc34CG(3, 10)
             call her_main("After I showed him my breasts it got too embarrassing for me to stay there any longer...","body_118")
+            $ sc34CG(3, 11)
             call her_main("So I just gathered all my books and left...","body_117")
+            $ sc34CG(3, 6)
             m "I see..."
+            hide screen sccg
+            with d3
     
     elif whoring >= 12 and whoring <= 14: # LEVEL 05 <=============================================================EVENT LEVEL 02
         if one_out_of_three == 1: ### EVENT (A)
@@ -1469,28 +1493,38 @@ label hg_pr_FlashClassmate_complete:
             with d3
             call her_main("I did [genie_name]...","body_45",xpos=370)
             m "I'm listening..."
+            $ sc34CG(3, 5)
             call her_main("Well... I had to spend a big portion of the day in the school library...","body_44")
             her "So I didn't really have the time to perform your task properly, [genie_name]..."
             m "Hm...?"
-            call her_main("Instead I just went to the library window...","body_117")
+            $ sc34CG(3, 6)
+            call her_main("Instead I just made sure there were no teachers around...","body_117")
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-            her "Pulled my shirt up and pressed my naked breasts against the glass..."
-            call her_main("And then I just stood there like that for a while...","body_31")
-            call her_main("It did not take long before someone in the yard noticed me...","body_87")
-            her "I don't think they were able to see my face from there..."
+            $ sc34CG(3, 7)
+            her "Pulled my shirt up..."
+            call her_main("And then I just sat there like that for a while...","body_31")
+            $ sc34CG(3, 12)
+            call her_main("trying to get some studying done...","body_87")
+            her "I don't think there were many people around..."
             call her_main("Or at least I hope so...","body_118")
-            call her_main("But they definitely saw my breasts being pressed against that cold window glass, [genie_name]...","body_117")
-            call her_main("A small crowd gathered up rather quickly...","body_118")
-            call her_main("People were shouting and cheering and pointing at my bare chest...","body_121")
-            call her_main("Then I saw several of the boys running towards the library entrance...","body_87")
-            call her_main("I had to leave quickly to avoid being discovered...","body_117")
+            $ sc34CG(3, 13)
+            call her_main("But they definitely saw my breasts, [genie_name]...","body_117")
+            $ sc34CG(3, 7)
+            call her_main("eventually A few first years seemed to notice...","body_118")
+            $ sc34CG(3, 10)
+            call her_main("I had to leave pretty quickly after that...","body_117")
             m "Hm..."
             m "How many people would you say saw your tits today, [hermione_name]?"
+            $ sc34CG(3, 9)
             call her_main("Hard to say, [genie_name]...","body_31")
             her "Two dozen boys or so I suppose..."
+            $ sc34CG(3, 12)
             call her_main("A few girls as well...","body_29")
+            $ sc34CG(3, 11)
             her "I think the school librarian may have seen me too..."
             m "Hm... Well, I'd say that's a job well done."
+            hide screen sccg 
+            with d3
         
         elif one_out_of_three == 2: ### EVENT (B)
             stop music fadeout 1.0
