@@ -132,6 +132,33 @@ label __init_variables:
     $ hg_tifa_OBJ.outfit_layers = []
     $ hg_tifa_OBJ.outfit_layers.extend(("tifa_pants.png","tifa_top.png","tifa_gloves.png","tifa_ear.png"))
     $ hg_tifa_OBJ.hair_layer = "tifa_hair"
+
+    if not hasattr(renpy.store,'hg_rocker_OBJ'):
+        $ hg_rocker_OBJ = hermione_outfit()
+    $ hg_rocker_OBJ.name = "Rocker"
+    $ hg_rocker_OBJ.cost = 85
+    $ hg_rocker_OBJ.wait_time = 1
+    $ hg_rocker_OBJ.store_image = "rocker.png"
+    $ hg_rocker_OBJ.outfit_layers = []
+    $ hg_rocker_OBJ.outfit_layers.extend(("rocker_skirt.png","rocker_top.png","rocker_band.png"))
+
+    if not hasattr(renpy.store,'hg_present_OBJ'):
+        $ hg_present_OBJ = hermione_outfit()
+    $ hg_present_OBJ.name = "Present"
+    $ hg_present_OBJ.cost = 35
+    $ hg_present_OBJ.wait_time = 1
+    $ hg_present_OBJ.store_image = "present.png"
+    $ hg_present_OBJ.outfit_layers = []
+    $ hg_present_OBJ.outfit_layers.extend(("present_pant.png","present_top.png"))
+
+    if not hasattr(renpy.store,'hg_japan_OBJ'):
+        $ hg_japan_OBJ = hermione_outfit()
+    $ hg_japan_OBJ.name = "Japanese Schoolgirl"
+    $ hg_japan_OBJ.cost = 125
+    $ hg_japan_OBJ.wait_time = 2
+    $ hg_japan_OBJ.store_image = "japan.png"
+    $ hg_japan_OBJ.outfit_layers = []
+    $ hg_japan_OBJ.outfit_layers.extend(("japan_pant.png","japan_top.png"))
     
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
@@ -147,6 +174,9 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_christmas_OBJ)
     $ hermione_outfits_list.append(hg_laraCroft_OBJ)
     $ hermione_outfits_list.append(hg_tifa_OBJ)
+    $ hermione_outfits_list.append(hg_rocker_OBJ)
+    $ hermione_outfits_list.append(hg_present_OBJ)
+    $ hermione_outfits_list.append(hg_japan_OBJ)
     
     return
     
