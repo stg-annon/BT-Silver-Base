@@ -371,7 +371,10 @@ label h_outfit_OBJ(outfit):
         call h_update_hair
         
         if transparency < 1:
-            $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png"
+            if not hermione_perm_expand:
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+            else:
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
         else:
             $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+outfit.breast_layer+".png"
         
@@ -457,7 +460,10 @@ label h_action(action =  ""):
                     $ h_action_a = "lift_skirt_4.png"
                 $ h_action_left_arm = "half_arm.png"
                 $ h_action_right_arm = "00_blank.png"
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                if not hermione_perm_expand:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                else:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png" 
                 
             if action == "lift_top":
                 $ h_action_show_top = False
@@ -511,8 +517,10 @@ label h_action(action =  ""):
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
                 $ override = True
-                $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts.png"
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                if not hermione_perm_expand:
+                    $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts.png"
+                else:
+                    $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts_large.png"
 
             if action == "lift_breasts_naked":
                 $ h_action_show_skirt = False
@@ -520,8 +528,10 @@ label h_action(action =  ""):
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
                 $ override = True
-                $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts.png"
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                if not hermione_perm_expand:
+                    $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts.png"
+                else:
+                    $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/lift_breasts_large.png"
                 
             if action == "lift_breasts_large":
                 $ h_action_show_top = False
@@ -558,7 +568,10 @@ label h_action(action =  ""):
                 $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/finger.png"
                 $ hermione_action_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
                 $ hermione_action_left_arm = "01_hp/13_characters/hermione/body/arms/left/00_blank.png"
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                if not hermione_perm_expand:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                else:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
 
             if action == "covering_top":
                 $ h_action_show_top = False
@@ -569,7 +582,10 @@ label h_action(action =  ""):
                 $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/finger.png"
                 $ hermione_action_right_arm = "01_hp/13_characters/hermione/body/arms/right/right_1.png"
                 $ hermione_action_left_arm = "01_hp/13_characters/hermione/body/arms/left/00_blank.png"
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                if not hermione_perm_expand:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+                else:
+                    $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
                 
             if action == "pinch":
                 $ h_action_show_top = False
@@ -653,7 +669,10 @@ label h_update_body:
         $ h_breasts = "breasts_nipfix"
 
     if transparency < 1:
-        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png"
+        if not hermione_perm_expand:
+            $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
+        else:
+            $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
     else:
         $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+str(h_breasts)+".png"
     $ hermione_legs = "01_hp/13_characters/hermione/body/legs/legs_1.png"
@@ -713,7 +732,12 @@ label update_her_uniform:
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/bot/"+h_skirt_color+str(h_skirt)+".png"
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/"+str(h_badge)+".png"
-    $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
+    if hermione_perm_expand and str(h_top) == '5':
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5_B.png"
+    elif hermione_perm_expand:
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_6_B.png"
+    else:
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
     
     if custom_skirt == 1: # jeans
         $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans.png"
