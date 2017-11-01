@@ -2947,16 +2947,16 @@ label hg_pr_BlowjobTeacher:# "teacher blowjob" (Level ??)
         jump too_much
     else:
         m "Today's favour shall be..."
-        call her_main(".........",117,140)
+        call her_main(".........","body_117", xpos=140)
         m "A Blowjob with Professor Snape!"
-        call her_main("Snape!",119)
-        call her_main("Ehm...",127)
+        call her_main("Snape!","body_119")
+        call her_main("Ehm...","body_127")
         her "I don't mind, sir."
         m "Really?"
-        call her_main("Yes... I mean, it's just a blowjob, I've already grown quite accustomed to it...",68)
+        call her_main("Yes... I mean, it's just a blowjob, I've already grown quite accustomed to it...","body_68")
         m "Great. Go have fun then!"
         m "And report back to me after your classes, as usual."
-        call her_main("Of course, sir.",74)
+        call her_main("Of course, sir.","body_74")
     
     $ hg_pr_BlowjobTeacher_OBJ.inProgress = True
     

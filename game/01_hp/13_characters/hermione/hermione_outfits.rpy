@@ -159,6 +159,15 @@ label __init_variables:
     $ hg_japan_OBJ.store_image = "japan.png"
     $ hg_japan_OBJ.outfit_layers = []
     $ hg_japan_OBJ.outfit_layers.extend(("japan_pant.png","japan_top.png"))
+
+    if not hasattr(renpy.store,'hg_witch_OBJ'):
+        $ hg_witch_OBJ = hermione_outfit()
+    $ hg_witch_OBJ.name = "Witch outfit"
+    $ hg_witch_OBJ.cost = 175
+    $ hg_witch_OBJ.wait_time = 2
+    $ hg_witch_OBJ.store_image = "witch.png"
+    $ hg_witch_OBJ.outfit_layers = []
+    $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
     
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
@@ -177,6 +186,7 @@ label __init_variables:
     $ hermione_outfits_list.append(hg_rocker_OBJ)
     $ hermione_outfits_list.append(hg_present_OBJ)
     $ hermione_outfits_list.append(hg_japan_OBJ)
+    $ hermione_outfits_list.append(hg_witch_OBJ)
     
     return
     
