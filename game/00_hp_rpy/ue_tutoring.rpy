@@ -666,7 +666,6 @@ label l_tutoring:
         hide screen hermione_stand_f
         with d3
 
-        $ lock_public_favors = True
         $ v_tutoring = 7
         jump l_tutoring_end
 
