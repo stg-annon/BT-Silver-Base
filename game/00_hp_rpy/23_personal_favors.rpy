@@ -468,7 +468,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         pause
     
     call reset_hermione_main
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ skirt_up = False
     show screen hermione_blink #Hermione stands still.
     with fade
@@ -574,7 +574,7 @@ label hg_pf_BreastMolester:
         hide screen hermione_blink
         with d3
         
-        call her_walk(400, 280, 3, redux_pause = 2)
+        call her_walk(500, 280, 3, redux_pause = 2)
         show screen blkfade
         with d2
         pause.5
@@ -678,7 +678,7 @@ label hg_pf_BreastMolester:
         hide screen bld1
         hide screen hermione_blink
         with d3
-        call her_walk(400, 280, 3, redux_pause = 2)
+        call her_walk(500, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -751,7 +751,7 @@ label hg_pf_BreastMolester:
     hide screen chair_02 #Genie's chair.
     show screen genie
     show screen hermione_stand #Hermione stands still.
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
 
     stop music fadeout 1.0
     ">You let go of Hermione's breasts..."
@@ -786,7 +786,7 @@ label hg_pf_BreastMolester:
     hide screen hermione_blink
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     if whoring >= 13:
         show screen hermione_stand_f
@@ -868,7 +868,7 @@ label hg_pf_ButtMolester:
             call her_head("Again.....?","body_203")
         hide screen bld1
         with d3
-        call her_walk(400, 280, 3, redux_pause = 2)
+        call her_walk(500, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1157,7 +1157,7 @@ label hg_pf_ButtMolester:
         call her_head("If I must...","body_204")
         hide screen bld1
         with d3
-        call her_walk(400, 280, 3, redux_pause = 2)
+        call her_walk(500, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1345,7 +1345,7 @@ label hg_pf_ButtMolester:
         call her_head("If I must...","body_204")
         hide screen bld1
         with d3
-        call her_walk(400, 280, 3, redux_pause = 2)
+        call her_walk(500, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1773,7 +1773,7 @@ label hg_pf_ButtMolester:
     $ hg_pf_ButtMolester_OBJ.points += 1
    
    
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     hide screen blkfade
@@ -1791,7 +1791,7 @@ label hg_pf_ButtMolester:
     hide screen hermione_main
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         show screen hermione_stand_f #Hermione stands still.
@@ -2111,7 +2111,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2167,7 +2167,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2255,7 +2255,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                 hide screen groping_naked_tits
                 hide screen bld1
                 show screen genie
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -2322,7 +2322,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
             hide screen blktone
             show screen genie
             show screen bld1
-            $ hermione_SC.chibi.xpos = 400 #Near the desk.
+            $ hermione_SC.chibi.xpos = 500 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             with d5
 
@@ -2489,14 +2489,14 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         with d3
                         call set_hermione_action("none")
                         $ sperm_on_tits = False
-                        $ aftersperm = True
                         
                         show screen blkfade
+                        with d3
                         show screen genie
-                        show screen hermione_blink
                         hide screen jerking_off_01
                         hide screen chair_02
-                        with d3
+                        show screen hermione_blink
+                        hide screen blkfade
                         
                         hide screen blkfade
                         with d5
@@ -2698,7 +2698,6 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         $ lift_shirt = False
                         $ sperm_on_tits = False
                         $ only_upper = False
-                        $ aftersperm = True
                         show screen blkfade
                         with d3
                         show screen genie
@@ -2708,8 +2707,6 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         hide screen blkfade
                         with d5
                         $ badges = True # Hides any badges from hermione_main screen.
-                        if custom_outfit_old == 7.2:
-                            $ custom_outfit_old = 7
                         call her_main("","body_45")
                         pause
                         her "Well, this should do for now..."
@@ -2718,9 +2715,18 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         
     
     call set_hermione_action("none")
-    $ badges = True # Hides any badges from hermione_main screen.
+    $ badges = True # Turns the badges layer back on.
     $ lift_shirt = False
-    hide screen jerking_off_01                   
+    $ sperm_on_tits = False
+    $ only_upper = False
+    show screen blkfade
+    with d3
+    show screen genie
+    hide screen jerking_off_01
+    hide screen chair_02
+    show screen hermione_blink
+    hide screen blkfade
+    with d5                 
     hide screen blktone8
     hide screen ctc
     hide screen bld1
@@ -2738,7 +2744,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
         m "The \"Gryffindor\" house gets [current_payout] points!"
     stop music fadeout 10.0
    
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     hide screen blkfade
@@ -2772,7 +2778,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     hide screen hermione_main
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     show screen hermione_stand_f #Hermione stands still.
     with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
@@ -3340,7 +3346,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         stop music fadeout 2.0
         call her_head("Can I just get my points now, please?","body_34")
         pause.1
-        $ hermione_SC.chibi.xpos = 400 #Near the desk.
+        $ hermione_SC.chibi.xpos = 500 #Near the desk.
         $ hermione_SC.chibi.ypos = 250 #Default: 250. Another number is 180
         show screen hermione_blink #Hermione stands still.
             
@@ -3387,7 +3393,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                         with d3
                         hide screen hermione_blink #Hermione stands still.
                         
-                        call her_walk(400,610,2)
+                        call her_walk(500,710,2)
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                         with d3
                         pause.2
@@ -3969,7 +3975,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         hide screen ctc
                                         hide screen s_c_u
                                         hide screen h_c_u
-                                        $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                                        $ hermione_SC.chibi.xpos = 500 #Near the desk.
                                         $ hermione_SC.chibi.ypos = 250 #Default: 250
                                         show screen hermione_blink #Hermione stands still.
                                         ">You watch Snape with his dick still hanging out and the cum-covered Hermione argue loudly about her imaginary grade."
@@ -4133,7 +4139,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     
                     
                     #Walks to the door
-                    call her_walk(400,650,2)
+                    call her_walk(500,650,2)
                     show screen hermione_stand_f
                     
                     #Locks the door
@@ -4601,7 +4607,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                                             hide screen desk_02
                                                             show screen genie
                                                             show screen bld1
-                                                            $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                                                            $ hermione_SC.chibi.xpos = 500 #Near the desk.
                                                             $ hermione_SC.chibi.ypos = 250 #Default: 250
                                                             show screen hermione_blink #Hermione stands still.
                                                             pause.1
@@ -4728,7 +4734,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -4764,7 +4770,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     $ stockings = temp_stockings
     $ panties = True
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -5022,8 +5028,8 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 hide screen blkfade
                 hide screen blktone8
                 hide screen blktone
-                show screen desk
                 show screen chair_02
+                show screen desk
                 hide screen genie
                 $ genie_chibi_xpos = 80
                 $ genie_chibi_ypos = 10
@@ -5054,7 +5060,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 hide screen bld1
                 show screen genie
                 hide screen hermione_ass
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -5078,8 +5084,8 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 hide screen blktone8
                 hide screen blktone
                 hide screen bld1
-                show screen desk_02
                 show screen chair_02
+                show screen desk
                 hide screen genie
                 $ genie_chibi_xpos = 80
                 $ genie_chibi_ypos = 10
@@ -5127,7 +5133,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 hide screen hermione_ass
                 hide screen bld1
                 show screen genie
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -5234,7 +5240,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 hide screen hermione_ass
                 hide screen bld1
                 show screen genie
-                $ hermione_SC.chibi.xpos = 400 #Near the desk.
+                $ hermione_SC.chibi.xpos = 500 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
                 with d5
                 pause
@@ -5301,7 +5307,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
             hide screen blktone
             show screen genie
             show screen bld1
-            $ hermione_SC.chibi.xpos = 400 #Near the desk.
+            $ hermione_SC.chibi.xpos = 500 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             with d5
 
@@ -5377,8 +5383,8 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 ">You stare at Hermione's ass with hunger..."
                 hide screen genie
                 hide screen bld1
-                show screen desk
                 show screen chair_02
+                show screen desk_02
                 hide screen genie
                 $ genie_chibi_xpos = 20
                 $ genie_chibi_ypos = 10
@@ -5449,12 +5455,14 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                         m "all because of your ass [hermione_name]."
                         her "................"
                         her "I need to get dressed..."
-                        
+                        hide screen hermione_ass
                         hide screen hermione_main
                         with d3
                         call set_hermione_action("none")
                         
                         show screen blkfade
+                        hide screen g_c_u
+                        hide screen g_c_c_u
                         show screen genie
                         show screen hermione_blink
                         hide screen jerking_off_01
@@ -5506,14 +5514,15 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                         m "You did good."
                         her "................"
                         her "I need to clean myself up..."
-                        
+                        hide screen hermione_ass
                         hide screen hermione_main
                         with d3
                         call set_hermione_action("none")
                         $ sperm_on_tits = False
-                        $ aftersperm = True
                         
                         show screen blkfade
+                        hide screen g_c_u
+                        hide screen g_c_c_u
                         show screen genie
                         show screen hermione_blink
                         hide screen jerking_off_01
@@ -5525,12 +5534,12 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                         call her_main("","body_47")
                         pause
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                        her "How could you do this to mr, [genie_name]?!"
+                        her "How could you do this to me, [genie_name]?!"
                         her "my ass is covered in cum!"
                         hide screen hermione_main
                         with d3
                         $ mad += 10
-            elif whoring >= 12: # LEVEL 05 # <=================================================================================== THIRD EVENT.
+            elif whoring >= 15: # LEVEL 05 # <=================================================================================== THIRD EVENT.
                 hide screen hermione_main
                 with d3
                 ">You take your cock out and start stroking it..."
@@ -5540,8 +5549,8 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 call her_head("[genie_name]?","body_205")
                 ">You stare at Hermione's ass with hunger..."
                 hide screen bld1
-                show screen desk
                 show screen chair_02
+                show screen desk
                 hide screen genie
                 $ genie_chibi_xpos = 20
                 $ genie_chibi_ypos = 10
@@ -5601,137 +5610,136 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                     show screen blkfade 
                     with d3
                     # SAME AS PREVIOUS EVENT^^^
-            menu:
-                g4 "Argh! (I'm about to cum!)"
-                "-Hold it in-":
-                    g4 "Oh, alright..."
-                    g4 "I'd better stop now I suppose..."
-                    call her_head("...............","body_199")
-                    call her_head("Ehm... I mean I know I said not to cum on me...","body_199")
-                    m "Huh?"
-                    call her_head("but I wouldn't mind if you ...","body_132")
-                    call her_head("came...","body_199")
-                    call her_head("on my ass--","body_188")
-                    g4 "Argh! You whore!"
-                    call her_head("???","body_206")
-                    show screen white 
-                    pause.1
-                    hide screen white
-                    pause.2
-                    show screen white 
-                    pause .1
-                    hide screen white
-                    with hpunch
-                    g4 "Argh! YES!"
-                    hide screen bld1
-                    with d3
-                    $ genie_chibi_xpos = 20
-                    $ genie_chibi_ypos = 10
-                    $ genie_cum_chibi_xpos = 20
-                    $ genie_cum_chibi_ypos  = 10
-                    $ g_c_c_u_pic = "genie_cum_03"
-                    show screen g_c_c_u
-                    hide screen blkfade
-                    hide screen bld1
-                    with d3
-                    pause
-                    show screen bld1
-                    with d3
-                    $ hermione_ass_cum = True
-                    call her_head("that's it [genie_name], release your... semen on me...","body_208")
-                    g4 "Oh, this is great, yes..."
-                    $ no_blinking = False #When True - blinking animation is not displayed. 
-                    hide screen jerking_off_cum
-                    with d3
-                    call her_head("ah{image=textheart}, what's done is done I suppose...","body_188")
-                    m "Oh, this was quite amazing..."
-                    show screen blktone8
-                    with d3
-                    hide screen hermione_ass
-                    hide screen g_c_c_u
-                    call her_main("","body_85")
-                    pause
-                    her "My ass is covered though..."
-                    m "Don't worry, it still looks great, [hermione_name]."
-                    m "Maybe even better now..."
-                    call her_main("Thank you [genie_name].","body_84")
-                    call her_main("Now I need to clean myself up...","body_83")
-                    pause
-                    hide screen hermione_main
-                    with d3
-                    hide screen blkfade
-                    show screen blkfade
-                    with d3
-                    show screen genie
-                    hide screen g_c_u
-                    show screen hermione_blink
-                    with d5
-                    call her_main("","body_45")
-                    pause
-                    her "Well, this should do for now..."
-                    hide screen hermione_main
-                    with d3
-                "-Just start cumming-":
-                    g4 "Argh! You fat assed whore!"
-                    call her_head("???","body_206")
-                    show screen white 
-                    pause.1
-                    hide screen white
-                    pause.2
-                    show screen white 
-                    pause .1
-                    hide screen white
-                    with hpunch
-                    g4 "Argh! YES!"
-                    hide screen bld1
-                    with d3
-                    $ genie_chibi_xpos = 20
-                    $ genie_chibi_ypos = 10
-                    $ genie_cum_chibi_xpos = 20
-                    $ genie_cum_chibi_ypos  = 10
-                    $ g_c_c_u_pic = "genie_cum_03"
-                    show screen g_c_c_u
-                    hide screen blkfade
-                    $ hermione_ass_cum = True
-                    pause
-                    show screen bld1
-                    with d3
-                    call her_head("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
-                    call her_head("there's so much...{image=textheart}","body_208")
-                    g4 "Oh, this is great, yes..."
-                    call her_head("ah...{image=textheart}","body_208")
-                    hide screen g_c_c_u
-                    with d3
-                    call her_head("Well, what's done is done I suppose...","body_208b")
-                    m "Oh, this was quite amazing..."
-                    show screen blktone8
-                    with d3
-                    hide screen hermione_ass
-                    call her_main("","body_85")
-                    pause
-                    her "My ass is covered though..."
-                    m "Don't worry, it still looks great, [hermione_name]."
-                    m "Maybe even better now..."
-                    call her_main("Thank you [genie_name].","body_84")
-                    call her_main("although I do need to clean myself up...","body_83")
-                    pause
-                    hide screen hermione_main
-                    with d3
-                    show screen blkfade
-                    with d3
-                    show screen genie
-                    hide screen g_c_u
-                    hide screen chair_02
-                    hide screen desk
-                    show screen hermione_blink
-                    hide screen blkfade
-                    with d5
-                    $ badges = True # Hides any badges from hermione_main screen.
-                    call her_main("","body_45")
-                    pause
-                    her "Well, this should do for now..."
-                    hide screen hermione_main
-                    with d3
+                menu:
+                    g4 "Argh! (I'm about to cum!)"
+                    "-Hold it in-":
+                        g4 "Oh, alright..."
+                        g4 "I'd better stop now I suppose..."
+                        call her_head("...............","body_199")
+                        call her_head("Ehm... I mean I know I said not to cum on me...","body_199")
+                        m "Huh?"
+                        call her_head("but I wouldn't mind if you ...","body_132")
+                        call her_head("came...","body_199")
+                        call her_head("on my ass--","body_188")
+                        g4 "Argh! You whore!"
+                        call her_head("???","body_206")
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "Argh! YES!"
+                        hide screen bld1
+                        with d3
+                        $ genie_chibi_xpos = 20
+                        $ genie_chibi_ypos = 10
+                        $ genie_cum_chibi_xpos = 20
+                        $ genie_cum_chibi_ypos  = 10
+                        $ g_c_c_u_pic = "genie_cum_03"
+                        show screen g_c_c_u
+                        hide screen blkfade
+                        hide screen bld1
+                        with d3
+                        pause
+                        show screen bld1
+                        with d3
+                        $ hermione_ass_cum = True
+                        call her_head("that's it [genie_name], release your... semen on me...","body_208")
+                        g4 "Oh, this is great, yes..."
+                        $ no_blinking = False #When True - blinking animation is not displayed. 
+                        hide screen jerking_off_cum
+                        with d3
+                        call her_head("ah{image=textheart}, what's done is done I suppose...","body_188")
+                        m "Oh, this was quite amazing..."
+                        show screen blktone8
+                        with d3
+                        hide screen hermione_ass
+                        hide screen g_c_c_u
+                        call her_main("","body_85")
+                        pause
+                        her "My ass is covered though..."
+                        m "Don't worry, it still looks great, [hermione_name]."
+                        m "Maybe even better now..."
+                        call her_main("Thank you [genie_name].","body_84")
+                        call her_main("Now I need to clean myself up...","body_83")
+                        pause
+                        hide screen hermione_main
+                        with d3
+                        hide screen blkfade
+                        show screen blkfade
+                        with d3
+                        show screen genie
+                        hide screen g_c_u
+                        show screen hermione_blink
+                        with d5
+                        call her_main("","body_45")
+                        pause
+                        her "Well, this should do for now..."
+                        hide screen hermione_main
+                        with d3
+                    "-Just start cumming-":
+                        g4 "Argh! You fat assed whore!"
+                        call her_head("???","body_206")
+                        show screen white 
+                        pause.1
+                        hide screen white
+                        pause.2
+                        show screen white 
+                        pause .1
+                        hide screen white
+                        with hpunch
+                        g4 "Argh! YES!"
+                        hide screen bld1
+                        with d3
+                        $ genie_chibi_xpos = 20
+                        $ genie_chibi_ypos = 10
+                        $ genie_cum_chibi_xpos = 20
+                        $ genie_cum_chibi_ypos  = 10
+                        $ g_c_c_u_pic = "genie_cum_03"
+                        show screen g_c_c_u
+                        hide screen blkfade
+                        $ hermione_ass_cum = True
+                        pause
+                        show screen bld1
+                        with d3
+                        call her_head("ah...{image=textheart} It's so hot...{image=textheart}","body_132")
+                        call her_head("there's so much...{image=textheart}","body_208")
+                        g4 "Oh, this is great, yes..."
+                        call her_head("ah...{image=textheart}","body_208")
+                        hide screen g_c_c_u
+                        with d3
+                        call her_head("Well, what's done is done I suppose...","body_208b")
+                        m "Oh, this was quite amazing..."
+                        show screen blktone8
+                        with d3
+                        hide screen hermione_ass
+                        call her_main("","body_85")
+                        pause
+                        her "My ass is covered though..."
+                        m "Don't worry, it still looks great, [hermione_name]."
+                        m "Maybe even better now..."
+                        call her_main("Thank you [genie_name].","body_84")
+                        call her_main("although I do need to clean myself up...","body_83")
+                        pause
+                        hide screen hermione_main
+                        with d3
+                        show screen blkfade
+                        with d3
+                        show screen genie
+                        hide screen g_c_u
+                        hide screen chair_02
+                        hide screen desk
+                        show screen hermione_blink
+                        hide screen blkfade
+                        with d5
+                        call her_main("","body_45")
+                        pause
+                        her "Well, this should do for now..."
+                        hide screen hermione_main
+                        with d3
                         
     
     $ badges = True # Hides any badges from hermione_main screen.
@@ -5760,7 +5768,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
         m "The \"Gryffindor\" house gets [current_payout] points!"
     stop music fadeout 10.0
    
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen bld1
     hide screen blkfade
@@ -5794,7 +5802,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
     hide screen hermione_main
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     show screen hermione_stand_f #Hermione stands still.
     with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
@@ -5909,7 +5917,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen bld1
     with d3
     
-    call her_walk(400,280,3,redux_pause=2)
+    call her_walk(500,280,3,redux_pause=2)
     
     show screen blkfade
     with Dissolve(1)
@@ -6317,7 +6325,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -6365,7 +6373,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     $ stockings = temp_stockings
     $ panties = True
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf      
@@ -7420,7 +7428,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -7460,7 +7468,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf         
@@ -8458,7 +8466,7 @@ label done_with_titjob:
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -8494,7 +8502,7 @@ label done_with_titjob:
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf         
@@ -9794,7 +9802,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -9836,7 +9844,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen ctc
     with Dissolve(.3)
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -10675,7 +10683,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -10711,7 +10719,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen ctc
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -11358,7 +11366,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen desk_02
     show screen genie
     show screen bld1
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     $ hermione_SC.chibi.ypos = 250 #Default: 250
     show screen hermione_blink #Hermione stands still.
     pause.1
@@ -11398,7 +11406,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen ctc
     with d3
     
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -11444,7 +11452,7 @@ label hg_pf_TheGamble:
     
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     
-    call her_walk(400,325,1.25)
+    call her_walk(500,325,1.25)
     
     show screen blkfade
     with fade
@@ -11515,7 +11523,7 @@ label hg_pf_TheGamble:
     with fade
     hide screen desk_03
     hide screen g_c_u
-    $ hermione_SC.chibi.xpos = 400 #Near the desk.
+    $ hermione_SC.chibi.xpos = 500 #Near the desk.
     show screen hermione_blink #Hermione stands still.
     show screen genie
     
@@ -11683,14 +11691,14 @@ label hg_pf_TheGamble_complete:
         # show screen hermione_walk_01 
         # with d4
         # pause 2.1
-        # $ hermione_SC.chibi.xpos = 400 #Near the desk.
+        # $ hermione_SC.chibi.xpos = 500 #Near the desk.
         # show screen hermione_blink #Hermione stands still.
         # with d3
         ">Hermione enters. She does not look happy"
         call hermione_enter
         m "Miss Granger?"
         
-        call her_walk(400,320,1.25)
+        call her_walk(500,320,1.25)
         show screen blkfade
         with fade
         "She says nothing as she walks around the desk."
@@ -12011,7 +12019,7 @@ label hg_pf_TheGamble_complete:
     #after daytime menu
         
     label hg_pf_TheGamble_MySlave_n:
-        #$ hermione_SC.chibi.xpos = 400 #Near the desk.
+        #$ hermione_SC.chibi.xpos = 500 #Near the desk.
         #$ hermione_SC.chibi.ypos
         #show screen hermione_blink #Hermione stands still.
         #hide screen blkfade
@@ -12850,7 +12858,7 @@ label end_touch_yourself:
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(400,610,2)
+    call her_walk(500,710,2)
 
     $ hermione_dribble = False
 
