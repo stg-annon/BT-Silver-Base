@@ -2855,7 +2855,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
     hide screen genie_jerking_sperm_02    
 
     jump luna_away
-label luna_favour_4:
+label luna_favour_4: ###Luna grope
     jump luna_away
 label luna_favour_5:
     jump luna_away

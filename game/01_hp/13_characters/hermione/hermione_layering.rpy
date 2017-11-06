@@ -468,15 +468,14 @@ label h_action(action =  ""):
             if action == "lift_top":
                 $ h_action_show_top = False
                 $ h_action_show_bra = False
-                if whoring <= 3:# shirt_00
+                if h_top == '1':# shirt_00
                     $ h_action_a = "lift_top_1.png"
-                elif whoring >= 4 and whoring <= 20:
+                elif h_top == '5':
+                    $ h_action_a = "lift_top_5_2.png"
+                elif h_top == '6':
+                    $ h_action_a = "lift_top_1.png"
+                else:
                     $ h_action_a = "lift_top_2-4.png"
-                elif whoring >= 21:
-                    if day_random <= 4:# shirt_04
-                        $ h_action_a = "lift_top_5_3.png"
-                    if day_random >= 5:# shirt_05
-                        $ h_action_a = "lift_top_6.png"
                 if hermione_perm_expand:
                     $ h_action_b = "lift_top_expand_perm_overlay.png"
                 else:
