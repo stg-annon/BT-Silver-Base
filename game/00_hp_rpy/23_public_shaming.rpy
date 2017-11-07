@@ -1081,6 +1081,7 @@ label hg_ps_WearMyCum_complete_1:
                 call her_main("Thank you [genie_name], will that be all?","body_29")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
+                $ sc34CG(1, 10, 2)
                 call her_main("It was a pretty normal day, I had potions class and then transfiguration.","body_29")
                 m "And do you think that anyone noticed?"
                 call her_main("I think a few people did [genie_name]. I could hear The first years all whispering as I walked past.","body_57b")
@@ -1106,6 +1107,7 @@ label hg_ps_WearMyCum_complete_1:
                 call her_main("Hmmmphh...","body_51","tears_03a")
             "\"Tell me about your day.\"":
                 $ mad += 10
+                $ sc34CG(1, 8, 8)
                 call her_main("My day...","body_33","tears_03a")
                 call her_main("This was the worst day of my life!","body_32","tears_03a")
                 call her_main("I've never been so ashamed!","body_34","tears_03a")
@@ -1123,6 +1125,8 @@ label hg_ps_WearMyCum_complete_1:
                 call her_main("...","body_27","tears_03a")
                 call her_main("Good night [genie_name].","body_33","tears_03a")
 
+    hide screen sccg 
+    with fade
     jump end_hg_pf
 
 
@@ -1166,6 +1170,7 @@ label hg_ps_WearMyCum_complete_2:
                 call her_main("Thank you [genie_name], will that be all?","body_29")
                 m "Yes [hermione_name], you may leave now. "
             "\"Tell me about your day.\"":
+                $ sc34CG(1, 14, 7)
                 call her_main("It was a pretty normal day, I had Defense against the dark arts class and then herbology.","body_29")
                 m "And do you think that anyone noticed?"
                 call her_main("I think most people did [genie_name]. I'm not sure if they all knew it was cum though.","body_57b")
@@ -1189,6 +1194,7 @@ label hg_ps_WearMyCum_complete_2:
                 m "You did."
                 call her_main("Good.","body_90","tears_03a")
             "\"Tell me about your day.\"":
+                $ sc34CG(1, 16, 6)
                 call her_main("My day...","body_33","tears_03a")
                 call her_main("It was completely normal.","body_32","tears_03a")
                 m "Really? Nothing strange happened at all?"
@@ -1206,7 +1212,8 @@ label hg_ps_WearMyCum_complete_2:
                 call her_main("Did I{p}make you happy?","body_92","tears_03a")
                 m "You did."
                 call her_main("Good night [genie_name].","body_33","tears_03a")
-
+    hide screen sccg 
+    with fade
     jump end_hg_pf
 
 label hg_ps_WearMyCum_complete_3:
