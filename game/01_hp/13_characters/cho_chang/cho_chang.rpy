@@ -662,7 +662,15 @@ label cho2begin:
     m "[cho_points] points to Ravenclaw!"
     $ ravenclaw += cho_points
     call cho_main("Thank you, sir...", 6, 2, 6, 9)
+    $ cc_wear_top = True
+    $ cc_wear_bra = True
+    $ cc_wear_stockings = True 
+    $ cc_wear_skirt = True
+    $ cc_wear_panties = True
+    $ cc_wear_vest = True
+    ">Cho quickly puts her clothes on before leaving."
     hide screen cho_chang
+    hide screen genie_jerking_sperm_02
     jump cho_end_event
 
 label cho2end:
@@ -676,60 +684,85 @@ label cho2end:
 
 ###Favor 1###
 label cho_favor_1_1:
+    $ cho_points = 15
     m "Miss Chang how would you like to earn 15 house points the easy way?"
-    call cho_main("what do i have to do?", 1, 1, 1, 1)
+    call cho_main("what do i have to do?", 6, 3, 5, 7)
     m "I want to see your body again?"
-    call cho_main("you want me to get naked, sir?", 1, 1, 1, 1)
+    call cho_main("you want me to get naked, sir?", 1, 3, 2, 9)
     m "Of course."
     m "If you're not interested, I'm sure Hermione wouldn't mind..."
-    call cho_main("!", 1, 1, 1, 1)
-    call cho_main("I'll do it.", 1, 1, 1, 1)
+    call cho_main("!!!", 4, 3, 4, 9)
+    call cho_main("I'll do it.", 1, 3, 2, 5)
     menu:
         "-Be aggressive-":
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Get on with it, girl."
-            call cho_main("Yes, sir!", 1, 1, 1, 1)
+            call cho_main("Yes, sir!", 1, 3, 2, 7)
+            $ cc_wear_top = False
+            $ cc_wear_vest = False
+            $ cc_wear_acc = False 
             "Cho grits her teeth and removes her top in one swift motion."
             m "That's better. Now the bottoms."
-            call cho_main("Yes, sir.", 1, 1, 1, 1)
+            call cho_main("Yes, sir.", 1, 3, 1, 9)
+            $ cc_wear_skirt = False 
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
-            call cho_main("(house points...loads of house points....)", 1, 1, 1, 1)
+            call cho_main("(house points...loads of house points....)", 3, 3, 3, 5)
             "Her hands nervously move to her bra."
+            $ cc_wear_bra = False
             "She pulls it up, over her head, and lets it fall to the ground."
+            $ cc_wear_panties = False 
             "Finally, she pushes her panties over her hips."
             m "Very good."
-            call cho_main("........", 1, 1, 1, 1)
-            call cho_main("...............", 1, 1, 1, 1)
-            call cho_main("......................", 1, 1, 1, 1)
-            call cho_main("Um...", 1, 1, 1, 1)
-            call cho_main("um...is that enough?", 1, 1, 1, 1)
+            call cho_main("........", 3, 3, 3, 4)
+            call cho_main("...............", 1, 3, 1, 4)
+            call cho_main("......................", 1, 3, 1, 9)
+            call cho_main("Um...", 1, 3, 2, 7)
+            call cho_main("um...is that enough?", 6, 3, 5, 7)
             menu:
                 "-That's enough-":
                     m "You can put your close back on."
                     m "15 points to Ravenclaw."
+                    $ ravenclaw += cho_points
+                    call cho_main("Thank you, sir...", 6, 2, 6, 9)
+                    $ cc_wear_top = True
+                    $ cc_wear_bra = True
+                    $ cc_wear_stockings = True 
+                    $ cc_wear_skirt = True
+                    $ cc_wear_panties = True
+                    $ cc_wear_vest = True
+                    ">Cho quickly puts her clothes on before leaving."
+                    hide screen cho_chang
+                    jump cho_end_event
                 "-Jerk off-":
                     "You slide your hands under your robes and pull your cock out."
+                    hide screen blktone8
+                    with d3
+                    hide screen genie
+                    show screen genie_jerking_off
+                    with d3
                     "Cho's tight, athletic body sends shivers through you."
-                    call cho_main("what are you doing?", 1, 1, 1, 1)
-                    call cho_main("i'm not watching you do that for a measly 15 house points.", 1, 1, 1, 1)
+                    call cho_main("what are you doing?", 4, 2, 4, 3)
+                    call cho_main("i'm not watching you do that for a measly 15 house points.", 6, 2, 5, 7)
                     "Ignoring Cho's protests, your fingers wrap around your thick cock."
-                    call cho_main(".......", 1, 1, 1, 1)
+                    call cho_main(".......", 6, 3, 5, 9)
                     "Cho takes a deep breath."
-                    call cho_main("20 points.", 1, 1, 1, 1)
+                    call cho_main("20 points.", 6, 3, 6, 7)
                     menu:
                         "-Offer 15-":
                             "You look the poor girl in the eyes and continue jerking you cock."
                             m "You'll get 15. No more."
-                            call cho_main("Fine.", 1, 1, 1, 1)
+                            call cho_main("Fine.", 6, 2, 5, 9)
                             $ cho_mad += 4
                             jump cho_favor_1_1_1
                         "-20 Sounds good-":
+                            $ cho_points = 20
                             "You nod, slowly pumping your cock."
                             m "Sounds good."
                             jump cho_favor_1_1_1
                         "-Give her 25-":
+                            $ cho_points = 25
                             "I'll give you 25."
-                            call cho_main("Really?", 1, 1, 1, 1)
+                            call cho_main("Really?", 1, 3, 1, 7)
                             $ cho_mad -= 1
                             jump cho_favor_1_1_1
                             
@@ -737,117 +770,178 @@ label cho_favor_1_1:
         "-Be nice-":
             "Despite her apparent confidence, Cho's hands shake as she reaches for the edge of her top."
             m "Go on, girl."
-            call cho_main("Yes, sir!", 1, 1, 1, 1)
+            call cho_main("Yes, sir!", 1, 3, 2, 1)
+            $ cc_wear_top = False
+            $ cc_wear_vest = False
+            $ cc_wear_acc = False 
             "Cho flashes a subdued smile and removes her top in one swift motion."
             m "Nice."
-            call cho_main("Thank you, sir.", 1, 1, 1, 1)
+            call cho_main("Thank you, sir.", 3, 1, 3, 7)
+            $ cc_wear_skirt = False 
             "Cho hooks her delicate thumbs into the tight band on her skirt and pushes it over the tight curve of her hips."
-            call cho_main("is this okay?", 1, 1, 1, 1)
+            call cho_main("is this okay?", 1, 3, 1, 9)
             "Her hands nervously move to her bra."
+            $ cc_wear_bra = False 
             "She pulls it up, over her head, and lets it fall to the ground."
-            call cho_main("what do you think?", 1, 1, 1, 1)
-            m "Simply gorgeous."
+            call cho_main("what do you think?", 2, 3, 2, 5)
+            m "Simply. gorgeous."
+            $ cc_wear_panties = False 
             "Finally, she pushes her panties over her hips."
             m "Very nice."
-            call cho_main("........", 1, 1, 1, 1)
-            call cho_main("...............", 1, 1, 1, 1)
-            call cho_main("......................", 1, 1, 1, 1)
-            call cho_main("Um...", 1, 1, 1, 1)
-            call cho_main("Um...can i put my clothes back on now?", 1, 1, 1, 1)
+            call cho_main("........", 3, 3, 3, 4)
+            call cho_main("...............", 1, 3, 1, 4)
+            call cho_main("......................", 1, 3, 1, 9)
+            call cho_main("Um...", 1, 3, 2, 7)
+            call cho_main("Um...can i put my clothes back on now?", 6, 3, 5, 7)
             menu:
                 "-That's enough-":
                     m "You can put your close back on."
                     m "15 points to Ravenclaw."
+                    $ ravenclaw += cho_points
+                    call cho_main("Thank you, sir...", 6, 2, 6, 9)
+                    $ cc_wear_top = True
+                    $ cc_wear_bra = True
+                    $ cc_wear_stockings = True 
+                    $ cc_wear_skirt = True
+                    $ cc_wear_panties = True
+                    $ cc_wear_vest = True
+                    ">Cho quickly puts her clothes on before leaving."
+                    hide screen cho_chang
+                    jump cho_end_event
                 "-jerk off-":
-                    
                     "You slide your hands under your wizard robes and pull your cock out."
+                    hide screen blktone8
+                    with d3
+                    hide screen genie
+                    show screen genie_jerking_off
+                    with d3
                     "Cho's tight, vulnerable body has you incredibly aroused."
-                    call cho_main("what are you doing?", 1, 1, 1, 1)
-                    call cho_main("i didn't agree to this!", 1, 1, 1, 1)
+                    call cho_main("what are you doing?", 4, 2, 4, 3)
+                    call cho_main("i didn't agree to this!", 6, 2, 5, 7)
                     "Ignoring Cho's protests, your fingers wrap around your thick cock."
-                    call cho_main(".......", 1, 1, 1, 1)
+                    call cho_main(".......", 6, 3, 5, 9)
                     "Cho takes a deep breath."
-                    call cho_main("20 points.", 1, 1, 1, 1)
+                    call cho_main("20 points.", 6, 3, 6, 7)
                     menu:
                         "-offer 15-":
                             "You look the poor girl in the eyes and continue jerking you cock."
                             m "You'll get 15. No more."
-                            call cho_main("Fine.", 1, 1, 1, 1)
+                            call cho_main("Fine.", 6, 2, 5, 9)
                             $ cho_mad += 2
                             jump cho_favor_1_1_1
                         "-Give her 20-":
+                            $ cho_points = 20
                             m "Sounds good."
                             jump cho_favor_1_1_2
                         "-Giver her 25-":
+                            $ cho_points = 25
                             m "I'll give you 25."
-                            call cho_main("Really?", 1, 1, 1, 1)
+                            call cho_main("Really?", 1, 3, 1, 7)
                             $ cho_mad -= 2
                             jump cho_favor_1_1_2
                             
 label cho_favor_1_1_1: 
-    call cho_main("....", 1, 1, 1, 1)
-    call cho_main("........", 1, 1, 1, 1)
-    call cho_main("........you're...so big and...", 1, 1, 1, 1)
-    call cho_main(".....hard.", 1, 1, 1, 1)
+    call cho_main("....", 6, 3, 5, 5)
+    call cho_main("........", 6, 3, 6, 5)
+    call cho_main("........you're...so big and...", 6, 3, 5, 7)
+    call cho_main(".....hard.", 6, 3, 6, 6)
     "You can practically feel the girl's eyes on your cock as you drag your hand up and down its length."
-    call cho_main("....", 1, 1, 1, 1)
-    call cho_main("you're going to spurt soon, aren't you?", 1, 1, 1, 1)
-    call cho_main("you're going to shoot it all over again.", 1, 1, 1, 1)
+    call cho_main("....", 6, 3, 5, 6)
+    call cho_main("you're going to spurt soon, aren't you?", 6, 3, 6, 1)
+    call cho_main("you're going to shoot it all over again.", 6, 3, 5, 7)
+    call cho_main("you mUst think I'm really sexy, don't you?", 6, 3, 6, 9)
     "Precum pours from your engorged tip. Dripping down your hand."
-    call cho_main("you mUst think I'm really sexy, don't you?", 1, 1, 1, 1)
-    call cho_main("Oh god...", 1, 1, 1, 1)
-    call cho_main("oh god...there's so much.", 1, 1, 1, 1)
+    call cho_main("Oh god...", 6, 3, 5, 5)
+    call cho_main("oh god...there's so much.", 6, 3, 6, 5)
     "The quiet pleasure in Cho's eyes pushes you over the edge and begin to cum violently."
     m "You retard!"
     #-Genie chibi Cums-
-    call cho_main("....", 1, 1, 1, 1)
-    call cho_main("....what did you say?", 1, 1, 1, 1)
+    with d3
+    hide screen bld1
+    with d3
+    show screen genie_jerking_sperm
+    with d3
+    call cho_main("....", 6, 2, 5, 4)
+    call cho_main("....what did you say?", 6, 2, 5, 7)
     #-Genie Chibi continues to cum-
     m "Shut up. Don't ruin this for me."
-    call cho_main("......", 1, 1, 1, 1)
-    call cho_main("............", 1, 1, 1, 1)
+    call cho_main("......", 6, 3, 6, 9)
+    call cho_main("............", 6, 3, 5, 4)
     #-Genie Chibi stops cumming-
-    call cho_main("Can i have my points now?", 1, 1, 1, 1)
+    show screen genie_jerking_sperm_02
+    with d3
+    call cho_main("Can i have my points now?", 1, 3, 2, 9)
+    show screen genie
+    hide screen genie_jerking_off
+    with d3
     m "....."
-    m "......Very well. (Points) to Ravenclaw."
+    m "......Very well. [cho_points] to Ravenclaw."
+    $ ravenclaw += cho_points
+    call cho_main("Thank you, sir...", 6, 3, 5, 1)
+    $ cc_wear_top = True
+    $ cc_wear_bra = True
+    $ cc_wear_stockings = True 
+    $ cc_wear_skirt = True
+    $ cc_wear_panties = True
+    $ cc_wear_vest = True
+    ">Cho quickly puts her clothes on before leaving."
+    hide screen cho_chang
+    hide screen genie_jerking_sperm_02
     jump cho_end_event
     
 label cho_favor_1_1_2:
-    call cho_main("um...are you going to...do it?", 1, 1, 1, 1)
-    m "Do what?"
-    call cho_main("you're paying extra so you can jerk off if you want!", 1, 1, 1, 1)
-    m "Well, if you insist."
     "You gaze into Cho's eys, her tight, young body has you harder than a troll's ass."
-    call cho_main("....", 1, 1, 1, 1)
-    call cho_main("........", 1, 1, 1, 1)
-    call cho_main("........you're...so big and...", 1, 1, 1, 1)
-    call cho_main(".....hard.", 1, 1, 1, 1)
+    call cho_main("....", 6, 3, 5, 5)
+    call cho_main("........", 6, 3, 6, 5)
+    call cho_main("........you're...so big and...", 6, 3, 5, 7)
+    call cho_main(".....hard.", 6, 3, 6, 6)
     "You can practically feel the girl's eyes on your cock as you drag your hand up and down its length."
-    call cho_main("are you going to finish soon?", 1, 1, 1, 1)
-    call cho_main("and spurt it all over your desk again.", 1, 1, 1, 1)
+    call cho_main("are you going to finish soon?", 6, 3, 6, 1)
+    call cho_main("and spurt it all over your desk again.", 6, 3, 5, 7)
     "Precum pours from your engorged tip. Dripping down your hand."
-    call cho_main("Is my body that good?", 1, 1, 1, 1)
-    call cho_main("your dripping everywhere, professor", 1, 1, 1, 1)
-    call cho_main("oh god...your balls looks so full. There's so much.", 1, 1, 1, 1)
+    call cho_main("Is my body that good?", 6, 3, 6, 9)
+    call cho_main("your dripping everywhere, professor", 6, 3, 5, 5)
+    call cho_main("oh god...your balls looks so full. There's so much.", 6, 3, 6, 5)
     "The perverse wonder in Cho's voice pushes you over the edge."
     "You pump your cock like a madman, and cum violently."
     m "Yes, you whore!"
     #-Genie chibi Cums-
-    call cho_main("....", 1, 1, 1, 1)
-    call cho_main("....what did you say?", 1, 1, 1, 1)
+    with d3
+    hide screen bld1
+    with d3
+    show screen genie_jerking_sperm
+    with d3
+    call cho_main("....", 6, 2, 5, 4)
+    call cho_main("....what did you say?", 6, 2, 5, 7)
     #-Genie Chibi continues to cum-
     m "YOu...fucking...whore."
-    call cho_main("......", 1, 1, 1, 1)
-    call cho_main("............", 1, 1, 1, 1)
+    call cho_main("......", 6, 3, 6, 9)
+    call cho_main("............", 6, 3, 5, 4)
     #-Genie Chibi stops cumming-
+    show screen genie_jerking_sperm_02
+    with d3
     "You cum covers the desk in font of you in thick, slimy gobs."
-    call cho_main("(Look at it all!)", 1, 1, 1, 1)
-    call cho_main("......", 1, 1, 1, 1)
-    call cho_main("(i wonder what it tastes li-)", 1, 1, 1, 1)
-    call cho_main("!", 1, 1, 1, 1)
-    call cho_main("Can i have my points now?", 1, 1, 1, 1)
+    call cho_main("(Look at it all!)", 4, 3, 4, 5)
+    call cho_main("......", 6, 3, 5, 5)
+    call cho_main("(i wonder what it tastes li-)", 6, 3, 5, 6)
+    call cho_main("!", 4, 3, 4, 5)
+    call cho_main("Can i have my points now?", 1, 3, 2, 5)
+    show screen genie
+    hide screen genie_jerking_off
+    with d3
     m "....."
-    m "......Huh? Oh, yeah. Sure. (Points) to Ravenclaw."
+    m "......Huh? Oh, yeah. Sure. [cho_points] to Ravenclaw."
+    $ ravenclaw += cho_points
+    call cho_main("Thank you, sir...", 6, 3, 5, 1)
+    $ cc_wear_top = True
+    $ cc_wear_bra = True
+    $ cc_wear_stockings = True 
+    $ cc_wear_skirt = True
+    $ cc_wear_panties = True
+    $ cc_wear_vest = True
+    ">Cho quickly puts her clothes on before leaving."
+    hide screen cho_chang
+    hide screen genie_jerking_sperm_02
     jump cho_end_event
 
 
