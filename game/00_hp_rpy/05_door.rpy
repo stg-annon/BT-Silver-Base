@@ -418,6 +418,17 @@ label door:
         "-Summon Luna-" if luna_known and luna_unlocked and not luna_busy:
             play music "music/Dark Fog.mp3" fadein 1 fadeout 1 # LUNA'S THEME (placeholder probably)
             jump luna_door
+
+        "{color=#858585}-Summon Cho-{/color}" if cho_met and cho_busy:
+            ">Cho is unavailable."
+            if daytime:
+                jump day_main_menu
+            else: 
+                jump night_main_menu
+            
+        "-Summon Cho-" if cho_met and not cho_busy:
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # CHO'S THEME (placeholder probably)
+            jump cho_menu
                             
         "{color=#858585}-Summon Snape-{/color}" if hanging_with_snape and snape_busy:
             ">Professor Snape is unavailable."

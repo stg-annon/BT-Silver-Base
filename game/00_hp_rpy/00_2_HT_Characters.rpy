@@ -48,6 +48,9 @@ init python:
     herA = Character('Prude Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     hat = Character('Sorting Hat', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/hat/hat.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
     
+    ###4 Houses characters
+    cho = Character('Cho', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
+    sus = Character('Susan', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     
     
 define dum = Character(None, window_left_padding=240, image="dum1", color="#402313", ctc="ctc3", ctc_position="fixed")

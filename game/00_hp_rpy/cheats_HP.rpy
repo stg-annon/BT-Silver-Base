@@ -73,9 +73,13 @@ label cheats_ht:
             $ gold += 50000
             "Obtained 50,000g."
             jump cheats_ht
-        "-Ticket-":
-            $ vouchers += 1
-            "Obtained Voucher."
+        "-Toggle Breast Expansion-":
+            if hermione_perm_expand:
+                $ hermione_perm_expand = False
+                "Hermione's breasts shrink..."
+            else:
+                $ hermione_perm_expand = True
+                "Hermione's breasts grow..."
             jump cheats_ht
         "-Slytherin Points (+10,000)-":
             $ slytherin +=10000

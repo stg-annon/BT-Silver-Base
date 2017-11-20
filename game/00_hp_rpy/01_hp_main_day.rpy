@@ -255,6 +255,15 @@ with fade
 $ day +=1
 
 
+###4 Houses
+call FH_day
+if days_since_cho == 2:
+    jump hermione_cho
+if days_since_cho == 4 and not cho_met:
+    jump cho_intro_2
+    
+
+
 ### EVENTS
 
 #NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"

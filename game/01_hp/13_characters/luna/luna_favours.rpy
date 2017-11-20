@@ -1987,7 +1987,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call luna_main(".....................", 6, 2, 4, 3) 
             call luna_main(".......................................", 7, 3, 4, 2) 
             $ luna_tears = 1
-            call luna_main("please [genie_name]...", 8, 1, 4, 2)
+            call luna_main("please [l_genie_name]...", 8, 1, 4, 2)
             call luna_main("isn't there anything else I can do...", 9, 2, 4, 2)
             menu:
                 "-Make her strip-" if luna_choice == 1:
@@ -2280,6 +2280,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             call luna_main("This says otherwise.", 7, 3, 2, 1)
             m "How will they know it's mine? That could be anyone's cum!"
             call luna_main("Please... we're taught identification spells in second year. even neville longbottom would know it's yours.", 9, 1, 3, 1)
+            m "(Shit, if she actually tries that she might work out I'm not really Dumblefore or whatever his name is...)"
             m "So you're going to tell them everything?"
             call luna_main("What? of course not.", 9, 2, 1, 1)
             call luna_main("As long as you behave yourself...", 9, 1, 1, 1)
@@ -2855,6 +2856,10 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
     hide screen genie_jerking_sperm_02    
 
     jump luna_away
+
+
+
+
 label luna_favour_4: ###Luna grope
     jump luna_away
 label luna_favour_5:

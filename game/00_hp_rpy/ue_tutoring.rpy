@@ -106,10 +106,10 @@ label l_tutoring:
         her "..........."
         m "Alright, I want you to take some time and think about what I've said. Next time we'll start with your first lesson."
         call her_main("Can't we start now?","body_14")
-        m "Miss Hermione, you're not the only student I must take care of."
+        m "Miss Granger, you're not the only student I must take care of."
         call her_main("You're tutoring someone else?","body_02")
         m "{size=-2}(If only...){/size}"
-        m "I meant, I must take care of all the students of this school."
+        m "I mean, I must take care of all the students of this school."
         m "But yes, there is another girl who needs..."
         call her_main("A Slytherin girl?!","body_130")
         g9 "That is none of your business, miss Granger."

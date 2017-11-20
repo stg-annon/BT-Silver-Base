@@ -262,7 +262,10 @@ label __init_variables:
         $ sc_cg_image_3 = "01_hp/28_cg/sc34/2/C_1.png"
         $ sccgxpos = 200
         $ sccgypos = 50
-    
+
+    #4 Houses Stuff
+    if not hasattr(renpy.store,'cc_base'): #important!
+        call FH_init
     
     
     

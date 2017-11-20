@@ -845,6 +845,9 @@ label hg_pf_ButtMolester:
     hide screen hermione_main
     with d3
     $ her_head_ypos = her_head_only
+
+    if whoring > 8 and not cho_known:
+        jump cho_intro
     
     if whoring >= 0 and whoring <= 5: # LEVEL 02 # Hermione is hesitant. <=================================================================================== FIRST EVENT.
         $ new_request_05_heart = 1
