@@ -1,14 +1,14 @@
 label cho_menu:
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    $ changeCho(1, 1, 1, 1)
+    $ changeCho(1, 1, 2, 1)
     menu:
         "-Personal Favours-":
             menu:
                 "-Take it Off-":
                     jump cho_favor_1
-                "-Play with her butt-":
+                #"-Play with her butt-":
                     jump cho_favor_2
-                "-Make her suck my cock-":
+                #"-Make her suck my cock-":
                     jump cho_favor_3
                 "-Nevermind-":
                     jump cho_menu
@@ -146,37 +146,37 @@ label cho_intro:
     $ days_since_cho = 0
     $ renpy.play('sounds/door.mp3')
     $ cc_xpos = 550
-    call cho_main("Professor Dumbledore! I'm sorry for rushing in without knocking, but I finally have proof the Slytherin team is cheating! Draco and his goons are-", 1, 1, 1, 1)
+    call cho_main("Professor Dumbledore! I'm sorry for rushing in without knocking, but I finally have proof the Slytherin team is cheating! Draco and his goons are-", 3, 2, 3, 4)
     $ renpy.play('sounds/scratch.wav')
     hide screen groping_02
     show screen no_groping_02
     call her_main("...","head_exp/30")
-    call cho_main("...", 1, 1, 1, 1)
+    call cho_main("...", 4, 2, 4, 3)
     call her_main("..","head_exp/30")
-    call cho_main("..", 1, 1, 1, 1)
+    call cho_main("..", 4, 2, 4, 2)
     call her_main(".","head_exp/30")
     m "."
-    call cho_main(".", 1, 1, 1, 1)
+    call cho_main(".", 2, 2, 1, 2)
     call her_main("It's not what it looks like!","head_exp/22")
-    call cho_main("You lying bitch!", 1, 1, 1, 1)
-    call cho_main("men's rights movement my ass!", 1, 1, 1, 1)
+    call cho_main("You lying bitch!", 2, 2, 1, 3)
+    call cho_main("men's rights movement my ass!", 2, 2, 2, 4)
     call her_main("...","head_exp/24")
     call her_main("How dare you accuse me of trading favors with Professor Dumbledore!","head_exp/26")
     call her_main("He was merely massaging a pulled muscle in my...in my...leg!","head_exp/19")
-    call cho_main("Liar", 1, 1, 1, 1)
+    call cho_main("Liar", 1, 2, 1, 2)
     call her_main("You... you...","head_exp/25")
     call her_main("You flatchested skank!","head_exp/26")
-    call cho_main("Two-faced cow!", 1, 1, 1, 1)
+    call cho_main("Two-faced cow!", 5, 2, 1, 3)
     call her_main("C student!","head_exp/26")
     menu:
         "-Tell them to shut up-":
-            m "Students! By the sands! Calm yourselves! There is a perfectly reasonable explaination!"
+            m "Students! By the sands! Calm yourselves! There is a perfectly reasonable explanation!"
             call her_main("..","head_exp/25")
-            call cho_main("..", 1, 1, 1, 1)
-            call cho_main("....well?", 1, 1, 1, 1)
+            call cho_main("..", 2, 2, 1, 2)
+            call cho_main("....well?", 2, 2, 1, 3)
             m "Miss Granger was simply helping me clean my office when she pulled a muscle in her leg. It's quite painful. That's why she's so flustered."
-            call cho_main("...", 1, 1, 1, 1)
-            call cho_main("i can't believe this!", 1, 1, 1, 1)
+            call cho_main("...", 5, 2, 2, 2)
+            call cho_main("i can't believe this!", 5, 2, 2, 3)
             hide screen cho_chang
             with d3
             show screen bld1
@@ -232,7 +232,7 @@ label cho_intro:
     
         "-Stay out of it-":
             call her_main("Nothing! Get out!","head_exp/40")
-            call cho_main("Slut!", 1, 1, 1, 1)
+            call cho_main("Slut!", 5, 2, 1, 3)
             with d3
             hide screen cho_chang
             show screen bld1
@@ -261,10 +261,12 @@ label cho_intro:
 
 
 label hermione_cho:
+    $ renpy.play('sounds/knocking.mp3') #Sound someone knocking on the door.
+    "*Knock-knock-knock!*"
     menu:
         "-Come in-":
-            $ renpy.play('sounds/door.mp3')
-            $ hermione_chibi_xpos = 400 #Near the desk.
+            $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+            $ hermione_SC.chibi.xpos = 540 #Near the desk.
             show screen hermione_blink #Hermione stands still.
             call her_main("Sir, I just wanted to...","head_exp/2")
             call her_main("...to...","head_exp/4")
@@ -299,6 +301,7 @@ label hermione_cho:
                     m "Splendid."
                     call her_main("Well, I've got to get to class. Bye, sir.","head_exp/2")
                     m "Of course, Miss Granger."
+                    hide screen hermione_blink
                     hide screen hermione_main
                     with d3
                     $ renpy.play('sounds/door.mp3')
@@ -313,6 +316,7 @@ label hermione_cho:
                     m "That's racist!"
                     call her_main("What?","head_exp/7")
                     m "Don't you have class or something?"
+                    hide screen hermione_blink
                     hide screen hermione_main
                     with d3
                     $ renpy.play('sounds/door.mp3')
@@ -353,9 +357,9 @@ menu:
     "Is that you, Miss Granger?":
         "No, it's me. Cho Chang?"
         m "Ah, Miss Chong."
-        call cho_main("Chang!", 1, 1, 1, 1)
+        call cho_main("Chang!", 5, 2, 1, 2)
         m "What?"
-        call cho_main("MY name is Chang, sir!", 1, 1, 1, 1)
+        call cho_main("MY name is Chang, sir!", 5, 2, 1, 3)
         m "Ah, well, come in already, Miss Ching."
         jump cho2begin
     "Come in.":
@@ -370,46 +374,44 @@ label cho2begin:
     $ cho_mad = 0
     $ cho_whoring = 0
     $ renpy.play ('sounds/door.mp3')
-    $ changeCho(1, 1, 1, 1)
+    $ changeCho(3, 3, 3, 4)
     ">Cho enters and stands in the middle of the room."
     m "Now, what was it you needed?"
-    call cho_main("I... um...", 1, 1, 1, 1)
-    call cho_main("I know you're buying favors from Hermione!", 1, 1, 1, 1)
-    hide screen cho_chang
+    call cho_main("I... um...", 1, 3, 2, 2)
+    call cho_main("I know you're buying favors from Hermione.", 2, 3, 1, 2)
     m "And why would you think that?"
-    call cho_main("Because I saw you.", 1, 1, 1, 1)
-    hide screen cho_chang
+    call cho_main("Because I saw you!", 1, 2, 1, 2)
     m "Oh, right."
     m "Well, is there anything else? Or did you merely come to inform me of things I already know."
-    call cho_main("Well......", 1, 1, 1, 1)
-    hide screen cho_chang
+    call cho_main("Well......", 2, 3, 2, 5)
     m "What is it? Speak up, girl."
-    call cho_main("Sir, I want you to buy favors from me, too!", 1, 1, 1, 1)
-    hide screen cho_chang
+    call cho_main("Sir, I want you to buy favors from me, too!", 2, 3, 1, 1)
     m "You do? What happened to being above all of this 'nasty' favor business, and not needing to 'dirty' yourself to win the cup?"
-    call cho_main("The Slytherin team is cheating, Sir.", 1, 1, 1, 1)
+    call cho_main("The Slytherin team is cheating, Sir.", 6, 2, 5, 9)
     m "How does that change anything?"
-    call cho_main("It doesn't matter...", 1, 1, 1, 1)
-    call cho_main("It doesn't matter how hard i try or how good I am!", 1, 1, 1, 1)
-    call cho_main("i can't beat them any other way.", 1, 1, 1, 1)
-    $ changeCho(1, 1, 1, 1)
+    call cho_main("It doesn't matter...", 6, 2, 6, 7)
+    call cho_main("It doesn't matter how hard i try or how good I am!", 6, 2, 5, 7)
+    call cho_main("i can't beat them any other way.", 5, 2, 1, 7)
+    $ changeCho(5, 2, 1, 9)
     m "I see."
     m "But...why sell your favors to me, specifically?"
     m "If you suspect that Miss Granger is selling me favors, wouldn't you earn points faster from a less 'occupied' professor?"
-    call cho_main("I...um...I looked, but the only other professor trading favors is Snape.", 1, 1, 1, 1)
-    call cho_main("AND I will nEver tRade that slytherin scum a single favor!", 1, 1, 1, 1)
+    call cho_main("I...um...I looked, but the only other professor trading favors is Snape.", 6, 3, 6, 9)
+    call cho_main("AND I will nEver tRade that slytherin scum a single favor!", 6, 2, 5, 10)
     menu:
         "I really don't feel it would be appropriate.":
             m "I really don't feel that it would be appropriate. I'm sure you understand."
-            call cho_main("What?!", 1, 1, 1, 1)
+            call cho_main("What?!", 4, 2, 4, 7)
             m "I simply can not buy favors from you."
             m "You'll have to go."
-            call cho_main("What?", 1, 1, 1, 1)
+            call cho_main("What?", 6, 2, 5, 4)
             m "You'll... have to"
-            call cho_main("I can't believe you're going to chose that stupid Gryffindor girl over me!", 1, 1, 1, 1)
-            call cho_main("you're a horrIble man. i'm going to coNtact the miNistry of magic and see what they think of their favorite wizard acting like a...like a...", 1, 1, 1, 1)
-            call cho_main("CROOK!", 1, 1, 1, 1)
+            call cho_main("I can't believe you're going to chose that stupid Gryffindor girl over me!", 2, 2, 1, 3)
+            call cho_main("you're a horrIble man. i'm going to coNtact the miNistry of magic and see what they think of their favorite wizard acting like a...like a...", 2, 2, 2, 4)
+            call cho_main("CROOK!", 2, 2, 1, 9)
             #Cho storms out
+            pause 
+            hide screen cho_chang
             $ renpy.play ('sounds/door.mp3')
             m "By Old Crocus' dangly testicles! I hope that doesn't come up again."
             jump cho2end
@@ -417,76 +419,98 @@ label cho2begin:
             m "Alright, Miss Chang. I'll let you sell me favors."
             call cho_main("Really?", 1, 1, 1, 1)
             m "Yes. Now, wipe your eyes."
-            call cho_main("Sorry, Professor Dumbledor, sir.", 1, 1, 1, 1)
+            call cho_main("Sorry, Professor Dumbledor, sir.", 2, 3, 2, 7)
             m "..."
-            call cho_main("...", 1, 1, 1, 1)
+            call cho_main("...", 1, 1, 2, 5)
             m "..."
-            call cho_main("Um?...", 1, 1, 1, 1)
+            call cho_main("Um?...", 1, 3, 1, 7)
             m "Yes?"
-            call cho_main("What do I do?", 1, 1, 1, 1)
+            call cho_main("What do I do?", 1, 3, 2, 7)
             menu:
-                "Take off your robes.":
-                    #Cho removes her robe
-                    m "Very nice. See that's not so hard."
+                "\"Take off your vest\"":
+                    #Cho removes her vest
+                    call cho_main("What? Don't you want to talk a little first?", 4, 3, 4, 7)
+                    m "Not really..."
+                    m "Besides, Miss Granger is more than happy to show me her-"
+                    call cho_main("Fine!", 1, 2, 2, 9)
+                    ">Cho quickly pulls off her vest."
+                    $ cc_wear_vest = False
+                    m "Good..."
                     menu:
-                        "Now, take off your shirt.":
-                            call cho_main("Okay...", 1, 1, 1, 1)
-                            ">Cho quickly pulls her Ravenclaw vest over her head, and her shirt comes off with it."
+                        "\"Now, take off your shirt\"":
+                            call cho_main("Okay...", 1, 3, 2, 5)
+                            ">Cho quickly removes her tie before starting to undo her shirt."
                             ">Her inexperience is obvious and she struggles for a moment."
                             #Cho removes her shirt
-                            call cho_main("Sorry, about that.", 1, 1, 1, 1)
+                            $ cc_wear_top = False
+                            $ cc_wear_acc = False
+                            call cho_main("Sorry, about that.", 1, 3, 1, 7)
                             menu:
-                                "-Not bad-":
-                                    call cho_main("Thanks.", 1, 1, 1, 1)
+                                "\"Not bad\"":
+                                    call cho_main("Thanks.", 1, 3, 2, 1)
+                                    m "Now take off your skirt..."
+                                    call cho_main("Okay...", 1, 3, 1, 7)
+                                    ">Cho takes a deep breath then swiftly drops her skirt."
+                                    $ cc_wear_skirt = False
                                     jump cho2keepgoing
-                                "-Keep going-":
+                                "\"Now your skirt\"":
+                                    call cho_main("Okay...", 1, 3, 1, 7)
+                                    ">Cho takes a deep breath then swiftly drops her skirt."
+                                    $ cc_wear_skirt = False
                                     jump cho2keepgoing
-                        "Now, take off your skirt.":
-                                call cho_main("Okay...", 1, 1, 1, 1)
+                        "\"Now, take off your skirt\"":
+                                call cho_main("Okay...", 1, 3, 1, 7)
                                 ">Cho takes a deep breath then swiftly drops her skirt."
                                 #Cho removes her skirt
+                                $ cc_wear_skirt = False
                                 menu:
                                     "-Not bad-":
-                                        call cho_main("Thanks.", 1, 1, 1, 1)
+                                        call cho_main("Thanks.", 1, 3, 2, 1)
+                                        m "Now take off your shirt..."
+                                        call cho_main("Okay...", 1, 3, 2, 5)
+                                        ">Cho quickly removes her tie before starting to undo her shirt."
+                                        ">Her inexperience is obvious and she struggles for a moment."
                                         jump cho2keepgoing
-                                    "-Keep Going-":
-                                        label cho2keepgoing:
+                                    "-Now your shirt-":
                                         #Cho is now wearing only her underwear
-                                        call cho_main("Um, I forgot to ask, but how many points do I get for this?", 1, 1, 1, 1)
-                                        hide screen cho_chang
+                                        call cho_main("Okay...", 1, 3, 2, 5)
+                                        ">Cho quickly removes her tie before starting to undo her shirt."
+                                        ">Her inexperience is obvious and she struggles for a moment."
+                                        label cho2keepgoing:
+                                        call cho_main("Um, I forgot to ask, but how many points do I get for this?", 2, 3, 1, 7)
                                         m "You're a terrible negotiator."
-                                        call cho_main("I know.", 1, 1, 1, 1)
-                                        call cho_main("what dO you pay Hermione?", 1, 1, 1, 1)
+                                        call cho_main("I know.", 2, 3, 2, 1)
+                                        call cho_main("what dO you pay Hermione?", 2, 3, 1, 1)
                                         menu:
                                             "-5 points-":
-                                                call cho_main("Just five?", 1, 1, 1, 1)
-                                                call cho_main("i bet she looks like a cow compared to me.", 1, 1, 1, 1)
-                                                jump cho2howmuch
+                                                call cho_main("Just five?", 6, 1, 5, 9)
+                                                call cho_main("i bet she looks like a cow compared to me.", 6, 1, 6, 1)
+                                                pass
                                             "-15 points-":
-                                                call cho_main("{size=-3}(Is that a good price?){/size}", 1, 1, 1, 1)
-                                                jump cho2howmuch
+                                                call cho_main("{size=-3}(Is that a good price?){/size}", 6, 1, 6, 5)
+                                                pass
                                             "-30 points-":
-                                                call cho_main("That much, huh?", 1, 1, 1, 1)
-                                                jump cho2howmuch
+                                                call cho_main("That much, huh?", 1, 1, 2, 7)
+                                                pass
                                             "-100 points-":
-                                                call cho_main("100?", 1, 1, 1, 1)
-                                                call cho_main("but she's so...", 1, 1, 1, 1)
-                                                call cho_main("she doesn't even work out!", 1, 1, 1, 1)
-                                                jump cho2howmuch
+                                                call cho_main("100?", 4, 3, 4, 3)
+                                                call cho_main("but she's so...", 1, 3, 2, 2)
+                                                call cho_main("she doesn't even work out!", 1, 2, 1, 2)
+                                                pass
                                         call cho_main("How much do you think my body is worth?", 1, 1, 1, 1)
                                         label cho2howmuch:
                                         menu:
                                             "-5 points-":
-                                                call cho_main("Just five?", 1, 1, 1, 1)
-                                                call cho_main("five measley points!", 1, 1, 1, 1)
+                                                call cho_main("Just five?", 4, 2, 4, 3)
+                                                call cho_main("five measley points!", 6, 2, 5, 4)
                                                 menu:
                                                     "-Take it or leave it-":
-                                                        call cho_main("You can't be serious.", 1, 1, 1, 1)
-                                                        call cho_main("i wake up every morning before dawn and run the quidditch pitch until the sun rises!", 1, 1, 1, 1)
-                                                        call cho_main("i keep my body at the absolute peak of human and wizard conditioning!", 1, 1, 1, 1)
-                                                        call cho_main("It's worth way more than 5 points.", 1, 1, 1, 1)
+                                                        call cho_main("You can't be serious.", 6, 2, 5, 4)
+                                                        call cho_main("i wake up every morning before dawn and run the quidditch pitch until the sun rises!", 6, 2, 5, 7)
+                                                        call cho_main("i keep my body at the absolute peak of human and wizard conditioning!", 6, 2, 6, 7)
+                                                        call cho_main("It's worth way more than 5 points.", 6, 2, 5, 9)
                                                         ">Cho gathers up her clothes in a huff."
-                                                        call cho_main("I can't believe I thought this would work.", 1, 1, 1, 1)
+                                                        call cho_main("I can't believe I thought this would work.", 6, 2, 5, 4)
                                                         hide screen cho_chang
                                                         $ cho_mad +=10
                                                         #Cho storms out
@@ -494,135 +518,150 @@ label cho2begin:
                                                         m "..."
                                                         jump cho2end
                                                     "-Did I say five? I meant more-":
+                                                        $ changeCho(6, 2, 5, 4)
                                                         $ cho_mad +=5
                                                         jump cho2howmuch
-                                            "15 points.":
-                                                call cho_main("(Is that a good price?)", 1, 1, 1, 1)
-                                                call cho_main("i guess that's enough...", 1, 1, 1, 1)
+                                            "-15 points-":
+                                                call cho_main("(Is that a good price?)", 6, 3, 6, 5)
+                                                call cho_main("i guess that's enough...", 6, 3, 5, 7)
                                                 $ cho_points = 15
-                                            "30 points.":
-                                                call cho_main("Okay.", 1, 1, 1, 1)
-                                                call cho_main("it's a deal.", 1, 1, 1, 1)
+                                            "-30 points-":
+                                                call cho_main("Okay.", 1, 1, 1, 5)
+                                                call cho_main("it's a deal.", 1, 1, 2, 1)
                                                 $ cho_points = 30
-                                            "100 points.":
-                                                call cho_main("100?", 1, 1, 1, 1)
-                                                call cho_main("Really?", 1, 1, 1, 1)
-                                                call cho_main("that's sooo much, professor.", 1, 1, 1, 1)
-                                                call cho_main("Do you want me to take the rest off?", 1, 1, 1, 1)
+                                            "-100 points-":
+                                                call cho_main("100?", 4, 1, 4, 1)
+                                                call cho_main("Really?", 4, 1, 4, 7)
+                                                call cho_main("that's sooo much, professor.", 1, 1, 2, 5)
+                                                call cho_main("Do you want me to take the rest off?", 2, 3, 2, 6)
                                                 $ cho_points = 100
-                                        hide screen cho_chang
-                                        $ changeCho(1, 1, 1, 1)
+                                        $ changeCho(2, 1, 2, 5)
                                         m "Miss Chang, the rest if you would."
-                                        call cho_main("Of course, sir.", 1, 1, 1, 1)
+                                        call cho_main("Of course, sir.", 1, 1, 1, 5)
                                         ">Cho reaches over her head and pulls her bra off in one smooth motion.{p}Her small, pert breasts barely move as she dips low and pulls her painties down her fit legs."
                                         ">Once finished she leans back proudly and smiles nervously."
-                                        call cho_main("i bet my tight body looks way beTter than Hermione's.", 1, 1, 1, 1)
+                                        $ cc_wear_bra = False
+                                        call cho_main("i bet my tight body looks way beTter than Hermione's.", 6, 1, 6, 5)
                                         menu:
                                             "-Yeah, she's gross-":
-                                                hide screen cho_chang
                                                 m  "Miss Granger's body is nothing compared to yours."
-                                                call cho_main("Really?", 1, 1, 1, 1)
+                                                call cho_main("Really?", 4, 1, 4, 1)
                                                 m  "Her tits sag too much, and her fat hips are disgusting."
-                                                call cho_main("She really is a...", 1, 1, 1, 1)
-                                                call cho_main("...stupid...", 1, 1, 1, 1)
-                                                call cho_main("...fat...", 1, 1, 1, 1)
-                                                call cho_main("...cow, isn't she?", 1, 1, 1, 1)
+                                                call cho_main("She really is a...", 6, 2, 6, 5)
+                                                call cho_main("...stupid...", 6, 2, 6, 4)
+                                                call cho_main("...fat...", 6, 2, 6, 10)
+                                                call cho_main("...cow, isn't she?", 6, 2, 5, 6)
                                                 ">From your desk, you can see Cho's hand moving closer to her mound. She's clearly getting wet."
                                             "-I can't choose-":
-                                                hide screen cho_chang
                                                 m  "You're both hot."
-                                                call cho_main("I guess.", 1, 1, 1, 1)
+                                                call cho_main("I guess.", 6, 2, 6, 9)
                                             "-Nope, you lose-":
-                                                hide screen cho_chang
                                                 m "I'm afraid, Miss Granger is simply more sexy. Jealousy is quite unbecoming of a young witch."
-                                                call cho_main("What?", 1, 1, 1, 1)
-                                                call cho_main("but she doesn't even Work out. Sir.", 1, 1, 1, 1)
+                                                call cho_main("What?", 6, 2, 5, 7)
+                                                call cho_main("but she doesn't even Work out. Sir.", 6, 2, 6, 10)
                                                 $ cho_mad +=5
                                         menu:
                                             "-Take out your cock and start jerking off behind your desk-":
                                                 ">You lean back in your chair and pull your cock out of your robes."
-                                                call cho_main("Are you...", 1, 1, 1, 1)
+                                                hide screen blktone8
+                                                with d3
+                                                hide screen genie
+                                                show screen genie_jerking_off
+                                                with d3
+                                                call cho_main("Are you...", 6, 3, 5, 1)
                                                 ">Cho's voice is soft and slightly husky. She almost sounds...aroused."
                                                 ">You wrap your hand around your thick, veiny cock and begin to jerk off."
-                                                call cho_main("Professor...", 1, 1, 1, 1)
+                                                call cho_main("Professor...", 6, 1, 5, 6)
                                                 menu:
                                                     "-Keep jerking off-":
                                                         ">Your eyes continue to drift over the young quidditch players tight, athletic body."
                                                         ">You lean back in your chair and begin stroking in earnest."
-                                                        call cho_main("....", 1, 1, 1, 1)
+                                                        call cho_main("....", 6, 1, 6, 6)
                                                         ">Cho's innocent eyes are glued to your thick cock."
-                                                        call cho_main("...", 1, 1, 1, 1)
+                                                        call cho_main("...", 6, 1, 5, 6)
                                                         ">The competetive, young seeker looks mesmerized by your actions."
                                                         ">Finally, your eyes meet and she flushes red."
-                                                        call cho_main("I-I've never seen one before.", 1, 1, 1, 1)
-                                                        call cho_main("are they alWAYs so...BIG?", 1, 1, 1, 1)
+                                                        call cho_main("I-I've never seen one before.", 6, 3, 5, 7)
+                                                        call cho_main("are they alWAYs so...BIG?", 6, 3, 5, 1)
                                                         menu:
                                                             "-Tell her to shut up-":
-                                                                hide screen cho_chang
                                                                 m "Quiet, girl! Don't ruin this for me."
-                                                                call cho_main("...", 1, 1, 1, 1)
+                                                                call cho_main("...", 6, 3, 6, 5)
                                                                 ">At your command the girl closes her mouth and lets you continue undisturbed."
                                                                 ">As you continue to stroke your cock you notice Cho shifting her weight.{w=0.4}The tight muscles of her thighs are squeezing in desperate rythym."
                                                                 ">You pump your cock faster, matching her rythym"
-                                                                call cho_main("I-I think I'm...I'm going to...", 1, 1, 1, 1)
+                                                                call cho_main("I-I think I'm...I'm going to...", 4, 3, 4, 5)
                                                                 ">Cho's thighs are squeezing faster and faster."
-                                                                call cho_main("Cum!......", 1, 1, 1, 1)
+                                                                call cho_main("Cum!......", 4, 3, 4, 6)
                                                                 ">Suddenly, her body goes rigid and her abdominal muscles pulse in waves as orgasm rocks the young girl's body."
                                                                 ">Cho's legs, suddenly too weak to hold her lithe body, collapse beneath her and she falls to the floor."
                                                             "-Play along-":
-                                                                hide screen cho_chang
                                                                 m  "Only when I'm around students like you, Miss Chang."
-                                                                $ changeCho(1, 1, 1, 1)
+                                                                $ changeCho(6, 3, 6, 5)
                                                                 ">As you continue to stroke your cock you notice Cho shifting her weight.{w=.04} The tight muscles of her thighs are squeezing in desperate rythym."
                                                                 hide screen cho_chang
                                                                 m "Miss Chang, what are you doing?"
-                                                                call cho_main("I-I'm j-just...I'm just...", 1, 1, 1, 1)
+                                                                call cho_main("I-I'm j-just...I'm just...", 4, 3, 4, 5)
                                                                 ">Cho's thighs are squeezing faster and faster."
-                                                                call cho_main("Cumming!......", 1, 1, 1, 1)
+                                                                call cho_main("Cumming!......", 4, 3, 4, 6)
                                                                 ">Suddenly, her body goes rigid and her abdominal muscles pulse in waves as orgasm rocks the young girl's body."
                                                                 ">Cho's legs, suddenly too weak to hold her lithe body, collapse beneath her and she falls to the floor."
                                                         "The sight before you is simply too much, and you unleash torrents of cum all over your desk."
-                                                        #Genie Cums behind his desk
+                                                        $ cc_ypos = 150
+                                                        with d3
+                                                        hide screen bld1
+                                                        with d3
+                                                        show screen genie_jerking_sperm
+                                                        with d3
                                                         "By the sands!"
                                                         "Cum coats your otherwise pristine desk. The only sounds in the room are your heavy breaths and the slow *plat* *plat* of your cum dripping off your desk."
+                                                        show screen genie_jerking_sperm_02
+                                                        with d3
                                                         "Cho looks up at you from the floor."
-                                                        call cho_main("...", 1, 1, 1, 1)
-                                                        call cho_main("i can'T believe I did that.", 1, 1, 1, 1)
-                                                        call cho_main("Can i have my points now!", 1, 1, 1, 1)
+                                                        call cho_main("...", 6, 3, 6, 5)
+                                                        call cho_main("i can'T believe I did that.", 6, 3, 5, 7)
+                                                        call cho_main("Can i have my points now!", 1, 1, 2, 1)
+                                                        ">Cho jumps back up onto her feet."
+                                                        $ cc_ypos = 0
                                                         #go to [End Points]
                                                     "Put it away":
                                                         ">You tactfully tuck your throbbing erection back into your robes."
                                                         #go to [End Points]
                                             "Better not.":
-                                                ">You decide not to indulge your baser insticts."
+                                                ">You decide not to indulge your baser instincts."
                                                 #go to [End Points]
-                "Suck my cock":
+                "\"Suck my cock\"":
                     m "I'd like you to suck my cock, Miss Chang."
-                    call cho_main("That's too far. what's wrong with you?", 1, 1, 1, 1)
-                    call cho_main("haven't you ever hear of character progression!", 1, 1, 1, 1)
-                    call cho_main("you're supposed to start out small!", 1, 1, 1, 1)
+                    call cho_main("That's too far. what's wrong with you?", 4, 2, 4, 3)
+                    call cho_main("haven't you ever hear of character progression!", 6, 2, 6, 4)
+                    call cho_main("you're supposed to start out small!", 6, 2, 5, 4)
                     #Cho storms out
                     $ renpy.play ('sounds/door.mp3')
                     m "By Old Crocus' dangly testicles! I hope that doesn't bite me in the lamp."
                     #Go to [END]
-                "-Do you eat ass, Miss Chong?-":
+                "\"Do you eat ass, Miss Chong?\"":
                             m "Do you eat ass, Miss Chong?"
-                            call cho_main("for the last time.", 1, 1, 1, 1)
-                            call cho_main("MY name Is CHang, Cho Chang!", 1, 1, 1, 1)
-                            call cho_main("...", 1, 1, 1, 1)
-                            call cho_main("..", 1, 1, 1, 1)
-                            call cho_main(".", 1, 1, 1, 1)
-                            call cho_main("Professor.", 1, 1, 1, 1)
-                            call cho_main("you're disgusting!", 1, 1, 1, 1)
+                            call cho_main("for the last time.", 4, 2, 4, 3)
+                            call cho_main("MY name Is CHang, Cho Chang!", 4, 2, 4, 4)
+                            call cho_main("...", 6, 2, 5, 9)
+                            call cho_main("..", 6, 2, 5, 4)
+                            call cho_main(".", 6, 2, 6, 9)
+                            call cho_main("Professor.", 6, 2, 5, 7)
+                            call cho_main("you're disgusting!", 6, 2, 5, 10)
                             $ cho_mad += 10
                             $ renpy.play ('sounds/door.mp3')
                             m4 "Damn it. I should have know that only internet perverts and shitty writers ruin good porn with assplay."
                             #Go to [End]
+    show screen genie
+    hide screen genie_jerking_off
+    with d3
     m "Very good, Miss Chang."
     m "[cho_points] points to Gryffindor!"
-    call cho_main("i'm from Ravenclaw, sir.", 1, 1, 1, 1)
+    call cho_main("i'm from Ravenclaw, sir.", 6, 2, 5, 9)
     m "Right, what did I say?"
     m "[cho_points] points to Ravenclaw!"
+    $ ravenclaw += cho_points
+    call cho_main("Thank you, sir...", 6, 2, 6, 9)
     hide screen cho_chang
     jump cho_end_event
 

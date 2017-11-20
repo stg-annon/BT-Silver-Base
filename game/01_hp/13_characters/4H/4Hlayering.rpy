@@ -1,7 +1,7 @@
 screen cho_chang:
     ### BASE IMAGE
-    add cc_base xpos cc_xpos ypos cc_ypos #Add the base body
     add cc_arms xpos cc_xpos ypos cc_ypos #Add the arms
+    add cc_base xpos cc_xpos ypos cc_ypos #Add the base body
     add cc_hair_shadow xpos cc_xpos ypos cc_ypos #Add the hair shadow
     ### EMOTIONS
     add cc_eye xpos cc_xpos ypos cc_ypos #Add the eye outline
@@ -10,12 +10,23 @@ screen cho_chang:
     add cc_hair xpos cc_xpos ypos cc_ypos #Add the hair shadow
     ###MOUTH
     add cc_mouth xpos cc_xpos ypos cc_ypos #Add the mouth
+    ###TEARS for fears
+    add cc_tears xpos cc_xpos ypos cc_ypos #Add the tears
     ### CLOTHES 
-    add cc_skirt xpos cc_xpos ypos cc_ypos # Add the skirt
-    add cc_top xpos cc_xpos ypos cc_ypos # Add the top
-    add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
-    add cc_vest xpos cc_xpos ypos cc_ypos # Add the vest
-    add cc_stock xpos cc_xpos ypos cc_ypos # Add the stockings
+    if cc_wear_bra and not cc_wear_top:
+        add cc_bra xpos cc_xpos ypos cc_ypos # Add the bra
+    if cc_wear_panties and not cc_wear_skirt:
+        add cc_panties xpos cc_xpos ypos cc_ypos # Add the panties
+    if cc_wear_skirt:
+        add cc_skirt xpos cc_xpos ypos cc_ypos # Add the skirt
+    if cc_wear_top:
+        add cc_top xpos cc_xpos ypos cc_ypos # Add the top
+    if cc_wear_acc:
+        add cc_acc xpos cc_xpos ypos cc_ypos # Add the accessory
+    if cc_wear_vest:
+        add cc_vest xpos cc_xpos ypos cc_ypos # Add the vest
+    if cc_wear_stockings:
+        add cc_stock xpos cc_xpos ypos cc_ypos # Add the stockings
     ### OTHER
     add cc_l_hand xpos cc_xpos ypos cc_ypos # Add the left hand
     ### ZORDER

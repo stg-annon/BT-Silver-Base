@@ -13,12 +13,25 @@ label FH_init:
     $ cc_eye = "01_hp/13_characters/cho_chang/eye/eye_01.png" 
     $ cc_eyebrow = "01_hp/13_characters/cho_chang/eye/eyebrow_01.png" 
     $ cc_pupil = "01_hp/13_characters/cho_chang/eye/pupil_01.png" 
+    $ cc_tears = "01_hp/13_characters/cho_chang/tears/tears_0.png" 
     $ cc_vest = "01_hp/13_characters/cho_chang/clothes/uniform/vest.png" 
     $ cc_top = "01_hp/13_characters/cho_chang/clothes/uniform/top.png" 
     $ cc_acc = "01_hp/13_characters/cho_chang/clothes/uniform/tie.png" 
     $ cc_skirt = "01_hp/13_characters/cho_chang/clothes/uniform/skirt.png" 
     $ cc_stock = "01_hp/13_characters/cho_chang/clothes/uniform/stockings.png" 
+    $ cc_bra = "01_hp/13_characters/cho_chang/clothes/workout/bra.png" 
+    $ cc_panties = "01_hp/13_characters/cho_chang/clothes/workout/panties.png" 
     $ cc_zorder = 5
+
+    ###Clothing flags
+
+    $ cc_wear_top = True
+    $ cc_wear_bra = True
+    $ cc_wear_vest = True
+    $ cc_wear_stockings = True 
+    $ cc_wear_skirt = True
+    $ cc_wear_panties = True
+    $ cc_wear_acc = True
 
     
 
@@ -79,7 +92,16 @@ label FH_init:
 
 
 label FH_day:
+    # Increment shit
     if cho_known:
         $ days_since_cho += 1
+
+    #reset cho's outfit just incase
+    $ cc_wear_top = True
+    $ cc_wear_bra = True
+    $ cc_wear_stockings = True 
+    $ cc_wear_skirt = True
+    $ cc_wear_panties = True
+    $ cc_wear_vest = True
 
     return
