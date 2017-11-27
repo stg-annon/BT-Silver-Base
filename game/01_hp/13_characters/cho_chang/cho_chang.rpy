@@ -685,6 +685,9 @@ label cho2end:
 ###Favor 1###
 label cho_favor_1_1:
     $ cho_points = 15
+    if cho_whoring < 1:
+        $ cho_whoring += 1
+
     m "Miss Chang how would you like to earn 15 house points the easy way?"
     call cho_main("what do i have to do?", 6, 3, 5, 7)
     m "I want to see your body again?"
@@ -947,6 +950,9 @@ label cho_favor_1_1_2:
 
 
 label cho_favor_1_2:
+    $ cho_points = 15
+    if cho_whoring < 1:
+        $ cho_whoring += 1
     m "Miss Chang how would you like to earn 15 house points the easy way?"
     call cho_main("what do i have to do?", 1, 1, 1, 1)
     m "I want to see your body again?"
@@ -974,14 +980,17 @@ label cho_favor_1_2:
                     m "You'll get 15. No more."
                     call cho_main("Fine.", 1, 1, 1, 1)
                     $ cho_mad += 3
+                    $ cho_points = 15
                     pass
                 "-20 sounds good-":
                     m "Sounds good."
+                    $ cho_points = 20
                     pass
                 "-Give her 25-":
                     m "I'll give you 25."
                     call cho_main("Really?", 1, 1, 1, 1)
                     $ cho_mad -= 1
+                    $ cho_points = 25
                     pass
             menu:
                 "-Be Aggressive-":
@@ -1113,7 +1122,7 @@ label cho_favor_1_2:
                     call cho_main("um...is that enough?", 1, 1, 1, 1)
                     menu:
                         "-That's enough-":
-                            m "You can put your close back on."
+                            m "You can put your clothes back on."
                             m "15 points to Ravenclaw."
                             $ ravenclaw += 15
                             jump cho_end_event
@@ -1123,9 +1132,9 @@ label cho_favor_1_2:
                             call cho_main("what are you doing?", 1, 1, 1, 1)
                             call cho_main("i'm not watching you do that for a measly 15 house points.", 1, 1, 1, 1)
                             "Ignoring Cho's protests, your fingers wrap around your thick cock."
-                            Cho_19"......."
+                            call cho_main(".......", 1, 1, 1, 1)
                             "Cho takes a deep breath."
-                            Cho_26"20 points."
+                            call cho_main("20 points.", 1, 1, 1, 1)
                             menu:
                                 "-offer 15-":
                                     "You look the poor girl in the eyes and continue jerking you cock."

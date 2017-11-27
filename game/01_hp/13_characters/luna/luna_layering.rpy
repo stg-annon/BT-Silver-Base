@@ -124,6 +124,8 @@ init python: ###Method Definition for new characters
             luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_"+str(l_pupil)+".png" 
         if l_pupil is not None and luna_unlocked:
             luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_"+str(l_pupil)+"_G.png" 
+        if l_pupil is not None and luna_reverted:
+            luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_"+str(l_pupil)+".png" 
 
         if l_eyebrow is not None:
             luna_eyebrow = "01_hp/13_characters/luna/body/face/eyebrow/eyebrow_"+str(l_eyebrow)+".png" 

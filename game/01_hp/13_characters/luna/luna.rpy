@@ -51,6 +51,8 @@ label luna_init:
     $ luna_wear_panties = True
     $ luna_wear_skirt = True
     $ luna_wear_top = True
+
+    $ luna_reverted = True
 return
 
 label luna_day_flags:
