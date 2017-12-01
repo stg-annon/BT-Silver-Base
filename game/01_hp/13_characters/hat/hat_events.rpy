@@ -155,5 +155,5 @@ label hat_intro_3: #Luna change scene
 
 
 
-
+###Need another intro event here, introducing Luna and setting up the favour selling stuff.
 

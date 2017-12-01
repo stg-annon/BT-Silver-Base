@@ -81,6 +81,14 @@ label cheats_ht:
                 $ hermione_perm_expand = True
                 "Hermione's breasts grow..."
             jump cheats_ht
+        "-Toggle Futa Hermione-":
+            if hermione_futa:
+                $ hermione_futa = False
+                "Hermione's cock shrinks away..."
+            else:
+                $ hermione_futa = True
+                "Hermione's grows a... dick!"
+            jump cheats_ht
         "-Slytherin Points (+10,000)-":
             $ slytherin +=10000
             "10,000 to Slytherin!"

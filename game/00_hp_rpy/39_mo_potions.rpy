@@ -879,7 +879,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
         "-Cum in her mouth-":
             m "This is it girl. Get ready."
             ">Hermione starts swirling her tongue and focusing on the tip of your shaft."
-            m "That's done it slut. Start swallowing."
+            g4 "That's done it slut! Start swallowing."
             ">You explode into her mouth."
             $ g_c_u_pic = "cum_in_mouth_ani"
             $ aftersperm = True
@@ -1298,7 +1298,7 @@ label potion_scene_6: #Luna potion
     m "You're going to class looking like a fellow classmate?"
     $ changeLuna(1, 1, 5, 1)
     her "It's not going to be a problem. Luna's barely in class as it is, I can just pretend to be her. Maybe I'll even improve her test scores. You'll notify the teachers I can't attend class right?"
-    m "Absolutely. (Not a chance.) But, what if you bump into her in the halls?"
+    m "Absolutely. (Not a chance) But, what if you bump into her in the halls?"
     $ changeLuna(5, 1, 1, 4)
     her "Believe me [genie_name], Luna will probably think I'm some kind of Wrackspurt that's messing with her head."
     hide screen bld1
@@ -1375,6 +1375,7 @@ label potion_scene_7_1: #Hyper sensitive breasts
     her "My breasts... they're on fire."
     m "If they were I think I would know."
     ">You gently roll her nipples between your thumbs and forefingers."
+    her "!!!"
     her "Please [genie_name], you have to stop."
     m "You're not allowed to ask me to stop until the two minutes are up."
     m "And by my count there's still over a minute and a half to go."
@@ -1658,7 +1659,7 @@ label potion_scene_9: #Clone potion
     #Genie obliges
     #Slutty Hermione enjoying it immensely 
     #Genie trying to convince pruddy Hermione to join in
-    #Prude Hermione wants no part in it, although she is slightly arroused
+    #Prude Hermione wants no part in it, although she is slightly aroused
     #Slut Hermione 
     #Genie cums in Hermione
     #Slut Hermione wants to go again 
@@ -1730,3 +1731,166 @@ label potion_scene_10: #Time stop potion
     with Dissolve(.3)
     $ hermione_takes_classes = True
     jump day_main_menu
+
+label potion_scene_11: #Milking potion
+
+    m "[hermione_name]?"
+    call her_main("Yes, [genie_name]?","body_01")
+    m "Today I have a new type of favour for you to perform."
+    call her_main("What do you mean new? What do I have to do?","body_07")
+    m "It's quite simple, today you will be drinking a potion"
+    call her_main("Is that it? How much will I get paid?","body_08")
+    m "20 points."
+    call her_main("Hmmm, what type of potion is it?","body_17")
+    call her_main("Polyjuice? Amortentia? Babbling Beverage? Felix Felicis?","body_24")
+    m "That's a secret [hermione_name]."
+    call her_main("...","body_73")
+    m "Well [hermione_name], what do you say? Will you drink a harmless little potion?"
+    m "For Gyrffindor?"
+    call her_main("Fine...","body_16")
+    ">Hermione takes a whiff of the thick potion."
+    call her_main("This smells disgusting. Like mud and wet dog fur.","body_43")
+    call her_main("Do I really have to drink this?","body_11")
+    m "You do. I suggest holding your nose if the smell is too much."
+    call her_main("For Gryffindor.","body_20")
+    hide screen hermione_blink
+    show screen ch_potion
+    ">Hermione holds her nose and quickly downs the flask."
+    call her_main("","body_42")
+    pause
+    call her_main("","body_22")
+    hide screen ch_potion
+    show screen hermione_blink
+    her "Ughhh. That was horrible."
+    m "Well done."
+    call her_main("Now will you at least tell me what this potion does.","body_21")
+    m "It should be noticeable any second now..."
+    call her_main("Well? Is it supposed to make my breasts bigger? They don't feel any bigger.","body_73")
+    m "No. Hmmmm, it mustn't have worked."
+    call her_main("What was it supposed to do?","body_70")
+    m "There's no point in telling you now. It was going to be a surprise."
+    m "Damn Twins must've conned me."
+    call her_main("Is that all [genie_name]?","body_15")
+    m "Yes, [hermione_name], 20 points to Gryffindor."
+    call her_main("Thank you [genie_name].","body_06")
+
+    if potion_scene_11_progress == 0:
+        $ potion_scene_11_progress = 1
+        jump potion_scene_11_1
+    elif potion_scene_11_progress == 1:
+        $ potion_scene_11_progress = 2
+        jump potion_scene_11_2
+    else:
+        jump potion_scene_11_3
+
+
+
+
+
+
+
+
+
+
+
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    $ hermione_takes_classes = True
+    jump day_main_menu
+
+
+label potion_scene_11_1: #Milking potion part 1
+    m "asd"
+    #Genie offers Hermione a potion
+    #Hermione accepts
+    #Says it tastes like milk
+    #Wait
+    #breasts start to grow 
+    #Hermione upset
+    #Shirt expands
+    #Genie says milking her breasts might help them go down
+    #Upset at the idea of genie milking her
+    #Goes to class
+
+label potion_scene_11_2: #Milking potion part 2
+    m "asd"
+    #Genie offers hermione the potion again
+    #She reluctantly accepts, but says that she expects to be paid double.
+    #takes potion
+    #comments on taste
+    #wait
+    #breasts expand
+    #Genie offers milking
+    #Hermione reluctantly accepts
+    #Pulls out machine
+    #Hermione shocked, expected to be by hand
+    #Tries to refuse
+    #Genie says she has already agreed
+    #Upset, she puts on the milker
+    #Slowly starts to work
+    #Hermione is Cautious at first but gradually starts to enjoy it
+    #starts to enjoy it a little too much
+    #starts moaning, gets close to cumming
+    #milking stops
+    #she is somewhat upset but goes to class wearing expanded clothes
+
+label potion_scene_11_3: #Milking potion part 3
+    m "asd"
+    #Genie offers hermione the potion
+    #Agrees on the condition that she milks him
+    #Genie agrees
+    #option to add extra ingredient
+    #Hermione drinks potion
+    #Comments that the milk tastes sweeter than regular milk
+    #wait
+    #Breasts expand
+    #takes her top off
+
+    #option 1 (futa)
+
+    #option 2 (Permanent expansion)
+
+
+
+label potion_scene_11_1_2: #Milking potion part 1 night time
+    m "asd"
+    #comes back after class
+    #shirt covered in milk stains
+    #furious at genie 
+    #Genie responds saying he should have let him milk her
+    #Hermione is angry again at him for suggesting it
+    #demands more points 
+    #asks when they're going to go away
+    #genie says she has to get the milk out of them
+    #offers to milk her again
+    #refuses and says she can take care of it herself
+    #leaves
+
+label potion_scene_11_2_2: #Milking potion part 2 night time
+    m "asd"
+    #comes back after class
+    #breasts still expanded
+    #genie asks her how her day was
+    #She had a good day
+    #Appreciates the attention from everyone
+    #Milking prevented her from leaking
+    #Says she wouldn't mind taking the potion again some time
+
+
+
+
+
+
+
+
+
+
+
+

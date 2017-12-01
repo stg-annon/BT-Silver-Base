@@ -38,6 +38,9 @@ screen hermione_main:
 
     if hermione_squirt:
         add "01_hp/13_characters/hermione/body/legs/squirting.png" xpos hermione_xpos_offset ypos hermione_ypos
+
+    if hermione_futa and not hermione_wear_skirt:
+        add "01_hp/13_characters/hermione/body/legs/dick.png" xpos hermione_xpos_offset ypos hermione_ypos 
     
     if not hermione_costume and not hermione_action:
         use hermione_uniform
@@ -123,6 +126,9 @@ screen hermione_main_obj:
 
     if hermione_squirt:
         add "01_hp/13_characters/hermione/body/legs/squirting.png" xpos x ypos y
+
+    if hermione_futa and not hermione_wear_skirt:
+        add "01_hp/13_characters/hermione/body/legs/dick.png" xpos x ypos y 
     
     if not hermione_costume and not hermione_action:
         use hermione_uniform
@@ -606,6 +612,14 @@ label h_action(action =  ""):
                 $ h_action_show_arms = True
                 $ h_action_left_arm = "left_1.png"
                 $ h_action_right_arm = "right_1.png"
+
+            if action == "milk_breasts":
+                $ h_action_show_top = False
+                $ h_action_show_bra = False
+                $ h_action_show_arms = True
+                $ override = True
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
+                $ hermione_action_a = "01_hp/13_characters/hermione/clothes/milk/milk_1.png"
     
     if not override:
         call set_h_action_vars

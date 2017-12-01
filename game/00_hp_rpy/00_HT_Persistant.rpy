@@ -257,6 +257,15 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_squirt'): #important!
         $ hermione_squirt = False
 
+    if not hasattr(renpy.store,'hermione_futa'): #important!
+        $ hermione_futa = False
+
+    if not hasattr(renpy.store,'milk_level'): #important!
+        $ milk_level = 0
+
+    if not hasattr(renpy.store,'potion_scene_11_progress'): #important!
+        $ potion_scene_11_progress = 0
+
     #SC34 update 2 stuff, thanks akabur.
     if not hasattr(renpy.store,'sc_cg_base'): #important!
         $ sc_cg_base = "01_hp/28_cg/sc34/1/base_1.png"
