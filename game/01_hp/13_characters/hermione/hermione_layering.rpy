@@ -618,7 +618,7 @@ label h_action(action =  ""):
                 $ h_action_show_bra = False
                 $ h_action_show_arms = True
                 $ override = True
-                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_large.png"
+                $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_xlarge.png"
                 $ hermione_action_a = "01_hp/13_characters/hermione/clothes/milk/milk_1.png"
     
     if not override:

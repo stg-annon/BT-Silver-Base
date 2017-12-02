@@ -1843,6 +1843,8 @@ label potion_scene_11_2: #Milking potion part 2
 
 label potion_scene_11_3: #Milking potion part 3
     m "asd"
+
+    call h_action("milk_breasts")
     #Genie offers hermione the potion
     #Agrees on the condition that she milks him
     #Genie agrees
