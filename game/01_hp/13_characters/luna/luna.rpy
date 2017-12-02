@@ -138,8 +138,8 @@ label luna_favour_menu:
             jump luna_favour_2
         "-Strip for me-" if luna_corruption >= 5:
             jump luna_favour_3
-        #"-Touch me-" if luna_corruption >= 7:
-            if luna_corruption == 7:
+        "-Touch me-" if luna_corruption >= 7:
+            if luna_corruption == 9:
                 jump luna_reversion_event
             jump luna_favour_4
         #"-Suck it-":

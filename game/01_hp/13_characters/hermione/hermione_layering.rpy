@@ -339,6 +339,22 @@ screen hermione_head:
     ### ZORDER
     zorder 8
     
+screen hermione_kneel:
+    tag hermione_kneel
+    
+    $ hermione_head_xpos_offset = hermione_head_xpos+220
+    $ hermione_head_ypos_offset = hermione_head_ypos-150
+
+    add "01_hp/13_characters/hermione/body/kneel/kneel_base.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
+
+    add hermione_body xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset
+    add hermione_tears xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset
+    
+    add "01_hp/13_characters/hermione/body/kneel/kneel_hair.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
+
+    ### ZORDER
+    zorder luna_zorder-1
+    
     
 label set_hermione_robe(robe = ""):
     hide screen hermione_main

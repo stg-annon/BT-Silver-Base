@@ -341,3 +341,13 @@ label her_head(text="",face=h_body,tears=""):
     hide screen hermione_head #h_head2
     return
     
+label her_kneel(text="",face=h_body,tears=""):
+    if face != h_body:
+        $ h_body = face
+        # $ h_body = her_path + str(face) + ".png"
+    $ h_tears = tears
+    call h_update
+    show screen hermione_kneel #h_head2
+    if text != "":
+        $ renpy.say(her,text)
+    return
