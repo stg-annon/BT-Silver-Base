@@ -6,13 +6,13 @@ label luna_reversion_event:
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
         if luna_sub > luna_dom: #Sub intro
             m "[luna_name]..."
-            call luna_main("yes [l_genie_name]...", 6, 1, 2, 3)
+            call luna_main("yes [l_genie_name]...", 6, 3, 4, 2)
             m "Do you know what a handjob is?"
-            call luna_main("What?", 6, 1, 2, 3)
+            call luna_main("What?", 1, 1, 3, 3)
             m "It's where you wrap your hand around-"
-            call luna_main("I know what they are!", 6, 1, 2, 3)
+            call luna_main("I know what they are!", 4, 1, 2, 4)
             m "Fantastic!"
-            call luna_main("...", 6, 1, 2, 3)
+            call luna_main("...", 7, 2, 2, 3)
 
         else: #Dom intro
             m "[luna_name]?"
@@ -31,8 +31,8 @@ label luna_reversion_event:
                 $ luna_choice = 1
                 m "Well seeing as how you're familiar with the concept, how about a practical demonstration."
                 call luna_main("...", 6, 2, 2, 3) 
-                call luna_main("Really? You expect me to {size=+5}touch{/size} that filthy cock of yours?", 8, 2, 1, 2) 
-                call luna_main("It's bad enough that I have to stand here while you touch yourself...", 4, 2, 5, 3)
+                call luna_main("Really? You expect me to {size=+5}touch{/size} that filthy cock of yours?", 4, 1, 5, 3)
+                call luna_main("It's bad enough that I have to stand here while you touch yourself...", 8, 2, 1, 2)
                 call luna_main("But that's where I draw the line [l_genie_name]!", 4, 2, 5, 3)
                 m "Hmmm{p}, well alright then, I'm not going to force you into anything."
                 call luna_main("Thank you...", 4, 2, 5, 3)
@@ -62,17 +62,17 @@ label luna_reversion_event:
                     $ luna_sub += 1
                 $ luna_choice = 2
                 m "Well seeing as how you're familiar with the concept..."
-                call luna_main("...", 6, 2, 2, 3) 
-                call luna_main("Really? You expect me to {size=+5}touch{/size} that filthy cock of yours?", 8, 2, 1, 2) 
-                call luna_main("It's bad enough that I have to stand here while you touch yourself...", 4, 2, 5, 3)
+                call luna_main("...", 7, 1, 3, 3) 
+                call luna_main("Really? You expect me to {size=+5}touch{/size} that filthy cock of yours?", 4, 1, 5, 3) 
+                call luna_main("It's bad enough that I have to stand here while you touch yourself...", 8, 8, 4, 2) 
                 m "There'll be a hefty reward..."
                 call luna_main("...", 6, 3, 4, 3) 
-                call luna_main("......", 6, 3, 4, 3)
-                call luna_main("I expect that my father's magazine will also sell a few more copies...", 6, 3, 4, 3) 
+                call luna_main("......", 6, 2, 4, 1)
+                call luna_main("I expect that my father's magazine will also sell a few more copies...", 7, 1, 4, 2) 
                 m "Of course..."
                 call luna_main("Fine...", 6, 3, 4, 3) 
                 m "Fantastic! Let me just stand up."
-                call luna_main("*Hmmmph* Don't expect that you'll be cumming anywhere near me though!", 6, 3, 4, 3) 
+                call luna_main("*Hmmmph* Don't expect that you'll be cumming anywhere near me though!", 8, 1, 3, 3) 
             "-Ask for a handjob politely-" if luna_sub < luna_dom:
                 $ current_payout = 160
                 if luna_dom <= 8:
@@ -128,86 +128,86 @@ label luna_revert_1: #Reversion event
     ">You open your cloak and pull out your cock."
     m "Well..."
     $ luna_tears = 0
-    call luna_main("...", 6, 3, 4, 3) 
+    call luna_main("...", 5, 3, 1, 2) 
     ">Luna looks hesitantly at your cock."
-    call luna_main("......", 6, 3, 4, 3) 
+    call luna_main("......", 3, 3, 4, 2)  
     ">She slowly takes a hold of it with her right hand."
-    call luna_main("It's so big...", 6, 3, 4, 3) 
-    call luna_main("(I can't even fit my hand around it.)", 6, 3, 4, 3) 
+    call luna_main("It's so big...", 5, 3, 4, 1) 
+    call luna_main("(I can't even fit my hand around it.)", 5, 2, 4, 1) 
     m "Why don't you try grabbing it with both hands [luna_name]..."
-    call luna_main("Alright...", 6, 3, 4, 3) 
+    call luna_main("Alright...", 6, 3, 4, 1) 
     ">Luna slowly wraps both hands around your cock."
     m "Mmmm, that's it. Now start moving your hands back and forth."
-    call luna_main("......", 6, 3, 4, 3) 
+    call luna_main("......", 5, 3, 1, 2) 
     ">Luna starts moving her hands back and forth along the length of your cock."
     m "Yes, that's it..."
-    call luna_main("...", 6, 3, 4, 3) 
+    call luna_main("...", 6, 3, 4, 1) 
     m "Mmmm, yes... not bad [luna_name], have you been practicing?"
-    call luna_main("What? Of course not!", 6, 3, 4, 3) 
+    call luna_main("What? Of course not!", 4, 1, 2, 2) 
     m "well, I expect you to start practicing from now on!"
-    call luna_main("on what?", 6, 3, 4, 3) 
+    call luna_main("on what?", 7, 1, 5, 2) 
     m "My cock of course!"
-    call luna_main("[l_genie_name]!", 6, 3, 4, 3) 
+    call luna_main("[l_genie_name]!", 8, 1, 2, 6) 
     m "I'm kidding [luna_name]."
-    call luna_main("oh...", 6, 3, 4, 3) 
+    call luna_main("oh...", 7, 2, 4, 14) 
     m "But I do expect you to improve..."
-    call luna_main("Doesn't this feel good?...", 6, 3, 4, 3) 
+    call luna_main("Doesn't this feel good?...", 8, 1, 5, 4) 
     m "It's alright..."
-    call luna_main("Well what do I need to do differently?", 6, 3, 4, 3) 
+    call luna_main("Well what do I need to do differently?", 6, 2, 4, 2) 
     menu:
         "\"Take your shirt off\"":
             $ luna_choice = 1
-            call luna_main("My shirt? Really?", 6, 3, 4, 3) 
+            call luna_main("My shirt? Really?", 8, 1, 2, 14) 
             m "It'd make this go a lot faster."
             call luna_main("...", 6, 3, 4, 3) 
-            call luna_main("Fine...", 6, 3, 4, 3) 
-            call luna_main("But I expect to be paid extra!", 6, 3, 4, 3) 
+            call luna_main("Fine...", 8, 1, 4, 2) 
+            call luna_main("But I expect to be paid extra!", 3, 3, 2, 3) 
             $ current_payout += 20
             m "Fair's fair."
             call luna_main("...", 6, 3, 4, 3) 
             ">Luna slowly takes off her top, placing it on the floor."
             $ luna_wear_top = False
-            call luna_main("There...", 6, 3, 4, 3) 
-            call luna_main("Is that enough [l_genie_name]?", 6, 3, 4, 3) 
+            call luna_main("There...", 5, 1, 4, 2) 
+            call luna_main("Is that enough [l_genie_name]?", 7, 2, 2, 3) 
             m "Almost... hands back on the cock [luna_name]..."
-            call luna_main("...", 6, 3, 4, 3) 
+            call luna_main("...", 5, 3, 4, 1) 
             ">Luna slowly wraps her hands back around your cock and starts pumping."
         "\"Faster\"":
             $ luna_choice = 2
-            call luna_main("Like this?", 6, 3, 4, 3) 
+            call luna_main("Like this?", 7, 8, 4, 1) 
             ">Luna starts moving her hands up and down your cock a little faster."
             m "mmmm..."
-            call luna_main("Is this fast enough [l_genie_name]?", 6, 3, 4, 3) 
+            call luna_main("Is this fast enough [l_genie_name]?", 5, 2, 4, 1) 
             m "Almost..."
             call luna_main("...", 6, 3, 4, 3) 
             ">She speeds up the pace."
             m "Ah!"
-            call luna_main("What?", 6, 3, 4, 3) 
+            call luna_main("What?", 4, 1, 1, 2) 
             m "Well if you go that fast the friction's a little painful"
             call luna_main("Really? I'll slow down then...", 6, 3, 4, 3) 
             m "No need for that [luna_name], a little spit should solve the problem."
-            call luna_main("...", 6, 3, 4, 3) 
-            call luna_main("You want me to spit on your cock?", 6, 3, 4, 3) 
+            call luna_main("...", 8, 1, 2, 2) 
+            call luna_main("You want me to spit on your cock?", 9, 2, 4, 3) 
             m "Just a little bit."
-            call luna_main("...", 6, 3, 4, 3) 
-            call luna_main("......", 6, 3, 4, 3)
-            call luna_main("*Ptew*", 6, 3, 4, 3) 
+            call luna_main("...", 8, 1, 4, 3) 
+            call luna_main("......", 7, 2, 4, 3) 
+            call luna_main("*Ptew*", 6, 3, 4, 16) 
             ">Luna spits into her hand before placing it back on your cock."
-    g9 "Mmmm, yes that's it [luna_name]..."
-    call luna_main("...", 6, 3, 4, 3) 
+    m "Mmmm, yes that's it [luna_name]..."
+    call luna_main("...", 5, 1, 1, 1) 
     g9 "Just keep pumping those hands up and down."
-    call luna_main("......", 6, 3, 4, 3) 
+    call luna_main("......", 5, 2, 4, 1) 
     if luna_choice == 1:
         g9 "Why don't you give those milky tits of yours a nice shake?"
-        call luna_main("[l_genie_name]...", 6, 3, 4, 3) 
-        call luna_main("(A little shake won't hurt...)", 6, 3, 4, 3) 
+        call luna_main("[l_genie_name]...", 5, 2, 1, 1) 
+        call luna_main("(A little shake won't hurt...)", 3, 3, 1, 1) 
         ">Luna gently starts shaking her boobs as she jerks you off."
     else:
         g9 "Mmmm, yes... how about a little more spit [luna_name]?"
         g9 "Just to make sure everything is nice and lubricated..."
-        call luna_main("...", 6, 3, 4, 3) 
-        call luna_main("Alright...", 6, 3, 4, 3) 
-        call luna_main("*Ptew*", 6, 3, 4, 3) 
+        call luna_main("...", 5, 2, 1, 1) 
+        call luna_main("Alright...", 5, 3, 1, 1) 
+        call luna_main("*Ptew*", 6, 3, 4, 16)  
         ">Luna spits into her hand again and places it back on your cock."
     ">She starts pumping your cock even faster."
     g9 "Gods yes..."
@@ -216,19 +216,19 @@ label luna_revert_1: #Reversion event
         "-On her face-":
             ">You place your hand on the top of Luna's head and slowly force it down to be level with your crouch."
             ">Her slender hands don't stop sliding up and down your length."
-            call luna_main("[l_genie_name]!!!", 6, 3, 4, 3) 
+            call luna_main("[l_genie_name]!!!", 4, 1, 4, 6)
             g9 "Shhh [luna_name], I'm just giving you a closer look."
-            call luna_main("...", 6, 3, 4, 3) 
+            call luna_main("...", 8, 3, 4, 2)
             $ luna_tears = 2
-            call luna_main("{size=-5}please sir...{/size}", 6, 3, 4, 3) 
+            call luna_main("{size=-5}please sir...{/size}", 5, 2, 4, 3)
             g9 "what [luna_name]?"
             call luna_main("Please don't...", 6, 3, 4, 3) 
             g9 "mmmm"
-            call luna_main("cum on my-", 6, 3, 4, 3) 
-            $ luna_wear_cum = True
-            $ luna_cum = 7
+            call luna_main("cum on my-", 5, 3, 4, 3) 
             hide screen luna
             with d3
+            $ luna_wear_cum = True
+            $ luna_cum = 7
             show screen white 
             pause.1
             hide screen white
@@ -237,26 +237,26 @@ label luna_revert_1: #Reversion event
             pause .1
             hide screen white
             with hpunch
-            call luna_main("!!!!!!", 5, 3, 1, 1)
+            call luna_main("!!!!!!", 4, 1, 4, 8)
             g4 "Argh! by the gods {size=+10}YES!{/size}"
             g4 "{size=+10}TAKE IT ALL!{/size}"
 
         "-On her shirt-":
             ">You place your hand on Luna's shoulder."
             ">Her slender hands don't stop sliding up and down your length."
-            call luna_main("[l_genie_name]...", 6, 3, 4, 3) 
+            call luna_main("[l_genie_name]...", 4, 1, 4, 6)
             g9 "Shhh [luna_name], just keep stroking."
-            call luna_main("...", 6, 3, 4, 3) 
+            call luna_main("...", 8, 3, 4, 2)
             $ luna_tears = 2
-            call luna_main("{size=-5}please sir...{/size}", 6, 3, 4, 3) 
+            call luna_main("{size=-5}please sir...{/size}", 5, 2, 4, 3)
             g9 "what [luna_name]?"
             call luna_main("Please don't...", 6, 3, 4, 3) 
             g9 "mmmm"
-            call luna_main("cum on me-", 6, 3, 4, 3) 
-            $ luna_wear_cum = True
-            $ luna_cum = 3
+            call luna_main("cum on me-", 5, 3, 4, 3) 
             hide screen luna
             with d3
+            $ luna_wear_cum = True
+            $ luna_cum = 3
             show screen white 
             pause.1
             hide screen white
@@ -265,43 +265,53 @@ label luna_revert_1: #Reversion event
             pause .1
             hide screen white
             with hpunch
-            call luna_main("!!!!!!", 5, 3, 1, 1)
+            call luna_main("!!!!!!", 4, 1, 4, 8)
             g4 "Argh! by the gods {size=+10}YES!{/size}"
             g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
     g4 "mmmm....."
     m "That hit the spot..."
-    call luna_main("[l_genie_name]!", 5, 3, 1, 1)
-    call luna_main("How could you!", 5, 3, 1, 1)
+    call luna_main("[l_genie_name]!", 8, 1, 2, 9)
+    call luna_main("How could you!", 7, 1, 3, 6)
     m "Ahh... that was fantastic slut..."
-    call luna_main("[l_genie_name]!!!", 5, 3, 1, 1)
+    call luna_main("[l_genie_name]!!!", 8, 1, 3, 15)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    pause
+    hide screen luna
+    with d3
+    $ luna_flip = -1
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","body_122")
-    call her_main("But I really need a good-.","body_122")
-    call her_main("...","body_122")
-    $ luna_flip = 1
-    call luna_main("...", 5, 3, 1, 1)
+    $ changeLuna(4, 1, 4, 3, 400)
+    call her_main("But I really need a good-.","body_118")
+    call her_main("...","body_48")
+    call luna_main("...", 4, 2, 4, 3)
     m "..."
     pause
-    call her_main("{size=+5}WHAT{/size}","body_122")
-    call her_main("{size=+10}THE{/size}","body_122")
-    call her_main("{size=+15}FRICK!{/size}","body_122")
-    call luna_main("It's not what it looks-", 5, 3, 1, 1)
-    call her_main("{size=+15}petrificus totalus!{/size}","body_122")
+    call her_main("{size=+5}WHAT{/size}","body_79")
+    $ changeLuna(4, 3, 4, 3)
+    call her_main("{size=+10}THE{/size}","body_77")
+    $ changeLuna(4, 2, 4, 3)
+    call her_main("{size=+15}FRICK!{/size}","body_86")
+    call luna_main("It's not what it looks-", 5, 2, 4, 6)
+    show screen white 
+    pause .1
+    hide screen white
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
+    call her_main("{size=+15}petrificus totalus!{/size}","body_86")
     ">Hermione pulls out her wand with surprising speed and paralyzes Luna."
-    call luna_main("!!!", 5, 3, 1, 1)
+    call luna_main("!!!", 4, 1, 4, 6)
     m "(Whoa...)"
-    call her_main("Honestly sir what are you thinking!","body_122")
-    call her_main("If you need you're filthy old cock jerked so badly you should just call me!","body_122")
-    call luna_main("???", 5, 3, 1, 1)
-    call her_main("But to be doing this with Luna Lovegood...","body_122")
-    call her_main("She's not even a {size=+5}\"Gryffindor!{/size}","body_122")
+    call her_main("Honestly sir what are you thinking!","body_81")
+    call her_main("If you need you're filthy old cock jerked so badly you should just call me!","body_69")
+    call luna_main("???", 4, 2, 4, 3)
+    call her_main("But to be doing this with Luna Lovegood...","body_79")
+    call her_main("She's not even a {size=+5}\"Gryffindor\"!{/size}","body_77")
     m "I wasn't pay-"
-    call her_main("Shut up!","body_122")
-    call her_main("How did you even get Luna to agree to this sir?","body_122") 
-    call her_main("I don't even think she knows what house she's in half the time.","body_122")
-    call her_main("I can't imagine her sense of house pride is large enough to warrant this...","body_122")
+    call her_main("Shut up!","body_86")
+    call her_main("How did you even get Luna to agree to this sir?","body_79") 
+    call her_main("I don't even think she knows what house she's in half the time.","body_77")
+    call her_main("I can't imagine her sense of house pride is large enough to warrant this...","body_81")
     m "I can explain this..."
-    call her_main("Really? {p}Go on...","body_122")
+    call her_main("Really? {p}Go on...","body_05")
     m "Well I was sitting here alone in my office."
     m "(What else can I do...)"
     m "When all of a sudden this weird hat on the shelf behind me starts talking!"
@@ -579,7 +589,7 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     ">Luna pulls out her wand with surprising speed and paralyzes Hermione."
     call her_main("!!!","body_122")
     m "(Whoa...)"
@@ -639,7 +649,7 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call luna_main("liquescimus corporis!", 5, 3, 1, 1)
     ">Another flash of light as Hermione becomes un-petrified."
     call her_main("Professor! What is the meaning of this!","body_122")
@@ -658,7 +668,7 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     ">Luna paralyzes Hermione for the second time."
     call her_main("!!!","body_122")
     ">Hermione stares at Luna with a blind rage."
@@ -681,7 +691,7 @@ label luna_revert_2: #Non-Reversion event
             show screen white 
             pause .1
             hide screen white
-            $ renpy.play('sounds/magic1.ogg')   #Not loud.
+            $ renpy.play('sounds/magic4.ogg')   #Not loud.
             call luna_main("liquescimus corporis!", 5, 3, 1, 1)
             call her_main("...","body_122")
             m "That will be all for now miss lovegood."
@@ -929,7 +939,7 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call luna_main("scourgify!", 5, 3, 1, 1)
     ">All the cum vanishes from hermione's body."
     call her_kneel("...","body_122")
@@ -937,14 +947,14 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call luna_main("vestimenta lacus!", 5, 3, 1, 1)
     ">All of Hermione's clothes wriggle like worms back onto her body."
     call her_kneel("...","body_122")
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call luna_main("obliviate!", 5, 3, 1, 1)
     ">Another flash of light as hermione's eye's glaze over."
     call her_kneel("...","body_122")
@@ -952,7 +962,7 @@ label luna_revert_2: #Non-Reversion event
     show screen white 
     pause .1
     hide screen white
-    $ renpy.play('sounds/magic1.ogg')   #Not loud.
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
     call luna_main("liquescimus corporis!", 5, 3, 1, 1)
     ">Hermione collapses to the floor in a limp heap."
     call her_kneel("agh...","body_122")
