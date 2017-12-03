@@ -310,134 +310,139 @@ label luna_revert_1: #Reversion event
     call her_main("How did you even get Luna to agree to this sir?","body_79") 
     call her_main("I don't even think she knows what house she's in half the time.","body_77")
     call her_main("I can't imagine her sense of house pride is large enough to warrant this...","body_81")
+    $ changeLuna(4, 3, 4, 2)
     m "I can explain this..."
     call her_main("Really? {p}Go on...","body_05")
     m "Well I was sitting here alone in my office."
     m "(What else can I do...)"
     m "When all of a sudden this weird hat on the shelf behind me starts talking!"
-    call her_main("...","body_122")
-    call her_main("Are you serious sir?","body_122")
-    m "I knew you wouldn't beli-"
-    call her_main("Of course I believe you! It's the sorting hat!","body_122")
+    call her_main("...","body_17")
+    call her_main("Are you serious sir?","body_61")
+    m "I knew you wouldn't believe-"
+    call her_main("Of course I believe you! It's the sorting hat!","body_77")
     m "(I keep forgetting that this place is magic...)"
     m "Yes, well... the \"sorting\" hat mentioned that it may have made a mistake with the sorting of some students."
     hat "..."
     m "So it offered to use \"Legitimancy\" or something to fix-"
-    call her_main("You performed Legilimency?","body_122")
-    call her_main("On a {size=+5}student{/size}!?","body_122")
+    call her_main("You performed Legilimency?","body_18")
+    call her_main("On a {size=+5}student{/size}!?","body_86")
     m "It's not that bad, surely..."
-    call her_main("Sir, it's bad enough to use Legilimency to read someone's mind...","body_122")
-    call her_main("but to use it to change their mind...","body_122")
-    call her_main("I didn't even think it was possible...","body_122")
+    call her_main("Sir, it's bad enough to use Legilimency to read someone's mind...","body_79")
+    call her_main("but to use it to change their mind...","body_79")
+    call her_main("I didn't even think it was possible...","body_77")
     m "So it's ok then?"
-    call her_main("It's pretty frickin' far from OK...","body_122")
-    call her_main("You have to Change her back!","body_122")
+    call her_main("It's pretty frickin' far from OK...","body_86")
+    call her_main("You have to Change her back!","body_79")
     m "Really? But this has been pretty fun."
-    call her_main("I can't believe I have to tell you how wrong this is sir!","body_122")
-    call her_main("Change her back now or I tell the ministry everything.","body_122")
+    call her_main("I can't even believe I have to tell you how wrong this is sir!","body_77")
+    call her_main("Change her back now or I tell the ministry everything.","body_30")
     m "What about your house-"
-    call her_main("{size=+10}NOW!{/size}","body_122")
+    call her_main("{size=+10}NOW!{/size}","body_86")
     m "Alright, alright, sheesh..."
     m "{size=-5}(these bitches be crazy){/size}"
     m "Let me just get the hat."
     ">You reach around and pull the old leathery hat down from the dusty cupboard."
     hat "Ughh... Gently does it now."
-    call her_main("Put it on her head.","body_122")
+    call her_main("Put it on her head.","body_79")
     hat "Well if it isn't Miss Granger..."
-    call her_main("...","body_122")
+    call her_main("...","body_69")
     ">You place the sorting hat gently on top of Luna's head."
     m "There."
-    call her_main("Well, change her back!","body_122")
+    call her_main("Well, change her back!","body_79")
     hat "Are you sure? She seemed much more entertaining this way..."
-    call her_main("Do. {size=+5}it. {size=+5}NOW!{/size}","body_122")
+    call her_main("Do. {size=+5}it. {size=+5}NOW!{/size}","body_77")
     hat "Alright, alright. Sheesh."
     hat "You don't seem this bossy when you're in here normally..."
-    call luna_main("!!!", 6, 3, 4, 3) 
-    call her_main("{size=+5}Shut up!{/size}","body_122")
+    call luna_main("!!!", 4, 1, 4, 3)
+    call her_main("{size=+5}Shut up!{/size}","body_30")
     hat "One boring old Lovegood, coming right up."
-    call luna_main("???", 6, 3, 4, 3) 
-    call luna_main("......", 6, 3, 4, 3) 
-    call luna_main(".....", 6, 3, 4, 3) 
-    call luna_main("....", 6, 3, 4, 3) 
-    call luna_main("...", 6, 3, 4, 3) 
+    call luna_main("???", 4, 2, 4, 3) 
+    call luna_main("......", 4, 3, 4, 2) 
+    call luna_main(".....", 4, 1, 4, 2) 
+    call luna_main("....", 4, 6, 4, 3) 
+    call luna_main("...", 4, 6, 4, 2) 
     $ luna_reverted = True
-    call luna_main("...", 6, 3, 4, 3) 
+    call luna_main("...", 4, 6, 4, 2) 
     hat "There, she's back to normal... {size=-8}sadly{/size}"
-    call her_main("Are you certain?","body_122")
+    call her_main("Are you certain?","body_81")
     hat "Yes, I'm sure of it. Can I go back up on the shelf now?"
-    call her_main("Fine...","body_122")
-    call her_main("But if you every try anything else like this again...","body_122")
-    call her_main("...","body_122")
+    call her_main("Fine...","body_81")
+    call her_main("But if you every try anything else like this again...","body_69")
+    call her_main("...","body_79")
     ">You decide to place the hat back on the top of the cupboard."
     m "There, all better. now we can forget this whole thing ever happened."
-    call her_main("You're not serious are you?","body_122")
+    call her_main("You're not serious, are you?","body_81")
     m "What? Miss Lovesgood is back to normal..."
-    call her_main("You don't think you're getting away with this do you?","body_122")
+    call her_main("You're not getting away with this sir.","body_79")
     m "I'm not sure what you're referring to?"
-    call her_main("What I'm referring to?","body_122")
-    call her_main("Luna Lovegood is {size+=10}COVERED {/size}in your cum!","body_122")
+    call her_main("What I'm referring to?","body_77")
+    call her_main("Luna Lovegood is {size+=10}COVERED {/size}in your cum!","body_76")
     m "Oh..."
-    call her_main("more importantly, How many points did you pay her?","body_122")
+    call her_main("more importantly, How many points did you pay her?","body_81")
     menu:
         "\"None\"":
-            call her_main("What?","body_122")
-            call her_main("I'm supposed to believe that she came up to your office...","body_122")
-            call her_main("And let you jerk your disgusting old cock in front of her...","body_122")
-            call her_main("For free?","body_122")
+            call her_main("What?","body_66")
+            call her_main("I'm supposed to believe that she came up to your office...","body_79")
+            call her_main("And let you jerk your disgusting old cock in front of her...","body_77")
+            call her_main("For free?","body_79")
             ">You raise your hand to the air."
             m "Scouts honor!"
-            call her_main("...","body_122")
+            call her_main("...","body_66")
             m "Besides, surely you'd notice a jump in \"Ravenclaw's\" points?"
-            call her_main("I suppose you're right...","body_122")
-            call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.","body_122")
-            call her_main("{size-=5}(But for her to do it so willingly...){/size}","body_122")
+            call her_main("I suppose you're right...","body_69")
+            call her_main("If the sorting hat had manipulated her then doing this isn't out of the question.","body_69")
+            call her_main("{size-=5}(But for her to do it so willingly...){/size}","body_12")
         "\"I paid her in gold\"":
-            call her_main("Gold?","body_122")
+            call her_main("Gold?","body_66")
             m "Gold."
-            call her_main("So no points?","body_122")
+            call her_main("So no points?","body_79")
             m "Not one."
-            call her_main("I suppose that's OK then...","body_122")
-            call her_main("{size-=5}(Why don't I ever get paid in gold...){/size}","body_122")
-            call her_main("{size-=5}(well Then I'd be a prostitute...){/size}","body_122")
-            call her_main("{size-=5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_122")
+            call her_main("I suppose that's OK then...","body_69")
+            call her_main("{size-=5}(Why don't I ever get paid in gold...){/size}","body_50")
+            call her_main("{size-=5}(No Hermione! If I did that I'd be a prostitute...){/size}","body_33")
+            call her_main("{size-=5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_106")
 
-    call her_main("Well regardless, she has to be punished.","body_122")
+    call her_main("Well regardless, she has to be punished.","body_79")
     m "Wait, she's being punished?"
-    call her_main("Of course!","body_122")
-    call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.","body_122")
-    call her_main("But her...","body_122")
+    call her_main("Of course!","body_69")
+    call her_main("Seeing as how you didn't give \"Ravenclaw\" any points you haven't done anything wrong.","body_17")
+    call her_main("But her...","body_09")
     ">Hermione glares at the still frozen Luna Lovegood."
-    call her_main("...","body_122")
-    call her_main("She needs a punishment.","body_122")
+    call her_main("...","body_09")
+    call her_main("She needs a punishment.","body_111")
     m "What are you thinking?"
-    call her_main("Hmmm...","body_122")
-    call her_main("Sorting hat!","body_122")
+    call her_main("Hmmm...","body_103")
+    call her_main("Sorting hat!","body_79")
     hat "W-w-what? I'm trying to go to sleep..."
-    call her_main("How long until Luna's back to normal?","body_122")
+    call her_main("How long until Luna's back to normal?","body_101")
     hat "I'm not exactly sure... Probably twenty minutes."
     hat "Until then she'll pretty much be in a fairly lucid and suggestible state."
-    call her_main("Good...","body_122")
-    call her_main("liquescimus corporis!","body_122")
+    call her_main("Good...","body_111")
+    show screen white 
+    pause .1
+    hide screen white
+    $ renpy.play('sounds/magic4.ogg')   #Not loud.
+    call her_main("liquescimus corporis!","body_30")
     ">Another flash of light as Luna becomes un-petrified."
-    call luna_main("Ugh... where am I?", 5, 3, 1, 1)
-    call her_main("Shhh, it's alright.","body_122")
-    call luna_main("Hermione? What's happening?", 5, 3, 1, 1)
-    call her_main("Nothing. Professor Dumbledore and I just needed your help.","body_122")
-    call luna_main("What with?", 5, 3, 1, 1)
-    call luna_main("And what's this stuff on-", 5, 3, 1, 1)
-    call her_main("Shhh, that doesn't matter right now.","body_122")
-    call her_main("Just head back to your common room...","body_122")
+    call luna_main("Ugh... where am I?", 6, 2, 4, 2)
+    call her_main("Shhh, it's alright.","body_58")
+    call luna_main("Hermione? What's happening?", 6, 1, 4, 2)
+    call her_main("Nothing... Professor Dumbledore and I just needed your help.","body_59")
+    call luna_main("What with?", 7, 1, 4, 3)
+    call luna_main("And what's this stuff on-", 8, 2, 4, 2)
+    call her_main("Shhh, that doesn't matter right now.","body_105")
+    call her_main("Just head back to your common room...","body_107")
     m "is that really-"
     ">Hermione glares at you."
-    call her_main("...","body_122")
-    call luna_main("Alright, I'll go back to my common room...", 5, 3, 1, 1)
-    call her_main("That's right...","body_122")
+    call her_main("...","body_81")
+    call luna_main("Alright, I'll go back to my common room...", 6, 1, 4, 3)
+    call her_main("That's right...","body_105")
     ">Luna quietly exits the room."
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_main("Well, now that that's over...","body_122")
-    call her_main("I think I'll be leaving as well...","body_122")
+    call her_main("Well, now that that's over...","body_69")
+    call her_main("I think I'll be leaving as well...","body_61")
     m "Don't you want to stay a little longer?"
-    call her_main("I don't think so sir...","body_122")
+    call her_main("I don't think so sir...","body_66")
 
     ">Hermione turns to leave."
 
