@@ -345,15 +345,24 @@ screen hermione_kneel:
     $ hermione_head_xpos_offset = hermione_head_xpos+220
     $ hermione_head_ypos_offset = hermione_head_ypos-150
 
-    add "01_hp/13_characters/hermione/body/kneel/kneel_base.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
+    if not hermione_kneel_leg:
+        add "01_hp/13_characters/hermione/body/kneel/kneel_base.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
+    else:
+        add "01_hp/13_characters/hermione/body/kneel/kneel_base_2.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
 
     add hermione_body xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset
     add hermione_tears xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset
     
     add "01_hp/13_characters/hermione/body/kneel/kneel_hair.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset #Add the base body
 
+    if uni_sperm:
+        add u_sperm xpos hermione_head_xpos_offset ypos hermione_head_ypos_offset
+        
+    if hermione_kneel_leg:
+        add "01_hp/13_characters/hermione/body/kneel/kneel_leg.png" xpos luna_xpos ypos 0 xzoom -1 #Add Luna's leg
+
     ### ZORDER
-    zorder luna_zorder-1
+    zorder luna_zorder+1
     
     
 label set_hermione_robe(robe = ""):

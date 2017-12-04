@@ -148,6 +148,12 @@ label __init_variables:
 
     if not hasattr(renpy.store,'luna_reverted'): #important!
         $ luna_reverted = False
+
+    if not hasattr(renpy.store,'luna_wear_cum_under'): #important!
+        $ luna_wear_cum_under = False
+
+    if not hasattr(renpy.store,'hermione_kneel_leg'): #important!
+        $ hermione_kneel_leg = False
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!

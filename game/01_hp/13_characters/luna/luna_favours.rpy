@@ -2675,8 +2675,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 
         else:
-            $ luna_chibi("stand_naked")
             call luna_main("...", 7, 1, 1, 1) 
+            $ luna_chibi("stand_naked")
             pause
             g9 "mmmm"
             if luna_dom <= 5:

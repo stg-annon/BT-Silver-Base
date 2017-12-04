@@ -11,6 +11,9 @@ screen luna:
     add luna_eyebrow xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the eyebrow
     add "01_hp/13_characters/luna/body/face/tears/tears_"+str(luna_tears)+".png"  xpos luna_xpos ypos luna_ypos xzoom luna_flip
     add "01_hp/13_characters/luna/body/head/hair_01_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip #add the hair overlayer
+
+    if luna_wear_cum_under: #Luna cum but under clothes
+        add "01_hp/13_characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
     ### CLOTHES 
     if luna_wear_glasses:
         add luna_glasses xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the glasses
@@ -93,8 +96,8 @@ init python: ###Method Definition for new characters
         global luna_skirt 
         global luna_top
         ###HIDE OLD SCREEN
-        renpy.hide_screen("luna")
-        renpy.with_statement(Dissolve(0.5))
+        #renpy.hide_screen("luna")
+        #renpy.with_statement(Dissolve(0.5))
         ###UPDATE UNIFORM
         luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_"+str(luna_skirt_level)+".png" 
         luna_top = "01_hp/13_characters/luna/clothes/uniform/top_"+str(luna_top_level)+".png" 

@@ -37,6 +37,7 @@ label luna_init:
     $ luna_bra = "01_hp/13_characters/luna/clothes/underwear/bra.png" 
     $ luna_cum = 1
     $ luna_wear_cum = False
+    $ luna_wear_cum_under = False
     $ luna_tears = 0
     $ luna_zorder = 5
     $ luna_flip = 1
@@ -44,7 +45,7 @@ label luna_init:
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
     $ luna_chibi_xpos = 500
     $ luna_chibi_ypos = 250
-    $ luna_chibi_zorder = 5
+    $ luna_chibi_zorder = 4
 
     $ luna_wear_glasses = False
     $ luna_wear_bra = True
@@ -52,7 +53,7 @@ label luna_init:
     $ luna_wear_skirt = True
     $ luna_wear_top = True
 
-    $ luna_reverted = True
+    $ luna_reverted = False
 return
 
 label luna_day_flags:
@@ -132,13 +133,13 @@ label luna_door_menu:
 
 label luna_favour_menu:
     menu:
-        "-Talk to me-":
+        "-Talk to me-" if not luna_reverted:
             jump luna_favour_1
-        "-Sit on my lap-" if luna_corruption >= 3:
+        "-Sit on my lap-" if luna_corruption >= 3 and not luna_reverted:
             jump luna_favour_2
-        "-Strip for me-" if luna_corruption >= 5:
+        "-Strip for me-" if luna_corruption >= 5 and not luna_reverted:
             jump luna_favour_3
-        "-Touch me-" if luna_corruption >= 7:
+        "-Touch me-" if luna_corruption == 9:
             if luna_corruption == 9:
                 jump luna_reversion_event
             jump luna_favour_4
@@ -172,6 +173,8 @@ label luna_reset:
     $ luna_tears = 0
     $ luna_wear_skirt = True
     $ luna_wear_top = True
+    $ luna_wear_cum = False 
+    $ luna_wear_cum_under = False 
     return
 
 label luna_no_money:
