@@ -478,6 +478,7 @@ label luna_revert_1: #Reversion event
     $ genie_chibi_xpos = -20
     $ genie_chibi_ypos = 10
     hide screen g_c_u
+    call luna_reset
     jump end_hg_pf
 
     #result of this event:
@@ -769,7 +770,7 @@ label luna_revert_2: #Non-Reversion event
     call her_main("...","body_88")
     call luna_main("You're not going to let her get away with that are you?", 7, 1, 3, 3)
     menu:
-        "-Tell her to let hermione go-":
+        "-Tell her to let hermione go-" if False:
             m "Unfreeze miss granger."
             call luna_main("What? You're taking her side?", 5, 3, 1, 1)
             m "(Ugh... bitches...)"
@@ -1138,6 +1139,7 @@ label luna_revert_2: #Non-Reversion event
     call her_main("ugh...","body_85")
     call her_main("(I could have sworn Luna was here...)","body_29")
     call her_main("(Wait, what was I doing here...)","body_17")
+    call luna_reset
     jump end_hg_pf
     #result of this event:
         #Ability to get Luna to summon hermione for threesome (Planned future event)
