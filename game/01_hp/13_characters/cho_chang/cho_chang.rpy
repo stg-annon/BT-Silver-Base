@@ -1333,7 +1333,7 @@ label cho_favor_2:
                     "-25 points-":
                         m "I could get Hermione to do it for only 25 points."
                         call cho_main("25?", 1, 1, 1, 1)
-                        cho_pleasure "25? What cheap slag."
+                        call cho_main("25? What cheap slag.", 1, 1, 1, 1)
                         call cho_main("I'll do it for 40.", 1, 1, 1, 1)
                         m "Alright, 40. But it better be worth it."
                         jump chofbm

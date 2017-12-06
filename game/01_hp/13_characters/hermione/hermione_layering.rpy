@@ -51,7 +51,7 @@ screen hermione_main:
     
     if hermione_costume:
         for i in hermoine_outfit_GLBL.getTopLayers():
-            add i xpos hermione_xpos_offset ypos hermione_ypos
+            add i xpos hermione_xpos_offset ypos hermione_ypos alpha transparency
     
     if uni_sperm:
         add u_sperm xpos hermione_xpos_offset ypos hermione_ypos
@@ -140,7 +140,7 @@ screen hermione_main_obj:
     
     if hermione_costume:
         for i in hermoine_outfit_GLBL.getTopLayers():
-            add i xpos x ypos y
+            add i xpos x ypos y alpha transparency
     
     if uni_sperm:
         add u_sperm xpos x ypos y
@@ -238,7 +238,7 @@ screen hermione_uniform:
 screen hermione_costume:
     tag hermione_main
     for i in hermoine_outfit_GLBL.getOutfitLayers():
-        add i xpos hermione_xpos_offset ypos hermione_ypos
+        add i xpos hermione_xpos_offset ypos hermione_ypos alpha transparency
     add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
     #add hermione_costume_e xpos hermione_xpos_offset ypos hermione_ypos
     add hermione_costume_action_a xpos hermione_xpos_offset ypos hermione_ypos
@@ -301,13 +301,13 @@ screen hermione_head:
     else:
         for i in hermoine_outfit_GLBL.getOutfitLayers():
             add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
-        add hermione_costume_action_a xpos hermione_head_xpos_offset ypos hermione_head_ypos
+        add hermione_costume_action_a xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency
     
     add hermione_hair_b xpos hermione_head_xpos_offset ypos hermione_head_ypos
     
     if hermione_costume:
         for i in hermoine_outfit_GLBL.getTopLayers():
-            add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
+            add i xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency
 
     # ACCESORIES
     if hermione_badges and hermione_wear_top and not hermione_costume:
@@ -360,6 +360,7 @@ screen hermione_kneel:
         
     if hermione_kneel_leg:
         add "01_hp/13_characters/hermione/body/kneel/kneel_leg.png" xpos luna_xpos ypos 0 xzoom -1 #Add Luna's leg
+        add "01_hp/13_characters/hermione/body/kneel/kneel_arm.png" xpos luna_xpos ypos 0
 
     ### ZORDER
     zorder luna_zorder+1

@@ -806,6 +806,9 @@ label luna_revert_2: #Non-Reversion event
     ">Luna places her hands on Hermione's shoulders and gently forces her paralyzed body to her knees."
     call luna_main("That should be about right...", 5, 8, 2, 1)
     call luna_main("wait...", 5, 8, 1, 2)
+    if luna_wear_top:
+        $ luna_wear_top = False
+        ">Luna quickly removes her top."
     ">Luna places her hand on hermione's chin and gently turns her head upwards."
     call luna_main("Perfect...", 5, 8, 1, 5)
     call her_kneel("...","body_29")
@@ -826,7 +829,8 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("*Sigh* I guess I have to do everything then!", 7, 8, 2, 1)
     show screen blkfade
     hide screen hermione_kneel
-    $ luna_xpos=648
+    $ luna_base = "01_hp/13_characters/luna/body/base/base_02.png" 
+    $ luna_xpos=635
     $ hermione_head_ypos=390
     $ hermione_kneel_leg = True
     ">Luna thrusts her mound forward, griding it under Hermione's nose and against her closed mouth."
@@ -839,6 +843,8 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("mmmm... smells good doesn't it, slut?", 5, 3, 1, 1)
     call luna_main("mmmm... you look like you want more though...", 5, 3, 2, 5)
     $ luna_xpos = 550
+    $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
+    $ hermione_kneel_leg = False
     ">Luna takes a step back from hermione's face."
     call luna_main("Such a pretty face...", 5, 8, 4, 1)
     ">Luna places her thumb into hermione's paralyzed mouth, slowly opening it."
@@ -847,7 +853,9 @@ label luna_revert_2: #Non-Reversion event
     call her_kneel("oahhh hiiieerr!!!","body_40")
     m "(...)"
     call luna_main("Shhh....", 5, 3, 4, 2)
-    $ luna_xpos=648
+    $ luna_xpos=635
+    $ luna_base = "01_hp/13_characters/luna/body/base/base_02.png" 
+    $ hermione_kneel_leg = True
     ">Luna steps forward, placing her cum coated pussy on top of hermione's open mouth."
     call her_kneel("!!!","body_116")
     call luna_main("Shhh.... mmmm, that's not bad...", 5, 8, 1, 5)
@@ -1018,6 +1026,8 @@ label luna_revert_2: #Non-Reversion event
             $ uni_sperm = True
             $ u_sperm = "01_hp/13_hermione_main/auto_15.png"
             $ luna_xpos = 550
+            $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
+            $ hermione_kneel_leg = False
             call her_kneel("!!!","body_136", "blush")
 
             ">Luna takes a step back as you simply erupt over Hermione's petrified expression."
