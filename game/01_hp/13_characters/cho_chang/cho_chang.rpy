@@ -6,7 +6,7 @@ label cho_menu:
             menu:
                 "-Take it Off-":
                     jump cho_favor_1
-                #"-Play with her butt-":
+                "-Play with her butt-" if cho_whoring == 1:
                     jump cho_favor_2
                 #"-Make her suck my cock-":
                     jump cho_favor_3
@@ -1317,231 +1317,223 @@ label cho_favor_2:
             if chof2_first: #have to include new boolean chof2_first=False
                 $ chof2_first = False
                 g9 "Miss Chang, I'd like to touch your ass."
-                call cho_main("My...ass?", 1, 1, 1, 1)
+                call cho_main("My...ass?", 6, 3, 6, 1)
                 m "Yes. I'd like to touch it."
-                call cho_main("I knew you liked my ass.", 1, 1, 1, 1)
-                call cho_main("{size=-4}(i knew he couldn't resist for long.){/size}", 1, 1, 1, 1)
-                call cho_main("if you want to touch my firm ass, it's going to cost you.", 1, 1, 1, 1)
-                call cho_main("I'll do it for 40 house points.", 1, 1, 1, 1)
+                call cho_main("I knew you liked my ass.", 5, 1, 1, 5)
+                call cho_main("{size=-4}(i knew he couldn't resist for long.){/size}", 5, 1, 2, 6)
+                call cho_main("if you want to touch my firm ass, it's going to cost you.", 3, 1, 3, 3)
+                call cho_main("I'll do it for 40 house points.", 1, 1, 2, 7)
                 m "That's a lot just to grab a students ass."
                 ">Cho twists her lithe, muscular body."
                 ">You can see the firm lines of her ass under her uniform."
-                call cho_main("come on, PRofessor. isn't it worth it?", 1, 1, 1, 1)
+                call cho_main("come on, PRofessor... isn't it worth it?", 1, 1, 1, 1)
                 m "That is a nice ass..."
                 m "But I could get Hermione to do it for..."
                 menu:
                     "-25 points-":
                         m "I could get Hermione to do it for only 25 points."
-                        call cho_main("25?", 1, 1, 1, 1)
-                        call cho_main("25? What cheap slag.", 1, 1, 1, 1)
-                        call cho_main("I'll do it for 40.", 1, 1, 1, 1)
+                        call cho_main("25?", 4, 2, 1, 3)
+                        call cho_main("25? What cheap slag.", 5, 2, 2, 4)
+                        call cho_main("I'll do it for 40.", 1, 2, 1, 7)
                         m "Alright, 40. But it better be worth it."
                         jump chofbm
                     "-35 points-":
                         m "I could get Hermione to do it for 35 points."
-                        call cho_main("{siZe=-8}35? really?{/size}", 1, 1, 1, 1)
-                        call cho_main("{siZe=-4}35? Really?....{/size}", 1, 1, 1, 1)
-                        call cho_main("35? Really?........", 1, 1, 1, 1)
-                        call cho_main("{siZe=+2}35? Really?.............{/size}", 1, 1, 1, 1)
-                        call cho_main("{size=+2}If her fat ass is worth 35 then mine must be worth 40.{/size}", 1, 1, 1, 1)
+                        call cho_main("{siZe=-2}35? Really?....{/size}", 6, 2, 5, 9)
+                        call cho_main("{size=+2}If her fat ass is worth 35 then mine must be worth 40.{/size}", 3, 2, 3, 8)
                         m "Fine."
                         jump chofbm
                     "-50 points-":
                         m "I could get Hermione to do it for 50 points."
-                        call cho_main("50!", 1, 1, 1, 1)
-                        call cho_main("50! are you serious! No way.", 1, 1, 1, 1)
-                        call cho_main("but, she doesn't even work out...", 1, 1, 1, 1)
+                        call cho_main("50!", 4, 2, 1, 7)
+                        call cho_main("50! are you serious! No way.", 6, 2, 5, 1)
+                        call cho_main("but, she doesn't even work out...", 6, 3, 6, 9)
                         m "I suppose you're ass will do for now, but I'm only paying you 40 house points."
-                        call cho_main("my ass will do?!", 1, 1, 1, 1)
-                        call cho_main("i'll show you whose ass is better!", 1, 1, 1, 1)
+                        call cho_main("my ass will do?!", 6, 2, 5, 3)
+                        call cho_main("i'll show you whose ass is better!", 6, 2, 5, 1)
                         $ cho_mad +5 #new variable cho_mad
                         jump chofbm
                     "-Nothing-":
                         m "I could get Hermione to do it for absolutely nothing."
-                        call cho_main("Nothing?", 1, 1, 1, 1)
-                        call cho_main("nothing? but why? There's no point.", 1, 1, 1, 1)
-                        call cho_main("what a little slut.", 1, 1, 1, 1)
-                        call cho_main("you'll still haVE to pay me, of course.", 1, 1, 1, 1)
-                        call cho_main("40 house Points.", 1, 1, 1, 1)
+                        call cho_main("Nothing?", 4, 2, 1, 7)
+                        call cho_main("what a little slut.", 6, 1, 6, 5)
+                        call cho_main("you'll still haVE to pay me, of course.", 3, 2, 3, 7)
+                        call cho_main("40 house Points.", 6, 2, 5, 8)
                         m "Very Well, Miss Chang."
                         jump chofbm
             else:
                     m "Miss Chang. I'd like to touch your butt again."
                     if cho_whoring  == 1: #new variable cho_whoring 
-                        call cho_main("Well...", 1, 1, 1, 1)
-                        call cho_main("welL...okay. but it'll cost you 40 house points", 1, 1, 1, 1)
+                        call cho_main("welL...okay. but it'll cost you 40 house points", 2, 3, 2, 7)
                         m "Very well. Now come over here, girl."
                         jump chofbm
                     if cho_whoring  == 2:
-                        call cho_main("alright, professor.", 1, 1, 1, 1)
-                        call cho_main("40 house points, right?", 1, 1, 1, 1)
+                        call cho_main("alright, professor.", 1, 3, 2, 5)
+                        call cho_main("40 house points, right?", 2, 1, 1, 7)
                         m "Of course, Miss Chang."
                         jump chofbm
                     if cho_whoring  == 3:
-                        call cho_main("You do?", 1, 1, 1, 1)
-                        call cho_main("are you going to wank off?", 1, 1, 1, 1)
+                        call cho_main("You do?", 1, 1, 1, 5)
+                        call cho_main("are you going to wank off?", 6, 3, 5, 6)
                         menu:
                             "Of course.":
                                 m "Of course."
-                                call cho_main("i guess I'd better take off my panties.", 1, 1, 1, 1)
+                                call cho_main("i guess I'd better take off my panties.", 6, 3, 6, 6)
                             "No Way.":
                                 m "Of course not. What do you take me for, a pervert?"
-                                call cho_main("Well...", 1, 1, 1, 1)
+                                call cho_main("Well...", 6, 1, 2, 1)
                         jump chofbm
 
 label chofbm:
 #Cho chibi walks over to Dumbledore's desk and turns around.
     if cho_whoring  == 1:
         if not chof2_first:
-            call cho_main("AlrighT...{w=2} you can touch me a little.", 1, 1, 1, 1)
+            call cho_main("AlrighT...{w=2} you can touch me a little.", 1, 3, 2, 5)
             ">Cho is standing just inches in front of you, the firm globes of her ass-"
             stop music
             $ renpy.play('sounds/scratch.mp3')
-            call cho_main("hey! hogwarts, like most respectable institutions for magical learning, is locatED in the UK.", 1, 1, 1, 1)
-            call cho_main("please, stick to the metric system.", 1, 1, 1, 1)
+            call cho_main("hey! hogwarts, like most respectable institutions for magical learning, is locatED in the UK.", 3, 2, 3, 3)
+            call cho_main("please, stick to the metric system.", 3, 2, 3, 4)
             ">Ah, yes...well..."
             #play music fadein 1.5
         else:
-            call cho_main("Alright...", 1, 1, 1, 1)
-            call cho_main("Alright...you can touch me a little.", 1, 1, 1, 1)
+            call cho_main("Alright...", 1, 3, 2, 5)
+            call cho_main("Alright...you can touch me a little.", 1, 3, 2, 6)
         ">Cho is standing mere centimeters in front of you, the firm globes of her ass barely visible under her skirt."
         ">Cho hands remain firmly planted on the edge of your desk."
         ">You feel her quiver as the tips of your fingers touch her warm thighs."
         ">Cho's hands grip the desk firmly as your hands begin to slide up her legs."
         ">You reach her panties, and feeling the contrast between flesh and soft fabric, you guide your palms over both cheeks."
         ">You give both a series of firm squeezes, appreciating the thick, tight muscle underneath."
-        call cho_main("prof-Professor...", 1, 1, 1, 1)
+        call cho_main("prof-Professor...", 3, 3, 3, 5)
         ">You hear Cho stiffle a nervous cry. Her ass squeezes tight under your palms."
-        call cho_main("that's enouGh, right Professor?", 1, 1, 1, 1)
+        call cho_main("that's enouGh, right Professor?", 1, 3, 2, 9)
         menu:
-            "Yes.":
+            "\"Yes\"":
                 m "Yes. I think that did the trick."
-                call cho_main("THank you, Professor.", 1, 1, 1, 1)
+                call cho_main("THank you, Professor.", 1, 1, 2, 1)
                 m "40 points to Ravenclaw."
                 $ ravenclaw += 40
                 jump chof2end
-            "Absolutely not.":
+            "\"Absolutely not!\"":
                 m "Absolutely not. I'm paying you 40 house points for this, girl."
-                call cho_main("But, sir, I-", 1, 1, 1, 1)
+                call cho_main("But, sir, I-", 4, 3, 1, 7)
                 ">You give Cho's ass an aggressive squeeze."
                 m "I'll tell you when it's enough."
-                call cho_main("Fine.", 1, 1, 1, 1)
-                $ cho_mad +2
+                call cho_main("Fine.", 5, 2, 2, 9)
+                $ cho_mad += 2
                 ">Cho's ass feels smooth and warm under your touch. Nevertheless, you begin to savage the poor girls ass."
-                call cho_main("Ow.", 1, 1, 1, 1)
-                call cho_main("ow. ow. That hurts!", 1, 1, 1, 1)
-                call cho_main("Professor!", 1, 1, 1, 1)
-                call cho_main("PRofessor! Professor, please stop.", 1, 1, 1, 1)
+                call cho_main("Ow.", 5, 2, 1, 4)
+                call cho_main("ow. ow. That hurts!", 5, 2, 1, 7)
+                call cho_main("Professor!", 5, 2, 1, 3)
+                call cho_main("PRofessor! Professor, please stop.", 5, 2, 1, 8)
                 menu:
                     "-Do as she asks-":
                         ">You come to your senses and let the poor girl's ass be."
                         ">Cho quickly pulls her skirt back down, rubbing her tender ass."
-                        call cho_main("Thank you, sir.", 1, 1, 1, 1)
-                        call cho_main("Thank You, sir. Can i have my house points now?", 1, 1, 1, 1)
+                        call cho_main("Thank you, sir.", 3, 1, 3, 4)
+                        call cho_main("Thank You, sir. Can i have my house points now?", 2, 3, 1, 7)
                         m "Of course, Miss Chang. You earned them."
                         m "40 points to Ravenclaw."
                         $ ravenclaw += 40
                         jump chof2end
                     "-Keep going-":
                         ">You ignore the foolish girl's cries and continue to abuse her ass, sliding your hands under her panties."
-                        call cho_main("Stop!", 1, 1, 1, 1)
+                        call cho_main("Stop!", 4, 2, 1, 3)
                         ">You grab Cho's ass tightly and squeeze with all your might."
                         ">The star quidditch player falls forward over your desk."
-                        call cho_main("It hurts!", 1, 1, 1, 1)
+                        call cho_main("It hurts!", 4, 3, 1, 3)
                         ">You roll your hands over her ass, then, you guide your thumbs to her tight, little, brown hole."
                         ">You can feel her beginning to fight, as you squeeze tightly and pull her ass open."
-                        call cho_main("Professor Dumbledore!", 1, 1, 1, 1)
+                        call cho_main("Professor Dumbledore!", 3, 2, 3, 3)
                         ">You suddenly release her ass and rain your firm hands across her cheeks."
                         $ renpy.play('sounds/slap_02.mp3')
                         show screen white
                         "{size=+4}SLAP!{/size}"
-                        #Shake the screen - will this work with white screen?
                         hide screen white
-                        call cho_main("...", 1, 1, 1, 1)
+                        with hpunch
+                        call cho_main("...", 3, 3, 3, 4)
                         $ renpy.play('sounds/slap_02.mp3')
                         show screen white
                         "{size=+4}SLAP!{/size}"
-                        #Shake the screen
                         hide screen white 
-                        call cho_main("ockk!", 1, 1, 1, 1)
+                        with hpunch
+                        call cho_main("ockk!", 6, 3, 6, 4)
                         $ renpy.play('sounds/slap_02.mp3')
                         show screen white
                         "{size=+4}SLAP!{/size}"
-                        #Shake the screen
-                        hide screen white 
-                        call cho_main("(it hurts so bad!)", 1, 1, 1, 1)
+                        hide screen white
+                        with hpunch 
+                        call cho_main("(it hurts so bad!)", 4, 3, 1, 1)
                         $ renpy.play('sounds/slap_02.mp3')
                         show screen white
                         "{size=+4}SLAP!{/size}"
-                        #Shake the screen
                         hide screen white 
+                        with hpunch
                         ">Cho's breathing is heavy and her legs shake under your assault."
                         ">A thick, red outline of your hand is bruising on her ass."
-                        call cho_main("Ack!", 1, 1, 1, 1)
-                        call cho_main("Ack!...", 1, 1, 1, 1)
-                        call cho_main("ack!...Professor!", 1, 1, 1, 1)
+                        call cho_main("Ack!", 4, 3, 1, 3)
+                        call cho_main("Ack!...", 4, 2, 1, 5)
+                        call cho_main("ack!...Professor!", 4, 2, 1, 3)
                         ">Cho finally gains enough control to wrench free of your grasp, and quickly moves away."
                         #Cho chibi walks to the middle of the room.
-                        call cho_main("That's too far!", 1, 1, 1, 1)
-                        call cho_main("i never agreed to any of that.", 1, 1, 1, 1)
-                        call cho_main("....", 1, 1, 1, 1)
-                        call cho_main(".......", 1, 1, 1, 1)
-                        call cho_main(".......i want 60 points.", 1, 1, 1, 1)
+                        call cho_main("That's too far!", 3, 2, 3, 3)
+                        call cho_main("i never agreed to any of that.", 5, 2, 1, 3)
+                        call cho_main(".......i want 60 points.", 3, 2, 3, 3)
                         menu:
-                            "She earned 60.":
+                            "-She earned 60-":
                                 m "Very well. That was more than we agreed to. 60 points to Ravenclaw."
-                                call cho_main("Thank you, sir.", 1, 1, 1, 1)
-                                $ cho_mad +5
+                                call cho_main("Thank you, sir.", 5, 1, 2, 4)
+                                $ cho_mad += 5
                                 $ ravenclaw += 60
                                 jump chof2end
-                            "That was a bit much. 80 points.":
+                            "\"That was a bit much. 80 points\"":
                                 m "I think I got a little carried away."
-                                call cho_main("...", 1, 1, 1, 1)
+                                call cho_main("...", 6, 2, 6, 4)
                                 m "80 points to Ravenclaw."
-                                call cho_main("Really?", 1, 1, 1, 1)
-                                call cho_main("well, i suppose it wasn't that bad...", 1, 1, 1, 1)
+                                call cho_main("Really?", 6, 2, 5, 7)
+                                call cho_main("well, i suppose it wasn't that bad...", 6, 3, 6, 9)
                                 $ cho_mad +1
                                 $ ravenclaw += 80
                                 jump chof2end
-                            "How dare she. 0 points!":
+                            "\"(How dare she!) 0 points!\"":
                                 m "How dare you defy your headmaster, Rumbledwarf!"
                                 m "If you don't come back here, you'll get nothing."
-                                cho  "What!"
-                                call cho_main("That's not fair!", 1, 1, 1, 1)
+                                call cho_main("What!", 4, 3, 1, 3)
+                                call cho_main("That's not fair!", 4, 2, 1, 3)
                                 m "Well?"
-                                cho_furious "Fine!"
+                                call cho_main("Fine!", 6, 2, 5, 4)
                                 $ cho_mad +15
                                 #Cho chibi returns to Dumbledore's desk.
                                 ">Cho returns to your desk."
                                 ">You catch a glimpse of her furious tears as she presents you her tender ass."
                                 ">Wasting no time, you quickly tear the poor girls panties down and plant your hands on her firm flesh."
-                                cho  "..."
-                                call cho_main("......", 1, 1, 1, 1)
-                                call cho_main(".........", 1, 1, 1, 1)
+                                call cho_main("...", 4, 2, 2, 5)
+                                pause
                                 ">Pulling her cheeks apart, you begin to rub your thumbs across the tight ring of her virgin asshole."
-                                call cho_main("...", 1, 1, 1, 1)
-                                call cho_main("......", 1, 1, 1, 1)
+                                call cho_main("...", 6, 3, 6, 5)
+                                call cho_main("......", 6, 4, 5, 6)
                                 ">You can feel Cho's body tensing up."
                                 ">You wet a finger with your saliva and begin to prod her asshole."
-                                cho  "........."
+                                call cho_main(".........", 4, 3, 4, 5)
                                 m "Just relax."
                                 ">Finally, you feel it give and your thick digit begins to slowly slide in."
-                                cho  "Profes-...."
+                                call cho_main("Profes-....", 6, 3, 6, 6)
                                 ">Cho fights the urge to cry out. Letting you continue."
                                 ">It's clear she wants her points more than anything."
                                 m "{size=-2}(Don't you worry girl. You'll get your points.){/size}"
                                 ">Once your finger is completely buried you begin to pull it back."
                                 ">The muscle clings to your finger as it slides out."
-                                call cho_main("...", 1, 1, 1, 1)
+                                call cho_main("...", 1, 3, 2, 5)
                                 ">You can feel Cho tensing up again."
                                 ">Your finger slides in and out of her tight asshole."
                                 ">Cho falls forward on the desk. Her breathing is getting faster, more ragged."
-                                call cho_main("...", 1, 1, 1, 1)
+                                call cho_main("...", 3, 3, 3, 5)
                                 ">Suddenly, you feel her muscular ring pulse, squeezing your finger with unbearable tightness."
-                                call cho_main("Professor!", 1, 1, 1, 1)
+                                call cho_main("Professor!", 4, 3, 4, 6)
                                 ">Cho cums hard on your finger, before completely collapsing."
                                 m "40 points to Ravenclaw."
-                                cho_stupid "{size=-2}.....yay.{/size}"
+                                call cho_main("{size=-2}.....yay.{/size}", 6, 3, 5, 5)
                                 $ ravenclaw += 40
                                 jump chof2end
     if cho_whoring  == 2:
