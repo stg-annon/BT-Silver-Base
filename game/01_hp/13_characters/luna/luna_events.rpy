@@ -1156,4 +1156,138 @@ label luna_revert_2: #Non-Reversion event
 
 
 
+label luna_reverted_greeting: #reverted Luna explains the wrackspurt problem
+    $ luna_wear_glasses = True
+    "*Knock* *Knock* *Knock*"
+    lun "Hello?"
+    m "(Sounds like Luna...)"
+    menu:
+        "-Let her in-":
+            m "Come in!"
+            $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+            call luna_main("Hello Professor...", 7, 2, 2, 2) 
+            m "Miss Lovegood."
+            pass
+
+
+        "-Tell her to go away-":
+            m "(SHe's probably here because of that thing with the hat!)"
+            m "Ugh... I'm not here!"
+            lun "..." 
+            ">Your door opens as Luna walks in."
+            $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+            call luna_main("Hello Professor...", 7, 2, 2, 2) 
+            m "Oh, um... Hello miss lovegood."
+
+    call luna_main("...", 7, 2, 2, 2) 
+    call luna_main("......", 7, 2, 2, 2) 
+    ">Luna starts staring looking around your room."
+    call luna_main("There's such a strange aura in here...", 7, 2, 2, 2) 
+    call luna_main("it's like a big hollow tree...", 7, 2, 2, 2)
+    m "..."
+    m "(What?)"
+    m "Can I help you with something?"
+    call luna_main("oh... there was something I came here for wasn't there...", 7, 2, 2, 2) 
+    m "(What's going on here?)"
+    call luna_main("I remember! The wrackspurt infestation!", 7, 2, 2, 2) 
+    menu: 
+        "\"Wrackspurts?... Is that some sort of wizard STD?\"":
+            call luna_main("Hahaha, I guess you could say that, Professor! ", 1, 1, 1, 1)
+            call luna_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.", 1, 1, 1, 1)
+            call luna_main("You can only view them wearing these spectrespecs!", 1, 1, 1, 1)
+            m "I see... (This bitch really is crazy)"
+            m "(Maybe the hat was good for her...)"
+            m "Well Miss Lovegood what can we do about it?"
+            call luna_main("I am not sure professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius -", 1, 1, 1, 1)
+            "*Genie jumps from the table*"
+            g9 "DID YOU JUST CAST A SPELL ON ME?!"
+            call luna_main("Professor?", 1, 1, 1, 1)
+            g9 "EXPLAIN YOURSELF!"
+            call luna_main("I am sorry Professor, I am not sure what-", 1, 1, 1, 1)
+            g9 "XENOFIUS! What does it do?"
+            call luna_main("Xenofius? I’ve not heard of that spell before, Professor.", 1, 1, 1, 1)
+            m "The spell... That you just... Never mind."
+            call luna_main("(A Secret spell?) Professor, your magic is the strongest in Hogwarts and these wrackspurts are really getting to me.", 1, 1, 1, 1)
+            m "I see... do go on."
+        "\"I am afraid I can’t help you Miss Lovegood.\"":
+            call luna_main("Oh please, Professor! You’re the only one powerful enough to help.", 1, 1, 1, 1)
+            "*You can see Luna is rocking her pelvis as though she were grinding the air*"
+            m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
+            call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", 1, 1, 1, 1)
+            "*Luna hands you a Quibbler*"
+            m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
+            "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
+            "*Luna points to her spectrespecs* "
+            call luna_main("I can see them, Professor.", 1, 1, 1, 1)
+            m "I see...(No wonder Hermione called her Loony Lovegood)."
+        "\"What in Agrabah are you wearing?\"":
+            call luna_main("Oh! These are my spectrespecs, professor!", 1, 1, 1, 1)
+            m "(Please don’t be mind-reading, please don’t be mind-reading-)"
+            call luna_main("They help me see the wrackspurts.", 1, 1, 1, 1)
+            m "(Thank the great desert sands!)"
+            call luna_main("And this is my butter beer necklace.", 1, 1, 1, 1)
+            m "Ah yes, very nice..."
+            m "So about these wrecksputs..."
+
+    call luna_main("Yes, Professor, they’re proving to be quite a pain.", 1, 1, 1, 1)
+
+    "*Luna is visibly grinding her pelvis against her thighs.*"
+    m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
+    call luna_main("they're Just like the quibbler says sir, except...", 1, 1, 1, 1)
+    m "Go on."
+    call luna_main("Well it's not my brain they're making fuzzy.", 1, 1, 1, 1)
+    m "Where exactly is fuzzy miss lovegood?"
+    call luna_main("Umm... I'm not sure if I can say...", 1, 1, 1, 1)
+    m "(YES!)"
+    m "Now now miss lovegood, as your headmaster there shouldn't be anything that you can't say to me."
+    call luna_main("Well alright...", 1, 1, 1, 1)
+    call luna_main("the fuziness is in between my legs, sir...", 1, 1, 1, 1)
+    m "Really? That seems quite strange..."
+    call luna_main("It is sir! I've only ever heard of people's brains going fuzzy...", 1, 1, 1, 1)
+    call luna_main("but this...", 1, 1, 1, 1)
+    call luna_main("it's like this unbearable itch I can't scratch...", 1, 1, 1, 1)
+    m "(I know that feeling.)"
+    call luna_main("and I feel like I can't quite remember what I've been up to over the last few days...", 1, 1, 1, 1)
+    m "Oh um... I wouldn't worry about that at all..."
+    m "Let's just focus on this fuzziness of yours."
+    call luna_main("Alright professor...", 1, 1, 1, 1)
+    call luna_main("As I was saying this fuzziness has really been bothering me the last few days...", 1, 1, 1, 1)
+    m "Hmmm, has it been affecting your studies at all?"
+    call luna_main("yes, it has sir...", 1, 1, 1, 1)
+    m "Well we can't have that now can we."
+    call luna_main("no sir...", 1, 1, 1, 1)
+    m "Are you free at the moment?"
+    call luna_main("Umm... I'm about to go to divination class sir...", 1, 1, 1, 1)
+    m "Well in that case we'll address that nasty itch of your later on."
+    m "Come to my office later tonight and we'll see what we can do."
+    call luna_main("Oh thank you sir!", 1, 1, 1, 1)
+    call luna_main("I can't wait!", 1, 1, 1, 1)
+    call luna_main("Do you think you could possibly stop the nargles stealing my shoes as well?", 1, 1, 1, 1)
+    m "(What the hell is a nargle?)"
+    m "One step at a time miss lovegood."
+    call luna_main("yes, you're right... the nargles wouldn't like it if we were multitasking.", 1, 1, 1, 1)
+    m "..."
+    call luna_main("well I best be off... goodbye professor!", 1, 1, 1, 1)
+    "*Luna skips out of the room, squeezing her legs together as she prances*"
+    m "(This is going to be fun!)"
+    $ luna_wear_glasses = True
+    jump luna_away
+
+
+label luna_reverted_greeting_night: #First time masturbation event with reverted Luna
+    "*knock* *knock* *knock*"
+    m "Come in..."
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    call luna_main("Hello Professor...", 7, 2, 2, 2) 
+    m "Miss Lovegood."
+
+
+
+
+
+
+
+
+
+
 

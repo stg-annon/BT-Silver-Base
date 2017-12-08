@@ -1391,7 +1391,7 @@ label chofbm:
             call cho_main("AlrighT...{w=2} you can touch me a little.", 1, 3, 2, 5)
             ">Cho is standing just inches in front of you, the firm globes of her ass-"
             stop music
-            $ renpy.play('sounds/scratch.mp3')
+            $ renpy.play('sounds/scratch.wav')
             call cho_main("hey! hogwarts, like most respectable institutions for magical learning, is locatED in the UK.", 3, 2, 3, 3)
             call cho_main("please, stick to the metric system.", 3, 2, 3, 4)
             ">Ah, yes...well..."
@@ -2131,6 +2131,8 @@ label chofbm:
     label chof2end:
     #cho walking out
     $ renpy.play('sounds/door.mp3')
+    hide screen cho_chang
+    jump day_main_menu
     
     
     
