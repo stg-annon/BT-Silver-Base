@@ -19,10 +19,11 @@ label luna_init:
     $ luna_skirt_level = 1
     $ luna_top_level = 1
     $ luna_corruption = 0
+    $ luna_arousal = 0
 
     $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
     $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
-    $ luna_hair = "01_hp/13_characters/luna/body/head/hair_01.png" 
+    $ luna_hair = 1
     $ luna_xpos = 600
     $ luna_ypos = 0
     $ luna_mouth = "01_hp/13_characters/luna/body/face/mouth/mouth_1.png" 
@@ -52,6 +53,7 @@ label luna_init:
     $ luna_wear_panties = True
     $ luna_wear_skirt = True
     $ luna_wear_top = True
+    $ luna_wear_acc = True
 
     $ luna_reverted = False
 return

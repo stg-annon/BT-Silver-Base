@@ -1512,7 +1512,7 @@ label chofbm:
                                 pause
                                 ">Pulling her cheeks apart, you begin to rub your thumbs across the tight ring of her virgin asshole."
                                 call cho_main("...", 6, 3, 6, 5)
-                                call cho_main("......", 6, 4, 5, 6)
+                                call cho_main("......", 6, 3, 5, 6)
                                 ">You can feel Cho's body tensing up."
                                 ">You wet a finger with your saliva and begin to prod her asshole."
                                 call cho_main(".........", 4, 3, 4, 5)
