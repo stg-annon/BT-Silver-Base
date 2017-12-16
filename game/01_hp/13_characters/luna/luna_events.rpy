@@ -1459,14 +1459,37 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     ">THere's a blur of movement under Luna's skirt."
     call luna_main("ah! I think they're attacking me sir!", 7, 2, 2, 2)
     call luna_main("!!!", 7, 2, 2, 2) #orgasm face
-    #wind down
-    #have Luna talk about what she felt
-    #have her ask if she can come back to repeat
-    #have genie agree
-    #have her thank him again
-    #end
-
-
+    m "Is everything OK?"
+    call luna_main("Ah... yes sir...{image=textheart}", 7, 2, 2, 2)
+    call luna_main("it's just...", 7, 2, 2, 2)
+    m "..."
+    call luna_main("I-I've never...", 7, 2, 2, 2)
+    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("{size=-5}Ah...{/size}", 7, 2, 2, 2)
+    m "so Have the wickspots left you alone?"
+    call luna_main("I think so sir...", 7, 2, 2, 2)
+    ">Luna slowly pulls her hand out from under her skirt."
+    call luna_main("at least That nasty itch seems to have gone away.", 7, 2, 2, 2)
+    m "Fantastic! will that be all then miss lovegood."
+    call luna_main("OH... did you want me to leave already sir?", 7, 2, 2, 2)
+    m "If there's nothing else I can help you with."
+    call luna_main("I suppose not... but what if the feeling comes back sir?", 7, 2, 2, 2)
+    call luna_main("Should I try and get rid of them myself?", 7, 2, 2, 2)
+    m "Certainly not!"
+    call luna_main("Really? Why not?", 7, 2, 2, 2)
+    m "as I said earlier miss lovegood, These techniques are to be kept secret."
+    m "Not to mention dispelling them in your common room could lead to a school wide outbreak."
+    call luna_main("So what can I do if they come back?", 7, 2, 2, 2)
+    m "If you ever feel like you need to relieve yourself of those pesky little things again, my door is always open."
+    call luna_main("Are you sure sir?", 7, 2, 2, 2)
+    call luna_main("I wouldn't want to bother you...", 7, 2, 2, 2)
+    m "You'd be doing no such thing! besides, I've been meaning to test these sort of techniques for a while now."
+    m "If anything you'll be helping me with important research."
+    call luna_main("Really? thank you very much sir.", 7, 2, 2, 2)
+    call luna_main("Hopefully they leave me alone but if not I'll come and visit you again.", 7, 2, 2, 2)
+    m "I look forward to it."
+    call luna_main("...", 7, 2, 2, 2)
+    ">Luna gives you one last smile before leaving your office."
 
 
 

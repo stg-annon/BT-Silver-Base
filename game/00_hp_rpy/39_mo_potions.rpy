@@ -1807,7 +1807,6 @@ label potion_scene_11: #Milking potion
 
 
 label potion_scene_11_1: #Milking potion part 1
-    m "asd"
     #Genie offers Hermione a potion
     #Hermione accepts
     #Says it tastes like milk
@@ -1815,6 +1814,90 @@ label potion_scene_11_1: #Milking potion part 1
     #breasts start to grow 
     #Hermione upset
     #Shirt expands
+    #Genie says milking her breasts might help them go down
+    #Upset at the idea of genie milking her
+    #Goes to class
+    m "[hermione_name], how would you like to try a nice little potion?"
+    call her_main("...","body_06")
+    call her_main("If I had the option I'd prefer not to...","body_06")
+    m "well-"
+    call her_main("but unfortunately, Slytherin winning the house cup this year isn't an option!","body_06")
+    m "So you'll drink the potion then?"
+    call her_main("Yes [genie_name], I'll drink your potion.","body_06")
+    m "Fantastic!"
+    ">You hand her the cloudy potion."
+    ">Hermione cautiously smells the mixture."
+    call her_main("Is this milk?","body_42")
+    call her_main("...","body_06")
+    call her_main("I guess it doesn't matter...","body_22")
+    hide screen hermione_blink
+    show screen ch_potion
+    ">Hermione quickly drinks the potion."
+    hide screen ch_potion
+    show screen hermione_blink
+    call her_main("Ah...","body_42")
+    call her_main("It was milk!","body_42")
+    m "Yes. Apparently it's a special kind of milk."
+    call her_main("Apparently?","body_42")
+    call her_main("Do you even know where this came from?","body_42")
+    m "O-Of course I do."
+    m "I'm the great dingledoor after all!"
+    call her_main("...","body_42")
+    call her_main("If you don't want to say what it is that's fine sir...","body_42")
+    call her_main("But there's no need to insult me.","body_42")
+    m "(what did I say?)"
+    m "Yes, well, you should notice the effects starting to manifest soon enough."
+    call her_main("Hmmm...","body_42")
+    call her_main("And what sort of \'effects\' would that be?","body_42")
+    m "You may notice a some minor swelling in those nice tits of yours."
+    call her_main("...","body_06")
+    call her_main("Is this milk going to make by breasts bigger [genie_name]?","body_06")
+    m "That's one half of it."
+    call her_main("...","body_06")
+    call her_main("And the other half?","body_06")
+    m "Well you might start to notice a little milk coming from your-"
+    call her_main("What???","body_06")
+    call her_main("Professor, Do you mean to say that this potion is going to cause me to lactate?","body_06")
+    m "That's one way to put it."
+    call her_main("...","body_06")
+    call her_main("Well how long is it supposed to last? I do have classes today.","body_06")
+    call her_main("I'm falling behind enough as it is...","body_06")
+    m "Really?"
+    call her_main("Yes... I think it's all this fooling around sir.","body_06")
+    call her_main("I nearly got a \"b\" in biology the other day...","body_06")
+    m "Well speaking of biology..."
+    ">You notice hermione's breasts slight to swell slightly."
+    call her_main("!!!","body_06")
+    call her_main("[genie_name], they're growing rather quickly!","body_06")
+    m "This is all perfectly normal."
+    call her_main("...","body_06")
+    ">Hermione's breasts start to visibly swell again."
+    call her_main("Ugh... it feels like my organs are sliding into my chest...","body_06")
+    call her_main("This isn't going to cause any ongoing issues is it?","body_06")
+    m "O-o-of course not..."
+    call her_main("...","body_06")
+    call her_main("That wasn't very inspiring...","body_06")
+    m "Just focus on the matter at hand."
+    $ hermione_perm_expand = True
+    ">You hear a faint popping as Hermione's shirt fails to hold back her rapidly expanding breasts."
+    call her_main("!!!","body_06")
+    call her_main("[genie_name], this is ridiculous!","body_06")
+    call her_main("I can't be expected to go to class looking like this!","body_06")
+    m "Why not? I don't think they're that much bigger than normal."
+    call her_main("Are you kidding me?","body_06")
+    call her_main("They're {size=+5}humungous!{/size}","body_06")
+    m "Well if you want them to go back to normal..."
+    call her_main("What? Do you have an antidote?","body_06")
+    m "Not an antidote, but I do have a method that would aleviate the swelling."
+    call her_main("...","body_06")
+    call her_main("I'm listening...","body_06")
+    m "Well as far as I can tell, you're breasts are swelling due to an excess supply of milk."
+    call her_main("...","body_06")
+    m "If we somehow got it all out of there, I'm sure they'd revert to normal size in no time at all."
+    call her_main("...","body_06")
+    call her_main("You can't be serious!","body_06")
+    #have her breasts grow more
+    #Hermione upset
     #Genie says milking her breasts might help them go down
     #Upset at the idea of genie milking her
     #Goes to class
