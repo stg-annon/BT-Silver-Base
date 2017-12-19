@@ -24,6 +24,8 @@ label luna_init:
     $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
     $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
     $ luna_hair = 1
+    $ luna_l_arm = 1
+    $ luna_r_arm = 1
     $ luna_xpos = 600
     $ luna_ypos = 0
     $ luna_mouth = "01_hp/13_characters/luna/body/face/mouth/mouth_1.png" 
@@ -167,6 +169,8 @@ label luna_away:
 
 label luna_reset:
     $ luna_flip = 1
+    $ luna_l_arm = 1
+    $ luna_r_arm = 1
     $ luna_xpos = 600
     $ luna_ypos = 0
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 

@@ -1807,16 +1807,6 @@ label potion_scene_11: #Milking potion
 
 
 label potion_scene_11_1: #Milking potion part 1
-    #Genie offers Hermione a potion
-    #Hermione accepts
-    #Says it tastes like milk
-    #Wait
-    #breasts start to grow 
-    #Hermione upset
-    #Shirt expands
-    #Genie says milking her breasts might help them go down
-    #Upset at the idea of genie milking her
-    #Goes to class
     m "[hermione_name], how would you like to try a nice little potion?"
     call her_main("...","body_06")
     call her_main("If I had the option I'd prefer not to...","body_06")
@@ -1888,7 +1878,7 @@ label potion_scene_11_1: #Milking potion part 1
     call her_main("They're {size=+5}humungous!{/size}","body_06")
     m "Well if you want them to go back to normal..."
     call her_main("What? Do you have an antidote?","body_06")
-    m "Not an antidote, but I do have a method that would aleviate the swelling."
+    m "Not an antidote, but I do have a method that would alleviate the swelling."
     call her_main("...","body_06")
     call her_main("I'm listening...","body_06")
     m "Well as far as I can tell, you're breasts are swelling due to an excess supply of milk."
@@ -1896,11 +1886,31 @@ label potion_scene_11_1: #Milking potion part 1
     m "If we somehow got it all out of there, I'm sure they'd revert to normal size in no time at all."
     call her_main("...","body_06")
     call her_main("You can't be serious!","body_06")
-    #have her breasts grow more
-    #Hermione upset
+    call her_main("Are you suggesting that I be milked! Like some sort of animal!","body_06")
+    m "I'm simply offering a way to fix your problem."
+    m "If you don't want my help then I'm afraid you'll have to go to class in your current condition."
+    call her_main("*hmph*","body_06")
+    call her_main("It can't be any worse than being milked.","body_06")
+    call her_main("Honestly, [genie_name], I'm shocked that you would even suggest something so completely ridiculous.","body_06")
+    call her_main("I think I better get going...","body_06")
+    m "Well, 20 points to \"gryffindor\""
+    $ gryffindor =+ 20
+    call her_main("Thank you sir.","body_06")
+    $ milking = -1
     #Genie says milking her breasts might help them go down
     #Upset at the idea of genie milking her
     #Goes to class
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    $ hermione_takes_classes = True
+    jump day_main_menu
 
 label potion_scene_11_2: #Milking potion part 2
     m "asd"
@@ -1945,7 +1955,46 @@ label potion_scene_11_3: #Milking potion part 3
 
 
 label potion_scene_11_1_2: #Milking potion part 1 night time
-    m "asd"
+    ">Hermione bursts through your door."
+    call her_main("Professor! why didn't you warn me about this!","body_06")
+    m "About what? I told you your breasts would expand."
+    call her_main("Look at my shirt!","body_06")
+    m "Hmmm, seems like you had a bit of an accident."
+    call her_main("An accident?","body_06")
+    call her_main("I've been leaking milk all day!","body_06")
+    m "It doesn't seem that bad..."
+    call her_main("This is the third shirt that I've had to wear today!","body_06")
+    call her_main("All the others are soaked through!","body_06")
+    call her_main("Even my vest is soaked...","body_06")
+    m "Well I did offer to relieve your issue..."
+    call her_main("by milking me like some sort of... animal!","body_06")
+    call her_main("I'm upset you'd even think that would be a possibility.","body_06")
+    m "Well it would have solved your \'problem\'."
+    call her_main("...","body_06")
+    call her_main("Well I expect to be paid extra after this humiliation.","body_06")
+    m "how much?"
+    call her_main("30 points.","body_06")
+    m "Fine, 30 points to \"gryffindor\"."
+    $ gryffindor =+ 30 
+    call her_main("*hmph*","body_06")
+    call her_main("So when are these \'things\' going to go away? Or do I have to go get one of the nurses to shrink them?","body_06")
+    m "They should go back to normal Sometime tonight."
+    call her_main("good...","body_06")
+    call her_main("but don't think I've forgiven you!","body_06")
+    ">Hermione storms out in a huff."
+    $ mad =+ 10
+    hide screen bld1
+    hide screen hermione_main
+    hide screen blktone 
+    hide screen ctc
+    with Dissolve(.3)
+    
+    call her_walk(400,610,2)
+    $ renpy.play('sounds/door.mp3') #Sound of a door opening.
+    with Dissolve(.3)
+    $ hermione_sleeping = True
+    m "(bitches... you'd think she'd be happy to get some bigger knockers for free!)"
+    jump day_main_menu
     #comes back after class
     #shirt covered in milk stains
     #furious at genie 

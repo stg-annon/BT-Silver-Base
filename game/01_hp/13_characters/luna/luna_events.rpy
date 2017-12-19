@@ -145,6 +145,11 @@ label luna_revert_1: #Reversion event
     ">Luna looks hesitantly at your cock."
     call luna_main("......", 3, 3, 4, 2)  
     ">She slowly takes a hold of it with her right hand."
+    $ luna_r_arm = 3
+    $ genie_sprite_xpos = 300
+    $ luna_xpos = 390
+    call gen_main("!!!", 4, 2)
+
     call luna_main("It's so big...", 5, 3, 4, 1) 
     call luna_main("(I can't even fit my hand around it.)", 5, 2, 4, 1) 
     m "Why don't you try grabbing it with both hands [luna_name]..."
@@ -209,35 +214,35 @@ label luna_revert_1: #Reversion event
             ">Luna spits into her hand before placing it back on your cock."
     m "Mmmm, yes that's it [luna_name]..."
     call luna_main("...", 5, 1, 1, 1) 
-    g4 "Just keep pumping those hands up and down."
+    g9 "Just keep pumping those hands up and down."
     call luna_main("......", 5, 2, 4, 1) 
     if luna_choice == 1:
-        g4 "Why don't you give those milky tits of yours a nice shake?"
+        g9 "Why don't you give those milky tits of yours a nice shake?"
         call luna_main("[l_genie_name]...", 5, 2, 1, 1) 
         call luna_main("(A little shake won't hurt...)", 3, 3, 1, 1) 
         ">Luna gently starts shaking her boobs as she jerks you off."
     else:
-        g4 "Mmmm, yes... how about a little more spit [luna_name]?"
-        g4 "Just to make sure everything is nice and lubricated..."
+        g9 "Mmmm, yes... how about a little more spit [luna_name]?"
+        g9 "Just to make sure everything is nice and lubricated..."
         call luna_main("...", 5, 2, 1, 1) 
         call luna_main("Alright...", 5, 3, 1, 1) 
         call luna_main("*Ptew*", 6, 3, 4, 16)  
         ">Luna spits into her hand again and places it back on your cock."
     ">She starts pumping your cock even faster."
-    g4 "Gods yes..."
-    g4 "(This is it, where should I cum?)"
+    g9 "Gods yes..."
+    g9 "(This is it, where should I cum?)"
     menu:
         "-On her face-":
             ">You place your hand on the top of Luna's head and slowly force it down to be level with your crouch."
             ">Her slender hands don't stop sliding up and down your length."
             call luna_main("[l_genie_name]!!!", 4, 1, 4, 6)
-            g4 "Shhh [luna_name], I'm just giving you a closer look."
+            g9  "Shhh [luna_name], I'm just giving you a closer look."
             call luna_main("...", 8, 3, 4, 2)
             $ luna_tears = 2
             call luna_main("{size=-5}please sir...{/size}", 5, 2, 4, 3)
-            g4 "what [luna_name]?"
+            g9  "what [luna_name]?"
             call luna_main("Please don't...", 6, 3, 4, 3) 
-            g4 "mmmm"
+            g9  "mmmm"
             call luna_main("cum on my-", 5, 3, 4, 3) 
             hide screen luna
             with d3
@@ -252,20 +257,20 @@ label luna_revert_1: #Reversion event
             hide screen white
             with hpunch
             call luna_main("!!!!!!", 4, 1, 4, 8)
-            g4 "Argh! by the gods {size=+10}YES!{/size}"
-            g4 "{size=+10}TAKE IT ALL!{/size}"
+            g9  "Argh! by the gods {size=+10}YES!{/size}"
+            g9  "{size=+10}TAKE IT ALL!{/size}"
 
         "-On her shirt-":
             ">You place your hand on Luna's shoulder."
             ">Her slender hands don't stop sliding up and down your length."
             call luna_main("[l_genie_name]...", 4, 1, 4, 6)
-            g4 "Shhh [luna_name], just keep stroking."
+            g9  "Shhh [luna_name], just keep stroking."
             call luna_main("...", 8, 3, 4, 2)
             $ luna_tears = 2
             call luna_main("{size=-5}please sir...{/size}", 5, 2, 4, 3)
-            g4 "what [luna_name]?"
+            g9  "what [luna_name]?"
             call luna_main("Please don't...", 6, 3, 4, 3) 
-            g4 "mmmm"
+            g9  "mmmm"
             call luna_main("cum on me-", 5, 3, 4, 3) 
             hide screen luna
             with d3
@@ -280,9 +285,9 @@ label luna_revert_1: #Reversion event
             hide screen white
             with hpunch
             call luna_main("!!!!!!", 4, 1, 4, 8)
-            g4 "Argh! by the gods {size=+10}YES!{/size}"
-            g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
-    g4 "mmmm....."
+            g9  "Argh! by the gods {size=+10}YES!{/size}"
+            g9  "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
+    g9  "mmmm....."
     m "That hit the spot..."
     call luna_main("[l_genie_name]!", 8, 1, 2, 9)
     call luna_main("How could you!", 7, 1, 3, 6)
@@ -296,6 +301,9 @@ label luna_revert_1: #Reversion event
     hide screen luna
     with d3
     $ luna_flip = -1
+    $ luna_r_arm = 2
+    hide screen genie_sprite
+    with d3
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","body_122")
     $ changeLuna(4, 1, 4, 3, 400)
     call her_main("But I really need a good-.","body_118")
@@ -572,9 +580,9 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("Good boy.", 7, 1, 2, 1) 
             call luna_main("*Ptew*", 5, 8, 2, 16) 
             ">Luna spits into her hand before placing it back on your cock."
-    g4 "Mmmm, yes that's it [luna_name]..."
+    g9  "Mmmm, yes that's it [luna_name]..."
     call luna_main("...", 7, 8, 2, 1) 
-    g4 "Just keep pumping those hands up and down."
+    g9  "Just keep pumping those hands up and down."
     call luna_main("......", 8, 1, 3, 1) 
     if luna_choice == 1:
         ">Luna gently starts shaking her boobs as she jerks you off."
@@ -582,8 +590,8 @@ label luna_revert_2: #Non-Reversion event
         call luna_main("*Ptew*", 8, 8, 3, 16) 
         ">Luna spits into her hand again and places it back on your cock."
     ">She then starts pumping your cock even faster."
-    g4 "Gods yes..."
-    g4 "(This is it, where should I cum?)"
+    g9  "Gods yes..."
+    g9  "(This is it, where should I cum?)"
     menu:
         "-On her face-":
             ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
@@ -593,17 +601,17 @@ label luna_revert_2: #Non-Reversion event
 
     call luna_main("[l_genie_name]!!!", 7, 1, 3, 6) 
     call luna_main("You're not trying to cum on me are you?", 8, 1, 3, 3) 
-    g4 "Ah [luna_name], I'm almost there."
+    g9  "Ah [luna_name], I'm almost there."
     call luna_main("Well...", 9, 8, 3, 3) 
     $ luna_wear_skirt = False
     ">Luna quickly pulls down her skirt."
-    g4 "!!!"
+    g9  "!!!"
     call luna_main("You cum...", 8, 1, 3, 3) 
-    g4 "Ah..."
+    g9  "Ah..."
     ">Luna slowly pulls her panties forward, exposing her pussy to the air."
     ">Her right hand is still wrapped around your cock as she pumps it with blinding speed."
     call luna_main("Where I tell you...", 9, 1, 3, 3) 
-    g4 "mmmm"
+    g9  "mmmm"
     call luna_main("Now...", 8, 1, 3, 2) 
     call luna_main("Cum.", 5, 1, 2, 1) 
     hide screen luna
@@ -621,11 +629,11 @@ label luna_revert_2: #Non-Reversion event
     hide screen white
     with hpunch
     ">You start shooting your load directly into Luna's panties, coating her pussy in cum."
-    g4 "Argh! by the gods {size=+10}YES!{/size}"
+    g9  "Argh! by the gods {size=+10}YES!{/size}"
     call luna_main("...", 5, 3, 1, 1)
     call luna_main("(It's so warm...)", 5, 2, 4, 1)
-    g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
-    g4 "mmmm....."
+    g9  "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
+    g9  "mmmm....."
     hide screen g_c_c_u
     $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
     m "That hit the spot..."
@@ -829,7 +837,7 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("*Sigh* I guess I have to do everything then!", 7, 8, 2, 1)
     show screen blkfade
     hide screen hermione_kneel
-    $ luna_base = "01_hp/13_characters/luna/body/base/base_02.png" 
+    $ luna_l_arm = 3
     $ luna_xpos=635
     $ hermione_head_ypos=390
     $ hermione_kneel_leg = True
@@ -843,7 +851,7 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("mmmm... smells good doesn't it, slut?", 5, 3, 1, 1)
     call luna_main("mmmm... you look like you want more though...", 5, 3, 2, 5)
     $ luna_xpos = 550
-    $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
+    $ luna_l_arm = 1
     $ hermione_kneel_leg = False
     ">Luna takes a step back from hermione's face."
     call luna_main("Such a pretty face...", 5, 8, 4, 1)
@@ -854,7 +862,7 @@ label luna_revert_2: #Non-Reversion event
     m "(...)"
     call luna_main("Shhh....", 5, 3, 4, 2)
     $ luna_xpos=635
-    $ luna_base = "01_hp/13_characters/luna/body/base/base_02.png" 
+    $ luna_l_arm = 3
     $ hermione_kneel_leg = True
     ">Luna steps forward, placing her cum coated pussy on top of hermione's open mouth."
     call her_kneel("!!!","body_116")
@@ -870,7 +878,7 @@ label luna_revert_2: #Non-Reversion event
     call luna_main("Don't we?", 9, 8, 3, 5)
     call her_kneel("hheessss...","body_135", "blush")
     ">Hermione barely manages a muffled response."
-    g4 "(This is too much!)"
+    g9  "(This is too much!)"
     menu:
         "-Join in-" if False: #Have sex with hermione while luna grinds on her face. Needs chibi work
             show screen blkfade
@@ -896,9 +904,9 @@ label luna_revert_2: #Non-Reversion event
             m "Mmmm..."
             m "Come on barbie..."
             ">You thrust your full length into hermione's cunt!"
-            g4 "Let's go party!"
+            g9  "Let's go party!"
             call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_122")
-            g4 "Gods yes!"
+            g9  "Gods yes!"
             call luna_main("mmmm {image=textheart}", 5, 3, 1, 1)
             ">You start fucking hermione in earnest."
             call luna_main("so [l_genie_name]...", 5, 3, 1, 1)
@@ -909,7 +917,7 @@ label luna_revert_2: #Non-Reversion event
             call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_122")
             call luna_main("I bet you even came here on your own didn't you...", 5, 3, 1, 1)
             call luna_main("Eager to sell your body for a few lousy points...", 5, 3, 1, 1)
-            g4 "Yes..."
+            g9  "Yes..."
             call her_kneel("...","body_122")
             call luna_main("just so your house can win the cup this year...", 5, 3, 1, 1)
             call luna_main("you know no one cares about the house cup don't you?", 5, 3, 1, 1)
@@ -931,19 +939,19 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("all the times you've sold your body...", 5, 3, 1, 1)
             call luna_main("all the times you've humiliated yourself...", 5, 3, 1, 1)
             call luna_main("even lying here eating me out while your precious dumbledore fucks you...", 5, 3, 1, 1)
-            g4 "Yes..."
+            g9  "Yes..."
             call her_kneel("...","body_122")
-            g4 "Argh!"
+            g9  "Argh!"
             call luna_main("you did it all just because you wanted to...", 5, 3, 1, 1)
             call her_kneel("...","body_122")
-            g4 "{size=+5}yes!!!!{/size}"
+            g9  "{size=+5}yes!!!!{/size}"
             call luna_main("you...", 5, 3, 1, 1)
             call luna_main("filthy...", 5, 3, 1, 1)
             call luna_main("slut...", 5, 3, 1, 1)
             with hpunch
-            g4 "{size=+7}Argh, TAKE THIS!!!{/size}"
+            g9  "{size=+7}Argh, TAKE THIS!!!{/size}"
             call cum_block
-            g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+            g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             $ g_c_u_pic = "sex_cum_in_ani"
             call cum_block
             show screen ctc
@@ -984,7 +992,7 @@ label luna_revert_2: #Non-Reversion event
             ">Luna grinds herself hard against hermione's mouth."
             call her_kneel("...","body_135", "blush")
             call luna_main("She's much more tenable with her mouth full...", 8, 8, 1, 5)
-            g4 "You're telling me!"
+            g9  "You're telling me!"
             call luna_main("so how long has this been going on [l_genie_name]?", 8, 2, 2, 1)
             m "A while now..."
             call luna_main("That doesn't surprise me...", 5, 8, 1, 3)
@@ -999,16 +1007,16 @@ label luna_revert_2: #Non-Reversion event
             call luna_main("all for a few points...", 5, 8, 1, 1)
             m "Yes... keep going..."
             call luna_main("Aww, Do you enjoy it when I degrade her [l_genie_name]?", 7, 2, 4, 1)
-            g4 "Gods yes!"
+            g9  "Gods yes!"
             call luna_main("good...", 5, 2, 2, 1)
             call luna_main("because I expect you to coat this slut in your \"enjoyment\"...", 7, 8, 2, 5)
-            g4 "Don't you worry!"
-            g4 "One fresh load cumming right up!"
+            g9  "Don't you worry!"
+            g9  "One fresh load cumming right up!"
             call luna_main("hear that hermione?", 8, 8, 3, 5)
             call her_kneel("...","body_39", "blush")
             call luna_main("you're headmaster has a nice load of cum ready for you...", 9, 8, 2, 1)
             call luna_main("if you're lucky he might even give \"gryffindor\" some points...", 5, 3, 1, 11)
-            g4 "Yes..."
+            g9  "Yes..."
             call her_kneel("...","body_40", "blush")
             call luna_main("Aww, you look so upset...", 5, 3, 4, 2)
             call luna_main("don't be sad... this is what you were born for...", 5, 8, 4, 5)
@@ -1016,26 +1024,26 @@ label luna_revert_2: #Non-Reversion event
             ">You start beating your meat with renewed determination!"
             call luna_main("you should be proud to take a thick load of cum from one of your teachers...", 7, 3, 4, 1)
             call luna_main("speaking of which... are you ready [l_genie_name]?", 5, 2, 2, 1)
-            g4 "Argh! by the nine gods yes!"
+            g9  "Argh! by the nine gods yes!"
             call luna_main("then cum!", 9, 2, 2, 5)
             $ g_c_c_u_pic = "jerking_off_cum_ani"
             show screen g_c_c_u
-            g4 "{size=+7}Argh, TAKE THIS!!!{/size}"
+            g9  "{size=+7}Argh, TAKE THIS!!!{/size}"
             call luna_main("Cover this slut!", 8, 3, 2, 1)
-            g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+            g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             $ uni_sperm = True
             $ u_sperm = "01_hp/13_hermione_main/auto_15.png"
             $ luna_xpos = 550
-            $ luna_base = "01_hp/13_characters/luna/body/base/base_01.png" 
+            $ luna_l_arm = 1
             $ hermione_kneel_leg = False
             call her_kneel("!!!","body_136", "blush")
 
             ">Luna takes a step back as you simply erupt over Hermione's petrified expression."
-            g4 "take it all, bitch!"
-            g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+            g9  "take it all, bitch!"
+            g9  "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
             call her_kneel("!!!","body_133", "blush")
             ">You feel like your cumming more then you've ever cum in your life"
-            g4 "take it all!"
+            g9  "take it all!"
             hide screen g_c_c_u
             $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
             $ u_sperm = "01_hp/13_hermione_main/auto_16.png"
@@ -1159,6 +1167,8 @@ label luna_revert_2: #Non-Reversion event
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     $ luna_wear_glasses = True
     $ luna_wear_acc = True
+    $ luna_l_arm = 1
+    $ luna_r_arm = 2
     $ l_genie_name = "sir" #reset genie's name with Luna
     $ luna_name = "Miss Lovegood" #reset luna's name with genie
     "*Knock* *Knock* *Knock*"
@@ -1170,7 +1180,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             $ luna_chibi("stand")
             ">Luna stands in front of your desk."
-            call luna_main("Hello Professor...", 7, 2, 2, 2) 
+            call luna_main("Hello Professor...", 1, 1, 4, 1) 
             m "Miss Lovegood."
             pass
 
@@ -1183,98 +1193,102 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             $ renpy.play('sounds/door.mp3') #Sound of a door opening.
             $ luna_chibi("stand")
             ">Luna stands in front of your desk."
-            call luna_main("Hello Professor...", 7, 2, 2, 2) 
+            call luna_main("Hello Professor...", 1, 1, 4, 1) 
             m "Oh, um... Hello miss lovegood."
 
-    call luna_main("...", 7, 2, 2, 2) 
-    call luna_main("......", 7, 2, 2, 2) 
+    $ luna_l_arm = 1
+    $ luna_r_arm = 1
+    call luna_main("...", 1, 2, 4, 1) 
+    call luna_main("......", 1, 3, 4, 2) 
     ">Luna starts staring looking around your room."
-    call luna_main("There's such a strange aura in here...", 7, 2, 2, 2) 
-    call luna_main("it's like a big hollow tree...", 7, 2, 2, 2)
+    call luna_main("There's such a strange aura in here...", 6, 2, 2, 2) 
+    call luna_main("it's like a big hollow tree...", 1, 2, 4, 2)
     m "..."
     m "(What?)"
     m "Can I help you with something?"
-    call luna_main("oh... there was something I came here for wasn't there...", 7, 2, 2, 2) 
+    call luna_main("oh... there was something I came here for wasn't there...", 1, 3, 4, 3) 
     m "(What's going on here?)"
-    call luna_main("I remember! The wrackspurt infestation!", 7, 2, 2, 2) 
+    call luna_main("I remember! The wrackspurt infestation!", 2, 2, 4, 1) 
     menu: 
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
-            call luna_main("Hahaha, I guess you could say that, Professor! ", 1, 1, 1, 1)
-            call luna_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.", 1, 1, 1, 1)
-            call luna_main("You can only view them wearing these spectrespecs!", 1, 1, 1, 1)
+            call luna_main("Hahaha, I guess you could say that, Professor! ", 1, 2, 4, 1)
+            call luna_main("Wrackspurts are invisible creatures which float into a person’s ear and make their brain go all fuzzy.", 1, 1, 4, 2)
+            $ luna_l_arm = 2
+            call luna_main("You can only view them wearing these spectrespecs!", 1, 4, 1, 1)
+            $ luna_l_arm = 1
             m "I see... (This bitch really is crazy)"
             m "(Maybe the hat was good for her...)"
             m "Well Miss Lovegood what can we do about it?"
-            call luna_main("I am not sure professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-", 1, 1, 1, 1)
+            call luna_main("I am not sure professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-", 7, 2, 4, 2)
             "*Genie jumps from the table*"
-            g9 "DID YOU JUST CAST A SPELL ON ME?!"
-            call luna_main("Professor?", 1, 1, 1, 1)
-            g9 "EXPLAIN YOURSELF!"
-            call luna_main("I am sorry Professor, I am not sure what-", 1, 1, 1, 1)
-            g9 "XENOFIUS! What does it do?"
-            call luna_main("Xenofius? I’ve not heard of that spell before, Professor.", 1, 1, 1, 1)
+            g4 "DID YOU JUST CAST A SPELL ON ME?!"
+            call luna_main("Professor?", 4, 1, 4, 3)
+            g4 "EXPLAIN YOURSELF!"
+            call luna_main("I am sorry Professor, I am not sure what-", 4, 2, 4, 2)
+            g4 "XENOFIUS! What does it do?"
+            call luna_main("Xenofius? I’ve not heard of that spell before, Professor.", 7, 1, 4, 2)
             m "The spell... That you just... Never mind."
-            call luna_main("(A Secret spell?) Professor, your magic is the strongest in Hogwarts and these wrackspurts are really getting to me.", 1, 1, 1, 1)
+            call luna_main("(A Secret spell?) Professor, your magic is the strongest in Hogwarts and these wrackspurts are really getting to me.", 8, 2, 4, 3)
             m "I see... do go on."
         "\"I am afraid I can’t help you Miss Lovegood.\"":
-            call luna_main("Oh please, Professor! You’re the only one powerful enough to help.", 1, 1, 1, 1)
+            call luna_main("Oh please, Professor! You’re the only one powerful enough to help.", 4, 1, 4, 15)
             "*You can see Luna is rocking her pelvis as though she were grinding the air*"
             m "Miss Lovegood, I am afraid I don’t know what a wrackspurt is, let alone how to cure it."
-            call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", 1, 1, 1, 1)
+            call luna_main("Well, professor; wrackspurts are detailed on page 6 of The Quibbler! Here!", 1, 1, 4, 2)
             "*Luna hands you a Quibbler*"
             m "*Reading* “Rotfang conspiracy... 300 ways to tie up a ghost... “ Ah! Wrackspurts..."
             "\"Invisible creatures which float into a person’s ears, making his/her brain go fuzzy\""
             "*Luna points to her spectrespecs* "
-            call luna_main("I can see them, Professor.", 1, 1, 1, 1)
+            call luna_main("I can see them, Professor.", 2, 1, 1, 1)
             m "I see...(No wonder Hermione called her Loony Lovegood)."
         "\"What in Agrabah are you wearing?\"":
-            call luna_main("Oh! These are my spectrespecs, professor!", 1, 1, 1, 1)
+            call luna_main("Oh! These are my spectrespecs, professor!", 1, 5, 4, 1)
             m "(Please don’t be mind-reading, please don’t be mind-reading-)"
-            call luna_main("They help me see the wrackspurts.", 1, 1, 1, 1)
+            call luna_main("They help me see the wrackspurts.", 1, 1, 4, 2)
             m "(Thank the great desert sands!)"
-            call luna_main("And this is my butter beer necklace.", 1, 1, 1, 1)
+            call luna_main("And these are my plum earrings.", 1, 4, 4, 1)
             m "Ah yes, very nice..."
             m "So about these wrecksputs..."
 
-    call luna_main("Yes, Professor, they’re proving to be quite a pain.", 1, 1, 1, 1)
+    call luna_main("Yes, Professor, they’re proving to be quite a pain.", 3, 1, 4, 2)
 
     "*Luna is visibly grinding her pelvis against her thighs.*"
     m "(Is she really?... Ohhh). Miss Lovegood, how exactly do these wickspurts make you feel?"
-    call luna_main("they're Just like the quibbler says sir, except...", 1, 1, 1, 1)
+    call luna_main("they're Just like the quibbler says sir, except...", 5, 2, 4, 2)
     m "Go on..."
-    call luna_main("Well it's not my brain they're making fuzzy.", 1, 1, 1, 1)
+    call luna_main("Well it's not my brain they're making fuzzy.", 5, 3, 4, 14)
     m "Where exactly is fuzzy miss lovegood?"
-    call luna_main("Umm... I'm not sure if I can say...", 1, 1, 1, 1)
+    call luna_main("Umm... I'm not sure if I can say...", 5, 2, 4, 2)
     m "(YES!)"
     m "Now now miss lovegood, as your headmaster there shouldn't be anything that you can't say to me."
-    call luna_main("Well alright...", 1, 1, 1, 1)
-    call luna_main("the fuziness is in between my legs, sir...", 1, 1, 1, 1)
+    call luna_main("Well alright...", 5, 3, 4, 1)
+    call luna_main("the fuziness is in between my legs, sir...", 5, 1, 4, 1)
     m "Really? That seems quite strange..."
-    call luna_main("It is sir! I've only ever heard of people's brains going fuzzy...", 1, 1, 1, 1)
-    call luna_main("but this...", 1, 1, 1, 1)
-    call luna_main("it's like this unbearable itch I can't scratch...", 1, 1, 1, 1)
+    call luna_main("It is sir! I've only ever heard of people's brains going fuzzy...", 1, 1, 4, 2)
+    call luna_main("but this...", 7, 1, 4, 2)
+    call luna_main("it's like this unbearable itch I can't scratch...", 5, 3, 4, 3)
     m "(I know that feeling.)"
-    call luna_main("and I feel like I can't quite remember what I've been up to over the last few days...", 1, 1, 1, 1)
+    call luna_main("and I feel like I can't quite remember what I've been up to over the last few days...", 6, 2, 4, 2)
     m "Oh um... I wouldn't worry about that at all..."
     m "Let's just focus on this fuzziness of yours."
-    call luna_main("Alright professor...", 1, 1, 1, 1)
-    call luna_main("As I was saying this fuzziness has really been bothering me the last few days...", 1, 1, 1, 1)
+    call luna_main("Alright professor...", 5, 3, 4, 2)
+    call luna_main("As I was saying this fuzziness has really been bothering me the last few days...", 5, 1, 4, 2)
     m "Hmmm, has it been affecting your studies at all?"
-    call luna_main("yes, it has sir...", 1, 1, 1, 1)
+    call luna_main("yes, it has sir...", 5, 3, 4, 3)
     m "Well we can't have that now can we."
-    call luna_main("no sir...", 1, 1, 1, 1)
+    call luna_main("no sir...", 5, 1, 4, 1)
     m "Are you free at the moment?"
-    call luna_main("Umm... I'm about to go to divination class sir...", 1, 1, 1, 1)
+    call luna_main("Umm... I'm about to go to divination class sir...", 5, 3, 4, 2)
     m "Well in that case we'll address that nasty itch of your later on."
     m "Come to my office later tonight and we'll see what we can do."
-    call luna_main("Oh thank you sir!", 1, 1, 1, 1)
-    call luna_main("I can't wait!", 1, 1, 1, 1)
-    call luna_main("Do you think you could possibly stop the nargles stealing my shoes as well?", 1, 1, 1, 1)
+    call luna_main("Oh thank you sir!", 4, 1, 4, 1)
+    call luna_main("I can't wait!", 5, 1, 4, 1)
+    call luna_main("Do you think you could possibly stop the nargles stealing my shoes as well?", 1, 3, 4, 1)
     m "(What the hell is a nargle?)"
     m "One step at a time miss lovegood."
-    call luna_main("yes, you're right... the nargles wouldn't like it if we were multitasking...", 1, 1, 1, 1)
+    call luna_main("yes, you're right... the nargles wouldn't like it if we were multitasking...", 3, 1, 4, 2)
     m "..."
-    call luna_main("well, I best be off... goodbye professor!", 1, 1, 1, 1)
+    call luna_main("well, I best be off... goodbye professor!", 2, 1, 1, 1)
     "*Luna skips out of the room, squeezing her legs together as she prances*"
     m "(This is going to be fun!)"
     $ luna_wear_glasses = True
@@ -1287,210 +1301,212 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ luna_chibi("stand")
     ">Luna stands in front of your desk."
-    call luna_main("Hello Professor...", 7, 2, 2, 2) 
+    call luna_main("Hello Professor...", 2, 1, 1, 1) 
     m "Miss Lovegood. So, Did the wickerspats leave you alone today?"
-    call luna_main("Not at all! They were worse than ever!", 7, 2, 2, 2)
+    call luna_main("Not at all! They were worse than ever!", 1, 2, 2, 3)
     m "Really?"
-    call luna_main("Really, sir. And I don't think it's just me they're affecting either.", 7, 2, 2, 2)
-    call luna_main("I fear the whole school is becoming overrun!", 7, 2, 2, 2)
+    call luna_main("Really, sir. And I don't think it's just me they're affecting either.", 1, 1, 4, 2)
+    call luna_main("I fear the whole school is becoming overrun!", 4, 1, 4, 2)
     m "What makes you say that?"
-    call luna_main("The way people are acting...", 7, 2, 2, 2)
-    call luna_main("It's very strange don't you think sir?", 7, 2, 2, 2)
+    call luna_main("The way people are acting...", 7, 2, 4, 2)
+    call luna_main("It's very strange don't you think sir?", 7, 1, 4, 3)
     m "(Like this crazy bitch can call anyone strange!)"
     m "Strange how?"
-    call luna_main("it's Their aura's sir!", 7, 2, 2, 2)
+    call luna_main("it's Their aura's sir!", 3, 2, 4, 2)
     m "Oh..."
-    call luna_main("They're far too red!", 7, 2, 2, 2)
+    call luna_main("They're far too red!", 7, 1, 4, 2)
     m "Too red?"
-    call luna_main("I'm afraid so...", 7, 2, 2, 2)
+    call luna_main("I'm afraid so...", 7, 2, 4, 3)
     m "And you think these wackspots are to blame?"
-    call luna_main("I'm not sure...", 7, 2, 2, 2)
-    call luna_main("According to my father's beastiaries they should only ever produce a grey tinge to an aura...", 7, 2, 2, 2)
-    call luna_main("For them to be making auras red...", 7, 2, 2, 2)
-    call luna_main("It could be very dangerous!", 7, 2, 2, 2)
+    call luna_main("I'm not sure...", 5, 3, 4, 2)
+    call luna_main("According to my father's beastiaries they should only ever produce a grey tinge to an aura...", 5, 2, 4, 2)
+    call luna_main("For them to be making auras red...", 4, 3, 4, 3)
+    call luna_main("It could be very dangerous!", 4, 1, 4, 2)
     m "(Pffft... auras)"
     m "yes, I see how that could be dangerous..."
     "*Luna starts grinding her thighs together.*"
-    call luna_main("yes...", 7, 2, 2, 2)
-    call luna_main("So about this itch sir...", 7, 2, 2, 2)
+    call luna_main("yes...", 5, 3, 4, 1)
+    call luna_main("So about this itch sir...", 5, 1, 4, 1)
     m "Yes."
-    call luna_main("Did you say you had some way to get rid of it?", 7, 2, 2, 2)
+    call luna_main("Did you say you had some way to get rid of it?", 5, 1, 4, 2)
     m "I did."
-    call luna_main("well...", 7, 2, 2, 2)
+    call luna_main("well...", 5, 2, 4, 3)
     m "well first thing's first I need something from you miss lovegood."
-    call luna_main("Something from me?", 7, 2, 2, 2)
+    call luna_main("Something from me?", 4, 1, 4, 4)
     m "Yes, I need a promise."
-    call luna_main("oh...", 7, 2, 2, 2)
-    call luna_main("alright then!", 7, 2, 2, 2)
+    call luna_main("oh...", 1, 2, 4, 2)
+    call luna_main("alright then!", 2, 1, 4, 1)
     m "I haven't even told you what it is yet."
-    call luna_main("Don't worry sir, I trust you!", 7, 2, 2, 2)
+    call luna_main("Don't worry sir, I trust you!", 4, 1, 1, 1)
     m "(this might be too easy)"
     m "Yes well, the techniques I'm going to be showing you are proprietary so I'm going to have to make you promise not to talk to anyone about what goes on in this room."
-    call luna_main("techniques...", 7, 2, 2, 2)
-    call luna_main("proprietary...", 7, 2, 2, 2)
-    call luna_main("I'm not sure I understand sir.", 7, 2, 2, 2)
+    call luna_main("techniques...", 5, 2, 4, 2)
+    call luna_main("proprietary...", 5, 3, 4, 3)
+    call luna_main("I'm not sure I understand sir.", 5, 1, 4, 2)
     m "Well if what you're saying is correct, even if I use some powerful magic to remove them."
     m "(I hope she buys this...)"
     m "They'll soon be back, and in greater numbers."
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 5, 2, 4, 2)
     m "(Did she buy it?)"
-    call luna_main("yes, You're right sir.", 7, 2, 2, 2)
+    call luna_main("yes, You're right sir.", 3, 2, 4, 2)
     m "(YES!)"
-    call luna_main("But are there really techniques to dispell them?", 7, 2, 2, 2)
+    call luna_main("But are there really techniques to dispell them?", 5, 1, 5, 2)
     m "There are, but as I said, if you want to learn them you have to promise not to tell anyone what happens here."
-    call luna_main("I suppose that's only fair, This information would be worth more than a snorkack sighting!", 7, 2, 2, 2)
+    call luna_main("I suppose that's only fair, This information would be worth more than a snorkack sighting!", 1, 1, 4, 1)
     m "..."
     m "well it's Not just the techniques miss lovegood."
     m "You must promise to tell anyone anything that happens in this room, no matter what."
-    call luna_main("well...", 7, 2, 2, 2)
+    call luna_main("well...", 5, 2, 4, 2)
     "*You can see Luna is awkwardly rocking her pelvis*"
-    call luna_main("alright then...", 7, 2, 2, 2)
-    call luna_main("I solemnly swear that I will tell no one what happens within these hallowed walls...", 7, 2, 2, 2)
+    call luna_main("alright then...", 5, 1, 4, 1)
+    call luna_main("I solemnly swear that I will tell no one what happens within these hallowed walls...", 3, 2, 1, 2)
     m "Fantastic!"
-    call luna_main("so can you please teach me the techniques sir?", 7, 2, 2, 2)
+    call luna_main("so can you please teach me the techniques sir?", 4, 1, 4, 1)
     ">There's a desperate need in Luna's eyes that excites you to no end."
     m "yes, yes. I think I've made you wait long enough."
-    call luna_main("Thank you so much!", 7, 2, 2, 2)
+    call luna_main("Thank you so much!", 2, 2, 1, 1)
     m "No need to thank me miss lovegood, I'm simply doing what any good teacher should."
     m "Now stand in the middle of the room for me."
     hide screen luna 
     with d3
     $ luna_xpos = 400
-    call luna_main("is Here ok?", 7, 2, 2, 2)
+    call luna_main("is Here ok?", 1, 1, 4, 4)
     m "Perfect."
     m "Now before we begin I have to explain a few things."
     ">Luna stares at you intently."
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 7, 1, 4, 2)
     m "From what I can tell these rockspits seem to have infected an unusual part of your body."
-    call luna_main("Yes... Normally they only make your head fuzzy.", 7, 2, 2, 2)
+    call luna_main("Yes... Normally they only make your head fuzzy.", 7, 2, 4, 4)
     m "And how do you get rid of them in that situation."
-    call luna_main("By thinking positive thoughts sir...", 7, 2, 2, 2)
+    call luna_main("By thinking positive thoughts sir...", 2, 2, 4, 1)
     m "Correct."
     m "So in your current situation you simply need to focus positive thoughts on the affected area."
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("How do I do that?", 7, 2, 2, 2)
+    call luna_main("...", 1, 2, 5, 2)
+    call luna_main("How do I do that?", 1, 1, 4, 3)
     m "We'll try some self applied massage to the area to start with."
-    call luna_main("So I just start massaging the area that they're making fuzzy?", 7, 2, 2, 2)
+    call luna_main("So I just start massaging the area that they're making fuzzy?", 1, 1, 4, 14)
     m "That's correct, I'll be here to give you some guidance."
-    call luna_main("thank you professor!", 7, 2, 2, 2)
+    call luna_main("thank you professor!", 2, 2, 4, 1)
     m "You're quite welcome."
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 1, 3, 4, 1)
+    $ luna_l_arm = 4
     ">Luna quickly puts her hand down her skirt, barely acknowledging the nature of her actions."
-    call luna_main("ah...", 7, 2, 2, 2)
+    call luna_main("ah...", 5, 3, 4, 2)
     m "Is everything alright miss lovegood?"
-    call luna_main("ah... of course!", 7, 2, 2, 2)
-    call luna_main("It's just a little sensitive...", 7, 2, 2, 2)
+    call luna_main("ah... of course!", 4, 1, 4, 1)
+    call luna_main("It's just a little sensitive...", 5, 3, 4, 1)
     m "That's to be expected. Keep going."
-    call luna_main("ah... yes sir...", 7, 2, 2, 2)
+    call luna_main("ah... yes sir...", 2, 2, 4, 2)
     g4 "..."
-    call luna_main("ah... is this how it should be done?", 7, 2, 2, 2)
+    call luna_main("ah... is this how it should be done?", 1, 8, 4, 4)
     m "As long as it's feeling good I'm sure it's working. If you keep this up I'm sure you'll be rid of those nasty wickerspoons."
-    call luna_main("that's nice...", 7, 2, 2, 2)
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("are you sure this will work sir?", 7, 2, 2, 2)
+    call luna_main("that's nice...", 3, 2, 4, 1)
+    call luna_main("...", 1, 8, 4, 2)
+    call luna_main("are you sure this will work sir?", 5, 1, 4, 14)
     m "Of course I am! Do you dare doubt the powerful Dumbelldoor?"
-    call luna_main("certainly not sir...", 7, 2, 2, 2)
-    call luna_main("it's just...", 7, 2, 2, 2)
-    call luna_main("I'm not sure this is going to get rid of them...", 7, 2, 2, 2)
+    call luna_main("certainly not sir...", 4, 2, 4, 2)
+    call luna_main("it's just...", 5, 3, 4, 2)
+    call luna_main("I'm not sure this is going to get rid of them...", 5, 1, 4, 4)
     m "What makes you say that?"
-    call luna_main("do you remember how I said the wickerspats were like a nasty itch sir?", 7, 2, 2, 2)
+    call luna_main("do you remember how I said the wickerspats were like a nasty itch sir?", 5, 2, 4, 2)
     m "I do."
-    call luna_main("well... as nice as this massage feels...", 7, 2, 2, 2)
-    call luna_main("it's not really scratching that itch sir...", 7, 2, 2, 2)
-    call luna_main("... {p}am I doing it wrong sir?", 7, 2, 2, 2)
+    call luna_main("well... as nice as this massage feels...", 5, 3, 4, 2)
+    call luna_main("it's not really scratching that itch sir...", 7, 8, 4, 4)
+    call luna_main("... {p}am I doing it wrong sir?", 5, 1, 4, 2)
     m "Certainly not, but this is worse than I feared."
-    call luna_main("really?", 7, 2, 2, 2)
+    call luna_main("really?", 4, 1, 4, 2)
     m "Yes. It would seem that those nasty critters are trying to hide."
-    call luna_main("Hide? Where?", 7, 2, 2, 2)
+    call luna_main("Hide? Where?", 4, 3, 4, 2)
     m "Well as long as you're still feeling that itch they can't have gone far."
     m "But this means you'll have to chase them down."
-    call luna_main("chase them down?", 7, 2, 2, 2)
+    call luna_main("chase them down?", 5, 1, 5, 2)
     m "Don't worry, I'll be here to guide you through it."
-    call luna_main("thank you sir.", 7, 2, 2, 2)
+    call luna_main("thank you sir.", 1, 2, 4, 1)
     m "First things first, close your eyes."
-    call luna_main("...", 7, 2, 2, 2) #eyes closed
+    call luna_main("...", 2, 2, 4, 2) #eyes closed
     m "Very good. Now I want you to block everything else out."
-    call luna_main("alright sir...", 7, 2, 2, 2)
+    call luna_main("alright sir...", 2, 2, 4, 3)
     m "Imagine it's just you alone in your room."
-    call luna_main("yes...", 7, 2, 2, 2)
+    call luna_main("yes...", 2, 2, 4, 2)
     m "Nice and cosy. Not a care in the world."
-    call luna_main("...", 7, 2, 2, 2) #smile
+    call luna_main("...", 2, 2, 4, 1) #smile
     m "Now, focus on where the itch is strongest."
-    call luna_main("Ah... alright...", 7, 2, 2, 2)
+    call luna_main("Ah... alright...", 2, 2, 1, 1)
     m "I want you to chase that feeling with your fingers."
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 2, 2, 1, 2)
     m "Focus on catching it."
-    call luna_main("I can't...", 7, 2, 2, 2)
-    call luna_main("It's like trying to grab rays of sunlight...", 7, 2, 2, 2)
+    call luna_main("I can't...", 2, 2, 4, 4)
+    call luna_main("It's like trying to grab rays of sunlight...", 2, 2, 4, 2)
     m "Don't try and grab a hold of it, just brush against it with the tips of your fingers."
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 2, 2, 4, 1)
+    call luna_main("...", 2, 2, 1, 1)
     ">Luna starts dancing her fingers along under her skirt."
-    call luna_main("ah...", 7, 2, 2, 2)
-    call luna_main("mmm...", 7, 2, 2, 2)
+    call luna_main("ah...", 2, 2, 4, 1)
+    call luna_main("mmm...", 2, 2, 4, 5)
     ">Luna starts to softly moan under her breath."
-    call luna_main("I'm close sir...", 7, 2, 2, 2)
+    call luna_main("I'm close sir...", 2, 2, 4, 1)
     m "Good. Just keep your eye's closed and focus on your fingers."
-    call luna_main("{image=textheart}", 7, 2, 2, 2)
-    call luna_main("ah... I think it's working sir!", 7, 2, 2, 2)
-    call luna_main("I think I'm about to catch it!", 7, 2, 2, 2)
+    call luna_main("{image=textheart}", 2, 2, 1, 5)
+    call luna_main("ah... I think it's working sir!", 2, 2, 4, 1)
+    call luna_main("I think I'm about to catch it!", 2, 2, 1, 1)
     m "Shhh, don't speak just focus..."
-    call luna_main("ok...", 7, 2, 2, 2)
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("ah...", 7, 2, 2, 2)
-    call luna_main("{image=textheart}", 7, 2, 2, 2)
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("ah... sir...", 7, 2, 2, 2)
-    call luna_main("I think...", 7, 2, 2, 2)
-    call luna_main("ah...", 7, 2, 2, 2)
-    call luna_main("I think I've almost got it...", 7, 2, 2, 2)
+    call luna_main("ok...", 2, 2, 4, 2)
+    call luna_main("...", 2, 2, 4, 1)
+    call luna_main("ah...", 2, 2, 4, 5)
+    call luna_main("{image=textheart}", 2, 2, 4, 1)
+    call luna_main("...", 2, 2, 4, 3)
+    call luna_main("ah... sir...", 5, 1, 4, 2)
+    call luna_main("I think...", 5, 3, 4, 5)
+    call luna_main("ah...", 5, 2, 4, 5)
+    call luna_main("I think I've almost got it...", 2, 2, 4, 5)
     m "Shhh..."
-    call luna_main("ah...", 7, 2, 2, 2)
+    call luna_main("ah...", 2, 1, 2, 5)
     ">Luna's fingers start furiously dancing underneath her skirt."
-    call luna_main("mmmm...", 7, 2, 2, 2)
-    call luna_main("ah...", 7, 2, 2, 2)
-    call luna_main("a-ah...", 7, 2, 2, 2)
-    call luna_main("yes...", 7, 2, 2, 2)
+    call luna_main("mmmm...", 2, 1, 2, 1)
+    call luna_main("ah...", 2, 1, 2, 5)
+    call luna_main("a-ah...", 5, 3, 4, 1)
+    call luna_main("yes...", 5, 8, 2, 1)
     m "(I think this is it.)"
-    call luna_main("Ah... ah...{image=textheart}", 7, 2, 2, 2)
-    call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", 7, 2, 2, 2)
-    call luna_main("{size=+8}ah... ah...{/size}", 7, 2, 2, 2)
-    call luna_main("!!!", 7, 2, 2, 2) #orgasm face
+    call luna_main("Ah... ah...{image=textheart}", 5, 2, 4, 5)
+    call luna_main("{size=+4}mmm... yes...{image=textheart}{/size}", 5, 3, 4, 1)
+    call luna_main("{size=+8}ah... ah...{/size}", 5, 8, 4, 5)
+    call luna_main("!!!", 4, 9, 1, 5) #orgasm face
     ">THere's a blur of movement under Luna's skirt."
-    call luna_main("ah! I think they're attacking me sir!", 7, 2, 2, 2)
-    call luna_main("!!!", 7, 2, 2, 2) #orgasm face
+    call luna_main("ah! I think they're attacking me sir!", 4, 8, 4, 1)
+    call luna_main("!!!", 1, 9, 4, 1) #orgasm face
     m "Is everything OK?"
-    call luna_main("Ah... yes sir...{image=textheart}", 7, 2, 2, 2)
-    call luna_main("it's just...", 7, 2, 2, 2)
+    call luna_main("Ah... yes sir...{image=textheart}", 5, 2, 4, 2)
+    call luna_main("it's just...", 5, 2, 4, 1)
     m "..."
-    call luna_main("I-I've never...", 7, 2, 2, 2)
-    call luna_main("...", 7, 2, 2, 2)
-    call luna_main("{size=-5}Ah...{/size}", 7, 2, 2, 2)
+    call luna_main("I-I've never...", 5, 2, 4, 2)
+    call luna_main("...", 5, 3, 4, 1)
+    call luna_main("{size=-5}Ah...{/size}", 5, 2, 4, 1)
     m "so Have the wickspots left you alone?"
-    call luna_main("I think so sir...", 7, 2, 2, 2)
+    call luna_main("I think so sir...", 5, 1, 4, 2)
+    $ luna_l_arm = 1
     ">Luna slowly pulls her hand out from under her skirt."
-    call luna_main("at least That nasty itch seems to have gone away.", 7, 2, 2, 2)
+    call luna_main("at least That nasty itch seems to have gone away.", 1, 1, 4, 1)
     m "Fantastic! will that be all then miss lovegood."
-    call luna_main("OH... did you want me to leave already sir?", 7, 2, 2, 2)
+    call luna_main("OH... did you want me to leave already sir?", 5, 3, 4, 2)
     m "If there's nothing else I can help you with."
-    call luna_main("I suppose not... but what if the feeling comes back sir?", 7, 2, 2, 2)
-    call luna_main("Should I try and get rid of them myself?", 7, 2, 2, 2)
+    call luna_main("I suppose not... but what if the feeling comes back sir?", 5, 2, 4, 3)
+    call luna_main("Should I try and get rid of them myself?", 5, 3, 4, 2)
     m "Certainly not!"
-    call luna_main("Really? Why not?", 7, 2, 2, 2)
+    call luna_main("Really? Why not?", 4, 1, 4, 2)
     m "as I said earlier miss lovegood, These techniques are to be kept secret."
     m "Not to mention dispelling them in your common room could lead to a school wide outbreak."
-    call luna_main("So what can I do if they come back?", 7, 2, 2, 2)
+    call luna_main("So what can I do if they come back?", 1, 1, 4, 2)
     m "If you ever feel like you need to relieve yourself of those pesky little things again, my door is always open."
-    call luna_main("Are you sure sir?", 7, 2, 2, 2)
-    call luna_main("I wouldn't want to bother you...", 7, 2, 2, 2)
+    call luna_main("Are you sure sir?", 5, 1, 4, 2)
+    call luna_main("I wouldn't want to bother you...", 5, 2, 4, 2)
     m "You'd be doing no such thing! besides, I've been meaning to test these sort of techniques for a while now."
     m "If anything you'll be helping me with important research."
-    call luna_main("Really? thank you very much sir.", 7, 2, 2, 2)
-    call luna_main("Hopefully they leave me alone but if not I'll come and visit you again.", 7, 2, 2, 2)
+    call luna_main("Really? thank you very much sir.", 4, 1, 1, 1)
+    call luna_main("Hopefully they leave me alone but if not I'll come and visit you again.", 1, 2, 4, 1)
     m "I look forward to it."
-    call luna_main("...", 7, 2, 2, 2)
+    call luna_main("...", 5, 1, 4, 1)
     ">Luna gives you one last smile before leaving your office."
-
+    jump luna_away
 
 
 

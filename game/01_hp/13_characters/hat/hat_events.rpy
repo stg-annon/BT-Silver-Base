@@ -88,6 +88,7 @@ label hat_intro_2: #Bringing in Hermione
     jump end_hg_pf
 
 label hat_intro_3: #Luna change scene 
+    $ luna_hair = 2
     $ renpy.play('sounds/knocking.mp3')
     "*knock* *knock* *knock*"
     lun "It's Luna Lovegood sir..."
@@ -143,7 +144,8 @@ label hat_intro_3: #Luna change scene
     m "Thank you very much Miss Lovegood. I think you better be off to bed now "
     call luna_main("yes... bed...", 1, 6, 1, 2) #hypno eyes
     call luna_away
-
+    $ luna_wear_acc = False
+    $ luna_hair = 1
     ">You place the hat back on the cupboard"
     m "So what did you do to her personality?"
     hat "Now now... no sense ruining the fun. You'll just have to wait..."

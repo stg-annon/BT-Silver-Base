@@ -1,35 +1,10 @@
-#Scene overview and planning for young Hermione character:
+#Scene overview and planning for Astoria:
 
-#Intro scene 1:
-#	Have the time turner item purchasable from the Weasley's shop/discover it in cupboard/have it given to Genie by Snape
-#	After it is purchased/found have a one-off event where Hermione complains about these meetings taking too long and cutting into class time
-#	Says that if her grades keep suffering that she may have to stop the meetings
-#	Genie says that he recently acquired a magical artifact that will be able to help her do both
-#	Shows her the time turner
-#	She is excited, saying how she always wished she could have one to be able to take multiple subjects at once
-#	Upon using it spins too fast and explodes in a flash of magic
-#	The result is two Hermiones, one the same and a younger one
-#	They share the same memories and conciousness however the younger is slightly more brattish due to her reversed age
-#	Hermione complains about being split in two telling Genie to fix her
-#	Genie says that he's unsure how to 
-#	Genie tells her that isn't this what she wanted? One of them will always be able to be in class
-#	She begrudgingly accepts and they both leave
-
-#Intro scene 2:
-#	The Hermiones come to Genie later that day asking him to fix the situation with the time-clone again
-#	She complains about too many people asking who this new Hermione look-alike is
-#	So far she has just avoided the question, but she can't do it much longer
-#	Genie says why can't she just say she's her younger sister
-#	Hermione says everyone knows she's an only child 
-#	Genie says what about a cousin that moved here from another country
-#	Hermione says she supposes it'll work
-#	Genie says great, he'll have her enrolled by tomorrow
-#	Hermione says to make sure she's enrolled in the same year as her so she can attend the same classes
-#	Genie asks what people will say about how old she looks
-#	Young Hermione says she'll just say that she's older than she looks
-
-
-#Young Hermione is now unlocked
+#Intro
+#	Have her sent to Dumbledore's office by Mcgonagle for possible using an unforgivable curse (imperius)
+#   Have Genie make her talk about the spells and their punishment
+#   Genie realises he can use this to blackmail her into favours (To intense?)
+#   Have favour trading start up with Genie paying Astoria in house points
 
 #Private Favours:
 
@@ -164,7 +139,7 @@
 #		She complains the whole time
 #		She cries when he penetrates her
 #		Option to finish inside her
-#			Do it, she cries and runs off compaining about how she hates yo
+#			Do it, she cries and runs off compaining about how she hates you
 #			Don't - she collapses on your desk, thanking daddy
 #	Lvl 2:
 #		Only slightly reluctant
@@ -185,5 +160,8 @@
 #		Hermione reacts based off of her whoring level
 #			Low - Shocked and outraged. Extremely mad, threatens genie
 #			Medium - Shocked, but not surprised/mad. Leaves soon after. slightly curious
-#			High - Not shocked. Waits until the end before leaving. Mocks/shames young-hermione
-#			Max - Shames young hermione, calling her a slut, etc. Visibly aroused, slightly jealous
+#			High - Not shocked. Waits until the end before leaving. Mocks/shames Astoria
+#			Max - Shames Astoria, calling her a syltherin slut, etc. Visibly aroused, slightly jealous
+
+
+

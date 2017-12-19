@@ -1,6 +1,8 @@
 screen luna:
     ### BASE IMAGE
     add luna_base xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the base body
+    add "01_hp/13_characters/luna/body/arms/left_"+str(luna_l_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the left arm
+    add "01_hp/13_characters/luna/body/arms/right_"+str(luna_r_arm)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right arm
     add luna_cheeks xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add her blush to base
     add "01_hp/13_characters/luna/body/head/hair_"+str(luna_hair)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the hair base
     ### EMOTIONS
@@ -27,6 +29,10 @@ screen luna:
         add luna_top xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
     if luna_wear_acc:
         add luna_acc xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the accessory (jewellery)
+
+    ### ARM OVERLAYS
+    add "01_hp/13_characters/luna/body/arms/left_"+str(luna_l_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the left arm
+    add "01_hp/13_characters/luna/body/arms/right_"+str(luna_r_arm)+"_2.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right arm
 
     if luna_wear_cum:
         add "01_hp/13_characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top

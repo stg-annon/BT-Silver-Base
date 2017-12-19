@@ -23,7 +23,7 @@ label init_genie_layering:
     $ genie_sprite_xpos = 200
     $ genie_sprite_ypos = 0
     $ genie_sprite_flip = 1
-    $ genie_zorder = 5
+    $ genie_zorder = 4
 
     return
 
