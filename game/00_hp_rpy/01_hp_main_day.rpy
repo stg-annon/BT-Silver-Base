@@ -293,6 +293,10 @@ if whoring >= 18 and have_no_dress_hap and not sorry_for_hesterics and days_with
 if whoring >= 21 and not hat_known:
     call hat_intro
 
+#Luna event's
+if luna_corruption == 10 and luna_reverted:
+    call luna_reverted_greeting_1
+
 ### NOT IN USE
 #if day == 10:
 #    call event_08_02 #Hermione shows up for the second time. (Shorter skirts notion).

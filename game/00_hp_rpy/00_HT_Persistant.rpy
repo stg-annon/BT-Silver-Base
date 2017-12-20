@@ -19,6 +19,8 @@ label __init_variables:
         $ robe = 0
     if not hasattr(renpy.store,'addicted'): #important!
         $ addicted = False
+    if not hasattr(renpy.store,'milking'): #important!
+        $ milking = 0
     if not hasattr(renpy.store,'lift_shirt'): #important!
         $ lift_shirt = False
     if not hasattr(renpy.store,'book_hold'): #important!

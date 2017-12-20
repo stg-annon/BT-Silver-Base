@@ -233,7 +233,7 @@ label potion_scene_1_2: #Scene where Hermione comes back after classes angry and
     jump night_main_menu
     
     
-label potion_scene_2_1: #breast expansion - Until chibis are added for it tifucking won't be written
+label potion_scene_2_1: #breast expansion - Until chibis are added for it tifucking won't be written (ayylmao)
     m "Guess what I have for you today."
     call her_main("Is it another foul tasting potion that will try transform me into a hideous animal?","body_04")
     m "Well I mean this one smells nice."
@@ -1808,98 +1808,97 @@ label potion_scene_11: #Milking potion
 
 label potion_scene_11_1: #Milking potion part 1
     m "[hermione_name], how would you like to try a nice little potion?"
-    call her_main("...","body_06")
-    call her_main("If I had the option I'd prefer not to...","body_06")
+    call her_main("...","body_04")
+    call her_main("If I had the option I'd prefer not to...","body_02")
     m "well-"
-    call her_main("but unfortunately, Slytherin winning the house cup this year isn't an option!","body_06")
+    call her_main("but unfortunately, \"Slytherin\" winning the house cup this year isn't an option!","body_30")
     m "So you'll drink the potion then?"
-    call her_main("Yes [genie_name], I'll drink your potion.","body_06")
+    call her_main("Yes [genie_name], I'll drink your potion.","body_17")
     m "Fantastic!"
     ">You hand her the cloudy potion."
     ">Hermione cautiously smells the mixture."
-    call her_main("Is this milk?","body_42")
-    call her_main("...","body_06")
-    call her_main("I guess it doesn't matter...","body_22")
+    call her_main("Is this milk?","body_12")
+    call her_main("...","body_09")
+    call her_main("I guess it doesn't matter...","body_08")
     hide screen hermione_blink
     show screen ch_potion
     ">Hermione quickly drinks the potion."
     hide screen ch_potion
     show screen hermione_blink
-    call her_main("Ah...","body_42")
-    call her_main("It was milk!","body_42")
+    call her_main("Ah...","body_126")
+    call her_main("It was milk!","body_46")
     m "Yes. Apparently it's a special kind of milk."
-    call her_main("Apparently?","body_42")
-    call her_main("Do you even know where this came from?","body_42")
+    call her_main("Apparently?","body_08")
+    call her_main("Do you even know where this came from?","body_09")
     m "O-Of course I do."
     m "I'm the great dingledoor after all!"
-    call her_main("...","body_42")
-    call her_main("If you don't want to say what it is that's fine sir...","body_42")
-    call her_main("But there's no need to insult me.","body_42")
+    call her_main("...","body_08")
+    call her_main("If you don't want to say what it is that's fine sir...","body_04")
+    call her_main("But there's no need to insult me.","body_07")
     m "(what did I say?)"
     m "Yes, well, you should notice the effects starting to manifest soon enough."
-    call her_main("Hmmm...","body_42")
-    call her_main("And what sort of \'effects\' would that be?","body_42")
+    call her_main("Hmmm...","body_128")
+    call her_main("And what sort of \'effects\' would that be?","body_08")
     m "You may notice a some minor swelling in those nice tits of yours."
     call her_main("...","body_06")
-    call her_main("Is this milk going to make by breasts bigger [genie_name]?","body_06")
+    call her_main("Is this milk going to make by breasts bigger [genie_name]?","body_09")
     m "That's one half of it."
-    call her_main("...","body_06")
-    call her_main("And the other half?","body_06")
+    call her_main("...","body_07")
+    call her_main("And the other half?","body_12")
     m "Well you might start to notice a little milk coming from your-"
-    call her_main("What???","body_06")
-    call her_main("Professor, Do you mean to say that this potion is going to cause me to lactate?","body_06")
+    call her_main("What???","body_48")
+    call her_main("Professor, Do you mean to say that this potion is going to cause me to lactate?","body_09")
     m "That's one way to put it."
-    call her_main("...","body_06")
-    call her_main("Well how long is it supposed to last? I do have classes today.","body_06")
-    call her_main("I'm falling behind enough as it is...","body_06")
+    call her_main("...","body_07")
+    call her_main("Well how long is it supposed to last? I do have classes today.","body_12")
+    call her_main("I'm falling behind enough as it is...","body_29")
     m "Really?"
-    call her_main("Yes... I think it's all this fooling around sir.","body_06")
-    call her_main("I nearly got a \"b\" in biology the other day...","body_06")
+    call her_main("Yes... I think it's all this fooling around sir.","body_33")
+    call her_main("I nearly got a \"b\" in biology the other day...","body_28")
     m "Well speaking of biology..."
     ">You notice hermione's breasts slight to swell slightly."
-    call her_main("!!!","body_06")
-    call her_main("[genie_name], they're growing rather quickly!","body_06")
+    call her_main("!!!","body_18")
+    call her_main("[genie_name], they're growing rather quickly!","body_28")
     m "This is all perfectly normal."
-    call her_main("...","body_06")
+    call her_main("...","body_08")
     ">Hermione's breasts start to visibly swell again."
-    call her_main("Ugh... it feels like my organs are sliding into my chest...","body_06")
-    call her_main("This isn't going to cause any ongoing issues is it?","body_06")
+    call her_main("Ugh... it feels like my organs are sliding into my chest...","body_28")
+    call her_main("This isn't going to cause any ongoing issues is it?","body_09")
     m "O-o-of course not..."
-    call her_main("...","body_06")
-    call her_main("That wasn't very inspiring...","body_06")
+    call her_main("...","body_07")
+    call her_main("That wasn't very inspiring...","body_09")
     m "Just focus on the matter at hand."
     $ hermione_perm_expand = True
+    call update_her_uniform
     ">You hear a faint popping as Hermione's shirt fails to hold back her rapidly expanding breasts."
-    call her_main("!!!","body_06")
-    call her_main("[genie_name], this is ridiculous!","body_06")
-    call her_main("I can't be expected to go to class looking like this!","body_06")
+    call her_main("!!!","body_18")
+    call her_main("[genie_name], this is ridiculous!","body_28")
+    call her_main("I can't be expected to go to class looking like this!","body_29")
     m "Why not? I don't think they're that much bigger than normal."
-    call her_main("Are you kidding me?","body_06")
-    call her_main("They're {size=+5}humungous!{/size}","body_06")
+    call her_main("Are you kidding me?","body_66")
+    call her_main("They're {size=+5}humungous!{/size}","body_77")
     m "Well if you want them to go back to normal..."
-    call her_main("What? Do you have an antidote?","body_06")
+    call her_main("What? Do you have an antidote?","body_68")
     m "Not an antidote, but I do have a method that would alleviate the swelling."
-    call her_main("...","body_06")
-    call her_main("I'm listening...","body_06")
+    call her_main("...","body_61")
+    call her_main("I'm listening...","body_09")
     m "Well as far as I can tell, you're breasts are swelling due to an excess supply of milk."
-    call her_main("...","body_06")
+    call her_main("...","body_61")
     m "If we somehow got it all out of there, I'm sure they'd revert to normal size in no time at all."
-    call her_main("...","body_06")
-    call her_main("You can't be serious!","body_06")
-    call her_main("Are you suggesting that I be milked! Like some sort of animal!","body_06")
+    call her_main("...","body_72")
+    call her_main("You can't be serious!","body_79")
+    call her_main("Are you suggesting that I be milked! Like some sort of animal!","body_81")
     m "I'm simply offering a way to fix your problem."
     m "If you don't want my help then I'm afraid you'll have to go to class in your current condition."
-    call her_main("*hmph*","body_06")
-    call her_main("It can't be any worse than being milked.","body_06")
-    call her_main("Honestly, [genie_name], I'm shocked that you would even suggest something so completely ridiculous.","body_06")
-    call her_main("I think I better get going...","body_06")
+    call her_main("*hmph*","body_09")
+    call her_main("It can't be any worse than being milked.","body_08")
+    call her_main("Honestly, [genie_name], I'm shocked that you would even suggest something so completely ridiculous.","body_07")
+    call her_main("I think I better get going...","body_12")
     m "Well, 20 points to \"gryffindor\""
     $ gryffindor =+ 20
-    call her_main("Thank you sir.","body_06")
+    call her_main("Thanks...","body_17")
     $ milking = -1
-    #Genie says milking her breasts might help them go down
-    #Upset at the idea of genie milking her
-    #Goes to class
+
     hide screen bld1
     hide screen hermione_main
     hide screen blktone 
@@ -1955,32 +1954,34 @@ label potion_scene_11_3: #Milking potion part 3
 
 
 label potion_scene_11_1_2: #Milking potion part 1 night time
+    $ aftersperm = True
+    $ milking = 0
     ">Hermione bursts through your door."
-    call her_main("Professor! why didn't you warn me about this!","body_06")
+    call her_main("Professor! why didn't you warn me about this!","body_77")
     m "About what? I told you your breasts would expand."
-    call her_main("Look at my shirt!","body_06")
+    call her_main("Look at my shirt!","body_76")
     m "Hmmm, seems like you had a bit of an accident."
-    call her_main("An accident?","body_06")
-    call her_main("I've been leaking milk all day!","body_06")
+    call her_main("An accident?","body_08")
+    call her_main("I've been leaking milk all day!","body_86")
     m "It doesn't seem that bad..."
-    call her_main("This is the third shirt that I've had to wear today!","body_06")
-    call her_main("All the others are soaked through!","body_06")
-    call her_main("Even my vest is soaked...","body_06")
+    call her_main("This is the third shirt that I've had to wear today!","body_04")
+    call her_main("All the others are soaked through!","body_77")
+    call her_main("Even my vest is soaked...","body_09")
     m "Well I did offer to relieve your issue..."
-    call her_main("by milking me like some sort of... animal!","body_06")
-    call her_main("I'm upset you'd even think that would be a possibility.","body_06")
+    call her_main("by milking me like some sort of... animal!","body_05")
+    call her_main("I'm upset you'd even think that would be a possibility.","body_51")
     m "Well it would have solved your \'problem\'."
-    call her_main("...","body_06")
-    call her_main("Well I expect to be paid extra after this humiliation.","body_06")
+    call her_main("...","body_08")
+    call her_main("Well I expect to be paid extra after this humiliation.","body_50")
     m "how much?"
-    call her_main("30 points.","body_06")
+    call her_main("30 points.","body_61")
     m "Fine, 30 points to \"gryffindor\"."
     $ gryffindor =+ 30 
-    call her_main("*hmph*","body_06")
-    call her_main("So when are these \'things\' going to go away? Or do I have to go get one of the nurses to shrink them?","body_06")
+    call her_main("*hmph*","body_50")
+    call her_main("So when are these \'things\' going to go away? Or do I have to go get one of the nurses to shrink them?","body_51")
     m "They should go back to normal Sometime tonight."
-    call her_main("good...","body_06")
-    call her_main("but don't think I've forgiven you!","body_06")
+    call her_main("good...","body_08")
+    call her_main("but don't think I've forgiven you!","body_04")
     ">Hermione storms out in a huff."
     $ mad =+ 10
     hide screen bld1
@@ -1993,6 +1994,8 @@ label potion_scene_11_1_2: #Milking potion part 1 night time
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
     $ hermione_sleeping = True
+    $ hermione_perm_expand = False
+    $ aftersperm = False
     m "(bitches... you'd think she'd be happy to get some bigger knockers for free!)"
     jump day_main_menu
     #comes back after class

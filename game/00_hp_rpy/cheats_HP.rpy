@@ -13,6 +13,9 @@ label cheats_ht:
                     $ whoring = 24
                     "Hermione is now a giant slut"
                     jump cheats_ht_hermione
+
+                "-Test Milking potion-":
+                    jump potion_scene_11_1
                     
                 "-Increase Whoring-":
                     $ whoring += 1

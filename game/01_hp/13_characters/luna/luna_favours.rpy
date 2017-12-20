@@ -2862,16 +2862,13 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 label luna_favour_4: ###Luna handjob
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if luna_corruption <= 11: #FIRST TIME - Change this when part 2 added
+    if luna_corruption <= 11: #FIRST TIME - Change this to 10 when part 2 added
         if luna_corruption <= 10:
             $ luna_corruption += 1
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
         m "[luna_name]?"
         call luna_main("yes [l_genie_name]...", 1, 2, 2, 2) 
-        m "Do you happen to know what a handjob is?"
-        call luna_main("...", 7, 1, 2, 2)
-        m "..."
-        m "Well if it's not too much trouble..."
+        m "Would it be possible for me to buy another favour..."
         call luna_main("...", 7, 2, 2, 2) 
         call luna_main("Go on...", 7, 2, 2, 2) 
         menu:
@@ -2904,7 +2901,7 @@ label luna_favour_4: ###Luna handjob
                 call luna_main("Mhmmm...", 6, 2, 2, 3) 
                 m "I was hoping you could..."
                 call luna_main("...", 8, 2, 1, 2) 
-                m "give me one..."
+                m "give me a handjob..."
                 call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
                 m "If it's not too much trouble..."
                 call luna_main("Well I suppose I probably should.", 5, 2, 1, 1)
@@ -2940,16 +2937,18 @@ label luna_favour_4: ###Luna handjob
         ">Luna looks down at your cock."
         call luna_main("Disgusting...", 9, 8, 3, 1) 
         ">She takes a firm hold of it with her right hand"
+        $ luna_r_arm = 3
+        $ genie_sprite_xpos = 300
+        $ luna_xpos = 390
+        call gen_main("!!!", 4, 2)
         call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
         call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
         ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
         m "Why don't you try grabbing it with both hands [luna_name]..."
-        call luna_main("Alright... But I expect to be paid extra!", 8, 1, 2, 1) 
-        ">Luna slowly wraps both hands around your cock."
-        m "Mmmm, that's it. Now start moving your hands back and forth."
-        call luna_main("......", 6, 3, 4, 1) 
-        ">Luna starts moving her hands back and forth along the length of your cock."
-        m "Yes, that's it..."
+        call luna_main("Hmph... you wish!", 8, 1, 2, 1) 
+        m "..."
+        ">Luna starts moving her hand back and forth along the length of your cock."
+        m "ugh... Yes, that's it..."
         call luna_main("(Men really are the worst)", 6, 3, 3, 3) 
         m "Mmmm, yes... just like that [luna_name]..."
         call luna_main("Is this good [l_genie_name]?", 6, 1, 4, 14) 
@@ -2963,7 +2962,6 @@ label luna_favour_4: ###Luna handjob
             "-Luna takes her top off-":
                 ">Luna slowly removes her vest and starts to unbutton her top."
                 m "Mmmm"
-                $ luna_chibi("stand_topless")
                 $ luna_wear_top = False
                 $ luna_choice = 1
                 ">She takes her shirt off and places it onto the floor."
@@ -3039,8 +3037,6 @@ label luna_favour_4: ###Luna handjob
         g4 "mmmm"
         call luna_main("Now...", 8, 1, 3, 2) 
         call luna_main("Cum.", 5, 1, 2, 1) 
-        hide screen luna
-        with d3
         $ g_c_c_u_pic = "jerking_off_cum_ani"
         show screen g_c_c_u
         $ luna_wear_cum_under = True
@@ -3061,6 +3057,9 @@ label luna_favour_4: ###Luna handjob
         g4 "mmmm....."
         hide screen g_c_c_u
         $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
+        $ luna_r_arm = 2
+        hide screen genie_sprite
+        with d3
         m "That hit the spot..."
         call luna_main("({image=textheart}{image=textheart}{image=textheart})", 5, 8, 4, 1)
         call luna_main("[l_genie_name]!", 8, 1, 3, 1)
@@ -3071,7 +3070,7 @@ label luna_favour_4: ###Luna handjob
 
 
     hide screen bld1
-
+    $ current_payout = 100
     m "well then, Here's your payment [luna_name]."
     $ gold -= current_payout
     $ luna_gold += current_payout
@@ -3079,7 +3078,12 @@ label luna_favour_4: ###Luna handjob
     call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)  
     ">Luna leaves your office."  
     $ luna_wear_cum = False
-
+    $ luna_wear_cum_under = False
+    
+    hide screen g_c_u
+    show screen genie
+    hide screen chair_02
+    hide screen desk_02
 
     jump luna_away
 

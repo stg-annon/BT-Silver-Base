@@ -143,7 +143,7 @@ label luna_favour_menu:
             jump luna_favour_2
         "-Strip for me-" if luna_corruption >= 5 and not luna_reverted:
             jump luna_favour_3
-        "-Touch me-" if luna_corruption == 9:
+        "-Touch me-" if luna_corruption >= 9 and not luna_reverted:
             if luna_corruption == 9:
                 jump luna_reversion_event
             jump luna_favour_4

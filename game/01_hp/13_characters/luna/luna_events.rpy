@@ -185,7 +185,6 @@ label luna_revert_1: #Reversion event
             call luna_main("...", 6, 3, 4, 3) 
             ">Luna slowly takes off her top, placing it on the floor."
             $ luna_wear_top = False
-            $ luna_chibi("stand_topless")
             call luna_main("There...", 5, 1, 4, 2) 
             call luna_main("Is that enough [l_genie_name]?", 7, 2, 2, 3) 
             m "Almost... hands back on the cock [luna_name]..."
@@ -200,7 +199,7 @@ label luna_revert_1: #Reversion event
             m "Almost..."
             call luna_main("...", 6, 3, 4, 3) 
             ">She speeds up the pace."
-            m "Ah!"
+            call gen_main("Ah!", 2)
             call luna_main("What?", 4, 1, 1, 2) 
             m "Well if you go that fast the friction's a little painful"
             call luna_main("Really? I'll slow down then...", 6, 3, 4, 3) 
@@ -212,7 +211,7 @@ label luna_revert_1: #Reversion event
             call luna_main("......", 7, 2, 4, 3) 
             call luna_main("*Ptew*", 6, 3, 4, 16) 
             ">Luna spits into her hand before placing it back on your cock."
-    m "Mmmm, yes that's it [luna_name]..."
+    call gen_main("Mmmm, yes that's it [luna_name]...", 4)
     call luna_main("...", 5, 1, 1, 1) 
     g9 "Just keep pumping those hands up and down."
     call luna_main("......", 5, 2, 4, 1) 
@@ -515,15 +514,17 @@ label luna_revert_2: #Non-Reversion event
     ">Luna looks down at your cock."
     call luna_main("Disgusting...", 9, 8, 3, 1) 
     ">She takes a firm hold of it with her right hand"
+    $ luna_r_arm = 3
+    $ genie_sprite_xpos = 300
+    $ luna_xpos = 390
+    call gen_main("!!!", 4, 2)
     call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
     call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
     ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
     m "Why don't you try grabbing it with both hands [luna_name]..."
-    call luna_main("Alright... But I expect to be paid extra!", 8, 1, 2, 1) 
-    ">Luna slowly wraps both hands around your cock."
-    m "Mmmm, that's it. Now start moving your hands back and forth."
-    call luna_main("......", 6, 3, 4, 1) 
-    ">Luna starts moving her hands back and forth along the length of your cock."
+    call luna_main("Hmph... you wish!", 8, 1, 2, 1) 
+    m "..."
+    ">Luna starts moving her hand back and forth along the length of your cock."
     m "Yes, that's it..."
     call luna_main("(Men really are the worst)", 6, 3, 3, 3) 
     m "Mmmm, yes... just like that [luna_name]..."
@@ -538,7 +539,6 @@ label luna_revert_2: #Non-Reversion event
         "-Luna takes her top off-":
             ">Luna slowly removes her vest and starts to unbutton her top."
             m "Mmmm"
-            $ luna_chibi("stand_topless")
             $ luna_wear_top = False
             $ luna_choice = 1
             ">She takes her shirt off and places it onto the floor."
@@ -564,25 +564,25 @@ label luna_revert_2: #Non-Reversion event
             m "Ah yes..."
             call luna_main("get ready to cum all over your student.", 7, 1, 4, 1) 
             ">She speeds up the pace."
-            m "Ah..."
+            call gen_main("Ah...", 2)
             call luna_main("What's wrong?", 7, 1, 5, 2) 
             m "Well if you go that fast the friction's a little painful."
             call luna_main("Really?...", 8, 1, 2, 1) 
             ">Luna doesn't slow down. If anything she speeds up slightly."
-            g9 "Ah!"
+            g4 "Ah!"
             call luna_main("...", 9, 1, 3, 1) 
-            g9 "[luna_name]..."
+            g4 "[luna_name]..."
             call luna_main("Hmmm, do You want me to spit on your cock then?", 5, 1, 5, 1) 
-            g9 "Just a little bit..."
+            g4 "Just a little bit..."
             call luna_main("...", 5, 1, 2, 1) 
             call luna_main("......", 5, 1, 3, 1) 
-            g9 "Please..."
+            g4 "Please..."
             call luna_main("Good boy.", 7, 1, 2, 1) 
             call luna_main("*Ptew*", 5, 8, 2, 16) 
             ">Luna spits into her hand before placing it back on your cock."
-    g9  "Mmmm, yes that's it [luna_name]..."
+    call gen_main("Mmmm, yes that's it [luna_name]...", 4)
     call luna_main("...", 7, 8, 2, 1) 
-    g9  "Just keep pumping those hands up and down."
+    g9  "Just keep pumping that hand up and down."
     call luna_main("......", 8, 1, 3, 1) 
     if luna_choice == 1:
         ">Luna gently starts shaking her boobs as she jerks you off."
@@ -614,8 +614,6 @@ label luna_revert_2: #Non-Reversion event
     g9  "mmmm"
     call luna_main("Now...", 8, 1, 3, 2) 
     call luna_main("Cum.", 5, 1, 2, 1) 
-    hide screen luna
-    with d3
     $ g_c_c_u_pic = "jerking_off_cum_ani"
     show screen g_c_c_u
     $ luna_wear_cum_under = True
@@ -649,6 +647,9 @@ label luna_revert_2: #Non-Reversion event
     hide screen luna 
     with d3
     $ luna_flip = -1
+    $ luna_r_arm = 2
+    hide screen genie_sprite
+    with d3
     call her_main("[genie_name], I hope you don't mind me coming in unannounced...","body_122")
     call her_main("But I really need a good-.","body_118")
     $ changeLuna(4, 1, 4, 3, 400)
@@ -1165,10 +1166,12 @@ label luna_revert_2: #Non-Reversion event
 
 
 label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
+    $ luna_corruption += 1
     $ luna_wear_glasses = True
     $ luna_wear_acc = True
     $ luna_l_arm = 1
     $ luna_r_arm = 2
+    $ luna_hair = 2
     $ l_genie_name = "sir" #reset genie's name with Luna
     $ luna_name = "Miss Lovegood" #reset luna's name with genie
     "*Knock* *Knock* *Knock*"
@@ -1207,7 +1210,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
     m "(What?)"
     m "Can I help you with something?"
     call luna_main("oh... there was something I came here for wasn't there...", 1, 3, 4, 3) 
-    m "(What's going on here?)"
+    m "(What's going on here? I thought the hat wiped her mind!)"
     call luna_main("I remember! The wrackspurt infestation!", 2, 2, 4, 1) 
     menu: 
         "\"Wrackspurts?... Is that some sort of wizard STD?\"":
@@ -1222,8 +1225,12 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
             call luna_main("I am not sure professor... normally thinking positive thoughts is enough to remove them, but I am having trouble with these. If my father, Xenophilius-", 7, 2, 4, 2)
             "*Genie jumps from the table*"
             g4 "DID YOU JUST CAST A SPELL ON ME?!"
+            $ luna_l_arm = 2
+            $ luna_r_arm = 2
             call luna_main("Professor?", 4, 1, 4, 3)
             g4 "EXPLAIN YOURSELF!"
+            $ luna_l_arm = 1
+            $ luna_r_arm = 1
             call luna_main("I am sorry Professor, I am not sure what-", 4, 2, 4, 2)
             g4 "XENOFIUS! What does it do?"
             call luna_main("Xenofius? I’ve not heard of that spell before, Professor.", 7, 1, 4, 2)
@@ -1296,6 +1303,7 @@ label luna_reverted_greeting_1: #reverted Luna explains the wrackspurt problem
 
 
 label luna_reverted_greeting_2: #Explaining to Luna what will happen or something
+    $ luna_corruption += 1
     "*knock* *knock* *knock*"
     m "Come in..."
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.

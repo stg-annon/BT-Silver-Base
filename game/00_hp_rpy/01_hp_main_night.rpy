@@ -155,6 +155,12 @@ if gave_the_dress and days_without_an_event >= 2: #$ gave_the_dress = True #Turn
 if luna_known and not luna_unlocked:
     call hat_intro_3
 
+if luna_corruption == 11 and luna_reverted:
+    call luna_reverted_greeting_2
+
+if milking == -1:
+    call potion_scene_11_1_2
+
 
 
 
