@@ -385,6 +385,9 @@ label silver_requests:
                         else:
                             m "I don't have this potion..."
                             jump request_potion_menu
+                    "-milk potion-" if "Milk Potion" in p_inv: 
+                        $ p_inv.remove("Milk Potion")
+                        jump potion_scene_11
                     ##"-Snek-" if whoring >= 3:
                     ##    jump potion_scene_5
                     "-Nevermind -":

@@ -157,9 +157,15 @@ label __init_variables:
     if not hasattr(renpy.store,'hermione_kneel_leg'): #important!
         $ hermione_kneel_leg = False
 
+    if not hasattr(renpy.store,'hermione_kneel_cock'): #important!
+        $ hermione_kneel_cock = False
+
     if not hasattr(renpy.store,'luna_arousal'): #important!
         $ hat_known = False
         call luna_init
+
+    if not hasattr(renpy.store,'luna_addicted'): #important!
+        $ luna_addicted = False
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!

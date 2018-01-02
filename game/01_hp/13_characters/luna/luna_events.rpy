@@ -813,6 +813,9 @@ label luna_revert_2: #Non-Reversion event
     hide screen hermione_main 
     with d3
     ">Luna places her hands on Hermione's shoulders and gently forces her paralyzed body to her knees."
+    $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
+    $ hermione_SC.chibi.ypos = 60
+    $ h_c_u_pic = "01_hp/16_hermione_chibi/dance/08_sits.png"
     call luna_main("That should be about right...", 5, 8, 2, 1)
     call luna_main("wait...", 5, 8, 1, 2)
     if luna_wear_top:
@@ -1517,7 +1520,114 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
     jump luna_away
 
 
+label luna_cum_addict_event:
+    $ luna_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in
+    ">You put your arms on Luna's shoulders forcing her to her knees."
+    call luna_main("Stop right now! This wasn't an option [l_genie_name]!", 5, 3, 1, 1)
+    g4 "Argh, too late slut!"
+    $ g_c_c_u_pic = "jerking_off_cum_ani"
+    show screen g_c_c_u
+    $ luna_cum = 11
+    show screen white 
+    pause.1
+    hide screen white
+    pause.2
+    show screen white 
+    pause .1
+    hide screen white
+    with hpunch
+    ">You coat Luna's furious expression in a wave of hot cum!"
 
+    g4 "Argh! by the gods {size=+10}YES!{/size}"
+    call luna_main("...", 5, 3, 1, 1)
+    call luna_main("(What's this smell?)", 5, 2, 4, 1)
+    g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
+    g4 "mmmm....."
+    hide screen g_c_c_u
+    $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
+    $ luna_r_arm = 2
+    hide screen genie_sprite
+    with d3
+    m "That hit the spot..."
+    call luna_main("...", 5, 8, 4, 1)
+    call luna_main("......", 8, 1, 3, 1)
+    call luna_main(".........", 7, 8, 2, 1)
+    m "Ahh... that was fantastic slut..."
+    $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png"
+    call luna_main("What {size=+4}is {size=+4}this {size=+4}smell?{/size}", 6, 2, 2, 1)
+    m "Cum?"
+    call luna_main("{size=+4}it{/size}", 6, 2, 2, 1)
+    call luna_main("{size=+8}smells{/size}", 6, 2, 2, 1)
+    call luna_main("{size=+12}incredible!!!{/size}", 6, 2, 2, 1)
+    m "..."
+    m "What?"
+    call luna_main("my god!!! there's so much magical energy in it!", 6, 2, 2, 1)
+    call luna_main("I've never sensed anything this powerful before!", 6, 2, 2, 1)
+    m "Ah yes, well I am the great fumblemore!"
+    call luna_main("even so sir...", 6, 2, 2, 1)
+    call luna_main("This smell... it's too much for a mortal to make...", 6, 2, 2, 1)
+    m "(Shit...)"
+    call luna_main("can I...", 6, 2, 2, 1)
+    call luna_main("taste it?", 6, 2, 2, 1)
+    m "What sort of question is that?"
+    call luna_main("If it's too much...", 6, 2, 2, 1)
+    g4 "Of course you can taste my cum girl!"
+    call luna_main("thank you sir...", 6, 2, 2, 1)
+    m "(She seems different...)"
+    $ luna_cum = 12
+    ">Luna collects a stand of cum on the end of her finger starting at it intently before putting it into her mouth."
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}", 5, 8, 4, 1)
+    call luna_main("{size=+4}It's {size=+4}amazing!!!!!{image=textheart}{image=textheart}{/size}", 5, 8, 4, 1)
+    call luna_main("can I have the rest? Please sir?", 5, 8, 4, 1)
+    m "Sure..."
+    ">You watch in awe as Luna slowly heaps your cum in her mouth and swallows it."
+    $ luna_cum = 13
+    call luna_main("...", 5, 8, 4, 1)
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}", 5, 8, 4, 1)
+    pause
+    $ luna_cum = 14
+    call luna_main("...", 5, 8, 4, 1)
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}", 5, 8, 4, 1)
+    $ luna_cum = 15
+    call luna_main("...", 5, 8, 4, 1)
+    call luna_main("{image=textheart}{image=textheart}{image=textheart}", 5, 8, 4, 1)
+    $ luna_wear_cum = False
+    call luna_main("ah...", 5, 8, 4, 1)
+    call luna_main("amazing...", 5, 8, 4, 1)
+    m "Enjoy yourself did we?"
+    call luna_main("How could I not?", 5, 8, 4, 1)
+    m "(What is going on here? SHe seems all bitchy again...)"
+    call luna_main("You have to tell me how you did that!", 5, 8, 4, 1)
+    m "Cum? I'm pretty sure you've got that all worked out..."
+    call luna_main("Not that, idiot!", 5, 8, 4, 1)
+    call luna_main("why did it contain so much magical energy?", 5, 8, 4, 1)
+    call luna_main("The only thing I've ever experienced like it was essence of Djinn...", 5, 8, 4, 1)
+    call luna_main("But everyone knows the Djinn were hunted to extinction...", 5, 8, 4, 1)
+    g9 "(!!!)"
+    m "oh, um..."
+    m "Trade secret..."
+    call luna_main("Fine! Be that way then pervert!", 5, 8, 4, 1)
+    ">Luna gets dressed in front of you in a huff."
+    $ luna_wear_skirt = True
+    $ luna_wear_bra = True
+    $ luna_wear_skirt = True
+    $ luna_wear_skirt = True
+    call luna_main("Just don't expect me to let you get away with wasting that spunk anymore old man!", 5, 8, 4, 1)
+
+    hide screen bld1
+    m "well... anyway, Here's your payment [luna_name]."
+    $ gold -= current_payout
+    $ luna_gold += current_payout
+    ">You hand Luna [current_payout] gold."
+    call luna_main("Thank you, [l_genie_name].", 5, 2, 1, 1)  
+    ">Luna leaves your office."  
+
+    hide screen g_c_u
+    show screen genie
+    hide screen chair_02
+    hide screen desk_02
+
+    jump luna_away
 
 
 

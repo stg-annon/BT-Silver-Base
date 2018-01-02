@@ -362,6 +362,9 @@ screen hermione_kneel:
         add "01_hp/13_characters/hermione/body/kneel/kneel_leg.png" xpos luna_xpos ypos 0 xzoom -1 #Add Luna's leg
         add "01_hp/13_characters/hermione/body/kneel/kneel_arm.png" xpos luna_xpos ypos 0
 
+    if hermione_kneel_cock: #Need to redo this into a better system.
+        add "01_hp/13_characters/hermione/body/kneel/kneel_cock.png" xpos luna_xpos ypos luna_ypos
+
     ### ZORDER
     zorder luna_zorder+1
     
@@ -645,7 +648,7 @@ label h_action(action =  ""):
                 $ h_action_show_arms = True
                 $ override = True
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_expanded_xlarge.png"
-                $ hermione_action_a = "01_hp/13_characters/hermione/clothes/milk/milk_1.png"
+                $ hermione_action_a = "01_hp/13_characters/hermione/clothes/milk/milk_"+str(milking)+".png"
     
     if not override:
         call set_h_action_vars

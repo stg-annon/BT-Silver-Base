@@ -112,6 +112,7 @@ label luna_walk_end_loiter(dissolveTime = 3):
     return
 
 label luna_door:
+    call luna_reset
     $ renpy.play('sounds/door.mp3')
     $ luna_chibi("stand")
     if luna_dom >= luna_sub:

@@ -160,7 +160,8 @@ if luna_corruption == 11 and luna_reverted:
 
 if milking == -1:
     call potion_scene_11_1_2
-
+if milking == -3:
+    call potion_scene_11_3_2
 
 
 

@@ -28,6 +28,101 @@ label summon_snape:
     label snape_ready:
         pass
     menu:
+        "-Get a potion-" if whoring > 10:
+            sna_[9] "I notice you're making a bit of progress on Miss Granger."
+            sna_[21] "I've got some potions here that normally aren't available to students."
+            sna_[21] "These might help speed up the process..."
+            menu:
+                "-milking potion-" if "Milk Potion" in p_inv:
+                    ">You already have a milking potion."
+                    jump snape_ready
+
+                "-milking potion-" if "Milk Potion" not in p_inv:
+                    if potion_scene_11_progress <= 1:
+                        sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
+                        sna_[13] "Just in case..."
+                        sna_[18] "Here, take it!"
+                        ">Snape quickly pushes the milky potion into your hands."
+                        ">Milking potion received!"
+                        $ p_inv.append("Milk Potion")
+                    elif potion_scene_11_progress == 1:
+                        sna_[9] "Good work on getting her to take it."
+                        sna_[13] "Her breasts did look magnificently full in class..."
+                        sna_[20] "Get her to take another!"
+                        sna_[18] "Here, I'll even give you a milker for the slut!"
+                        ">Snape hands you an odd leather and metal harness."
+                        m "What is-"
+                        ">Snape quickly pushes another milky potion into your hands."
+                        ">Milking potion received!"
+                        sna_[12] "Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest..."
+                        sna_[6] "but I want it back before you leave!"
+                        sna_[20] "I spent a fortune on the self cleaning model..."
+                        $ p_inv.append("Milk Potion")
+                    else:
+                        sna_[13] "Mmmm, I wish I could be there to see you milk her..."
+                        m "..."
+                        sna_[12] "All that delicious milk..."
+                        sna_[13] "..."
+                        sna_[9] "Well anyway, I was wondering..."
+                        sna_[9] "Want me to augment the potion?"
+                        m "Augmented?"
+                        m "I never asked for this..."
+                        sna_[6] "I know... I'm offering it..."
+                        m "Oh yeah, sorry. What sort of augmentation?"
+                        sna_[10] "Well I can leave the potion as it is..."
+                        sna_[12] "Or I can add an extra little something to it."
+                        m "Such as?"
+                        sna_[9] "Well..."
+                        label snape_potion_choice:
+                            pass
+                        menu:
+                            "-Normal potion-":
+                                sna_[7] "Here you are Mr. Adventurous..."
+                                $ potion_version = 1
+                            "-futa potion-":
+                                sna_[17] "What? Are you sure you want this one?"
+                                sna_[18] "I mean I figured you were a bit of a pervert..."
+                                sna_[19] "but I didn't think..."
+                                sna_[18] "Oh well, if you want it, it's yours..."
+                                menu:
+                                    "-give it to me-":
+                                        sna_[17] "really?"
+                                        sna_[18] "you're more Adventurous than I thought!"
+                                        sna_[20] "Here, I'll even give you an extra attachment for the milker!"
+                                        ">Snape hands you another strange metal and glass cup with a tube attached."
+                                        sna_[19] "Promise to tell me what happens!"
+                                    "-no-":
+                                          sna_[7] "Too bad..."
+                                          jump snape_potion_choice  
+                                          
+                                $ potion_version = 2
+                            "-Permanent breast expansion-":
+                                sna_[18] "The milk production will still only last a day..."
+                                sna_[18] "But her big boobs will be permanent..."
+                                sna_[18] "Are you sure you want this?"
+                                sna_[18] "She might not like it..."
+                                menu:
+                                    "-yes-":
+                                        sna_[18] "Fantastic!!!"
+                                    "-no-":
+                                          sna_[18] "Too bad..."
+                                          jump snape_potion_choice  
+
+                                $ potion_version = 3
+                        ">Snape quickly pushes the milky potion into your hands."
+                        ">Milking potion received!"
+                        $ p_inv.append("Milk Potion")
+                    jump snape_ready
+                "-Veritaserum-" if "Veritaserum" not in p_inv:
+                    sna_[1] "Truth potion."
+                    sna_[1] "This is dangerous stuff Genie..."
+                    sna_[21] "Use it to make anyone tell the truth."
+                    sna_[8] "Just not me!"
+                    ">Snape hands you the tiny vial filled with a strange gold liquid."
+                    ">Veritaserum received!"
+                    $ p_inv.append("Veritaserum")
+                    jump snape_ready
+
         "-Chit chat-" if sfmax and not chitchated_with_snape and not daytime: # sfmax - friendship with Snape maxed out.
             $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
