@@ -2061,7 +2061,7 @@ label potion_scene_11_3: #Milking potion part 3
     call her_main("It's not the same!","body_08")
     call her_main("There's not any sugar or flavour!","body_08")
     if potion_version > 1:
-        m "Um, this one does have an extra ingredient..."
+        m "well, this one does have an extra ingredient..."
         call her_main("Really?","body_08")
         call her_main("Is it Strawberry?","body_08")
         m "WHy don't you have a taste and find out?"
@@ -2080,117 +2080,229 @@ label potion_scene_11_3: #Milking potion part 3
     call her_main("Ah...","body_126")
     call her_main("That wasn't Strawberry!","body_46")
     m "Did you really think it would be?"
-    call her_main("I mean Sort of...","body_08")
+    call her_main("I mean... Sort of?","body_08")
     call her_main("you are a wizard after all...","body_09")
     call her_main("I mean the house elfs make me a milkshake whenever i ask...","body_04")
     m "Speaking of milkshakes!"
     ">You notice hermione's breasts start to swell..."
     call her_main("Ugh... this always feels so weird...","body_07")
-    call her_main("I better take my shirt off before they rip the buttons...","body_07")
+    call her_main("I better take my shirt off before \'they\' rip the buttons...","body_07")
     ">Hermione quickly removes her top."
+    $ milking = 1
     #breasts larger
-    if potion_version == 1: #Orgasms while milking
-        call her_main("well how are you going to solve the milk problem [genie_name]?","body_08")
-        call her_main("Am I going to have to stand here...","body_06")
-        call her_main("With my shirt off...","body_09")
-        ">Hermione quickly removes her top."
-        call her_main("while you milk me...","body_07")
-        call her_main("like some sort of animal!","body_12")
-        m "Not quite..."
-        ">YOu hand her the milking harness."
-        call her_main("What's this???","body_48")
-        m "A milker."
-        call her_main("Professor, Do you really expect me to put this on?","body_09")
-        m "unless you want to go to class with those puppies full of milk."
-        call her_main("but...","body_07")
-        call her_main("Can't you just do it by hand...","body_12")
-        call her_main("I though it would be just like when you play with them normally...","body_29")
-        m "No can do. I don't think I'd be able to get it all out before your classes anyway"
-        call her_main("I'm sure there's tim-","body_33")
-        ">You notice hermione's breasts slight to swell slightly."
+    if not potion_version == 2: #Orgasms while milking
+        ">You notice hermione's breasts start to grow a little more."
         call her_main("!!!","body_18")
         # change boobs
-        call her_main("[genie_name], they're growing rather quickly!","body_28")
-        m "This is all perfectly normal."
-        call her_main("please ...","body_08")
+        call her_main("ugh...","body_28")
+        m "mmmm, just like that."
+        call her_main("(this is so weird...)","body_08")
         # change boobs again
         ">Hermione's breasts start to visibly swell again."
+        call her_main("!!!","body_18")
         $ hermione_perm_expand = True
         call update_her_uniform
         ">You notice hermione's breasts swell for the final time."
         call her_main("!!!","body_18")
         call her_main("[genie_name], this is ridiculous!","body_28")
-        call her_main("do they have to be so big?","body_29")
-        m "Yes."
-        call her_main("...","body_66")
-        call her_main("pervert.","body_77")
-        m "Well seeing as how they've reached full size..."
-        call her_main("*hmph* Fine!","body_09")
-        call her_main("Let me just put on your weird milking device that you own for some reason!","body_08")
-        m "Well technically I'm just borrowing it, so if you could make sure not to break it..."
-        call her_main("...","body_61")
-        call her_main("Ugh... the things I put up with for this house.","body_79")
-        ">hermione slowly slips the harness on."
+        call her_main("did you make the potion stronger this time?","body_29")
+        m "What are you talking about girl, they're the same size as always."
+        call her_main("are you sure...","body_66")
+        ">Hermione jiggles her boobs side to side."
+        call her_main("They just feel so much ...heavier... than before.","body_77")
+        m "Well seeing as how you milked them last time, maybe they made more this time..."
+        call her_main("*hmph* as if!","body_09")
+        call her_main("just hand me the milker so I can get to class...","body_61")
+        m "Is that the only reason you want it?"
+        call her_main("What? Why else would I want it?","body_79")
+        m "I seem to remember you enjoying yourself with it last time."
+        call her_main("You really are disgusting sometimes [genie_name]...","body_79")
+        m "Whatever you say..."
+        ">You hand hermione the harness."
+        ">hermione takes it from your hands and slowly slips it on, taking care to make sure the cups fit."
         $ milking = 1
         call h_action("milk_breasts")
-        call her_main("There! Happy now!","body_81")
-        m "I mean if you could moo that would really Complete the picture..."
+        call her_main("...","body_81", "blush")
+        m "are you sure you can't moo?..."
+        call her_main("...","body_09", "blush")
+        call her_main("{size=-5}moo...{/size}","body_08", "blush")
+        m "what was that?"
+        call her_main("I'm not saying it again [genie_name]... {size=-5}once is enough...{/size}","body_07", "blush")
         call her_main("...","body_09")
-        call her_main("can we just get this over with...","body_08")
-        m "Um... It's enchanted..."
-        "(Does it have an on switch)"
-        call her_main("Wait... This is an enchanted item? Please don't turn it on-","body_07")
+        call her_main("on!","body_09")
         ">You hear a faint noise as the harness on hermione's chest springs to life."
         $ milking = 2
         call her_main("!!!","body_12")
-        call her_main("{size=+5}OFF! TURN OFF!{/size}","body_12")
-        m "I think you need to wait until it's done."
-        call her_main("Ugh...","body_12")
-        call her_main("I can't...","body_12")
+        call her_main("Ugh... it feels different this time...","body_12")
+        call her_main("like there's so much more in my breasts...","body_12")
+        call her_main("and it all wants to come out...","body_12")
         call her_main("It's too much...","body_12")
         m "What's wrong?"
-        call her_main("Ugh... it's the sucking...","body_12")
-        call her_main("It's too intense!","body_12")
-        m "Can't you just ride it out?"
-        call her_main("Ugh.... maybe... {p}I'll try.","body_12")
-        ">You wait a few more mintues as hermione is milked in front of you."
+        call her_main("ah... it's the sucking...","body_12")
+        call her_main("It's not like before!","body_12")
+        m "is it hurting you?"
+        call her_main("ah.... no... {p}It's not bad...","body_12")
         $ milking = 3
-        call her_main("...","body_12")
-        ">Her expression slowly fades from discomfort to pleasure."
-        call her_main("...","body_12", "blush")
+        call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","body_12")
+        ">You notice the canister in front of her fill with milk at an alarming rate..."
+        call her_main("ah... it's so good...","body_12", "blush")
         $ milking = 4
         ">The machine makes a pleasant sounding click as it looks to turn off."
         m "Alright, well, look like you're good to head off to class."
-        call her_main("What?","body_12", "blush")
-        call her_main("Can't you leave it on...","body_12", "blush")
-        m "I'm afraid not."
-        m "(I don't even know how it turns on...)"
-        call her_main("But I was so close...","body_12", "blush")
-        call her_main("...","body_12", "blush")
-        call her_main("Fine... I better get to potions class then...","body_12", "blush")
-        ">Hermione takes off the harness. You see the passing look of regret on her face."
-        m "Feel better?"
-        call her_main("Surpisingly yes...","body_12")
-        call her_main("They even seem like they've shrunk a little bit.","body_12")
-        call her_main("So you're sure they're not going to leak anymore?","body_12")
-        m "oh um, no of course not..."
-        call her_main("...","body_12")
-        call her_main("well I'd like to be paid now [genie_name]...","body_12")
+        call her_main("What? but sir...","body_12", "blush")
+        call her_main("they're still so full...","body_12", "blush")
+        m "Well it looks like the machines full I'm afraid."
+        call her_main("(But I was so close...)","body_12", "blush")
+        call her_main("ah... but if I go to class like this I'll leak everywhere!","body_12", "blush")
+        m "just empty the cannister and It'll probably turn back on."
+        call her_main("empty it...","body_12", "blush")
+        ">Hermione takes a look at the full milk cannister."
+        call her_main("Can I just pour it out on the floor?","body_12")
+        m "And waste all that delicious milk?"
+        menu:
+            "-make her drink it-":
+                call her_main("Do you want to drink it then [genie_name]?","body_12")
+                m "Um, I'm afraid not... I just had a big bowl of cereal."
+                call her_main("...","body_12")
+                call her_main("Well then do you have a bottle for me to store it in...","body_12")
+                m "fresh out..."
+                call her_main("...","body_12")
+                m "I'm afraid you'll have to drink it yourself."
+                call her_main("...","body_12")
+                call her_main("{size=-5}alright...{/size}","body_12")
+                m "Really?"
+                call her_main("Well it's not like I can go to class leaking milk again...","body_12")
+                call her_main("and besides, it's not the worst feeling in the world...","body_12")
+                call her_main("I wouldn't mind giving the machine another go...","body_12")
+                m "Well, bottoms up!"
+                call her_main("...","body_12")
+                $ milking = 5
+                ">Hermione gives the cannister one final look before unscrewing it and putting it to her lips."
+                call her_main("(For gryffindor!)","body_12")
+                ">She takes a mouthful of her own milk."
+                call her_main("...","body_12")
+                call her_main("*gulp*","body_12")
+                ">She takes the last half into her mouth."
+                call her_main("...","body_12")
+                call her_main("*gulp*","body_12")
+                call her_main("ah...","body_12")
+                call her_main("I think I'll need to skip a meal after all this milk...","body_12")
+                ">She slowly screws the cannister back into milker."
+                $ milking = 1
+                call her_main("...","body_12")
+                call her_main("on!","body_12")
+                ">The milker once again comes to life as it starts to milk Hermione for a second time."
+            "-drink it yourself-":
+                call her_main("Do you want to drink it then [genie_name]?","body_12")
+                m "Waste not, want not!"
+                call her_main("...","body_12")
+                call her_main("well, here you are then...","body_12")
+                $ milking = 5
+                ">Hermione gives the cannister one final look before unscrewing it and handing it to you."
+                call her_main("(weirdo...)","body_12")
+                ">you take a mouthful of her milk."
+                m "Mmmmmm... Delicious!"
+                call her_main("...","body_12")
+                call her_main("really? You liked my milk?","body_12")
+                m "More than water from an oasis!"
+                call her_main("...","body_12")
+                call her_main("well...","body_12")
+                call her_main("Are you going to finish it?","body_12")
+                ">You finish the cannister in one final mouthful."
+                call her_main("...","body_12")
+                ">She slowly screws the cannister back into milker."
+                $ milking = 1
+                call her_main("(I can't believe he like it...)","body_12")
+                call her_main("(maybe it does taste good...)","body_12")
+                call her_main("...","body_12")
+                call her_main("on!","body_12")
+                ">The milker once again comes to life as it starts to milk Hermione for a second time."
 
-        m "Oh yes, quite right. 100 points to \"gryffindor\"!"
-        $ gryffindor =+ 100
-        call her_main("Thank you sir...","body_17")
-        call her_main("(Although I still have to head to class with these huge things...)","body_17")
-        call her_main("(not that I mind the extra attention...)","body_17")
+
+        call her_main("!!!","body_12")
+        call her_main("ugh... it's so gooood...","body_12")
+        $ hermione_dribble = True
+        $ milking = 2
+        call her_main("ah... it's like the straps are massaging me while it sucks...","body_12")
+        call her_main("mmmm... it's amazing...","body_12")
+        ">Hermione lets the machine continue it's work."
+        $ milking = 3
+        call her_main("ah... I think that's all of it [genie_name]...","body_12")
+        ">You notice the amount of milk coming from hermione's breasts has almost stopped."
+        call her_main("it felt amazing...","body_12")
+        call her_main("it almost made me cum...","body_12")
+        call her_main("but you can turn it off now...","body_12")
+        m "Um..."
+        ">The machine struggles to suck any more milk from hermione's heaving chest."
+        m "I'm not sure how. I think it only shuts off when it's full?"
+        call her_main("well I don't think it's going to be able to-","body_12")
+        ">You hear the harness start to whir, like a vacuum cleaner caught on carpet."
+        call her_main("!!!","body_12")
+        ">You hear a strange click come from the harness."
+        "*Zzzzkkk*"
+        show screen white 
+        pause .1
+        hide screen white
+        with hpunch
+        call her_main("Ah!!!","body_12")
+        ">You see a small squirt of milk come out of hermione's nipples."
+        ">The cannister is still barely more than half full."
+        "*Zzzzkkk*"
+        show screen white 
+        pause .1
+        hide screen white
+        with hpunch
+        call her_main("{size=+5}Ah!!!{/size}","body_12")
+        ">Another small squirt of milk comes out of hermione's nipples."
+        call her_main("{size=+5}It's making me cum!{/size}","body_12")
+        call her_main("{size=+5}why is it-{/size}","body_12")
+        "*Zzzzkkk*"
+        show screen white 
+        pause .1
+        hide screen white
+        with hpunch
+        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_12")
+        "*Zzzzkkk*"
+        show screen white 
+        pause .1
+        hide screen white
+        with hpunch
+        call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_12")
+        show screen blkfade
+        with d3
+        ">The machine continues for another couple of minutes. Each crack is accompanied by a small squirt of milk into the cups..."
+        $ milking = 4
+        hide screen blkfade 
+        with d3
+
+        call her_main("...","body_17")
+        ">Hermione stands before you, unable to speak."
+        m "Oh um... 20 points to \"gryffindor\"!"
+        $ gryffindor =+ 20
+        call her_main("...","body_17")
+        ">And I'll be needing this back."
+        call her_main("...","body_17")
+        show screen blkfade
+        with d3
+        ">You slowly remove the milk filled harness. There are red marks, surrounding her tender looking nipples, where the cups were."
+        m "Hmmm, maybe we overdid it a little today."
+        call her_main("...","body_17")
+        m "Why don't you head back to your room... I think you've earned a day off."
+        call her_main("yes...","body_17")
+        call her_main("I'll go now...","body_17")
+        m "Maybe you should get dressed first..."
+        call her_main("...","body_17")
+        ">Hermione slowly dresses herself, fumbling at every point."
+        $ hermione_wear_panties = True
+        $ hermione_wear_bra = True
+        $ hermione_wear_skirt = True
+        $ hermione_wear_top = True
+        call her_main("good by sir...","body_17")
+        if potion_version == 2: #permanent breast expansion flavour town text
+            m "Also, fyi, your boobs are now large permanently."
 
 
-    elif potion_version == 2: #futa variant
-
-
-
-
-
-    else: #permanent breast expansion
+    else: #futa variant
 
 
 

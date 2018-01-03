@@ -2862,266 +2862,19 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
 label luna_favour_4: ###Luna handjob
     m "{size=-4}(I'll just ask for a quick tug...){/size}"
-    if luna_corruption <= 10: #FIRST TIME - Change this to 10 when part 2 added
-        if luna_corruption <= 10:
-            $ luna_corruption += 1
-        play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
-        m "[luna_name]?"
-        call luna_main("yes [l_genie_name]...", 1, 2, 2, 2) 
-        m "Would it be possible for me to buy another favour..."
-        call luna_main("...", 7, 2, 2, 2) 
-        call luna_main("Go on...", 7, 2, 2, 2) 
-        menu:
-            "-Ask for a handjob politely-" if luna_sub < luna_dom:
-                $ current_payout = 160
-                if luna_dom <= 8:
-                    $ luna_dom += 1
-                $ luna_choice = 3
-                m "Well seeing as how you're so skilled at everything you turn your hand towards..."
-                call luna_main("Mhmmm...", 6, 2, 2, 3) 
-                m "I was hoping you could turn your hand towards my cock."
-                call luna_main("...", 8, 2, 1, 2) 
-                m "please..."
-                call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
-                call luna_main("Isn't it enough that I let you touch yourself...", 9, 2, 3, 3)
-                m "There'll be a hefty reward..."
-                call luna_main("...", 8, 2, 3, 3) 
-                call luna_main("......", 8, 1, 2, 2)
-                call luna_main("Well seeing as how you asked so nicely...", 8, 1, 1, 1) 
-                m "..."
-                call luna_main("Get over here...", 7, 1, 3, 1) 
-                m "Fantastic! Let me just stand up."
-                call luna_main("(This couldn't get any easier)", 8, 2, 2, 1) 
-            "-Beg for a handjob-" if luna_dom >= 7:
-                $ current_payout = 200
-                if luna_dom <= 8:
-                    $ luna_dom += 1
-                $ luna_choice = 4
-                m "Well if it's not too much trouble..."
-                call luna_main("Mhmmm...", 6, 2, 2, 3) 
-                m "I was hoping you could..."
-                call luna_main("...", 8, 2, 1, 2) 
-                m "give me a handjob..."
-                call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
-                m "If it's not too much trouble..."
-                call luna_main("Well I suppose I probably should.", 5, 2, 1, 1)
-                call luna_main("Who knows who you'll call up her if I don't...", 8, 1, 3, 1)
-                m "Thank you..."
-                call luna_main("...", 8, 2, 3, 3) 
-                call luna_main("......", 8, 1, 2, 2)
-                call luna_main("However I do expect to be fairly compensated...", 8, 1, 1, 1) 
-                m "Of course."
-                call luna_main("Good. Now Get over here...", 7, 1, 3, 1) 
-                m "Fantastic! Let me just stand up."
-                call luna_main("(This couldn't get any easier...)", 8, 2, 2, 1) 
-                call luna_main("(I'll be the only person in his will by the end of the month at this rate...)", 9, 1, 3, 1) 
-
-        show screen blkfade
-        ">You stand up and walk around your desk, standing in front of Luna."
-        ">You open your cloak and pull out your cock."
-        hide screen bld1
-        hide screen genie
-        show screen chair_02
-        show screen desk_02
-        $ genie_chibi_xpos = -20
-        $ genie_chibi_ypos = 10
-        $ g_c_u_pic = "jerking_off_02_ani"
-        show screen g_c_u
-        with fade
-        hide screen blktone
-        hide screen blkfade
-        with d5
-        pause
-        m "Well..."
-        call luna_main("...", 7, 8, 2, 3) 
-        ">Luna looks down at your cock."
-        call luna_main("Disgusting...", 9, 8, 3, 1) 
-        ">She takes a firm hold of it with her right hand"
-        $ luna_r_arm = 3
-        $ genie_sprite_xpos = 300
-        $ luna_xpos = 390
-        call gen_main("!!!", 4, 2)
-        call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
-        call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
-        ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
-        m "Why don't you try grabbing it with both hands [luna_name]..."
-        call luna_main("Hmph... you wish!", 8, 1, 2, 1) 
-        m "..."
-        ">Luna starts moving her hand back and forth along the length of your cock."
-        m "ugh... Yes, that's it..."
-        call luna_main("(Men really are the worst)", 6, 3, 3, 3) 
-        m "Mmmm, yes... just like that [luna_name]..."
-        call luna_main("Is this good [l_genie_name]?", 6, 1, 4, 14) 
-        m "yes, yes, this is amazing..."
-        call luna_main("good...", 6, 1, 4, 1) 
-        call luna_main("but...", 6, 2, 4, 2) 
-        call luna_main("Do you need a little more encouragement?", 8, 1, 4, 1) 
-        m "What are you thinking?"
-        call luna_main("......", 9, 8, 3, 1) 
-        menu:
-            "-Luna takes her top off-":
-                ">Luna slowly removes her vest and starts to unbutton her top."
-                m "Mmmm"
-                $ luna_wear_top = False
-                $ luna_choice = 1
-                ">She takes her shirt off and places it onto the floor."
-                call luna_main("There...", 8, 2, 4, 1) 
-                m "Very nice [luna_name]!"
-                call luna_main("...", 7, 8, 4, 2) 
-                call luna_main("Thank you sir...", 7, 1, 4, 1) 
-                ">She places her hands back around your cock."
-                call luna_main("Mmm, much better...", 5, 8, 2, 1) 
-                m "Gods yes."
-                call luna_main("...", 5, 1, 2, 1) 
-                call luna_main("I'd take my bra off as well...", 5, 2, 4, 2) 
-                call luna_main("But I don't think you'd be able to stop yourself from cumming on the spot, would you?", 8, 1, 3, 1) 
-                g4 "probably not!"
-                call luna_main("...", 9, 8, 2, 1) 
-                ">Luna starts pumping your cock a little faster."
-            "-Luna teases you-":
-                $ luna_choice = 2
-                call luna_main("Come on Professor...", 8, 2, 4, 1) 
-                ">Luna starts moving her hands up and down your cock a little faster."
-                m "mmmm..."
-                call luna_main("Get a nice big load ready for me...", 7, 8, 4, 2) 
-                m "Ah yes..."
-                call luna_main("get ready to cum all over your student.", 7, 1, 4, 1) 
-                ">She speeds up the pace."
-                m "Ah..."
-                call luna_main("What's wrong?", 7, 1, 5, 2) 
-                m "Well if you go that fast the friction's a little painful."
-                call luna_main("Really?...", 8, 1, 2, 1) 
-                ">Luna doesn't slow down. If anything she speeds up slightly."
-                g9 "Ah!"
-                call luna_main("...", 9, 1, 3, 1) 
-                g9 "[luna_name]..."
-                call luna_main("Hmmm, do You want me to spit on your cock then?", 5, 1, 5, 1) 
-                g9 "Just a little bit..."
-                call luna_main("...", 5, 1, 2, 1) 
-                call luna_main("......", 5, 1, 3, 1) 
-                g9 "Please..."
-                call luna_main("Good boy.", 7, 1, 2, 1) 
-                call luna_main("*Ptew*", 5, 8, 2, 16) 
-                ">Luna spits into her hand before placing it back on your cock."
-        g4 "Mmmm, yes that's it [luna_name]..."
-        call luna_main("...", 7, 8, 2, 1) 
-        g4 "Just keep pumping those hands up and down."
-        call luna_main("......", 8, 1, 3, 1) 
-        if luna_choice == 1:
-            ">Luna gently starts shaking her boobs as she jerks you off."
-        else:
-            call luna_main("*Ptew*", 8, 8, 3, 16) 
-            ">Luna spits into her hand again and places it back on your cock."
-        ">She then starts pumping your cock even faster."
-        g4 "Gods yes..."
-        g4 "(This is it, where should I cum?)"
-        menu:
-            "-On her face-":
-                ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
-
-            "-On her tits-":
-                ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
-
-        call luna_main("[l_genie_name]!!!", 7, 1, 3, 6) 
-        call luna_main("You're not trying to cum on me are you?", 8, 1, 3, 3) 
-        g4 "Ah [luna_name], I'm almost there."
-        call luna_main("Well...", 9, 8, 3, 3) 
-        $ luna_wear_skirt = False
-        ">Luna quickly pulls down her skirt."
-        g4 "!!!"
-        call luna_main("You cum...", 8, 1, 3, 3) 
-        g4 "Ah..."
-        ">Luna slowly pulls her panties forward, exposing her pussy to the air."
-        ">Her right hand is still wrapped around your cock as she pumps it with blinding speed."
-        call luna_main("Where I tell you...", 9, 1, 3, 3) 
-        g4 "mmmm"
-        call luna_main("Now...", 8, 1, 3, 2) 
-        call luna_main("Cum.", 5, 1, 2, 1) 
-        $ g_c_c_u_pic = "jerking_off_cum_ani"
-        show screen g_c_c_u
-        $ luna_wear_cum_under = True
-        $ luna_cum = 10
-        show screen white 
-        pause.1
-        hide screen white
-        pause.2
-        show screen white 
-        pause .1
-        hide screen white
-        with hpunch
-        ">You start shooting your load directly into Luna's panties, coating her pussy in cum."
-        g4 "Argh! by the gods {size=+10}YES!{/size}"
-        call luna_main("...", 5, 3, 1, 1)
-        call luna_main("(It's so warm...)", 5, 2, 4, 1)
-        g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
-        g4 "mmmm....."
-        hide screen g_c_c_u
-        $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
-        $ luna_r_arm = 2
-        hide screen genie_sprite
-        with d3
-        m "That hit the spot..."
-        call luna_main("({image=textheart}{image=textheart}{image=textheart})", 5, 8, 4, 1)
-        call luna_main("[l_genie_name]!", 8, 1, 3, 1)
-        call luna_main("How could you! Cumming on your students {size=-10}pussy{/size}...", 7, 8, 2, 1)
-        m "Ahh... that was fantastic slut..."
-        $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png"
-        call luna_main("[l_genie_name]...", 6, 2, 2, 1)
-
-    else: #last time event is run before cum addict variant
+    if luna_addicted:
         if luna_corruption <= 11:
             $ luna_corruption += 1
         play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
         m "[luna_name]?"
         call luna_main("yes [l_genie_name]...", 1, 2, 2, 2) 
         m "Would it be possible for me to buy another favour..."
-        call luna_main("I think I know what you want...", 7, 2, 2, 1) 
-        call luna_main("but why don't you ask me anyway...", 5, 1, 1, 1) 
-        call luna_main("you know I like to hear you beg.", 8, 1, 3, 1) 
-        menu:
-            "-Ask for a handjob politely-" if luna_sub < luna_dom:
-                $ current_payout = 160
-                if luna_dom <= 8:
-                    $ luna_dom += 1
-                $ luna_choice = 3
-                m "Well seeing as how you're so skilled at everything you turn your hand towards..."
-                call luna_main("Mhmmm...", 6, 2, 2, 3) 
-                m "I was hoping you could turn your hand towards my cock."
-                call luna_main("...", 8, 2, 1, 2) 
-                m "please..."
-                call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
-                call luna_main("Isn't it enough that I let you touch yourself...", 9, 2, 3, 3)
-                m "There'll be a hefty reward..."
-                call luna_main("...", 8, 2, 3, 3) 
-                call luna_main("......", 8, 1, 2, 2)
-                call luna_main("Well seeing as how you asked so nicely...", 8, 1, 1, 1) 
-                m "..."
-                call luna_main("Get over here...", 7, 1, 3, 1) 
-                m "Fantastic! Let me just stand up."
-                call luna_main("(This couldn't get any easier)", 8, 2, 2, 1) 
-            "-Beg for a handjob-" if luna_dom >= 7:
-                $ current_payout = 200
-                if luna_dom <= 8:
-                    $ luna_dom += 1
-                $ luna_choice = 4
-                m "Well if it's not too much trouble..."
-                call luna_main("Mhmmm...", 6, 2, 2, 3) 
-                m "I was hoping you could..."
-                call luna_main("...", 8, 2, 1, 2) 
-                m "give me a handjob..."
-                call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
-                m "If it's not too much trouble..."
-                call luna_main("Well I suppose I probably should.", 5, 2, 1, 1)
-                call luna_main("Who knows who you'll call up her if I don't...", 8, 1, 3, 1)
-                m "Thank you..."
-                call luna_main("...", 8, 2, 3, 3) 
-                call luna_main("......", 8, 1, 2, 2)
-                call luna_main("However I do expect to be fairly compensated...", 8, 1, 1, 1) 
-                m "Of course."
-                call luna_main("Good. Now Get over here...", 7, 1, 3, 1) 
-                m "Fantastic! Let me just stand up."
-                call luna_main("(This couldn't get any easier...)", 8, 2, 2, 1) 
-                call luna_main("(I'll be the only person in his will by the end of the month at this rate...)", 9, 1, 3, 1) 
+        call luna_main("Does it involve me cranking out that delicous cum from your wrinkly old balls?", 7, 2, 2, 1) 
+        call luna_main("Hmmmm?", 5, 1, 1, 1) 
+        m "Possibly..."
+        call luna_main("mmmm... good boy...", 8, 1, 3, 1) 
+        call luna_main("well...", 8, 1, 3, 1) 
+        call luna_main("stand up [l_genie_name]...", 8, 1, 3, 1) 
 
         show screen blkfade
         ">You stand up and walk around your desk, standing in front of Luna."
@@ -3142,53 +2895,59 @@ label luna_favour_4: ###Luna handjob
         m "Well..."
         call luna_main("...", 7, 8, 2, 3) 
         ">Luna looks down at your cock."
-        call luna_main("Disgusting...", 9, 8, 3, 1) 
+        call luna_main("Mmmm, to think something so disgusting could be so tasty...", 9, 8, 3, 1) 
         ">She takes a firm hold of it with her right hand"
         $ luna_r_arm = 3
         $ genie_sprite_xpos = 300
         $ luna_xpos = 390
         call gen_main("!!!", 4, 2)
-        call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
-        call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
-        ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
+        call luna_main("*Hmmph*", 5, 8, 2, 1) 
+        call luna_main("(It's so warm...)", 5, 3, 3, 1) 
+        ">Luna slowly starts stroking your cock with her hand, her movements are fast yet stiff."
         m "Why don't you try grabbing it with both hands [luna_name]..."
-        call luna_main("Hmph... you wish [l_genie_name]!", 8, 1, 2, 1) 
+        call luna_main("Hmph... I don't think so [l_genie_name]!", 8, 1, 2, 1) 
         m "..."
         ">Luna starts moving her hand back and forth along the length of your cock."
         m "ugh... Yes, that's it..."
-        call luna_main("(He loves this...)", 6, 3, 3, 3) 
+        call luna_main("See, one hand's all you need.", 6, 3, 3, 3) 
         m "Mmmm, yes... just like that [luna_name]..."
         call luna_main("Is this good [l_genie_name]?", 6, 1, 4, 14) 
         m "yes, yes, this is amazing..."
         call luna_main("good...", 6, 1, 4, 1) 
         call luna_main("but...", 6, 2, 4, 2) 
-        call luna_main("Do you need a little more encouragement?", 8, 1, 4, 1) 
+        call luna_main("I think you need a little more encouragement...", 8, 1, 4, 1) 
         m "What are you thinking?"
-        call luna_main("......", 9, 8, 3, 1) 
+        call luna_main("well...", 9, 8, 3, 1) 
+        $ luna_wear_skirt = False
+        $ luna_wear_bra = False
+        $ luna_wear_skirt = False
+        $ luna_wear_skirt = False
+        ">Luna casually strips, all while keeping a firm grip of your cock."
+        g4 "Now that's some encouragement!"
+        call luna_main("That's not all sir...", 9, 8, 3, 1) 
+        $ luna_r_arm = 1
         menu:
-            "-Luna takes her top off-":
-                ">Luna slowly removes her vest and starts to unbutton her top."
+            "-Luna teases you with her butt-":
+                $ luna_flip = -1
+                ">Luna slowly turns around, giving a nice view of her pale white cheeks."
                 m "Mmmm"
-                $ luna_wear_top = False
-                $ luna_choice = 1
-                ">She takes her shirt off and places it onto the floor."
-                call luna_main("There...", 8, 2, 4, 1) 
+                ">She slowly rolls her hips side to side."
+                call luna_main("Enjoying the view...", 8, 2, 4, 1) 
                 m "Very nice [luna_name]!"
                 call luna_main("...", 7, 8, 4, 2) 
                 call luna_main("Thank you sir...", 7, 1, 4, 1) 
-                ">She places her hands back around your cock."
-                call luna_main("Mmm, much better...", 5, 8, 2, 1) 
+                $ luna_xpos = 300
+                ">She quietly backs into you, just letting the tip of your cock touch her ass, a drop of precum sticks to her cheek."
+                call luna_main("Mmm, that's much better...", 5, 8, 2, 1) 
                 m "Gods yes."
                 call luna_main("...", 5, 1, 2, 1) 
-                call luna_main("well, seeing as how you're being such a good boy...", 8, 3, 2, 1) 
-                $ luna_wear_bra = False
-                $ luna_r_arm = 2
-                $ luna_l_arm = 2
-                ">Luna slowly removes her bra before placing her hand back on your cock."
+                $ luna_xpos = 500
+                call luna_main("well, I suppose I better get back to work...", 8, 3, 2, 1) 
+                ">Luna slowly turns back around before placing her hand back on your cock."
                 $ luna_r_arm = 3
-                $ luna_l_arm = 1
+                $ luna_flip = 1
                 ">Luna starts pumping your cock a little faster."
-            "-Luna teases you-":
+            "-Luna teases you with her thighs-":
                 $ luna_choice = 2
                 call luna_main("Come on Professor...", 8, 2, 4, 1) 
                 ">Luna starts moving her hands up and down your cock a little faster."
@@ -3232,17 +2991,8 @@ label luna_favour_4: ###Luna handjob
         call luna_main("[l_genie_name]!!!", 7, 1, 3, 6) 
         call luna_main("You're not trying to cum on me are you?", 8, 1, 3, 3) 
         g4 "Ah [luna_name], I'm almost there!"
-        call luna_main("Well...", 9, 8, 3, 3) 
-        $ luna_wear_skirt = False
-        $ luna_wear_bra = False
-        $ luna_wear_skirt = False
-        $ luna_wear_skirt = False
-        ">Luna quickly strips, all while keeping a firm grip of your cock.."
-        g4 "hurry up! You'll ruin the damn moment!"
-        call luna_main("well, pick...", 8, 1, 3, 3) 
-        g4 "you mean..."
-        ">Leans forward slowly while ever so slithery jiggling her milky boobs."
-        ">Her right hand is still wrapped around your cock as she pumps slowly, keeping you at the edge."
+        ">Leans forward slowly while ever so slightly jiggling her milky boobs."
+        ">Her right hand is still wrapped around your cock as she pumps slowly, keeping you at firmly at the edge."
         call luna_main("pick where you want...", 9, 1, 3, 3) 
         g4 "Ah yes!"
         call luna_main("you can pick my boobs...", 8, 1, 3, 2) 
@@ -3281,7 +3031,7 @@ label luna_favour_4: ###Luna handjob
                 pause .1
                 hide screen white
                 with hpunch
-                ">You start shooting your load directly into Luna's panties, coating her pussy in cum."
+                ">You start spurting over Luna's soft thighs, coating her pussy in cum."
 
             "-{size=+10}FACE!{/size}-":
                 jump luna_cum_addict_event
@@ -3302,6 +3052,447 @@ label luna_favour_4: ###Luna handjob
         m "Ahh... that was fantastic slut..."
         $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png"
         call luna_main("[l_genie_name]...", 6, 2, 2, 1)
+    else:
+        if luna_corruption <= 10: #FIRST TIME - Change this to 10 when part 2 added
+            if luna_corruption <= 10:
+                $ luna_corruption += 1
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+            m "[luna_name]?"
+            call luna_main("yes [l_genie_name]...", 1, 2, 2, 2) 
+            m "Would it be possible for me to buy another favour..."
+            call luna_main("...", 7, 2, 2, 2) 
+            call luna_main("Go on...", 7, 2, 2, 2) 
+            menu:
+                "-Ask for a handjob politely-" if luna_sub < luna_dom:
+                    $ current_payout = 160
+                    if luna_dom <= 8:
+                        $ luna_dom += 1
+                    $ luna_choice = 3
+                    m "Well seeing as how you're so skilled at everything you turn your hand towards..."
+                    call luna_main("Mhmmm...", 6, 2, 2, 3) 
+                    m "I was hoping you could turn your hand towards my cock."
+                    call luna_main("...", 8, 2, 1, 2) 
+                    m "please..."
+                    call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
+                    call luna_main("Isn't it enough that I let you touch yourself...", 9, 2, 3, 3)
+                    m "There'll be a hefty reward..."
+                    call luna_main("...", 8, 2, 3, 3) 
+                    call luna_main("......", 8, 1, 2, 2)
+                    call luna_main("Well seeing as how you asked so nicely...", 8, 1, 1, 1) 
+                    m "..."
+                    call luna_main("Get over here...", 7, 1, 3, 1) 
+                    m "Fantastic! Let me just stand up."
+                    call luna_main("(This couldn't get any easier)", 8, 2, 2, 1) 
+                "-Beg for a handjob-" if luna_dom >= 7:
+                    $ current_payout = 200
+                    if luna_dom <= 8:
+                        $ luna_dom += 1
+                    $ luna_choice = 4
+                    m "Well if it's not too much trouble..."
+                    call luna_main("Mhmmm...", 6, 2, 2, 3) 
+                    m "I was hoping you could..."
+                    call luna_main("...", 8, 2, 1, 2) 
+                    m "give me a handjob..."
+                    call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
+                    m "If it's not too much trouble..."
+                    call luna_main("Well I suppose I probably should.", 5, 2, 1, 1)
+                    call luna_main("Who knows who you'll call up her if I don't...", 8, 1, 3, 1)
+                    m "Thank you..."
+                    call luna_main("...", 8, 2, 3, 3) 
+                    call luna_main("......", 8, 1, 2, 2)
+                    call luna_main("However I do expect to be fairly compensated...", 8, 1, 1, 1) 
+                    m "Of course."
+                    call luna_main("Good. Now Get over here...", 7, 1, 3, 1) 
+                    m "Fantastic! Let me just stand up."
+                    call luna_main("(This couldn't get any easier...)", 8, 2, 2, 1) 
+                    call luna_main("(I'll be the only person in his will by the end of the month at this rate...)", 9, 1, 3, 1) 
+
+            show screen blkfade
+            ">You stand up and walk around your desk, standing in front of Luna."
+            ">You open your cloak and pull out your cock."
+            hide screen bld1
+            hide screen genie
+            show screen chair_02
+            show screen desk_02
+            $ genie_chibi_xpos = -20
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "jerking_off_02_ani"
+            show screen g_c_u
+            with fade
+            hide screen blktone
+            hide screen blkfade
+            with d5
+            pause
+            m "Well..."
+            call luna_main("...", 7, 8, 2, 3) 
+            ">Luna looks down at your cock."
+            call luna_main("Disgusting...", 9, 8, 3, 1) 
+            ">She takes a firm hold of it with her right hand"
+            $ luna_r_arm = 3
+            $ genie_sprite_xpos = 300
+            $ luna_xpos = 390
+            call gen_main("!!!", 4, 2)
+            call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
+            call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
+            ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
+            m "Why don't you try grabbing it with both hands [luna_name]..."
+            call luna_main("Hmph... you wish!", 8, 1, 2, 1) 
+            m "..."
+            ">Luna starts moving her hand back and forth along the length of your cock."
+            m "ugh... Yes, that's it..."
+            call luna_main("(Men really are the worst)", 6, 3, 3, 3) 
+            m "Mmmm, yes... just like that [luna_name]..."
+            call luna_main("Is this good [l_genie_name]?", 6, 1, 4, 14) 
+            m "yes, yes, this is amazing..."
+            call luna_main("good...", 6, 1, 4, 1) 
+            call luna_main("but...", 6, 2, 4, 2) 
+            call luna_main("Do you need a little more encouragement?", 8, 1, 4, 1) 
+            m "What are you thinking?"
+            call luna_main("......", 9, 8, 3, 1) 
+            menu:
+                "-Luna takes her top off-":
+                    ">Luna slowly removes her vest and starts to unbutton her top."
+                    m "Mmmm"
+                    $ luna_wear_top = False
+                    $ luna_choice = 1
+                    ">She takes her shirt off and places it onto the floor."
+                    call luna_main("There...", 8, 2, 4, 1) 
+                    m "Very nice [luna_name]!"
+                    call luna_main("...", 7, 8, 4, 2) 
+                    call luna_main("Thank you sir...", 7, 1, 4, 1) 
+                    ">She places her hands back around your cock."
+                    call luna_main("Mmm, much better...", 5, 8, 2, 1) 
+                    m "Gods yes."
+                    call luna_main("...", 5, 1, 2, 1) 
+                    call luna_main("I'd take my bra off as well...", 5, 2, 4, 2) 
+                    call luna_main("But I don't think you'd be able to stop yourself from cumming on the spot, would you?", 8, 1, 3, 1) 
+                    g4 "probably not!"
+                    call luna_main("...", 9, 8, 2, 1) 
+                    ">Luna starts pumping your cock a little faster."
+                "-Luna teases you-":
+                    $ luna_choice = 2
+                    call luna_main("Come on Professor...", 8, 2, 4, 1) 
+                    ">Luna starts moving her hands up and down your cock a little faster."
+                    m "mmmm..."
+                    call luna_main("Get a nice big load ready for me...", 7, 8, 4, 2) 
+                    m "Ah yes..."
+                    call luna_main("get ready to cum all over your student.", 7, 1, 4, 1) 
+                    ">She speeds up the pace."
+                    m "Ah..."
+                    call luna_main("What's wrong?", 7, 1, 5, 2) 
+                    m "Well if you go that fast the friction's a little painful."
+                    call luna_main("Really?...", 8, 1, 2, 1) 
+                    ">Luna doesn't slow down. If anything she speeds up slightly."
+                    g9 "Ah!"
+                    call luna_main("...", 9, 1, 3, 1) 
+                    g9 "[luna_name]..."
+                    call luna_main("Hmmm, do You want me to spit on your cock then?", 5, 1, 5, 1) 
+                    g9 "Just a little bit..."
+                    call luna_main("...", 5, 1, 2, 1) 
+                    call luna_main("......", 5, 1, 3, 1) 
+                    g9 "Please..."
+                    call luna_main("Good boy.", 7, 1, 2, 1) 
+                    call luna_main("*Ptew*", 5, 8, 2, 16) 
+                    ">Luna spits into her hand before placing it back on your cock."
+            g4 "Mmmm, yes that's it [luna_name]..."
+            call luna_main("...", 7, 8, 2, 1) 
+            g4 "Just keep pumping those hands up and down."
+            call luna_main("......", 8, 1, 3, 1) 
+            if luna_choice == 1:
+                ">Luna gently starts shaking her boobs as she jerks you off."
+            else:
+                call luna_main("*Ptew*", 8, 8, 3, 16) 
+                ">Luna spits into her hand again and places it back on your cock."
+            ">She then starts pumping your cock even faster."
+            g4 "Gods yes..."
+            g4 "(This is it, where should I cum?)"
+            menu:
+                "-On her face-":
+                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
+
+                "-On her tits-":
+                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+
+            call luna_main("[l_genie_name]!!!", 7, 1, 3, 6) 
+            call luna_main("You're not trying to cum on me are you?", 8, 1, 3, 3) 
+            g4 "Ah [luna_name], I'm almost there."
+            call luna_main("Well...", 9, 8, 3, 3) 
+            $ luna_wear_skirt = False
+            ">Luna quickly pulls down her skirt."
+            g4 "!!!"
+            call luna_main("You cum...", 8, 1, 3, 3) 
+            g4 "Ah..."
+            ">Luna slowly pulls her panties forward, exposing her pussy to the air."
+            ">Her right hand is still wrapped around your cock as she pumps it with blinding speed."
+            call luna_main("Where I tell you...", 9, 1, 3, 3) 
+            g4 "mmmm"
+            call luna_main("Now...", 8, 1, 3, 2) 
+            call luna_main("Cum.", 5, 1, 2, 1) 
+            $ g_c_c_u_pic = "jerking_off_cum_ani"
+            show screen g_c_c_u
+            $ luna_wear_cum_under = True
+            $ luna_cum = 10
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white 
+            pause .1
+            hide screen white
+            with hpunch
+            ">You start shooting your load directly into Luna's panties, coating her pussy in cum."
+            g4 "Argh! by the gods {size=+10}YES!{/size}"
+            call luna_main("...", 5, 3, 1, 1)
+            call luna_main("(It's so warm...)", 5, 2, 4, 1)
+            g4 "{size=+10}TAKE IT ALL YOU sLUT!{/size}"
+            g4 "mmmm....."
+            hide screen g_c_c_u
+            $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
+            $ luna_r_arm = 2
+            hide screen genie_sprite
+            with d3
+            m "That hit the spot..."
+            call luna_main("({image=textheart}{image=textheart}{image=textheart})", 5, 8, 4, 1)
+            call luna_main("[l_genie_name]!", 8, 1, 3, 1)
+            call luna_main("How could you! Cumming on your students {size=-10}pussy{/size}...", 7, 8, 2, 1)
+            m "Ahh... that was fantastic slut..."
+            $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png"
+            call luna_main("[l_genie_name]...", 6, 2, 2, 1)
+
+        else: #last time event is run before cum addict variant
+            if luna_corruption <= 11:
+                $ luna_corruption += 1
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
+            m "[luna_name]?"
+            call luna_main("yes [l_genie_name]...", 1, 2, 2, 2) 
+            m "Would it be possible for me to buy another favour..."
+            call luna_main("I think I know what you want...", 7, 2, 2, 1) 
+            call luna_main("but why don't you ask me anyway...", 5, 1, 1, 1) 
+            call luna_main("you know I like to hear you beg.", 8, 1, 3, 1) 
+            menu:
+                "-Ask for a handjob politely-" if luna_sub < luna_dom:
+                    $ current_payout = 160
+                    if luna_dom <= 8:
+                        $ luna_dom += 1
+                    $ luna_choice = 3
+                    m "Well seeing as how you're so skilled at everything you turn your hand towards..."
+                    call luna_main("Mhmmm...", 6, 2, 2, 3) 
+                    m "I was hoping you could turn your hand towards my cock."
+                    call luna_main("...", 8, 2, 1, 2) 
+                    m "please..."
+                    call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
+                    call luna_main("Isn't it enough that I let you touch yourself...", 9, 2, 3, 3)
+                    m "There'll be a hefty reward..."
+                    call luna_main("...", 8, 2, 3, 3) 
+                    call luna_main("......", 8, 1, 2, 2)
+                    call luna_main("Well seeing as how you asked so nicely...", 8, 1, 1, 1) 
+                    m "..."
+                    call luna_main("Get over here...", 7, 1, 3, 1) 
+                    m "Fantastic! Let me just stand up."
+                    call luna_main("(This couldn't get any easier)", 8, 2, 2, 1) 
+                "-Beg for a handjob-" if luna_dom >= 7:
+                    $ current_payout = 200
+                    if luna_dom <= 8:
+                        $ luna_dom += 1
+                    $ luna_choice = 4
+                    m "Well if it's not too much trouble..."
+                    call luna_main("Mhmmm...", 6, 2, 2, 3) 
+                    m "I was hoping you could..."
+                    call luna_main("...", 8, 2, 1, 2) 
+                    m "give me a handjob..."
+                    call luna_main("Really? You want me to stroke that filthy cock of yours?", 8, 1, 2, 3) 
+                    m "If it's not too much trouble..."
+                    call luna_main("Well I suppose I probably should.", 5, 2, 1, 1)
+                    call luna_main("Who knows who you'll call up her if I don't...", 8, 1, 3, 1)
+                    m "Thank you..."
+                    call luna_main("...", 8, 2, 3, 3) 
+                    call luna_main("......", 8, 1, 2, 2)
+                    call luna_main("However I do expect to be fairly compensated...", 8, 1, 1, 1) 
+                    m "Of course."
+                    call luna_main("Good. Now Get over here...", 7, 1, 3, 1) 
+                    m "Fantastic! Let me just stand up."
+                    call luna_main("(This couldn't get any easier...)", 8, 2, 2, 1) 
+                    call luna_main("(I'll be the only person in his will by the end of the month at this rate...)", 9, 1, 3, 1) 
+
+            show screen blkfade
+            ">You stand up and walk around your desk, standing in front of Luna."
+            ">You open your cloak and pull out your cock."
+            hide screen bld1
+            hide screen genie
+            show screen chair_02
+            show screen desk_02
+            $ genie_chibi_xpos = -20
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "jerking_off_02_ani"
+            show screen g_c_u
+            with fade
+            hide screen blktone
+            hide screen blkfade
+            with d5
+            pause
+            m "Well..."
+            call luna_main("...", 7, 8, 2, 3) 
+            ">Luna looks down at your cock."
+            call luna_main("Disgusting...", 9, 8, 3, 1) 
+            ">She takes a firm hold of it with her right hand"
+            $ luna_r_arm = 3
+            $ genie_sprite_xpos = 300
+            $ luna_xpos = 390
+            call gen_main("!!!", 4, 2)
+            call luna_main("*Hmmph* At least it isn't small...", 5, 8, 2, 1) 
+            call luna_main("(I can't even fit my hand around it.)", 5, 3, 3, 1) 
+            ">Luna slowly starts stroking your cock with her hand, her movements are rough and inexperienced."
+            m "Why don't you try grabbing it with both hands [luna_name]..."
+            call luna_main("Hmph... you wish [l_genie_name]!", 8, 1, 2, 1) 
+            m "..."
+            ">Luna starts moving her hand back and forth along the length of your cock."
+            m "ugh... Yes, that's it..."
+            call luna_main("(He loves this...)", 6, 3, 3, 3) 
+            m "Mmmm, yes... just like that [luna_name]..."
+            call luna_main("Is this good [l_genie_name]?", 6, 1, 4, 14) 
+            m "yes, yes, this is amazing..."
+            call luna_main("good...", 6, 1, 4, 1) 
+            call luna_main("but...", 6, 2, 4, 2) 
+            call luna_main("Do you need a little more encouragement?", 8, 1, 4, 1) 
+            m "What are you thinking?"
+            call luna_main("......", 9, 8, 3, 1) 
+            menu:
+                "-Luna takes her top off-":
+                    ">Luna slowly removes her vest and starts to unbutton her top."
+                    m "Mmmm"
+                    $ luna_wear_top = False
+                    $ luna_choice = 1
+                    ">She takes her shirt off and places it onto the floor."
+                    call luna_main("There...", 8, 2, 4, 1) 
+                    m "Very nice [luna_name]!"
+                    call luna_main("...", 7, 8, 4, 2) 
+                    call luna_main("Thank you sir...", 7, 1, 4, 1) 
+                    ">She places her hands back around your cock."
+                    call luna_main("Mmm, much better...", 5, 8, 2, 1) 
+                    m "Gods yes."
+                    call luna_main("...", 5, 1, 2, 1) 
+                    call luna_main("well, seeing as how you're being such a good boy...", 8, 3, 2, 1) 
+                    $ luna_wear_bra = False
+                    $ luna_r_arm = 2
+                    $ luna_l_arm = 2
+                    ">Luna slowly removes her bra before placing her hand back on your cock."
+                    $ luna_r_arm = 3
+                    $ luna_l_arm = 1
+                    ">Luna starts pumping your cock a little faster."
+                "-Luna teases you-":
+                    $ luna_choice = 2
+                    call luna_main("Come on Professor...", 8, 2, 4, 1) 
+                    ">Luna starts moving her hands up and down your cock a little faster."
+                    m "mmmm..."
+                    call luna_main("Get a nice big load ready for me...", 7, 8, 4, 2) 
+                    m "Ah yes..."
+                    call luna_main("get ready to cum all over your student.", 7, 1, 4, 1) 
+                    ">She speeds up the pace."
+                    m "Ah..."
+                    call luna_main("mmmm, hurts doesn't it.", 7, 3, 2, 1) 
+                    m "yes..."
+                    call luna_main("Really?...", 8, 1, 2, 1) 
+                    ">Luna doesn't slow down. If anything she speeds up slightly."
+                    g9 "Ah! yes!"
+                    call luna_main("...", 9, 1, 3, 1) 
+                    g9 "[luna_name]..."
+                    call luna_main("Hmmm, do You want me to spit on your cock then?", 5, 1, 5, 1) 
+                    g9 "yes... please [luna_name]..."
+                    call luna_main("Good boy.", 7, 1, 2, 1) 
+                    call luna_main("*Ptew*", 5, 8, 2, 16) 
+                    ">Luna spits into her hand before placing it back on your cock."
+            g4 "Mmmm, yes that's it [luna_name]..."
+            call luna_main("...", 7, 8, 2, 1) 
+            g4 "Just keep pumping those hands up and down."
+            call luna_main("......", 8, 1, 3, 1) 
+            if luna_choice == 1:
+                ">Luna gently starts shaking her boobs as she jerks you off."
+            else:
+                call luna_main("*Ptew*", 8, 8, 3, 16) 
+                ">Luna spits into her hand again and places it back on your cock."
+            ">She then starts pumping your cock even faster."
+            g4 "Gods yes..."
+            g4 "(This is it, where should I cum?)"
+            menu:
+                "-On her face-":
+                    ">You place your hand on the top of Luna's head and slowly try to force it down to be level with your crouch."
+
+                "-On her tits-":
+                    ">You place your hand on the top of Luna's should and slowly try to force her down to be level with your crouch."
+
+            call luna_main("[l_genie_name]!!!", 7, 1, 3, 6) 
+            call luna_main("You're not trying to cum on me are you?", 8, 1, 3, 3) 
+            g4 "Ah [luna_name], I'm almost there!"
+            call luna_main("hmmm... (Might as well make some more money from the [l_genie_name]...)", 9, 8, 3, 3) 
+            $ luna_wear_skirt = False
+            $ luna_wear_bra = False
+            $ luna_wear_skirt = False
+            $ luna_wear_skirt = False
+            ">Luna quickly strips, all while keeping a firm grip of your cock.."
+            g4 "hurry up! You'll ruin the damn moment!"
+            call luna_main("well then, pick...", 8, 1, 3, 3) 
+            g4 "you mean..."
+            ">Leans forward slowly while ever so slightly jiggling her milky boobs."
+            ">Her right hand is still wrapped around your cock as she pumps slowly, keeping you at firmly at the edge."
+            call luna_main("pick where you want...", 9, 1, 3, 3) 
+            g4 "Ah yes!"
+            call luna_main("you can pick my boobs...", 8, 1, 3, 2) 
+            ">She gives them another shake."
+            call luna_main("or my thighs...", 5, 1, 2, 1) 
+            ">She rubs them together as she rotates on the balls of her feet."
+            call luna_main("boobs are an extra 100...", 5, 1, 2, 1) 
+            call luna_main("thighs are 50...", 5, 1, 2, 1) 
+            g4 "Ah{size+=2} here {size+=2}it {size+=2}is!{/size}"
+            menu:
+                "-boobs-":
+                    $ current_payout += 100 
+                    $ g_c_c_u_pic = "jerking_off_cum_ani"
+                    show screen g_c_c_u
+                    $ luna_cum = 5
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    ">You start shooting your load across her chest, coating her tits in cum."
+
+                "-thighs-":
+                    $ current_payout += 50 
+                    $ g_c_c_u_pic = "jerking_off_cum_ani"
+                    show screen g_c_c_u
+                    $ luna_cum = 10
+                    show screen white 
+                    pause.1
+                    hide screen white
+                    pause.2
+                    show screen white 
+                    pause .1
+                    hide screen white
+                    with hpunch
+                    ">You start spurting over Luna's soft thighs, coating her pussy in cum."
+
+                "-{size=+10}FACE!{/size}-":
+                    jump luna_cum_addict_event
+            g4 "Argh! by the gods {size=+10}YES!{/size}"
+            call luna_main("...", 5, 3, 1, 1)
+            call luna_main("(It's so warm...)", 5, 2, 4, 1)
+            g4 "{size=+10}TAKE IT ALL YOU big titted sLUT!{/size}"
+            g4 "mmmm....."
+            hide screen g_c_c_u
+            $ g_c_u_pic = "01_hp/08_animation_02/06_jerking_01.png"
+            $ luna_r_arm = 2
+            hide screen genie_sprite
+            with d3
+            m "That hit the spot..."
+            call luna_main("({image=textheart}{image=textheart}{image=textheart})", 5, 8, 4, 1)
+            call luna_main("[l_genie_name]!", 8, 1, 3, 1)
+            call luna_main("How could you! Cumming on your students {size=-10}pussy{/size}...", 7, 8, 2, 1)
+            m "Ahh... that was fantastic slut..."
+            $ g_c_u_pic = "01_hp/08_animation_02/06_groping_01.png"
+            call luna_main("[l_genie_name]...", 6, 2, 2, 1)
 
     hide screen bld1
     m "well then, Here's your payment [luna_name]."
@@ -3571,49 +3762,98 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     $ luna_flip = -1
     $ luna_r_arm = 1
     $ luna_xpos = 300
-    call luna_main("well it's not over yet...", 4, 1, 4, 8)
-    call her_kneel("...what?","body_122")
-    call her_kneel("why?","body_122")
-    call luna_main("Just look at the mess you made!", 4, 1, 4, 8)
-    call luna_main("You'll have to clean that up before you can go to class!", 4, 1, 4, 8)
-    call her_kneel("well normally I just go the prefect bathroom...","body_122")
-    call her_kneel("or I use a towel...","body_122")
-    call her_kneel("{size=-5}but never scourgify for some reason...{/size}","body_122")
-    call luna_main("And waste all that perfectly good cum the Professor gave you?!", 4, 1, 4, 8)
-    call luna_main("No, I think I'll have to stay here and make sure you dispose of it properly...", 4, 1, 4, 8)
-    call her_kneel("does that mean...","body_122")
-    call luna_main("come on hermione, we don't have all day...", 4, 1, 4, 8)
-    call luna_main("tranfiguration starts in 5 minutes...", 4, 1, 4, 8)
-    call her_kneel("(I can't be late to mcgonagall's class...)","body_122")
-    call luna_main("now dispose of that cum like a good little slut...", 4, 1, 4, 8)
-    call her_kneel("...","body_122")
-    ">Hermione slowly starts using her fingers to push your cum into her mouth."
-    $ luna_l_arm = 4
-    $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_2.png"
-    call luna_main("mmmmm... that's it... make sure you get it all slut...", 4, 1, 4, 8)
-    m "(woah...)"
-    ">Hermione slowly continues to clear her face of cum."
-    $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-    call her_kneel("...","body_125", "blush") #Cheek full
-    ">She fills her mouth with cum before eventually swallowing."
-    call her_kneel("*gulp*","body_126", "blush")
-    ">Eventually she finally gets the last strand into her mouth."
-    $ uni_sperm = False
-    call her_kneel("...","body_125", "blush") #Cheek full
-    call luna_main("see, good sluts don't waste anyting do they?", 4, 1, 4, 8)
-    call her_kneel("...","body_125", "blush") #Cheek full
-    $ luna_l_arm = 2
-    call luna_main("Well, I better be off to... class...", 4, 1, 4, 8)
-    call luna_main("Good bye [l_genie_name]...", 4, 1, 4, 8)
-    call luna_main("Good bye slut...", 4, 1, 4, 8)
-    ">Luna quietly exits the room."
-    hide screen luna_chibi
-    hide screen luna 
-    with d3
-    ">Hermione swallows the last mouthful of your cum."
-    call her_kneel("*gulp*","body_126", "blush")
-    call her_kneel("mmmm...{image=textheart}{image=textheart}{image=textheart}","body_123", "blush")
-    ">She picks herself up from the floor gracefully. Getting dressed before turning to address you."
+    if luna_addicted == True:
+        call luna_main("well it's not over yet...", 4, 1, 4, 8)
+        call her_kneel("...what?","body_122")
+        call her_kneel("why?","body_122")
+        call luna_main("Just look at you!", 4, 1, 4, 8)
+        call luna_main("Covered in the [l_genie_name]s delicous cum!", 4, 1, 4, 8)
+        call her_kneel("delicous...","body_122")
+        call her_kneel("Do you want me to clean myself up?","body_122")
+        call luna_main("And waste all that perfectly good cum one some tart like you?!", 4, 1, 4, 8)
+        call luna_main("No, I think I'll have to clean this mess up myself...", 4, 1, 4, 8)
+        ">You notice a hunger in Luna's eyes..."
+        call her_kneel("does that mean...","body_122")
+        call luna_main("come on hermione, we don't have all day...", 4, 1, 4, 8)
+        call luna_main("tranfiguration starts in 5 minutes...", 4, 1, 4, 8)
+        call luna_main("so hurry up...", 4, 1, 4, 8)
+        call her_kneel("(I can't be late to mcgonagall's class...)","body_122")
+        call her_kneel("I'm not sure what you want me to...","body_122")
+        call luna_main("stand up now slut...", 4, 1, 4, 8)
+        call her_kneel("...","body_122")
+        ">Hermione slowly stands up, her face still covered in cum..."
+        $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_2.png"
+        call luna_main("mmmmm... look at you... you smell so good...", 4, 1, 4, 8)
+        ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
+        call her_main("!!!","body_125", "blush") #Cheek full
+        m "(woah...)"
+        call luna_main("mmmmm... you taste even better...", 4, 1, 4, 8)
+        call her_main("...","body_125", "blush") #Cheek full
+        ">Hermione stands still, letting luna slowly wipe the cum from her face..."
+        $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+        call her_main("...","body_125", "blush") #Cheek full
+        call luna_main("mmmmm...", 4, 1, 4, 8)
+        ">Luna slwoly fills her mouth with cum before eventually swallowing."
+        call luna_main("*gulp*", 4, 1, 4, 8)
+        ">Eventually she finally gets the last strand into her mouth."
+        $ uni_sperm = False
+        call her_main("...","body_125", "blush") #Cheek full
+        call luna_main("...", 4, 1, 4, 8)
+        call luna_main("*gulp*", 4, 1, 4, 8)
+        call her_main("...","body_125", "blush") #Cheek full
+        $ luna_l_arm = 2
+        call luna_main("Well, I better be off to... class...", 4, 1, 4, 8)
+        call luna_main("Good bye [l_genie_name]...", 4, 1, 4, 8)
+        call luna_main("Good bye slut...", 4, 1, 4, 8)
+        ">Luna quietly exits the room."
+        hide screen luna_chibi
+        hide screen luna 
+        with d3
+        ">Hermione quietly gets dressed, a shocked look on her face..."
+    else:
+        call luna_main("well it's not over yet...", 4, 1, 4, 8)
+        call her_kneel("...what?","body_122")
+        call her_kneel("why?","body_122")
+        call luna_main("Just look at the mess you made!", 4, 1, 4, 8)
+        call luna_main("You'll have to clean that up before you can go to class!", 4, 1, 4, 8)
+        call her_kneel("well normally I just go the prefect bathroom...","body_122")
+        call her_kneel("or I use a towel...","body_122")
+        call her_kneel("{size=-5}but never scourgify for some reason...{/size}","body_122")
+        call luna_main("And waste all that perfectly good cum the Professor gave you?!", 4, 1, 4, 8)
+        call luna_main("No, I think I'll have to stay here and make sure you dispose of it properly...", 4, 1, 4, 8)
+        call her_kneel("does that mean...","body_122")
+        call luna_main("come on hermione, we don't have all day...", 4, 1, 4, 8)
+        call luna_main("tranfiguration starts in 5 minutes...", 4, 1, 4, 8)
+        call her_kneel("(I can't be late to mcgonagall's class...)","body_122")
+        call luna_main("now dispose of that cum like a good little slut...", 4, 1, 4, 8)
+        call her_kneel("...","body_122")
+        ">Hermione slowly starts using her fingers to push your cum into her mouth."
+        $ luna_l_arm = 4
+        $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_2.png"
+        call luna_main("mmmmm... that's it... make sure you get it all slut...", 4, 1, 4, 8)
+        m "(woah...)"
+        ">Hermione slowly continues to clear her face of cum."
+        $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+        call her_kneel("...","body_125", "blush") #Cheek full
+        ">She fills her mouth with cum before eventually swallowing."
+        call her_kneel("*gulp*","body_126", "blush")
+        ">Eventually she finally gets the last strand into her mouth."
+        $ uni_sperm = False
+        call her_kneel("...","body_125", "blush") #Cheek full
+        call luna_main("see, good sluts don't waste anyting do they?", 4, 1, 4, 8)
+        call her_kneel("...","body_125", "blush") #Cheek full
+        $ luna_l_arm = 2
+        call luna_main("Well, I better be off to... class...", 4, 1, 4, 8)
+        call luna_main("Good bye [l_genie_name]...", 4, 1, 4, 8)
+        call luna_main("Good bye slut...", 4, 1, 4, 8)
+        ">Luna quietly exits the room."
+        hide screen luna_chibi
+        hide screen luna 
+        with d3
+        ">Hermione swallows the last mouthful of your cum."
+        call her_kneel("*gulp*","body_126", "blush")
+        call her_kneel("mmmm...{image=textheart}{image=textheart}{image=textheart}","body_123", "blush")
+        ">She picks herself up from the floor gracefully. Getting dressed before turning to address you."
     $ hermione_wear_panties = True
     $ hermione_wear_skirt = True
     $ hermione_wear_top = True
@@ -3626,7 +3866,9 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     with d3
     call her_main("[genie_name], what on earth was that all about?!","body_122")
     call her_main("Why on earth was Luna in here?","body_122")
-    call her_main("And how on earth does she know about me selling favours?","body_122")
+    call her_main("how on earth does she know about me selling favours?","body_122")
+    if luna_addicted == True:
+        call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","body_122")
     m "I can explain everything..."
     call her_main("Please do!","body_122")
     m "do you remember how you yourself described Luna lovegood as crazy?"
@@ -3652,6 +3894,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     m "Oh um..."
     m "Well that sort of just happened during my evaluation..."
     m "She wanted to help her fathers magazine anyway possible, and one thing led to another..."
+    if luna_addicted == True:
+        call her_main("what about the her loving the taste of your sperm?","body_122")
+        m "Honestly I'm not really sure about that."
+        m "I think that's just her being weird..."
     call her_main("...","body_122")
     call her_main("ugh, fine...","body_122")
     call her_main("I guess...","body_122")
@@ -3660,11 +3906,12 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     call her_main("But she's weird...","body_122")
     m "We can work on that. Besides, don't you want to help out one of your friends?"
     call her_main("Hmmm, I suppose that you're right [genie_name].","body_122")
-    call her_main("I can't imagine that the daydreaming Luna would make it too well in the real world.","body_122")
-    call her_main("and as her friend It's my responsibility to try and save her from that.","body_122")
+    call her_main("I can't imagine that the daydreaming Luna would do too well in the real world.","body_122")
+    call her_main("and as her friend It's my responsibility to try and save her from that!","body_122")
     call her_main("!!!","body_122")
     call her_main("Maybe we could even have study sessions together!","body_122")
-    call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs.","body_122")
+    call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs...","body_122")
+    call her_main("(Not that I mind...)","body_122")
     menu:
         "-Encourage friendship-":
             $ luna_friendship = 1

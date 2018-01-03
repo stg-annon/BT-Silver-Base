@@ -1,25 +1,20 @@
 label cheats_ht:
     menu:
-        "-Test new main-":
-            jump new_main_menu
         "-Hermione Cheats-":
             label cheats_ht_hermione:
             menu:
                 "-Reset Hermione's mood-":
                     $ mad = 0
-                    "Hermione is no longer mad at you."
+                    ">Hermione is no longer mad at you."
                     jump cheats_ht_hermione
                 "-Max Whoring-":
                     $ whoring = 24
-                    "Hermione is now a giant slut"
+                    ">Hermione is now a giant slut."
                     jump cheats_ht_hermione
-
-                "-Test Milking potion-":
-                    jump potion_scene_11_1
                     
                 "-Increase Whoring-":
                     $ whoring += 1
-                    "Hermione became more depraved"
+                    ">Hermione became more depraved..."
                     jump cheats_ht_hermione
                 "-Decrease Whoring-":
                     $ whoring -= 1
@@ -29,23 +24,14 @@ label cheats_ht:
                     $ force_unlock_pub_favors = True
                     $ touched_by_boy = True
                     $ lock_public_favors = False
-                    "Public favours unlocked!"
+                    ">Public favours unlocked!"
                     jump cheats_ht_hermione
                 "-Add all costumes-":
                     python:
                         for i in hermione_outfits_list:
                             i.purchased = True
-                    "All of hermioine's costumes have been unlocked"
+                    ">All of Hermione's costumes have been unlocked"
                     jump cheats_ht
-                "-Reset Clothing Scenes-":
-                    $ request_jeans = False
-                    $ hermione_dribble = False
-                    $ request_gryyf_stockings = False
-                    $ dribble_equippable = False
-                    $ hermione_wetpanties = False
-                    $ wetpanties_equippable = False
-                    "Clothing scenes reset! Try equipping the jeans or gryffindor stockings at various whoring levels"
-                    jump cheats_ht_hermione
                 "-back-":
                     jump cheats_ht
         "-Book Cheats-":
@@ -69,8 +55,9 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-back-":
                     jump cheats_ht
-        "-Add all potions-":
+        "-Add all normal potions-":
             $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
+            ">All potions added (Does not include Snape's potions)"
             jump cheats_ht
         "-Gold (+50,000g)-":
             $ gold += 50000

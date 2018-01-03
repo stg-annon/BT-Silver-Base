@@ -36,6 +36,10 @@ screen luna:
 
     if luna_wear_cum:
         add "01_hp/13_characters/luna/misc/cum_"+str(luna_cum)+".png" xpos luna_xpos ypos luna_ypos xzoom luna_flip# Add the top
+
+    if genie_sprite_base == "01_hp/13_characters/genie/base_4.png": #add genies dick for licking/sucking
+        add "01_hp/13_characters/genie/dick_1.png" xpos genie_sprite_xpos ypos genie_sprite_ypos
+        add "01_hp/13_characters/luna/body/legs/right_1.png" xpos luna_xpos ypos luna_ypos xzoom luna_flip#Add the right leg cover for the dick. What's a thigh job called again?
     ### ZORDER
     zorder luna_zorder
 

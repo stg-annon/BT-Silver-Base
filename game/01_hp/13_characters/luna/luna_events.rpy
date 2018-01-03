@@ -1521,7 +1521,7 @@ label luna_reverted_greeting_2: #Explaining to Luna what will happen or somethin
 
 
 label luna_cum_addict_event:
-    $ luna_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in
+    $ luna_addicted = True #luna is now a cum addict. I'm a bit undecided about the whole thing tbh, might ruin the dom path but idk, we can work it in, make her a dommy cumslut or whatever........
     ">You put your arms on Luna's shoulders forcing her to her knees."
     call luna_main("Stop right now! This wasn't an option [l_genie_name]!", 5, 3, 1, 1)
     g4 "Argh, too late slut!"

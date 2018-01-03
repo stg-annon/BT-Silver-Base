@@ -123,6 +123,9 @@ label summon_snape:
                     $ p_inv.append("Veritaserum")
                     jump snape_ready
 
+                "\"Never mind.\"":
+                    jump snape_ready
+
         "-Chit chat-" if sfmax and not chitchated_with_snape and not daytime: # sfmax - friendship with Snape maxed out.
             $ chitchated_with_snape = True #Prevents you from chitchating more then once a day. Turns back to False every night and every day.
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
@@ -144,7 +147,7 @@ label summon_snape:
                 pass
                 $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
                 jump snape_dates
-        "\"Nevermind.\"":
+        "\"Never mind.\"":
             stop music fadeout 1.0
             $ menu_x = 0.5 #Menu is moved to the left side. (Default menu_x = 0.5)
             if daytime:
