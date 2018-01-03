@@ -89,8 +89,8 @@ label summon_snape:
                                         sna_[17] "really?"
                                         sna_[18] "you're more Adventurous than I thought!"
                                         sna_[20] "Here, I'll even give you an extra attachment for the milker!"
-                                        ">Snape hands you another strange metal and glass cup with a tube attached."
-                                        sna_[19] "Promise to tell me what happens!"
+                                        ">Snape hands you a different cannister with a soft plastic opening in the bottom. It looks almost like an anus."
+                                        sna_[19] "I also put an undetectable extension charm on the cannister... Promise to tell me what happens!"
                                     "-no-":
                                           sna_[7] "Too bad..."
                                           jump snape_potion_choice  
