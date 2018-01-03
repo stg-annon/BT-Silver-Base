@@ -32,7 +32,24 @@ label cheats_ht:
                             i.purchased = True
                     ">All of Hermione's costumes have been unlocked"
                     jump cheats_ht
-                "-back-":
+                "-Toggle Breast Expansion-":
+                    if hermione_perm_expand:
+                        $ hermione_perm_expand = False
+                        "Hermione's breasts shrink..."
+                    else:
+                        $ hermione_perm_expand = True
+                        "Hermione's breasts grow..."
+                    jump cheats_ht
+
+                "-Toggle Futa Hermione-":
+                    if hermione_futa:
+                        $ hermione_futa = False
+                        "Hermione's cock shrinks away..."
+                    else:
+                        $ hermione_futa = True
+                        "Hermione's grows a... dick!"
+                    jump cheats_ht
+                "-never mind-":
                     jump cheats_ht
         "-Book Cheats-":
             label cheats_ht_books:
@@ -53,7 +70,7 @@ label cheats_ht:
                             i.purchased = True
                     "Obtained All Books."
                     jump cheats_ht_books
-                "-back-":
+                "-never mind-":
                     jump cheats_ht
         "-Add all normal potions-":
             $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
@@ -63,29 +80,18 @@ label cheats_ht:
             $ gold += 50000
             "Obtained 50,000g."
             jump cheats_ht
-        "-Toggle Breast Expansion-":
-            if hermione_perm_expand:
-                $ hermione_perm_expand = False
-                "Hermione's breasts shrink..."
-            else:
-                $ hermione_perm_expand = True
-                "Hermione's breasts grow..."
-            jump cheats_ht
-        "-Toggle Futa Hermione-":
-            if hermione_futa:
-                $ hermione_futa = False
-                "Hermione's cock shrinks away..."
-            else:
-                $ hermione_futa = True
-                "Hermione's grows a... dick!"
-            jump cheats_ht
         "-Slytherin Points (+10,000)-":
             $ slytherin +=10000
             "10,000 to Slytherin!"
+            jump cheats_ht
+        "-Reset ALL Luna content-":
+            $ hat_known = False
+            call luna_init
+            ">Luna content reset!"
             jump cheats_ht
         "-Map-":
             "Map added to inventory!"
             $ cataloug_found = True
             jump cheats_ht
-        "-Nevermind-":
+        "-Never mind-":
             jump day_main_menu

@@ -177,6 +177,7 @@ label luna_reset:
     $ luna_xpos = 600
     $ luna_ypos = 0
     $ luna_chibi_image = "01_hp/13_characters/luna/chibis/luna_stand.png" 
+    $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_1.png" 
     $ luna_chibi_xpos = 500
     $ luna_chibi_ypos = 250
     $ luna_tears = 0

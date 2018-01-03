@@ -38,7 +38,7 @@ label summon_snape:
                     jump snape_ready
 
                 "-milking potion-" if "Milk Potion" not in p_inv:
-                    if potion_scene_11_progress <= 1:
+                    if potion_scene_11_progress < 1:
                         sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
                         sna_[13] "Just in case..."
                         sna_[18] "Here, take it!"

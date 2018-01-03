@@ -1976,6 +1976,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("Wait... This is an enchanted item? Please don't turn it on-","body_07")
     ">You hear a faint noise as the harness on hermione's chest springs to life."
     $ milking = 2
+    call h_action("milk_breasts")
     call her_main("!!!","body_12")
     call her_main("{size=+5}OFF! TURN OFF!{/size}","body_12")
     m "I think you need to wait until it's done."
@@ -1989,10 +1990,12 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("Ugh.... maybe... {p}I'll try.","body_12")
     ">You wait a few more mintues as hermione is milked in front of you."
     $ milking = 3
+    call h_action("milk_breasts")
     call her_main("...","body_12")
     ">Her expression slowly fades from discomfort to pleasure."
     call her_main("...","body_12", "blush")
     $ milking = 4
+    call h_action("milk_breasts")
     ">The machine makes a pleasant sounding click as it looks to turn off."
     m "Alright, well, look like you're good to head off to class."
     call her_main("What?","body_12", "blush")
@@ -2003,6 +2006,7 @@ label potion_scene_11_2: #Milking potion part 2
     call her_main("...","body_12", "blush")
     call her_main("Fine... I better get to potions class then...","body_12", "blush")
     ">Hermione takes off the harness. You see the passing look of regret on her face."
+    call h_action("none")
     m "Feel better?"
     call her_main("Surpisingly yes...","body_12")
     call her_main("They even seem like they've shrunk a little bit.","body_12")
@@ -2027,6 +2031,8 @@ label potion_scene_11_2: #Milking potion part 2
     hide screen ctc
     with Dissolve(.3)
     
+    $ milking = 0
+
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
@@ -2036,6 +2042,7 @@ label potion_scene_11_2: #Milking potion part 2
     jump day_main_menu
 
 label potion_scene_11_3: #Milking potion part 3
+    $ milking = 0
     #Genie offers hermione the potion
     #Agrees on the condition that she milks him
     #Genie agrees
@@ -2088,7 +2095,6 @@ label potion_scene_11_3: #Milking potion part 3
     call her_main("Ugh... this always feels so weird...","body_07")
     call her_main("I better take my shirt off before \'they\' rip the buttons...","body_07")
     ">Hermione quickly removes her top."
-    $ milking = 1
     #breasts larger
     if not potion_version == 2: #Orgasms while milking
         ">You notice hermione's breasts start to grow a little more."
@@ -2132,6 +2138,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("on!","body_09")
         ">You hear a faint noise as the harness on hermione's chest springs to life."
         $ milking = 2
+        call h_action("milk_breasts")
         call her_main("!!!","body_12")
         call her_main("Ugh... it feels different this time...","body_12")
         call her_main("like there's so much more in my breasts...","body_12")
@@ -2143,10 +2150,12 @@ label potion_scene_11_3: #Milking potion part 3
         m "is it hurting you?"
         call her_main("ah.... no... {p}It's not bad...","body_12")
         $ milking = 3
+        call h_action("milk_breasts")
         call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","body_12")
         ">You notice the canister in front of her fill with milk at an alarming rate..."
         call her_main("ah... it's so good...","body_12", "blush")
         $ milking = 4
+        call h_action("milk_breasts")
         ">The machine makes a pleasant sounding click as it looks to turn off."
         m "Alright, well, look like you're good to head off to class."
         call her_main("What? but sir...","body_12", "blush")
@@ -2177,6 +2186,7 @@ label potion_scene_11_3: #Milking potion part 3
                 m "Well, bottoms up!"
                 call her_main("...","body_12")
                 $ milking = 5
+                call h_action("milk_breasts")
                 ">Hermione gives the cannister one final look before unscrewing it and putting it to her lips."
                 call her_main("(For gryffindor!)","body_12")
                 ">She takes a mouthful of her own milk."
@@ -2189,6 +2199,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("I think I'll need to skip a meal after all this milk...","body_12")
                 ">She slowly screws the cannister back into milker."
                 $ milking = 1
+                call h_action("milk_breasts")
                 call her_main("...","body_12")
                 call her_main("on!","body_12")
                 ">The milker once again comes to life as it starts to milk Hermione for a second time."
@@ -2198,6 +2209,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("...","body_12")
                 call her_main("well, here you are then...","body_12")
                 $ milking = 5
+                call h_action("milk_breasts")
                 ">Hermione gives the cannister one final look before unscrewing it and handing it to you."
                 call her_main("(weirdo...)","body_12")
                 ">you take a mouthful of her milk."
@@ -2212,6 +2224,7 @@ label potion_scene_11_3: #Milking potion part 3
                 call her_main("...","body_12")
                 ">She slowly screws the cannister back into milker."
                 $ milking = 1
+                call h_action("milk_breasts")
                 call her_main("(I can't believe he like it...)","body_12")
                 call her_main("(maybe it does taste good...)","body_12")
                 call her_main("...","body_12")
@@ -2223,10 +2236,12 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("ugh... it's so gooood...","body_12")
         $ hermione_dribble = True
         $ milking = 2
+        call h_action("milk_breasts")
         call her_main("ah... it's like the straps are massaging me while it sucks...","body_12")
         call her_main("mmmm... it's amazing...","body_12")
         ">Hermione lets the machine continue it's work."
         $ milking = 3
+        call h_action("milk_breasts")
         call her_main("ah... I think that's all of it [genie_name]...","body_12")
         ">You notice the amount of milk coming from hermione's breasts has almost stopped."
         call her_main("it felt amazing...","body_12")
@@ -2244,16 +2259,20 @@ label potion_scene_11_3: #Milking potion part 3
         pause .1
         hide screen white
         with hpunch
+        $ hermione_squirt = True
         call her_main("Ah!!!","body_12")
         ">You see a small squirt of milk come out of hermione's nipples."
+        $ hermione_squirt = False
         ">The cannister is still barely more than half full."
         "*Zzzzkkk*"
         show screen white 
         pause .1
         hide screen white
         with hpunch
+        $ hermione_squirt = True
         call her_main("{size=+5}Ah!!!{/size}","body_12")
         ">Another small squirt of milk comes out of hermione's nipples."
+        $ hermione_squirt = False
         call her_main("{size=+5}It's making me cum!{/size}","body_12")
         call her_main("{size=+5}why is it-{/size}","body_12")
         "*Zzzzkkk*"
@@ -2261,17 +2280,22 @@ label potion_scene_11_3: #Milking potion part 3
         pause .1
         hide screen white
         with hpunch
+        $ hermione_squirt = True
         call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_12")
+        $ hermione_squirt = False
         "*Zzzzkkk*"
         show screen white 
         pause .1
         hide screen white
         with hpunch
+        $ hermione_squirt = True
         call her_main("{size=+5}{image=textheart}{image=textheart}{image=textheart}{/size}","body_12")
+        $ hermione_squirt = False
         show screen blkfade
         with d3
         ">The machine continues for another couple of minutes. Each crack is accompanied by a small squirt of milk into the cups..."
         $ milking = 4
+        call h_action("milk_breasts")
         hide screen blkfade 
         with d3
 
@@ -2285,7 +2309,9 @@ label potion_scene_11_3: #Milking potion part 3
         show screen blkfade
         with d3
         ">You slowly remove the milk filled harness. There are red marks, surrounding her tender looking nipples, where the cups were."
+        call h_action("none")
         m "Hmmm, maybe we overdid it a little today."
+        hide screen blkfade
         call her_main("...","body_17")
         m "Why don't you head back to your room... I think you've earned a day off."
         call her_main("yes...","body_17")
@@ -2297,6 +2323,7 @@ label potion_scene_11_3: #Milking potion part 3
         $ hermione_wear_bra = True
         $ hermione_wear_skirt = True
         $ hermione_wear_top = True
+        $ hermione_dribble = False
         call her_main("good bye sir...","body_17")
         if potion_version == 2:
             "Hermione's breasts will now be permanently large thanks to Snape's added ingredient..."
@@ -2342,8 +2369,9 @@ label potion_scene_11_3: #Milking potion part 3
         $ hermione_futa = True
         $ hermione_wear_skirt = False
         $ hermione_wear_panties = False
+        $ h_action_show_skirt = False
         ">Hermione removes her skirt, revealing a throbbing erection."
-        m4 "Woah! Nice..."
+        g9 "Woah! Nice..."
         call her_main("Nice? How is this nice?","body_79")
         call her_main("I have a damn {size=+10}cock!{/size}","body_79")
         m "Come on [hermione_name]... where's your sense of adventure?"
@@ -2368,6 +2396,7 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("What... why would that-","body_79")
         $ milking = 1
         call h_action("milk_breasts")
+        $ h_action_show_skirt = False
         call her_main("!!!","body_81", "blush")
         m "how's that?"
         call her_main("I'm sorry about being angry before [genie_name]...","body_09", "blush")
@@ -2380,6 +2409,8 @@ label potion_scene_11_3: #Milking potion part 3
         call her_main("At this rate I'll cum before we even have to turn the thing on-","body_07", "blush")
         ">You hear a faint noise as the harness on hermione's chest springs to life."
         $ milking = 2
+        call h_action("milk_breasts")
+        $ h_action_show_skirt = False
         call her_main("!!!","body_12")
         call her_main("no!","body_12")
         call her_main("Stop it!","body_12")
@@ -2391,12 +2422,16 @@ label potion_scene_11_3: #Milking potion part 3
         m "is it hurting you?"
         call her_main("ah.... no... {p}It's just too good...{image=textheart}","body_12")
         $ milking = 3
+        call h_action("milk_breasts")
+        $ h_action_show_skirt = False
         call her_main("ah...{image=textheart}{image=textheart}{image=textheart}","body_12")
         ">You notice the canister in front of her fill with milk at an alarming rate..."
         call her_main("ah... please [genie_name]...","body_12", "blush")
         call her_main("ah... you have to turn it off...","body_12", "blush")
         call her_main("{size=-2}i'll {size=-2}go {size=-2}insane {size=-2}if {size=-2}you {size=-2}don't...{/size}","body_12", "blush")
         $ milking = 4
+        call h_action("milk_breasts")
+        $ h_action_show_skirt = False
         ">You notice the cannister fill, yet the machine keeps working."
         call her_main("What? but it's full...","body_12", "blush")
         call her_main("it should turn off...","body_12", "blush")
@@ -2467,6 +2502,8 @@ label potion_scene_11_3: #Milking potion part 3
         with d3
         ">The machine continues for another couple of minutes. Each crack is accompanied by a small squirt of milk into the cups and a pulse of her cock into the cannister..."
         $ milking = 4
+        call h_action("milk_breasts")
+        $ h_action_show_skirt = False
         ">You let it continue for a little longer before it finally stops."
         hide screen blkfade 
         with d3
@@ -2484,9 +2521,17 @@ label potion_scene_11_3: #Milking potion part 3
         show screen blkfade
         with d3
         ">You slowly remove the milk filled harness. There are red marks, surrounding her tender looking nipples, where the cups were."
+        call h_action("none")
+        $ hermione_wear_panties = False
+        $ hermione_wear_bra = False
+        $ hermione_wear_skirt = False
+        $ hermione_wear_top = False
+        $ hermione_futa = False
+        $ hermione_dripping
         ">As you pull the heavy cannister off her cock it flops down before wilting away into nothingness."
         m "(eww...)"
         m "Hmmm, I think you probably overdid it a little today."
+        hide screen blkfade
         call her_main("{size=-6}more...{/size}","body_17")
         m "Why don't you head back to your room... I think you've earned another day off."
         call her_main("yes...","body_17")
@@ -2507,7 +2552,7 @@ label potion_scene_11_3: #Milking potion part 3
     hide screen blktone 
     hide screen ctc
     with Dissolve(.3)
-    
+    $ milking = 0
     call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)

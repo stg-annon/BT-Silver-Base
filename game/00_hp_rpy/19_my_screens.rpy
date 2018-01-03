@@ -149,8 +149,16 @@ screen main_menu_01:
 ###MO SCREENS
 label stat_hermione:
     $ hermione_xpos=490
+    hide screen luna
     call updateHermioneWords
+    call update_her_uniform
     call screen stat_screen_hermione
+    jump day_main_menu
+
+label stat_luna:
+    $ luna_xpos=600
+    hide screen hermione_main
+    call screen stat_screen_luna
     jump day_main_menu
 
 screen stat_screen_hermione:
@@ -184,12 +192,51 @@ screen stat_screen_hermione:
         hover "01_hp/25_mo/close_hover.png"
         action [Hide("stat_screen_hermione"), Hide("hermione_main"), Jump("day_main_menu")]
 
-screen stat_screen_luna:
-    zorder hermione_main_zorder-1
-    $ renpy.show_screen('luna')
-    imagemap:
-        ground "01_hp/25_mo/stat_base.png"
+    imagebutton: # STAT MENU SWAP
+        xpos 894
+        ypos 72
+        xanchor "center"
+        yanchor "center"
+        idle "01_hp/11_misc/points_03.png"
+        hover "01_hp/11_misc/points_04.png"
+        action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
 
+screen stat_screen_luna:
+    zorder luna_zorder-1
+
+    #add "01_hp/25_mo/stat_base.png" xpos 275
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos -175+30
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 0+30
+
+    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 175+30 
+
+    text "-Corruption-" xalign 0.485 ypos 50+38 size 30 bold 0.2
+    text "-Dom points-" xalign 0.485 ypos 225+38 size 30 bold 0.2
+    text "-Sub points-" xalign 0.485 ypos 400+38 size 30 bold 0.2
+
+    text "-"+str(luna_corruption)+"-" xalign 0.485 ypos 50+110 size 20 
+    text "-"+str(luna_dom)+"-" xalign 0.485 ypos 225+110 size 20
+    text "-"+str(luna_sub)+"-" xalign 0.485 ypos 400+110 size 20 
+
+    #text "[hermione_name]" xalign 0.9 ypos 80 size 20 
+
+    imagebutton: # X
+        xpos 1013
+        ypos 13
+        idle "01_hp/25_mo/close_ground.png"
+        hover "01_hp/25_mo/close_hover.png"
+        action [Hide("stat_screen_hermione"), Hide("luna"), Jump("day_main_menu")]
+
+    imagebutton: # STAT MENU SWAP
+        xpos 894
+        ypos 72
+        xanchor "center"
+        yanchor "center"
+        idle "01_hp/11_misc/points_03.png"
+        hover "01_hp/11_misc/points_04.png"
+        action [Hide("main_menu_01"), Show("hermione_main"), Jump("stat_hermione")]
 
 
 label updateHermioneWords:

@@ -14,7 +14,7 @@ label l_tutoring_check:
     elif v_tutoring == 6 and whoring >= 11:
         jump l_tutoring
     elif v_tutoring == 7 and whoring >= 14:
-        if gift_item_inv[7] >= 1:# Adult magazines
+        if gift_item_inv[6] >= 1:# Adult magazines
             jump l_tutoring
         else:
             m "I need to buy adult magazines for this lesson."
