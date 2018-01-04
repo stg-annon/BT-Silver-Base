@@ -47,7 +47,8 @@ label summon_snape:
                         $ p_inv.append("Milk Potion")
                     elif potion_scene_11_progress == 1:
                         sna_[9] "Good work on getting her to take it."
-                        sna_[13] "Her breasts did look magnificently full in class..."
+                        sna_[13] "Her breasts did look magnificently full in class."
+                        sna_[13] "mmmm, and I think she was even leaking a little..."
                         sna_[20] "Get her to take another!"
                         sna_[18] "Here, I'll even give you a milker for the slut!"
                         ">Snape hands you an odd leather and metal harness."
@@ -61,7 +62,9 @@ label summon_snape:
                     else:
                         sna_[13] "Mmmm, I wish I could be there to see you milk her..."
                         m "..."
-                        sna_[12] "All that delicious milk..."
+                        m "(That's probably not a good idea...)"
+                        sna_[12] "All that {b}delicious{/b} milk..."
+                        m "(definitely not a good idea.)"
                         sna_[13] "..."
                         sna_[9] "Well anyway, I was wondering..."
                         sna_[9] "Want me to augment the potion?"
@@ -98,14 +101,14 @@ label summon_snape:
                                 $ potion_version = 2
                             "-Permanent breast expansion-":
                                 sna_[18] "The milk production will still only last a day..."
-                                sna_[18] "But her big boobs will be permanent..."
+                                sna_[9] "But her big boobs will be permanent..."
                                 sna_[18] "Are you sure you want this?"
-                                sna_[18] "She might not like it..."
+                                sna_[20] "She might not like it..."
                                 menu:
                                     "-yes-":
-                                        sna_[18] "Fantastic!!!"
+                                        sna_[19] "Fantastic!!!"
                                     "-no-":
-                                          sna_[18] "Too bad..."
+                                          sna_[7] "Too bad..."
                                           jump snape_potion_choice  
 
                                 $ potion_version = 3

@@ -3724,72 +3724,72 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     $ luna_xpos = 390
     call update_her_uniform
     pause
-    call her_main("hello Prof-","body_122")
-    call her_main("Luna! what are you doing here?","body_122")
+    call her_main("hello Prof-","body_13")
+    call her_main("Luna! what are you doing here?","body_18")
     call luna_main("same thing as you...", 5, 1, 2, 1)
-    call her_main("Oh, um... you must be here to... help Professor dumbledore then...","body_122")
+    call her_main("Oh, um... you must be here to... help Professor dumbledore then...","body_10")
     call luna_main("Mhmmm...", 7, 1, 4, 1)
-    call her_main("So, ugh... what does dumbledore need our help with?","body_122")
+    call her_main("So, ugh... what does dumbledore need our help with?","body_11")
     call luna_main("Probably emptying those nasty balls of his...", 8, 1, 2, 3)
-    call her_main("!!!","body_122")
-    call her_main("Luna! what are you talking about?","body_122")
-    call her_main("are you feeling ok?","body_122")
+    call her_main("!!!","body_18")
+    call her_main("Luna! what are you talking about?","body_28")
+    call her_main("are you feeling ok?","body_29")
     call luna_main("come on now hermione... it wouldn't be the first time you've helped old dumbledore like this?", 7, 2, 2, 1)
     call luna_main("would it...?", 7, 1, 2, 2)
-    call her_main("I have no idea what you're talking about!","body_122")
-    call her_main("Professor dumbledore must be mistaken...","body_122")
-    call her_main("M-Maybe he needs to go to the nurses and have his mind checked...","body_122")
+    call her_main("I have no idea what you're talking about!","body_30")
+    call her_main("Professor dumbledore must be mistaken...","body_30")
+    call her_main("M-Maybe he needs to go to the nurses and have his mind checked...","body_30")
     call luna_main("So you're not selling favours to dumbledore in exchange for points?", 6, 1, 5, 2)
-    call her_main("certainly not! I'd never do something so underhanded!","body_122")
+    call her_main("certainly not! I'd never do something so underhanded!","body_32")
     call luna_main("Really?", 7, 1, 5, 3)
-    call her_main("Of course not! I'm shocked you even have to ask!","body_122")
+    call her_main("Of course not! I'm shocked you even have to ask!","body_29")
     call luna_main("So you're comfortable saying that after you've had a sip of some veritaserum?", 8, 1, 3, 2)
-    call her_main("!!!","body_122")
-    call her_main("O-O-Of course... but as you know, that potion's banned...","body_122")
+    call her_main("!!!","body_18")
+    call her_main("O-O-Of course... but as you know, that potion's banned...","body_16")
     call luna_main("Not for the illustrious Professor dumbledore!", 5, 2, 4, 1)
     call luna_main("Isn't that right sir?", 7, 2, 3, 3)
     m "Oh, um yes of course I can get that easily..."
     m "(What the hell is veribatium?)"
-    call her_main("!!!","body_122") #angry face
-    call her_main("surely you know there's no need for that sir!","body_122") #angry face
+    call her_main("!!!","body_09") #angry face
+    call her_main("surely you know there's no need for that sir!","body_07") #angry face
     m "..."
-    call her_main("...","body_122") 
+    call her_main("...","body_09") 
     call luna_main("...", 7, 1, 1, 1)
-    call her_main("Fine! I admit it!","body_122") 
+    call her_main("Fine! I admit it!","body_32") 
     call luna_main("See... Isn't it better to tell the truth?", 8, 1, 4, 1)
-    call her_main("...","body_122")
-    call her_main("So is that why I've been brought here? To be ridiculed!?","body_122") 
-    call her_main("I'm not ashamed of what I've done for my house!","body_122")
-    call luna_main("No, you've been brought here to sell dumbledore a favour.", 5, 1, 2, 1)
-    call her_main("What?","body_122")
-    call her_main("Why are you here then?","body_122")
+    call her_main("...","body_33")
+    call her_main("So is that why I've been brought here? To be ridiculed!?","body_47") 
+    call her_main("I'm not ashamed of what I've done for my house!","body_50")
+    call luna_main("No, you've been brought here to sell dumbledore one of those favours.", 5, 1, 2, 1)
+    call her_main("What?","body_44")
+    call her_main("Why are you here then?","body_55")
     call luna_main("To help you.", 7, 1, 4, 1)
-    call her_main("...","body_122")
-    call her_main("Help how?","body_122")
+    call her_main("...","body_61")
+    call her_main("Help how?","body_66")
     call luna_main("Why don't you take your clothes off and I'll show you...", 8, 8, 4, 1)
-    call her_main("[genie_name]... please...","body_122")
+    call her_main("[genie_name]... please...","body_32")
     m "I'm sorry [hermione_name], my hands are tied..."
-    call her_main("...","body_122")
-    call her_main("Do I have to?","body_122")
+    call her_main("...","body_33")
+    call her_main("Do I have to?","body_34")
     call luna_main("Of course not... So long as you don't mind me telling your precious \"MRM\" what's been going on.", 8, 1, 3, 1)
-    call her_main("...","body_122")
-    call her_main("FINE!","body_122", "tears_02")
-    call her_main("I see how it is!","body_122", "tears_02")
+    call her_main("...","body_67")
+    call her_main("FINE!","body_20", "tears_02")
+    call her_main("I see how it is!","body_79", "tears_02")
     ">Hermione pulls off her top in a huff."
     $ hermione_wear_top = False
     $ hermione_wear_bra = False
-    call her_main("Feel free to humiliate me!","body_122", "tears_02")
+    call her_main("Feel free to humiliate me!","body_77", "tears_02")
     ">Hermione angrly removes her skirt."
     $ hermione_wear_skirt = False
     $ hermione_wear_panties = False
-    call her_main("for trying to do what's right!","body_122", "tears_02")
+    call her_main("for trying to do what's right!","body_81", "tears_02")
     ">Hermione stands naked before you and Luna. Her face is contorted in what seems like an equal mix of rage and embarrassment."
-    call her_main("there! are you happy now you two?","body_122", "tears_02")
+    call her_main("there! are you happy now you two?","body_81", "blush")
     m "Ye-"
     call luna_main("almost...", 5, 3, 4, 1)
     call luna_main("now why don't you get on your knees...", 7, 1, 2, 3)
-    call her_main("!!!","body_122", "tears_02")
-    call her_main("please, luna... I'm {size=-2}sorry {size=-2}about {size=-2}what I said...{/size}","body_122", "tears_02")
+    call her_main("!!!","body_18", "tears_02")
+    call her_main("please, luna... I'm {size=-2}sorry {size=-2}about {size=-2}what I said to you the other day...{/size}","body_71", "tears_02")
     call luna_main("then kneel...", 9, 1, 4, 2)
     hide screen hermione_main 
     $ hermione_SC.chibi.xpos = 40 #40 = Near Luna
@@ -3798,13 +3798,15 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     $ hermione_head_xpos=390
     show screen h_c_u 
     with d3
-    call her_kneel("...","body_122")
+    call her_kneel("...","body_70")
     call luna_main("there... isn't this simpler? Is this not your natural state?", 1, 3, 2, 2)
-    call her_kneel("...","body_122", "blush")
+    call her_kneel("...","body_71", "blush")
     call luna_main("now... I'll need your help for this next bit Professor.", 5, 2, 4, 1)
     m "What do I need to do?"
     call luna_main("come and stand before your star student.", 7, 3, 2, 1)
     ">You get up out of your chair and walk over to the two girls."
+    show screen blktone
+    show screen blkfade
     hide screen bld1
     hide screen genie
     show screen chair_02
@@ -3819,18 +3821,18 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     with d5
     pause
     ">Hermione looks up at you with a pleading expression."
-    call her_kneel("[genie_name]... please... what's going on?","body_122", "blush")
+    call her_kneel("[genie_name]... please... what's going on?","body_67", "blush")
     call luna_main("I said that you're here to sell a favour.", 7, 3, 2, 2)
     call luna_main("Isn't that you want? To sell favours to dumbledore?", 5, 8, 4, 1)
-    call her_kneel("I want... I want \"gryffindor\" to win the house cup...","body_122", "blush")
+    call her_kneel("I want... I want \"gryffindor\" to win the house cup...","body_87", "blush")
     if gryffindor > slytherin:
         call luna_main("But \"gryffindor\" is already ahead by [gryffindor-slytherin] points...", 7, 3, 5, 4)
         call luna_main("do you really think that they need any more points to win?", 7, 3, 4, 1)
-        call her_kneel("...","body_122", "blush")
+        call her_kneel("...","body_105", "blush")
     else:
         call luna_main("do you really think it's fair for you to win by selling your body?", 8, 3, 2, 2)
         call luna_main("*tch* *tch* *tch* what would your parents think?", 7, 3, 2, 4)
-        call her_kneel("they wouldn't understand...","body_122", "blush")
+        call her_kneel("they wouldn't understand...","body_103", "blush")
     ">Luna puts her hand in your robes and quickly pulls out your hardening cock."
     $ luna_r_arm = 3
     $ luna_flip = 1
@@ -3841,25 +3843,27 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     call gen_main("!!!", 4, 2)
     call luna_main("Just admit it...", 8, 8, 4, 1)
     call luna_main("you're a slut...", 9, 8, 1, 1)
-    call her_kneel("{size=-5}no... I'm... a good student...{/size}","body_122", "blush")
+    call her_kneel("{size=-5}no... I'm... a good student...{/size}","body_107", "blush")
+    pause
     ">Luna starts sliding her smooth hand up and down your cock."
     call luna_main("hmmmm... I'm not so sure a good student would do this...", 5, 2, 4, 4)
-    call her_kneel("...","body_122", "blush")
+    call her_kneel("...","body_105", "blush")
     call luna_main("kneel willingly in front of their headmaster..", 7, 3, 2, 1)
-    call her_kneel("...","body_122", "blush")
+    call her_kneel("...","body_106", "blush")
     call luna_main("naked...", 8, 8, 2, 1)
-    call her_kneel("...","body_122", "blush")
+    call her_kneel("...","body_118", "blush")
     call luna_main("While another student jerks him off...", 5, 2, 4, 1)
-    call her_kneel("...","body_122")
+    call her_kneel("...","body_121")
     call luna_main("Waiting patiently to be covered in cum...", 8, 3, 4, 5)
-    call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_122")
+    call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_123")
+    pause
     call luna_main("in fact, I can think of only one sort of student who'd do that...", 5, 3, 2, 1)
     call luna_main("do you know what sort of student that is hermione?", 7, 8, 4, 1)
-    call her_kneel("ah...{image=textheart} a...","body_122")
+    call her_kneel("ah...{image=textheart} a...","body_105")
     call luna_main("Mhmmm, go on...", 5, 3, 2, 1)
-    call her_kneel("ah... {p}a slut...{image=textheart}","body_122")
+    call her_kneel("ah... {p}a slut...{image=textheart}","body_107", "blush")
     call luna_main("good girl...", 5, 3, 4, 1)
-    call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_122")
+    call her_kneel("{image=textheart}{image=textheart}{image=textheart}","body_123", "blush")
     m "Ah... almost there [luna_name]..."
     ">Luna gives your cock a hard squeeze."
     g9 "Ah!"
@@ -3868,10 +3872,10 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     m "What else does she need to do?"
     call luna_main("...", 7, 2, 2, 4)
     call luna_main("Lick it...", 8, 3, 4, 3)
-    call her_kneel("...","body_122")
-    call her_kneel("OK...","body_122", "blush")
-    ">Hermione opens her mouth and puts out her tongue, closing her eyes."
-    call her_kneel("ah...","body_135", "blush")
+    call her_kneel("...","body_104")
+    call her_kneel("OK...","body_105", "blush")
+    ">Hermione opens her mouth and puts out her tongue."
+    call her_kneel("ah...","body_38", "blush")
     call luna_main("...", 7, 8, 2, 3)
     call luna_main("seems like I have to do everything then...", 6, 2, 2, 2)
     ">Luna pulls you forward, harshly, by your cock into Hermione's open mouth."
@@ -3908,13 +3912,13 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     with hpunch
     $ luna_r_arm = 3
     ">You erupt over Hermione's face, coating her in a thick layer of spunk."
-    call her_kneel("!!!!","body_122")
+    call her_kneel("!!!!","body_212")
     g9 "{size=+10}YES!{/size}"
     call luna_main("mmmm, good girl...", 5, 3, 4, 1)
     ">Luna's hand slowly continues to stroke your cock, jerking out the last couple of drops of sperm onto Hermione's nose."
     pause
     call luna_main("perfect...", 1, 3, 4, 1)
-    call her_kneel("...","body_122")
+    call her_kneel("...","body_123", "blush")
     m "that was fantastic!"
     $ luna_r_arm = 1
     hide screen genie_sprite
@@ -3924,29 +3928,30 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     hide screen chair_02
     hide screen desk_02
     hide screen g_c_u
-    call luna_main("...", 4, 1, 4, 8)
+    call luna_main("...", 5, 8, 4, 1)
     $ luna_flip = -1
     $ luna_xpos = 300
     if luna_addicted == True:
         call luna_main("well it's not over yet...", 5, 2, 4, 1)
-        call her_kneel("...what?","body_122")
-        call her_kneel("why?","body_122")
+        call her_kneel("...what?","body_206")
+        call her_kneel("why?","body_204")
         call luna_main("Just look at you!", 4, 3, 4, 5)
         call luna_main("Covered in the [l_genie_name]s delicous cum!", 5, 3, 4, 1)
-        call her_kneel("delicous...","body_122")
-        call her_kneel("Do you want me to clean myself up?","body_122")
+        call her_kneel("delicous...","body_85")
+        call her_kneel("Do you want me to clean myself up?","body_44")
         call luna_main("And waste all that perfectly good cum one some tart like you?!", 4, 3, 2, 3)
         call luna_main("No, I think I'll have to clean this mess up myself...", 4, 3, 4, 1)
         ">You notice a hunger in Luna's eyes..."
-        call her_kneel("does that mean...","body_122")
+        call her_kneel("does that mean...","body_66")
         call luna_main("come on hermione, we don't have all day...", 7, 2, 2, 2)
         call luna_main("tranfiguration starts in 5 minutes...", 7, 2, 3, 3)
         call luna_main("so hurry up...", 7, 3, 2, 2)
-        call her_kneel("(I can't be late to mcgonagall's class...)","body_122")
-        call her_kneel("I'm not sure what you want me to...","body_122")
+        call her_kneel("(I can't be late to mcgonagall's class...)","body_71")
+        call her_kneel("I'm not sure what you want me to do...","body_69")
         call luna_main("stand up now slut...", 9, 3, 3, 2)
-        call her_kneel("...","body_122")
+        call her_kneel("...","body_61")
         hide screen hermione_kneel
+        $ hermione_xpos = 480
         show screen hermione_main 
         with d3
         ">Hermione slowly stands up, her face still covered in cum..."
@@ -3955,23 +3960,23 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         $ luna_xpos = 600
         $ luna_r_arm = 2
         ">Luna moves closer to Hermione before picking up a strand of cum with her finger and moving it to her mouth."
-        call her_main("!!!","body_125", "blush") #Cheek full
+        call her_main("!!!","body_119", "blush") 
         m "(woah...)"
         $ luna_xpos = 630
         call luna_main("mmmmm... you taste even better...", 2, 1, 4, 1)
-        call her_main("...","body_125", "blush") #Cheek full
+        call her_main("...","body_131", "blush") 
         ">Hermione stands still, letting luna slowly wipe the cum from her face..."
         $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
-        call her_main("...","body_125", "blush") #Cheek full
+        call her_main("...","body_132", "blush") 
         call luna_main("mmmmm...", 2, 1, 4, 13)
         ">Luna slowly fills her mouth with cum before eventually swallowing."
         call luna_main("*gulp*", 5, 6, 4, 1)
         ">Eventually she finally gets the last strand into her mouth."
         $ uni_sperm = False
-        call her_main("...","body_125", "blush") #Cheek full
+        call her_main("...","body_85", "blush") 
         call luna_main("...", 2, 1, 4, 13)
         call luna_main("*gulp*", 5, 6, 4, 1)
-        call her_main("...","body_125", "blush") #Cheek full
+        call her_main("...","body_29", "blush")
         $ luna_l_arm = 2
         $ luna_flip = 1
         $ luna_xpos = 300
@@ -3986,22 +3991,22 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
         with d3
         ">Hermione quietly gets dressed, a shocked look on her face..."
     else:
-        call luna_main("well it's not over yet...", 5, 2, 4, 1)
-        call her_kneel("...what?","body_122")
-        call her_kneel("why?","body_122")
-        call luna_main("Just look at the mess you made!", 4, 3, 4, 5)
-        call luna_main("You'll have to clean that up before you can go to class!", 7, 3, 4, 8)
-        call her_kneel("well normally I just go the prefect bathroom...","body_122")
-        call her_kneel("or I use a towel...","body_122")
-        call her_kneel("{size=-5}but never scourgify for some reason...{/size}","body_122")
+        call luna_main("well it's not over yet...", 6, 2, 2, 1)
+        call her_kneel("...what?","body_206")
+        call her_kneel("why?","body_204")
+        call luna_main("Just look at the mess you made!", 7, 3, 2, 2)
+        call luna_main("You'll have to clean that up before you can go to class!", 7, 3, 3, 1)
+        call her_kneel("well normally I just go the prefect bathroom...","body_29")
+        call her_kneel("or I use a towel...","body_71")
+        call her_kneel("{size=-5}but never scourgify for some reason...{/size}","body_69")
         call luna_main("And waste all that perfectly good cum the Professor gave you?!", 4, 3, 2, 3)
         call luna_main("No, I think I'll have to stay here and make sure you dispose of it properly...", 7, 3, 2, 1)
-        call her_kneel("does that mean...","body_122")
+        call her_kneel("does that mean...","body_119")
         call luna_main("come on hermione, we don't have all day...", 5, 3, 4, 1)
         call luna_main("tranfiguration starts in 5 minutes...", 7, 3, 2, 2)
-        call her_kneel("(I can't be late to mcgonagall's class...)","body_122")
+        call her_kneel("(I can't be late to mcgonagall's class...)","body_118")
         call luna_main("now dispose of that cum like a good little slut...", 8, 3, 4, 1)
-        call her_kneel("...","body_122")
+        call her_kneel("...","body_121", "blush")
         ">Hermione slowly starts using her fingers to push your cum into her mouth."
         $ luna_l_arm = 4
         $ luna_cheeks = "01_hp/13_characters/luna/body/face/cheeks/cheeks_2.png"
@@ -4039,79 +4044,79 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
     call update_her_uniform
     hide screen hermione_kneel 
     with d3
-    call her_main("[genie_name], what on earth was that all about?!","body_122")
-    call her_main("Why on earth was Luna in here?","body_122")
-    call her_main("how on earth does she know about me selling favours?","body_122")
+    call her_main("[genie_name], what on earth was that all about?!","body_30")
+    call her_main("Why on earth was Luna in here?","body_69")
+    call her_main("how on earth does she know about me selling favours?","body_77")
     if luna_addicted == True:
-        call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","body_122")
+        call her_main("And {size=+5}why on earth{/size} does she love the taste of your cum?","body_76")
     m "I can explain everything..."
-    call her_main("Please do!","body_122")
+    call her_main("Please do...","body_79")
     m "do you remember how you yourself described Luna lovegood as crazy?"
-    call her_main("Of course. Everyone knows she's Loony Luna.","body_122")
+    call her_main("Of course. Everyone knows she's Loony Luna.","body_103")
     m "Well I was testing out some new magic..."
     m "And I'm attempting to cure her of her previous condition..."
     m "(I hope she believes this schlock...)"
-    call her_main("Really?","body_122")
-    call her_main("But isn't messing around with her mind a little...","body_122")
-    call her_main("unethical?","body_122")
+    call her_main("Really?","body_104")
+    call her_main("But isn't messing around with her mind a little...","body_105")
+    call her_main("unethical?","body_118")
     m "Yes, well normally you'd be right, but this is more of a curing of an existing mental condition."
     m "Think about it like I'm trying to cure her of Aspergers disease."
-    call her_main("Actually sir, Aspergers has been reclassified as part of the autism spectrum and is no longer it's own disease.","body_122")
+    call her_main("Actually sir, Aspergers has been reclassified as part of the autism spectrum and is no longer considered it's own disease.","body_16")
     m "..."
     m "(Of course she'd know that...)"
     m "Well anyway, my point is there's nothing untoward happening."
-    call her_main("...","body_122")
-    call her_main("Alright then...","body_122")
-    call her_main("But why is she so mean?","body_122")
+    call her_main("...","body_103")
+    call her_main("Alright then...","body_127")
+    call her_main("But why is she so mean?","body_131")
     m "I'm not sure. Maybe that's the true her."
-    call her_main("I guess...","body_122")
-    call her_main("But why was she jerking you off?","body_122")
+    call her_main("I guess that's not impossible...","body_71")
+    call her_main("But why was she jerking you off?","body_87")
     m "Oh um..."
     m "Well that sort of just happened during my evaluation..."
     m "She wanted to help her fathers magazine anyway possible, and one thing led to another..."
     if luna_addicted == True:
-        call her_main("what about the her loving the taste of your sperm?","body_122")
+        call her_main("what about the her loving the taste of your sperm?","body_141")
         m "Honestly I'm not really sure about that."
         m "I think that's just her being weird..."
-    call her_main("...","body_122")
-    call her_main("ugh, fine...","body_122")
-    call her_main("I guess...","body_122")
+    call her_main("...","body_61")
+    call her_main("ugh, fine...","body_201")
+    call her_main("I guess...","body_203")
     m "So you don't mind helping out with her in the future?"
-    call her_main("What? I have to spend more time with her?","body_122")
-    call her_main("But she's weird...","body_122")
+    call her_main("What? I have to spend more time with her?","body_202")
+    call her_main("But she's weird...","body_182")
     m "We can work on that. Besides, don't you want to help out one of your friends?"
-    call her_main("Hmmm, I suppose that you're right [genie_name].","body_122")
-    call her_main("I can't imagine that the daydreaming Luna would do too well in the real world.","body_122")
-    call her_main("and as her friend It's my responsibility to try and save her from that!","body_122")
-    call her_main("!!!","body_122")
-    call her_main("Maybe we could even have study sessions together!","body_122")
-    call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs...","body_122")
-    call her_main("(Not that I mind...)","body_122")
+    call her_main("Hmmm, I suppose that you're right [genie_name].","body_184")
+    call her_main("I can't imagine that the daydreaming Luna would do too well in the real world.","body_190")
+    call her_main("and as her friend It's my responsibility to try and save her from that!","body_189")
+    call her_main("!!!","body_202")
+    call her_main("Maybe we could even have study sessions together!","body_56")
+    call her_main("I've always wanted someone to study with! Normally it's only ever Harry and I'm pretty sure he's just there to stare at my boobs...","body_50")
+    call her_main("(Not that I mind...)","body_107")
     menu:
         "-Encourage friendship-":
             $ luna_friendship = 1
             $ luna_hatred = 0
             m "I'm sure she'd be happy to spend some more time with you."
-            call her_main("Do you think so sir? She seemed pretty mean today.","body_122")
+            call her_main("Do you think so sir? She seemed pretty mean today.","body_87")
             m "She'll come around, just give it time."
-            call her_main("I hope so sir! A ravenclaw study buddy would be great!","body_122")
+            call her_main("I hope so sir! A ravenclaw study buddy would be great!","body_80")
             m "(more like fuck buddy...)"
-            call her_main("...","body_08")
+            call her_main("...","body_74")
         "-discourage friendship-":
             $ luna_friendship = 0
             $ luna_hatred = 1
             m "I'm not so sure about that. She seemed pretty harsh today."
-            call her_main("hmmm, you're probably right.","body_122")
+            call her_main("hmmm, you're probably right.","body_82")
             m "Maybe you should fight fire with fire?"
-            call her_main("And be mean in return?","body_122")
-            call her_main("I don't know [genie_name]... She is my friend...","body_08")
+            call her_main("And be mean in return?","body_85")
+            call her_main("I don't know [genie_name]... She is my friend...","body_88")
     m "Anyway, thanks for your help today."
-    call her_main("anything for my friends [genie_name]...","body_08")
+    call her_main("anything for my friends [genie_name]...","body_105")
     m "(Does that mean me?)"
     m "Yes, well, 60 points to \"gryffindor\"!"
     $ gryffindor += 60
-    call her_main("Thank you [genie_name]...","body_08")
-
+    call her_main("Thank you [genie_name]...","body_107")
+    $ luna_busy = True
     jump end_hg_pf
 
 
