@@ -364,7 +364,13 @@ label door:
                             jump silver_requests
                     
                     "-Inventory-":
-                        call her_main("",xpos=410)
+
+                        call update_wardrobe_lists
+
+                        call reset_wardrobe_vars
+
+                        call her_main("",xpos=425)
+
                         call screen wardrobe
 
                         

@@ -323,8 +323,11 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
         #$ hermione_body = her_path + str(face) + ".png"
     $ h_tears = tears
     call h_update
-    show screen hermione_main
-    with d1
+    if wardrobe_active: #No Dissolve in wardrobe
+        show screen hermione_main
+    else:
+        show screen hermione_main
+        with d1
     if text != "":
         $ renpy.say(her,text)
     return
