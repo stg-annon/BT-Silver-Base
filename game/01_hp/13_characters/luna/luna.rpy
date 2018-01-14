@@ -148,7 +148,7 @@ label luna_favour_menu:
             if luna_corruption == 9:
                 jump luna_reversion_event
             jump luna_favour_4
-        "-Touch me with Hermione-" if luna_corruption >= 11:
+        "-Touch me with Hermione-" if luna_corruption >= 11 and not luna_reverted:
             jump luna_favour_5
         #"-Suck it-":
             jump luna_favour_6

@@ -191,15 +191,16 @@ screen stat_screen_hermione:
         idle "01_hp/25_mo/close_ground.png"
         hover "01_hp/25_mo/close_hover.png"
         action [Hide("stat_screen_hermione"), Hide("hermione_main"), Jump("day_main_menu")]
-
-    imagebutton: # STAT MENU SWAP
-        xpos 894
-        ypos 72
-        xanchor "center"
-        yanchor "center"
-        idle "01_hp/11_misc/points_03.png"
-        hover "01_hp/11_misc/points_04.png"
-        action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
+    
+    if luna_known:
+        imagebutton: # STAT MENU SWAP
+            xpos 894
+            ypos 72
+            xanchor "center"
+            yanchor "center"
+            idle "01_hp/11_misc/points_03.png"
+            hover "01_hp/11_misc/points_04.png"
+            action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
 
 screen stat_screen_luna:
     zorder luna_zorder-1
