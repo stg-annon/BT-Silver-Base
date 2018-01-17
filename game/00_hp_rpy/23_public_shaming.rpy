@@ -127,7 +127,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     show screen genie
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     
@@ -308,7 +308,7 @@ label hg_ps_PantyThief_soaked:### PANTIES SOAKED IN CUM ###
 label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
     $ hg_ps_PantyThief_OBJ.complete = True
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
-    call her_walk(710,500,3)
+    call her_walk(610,400,3)
     
     show screen hermione_blink #Hermione stands still.
     pause.5
@@ -463,7 +463,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
     show screen genie
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     $ renpy.play('sounds/door.mp3') #Sound of a door.
     with Dissolve(.3)
     

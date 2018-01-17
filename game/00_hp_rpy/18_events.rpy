@@ -812,8 +812,8 @@ label event_07:
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-    $ walk_xpos=470 #Animation of walking chibi. (From)
-    $ walk_xpos2=360 #Coordinates of it's movement. (To)
+    $ walk_xpos=610 #Animation of walking chibi. (From)
+    $ walk_xpos2=500 #Coordinates of it's movement. (To)
     show screen snape_walk_01 
     with d3
     pause 1.5
@@ -1836,8 +1836,8 @@ label event_11:
     m "...."
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
 
-    $ walk_xpos=570 #Animation of walking chibi. (From)
-    $ walk_xpos2=400 #Coordinates of it's movement. (To)
+    $ walk_xpos=610+140 #Animation of walking chibi. (From) +140 since this is done in her_walk to keep consitance 
+    $ walk_xpos2=400+140 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.1 #The speed of moving the walking animation across the screen.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     # show screen hermione_walk_01 
@@ -1916,7 +1916,7 @@ label event_11:
     hide screen hermione_main
     with Dissolve(.3)
     $ walk_xpos=400 #Animation of walking chibi. (From)
-    $ walk_xpos2=610 #Coordinates of it's movement. (To)
+    $ walk_xpos2=610+140 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.0 #The speed of moving the walking animation across the screen.
     show screen hermione_chibi_robe_f #Hermione. Chibi. Walking. Wearing a robe.
     #show screen hermione_walk_01_f 
@@ -2107,7 +2107,7 @@ label event_14:
     
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
 
-    $ walk_xpos=570 #Animation of walking chibi. (From)
+    $ walk_xpos=610+140 #Animation of walking chibi. (From)
     $ walk_xpos2=400 #Coordinates of it's movement. (To)
     $ hermione_speed = 02.1 #The speed of moving the walking animation across the screen.
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
@@ -2193,7 +2193,7 @@ label event_14:
     hide screen hermione_main
     with Dissolve(.3)
     
-    call her_walk(400,610,2)
+    call her_walk(260,610,2)
     
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     with Dissolve(.3)
