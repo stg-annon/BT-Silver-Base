@@ -574,7 +574,7 @@ label hg_pf_BreastMolester:
         hide screen hermione_blink
         with d3
         
-        call her_walk(500, 280, 3, redux_pause = 2)
+        call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with d2
         pause.5
@@ -786,7 +786,7 @@ label hg_pf_BreastMolester:
     hide screen hermione_blink
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     if whoring >= 13:
         show screen hermione_stand_f
@@ -871,7 +871,7 @@ label hg_pf_ButtMolester:
             call her_head("Again.....?","body_203")
         hide screen bld1
         with d3
-        call her_walk(500, 280, 3, redux_pause = 2)
+        call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1160,7 +1160,7 @@ label hg_pf_ButtMolester:
         call her_head("If I must...","body_204")
         hide screen bld1
         with d3
-        call her_walk(500, 280, 3, redux_pause = 2)
+        call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1348,7 +1348,7 @@ label hg_pf_ButtMolester:
         call her_head("If I must...","body_204")
         hide screen bld1
         with d3
-        call her_walk(500, 280, 3, redux_pause = 2)
+        call her_walk(400, 280, 3, redux_pause = 2)
         show screen blkfade
         with Dissolve(1)
         pause.5
@@ -1794,7 +1794,7 @@ label hg_pf_ButtMolester:
     hide screen hermione_main
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     if whoring >= 3 and whoring <= 5: #First level. Not happy.
         show screen hermione_stand_f #Hermione stands still.
@@ -2781,7 +2781,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
     hide screen hermione_main
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     show screen hermione_stand_f #Hermione stands still.
     with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
@@ -3107,6 +3107,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         show screen hermione_walk_01 
         pause 1
         show screen blkfade
+        hide screen hermione_walk_01 
         with Dissolve(1)
         $ renpy.play('sounds/08_hop_on_desk.mp3') #Sound of the desk squeaking. 
         pause 5
@@ -3275,8 +3276,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         g9 "......................................."
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
-        $ walk_xpos=470 #Animation of walking chibi. (From)
-        $ walk_xpos2=360 #Coordinates of it's movement. (To)
+        $ walk_xpos=610 #Animation of walking chibi. (From)
+        $ walk_xpos2=490 #Coordinates of it's movement. (To)
         hide screen blktone8
         hide screen bld1
         show screen snape_walk_01 
@@ -3299,7 +3300,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
         sna2 "Listen, Genie. I've been thinki--"
         $ s_sprite = "01_hp/13_characters/snape/main/snape_11.png"
         with hpunch
-        sna2 "................................................................................................................................................................................"
+        sna2 "............................................"
         with hpunch
         call her_head("(Professor Snape???????!)","body_96")
         call sna_head("Miss Granger?","snape_12")
@@ -3396,7 +3397,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                         with d3
                         hide screen hermione_blink #Hermione stands still.
                         
-                        call her_walk(500,710,2)
+                        call her_walk(400,610,2)
                         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                         with d3
                         pause.2
@@ -4142,7 +4143,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     
                     
                     #Walks to the door
-                    call her_walk(500,650,2)
+                    call her_walk(400,610,2)
                     show screen hermione_stand_f
                     
                     #Locks the door
@@ -4163,7 +4164,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     m "??!"
                     hide screen hermione_stand_f
                     hide screen ctc
-                    call her_walk(650,400,3)
+                    call her_walk(610,400,3)
                     show screen hermione_blink #Hermione stands still.
                     show screen bld1
                     with d3
@@ -4391,6 +4392,8 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         pause
                                         $ h_c_u_pic = "no_panties_dance_ani"
                                         hide screen no_shirt_no_skirt_dance
+                                        $ hermione_SC.chibi.xpos = 210 #400 = Near the desk. 
+                                        $ hermione_SC.chibi.ypos = 180 
                                         show screen h_c_u
                                         with d3
                                         pause
@@ -4398,7 +4401,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                                         with d3
                                         show screen blktone
                                         with d3
-                                        ">Nonetheless you decide to show her some appreciation..."
+                                        ">None the less you decide to show her some appreciation..."
                                         ">By stroking your cock even faster!"
                                         call her_head("..........","body_91")
                                         show screen blktone8
@@ -4773,7 +4776,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
     $ stockings = temp_stockings
     $ panties = True
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -5805,7 +5808,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
     hide screen hermione_main
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     show screen hermione_stand_f #Hermione stands still.
     with d3
     if whoring >= 6 and whoring <= 8: # LEVEL 03 # <=================================================================================== FIRST EVENT.    
@@ -5920,7 +5923,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     hide screen bld1
     with d3
     
-    call her_walk(500,280,3,redux_pause=2)
+    call her_walk(400,280,3,redux_pause=2)
     
     show screen blkfade
     with Dissolve(1)
@@ -6376,7 +6379,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
     $ stockings = temp_stockings
     $ panties = True
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf      
@@ -6497,8 +6500,8 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         show screen hermione_walk_01 
         pause.1
         show screen blkfade
-        with Dissolve(1)
         hide screen hermione_walk_01 
+        with Dissolve(1)
         pause.3
         label event_01_round_02:
         ">Hermione puts her slender hands on your cock..."
@@ -6863,6 +6866,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
                 pause
                 her ".........."
                 m "Well, I think that's about it..."
+                $ hermione_SC.chibi.xpos = 500 
                 show screen hermione_stand 
                 hide screen chair_02
                 hide screen desk_02
@@ -6936,6 +6940,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         show screen hermione_walk_01 
         pause.1
         show screen blkfade
+        hide screen hermione_walk_01 
         with Dissolve(1)
         pause.3
 
@@ -6977,6 +6982,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
         show screen hermione_walk_01 
         pause.1
         show screen blkfade
+        hide screen hermione_walk_01 
         with Dissolve(1)
         pause.3
 
@@ -7471,7 +7477,7 @@ label hg_pf_TouchMe: #LV.5 (Whoring = 12 - 14)
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf         
@@ -7673,8 +7679,8 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
         show screen hermione_walk_01 
         pause.1
         show screen blkfade
-        with Dissolve(1)
         hide screen hermione_walk_01 
+        with Dissolve(1)
         pause.3
         label titjob_round_2:
         $ hermione_wear_top = False
@@ -7995,8 +8001,9 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                     with d3
                     $ uni_sperm = False
                 $ aftersperm = True
-        #her "Can I just get paid now?"
-
+        
+        jump done_with_titjob
+        
     elif hg_pf_TitJob_OBJ.points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name]?"
         call her_main("Yes, [genie_name]?","body_01",xpos=140)
@@ -8505,7 +8512,7 @@ label done_with_titjob:
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf         
@@ -9847,7 +9854,7 @@ label hg_pf_SuckIt: #LV.6 (Whoring = 15 - 17)
     hide screen ctc
     with Dissolve(.3)
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -10705,10 +10712,10 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     
     if hg_pf_LetsHaveSex_OBJ.points == 0:
         $ new_request_29_heart = 1
-        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 1 #Event hearts level (0-3)
     if hg_pf_LetsHaveSex_OBJ.points == 1:
         $ new_request_29_heart = 2
-        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 3 #Event hearts level (0-3)
+        $ hg_pf_LetsHaveSex_OBJ.hearts_level = 2 #Event hearts level (0-3)
     if hg_pf_LetsHaveSex_OBJ.points >= 2:
         $ new_request_29_heart = 3
         $ hg_pf_LetsHaveSex_OBJ.hearts_level = 3 #Event hearts level (0-3)
@@ -10722,7 +10729,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
     hide screen ctc
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -11409,7 +11416,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
     hide screen ctc
     with d3
     
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
     
     call reset_hermione_main
     jump end_hg_pf
@@ -11455,7 +11462,7 @@ label hg_pf_TheGamble:
     
     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
     
-    call her_walk(500,325,1.25)
+    call her_walk(400,325,1.25)
     
     show screen blkfade
     with fade
@@ -11701,7 +11708,7 @@ label hg_pf_TheGamble_complete:
         call hermione_enter
         m "Miss Granger?"
         
-        call her_walk(500,320,1.25)
+        call her_walk(400,320,1.25)
         show screen blkfade
         with fade
         "She says nothing as she walks around the desk."
@@ -12861,7 +12868,7 @@ label end_touch_yourself:
     $ custom_outfit_old = temp_outfit
     $ stockings = temp_stockings
     $ panties = True
-    call her_walk(500,710,2)
+    call her_walk(400,610,2)
 
     $ hermione_dribble = False
 
