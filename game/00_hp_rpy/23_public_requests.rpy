@@ -354,12 +354,13 @@ label hg_pr_FlirtClassmate_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_FlirtClassmate_OBJ.points += 1
-    $ hg_pr_FlirtClassmate_OBJ.complete = True
     $ hg_pr_FlirtClassmate_OBJ.inProgress = False
     
     if whoring <= 2:
         $ whoring +=1
-    
+    if whoring >= 2:
+        $ hg_pr_FlirtClassmate_OBJ.complete = True
+       
     call hg_pr_transition_block
     return
     
@@ -797,11 +798,12 @@ label hg_pr_FlirtTeacher_complete:
     her "Thank you, [genie_name]."
     
     $ hg_pr_FlirtTeacher_OBJ.points += 1
-    $ hg_pr_FlirtTeacher_OBJ.complete = True
     $ hg_pr_FlirtTeacher_OBJ.inProgress = False
     
     if whoring <= 5:  # (if whoring >= 3 and whoring <= 5) - LEVEL 02
         $ whoring +=1
+    if whoring >= 5:
+        $ hg_pr_FlirtTeacher_OBJ.complete = True
     
     call hg_pr_transition_block
     return

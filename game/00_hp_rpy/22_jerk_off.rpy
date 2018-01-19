@@ -23,7 +23,7 @@ label jerk_off:
             $ cum_on_the_floor = True #TRUE when chosen to cum on the floor.
             pass
         "-Cancel-":
-            jump jerk_off
+            jump desk
 
 
 ### JERKING OFF ###
