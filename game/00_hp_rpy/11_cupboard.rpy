@@ -162,6 +162,9 @@ label cupboard:
         
         "-Cheat-":
             jump cheats_ht
+
+        "-Toggle Player Guide-":
+            jump toggle_guide_icon
         
         "-Never mind-":
             jump day_main_menu

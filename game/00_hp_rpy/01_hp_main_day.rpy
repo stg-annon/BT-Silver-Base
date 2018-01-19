@@ -327,6 +327,11 @@ if day == 1 and not bird_examined and not desk_examined and not cupboard_examine
 if collar == 5:
     jump collar_scene
 
+### Guide ###
+#Random Number for Tip/Fact of the Day
+$ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
+call update_quests
+
 
 call Day_Request_Block
 

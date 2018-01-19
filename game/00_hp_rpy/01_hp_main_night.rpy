@@ -163,7 +163,10 @@ if milking == -1:
 if milking == -3:
     call potion_scene_11_3_2
 
-
+### Guide ###
+#Random Number for Tip/Fact of the Day
+$ daily_rndm_tip_or_fact = renpy.random.randint(0, 18)
+call update_quests
 
 
 

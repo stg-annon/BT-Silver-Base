@@ -4,8 +4,8 @@ label duel:
     $ d_flag_01 = False #Turns True after conversation triggered when Genie's HP runs low.
     $ d_flag_02 = False #Turns True after conversation triggered when Snape's HP runs low.
     
-    $ genie_hp = 100000
-    $ snape_hp = 20 #Must be 2000
+    $ genie_hp = 1000
+    $ snape_hp = 2000 #Must be 2000
     
 
 
@@ -50,24 +50,25 @@ label duel:
     
 
     show image "01_hp/01_bg/01_main_room_02.png"
-    show image "01_hp/05_props/01_door.png" at Position(xpos=758, ypos=315, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/02_cupboard_00.png" at Position(xpos=120, ypos=280, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/04_chair.png" at Position(xpos=653, ypos=300, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/03_fireplace.png" at Position(xpos=553, ypos=277, xanchor="center", yanchor="center")
-    #show image "01_hp/05_props/05_window.png" at Position(xpos=290, ypos=218, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/06_phoenix.png" at Position(xpos=400, ypos=225, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/07_candle.png" at Position(xpos=693, ypos=225, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/08_candle.png" at Position(xpos=210, ypos=160, xanchor="center", yanchor="center")
-    #show image "01_hp/05_props/11_genie_00.png" at Position(xpos=230, ypos=336, xanchor="center", yanchor="center")
-    show image "01_hp/05_props/09_table.png" at Position(xpos=220, ypos=330, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/01_door.png" at Position(xpos=758+140, ypos=315, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/02_cupboard_00.png" at Position(xpos=120+140, ypos=280, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/04_chair.png" at Position(xpos=653+140, ypos=300, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/03_fireplace.png" at Position(xpos=553+140, ypos=277, xanchor="center", yanchor="center")
+    #show image "01_hp/05_props/05_window.png" at Position(xpos=290+140, ypos=218, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/06_phoenix.png" at Position(xpos=400+140, ypos=225, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/07_candle.png" at Position(xpos=693+140, ypos=225, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/08_candle.png" at Position(xpos=210+140, ypos=160, xanchor="center", yanchor="center")
+    #show image "01_hp/05_props/11_genie_00.png" at Position(xpos=230+140, ypos=336, xanchor="center", yanchor="center")
+    show image "01_hp/05_props/09_table.png" at Position(xpos=220+140, ypos=330, xanchor="center", yanchor="center")
     show screen candlefire_01 #CANDLE FIRE.
     show screen candlefire_02 #CANDLE FIRE.
+    #show screen 
     
     hide screen snape_defends
     hide screen blkfade
     
-    show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
 
     hide screen end_u_1
     with fade
@@ -90,7 +91,7 @@ label duel:
 
 
 label duel_main:
-    if genie_hp <= 30000 and not d_flag_01:
+    if genie_hp <= 300 and not d_flag_01:
         $ d_flag_01 = True
         sna_[1] "Ready to give up yet?"
         g4 "Tsk..."
@@ -116,7 +117,7 @@ label duel_main:
                 jump genie_attack
         "-Defend-":
             $ blocking = True #Genie is guard.
-            show ch_gen guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+            show ch_gen guard at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
             pause 1
             jump snapes_turn
         "-Potion (x[potions])-":
@@ -133,7 +134,7 @@ label snapes_turn:
         $ pentogram = False
         hide ch_sna
         hide pentogram
-        show hand at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+        show hand at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
         $ renpy.play('sounds/attack_snape3.ogg')
         pause 1.5
         hide hand
@@ -141,32 +142,32 @@ label snapes_turn:
         $ renpy.play('sounds/attack_snape4.ogg')
         if blocking: # GENIE BLOCKS AGAINST THE HAND.(Genie -50 HP)
             $ blocking = False
-            show hand_guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show hand_guard at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             pause 1.8
             hide hand_guard
-            show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+            show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
             hide screen minus_50_genie
             show screen minus_50_genie
             $ genie_hp -= 50
             if genie_hp < 50: #Check for gameover
                 jump genie_lost
             
-            show smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+            show smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
             show ch_gen duel_01 behind smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
             jump duel_main
             
         
         else: # GENIE DOESN'T BLOCK AGAINST THE HAND. (Genie -400 HP)
-            show hand_genie at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show hand_genie at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             pause 1.3
             hide hand_genie
-            show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+            show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
             hide screen minus_400_genie
             show screen minus_400_genie
             $ genie_hp -= 400
             if genie_hp < 50: #Check for gameover
                 jump genie_lost
-            show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             jump duel_main
     
     
@@ -183,20 +184,20 @@ label snapes_turn:
                 jump snape_attack
         elif snape_decides == 2: #BLOCK 
             $ snape_blocking = True
-            show ch_sna defend at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show ch_sna defend at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             pause 1
             jump duel_main
 
         elif snape_decides == 3:  #MAGIC. CASTS THE PICTOGRAM. 
             $ pentogram = True
             hide ch_sna 
-            show image "01_hp/04_duel/snape_casting_01.png" at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show image "01_hp/04_duel/snape_casting_01.png" at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             $ renpy.play('sounds/attack_snape2.ogg')
             pause.8
-            show pentogram at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+            show pentogram at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
             pause 1
             hide image "01_hp/04_duel/snape_casting_01.png" #Snape point to the ground with his wand.
-            show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+            show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
             
             jump duel_main
 
@@ -206,16 +207,16 @@ label snapes_turn:
 label snape_attack:
     hide ch_sna
     hide ch_gen
-    show snape_attack at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show snape_attack at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
     $ renpy.play('sounds/attack_snape.ogg')
     pause 0.45
-    hide snape_attack at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
-    show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    hide snape_attack at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
+    show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     $ genie_hp -= 100
     if genie_hp < 50: #Check for gameover
         jump genie_lost
-    show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
     jump duel_main
     
@@ -224,18 +225,18 @@ label snape_attack:
 label snape_attack_guard: 
     hide ch_sna 
     hide ch_gen 
-    show snape_attack_guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show snape_attack_guard at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
     $ renpy.play('sounds/attack_snape.ogg')
     pause 0.5
     hide screen minus_0_genie
     show screen minus_0_genie
-    hide snape_attack_guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
-    show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show ch_gen guard at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+    hide snape_attack_guard at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
+    show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen guard at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
     pause 1
     
-    #show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    #show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
 
     jump duel_main
@@ -247,18 +248,18 @@ label snape_defends:
     hide ch_sna
     hide ch_gen
     $ renpy.play('sounds/magic4.ogg')
-    show smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show snape_defend behind smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show snape_defend behind smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
     pause 2.3
     hide screen minus_0
     show screen minus_0
-    hide snape_defend at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
-    show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show ch_gen barb at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+    hide snape_defend at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
+    show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen barb at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
     pause 1
     
-    show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     pause 1
     jump snapes_turn
 
@@ -269,8 +270,8 @@ label genie_attack:
     hide ch_gen
     
     $ renpy.play('sounds/magic4.ogg')
-    show smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show genie_attack behind smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show genie_attack behind smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with Dissolve(.1)
     
     pause 1
@@ -291,11 +292,11 @@ label genie_attack:
     pause 1
     if snape_hp < 50: #Check for gameover
         jump snape_lost
-    show smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    hide genie_attack at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
-    show ch_sna duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show ch_gen barb at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
-    show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    hide genie_attack at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
+    show ch_sna duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen barb at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
+    show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     pause 1
     jump snapes_turn
    
@@ -305,7 +306,7 @@ label genie_attack:
 label potion:
     pause.5
     hide heal_02
-    show heal_02 at Position(xpos=360, ypos=330, xanchor="center", yanchor="center")
+    show heal_02 at Position(xpos=360+140, ypos=330, xanchor="center", yanchor="center")
     $ renpy.play('sounds/attack_heal.ogg')
     pause 1 
     
@@ -339,8 +340,8 @@ label main_attack:
 label main_block:
     $ blocking = True #Genie is guard.
     $ renpy.play('sounds/magic4.ogg')
-    show smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
-    show ch_gen guard behind smoke at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
+    show ch_gen guard behind smoke at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     pause 1
     jump snapes_turn
     
@@ -363,47 +364,48 @@ init -1:
    ### DUEL ###
 
     screen hp_bar:
-        if genie_hp <= 100000:
+
+        if genie_hp <= 1000:
             add "01_hp/04_duel/hp_bar_02.png" 
-        if genie_hp <= 95000:
+        if genie_hp <= 950:
             add "01_hp/04_duel/hp_bar_02.png" xpos -15 ypos 0
-        if genie_hp <= 90000:
+        if genie_hp <= 900:
             add "01_hp/04_duel/hp_bar_02.png" xpos -30 ypos 0
-        if genie_hp <= 85000:
+        if genie_hp <= 850:
             add "01_hp/04_duel/hp_bar_02.png" xpos -45 ypos 0
-        if genie_hp <= 80000:
+        if genie_hp <= 800:
             add "01_hp/04_duel/hp_bar_02.png" xpos -60 ypos 0
-        if genie_hp <= 75000:
+        if genie_hp <= 750:
             add "01_hp/04_duel/hp_bar_02.png" xpos -75 ypos 0
-        if genie_hp <= 70000:
+        if genie_hp <= 700:
             add "01_hp/04_duel/hp_bar_02.png" xpos -90 ypos 0
-        if genie_hp <= 65000:
+        if genie_hp <= 650:
             add "01_hp/04_duel/hp_bar_02.png" xpos -105 ypos 0
-        if genie_hp <= 60000:
+        if genie_hp <= 600:
             add "01_hp/04_duel/hp_bar_02.png" xpos -120 ypos 0
-        if genie_hp <= 55000:
+        if genie_hp <= 550:
             add "01_hp/04_duel/hp_bar_02.png" xpos -135 ypos 0
-        if genie_hp <= 50000:
+        if genie_hp <= 500:
             add "01_hp/04_duel/hp_bar_02.png" xpos -150 ypos 0
-        if genie_hp <= 45000:
+        if genie_hp <= 450:
             add "01_hp/04_duel/hp_bar_02.png" xpos -165 ypos 0
-        if genie_hp <= 40000:
+        if genie_hp <= 400:
             add "01_hp/04_duel/hp_bar_02.png" xpos -180 ypos 0
-        if genie_hp <= 35000:
+        if genie_hp <= 350:
             add "01_hp/04_duel/hp_bar_02.png" xpos -195 ypos 0
-        if genie_hp <= 30000:
+        if genie_hp <= 300:
             add "01_hp/04_duel/hp_bar_02.png" xpos -210 ypos 0
-        if genie_hp <= 25000:
+        if genie_hp <= 250:
             add "01_hp/04_duel/hp_bar_02.png" xpos -225 ypos 0
-        if genie_hp <= 20000:
+        if genie_hp <= 200:
             add "01_hp/04_duel/hp_bar_02.png" xpos -240 ypos 0
-        if genie_hp <= 15000:
+        if genie_hp <= 150:
             add "01_hp/04_duel/hp_bar_02.png" xpos -255 ypos 0
-        if genie_hp <= 10000:
+        if genie_hp <= 100:
             add "01_hp/04_duel/hp_bar_02.png" xpos -270 ypos 0
-        if genie_hp <= 5000:
+        if genie_hp <= 50:
             add "01_hp/04_duel/hp_bar_02.png" xpos -285 ypos 0
-        if genie_hp < 5000:
+        if genie_hp < 50:
             add "01_hp/04_duel/hp_bar_02.png" xpos -300 ypos 0
         add "01_hp/04_duel/hp_bar.png" #Genie avatr pic.
         add "01_hp/04_duel/hp_bar_05.png" #Inactive buttons.
@@ -481,16 +483,18 @@ init -1:
     
 ### SNAPE LOSES ###
 label snape_lost:
-    hide genie_attack at Position(xpos=550, ypos=250, xanchor="center", yanchor="center")
+    hide genie_attack at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center")
     hide pentogram
-    show ch_gen duel_01 at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    hide screen hp_bar
+    hide screen duel_buttons
+    show ch_gen duel_01 at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
 
-    show image "01_hp/04_duel/snape.png" at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show image "01_hp/04_duel/snape.png" at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     with flashbulb
 
 
     pause 1
-    jump event_06
+    jump event_06 #18_events.rpy
     
     
 ### GENIE LOSES ###
@@ -501,9 +505,7 @@ label genie_lost:
     $ end_u_1_pic =  "01_hp/20_intro/game_over.jpg"
     with flashbulb
     with hpunch
-    show screen ctc
-    pause
-    hide screen ctc
+    call ctc_wPause
     menu:
         "-Try again-":
             stop music 

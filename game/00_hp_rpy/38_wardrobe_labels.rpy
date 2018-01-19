@@ -7,27 +7,71 @@ label __init_variables:
     if not hasattr(renpy.store,'wardrobe_page'): #important!
         $ wardrobe_page = 0
 
+    if not hasattr(renpy.store,'wardrobe_chitchat_active'): #important!
+        $ wardrobe_chitchat_active = True
+
+    #Wardrobe Categories
+    if not hasattr(renpy.store,'wardrobe_tops_category'): #important!
+        $ wardrobe_tops_category = 0
+    if not hasattr(renpy.store,'wardrobe_bottoms_category'): #important!
+        $ wardrobe_bottoms_category = 0
+    if not hasattr(renpy.store,'wardrobe_stockings_category'): #important!
+        $ wardrobe_stockings_category = 0
     if not hasattr(renpy.store,'wardrobe_accessories_category'): #important!
         $ wardrobe_accessories_category = 0
-
+    if not hasattr(renpy.store,'wardrobe_underwear_category'): #important!
+        $ wardrobe_underwear_category = 0
+    if not hasattr(renpy.store,'wardrobe_outfits_category'): #important!
+        $ wardrobe_outfits_category = 0
     if not hasattr(renpy.store,'wardrobe_gifts_category'): #important!
         $ wardrobe_gifts_category = 0
 
+    if not hasattr(renpy.store,'update_old_clothing'): #important!
+        $ update_old_clothing = True
+
     return
 
+label wardrobe:
+    call update_wardrobe_lists
+    call reset_wardrobe_vars
+    call her_main("",xpos=400) #400=wardrobe center
+    hide screen main_menu_01
+    call screen wardrobe
 
 label reset_wardrobe_vars:
     $ wardrobe_active = 1                 #1=True #hides dissolve from "her_main"
     $ wardrobe_page = 0                   #default page
+    $ wardrobe_tops_category = 0          #default page
+    $ wardrobe_bottoms_category = 0       #default page
+    $ wardrobe_stockings_category = 0     #default page
     $ wardrobe_accessories_category = 0   #default page
+    $ wardrobe_underwear_category = 0     #default page
+    $ wardrobe_outfits_category = 0       #default page
     $ wardrobe_gifts_category = 0         #default page
     return
 
+label hide_wardrobe:
+    call ctc_wPause
+    call screen wardrobe
 
 label close_wardrobe:
-    $ hermione_xpos = 510 #Hermione position reset when closing inventory.
-    call her_main("","body_01") #reset hermione face to default
+    call her_main("","body_01",xpos=510) #reset hermione face and position to default
     jump day_time_requests
+
+
+label wardrobe_chitchat_toggle:
+    hide screen hermione_main
+    if wardrobe_chitchat_active:
+        ">This will skip most of the wardrobe dialogue."
+        menu:
+            "-Disable Wardrobe Chit-Chat-":
+                $ wardrobe_chitchat_active = False
+                call wardrobe
+            "-Back-":
+                pass
+    else:
+        $ wardrobe_chitchat_active = True
+    call wardrobe
 
 
 ### Hair ###
@@ -67,7 +111,7 @@ label update_her_hair:
     return
 
 
-### Toggles ##
+
 
 ## Tops ##
 
@@ -82,12 +126,32 @@ label her_top_toggle:
     show screen hermione_main
     call screen wardrobe
 
+# Top Selection #
+label set_h_top(top = ""):
+    $ hermione_wear_top = True
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_top = top
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_top = top
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
+
+
 ## Bottoms ##
 
 # Bottom Toggle #
 label her_bottom_toggle:
     hide screen hermione_main
-    if hermione_wear_skirt: #rename "skirt" to "bottom"
+    if hermione_wear_skirt:
         $ hermione_wear_skirt = False
     else:
         $ hermione_wear_skirt = True
@@ -95,6 +159,33 @@ label her_bottom_toggle:
     show screen hermione_main
     call screen wardrobe
 
+# Bottom Selection #
+label set_h_skirt(skirt = ""):
+    $ hermione_wear_skirt = True
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_skirt = skirt
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_skirt = skirt
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
+    
+label set_h_skirt_color(color = ""):
+    hide screen hermione_main
+    with d5
+    $ h_skirt_color = color
+    call update_her_uniform
+    show screen hermione_main
+    with d5
+    return
 
 ## Stockings ##
 
@@ -102,7 +193,7 @@ label her_bottom_toggle:
 label her_stockings_toggle:
     hide screen hermione_main
     if h_stocking == "00_blank": #rename
-        $ h_stocking = "gryff"
+        $ h_stocking = "gryff_stockings"
     else:
         $ h_stocking = "00_blank"
     call update_her_uniform
@@ -110,13 +201,13 @@ label her_stockings_toggle:
     call screen wardrobe
 
 # Stockings Selection #
-label wardrobe_wear_stockings:
+label equip_stockings:
     call set_h_stockings(wr_her_stockings_choice)
     
     hide screen wardrobe
     call screen wardrobe
 
-label set_h_stockings(stocking = "00_blank"):
+label set_h_stockings(stocking = ""):
     hide screen hermione_main
     if stocking == h_stocking:
         $ h_stocking = "00_blank"
@@ -125,19 +216,6 @@ label set_h_stockings(stocking = "00_blank"):
     call update_her_uniform
     show screen hermione_main
     return
-
-
-## Accessories ##
-
-# Accessories Toggle # 
-# ADD Toggles
-
-# Accessories Selection #
-label wardrobe_give_acc:
-    call give_her_acc(wardrobe_acc_item)
-    hide screen wardrobe
-    call screen wardrobe
-
 
 ## Robes ##
 
@@ -155,10 +233,7 @@ label her_robe_toggle:
 
 # Robe Selection #
 label wardrobe_wear_robe:
-    if hermione_wear_robe:
-        $ hermione_wear_robe = False
-    else:
-        $ hermione_wear_robe = True
+    $ hermione_wear_robe = True
     call set_h_robe(wr_her_robe)
     hide screen wardrobe
     call screen wardrobe
@@ -168,6 +243,17 @@ label set_h_robe(hermione_robe = "00_blank"):
     call update_her_uniform
     show screen hermione_main
     return
+
+## Accessories ##
+
+# Accessories Toggle # 
+# ADD Toggles
+
+# Accessories Selection #
+label wardrobe_give_acc:
+    call give_her_acc(wardrobe_acc_item)
+    hide screen wardrobe
+    call screen wardrobe
 
 
 ## Underwear ##
