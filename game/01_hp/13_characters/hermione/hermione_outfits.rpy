@@ -170,15 +170,35 @@ label __init_variables:
     $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
 
     
-    #Outfits
+    #All Outfits/Costumes
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
     $ hermione_outfits_list.append(hg_gryffCheer_OBJ)
     $ hermione_outfits_list.append(hg_slythCheer_OBJ)
+    $ hermione_outfits_list.append(hg_heartDancer_OBJ)
+    $ hermione_outfits_list.append(hg_silkNightgown_OBJ)
+    $ hermione_outfits_list.append(hg_pirate_OBJ)
+    $ hermione_outfits_list.append(hg_powerGirl_OBJ)
+    $ hermione_outfits_list.append(hg_msMarvel_OBJ)
+    $ hermione_outfits_list.append(hg_harleyQuinn_OBJ)
+    $ hermione_outfits_list.append(hg_ballDress_OBJ)
     $ hermione_outfits_list.append(hg_christmas_OBJ)
-    $ hermione_outfits_list.append(hg_present_OBJ)
+    $ hermione_outfits_list.append(hg_laraCroft_OBJ)
+    $ hermione_outfits_list.append(hg_tifa_OBJ)
     $ hermione_outfits_list.append(hg_rocker_OBJ)
+    $ hermione_outfits_list.append(hg_present_OBJ)
     $ hermione_outfits_list.append(hg_japan_OBJ)
+    $ hermione_outfits_list.append(hg_witch_OBJ)
+
+    #Outfits Only
+    $ hermione_outfits_only_list = []
+    $ hermione_outfits_only_list.append(hg_maid_OBJ)
+    $ hermione_outfits_only_list.append(hg_gryffCheer_OBJ)
+    $ hermione_outfits_only_list.append(hg_slythCheer_OBJ)
+    $ hermione_outfits_only_list.append(hg_christmas_OBJ)
+    $ hermione_outfits_only_list.append(hg_present_OBJ)
+    $ hermione_outfits_only_list.append(hg_rocker_OBJ)
+    $ hermione_outfits_only_list.append(hg_japan_OBJ)
 
     #Costumes
     $ hermione_costumes_list = []
