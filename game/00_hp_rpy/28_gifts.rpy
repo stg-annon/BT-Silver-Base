@@ -1665,55 +1665,10 @@ label h_badge_off(badge = "SPEW_badge"):
     with d5
     return
     
-#label set_h_underwear(bra="base_bra_white_1", panties="base_panties_1"):
-#    hide screen hermione_main
-#    with d5
-#    $ h_bra = bra
-#    $ h_panties = panties
-#    call update_her_uniform
-#    show screen hermione_main
-#    with d5
-#    return
+
     
-label set_h_hair(hair_style="A", color=1):
-    hide screen hermione_main
-    with d5
-    $ h_hair_style = hair_style
-    $ h_hair_color = color
-    call h_update_hair
-    show screen hermione_main
-    with d5
-    return
-    
-#label set_h_hair_style(hair_style = "A"):
-#    hide screen hermione_main
-#    with d5
-#    $ h_hair_style = hair_style
-#    call h_update_hair
-#    show screen hermione_main
-#    with d5
-#    return
-    
-#label set_h_hair_color(hair_color = 1):
-#    hide screen hermione_main
-#    with d5
-#    $ h_hair_color = hair_color
-#    call h_update_hair
-#    show screen hermione_main
-#    with d5
-#    return
-    
-#label set_h_stockings(stocking = "00_blank"):
-#    hide screen hermione_main
-#    with d5
-#    if stocking == h_stocking:
-#        $ h_stocking = "00_blank"
-#    else:
-#        $ h_stocking = stocking
-#    call update_her_uniform
-#    show screen hermione_main
-#    with d5
-#    return
+
+
     
 label set_h_costume(costume_id = 0):
     hide screen hermione_main
@@ -1722,34 +1677,6 @@ label set_h_costume(costume_id = 0):
     show screen hermione_main
     with d5
     return
-    
-label set_h_skirt(skirt = ""):
-    hide screen hermione_main
-    with d5
-    $ h_skirt = skirt
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    call screen wardrobe
-    
-label set_h_skirt_color(color = ""):
-    hide screen hermione_main
-    with d5
-    $ h_skirt_color = color
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    return
-
-label set_h_top(top = ""):
-    hide screen hermione_main
-    with d5
-    $ h_top = top[-1:]
-    call update_chibi_uniform
-    call update_her_uniform
-    show screen hermione_main
-    with d5
-    call screen wardrobe
     
 
 #$ renpy.play('sounds/door.mp3') #Sound of a door opening.

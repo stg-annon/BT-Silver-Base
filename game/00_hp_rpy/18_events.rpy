@@ -636,8 +636,9 @@ label event_05:
 
     $ end_u_1_pic =  "glass"
     pause.1
-    show screen end_u_1
+    hide screen genie
     hide screen snape_defends
+    show screen end_u_1
     pause 3
 
     
@@ -658,7 +659,7 @@ label event_06:
     play music "music/Dark Fog.mp3" fadein 1 fadeout 1 
     
     hide ch_gen
-    show image "01_hp/04_duel/no_magic.png" at Position(xpos=550, ypos=250, xanchor="center", yanchor="center") 
+    show image "01_hp/04_duel/no_magic.png" at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     
     m "I told you you are no match for me..."
     show screen bld1
@@ -805,6 +806,9 @@ label event_06:
     m "I'll be here..."
 
     sna_[7] "(A genie? Now that's new...)"
+
+    $ mQuest_A.started = 6 #Main Quest Milestone!
+    call update_quests
     jump day_start
 
 #THE TALK WITH SNAPE THE DAY AFTER THE DUEL.
@@ -951,10 +955,14 @@ label event_07:
     m "I Suppose I'll just curl up in a ball on top of this desk as usual..."
     pause.2
     show screen notes
-    $ renpy.play('sounds/win2.mp3') 
+    #$ renpy.play('sounds/win2.mp3') 
     show screen blktone
     with d3
-    ">You've unlocked the ability to summon Severus Snape to your office."
+
+    $ mQuest_A.started = 7 #Main Quest Milestone!
+    call update_quests #Updates Quest and gives out reward here!
+
+    #">You've unlocked the ability to summon Severus Snape to your office."
     hide screen blktone
     with d3
     $ hanging_with_snape = True

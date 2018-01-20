@@ -144,7 +144,15 @@ screen main_menu_01:
             #unhovered [Hide("gui_tooltip")]
             action [Hide("main_menu_01"), Jump("mail")]
     
-
+    imagebutton: #Quest Guide
+        xpos 128
+        ypos 15
+        focus_mask True
+        xanchor "center"
+        yanchor "center"
+        idle "interface/check_07.png"
+        hover "interface/check_08.png"
+        action [Hide("main_menu_01"), Hide("animation_feather"), Jump("open_guide")]
 
 ###MO SCREENS
 label stat_hermione:
@@ -191,16 +199,15 @@ screen stat_screen_hermione:
         idle "01_hp/25_mo/close_ground.png"
         hover "01_hp/25_mo/close_hover.png"
         action [Hide("stat_screen_hermione"), Hide("hermione_main"), Jump("day_main_menu")]
-    
-    if luna_known:
-        imagebutton: # STAT MENU SWAP
-            xpos 894
-            ypos 72
-            xanchor "center"
-            yanchor "center"
-            idle "01_hp/11_misc/points_03.png"
-            hover "01_hp/11_misc/points_04.png"
-            action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
+
+    imagebutton: # STAT MENU SWAP
+        xpos 894
+        ypos 72
+        xanchor "center"
+        yanchor "center"
+        idle "01_hp/11_misc/points_03.png"
+        hover "01_hp/11_misc/points_04.png"
+        action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
 
 screen stat_screen_luna:
     zorder luna_zorder-1
@@ -850,6 +857,7 @@ screen desk_02: #Genie's desk.
 screen snape_defends:
     add "ch_sna defend" at Position(xpos=-90+140, ypos=-5)
     zorder 7
+
 
 ### DAMAGE ###
 screen minus_100:

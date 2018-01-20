@@ -759,7 +759,11 @@ label update_her_uniform:
     #        
         #$ h_skirt += h_skirt_color
         
-        
+    #Update Old Cloth Vars
+    if update_old_clothing:
+        $ update_old_clothing = False
+        $ h_top = "uni_top_1"
+        $ h_skirt = "uni_skirt_1"  
     ### PANTIES
     if whoring >= hg_NoPanties_lvl:
         $ hermione_wear_panties = False
@@ -768,24 +772,23 @@ label update_her_uniform:
     else:
         $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/00_blank.png"
         
-    
     $ hermione_bra = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_bra)+".png"
     $ hermione_stockings = "01_hp/13_characters/hermione/clothes/stockings/"+str(h_stocking)+".png"
     $ hermione_panties = "01_hp/13_characters/hermione/clothes/underwear/"+str(h_panties)+".png"
-    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/bot/"+h_skirt_color+str(h_skirt)+".png"
+    $ hermione_skirt = "01_hp/13_characters/hermione/clothes/bottoms/"+h_skirt_color+str(h_skirt)+".png" #"01_hp/13_characters/hermione/clothes/uniform/bot/"+h_skirt_color+str(h_skirt)+".png"
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/"+str(h_badge)+".png"
     if hermione_perm_expand and str(h_top) == '5':
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5_B.png"
     elif hermione_perm_expand:
         $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_6_B.png"
     else:
-        $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
+        $ hermione_top = "01_hp/13_characters/hermione/clothes/tops/"+str(h_top)+".png" #"01_hp/13_characters/hermione/clothes/uniform/top_"+str(h_top)+".png"
     
     if custom_skirt == 1: # jeans
-        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans.png"
+        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/pants_jeans_long.png"
         
     if custom_skirt == 5: # short_jeans
-        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/jeans_short.png"
+        $ hermione_skirt = "01_hp/23_clothes_store/existing_stock/pants_jeans_short.png"
     
     call update_chibi_uniform
     call h_update_body
@@ -849,7 +852,7 @@ label reset_hermione_main:
     hide screen hermione_blank_main
     hide screen hermione_blank_head
     hide screen hermione_blank_chibi
-    
+
     $ aftersperm = False #Show cum stains on Hermione's uniform.
     hide screen bld1
     hide screen hermione_main
