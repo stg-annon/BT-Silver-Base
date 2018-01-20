@@ -95,7 +95,7 @@ screen wardrobe:
         #Underwear
         if wardrobe_page == 6:
             hotspot (985, 230, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
-            text "Bras & Panties" xpos 118 ypos 100 size 18
+            text "Underwear" xpos 118 ypos 100 size 18
         else:
             hotspot (985, 230, 60, 98) clicked [SetVariable("wardrobe_page",6),Show("wardrobe")] #default
 
@@ -739,11 +739,6 @@ screen wardrobe:
             add "01_hp/23_clothes_store/cs_gui/ball_dress.png" xpos 75+360 ypos 116 zoom 0.18
             text "Dresses" xpos 76+360 ypos 140+75 size 10
 
-            #Purchase Check
-            $ hg_purchased_outfits = []
-            for i in hermione_outfits_list:
-                if i.purchased:
-                    $ hg_purchased_outfits.append(i)
 
             #Outfits
             if wardrobe_outfits_category == 0:
@@ -771,9 +766,9 @@ screen wardrobe:
                     $ row = i // 5
                     $ col = i % 5
 
-                    if index < len(hg_purchased_outfits):
+                    if index < len(hg_purchased_costumes):
 
-                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]), Jump("wardrobe_wear_costume")]
+                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_costumes[index]), Jump("wardrobe_wear_costume")]
                         add "01_hp/23_clothes_store/cs_gui/"+wr_her_costumes[i]+".png" xpos 75+(90*col) ypos 116+90+(90*row) zoom 0.18
                         $ index = index+1
 
@@ -781,16 +776,16 @@ screen wardrobe:
             if wardrobe_outfits_category == 2:
                 hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",0),Show("wardrobe")]
                 add "01_hp/23_clothes_store/cs_gui/nightgown.png" xpos 75+180 ypos 116 zoom 0.18
-                text "One-Piece" xpos 76+180 ypos 140+75 size 10
+                text "One-Pieces" xpos 76+180 ypos 140+75 size 10
                 $ index = 0
-                for i in range(0,len(wr_her_onepiece)):
+                for i in range(0,len(wr_her_onepieces)):
                     $ row = i // 5
                     $ col = i % 5
 
-                    if index < len(hg_purchased_outfits):
+                    if index < len(hg_purchased_onepieces):
 
-                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]), Jump("wardrobe_wear_costume")]
-                        add "01_hp/23_clothes_store/cs_gui/"+wr_her_onepiece[i]+".png" xpos 75+(90*col) ypos 116+90+(90*row) zoom 0.18
+                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_onepieces[index]), Jump("wardrobe_wear_costume")]
+                        add "01_hp/23_clothes_store/cs_gui/"+wr_her_onepieces[i]+".png" xpos 75+(90*col) ypos 116+90+(90*row) zoom 0.18
                         $ index = index+1
 
             #Swimsuits
@@ -803,9 +798,9 @@ screen wardrobe:
                     $ row = i // 5
                     $ col = i % 5
 
-                    if index < len(hg_purchased_outfits):
+                    if index < len(hg_purchased_swimsuits):
 
-                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]), Jump("wardrobe_wear_costume")]
+                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_swimsuits[index]), Jump("wardrobe_wear_costume")]
                         add "01_hp/23_clothes_store/cs_gui/"+wr_her_swimsuits[i]+".png" xpos 75+(90*col) ypos 116+90+(90*row) zoom 0.18
                         $ index = index+1
 
@@ -819,19 +814,12 @@ screen wardrobe:
                     $ row = i // 5
                     $ col = i % 5
 
-                    if index < len(hg_purchased_outfits):
+                    if index < len(hg_purchased_dresses):
 
-                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]), Jump("wardrobe_wear_costume")]
+                        hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_dresses[index]), Jump("wardrobe_wear_costume")]
                         add "01_hp/23_clothes_store/cs_gui/"+wr_her_dresses[i]+".png" xpos 75+(90*col) ypos 116+90+(90*row) zoom 0.18
                         $ index = index+1
         
-            #$ index = 0
-            #for i in range(0,5): #5
-            #    for j in range(0,5): #6
-            #        if index < len(hg_purchased_outfits):
-            #            hotspot ((75+(90*j)), (140+(92*i)), 83, 85) clicked [SetVariable("wardrobe_costume_selection",hg_purchased_outfits[index]),Jump("wardrobe_wear_costume")]
-            #            add hg_purchased_outfits[index].getStoreImage() xpos (75+(90*j)) ypos (116+(92*i)) zoom 0.18
-            #            $ index = index+1
 
         else:
             pass
