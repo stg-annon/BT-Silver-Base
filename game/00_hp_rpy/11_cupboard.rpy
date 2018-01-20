@@ -163,8 +163,8 @@ label cupboard:
         "-Cheat-":
             jump cheats_ht
 
-        "-Toggle Player Guide-":
-            jump toggle_guide_icon
+        "-Reset Hermione's Clothes-": #label in wardrobe_labels.rpy
+            jump reset_hermione_clothes
         
         "-Never mind-":
             jump day_main_menu
