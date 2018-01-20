@@ -27,13 +27,6 @@ init python:
         started = 0
         completed = False
 
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-        
-        def set(self, **kwargs):
-            self.__dict__.update(**kwargs)
-
 label __init_variables:
 
     #Guide
@@ -49,8 +42,6 @@ label __init_variables:
         $ guide_add_tip = False
 
     #Main Quests
-    if not hasattr(renpy.store,'main_quest'): #important!
-        $ main_quest = (mQuest_0)
 
     if not hasattr(renpy.store,'mQuest_0'): #important!
         $ mQuest_0 = main_quest()
@@ -103,10 +94,13 @@ label __init_variables:
     $ mQuest_B.full_text5 = ""
     $ mQuest_B.started = 0 #counter
     $ mQuest_B.completed = False
+
+    if not hasattr(renpy.store,'current_main_quest'): #important!
+        $ current_main_quest = mQuest_0
         
     #Side Quests
-    if not hasattr(renpy.store,'side_quest'): #important!
-        $ side_quest = []
+    if not hasattr(renpy.store,'side_quests'): #important!
+        $ side_quests = []
 
     if not hasattr(renpy.store,'sQuest_get_map'): #important!
         $ sQuest_get_map = side_quest()
@@ -158,20 +152,20 @@ label __init_variables:
 label update_quests:
 
     #Side Quests
-    $ side_quest = [] #list of your side quests
+    $ side_quests = [] #list of your side quests
 
     #Get Marauder's Map
-    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quest:
-        $ side_quest.append(sQuest_get_map)
+    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quests:
+        $ side_quests.append(sQuest_get_map)
 
     #Buy something at the shop
-    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quest:
-        $ side_quest.append(sQuest_buy_at_shop)
+    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quests:
+        $ side_quests.append(sQuest_buy_at_shop)
 
 
     #Main Quest A #Start of game till Snape unlock
     if mQuest_A.started >= 1 and mQuest_A.started <=6: #7=.completed
-        $ main_quest = mQuest_A
+        $ current_main_quest = mQuest_A
 
     if mQuest_A.started == 1: #Examine room
         $ mQuest_A.hint_text = "Why don't you have a look around!"
@@ -210,7 +204,7 @@ label update_quests:
 
     #Main Quest B #Till Hermione unlock
     if mQuest_B.started >= 1 and mQuest_B.started <=5: #6=.completed
-        $ main_quest = mQuest_B
+        $ current_main_quest = mQuest_B
         $ mQuest_A.completed = True
 
     if mQuest_B.started == 1: #wait for Hermione
