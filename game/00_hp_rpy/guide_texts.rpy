@@ -23,7 +23,15 @@ init python:
         name = ""
         objective = ""
         hint_text = ""
+        hint_text2 = ""
+        hint_text3 = ""
+        hint_text4 = ""
+        hint_text5 = ""
         full_text = ""
+        full_text2 = ""
+        full_text3 = ""
+        full_text4 = ""
+        full_text5 = ""
         started = 0
         completed = False
 
@@ -49,9 +57,6 @@ label __init_variables:
         $ guide_add_tip = False
 
     #Main Quests
-    if not hasattr(renpy.store,'main_quest'): #important!
-        $ main_quest = (mQuest_0)
-
     if not hasattr(renpy.store,'mQuest_0'): #important!
         $ mQuest_0 = main_quest()
     $ mQuest_0.id = 0
@@ -105,9 +110,6 @@ label __init_variables:
     $ mQuest_B.completed = False
         
     #Side Quests
-    if not hasattr(renpy.store,'side_quest'): #important!
-        $ side_quest = []
-
     if not hasattr(renpy.store,'sQuest_get_map'): #important!
         $ sQuest_get_map = side_quest()
     $ sQuest_get_map.id = 0
@@ -128,6 +130,11 @@ label __init_variables:
     $ sQuest_buy_at_shop.started = 0
     $ sQuest_buy_at_shop.completed = False
 
+    if not hasattr(renpy.store,'main_quest'): #important!
+        $ main_quest = (mQuest_0)
+        if not hasattr(renpy.store,'side_quest'): #important!
+        $ side_quest = []
+    
     #Quest Rewards
     if not hasattr(renpy.store,'quest_reward_image'): #important!
         $ quest_reward_image = ""
@@ -157,21 +164,10 @@ label __init_variables:
 
 label update_quests:
 
-    #Side Quests
-    $ side_quest = [] #list of your side quests
-
-    #Get Marauder's Map
-    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quest:
-        $ side_quest.append(sQuest_get_map)
-
-    #Buy something at the shop
-    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quest:
-        $ side_quest.append(sQuest_buy_at_shop)
-
 
     #Main Quest A #Start of game till Snape unlock
     if mQuest_A.started >= 1 and mQuest_A.started <=6: #7=.completed
-        $ main_quest = mQuest_A
+        $ main_quest = (mQuest_A)
 
     if mQuest_A.started == 1: #Examine room
         $ mQuest_A.hint_text = "Why don't you have a look around!"
@@ -210,7 +206,7 @@ label update_quests:
 
     #Main Quest B #Till Hermione unlock
     if mQuest_B.started >= 1 and mQuest_B.started <=5: #6=.completed
-        $ main_quest = mQuest_B
+        $ main_quest = (mQuest_B)
         $ mQuest_A.completed = True
 
     if mQuest_B.started == 1: #wait for Hermione
@@ -241,6 +237,17 @@ label update_quests:
         $ quest_reward_image = ""
         $ quest_reward_text = ">You've unlocked the ability to summon Hermione to your office."
         call give_quest_reward
+
+    #Side Quests
+    $ side_quest = [] #list of your side quests
+
+    #Get Marauder's Map
+    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quest:
+        $ side_quest.append(sQuest_get_map)
+
+    #Buy something at the shop
+    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quest:
+        $ side_quest.append(sQuest_buy_at_shop)
 
     else:
         pass
