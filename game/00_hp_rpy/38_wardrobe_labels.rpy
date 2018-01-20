@@ -201,7 +201,7 @@ label set_h_skirt_color(color = ""):
 label her_stockings_toggle:
     hide screen hermione_main
     if h_stocking == "00_blank": #rename
-        $ h_stocking = "gryff_stockings"
+        $ h_stocking = "stockings_gryff"
     else:
         $ h_stocking = "00_blank"
     call update_her_uniform
