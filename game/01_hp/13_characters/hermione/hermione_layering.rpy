@@ -764,6 +764,9 @@ label update_her_uniform:
         $ update_old_clothing = False
         $ h_top = "uni_top_1"
         $ h_skirt = "uni_skirt_1"  
+        $ h_panties = "panties_white"
+        $ h_bra = "bra_white"
+        $ h_stocking = "00_blank"
     ### PANTIES
     if whoring >= hg_NoPanties_lvl:
         $ hermione_wear_panties = False
