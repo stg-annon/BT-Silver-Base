@@ -214,29 +214,29 @@ label update_wardrobe_lists:
 ### Outfits ###
 
     $ hg_purchased_outfits = []
-    for i in hermione_outfits_list:
-        if i.purchased:
-            $ hg_purchased_outfits.append(i)
+    #for i in hermione_outfits_only_list:
+    #    if i.purchased:
+    #        $ hg_purchased_outfits.append(i)
 
     $ hg_purchased_costumes = []
-    for i in hermione_costumes_list:
-        if i.purchased:
-            $ hg_purchased_costumes.append(i)
+    #for i in hermione_costumes_list:
+    #    if i.purchased:
+    #        $ hg_purchased_costumes.append(i)
 
     $ hg_purchased_onepieces = []
-    for i in hermione_onepieces_list:
-        if i.purchased:
-            $ hg_purchased_onepieces.append(i)
+    #for i in hermione_onepieces_list:
+    #    if i.purchased:
+    #        $ hg_purchased_onepieces.append(i)
 
     $ hg_purchased_swimsuits = []
-    for i in hermione_swimsuits_list:
-        if i.purchased:
-            $ hg_purchased_swimsuits.append(i)
+    #for i in hermione_swimsuits_list:
+    #    if i.purchased:
+    #        $ hg_purchased_swimsuits.append(i)
 
     $ hg_purchased_dresses = []
-    for i in hermione_dresses_list:
-        if i.purchased:
-            $ hg_purchased_dresses.append(i)
+    #for i in hermione_dresses_list:
+    #    if i.purchased:
+    #        $ hg_purchased_dresses.append(i)
 
     #Outfits
     $ wr_her_outfits = []
