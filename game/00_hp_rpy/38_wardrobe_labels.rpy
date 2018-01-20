@@ -50,6 +50,14 @@ label reset_wardrobe_vars:
     $ wardrobe_gifts_category = 0         #default page
     return
 
+label reset_hermione_clothes:
+    $ h_top = "uni_top_1"
+    $ h_skirt = "uni_skirt_1"  
+    $ h_panties = "panties_white"
+    $ h_bra = "bra_white"
+    $ h_stocking = "00_blank"
+    jump cupboard
+
 label hide_wardrobe:
     call ctc_wPause
     call screen wardrobe
