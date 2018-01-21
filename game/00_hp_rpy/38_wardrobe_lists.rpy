@@ -213,81 +213,79 @@ label update_wardrobe_lists:
 
 ### Outfits ###
 
-    $ hg_purchased_outfits = []
-    #for i in hermione_outfits_only_list:
-    #    if i.purchased:
-    #        $ hg_purchased_outfits.append(i)
-
-    $ hg_purchased_costumes = []
-    #for i in hermione_costumes_list:
-    #    if i.purchased:
-    #        $ hg_purchased_costumes.append(i)
-
-    $ hg_purchased_onepieces = []
-    #for i in hermione_onepieces_list:
-    #    if i.purchased:
-    #        $ hg_purchased_onepieces.append(i)
-
-    $ hg_purchased_swimsuits = []
-    #for i in hermione_swimsuits_list:
-    #    if i.purchased:
-    #        $ hg_purchased_swimsuits.append(i)
-
-    $ hg_purchased_dresses = []
-    #for i in hermione_dresses_list:
-    #    if i.purchased:
-    #        $ hg_purchased_dresses.append(i)
-
     #Outfits
     $ wr_her_outfits = []
+    $ hg_purchased_outfits = []
     if hg_maid_OBJ.purchased:
         $ wr_her_outfits.append("maid")
+        $ hg_purchased_outfits.append(hg_maid_OBJ)
     if hg_gryffCheer_OBJ.purchased:
         $ wr_her_outfits.append("cheer")
+        $ hg_purchased_outfits.append(hg_gryffCheer_OBJ)
     if hg_slythCheer_OBJ.purchased:
         $ wr_her_outfits.append("s_cheer")
+        $ hg_purchased_outfits.append(hg_slythCheer_OBJ)
     if hg_christmas_OBJ.purchased:
         $ wr_her_outfits.append("christmas")
+        $ hg_purchased_outfits.append(hg_christmas_OBJ)
     if hg_present_OBJ.purchased:
         $ wr_her_outfits.append("present")
+        $ hg_purchased_outfits.append(hg_present_OBJ)
     if hg_rocker_OBJ.purchased:
         $ wr_her_outfits.append("rocker")
+        $ hg_purchased_outfits.append(hg_rocker_OBJ)
     if hg_japan_OBJ.purchased:
         $ wr_her_outfits.append("japan")
+        $ hg_purchased_outfits.append(hg_japan_OBJ)
 
     #Costumes
     $ wr_her_costumes = []
+    $ hg_purchased_costumes = []
     if hg_pirate_OBJ.purchased:
         $ wr_her_costumes.append("pirate")
+        $ hg_purchased_costumes.append(hg_pirate_OBJ)
     if hg_powerGirl_OBJ.purchased:
         $ wr_her_costumes.append("power")
+        $ hg_purchased_costumes.append(hg_powerGirl_OBJ)
     if hg_msMarvel_OBJ.purchased:
         $ wr_her_costumes.append("marvel")
+        $ hg_purchased_costumes.append(hg_msMarvel_OBJ)
     if hg_harleyQuinn_OBJ.purchased:
         $ wr_her_costumes.append("harley")
+        $ hg_purchased_costumes.append(hg_harleyQuinn_OBJ)
     if hg_laraCroft_OBJ.purchased:
         $ wr_her_costumes.append("lara")
+        $ hg_purchased_costumes.append(hg_laraCroft_OBJ)
     if hg_tifa_OBJ.purchased:
         $ wr_her_costumes.append("tifa")
+        $ hg_purchased_costumes.append(hg_tifa_OBJ)
     if hg_witch_OBJ.purchased:
         $ wr_her_costumes.append("witch")
+        $ hg_purchased_costumes.append(hg_witch_OBJ)
 
     #One-Pieces
     $ wr_her_onepieces = []
+    $ hg_purchased_onepieces = []
     if hg_silkNightgown_OBJ.purchased:
         $ wr_her_onepieces.append("nightgown")
+        $ hg_purchased_onepieces.append(hg_silkNightgown_OBJ)
 
     #Swimsuits
     $ wr_her_swimsuits = []
+    $ hg_purchased_swimsuits = []
     #if .purchased:
     #    $ wr_her_swimsuits.append("")
+    #    $ hg_purchased_swimsuits.append()
 
     #Dresses
     $ wr_her_dresses = []
+    $ hg_purchased_dresses = []
     if hg_heartDancer_OBJ.purchased:
         $ wr_her_dresses.append("heart")
+        $ hg_purchased_dresses.append(hg_heartDancer_OBJ)
     if hg_ballDress_OBJ.purchased:
         $ wr_her_dresses.append("ball_dress")
+        $ hg_purchased_dresses.append(hg_ballDress_OBJ)
 
 
     ###TATTOOS
