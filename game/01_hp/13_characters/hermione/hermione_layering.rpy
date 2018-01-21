@@ -287,6 +287,9 @@ screen hermione_head:
   ### CLOTHES
     add hermione_stockings xpos hermione_head_xpos_offset ypos hermione_head_ypos
     if not hermione_costume:
+        ### CORSET
+        if hermione_wear_garterbelt:
+            add hermione_garterbelt xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the garterbelts
         ### SKIRT
         if hermione_wear_skirt:
             add hermione_skirt xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the skirt
@@ -300,9 +303,15 @@ screen hermione_head:
             add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         if hermione_wear_top:
             add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the top
+        ### BELT
+        if hermione_wear_belt:
+            add hermione_belt xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the belt
         ### Gloves
         if hermione_wear_gloves:
             add hermione_gloves xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the gloves
+        ### Neckwear
+        if hermione_wear_necklace:
+            add hermione_necklace xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the necklace
         ### COLLAR 
         if collar == 1:
             add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
