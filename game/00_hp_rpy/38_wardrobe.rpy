@@ -252,12 +252,12 @@ screen wardrobe:
             add "01_hp/13_characters/hermione/body/head/A_1.png" xpos 10 ypos 105 zoom 0.35
             add "01_hp/13_characters/hermione/body/head/B_1.png" xpos 10+90 ypos 105 zoom 0.35
 
-            for i in range(0,10): #Add more for every haircolor. Page MAX=20
+            for i in range(0,len(wr_her_haircolor)):
                 $ row = i // 5
                 $ col = i % 5
 
-                hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(i+1)),Jump("change_her_hair")]
-                add "interface/wardrobe_icons/dyes/dye_"+str(i+1)+".png" xpos 75+(90*col) ypos (230+(92*row)) zoom 0.70
+                hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(i+1)),Jump("change_her_hair")]
+                add "interface/wardrobe_icons/dyes/dye_"+wr_her_haircolor[i]+".png" xpos 75+(90*col) ypos (138+92+(92*row)) zoom 0.70
         else:
             pass
 
