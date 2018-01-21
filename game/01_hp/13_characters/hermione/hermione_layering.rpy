@@ -221,7 +221,7 @@ screen hermione_uniform:
     if hermione_wear_skirt:
         add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the skirt
     ### TOP
-    if hermione_wear_bra and not h_top in h_bra_top_fix:
+    if hermione_wear_bra and not (h_top in h_bra_top_fix and hermione_wear_top):
         add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the bra
     if hermione_wear_top:
         add hermione_top xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the top
@@ -287,7 +287,7 @@ screen hermione_head:
         elif hermione_wear_panties or h_request_wear_panties:
             add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the panties
         ### TOP
-        if hermione_wear_bra and not h_top in h_bra_top_fix:
+        if hermione_wear_bra and not (h_top in h_bra_top_fix and hermione_wear_top):
             add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         if hermione_wear_top:
             add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the top
