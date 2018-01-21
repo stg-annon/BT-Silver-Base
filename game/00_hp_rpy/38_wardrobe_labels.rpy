@@ -225,6 +225,15 @@ label set_h_stockings(stocking = ""):
     show screen hermione_main
     return
 
+label equip_tattoo:
+    if tattoo_choice in hermione_tattoos:
+        $ hermione_tattoos.remove(tattoo_choice)
+    else:
+        $ hermione_tattoos.append(tattoo_choice)
+    
+    hide screen wardrobe
+    call screen wardrobe
+
 ## Robes ##
 
 # Robe Toggle #

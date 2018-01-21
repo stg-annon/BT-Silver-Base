@@ -290,6 +290,37 @@ label update_wardrobe_lists:
         $ wr_her_dresses.append("ball_dress")
 
 
+    ###TATTOOS
+    $ wr_tattoo_list = []
+
+    ###Free tattoos
+    $ wr_tattoo_list.append("thigh/signature")
+
+    if whoring >= 10:
+        $ wr_tattoo_list.append("torso/twist")
+        $ wr_tattoo_list.append("thigh/tribal")
+
+    if whoring >= 15:
+        $ wr_tattoo_list.append("thigh/free")
+
+    if whoring >= 17:
+        $ wr_tattoo_list.append("pubic/10g_raised")
+        $ wr_tattoo_list.append("pubic/10g")
+        $ wr_tattoo_list.append("pubic/cock_hole")
+        $ wr_tattoo_list.append("pubic/inheat")
+
+    if whoring >= 21:
+        $ wr_tattoo_list.append("pubic/deatheater")
+        $ wr_tattoo_list.append("pubic/mudblood")
+        $ wr_tattoo_list.append("pubic/fuck_me")
+        $ wr_tattoo_list.append("pubic/deposit")
+
+    if whoring >= 24:
+        $ wr_tattoo_list.append("pubic/Cumslut")
+        $ wr_tattoo_list.append("pubic/cum_here")
+        $ wr_tattoo_list.append("pubic/cunt")
+        $ wr_tattoo_list.append("pubic/mudblood")
+        $ wr_tattoo_list.append("pubic/punk_mudblood")
 
 
     return
