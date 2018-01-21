@@ -220,11 +220,17 @@ screen hermione_uniform:
     ### SKIRT
     if hermione_wear_skirt:
         add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the skirt
+    ### CORSET
+    if hermione_wear_corset:
+        add hermione_corset xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the corset
     ### TOP
     if hermione_wear_bra and not (h_top in h_bra_top_fix and hermione_wear_top):
         add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the bra
     if hermione_wear_top:
         add hermione_top xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the top
+    ### Gloves
+    if hermione_wear_gloves:
+        add hermione_gloves xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the gloves
     ### COLLAR 
     if collar == 1:
         add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
@@ -286,11 +292,17 @@ screen hermione_head:
             add hermione_skirt xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the skirt
         elif hermione_wear_panties or h_request_wear_panties:
             add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the panties
+        ### CORSET
+        if hermione_wear_corset:
+            add hermione_corset xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the corset
         ### TOP
         if hermione_wear_bra and not (h_top in h_bra_top_fix and hermione_wear_top):
             add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         if hermione_wear_top:
             add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the top
+        ### Gloves
+        if hermione_wear_gloves:
+            add hermione_gloves xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the gloves
         ### COLLAR 
         if collar == 1:
             add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar

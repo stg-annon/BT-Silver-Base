@@ -301,7 +301,14 @@ label __init_variables:
     #4 Houses Stuff
     if not hasattr(renpy.store,'cc_base'): #important!
         call FH_init
-    
+
+
+    #New clothing layers for hermione
+    if not hasattr(renpy.store,'hermione_wear_corset'): #important!
+        $ hermione_wear_corset = False
+        $ hermione_corset = "01_hp/13_characters/hermione/clothes/corsets/00_blank.png"
+        $ hermione_wear_gloves = False
+        $ hermione_gloves = "01_hp/13_characters/hermione/clothes/gloves/00_blank.png"
     
     
     $ override_persistant = False

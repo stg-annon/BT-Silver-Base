@@ -293,7 +293,8 @@ label wardrobe_wear_robe:
     hide screen wardrobe
     call screen wardrobe
 
-label set_h_robe(hermione_robe = "00_blank"):
+label set_h_robe(robe = "00_blank"):
+    $ hermione_robe = "01_hp/13_characters/hermione/clothes/robe/"+str(robe)+".png"
     hide screen hermione_main
     call update_her_uniform
     show screen hermione_main
