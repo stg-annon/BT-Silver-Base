@@ -257,7 +257,7 @@ screen wardrobe:
                 $ col = i % 5
 
                 hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(i+1)),Jump("change_her_hair")]
-                add "interface/wardrobe_icons/dyes/dye_"+str(i+1)+".png" xpos 75+(90*col) ypos (230+(90*row)) zoom 0.70
+                add "interface/wardrobe_icons/dyes/dye_"+str(i+1)+".png" xpos 75+(90*col) ypos (230+(92*row)) zoom 0.70
         else:
             pass
 
@@ -297,7 +297,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("top_choice",(i+1)), Jump("equip_top")]
-                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_uniform[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
             #Fancy
             if wardrobe_tops_category == 1:
@@ -309,7 +309,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("top_choice",(i+1)), Jump("equip_top")]
-                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_fancy[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_fancy[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
             #Wicked
             if wardrobe_tops_category == 2:
@@ -321,7 +321,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("top_choice",(i+1)), Jump("equip_top")]
-                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_wicked[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_wicked[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
             #Muggle
             if wardrobe_tops_category == 3:
@@ -333,7 +333,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("top_choice",(i+1)), Jump("equip_top")]
-                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_normal[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_normal[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
             #Misc
             if wardrobe_tops_category == 4:
@@ -345,7 +345,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("top_choice",(i+1)), Jump("equip_top")]
-                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_misc[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/tops/"+wr_her_tops_misc[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
         else:
             pass
@@ -386,7 +386,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_uniform[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_uniform[i]+".png" xpos 15+(90*col) ypos (17+90+(92*row)) zoom 0.35
 
             #Uniform Low
             if wardrobe_bottoms_category == 1:
@@ -398,7 +398,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_uniform_low[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_uniform_low[i]+".png" xpos 15+(90*col) ypos (17+90+(92*row)) zoom 0.35
 
             #Skirts
             if wardrobe_bottoms_category == 2:
@@ -410,7 +410,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_skirts[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_skirts[i]+".png" xpos 15+(90*col) ypos (17+90+(92*row)) zoom 0.35
 
             #Pants
             if wardrobe_bottoms_category == 3:
@@ -422,7 +422,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+90+(92*row)) zoom 0.35
 
             #Misc
             if wardrobe_bottoms_category == 4:
@@ -434,7 +434,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+90+(92*row)) zoom 0.35
 
 
         else:
@@ -476,7 +476,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wr_her_neckwear_choice",wr_her_neckwears[i]),Jump("equip_stockings")]
-                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_neckwears[i])+".png" xpos -85+(90*i) ypos -195+90 zoom 0.7
+                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_neckwears[i])+".png" xpos -85+(90*col) ypos -195+90+(92*row) zoom 0.7
 
             #Belts
             if wardrobe_stockings_category == 1:
@@ -488,7 +488,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wr_her_belt_choice",wr_her_belts[i]),Jump("equip_stockings")]
-                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_belts[i])+".png" xpos -85+(90*i) ypos -195+90 zoom 0.7
+                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_belts[i])+".png" xpos -85+(90*col) ypos -195+90+(92*row) zoom 0.7
 
             #Gloves
             if wardrobe_stockings_category == 2:
@@ -500,7 +500,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wr_her_gloves_choice",wr_her_gloves[i]),Jump("equip_stockings")]
-                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_gloves[i])+".png" xpos -85+(90*i) ypos -195+90 zoom 0.7
+                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_gloves[i])+".png" xpos -85+(90*col) ypos -195+90+(92*row) zoom 0.7
 
             #Stockings
             if wardrobe_stockings_category == 3:
@@ -512,7 +512,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("wr_her_stockings_choice",wr_her_stockings[i]),Jump("equip_stockings")]
-                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_stockings[i])+".png" xpos -85+(90*i) ypos -195+90 zoom 0.7
+                    add "01_hp/13_characters/hermione/clothes/stockings/"+str(wr_her_stockings[i])+".png" xpos -85+(90*col) ypos -195+90+(92*row) zoom 0.7
 
             #Robes
             if wardrobe_stockings_category == 4:
@@ -613,7 +613,7 @@ screen wardrobe:
                     $ col = i % 5
 
                     hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("tattoo_choice",(wr_her_tattoo_list[i])), Jump("equip_tattoo")]
-                    add "01_hp/13_characters/hermione/body/tattoo/"+wr_her_tattoo_list[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    add "01_hp/13_characters/hermione/body/tattoo/"+wr_her_tattoo_list[i]+".png" xpos 15+(90*col) ypos (60+90+(92*row)) zoom 0.35
 
             ## Potions Category ##
             if wardrobe_accessories_category == 4:
