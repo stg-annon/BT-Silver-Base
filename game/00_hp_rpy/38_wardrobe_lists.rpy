@@ -201,8 +201,20 @@ label update_wardrobe_lists:
 
 ### Underwear ###
     $ wr_her_bras = []
+    $ wr_her_bras.append("bra_white")
+    $ wr_her_bras.append("bra_silk_black")
+    $ wr_her_bras.append("bra_lace_turquoise")
+    $ wr_her_bras.append("bra_french_maid")
+    $ wr_her_bras.append("bra_bikini_string_black")
+    $ wr_her_bras.append("bra_bikini_string_blue")
+    $ wr_her_bras.append("bra_leather_black")
 
     $ wr_her_panties = []
+    $ wr_her_panties.append("panties_white")
+    $ wr_her_panties.append("panties_silk_black")
+    $ wr_her_panties.append("panties_lace_turquoise")
+    $ wr_her_panties.append("panties_french_maid")
+    $ wr_her_panties.append("panties_bikini_string_black")
 
     $ wr_her_corsets = []
 
@@ -291,36 +303,36 @@ label update_wardrobe_lists:
 
 
     ###TATTOOS
-    $ wr_tattoo_list = []
+    $ wr_her_tattoo_list = []
 
     ###Free tattoos
-    $ wr_tattoo_list.append("thigh/signature")
+    $ wr_her_tattoo_list.append("thigh/signature")
 
     if whoring >= 10:
-        $ wr_tattoo_list.append("torso/twist")
-        $ wr_tattoo_list.append("thigh/tribal")
+        $ wr_her_tattoo_list.append("torso/twist")
+        $ wr_her_tattoo_list.append("thigh/tribal")
 
     if whoring >= 15:
-        $ wr_tattoo_list.append("thigh/free")
+        $ wr_her_tattoo_list.append("thigh/free")
 
     if whoring >= 17:
-        $ wr_tattoo_list.append("pubic/10g_raised")
-        $ wr_tattoo_list.append("pubic/10g")
-        $ wr_tattoo_list.append("pubic/cock_hole")
-        $ wr_tattoo_list.append("pubic/inheat")
+        $ wr_her_tattoo_list.append("pubic/10g_raised")
+        $ wr_her_tattoo_list.append("pubic/10g")
+        $ wr_her_tattoo_list.append("pubic/cock_hole")
+        $ wr_her_tattoo_list.append("pubic/inheat")
 
     if whoring >= 21:
-        $ wr_tattoo_list.append("pubic/deatheater")
-        $ wr_tattoo_list.append("pubic/mudblood")
-        $ wr_tattoo_list.append("pubic/fuck_me")
-        $ wr_tattoo_list.append("pubic/deposit")
+        $ wr_her_tattoo_list.append("pubic/deatheater")
+        $ wr_her_tattoo_list.append("pubic/mudblood")
+        $ wr_her_tattoo_list.append("pubic/fuck_me")
+        $ wr_her_tattoo_list.append("pubic/deposit")
 
     if whoring >= 24:
-        $ wr_tattoo_list.append("pubic/Cumslut")
-        $ wr_tattoo_list.append("pubic/cum_here")
-        $ wr_tattoo_list.append("pubic/cunt")
-        $ wr_tattoo_list.append("pubic/mudblood")
-        $ wr_tattoo_list.append("pubic/punk_mudblood")
+        $ wr_her_tattoo_list.append("pubic/Cumslut")
+        $ wr_her_tattoo_list.append("pubic/cum_here")
+        $ wr_her_tattoo_list.append("pubic/cunt")
+        $ wr_her_tattoo_list.append("pubic/mudblood")
+        $ wr_her_tattoo_list.append("pubic/punk_mudblood")
 
 
     return

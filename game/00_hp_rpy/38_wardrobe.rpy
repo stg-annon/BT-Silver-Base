@@ -608,12 +608,12 @@ screen wardrobe:
                 hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_accessories_category",0),Show("wardrobe")]
                 add "interface/wardrobe_icons/accessories/spew_badge.png" xpos -130+270 ypos -120
                 text "Tattoos" xpos 76+270 ypos 140+75 size 10
-                for i in range(0,len(wr_tattoo_list)):
+                for i in range(0,len(wr_her_tattoo_list)):
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("tattoo_choice",(wr_tattoo_list[i])), Jump("equip_tattoo")]
-                    add "01_hp/13_characters/hermione/body/tattoo/"+wr_tattoo_list[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
+                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("tattoo_choice",(wr_her_tattoo_list[i])), Jump("equip_tattoo")]
+                    add "01_hp/13_characters/hermione/body/tattoo/"+wr_her_tattoo_list[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
 
             ## Potions Category ##
             if wardrobe_accessories_category == 4:
@@ -664,7 +664,7 @@ screen wardrobe:
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("underwear_choice",(i+1)), Jump("equip_underwear")]
+                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_her_bras[i])), Jump("equip_bra")]
                     add "01_hp/13_characters/hermione/clothes/underwear/"+wr_her_bras[i]+".png" xpos 15+(90*col) ypos (60+90+(90*row)) zoom 0.35
 
             #Panties
@@ -676,7 +676,7 @@ screen wardrobe:
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("underwear_choice",(i+1)), Jump("equip_underwear")]
+                    hotspot ((75+(90*col)), (230+(90*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_her_panties[i])), Jump("equip_panties")]
                     add "01_hp/13_characters/hermione/clothes/underwear/"+wr_her_panties[i]+".png" xpos 15+(90*col) ypos (17+90+(90*row)) zoom 0.35
 
             #Corsets

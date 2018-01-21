@@ -217,14 +217,14 @@ screen hermione_uniform:
     if hermione_wear_panties or h_request_wear_panties:
         add hermione_panties xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the panties
         add hermione_panties_overlay xpos hermione_xpos_offset ypos hermione_ypos
-    ### TOP
-    if hermione_wear_top:
-        add hermione_top xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the top
-    elif hermione_wear_bra:
-        add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the bra
     ### SKIRT
     if hermione_wear_skirt:
         add hermione_skirt xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the skirt
+    ### TOP
+    if hermione_wear_bra and not h_top in h_bra_top_fix:
+        add hermione_bra xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the bra
+    if hermione_wear_top:
+        add hermione_top xpos hermione_xpos_offset ypos hermione_ypos alpha transparency # Add the top
     ### COLLAR 
     if collar == 1:
         add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
@@ -287,10 +287,10 @@ screen hermione_head:
         elif hermione_wear_panties or h_request_wear_panties:
             add hermione_panties xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the panties
         ### TOP
+        if hermione_wear_bra and not h_top in h_bra_top_fix:
+            add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         if hermione_wear_top:
             add hermione_top xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the top
-        elif hermione_wear_bra:
-            add hermione_bra xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the bra
         ### COLLAR 
         if collar == 1:
             add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
@@ -405,7 +405,7 @@ label h_outfit_OBJ(outfit):
         $ hermoine_outfit_GLBL = outfit
         call h_update_hair
         
-        if transparency < 1:
+        if transparency < 1 or not hermione_wear_top:
             if not hermione_perm_expand:
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_normal.png" 
             else:
@@ -708,7 +708,10 @@ label h_update_body:
         else:
             $ h_breasts = "breasts_nipfix" # nipple corrected breasts
     else:
-        $ h_breasts = "breasts_nipfix"
+        if not h_top in h_bra_top_fix: #top toggle
+            $ h_breasts = "breasts_normal" # normal breasts
+        else:
+            $ h_breasts = "breasts_nipfix"
 
     if transparency < 1:
         if not hermione_perm_expand:
@@ -768,8 +771,8 @@ label update_her_uniform:
         $ h_bra = "bra_white"
         $ h_stocking = "00_blank"
     ### PANTIES
-    if whoring >= hg_NoPanties_lvl:
-        $ hermione_wear_panties = False
+    #if whoring >= hg_NoPanties_lvl:  #removed due to wardrobe toggle
+    #    $ hermione_wear_panties = False
     if hermione_wetpanties:
         $ hermione_panties_overlay = "01_hp/13_characters/hermione/overlays/pantystain.png"
     else:

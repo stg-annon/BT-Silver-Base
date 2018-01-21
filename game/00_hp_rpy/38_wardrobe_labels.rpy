@@ -185,6 +185,44 @@ label set_h_skirt(skirt = ""):
         show screen hermione_main
         with d5
     return
+
+# Panty Selection #
+label set_h_panties(panties = ""):
+    $ hermione_wear_panties = True
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_panties = panties
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_panties = panties
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
+
+# Bra Selection #
+label set_h_bra(bra = ""):
+    $ hermione_wear_bra = True
+    if wardrobe_active == 1: #1=True #No dissolve
+        hide screen hermione_main
+        $ h_bra = bra
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+    else:
+        hide screen hermione_main
+        with d5
+        $ h_bra = bra
+        call update_chibi_uniform
+        call update_her_uniform
+        show screen hermione_main
+        with d5
+    return
     
 label set_h_skirt_color(color = ""):
     hide screen hermione_main
@@ -275,6 +313,12 @@ label wardrobe_give_acc:
 
 ## Underwear ##
 
+#Bra equip
+label equip_bra:
+    call set_h_bra(underwear_choice)
+    hide screen wardrobe
+    call screen wardrobe
+
 # Bra Toggle #
 label her_bra_toggle:
     hide screen hermione_main
@@ -296,6 +340,12 @@ label her_bra_toggle:
             call her_main_rndm_neutral
         else:                                   #level 8
             call her_main_rndm_happy
+    hide screen wardrobe
+    call screen wardrobe
+
+#Panties equip
+label equip_panties:
+    call set_h_panties(underwear_choice)
     hide screen wardrobe
     call screen wardrobe
 
