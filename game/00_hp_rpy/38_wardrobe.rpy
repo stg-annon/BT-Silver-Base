@@ -279,7 +279,7 @@ screen wardrobe:
                 $ row = i // 5
                 $ col = i % 5
 
-                hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(i+1)),Jump("change_her_hair")]
+                hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(wr_her_haircolor[i])),Jump("change_her_hair")]
                 add "interface/wardrobe_icons/dyes/dye_"+wr_her_haircolor[i]+".png" xpos 75+(90*col) ypos (138+92+(92*row)) zoom 0.70
         else:
             pass
