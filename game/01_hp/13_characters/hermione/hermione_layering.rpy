@@ -490,7 +490,7 @@ label h_action(action =  ""):
             if action == "lift_skirt":
                 $ h_action_show_skirt = False
                 $ h_action_show_arms = True
-                if h_top == uni_top_2 or h_top == uni_top_3 or h_top == uni_top_4:
+                if h_top == "uni_top_2" or h_top == "uni_top_3" or h_top == "uni_top_4":
                     $ hermione_action_top = "01_hp/13_characters/hermione/clothes/uniform/action/lift_skirt_"+str(h_top)+".png" #Fixed naming for 1.24
                 if whoring <= 5:
                     $ h_action_a = "lift_skirt_1.png"
