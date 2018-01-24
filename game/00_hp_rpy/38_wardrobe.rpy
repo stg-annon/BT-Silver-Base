@@ -395,9 +395,9 @@ screen wardrobe:
             add "interface/wardrobe_icons/bottoms/bottoms_pants.png" xpos 15+270 ypos 17 zoom 0.35
             text "Pants" xpos 76+270 ypos 140+75 size 10
             #Misc
-            hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",4),Show("wardrobe")]
-            add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
-            text "Misc." xpos 76+360 ypos 140+75 size 10
+            #hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",4),Show("wardrobe")]
+            #add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
+            #text "Misc." xpos 76+360 ypos 140+75 size 10
 
             #Uniforms
             if wardrobe_bottoms_category == 0:
@@ -448,16 +448,16 @@ screen wardrobe:
                     add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
 
             #Misc
-            if wardrobe_bottoms_category == 4:
-                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
-                add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
-                text "Misc." xpos 76+360 ypos 140+75 size 10
-                for i in range(0,len(wr_her_bottoms_misc)):
-                    $ row = i // 5
-                    $ col = i % 5
+            #if wardrobe_bottoms_category == 4:
+            #    hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
+            #    add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
+            #    text "Misc." xpos 76+360 ypos 140+75 size 10
+            #    for i in range(0,len(wr_her_bottoms_misc)):
+            #        $ row = i // 5
+            #        $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
+            #        hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
+            #        add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
 
 
         else:
