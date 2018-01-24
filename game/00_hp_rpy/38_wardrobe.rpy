@@ -732,13 +732,14 @@ screen wardrobe:
                 hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_underwear_category",0),Show("wardrobe")]
                 add "interface/wardrobe_icons/underwear/underwear_misc.png" xpos 15+360 ypos 60 zoom 0.35
                 text "Misc." xpos 76+360 ypos 140+75 size 10
-                for i in range(0,len(wr_her_underwear_misc)):
+                for i in range(0,len(wr_her_bra_misc)):
                     $ row = i // 5
                     $ col = i % 5
 
-                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_her_underwear_misc[i])), Jump("equip_bra")]
-                    add "01_hp/13_characters/hermione/clothes/underwear/"+wr_her_underwear_misc[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35 #Temp
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("underwear_choice",(wr_her_bra_misc[i])), Jump("equip_bra")]
+                    add "01_hp/13_characters/hermione/clothes/underwear/"+wr_her_bra_misc[i]+".png" xpos 15+(90*col) ypos (60+92+(92*row)) zoom 0.35 #Temp
 
+                #Add underwear_panties_misc after underwear_bra_misc
         else:
             pass
 
