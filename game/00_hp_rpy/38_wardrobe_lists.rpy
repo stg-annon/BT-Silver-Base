@@ -34,66 +34,66 @@ label update_wardrobe_lists:
     #Uniform
     if whoring >= 0:
         $ wr_her_tops_uniform.append("uni_top_1")
-    if whoring >= 3: #get right number
+    if whoring >= 4: #get right number
         $ wr_her_tops_uniform.append("uni_top_2")
-    if whoring >= 6: #get right number
+    if whoring >= 7: #get right number
         $ wr_her_tops_uniform.append("uni_top_3")
-    if whoring >= 9: #get right number
+    if whoring >= 10: #get right number
         $ wr_her_tops_uniform.append("uni_top_4")
-    if whoring >= 12: #get right number
+    if whoring >= 13: #get right number
         $ wr_her_tops_uniform.append("uni_top_5")
-    if whoring >=18:
+    if whoring >=19:
         $ wr_her_tops_uniform.append("uni_top_6")
         $ wr_her_tops_uniform.remove("uni_top_3") #remove shirt 3. Looks ugly, no point in having it when she's willing to wear shirt 4.
 
-    if whoring >= 3 and hg_gryffCheer_OBJ.purchased:
+    if whoring >= 4 and hg_gryffCheer_OBJ.purchased:
         $ wr_her_tops_uniform.append("uni_top_cheer_gryff")
-    if whoring >= 6 and hg_gryffCheer_OBJ.purchased:
+    if whoring >= 7 and hg_gryffCheer_OBJ.purchased:
         $ wr_her_tops_uniform.append("uni_top_cheer_gryff_skimpy")
 
-    if whoring >= 9 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
+    if whoring >= 10 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
         $ wr_her_tops_uniform.append("uni_top_cheer_slyth")
         $ wr_her_tops_uniform.append("uni_top_cheer_slyth_skimpy")
 
     #Fancy
     $ wr_her_tops_fancy = []  #ADD sexy clothing
-    if whoring >= 6 and "fancy_waitress_beige" in cs_existing_stock:
+    if whoring >= 7 and "fancy_waitress_beige" in cs_existing_stock:
         $ wr_her_tops_fancy.append("fancy_waitress_beige")
-    if whoring >= 9 and "fancy_waitress_green" in cs_existing_stock:
+    if whoring >= 10 and "fancy_waitress_green" in cs_existing_stock:
         $ wr_her_tops_fancy.append("fancy_waitress_green")
 
     #Wicked
     $ wr_her_tops_wicked = [] #ADD kinky clothing items like leather, fishnet
-    if whoring >= 18 and "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
+    if whoring >= 19 and "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves_open")
-    if whoring >= 18 and "wicked_leather_jacket_sleeveless" in cs_existing_stock:
+    if whoring >= 19 and "wicked_leather_jacket_sleeveless" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless_open")
-    if whoring >= 18 and "wicked_leather_jacket_sleeves" in cs_existing_stock:
+    if whoring >= 19 and "wicked_leather_jacket_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves_open")
 
-    if whoring >= 21 and hg_rocker_OBJ.purchased:
+    if whoring >= 22 and hg_rocker_OBJ.purchased:
         $ wr_her_tops_wicked.append("wicked_rocker_top")
 
     #Muggle
     $ wr_her_tops_normal = [] #ADD Pullovers, Sweaters, Shirts, Muggle Clothing
-    if whoring >= 3 and "normal_pullover" in cs_existing_stock:
+    if whoring >= 4 and "normal_pullover" in cs_existing_stock:
         $ wr_her_tops_normal.append("normal_pullover")
         $ wr_her_tops_normal.append("normal_pullover_sexy")
-    if whoring >= 6 and "normal_purple_sweater" in cs_existing_stock:
+    if whoring >= 7 and "normal_purple_sweater" in cs_existing_stock:
         $ wr_her_tops_normal.append("normal_purple_sweater")
 
     #Misc. Tops
     $ wr_her_tops_misc = []   #ADD Misc top items
-    if whoring >= 9: #get right number
+    if whoring >= 10: #get right number
         $ wr_her_tops_misc.append("top_banner_gryff")
-    if whoring >= 12: #get right number
+    if whoring >= 13: #get right number
         $ wr_her_tops_misc.append("top_shirt_gryff_ripped_long_tie")
         $ wr_her_tops_misc.append("top_tie_gryff")
         $ wr_her_tops_misc.append("top_banner_slyth")
-    if whoring >= 18 and "top_fishnets" in cs_existing_stock:
+    if whoring >= 19 and "top_fishnets" in cs_existing_stock:
         $ wr_her_tops_misc.append("top_fishnets")
 
 
@@ -103,18 +103,18 @@ label update_wardrobe_lists:
     #Uniform
     if whoring >= 0:
         $ wr_her_bottoms_uniform.append("uni_skirt_1")
-    if whoring >= 3: #get right number
+    if whoring >= 4: #get right number
         $ wr_her_bottoms_uniform.append("uni_skirt_2")
-    if whoring >= 9: #get right number
+    if whoring >= 10: #get right number
         $ wr_her_bottoms_uniform.append("uni_skirt_3")
-    if whoring >= 15: #get right number
+    if whoring >= 16: #get right number
         $ wr_her_bottoms_uniform.append("uni_skirt_4")
-    if whoring >= 18: #get right number
+    if whoring >= 19: #get right number
         $ wr_her_bottoms_uniform.append("uni_skirt_5")
 
-    if whoring >= 3 and hg_gryffCheer_OBJ.purchased:
+    if whoring >= 4 and hg_gryffCheer_OBJ.purchased:
         $ wr_her_bottoms_uniform.append("uni_skirt_cheer_gryff")
-    if whoring >= 9 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
+    if whoring >= 10 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
         $ wr_her_bottoms_uniform.append("uni_skirt_cheer_slyth")
 
     #Uniform Low
@@ -122,18 +122,18 @@ label update_wardrobe_lists:
 
     if whoring >= 0:
         $ wr_her_bottoms_uniform_low.append("uni_skirt_1_low")
-    if whoring >= 6:
+    if whoring >= 7:
         $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
-    if whoring >= 18: #shows panties
+    if whoring >= 19: #shows panties
         $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
     #if micro_skirt unlocked/purchased:
     #    $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
 
     #Skirts
     $ wr_her_bottoms_skirts = [] #Add skirts
-    if whoring >= 9 and "skirt_belted_mini" in cs_existing_stock:
+    if whoring >= 10 and "skirt_belted_mini" in cs_existing_stock:
         $ wr_her_bottoms_skirts.append("skirt_belted_mini")
-    if whoring >= 18 and "skirt_belted_micro" in cs_existing_stock:
+    if whoring >= 19 and "skirt_belted_micro" in cs_existing_stock:
         $ wr_her_bottoms_skirts.append("skirt_belted_micro")
     #ADD japan_pant
 
@@ -144,9 +144,9 @@ label update_wardrobe_lists:
         $ wr_her_bottoms_pants.append("pants_jeans_long")
     if "pants_jeans_short" in cs_existing_stock:
         $ wr_her_bottoms_pants.append("pants_jeans_short")
-    if whoring >= 18 and "pants_retro_shorts" in cs_existing_stock:
+    if whoring >= 19 and "pants_retro_shorts" in cs_existing_stock:
         $ wr_her_bottoms_pants.append("pants_retro_shorts")
-    if whoring >= 21 and hg_rocker_OBJ.purchased:
+    if whoring >= 22 and hg_rocker_OBJ.purchased:
         $ wr_her_bottoms_pants.append("pants_rocker")
 
     #Bottoms Misc
@@ -159,16 +159,16 @@ label update_wardrobe_lists:
 
     if whoring >= 0:
         $ wr_her_neckwears.append("neck_scarf_gryff")
-    if whoring >= 3:
+    if whoring >= 4:
         $ wr_her_neckwears.append("neck_tie_gryff")
-    if whoring >= 9:
+    if whoring >= 10:
         $ wr_her_neckwears.append("neck_leather_collar")
-    if whoring >= 18:
+    if whoring >= 19:
         $ wr_her_neckwears.append("neck_bondage_collar")
 
-    if whoring >= 6 and hg_ballDress_OBJ.purchased:
+    if whoring >= 7 and hg_ballDress_OBJ.purchased:
         $ wr_her_neckwears.append("neck_pearl_necklace")
-    if whoring >= 15 and hg_christmas_OBJ.purchased:
+    if whoring >= 16 and hg_christmas_OBJ.purchased:
         $ wr_her_neckwears.append("neck_xmas")
 
     #$ wr_her_neckwears.append("neck_miss_hogwarts") #mQuest reward (after end of game)
@@ -190,20 +190,20 @@ label update_wardrobe_lists:
 
     if whoring >= 0:
         $ wr_her_gloves.append("gloves_gryff")
-    if whoring >= 9:
+    if whoring >= 10:
         $ wr_her_gloves.append("gloves_lace_white")
-    if whoring >= 18:
+    if whoring >= 19:
         $ wr_her_gloves.append("gloves_latex_black")
 
-    if whoring >= 3 and hg_christmas_OBJ.purchased:
+    if whoring >= 4 and hg_christmas_OBJ.purchased:
         $ wr_her_gloves.append("gloves_xmas_red")
-    if whoring >= 12 and hg_maid_OBJ.purchased:
+    if whoring >= 13 and hg_maid_OBJ.purchased:
         $ wr_her_gloves.append("gloves_french_maid")
-    if whoring >= 12 and hg_laraCroft_OBJ.purchased:
+    if whoring >= 13 and hg_laraCroft_OBJ.purchased:
         $ wr_her_gloves.append("gloves_treasure_hunter")
-    if whoring >= 18 and hg_powerGirl_OBJ.purchased:
+    if whoring >= 19 and hg_powerGirl_OBJ.purchased:
         $ wr_her_gloves.append("gloves_latex_hero_blue")
-    if whoring >= 21 and hg_harleyQuinn_OBJ.purchased:
+    if whoring >= 22 and hg_harleyQuinn_OBJ.purchased:
         $ wr_her_gloves.append("gloves_leather_red")
     #$ wr_her_gloves.append("gloves_egyptian") #ADD Egypt Outfit
 
@@ -212,33 +212,33 @@ label update_wardrobe_lists:
 
     if "stockings_gryff" in cs_existing_stock:
         $ wr_her_stockings.append("stockings_gryff")
-        #if whoring  >= 21 and "vibrators" in cs_existing_stock:
+        #if whoring  >= 22 and "vibrators" in cs_existing_stock:
         #    $ wr_her_stockings.append("stockings_gryff_vibe") #Will be in accessories instead
-    if whoring >= 6 and hg_gryffCheer_OBJ.purchased:
+    if whoring >= 7 and hg_gryffCheer_OBJ.purchased:
         $ wr_her_stockings.append("stockings_gryff_cheer")
         $ wr_her_stockings.append("stockings_gryff_cheer_short")
-        #if whoring  >= 21 and "vibrators" in cs_existing_stock:
+        #if whoring  >= 22 and "vibrators" in cs_existing_stock:
         #    $ wr_her_stockings.append("stockings_gryff_cheer_vibe") #Will be in accessories instead
 
-    if whoring >= 9 and "stockings_slyth" in cs_existing_stock: #Add sQuest: Slytherin at heart unlock.
+    if whoring >= 10 and "stockings_slyth" in cs_existing_stock: #Add sQuest: Slytherin at heart unlock.
         $ wr_her_stockings.append("stockings_slyth")
-        #if whoring  >= 21 and "vibrators" in cs_existing_stock:
+        #if whoring  >= 22 and "vibrators" in cs_existing_stock:
         #    $ wr_her_stockings.append("stockings_slyth_vibe") #Will be in accessories instead
     if whoring >= 9 and hg_slythCheer_OBJ.purchased:
         $ wr_her_stockings.append("stockings_slyth_cheer")
         $ wr_her_stockings.append("stockings_slyth_cheer_short")
-        #if whoring  >= 21 and "vibrators" in cs_existing_stock:
+        #if whoring  >= 22 and "vibrators" in cs_existing_stock:
         #    $ wr_her_stockings.append("stockings_slyth_cheer_vibe") #Will be in accessories instead
     #ADD Ravenclaw Blue. And maybe Hufflepuff.
 
 
-    if whoring >= 6:
+    if whoring >= 7:
         $ wr_her_stockings.append("stockings_pantyhose_tan")
         $ wr_her_stockings.append("stockings_pantyhose_grey")
-    if whoring >= 15:
+    if whoring >= 16:
         $ wr_her_stockings.append("stockings_black")
         $ wr_her_stockings.append("stockings_white")
-    if whoring >= 18:
+    if whoring >= 19:
         $ wr_her_stockings.append("stockings_latex_black")
 
     if "stockings_lace_black" in cs_existing_stock:
@@ -257,46 +257,73 @@ label update_wardrobe_lists:
         $ wr_her_robes.append("gryff_quidditch")
 
 
-    if whoring >= 6:
+    if whoring >= 10:
         $ wr_her_robes.append("slyth_robe_shirt_none")
         $ wr_her_robes.append("slyth_robe_off")
         $ wr_her_robes.append("slyth_robe_gap_wide")
-    if whoring >= 9:
+    if whoring >= 13:
         $ wr_her_robes.append("slyth_robe_seethrough")
-    if whoring >= 12:
+    if whoring >= 16:
         $ wr_her_robes.append("slyth_quidditch")
 
 
 ### Underwear ###
+    #Bra
     $ wr_her_bras = []
-    $ wr_her_bras.append("bra_white")
-    $ wr_her_bras.append("bra_silk_black")
-    $ wr_her_bras.append("bra_lace_turquoise")
-    $ wr_her_bras.append("bra_french_maid")
-    $ wr_her_bras.append("bra_bikini_string_black")
-    $ wr_her_bras.append("bra_bikini_string_blue")
-    $ wr_her_bras.append("bra_leather_black")
 
+    if whoring >= 10:
+        $ wr_her_bras.append("bra_white")
+        $ wr_her_bras.append("bra_silk_black")
+        $ wr_her_bras.append("bra_lace_turquoise")
+
+    if whoring >= 16:
+        $ wr_her_bras.append("bra_bikini_string_blue")
+        $ wr_her_bras.append("bra_bikini_string_black")
+
+    if whoring >= 19:
+        $ wr_her_bras.append("bra_french_maid")
+        $ wr_her_bras.append("bra_leather_black")
+
+    #Panties
     $ wr_her_panties = []
-    $ wr_her_panties.append("panties_white")
-    $ wr_her_panties.append("panties_silk_black")
-    $ wr_her_panties.append("panties_lace_turquoise")
-    $ wr_her_panties.append("panties_french_maid")
-    $ wr_her_panties.append("panties_bikini_string_black")
 
+    if whoring >= 10:
+        $ wr_her_panties.append("panties_white")
+        $ wr_her_panties.append("panties_silk_black")
+        $ wr_her_panties.append("panties_lace_turquoise")
+
+    if whoring >= 16:
+        $ wr_her_panties.append("panties_stringbikini_blue")
+        $ wr_her_panties.append("panties_bikini_string_black")
+        $ wr_her_panties.append("panties_latex_black")
+
+    if whoring >= 19:
+        $ wr_her_panties.append("panties_french_maid")
+        $ wr_her_panties.append("panties_fishnet_gstring")
+
+    #Corsets
     $ wr_her_corsets = []
-    if whoring >= 18: #and "corset_black" in cs_existing_stock:
+
+    if whoring >= 19: #and "corset_black" in cs_existing_stock:
         $ wr_her_corsets.append("corset_black")
 
+    #Garterbelts
     $ wr_her_garterbelts = []
-    if whoring >= 18: #and "garterbelt_lace_black" in cs_existing_stock:
+
+    if whoring >= 10: #and "garterbelt_lace_black" in cs_existing_stock:
         $ wr_her_garterbelts.append("garterbelt_lace_black")
 
-    $ wr_her_underwear_misc = []
-    if whoring >= 18:
-        $ wr_her_underwear_misc.append("underwear_misc_seethru_bandeau")
-    if whoring >= 18 and "top_fishnets" in cs_existing_stock:
-        $ wr_her_underwear_misc.append("top_fishnets")
+    #Underwear Misc.
+    $ wr_her_bra_misc = []
+
+    if whoring >= 19:
+        $ wr_her_bra_misc.append("underwear_misc_seethru_bandeau")
+    if whoring >= 22:
+        $ wr_her_bra_misc.append("underwear_misc_insulating_tape")
+    if whoring >= 22 and "top_fishnets" in cs_existing_stock:
+        $ wr_her_bra_misc.append("top_fishnets")
+
+    $ wr_her_panties_misc = []
 
 
 ### Outfits ###
