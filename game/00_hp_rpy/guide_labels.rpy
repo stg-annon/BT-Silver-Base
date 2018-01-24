@@ -19,15 +19,15 @@ label open_guide:
     
 
 label give_quest_reward:
-    $ renpy.play('sounds/win2.mp3') 
     call blk_tone
+    $ renpy.play('sounds/win2.mp3') 
+    show screen notes
     $ the_gift = "01_hp/18_store/01.png"
     show screen gift
     with d3
-    #"""+quest_reward_text"
+    "[quest_reward_text]"
+    hide screen notes
+    hide screen gift
+    with d1
     call hide_blk_tone
     return
-
-
-
-
