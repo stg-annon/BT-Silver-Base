@@ -116,7 +116,7 @@ screen wardrobe:
 ### ON/OFF Toggles ###
 
         ## Top Toggle ##
-        if whoring >= 9:
+        if whoring >= 6:
             hotspot (667,150,18,18) clicked Jump("her_top_toggle")
             if hermione_wear_top:
                 add "interface/check_02.png" xpos 667 ypos 145 #ypos-5 of hotspot ypos #2nd row Ypos+25
@@ -131,7 +131,7 @@ screen wardrobe:
             text "{color=#858585}Top{/color}" xpos 688 ypos 154 size 10            #grayed out
 
         ## Bra Toggle ##
-        if whoring >= 12:
+        if whoring >= 9:
             hotspot (667+5,150+25,18,18) clicked Jump("her_bra_toggle")
             if hermione_wear_bra:
                 add "interface/check_02.png" xpos 667+5 ypos 145+25 #ypos-5 of hotspot ypos
@@ -146,7 +146,7 @@ screen wardrobe:
             text "{color=#858585}Bra{/color}" xpos 688+5 ypos 154+25 size 10          #grayed out
 
         ## Bottom Toggle ##
-        if whoring >= 9:
+        if whoring >= 6:
             hotspot (667,150+50,18,18) clicked Jump("her_bottom_toggle")
             if hermione_wear_skirt: #rename to "hermione_wear_bottom"
                 add "interface/check_02.png" xpos 667 ypos 145+50 #ypos-5 of hotspot ypos
@@ -161,7 +161,7 @@ screen wardrobe:
             text "{color=#858585}Bottom{/color}" xpos 688 ypos 154+50 size 10          #grayed out
 
         ## Panties Toggle ##
-        if whoring >= 12:
+        if whoring >= 9:
             hotspot (667+5,150+75,18,18) clicked Jump("her_panties_toggle")
             if hermione_wear_panties:
                 add "interface/check_02.png" xpos 667+5 ypos 145+75 #ypos-5 of hotspot ypos
@@ -279,7 +279,7 @@ screen wardrobe:
                 $ row = i // 5
                 $ col = i % 5
 
-                hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(i+1)),Jump("change_her_hair")]
+                hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("wardrobe_hair_color",(wr_her_haircolor[i])),Jump("change_her_hair")]
                 add "interface/wardrobe_icons/dyes/dye_"+wr_her_haircolor[i]+".png" xpos 75+(90*col) ypos (138+92+(92*row)) zoom 0.70
         else:
             pass
@@ -448,16 +448,16 @@ screen wardrobe:
                     add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_pants[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
 
             #Misc
-            #if wardrobe_bottoms_category == 4:
-            #    hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
-            #    add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
-            #    text "Misc." xpos 76+360 ypos 140+75 size 10
-            #   for i in range(0,len(wr_her_bottoms_misc)):
-            #       $ row = i // 5
-            #       $ col = i % 5
+            if wardrobe_bottoms_category == 4:
+                hotspot (75+360, 140, 83, 85) clicked [SetVariable("wardrobe_bottoms_category",0),Show("wardrobe")]
+                add "interface/wardrobe_icons/bottoms/bottoms_misc.png" xpos 15+360 ypos 17 zoom 0.35
+                text "Misc." xpos 76+360 ypos 140+75 size 10
+                for i in range(0,len(wr_her_bottoms_misc)):
+                    $ row = i // 5
+                    $ col = i % 5
 
-            #       hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
-            #       add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
+                    hotspot ((75+(90*col)), (230+(92*row)), 83, 85) clicked [SetVariable("skirt_choice",(i+1)), Jump("equip_skirt")]
+                    add "01_hp/13_characters/hermione/clothes/bottoms/"+wr_her_bottoms_misc[i]+".png" xpos 15+(90*col) ypos (17+92+(92*row)) zoom 0.35
 
 
         else:
@@ -758,7 +758,7 @@ screen wardrobe:
             #One-Pieces
             hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",2),Show("wardrobe")]
             add "01_hp/23_clothes_store/cs_gui/nightgown.png" xpos 75+180 ypos 116 zoom 0.18
-            text "One-Pieces" xpos 76+180 ypos 140+75 size 10
+            text "One-Piece" xpos 76+180 ypos 140+75 size 10
             #Swimsuits
             hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",3),Show("wardrobe")]
             add "01_hp/23_clothes_store/cs_gui/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
