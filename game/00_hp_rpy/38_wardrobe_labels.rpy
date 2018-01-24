@@ -578,6 +578,7 @@ label set_h_corset(corset = ""):
 label wardrobe_wear_costume:
     hide screen hermione_main
     call h_outfit_OBJ(wardrobe_costume_selection)
+    call update_her_uniform
     show screen hermione_main
     hide screen wardrobe
     call screen wardrobe
