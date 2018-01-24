@@ -64,13 +64,13 @@ label update_wardrobe_lists:
 
     #Wicked
     $ wr_her_tops_wicked = [] #ADD kinky clothing items like leather, fishnet
-    if whoring >= 12 and "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
+    if whoring >= 18 and "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves_open")
-    if whoring >= 12 and "wicked_leather_jacket_sleeveless" in cs_existing_stock:
+    if whoring >= 18 and "wicked_leather_jacket_sleeveless" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless_open")
-    if whoring >= 12 and "wicked_leather_jacket_sleeves" in cs_existing_stock:
+    if whoring >= 18 and "wicked_leather_jacket_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves_open")
 
@@ -157,11 +157,55 @@ label update_wardrobe_lists:
     #Neckwear
     $ wr_her_neckwears = []
 
+    if whoring >= 0:
+        $ wr_her_neckwears.append("neck_scarf_gryff")
+    if whoring >= 3:
+        $ wr_her_neckwears.append("neck_tie_gryff")
+    if whoring >= 9:
+        $ wr_her_neckwears.append("neck_leather_collar")
+    if whoring >= 18:
+        $ wr_her_neckwears.append("neck_bondage_collar")
+
+    if whoring >= 6 and hg_ballDress_OBJ.purchased:
+        $ wr_her_neckwears.append("neck_pearl_necklace")
+    if whoring >= 15 and hg_christmas_OBJ.purchased:
+        $ wr_her_neckwears.append("neck_xmas")
+
+    #$ wr_her_neckwears.append("neck_miss_hogwarts") #mQuest reward (after end of game)
+    #$ wr_her_neckwears.append("neck_goggles") #sQuest reward
+    #$ wr_her_neckwears.append("neck_slave_shackle") #sQuest collar reward
+    #$ wr_her_neckwears.append("neck_slut_shackle") #sQuest collar reward
+    #$ wr_her_neckwears.append("neck_whore_shackle") #sQuest collar reward
+
     #Belts
     $ wr_her_belts = []
 
+    if whoring >= 0:
+        $ wr_her_belts.append("belt_scarf_gryff")
+    if whoring >= 24:
+        $ wr_her_belts.append("belt_band_of_condoms")
+
     #Gloves
     $ wr_her_gloves = []
+
+    if whoring >= 0:
+        $ wr_her_gloves.append("gloves_gryff")
+    if whoring >= 9:
+        $ wr_her_gloves.append("gloves_lace_white")
+    if whoring >= 18:
+        $ wr_her_gloves.append("gloves_latex_black")
+
+    if whoring >= 3 and hg_christmas_OBJ.purchased:
+        $ wr_her_gloves.append("gloves_xmas_red")
+    if whoring >= 12 and hg_maid_OBJ.purchased:
+        $ wr_her_gloves.append("gloves_french_maid")
+    if whoring >= 12 and hg_laraCroft_OBJ.purchased:
+        $ wr_her_gloves.append("gloves_treasure_hunter")
+    if whoring >= 18 and hg_powerGirl_OBJ.purchased:
+        $ wr_her_gloves.append("gloves_latex_hero_blue")
+    if whoring >= 21 and hg_harleyQuinn_OBJ.purchased:
+        $ wr_her_gloves.append("gloves_leather_red")
+    #$ wr_her_gloves.append("gloves_egyptian") #ADD Egypt Outfit
 
     #Stockings
     $ wr_her_stockings = []
@@ -188,6 +232,14 @@ label update_wardrobe_lists:
     #ADD Ravenclaw Blue. And maybe Hufflepuff.
 
 
+    if whoring >= 6:
+        $ wr_her_stockings.append("stockings_pantyhose_tan")
+        $ wr_her_stockings.append("stockings_pantyhose_grey")
+    if whoring >= 15:
+        $ wr_her_stockings.append("stockings_black")
+        $ wr_her_stockings.append("stockings_white")
+    if whoring >= 18:
+        $ wr_her_stockings.append("stockings_latex_black")
 
     if "stockings_lace_black" in cs_existing_stock:
         $ wr_her_stockings.append("stockings_lace_black")
@@ -233,10 +285,18 @@ label update_wardrobe_lists:
     $ wr_her_panties.append("panties_bikini_string_black")
 
     $ wr_her_corsets = []
+    if whoring >= 18: #and "corset_black" in cs_existing_stock:
+        $ wr_her_corsets.append("corset_black")
 
     $ wr_her_garterbelts = []
+    if whoring >= 18: #and "garterbelt_lace_black" in cs_existing_stock:
+        $ wr_her_garterbelts.append("garterbelt_lace_black")
 
     $ wr_her_underwear_misc = []
+    if whoring >= 18:
+        $ wr_her_underwear_misc.append("underwear_misc_seethru_bandeau")
+    if whoring >= 18 and "top_fishnets" in cs_existing_stock:
+        $ wr_her_underwear_misc.append("top_fishnets")
 
 
 ### Outfits ###

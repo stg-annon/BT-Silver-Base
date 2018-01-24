@@ -313,11 +313,11 @@ label existing_stock:
             label existing_stock_dyes:
             menu:
                 "{color=#858585}-Blonde Dye- (20 Gold)-{/color}"if "blonde_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 6 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 6 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Blonde Dye- (20 Gold)" if "blonde_dye" not in cs_existing_stock:
                     maf "A very nice shade of yellow."
-                    ">Needs a whoring level of 6 to be used.<"
+                    ">Requires a whoring level of 6 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
                             call cs_buy_stock("blonde_dye", 20)
@@ -326,11 +326,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Red Dye- (20 Gold)-{/color}"if "red_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 6 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 6 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Red Dye- (20 Gold)" if "red_dye" not in cs_existing_stock:
                     maf "A very nice shade of red."
-                    ">Needs a whoring level of 6 to be used.<"
+                    ">Requires a whoring level of 6 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
                             call cs_buy_stock("red_dye", 20)
@@ -339,11 +339,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Crimson Dye- (40 Gold)-{/color}"if "crimson_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 9 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Crimson Dye- (40 Gold)" if "crimson_dye" not in cs_existing_stock:
                     maf "A very rich shade of red."
-                    ">Needs a whoring level of 9 to be used.<"
+                    ">Requires a whoring level of 9 to be used.<"
                     menu:
                         "-Buy the item (40 gold)-":
                             call cs_buy_stock("crimson_dye", 40)
@@ -352,11 +352,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Black Dye- (200 Gold)-{/color}"if "black_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 9 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Black Dye- (200 Gold)" if "black_dye" not in cs_existing_stock:
                     maf "As black as a Testral! So I have heard."
-                    ">Needs a whoring level of 9 to be used.<"
+                    ">Requires a whoring level of 9 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
                             call cs_buy_stock("black_dye", 200)
@@ -365,11 +365,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Green Dye- (60 Gold)-{/color}"if "green_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 12 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Green Dye- (60 Gold)" if "green_dye" not in cs_existing_stock:
                     maf "A bright shade of green."
-                    ">Needs a whoring level of 12 to be used.<"
+                    ">Requires a whoring level of 12 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
                             call cs_buy_stock("green_dye", 60)
@@ -378,11 +378,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Blue Dye- (60 Gold)-{/color}"if "blue_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 12 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Blue Dye- (60 Gold)" if "blue_dye" not in cs_existing_stock:
                     maf "A bright shade of blue."
-                    ">Needs a whoring level of 12 to be used.<"
+                    ">Requires a whoring level of 12 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
                             call cs_buy_stock("blue_dye", 60)
@@ -391,11 +391,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Purple Dye- (80 Gold)-{/color}"if "purple_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 12 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Purple Dye- (80 Gold)" if "purple_dye" not in cs_existing_stock:
                     maf "A very nice shade of purple."
-                    ">Needs a whoring level of 12 to be used.<"
+                    ">Requires a whoring level of 12 to be used.<"
                     menu:
                         "-Buy the item (80 gold)-":
                             call cs_buy_stock("purple_dye", 80)
@@ -404,11 +404,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-Pink Dye- (200 Gold)-{/color}"if "pink_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 15 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 15 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-Pink Dye- (200 Gold)" if "pink_dye" not in cs_existing_stock:
                     maf "As bright and pink as my... I better not say any more."
-                    ">Needs a whoring level of 15 to be used.<"
+                    ">Requires a whoring level of 15 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
                             call cs_buy_stock("pink_dye", 200)
@@ -417,11 +417,11 @@ label existing_stock:
                             jump existing_stock_dyes
 
                 "{color=#858585}-White Dye- (400 Gold)-{/color}"if "white_dye" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 18 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_dyes
                 "-White Dye- (400 Gold)" if "white_dye" not in cs_existing_stock:
                     maf "A white as bright and pure as a Unicorn's skin."
-                    ">Needs a whoring level of 18 to be used.<"
+                    ">Requires a whoring level of 18 to be used.<"
                     menu:
                         "-Buy the item (400 gold)-":
                             call cs_buy_stock("white_dye", 400)
@@ -438,11 +438,11 @@ label existing_stock:
             label existing_stock_tops:
             menu:
                 "{color=#858585}-Pink Pullover- (50 Gold)-{/color}"if "normal_pullover" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 3 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 3 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Pink Pullover- (50 Gold)" if "normal_pullover" not in cs_existing_stock:
                     maf "A cute pink pullover. Has a heart shaped hole for her cleavage that can magically appear if you want!"
-                    ">Needs a whoring level of 3 to be worn.<"
+                    ">Requires a whoring level of 3 to be worn.<"
                     menu:
                         "-Buy the item (50 gold)-":
                             call cs_buy_stock("normal_pullover", 50)
@@ -451,11 +451,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Pink Sweater- (60 Gold)-{/color}"if "normal_purple_sweater" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 6 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 6 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Pink Sweater- (60 Gold)" if "normal_purple_sweater" not in cs_existing_stock:
                     maf "The pink sweater she has worn in movie 3! When she punched that rascal Malfoy in the face! Loved that scene."
-                    ">Needs a whoring level of 6 to be worn.<"
+                    ">Requires a whoring level of 6 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
                             call cs_buy_stock("normal_purple_sweater", 60)
@@ -464,11 +464,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Fancy Beige Top- (100 Gold)-{/color}"if "fancy_waitress_beige" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 6 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 6 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Fancy Beige Top- (100 Gold)" if "fancy_waitress_beige" not in cs_existing_stock:
                     maf "Very cute looking top if I may say so myself."
-                    ">Needs a whoring level of 6 to be worn.<"
+                    ">Requires a whoring level of 6 to be worn.<"
                     menu:
                         "-Buy the item (100 gold)-":
                             call cs_buy_stock("fancy_waitress_beige", 100)
@@ -477,11 +477,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Fancy Green Top- (100 Gold)-{/color}"if "fancy_waitress_green" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 9 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Fancy Green Top- (100 Gold)" if "fancy_waitress_green" not in cs_existing_stock:
                     maf "Very lovely looking top. Perfect for a proud slytherin girl!"
-                    ">Needs a whoring level of 9 to be worn.<"
+                    ">Requires a whoring level of 9 to be worn.<"
                     menu:
                         "-Buy the item (100 gold)-":
                             call cs_buy_stock("fancy_waitress_green", 100)
@@ -490,11 +490,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket Short Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Leather Jacket Short Sleeves- (200 Gold)" if "wicked_leather_jacket_short_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with short sleeves. Can also be worn open of course."
-                    ">Needs a whoring level of 12 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
                             call cs_buy_stock("wicked_leather_jacket_short_sleeves", 200)
@@ -503,11 +503,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket No Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_sleeveless" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Leather Jacket No Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeveless" not in cs_existing_stock:
                     maf "A black leather jacket with no sleeves. Can also be worn open of course."
-                    ">Needs a whoring level of 12 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
                             call cs_buy_stock("wicked_leather_jacket_sleeveless", 200)
@@ -516,11 +516,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Leather Jacket Long Sleeves- (200 Gold)-{/color}"if "wicked_leather_jacket_sleeves" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 12 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Leather Jacket Long Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with long sleeves. Can also be worn open of course."
-                    ">Needs a whoring level of 12 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
                             call cs_buy_stock("wicked_leather_jacket_sleeves", 200)
@@ -529,11 +529,11 @@ label existing_stock:
                             jump existing_stock_tops
 
                 "{color=#858585}-Fishnets Top- (60 Gold)-{/color}"if "top_fishnets" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 18 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_tops
                 "-Fishnets Top- (60 Gold)" if "top_fishnets" not in cs_existing_stock:
                     maf "This fishnets top hides nothing! What girl would possibly want to wear this on school grounds?"
-                    ">Needs a whoring level of 18 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
                             call cs_buy_stock("top_fishnets", 60)
@@ -549,11 +549,11 @@ label existing_stock:
             label existing_stock_pants_skirts:
             menu:
                 "{color=#858585}-Belted Mini Skirt- (75 Gold)-{/color}"if "skirt_belted_mini" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 9 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.")
                     jump existing_stock_pants_skirts
                 "-Belted Mini Skirt- (75 Gold)" if "skirt_belted_mini" not in cs_existing_stock:
                     maf "A short skirt with a belt. Very trendy!"
-                    ">Needs a whoring level of 9 to be worn.<"
+                    ">Requires a whoring level of 9 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
                             call cs_buy_stock("skirt_belted_mini", 75)
@@ -562,11 +562,11 @@ label existing_stock:
                             jump existing_stock_pants_skirts
 
                 "{color=#858585}-Belted Micro Skirt- (150 Gold)-{/color}"if "skirt_belted_micro" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 18 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_pants_skirts
                 "-Belted Micro Skirt- (150 Gold)" if "skirt_belted_micro" not in cs_existing_stock:
                     maf "A very short skirt with a belt. Very revealing! Lets just hope the girl is wearing a pair of underwear!"
-                    ">Needs a whoring level of 18 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
                             call cs_buy_stock("skirt_belted_micro", 150)
@@ -599,11 +599,11 @@ label existing_stock:
                             jump existing_stock_pants_skirts
 
                 "{color=#858585}-Retro Shorts- (170 Gold)-{/color}"if "pants_retro_shorts" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 18 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 18 for it to appear in the wardrobe.")
                     jump existing_stock_pants_skirts
                 "-Retro Shorts- (170 Gold)" if "pants_retro_shorts" not in cs_existing_stock:
                     maf "A pair of skin tight retro shorts. Just the right thing to highlight a magnificent behind."
-                    ">Needs a whoring level of 18 to be worn.<"
+                    ">Requires a whoring level of 18 to be worn.<"
                     menu:
                         "-Buy the item (170 gold)-":
                             call cs_buy_stock("pants_retro_shorts", 170)
@@ -630,11 +630,11 @@ label existing_stock:
                             jump existing_stock_stockings
 
                 "{color=#858585}-Slytherin Stockings- (50 Gold)-{/color}"if "stockings_slyth" in cs_existing_stock:
-                    call cust_excuse("You already own this. - Needs whoring level 9 for it to appear in the wardrobe.")
+                    call cust_excuse("You already own this. - Requires whoring level 9 for it to appear in the wardrobe.")
                     jump existing_stock_stockings
                 "-Slytherin Stockings- (50 Gold)" if "stockings_slyth" not in cs_existing_stock:
                     maf "A pair of cheerful school stockings, in Slytherin's colours."
-                    ">Needs a whoring level of 9 to be worn.<"
+                    ">Requires a whoring level of 9 to be worn.<"
                     menu:
                         "-Buy the item (50 gold)-":
                             call cs_buy_stock("stockings_slyth", 50)
