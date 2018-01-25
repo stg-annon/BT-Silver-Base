@@ -124,7 +124,7 @@ label update_wardrobe_lists:
         $ wr_her_bottoms_uniform_low.append("uni_skirt_1_low")
     if whoring >= 7:
         $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
-    if whoring >= 19: #shows panties
+    if whoring >= 16: #shows panties
         $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
     #if micro_skirt unlocked/purchased:
     #    $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
@@ -152,7 +152,7 @@ label update_wardrobe_lists:
     #Bottoms Misc
     $ wr_her_bottoms_misc = []   #ADD Misc bottom items
 
-### Stockings ###
+### Other Clothings ###
 
     #Neckwear
     $ wr_her_neckwears = []
@@ -173,9 +173,12 @@ label update_wardrobe_lists:
 
     #$ wr_her_neckwears.append("neck_miss_hogwarts") #mQuest reward (after end of game)
     #$ wr_her_neckwears.append("neck_goggles") #sQuest reward
-    #$ wr_her_neckwears.append("neck_slave_shackle") #sQuest collar reward
-    #$ wr_her_neckwears.append("neck_slut_shackle") #sQuest collar reward
-    #$ wr_her_neckwears.append("neck_whore_shackle") #sQuest collar reward
+    if collar == 1:
+        $ wr_her_neckwears.append("neck_slave_shackle") #sQuest collar reward
+    if collar == 2:
+        $ wr_her_neckwears.append("neck_slut_shackle") #sQuest collar reward
+    if collar == 3:
+        $ wr_her_neckwears.append("neck_whore_shackle") #sQuest collar reward
 
     #Belts
     $ wr_her_belts = []
