@@ -1,8 +1,8 @@
 ###Jeans ###
 label equip_bot(item = ""):
-    if item == "jeans_long":
+    if item == "pants_jeans_long":
         call equip_jeans_long
-    elif item == "jeans_short":
+    elif item == "pants_jeans_short":
         call equip_jeans_short
     elif (item[:1]) == "s": #set skirt
         call equip_skirt(item[-1:])
@@ -308,6 +308,8 @@ label equip_skirt:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
+                $ wardrobe_active = 1
+                call her_main("",xpos=400) #400=Wardrobe xpos 
                 call screen wardrobe
 
         if skirt_choice == 1:
@@ -482,7 +484,7 @@ label equip_skirt:
                m "15 points?"
                call her_main("............")   
                call her_main("... How on earth am I going to explain this to my classmates?","body_21")
-               call set_h_skirt("jeans_long")
+               call set_h_skirt("pants_jeans_long")
                call her_main("","body_21",xpos=120,ypos=0)
                pause
                m "15 points for Gryffindor!"
@@ -499,7 +501,7 @@ label equip_skirt:
                $ gryffindor +=15
                call her_main("Thank you, [genie_name]! (These might.. get me some extra attention)","body_59")
                call her_main("(Not that I want the attention!) I'm only in it for the points!","body_58")
-               call set_h_skirt("jeans_long")
+               call set_h_skirt("pants_jeans_long")
                call her_main("","body_58",xpos=120,ypos=0)
                pause
                call her_main("","body_01")
@@ -513,7 +515,7 @@ label equip_skirt:
                call her_main("At least make this worth while... Please, [genie_name]","body_17")
                m "15 points for Gryffindor, I guess?"
                call her_main("You're the best, [genie_name]!","body_129")
-               call set_h_skirt("jeans_long")
+               call set_h_skirt("pants_jeans_long")
                call her_main("*humph* ... (These are so stuffy... How am i supposed to get my hands into...)","body_12",xpos=120)
                call her_main("(What if [genie_name] needs me to...)","body_12",xpos=120)
                call her_main("(No... i shouldn't think about things like that! Keep your head in the game, [hermione_name]","body_141")
@@ -533,7 +535,7 @@ label equip_skirt:
                 call her_main("There's a lot of fabric, [genie_name]")
                 call her_main("...")
                 call her_main("I'll go change immediately, [genie_name]","body_209")
-                call set_h_skirt("jeans_long")
+                call set_h_skirt("pants_jeans_long")
                 call her_main("","body_209",xpos=120,ypos=0)
                 pause
                 call her_main("If you still have time, [genie_name], we could test how long it takes to get out of these things?","body_205")
@@ -561,7 +563,7 @@ label equip_skirt:
                 $ gryffindor +=15
                 call her_main("Thank you, [genie_name]! (These might.. get me some extra attention)","body_59")
                 call her_main("(Not that I want the attention!) I'm only in it for the points!","body_58")
-                call set_h_skirt("jeans_short")
+                call set_h_skirt("pants_jeans_short")
                 call her_main("","body_58")
                 pause
                 call her_main("","body_01")
@@ -571,7 +573,7 @@ label equip_skirt:
                 call her_main("Aren't they a little... slutty?","body_107")
                 m "is that a problem?"
                 call her_main("I suppose not...","body_105")
-                call set_h_skirt("jeans_short")
+                call set_h_skirt("pants_jeans_short")
                 call her_main("...","body_106", "blush")
             elif whoring > 20: 
                 call her_main("...cut offs??","body_02")
@@ -585,7 +587,7 @@ label equip_skirt:
                 call her_main("it's much easier for when you want to touch me [genie_name]...")
                 call her_main("...")
                 call her_main("I'll go change immediately, [genie_name]","body_118")
-                call set_h_skirt("jeans_short")
+                call set_h_skirt("pants_jeans_short")
                 call her_main("","body_121")
 
         if wardrobe_bottoms_category == 0:
@@ -673,7 +675,7 @@ label equip_jeans_long:
         call her_main("... How on earth am I going to explain this to my classmates?","body_21")
         call her_main("",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_long")
+        call set_h_skirt("pants_jeans_long")
         call ctc_wPause
         call hide_blk_tone
         call her_main("",xpos=510) #510=default Hermione xpos
@@ -693,7 +695,7 @@ label equip_jeans_long:
         call her_main("(Not that I want the attention!) I'm only in it for the points!","body_58")
         call her_main("",xpos=120) #Hermione xpos middle + pause
         call blk_tone
-        call set_h_skirt("jeans_long")
+        call set_h_skirt("pants_jeans_long")
         call ctc_wPause
         call hide_blk_tone
         call her_main("","body_01",xpos=510) #510=default Hermione xpos
@@ -709,7 +711,7 @@ label equip_jeans_long:
         call her_main("You're the best, [genie_name]!","body_129")
         call her_main("",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_long")
+        call set_h_skirt("pants_jeans_long")
         call ctc_wPause
         call hide_blk_tone
         call her_main("*humph* ... (These are so stuffy... How am i supposed to get my hands into...)","body_12",xpos=510) #510=default Hermione xpos
@@ -733,7 +735,7 @@ label equip_jeans_long:
         call her_main("I'll go change immediately, [genie_name]","body_209")
         call her_main("",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_long")
+        call set_h_skirt("pants_jeans_long")
         call ctc_wPause
         call hide_blk_tone
         call her_main("If you still have time, [genie_name], we could test how long it takes to get out of these things?","body_205",xpos=510) #510=default Hermione xpos
@@ -772,7 +774,7 @@ label equip_jeans_short:
         call her_main("(Not that I want the attention!) I'm only in it for the points!","body_58")
         call her_main("",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_short")
+        call set_h_skirt("pants_jeans_short")
         call ctc_wPause
         call hide_blk_tone
         call her_main("","body_01",xpos=510) #510=default Hermione xpos
@@ -788,7 +790,7 @@ label equip_jeans_short:
         call her_main("You're the best, [genie_name]!","body_129")
         call her_main("","body_209",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_short")
+        call set_h_skirt("pants_jeans_short")
         call ctc_wPause
         call hide_blk_tone
         call her_main("*humph* ... (These are so stuffy... How am i supposed to get my hands into...)","body_12",xpos=510) #Hermione default xpos
@@ -812,7 +814,7 @@ label equip_jeans_short:
         call her_main("I'll go change immediately, [genie_name]","body_209")
         call her_main("",xpos=120) #Hermione xpos middle
         call blk_tone
-        call set_h_skirt("jeans_short")
+        call set_h_skirt("pants_jeans_short")
         call ctc_wPause
         call hide_blk_tone
         call her_main("If you still have time, [genie_name], we could test how long it takes to get out of these things?","body_205",xpos=510) #Hermione default xpos
@@ -838,25 +840,28 @@ label equip_top:
             "\"(Yes, let's do it!)\"":
                 pass
             "\"(Not right now.)\"":
+                $ wardrobe_active = 1
+                call her_main("",xpos=400) #400=Wardrobe xpos 
                 call screen wardrobe
 
         if top_choice == 1:
             if whoring < 13:
                 m "[hermione_name]..."
                 call her_main("yes, [genie_name]?","body_01")
-                m "I'd like you to wear your normal skirt."
+                m "I'd like you to wear your normal shirt and vest."
                 call her_main("really?","body_82")
                 m "Sure, why not?"
                 call her_main("Thank you [genie_name]. I'll go change now.","body_16")
             else:
                 m "[hermione_name]..."
                 call her_main("yes, [genie_name]?","body_01")
-                m "I'd like you to wear your normal skirt."
+                m "I'd like you to wear your normal shirt."
                 call her_main("...that old thing?","body_69")
                 m "Sure, is that a problem?"
                 call her_main("..........","body_70")
                 call her_main("I suppose not...","body_71")
                 call her_main("It's just so plain...","body_69")
+                call her_main("can I at least undo a few buttons...","body_71")
         else:
             pass
 

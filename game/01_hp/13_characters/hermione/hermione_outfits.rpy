@@ -168,7 +168,8 @@ label __init_variables:
     $ hg_witch_OBJ.store_image = "witch.png"
     $ hg_witch_OBJ.outfit_layers = []
     $ hg_witch_OBJ.outfit_layers.extend(("witch_stockings.png","witch_top.png","witch_cloak.png","witch_hat.png"))
-    
+
+
     $ hermione_outfits_list = []
     $ hermione_outfits_list.append(hg_maid_OBJ)
     $ hermione_outfits_list.append(hg_gryffCheer_OBJ)

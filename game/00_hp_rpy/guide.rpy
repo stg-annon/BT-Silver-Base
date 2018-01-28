@@ -46,31 +46,31 @@ screen guide:
 
         #Quest Name
         if guide_page == 0:
-            text ""+main_quest.name xalign 0.5 ypos 135 size 16
+            text ""+current_main_quest.name xalign 0.5 ypos 135 size 16
         else:
-            for i in range(0,len(side_quest)):
-                text ""+side_quest[i].name xalign 0.5 ypos 135 size 16
+            for i in range(0,len(side_quests)):
+                text ""+side_quests[i].name xalign 0.5 ypos 135 size 16
 
         #Quest Objctive
         text "- Objective -" xpos 400 ypos 165 size 12
         if guide_page == 0:
-            text ""+main_quest.objective xpos 400 ypos 180 size 10
+            text ""+current_main_quest.objective xpos 400 ypos 180 size 10
         else:
-            for i in range(0,len(side_quest)):
-                text ""+side_quest[i].objective xpos 400 ypos 180 size 10
+            for i in range(0,len(side_quests)):
+                text ""+side_quests[i].objective xpos 400 ypos 180 size 10
 
         #Quest Hint
         text "- Hint -" xpos 400 ypos 210 size 12
         if guide_show_hint:
             if guide_page == 0:
-                text ""+main_quest.hint_text xpos 400 ypos 225 size 10
-                text ""+main_quest.hint_text2 xpos 400 ypos 235+2 size 10
-                text ""+main_quest.hint_text3 xpos 400 ypos 245+4 size 10
-                text ""+main_quest.hint_text4 xpos 400 ypos 255+6 size 10
-                text ""+main_quest.hint_text5 xpos 400 ypos 265+8 size 10
+                text ""+current_main_quest.hint_text xpos 400 ypos 225 size 10
+                text ""+current_main_quest.hint_text2 xpos 400 ypos 235+2 size 10
+                text ""+current_main_quest.hint_text3 xpos 400 ypos 245+4 size 10
+                text ""+current_main_quest.hint_text4 xpos 400 ypos 255+6 size 10
+                text ""+current_main_quest.hint_text5 xpos 400 ypos 265+8 size 10
             else:
-                for i in range(0,len(side_quest)):
-                    text ""+side_quest[i].hint_text xpos 400 ypos 225 size 10
+                for i in range(0,len(side_quests)):
+                    text ""+side_quests[i].hint_text xpos 400 ypos 225 size 10
         else:
             hotspot (395, 225, 280, 70) clicked [SetVariable("guide_show_hint","True"),Show("guide")]
 
@@ -78,14 +78,14 @@ screen guide:
         text "- Next Step -" xpos 400 ypos 310 size 12
         if guide_show_next_step:
             if guide_page == 0:
-                text ""+main_quest.full_text xpos 400 ypos 325 size 10
-                text ""+main_quest.full_text2 xpos 400 ypos 335+2 size 10
-                text ""+main_quest.full_text3 xpos 400 ypos 345+4 size 10
-                text ""+main_quest.full_text4 xpos 400 ypos 355+6 size 10
-                text ""+main_quest.full_text5 xpos 400 ypos 365+8 size 10
+                text ""+current_main_quest.full_text xpos 400 ypos 325 size 10
+                text ""+current_main_quest.full_text2 xpos 400 ypos 335+2 size 10
+                text ""+current_main_quest.full_text3 xpos 400 ypos 345+4 size 10
+                text ""+current_main_quest.full_text4 xpos 400 ypos 355+6 size 10
+                text ""+current_main_quest.full_text5 xpos 400 ypos 365+8 size 10
             else:
-                for i in range(0,len(side_quest)):
-                    text ""+side_quest[i].full_text xpos 400 ypos 325 size 10
+                for i in range(0,len(side_quests)):
+                    text ""+side_quests[i].full_text xpos 400 ypos 325 size 10
         else:
             hotspot (395, 325, 280, 70) clicked [SetVariable("guide_show_next_step","True"),Show("guide")]
 

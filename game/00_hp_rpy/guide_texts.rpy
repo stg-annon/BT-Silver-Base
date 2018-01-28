@@ -23,16 +23,17 @@ init python:
         name = ""
         objective = ""
         hint_text = ""
+        hint_text2 = ""
+        hint_text3 = ""
+        hint_text4 = ""
+        hint_text5 = ""
         full_text = ""
+        full_text2 = ""
+        full_text3 = ""
+        full_text4 = ""
+        full_text5 = ""
         started = 0
         completed = False
-
-
-        def __init__(self, **kwargs):
-            self.__dict__.update(**kwargs)
-        
-        def set(self, **kwargs):
-            self.__dict__.update(**kwargs)
 
 label __init_variables:
 
@@ -49,20 +50,18 @@ label __init_variables:
         $ guide_add_tip = False
 
     #Main Quests
-    if not hasattr(renpy.store,'main_quest'): #important!
-        $ main_quest = (mQuest_0)
 
     if not hasattr(renpy.store,'mQuest_0'): #important!
         $ mQuest_0 = main_quest()
     $ mQuest_0.id = 0
-    $ mQuest_0.name = "Find your Quest"
-    $ mQuest_0.objective = "Progress through the game for the Main Quest to update!"
+    $ mQuest_0.name = ""
+    $ mQuest_0.objective = "No more quests have been added yet."
     $ mQuest_0.hint_text = "You are on your own for now. Good luck!"
     $ mQuest_0.hint_text2 = ""
     $ mQuest_0.hint_text3 = ""
     $ mQuest_0.hint_text4 = ""
     $ mQuest_0.hint_text5 = ""
-    $ mQuest_0.full_text = "Figure out your next goal and I will help you again!"
+    $ mQuest_0.full_text = "You are on your own for now. Good luck!"
     $ mQuest_0.full_text2 = ""
     $ mQuest_0.full_text3 = ""
     $ mQuest_0.full_text4 = ""
@@ -71,7 +70,7 @@ label __init_variables:
     if not hasattr(renpy.store,'mQuest_A'): #important!
         $ mQuest_A = main_quest()
     $ mQuest_A.id = 1
-    $ mQuest_A.name = "The Lion and the Serpent"
+    $ mQuest_A.name = "The Beginning"
     $ mQuest_A.objective = "Find a way to return home!"
     $ mQuest_A.hint_text = ""
     $ mQuest_A.hint_text2 = ""
@@ -89,7 +88,7 @@ label __init_variables:
     if not hasattr(renpy.store,'mQuest_B'): #important!
         $ mQuest_B = main_quest()
     $ mQuest_B.id = 2
-    $ mQuest_B.name = "Mudbloods and Murmurs"
+    $ mQuest_B.name = "The Lion and the Serpent"
     $ mQuest_B.objective = "Find a way to cope with your boredom."
     $ mQuest_B.hint_text = ""
     $ mQuest_B.hint_text2 = ""
@@ -103,10 +102,9 @@ label __init_variables:
     $ mQuest_B.full_text5 = ""
     $ mQuest_B.started = 0 #counter
     $ mQuest_B.completed = False
-        
+
+
     #Side Quests
-    if not hasattr(renpy.store,'side_quest'): #important!
-        $ side_quest = []
 
     if not hasattr(renpy.store,'sQuest_get_map'): #important!
         $ sQuest_get_map = side_quest()
@@ -127,6 +125,12 @@ label __init_variables:
     $ sQuest_buy_at_shop.full_text = ""
     $ sQuest_buy_at_shop.started = 0
     $ sQuest_buy_at_shop.completed = False
+
+
+    if not hasattr(renpy.store,'current_main_quest'): #important!
+        $ current_main_quest = mQuest_0
+    if not hasattr(renpy.store,'current_side_quests'): #important!
+        $ current_side_quests = []
 
     #Quest Rewards
     if not hasattr(renpy.store,'quest_reward_image'): #important!
@@ -158,20 +162,20 @@ label __init_variables:
 label update_quests:
 
     #Side Quests
-    $ side_quest = [] #list of your side quests
+    $ side_quests = [] #list of your side quests
 
     #Get Marauder's Map
-    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quest:
-        $ side_quest.append(sQuest_get_map)
+    if sQuest_get_map.started >=1 and sQuest_get_map.started <= 3 and sQuest_get_map not in side_quests:
+        $ side_quests.append(sQuest_get_map)
 
     #Buy something at the shop
-    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quest:
-        $ side_quest.append(sQuest_buy_at_shop)
+    if sQuest_buy_at_shop.started >=1 and sQuest_buy_at_shop.started <= 3 and sQuest_buy_at_shop not in side_quests:
+        $ side_quests.append(sQuest_buy_at_shop)
 
 
     #Main Quest A #Start of game till Snape unlock
     if mQuest_A.started >= 1 and mQuest_A.started <=6: #7=.completed
-        $ main_quest = mQuest_A
+        $ current_main_quest = mQuest_A
 
     if mQuest_A.started == 1: #Examine room
         $ mQuest_A.hint_text = "Why don't you have a look around!"
@@ -210,7 +214,7 @@ label update_quests:
 
     #Main Quest B #Till Hermione unlock
     if mQuest_B.started >= 1 and mQuest_B.started <=5: #6=.completed
-        $ main_quest = mQuest_B
+        $ current_main_quest = mQuest_B
         $ mQuest_A.completed = True
 
     if mQuest_B.started == 1: #wait for Hermione
@@ -363,25 +367,36 @@ label update_tip_of_the_day:
                 $ rndm_one_of_three = renpy.random.randint(1, 3)
                 if rndm_one_of_three == 1:
                     $ guide_add_tip = True
-                    $ guide_tip_text = "Apparently they released a new set of exclusive plush owls! Gotta catch 'em all!"
+                    $ guide_tip_text = "Apparently they released a new set of"
+                    $ guide_tip_text2 = "new and exclusive plush owls!"
+                    $ guide_tip_text3 = "Gotta catch 'em all!"
                 elif rndm_one_of_three == 2:
                     $ guide_add_tip = True
-                    $ guide_tip_text = "She really seems to like this Krum guy! Maybe you should buy her a poster of him!"
+                    $ guide_tip_text = "She really seems to like this Krum guy!"
+                    $ guide_tip_text2 = "Maybe you should buy her a poster of him!"
                 elif rndm_one_of_three == 3:
                     $ guide_add_tip = True
-                    $ guide_tip_text = "One might think Hermione has grown interested in sex-toys by now!"
+                    $ guide_tip_text = "One might think Hermione has grown"
+                    $ guide_tip_text2 = "interested in sex-toys by now!"
 
             if whoring >= 18 and whoring <= 23: #7
                 $ rndm_one_of_three = renpy.random.randint(1, 3)
                 if rndm_one_of_three == 1:
                     $ guide_add_tip = False #False=Fact
-                    $ guide_tip_text = "Educational Magazines? Fuck that shit! Who needs those!"
+                    $ guide_tip_text = "Educational Magazines? Fuck that shit!"
+                    $ guide_tip_text2 = "Who needs those!"
                 elif rndm_one_of_three == 2:
                     $ guide_add_tip = True
-                    $ guide_tip_text = "I have heard there is a new Krum poster in the store! Hermione will kiss your feet if you buy it for her!"
+                    $ guide_tip_text = "I have heard there is a new Krum poster"
+                    $ guide_tip_text2 = "in the store!"
+                    $ guide_tip_text3 = "Hermione will kiss your feet if you"
+                    $ guide_tip_text4 = "buy it for her!"
                 elif rndm_one_of_three == 3:
                     $ guide_add_tip = True
-                    $ guide_tip_text = "She is really into sex stuff now. You really did your job well! Still you kind of fucked up and she's mad at you! Maybe buy her something!"
+                    $ guide_tip_text = "She is really into sex stuff now."
+                    $ guide_tip_text2 = "You really did your job well! "
+                    $ guide_tip_text3 = "Still you kind of fucked up and she's"
+                    $ guide_tip_text4 = "mad at you! Maybe buy her something!"
 
 
 
@@ -390,73 +405,116 @@ label update_tip_of_the_day:
         
 
         ## Funny Tips ##
-        #$ daily_rndm_tip_or_fact = renpy.random.randint(0, 18) #remove. Add to 01_hp_main_day instead.
-        if daily_rndm_tip_or_fact ==  0:
+        if daily_rndm_tip_or_fact ==  0:                                     #Max Characters
             $ guide_add_tip = True
             $ guide_tip_text = "Never tickle a sleeping dragon."
 
-        if daily_rndm_tip_or_fact ==  1:
+        if daily_rndm_tip_or_fact ==  1:                                     #Max Characters
             $ guide_add_tip = False #False=Fact
             $ guide_tip_text = "Book 3 will always be the best one!"
 
-        if daily_rndm_tip_or_fact ==  2:
+        if daily_rndm_tip_or_fact ==  2:                                     #Max Characters
             $ guide_add_tip = False #False=Fact
-            $ guide_tip_text = "Don't worry headmaster, Snape is not going to kill you. Different timeline!"
+            $ guide_tip_text = "Don't worry headmaster, Snape is not going"
+            $ guide_tip_text2 = "to kill you."
+            $ guide_tip_text3 = "Different timeline!"
 
-        if daily_rndm_tip_or_fact ==  3:
+        if daily_rndm_tip_or_fact ==  3:                                     #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "Don't walk into the forbidden forest alone! There are creatures that live there, of the likes you have never seen before. They call them cars!"
+            $ guide_tip_text = "Don't walk into the forbidden forest alone!"
+            $ guide_tip_text2 = "There are creatures that live there,"
+            $ guide_tip_text3 = "of the likes you have never seen before."
+            $ guide_tip_text4 = "They call them cars!"
 
-        if daily_rndm_tip_or_fact ==  4:
+        if daily_rndm_tip_or_fact ==  4:                                     #Max Characters
             $ guide_add_tip = False #False=Fact
-            $ guide_tip_text = "You would think flying-carpets are the preferred way for a wizard to travel, yet they got almost completely substituted by brooms. What real wizard would want to sit on a broom? They hurt your crotch!"
+            $ guide_tip_text = "Flying-carpets were the preferred way for"
+            $ guide_tip_text2 = " a wizard to travel. Now it's brooms."
+            $ guide_tip_text3 = "What real wizard wants to sit on a broom?"
+            $ guide_tip_text4 = "At least carpets don't hurt you crotch!"
 
-        if daily_rndm_tip_or_fact ==  5:
+        if daily_rndm_tip_or_fact ==  5:                                     #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "The small star icon on the top left of your screen opens the player guide!... Oh you already knew that? Well nvm then!"
+            $ guide_tip_text = "The small star icon on the top left of your"
+            $ guide_tip_text2 = "screen opens the player guide!... "
+            $ guide_tip_text3 = "Oh you already knew that?"
+            $ guide_tip_text4 = "Well never mind then!"
 
-        if daily_rndm_tip_or_fact ==  6:
-            $ guide_tip_text = "It's not a good idea to use one of the unforgivable curses! While the imperius curse might have been useful to you, you will have to corrupt Hermione the old way!"
+        if daily_rndm_tip_or_fact ==  6:                                     #Max Characters
+            $ guide_add_tip = False
+            $ guide_tip_text = "It's not a good idea to use an unforgivable"
+            $ guide_tip_text2 = "curse! While the Imperius Curse might have"
+            $ guide_tip_text3 = "had some usefulness to you, you will sadly"
+            $ guide_tip_text4 = "have to corrupt Hermione the old way!"
 
-        if daily_rndm_tip_or_fact ==  7:
-            $ guide_tip_text = "Test Funny 7"
+        if daily_rndm_tip_or_fact ==  7:                                     #Max Characters
+            $ guide_add_tip = False
+            $ guide_tip_text = "We have noticed you are running an Ad-Blocker!"
+            $ guide_tip_text2 = "Please disable your Ad-Blocker to"
+            $ guide_tip_text3 = "support this Quest-Guide! Thank You."
 
-        if daily_rndm_tip_or_fact ==  8:
-            $ guide_tip_text = "Test Funny 8"
+        if daily_rndm_tip_or_fact ==  8:                                     #Max Characters
+            $ guide_add_tip = False
+            $ guide_tip_text = "Dumbledore is gay apparently."
+            $ guide_tip_text2 = "Not that I mind that,"
+            $ guide_tip_text3 = "I'm just running out of useful facts to tell."
 
-        if daily_rndm_tip_or_fact ==  9:
-            $ guide_tip_text = "Test Funny 9"
+        if daily_rndm_tip_or_fact ==  9:                                     #Max Characters
+            $ guide_add_tip = False
+            $ guide_tip_text = "You can support us on Patreon!"
+            $ guide_tip_text2 = "You can find us at..."
 
-        if daily_rndm_tip_or_fact ==  10:
-           $ guide_tip_text = "Test Funny 10"
+        if daily_rndm_tip_or_fact ==  10:                                    #Max Characters
+            $ guide_add_tip = True
+            $ guide_tip_text = "Do. Or do not."
+            $ guide_tip_text2 = "There is no try!"
 
 
         ## Helpful Tips ##
-        if daily_rndm_tip_or_fact ==  11:
+        if daily_rndm_tip_or_fact ==  11:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "Rainy or cloudy day? Read a book! The moody weather will help you focus and be more productive!"
-        if daily_rndm_tip_or_fact ==  12:
+            $ guide_tip_text = "Rainy or cloudy day?"
+            $ guide_tip_text2 = "Read a book!"
+            $ guide_tip_text3 = "The moody weather will help you focus,"
+            $ guide_tip_text4 = "and be more productive!"
+        if daily_rndm_tip_or_fact ==  12:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "Rainy or cloudy day? Best weather to write some reports! The moody weather will help you focus and be more productive!"
-        if daily_rndm_tip_or_fact ==  13:
+            $ guide_tip_text = "Rainy or cloudy day?"
+            $ guide_tip_text2 = "Best weather to write some reports!"
+            $ guide_tip_text3 = "The moody weather will help you focus,"
+            $ guide_tip_text4 = "and be more productive!"
+        if daily_rndm_tip_or_fact ==  13:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "Turn on the fireplace during the rain! The warming comfort of a fire-lit room makes reading and writing more enjoyable!"
-        if daily_rndm_tip_or_fact ==  14:
+            $ guide_tip_text = "Turn on the fireplace during the rain!"
+            $ guide_tip_text2 = "The warming comfort of a fire-lit room makes"
+            $ guide_tip_text3 = "reading faster and writing more enjoyable!"
+        if daily_rndm_tip_or_fact ==  14:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "Drinking wine with Snape not only lengthens your strong friendship with him, he'll also be more willing to reward Slytherin with a higher number of house-points."
-        if daily_rndm_tip_or_fact ==  15:
-            $ guide_tip_text = "Keep rummaging through your cupboard. You'll never know what useful things you can find until you try."
-        if daily_rndm_tip_or_fact ==  16:
+            $ guide_tip_text = "Drinking wine with Snape not only lengthens"
+            $ guide_tip_text2 = "your strong friendship with him, he'll also"
+            $ guide_tip_text3 = "be more willing to reward Slytherin with"
+            $ guide_tip_text4 = "a higher number of house-points!"
+        if daily_rndm_tip_or_fact ==  15:                                    #Max Characters
+            $ guide_tip_text = "Keep rummaging through your cupboard."
+            $ guide_tip_text2 = "You'll never know what useful things you"
+            $ guide_tip_text3 = "can find until you try!"
+        if daily_rndm_tip_or_fact ==  16:                                    #Max Characters
             $ guide_add_tip = False #False=Fact
-            $ guide_tip_text = "Dumbledore had quite a selection of wine. He might have some wine left stored in his cupboard!"
+            $ guide_tip_text = "Dumbledore had quite a selection of wine."
+            $ guide_tip_text2 = "He might have some wine left in his cupboard!"
 
-        if daily_rndm_tip_or_fact ==  17:
+        if daily_rndm_tip_or_fact ==  17:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "If Hermione is mad at you it might take -days- for her to like you again! Better just buy her a gift!"
+            $ guide_tip_text = "If Hermione is mad at you it might take -days-"
+            $ guide_tip_text2 = "for her to like you again!"
+            $ guide_tip_text3 = "Better just buy her a gift!"
 
-        if daily_rndm_tip_or_fact ==  18:
+        if daily_rndm_tip_or_fact ==  18:                                    #Max Characters
             $ guide_add_tip = True
-            $ guide_tip_text = "If Hermione is mad you, you can give her gifts to better her mood! Dependant on her whoring level she will prefer some gifts over others!"
+            $ guide_tip_text = "If Hermione is mad you, you can give her"
+            $ guide_tip_text2 = "gifts to better her mood! "
+            $ guide_tip_text3 = "Dependant on her whoring level she will"
+            $ guide_tip_text4 = "prefer some gifts over others!"
 
 
 

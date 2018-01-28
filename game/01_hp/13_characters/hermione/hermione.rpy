@@ -215,8 +215,10 @@ label __init_variables:
     
     
     $ h_breasts                  = "breasts_nipfix"
-    $ h_bra_nip_fix              = ["cup_bra","silk_bra","latex_bra"]
+    $ h_bra_nip_fix              = ["bra_silk_black","bra_lace_turquoise","bra_french_maid", "bra_bikini_string_black", "bra_bikini_string_blue", "bra_leather_black", "underwear_misc_insulating_tape", "underwear_misc_bra_white_ripped", "underwear_misc_heart_pasties", "underwear_misc_seethru_bandeau"]
     
+    $ h_bra_top_fix              = ["normal_pullover_sexy", "normal_pullover", "normal_purple_sweater", "uni_top_1", "uni_top_2", "uni_top_3", "uni_top_4", "uni_top_5", "uni_top_6", "uni_top_cheer_gryff_skimpy", "uni_top_cheer_gryff", "uni_top_cheer_slyth_skimpy", "uni_top_cheer_slyth"]
+
     $ h_can_color                = ["A","B"]
     
     $ hermione_tattoos           = []
