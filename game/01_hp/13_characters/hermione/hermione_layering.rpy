@@ -241,13 +241,6 @@ screen hermione_uniform:
     ### Neckwear
     if hermione_wear_neckwear:
         add hermione_neckwear xpos hermione_xpos_offset ypos hermione_ypos alpha transparency
-    ### COLLAR 
-    if collar == 1:
-        add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
-    if collar == 2:
-        add "01_hp/13_characters/hermione/accessories/collars/collar_2.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
-    if collar == 3:  
-        add "01_hp/13_characters/hermione/accessories/collars/collar_3.png" xpos hermione_xpos_offset ypos hermione_ypos # Add the collar
     add hermione_hair_b xpos hermione_xpos_offset ypos hermione_ypos
     zorder hermione_zorder
     
@@ -329,13 +322,6 @@ screen hermione_head:
         ### Neckwear
         if hermione_wear_neckwear:
             add hermione_neckwear xpos hermione_head_xpos_offset ypos hermione_head_ypos alpha transparency # Add the necklace
-        ### COLLAR 
-        if collar == 1:
-            add "01_hp/13_characters/hermione/accessories/collars/collar_1.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
-        if collar == 2:
-            add "01_hp/13_characters/hermione/accessories/collars/collar_2.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
-        if collar == 3:  
-            add "01_hp/13_characters/hermione/accessories/collars/collar_3.png" xpos hermione_head_xpos_offset ypos hermione_head_ypos # Add the collar
     else:
         for i in hermoine_outfit_GLBL.getOutfitLayers():
             add i xpos hermione_head_xpos_offset ypos hermione_head_ypos
