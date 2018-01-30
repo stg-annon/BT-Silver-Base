@@ -53,61 +53,59 @@ screen wardrobe:
             pass
         else:
             pass
-        #    hotspot for Arrows that add +/- to wardrobe_page == 0 (top, left) 
-        #    hotspot for Arrows that add +/- to item pages (left, middle)
 
         #Hair
         if wardrobe_page == 1:
-            hotspot (555, 120, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (555, 120, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Hair-style & Colour" xpos 118 ypos 100 size 18
         else:
             hotspot (595, 120, 50, 98) clicked [SetVariable("wardrobe_page",1),Show("wardrobe")] #default
 
         #Tops
         if wardrobe_page == 2:
-            hotspot (555, 230, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (555, 230, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Top Clothings" xpos 118 ypos 100 size 18
         else:
             hotspot (595, 230, 50, 98) clicked [SetVariable("wardrobe_page",2),Show("wardrobe")] #default
 
         #Bottoms
         if wardrobe_page == 3:
-            hotspot (555, 340, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (555, 340, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Bottom Clothings" xpos 118 ypos 100 size 18
         else:
             hotspot (595, 340, 50, 98) clicked [SetVariable("wardrobe_page",3),Show("wardrobe")] #default
 
         #Other Clothings
         if wardrobe_page == 4:
-            hotspot (555, 450, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (555, 450, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Other Clothings" xpos 118 ypos 100 size 18
         else:
             hotspot (595, 450, 50, 98) clicked [SetVariable("wardrobe_page",4),Show("wardrobe")] #default
 
         #Accessories
         if wardrobe_page == 5:
-            hotspot (985, 120, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (985, 120, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Accessories" xpos 118 ypos 100 size 18
         else:
             hotspot (985, 120, 60, 98) clicked [SetVariable("wardrobe_page",5),Show("wardrobe")] #default
 
         #Underwear
         if wardrobe_page == 6:
-            hotspot (985, 230, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (985, 230, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Underwear" xpos 118 ypos 100 size 18
         else:
             hotspot (985, 230, 60, 98) clicked [SetVariable("wardrobe_page",6),Show("wardrobe")] #default
 
         #Outfits
         if wardrobe_page == 7:
-            hotspot (985, 340, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (985, 340, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Costumes & Outfits" xpos 118 ypos 100 size 18
         else:
             hotspot (985, 340, 60, 98) clicked [SetVariable("wardrobe_page",7),Show("wardrobe")] #default
 
         #Gifts
         if wardrobe_page == 8:
-            hotspot (985, 450, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")]
+            hotspot (985, 450, 90, 98) clicked [SetVariable("wardrobe_page",0),Show("wardrobe")] #return to default
             text "Gifts & Quest Items" xpos 118 ypos 100 size 18
         else:
             hotspot (985, 450, 60, 98) clicked [SetVariable("wardrobe_page",8),Show("wardrobe")] #default
@@ -116,7 +114,7 @@ screen wardrobe:
 ### ON/OFF Toggles ###
 
         ## Top Toggle ##
-        if whoring >= 6:
+        if whoring >= 12:
             hotspot (667,150,18,18) clicked Jump("her_top_toggle")
             if hermione_wear_top:
                 add "interface/check_02.png" xpos 667 ypos 145 #ypos-5 of hotspot ypos #2nd row Ypos+25
@@ -131,7 +129,7 @@ screen wardrobe:
             text "{color=#858585}Top{/color}" xpos 688 ypos 154 size 10            #grayed out
 
         ## Bra Toggle ##
-        if whoring >= 9:
+        if whoring >= 12:
             hotspot (667+5,150+25,18,18) clicked Jump("her_bra_toggle")
             if hermione_wear_bra:
                 add "interface/check_02.png" xpos 667+5 ypos 145+25 #ypos-5 of hotspot ypos
@@ -146,7 +144,7 @@ screen wardrobe:
             text "{color=#858585}Bra{/color}" xpos 688+5 ypos 154+25 size 10          #grayed out
 
         ## Bottom Toggle ##
-        if whoring >= 6:
+        if whoring >= 12:
             hotspot (667,150+50,18,18) clicked Jump("her_bottom_toggle")
             if hermione_wear_skirt: #rename to "hermione_wear_bottom"
                 add "interface/check_02.png" xpos 667 ypos 145+50 #ypos-5 of hotspot ypos
@@ -161,7 +159,7 @@ screen wardrobe:
             text "{color=#858585}Bottom{/color}" xpos 688 ypos 154+50 size 10          #grayed out
 
         ## Panties Toggle ##
-        if whoring >= 9:
+        if whoring >= 12:
             hotspot (667+5,150+75,18,18) clicked Jump("her_panties_toggle")
             if hermione_wear_panties:
                 add "interface/check_02.png" xpos 667+5 ypos 145+75 #ypos-5 of hotspot ypos
@@ -759,7 +757,7 @@ screen wardrobe:
             #One-Pieces
             hotspot (75+180, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",2),Show("wardrobe")]
             add "01_hp/23_clothes_store/cs_gui/nightgown.png" xpos 75+180 ypos 116 zoom 0.18
-            text "One-Piece" xpos 76+180 ypos 140+75 size 10
+            text "One-Pieces" xpos 76+180 ypos 140+75 size 10
             #Swimsuits
             hotspot (75+270, 140, 83, 85) clicked [SetVariable("wardrobe_outfits_category",3),Show("wardrobe")]
             add "01_hp/23_clothes_store/cs_gui/mannequin.png" xpos 75+270 ypos 116 zoom 0.18
