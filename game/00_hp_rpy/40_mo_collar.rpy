@@ -1,13 +1,13 @@
 ###COLLAR SCENES
 label start_collar_event:
-    hide screen wardrobe_gifts
+    hide screen wardrobe
     "Are you sure you wish to start this event?"
     menu: 
         "Yes!":
             $ collar = 5
         "No.":
             pass
-    call screen wardrobe_gifts
+    call screen wardrobe
 
 
 label collar_scene:
@@ -183,7 +183,13 @@ label slut_scene: #Locked to her being your slut
     call her_main("A present? What is it?","body_124")
     hide screen hermione_main
     m "It's a lovely necklace to help remember who you are."
-    ">You present her the \"slut\" collar."
+
+    #sQuest "slave" collar reward
+    $ the_gift = "interface/store_icons/store_neck_slut_shackle.png"
+    $ quest_reward_text = ">You present her the \"slut\" collar.\n \"slut\" collar added to your wardrobe."
+    #$ sQuest_collar = (add final number)
+    call give_quest_reward
+
     call her_main("This isn't a necklace, this is a collar with slut \nwritten on it! I can't wear this!","body_119")
     hide screen hermione_main
     m "You can and will wear this."
@@ -191,7 +197,12 @@ label slut_scene: #Locked to her being your slut
     call her_main("...Fine","body_118")
     hide screen hermione_main
     ">She tightens the collar around the neck."
+
+    $ h_neckwear = "neck_slut_shackle"
+    $ hermione_wear_neckwear = True
     $ collar = 2
+    call update_her_uniform
+
     call her_main("Can I at least get a towel or something to \nclean my face?","body_117")
     hide screen hermione_main
     m "Why? Everyone already knows what a slut you are, walking back to your room with a bit of cum on your face is hardly going to change that."
@@ -218,6 +229,7 @@ label slut_scene: #Locked to her being your slut
     $ display_h_tears = False
     jump end_hg_pf
     #she then comes back in the evening with a story about some people abusing her and some congratulating her
+
 label whore_scene: #(locked behind the public whoring flag)
     #sex scene where she begs genie to cum inside her
     #genie yells at her and makes her admit she is a whore
@@ -329,7 +341,13 @@ label whore_scene: #(locked behind the public whoring flag)
     m "Well seeing as how you said thank you I have a present for you."
     call her_main("A present?","body_154")
     m "Yes, it's a lovely piece of jewellery to commemorate your self-acceptance."
-    ">You present her the \"whore\" collar."
+
+    #sQuest "whore" collar reward
+    $ the_gift = "interface/store_icons/store_neck_whore_shackle.png"
+    $ quest_reward_text = ">You present her the \"whore\" collar.\n \"whore\" collar added to your wardrobe."
+    #$ sQuest_collar = (add final number)
+    call give_quest_reward
+
     call her_main("A collar? That says whore?","body_190")
     call her_main("How is this a piece of jewellery?","body_186")
     m "Well I expect you to wear it all the time, like a ring, so I guess that qualifies it as jewellery."
@@ -341,7 +359,12 @@ label whore_scene: #(locked behind the public whoring flag)
     m "Well whatever you think, I expect you to put it on and then get out of my office."
     call her_main("...Fine","body_143")
     ">She places the collar around her neck and tightens it."
+
+    $ h_neckwear = "neck_whore_shackle"
+    $ hermione_wear_neckwear = True
     $ collar = 3
+    call update_her_uniform
+
     call her_main("Goodbye [genie_name].","body_142")
     m "Goodbye whore."
     hide screen hermione_main
@@ -350,8 +373,6 @@ label whore_scene: #(locked behind the public whoring flag)
     jump end_hg_pf
     #m "Also, come see me tonight after everyone has seen the new you. I want to hear what they say."
     #call her_main("...yes [genie_name].","body_145")
-
-label whore_scene_2:
 
 
 label slave_scene: 
@@ -497,7 +518,13 @@ label slave_scene:
     call her_main("Master's slave.","body_124")
     hide screen hermione_main
     m "That's a good answer. And because you are such a good girl I'm going to give you a present."
-    ">You present her the \"slave\" collar."
+
+    #sQuest "slave" collar reward
+    $ the_gift = "interface/store_icons/store_neck_slave_shackle.png"
+    $ quest_reward_text = ">You present her the \"slave\" collar.\n \"slave\" collar added to your wardrobe."
+    #$ sQuest_collar = (add final number)
+    call give_quest_reward
+
     call her_main("What's this?","body_128")
     hide screen hermione_main
     m "This is a collar, so that everyone will know that you're my slut."
@@ -509,7 +536,12 @@ label slave_scene:
     call her_main("Yes master...","body_122")
     hide screen hermione_main
     ">She tightens the collar around her neck."
+
+    $ h_neckwear = "neck_slut_shackle"
+    $ hermione_wear_neckwear = True
     $ collar = 1
+    call update_her_uniform
+
     m "That look suits you girl."
     call her_main("Thank you master. Will I be getting any points \ntoday?","body_124")
     hide screen hermione_main
@@ -531,9 +563,6 @@ label slave_scene:
     call her_walk(400,610,2)
     $ display_h_tears = False
     jump end_hg_pf
-
-
-
 
 
 label good_girl_scene:
