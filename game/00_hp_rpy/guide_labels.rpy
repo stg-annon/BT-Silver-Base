@@ -22,11 +22,14 @@ label give_quest_reward:
     call blk_tone
     $ renpy.play('sounds/win2.mp3') 
     show screen notes
-    $ the_gift = "01_hp/18_store/01.png"
     show screen gift
     with d3
-    "[quest_reward_text]"
     hide screen notes
+    pause
+    menu:
+        "[quest_reward_text]"
+        "-Done Reading-":
+            pass
     hide screen gift
     with d1
     call hide_blk_tone
