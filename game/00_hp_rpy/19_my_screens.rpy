@@ -156,7 +156,7 @@ screen main_menu_01:
 
 ###MO SCREENS
 label stat_hermione:
-    $ hermione_xpos=510
+    $ hermione_xpos=400
     hide screen luna
     call updateHermioneWords
     call update_her_uniform
@@ -164,50 +164,55 @@ label stat_hermione:
     jump day_main_menu
 
 label stat_luna:
-    $ luna_xpos=650
+    $ luna_xpos=540
     hide screen hermione_main
     call screen select_stat_character("LUNA")
     jump day_main_menu
     
 screen select_stat_character(charName):
-    $ moveToRight = 50
     $ indexSize = 0 # just update this after each button and copy the code bellow and the button will automaticlig find the correct position in the index. The icon image need to be 200*210 pixel
-    add "interface/stat_select/selection_menu.png" xpos 25 ypos 50
-    text "-Character Select-" xpos 85 ypos 85 size 16 
+    add "interface/stat_select/CharacterStats.png" xpos 0 ypos 0
+    text "-Character Select-" xpos 40 ypos 115 size 14 
     
     imagebutton:
-        xpos 60 + ( 85 * (indexSize%3))
-        ypos 120 + ( 90 * ((indexSize/3) - ((indexSize / 3)% 1)))
+        xpos 40 + ( 85 * (indexSize%2))
+        ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
         idle Transform("interface/stat_select/CharacterIcon/HermioneIcon.png", zoom=.40) 
         hover Transform("interface/stat_select/CharacterIcon/HermioneIcon_Hover.png", zoom=.40) 
         action [Hide("select_stat_character"), Show("hermione_main"), Jump("stat_hermione")]
     $ indexSize += 1 
     
     imagebutton:
-        xpos 60 + ( 85 * (indexSize%3))
-        ypos 120 + ( 90 * ((indexSize/3) - ((indexSize / 3)% 1)))
+        xpos 40 + ( 85 * (indexSize%2))
+        ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
         idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
         hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
         action [Hide("select_stat_character"), Show("luna"), Jump("stat_luna")]
     $ indexSize += 1 
 
-    add "01_hp/25_mo/stat_empty.png" xpos -20+moveToRight ypos -175+30
-    
-    add "01_hp/25_mo/stat_empty.png" xpos -20+moveToRight ypos 0+30
-    
-    add "01_hp/25_mo/stat_empty.png" xpos -20+moveToRight ypos 175+30 
     
     if charName == "HERMIONE":
-        add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20+moveToRight ypos -175+30
-        add LiveCrop((0, 0, 750-(madValue*40), 600), "01_hp/25_mo/stat_full.png") xpos -20+moveToRight ypos 0+30
-        add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20+moveToRight ypos 175+30
-        text "-"+whoringWord+"-" xalign 0.55 ypos 50+110 size 20 
-        text "-"+moodWord+"-" xalign 0.55 ypos 225+110 size 20
-        text "-"+reputationWord+"-" xalign 0.55 ypos 400+110 size 20 
-        text "-Whoring-" xalign 0.55 ypos 50+38 size 30 bold 0.2
-        text "-Mood-" xalign 0.55 ypos 225+38 size 30 bold 0.2
-        text "-Reputation-" xalign 0.55 ypos 400+38 size 30 bold 0.2
+        text charName xalign 0.8 ypos 75 size 24
         
+        text "-Whoring-" xalign 0.375 ypos 50+68 size 30 bold 0.2
+        text "-Mood-" xalign 0.39 ypos 225+68 size 30 bold 0.2
+        text "-Reputation-" xalign 0.375 ypos 400+68 size 30 bold 0.2
+        
+        text "-"+whoringWord+"-" xalign 0.375 ypos 50+130 size 20 
+        text "-"+moodWord+"-" xalign 0.39 ypos 225+130 size 20
+        text "-"+reputationWord+"-" xalign 0.375 ypos 400+130 size 20 
+        
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 150
+        add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 325
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 500
+        
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+
         imagebutton: # X
             xpos 1013
             ypos 13
@@ -216,13 +221,23 @@ screen select_stat_character(charName):
             action [Hide("select_stat_character"), Hide("hermione_main"), Jump("day_main_menu")]
     
     elif charName == "LUNA":
-        text "-Corruption-" xalign 0.55 ypos 50+38 size 30 bold 0.2
-        text "-Dom points-" xalign 0.55 ypos 225+38 size 30 bold 0.2
-        text "-Sub points-" xalign 0.55 ypos 400+38 size 30 bold 0.2
+        text charName xalign 0.775 ypos 75 size 24
+        
+        text "-Corruption-" xalign 0.375 ypos 50+ 68 size 30 bold 0.2
+        text "-Dom points-" xalign 0.375 ypos 225+ 68 size 30 bold 0.2
+        text "-Sub points-" xalign 0.375 ypos 400+ 68 size 30 bold 0.2
 
-        text "-"+str(luna_corruption)+"-" xalign 0.55 ypos 50+110 size 20 
-        text "-"+str(luna_dom)+"-" xalign 0.55 ypos 225+110 size 20
-        text "-"+str(luna_sub)+"-" xalign 0.55 ypos 400+110 size 20 
+        text "-"+str(luna_corruption)+"-" xalign 0.39 ypos 50+130 size 20 
+        text "-"+str(luna_dom)+"-" xalign 0.39 ypos 225+130 size 20
+        text "-"+str(luna_sub)+"-" xalign 0.39 ypos 400+130 size 20 
+        
+        #When the max amount of the diffrent stats add the full bare with crop
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
         
         imagebutton: # X
             xpos 1013
