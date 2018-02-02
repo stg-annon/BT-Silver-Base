@@ -1857,9 +1857,11 @@ label event_11:
     show screen hermione_02_b #Hermione stands still wearing a robe.
     show screen bld1
     show screen ctc
-    with Dissolve(.3)
+    with d3
     
-    $ robeon = True #Hermione is wearing a robe.
+    $ hermione_wear_robe = True #Hermione is wearing a robe. 
+    $ h_robe = "gryff_robe"
+    call update_her_uniform
     
     call her_main("","body_09",xpos=370,ypos=0)
     pause
@@ -1934,7 +1936,7 @@ label event_11:
     with Dissolve(.3)
     pause.5
     
-    $ robeon = False #Hermione is NOT wearing a robe.
+    $ hermione_wear_robe = False #Hermione is NOT wearing a robe.
     $ only_upper = False #Otherwise skirt shows up under the robe.
     
     $ event11_happened = True #Allows next event to start.
