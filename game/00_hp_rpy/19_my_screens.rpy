@@ -123,12 +123,12 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Jump("fireplace")]
 
     imagebutton: # STAT MENU
-        xpos 540
-        ypos 19
+        xpos 830
+        ypos 16
         xanchor "center"
         yanchor "center"
-        idle "01_hp/11_misc/points_03.png"
-        hover "01_hp/11_misc/points_04.png"
+        idle "01_hp/11_misc/Stats_Button.png"
+        hover "01_hp/11_misc/Stats_Button_Hover.png"
         action [Hide("main_menu_01"), Show("hermione_main"), Jump("stat_hermione")]
      
     if letters >= 1: #Adds one letter in waiting list to be read. Displays owl with envelope.:
@@ -156,19 +156,96 @@ screen main_menu_01:
 
 ###MO SCREENS
 label stat_hermione:
-    $ hermione_xpos=490
+    $ hermione_xpos=400
     hide screen luna
     call updateHermioneWords
     call update_her_uniform
-    call screen stat_screen_hermione
+    call screen select_stat_character("HERMIONE")
     jump day_main_menu
 
 label stat_luna:
-    $ luna_xpos=600
+    $ luna_xpos=540
     hide screen hermione_main
-    call screen stat_screen_luna
+    call screen select_stat_character("LUNA")
     jump day_main_menu
+    
+screen select_stat_character(charName):
+    $ indexSize = 0 # just update this after each button and copy the code bellow and the button will automaticlig find the correct position in the index. The icon image need to be 200*210 pixel
+    add "interface/stat_select/CharacterStats.png" xpos 0 ypos 0
+    text "-Character Select-" xpos 40 ypos 115 size 14 
+    
+    imagebutton:
+        xpos 40 + ( 85 * (indexSize%2))
+        ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
+        idle Transform("interface/stat_select/CharacterIcon/HermioneIcon.png", zoom=.40) 
+        hover Transform("interface/stat_select/CharacterIcon/HermioneIcon_Hover.png", zoom=.40) 
+        action [Hide("select_stat_character"), Show("hermione_main"), Jump("stat_hermione")]
+    $ indexSize += 1 
+    
+    imagebutton:
+        xpos 40 + ( 85 * (indexSize%2))
+        ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
+        idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
+        hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
+        action [Hide("select_stat_character"), Show("luna"), Jump("stat_luna")]
+    $ indexSize += 1 
 
+    
+    if charName == "HERMIONE":
+        text charName xalign 0.8 ypos 75 size 24
+        
+        text "-Whoring-" xalign 0.375 ypos 50+68 size 30 bold 0.2
+        text "-Mood-" xalign 0.39 ypos 225+68 size 30 bold 0.2
+        text "-Reputation-" xalign 0.375 ypos 400+68 size 30 bold 0.2
+        
+        text "-"+whoringWord+"-" xalign 0.375 ypos 50+130 size 20 
+        text "-"+moodWord+"-" xalign 0.39 ypos 225+130 size 20
+        text "-"+reputationWord+"-" xalign 0.375 ypos 400+130 size 20 
+        
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 150
+        add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 325
+        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 500
+        
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+
+        imagebutton: # X
+            xpos 1013
+            ypos 13
+            idle "01_hp/25_mo/close_ground.png"
+            hover "01_hp/25_mo/close_hover.png"
+            action [Hide("select_stat_character"), Hide("hermione_main"), Jump("day_main_menu")]
+    
+    elif charName == "LUNA":
+        text charName xalign 0.775 ypos 75 size 24
+        
+        text "-Corruption-" xalign 0.375 ypos 50+ 68 size 30 bold 0.2
+        text "-Dom points-" xalign 0.375 ypos 225+ 68 size 30 bold 0.2
+        text "-Sub points-" xalign 0.375 ypos 400+ 68 size 30 bold 0.2
+
+        text "-"+str(luna_corruption)+"-" xalign 0.39 ypos 50+130 size 20 
+        text "-"+str(luna_dom)+"-" xalign 0.39 ypos 225+130 size 20
+        text "-"+str(luna_sub)+"-" xalign 0.39 ypos 400+130 size 20 
+        
+        #When the max amount of the diffrent stats add the full bare with crop
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+        
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+        
+        imagebutton: # X
+            xpos 1013
+            ypos 13
+            idle "01_hp/25_mo/close_ground.png"
+            hover "01_hp/25_mo/close_hover.png"
+            action [Hide("select_stat_character"), Hide("luna"), Jump("day_main_menu")]
+        
 screen stat_screen_hermione:
     zorder hermione_main_zorder-1
 
@@ -702,7 +779,7 @@ screen ctc:
     zorder 9
     add "ctc4"
 screen points: #House points screen.
-    add "01_hp/11_misc/points_02.png" at Position(xpos=0+140, ypos=1)  
+    add "01_hp/11_misc/TopUI_Bar.png" at Position(xpos=0+140, ypos=1)  
     hbox: #горизонтальный «контейнер», где будет изображение золота и его количество
         spacing 10 xpos 146+140 ypos 11#отступ для текста, если надо прямо в левом углу — убираем его        
         text "{size=-5}[slytherin]{/size}" #сумма текстом
@@ -716,10 +793,10 @@ screen points: #House points screen.
         spacing 10 xpos 37+140 ypos 11
         text "{size=-5}[ravenclaw]{/size}" 
     hbox: ### DAYS COUNTER ###
-        spacing 10 xpos 630+140 ypos 10
+        spacing 10 xpos 475+140 ypos 10
         text "{size=-3}[day]{/size}"     
     hbox: ### DGOLD COUNTER ###
-        spacing 10 xpos 734+140 ypos 10
+        spacing 10 xpos 590+140 ypos 10
         text "{size=-4}[gold]{/size}" 
 
 
