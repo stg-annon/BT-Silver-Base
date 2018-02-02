@@ -5,26 +5,25 @@ label update_wardrobe_lists:
 ### Hair Color ###
     $ wr_her_haircolor = []
 
-    if whoring >= 0:    #brown_dye#
-        $ wr_her_haircolor.append("1")
-    if whoring >= 6 and "blonde_dye" in cs_existing_stock:
+    $ wr_her_haircolor.append("1")
+    if "blonde_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("2")
-    if whoring >= 6 and "red_dye" in cs_existing_stock:
+    if "red_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("3")
-    if whoring >= 9 and "crimson_dye" in cs_existing_stock:
+    if "crimson_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("4")
-    if whoring >= 9 and "black_dye" in cs_existing_stock:
+    if "black_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("5")
 
-    if whoring >= 12 and "green_dye" in cs_existing_stock:
+    if "green_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("6")
-    if whoring >= 12 and "blue_dye" in cs_existing_stock:
+    if "blue_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("7")
-    if whoring >= 12 and "purple_dye" in cs_existing_stock:
+    if "purple_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("8")
-    if whoring >= 15 and "pink_dye" in cs_existing_stock:
+    if "pink_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("9")
-    if whoring >= 18 and "white_dye" in cs_existing_stock:
+    if "white_dye" in cs_existing_stock:
         $ wr_her_haircolor.append("10")
 
 
@@ -32,57 +31,51 @@ label update_wardrobe_lists:
     $ wr_her_tops_uniform = [] #ADD school clothing and cheerleader tops,...
 
     #Uniform
-    if whoring >= 0:
-        $ wr_her_tops_uniform.append("uni_top_1")
-    if whoring >= 4: #get right number
-        $ wr_her_tops_uniform.append("uni_top_2")
-    if whoring >= 7: #get right number
+    $ wr_her_tops_uniform.append("uni_top_1")
+    $ wr_her_tops_uniform.append("uni_top_2")
+    if whoring < 9:
         $ wr_her_tops_uniform.append("uni_top_3")
-    if whoring >= 10: #get right number
-        $ wr_her_tops_uniform.append("uni_top_4")
-    if whoring >= 13: #get right number
+    $ wr_her_tops_uniform.append("uni_top_4")
+    if whoring >= 9: #get right number
         $ wr_her_tops_uniform.append("uni_top_5")
-    if whoring >=19:
-        $ wr_her_tops_uniform.append("uni_top_6")
-        $ wr_her_tops_uniform.remove("uni_top_3") #remove shirt 3. Looks ugly, no point in having it when she's willing to wear shirt 4.
+    $ wr_her_tops_uniform.append("uni_top_6")
 
-    if whoring >= 4 and hg_gryffCheer_OBJ.purchased:
+    if hg_gryffCheer_OBJ.purchased:
         $ wr_her_tops_uniform.append("uni_top_cheer_gryff")
-    if whoring >= 7 and hg_gryffCheer_OBJ.purchased:
         $ wr_her_tops_uniform.append("uni_top_cheer_gryff_skimpy")
 
-    if whoring >= 10 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
+    if hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
         $ wr_her_tops_uniform.append("uni_top_cheer_slyth")
         $ wr_her_tops_uniform.append("uni_top_cheer_slyth_skimpy")
 
     #Fancy
     $ wr_her_tops_fancy = []  #ADD sexy clothing
-    if whoring >= 7 and "fancy_waitress_beige" in cs_existing_stock:
+    if "fancy_waitress_beige" in cs_existing_stock:
         $ wr_her_tops_fancy.append("fancy_waitress_beige")
-    if whoring >= 10 and "fancy_waitress_green" in cs_existing_stock:
+    if "fancy_waitress_green" in cs_existing_stock:
         $ wr_her_tops_fancy.append("fancy_waitress_green")
 
     #Wicked
     $ wr_her_tops_wicked = [] #ADD kinky clothing items like leather, fishnet
-    if whoring >= 19 and "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
+    if "wicked_leather_jacket_short_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_short_sleeves_open")
-    if whoring >= 19 and "wicked_leather_jacket_sleeveless" in cs_existing_stock:
+    if "wicked_leather_jacket_sleeveless" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeveless_open")
-    if whoring >= 19 and "wicked_leather_jacket_sleeves" in cs_existing_stock:
+    if "wicked_leather_jacket_sleeves" in cs_existing_stock:
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves")
         $ wr_her_tops_wicked.append("wicked_leather_jacket_sleeves_open")
 
-    if whoring >= 22 and hg_rocker_OBJ.purchased:
+    if hg_rocker_OBJ.purchased:
         $ wr_her_tops_wicked.append("wicked_rocker_top")
 
     #Muggle
     $ wr_her_tops_normal = [] #ADD Pullovers, Sweaters, Shirts, Muggle Clothing
-    if whoring >= 4 and "normal_pullover" in cs_existing_stock:
+    if "normal_pullover" in cs_existing_stock:
         $ wr_her_tops_normal.append("normal_pullover")
         $ wr_her_tops_normal.append("normal_pullover_sexy")
-    if whoring >= 7 and "normal_purple_sweater" in cs_existing_stock:
+    if "normal_purple_sweater" in cs_existing_stock:
         $ wr_her_tops_normal.append("normal_purple_sweater")
 
     #Misc. Tops
