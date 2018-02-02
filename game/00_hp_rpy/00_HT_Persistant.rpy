@@ -136,6 +136,10 @@ label __init_variables:
     if not hasattr(renpy.store,'temp_outfit'): #important!
         $ temp_outfit = custom_outfit_old
 
+    ###Cheats###
+    if not hasattr(renpy.store,'cheats_active'): #important!
+        $ cheats_active = False
+
     ###Define Luna variables
     if not hasattr(renpy.store,'luna_chibi_zorder') or not hasattr(renpy.store,'luna_corruption'): #important!
         $ hat_known = False
