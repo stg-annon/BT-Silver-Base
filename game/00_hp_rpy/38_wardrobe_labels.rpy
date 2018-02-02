@@ -4,6 +4,9 @@ label __init_variables:
     if not hasattr(renpy.store,'wardrobe_active'): #important!
         $ wardrobe_active = 0
 
+    if not hasattr(renpy.store,'her_main_smooth_transition'): #important!
+        $ her_main_smooth_transition = False
+
     if not hasattr(renpy.store,'wardrobe_page'): #important!
         $ wardrobe_page = 0
 
@@ -88,9 +91,19 @@ label hide_wardrobe:
     call screen wardrobe
 
 label close_wardrobe:
-    call her_main("","body_01",xpos=510) #reset hermione face and position to default
+    call her_main("","body_01",xpos=525) #reset hermione face and position to default
     jump day_time_requests
 
+label return_to_wardrobe:
+    if not wardrobe_active:
+        $ her_main_smooth_transition = True
+        call her_main("", xpos=400)
+        $ wardrobe_active = 1
+        call screen wardrobe
+    else:
+        $ wardrobe_active = 1
+        call her_main("", xpos=400)
+        call screen wardrobe
 
 label wardrobe_chitchat_toggle:
     hide screen hermione_main
@@ -125,20 +138,20 @@ label her_bra_toggle:
     if hermione_wear_bra: #Toggle OFF
         $ hermione_wear_bra = False
         call update_her_uniform
-        if whoring >= 9 and whoring < 15:      #level 5
+        if whoring >= 11 and whoring < 15:
             call her_main_rndm_annoyed_wBlush
-        elif whoring >= 15 and whoring < 21:    #level 6+7
+        elif whoring >= 15 and whoring < 21:
             call her_main_rndm_naughty_wBlush
-        else:                                   #level 8
+        else: #21+
             call her_main_rndm_naughty
     else: #Toggle ON
         $ hermione_wear_bra = True
         call update_her_uniform
-        if whoring >= 9 and whoring < 15:      #level 5
+        if whoring >= 11 and whoring < 15:
             call her_main_rndm_annoyed
-        elif whoring >= 15 and whoring < 21:    #level 6+7
+        elif whoring >= 15 and whoring < 21:
             call her_main_rndm_neutral
-        else:                                   #level 8
+        else: #21+
             call her_main_rndm_happy
     hide screen wardrobe
     call screen wardrobe
@@ -160,20 +173,20 @@ label her_panties_toggle:
     if hermione_wear_panties: #Toggle OFF
         $ hermione_wear_panties = False
         call update_her_uniform
-        if whoring >= 9 and whoring < 15:      #level 5
+        if whoring >= 11 and whoring < 15:
             call her_main_rndm_annoyed_wBlush
-        elif whoring >= 15 and whoring < 21:    #level 6+7
+        elif whoring >= 15 and whoring < 21:
             call her_main_rndm_naughty_wBlush
-        else:                                   #level 8
+        else: #21+
             call her_main_rndm_naughty
     else: #Toggle ON
         $ hermione_wear_panties = True
         call update_her_uniform
-        if whoring >= 9 and whoring < 15:      #level 5
+        if whoring >= 11 and whoring < 15:
             call her_main_rndm_annoyed
-        elif whoring >= 15 and whoring < 21:    #level 6+7
+        elif whoring >= 15 and whoring < 21:
             call her_main_rndm_neutral
-        else:                                   #level 8
+        else: #21+
             call her_main_rndm_happy
     hide screen wardrobe
     call screen wardrobe
@@ -252,7 +265,7 @@ label her_outfit_toggle:
 ## Hair ##
 label change_her_hair():
     call set_her_hair(wardrobe_hair_style,wardrobe_hair_color)
-    call screen wardrobe
+    return
 
 label set_her_hair(hair_style="A", color=1):
     hide screen hermione_main
@@ -261,15 +274,15 @@ label set_her_hair(hair_style="A", color=1):
     call update_her_hair                     #Hermione_layering.rpy
     show screen hermione_main
     return
-    
-label set_h_hair_style(hair_style = "A"):
+
+label set_her_hair_style(hair_style = "A"):
     hide screen hermione_main
     $ h_hair_style = hair_style
     call update_her_hair                     #Hermione_layering.rpy
     show screen hermione_main
     return
     
-label set_h_hair_color(hair_color = 1):
+label set_her_hair_color(hair_color = 1):
     hide screen hermione_main
     $ h_hair_color = hair_color
     call update_her_hair                     #Hermione_layering.rpy
@@ -291,42 +304,24 @@ label update_her_hair:
 # Top Selection #
 label set_h_top(top = ""):
     $ hermione_wear_top = True
-    if wardrobe_active == 1: #1=True #No dissolve
-        hide screen hermione_main
-        $ h_top = top
-        call update_chibi_uniform
-        call update_her_uniform
-        show screen hermione_main
-    else:
-        hide screen hermione_main
-        with d5
-        $ h_top = top
-        call update_chibi_uniform
-        call update_her_uniform
-        show screen hermione_main
-        with d5
+    hide screen hermione_main
+    $ h_top = top
+    call update_chibi_uniform
+    call update_her_uniform
+    show screen hermione_main
     return
 
 
 ## Bottoms ##
 
 # Bottom Selection #
-label set_h_skirt(skirt = ""):
+label set_h_bottom(bottom = ""):
     $ hermione_wear_skirt = True
-    if wardrobe_active == 1: #1=True #No dissolve
-        hide screen hermione_main
-        $ h_skirt = skirt
-        call update_chibi_uniform
-        call update_her_uniform
-        show screen hermione_main
-    else:
-        hide screen hermione_main
-        with d5
-        $ h_skirt = skirt
-        call update_chibi_uniform
-        call update_her_uniform
-        show screen hermione_main
-        with d5
+    hide screen hermione_main
+    $ h_skirt = bottom
+    call update_chibi_uniform
+    call update_her_uniform
+    show screen hermione_main
     return
     
 label set_h_skirt_color(color = ""):
