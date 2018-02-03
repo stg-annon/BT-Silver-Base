@@ -134,7 +134,7 @@ label __init_variables:
 
     #Quest Rewards
     if not hasattr(renpy.store,'quest_reward_image'): #important!
-        $ quest_reward_image = ""
+        $ quest_reward_image = "/01_hp/18_store/01.png" #default image is the gift box
     if not hasattr(renpy.store,'quest_reward_text'): #important!
         $ quest_reward_text = ""
 
@@ -237,13 +237,15 @@ label update_quests:
     #Call Reward
     if mQuest_A.started == 7 and not mQuest_A.completed:
         $ mQuest_A.completed = True #makes sure reward screen only happens once
-        $ quest_reward_image = ""
+        $ quest_reward_image = "/01_hp/18_store/01.png" #My game crashed if there wasn't a reward image to display
         $ quest_reward_text = ">You've unlocked the ability to summon Severus Snape to your office."
+        $ the_gift = quest_reward_image #Again, if I had no gift set, my game crashed
         call give_quest_reward
     if mQuest_B.started == 6 and not mQuest_B.completed:
         $ mQuest_B.completed = True
-        $ quest_reward_image = ""
+        $ quest_reward_image = "/01_hp/18_store/01.png" #My game crashed if there wasn't a reward image to display
         $ quest_reward_text = ">You've unlocked the ability to summon Hermione to your office."
+        $ the_gift = quest_reward_image #Again, if I had no gift set, my game crashed
         call give_quest_reward
 
     else:

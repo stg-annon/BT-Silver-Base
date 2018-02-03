@@ -70,7 +70,7 @@ screen choice:
     window:
         style "menu_window"
         xalign menu_x
-        yalign 0.5
+        yalign menu_y
 
         vbox:
             style "menu"

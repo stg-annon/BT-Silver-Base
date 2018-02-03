@@ -19,6 +19,7 @@ $ save_name = temp_name
 
 ### MENU PLACEMENT ###
 $ menu_x = 0.5 #Just to make sure that menu is displayed in the center of the screen by default.
+$ menu_y = 0.5 #Same deal. Make sure that the menu is v_aligned in the middle.
 
 ### RESETING STUFF ###
 call luna_day_flags
