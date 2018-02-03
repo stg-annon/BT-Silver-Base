@@ -33,9 +33,9 @@ label luna_init:
     $ luna_eyebrow = "01_hp/13_characters/luna/body/face/eyebrow/eyebrow_1.png" 
     $ luna_pupil = "01_hp/13_characters/luna/body/face/pupil/pupil_1.png" 
     $ luna_glasses = "01_hp/13_characters/luna/misc/glasses.png" 
-    $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_0.png" 
+    $ luna_top = "01_hp/13_characters/luna/clothes/uniform/top_1.png" 
     $ luna_acc = "01_hp/13_characters/luna/misc/jewel.png" 
-    $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_0.png" 
+    $ luna_skirt = "01_hp/13_characters/luna/clothes/uniform/skirt_1.png" 
     $ luna_panties = "01_hp/13_characters/luna/clothes/underwear/panties.png" 
     $ luna_bra = "01_hp/13_characters/luna/clothes/underwear/bra.png" 
     $ luna_cum = 1
