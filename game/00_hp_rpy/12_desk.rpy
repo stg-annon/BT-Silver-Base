@@ -77,21 +77,21 @@ label paperwork:
            
     call report_chapters_check #Checks whether or not the completed chapter was the final one.
     
-    ### CONCENTRATION CHECK ###========================================================================
-    if concentration == 1:
-        $ concentraton_check = renpy.random.randint(1, 6) #Copper book.
-        if concentraton_check == 1:
-            call concentration_label
-    if concentration == 2:
-        $ concentraton_check = renpy.random.randint(1, 4) #Bronze book.
-        if concentraton_check == 1:
-            call concentration_label
-    if concentration == 3:
-        $ concentraton_check = renpy.random.randint(1, 2) #Silver book.
-        if concentraton_check == 1:
-            call concentration_label
-    if concentration == 4:                                                               #Golden book.
-        call concentration_label
+#   ### CONCENTRATION CHECK ###========================================================================
+#   if concentration == 1:
+#       $ concentraton_check = renpy.random.randint(1, 6) #Copper book.
+#       if concentraton_check == 1:
+#           call concentration_label
+#   if concentration == 2:
+#       $ concentraton_check = renpy.random.randint(1, 4) #Bronze book.
+#       if concentraton_check == 1:
+#           call concentration_label
+#   if concentration == 3:
+#       $ concentraton_check = renpy.random.randint(1, 2) #Silver book.
+#       if concentraton_check == 1:
+#           call concentration_label
+#   if concentration == 4:                                                               #Golden book.
+#       call concentration_label
 #    if concentration == 5:
 #        $ concentraton_check = renpy.random.randint(1, 2) #Platinum book.
 #        if concentraton_check == 1:
@@ -104,19 +104,18 @@ label paperwork:
     
     ### SPEEDWRITING CHECK ###========================================================================
     if speedwriting == 1:
-        $ speedwriting_check = renpy.random.randint(1, 6) #"\"Speedwriting for dummies.\"" # 1/10 chance
+        $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for dummies.\"" # 1/10 chance
         if speedwriting_check == 1:
             call speedwriting_label
     if speedwriting == 2:
-        $ speedwriting_check = renpy.random.randint(1, 4) #"\"Speedwriting for beginners.\"" # 1/8 chance of it to pop up.
-        if speedwriting_check == 1:
+        $ speedwriting_check = renpy.random.randint(1, 3) #"\"Speedwriting for beginners.\"" # 1/8 chance of it to pop up.
+        if speedwriting_check > 1:
             call speedwriting_label
     if speedwriting == 3:
-        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for intermediate.\"" # 1/6 chance of it to pop up.
-        if speedwriting_check == 1:
             call speedwriting_label
-    if speedwriting == 4:
+    if speedwriting >= 4:
             call speedwriting_label
+            call concentration_label
 #    if speedwriting == 5:
 #        $ speedwriting_check = renpy.random.randint(1, 2) #"\"Speedwriting for experts.\"" # 1/2 chance of it to pop up.
 #        if speedwriting_check == 1:
@@ -139,7 +138,7 @@ label paperwork:
     
 ### 
 label report_chapters_check:
-    if report_chapters >= 7:
+    if report_chapters >= 4:
         ">You've completed a report."
         $ report_chapters = 0
         $ finished_report += 1

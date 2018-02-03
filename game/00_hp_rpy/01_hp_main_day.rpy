@@ -270,9 +270,9 @@ if days_since_cho == 4 and not cho_met:
 #NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"
 #About two-faced dude    call event_04
 
-if day == 8:
+if day == 7:
     call event_08 #Hermione shows up for the first time.
-if day >= 9 and hermione_is_waiting_01 and not event09:
+if day >= 8 and hermione_is_waiting_01 and not event09:
     call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry.
                   #Takes place after first special event with Snape, where he just complains about Hermione.
 if event13_happened and not event14_happened:
