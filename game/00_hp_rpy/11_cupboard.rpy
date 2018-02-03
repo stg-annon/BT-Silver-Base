@@ -350,7 +350,7 @@ label rummaging:
             else: 
                 jump day_start
     
-    if rum_times >= 7 and not cataloug_found:
+    if rum_times >= 4 and not cataloug_found:
         $ renpy.play('sounds/win2.mp3')   #Not loud.
         $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
         $ the_gift = "01_hp/18_store/31.png" # DAHR's oddities catalog. 
@@ -372,7 +372,7 @@ label rummaging:
             jump day_start
         
     
-    if i_of_iv == 4: # Found something.
+    if i_of_iv >= 3: # Found something.
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
                 call rum_block(PlushOwl)

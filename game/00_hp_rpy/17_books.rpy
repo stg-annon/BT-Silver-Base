@@ -97,7 +97,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Galadriel_II_OBJ'): #important!
         $ Galadriel_II_OBJ = fiction_book()
     $ Galadriel_II_OBJ.name = "\"The Tale of Galadriel. Book II.\""
-    $ Galadriel_II_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it?"
+    $ Galadriel_II_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it? "  + str(Galadriel_II_OBJ.chapters / 2) + " chapters."
     $ Galadriel_II_OBJ.effect = ">Your imagination has improved."
     $ Galadriel_II_OBJ.chapters = 20
     $ Galadriel_II_OBJ.cost = 200
@@ -106,7 +106,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Armchairs_OBJ'): #important!
         $ Armchairs_OBJ = fiction_book()
     $ Armchairs_OBJ.name = "\"The game of Armchairs\""
-    $ Armchairs_OBJ.book_description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape."
+    $ Armchairs_OBJ.book_description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. " + str(Armchairs_OBJ.chapters / 2) + " chapters."
     $ Armchairs_OBJ.effect = ">Your imagination has improved."
     $ Armchairs_OBJ.chapters = 20
     $ Armchairs_OBJ.cost = 250
@@ -115,7 +115,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Dear_Wifu_OBJ'): #important!
         $ Dear_Wifu_OBJ = fiction_book()
     $ Dear_Wifu_OBJ.name = "\"My dear waifu\""
-    $ Dear_Wifu_OBJ.book_description = "{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
+    $ Dear_Wifu_OBJ.book_description = "{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? " + str(Dear_Wifu_OBJ.chapters) + " chapters."
     $ Dear_Wifu_OBJ.effect = ">Your imagination has improved."
     $ Dear_Wifu_OBJ.chapters = 20
     $ Dear_Wifu_OBJ.cost = 300
