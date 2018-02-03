@@ -310,7 +310,12 @@ label her_main_new(text="",face=h_body, xpos = hermione_xpos, ypos = hermione_yp
     
 label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermione_ypos):
     hide screen hermione_main
-    #with d3
+    if her_main_smooth_transition: #when moving her xpos #looks better
+        with d3
+        pause 0.1
+        $ her_main_smooth_transition = False
+    else:
+        pass
     if xpos != hermione_xpos:
         if xpos == 370:
             $ hermione_xpos = 510
@@ -325,11 +330,9 @@ label her_main(text="",face=h_body,tears="", xpos = hermione_xpos, ypos = hermio
         #$ hermione_body = her_path + str(face) + ".png"
     $ h_tears = tears
     call h_update
-    if wardrobe_active: #No Dissolve in wardrobe
-        show screen hermione_main
-    else:
-        show screen hermione_main
-        with d1
+    show screen hermione_main
+    if not wardrobe_active: #No Dissolve in wardrobe
+        with d3
     if text != "":
         $ renpy.say(her,text)
     return
