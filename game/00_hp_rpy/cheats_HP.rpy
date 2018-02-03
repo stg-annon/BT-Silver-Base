@@ -1,5 +1,14 @@
 label cheats_ht:
     menu:
+        "-Turn on Cheats-":
+            menu:
+                "This will show you helpful tips throughout the game."
+                "-Turn on-":
+                    $ cheats_active = True
+                    jump cheats_ht
+                "-Turn off-":
+                    $ cheats_active = False
+                    jump cheats_ht
         "-Hermione Cheats-":
             label cheats_ht_hermione:
             menu:
