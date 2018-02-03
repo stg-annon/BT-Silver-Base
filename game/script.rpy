@@ -38,7 +38,7 @@ init:
     
     ### MENU PLACEMENT ###
     $ menu_x = 0.5
-    
+    $ menu_y = 0.5
     $ who = Character('Female voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ whom = Character('Male voice', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
     $ who2 = Character('???', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

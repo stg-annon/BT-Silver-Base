@@ -2,37 +2,37 @@ label __init_variables:
     if not hasattr(renpy.store,'Copper_Book_OBJ'): #important!
         $ Copper_Book_OBJ = educational_book()
     $ Copper_Book_OBJ.name = "\"Copper book of spirit\""
-    $ Copper_Book_OBJ.book_description = "\nThis book contains various tips on how to improve one's efficiency."
-    $ Copper_Book_OBJ.effect = ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when reading."
-    $ Copper_Book_OBJ.chapters = 10
+    $ Copper_Book_OBJ.effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when reading."
+    $ Copper_Book_OBJ.chapters = 2
+    $ Copper_Book_OBJ.book_description = "\nThis book contains various tips on speed reading. " + str(Copper_Book_OBJ.chapters) + " chapters."
     $ Copper_Book_OBJ.cost = 40
     $ Copper_Book_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Bronze_Book_OBJ'): #important!
         $ Bronze_Book_OBJ = educational_book()
     $ Bronze_Book_OBJ.name = "\"Bronze book of spirit\""
-    $ Bronze_Book_OBJ.book_description = "\nThis book contains various tips on how to improve one's efficiency."
-    $ Bronze_Book_OBJ.effect = ">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when reading."
-    $ Bronze_Book_OBJ.chapters = 10
-    $ Bronze_Book_OBJ.cost = 80
+    $ Bronze_Book_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when reading." 
+    $ Bronze_Book_OBJ.chapters = 4
+    $ Bronze_Book_OBJ.book_description = "\nThis book contains various tips on speed reading. "  + str(Bronze_Book_OBJ.chapters) + " chapters."
+    $ Bronze_Book_OBJ.cost = 60
     $ Bronze_Book_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Silver_Book_OBJ'): #important!
         $ Silver_Book_OBJ = educational_book()
     $ Silver_Book_OBJ.name = "\"Silver book of spirit\""
-    $ Silver_Book_OBJ.book_description = "\nThis book contains various tips on how to improve one's efficiency."
-    $ Silver_Book_OBJ.effect = ">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when reading."
-    $ Silver_Book_OBJ.chapters = 10
-    $ Silver_Book_OBJ.cost = 90
+    $ Silver_Book_OBJ.chapters = 6
+    $ Silver_Book_OBJ.book_description = "\nThis book contains various tips on speed reading. " + str(Silver_Book_OBJ.chapters) + " chapters."
+    $ Silver_Book_OBJ.effect = ">New skill unlocked: always complete an additional chapter when reading."
+    $ Silver_Book_OBJ.cost = 80
     $ Silver_Book_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Golden_Book_OBJ'): #important!
         $ Golden_Book_OBJ = educational_book()
     $ Golden_Book_OBJ.name = "\"Golden book of spirit\""
-    $ Golden_Book_OBJ.book_description = "\nThis book contains various tips on how to improve one's efficiency."
-    $ Golden_Book_OBJ.effect = ">You have mastered your spirit and from now on you shall always complete an additional chapter when reading."
-    $ Golden_Book_OBJ.chapters = 10
-    $ Golden_Book_OBJ.cost = 100
+    $ Golden_Book_OBJ.chapters = 8
+    $ Golden_Book_OBJ.book_description = "\nThis book contains various tips on speed reading. " + str(Golden_Book_OBJ.chapters) + " chapters."
+    $ Golden_Book_OBJ.effect = ">You have mastered your spirit and from now on you can always complete two additional chapters when reading."
+    $ Golden_Book_OBJ.cost = 160
     $ Golden_Book_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     $ speed_read_books = []
@@ -45,37 +45,37 @@ label __init_variables:
     if not hasattr(renpy.store,'Speedwriting_Beginners_OBJ'): #important!
         $ Speedwriting_Beginners_OBJ = educational_book()
     $ Speedwriting_Beginners_OBJ.name = "\"Speedwriting for beginners\""
-    $ Speedwriting_Beginners_OBJ.book_description = "\nThis book contains a bunch of very basic techniques used to improve one's ability to write quickly."
-    $ Speedwriting_Beginners_OBJ.effect = ">New skill unlocked: a 1 out of 6 chance of completing an additional chapter when doing paperwork."
-    $ Speedwriting_Beginners_OBJ.chapters = 10
+    $ Speedwriting_Beginners_OBJ.chapters = 2
+    $ Speedwriting_Beginners_OBJ.book_description = "\nThis book contains a bunch of very basic techniques used to improve one's ability to write quickly. " + str(Speedwriting_Beginners_OBJ.chapters) + " chapters."
+    $ Speedwriting_Beginners_OBJ.effect = ">New skill unlocked: a 1 out of 3 chance of completing an additional chapter when doing paperwork."
     $ Speedwriting_Beginners_OBJ.cost = 90
     $ Speedwriting_Beginners_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Speedwriting_Amateurs_OBJ'): #important!
         $ Speedwriting_Amateurs_OBJ = educational_book()
     $ Speedwriting_Amateurs_OBJ.name = "\"Speedwriting for amateurs\""
-    $ Speedwriting_Amateurs_OBJ.book_description = "\nThis book contains intermediate techniques used to improve one's ability to write quickly."
-    $ Speedwriting_Amateurs_OBJ.effect = ">New skill unlocked: a 1 out of 4 chance of completing an additional chapter when doing paperwork."
-    $ Speedwriting_Amateurs_OBJ.chapters = 10
-    $ Speedwriting_Amateurs_OBJ.cost = 100
+    $ Speedwriting_Amateurs_OBJ.chapters = 4
+    $ Speedwriting_Amateurs_OBJ.book_description = "\nThis book contains intermediate techniques used to improve one's ability to write quickly. " + str(Speedwriting_Amateurs_OBJ.chapters) + " chapters."
+    $ Speedwriting_Amateurs_OBJ.effect = ">New skill unlocked: a 2 out of 3 chance of completing an additional chapter when doing paperwork."
+    $ Speedwriting_Amateurs_OBJ.cost = 110
     $ Speedwriting_Amateurs_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Speedwriting_Advanced_OBJ'): #important!
         $ Speedwriting_Advanced_OBJ = educational_book()
     $ Speedwriting_Advanced_OBJ.name = "\"Speedwriting for advanced writers\""
-    $ Speedwriting_Advanced_OBJ.book_description = "\nThis book contains advanced techniques used to improve one's ability to write quickly."
-    $ Speedwriting_Advanced_OBJ.effect = ">New skill unlocked: a 1 out of 2 chance of completing an additional chapter when doing paperwork."
-    $ Speedwriting_Advanced_OBJ.chapters = 10
+    $ Speedwriting_Advanced_OBJ.chapters = 6
+    $ Speedwriting_Advanced_OBJ.book_description = "\nThis book contains advanced techniques used to improve one's ability to write quickly. " + str(Speedwriting_Advanced_OBJ.chapters) + " chapters."
+    $ Speedwriting_Advanced_OBJ.effect = ">New skill unlocked: always complete an additional chapter when doing paperwork."
     $ Speedwriting_Advanced_OBJ.cost = 130
     $ Speedwriting_Advanced_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     if not hasattr(renpy.store,'Speedwriting_Experts_OBJ'): #important!
         $ Speedwriting_Experts_OBJ = educational_book()
     $ Speedwriting_Experts_OBJ.name = "\"Speedwriting for experts\""
-    $ Speedwriting_Experts_OBJ.book_description = "\nThis book contains expert techniques used to improve one's ability to read quickly."
-    $ Speedwriting_Experts_OBJ.effect = ">You have become a true master of speedwriting and from now on you shall always complete an additional chapter when doing paperwork."
-    $ Speedwriting_Experts_OBJ.chapters = 10
-    $ Speedwriting_Experts_OBJ.cost = 175
+    $ Speedwriting_Experts_OBJ.chapters = 8
+    $ Speedwriting_Experts_OBJ.book_description = "\nThis book contains expert techniques used to improve one's ability to read quickly. " + str(Speedwriting_Experts_OBJ.chapters) + " chapters."
+    $ Speedwriting_Experts_OBJ.effect = ">You have become a true master of speedwriting and from now on you shall always complete two additional chapters when doing paperwork."
+    $ Speedwriting_Experts_OBJ.cost = 150
     $ Speedwriting_Experts_OBJ.picture = "01_hp/18_store/books/1-8.png"
     
     $ speed_write_books = []
@@ -88,7 +88,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Galadriel_I_OBJ'): #important!
         $ Galadriel_I_OBJ = fiction_book()
     $ Galadriel_I_OBJ.name = "\"The Tale of Galadriel. Book I.\""
-    $ Galadriel_I_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it?"
+    $ Galadriel_I_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it? " + str(Galadriel_I_OBJ.chapters / 2) + " chapters."
     $ Galadriel_I_OBJ.effect = ">Your imagination has improved."
     $ Galadriel_I_OBJ.chapters = 20
     $ Galadriel_I_OBJ.cost = 100
@@ -97,7 +97,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Galadriel_II_OBJ'): #important!
         $ Galadriel_II_OBJ = fiction_book()
     $ Galadriel_II_OBJ.name = "\"The Tale of Galadriel. Book II.\""
-    $ Galadriel_II_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it?"
+    $ Galadriel_II_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it? "  + str(Galadriel_II_OBJ.chapters / 2) + " chapters."
     $ Galadriel_II_OBJ.effect = ">Your imagination has improved."
     $ Galadriel_II_OBJ.chapters = 20
     $ Galadriel_II_OBJ.cost = 200
@@ -106,7 +106,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Armchairs_OBJ'): #important!
         $ Armchairs_OBJ = fiction_book()
     $ Armchairs_OBJ.name = "\"The game of Armchairs\""
-    $ Armchairs_OBJ.book_description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape."
+    $ Armchairs_OBJ.book_description = "An epic tale of betrayal, murder and rape. Then some more murder, some more betrayal and some more rape. " + str(Armchairs_OBJ.chapters / 2) + " chapters."
     $ Armchairs_OBJ.effect = ">Your imagination has improved."
     $ Armchairs_OBJ.chapters = 20
     $ Armchairs_OBJ.cost = 250
@@ -115,7 +115,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Dear_Wifu_OBJ'): #important!
         $ Dear_Wifu_OBJ = fiction_book()
     $ Dear_Wifu_OBJ.name = "\"My dear waifu\""
-    $ Dear_Wifu_OBJ.book_description = "{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"?"
+    $ Dear_Wifu_OBJ.book_description = "{size=-4}BY AKABUR{/size}\n" "Relive the glory of your high school days. Your step sister Shea, teacher Ms.Stevens or the mysterious library girl? Who will become your ultimate \"waifu\"? " + str(Dear_Wifu_OBJ.chapters) + " chapters."
     $ Dear_Wifu_OBJ.effect = ">Your imagination has improved."
     $ Dear_Wifu_OBJ.chapters = 20
     $ Dear_Wifu_OBJ.cost = 300
@@ -244,7 +244,7 @@ menu:
         if result == "nvm":
             jump books_list
         else:
-            call handle_book_selection(result)
+            call handle_book_selection(result,"educational_book")
     "-Fiction books-":
         label fiction_books_menu:
         python:
@@ -260,7 +260,7 @@ menu:
         if result == "nvm":
             jump books_list
         else:
-            call handle_book_selection(result)
+            call handle_book_selection(result,"fiction_book")
     "-Never mind-":
         jump desk
     
@@ -330,7 +330,7 @@ label gal_proper:
     return
     
     
-label handle_book_selection(BookOBJ):
+label handle_book_selection(BookOBJ, book_type):
     $ the_gift = BookOBJ.picture
     show screen gift
     with d3
@@ -341,7 +341,12 @@ label handle_book_selection(BookOBJ):
         else:
             ">You already finished this one."
         hide screen gift
-        jump books_list
+        if book_type == "fiction_book":
+            jump fiction_books_menu
+        if book_type == "educational_book":
+            jump books_on_improvement
+        else:
+            jump books_list
     else:
         menu:
             "-Read the book-":
@@ -416,20 +421,24 @@ label reading_book(bookID = None):
     
     
 label book_speed_check(bookOBJ = None):
-    if s_reading_lvl == 1: #30% chance
+    if s_reading_lvl == 1: #33% chance
         $ speed_dummies = renpy.random.randint(1, 3) 
         #$ speed_dummies = 1 #Here for testing purpose only.
         if speed_dummies == 1: #Success.
             ">Implementing some tricks you picked up in the \"Speed reading for dummies\" book allows you to save time and keep on reading."
             call read_book(bookOBJ)
-    if s_reading_lvl == 2: #50% chance
-        $ speed_dummies = renpy.random.randint(1, 2) 
+    if s_reading_lvl == 2: #66% chance
+        $ speed_dummies = renpy.random.randint(1, 3) 
         #$ speed_dummies = 1 #Here for testing purpose only.
-        if speed_dummies == 1: #Success.
+        if speed_dummies > 1: #Success.
             ">Implementing speed reading techniques allows you to save time and keep on reading."
             call read_book(bookOBJ)
-    if s_reading_lvl > 2: #100% chance
+    if s_reading_lvl == 3: #100% chance
         ">Implementing speed reading techniques allows you to save time and keep on reading."
+        call read_book(bookOBJ)
+    if s_reading_lvl > 3: #Double 100% chance
+        ">Implementing advanced speed reading techniques lets you blaze through the book."
+        call read_book(bookOBJ)
         call read_book(bookOBJ)
     return
     
@@ -439,7 +448,6 @@ label read_book(bookOBJ):
     if bookOBJ.progress >= bookOBJ.chapters:
         call book_complete(bookOBJ)
         return
-    ">There are still some chapters left."
     if cheat_reading:
         #">You are a cheater so you get to keep on reading."
         call read_book(bookOBJ)
@@ -460,10 +468,13 @@ label read_chapter(bookOBJ = None):
         else:
             $tmp_desc = bookOBJ.getChapterDesc()
             "[tmp_desc]"
+            $ bookOBJ.progress += 1
+            $tmp_desc = bookOBJ.getChapterDesc()
+            "[tmp_desc]"
         
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
         show screen notes
-        ">You've completed \"chapter [bookOBJ.progress]\" of the book."
+        ">You've completed \"chapter " +str(bookOBJ.progress/2) + "\" of the book."""
     return
     
 
@@ -520,6 +531,6 @@ init python:
     class fiction_book(silver_book):
         chapter_description = []
         def getChapterDesc(self):
-           return "Chapter "+str(self.progress)+": "+self.chapter_description[self.progress-1]
+           return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
            
            

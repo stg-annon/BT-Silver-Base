@@ -26,11 +26,13 @@ label give_quest_reward:
     with d3
     hide screen notes
     pause
+    $ menu_y = 0.75 #makes the menu lower so it isn't writing over the image.
     menu:
         "[quest_reward_text]"
         "-Done Reading-":
             pass
     hide screen gift
+    $ menu_y = 0.5 #return to default menu align
     with d1
     call hide_blk_tone
     return

@@ -19,6 +19,7 @@ $ save_name = temp_name
 
 ### MENU PLACEMENT ###
 $ menu_x = 0.5 #Just to make sure that menu is displayed in the center of the screen by default.
+$ menu_y = 0.5 #Same deal. Make sure that the menu is v_aligned in the middle.
 
 ### RESETING STUFF ###
 call luna_day_flags
@@ -97,10 +98,10 @@ $ one_of_tw = renpy.random.randint(1, 20) #Generating one number out of three fo
 
 ### CUPBOARD MONEY GENERATOR ###
 
-$ gold1 = renpy.random.randint(1, 10) # Money you find in the cupboard when Whoring Level: 1-2.
-$ gold2 = renpy.random.randint(10, 40) # Money you find in the cupboard when Whoring Level: 3-4.
-$ gold3 = renpy.random.randint(20, 50) # Money you find in the cupboard when Whoring Level: 5-6.
-$ gold4 = renpy.random.randint(30, 90) # Money you find in the cupboard when Whoring Level: 7+.
+$ gold1 = renpy.random.randint(10, 20) # Money you find in the cupboard when Whoring Level: 1-2.
+$ gold2 = renpy.random.randint(20, 50) # Money you find in the cupboard when Whoring Level: 3-4.
+$ gold3 = renpy.random.randint(40, 60) # Money you find in the cupboard when Whoring Level: 5-6.
+$ gold4 = renpy.random.randint(50, 90) # Money you find in the cupboard when Whoring Level: 7+.
 
 
 
@@ -269,9 +270,9 @@ if days_since_cho == 4 and not cho_met:
 #NOT IN USE if day == 4: #Genie says: "I wonder what has become of that two-faced dude?"
 #About two-faced dude    call event_04
 
-if day == 8:
+if day == 7:
     call event_08 #Hermione shows up for the first time.
-if day >= 9 and hermione_is_waiting_01 and not event09:
+if day >= 8 and hermione_is_waiting_01 and not event09:
     call event_09 #Second visit from Hermione. Says she sent a letter to the Minestry.
                   #Takes place after first special event with Snape, where he just complains about Hermione.
 if event13_happened and not event14_happened:
