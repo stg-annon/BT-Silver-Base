@@ -50,13 +50,11 @@ label l_tutoring:
     $ hair_temp = hair_color
     #$ hair_color = 0
 
-    hide screen hermione_main
-    $ h_xpos = 140
+    $ her_main_smooth_transition = True
 
     if v_tutoring == 0:   # Whoring lvl 0
-        $ h_xpos = 370
         
-        call her_main("Of course, sir.","body_14")
+        call her_main("Of course, sir.", xpos=525, "body_14")
         her "I'll go get my books then."
         
         hide screen hermione_main
@@ -67,17 +65,17 @@ label l_tutoring:
         play sound sd_door
         pause.3
         $ h_xpos = 140
-        $ book_hold = True
-        
-        call her_main("","body_45")
+
+        call set_hermione_action("hold_book")
+        call her_main("", xpos=140,"body_45")
         
         hide screen blkfade
         with d3
-        show screen ctc
-        pause
-        hide screen ctc
-        
-        call her_main("Again, thank you for doing this for me, sir...","body_14")
+
+        call ctc_wPause
+       
+        $ her_main_smooth_transition = True
+        call her_main("Again, thank you for doing this for me, sir...", xpos=500,"body_14")
         m "..........."
         call her_main("Sir?","body_13")
         m "It's time to talk about your future, child."
@@ -133,14 +131,21 @@ label l_tutoring:
         jump l_tutoring_end
 
     if v_tutoring == 1:   # Whoring lvl 1
-        ##call her_pose("book")
-        ##$ v_her_book = 1
-        call her_main("","body_45")
+        
+        call set_hermione_action("hold_book")
+        call her_main("", xpos=525,"body_45")
         m "Miss Granger, time for your first lesson."
         call her_main("Yes, professor.","body_13")
         m "You've brought your books again, I don't think we'll need them for the moment."
         call her_main("Too bad, I love books.","body_03")
+        call set_hermione_action("none")
+        hide screen hermione_main
+        with d3
+
         g9 "{size=-2}(And soon you'll love cock){/size}"
+        $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
+
+        $ her_main_smooth_transition = True
         call her_main("Yes?","body_13")
         m "It's nothing, I was just thinking about our next lesson."
         call her_main("{size=-2}(The elderly...){/size}","body_05")
