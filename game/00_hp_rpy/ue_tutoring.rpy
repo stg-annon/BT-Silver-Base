@@ -54,7 +54,7 @@ label l_tutoring:
 
     if v_tutoring == 0:   # Whoring lvl 0
         
-        call her_main("Of course, sir.", xpos=525, "body_14")
+        call her_main("Of course, sir.", "body_14")
         her "I'll go get my books then."
         
         hide screen hermione_main
@@ -133,7 +133,7 @@ label l_tutoring:
     if v_tutoring == 1:   # Whoring lvl 1
         
         call set_hermione_action("hold_book")
-        call her_main("", xpos=525,"body_45")
+        call her_main("","body_45")
         m "Miss Granger, time for your first lesson."
         call her_main("Yes, professor.","body_13")
         m "You've brought your books again, I don't think we'll need them for the moment."

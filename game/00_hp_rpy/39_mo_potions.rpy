@@ -1101,7 +1101,8 @@ label potion_scene_4_2: #Scene where Hermione comes back after classes angry and
         call her_main("Tell you about what happened? I'm never speaking to you again.","body_21")
         $ mad += 20
         $ transparency = 1
-        $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+outfit.breast_layer+".png"
+        # $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/"+outfit.breast_layer+".png"
+        # This is bugged and causes a crash. Things don't go catistrophically wrong without this line, so I've edited it out until you can fix it.
     elif whoring <= 13: #Mildly aggravated
         ">Hermione comes into your office quickly without knocking."
         call her_main("Again?","body_34")
