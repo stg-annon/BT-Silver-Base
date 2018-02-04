@@ -106,9 +106,9 @@ label door:
                 
                 $ menu_x = 0.2 #Menu is moved to the left side.
                 
+                
                 $ hermione_xpos = 550
                 $ hermione_ypos = 0
-                
                 $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                 $ hermione_SC.chibi.xpos = 540 #Near the desk.
                 show screen hermione_blink #Hermione stands still.
@@ -330,6 +330,9 @@ label door:
                         elif mad >=3 and mad < 10:
                             her "I am not in the mood today..."
                             jump day_time_requests
+                        elif mad >= 10 and mad < 20:
+                            her "Absolutely not, [genie_name]"
+                            her "I {i}might{/i} consider it once you've said sorry"
                             # Question: What to do between 9 and 20? Only "jump l_tutoring_check"?
                         elif mad >=20:
                             her "After what you did, [genie_name]?"
