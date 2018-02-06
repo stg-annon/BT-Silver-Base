@@ -150,7 +150,7 @@ label luna_favour_menu:
             jump luna_favour_4
         "-Touch me with Hermione-" if luna_corruption >= 11 and not luna_reverted:
             jump luna_favour_5
-        #"-Suck it-":
+        "-Suck it-" if luna_corruption >= 14 and not luna_reverted:
             jump luna_favour_6
         #"-Sex-":
             jump luna_favour_7
