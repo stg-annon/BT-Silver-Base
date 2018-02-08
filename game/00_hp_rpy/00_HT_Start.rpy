@@ -384,14 +384,11 @@ label start_ht:
                 pass
 
     menu:
-        "-Activate Cheats-":
-            $ cheats_active = True
-            $ avogadro_law = True
-            $ gold = gold + 10000
-            $ slytherin = 3000
-            ">you received a lot of coins.\n>slytherin is way beyond anyone else.\n>getting friendly with snape is far easier."
-        "-No, Fuck Cheats-":
-            pass
+        "-Play with easy difficulty-":
+            $ difficulty_easy = True
+        "-Play with normal difficulty-":
+            $ difficulty_easy = False
+
     menu:
         "Would you like to skip the intro?"
         "Play the intro.":
