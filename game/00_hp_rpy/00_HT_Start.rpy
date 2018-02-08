@@ -384,6 +384,14 @@ label start_ht:
                 pass
 
     menu:
+        "-Play with easy difficulty-":
+            $ difficulty_easy = True
+            $ cheat_reading = True
+        "-Play with normal difficulty-":
+            $ difficulty_easy = False
+            $ cheat_reading = False
+
+    menu:
         "-Activate Cheats-":
             $ cheats_active = True
             $ avogadro_law = True
@@ -392,6 +400,7 @@ label start_ht:
             ">you received a lot of coins.\n>slytherin is way beyond anyone else.\n>getting friendly with snape is far easier."
         "-No, Fuck Cheats-":
             pass
+
     menu:
         "Would you like to skip the intro?"
         "Play the intro.":
