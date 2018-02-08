@@ -164,6 +164,7 @@ label cupboard:
             menu:
                 "-Enable Easy Difficulty-":                                 #CHANGE IN 00_HT_Start, Start of game option.
                     $ difficulty_easy = True
+                    $ cheat_reading = True
                     "Game set to easy difficulty!"
                     "Increased gold reward from reports and other sources!" #CHANGE IN 01_hp_main_day and 15_mail.
                     "Rummaging through your cupboard is more rewarding!"    #CHANGE IN 11_cupboard, label rummaging.
@@ -172,6 +173,7 @@ label cupboard:
                     jump day_main_menu
                 "-Enable Normal Difficulty-":
                     $ difficulty_easy = False
+                    $ cheat_reading = False
                     "Game set to normal difficulty!"
                     jump day_main_menu
 
