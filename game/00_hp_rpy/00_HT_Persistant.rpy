@@ -136,7 +136,11 @@ label __init_variables:
     if not hasattr(renpy.store,'temp_outfit'): #important!
         $ temp_outfit = custom_outfit_old
 
-    ###Cheats###
+    ### Difficulty ###
+    if not hasattr(renpy.store,'difficulty_easy'): #important!
+        $ difficulty_easy = False
+
+    ### Cheats ###
     if not hasattr(renpy.store,'cheats_active'): #important!
         $ cheats_active = False
 
