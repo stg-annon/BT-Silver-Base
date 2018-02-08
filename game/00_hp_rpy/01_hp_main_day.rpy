@@ -98,10 +98,16 @@ $ one_of_tw = renpy.random.randint(1, 20) #Generating one number out of three fo
 
 ### CUPBOARD MONEY GENERATOR ###
 
-$ gold1 = renpy.random.randint(10, 20) # Money you find in the cupboard when Whoring Level: 1-2.
-$ gold2 = renpy.random.randint(20, 50) # Money you find in the cupboard when Whoring Level: 3-4.
-$ gold3 = renpy.random.randint(40, 60) # Money you find in the cupboard when Whoring Level: 5-6.
-$ gold4 = renpy.random.randint(50, 90) # Money you find in the cupboard when Whoring Level: 7+.
+if difficulty_easy:
+    $ gold1 = renpy.random.randint(8, 20) # Money you find in the cupboard when Whoring Level: 1-2.
+    $ gold2 = renpy.random.randint(20, 80) # Money you find in the cupboard when Whoring Level: 3-4.
+    $ gold3 = renpy.random.randint(40, 100) # Money you find in the cupboard when Whoring Level: 5-6.
+    $ gold4 = renpy.random.randint(60, 180) # Money you find in the cupboard when Whoring Level: 7+.
+else:
+    $ gold1 = renpy.random.randint(1, 10) # Money you find in the cupboard when Whoring Level: 1-2.
+    $ gold2 = renpy.random.randint(10, 40) # Money you find in the cupboard when Whoring Level: 3-4.
+    $ gold3 = renpy.random.randint(20, 50) # Money you find in the cupboard when Whoring Level: 5-6.
+    $ gold4 = renpy.random.randint(30, 90) # Money you find in the cupboard when Whoring Level: 7+.
 
 
 
@@ -126,8 +132,16 @@ if day_of_week == 7: #Counts days of the week. Everyday +1. When day_of_week = 7
 $ day_of_week += 1
 
 ### HERMIONE ###
-if mad >= 1:
-    $ mad -= 1
+if difficulty_easy:
+    if mad >= 1:
+        $ mad -= 3
+        if mad <= 0:
+            $ mad == 0
+        else:
+            pass
+else:
+    if mad >= 1:
+        $ mad -= 1
 
 
 
