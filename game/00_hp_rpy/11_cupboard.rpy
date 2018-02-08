@@ -160,6 +160,23 @@ label cupboard:
         "-Change Save Name-":
             jump custom_save
         
+        "-Change Game Difficulty-":
+            menu:
+                "-Enable Easy Difficulty-":                                 #CHANGE IN 00_HT_Start, Start of game option.
+                    $ difficulty_easy = True
+                    $ cheat_reading = True
+                    "Game set to easy difficulty!"
+                    "Increased gold reward from reports and other sources!" #CHANGE IN 01_hp_main_day and 15_mail.
+                    "Rummaging through your cupboard is more rewarding!"    #CHANGE IN 11_cupboard, label rummaging.
+                    "Snape will be more generous with Slytherin-points!"    #CHANGE IN 06_points.
+                    "Hermione won't stay mad at you for as long!"           #CHANGE IN 01_hp_main_day.
+                    jump day_main_menu
+                "-Enable Normal Difficulty-":
+                    $ difficulty_easy = False
+                    $ cheat_reading = False
+                    "Game set to normal difficulty!"
+                    jump day_main_menu
+
         "-Cheat-":
             jump cheats_ht
 
@@ -314,65 +331,28 @@ label custom_save:
     $ save_name = temp_name
     "Done."
     jump cupboard
-label rummaging:  
-    
-    $ searched = True #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
-    
-    $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
-    
-    hide screen cupboard
-    hide screen genie
-    show screen rum_screen
-    with Dissolve(0.3)
-    show screen bld1
-    with d3
-    ">You rummage through the cupboard for a while..." 
-    
-    if day <= 4:
-        if rum_times == 2 or rum_times == 3:
-            $ renpy.play('sounds/win2.mp3')   #Not loud.
-            $ potions += 1
-            $ the_gift = "01_hp/18_store/32.png"
-            show screen gift
-            with d3
-            ">You found some sort of potion..." 
-            hide screen gift
-            with d3
+
+label rummaging:
+    if not difficulty_easy:
+        if i_of_iv == 4: # Found something.
+            jump rum_rewards
+        else:
+            ">...You find nothing of value."
             show screen cupboard
             show screen genie
             hide screen rum_screen
-            
+    
             hide screen bld1
             with d3
-            
+    
             if daytime:
-                jump night_start
+                jump day_main_menu
             else: 
-                jump day_start
-    
-    if rum_times >= 4 and not cataloug_found:
-        $ renpy.play('sounds/win2.mp3')   #Not loud.
-        $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
-        $ the_gift = "01_hp/18_store/31.png" # DAHR's oddities catalog. 
-        show screen gift
-        with d3
-        ">You found a map of the school grounds...\n>You can now leave the office."
-        hide screen gift
-        with d3
-        show screen cupboard
-        show screen genie
-        hide screen rum_screen
-        
-        hide screen bld1
-        with d3
-        
-        if daytime:
-            jump night_start
-        else: 
-            jump day_start
-        
-    
-    if i_of_iv >= 3: # Found something.
+                jump night_main_menu
+    else:
+        jump rum_rewards 
+
+label rum_rewards:
         if whoring >= 0 and whoring <= 5: # Lv 1-2.
             if one_of_tw == 20:
                 call rum_block(PlushOwl)
@@ -413,7 +393,7 @@ label rummaging:
             elif one_of_tw >= 1 and one_of_tw <= 4:
                 call rum_block(PackOfCondoms)
             elif one_of_tw == 5 or one_of_tw == 6:
-                call rum_block(1)
+                call rum_block("gold1") #Bugfix? Previously was just (1). 
             elif one_of_tw >= 7 and one_of_tw <= 14:
                 call rum_block("gold3")
             elif one_of_tw >= 15 and one_of_tw <= 18:
@@ -439,23 +419,18 @@ label rummaging:
             elif one_of_tw == 19:
                 call rum_block(ThestralStrapon)
             
-            
-    else: #Didn't find anything.
-        ">...You find nothing of value." 
+                   
+        show screen cupboard
+        show screen genie
+        hide screen rum_screen
     
-
+        hide screen bld1
+        with d3
     
-    show screen cupboard
-    show screen genie
-    hide screen rum_screen
-    
-    hide screen bld1
-    with d3
-    
-    if daytime:
-        jump day_main_menu
-    else: 
-        jump night_main_menu
+        if daytime:
+            jump day_main_menu
+        else: 
+            jump night_main_menu 
     
 label disp_sacred_scrolls(scroll):
     $ the_gift = "01_hp/19_extras/"+str(scroll)+".png" # SACRED SCROLL
