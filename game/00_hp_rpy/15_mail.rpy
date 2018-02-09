@@ -48,29 +48,56 @@ label mail:
         show screen owl_02
         ">You read your mail."
         play sound "sounds/money.mp3"  #Quiet...
-        if finished_report == 1:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}60 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 60
+
+        if difficulty_easy: #Rewards Doubled.
+            if finished_report == 1:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}80 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 80
         
-        if finished_report == 2:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 90
+            if finished_report == 2:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}140 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 140
     
-        if finished_report == 3:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}120 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 120
+            if finished_report == 3:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}180 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 180
             
-        if finished_report == 4:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}150 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 150
+            if finished_report == 4:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}220 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 220
         
-        if finished_report == 5:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}180 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 180
+            if finished_report == 5:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}300 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 300
             
-        if finished_report >= 6:
-            $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}210 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
-            $ gold += 210
+            if finished_report >= 6:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}400 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 400
+
+        else: #normal difficulty
+            if finished_report == 1:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing one report this week.\nHere is your payment:{/size} \n{size=+4}40 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 40
+        
+            if finished_report == 2:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing two reports this week.\nHere is your payment:{/size} \n{size=+4}70 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 70
+    
+            if finished_report == 3:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing three reports this week.\nHere is your payment:{/size} \n{size=+4}90 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 90
+            
+            if finished_report == 4:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing four reports this week.\nHere is your payment:{/size} \n{size=+4}110 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 110
+        
+            if finished_report == 5:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing five reports this week.\nHere is your payment:{/size} \n{size=+4}150 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 150
+            
+            if finished_report >= 6:
+                $ letter_text = "{size=-7}From:Ministry of Magic\nTo: Professor Dumbledore\n\n\n{/size}{size=-2}Thank you for completing six reports this week.\nHere is your payment:{/size} \n{size=+4}200 gold coins.{/size}\n\n\n{size=-3}-With deepest respect-{/size}"    
+                $ gold += 200
         
         show screen bld1
         show screen letter
@@ -79,30 +106,6 @@ label mail:
         hide screen letter
         hide screen bld1
         hide screen ctc
-
-            
-#            ">Thank you for completing two reports this week. Here is your payment (40 gold)."
-#            $ gold += 40
-
-#        if finished_report >= 3:
-#            "Thank you for completing three reports this week. Here is your payment (60 gold)."
-#            $ gold += 60
-            
-#        if finished_report >= 4:
-#            "Thank you for completing four reports this week. Here is your payment (80 gold)."
-#            $ gold += 80
-        
-#        if finished_report >= 5: #Maximum amount per week.
-#            "Thank you for completing five reports this week. Here is your payment (100 gold)."
-#            $ gold += 100
-        
-#        if finished_report >= 6:
-#            "Thank you for completing six reports this week. Here is your payment (20 gold)."
-#            $ gold += 20
-            
-#        if finished_report >= 7:
-#            "Thank you for completing seven reports this week. Here is your payment (20 gold)."
-#            $ gold += 20
             
         $ finished_report = 0
 
