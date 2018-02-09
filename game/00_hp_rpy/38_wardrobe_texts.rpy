@@ -952,7 +952,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
 
             #Fancy Waitress Beige #Kinda done
             elif top_choice == "fancy_waitress_beige":
-                m "Dye your hair white for me." 
+                m "Would you wear this top I bought you." 
                 if whoring >= 8:
                     if whoring < 11:
                         call her_main("Fine, [genie_name].","body_127") #open, closed
