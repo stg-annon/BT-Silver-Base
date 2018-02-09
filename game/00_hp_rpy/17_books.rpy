@@ -474,7 +474,7 @@ label read_chapter(bookOBJ = None):
         
         $ renpy.play('sounds/win_04.mp3')   #Not loud.
         show screen notes
-        ">You've completed \"chapter " +str(bookOBJ.progress/2) + "\" of the book."""
+        ">You've completed \"chapter [bookOBJ.progress]\" of the book."""
     return
     
 
