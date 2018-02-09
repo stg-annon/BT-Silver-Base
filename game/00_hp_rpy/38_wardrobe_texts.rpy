@@ -269,7 +269,7 @@ label change_her_hair_color:
                     call her_main("Gladly, [genie_name].","body_127") #open, closed
                     call her_main("(I hate having people stare at me...)","body_70") #very upset, ahegao
                     call her_main("I will go and change it.","body_54") #smile, baseL
-                if whoring < 11:
+                elif whoring < 11:
                     call her_main("Of course, [genie_name].","body_14") #open, base
                     call her_main("Let me go change it.","body_01") #smile, base
                 elif whoring < 20:
