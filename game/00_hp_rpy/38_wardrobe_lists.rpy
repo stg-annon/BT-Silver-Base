@@ -33,10 +33,10 @@ label update_wardrobe_lists:
     #Uniform
     $ wr_her_tops_uniform.append("uni_top_1")
     $ wr_her_tops_uniform.append("uni_top_2")
-    if whoring < 9:
+    if whoring < 11:
         $ wr_her_tops_uniform.append("uni_top_3")
     $ wr_her_tops_uniform.append("uni_top_4")
-    if whoring >= 9: #get right number
+    if whoring >= 11:
         $ wr_her_tops_uniform.append("uni_top_5")
     $ wr_her_tops_uniform.append("uni_top_6")
 
@@ -94,40 +94,31 @@ label update_wardrobe_lists:
     $ wr_her_bottoms_uniform = [] #Page MAX=25
 
     #Uniform
-    if whoring >= 0:
-        $ wr_her_bottoms_uniform.append("uni_skirt_1")
-    if whoring >= 4: #get right number
-        $ wr_her_bottoms_uniform.append("uni_skirt_2")
-    if whoring >= 10: #get right number
-        $ wr_her_bottoms_uniform.append("uni_skirt_3")
-    if whoring >= 16: #get right number
-        $ wr_her_bottoms_uniform.append("uni_skirt_4")
-    if whoring >= 19: #get right number
-        $ wr_her_bottoms_uniform.append("uni_skirt_5")
+    $ wr_her_bottoms_uniform.append("uni_skirt_1")
+    $ wr_her_bottoms_uniform.append("uni_skirt_2")
+    $ wr_her_bottoms_uniform.append("uni_skirt_3")
+    $ wr_her_bottoms_uniform.append("uni_skirt_4")
+    $ wr_her_bottoms_uniform.append("uni_skirt_5")
 
-    if whoring >= 4 and hg_gryffCheer_OBJ.purchased:
+    if hg_gryffCheer_OBJ.purchased:
         $ wr_her_bottoms_uniform.append("uni_skirt_cheer_gryff")
-    if whoring >= 10 and hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
+    if hg_slythCheer_OBJ.purchased: #Add sQuest: Slytherin at heart unlock.
         $ wr_her_bottoms_uniform.append("uni_skirt_cheer_slyth")
 
     #Uniform Low
     $ wr_her_bottoms_uniform_low = []  #Add low hanging school skirts
 
-    if whoring >= 0:
-        $ wr_her_bottoms_uniform_low.append("uni_skirt_1_low")
-    if whoring >= 7:
-        $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
-    if whoring >= 16: #shows panties
-        $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
+    $ wr_her_bottoms_uniform_low.append("uni_skirt_1_low")
+    $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
+    $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
     #if micro_skirt unlocked/purchased:
-    #    $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
+    $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
 
     #Skirts
     $ wr_her_bottoms_skirts = [] #Add skirts
-    if whoring >= 10 and "skirt_belted_mini" in cs_existing_stock:
-        $ wr_her_bottoms_skirts.append("skirt_belted_mini")
-    if whoring >= 19 and "skirt_belted_micro" in cs_existing_stock:
-        $ wr_her_bottoms_skirts.append("skirt_belted_micro")
+
+    $ wr_her_bottoms_skirts.append("skirt_belted_mini")
+    $ wr_her_bottoms_skirts.append("skirt_belted_micro")
     #ADD japan_pant
 
     #Pants
@@ -137,9 +128,9 @@ label update_wardrobe_lists:
         $ wr_her_bottoms_pants.append("pants_jeans_long")
     if "pants_jeans_short" in cs_existing_stock:
         $ wr_her_bottoms_pants.append("pants_jeans_short")
-    if whoring >= 19 and "pants_retro_shorts" in cs_existing_stock:
+    if "pants_retro_shorts" in cs_existing_stock:
         $ wr_her_bottoms_pants.append("pants_retro_shorts")
-    if whoring >= 22 and hg_rocker_OBJ.purchased:
+    if hg_rocker_OBJ.purchased:
         $ wr_her_bottoms_pants.append("pants_rocker")
 
     #Bottoms Misc

@@ -570,7 +570,8 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Belted Mini Skirt- (75 Gold)" if "skirt_belted_mini" not in cs_existing_stock:
                     maf "A short skirt with a belt. Very trendy!"
-                    ">Requires a whoring level of 9 to be worn.<"
+                    if cheats_active or difficulty_easy:
+                        ">Requires a whoring level of 8 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
                             call cs_buy_stock("skirt_belted_mini", 75)
@@ -583,7 +584,8 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Belted Micro Skirt- (150 Gold)" if "skirt_belted_micro" not in cs_existing_stock:
                     maf "A very short skirt with a belt. Very revealing! Lets just hope the girl is wearing a pair of underwear!"
-                    ">Requires a whoring level of 18 to be worn.<"
+                    if cheats_active or difficulty_easy:
+                        ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
                             call cs_buy_stock("skirt_belted_micro", 150)
@@ -596,6 +598,8 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Jeans- (75 Gold)" if "pants_jeans_long" not in cs_existing_stock:
                     maf "A pair of standard muggle jeans, albeit a little low slung."
+                    if cheats_active or difficulty_easy:
+                        ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
                             call cs_buy_stock("pants_jeans_long", 75)
@@ -608,6 +612,8 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Short Jeans- (150 Gold)" if "pants_jeans_short" not in cs_existing_stock:
                     maf "A pair of short daisy dukes."
+                    if cheats_active or difficulty_easy:
+                        ">Requires a whoring level of 11 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
                             call cs_buy_stock("pants_jeans_short", 150)
@@ -620,7 +626,8 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Retro Shorts- (170 Gold)" if "pants_retro_shorts" not in cs_existing_stock:
                     maf "A pair of skin tight retro shorts. Just the right thing to highlight a magnificent behind."
-                    ">Requires a whoring level of 18 to be worn.<"
+                    if cheats_active or difficulty_easy:
+                        ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (170 gold)-":
                             call cs_buy_stock("pants_retro_shorts", 170)
