@@ -1696,16 +1696,20 @@ label hg_ps_Buttplug:
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "[hermione_name]..."
             m "how do you feel about wearing another buttplug to class today?"
-            call her_main("OK!","body_68",xpos=370)
-            m "You're eager. I haven't even said what one yet..."
-            call her_main("oh... can it be the big one... with the long tail...","body_87")
-            call her_main("please...","body_105")
-            m "well seeing as how you asked so nicely..."
+            call her_main("...","body_68",xpos=370)
+            call her_main("which one?","body_68")
+            m "how about the big one again?"
+            call her_main("really?","body_87")
+            call her_main("do i have to?","body_105")
+            m "you didn't seem to hate wearing it last time..."
+            call her_main("...","body_87")
+            call her_main("{size=-5}alright then...{/size","body_87")
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
+            ">You see it magically worm it's way inside her eager hole."
             $ hermione_buttplugs = True
             $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_c_on.png"
-            call her_main("{image=textheart}ah{image=textheart}...","body_106")
+            call her_main("{image=textheart}ah{image=textheart}ah...","body_106")
             call her_main("Thank you [genie_name]!","body_107")
             call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","body_106")
 
