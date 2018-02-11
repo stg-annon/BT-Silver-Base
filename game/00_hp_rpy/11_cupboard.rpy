@@ -332,7 +332,63 @@ label custom_save:
     "Done."
     jump cupboard
 
-label rummaging:
+label rummaging:  
+    
+    $ searched = True #Turns true after you search the cupboard. Turns back to False every day. Makes sure you can only search the cupboard once a day.
+    
+    $ rum_times += 1 # Counts how many times have you rummaged the cupboard. +1 every time you do that. Needed to make to grand 2 potions before the fight.
+    
+    hide screen cupboard
+    hide screen genie
+    show screen rum_screen
+    with Dissolve(0.3)
+    show screen bld1
+    with d3
+    ">You rummage through the cupboard for a while..." 
+    
+    if day <= 4:
+        if rum_times == 2 or rum_times == 3:
+            $ renpy.play('sounds/win2.mp3')   #Not loud.
+            $ potions += 1
+            $ the_gift = "01_hp/18_store/32.png"
+            show screen gift
+            with d3
+            ">You found some sort of potion..." 
+            hide screen gift
+            with d3
+            show screen cupboard
+            show screen genie
+            hide screen rum_screen
+            
+            hide screen bld1
+            with d3
+            
+            if daytime:
+                jump night_start
+            else: 
+                jump day_start
+    
+    if rum_times >= 7 and not cataloug_found:
+        $ renpy.play('sounds/win2.mp3')   #Not loud.
+        $ cataloug_found = True # Turns TRUE after you found the Dahr's oddities catalog in the cupboard.
+        $ the_gift = "01_hp/18_store/31.png" # DAHR's oddities catalog. 
+        show screen gift
+        with d3
+        ">You found a map of the school grounds...\n>You can now leave the office."
+        hide screen gift
+        with d3
+        show screen cupboard
+        show screen genie
+        hide screen rum_screen
+        
+        hide screen bld1
+        with d3
+        
+        if daytime:
+            jump night_start
+        else: 
+            jump day_start
+        
     if not difficulty_easy:
         if i_of_iv == 4: # Found something.
             jump rum_rewards
