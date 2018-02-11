@@ -182,13 +182,14 @@ screen select_stat_character(charName):
         action [Hide("select_stat_character"), Show("hermione_main"), Jump("stat_hermione")]
     $ indexSize += 1 
     
-    imagebutton:
-        xpos 40 + ( 85 * (indexSize%2))
-        ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
-        idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
-        hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
-        action [Hide("select_stat_character"), Show("luna"), Jump("stat_luna")]
-    $ indexSize += 1 
+    if luna_unlocked == True:
+        imagebutton:
+            xpos 40 + ( 85 * (indexSize%2))
+            ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
+            idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
+            hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
+            action [Hide("select_stat_character"), Show("luna"), Jump("stat_luna")]
+        $ indexSize += 1 
 
     
     if charName == "HERMIONE":
