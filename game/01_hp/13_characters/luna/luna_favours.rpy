@@ -4807,7 +4807,7 @@ label luna_favour_5: #Luna jerks Genie off onto Hermione's face
 
 
 label luna_favour_6: #luna and hermione blowjob
-    if luna_corruption <= 14: #first time
+    if luna_corruption <= 15: #first time
         m "I have a new favour for you to complete today [luna_name]!"
         call luna_main("...", 7, 1, 2, 2)
         m "If it's not too much trouble."
@@ -5111,7 +5111,7 @@ label luna_favour_6: #luna and hermione blowjob
         call her_main("Come on Luna!","body_107")
         call luna_main("...", 1, 2, 1, 1)
         ">Luna and hermione leave the office together, chattering happily as the door closes."
-        
+
     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
     hide screen luna
     hide screen luna_chibi

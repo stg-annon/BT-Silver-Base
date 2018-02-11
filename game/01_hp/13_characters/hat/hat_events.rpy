@@ -143,7 +143,9 @@ label hat_intro_3: #Luna change scene
     ">You take the hat off of Luna's head."
     m "Thank you very much Miss Lovegood. I think you better be off to bed now "
     call luna_main("yes... bed...", 1, 6, 1, 2) #hypno eyes
-    call luna_away
+    hide screen luna_chibi
+    hide screen luna
+    with d3
     $ luna_wear_acc = False
     $ luna_hair = 1
     ">You place the hat back on the cupboard"
