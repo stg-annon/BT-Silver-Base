@@ -1877,7 +1877,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("[genie_name], those are jeans!","body_122") #mad, wink
                         m "... yes?"
                         call her_main("Muggle pants!","body_199") #disgust, down, blush
-                        call her_main("Girls are supposed to wear skirts here at Hogwarts!","127") #open, closed
+                        call her_main("Girls are supposed to wear skirts here at Hogwarts!","body_127") #open, closed
                         call her_main("At all times! No exceptions!","body_29") #very upset, concernedL
                         m "That's a very sexist thing to say, don't you think?"
                         call her_main("I-- uhm...","body_122") #mad, wink
