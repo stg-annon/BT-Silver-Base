@@ -1421,7 +1421,7 @@ label potion_scene_8: #Hypno potion
     $ hermione_skirt = "01_hp/13_characters/hermione/clothes/uniform/skirt_6.png"
     $ hermione_top = "01_hp/13_characters/hermione/clothes/uniform/top_5.png"
     $ hermione_wear_panties = False
-    call set_h_hair(hair_style="B",color=2)
+    #call set_h_hair(hair_style="B",color=2)
     call her_main("I am an airheaded bimbo who only wants to make people happy...","body_225b")
     m "You love being covered in my cum."
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/cum_badge.png"

@@ -2391,6 +2391,10 @@ screen snape_sex:
     add "01_hp/28_cg/scene_04.png"
     zorder hermione_main_zorder
 
+screen blkback:
+    zorder 1
+    add "interface/blackfade.png"
+
 screen sccg:
     add "interface/blackfade.png"
     add sc_cg_base xpos sccgxpos ypos sccgypos

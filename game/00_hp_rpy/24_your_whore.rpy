@@ -3436,6 +3436,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     
     
     if public_whore_ending: # PUBLIC WHORE ENDING
+        hide screen blkback
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         $ snape_speed = 02.0 #The speed of moving the walking animation across the screen.
         $ walk_xpos=470 #Animation of walking chibi. (From)
@@ -3503,7 +3504,11 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         show screen blkfade
         with d7
         pause 2
-        
+        hide screen blkback
+        hide screen blkfade
+        hide screen snape_walk_01 
+        hide screen snape_02 
+            
         
         
         
@@ -3513,7 +3518,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
     
     else: # PERSONAL WHORE ENDING 
-
+        hide screen blkback
         $ renpy.play('sounds/door.mp3') #Sound of a door opening.
         call her_walk(610,400,3)
         show screen hermione_blink #Hermione stands still.
@@ -3624,13 +3629,18 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
         dum4 "Oh, dear... {image=textheart} "
         pause 1
+        hide screen blkback
+        hide screen blkfade
+        hide screen snape_walk_01 
+        hide screen snape_02 
         
     $ renpy.play('sounds/win2.mp3')   #Not loud.
     centered "{size=+7}{color=#cbcbcb}-\{Thank you for playing!\}-{/color}{/size}\n\n
               {size=+1}{color=#cbcbcb}-AKABUR 2014-{/color}{/size}"
     
     pause 2
-    
+     
+
     $ persistent.game_complete = True # Turns TRUE after you beat the game. Unlocks the gallery.
     
     # SILVER Items
@@ -3648,12 +3658,12 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
     #$ persistent.outfit_inventory = outfit_inventory
     
     # books
-    $ persistent.book_progress = []
-    $ persistent.book_progress = book_progress
-    $ persistent.book_done = []
-    $ persistent.book_done = book_done
-    $ persistent.books = []
-    $ persistent.books = books
+    #$ persistent.book_progress = []
+    #$ persistent.book_progress = book_progress
+    #$ persistent.book_done = []
+    #$ persistent.book_done = book_done
+    #$ persistent.books = []
+    #$ persistent.books = books
     
     
     if public_whore_ending:
@@ -3669,66 +3679,6 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         $ persistent.haveskirt = True # Makes sure you only need to buy the skirt once. Checked at the +new game screen.
    
     
-    ### POSSESSIONS ###
-    
-    $ persistent.lolipop = 0
-    $ persistent.lolipop = persistent.lolipop + candy # LOLIPOP.
-    
-    $ persistent.choco = 0
-    $ persistent.choco = persistent.choco + chocolate # CHOCOLATE.
-                    
-    $ persistent.owl = 0
-    $ persistent.owl = persistent.owl + owl # PLUSH OWL.
-                
-    $ persistent.beer = 0
-    $ persistent.beer = persistent.beer + beer # BUTTERBEER
-                
-    $ persistent.mag1 = 0
-    $ persistent.mag1 = persistent.mag1 + mag1 #MAGAZINE # 1
-    
-    $ persistent.mag2 = 0
-    $ persistent.mag2 = persistent.mag2 + mag2 #MAGAZINE #  2
-    
-    $ persistent.mag3 = 0
-    $ persistent.mag3 = persistent.mag3 + mag3 #MAGAZINE # 3
-    
-    $ persistent.mag4 = 0
-    $ persistent.mag4 = persistent.mag4 + mag4 #MAGAZINE # 1
-
-    $ persistent.krum = 0
-    $ persistent.krum = persistent.krum + krum # KRUM POSTER.
-
-    $ persistent.lin = 0
-    $ persistent.lin = persistent.lin + lingerie # LENGERIE.
-
-    $ persistent.con = 0 
-    $ persistent.con = persistent.con + condoms # CONDOMS.
-       
-    $ persistent.vib = 0
-    $ persistent.vib = persistent.vib + vibrator # VIBRATOR.
-        
-    $ persistent.lube = 0
-    $ persistent.lube = persistent.lube + anal_lube # Anal lubricant.
-
-    $ persistent.gag = 0
-    $ persistent.gag = persistent.gag + ballgag # BALL GAG.
-          
-    $ persistent.plug = 0
-    $ persistent.plug = persistent.plug + plug # ANAL PLUG.
-          
-    $ persistent.strap = 0
-    $ persistent.strap = persistent.strap + strapon # STRAP-ON.
-           
-    $ persistent.broom = 0
-    $ persistent.broom = persistent.broom + broom # BROOM.
-              
-    $ persistent.doll = 0
-    $ persistent.doll = persistent.doll + sexdoll  # SEX DOLL.
-
-    $ persistent.wine = 0
-    $ persistent.wine = persistent.wine + wine # WINE.
-
-            
            
     ### SACRED SCROLLS ###
     
@@ -3798,8 +3748,7 @@ Kenneth Aguilar, alt, David McClellan, Leo H Wilkin, Thorn, TheDudeAbides, Alexa
         
         
         
-        
-        
+    $ renpy.full_restart()
         
         
 

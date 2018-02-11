@@ -1279,6 +1279,9 @@ label good_bye_snape:
 
     play music "sounds/night.mp3" fadein 1 fadeout 1 #NIGHT SOUNDS.
     
+    show screen blkback # Hide room
+    $ hermione_head_ypos = 150
+
     $ end_u_1_pic =  "01_hp/17_ending/171.png" #<---- SCREEN
     show screen end_u_1                                           #<---- SCREEN
     pause.3
