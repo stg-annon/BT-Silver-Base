@@ -1156,13 +1156,13 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
 
             #Pink Pullover #Done
             elif top_choice == "normal_pullover":
-                m "Could you wear this pullover I bought you?" 
+                m "Could you wear this top I bought you?" 
                 if whoring >= 2:
                     if whoring < 5:
                         call her_main("[genie_name], that's a pullover!","body_122") #mad, wink
                         m "... So what?"
                         call her_main("Muggle clothing!","body_199") #disgust, down, blush
-                        call her_main("Muggle clothes are against the Hogwarts rules for--","127") #open, closed
+                        call her_main("Muggle clothes are against the Hogwarts rules for--","body_127") #open, closed
                         m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
                         call her_main("(...)","body_50") #very upset, annoyed
                         m "I'm telling you to wear it. I'm the headmaster, after all."
@@ -1222,13 +1222,13 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
 
             #Purple Sweater #Done
             elif top_choice == "normal_purple_sweater":
-                m "Could you wear this sweater I bought you?" 
+                m "Could you wear this top I bought you?" 
                 if whoring >= 2:
                     if whoring < 5:
-                        call her_main("[genie_name], that's a pullover!","body_122") #mad, wink
+                        call her_main("[genie_name], that's a sweater!","body_122") #mad, wink
                         m "... So what?"
                         call her_main("Muggle clothing!","body_199") #disgust, down, blush
-                        call her_main("Muggle clothes are against the Hogwarts rules for--","127") #open, closed
+                        call her_main("Muggle clothes are against the Hogwarts rules for--","body_127") #open, closed
                         m "Proper school attire... Yeah yeah, heard that one a hundred times already..."
                         call her_main("(...)","body_50") #very upset, annoyed
                         m "I'm telling you to wear it. I'm the headmaster, after all."
@@ -1466,7 +1466,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
 
     if skirt_choice == h_skirt:
         $ wardrobe_active = 1
-        ">She's already wearing that!" #Remove line. Just for testing.
+        #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
     elif mad >= 1:
