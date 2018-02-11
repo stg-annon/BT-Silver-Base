@@ -348,8 +348,13 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
             m "Just do it..."
         call her_main("..................","body_29")
     
+
+    if whoring >= 9:
+        $ hermione_wear_panties = False
+
     call set_hermione_action("lift_skirt")
     $ skirt_up = True
+
     $ menu_x = 0.5 #Default menu position restored.
     
     show screen hermione_chibi_lift_skirt
@@ -366,14 +371,9 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         $ new_request_02_heart = 1 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 1 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
+        call blk_tone
         call her_main("","body_49",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
+        call ctc_wPause
         
         her "....................."
         menu:
@@ -388,20 +388,16 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 pause
                 call her_main(".......................","body_51")
     
-    elif whoring >= 3 and whoring < hg_NoPanties_lvl: #LEVEL 02 = SECOND EVENT!
+    elif whoring >= 3 and whoring < 9: #hg_NoPanties_lvl #LEVEL 02 = SECOND EVENT!
         call her_head(".....................","body_188")
         
         $ new_request_02_heart = 2 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 2 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
+        call blk_tone
         call her_main("","body_52",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
+        call ctc_wPause
+
         her "Here, [genie_name]..."
         menu:
             "\"You don't look too embarrassed...\"":
@@ -417,7 +413,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 call her_main("................................","body_56")
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
     
-    elif whoring >= hg_NoPanties_lvl: #LEVEL 06 and up. = FINAL EVENT! (No panties).
+    elif whoring >= 9: #hg_NoPanties_lvl #LEVEL 06 and up. = FINAL EVENT! (No panties).
         # call her_head("..........................","body_188")
         call her_main("..........................","body_188") # TenchiMuyo1984 Modification
         g4 "!!?"
@@ -425,16 +421,11 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         $ new_request_02_heart = 3 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 3 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
-        $ temp_panties = panties
-        $ panties = False
+        call blk_tone
+
         call her_main("","body_58",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
+        call ctc_wPause
+
         g4 "Where are your panties, [hermione_name]?"
         call her_main("Oh, lately I just don't feel like wearing them...","body_59")
         menu:
