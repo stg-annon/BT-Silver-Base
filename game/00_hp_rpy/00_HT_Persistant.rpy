@@ -184,6 +184,11 @@ label __init_variables:
         $ ccg2 = 1
         $ ccg3 = "gene"
 
+    if not hasattr(renpy.store,'luna_skirt_level'): #important!
+        $ luna_skirt_level = 1
+    if not hasattr(renpy.store,'luna_top_level'): #important!
+        $ luna_top_level = 1
+
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!
