@@ -167,10 +167,12 @@ label her_bottom_toggle:
     show screen hermione_main
     call screen wardrobe
 
-# Panties Toggle #
+# Panties Toggle
 label her_panties_toggle:
     hide screen hermione_main
     if hermione_wear_panties: #Toggle OFF
+        if hg_pf_NicePanties_OBJ.points >= 3: #after 3rd panties event
+            $ h_request_wear_panties = False
         $ hermione_wear_panties = False
         call update_her_uniform
         if whoring >= 11 and whoring < 15:
@@ -180,6 +182,8 @@ label her_panties_toggle:
         else: #21+
             call her_main_rndm_naughty
     else: #Toggle ON
+        if hg_pf_NicePanties_OBJ.points >= 3: #after 3rd panties event
+            $ h_request_wear_panties = True
         $ hermione_wear_panties = True
         call update_her_uniform
         if whoring >= 11 and whoring < 15:
