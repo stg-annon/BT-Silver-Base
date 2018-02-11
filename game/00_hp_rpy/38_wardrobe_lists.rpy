@@ -112,13 +112,15 @@ label update_wardrobe_lists:
     $ wr_her_bottoms_uniform_low.append("uni_skirt_2_low")
     $ wr_her_bottoms_uniform_low.append("uni_skirt_3_low")
     #if micro_skirt unlocked/purchased:
-    $ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
+    #$ wr_her_bottoms_uniform_low.append("uni_skirt_4_low") #micro skirt
 
     #Skirts
     $ wr_her_bottoms_skirts = [] #Add skirts
 
-    $ wr_her_bottoms_skirts.append("skirt_belted_mini")
-    $ wr_her_bottoms_skirts.append("skirt_belted_micro")
+    if "skirt_belted_mini" in cs_existing_stock:
+        $ wr_her_bottoms_skirts.append("skirt_belted_mini")
+    if "skirt_belted_micro" in cs_existing_stock:
+        $ wr_her_bottoms_skirts.append("skirt_belted_micro")
     #ADD japan_pant
 
     #Pants

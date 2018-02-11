@@ -348,9 +348,18 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
             m "Just do it..."
         call her_main("..................","body_29")
     
-    call set_hermione_action("lift_skirt")
-    $ skirt_up = True
-    $ menu_x = 0.5 #Default menu position restored.
+
+    if whoring >= 9 and not h_request_wear_panties:
+        $ hermione_wear_panties = False
+    else:
+        $ hermione_wear_panties = True
+
+    if whoring < 9:
+        call set_hermione_action("lift_skirt")
+        $ skirt_up = True
+    else:
+        hide screen hermione_main
+        with d3
     
     show screen hermione_chibi_lift_skirt
     with d3
@@ -366,14 +375,9 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         $ new_request_02_heart = 1 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 1 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
+        call blk_tone
         call her_main("","body_49",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
+        call ctc_wPause
         
         her "....................."
         menu:
@@ -388,20 +392,16 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 pause
                 call her_main(".......................","body_51")
     
-    elif whoring >= 3 and whoring < hg_NoPanties_lvl: #LEVEL 02 = SECOND EVENT!
+    elif whoring >= 3 and whoring < 9: #hg_NoPanties_lvl #LEVEL 02 = SECOND EVENT!
         call her_head(".....................","body_188")
         
         $ new_request_02_heart = 2 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 2 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
+        call blk_tone
         call her_main("","body_52",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
+        call ctc_wPause
+
         her "Here, [genie_name]..."
         menu:
             "\"You don't look too embarrassed...\"":
@@ -417,49 +417,115 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
                 call her_main("................................","body_56")
                 call her_main("[genie_name], please... You are embarrassing me.","body_57")
     
-    elif whoring >= hg_NoPanties_lvl: #LEVEL 06 and up. = FINAL EVENT! (No panties).
-        # call her_head("..........................","body_188")
-        call her_main("..........................","body_188") # TenchiMuyo1984 Modification
+    elif whoring >= 9: #hg_NoPanties_lvl #LEVEL 06 and up. = FINAL EVENT! (No panties).
+
+        call ctc_wPause
+
+        call her_head("..........................","body_188")
+
         g4 "!!?"
+
+        call set_hermione_action("lift_skirt")
+        $ skirt_up = True
         
         $ new_request_02_heart = 3 #Event hearts level (0-3)
         $ hg_pf_NicePanties_OBJ.hearts_level = 3 #Event hearts level (0-3)
         
-        show screen bld1
-        with d3
-        show screen blktone
-        with d3
-        $ temp_panties = panties
-        $ panties = False
+        call blk_tone
+
         call her_main("","body_58",xpos=120,ypos=0)
-        show screen ctc
-        with d3
-        pause
-        g4 "Where are your panties, [hermione_name]?"
-        call her_main("Oh, lately I just don't feel like wearing them...","body_59")
-        menu:
-            "\"You little slut!\"":
-                her "Hm..."
-                call her_main("I suppose I am...","body_58")
-                her "Do I get extra points for that?"
-                menu:
-                    "\"Absolutely!\"":
-                        m "Absolutely!"
-                        $ gryffindor +=10
-                        m "Ten additional points to \"Gryffindor\"!" 
-                        call her_main("Thank you, [genie_name]!","body_60")
-                    "\"Absolutely not!\"":
-                        $ mad +=5
-                        call her_main("Why not!?","body_62")
-                        m "Sluts aren't paid"
-                        m "That's what makes them sluts"
-                        call her_main("well are you even going to pay me 5 points?","body_61")   
-                        m "Are you a slut or are you a prostitute?"
-                        her "{size=-4}...a slut {/size}"
-                        m "Good girl"
-            "\"Good! Five points!\"":
-                pass
-    
+        call ctc_wPause
+
+        if not h_request_wear_panties: #First event and Event A
+            g4 "Where are your panties, [hermione_name]?"
+            call her_main("Oh, lately I just don't feel like wearing them...","body_59")
+            menu:
+                "\"You little slut!\"":
+                    her "Hm..."
+                    call her_main("I suppose I am...","body_58")
+                    her "Do I get extra points for that?"
+                    menu:
+                        "\"Absolutely!\"":
+                            m "Absolutely!"
+                            $ gryffindor +=10
+                            m "Ten additional points to \"Gryffindor\"!" 
+                            call her_main("Thank you, [genie_name]!","body_60")
+                        "\"Absolutely not!\"":
+                            $ mad +=5
+                            call her_main("Why not!?","body_62")
+                            m "Sluts aren't paid"
+                            m "That's what makes them sluts"
+                            call her_main("well are you even going to pay me 5 points?","body_61")   
+                            m "Are you a slut or are you a prostitute?"
+                            her "{size=-4}...a slut {/size}"
+                            m "Good girl"
+                "\"Good! Five points!\"":
+                    pass
+        else: #Event B
+            call her_main("Do you like them, [genie_name]?","body_58") #smile, glance
+            m "Indeed I do, [hermione_name]..."
+            m "They look lovely on you!"
+            call her_main("Thank you, [genie_name].","body_188") #smile ,baseL, blush
+            call ctc_wPause
+
+        if not h_request_wear_panties: #False at this point
+            call her_main("If you want, [genie_name], I could put my panties back on for you.","body_107") #open, baseL
+            menu:
+                "\"Yes, put them back on!\"":
+                    call her_main("Alright, [genie_name].","body_58") #smile, glance
+                    hide screen hermione_main
+                    with d3
+                    ">Hermione puts on her panties."
+
+                    $ h_request_wear_panties = True
+                    $ hermione_wear_panties = True
+                    call update_her_uniform
+                    call update_chibi_uniform
+                    show screen hermione_chibi_lift_skirt
+                    call set_hermione_action("lift_skirt")
+
+                    $ her_main_smooth_transition = True
+                    call her_main("","body_58") #smile, glance
+
+                    call ctc_wPause
+                    call her_main("I hope you like them...","body_13") #soft, baseL
+
+                "\"No, keep them off!\"":
+                    call her_main("Of course, [genie_name].","body_121") #soft, ahegao
+
+                    $ h_request_wear_panties = False
+
+        else:
+            call her_main("I could take them off, if you'd like that, [genie_name].","body_107") #open, baseL
+            menu:
+                "\"Yes, Take them off!\"":
+                    call her_main("Alright, [genie_name].","body_121") #soft, ahegao
+                    m "And keep them off from now on!"
+                    call her_main("Whatever you want, [genie_name].","body_58") #smile, glance
+                    hide screen hermione_main
+                    with d3
+                    ">Hermione takes off her panties."
+
+                    $ h_request_wear_panties = False
+                    $ hermione_wear_panties = False
+                    call update_her_uniform
+                    hide screen hermione_chibi_lift_skirt
+                    call update_chibi_uniform
+                    show screen hermione_chibi_lift_skirt
+                    call set_hermione_action("lift_skirt")
+
+                    $ her_main_smooth_transition = True
+                    call her_main("","body_58") #smile, glance
+
+                    call ctc_wPause
+                    call her_main("I hope you like it, [genie_name]...","body_122") #mad, wink
+
+                "\"No, keep them on!\"":
+                    call her_main("Sure, [genie_name].","body_58") #smile, glance
+
+                    $ h_request_wear_panties = True
+
+
     stop music fadeout 4.0
     
     if whoring <= 8:
@@ -474,8 +540,10 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     with fade
     
     stop music fadeout 4.0
+
+    $ hermione_xpos = 525
     
-    call her_main("will this be all then?","body_31",xpos=370)
+    call her_main("will this be all then?","body_31")
     if whoring >= 13:
         menu:
             "-Let her go-":
