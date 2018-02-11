@@ -174,6 +174,16 @@ label __init_variables:
 
     if not hasattr(renpy.store,'luna_addicted'): #important!
         $ luna_addicted = False
+
+    if not hasattr(renpy.store,'luna_herm_talk'): #important!
+        $ luna_herm_talk = False
+
+    if not hasattr(renpy.store,'cgg_folder'): #important!
+        $ ccg_folder = "luna_bj"
+        $ ccg1 = "herm"
+        $ ccg2 = 1
+        $ ccg3 = "gene"
+
     
     
     if not hasattr(renpy.store,'new_request_01_heart'): #important!

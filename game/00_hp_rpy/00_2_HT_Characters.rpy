@@ -47,7 +47,7 @@ init python:
     lher = Character('Hermini', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     herA = Character('Prude Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250)
     hat = Character('Sorting Hat', color="#402313", show_two_window=True, ctc="ctc3", show_side_image=Image("01_hp/13_characters/hat/hat.png", xalign=1.0, yalign=1.0), ctc_position="fixed", window_right_padding=250)
-    msp = Character(color="#402313", window_left_padding=250, window_xpos=800, ctc="ctc3", ctc_position="fixed", window_right_padding=85)
+    msp = Character('Genie', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")
 
     ###4 Houses characters
     cho = Character('Cho', color="#402313", show_two_window=True, ctc="ctc3", ctc_position="fixed")

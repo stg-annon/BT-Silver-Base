@@ -396,6 +396,12 @@ screen shop_screen:
 screen cg:
     add cg_image
 
+screen ccg:
+    add "01_hp/28_cg/"+ccg_folder+"/base.png"
+    add "01_hp/28_cg/"+ccg_folder+"/"+str(ccg1)+".png"
+    add "01_hp/28_cg/"+ccg_folder+"/"+str(ccg2)+".png"
+    add "01_hp/28_cg/"+ccg_folder+"/"+str(ccg3)+".png"
+
 screen gui_tooltip:
     add my_picture xpos my_tt_xpos ypos my_tt_ypos
     
