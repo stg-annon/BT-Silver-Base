@@ -1427,7 +1427,7 @@ label end02_03:
     label intro:
         play music "music/TheKiss.mp3" fadein 1 fadeout 1 
         
-        centered "{size=+7}{color=#cbcbcb}Previously in the AKABUR's \"MAGIC SHOP\"...{/color}{/size}"
+        centered "{size=+7}{color=#cbcbcb}Previously in AKABUR's \"MAGIC SHOP\"...{/color}{/size}"
         show intro_01 with flashbb # WHITE FLASH.
         pause
         hide intro_01 
