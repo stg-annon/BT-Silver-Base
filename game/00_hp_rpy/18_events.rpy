@@ -1175,7 +1175,7 @@ label event_08:
         m "Uhm... I suppose I do..."
         her "{size=-4}(\"Suppose\"?){/size}"
         her "{size=-4}(When did Professor Dumbledore become so... apathetic.){/size}"
-    call her_main("Another measure you could take into consideration is tightening the control over your staff...","body_04")
+    call her_main("Another measure you could take into consideration is tightening your control over the staff...","body_04")
     her "Especially the teachers..."
     call her_main("I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision...","body_03")
     if d_flag_01:
