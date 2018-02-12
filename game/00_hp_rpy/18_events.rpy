@@ -334,7 +334,7 @@ label event_03:
     who2 "Then lift her skirt up, and..."
     call sna_main("","snape_12")
     who2 "*Khem!* Sadly, nowadays we teachers are severely limited in the disciplinary measures we have at our disposal..."
-    who2 "I know you are just as powerless as I am in this matter, but I'm telling you, that girl should better stop testing my patience."
+    who2 "I know you are just as powerless as I am in this matter, but I'm telling you, that girl had better stop testing my patience."
     menu:
         m "..."
 
@@ -416,7 +416,7 @@ label event_05:
     who2 "I want to talk to you about those damn kids again..."
     who2 "But first I want to ask you something..."
     call sna_main("","snape_05")
-    who2 "Did you notice anything strange going on around here lately?"
+    who2 "Have you noticed anything strange going on around here lately?"
     menu:
         m "..."
         "{size=-2}\"Like you being especially whiny?\"{/size}":
@@ -661,7 +661,7 @@ label event_06:
     hide ch_gen
     show image "01_hp/04_duel/no_magic.png" at Position(xpos=550+140, ypos=250, xanchor="center", yanchor="center") 
     
-    m "I told you you are no match for me..."
+    m "I told you that you're no match for me..."
     show screen bld1
     with d3
     m "You did give me a good run for my money though..."
@@ -681,7 +681,7 @@ label event_06:
     m "...Conducting an experiment back in my world, during which something went wrong and I ended up here."
     m "That's all..."
     sna_[1] ".........................."
-    sna_[1] "What became of to the real Albus Dumbledore then?"
+    sna_[1] "What became of the real Albus Dumbledore then?"
     m "I'm sure he is fine."
     m "He's Probably feeling as surprised about finding himself in my world as I am about finding myself here..."
     sna_[1] "...................................."
@@ -708,7 +708,7 @@ label event_06:
             sna_[1] "Whoever you are, you are not from this plane of existence."
             sna_[1] "Your very presence here upsets the natural order of things."
             sna_[1] "And these days this school needs a proper headmaster more than ever."
-    sna_[1] "Have a save trip home now."
+    sna_[1] "Have a safe trip home now."
     m "Ehm... Thank you, mr. Severus. Good luck with your students and the \"potter gang\"."
     sna_[1] "\"The potter gang\"?"
     sna_[7] "Oh, right, those buggers..."
@@ -777,7 +777,7 @@ label event_06:
             sna_[2] "Splendid..."
 
     m "Alright, to be honest I'm not sure where to go from here..."
-    m "All this time I thought I could undo the spell whenever I want to..."
+    m "All this time I thought I could undo the spell whenever I wanted to..."
     sna_[1] "..................................................."
     sna_[1] ".................................."
     sna_[1] "..................."
@@ -785,7 +785,7 @@ label event_06:
     sna_[1] "..................................................."
     m "Severus?"
     sna_[6] "Yes, yes..."
-    sna_[1] "Listen, it's very late, and too much happened already..."
+    sna_[1] "Listen, it's very late, and too much has happened already..."
     sna_[7] "I need to process all of this."
     sna_[1] "I will come to see you tomorrow, after my classes."
     sna_[6] "Until then, keep your true identity and our conversation a secret, alright?"
@@ -871,7 +871,7 @@ label event_07:
     g4 "Incredibly boring!"
     g4 "What am I supposed to do here?"
     call sna_main("You are a Genie. Conjure up some sort of entertainment for yourself.","snape_01")
-    m "My magic does not working properly here for some reason..."
+    m "My magic doesn't seem to be working properly here for some reason..."
     m "And my lamp is literally worlds away..."
     call sna_main("Well, what do you expect me to about that?","snape_03")
     sna "Send you a couple of girls from Slytherin maybe?"
@@ -915,9 +915,9 @@ label event_07:
     call sna_main("A-ha-ha-ha-ha...","snape_28")
     call sna_main("No, no, my apologies...","snape_02")
     sna "It's just that to me you still look and sound like Albus..."
-    sna "To hear Professor Dumbledore say things like \"Send me those girls up\"..."
+    sna "To hear Professor Dumbledore say things like \"Send me some of those girls\"..."
     call sna_main("It's hysterical... ","snape_22")
-    call sna_main("But you would't understand...","snape_09")
+    call sna_main("But you wouldn't understand...","snape_09")
     m "Heh..."
     g9 "Send those whores up, Severus. I'm feeling lonely tonight."
     call sna_main("Ha-ha-ha! Stop it, you're killing me!","snape_28")
@@ -1104,7 +1104,7 @@ label event_08:
         show screen blktone8
         with d3
         ">*Fap!* *Fap!* *Fap!*"
-        ">You keep on stroking you cock..."
+        ">You keep on stroking your cock..."
         hide screen blktone8
         with d3
         show screen hermione_main
@@ -1115,7 +1115,7 @@ label event_08:
     her "I mean, I would understand if something like this were to occur during the middle ages..."
     her "But we left the middle ages behind a long time ago, did we not?"
     if d_flag_01:
-        g9 "{size=-4}(Would you look at those rosy cheeks? I want to poke'em with my cock.){/size}"
+        g9 "{size=-4}(Would you look at those rosy cheeks? I want to poke 'em with my cock.){/size}"
         hide screen hermione_main
         show screen blktone8
         with d3
@@ -1126,19 +1126,19 @@ label event_08:
     else:
         m "Ehm... I suppose you did. I mean, we did."
     her "So it hurts the whole house-point-distribution system."
-    her "But it even doesn't stop there!"
+    her "But it doesn't even stop there!"
     her "It hurts our entire educational system as well..."
-    her "And more importantly the motivation among students is steadily decreasing due to it!"
+    her "And more importantly, the motivation among students is steadily decreasing due to it!"
     if d_flag_01:
         m "{size=-4}(Look at those huge knockers on you, girl!){/size}"
         m "{size=-4}(Yes... I want to squeeze my dick between them...){/size}"
-    her "As you can see the situation is dire..."
+    her "As you can see, the situation is dire..."
     call her_main("But we can still set everything right...","body_02")
     her "As the representative of our school's Student Representative Body..."
     her "I have a few suggestions on how to do that more efficiently."
     if not d_flag_01:
         m ".............."
-    her "First of all the house point system needs to be reinforced!"
+    her "First of all, the house point system needs to be reinforced!"
     call her_main("You need to control the point distribution better, sir.","body_03")
     if d_flag_01:
         g4 "{size=-4}(Yes, you are a whore... A nasty little whore... I bet you love to suck cocks... Don't you? Yes, I bet you do...){/size}"
@@ -1146,7 +1146,7 @@ label event_08:
         with d3
         show screen blktone8
         with d4
-        ">You stroke you diamond-hard cock ferociously!"
+        ">You stroke your diamond-hard cock ferociously!"
         hide screen blktone8 
         with d4
         show screen hermione_main
@@ -1175,11 +1175,11 @@ label event_08:
         m "Uhm... I suppose I do..."
         her "{size=-4}(\"Suppose\"?){/size}"
         her "{size=-4}(When did Professor Dumbledore become so... apathetic.){/size}"
-    call her_main("Another measure you could take in consideration is tightening the control over your staff...","body_04")
+    call her_main("Another measure you could take into consideration is tightening the control over your staff...","body_04")
     her "Especially the teachers..."
     call her_main("I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision...","body_03")
     if d_flag_01:
-        g4 "{size=-4}(Yes! You little whore! You fucking little whore!) *Panting*{/size}"
+        g4 "{size=-4}(Yes! You little whore! You little fucking whore!) *Panting*{/size}"
     else:
         m "......................."
     call her_main("I understand that you may not have time for this, professor, After all you are the headmaster of our school and a very busy and important man.","body_04")
@@ -1542,7 +1542,7 @@ label event_09:
     her "No individual shall be treated differently based on his or her gender."
     m "But--"
     call her_main("Please, let me finish, professor!","body_05")
-    call her_main("I'm organizing the \"Men's rights movements\" in our school!","body_04")
+    call her_main("I'm organizing the \"Men's rights movement\" in our school!","body_04")
     g4 "Oh, boy, this is just so typical!"
     g4 "Blame everything on--"
     stop music fadeout 1.0
@@ -1566,7 +1566,7 @@ label event_09:
     call her_main("This is sexism in its purest form!","body_02")
     menu:
         m "..."
-        "\"What you want me to do?\"":
+        "\"What do you want me to do?\"":
             call her_main("Nothing!","body_03")
             m "Great. I'm good at that."
         "\"I'm Not sure what to say...\"":
@@ -1580,7 +1580,7 @@ label event_09:
     m "{size=-4}(Wait, do I really give a damn about that?){/size}"
     her "I'm sorry, but you left me no choice, professor."
 
-    her "Now, if you excuse me I must get to my classes..."
+    her "Now, if you'll excuse me, I must get to my classes..."
     hide screen bld1
     hide screen hermione_main
     with d3
@@ -1967,7 +1967,7 @@ label event_12:
     call her_main("How this even possible?!","body_18")
     menu:
         "\"You should study more, girl!\"":
-            call her_main("But I did study all night!","body_19")
+            call her_main("But I studied all night for this test!","body_19")
         "\"There, there... It'll be alright.\"":
             call her_main("No it won't! This is a catastrophe!","body_20") 
 
@@ -1983,7 +1983,7 @@ label event_12:
             call her_main("Exactly...","body_09")
             her "Or at least I used to be until today..."
             call her_main("I cannot believe this is happening!","body_20")
-        "{size=-3}\"You could get smarter if I tutor you.\"{/size}":
+        "{size=-3}\"You could prepare better if I were to tutor you.\"{/size}":
             $ tutoring_offer_made = True #Affects conversation in the next event.
             call her_main("hm...","body_17")
             call her_main("Yes, that could help I suppose...","body_13")
@@ -1996,7 +1996,7 @@ label event_12:
     call her_main("I'm sorry, professor, I'm probably just overreacting anyway...","body_24")
     call her_main("But you must understand that my reputation is at stake here!","body_14")
     call her_main("There's gotta be something wrong with the test...","body_12")
-    her "And although I failed I probably still got the most points in the test..."
+    her "And although I failed, I probably still got the most points on the test..."
     her "As usual..."
     call her_main("Well I'd better go now. We have another \"MRM\" meeting today.","body_04")
     her "I will let you know about the new ideas we will come up with tonight."
@@ -2040,14 +2040,14 @@ label event_13:
     pause
     her "Huh?"
     hide screen ctc
-    her "Oh, I am already here?"
+    her "Oh, I'm already here?"
     her "I'm sorry sir... I..."
     her ".................."
     her "It seems that I did..."
     her "I did... uhm..."
     her "... I failed that test after all."
     her "I..."
-    call her_main("I am sorry, professor...","body_27")
+    call her_main("I'm sorry, professor...","body_27")
     her "I'm not sure why I am here..."
     her "I think I'd better go..."
     m "..................."
@@ -2135,7 +2135,7 @@ label event_14:
     call her_main("Good morning, Professor.","body_01",xpos=370,ypos=0)
     m "How can I help you today, miss Granger?"
     call her_main("Well, first of all I am terribly sorry about yesterday's display, sir...","body_04")
-    call her_main("I never failed a test in my life, so I wasn't sure how to react...","body_08")
+    call her_main("I've never failed a test in my life, so I wasn't sure how to react...","body_08")
     call her_main("But I am all better now...","body_04")
     m "I see..." 
     her "I will not take much of your time, I promise..."
@@ -2175,7 +2175,7 @@ label event_14:
                 pass
     else:
         call her_main("I... uhm...","body_07")
-        her "Sir Dumbledore, I hope this is not too much to ask..."
+        her "Sir, I hope this is not too much to ask..."
         m "Yes?"
         her "Ehm... would it be alright if..."
         her "..............."
@@ -2193,11 +2193,11 @@ label event_14:
     call her_main("And I'll be taking private lessons from you sir, as often as possible.","body_06")
     call her_main("But that's not all...","body_07")
     her "The \"MRM\" shall investigate our education system much closer now..."
-    her "I think some sort of foul-play might be taking place..."
+    her "I think some sort of foul play might be taking place..."
     m "No way!"
     her "I have a list of suspects already but I will get back to you on this later...."
     m "Ehm... alright..."
-    call her_main("Oh, the classes are about to start. I'd better go...","body_10")
+    call her_main("Oh, my classes are about to start. I'd better go...","body_10")
     
     hide screen bld1
     hide screen hermione_main
