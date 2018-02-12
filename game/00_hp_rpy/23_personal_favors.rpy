@@ -133,7 +133,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         her "I'm very happy about that..."
         call her_main("I think, given time, we will be able to make a real difference...","body_16")
         call her_main("Yes, it is so invigorating to know that you are doing the right thing!","body_06")
-        her "Would't you agree professor?"
+        her "Wouldn't you agree professor?"
         if d_flag_01:
             m "{size=-4}(Dammit. Now she killed the mood completely...){/size}"
             show screen genie
@@ -145,7 +145,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
             
         call her_main("[genie_name]?","body_05")
         m "Yes, yes, I'm totally listening..."
-        m "This is all very self righteous, er..."
+        m "This is all very self-righteous, er..."
         m "I mean, very invigorating and stuff..."
         call her_main("..........................","body_07")
   
@@ -12168,7 +12168,7 @@ label hg_pf_TheGamble_complete:
         "You couldn't say how many times the pain caused by her own thrashing makes her cum as you hold tight to her tits."
         "Eventually, she collapses against you. You can feel her breath on your cock."
         m "Look at yourself."
-        m "All of that pride and self righteousness you had at the beginning, and now you're collapsed against me. drooling on my dick, and... you can't even hear me, can you?"
+        m "All of that pride and self-righteousness you had at the beginning, and now you're collapsed against me, drooling on my dick, and... you can't even hear me, can you?"
         "You grab her hair and slap her face."
         m "Can you!"
         her "AH!! {image=textheart} AH!! {image=textheart} AH!! {image=textheart}"
