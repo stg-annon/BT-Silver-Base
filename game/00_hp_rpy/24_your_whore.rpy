@@ -1375,7 +1375,7 @@ label your_whore:
         her "Only one... ah..."
         g4 "What?"
         her "Only one tit, sir..."
-        g4 "Whatever happened to that idealistic and self righteous girl you once were?!"
+        g4 "Whatever happened to that idealistic and self-righteous girl you once were?!"
         $ end_u_2_pic =  "01_hp/17_ending/59.png" #<---- SCREEN
         show screen end_u_2                                             #<---- SCREEN
         with d7                                                                        #<---- SCREEN
