@@ -11,7 +11,7 @@ init python:
 ###MAP LOCATIONS AND RESPONSES
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
-        ">You venture up to the attic but find that the door locked"
+        ">You venture up to the attic but find that the door is locked."
         m "Damn, it's locked."
         m "Guess I'll have to ask Snape about a key."
         jump return_office
