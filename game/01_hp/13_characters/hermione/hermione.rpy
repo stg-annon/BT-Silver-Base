@@ -201,7 +201,10 @@ label __init_variables:
     $ hermione_wear_skirt       = True
     $ hermione_wear_top         = True
     
-    if not hasattr(renpy.store,'h_request_wear_panties'): #important!
+    if not hasattr(renpy.store,'h_request_wear_top'): #important!
+        $ h_request_wear_top = False
+        $ h_request_wear_bra = False
+        $ h_request_wear_bottom = False
         $ h_request_wear_panties = False
     
     
@@ -225,7 +228,10 @@ label __init_variables:
     
     $ hermione_tattoos           = []
     
-    $ hermione_perm_expand       = False
+    if not hasattr(renpy.store,'hermione_perm_expand'): #important!
+        $ hermione_perm_expand       = False
+        $ hermione_breasts_perm_expand       = False
+        $ hermione_ass_perm_expand       = False
     
     ## Chibi Vars
     $ hermione_chibi_stand       = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png"
