@@ -4,7 +4,7 @@ label points_changes: # SLYTHERIN POINTS AWARDING
     elif generating_points == 2: # POINTS WILL BE AWARDED
         
 
-        if difficulty_easy:  #Normal Difficulty
+        if game_difficulty <= 1:  #Easy Difficulty
             if snapes_support == 0: #Controls how much points is awarded to SLYTHERIN daily.
                 $ slytherin +=5     #Normal=2
                 hide screen s_p_u
