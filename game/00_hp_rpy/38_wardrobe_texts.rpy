@@ -1466,7 +1466,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
 
     if skirt_choice == h_skirt:
         $ wardrobe_active = 1
-        ">She's already wearing that!" #Remove line. Just for testing.
+        #">She's already wearing that!" #Remove line. Just for testing.
         jump return_to_wardrobe
 
     elif mad >= 1:
