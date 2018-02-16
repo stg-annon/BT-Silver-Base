@@ -385,10 +385,14 @@ label start_ht:
 
     menu:
         "-Play with easy difficulty-":
-            $ difficulty_easy = True
+            $ game_difficulty = 1
             $ cheat_reading = True
         "-Play with normal difficulty-":
-            $ difficulty_easy = False
+            $ game_difficulty = 2
+            $ cheat_reading = False
+        "-Play with hardcore difficulty-":
+            $ game_difficulty = 3
+            $ hardcore_difficulty_active = True #hardcore rewards #gets reset on difficulty change
             $ cheat_reading = False
 
     menu:
