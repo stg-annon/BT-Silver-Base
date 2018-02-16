@@ -163,8 +163,22 @@ label cupboard:
         "-Change Game Difficulty-":
             menu:
                 "-Enable Easy Difficulty-":                                 #CHANGE IN 00_HT_Start, Start of game option.
-                    $ difficulty_easy = True
+                    if hardcore_difficulty_active:
+                        "Warning: This will permanently remove your hardcore difficulty rewards!"
+                        menu:
+                            "Do you want to continue?"
+                            "-Yes, change difficulty to easy-":
+                                menu:
+                                    "Are you really sure?"
+                                    "-Yes, change difficulty to easy-":
+                                        pass
+                                    "-No, go back-":
+                                        jump day_main_menu
+                            "-No, go back-":
+                                jump day_main_menu
+                    $ game_difficulty = 1
                     $ cheat_reading = True
+                    $ hardcore_difficulty_active = False #removes hardcore rewards
                     "Game set to easy difficulty!"
                     "Increased gold reward from reports and other sources!" #CHANGE IN 01_hp_main_day and 15_mail.
                     "Rummaging through your cupboard is more rewarding!"    #CHANGE IN 11_cupboard, label rummaging.
@@ -172,9 +186,34 @@ label cupboard:
                     "Hermione won't stay mad at you for as long!"           #CHANGE IN 01_hp_main_day.
                     jump day_main_menu
                 "-Enable Normal Difficulty-":
-                    $ difficulty_easy = False
+                    if hardcore_difficulty_active:
+                        "Warning: This will permanently remove your hardcore difficulty rewards!"
+                        menu:
+                            "Do you want to continue?"
+                            "-Yes, change difficulty to normal-":
+                                menu:
+                                    "Are you really sure?"
+                                    "-Yes, change difficulty to normal-":
+                                        pass
+                                    "-No, go back-":
+                                        jump day_main_menu
+                            "-No, go back-":
+                                jump day_main_menu
+                    $ game_difficulty = 2
                     $ cheat_reading = False
+                    $ hardcore_difficulty_active = False #removes hardcore rewards
                     "Game set to normal difficulty!"
+                    jump day_main_menu
+                "-Enable Hardcore Difficulty-": #Original Game Difficulty
+                    "This will not add hardcore difficulty rewards!"
+                    "To get hardcore difficulty rewards you will need to start a new game in hardcore difficulty and stay in said difficulty!"
+                    $ game_difficulty = 3
+                    $ cheat_reading = False
+                    "Game set to hard difficulty!"
+                    "This is the original Witch Trainer difficulty!"
+                    jump day_main_menu
+                "-Cheat add hardcore difficulty rewards-":
+                    $ hardcore_difficulty_active = True
                     jump day_main_menu
 
         "-Cheat-":
