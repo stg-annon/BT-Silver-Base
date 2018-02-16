@@ -317,7 +317,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Blonde Dye- (20 Gold)" if "blonde_dye" not in cs_existing_stock:
                     maf "A very nice shade of yellow."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 5 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
@@ -331,7 +331,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Red Dye- (20 Gold)" if "red_dye" not in cs_existing_stock:
                     maf "A very nice shade of red."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 5 to be used.<"
                     menu:
                         "-Buy the item (20 gold)-":
@@ -345,7 +345,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Crimson Dye- (40 Gold)" if "crimson_dye" not in cs_existing_stock:
                     maf "A very rich shade of red."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 8 to be used.<"
                     menu:
                         "-Buy the item (40 gold)-":
@@ -359,7 +359,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Black Dye- (200 Gold)" if "black_dye" not in cs_existing_stock:
                     maf "As black as a Testral! So I have heard."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 8 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
@@ -373,7 +373,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Green Dye- (60 Gold)" if "green_dye" not in cs_existing_stock:
                     maf "A bright shade of green."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
@@ -387,7 +387,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Blue Dye- (60 Gold)" if "blue_dye" not in cs_existing_stock:
                     maf "A bright shade of blue."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (60 gold)-":
@@ -401,7 +401,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Purple Dye- (80 Gold)" if "purple_dye" not in cs_existing_stock:
                     maf "A very nice shade of purple."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 11 to be used.<"
                     menu:
                         "-Buy the item (80 gold)-":
@@ -415,7 +415,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-Pink Dye- (200 Gold)" if "pink_dye" not in cs_existing_stock:
                     maf "As bright and pink as my... I better not say any more."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 14 to be used.<"
                     menu:
                         "-Buy the item (200 gold)-":
@@ -429,7 +429,7 @@ label existing_stock:
                     jump existing_stock_dyes
                 "-White Dye- (400 Gold)" if "white_dye" not in cs_existing_stock:
                     maf "A white as bright and pure as a Unicorn's skin."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be used.<"
                     menu:
                         "-Buy the item (400 gold)-":
@@ -451,7 +451,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Pink Pullover- (50 Gold)" if "normal_pullover" not in cs_existing_stock:
                     maf "A cute pink pullover. Has a heart shaped hole for her cleavage that can magically appear if you want!"
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (50 gold)-":
@@ -465,7 +465,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Purple Sweater- (60 Gold)" if "normal_purple_sweater" not in cs_existing_stock:
                     maf "The pink sweater she has worn in movie 3! When she punched that rascal Malfoy in the face! Loved that scene."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
@@ -479,7 +479,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Fancy Beige Top- (100 Gold)" if "fancy_waitress_beige" not in cs_existing_stock:
                     maf "Very cute looking top if I may say so myself."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 8 to be worn.<"
                     menu:
                         "-Buy the item (100 gold)-":
@@ -493,7 +493,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Fancy Green Top- (100 Gold)" if "fancy_waitress_green" not in cs_existing_stock:
                     maf "Very lovely looking top. Perfect for a proud slytherin girl!"
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 11 to be worn.<"
                     menu:
                         "-Buy the item (100 gold)-":
@@ -507,7 +507,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Leather Jacket Short Sleeves- (200 Gold)" if "wicked_leather_jacket_short_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with short sleeves. Can also be worn open of course."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
@@ -521,7 +521,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Leather Jacket No Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeveless" not in cs_existing_stock:
                     maf "A black leather jacket with no sleeves. Can also be worn open of course."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
@@ -535,7 +535,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Leather Jacket Long Sleeves- (200 Gold)" if "wicked_leather_jacket_sleeves" not in cs_existing_stock:
                     maf "A black leather jacket with long sleeves. Can also be worn open of course."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (200 gold)-":
@@ -549,7 +549,7 @@ label existing_stock:
                     jump existing_stock_tops
                 "-Fishnets Top- (60 Gold)" if "top_fishnets" not in cs_existing_stock:
                     maf "This fishnets top hides nothing! What girl would possibly want to wear this on school grounds?"
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 20 to be worn.<"
                     menu:
                         "-Buy the item (60 gold)-":
@@ -570,7 +570,7 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Belted Mini Skirt- (75 Gold)" if "skirt_belted_mini" not in cs_existing_stock:
                     maf "A short skirt with a belt. Very trendy!"
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 8 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
@@ -584,7 +584,7 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Belted Micro Skirt- (150 Gold)" if "skirt_belted_micro" not in cs_existing_stock:
                     maf "A very short skirt with a belt. Very revealing! Lets just hope the girl is wearing a pair of underwear!"
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
@@ -598,7 +598,7 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Jeans- (75 Gold)" if "pants_jeans_long" not in cs_existing_stock:
                     maf "A pair of standard muggle jeans, albeit a little low slung."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 2 to be worn.<"
                     menu:
                         "-Buy the item (75 gold)-":
@@ -612,7 +612,7 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Short Jeans- (150 Gold)" if "pants_jeans_short" not in cs_existing_stock:
                     maf "A pair of short daisy dukes."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 11 to be worn.<"
                     menu:
                         "-Buy the item (150 gold)-":
@@ -626,7 +626,7 @@ label existing_stock:
                     jump existing_stock_pants_skirts
                 "-Retro Shorts- (170 Gold)" if "pants_retro_shorts" not in cs_existing_stock:
                     maf "A pair of skin tight retro shorts. Just the right thing to highlight a magnificent behind."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Requires a whoring level of 17 to be worn.<"
                     menu:
                         "-Buy the item (170 gold)-":
