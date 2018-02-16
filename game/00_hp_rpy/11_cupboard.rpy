@@ -428,10 +428,10 @@ label rummaging:
         else: 
             jump day_start
         
-    if not difficulty_easy:
+    if game_difficulty >= 2:                   #Normal and hardcore difficulty
         if i_of_iv == 4: # Found something.
             jump rum_rewards
-        else:
+        else:                                  #Easy difficulty
             ">...You find nothing of value."
             show screen cupboard
             show screen genie
