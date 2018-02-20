@@ -136,9 +136,14 @@ label __init_variables:
     if not hasattr(renpy.store,'temp_outfit'): #important!
         $ temp_outfit = custom_outfit_old
 
+    ### Interface ###
+    if not hasattr(renpy.store,'interface_color'): #important!
+        $ interface_color = "gold"
+
     ### Difficulty ###
-    if not hasattr(renpy.store,'difficulty_easy'): #important!
-        $ difficulty_easy = False
+    if not hasattr(renpy.store,'game_difficulty'): #important!
+        $ game_difficulty = 2                      # 2 = normal
+        $ hardcore_difficulty_active = False       # for hardcore play-through rewards
 
     ### Cheats ###
     if not hasattr(renpy.store,'cheats_active'): #important!

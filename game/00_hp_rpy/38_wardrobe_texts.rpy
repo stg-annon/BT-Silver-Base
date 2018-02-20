@@ -301,7 +301,7 @@ label change_her_hair_color:
                     call her_main("No thank you, [genie_name].","body_127") #open, closed
                     call her_main("I like my hair how it is.","body_10") #open, concernedL
                     call her_main("I have to refuse!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -337,7 +337,7 @@ label change_her_hair_color:
                     call her_main("No thank you, [genie_name].","body_127") #open, closed
                     call her_main("I like my hair how it is.","body_10") #open, concernedL
                     call her_main("I have to refuse!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -351,7 +351,7 @@ label change_her_hair_color:
                     call her_main("That's a bit much don't you think?","body_97") #mads, worried closed
                     call her_main("(I'm not dying my hair red to look like some harlot.)","body_201") #very upset, baseL
                     call her_main("I have to refuse, [genie_name]!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -372,7 +372,7 @@ label change_her_hair_color:
                     call her_main("Black isn't really my colour.","body_13") #soft, baseL
                     call her_main("I don't think it will suit me, [genie_name].","body_127") #open, closed
                     call her_main("I have to refuse.","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -403,7 +403,7 @@ label change_her_hair_color:
                     call her_main("What?!","body_49") #mad, angry
                     call her_main("I'm not going to walk around school parading as some Slytherin joke-mascot!","body_30") #scream, angry, closed
                     call her_main("I definitely refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -417,14 +417,14 @@ label change_her_hair_color:
                     if whoring < 5:
                         call her_main("I'm not going to dye my hair blue for you, [genie_name]!","body_04") #open, angry closed
                         call her_main("If you want your own parrot, then you should just buy one!","body_49") #mad, angry
-                        if cheats_active or difficulty_easy:
+                        if cheats_active or game_difficulty <= 1:
                             ">Try again at whoring level 11."
                         jump return_to_wardrobe
                     else: #5-10
                         call her_main("Really, [genie_name]?","body_17") #very upset, suspicious
                         call her_main("You want me to look like a lesbian that bad?","body_186") #open, annoyed, blush
                         call her_main("I'm going to refuse!","body_201") #very upset, baseL
-                        if cheats_active or difficulty_easy:
+                        if cheats_active or game_difficulty <= 1:
                             ">Try again at whoring level 11."
                         jump return_to_wardrobe
                     
@@ -439,7 +439,7 @@ label change_her_hair_color:
                     call her_main("I do like the colour, but...","body_13") #soft, baseL
                     call her_main("I don't think I want to wear it on my head...","body_70") #very upset, ahegao
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -458,7 +458,7 @@ label change_her_hair_color:
                     call her_main("(What does he think I am? Some cheap dressup-doll?)","body_69") #very upset, angryL
                     call her_main("It's an ugly colour anyway.","body_127") #open, closed
                     call her_main("I definitely refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 14."
                     jump return_to_wardrobe
                     
@@ -472,7 +472,7 @@ label change_her_hair_color:
                     call her_main("No, [genie_name].","body_127") #open, closed
                     call her_main("I'm not going to run around school looking like some grandma!","body_50") #very upset, annoyed
                     call her_main("I refuse!","body_201") #very upset, baseL
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
 
@@ -491,48 +491,48 @@ label change_her_hair_color:
         else:
             if wardrobe_hair_color == "2" and whoring <= 5:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "3" and whoring <= 5:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "4" and whoring <= 8:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "5" and whoring <= 8:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
 
             if wardrobe_hair_color == "6" and whoring <= 11:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "7" and whoring <= 11:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "8" and whoring <= 11:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "9" and whoring <= 14:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 14."
                 jump return_to_wardrobe
             if wardrobe_hair_color == "10" and whoring <= 17:
                 ">She won't wear that colour just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             else:
@@ -654,7 +654,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("I'm sorry, [genie_name].","body_01") #smile, base
                     call her_main("But that would be against the Hogwarts rules for proper school attire!","body_127") #open, closed
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 2."
                     jump return_to_wardrobe
                     
@@ -690,7 +690,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     m "Leave your tie on."
                     g4 "(And stop talking!)"
                     call her_main("Very well, [genie_name].","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -741,7 +741,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         m "(Maybe it's not a good idea to ask her that now.)"
                         m "Never mind, girl."
                         call her_main("OK, [genie_name].","body_01") #smile, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -775,7 +775,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("This is just ridiculous!","body_05") #mad, angry
                     call her_main("I'm not walking around school wearing my shirt like that!","body_17") #mad, suspicious
                     call her_main("I refuse!","body_10") #open, concernedL
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -807,7 +807,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("But there is no way I will walk around school with...","body_49") #mad, angry
                         call her_main("I will not show off my cleavage, [genie_name]!","body_127") #open, closed
                         call her_main("I have to refuse!","body_201") #very upset, look left
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -841,7 +841,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("While I like the idea of supporting my house in Quidditch...","body_127") #open, closed
                     call her_main("My priority is to secure this years house-cup instead!","body_107") #open, baseL
                     call her_main("I have to refuse, [genie_name].","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -890,7 +890,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("(Always flashed their tits at our players...)","body_12") #very upset, angryL
                         call her_main("(I hate those skunks! I will never fall that low.)","body_05") #mad, angry
                         call her_main("I'm not going to wear that, [genie_name]!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -943,7 +943,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     m "(Is she allergic to grasshoppers or something?)"
                     m "Forget about it, girl."
                     call her_main("I will!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -969,7 +969,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("I'm sorry, [genie_name].","body_127") #open, closed
                         call her_main("But don't even think I would wear a top like this in school!","body_05") #mad, angry
                         call her_main("No thanks.","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -993,7 +993,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("I refuse to walk around in a green top that's green!","body_05") #mad, angry
                         call her_main("People might mistake me for a Slytherin!","body_12") #very upset, angryL
                         call her_main("No thanks.","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -1040,7 +1040,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("Even with all the favours I'm willing to do for you...","body_10") #open, concernedL
                         call her_main("I am not going to wear a jacket like this on school grounds.","body_50") #very upset, annoyed
                         call her_main("I refuse!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
 
@@ -1095,7 +1095,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("Even with all the favours I'm willing to do for you...","body_10") #open, concernedL
                         call her_main("I am not going to wear a jacket like this on school grounds.","body_50") #very upset, annoyed
                         call her_main("I refuse!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
 
@@ -1147,7 +1147,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                         call her_main("I'm not going to wear a shirt like this on school grounds!","body_10") #open, concernedL
                         call her_main("What are you even thinking!","body_05") #mad, angry
                         call her_main("I refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
                     
@@ -1180,7 +1180,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("I'm sorry, [genie_name].","body_01") #smile, base
                     call her_main("But that would be against the Hogwarts rules for proper school attire!","body_127") #open, closed
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 2."
                     jump return_to_wardrobe
 
@@ -1216,7 +1216,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("I'm sorry, [genie_name].","body_01") #smile, base
                     call her_main("But that would be against the Hogwarts rules for proper school attire!","body_127") #open, closed
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 2."
                     jump return_to_wardrobe
 
@@ -1245,7 +1245,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     call her_main("I'm sorry, [genie_name].","body_01") #smile, base
                     call her_main("But that would be against the Hogwarts rules for proper school attire!","body_127") #open, closed
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 2."
                     jump return_to_wardrobe
 
@@ -1255,7 +1255,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     pass
                 else:
                     ">She won't wear that top just yet."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
             elif top_choice == "top_shirt_gryff_ripped_long_tie":
@@ -1263,7 +1263,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     pass
                 else:
                     ">She won't wear that top just yet."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
             elif top_choice == "top_tie_gryff":
@@ -1271,7 +1271,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     pass
                 else:
                     ">She won't wear that top just yet."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
             elif top_choice == "top_banner_slyth":
@@ -1279,7 +1279,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     pass
                 else:
                     ">She won't wear that top just yet."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
             elif top_choice == "top_fishnets":
@@ -1287,7 +1287,7 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
                     pass
                 else:
                     ">She won't wear that top just yet."
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
 
@@ -1307,148 +1307,148 @@ label equip_top:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \"te
             #Change this to:
             #if top_choice == wardrobe_item and whoring < wardrobe_item.whoring_requirement:
             #    ">She won't wear that top just yet."
-            #    if cheats_active or difficulty_easy:
+            #    if cheats_active or game_difficulty <= 1:
             #        ">Try again at whoring level "+ ""wardrobe_item.whoring_requirement +"."
             #    jump return_to_wardrobe
 
             #Uniform
             if top_choice == "uni_top_2" and whoring < 2: #no vest
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if top_choice == "uni_top_3" and whoring < 5: #no tie
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 5."
                 jump return_to_wardrobe
             if top_choice == "uni_top_4" and whoring < 8: #cleavage
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if top_choice == "uni_top_5" and whoring < 11: #crop top
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if top_choice == "uni_top_6" and whoring < 8: #vest w/cleavage
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
 
             if top_choice == "uni_top_cheer_gryff" and whoring < 5:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 5."
                 jump return_to_wardrobe
             if top_choice == "uni_top_cheer_gryff_skimpy" and whoring < 8:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if top_choice == "uni_top_cheer_slyth" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if top_choice == "uni_top_cheer_slyth_skimpy" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
 
             #Fancy
             if top_choice == "fancy_waitress_beige" and whoring < 8:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if top_choice == "fancy_waitress_green" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
 
             #Wicked
             if top_choice == "wicked_leather_jacket_short_sleeves" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_leather_jacket_short_sleeves_open" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_leather_jacket_sleeveless" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_leather_jacket_sleeveless_open" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_leather_jacket_sleeves" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_leather_jacket_sleeves_open" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "wicked_rocker_top" and whoring < 20:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 20."
                 jump return_to_wardrobe
 
             #Muggle
             if top_choice == "normal_pullover" and whoring < 2:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if top_choice == "normal_pullover_sexy" and whoring < 2:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if top_choice == "normal_purple_sweater" and whoring < 2:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
 
             #Misc
             if top_choice == "top_banner_gryff" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if top_choice == "top_shirt_gryff_ripped_long_tie" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if top_choice == "top_tie_gryff" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if top_choice == "top_banner_slyth" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if top_choice == "top_fishnets" and whoring < 20:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 20."
                 jump return_to_wardrobe
             else:
@@ -1531,7 +1531,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     call her_main("I'm sorry, [genie_name].","body_01") #smile, base
                     call her_main("But that would be against the Hogwarts rules for proper school attire!","body_127") #open, closed
                     call her_main("I have to refuse, [genie_name].","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -1558,7 +1558,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     else:
                         call her_main("That's way too short, [genie_name]!","body_127") #open, closed
                         call her_main("I have to refuse!","body_17") #very upset, suspicious
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -1582,7 +1582,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     else:
                         call her_main("That's way too short, [genie_name]!","body_127") #open, closed
                         call her_main("I have to refuse!","body_17") #very upset, suspicious
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 14."
                     jump return_to_wardrobe
                     
@@ -1609,7 +1609,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("Is that another one of your silly jokes, [genie_name]?","body_28") #mad, concerned
                         call her_main("No, please, don't tell me.","body_127") #open, closed
                         call her_main("I don't even want to know...","body_29") #very upset, concernedL
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
                     
@@ -1629,7 +1629,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     call her_main("While I like the idea of supporting my house in Quidditch...","body_127") #open, closed
                     call her_main("My priority is to secure this years house-cup instead!","body_107") #open, baseL
                     call her_main("I have to refuse, [genie_name].","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 5."
                     jump return_to_wardrobe
                     
@@ -1682,7 +1682,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     m "(Is she allergic to grasshoppers or something?)"
                     m "Forget about it, girl."
                     call her_main("I will!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -1721,7 +1721,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("My panties would be visible...","body_85") #disgust, down
                         m "That's kind of the point, [hermione_name]."
                         call her_main("I refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -1753,7 +1753,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         m "That's kind of the point, [hermione_name]."
                         call her_main("Besides, the length you suggested is way too short!","body_127") #open, closed
                         call her_main("I refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -1782,7 +1782,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         m "That's kind of the point, [hermione_name]."
                         call her_main("Besides, the length you suggested is way too short!","body_127") #open, closed
                         call her_main("I refuse!","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
                     
@@ -1794,7 +1794,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                    call her_main("","body_01")
                 else:
                     call her_main("","body_01")
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 20."
                     jump return_to_wardrobe
 
@@ -1829,7 +1829,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("I'm not going to wear a skirt that short!","body_49") #mad, angry
                         call her_main("(What is he thinking?...)","body_28") #mad, concerned
                         call her_main("I refuse","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
                     
@@ -1862,7 +1862,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("I'm not going to wear a skirt that short!","body_49") #mad, angry
                         call her_main("(What is he thinking?...)","body_28") #mad, concerned
                         call her_main("I refuse","body_50") #very upset, annoyed
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
 
@@ -1877,7 +1877,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("[genie_name], those are jeans!","body_122") #mad, wink
                         m "... yes?"
                         call her_main("Muggle pants!","body_199") #disgust, down, blush
-                        call her_main("Girls are supposed to wear skirts here at Hogwarts!","body_127") #open, closed
+                        call her_main("Girls are supposed to wear skirts here at Hogwarts!","127") #open, closed
                         call her_main("At all times! No exceptions!","body_29") #very upset, concernedL
                         m "That's a very sexist thing to say, don't you think?"
                         call her_main("I-- uhm...","body_122") #mad, wink
@@ -1902,7 +1902,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                     call her_main("But pants are not part of Hogwarts' school attire.","body_127") #open, closed
                     call her_main("Besides, I feel more comfortable in my school skirt.","body_08") #open, suspicious
                     call her_main("I have to refuse!","body_03") #normal, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 2."
                     jump return_to_wardrobe
                     
@@ -1939,7 +1939,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("(They look really nice though...)","body_59") #smile, down
                         call her_main("(Maybe next time...)","body_54") #smile, baseL
                         call her_main("I have to refuse.","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 11."
                     jump return_to_wardrobe
                     
@@ -1973,7 +1973,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("(They look really nice though...)","body_59") #smile, down
                         call her_main("(Maybe next time...)","body_54") #smile, baseL
                         call her_main("I have to refuse.","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 17."
                     jump return_to_wardrobe
                     
@@ -2020,7 +2020,7 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
                         call her_main("(They look really nice though...)","body_59") #smile, down
                         call her_main("(Maybe next time...)","body_54") #smile, baseL
                         call her_main("I have to refuse.","body_15") #soft, base
-                    if cheats_active or difficulty_easy:
+                    if cheats_active or game_difficulty <= 1:
                         ">Try again at whoring level 8."
                     jump return_to_wardrobe
             else:
@@ -2042,95 +2042,95 @@ label equip_bottom:    #useful stuff: {w=0.9} {size=-2}text{/size} {b}text{/b} \
             #Change this to:
             #if skirt_choice == wardrobe_item and whoring < wardrobe_item.whoring_requirement:
             #    ">She won't wear that skirt just yet."
-            #    if cheats_active or difficulty_easy:
+            #    if cheats_active or game_difficulty <= 1:
             #        ">Try again at whoring level "+ ""wardrobe_item.whoring_requirement +"."
             #    jump return_to_wardrobe
 
             #Uniform
             if skirt_choice == "uni_skirt_2" and whoring < 5: #no vest
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 5."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_3" and whoring < 8: #no tie
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_4" and whoring < 14: #cleavage
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 14."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_5" and whoring < 17: #crop top
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_cheer_gryff" and whoring < 5: #vest w/cleavage
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 5."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_cheer_slyth" and whoring < 11:
                 ">She won't wear that skirt just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
 
             #Uniform Low
             if skirt_choice == "uni_skirt_1_low" and whoring < 8:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_2_low" and whoring < 11:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if skirt_choice == "uni_skirt_3_low" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             #if skirt_choice == "uni_skirt_4_low" and whoring < 20:
             #    ">She won't wear that top just yet."
-            #    if cheats_active or difficulty_easy:
+            #    if cheats_active or game_difficulty <= 1:
             #        ">Try again at whoring level 20."
             #    jump return_to_wardrobe
 
             #Skirts
             if skirt_choice == "skirt_belted_mini" and whoring < 8:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 8."
                 jump return_to_wardrobe
             if skirt_choice == "skirt_belted_micro" and whoring < 17:
                 ">She won't wear that top just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
 
             #Pants
             if skirt_choice == "pants_jeans_long" and whoring < 2:
                 ">She won't wear those pants just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 2."
                 jump return_to_wardrobe
             if skirt_choice == "pants_jeans_short" and whoring < 11:
                 ">She won't wear those pants just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 11."
                 jump return_to_wardrobe
             if skirt_choice == "pants_retro_shorts" and whoring < 17:
                 ">She won't wear those pants just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 17."
                 jump return_to_wardrobe
             if skirt_choice == "pants_rocker" and whoring < 20:
                 ">She won't wear those pants just yet."
-                if cheats_active or difficulty_easy:
+                if cheats_active or game_difficulty <= 1:
                     ">Try again at whoring level 20."
                 jump return_to_wardrobe
 
