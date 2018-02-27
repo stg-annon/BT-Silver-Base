@@ -2304,7 +2304,7 @@ label event_15:
             call her_main("B-but... We need the points...","body_31")
             her "Professor, please, I am really desperate..."
             m "Desperate you say..?"
-            m "Well alright..."
+            m "Well, alright..."
     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 
     call her_main("Thank you, professor...","body_01")
     
@@ -2360,7 +2360,7 @@ label event_15:
     call her_main("Em, alright...",xpos=140)
     if d_flag_01: #Show me your tongue.
         call her_main("M-my... tongue, sir?","body_24")
-        m "Yes, girl, open your mouth and show me your tongue."
+        m "Yes, girl. Open your mouth, and show me your tongue."
         call her_main("{size=-7}(What a weirdo...){/size}","body_12")
         call her_main("Ehm... well, alright then...","body_07")
         call her_main("Here...","body_08")
@@ -2488,7 +2488,7 @@ label event_15:
                 call her_main("Get s-spanked??","body_18")
                 call her_main("Tsk!","body_05")
                 call her_main("Professor, I don't think I'm comfortable with--","body_04")
-                m "My bad, let me rephrase the question..."
+                m "Apologies, let me rephrase the question..."
                 m "How badly do you need those points?"
                 call her_main("..................","body_09")
                 call her_main("Yes, sir. I do need to get spanked.","body_04")
@@ -2514,7 +2514,7 @@ label event_15:
     
     call her_main("Yay!..............","body_24",xpos=140)
     her "This was quite easy..."
-    her "You think you could buy some more favours from me in the future, professor?"
+    her "Do you think you could buy some more favours from me in the future, professor?"
     menu:
         "\"I don't think that's a good idea.\"":
             call her_main("Please, professor...","body_28")
@@ -2526,8 +2526,8 @@ label event_15:
         "\"That's a possibility...\"":
             pass
             
-    call her_main("Thank you professor. Thank you so much.","body_06")
-    call her_main("Well, I suppose, I'd better go now...","body_01")
+    call her_main("Thank you, professor. Thank you so much.","body_06")
+    call her_main("Well... I suppose I'd better go now...","body_01")
     m "............"
 
     hide screen bld1
