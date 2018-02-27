@@ -80,11 +80,11 @@ label l_tutoring:
         call her_main("Sir?","body_13")
         m "It's time to talk about your future, child."
         stop music fadeout 1.0
-        call her_main("I'm not a child anymore professor!","body_07")
-        m "In a way you're right but..."
+        call her_main("I'm not a child anymore, professor!","body_07")
+        m "In a way you're right, but..."
         her "..........."
-        m "Anyway I can tutor you but you need to understand certain things about magic."
-        m "With proper training you can learn to increase your magic ability."
+        m "I can tutor you, but you need to understand certain things about magic."
+        m "With proper training, you can learn to increase your magic ability."
         play music ms_manatees fadein 1 fadeout 1
         call her_main("Yes?","body_13")
         m "Certain emotions like love and hate, pleasure and pain..."
@@ -95,25 +95,25 @@ label l_tutoring:
         call her_main("Please stop that, professor. Nobody considers me a child anymore.","body_02")
         m "Yes, technically..."
         call her_main("Technically?!","body_02")
-        g4 "Enough of this. You came to me to ask for my help and if it starts like that..."
+        g4 "Enough of this. You came to me to ask for my help, and if it starts like that..."
         call her_main("Yes, I suppose you are right...","body_05")
         call her_main("Alright, I'm ready to study hard with you!","body_45")
         g9 "{size=-2}(Yes!){/size}"
         call her_main("What was that?","body_186")
-        m "Uh, yes I'm glad you're beginning to understand, {w=0.3}child."
+        m "Uh, yes I'm glad you're beginning to understand, child."
         her "..........."
         m "Alright, I want you to take some time and think about what I've said. Next time we'll start with your first lesson."
         call her_main("Can't we start now?","body_14")
         m "Miss Granger, you're not the only student I must take care of."
         call her_main("You're tutoring someone else?","body_02")
         m "{size=-2}(If only...){/size}"
-        m "I mean, I must take care of all the students of this school."
+        m "I must take care of all the students of this school."
         m "But yes, there is another girl who needs..."
         call her_main("A Slytherin girl?!","body_130")
         g9 "That is none of your business, miss Granger."
-        call her_main("Yes, professor, I'm sorry but with all the recent events I'm a little on edge.","body_05")
-        m "Apology accepted and now goodnight!"
-        call her_main("Good night professor and thanks again for taking some of your precious time to help me.","body_45")
+        call her_main("Yes, professor. I'm sorry, but with all the recent events I'm a little on edge.","body_05")
+        m "Apology accepted, and now goodnight!"
+        call her_main("Good night, professor, and thanks again for taking some of your precious time to help me.","body_45")
         hide screen bld1
         hide screen hermione_main
         with d3
@@ -122,7 +122,7 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_stand_f
-        call her_head("{size=-4}(I'm glad professor agreed to tutor me){/size}","head_exp/35")
+        call her_head("{size=-4}(I'm glad the professor agreed to tutor me){/size}","head_exp/35")
         call her_head("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","head_exp/2")
         hide screen hermione_stand_f
         with d3
