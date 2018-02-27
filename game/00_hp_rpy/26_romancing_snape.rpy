@@ -137,13 +137,13 @@ label date_with_snape_04:
     show screen s_head2                                                                                                 # SNAPE
     sna "Do you believe in the theory of parallel worlds?"
     hide screen s_head2    
-    m "Well, it is hard not to. All things considered."
+    m "Well, it's hard not to. All things considered."
     $ s_sprite = "01_hp/13_characters/snape/main/23.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
     sna "True..."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "So you think somewhere out there is another version of me?"
+    sna2 "So, you think somewhere out there is another version of me?"
     hide screen s_head2    
     m "Probably..."
     $ s_sprite = "01_hp/13_characters/snape/main/23.png"                                         # SNAPE
@@ -215,7 +215,7 @@ label date_with_snape_05:
     sna "Well, we do have time..."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_05.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "I mean you are still pretty much powerless, right?"
+    sna2 "You are still pretty much powerless, right?"
     hide screen s_head2    
     m "Yeah, pretty much..."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_02.png"                                         # SNAPE
@@ -225,7 +225,7 @@ label date_with_snape_05:
     m "......................."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_29.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "I mean it is bad for {size=+5}you{/size}, but good for {size=+5}us{/size}, right?"
+    sna2 "I mean, it is bad for {size=+5}you{/size}, but good for {size=+5}us{/size}, right?"
     hide screen s_head2    
     m "Right..."
     show screen blktone
