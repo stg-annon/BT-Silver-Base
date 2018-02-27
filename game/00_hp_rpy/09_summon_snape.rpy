@@ -400,7 +400,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "What do you mean?"
     with hpunch
     sna_[5] "{size=+6}I will have to kill her!{/size}"
-    g4 "Like literally kill her?"
+    g4 "Like, literally kill her?"
     sna_[6] "Do I have any other choice?"
     m "You're joking, right?"
     sna_[6] "Am i?!"
