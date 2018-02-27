@@ -182,7 +182,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
                 her "You are not.....?"
                 call her_main("Are you...?","body_29")
-                m "What, it's nothing. Keep going."
+                m "What? Oh, it's nothing. Keep going."
                 call her_main("Hm...","body_07")
                 m "{size=-4}(Is she onto me? Nah...){/size}"
             "-Participate in the conversation-":
@@ -200,8 +200,8 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if d_flag_01:
             call her_main("And these two other girls...","body_29")
             her "There is a rumor that they are actually sleeping with professor snape..."
-            m "{size=-4}(Yes... Those little, nasty, \"slytherin\" sluts!){/size}"
-            call her_main("Also there was this one girl, who gave a teacher a handjob, right during class...","body_45")
+            m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
+            call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","body_45")
             m "{size=-4}(Yes... This is good stuff, go on!){/size}"
             call her_main("And this other girl, she sucked off a teacher!","body_29")
             m "{size=-4}(Yes! Yes!){/size}"
@@ -250,7 +250,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                     her "[genie_name], you are the headmaster! You are supposed to set a good example!"
                     m "Hey, little missy, are you going to judge me or do you want your points?"
                     call her_main("My points please, I believe I earned those.","body_34")
-                    m "Yes you did."
+                    m "Yes, you did."
                     call her_main("Ew... I feel so dirty now...","body_47")
                     hide screen genie_jerking_sperm_02
                     with d3
@@ -286,7 +286,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     stop music fadeout 2.0
     
     if whoring >= 11:
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         her "Oh, don't worry about the points, we were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
         her "It's just 5 points [genie_name]."
