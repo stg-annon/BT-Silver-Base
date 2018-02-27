@@ -309,7 +309,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     g4 "{size=-4}(What the...?){/size}"
     sna_[2] ".............."
     sna_[2] "She used to be just an annoyance, but these days..."
-    sna_[1] "She became a fully fledged menace..."
+    sna_[1] "She's become a full-fledged menace..."
     sna_[1] "That witch is officially my least favorite student in the entire school now..."
     m "What about that Potter boy?"
     sna_[6] "The Potter boy? Ha! Who's that!?"
