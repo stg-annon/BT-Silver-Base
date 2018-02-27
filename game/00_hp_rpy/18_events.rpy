@@ -158,7 +158,7 @@ label event_00:
     m "........................."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_04.png"
     show screen snape_main
-    who2 "Well, those wretched kids left me completely exhausted, I think I will retire for today."
+    who2 "Well, those wretched kids left me completely exhausted. I think I will retire for today."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_09.png"
     who2 "................"
     
@@ -253,7 +253,7 @@ label event_01:
     g4 "I did it again, didn't I?"
     g4 "Teleported myself to who knows where..."
     m "What's with those ingredients?"
-    m "They seem to be way more potent that I thought."
+    m "They seem to be way more potent than I thought."
     m "Well, whatever this place is I have no business here..."
     m "Better undo the spell and return to the shop before the princess gets angry with me again..."
     m "....................."
