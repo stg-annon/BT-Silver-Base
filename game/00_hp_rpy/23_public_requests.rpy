@@ -304,7 +304,7 @@ label hg_pr_FlirtClassmate_complete:
                     her "I tried to flirt with him too, but we ended up just chatting..."
                     her "He kept calling me \"Miss Hermione\"..."
                     her "So adorable..."
-                    m "Well I didn't send you to harass little kids, [hermione_name]."
+                    m "Well, I didn't send you to harass little kids, [hermione_name]."
                     call her_main("I didn't haras--","body_66")
                     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","body_34")
                     m "Oh, absolutely."
