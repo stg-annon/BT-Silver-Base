@@ -858,8 +858,8 @@ label event_07:
     call sna_main("Well what else could we do?","snape_06")
     sna "Normally I would alert the ministry of magic and let them take care of this mess..."
     sna "But I'd rather avoid any dealings with those rotten bureaucrats this time..."
-    call sna_main("Also, losing a headmaster, even temporarily could hurt the school's reputation...","snape_10")
-    sna "And what if your spell wears out tomorrow, or even tonight?"
+    call sna_main("Also, losing a headmaster, even temporarily, could hurt the school's reputation...","snape_10")
+    sna "And what if your spell wears off tomorrow, or even tonight?"
     call sna_main("I see no reason to start a commotion...","snape_09")
     m "Hm..."
     call sna_main("So we shall keep the charade going for now...","snape_03")
@@ -873,16 +873,16 @@ label event_07:
     call sna_main("You are a Genie. Conjure up some sort of entertainment for yourself.","snape_01")
     m "My magic doesn't seem to be working properly here for some reason..."
     m "And my lamp is literally worlds away..."
-    call sna_main("Well, what do you expect me to about that?","snape_03")
+    call sna_main("Well, what do you expect me to do about that?","snape_03")
     sna "Send you a couple of girls from Slytherin maybe?"
-    g9 "No idea what \"Slytherin\" is but I think that would work..."
+    g9 "I have no idea what \"Slytherin\" is, but I think that would work..."
     call sna_main("That was a joke, obviously.","snape_04")
     call sna_main("Although...","snape_09")
     sna "Hm..."
-    call sna_main("Well, in any case I don't see how entertaining {size=+7}you{/size} is {size=+7}my{/size} problem.","snape_01")
+    call sna_main("Well, in any case, I don't see how entertaining {size=+7}you{/size} is {size=+7}my{/size} problem.","snape_01")
     m "Oh, but it is!"
     m "I'm immortal and all-powerful..."
-    m "Being bored is like the worst thing that could happen to me!"
+    m "Being bored is one of the worst things that could happen to me!"
     g4 "And I have a thing against being cooped up in small spaces with nothing to do!"
     g4 "I may lose my mind..."
     g4 "Oh! Ah! I think it's happening already!"
@@ -906,7 +906,7 @@ label event_07:
     m "Yes... The way you conjure up your spells is..."
     m "Intriguing..."
     call sna_main("Hm...","snape_04")
-    call sna_main("So be it...","snape_06")
+    call sna_main("Agreed.","snape_06")
     m "Oh, and send me some of those \"Slytherin\" girls as well.."
     call sna_main("...............","snape_05")
     sna "........................."
@@ -925,13 +925,13 @@ label event_07:
     m "No, I'm serious... Is it possible?"
     call sna_main("Hm...","snape_02")
     sna "We'll see..."
-    sna "You being our new headmaster sure presents me with interesting possibilities..."
-    sna "I need some time to figure out how to use our situation for my advantage."
+    sna "You being our new headmaster presents me with interesting possibilities..."
+    sna "I need some time to figure out how to use this situation to my advantage."
     m "You mean {size=+7}our{/size} advantage, right?"
-    call sna_main("Oh, yes, yes, of course...","snape_06")
+    call sna_main("Oh, yes. Yes, of course...","snape_06")
     sna "Well, I think we are done for today..."
     call sna_main("Good night... genie.","24")
-    m "Yes, good night, Severus."
+    m "Yes. Good night, Severus."
 
     hide screen snape_main
     hide screen ctc
@@ -1047,7 +1047,7 @@ label event_08:
     
     call her_main("","body_01",xpos=370,ypos=0)
     pause
-    call her_main("Good morning professor.","body_03")
+    call her_main("Good morning, professor.","body_03")
     hide screen ctc
     menu:
         "\"Good morning... girl.\"":
@@ -1063,9 +1063,9 @@ label event_08:
     her "You probably know why I am here too."
     call her_main("The issue I have been fruitlessly trying to bring to your attention lately.","body_04")
     her "I cannot understand why you are not acting to stop that nonsense, professor!"
-    her "This simply cannot continue like that!"
+    her "This simply cannot continue!"
     call her_main("The inequality is starting to affect all of the houses...","body_02")
-    her "Simply because we have more integrity than the rest..."
+    her "Simply because Gryffindor has more integrity than the rest..."
     her "Do you think it's fair that the people who deserve to be in the lead are being pushed back instead?"
     her "Do you think that's fair, professor? Do you?"
     call her_main("","body_03")
@@ -1095,7 +1095,7 @@ label event_08:
     show screen bld1
     with d3
     call her_main("\"Yes\"?! So you think it's fair?","body_05")
-    m "Oh, of course not, I meant \"no\". But Keep on going anyway..."
+    m "Oh, of course not, I meant \"no\". But keep on going anyway..."
     call her_main("That's a relief. I'm glad that you agree with me, professor...","body_03")
     call her_main("As I was saying, the whole issue is simply ridiculous and I cannot believe that it is taking place in our day and age!","body_04")
     if d_flag_01:
@@ -1182,12 +1182,12 @@ label event_08:
         g4 "{size=-4}(Yes! You little whore! You little fucking whore!) *Panting*{/size}"
     else:
         m "......................."
-    call her_main("I understand that you may not have time for this, professor, After all you are the headmaster of our school and a very busy and important man.","body_04")
-    her "being a top student is hard on me as well sometimes..."
+    call her_main("I understand that you may not have time for this, professor. After all, you are the headmaster of our school, and a very busy man.","body_04")
+    her "Being a top student is hard on me as well, sometimes..."
     if d_flag_01:
         g4 "{size=-4}(She said \"hard-on\"!) *Panting*{/size}"
     her "But you could delegate that task to me..."
-    her "Just put your faith in me professor." 
+    her "Just put your faith in me, professor." 
     if d_flag_01: 
         call her_main("Yes, you can do it! Just put it in me, sir!","body_01")
         stop music fadeout 1.0
@@ -1229,7 +1229,7 @@ label event_08:
     if d_flag_01:
         m "No, no, thank you..."
         call her_main("Hm...","body_07")
-    call her_main("My classes are about to start so I'd better go now.","body_04")
+    call her_main("My classes are about to start, so I'd better go now.","body_04")
     her "Thank you for your time..."
     hide screen bld1
     hide screen hermione_main
