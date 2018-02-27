@@ -257,7 +257,7 @@ label date_with_snape_06:
     g9 "Nice!"
     $ s_sprite = "01_hp/13_characters/snape/main/snape_02.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
-    sna2 "Yes. Thanks to you, my friend I can do whatever the bloody hell I want!"
+    sna2 "Yes. Thanks to you, I can do whatever the bloody hell I want!"
     sna2 "And more importantly..."
     $ s_sprite = "01_hp/13_characters/snape/main/snape_13.png"                                         # SNAPE
     show screen s_head2                                                                                                 # SNAPE
