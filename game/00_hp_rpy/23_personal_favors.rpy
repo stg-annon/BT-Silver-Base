@@ -133,7 +133,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         her "I'm very happy about that..."
         call her_main("I think, given time, we will be able to make a real difference...","body_16")
         call her_main("It is so invigorating to know that you are doing the right thing!","body_06")
-        her "Wouldn't you agree professor?"
+        her "Wouldn't you agree, professor?"
         if d_flag_01:
             m "{size=-4}(Dammit. Now she's killed the mood completely...){/size}"
             show screen genie
