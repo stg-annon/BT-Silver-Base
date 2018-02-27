@@ -56,7 +56,7 @@ label hg_pr_FlirtClassmate:
             
         else: #if whoring >= 3 and whoring >= 6: ### LEVEL 02 and higher ## <=========================================================== SECOND EVENT!
             m "I need you to flirt with some boys from \"Slytherin\" today."
-            her "I will see what I can do, [genie_name]."
+            her "I'll see what I can do, [genie_name]."
             m "Great. I'll be expecting your report today after classes."
     her "Well, I'd better go now. Classes are about to start..."
     
