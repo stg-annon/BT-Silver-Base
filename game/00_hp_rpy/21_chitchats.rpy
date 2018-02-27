@@ -439,8 +439,8 @@ label snape_chitchat:
             call sna_main("Back in my days we just called it \"sex\".","snape_02")
 
         elif one_of_ten == 2:
-            call sna_main("Man, my cock is so ready for the \"Princess Trainer Gold Edition\"!","snape_22")
-            call sna_main("*Ahem!* I mean, slytherin rules, I hate gryffindor and stuff...","snape_09")
+            call sna_main("I heard a mysterious ticking noise today...","snape_04")
+            call sna_main("It was kind of catchy...","snape_28")
 
         elif one_of_ten == 3:
             call sna_main("I organized a small party the other day...","24")
