@@ -183,12 +183,12 @@ label hg_pr_FlirtClassmate_complete:
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     call her_main("Well, to my surprise he accepted it...","body_75")
                     her "He let me finish the assignment for him..."
-                    call her_main("While I was working he made a couple of inappropriate comments but I just smiled in response...","body_34")
+                    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","body_34")
                     m "So, basically, he was the one doing the flirting..."
                     call her_main("well... yes.","body_24")
-                    call her_main("But, despite my better judgment I did encourage his improper behavior...","body_45")
+                    call her_main("But, despite my better judgment, I did encourage his improper behavior...","body_45")
                     m "By being quiet?"
-                    her "Yes [genie_name]..."
+                    her "Yes, [genie_name]..."
                     her "I mean, this does amount to something, right?"
                     m "Meh..."
                     m "What else do you have for me?"
@@ -202,7 +202,7 @@ label hg_pr_FlirtClassmate_complete:
                     her "I barely have any time--"
                     m "Is this all you got for me this time then?"
                     call her_main("No, [genie_name].","body_69")
-                    her "Just an hour ago or so I ran into Draco Malfoy, [genie_name]."
+                    her "On my way here I ran into Draco Malfoy, [genie_name]."
                     m "No way!!! (No idea who that is...)"
                     her "I forced myself to be friendly with him and..."
                     call her_main("We ended up having a decent conversation for a change.","body_74") 
@@ -223,16 +223,16 @@ label hg_pr_FlirtClassmate_complete:
                     call her_main("Then after the second period there was this other guy...","body_13")
                     call her_main("And then something bizarre happened...","body_28")
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                    her "This angry-looking guy from the \"Slythetin\" came to me and asked me out on a date..."
+                    her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
                     call her_main("I told him \"no\" at first, but we ended up taking a walk together.","body_13")
                     m "Did you enjoy yourself, [hermione_name]?"
-                    call her_main("I think I did [genie_name]... To my own astonishment...","body_31")
+                    call her_main("I think I did, [genie_name]... To my own astonishment...","body_31")
                     call her_main("There was something about his \"devil-may-care\" attitude...","body_45")
                     call her_main("He was so confident and calm and...","body_74")
                     call her_main("I still loathe the \"Slytherin\" house of course!","body_34")
                     call her_main("But...","body_73")
                     her "Maybe some of the students got there by mistake?"
-                    call her_main("Could the \"sorting hat\" make... miscalculations ?","body_10")
+                    call her_main("Could the \"sorting hat\" make... miscalculations?","body_10")
                     menu:
                         "\"Just take your points and go!\"":
                             call her_main("................","body_07")
