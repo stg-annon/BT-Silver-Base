@@ -707,7 +707,7 @@ label wine_not_first:
     $ the_gift = "01_hp/18_store/27.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you fond in the cupboard to professor Snape..." 
+    ">You hand over the bottle you found in the cupboard to professor Snape..." 
     hide screen gift
     with d3
     $ wine -= 1
@@ -740,7 +740,7 @@ label wine_not_first:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    ">Your relationships with Professor Snape have improved."
+    ">Your relationship with Professor Snape have improved."
     $ snape_friendship +=1
     hide screen bld1
     with d3
