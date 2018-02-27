@@ -254,11 +254,11 @@ label l_tutoring:
         jump l_tutoring_end
 
     elif v_tutoring == 3:   # Whoring lvl 3
-        call her_main("First sir, I want to apologize for doubting you.","body_14")
+        call her_main("Sir, I want to apologize for doubting you.","body_14")
         m "Yes?"
         call her_main("Your \"atypical\" method works!","body_34")
-        m "{size=-2}(Impossible){/size}"
-        m "It works? I mean yes, naturally it works!"
+        m "{size=-2}(Impossible!){/size}"
+        m "It works? I mean, yes, naturally it works!"
         m "I'm glad you've succeeded. Now tell me more."
         call her_main("I managed to levitate a heavy rock while thinking about the behavior of two girls I saw earlier in the library.","body_127")
         call her_main("Usually I only manage to move small rocks. I don't know, I felt kind of warm inside thinking about that.","body_207")
@@ -270,17 +270,17 @@ label l_tutoring:
         call her_main("And when I pictured it, as you told me to, it worked.","body_183")
         call her_main("I feel at the same level as those harlots, I'm so ashamed.","body_187")
         m "But you succeeded."
-        g9 "{size=-2}(To my surprise){/size}"
+        g9 "{size=-2}(To my surprise...){/size}"
         call her_main("Yes! With this method I'll have better grades in my tests and win the House Cup for Gryffindor!","body_208")
-        g9 "{size=-2}(In your dreams){/size}"
+        g9 "{size=-2}(In your dreams.){/size}"
         m "Good, good. Now I want to know more about those two girls."
         call her_main("It's not very relevant, professor. And I'm not sure this is appropriate.","body_203")
         m "How will you improve yourself if I can't guide you?"
         m "And for that, I must know more."
         call her_main("Alright, but it's embarassing.","body_203")
-        g9 "{size=-2}(Ooh, I hope they were naked){/size}"
+        g9 "{size=-2}(Ooh, I hope they were naked!){/size}"
         call her_main("I went to the library to study interactions between plants...","body_16")
-        g11 "{size=-2}(Yeah, yeah, come on){/size}"
+        g11 "{size=-2}(Yeah, yeah, come on...){/size}"
         call her_main("... and I heard muffled sounds.","body_188")
         call her_main("I was hoping to catch a teacher doing bad things with one of those Slytherin whores.","body_203")
         call her_main("I slowly headed towards the sounds and I discovered two girls in an alcove.","body_183")
@@ -299,21 +299,21 @@ label l_tutoring:
         call her_main("How can such a thing happen in our beloved school!","body_191")
         m "But you kept watching, didn't you?"
         call her_main("Only for educational purposes.","body_203")
-        g9 "{size=-2}(\"Educational purposes\", haha, never heard a worse excuse){/size}"
+        g9 "{size=-2}(\"Educational purposes\"... ha-ha, I've never heard a worse excuse!){/size}"
         m "And during all this time you didn't feel a certain need?"
         call her_main("To my shame, yes. Like I said before, I felt kind of warm inside.","body_203")
         call her_main("Like when I have to pee but... different. Better.","body_199")
-        m "This good sensation, next time you experience it, let it come."
+        m "This good sensation... next time you experience it, let it come."
         call her_main("But...","body_183")
-        m "It's the only way to get better, miss Hermione."
+        m "It's the only way to get better, Miss Granger."
         m "If you suppress it, it won't work."
         call her_main("Ok...{w=0.3} I'll try my best.","body_203")
         her "But to be honest, sir, I thought you were going to punish those two sluts."
         m "Can you provide proof of their crime? No?"
         m "Even I can't punish students without proof of any wrongdoing."
         g11 "{size=-2}(With the possible exception of you!){/size}"
-        m "Anyway, you've done well. I think it will be enought for this lesson."
-        m "Remember well what I just told you and good night!"
+        m "Anyway, you've done well. I think it will be enough for this lesson."
+        m "Remember what I've told you, and good night!"
         call her_main("Good night, professor.","body_06")
         hide screen hermione_main
         with d3
@@ -322,9 +322,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_stand_f
-        call her_head("{size=-4}(Well, I'll try to investigate those two girls again){/size}","head_exp/12")
-        call her_head("{size=-4}(Like a real anthropologist){/size}","head_exp/18")
-        call her_head("{size=-4}(Yes, that's right, Hermione the anthropologist!){/size}","head_exp/35")
+        call her_head("{size=-4}(Well, I'll try to investigate those two girls again.){/size}","head_exp/12")
+        call her_head("{size=-4}(Like a real anthropologist!){/size}","head_exp/18")
+        call her_head("{size=-4}(Yes, that's right. Hermione the anthropologist!){/size}","head_exp/35")
         hide screen hermione_stand_f
         with d3
         
