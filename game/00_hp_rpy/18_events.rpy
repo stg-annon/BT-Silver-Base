@@ -2041,14 +2041,14 @@ label event_13:
     her "Huh?"
     hide screen ctc
     her "Oh, I'm already here?"
-    her "I'm sorry sir... I..."
+    her "I'm sorry, sir... I..."
     her ".................."
     her "It seems that I did..."
     her "I did... uhm..."
     her "... I failed that test after all."
     her "I..."
     call her_main("I'm sorry, professor...","body_27")
-    her "I'm not sure why I am here..."
+    her "I'm not sure why I'm here..."
     her "I think I'd better go..."
     m "..................."
     hide screen bld1
@@ -2134,9 +2134,9 @@ label event_14:
     with d3
     call her_main("Good morning, Professor.","body_01",xpos=370,ypos=0)
     m "How can I help you today, miss Granger?"
-    call her_main("Well, first of all I am terribly sorry about yesterday's display, sir...","body_04")
+    call her_main("Well, first of all, I am terribly sorry about yesterday's display, sir...","body_04")
     call her_main("I've never failed a test in my life, so I wasn't sure how to react...","body_08")
-    call her_main("But I am all better now...","body_04")
+    call her_main("But I'm all better now...","body_04")
     m "I see..." 
     her "I will not take much of your time, I promise..."
     if tutoring_offer_made:
@@ -2150,7 +2150,7 @@ label event_14:
                         her "Expired, sir?"
                         her "B-but...."
                         call her_main("But I require tutoring, and you are the smartest wizard I know...","body_11")
-                        call her_main("Please, sir, I really need your help.","body_28")
+                        call her_main("Please, sir. I really need your help.","body_28")
                         menu:
                             "\"Show me your tits and it's a deal!\"":
                                 call her_main("m-my...?","body_18")
@@ -2190,7 +2190,7 @@ label event_14:
     call her_main("Thank you, sir. I am very grateful.","body_01")
     call her_main("Just let me know when, and I will bring my books!","body_16")
     call her_main("I must study even harder from now on...","body_09")
-    call her_main("And I'll be taking private lessons from you sir, as often as possible.","body_06")
+    call her_main("And I'll be taking private lessons from you, sir, as often as possible.","body_06")
     call her_main("But that's not all...","body_07")
     her "The \"MRM\" shall investigate our education system much closer now..."
     her "I think some sort of foul play might be taking place..."
