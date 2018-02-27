@@ -195,11 +195,11 @@ label l_tutoring:
         jump l_tutoring_end
 
     elif v_tutoring == 2:   # Whoring lvl 2
-        m "Good you didn't bring your books this time."
+        m "Good, you didn't bring your books this time."
         call her_main("Not that I agree with it. All the knowledge I need is in those books.","body_12")
-        m "You're forgetting something important, practice and experience!"
-        call her_main("Maybe, after all you're not at the head of Hogwarts by chance.","body_17")
-        m "Sometimes you seem to forget it Miss Granger."
+        m "Books can't teach you everything, some knowlege only comes with practice and experience!"
+        call her_main("Maybe... I mean, you're not chosen as the head of Hogwarts by chance.","body_17")
+        m "Sometimes you seem to forget that, Miss Granger."
         call her_main("That sounded like something professor Snape would say...","body_08")
         call her_main(".........","body_17")
         call her_main("Sorry about that, he thinks he's always right and it annoys me.","body_75")
@@ -209,33 +209,33 @@ label l_tutoring:
         call her_main("Yes, professor Dumbledore.","body_199")
         m "So, have you thought about emotions and their usefulness in the practice of magic?"
         call her_main("Yes, first I tried to cast a spell while thinking of the behavior of those Slytherin girls.","body_16")
-        call her_main("It made me angry and confused so I lost my focus and failed miserably.","body_82")
+        call her_main("It made me so angry and confused that I lost my focus and failed miserably.","body_82")
         call her_main("I don't think it helps at all.","body_17")
-        m "That's your problem Miss Granger, you think you know the answer and don't follow my instructions."
+        m "That's your problem Miss Granger, you think you already know the answer and don't follow my instructions."
         m "I don't care about the behavior of those girls."
-        call her_main("What professor! You don't care?!","body_72")
-        g9 "{size=-2}(Oh I do care, just not in the way you think){/size}"
+        call her_main("What? Professor! You don't care?!","body_72")
+        g9 "{size=-2}(Oh, I do care, just not in the way you think.){/size}"
         m "For this exercise, Miss Granger, for this exercise. Don't get on your high horse."
         call her_main(".........","body_70")
         call her_main("Sorry about that, {w=0.5}again.","body_08")
         m "I need you to focus on what those girls do with professors, not their behavior in general."
         call her_main("But...","body_183")
         m "Last time you were talking about your sacred duty and at the first hurdle you hesitate."
-        call her_main("{size=-2}(\"Sacred\"? Don't exagerate old man){/size}","body_73")
-        call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the savior of house Gryffindor){/size}","body_182")
+        call her_main("{size=-2}(\"Sacred\"? Don't exagerate, old man){/size}","body_73")
+        call her_main("{size=-2}(Or not! Maybe I'll be remembered later for being the savior of Gryffindor house!){/size}","body_182")
         call her_main("Yes, you're right! It {b}is{/b} my sacred duty!","body_46")
-        g9 "{size=-2}(And it works every time, it's too easy... She looks so proud of herself){/size}"
+        g9 "{size=-2}(It works every time, it's too easy... She looks so proud of herself.){/size}"
         call her_main("I'll do my best, professor!","body_183")
         g9 "I'm excited too... uh, I'm sure you will."
-        call her_main("I'm glad you have such a high confidence in me.","body_57b")
-        m "And I'm glad you're starting to believe in this. I think you have a very good potential to master this branch of magic."
-        call her_main("You seem tired professor.","body_08")
-        g11 "{size=-2}(Tired of waiting to annihilate your ass){/size}"
+        call her_main("I'm glad you have such high confidence in me.","body_57b")
+        m "And I'm glad you're starting to believe in this. I think you have the potential to master this branch of magic."
+        call her_main("You seem tired, professor.","body_08")
+        g11 "{size=-2}(Tired of waiting to annihilate your ass.){/size}"
         call her_main("Yes, professor?","body_82")
         g9 "Yes we can!"
         m "Uh, I mean, I'm sure I'll tire you out soon enough, Miss Granger. How about you get some sleep?"
         call her_main("Sleep? I must study first.","body_16")
-        m "I wasn't thinking about that but you're right, time to go to bed!"
+        m "I wasn't thinking about that, but you're right, time to go to bed!"
         m "Just make sure to think about what you learned today."
         hide screen hermione_main
         with d3
@@ -244,9 +244,9 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_stand_f
-        call her_head("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about){/size}","head_exp/16")
-        call her_head("{size=-4}(Probably all the problems caused by those harlots){/size}","head_exp/18")
-        call her_head("{size=-4}(Well I will never be like them, so no need to worry){/size}","head_exp/34")
+        call her_head("{size=-4}(Hmm, I wonder what he {b}was{/b} thinking about.){/size}","head_exp/16")
+        call her_head("{size=-4}(Probably all the problems caused by those harlots.){/size}","head_exp/18")
+        call her_head("{size=-4}(Well, I will never be like them, so no need to worry.){/size}","head_exp/34")
         hide screen hermione_stand_f
         with d3
         
