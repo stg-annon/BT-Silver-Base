@@ -326,7 +326,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
             pass
         "\"(Not right now.)\"":
             jump silver_requests
-    call her_main("So, what will it be [genie_name]?")
+    call her_main("So, what will it be, [genie_name]?")
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."             
     if hg_pf_NicePanties_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
@@ -336,7 +336,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         call her_main(" {size=+7}A little !?{/size}","body_48")
         her "This is completely inappropriate!"
         m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-        call her_main("The \"good stuff\"? [genie_name] I don't understand...","body_31")
+        call her_main("The \"good stuff\"? [genie_name], I don't understand...","body_31")
         m "What don't you understand, [hermione_name]?"
         m "Do you need these points or not?"
         call her_main("I do...","body_31")
@@ -530,7 +530,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     
     if whoring <= 8:
         $ gryffindor +=5
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         pause
     
     call reset_hermione_main
