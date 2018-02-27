@@ -55,7 +55,7 @@ label hg_pr_FlirtClassmate:
             call her_main("Alright if I must... [genie_name]...","body_07")
             
         else: #if whoring >= 3 and whoring >= 6: ### LEVEL 02 and higher ## <=========================================================== SECOND EVENT!
-            m "I need you to flirt with some boys of the \"Slytherin\" house today."
+            m "I need you to flirt with some boys from \"Slytherin\" today."
             her "I will see what I can do, [genie_name]."
             m "Great. I'll be expecting your report today after classes."
     her "Well, I'd better go now. Classes are about to start..."
