@@ -1543,7 +1543,7 @@ label event_09:
     m "But--"
     call her_main("Please, let me finish, professor!","body_05")
     call her_main("I'm organizing the \"Men's rights movement\" in our school!","body_04")
-    g4 "Oh, boy, this is just so typical!"
+    g4 "Oh boy, this is just so typical!"
     g4 "Blame everything on--"
     stop music fadeout 1.0
     m "Wait, did you say {size=+5}MEN'S{/size} rights movement?"
@@ -1569,7 +1569,7 @@ label event_09:
         "\"What do you want me to do?\"":
             call her_main("Nothing!","body_03")
             m "Great. I'm good at that."
-        "\"I'm Not sure what to say...\"":
+        "\"I'm not sure what to say...\"":
             call her_main("You do not need to say anything anymore, professor.","body_03")
         "\"You are being ridiculous!\"":
             call her_main("Am I? Well, we'll see...","body_07")
