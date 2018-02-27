@@ -453,7 +453,7 @@ label door:
             jump day_main_menu
     
 label genie_change:
-    call her_main("Ok, from now on I'll call you [genie_name]","body_01")
+    call her_main("Ok, from now on I'll call you [genie_name].","body_01")
     jump hermione_talk
     
 label genie_change_fail:
