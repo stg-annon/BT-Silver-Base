@@ -335,8 +335,8 @@ label l_tutoring:
         m "So, any luck with your \"studies\"?"
         call her_main("Yes! When you hear the results of my hunt, you'll be proud of me!","body_74")
         m "{size=-2}(\"Hunt\"?){/size}"
-        m "Your \"hunt\" Miss Hermione?"
-        call her_main("Yes professor!","body_75")
+        m "Your \"hunt\", Miss Granger?"
+        call her_main("Yes, professor!","body_75")
         call her_main("Like an explorer in the wild jungle, I tracked those two filthy animals.","body_157")
         call her_main("With success, sir!","body_80b")
         call her_main("Hogwarts has so many dark and discreet corners...","body_82")
@@ -350,16 +350,16 @@ label l_tutoring:
         m "And what is your opinion on them?"
         call her_main("At least they don't sleep with professors in exchange for house points.","body_08")
         call her_main("","body_17")
-        m "And that's it? No \"this behavior must be severely punished\" ?"
-        m "Do you find girls of this sort attractive, miss Hermione?"
-        call her_main("What? Lesbians? I'm not... I... no way I...","body_183")
-        m "Alright, alright, back to your report if you please."
+        m "And that's it? No \"this behavior must be severely punished\"?"
+        m "Are you attracted to girls of this sort, Miss Granger?"
+        call her_main("What? Lesbians? I'm not... I... No way, I...","body_183")
+        m "Alright, alright, back to your report, if you please."
         call her_main("{size=-2}(I'm not a lesbian...{w=0.3} I think...){/size}","body_199")
         call her_main("{size=-2}(Hermione, girl, pull yourself together! You're not a harlot!){/size}","body_206")
         call her_main("No, I'm not!","body_184b")
         m "Excuse me?"
-        call her_main("Uh, yes, my report. My {b}scientific{/b} report.","body_183")
-        m "{size=-2}(Yeah, we get it..){/size}"
+        call her_main("Uh... Yes, my report. My {b}scientific{/b} report.","body_183")
+        m "{size=-2}(Yeah, we get it...){/size}"
         call her_main("So, like before, they started by kissing passionately.","body_182")
         call her_main("With the tongue and everything!","body_189")
         menu:
@@ -380,20 +380,20 @@ label l_tutoring:
         call her_main("","body_183")
         g9 "And? And?"
         call her_main("They pulled up their shirts and caressed each others breasts.","body_182")
-        call her_main("{size=-2}(Their beautiful and tempting breasts){/size}","body_196")
+        call her_main("{size=-2}(Their beautiful and tempting breasts...){/size}","body_196")
         call her_main("Later those nasty girls raised their skirts and started to touch each other \"there\" while kissing.","body_212")
         $ b_her_tears = True
         call her_main("{size=-2}(I can't believe I said that!){/size}","body_213","tears_03b")
-        call her_main("They were very excited and I could see their panties become wet.","body_196")
+        call her_main("They were very excited, and I could see their panties become wet.","body_196")
         call her_main("Disgusting.","body_214")
         if d_flag_01:
             g9 "{size=-2}(Yes... yes...){/size}"
         $ b_her_tears = False
         call her_main("One of the girls went crazy and inserted her fingers into the other's \"thing\" and worked them furiously.","body_138")
         call her_main("Soon imitated by her girlfriend.","body_212")
-        call her_main("Those whores came so hard they had to bite their lips not to scream.","body_215")
+        call her_main("Those whores came so hard I'm sure they heard the screams on the other side of the grounds!","body_215")
         if d_flag_01:
-            her "{size=-2}(And me too){/size}"
+            her "{size=-2}(And I had to bite my lip, or else they would've heard me too...){/size}"
             hide screen hermione_main
             with d3
             show screen white
@@ -404,7 +404,7 @@ label l_tutoring:
             pause .1
             hide screen white
             with hpunch
-            g11 "Me too! YES!"
+            g11 "Yes! That's the stuff!"
             hide screen bld1
             with d3
             show screen genie_jerking_sperm
@@ -415,7 +415,7 @@ label l_tutoring:
             call her_main("Professor!","body_187")
             show screen genie_jerking_sperm_02
             with d3
-            m "You enjoyed it too so don't act innocent."
+            m "You enjoyed it too, so don't act innocent."
             hide screen genie_jerking_sperm_02
             show screen genie
             with d3
@@ -430,8 +430,8 @@ label l_tutoring:
         call her_main("Do all you can to stop those acts of debauchery!")
         call her_main("","body_12")
         m "Yes, of course."
-        m "{size=-2}(Hypocrite){/size}"
-        her "{size=-2}(Old pervert){/size}"
+        m "{size=-2}(Hypocrite.){/size}"
+        her "{size=-2}(Old pervert.){/size}"
         m "You said that those girls became wet."
         g9 "Weren't you a little too?"
         call her_main("When I went to bed I noticed it, yes.","body_199")
@@ -442,7 +442,7 @@ label l_tutoring:
         $ b_her_tears = False
         call her_main("","body_187")
         m "No one can control their base desires."
-        m "Consider this well and enjoy your night, Miss Hermione."
+        m "Consider this well, and enjoy your night, Miss Granger."
         call her_main("Good night, professor.","body_29")
         hide screen hermione_main
         with d3
@@ -453,7 +453,7 @@ label l_tutoring:
         show screen hermione_stand_f
         call her_head("{size=-4}(I enjoyed it too much. Maybe I'm becoming a pervert as well){/size}","head_exp/6")
         call her_head("{size=-4}(I lost control, it won't happen again!){/size}","head_exp/13")
-        call her_head("{size=-4}(Good thing I'm not a degenerate like those filthy girls){/size}","head_exp/18")
+        call her_head("{size=-4}(Good thing I'm not a degenerate like those filthy girls!){/size}","head_exp/18")
         hide screen hermione_stand_f
         with d3
 
