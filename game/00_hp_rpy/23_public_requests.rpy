@@ -70,7 +70,7 @@ label hg_pr_FlirtClassmate_complete:
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
     m "Did you complete your task?"
-    her "I did as you asked [genie_name]..."
+    her "I did as you asked, [genie_name]..."
     menu:
         "\"Great. You earned your points.\"":
             pass
@@ -122,7 +122,7 @@ label hg_pr_FlirtClassmate_complete:
                     call her_main("He called me a \"Gryffindor whore\", [genie_name]!","body_76")
                     m "I see..."
                     m "What did you do then?"
-                    call her_main("Well that was not the proper way to address a fellow \"Hogwarts\" student...","body_04")
+                    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...","body_04")
                     her "So I told him that I would report him."
                     m "A truly captivating story..."
                     m "Anything else?"
@@ -251,14 +251,14 @@ label hg_pr_FlirtClassmate_complete:
                     her "Then another two right after the first period."
                     her "And then another one before the third period."
                     call her_main("And after that I had a surprisingly pleasant conversation with one more.","body_68")
-                    call her_main("That last one was quite smart and well mannered too.","body_74")
+                    call her_main("That last one was quite smart and well-mannered too.","body_74")
                     her "............................"
                     her "................"
                     call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","body_34")
                     m "I'm not asking you to, [hermione_name]."
                     her "I am only doing this to help my own house!"
                     call her_main("The proud house of \"Gryffndor\"!","body_32")
-                    m "Alright, alright, calm down, [hermione_name]."
+                    m "Alright, alright. Calm down, [hermione_name]."
                     call her_main("","body_74")
 
             elif whoring >= 6: # LEVEL 03 and higher.
