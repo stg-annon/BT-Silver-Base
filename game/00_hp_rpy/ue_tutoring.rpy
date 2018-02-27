@@ -150,34 +150,34 @@ label l_tutoring:
         m "It's nothing, I was just thinking about our next lesson."
         call her_main("{size=-2}(The elderly...){/size}","body_05")
         m "............."
-        m "Anyway have you thought about what we discussed?"
+        m "Anyway, have you thought about what we discussed?"
         call her_main("Not really, I'm not sure what you mean by \"emotions\".","body_03")
-        g9 "{size=-2}(Oh me I'm sure){/size}"
+        g9 "{size=-2}(You'll learn soon enough, girl.){/size}"
         m "For example, what was your state of mind when you heard those rumours about the Slytherin girls?"
-        call her_main("Please don't bring it up, sir, it really makes me mad!","body_130")
+        call her_main("Please don't bring that up, sir! it really makes me mad!","body_130")
         m "And what is this feeling?"
-        call her_main("...{w=0.5}an emotion I suppose...","body_03")
-        m "Yes and don't you have emotions you prefer over others?"
+        call her_main("...{w=0.5}an emotion, I suppose...","body_03")
+        m "Yes, and don't you have emotions you prefer over others?"
         call her_main("When I have the best score at a test.","body_75")
         m "{size=-2}(This girl is a monomaniac...){/size}"
         m "Don't you have other passions, things you like to do?"
         call her_main("Yes! Studing and reading books.","body_75")
-        g4 "{size=-2}(By all the ancient gods and the new){/size}"
+        g4 "{size=-2}(By all the ancient gods...){/size}"
         m "Things are not going in the right direction..."
         call her_main("And what direction is that, sir?","body_03")
-        g9 "{size=-2}(You impaled on my cock){/size}"
-        m "Adulthood Miss Hermione, adulthood..."
+        g9 "{size=-2}(You impaled on my cock.){/size}"
+        m "Adulthood, Miss Granger, adulthood..."
         call her_main("I am by far the most mature of my peers, professor. What more can you ask?","body_16")
         m "......{w=0.5}Miss Granger, did we not discuss this already? You need to accept you still have much to learn."
-        m "I'm tired of all this and I have work to do so goodnight, child."
-        call her_main("Tutoring one of those filthy Slytherin girls maybe?","body_186")
+        m "I'm tired of all this, and I have work to do. Goodnight, child."
+        call her_main("Tutoring one of those filthy Slytherin girls, maybe?","body_186")
         m "Maybe that's the right direction, think about what all those girls do with professors."
-        call her_main("But...{w=0.5} that's so wrong...{w=0.5} I don't know if I want to think about that.","body_02")
+        call her_main("But...{w=0.5} that's so wrong...{w=0.8} I don't know if I want to think about that.","body_02")
         m "If you want to progress and to restore the Gryffindor pride, you must!"
-        call her_main("Yes, you are right! It's my mission! I'll do my best professor.","body_195")
-        g9 "{size=-2}(She is so naive, it's adorable){/size}"
-        m "Good, now time to go to bed child."
-        call her_main("{size=-2}(Tss like I'm going to bed at this time, I need to study more){/size}","body_07")
+        call her_main("Yes, you're right! It's my mission! I'll do my best, professor.","body_195")
+        g9 "{size=-2}(She is so naive, it's adorable.){/size}"
+        m "Good, now time to go to bed, child."
+        call her_main("{size=-2}(Tsh... Like I'm going to bed at this time, I need to study more.){/size}","body_07")
         hide screen bld1
         hide screen hermione_main
         with d3
@@ -187,7 +187,7 @@ label l_tutoring:
         
         show screen hermione_stand_f
         call her_head("{size=-4}(Filthy whores...){/size}","head_exp/19")
-        call her_head("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good){/size}","head_exp/35")
+        call her_head("{size=-4}(Oh, I should not talk like that...{w=0.5} but it feels so good!){/size}","head_exp/35")
         hide screen hermione_stand_f
         with d3
         
