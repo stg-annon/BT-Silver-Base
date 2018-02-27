@@ -630,7 +630,7 @@ label chit_chat:
             call her_main("","body_03")
         
         elif one_of_ten == 2:
-            call her_main("Actually I don't mind it to be called a \"know-it-all\".","body_04")
+            call her_main("Actually, I don't mind being called a \"know-it-all\".","body_04")
             her "I think it's rather flattering..."
             call her_main("","body_03")
         elif one_of_ten == 3:
