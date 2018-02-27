@@ -778,7 +778,7 @@ label hg_pf_BreastMolester:
                 "*squeeze-squeeze-squeeze*"
                 ">You keep massaging her soft tits..."
                 if whoring <= 12:
-                    call her_head("I mean, this is not a big deal, as long as I am getting paid...","body_213")
+                    call her_head("I mean, this isn't a big deal, as long as I am getting paid...","body_213")
                     ">You keep on massaging her tits through her uniform..."
                     call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
@@ -843,9 +843,9 @@ label hg_pf_BreastMolester:
     with Dissolve(1)
     
     call her_main("..................","body_29",xpos=370,ypos=0)
-    her "Thank you [genie_name]..."
+    her "Thank you, [genie_name]..."
     if daytime:
-        her "Now if you don't mind I'd better go. The classes are about to start."
+        her "Now if you don't mind, I'd better go. My classes are about to start."
     else:
         her "I'd better go now. It's getting pretty late..."
     
