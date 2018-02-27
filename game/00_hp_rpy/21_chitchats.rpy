@@ -1,6 +1,6 @@
 label snape_chitchat:
-    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
-        jump chitchat_event_01
+#    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
+#        jump chitchat_event_01
     
     
 
@@ -530,7 +530,7 @@ label snape_chitchat:
     
     
 
-### CHITCHAT EVENTS ###
+### CHITCHAT EVENTS - Disabled trigger on lines 2/3 as the discussed event never happens. Remove section entirely? See 08_tutoring, line 137 for referenced events.###
 label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tutoring unlocks.
     hide screen snape_main
     with d3
