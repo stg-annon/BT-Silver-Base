@@ -85,8 +85,8 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
         call her_main("My life has been quite uneventful lately to be honest...","body_12")
-        her "Apart from that day when I failed that test..."
-        her "Still can't believe it happened..."
+        her "Apart from the day when I failed that test..."
+        her "I still can't believe it happened..."
         menu: 
             "-Jerk off while she is talking-":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
@@ -124,7 +124,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         call her_main("Did you say something [genie_name]?","body_07")
         m "It's nothing, keep going..."
         call her_main("Well, some students are making fun of professor Quirell behind his back...","body_14")
-        her "But I disapprove of such behavior of course."
+        her "I disapprove of such behavior, of course."
         if d_flag_01:
             m "{size=-4}(Come on! Say something naughty!){/size}"
         else:
@@ -132,7 +132,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         her "Oh, and my \"Men's Rights Movement\" group is gaining popularity..."
         her "I'm very happy about that..."
         call her_main("I think, given time, we will be able to make a real difference...","body_16")
-        call her_main("Yes, it is so invigorating to know that you are doing the right thing!","body_06")
+        call her_main("It is so invigorating to know that you are doing the right thing!","body_06")
         her "Wouldn't you agree professor?"
         if d_flag_01:
             m "{size=-4}(Dammit. Now she killed the mood completely...){/size}"
