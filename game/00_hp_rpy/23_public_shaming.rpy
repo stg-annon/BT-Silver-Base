@@ -95,7 +95,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     else: #<========================================================================================== FIRST EVENT!
         if hg_ps_PantyThief_OBJ.points >= 1:
             her "Again, [genie_name]?"
-            m "Yes again..."
+            m "Yes, again..."
         her "Here..."
         if whoring >= 12: #LEVEL 05
             hide screen hermione_main
