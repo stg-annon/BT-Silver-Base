@@ -1964,14 +1964,14 @@ label event_12:
     call her_main("Professor, something awful happened today!","body_11")
     her "I failed a test today..."
     her "I cannot believe this is happening!"
-    call her_main("How this even possible?!","body_18")
+    call her_main("How is this even possible?!","body_18")
     menu:
         "\"You should study more, girl!\"":
             call her_main("But I studied all night for this test!","body_19")
         "\"There, there... It'll be alright.\"":
             call her_main("No it won't! This is a catastrophe!","body_20") 
 
-    call her_main("And the worst part is that I think I might be the only one who has failed...","body_21")
+    call her_main("And the worst part is that I think I might be the only one who failed...","body_21")
     call her_main("How will this make me look?","body_22")
     call her_main("I will know for sure when we get the results though...","body_23")
     call her_main("Yes, I'm sure everyone else failed as well...","body_13")
@@ -1998,8 +1998,8 @@ label event_12:
     call her_main("There's gotta be something wrong with the test...","body_12")
     her "And although I failed, I probably still got the most points on the test..."
     her "As usual..."
-    call her_main("Well I'd better go now. We have another \"MRM\" meeting today.","body_04")
-    her "I will let you know about the new ideas we will come up with tonight."
+    call her_main("Well, I'd better go now. We have another \"MRM\" meeting today.","body_04")
+    her "I will let you know about the new ideas we come up with tonight."
     m "I can hardly wait..."
 
 
