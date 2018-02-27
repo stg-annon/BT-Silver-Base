@@ -1865,7 +1865,7 @@ label event_11:
     
     call her_main("","body_09",xpos=370,ypos=0)
     pause
-    call her_main("Good evening professor.","body_12")
+    call her_main("Good evening, professor.","body_12")
     hide screen ctc
     menu:
         "\"-stare full of hatred-\"":
@@ -1901,13 +1901,13 @@ label event_11:
     m "Is that so...?"
     call her_main("Yes, professor. Something went terribly wrong today...","body_07")
     call her_main(".................................","body_12")
-    call her_main("But what if it did not?","body_11")
+    call her_main("But what if it didn't?","body_11")
     her "What if all the tests will be this difficult from now on?"
     call her_main("I need to study harder!","body_10")
     label cant_say:
     menu:
         "\"I could tutor you, miss Granger.\"":
-            call her_main("You professor?","body_14")
+            call her_main("You, professor?","body_14")
             call her_main("Oh, thank you for your offer but I don't think that would be necessary, sir.","body_15")
             call her_main("The best tutor is a book, and I have the entire Hogwarts library at my disposal.","body_16")
         "\"A wise decision, miss Granger.\"":
