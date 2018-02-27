@@ -461,7 +461,7 @@ label genie_change_fail:
     jump hermione_talk
     
 label hermione_change:
-    call her_main("Fine, call me whatever you want [genie_name]","body_01")
+    call her_main("OK! I really like that name, [genie_name].","body_01")
     jump hermione_talk
     
 label hermione_change_fail:
