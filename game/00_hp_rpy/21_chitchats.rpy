@@ -81,7 +81,7 @@ label snape_chitchat:
   
         elif one_of_ten == 5:
             call sna_main("There was a time when I was young and full of hope...","snape_06")
-            call sna_main("Ha-ha... I'm pulling your leg, mate","snape_28")
+            call sna_main("Ha-ha... I'm pulling your leg, mate.","snape_28")
             call sna_main("I was never full of hope...","snape_29")
 
         elif one_of_ten == 6:
