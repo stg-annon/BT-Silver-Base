@@ -84,7 +84,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if whoring >= 3 and whoring <= 5:
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
         her "Apart from the day when I failed that test..."
         her "I still can't believe it happened..."
         menu: 
@@ -103,7 +103,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 pause
                 
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
-                m "What, oh it's nothing. Just scratching my leg."
+                m "What? Oh, it's nothing. Just scratching my leg."
                 m "You were saying?"
                 call her_main("Yes... Well, that test I failed...","body_14")
             "-Participate in the conversation-":
@@ -121,7 +121,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         else:
             m "(Professor Sprout... He-he, what a ridiculous name...)"
         
-        call her_main("Did you say something [genie_name]?","body_07")
+        call her_main("Did you say something, [genie_name]?","body_07")
         m "It's nothing, keep going..."
         call her_main("Well, some students are making fun of professor Quirell behind his back...","body_14")
         her "I disapprove of such behavior, of course."
@@ -135,7 +135,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         call her_main("It is so invigorating to know that you are doing the right thing!","body_06")
         her "Wouldn't you agree professor?"
         if d_flag_01:
-            m "{size=-4}(Dammit. Now she killed the mood completely...){/size}"
+            m "{size=-4}(Dammit. Now she's killed the mood completely...){/size}"
             show screen genie
             with d3
             $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
@@ -152,7 +152,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     elif whoring >= 6: #LEVEL 03
         $ new_request_01_heart = 3 #Event hearts level (0-3)
         $ hg_pf_TalkToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
         her "Hm..."
         her "There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house."
         her "To be honest, [genie_name], there should be none..."
