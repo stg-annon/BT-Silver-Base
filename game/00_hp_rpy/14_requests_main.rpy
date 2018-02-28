@@ -2,113 +2,155 @@ label __init_variables:
     if not hasattr(renpy.store,'hg_pf_TalkToMe_OBJ'): #important!
         $ hg_pf_TalkToMe_OBJ = personal_favor(
             imagination_level = 0,
+            max_heart_level = 3,
             menu_text = "Talk to me",
             start_label = "hg_pf_TalkToMe",
             costume_event = True
         )
-    
+    else:
+        $ hg_pf_TalkToMe_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_NicePanties_OBJ'): #important!
         $ hg_pf_NicePanties_OBJ = personal_favor(    
             imagination_level = 0,
+            max_heart_level = 3,
             menu_text = "Nice panties",
             start_label = "hg_pf_NicePanties"
         )
-    
+    else:
+        $ hg_pf_NicePanties_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_BreastMolester_OBJ'): #important!
         $ hg_pf_BreastMolester_OBJ = personal_favor(
             imagination_level = 2,
+            max_heart_level = 3,
             menu_text = "Breast molester",
             start_label = "hg_pf_BreastMolester",
             costume_event = True
         )
-    
+    else:
+        $ hg_pf_BreastMolester_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_ButtMolester_OBJ'): #important!
         $ hg_pf_ButtMolester_OBJ = personal_favor(
             imagination_level = 2,
+            max_heart_level = 3,
             menu_text = "Butt molester",
             start_label = "hg_pf_ButtMolester",
             costume_event = True
         )
-    
+    else:
+        $ hg_pf_ButtMolester_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_ShowThemToMe_OBJ'): #important!
         $ hg_pf_ShowThemToMe_OBJ = personal_favor(
             imagination_level = 3,
+            max_heart_level = 3,
             menu_text = "Show them to me!",
             start_label = "hg_pf_ShowThemToMe",
             costume_event = True
         )
-    
+    else:
+        $ hg_pf_ShowThemToMe_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_DanceForMe_OBJ'): #important!
         $ hg_pf_DanceForMe_OBJ = personal_favor(
             imagination_level = 3,
+            max_heart_level = 3,
             menu_text = "Dance for me!",
             start_label = "hg_pf_DanceForMe",
             costume_event = True
         )
-
+    else:
+        $ hg_pf_DanceForMe_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_ShowMeYourAss_OBJ'): #important!
         $ hg_pf_ShowMeYourAss_OBJ = personal_favor(
             imagination_level = 3,
+            max_heart_level = 3,
             menu_text = "Show me that ass!",
             start_label = "hg_pf_ShowMeYourAss",
             costume_event = False
         )
-    
+    else:
+        $ hg_pf_ShowMeYourAss_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_LetMeTouchThem_OBJ'): #important!
         $ hg_pf_LetMeTouchThem_OBJ = personal_favor(
             imagination_level = 3,
+            max_heart_level = 3,
             menu_text = "Let me touch them!",
             start_label = "hg_pf_LetMeTouchThem",
             costume_event = True
         )
-
+    else:
+        $ hg_pf_LetMeTouchThem_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_TouchYourself_OBJ'): #important!
         $ hg_pf_TouchYourself_OBJ = personal_favor(
             imagination_level = 4,
+            max_heart_level = 3,
             menu_text = "Touch Yourself!",
             start_label = "hg_pf_TouchYourself",
             costume_event = False
         )
-    
+    else:
+        $ hg_pf_TouchYourself_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_TouchMe_OBJ'): #important!
         $ hg_pf_TouchMe_OBJ = personal_favor(
             imagination_level = 4,
+            max_heart_level = 3,
             menu_text = "Touch me!",
             start_label = "hg_pf_TouchMe",
             costume_event = True
         )
-
+    else:
+        $ hg_pf_TouchMe_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_TitJob_OBJ'): #important!
         $ hg_pf_TitJob_OBJ = personal_favor(
             imagination_level = 4,
+            max_heart_level = 3,
             menu_text = "Let me fuck them!",
             start_label = "hg_pf_TitJob",
             costume_event = True
         )
-    
+    else:
+        $ hg_pf_TitJob_OBJ.max_heart_level = 3
+        
     if not hasattr(renpy.store,'hg_pf_SuckIt_OBJ'): #important!
         $ hg_pf_SuckIt_OBJ = personal_favor(
             imagination_level = 4,
+            max_heart_level = 4,
             menu_text = "Suck it!",
             start_label = "hg_pf_SuckIt",
             costume_event = True
         )
+    else:
+        $ hg_pf_SuckIt_OBJ.max_heart_level = 4
     
     if not hasattr(renpy.store,'hg_pf_LetsHaveSex_OBJ'): #important!
         $ hg_pf_LetsHaveSex_OBJ = personal_favor(
             imagination_level = 5,
+            max_heart_level = 3,
             menu_text = "Let's have sex!",
             start_label = "hg_pf_LetsHaveSex",
             costume_event = True
         )
-            
+    else:
+        $ hg_pf_LetsHaveSex_OBJ.max_heart_level = 3
+           
     if not hasattr(renpy.store,'hg_pf_TimeForAnal_OBJ'): #important!
         $ hg_pf_TimeForAnal_OBJ = personal_favor(
             imagination_level = 5,
+            max_heart_level = 3,
             menu_text = "Time for anal!",
             start_label = "hg_pf_TimeForAnal",
             costume_event = True
         )
+    else:
+        $ hg_pf_TimeForAnal_OBJ.max_heart_level = 3
     
     
     $ hg_pf_list = []
@@ -688,6 +730,7 @@ init python:
         
     class personal_favor(silver_request):
         hearts_level = 0
+        max_heart_level = 0
         imagination_level = 0
         costume_event = False
         
@@ -695,8 +738,14 @@ init python:
             self.__dict__.update(**kwargs)
         
         def getMenuText(self):
-            menu_image = "interface/heart_0"+str(self.hearts_level)+".png"
-            ret_str = "Favor: \""+self.menu_text+"\" {image="+menu_image+"}"
+            empty_heart = "interface/empty_heart.png"
+            full_heart = "interface/full_heart.png"
+            ret_str = "Favor: \""+self.menu_text+"\""
+            for x in range(0, self.max_heart_level):
+                if x < self.hearts_level:
+                    ret_str +=  "{image="+full_heart+"}"
+                else:
+                    ret_str +=  "{image="+empty_heart+"}"
             if self.costume_event:
                ret_str += "  {image=interface/clothes.png}"
             return ret_str
