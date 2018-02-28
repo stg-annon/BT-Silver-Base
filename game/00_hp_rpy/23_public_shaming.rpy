@@ -534,7 +534,7 @@ label hg_ps_WearMyCum: #Walk around school covered in genies cum
     elif whoring < 20:
         jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 2
     else:
-        jump hg_ps_WearMyCum_Scene_2 #This is 1 until I write 3
+        jump hg_ps_WearMyCum_Scene_3 #This is 1 until I write 3
 
 
 
@@ -1034,7 +1034,161 @@ label hg_ps_WearMyCum_Scene_2:
 
 
 label hg_ps_WearMyCum_Scene_3:
+    $ hg_ps_WearMyCum_OBJ.inProgress = True
+    call her_main("Are you serious?","body_104")
+    call her_main("Can I?","body_106")
+    m "well-"
+    call her_main("I was going to ask you if I could seeing as how it made you so happy last time [genie_name].","body_80")
+    call her_main("I'll even do it for free if that would make you happier!","body_78")
+    m "really?"
+    m "Well let's get started then!"
+    #Start jerk off chibis
+    hide screen hermione_main            
+    hide screen bld1
+    with d3
+    $ walk_xpos=500 #Animation of walking chibi. (From)
+    $ walk_xpos2=280 #Coordinates of it's movement. (To)
+    $ hermione_speed = 03.0 #The speed of moving the walking animation across the screen.
+    show screen hermione_walk_01 
+    pause.1
+    show screen blkfade
+    with Dissolve(1)
+    pause.3
 
+    hide screen genie
+    $ genie_chibi_xpos = 60 #-185 behind the desk.
+    $ genie_chibi_ypos = 10
+    $ g_c_u_pic = "handjob_ani"
+    show screen chair_02
+    show screen g_c_u
+    show screen desk_02
+    hide screen blktone
+    hide screen hermione_walk_01 
+    hide screen blkfade
+    $ hermione_head_ypos = 235
+    m "Gods you're good at this [hermione_name]/"
+    call her_head("Thank you... I've been thinking about what you asked me last time","body_121")
+    m "Last time?"
+    call her_head("about why I do this... sell you these sort of favours","body_120")
+    call her_head("At the start it was just just to get points, so that \'gryffindor\' could win the house cup...","body_122")
+    call her_head("but lately, it's been more than that sir...","body_124")
+    call her_head("But lately it’s been more than that... now I do it to make you happy [genie_name].","body_128")
+    call her_head("Because making you happy, make me happy...","body_129")
+    m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
+    call her_head("Oh! Of course [genie_name]...","body_131")
+    call her_head("Do you need some extra encouragement.","body_127")
+    m "it would help..."
+    call her_head("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","body_124")
+    call her_head("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","body_106")
+    call her_head("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So, everyone knows who and what I am.”","body_123")
+    call her_head("not just A slut... a cumslut...","body_121")
+    call her_head("Your {image=textheart}cum{image=textheart}slut...","body_134")
+    g9 "That did it slut!"
+    g4 "HERE IT COMES!!!"
+    call her_head("Shoot it wherever you want [genie_name]...","body_135")
+    menu:
+        "\"take it on your tits!\"": # Cum on shirt front 
+            $ cum_location = 7
+            call her_head("yes [genie_name]...","body_136")
+            ">Hermionely keeps jerking your cock, her eyes focused intently on it."
+            g4 "Get ready whore, here i come!"
+            call her_head("...","body_133")
+            ">Hermione leans forward, lining up her tits directly with your cock."
+            g9 "{size=+5}ARGH! YES!!! RIGHT in between your TITS!{/size}"
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+            $ uni_sperm = True
+            call her_main("{image=textheart}{image=textheart}{image=textheart}","body_124") 
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            m "That's it, all over you slut."
+            call her_main("......","body_121") 
+            pause
+            $ g_c_u_pic = "01_hp/08_animation_02/15_cum_21.png"
+            call her_main("It's so warm...{image=textheart}","body_123") 
+            m "That it is."
+            call her_main("If it's alright with you, I think I better head to class now...","body_124") 
+
+        "\"Take it on your face slut!\"":
+            $ cum_location = 8
+            ">Hermione bends down and place your cock in front of her face."
+            m "Get ready slut, here it comes!"
+            call her_head("thank you [genie_name]","body_136")
+            g9 "{size=+5}ARGH! YES!!!{/size}"
+            call her_head("...","body_135")
+            ">You erupt onto her face, dousing her in your thick spunk."
+            show screen white 
+            pause.1
+            hide screen white
+            pause.2
+            show screen white
+            pause .1
+            hide screen white
+            with hpunch
+            play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
+            $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+            $ uni_sperm = True
+            $ genie_chibi_xpos = 60 #-185 behind the desk.
+            $ genie_chibi_ypos = 10
+            $ g_c_u_pic = "on_shirt_cum_ani"
+            hide screen blkfade
+            with d3
+            show screen ctc
+            hide screen bld1
+            with d3
+            pause
+            show screen bld1
+            with d3
+            call her_main("{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_135") 
+            m "Yes... I Feel so much better now..."
+            call her_main("me too...","body_33") 
+    show screen hermione_stand 
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    hide screen g_c_u
+    $ her_head_ypos = her_head_tits
+    hide screen blkfade
+    with d5
+    ">You tuck your cock back into your robe."
+    m "I’ll see you after classes. And as before, if you come back without any cum on you, I’ll be very disappointed."
+    call her_main("of course [genie_name]...","body_121")
+    call her_main("(I can't wait to see the look on peoples faces...)","body_123") 
+
+    hide screen h_c_u
+    hide screen g_c_u
+    hide screen g_c_c_u # Genie's sperm. Universal.
+    hide screen ctc
+    hide screen chair_02
+    hide screen desk_02
+    show screen genie
+    show screen bld1
+    $ hermione_chibi_xpos = 500 #Near the desk.
+    $ hermione_chibi_ypos = 250 #Default: 250
+    show screen hermione_blink #Hermione stands still.
+    pause.1
+    hide screen blkfade
+    with d3
+
+
+    jump end_hg_pf
 
 
 label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your cum
@@ -1042,8 +1196,10 @@ label hg_ps_WearMyCum_complete: #Hermione returns from her day of wearing your c
     $ hg_ps_WearMyCum_OBJ.complete = True
     if cum_location <= 3:
         jump hg_ps_WearMyCum_complete_1
-    else:
+    elif cum_location <= 6:
         jump hg_ps_WearMyCum_complete_2
+    else:
+        jump hg_ps_WearMyCum_complete_3
 
 
 label hg_ps_WearMyCum_complete_1:
@@ -1216,6 +1372,58 @@ label hg_ps_WearMyCum_complete_2:
     jump end_hg_pf
 
 label hg_ps_WearMyCum_complete_3:
+    if cum_location == 7: #Cleavage
+        $ u_sperm = "01_hp/13_hermione_main/auto_06.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office, her shirt still covered in cum."
+        call her_main("...I did it [genie_name].","body_08")
+        call her_main("I kept your cum on me all day.","body_24")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you [genie_name], will that be all?","body_45")
+                m "Yes [hermione_name], you may leave now. "
+            "\"Tell me about your day.\"":
+                $ sc34CG(1, 17, 7)
+                call her_main("It was actually quite frustrating [genie_name]...","body_103")
+                m "frustrating?"
+                call her_main("yes! Having to spend the whole day smelling your delicous cum but not being able to taste any of it!","body_107")
+                call her_main("It was like looking at a glass of water in the desert...","body_121")
+                m "did anyone else notice?"
+                call her_main("I couldn't say [genie_name]... I was too distracted by the smell...","body_122")
+                m "Very well, goodnight [hermione_name]."
+                call her_main("Good night [genie_name].","body_123")
+    else: #Cum on face
+        $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
+        $ uni_sperm = True
+        ">Hermione returns to your office."
+        call her_main("I did it [genie_name].","body_08")
+        call her_main("I kept your cum on me all day.","body_45")
+        menu:
+            "\"Good Work!\"":
+                call her_main("Thank you, [genie_name]. Is that everything?","body_105")
+                m "yes [hermione_name], you can go clean up now."
+                call her_main("clean up?","body_107")
+                m "Only if you want to..."
+                call her_main("thank you [genie_name]!","body_106")
+            "\"Tell me about your day.\"":
+                $ sc34CG(1, 17, 6)
+                call her_main("My day...","body_105")
+                call her_main("It was a normal day [genie_name]. Well what is normal for me now.","body_121")
+                call her_main("I got called names again, and some of the boys groped me.","body_123")
+                call her_main("Susan Bones even said she liked how I looked in my shirt.","body_124")
+                m "And how did that make you feel?"
+                call her_main("Excited, I almost came when Moaning Myrtle started yelling to everyone about your cum on my shirt.","body_133")
+                m "Truly?"
+                call her_main("Of course, it made me even happier knowing that it makes you happy.","body_124")
+                m "that you did..."
+                call her_main("...{image=textheart}","body_136")
+                call her_main("thank you [genie_name]. well, goodnight.","body_107")
+                m "goodnight [hermione_name]."
+    hide screen sccg 
+    with fade
+    jump end_hg_pf
+
+
 
 #Blowjob in front of Luna
 #Genie tells Hermione to go fetch a student and that she will be sucking him off while he talks to them
@@ -1355,8 +1563,8 @@ label hg_ps_Buttplug:
                     $ buttplug_size = 1
                 "-Medium, magical-" if hg_ps_Buttplug_OBJ.points >= 1:
                     $ buttplug_size = 2
-                #"-Large, magical-" if buttplug_2_worn == True and whoring > 23:
-                #    $ buttplug_size = 3
+                "-Large, magical-" if buttplug_2_worn == True and whoring > 23:
+                    $ buttplug_size = 3
             pass
         "\"(Not right now.)\"":
             jump silver_requests
@@ -1615,82 +1823,83 @@ label hg_ps_Buttplug:
             call her_main("please...","body_105")
             m "well seeing as how you did ask for the big one..."
             ">You hand her the buttplug."
-            call her_main("!!!","body_118")
-            call her_main("This isn't the one I meant [genie_name]...","body_118")
+            call her_main("!!!","body_104")
+            call her_main("This isn't the one I meant [genie_name]...","body_101")
             m "Didn't you ask for the big one?"
-            call her_main("I did-","body_106")
+            call her_main("I did-","body_103")
             m "Well here's the {b}big{/b} one."
-            call her_main("I didn't know you had one this big!","body_107")
-            call her_main("I don't even think this will fit...","body_106")
+            call her_main("I didn't know you had one this big!","body_81")
+            call her_main("I don't even think this will fit...","body_85")
             m "Never say never!"
-            call her_main("You can't be serious!","body_106")
-            call her_main("This thing is ridiculous!","body_106")
+            call her_main("You can't be serious!","body_69")
+            call her_main("This thing is ridiculous!","body_66")
             m "You said the same thing about the smaller one."
-            call her_main("that was different...","body_106")
+            call her_main("that was different...","body_12")
             m "I have confidence in you! Besides, you were pretty great when you were taking my cock up your ass!"
-            call her_main("[genie_name]!","body_106")
+            call her_main("[genie_name]!","body_09")
             m "Come on..."
-            call her_main("This is too much sir! even your cock wasn't this {p}{b}thick{/b}...","body_106")
+            call her_main("This is too much sir! even your cock wasn't this {p}{b}thick{/b}...","body_97")
             m "Nothing a little spit won't solve!"
-            call her_main("I think this is beyond spit, [genie_name]. Unless you have some sort of actual {i}lubricant{/i} in your possession I don't think I'll be letting this thing anywhere near me.","body_106")
-            if gift_item_inv[6] >= 1:# anal lubricant
+            call her_main("I think this is beyond spit, [genie_name]. Unless you have some sort of actual {i}lubricant{/i} in your possession I don't think I'll be letting this thing anywhere near me.","body_103")
+            if gift_item_inv[12] >= 1:# anal lubricant
                 $ buttplug_3_worn = True
                 play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
                 m "well it just so happens that I recently came across the solution to your problem."
-                call her_main("Which is?","body_106")
+                call her_main("Which is?","body_66")
                 m "Here."
                 ">You hand hermione the jar of anal lubricant."
-                $ gift_item_inv[6] -= 1
-                call her_main("!!!","body_106")
-                call her_main("I wasn't serious [genie_name]!","body_106")
+                $ gift_item_inv[12] -= 1
+                call her_main("!!!","body_119")
+                call her_main("I wasn't serious [genie_name]!","body_117")
                 m "Now, now. No one likes a liar."
-                call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.","body_106")
+                call her_main("I didn't promise anything! Besides, I didn't actually expect you to have a jar of lube in your desk.","body_103")
                 m "I bought it for just such an occasion..."
-                call her_main("...","body_106")
-                call her_main("ugh... fine. I'll {b}try{/b} to fit it in.","body_106")
-                call her_main("but I'm not promising anything!","body_106")
+                call her_main("...","body_103")
+                call her_main("ugh... fine. I'll {b}try{/b} to fit it in.","body_118")
+                call her_main("but I'm not promising anything!","body_69")
                 m "That's all I ask."
                 ">You hand hermione the large buttplug."
-                call her_main("I still don't think this is going to work...","body_106")
+                call her_main("I still don't think this is going to work...","body_61")
                 ">Hermione slowly coats the massive buttplug with lube."
-                call her_main("There's barely even enough here to cover it...","body_106")
-                call her_main("(There's no way this thing will fit.)","body_106")
+                call her_main("There's barely even enough here to cover it...","body_43")
+                call her_main("(There's no way this thing will fit.)","body_85")
                 ">Hermione slowly places the lubed up buttplug to her anus."
-                call her_main("I'm telling you [genie_name], this isn't going to-","body_106")
-                call her_main("{size+=10}!!!{/size}","body_106")
-                call her_main("{size+=10}It's moving!{/size}","body_106")
+                call her_main("I'm telling you [genie_name], this isn't going to-","body_87")
+                call her_main("{size=+10}!!!{/size}","body_119")
+                call her_main("{size=+10}It's moving!{/size}","body_104")
                 m "Really?"
-                call her_main("{size+=5}ugh...{/size}","body_106")
-                call her_main("{size+=5}it's forcing it's way inside me....{/size}","body_106")
-                call her_main("{size+=5}it's stretching me out from the inside... [genie_name].{/size}","body_106")
-                call her_main("ah...","body_106")
-                call her_main("it's...{p}it's...","body_106")
+                call her_main("{size=+5}ugh...{/size}","body_118")
+                call her_main("{size=+5}it's forcing it's way inside me....{/size}","body_140")
+                call her_main("{size=+5}it's stretching me out from the inside... [genie_name].{/size}","body_142")
+                call her_main("ah...","body_143")
+                call her_main("it's...{p}it's...","body_144")
                 $ hermione_dribble = True
-                call her_main("{size+=5}incredible!{/size}","body_106")
+                call her_main("{size=+5}incredible!{/size}","body_158")
                 ">You hear an audible pop as the buttplug forces it's way inside hermione."
                 $ hermione_buttplugs = True
                 $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_c_on.png"
-                call her_main(".............","body_106")
+                call her_main(".............","body_142")
                 m "Are you alright [hermione_name]?"
-                call her_main("..........................","body_106")
-                call her_main("ah... y-yes...","body_106")
+                call her_main("..........................","body_142")
+                call her_main("ah... y-yes...","body_143")
                 m "Fantastic! I'll see you after class then."
-                call her_main(".............","body_106")
+                call her_main(".............","body_145")
                 ">Hermione slowly leaves your office, barely able to walk in a straight line."
                 pass
             else:
                 m "afraid not..."
-                call her_main("well then i think I better be off to class then.","body_106")
-                call her_main("{size=-2}unless {size=-2}you {size=-2}have {size=-2}the {size=-2}smaller {size=-2}one.{/size}{image=textheart}","body_106")
+                call her_main("well then i think I better be off to class then.","body_73")
+                call her_main("{size=-2}unless {size=-2}you {size=-2}have {size=-2}the {size=-2}smaller {size=-2}one.{/size}{image=textheart}","body_107")
                 m "It just so happens that I do."
                 ">You hand her the buttplug."
                 ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
                 $ hermione_buttplugs = True
                 $ hermione_buttplug = "01_hp/13_characters/hermione/accessories/plugs/plug_b_on.png"
                 call her_main("{image=textheart}ah{image=textheart}...","body_106")
-                call her_main("Thank you [genie_name]!","body_107")
-                call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","body_106")
+                call her_main("Thank you [genie_name]!","body_74")
+                call her_main("{size=-5}({image=textheart}it feels so good... I might have to buy my own...{image=textheart}){/size}","body_121")
                 m "(I'll have to see if those Weasley boys have anything that could help...)"
+                $ buttplug_size = 2
 
         elif buttplug_size == 3: # Large buttplug repeat
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
@@ -2251,90 +2460,92 @@ label hg_ps_Buttplug_complete:
             m "[hermione_name], how was your day?"
             show screen blktone
             with d3
-            call her_main("Awful, I was attacked by a group of rabid students, [genie_name].","body_62",xpos=370)
-            m "Attacked? By How many?"
-            call her_main("six first years, [genie_name]...","body_61")
-            m "you were attacked by first years?"
+            call her_main("Alright... Although you really need to do something about these first years!","body_69",xpos=370)
+            m "first years? why?"
+            call her_main("they're getting rather aggressive, [genie_name]...","body_103")
+            m "aggressive? you mean they're attacking people?"
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-            call her_main("I may have been exaggerating slightly...","body_10")
-            m "what happened?"
-            call her_main("well I was sitting in the library, minding my own business...","body_12")
-            call her_main("when all of a sudden a group of first year students came from nowhere asking me all these questions...","body_97")
-            call her_main("\"is it fluffy\"...","body_103")
-            call her_main("\"why are you wearing it\"...","body_118")
-            call her_main("\"does it feel nice\"...","body_124")
-            call her_main("\"can we touch it\"...","body_124")
-            call her_main("\"can you make it wag\"...","body_122")
-            m "what did you do?"
-            call her_main("well I made them promise to keep quiet about it...","body_120")
-            call her_main("but in exchange I may have had to let them touch it...","body_87")
+            call her_main("well, not physically...","body_105")
+            m "what happened this time?"
+            call her_main("I was simply walking back to my dorm room after classes.","body_87")
+            call her_main("when all of a sudden I was grabbed by the buttplug!","body_97")
+            call her_main("it started vibrating like nothing I've ever felt...","body_106")
+            call her_main("Before I could even react I'd been pulled into a group of first years room.","body_107")
+            call her_main("I tried to tell them to stop it...","body_124")
+            call her_main("but the buttplug... it was too much sir...","body_123")
+            call her_main("I collapsed face first onto one of their beds...","body_106")
+            m "what did they do?"
+            call her_main("it'd be quicker to tell you what they didn't do...","body_124")
+            call her_main("their little hands were everywhere...","body_212")
             call her_main("{image=textheart}{image=textheart}{image=textheart}","body_121")
-            m "So you let a group of innocent first years touch your buttplug..."
-            call her_main("It sounds sinister when you put it like that.","body_103")
-            her "All I did was take them to a secluded part of the library and let them touch my tail..."
-            m "Well that's alright then..."
-            call her_main(".......","body_124")
-            m "So did you enjoy it?"
-            call her_main("..........","body_117")
-            call her_main("Truthfully [genie_name].... It was the most one of the most pleasurable experiences of my life...","body_123")
-            call her_main("all their hands touching it...","body_121")
-            call her_main("taking turns...","body_106")
-            call her_main("all the while it was vibrating away...","body_124")
-            call her_main("I nearly passed out.","body_133")
-            call her_main("I even tried to make them stop...","body_134")
-            call her_main("but they just kept going...","body_136")
-            m "Nice work, [hermione_name]."
+            call her_main("they were stroking the buttplug... flicking it... tickling it...","body_106")
+            call her_main("two of the girls even took turns licking it...","body_133")
+            m "and you just let this happen?"
+            call her_main("I couldn't stop it!","body_117")
+            call her_main("this damn buttplug of yours kept vibrating so hard...","body_123")
+            call her_main("I tried to tell them to stop...","body_136")
+            call her_main("but all I could manage were moans...","body_106")
+            call her_main("and that just made it worse!","body_124")
+            call her_main("they even started to finger my-.","body_133")
+            call her_main("{image=textheart}{image=textheart}{image=textheart}...","body_134")
+            call her_main("You really need to do something about them sir! THey need to be reprimanded!","body_136")
+            m "yes yes, I'll get right on that... Nice work, [hermione_name]."
         
         elif one_out_of_three == 2: ### Speech in McGonagall's class
             m "[hermione_name], did you complete your task?"
             show screen blktone
             with d3
             call her_main("Yes I did, [genie_name]...","body_06",xpos=370)
-            call her_main("Did you know there are holes between the stalls in the girls bathroom?","body_55")
-            m "i did not, but What does that have to do with your buttplug?"
-            call her_main("Well, I noticed that the hole is the same height as the tail...","body_56")
-            call her_main("...............","body_57b")
+            m "Anything interesting happen?"
+            call her_main("Well I did have to deliver a speech on magical ethics today...","body_55")
+            m "i see... and do you think anyone noticed your little accessory?"
+            call her_main("I think everyone noticed it...","body_56")
+            call her_main("Or at least I hope they did...","body_57b")
             m "go on, [hermione_name]."
             play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-            call her_main("I might have put it through...","body_59")
-            m "what?"
-            call her_main("Well I was in the stall finishing up...","body_54")
-            her "When a girl entered the other stall."
-            call her_main("I wasn't sure but I thought that it may have been a \"slytherin\"...","body_44")
-            call her_main("So I decided to stick my tail through!","body_46")
-            m "did they touch it?"
-            call her_main("not immediately...","body_54")
-            call her_main("but after I gave it a little wiggle she eventually came around...","body_68")
-            call her_main("she was curious at first but eventually she started to really play with it...","body_107")
-            call her_main("stroking it... flicking it... I even think she may have licked it...","body_121")
-            her "...imagine that... a slytherin, licking something that was in my..."
-            her "It was incredible... I could barely stand while it happened..."
-            m "did you find out who it was?"
-            call her_main("I did [genie_name].","body_11")
-            call her_main("It was at lunch, in the great hall.","body_127")
-            call her_main("I was walking past the slytherin table on my way to sit down...","body_127")
-            call her_main("when I saw that little... vixen, astoria greengrass.","body_129")
-            her "she couldn't take her eyes off of it..."
-            call her_main("imagine that... astoria greengrass... pureblood, licking my...","body_136")
+            call her_main("It was almost like it wanted to be seen...","body_59")
+            call her_main("at first I was just going about my speech...","body_123")
+            her "delivering it normally."
+            call her_main("but when I jiggled my hips slightly it swayed to the side so everyone could see it...","body_106")
+            call her_main("It was almost like I could feel their eyes on it [genie_name]...","body_123")
+            call her_main("it felt incredible...","body_133")
+            call her_main("eventually I couldn't stop shaking my hips...","body_134")
+            call her_main("it kept vibrating everytime they saw it...","body_107")
+            call her_main("eventually I just turned around...","body_123")
+            her "I tried to continue my speech..."
+            her "but it was too much..."
+            call her_main("I could barely speak...","body_124")
+            call her_main("all while the whole class stared in silence as I shook something that was stuck up my ass...","body_128")
+            call her_main("I've never been so ashamed...","body_124")
+            call her_main("or excited...","body_134")
+            her "after five minutes of me trying to finish my speech while bent over the teachers desk the class finally came to an end..."
+            call her_main("thankfully I went last, I'm not sure if I would have been able to stop myself otherwise...","body_136")
             call her_main("{image=textheart}........{image=textheart}","body_121")
             m "It sounds like you've earned your points today then [hermione_name]."
-            call her_main("...{size=-7}(I would have done this for free...){/size}","body_59")
+            call her_main("...{size=-7}(I still can't believe McGonagall gave me full marks...){/size}","body_124")
         
         elif one_out_of_three == 3: ### Sits down in hall with it showing
             play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
             m "[hermione_name], did you complete your task?"
             show screen blktone
             with d3
-            call her_main("Yes, I did [genie_name]...","body_129",xpos=370)
+            call her_main("Yes, I did [genie_name]...","body_105",xpos=370)
             m "Anything interesting happen?"
-            her "do you know that Patil twins [genie_name]?"
-            m "no but do continue."
-            call her_main("well they were walking down the hall behind me...","body_128")
-            her "I swear I could hear them whispering to each other..."
-            call her_main("and I thought I may as well give them something to talk about...","body_129")
-            call her_main("So I stopped, kept my knees straight and bent over as far as I could...","body_128")
-            m "You exposed yourself just like that?"
-            call her_main(".......","body_188")
+            her "well I did have a fun time during lunch..."
+            m "go on..."
+            call her_main("I was sitting down in the great hall on the bench...","body_107")
+            her "Obviously I couldn't fit this thing under my skirt like I would with the smaller ones..."
+            call her_main("So I had to have it out in the open...","body_106")
+            call her_main("it was so far out that everyone who walked past bumped into it...","body_134")
+            m "You exposed yourself to the whole school?"
+            call her_main("I did...","body_121")
+            call her_main("and it felt incredible...","body_123")
+            call her_main("I barely touched my food...","body_124")
+            call her_main("and when it was time for everyone to leave, I just sat there...","body_124")
+            call her_main("letting them all shuffle past...","body_133")
+            call her_main("bumping as they went...","body_134")
+            call her_main("I nearly collapsed face first into my food...","body_136")
+            call her_main("{image=textheart}........{image=textheart}","body_133")
             m "Very good, [hermione_name]!"
     
     $ gryffindor += current_payout #55
@@ -2345,6 +2556,7 @@ label hg_ps_Buttplug_complete:
     $ hg_ps_Buttplug_OBJ.complete = True
     $ hg_ps_Buttplug_OBJ.inProgress = False
     $ hermione_buttplugs = False
+    $ hermione_dribble = False
     
     call hg_pr_transition_block
     return

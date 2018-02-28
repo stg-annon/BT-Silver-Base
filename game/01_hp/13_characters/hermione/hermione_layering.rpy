@@ -594,9 +594,9 @@ label h_action(action =  ""):
                 
             if action == "covering":
                 $ h_action_show_top = False
-                $ h_action_show_skirt = False
+                #$ h_action_show_skirt = False
                 $ h_action_show_bra = False
-                $ h_action_show_panties = False
+                #$ h_action_show_panties = False
                 $ override = True
                 $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/covering.png"
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nipfix.png" 
@@ -632,9 +632,9 @@ label h_action(action =  ""):
                 
             if action == "pinch":
                 $ h_action_show_top = False
-                $ h_action_show_skirt = False
+                #$ h_action_show_skirt = False
                 $ h_action_show_bra = False
-                $ h_action_show_panties = False
+                #$ h_action_show_panties = False
                 $ override = True
                 $ hermione_action_a = "01_hp/13_characters/hermione/body/arms/both/fingering_and_pinching.png"
                 $ hermione_breasts = "01_hp/13_characters/hermione/body/breasts/breasts_nonips.png" 
