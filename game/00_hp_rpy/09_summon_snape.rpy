@@ -356,14 +356,14 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     g4 "{size=-4}(What the...?){/size}"
     sna_[2] ".............."
     sna_[2] "She used to be just an annoyance, but these days..."
-    sna_[1] "She became a fully fledged menace..."
+    sna_[1] "She's become a full-fledged menace..."
     sna_[1] "That witch is officially my least favorite student in the entire school now..."
     m "What about that Potter boy?"
     sna_[6] "The Potter boy? Ha! Who's that!?"
-    sna_[1] "No I'm serious..."
-    sna_[1] "I will go as far as to say that Potter jr. and his wretched father combined..."
-    sna_[1] "Didn't cause me nearly as much grief as this little witch does lately..."
-    m "Now, now, we both know that's not true..."
+    sna_[1] "No, I'm serious..."
+    sna_[1] "I will go as far as to say that Potter and his wretched father combined..."
+    sna_[1] "Have never caused me as much grief as this little witch does lately..."
+    m "Now, now. We both know that's not true..."
     sna_[2] "Yeah... You're probably right..."
     sna_[7] "That bastard James Potter really did a number on me--"
     sna_[6] "Wait, how do you know this?"
@@ -371,7 +371,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     sna_[6] "What? What books?"
     m "Nah, never-mind. I'm a genie, remember? I know things..."
     sna_[9] "Hm... And yet you need me to teach you stuff..."
-    m "Well, I told you, my magic is acting up in your world..."
+    m "Well, I told you. My magic is acting up in your world..."
     sna_[9] "Sure, sure..."
     m "......"
     m "She came by the other day..."
@@ -403,7 +403,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
         sna_[10] "Unfortunately, us mere mortals cannot afford such a luxury..."
         
     else:
-        m "Not sure... She's been talking a lot..."
+        m "Not sure... She's was talking a lot..."
         m "Something about some \"greefeendo\" points... and..."
         m "Er... I wasn't paying attention to be honest..."
         sna_[1] "Nah... Probably another load of self-righteous crap..."
@@ -447,7 +447,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "What do you mean?"
     with hpunch
     sna_[5] "{size=+6}I will have to kill her!{/size}"
-    g4 "Like literally kill her?"
+    g4 "Like, literally kill her?"
     sna_[6] "Do I have any other choice?"
     m "You're joking, right?"
     sna_[6] "Am i?!"
@@ -466,7 +466,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[2] "I would never actually harm a student..."
     sna_[3] "(...permanently that is.)"
     m "Listen, if she bugs you so much, why not just find a less radical way to deal with her?"
-    sna_[7] "Nah... Flogging has been outlawed years ago..."
+    sna_[7] "Nah... Flogging has been outlawed for years now..."
     m "That's not what I mean..."
     sna_[1] "Huh?"
     m "She is a top student, right?"
@@ -475,7 +475,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[6] "Oh, yes!"
     m "And she thinks that she is better than everyone else..."
     sna_[17] "Where are you going with this?"
-    m "Well it seems like all of her power comes from her reputation..."
+    m "Well, it seems like all of her power comes from her reputation..."
     sna_[11] "......................?"
     m "What if we take that away from her?"
     sna_[10] "That would shut her up I suppose..."
@@ -558,7 +558,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "You'll do what?"
     sna_[4] "Murder her for real!"
     m "Alright, alright... got it."
-    m "Let's choose the lesser of the two evils then."
+    m "Let's choose the lesser of two evils then."
     sna_[7] "Yes..."
     sna_[6] "Now, pour me some more wine."
 
@@ -754,7 +754,7 @@ label wine_not_first:
     $ the_gift = "01_hp/18_store/27.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you fond in the cupboard to professor Snape..." 
+    ">You hand over the bottle you found in the cupboard to professor Snape..." 
     hide screen gift
     with d3
     $ wine -= 1
@@ -787,7 +787,7 @@ label wine_not_first:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    ">Your relationships with Professor Snape have improved."
+    ">Your relationship with Professor Snape have improved."
     $ snape_friendship +=1
     hide screen bld1
     with d3

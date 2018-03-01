@@ -60,7 +60,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         m "But don't you hate it that some of the girls from \"Slytherin\"..."
         m "Are selling favours for house points, [hermione_name]?"
         call her_main("Yes I do!","body_47")
-        call her_main("(Those \"Slythering\" tramps have no dignity.)","body_12")
+        call her_main("(Those \"Slytherin\" tramps have no dignity.)","body_12")
         m "Well, there you go then!"
         call her_main("Huh?","body_66")
         m "Beat them at their own game!"
@@ -68,7 +68,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         m "Yes! Don't just put the \"Gryffindor\" house back on top..."
         m "But do it by beating them at their own game!"
         call her_main("[genie_name]...","body_11")
-        m "A headmaster cannot play favourites, but you know how I feel about \"Gryffindor\"..."
+        m "As headmaster, I cannot play favourites. But you know how I feel about \"Gryffindor\"..."
         m "I wish I could give you the points but that would ruin the system..."
         show screen blktone8
         hide screen hermione_main
@@ -80,7 +80,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
         ">You acquired Hermione's panties..."
         hide screen blktone8
         with d3
-        call her_main("Just take them [genie_name]...","body_67")
+        call her_main("Just take them, [genie_name]...","body_67")
         m "What? When did you?"
         her "Your speech was so moving..."
         her "You are so right, [genie_name]! I shall beat them at their own game!"
@@ -95,7 +95,7 @@ label hg_ps_PantyThief: #(Whoring = 3 - 5)
     else: #<========================================================================================== FIRST EVENT!
         if hg_ps_PantyThief_OBJ.points >= 1:
             her "Again, [genie_name]?"
-            m "Yes again..."
+            m "Yes, again..."
         her "Here..."
         if whoring >= 12: #LEVEL 05
             hide screen hermione_main
@@ -332,7 +332,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
                 $ sc34CG(1, 10)
                 call her_main("Oh...","body_15",xpos=120)
                 her "Quite ordinary actually..."
-                call her_main("Although I could not help but worry that somebody would notice somehow...","body_13")
+                call her_main("Although... I couldn't help but worry that somebody would notice somehow...","body_13")
                 call her_main(".....","body_29")
                 call her_main("Can I have my panties back now?","body_31")
                 m "Of course..."
@@ -432,7 +432,7 @@ label hg_ps_PantyThief_complete: # WHORING LEVEL 02 <=================
         her "Good night, [genie_name]."
     else:
         $ gryffindor +=15
-        m "Fifteen points to \"Gryffindor\" [hermione_name]. Well deserved." 
+        m "Fifteen points to \"Gryffindor\", [hermione_name]. Well deserved." 
         her "Thank you, [genie_name]..."
         m "You can go now."
         her "Good night, [genie_name]."

@@ -55,8 +55,8 @@ label hg_pr_FlirtClassmate:
             call her_main("Alright if I must... [genie_name]...","body_07")
             
         else: #if whoring >= 3 and whoring >= 6: ### LEVEL 02 and higher ## <=========================================================== SECOND EVENT!
-            m "I need you to flirt with some boys of the \"Slytherin\" house today."
-            her "I will see what I can do, [genie_name]."
+            m "I need you to flirt with some boys from \"Slytherin\" today."
+            her "I'll see what I can do, [genie_name]."
             m "Great. I'll be expecting your report today after classes."
     her "Well, I'd better go now. Classes are about to start..."
     
@@ -70,7 +70,7 @@ label hg_pr_FlirtClassmate_complete:
     call her_main("Good evening, [genie_name].","body_01",xpos=370,ypos=0)
     m "[hermione_name]..."
     m "Did you complete your task?"
-    her "I did as you asked [genie_name]..."
+    her "I did as you asked, [genie_name]..."
     menu:
         "\"Great. You earned your points.\"":
             pass
@@ -122,7 +122,7 @@ label hg_pr_FlirtClassmate_complete:
                     call her_main("He called me a \"Gryffindor whore\", [genie_name]!","body_76")
                     m "I see..."
                     m "What did you do then?"
-                    call her_main("Well that was not the proper way to address a fellow \"Hogwarts\" student...","body_04")
+                    call her_main("Well, that was not the proper way to address a fellow \"Hogwarts\" student...","body_04")
                     her "So I told him that I would report him."
                     m "A truly captivating story..."
                     m "Anything else?"
@@ -183,12 +183,12 @@ label hg_pr_FlirtClassmate_complete:
                     play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
                     call her_main("Well, to my surprise he accepted it...","body_75")
                     her "He let me finish the assignment for him..."
-                    call her_main("While I was working he made a couple of inappropriate comments but I just smiled in response...","body_34")
+                    call her_main("While I was working he made a couple of inappropriate comments, but I just smiled in response...","body_34")
                     m "So, basically, he was the one doing the flirting..."
                     call her_main("well... yes.","body_24")
-                    call her_main("But, despite my better judgment I did encourage his improper behavior...","body_45")
+                    call her_main("But, despite my better judgment, I did encourage his improper behavior...","body_45")
                     m "By being quiet?"
-                    her "Yes [genie_name]..."
+                    her "Yes, [genie_name]..."
                     her "I mean, this does amount to something, right?"
                     m "Meh..."
                     m "What else do you have for me?"
@@ -202,7 +202,7 @@ label hg_pr_FlirtClassmate_complete:
                     her "I barely have any time--"
                     m "Is this all you got for me this time then?"
                     call her_main("No, [genie_name].","body_69")
-                    her "Just an hour ago or so I ran into Draco Malfoy, [genie_name]."
+                    her "On my way here I ran into Draco Malfoy, [genie_name]."
                     m "No way!!! (No idea who that is...)"
                     her "I forced myself to be friendly with him and..."
                     call her_main("We ended up having a decent conversation for a change.","body_74") 
@@ -223,16 +223,16 @@ label hg_pr_FlirtClassmate_complete:
                     call her_main("Then after the second period there was this other guy...","body_13")
                     call her_main("And then something bizarre happened...","body_28")
                     play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-                    her "This angry-looking guy from the \"Slythetin\" came to me and asked me out on a date..."
+                    her "This angry-looking guy from \"Slytherin\" came up to me and asked me out on a date..."
                     call her_main("I told him \"no\" at first, but we ended up taking a walk together.","body_13")
                     m "Did you enjoy yourself, [hermione_name]?"
-                    call her_main("I think I did [genie_name]... To my own astonishment...","body_31")
+                    call her_main("I think I did, [genie_name]... To my own astonishment...","body_31")
                     call her_main("There was something about his \"devil-may-care\" attitude...","body_45")
                     call her_main("He was so confident and calm and...","body_74")
                     call her_main("I still loathe the \"Slytherin\" house of course!","body_34")
                     call her_main("But...","body_73")
                     her "Maybe some of the students got there by mistake?"
-                    call her_main("Could the \"sorting hat\" make... miscalculations ?","body_10")
+                    call her_main("Could the \"sorting hat\" make... miscalculations?","body_10")
                     menu:
                         "\"Just take your points and go!\"":
                             call her_main("................","body_07")
@@ -251,14 +251,14 @@ label hg_pr_FlirtClassmate_complete:
                     her "Then another two right after the first period."
                     her "And then another one before the third period."
                     call her_main("And after that I had a surprisingly pleasant conversation with one more.","body_68")
-                    call her_main("That last one was quite smart and well mannered too.","body_74")
+                    call her_main("That last one was quite smart and well-mannered too.","body_74")
                     her "............................"
                     her "................"
                     call her_main("But I still refuse to change my opinion about the \"Slytherin\" house, [genie_name].","body_34")
                     m "I'm not asking you to, [hermione_name]."
                     her "I am only doing this to help my own house!"
                     call her_main("The proud house of \"Gryffndor\"!","body_32")
-                    m "Alright, alright, calm down, [hermione_name]."
+                    m "Alright, alright. Calm down, [hermione_name]."
                     call her_main("","body_74")
 
             elif whoring >= 6: # LEVEL 03 and higher.
@@ -304,7 +304,7 @@ label hg_pr_FlirtClassmate_complete:
                     her "I tried to flirt with him too, but we ended up just chatting..."
                     her "He kept calling me \"Miss Hermione\"..."
                     her "So adorable..."
-                    m "Well I didn't send you to harass little kids, [hermione_name]."
+                    m "Well, I didn't send you to harass little kids, [hermione_name]."
                     call her_main("I didn't haras--","body_66")
                     call her_main("[genie_name]! Seven flirts and two dates amount to something, don't they?","body_34")
                     m "Oh, absolutely."

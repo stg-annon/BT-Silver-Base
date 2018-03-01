@@ -88,7 +88,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Galadriel_I_OBJ'): #important!
         $ Galadriel_I_OBJ = fiction_book()
     $ Galadriel_I_OBJ.name = "\"The Tale of Galadriel. Book I.\""
-    $ Galadriel_I_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it? " + str(Galadriel_I_OBJ.chapters / 2) + " chapters."
+    $ Galadriel_I_OBJ.book_description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? " + str(Galadriel_I_OBJ.chapters / 2) + " chapters."
     $ Galadriel_I_OBJ.effect = ">Your imagination has improved."
     $ Galadriel_I_OBJ.chapters = 20
     $ Galadriel_I_OBJ.cost = 100
@@ -97,7 +97,7 @@ label __init_variables:
     if not hasattr(renpy.store,'Galadriel_II_OBJ'): #important!
         $ Galadriel_II_OBJ = fiction_book()
     $ Galadriel_II_OBJ.name = "\"The Tale of Galadriel. Book II.\""
-    $ Galadriel_II_OBJ.book_description = "This book tells a story of an elven princess who defies traditions of her people and chooses to forge her own destiny. Or does it? "  + str(Galadriel_II_OBJ.chapters / 2) + " chapters."
+    $ Galadriel_II_OBJ.book_description = "This book tells the story of an elven princess who defies the traditions of her people and chooses to forge her own destiny. Or does it? "  + str(Galadriel_II_OBJ.chapters / 2) + " chapters."
     $ Galadriel_II_OBJ.effect = ">Your imagination has improved."
     $ Galadriel_II_OBJ.chapters = 20
     $ Galadriel_II_OBJ.cost = 200

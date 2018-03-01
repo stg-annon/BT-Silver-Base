@@ -84,9 +84,9 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if whoring >= 3 and whoring <= 5:
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
-        her "Apart from that day when I failed that test..."
-        her "Still can't believe it happened..."
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
+        her "Apart from the day when I failed that test..."
+        her "I still can't believe it happened..."
         menu: 
             "-Jerk off while she is talking-":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
@@ -103,7 +103,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 pause
                 
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
-                m "What, oh it's nothing. Just scratching my leg."
+                m "What? Oh, it's nothing. Just scratching my leg."
                 m "You were saying?"
                 call her_main("Yes... Well, that test I failed...","body_14")
             "-Participate in the conversation-":
@@ -121,10 +121,10 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         else:
             m "(Professor Sprout... He-he, what a ridiculous name...)"
         
-        call her_main("Did you say something [genie_name]?","body_07")
+        call her_main("Did you say something, [genie_name]?","body_07")
         m "It's nothing, keep going..."
         call her_main("Well, some students are making fun of professor Quirell behind his back...","body_14")
-        her "But I disapprove of such behavior of course."
+        her "I disapprove of such behavior, of course."
         if d_flag_01:
             m "{size=-4}(Come on! Say something naughty!){/size}"
         else:
@@ -132,10 +132,10 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         her "Oh, and my \"Men's Rights Movement\" group is gaining popularity..."
         her "I'm very happy about that..."
         call her_main("I think, given time, we will be able to make a real difference...","body_16")
-        call her_main("Yes, it is so invigorating to know that you are doing the right thing!","body_06")
-        her "Wouldn't you agree professor?"
+        call her_main("It is so invigorating to know that you are doing the right thing!","body_06")
+        her "Wouldn't you agree, professor?"
         if d_flag_01:
-            m "{size=-4}(Dammit. Now she killed the mood completely...){/size}"
+            m "{size=-4}(Dammit. Now she's killed the mood completely...){/size}"
             show screen genie
             with d3
             $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
@@ -152,7 +152,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     elif whoring >= 6: #LEVEL 03
         $ new_request_01_heart = 3 #Event hearts level (0-3)
         $ hg_pf_TalkToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
         her "Hm..."
         her "There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house."
         her "To be honest, [genie_name], there should be none..."
@@ -182,7 +182,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
                 her "You are not.....?"
                 call her_main("Are you...?","body_29")
-                m "What, it's nothing. Keep going."
+                m "What? Oh, it's nothing. Keep going."
                 call her_main("Hm...","body_07")
                 m "{size=-4}(Is she onto me? Nah...){/size}"
             "-Participate in the conversation-":
@@ -200,8 +200,8 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if d_flag_01:
             call her_main("And these two other girls...","body_29")
             her "There is a rumor that they are actually sleeping with professor snape..."
-            m "{size=-4}(Yes... Those little, nasty, \"slytherin\" sluts!){/size}"
-            call her_main("Also there was this one girl, who gave a teacher a handjob, right during class...","body_45")
+            m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
+            call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","body_45")
             m "{size=-4}(Yes... This is good stuff, go on!){/size}"
             call her_main("And this other girl, she sucked off a teacher!","body_29")
             m "{size=-4}(Yes! Yes!){/size}"
@@ -250,7 +250,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                     her "[genie_name], you are the headmaster! You are supposed to set a good example!"
                     m "Hey, little missy, are you going to judge me or do you want your points?"
                     call her_main("My points please, I believe I earned those.","body_34")
-                    m "Yes you did."
+                    m "Yes, you did."
                     call her_main("Ew... I feel so dirty now...","body_47")
                     hide screen genie_jerking_sperm_02
                     with d3
@@ -286,7 +286,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     stop music fadeout 2.0
     
     if whoring >= 11:
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         her "Oh, don't worry about the points, we were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
         her "It's just 5 points [genie_name]."
@@ -326,7 +326,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
             pass
         "\"(Not right now.)\"":
             jump silver_requests
-    call her_main("So, what will it be [genie_name]?")
+    call her_main("So, what will it be, [genie_name]?")
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."             
     if hg_pf_NicePanties_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
@@ -336,7 +336,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         call her_main(" {size=+7}A little !?{/size}","body_48")
         her "This is completely inappropriate!"
         m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-        call her_main("The \"good stuff\"? [genie_name] I don't understand...","body_31")
+        call her_main("The \"good stuff\"? [genie_name], I don't understand...","body_31")
         m "What don't you understand, [hermione_name]?"
         m "Do you need these points or not?"
         call her_main("I do...","body_31")
@@ -530,7 +530,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     
     if whoring <= 8:
         $ gryffindor +=5
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         pause
     
     call reset_hermione_main
@@ -778,7 +778,7 @@ label hg_pf_BreastMolester:
                 "*squeeze-squeeze-squeeze*"
                 ">You keep massaging her soft tits..."
                 if whoring <= 12:
-                    call her_head("I mean, this is not a big deal, as long as I am getting paid...","body_213")
+                    call her_head("I mean, this isn't a big deal, as long as I am getting paid...","body_213")
                     ">You keep on massaging her tits through her uniform..."
                     call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
@@ -843,9 +843,9 @@ label hg_pf_BreastMolester:
     with Dissolve(1)
     
     call her_main("..................","body_29",xpos=370,ypos=0)
-    her "Thank you [genie_name]..."
+    her "Thank you, [genie_name]..."
     if daytime:
-        her "Now if you don't mind I'd better go. The classes are about to start."
+        her "Now if you don't mind, I'd better go. My classes are about to start."
     else:
         her "I'd better go now. It's getting pretty late..."
     
