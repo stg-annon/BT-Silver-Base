@@ -1387,6 +1387,7 @@ label cho_favor_2:
 label chofbm:
 #Cho chibi walks over to Dumbledore's desk and turns around.
     if cho_whoring  == 1:
+        $ cho_whoring += 1
         if not chof2_first:
             call cho_main("AlrighT...{w=2} you can touch me a little.", 1, 3, 2, 5)
             ">Cho is standing just inches in front of you, the firm globes of her ass-"

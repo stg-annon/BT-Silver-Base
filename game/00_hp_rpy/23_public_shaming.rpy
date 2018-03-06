@@ -1912,7 +1912,7 @@ label hg_ps_Buttplug:
             call her_main("do i have to?","body_105")
             m "you didn't seem to hate wearing it last time..."
             call her_main("...","body_87")
-            call her_main("{size=-5}alright then...{/size","body_87")
+            call her_main("{size=-5}alright then...{/size}","body_87")
             ">You hand her the buttplug."
             ">Hermione turns around and lifts her skirt giving you a full view as she inserts it."
             ">You see it magically worm it's way inside her eager hole."
