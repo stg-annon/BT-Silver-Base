@@ -1,6 +1,6 @@
 label snape_chitchat:
-    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
-        jump chitchat_event_01
+#    if not chitchat_event_01_happened and tutoring_hermione_unlocked and days_without_an_event >=2:
+#        jump chitchat_event_01
     
     
 
@@ -81,7 +81,7 @@ label snape_chitchat:
   
         elif one_of_ten == 5:
             call sna_main("There was a time when I was young and full of hope...","snape_06")
-            call sna_main("Ha-ha... I'm pulling your leg, mate","snape_28")
+            call sna_main("Ha-ha... I'm pulling your leg, mate.","snape_28")
             call sna_main("I was never full of hope...","snape_29")
 
         elif one_of_ten == 6:
@@ -439,8 +439,8 @@ label snape_chitchat:
             call sna_main("Back in my days we just called it \"sex\".","snape_02")
 
         elif one_of_ten == 2:
-            call sna_main("Man, my cock is so ready for the \"Princess Trainer Gold Edition\"!","snape_22")
-            call sna_main("*Ahem!* I mean, slytherin rules, I hate gryffindor and stuff...","snape_09")
+            call sna_main("I heard a mysterious ticking noise today...","snape_04")
+            call sna_main("It was kind of catchy...","snape_28")
 
         elif one_of_ten == 3:
             call sna_main("I organized a small party the other day...","24")
@@ -530,7 +530,7 @@ label snape_chitchat:
     
     
 
-### CHITCHAT EVENTS ###
+### CHITCHAT EVENTS - Disabled trigger on lines 2/3 as the discussed event never happens. Remove section entirely? See 08_tutoring, line 137 for referenced events.###
 label chitchat_event_01: #Snape says: so you tutor her now?". Happens after tutoring unlocks.
     hide screen snape_main
     with d3
@@ -630,7 +630,7 @@ label chit_chat:
             call her_main("","body_03")
         
         elif one_of_ten == 2:
-            call her_main("Actually I don't mind it to be called a \"know-it-all\".","body_04")
+            call her_main("Actually, I don't mind being called a \"know-it-all\".","body_04")
             her "I think it's rather flattering..."
             call her_main("","body_03")
         elif one_of_ten == 3:

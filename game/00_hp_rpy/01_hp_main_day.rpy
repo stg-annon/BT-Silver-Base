@@ -369,7 +369,7 @@ if day == 1 and daytime and bird_examined and desk_examined and cupboard_examine
     show screen bld1
     with d3
     m "It's getting darker already..."
-    m "Did I just spend an entire day with examining this room?"
+    m "Did I just spend an entire day examining this room?"
     hide screen bld1
     with d3
     jump night_start

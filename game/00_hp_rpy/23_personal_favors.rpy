@@ -84,9 +84,9 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if whoring >= 3 and whoring <= 5:
             $ new_request_01_heart = 2 #Event hearts level (0-3)
             $ hg_pf_TalkToMe_OBJ.hearts_level = 2 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
-        her "Apart from that day when I failed that test..."
-        her "Still can't believe it happened..."
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
+        her "Apart from the day when I failed that test..."
+        her "I still can't believe it happened..."
         menu: 
             "-Jerk off while she is talking-":
                 $ d_flag_01 = True #If TRUE genie jerks off under the desk.    
@@ -103,7 +103,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 pause
                 
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
-                m "What, oh it's nothing. Just scratching my leg."
+                m "What? Oh, it's nothing. Just scratching my leg."
                 m "You were saying?"
                 call her_main("Yes... Well, that test I failed...","body_14")
             "-Participate in the conversation-":
@@ -121,10 +121,10 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         else:
             m "(Professor Sprout... He-he, what a ridiculous name...)"
         
-        call her_main("Did you say something [genie_name]?","body_07")
+        call her_main("Did you say something, [genie_name]?","body_07")
         m "It's nothing, keep going..."
         call her_main("Well, some students are making fun of professor Quirell behind his back...","body_14")
-        her "But I disapprove of such behavior of course."
+        her "I disapprove of such behavior, of course."
         if d_flag_01:
             m "{size=-4}(Come on! Say something naughty!){/size}"
         else:
@@ -132,10 +132,10 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         her "Oh, and my \"Men's Rights Movement\" group is gaining popularity..."
         her "I'm very happy about that..."
         call her_main("I think, given time, we will be able to make a real difference...","body_16")
-        call her_main("Yes, it is so invigorating to know that you are doing the right thing!","body_06")
-        her "Wouldn't you agree professor?"
+        call her_main("It is so invigorating to know that you are doing the right thing!","body_06")
+        her "Wouldn't you agree, professor?"
         if d_flag_01:
-            m "{size=-4}(Dammit. Now she killed the mood completely...){/size}"
+            m "{size=-4}(Dammit. Now she's killed the mood completely...){/size}"
             show screen genie
             with d3
             $ d_flag_01 = False #NOT JERKING OFF ANY MORE.
@@ -152,7 +152,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     elif whoring >= 6: #LEVEL 03
         $ new_request_01_heart = 3 #Event hearts level (0-3)
         $ hg_pf_TalkToMe_OBJ.hearts_level = 3 #Event hearts level (0-3)
-        call her_main("My life has been quite uneventful lately to be honest...","body_12")
+        call her_main("My life has been quite uneventful lately, to be honest...","body_12")
         her "Hm..."
         her "There is a fierce competition going on between the \"Slytherin\" and the \"Gryffindor\" house."
         her "To be honest, [genie_name], there should be none..."
@@ -182,7 +182,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                 call her_main("[genie_name], what are you doing?","body_14",xpos=370)
                 her "You are not.....?"
                 call her_main("Are you...?","body_29")
-                m "What, it's nothing. Keep going."
+                m "What? Oh, it's nothing. Keep going."
                 call her_main("Hm...","body_07")
                 m "{size=-4}(Is she onto me? Nah...){/size}"
             "-Participate in the conversation-":
@@ -200,8 +200,8 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
         if d_flag_01:
             call her_main("And these two other girls...","body_29")
             her "There is a rumor that they are actually sleeping with professor snape..."
-            m "{size=-4}(Yes... Those little, nasty, \"slytherin\" sluts!){/size}"
-            call her_main("Also there was this one girl, who gave a teacher a handjob, right during class...","body_45")
+            m "{size=-4}(Yes... Those nasty \"slytherin\" sluts!){/size}"
+            call her_main("Also, there was this one girl who gave a teacher a handjob, right during class...","body_45")
             m "{size=-4}(Yes... This is good stuff, go on!){/size}"
             call her_main("And this other girl, she sucked off a teacher!","body_29")
             m "{size=-4}(Yes! Yes!){/size}"
@@ -250,7 +250,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
                     her "[genie_name], you are the headmaster! You are supposed to set a good example!"
                     m "Hey, little missy, are you going to judge me or do you want your points?"
                     call her_main("My points please, I believe I earned those.","body_34")
-                    m "Yes you did."
+                    m "Yes, you did."
                     call her_main("Ew... I feel so dirty now...","body_47")
                     hide screen genie_jerking_sperm_02
                     with d3
@@ -286,7 +286,7 @@ label hg_pf_TalkToMe: #LV.1 (Whoring = 0 - 2)
     stop music fadeout 2.0
     
     if whoring >= 11:
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         her "Oh, don't worry about the points, we were just having a nice talk."
         m "Really? What about \"Gryffindor\" winning the cup?"
         her "It's just 5 points [genie_name]."
@@ -326,7 +326,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
             pass
         "\"(Not right now.)\"":
             jump silver_requests
-    call her_main("So, what will it be [genie_name]?")
+    call her_main("So, what will it be, [genie_name]?")
     m "Nothing drastic, really..."
     m "I just want you to show me your panties."             
     if hg_pf_NicePanties_OBJ.points == 0 and whoring <= 5: #First time this event taking place. and LEVEL 02.  
@@ -336,7 +336,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
         call her_main(" {size=+7}A little !?{/size}","body_48")
         her "This is completely inappropriate!"
         m "Listen, we need to go through this phase before we get to the good stuff, alright?"
-        call her_main("The \"good stuff\"? [genie_name] I don't understand...","body_31")
+        call her_main("The \"good stuff\"? [genie_name], I don't understand...","body_31")
         m "What don't you understand, [hermione_name]?"
         m "Do you need these points or not?"
         call her_main("I do...","body_31")
@@ -530,7 +530,7 @@ label hg_pf_NicePanties: #SHOW ME YOUR PANTIES
     
     if whoring <= 8:
         $ gryffindor +=5
-        m "Five points to \"Gryffindor\" [hermione_name]. Well done." 
+        m "Five points to \"Gryffindor\", [hermione_name]. Well done." 
         pause
     
     call reset_hermione_main
@@ -778,7 +778,7 @@ label hg_pf_BreastMolester:
                 "*squeeze-squeeze-squeeze*"
                 ">You keep massaging her soft tits..."
                 if whoring <= 12:
-                    call her_head("I mean, this is not a big deal, as long as I am getting paid...","body_213")
+                    call her_head("I mean, this isn't a big deal, as long as I am getting paid...","body_213")
                     ">You keep on massaging her tits through her uniform..."
                     call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
@@ -843,9 +843,9 @@ label hg_pf_BreastMolester:
     with Dissolve(1)
     
     call her_main("..................","body_29",xpos=370,ypos=0)
-    her "Thank you [genie_name]..."
+    her "Thank you, [genie_name]..."
     if daytime:
-        her "Now if you don't mind I'd better go. The classes are about to start."
+        her "Now if you don't mind, I'd better go. My classes are about to start."
     else:
         her "I'd better go now. It's getting pretty late..."
     
@@ -9993,7 +9993,11 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen blkfade 
         with d7
         stop music fadeout 1.0
-        
+        $ ccg_folder = "herm_sex"
+        $ ccg1 = "blank"
+        $ ccg3 = "blank"
+        $ ccg2 = 19
+        show screen ccg
         call her_head(".............","body_120")
         call her_head("!!!!!!!!!!!!!!!","body_119")
         m "Relax, [hermione_name]. I'm Just gonna take off your panties."
@@ -10007,8 +10011,6 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         call her_head("Ooooohhhhhhhhhhhh....{image=textheart}","body_130")
         
         hide screen genie
-        show screen chair_02
-        show screen g_c_u
         
         hide screen hermione_blink #Hermione stands still.
         hide screen blkfade
@@ -10016,9 +10018,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen bld1
         show screen ctc
         with fade
-        pause
-        show screen bld1
-        with d3    
+        pause  
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
         
         #FUCKING
@@ -10033,6 +10033,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         hide screen ctc
         menu:
             "\"You should be ashamed of yourself!\"":
+                $ ccg2 = 20
                 call her_head("I am not ashamed, [genie_name]!","body_33")
                 call her_head("I am doing this for the sake my house!")
                 call her_head("To help my--")
@@ -10043,18 +10044,22 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("ah-a...","body_131")
                 call her_head("I don't know what you mean, [genie_name].","body_118")
                 m "It seems to me that you are enjoying this a little bit too much."
+                $ ccg2 = 21
                 call her_head("I'm not, [genie_name]!","body_118")
                 m "Really?"
                 call her_head("......................","body_33")
                 m "Then why is your pussy so wet?"
                 call her_head("....................a-ha.{image=textheart}","body_131")
                 m "Admit it, you enjoy getting fucked by your [genie_name]!"
+                $ ccg2 = 25
                 call her_head("I do not!","body_33")
                 m "Stubborn girl..."
                 call her_head("Aha...{image=textheart}","body_131") 
             "\"So... What's new in your life?\"":
+                $ ccg2 = 14
                 call her_head("...[genie_name]?","body_31")
                 m "Just trying to have a polite conversation."
+                $ ccg2 = 17
                 call her_head("Ah-ah... But... ah...","body_31")
                 m "Any news from your folks?"
                 call her_head("My parents?","body_34")
@@ -10068,6 +10073,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("What?","body_117")
                 m "Well I pay you to have sex with me. How would you call that?"
                 call her_head("...........","body_118")
+                $ ccg2 = 19
                 call her_head("I am not a prostitute...","body_131")
                 call her_head("Why are you being so mean to me, [genie_name]?","body_21")
                 m "I think you like it when I'm mean."
@@ -10075,9 +10081,11 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 m "Really? Then why is your pussy so wet?"
                 call her_head("Not because of that!","body_118")
                 m "If you say so..."
+                $ ccg2 = 20
                 call her_head("A-ah...{image=textheart}","body_131")
                 call her_head("I am... ah...{image=textheart} not a prostitute...","body_132")            
             "\"......................................................\"":
+                $ ccg2 = 14
                 call her_head("A-ha... ah...","body_131")
                 m "*Panting!*"
                 call her_head("Ah... ha-aha...","body_131")
@@ -10087,6 +10095,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("Ah... ah...","body_131")
                 call her_head("Ah... [genie_name]?","body_31")
                 m "What is it?"
+                $ ccg2 = 17
                 call her_head("Ah... Do you.... like it?","body_131")
                 m "Do I like drilling your super-tight pussy?"
                 m "Very much so, [hermione_name]. Why?"
@@ -10099,10 +10108,12 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("Your penis is too big... ah...","body_131")
                 m "Hm..."
                 m "You need me to slow down or something?"
+                $ ccg2 = 20
                 call her_head("No, [genie_name]... You don't have to...","body_31")
                 call her_head("Please, don't mind me... Enjoy your moment.","body_33")
                 call her_head("I will... ah... Get used to it eventually... ah...")
                 m "As you say, [hermione_name]."
+                $ ccg2 = 21
                 call her_head("Ah-a...{image=textheart}","body_131")
                 m "Yes, this is great!"
         call her_head("Ah-ah...{image=textheart}","body_131")
@@ -10110,27 +10121,31 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             m "Going to classes after this?"
         else:
             m "Going to bed after this?"
+        $ ccg2 = 22
         call her_head("Yes, ah...{image=textheart}","body_131")
         call her_head("If I'll be able to walk...")
         g4 "Ght! {image=textheart} Yes, you always say the right things, [hermione_name]!"
         call her_head("Ah...{image=textheart} ah...{image=textheart}{image=textheart}","body_132")
         with hpunch
+        $ ccg2 = 24
         call her_head("{size=+7}!!!!!!!!!!!!!!!{/size}{image=textheart}{image=textheart}{image=textheart}","body_130")
         m "Huh? You alright?"
-        show screen blktone8
-        with d3
         ">Hermione's legs are shaking..."
         m "[hermione_name]?"
+        $ ccg2 = 28
         call her_head("{image=textheart}{image=textheart}{image=textheart}I think I'm cumming, [genie_name]!{image=textheart}{image=textheart}{image=textheart}","body_130")
         g9 "Tch... You nasty slut!"
+        $ ccg2 = 29
         call her_head("AAH! I can't hold it!","body_133")
         g4 "You need to be punished for being such a slut!"
         ">You tighten your grip on Hermione's buttocks and start to fuck her fiercely!"
         $ g_c_u_pic = "sex2_ani"
         with hpunch
+        $ ccg2 = 30
         call her_head("NO! STOP! PLEASE!","body_130")
         g4 "Who told you you could cum, slut? This is your punishment!"
         call her_head("[genie_name], no, ah-a!{image=textheart}","body_131")
+        $ ccg2 = 31
         call her_head("Ah-a...{image=textheart}I will go insane!{image=textheart}{image=textheart}{image=textheart}","body_134")
         g4 "{size=+7}Grragh!{/size}"
         hide screen blktone8
@@ -10140,9 +10155,9 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen ctc
         pause
         hide screen ctc
-        show screen bld1
-        with d3
+        $ ccg2 = 32
         call her_head("No...{image=textheart} ah...{image=textheart}","body_134")
+        $ ccg2 = 33
         call her_head("I think I will...{image=textheart} pass out...{image=textheart}")
         g4 "ARGH! YOU WHORE!"
         menu:
@@ -10153,26 +10168,28 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
                 call set_u_ani("sex_cum_out_ani")
                 $ g_c_u_pic = "sex_cum_out_ani"
+                $ ccg3 = "s3"
                 call cum_block
                 show screen ctc
                 pause
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+                $ ccg2 = 42
                 call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 hide screen bld1
                 with d3
                 show screen ctc
                 pause
                 hide screen ctc
-                show screen bld1
-                with d3
                 call set_u_ani("sex_cum_out_blink_ani")
                 $ g_c_u_pic = "sex_cum_out_blink_ani"
                 m "Well, that was rather intense..."
+                $ ccg2 = 28
                 call her_head("*heavy panting*","body_135")
                 m "You alright?"
                 call her_head("Ah... yes...","body_133")
+                $ ccg2 = 29
                 call her_head("My legs are still shaking...")
                 hide screen bld1
                 with d3
@@ -10190,6 +10207,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("[genie_name], I am only doing this for my house.","body_136")
                 m "Seriously? Still?"
                 call her_head("Could I just get paid now... please?","body_131")
+                hide screen ccg
             "-Cum inside Hermione-":
                 with hpunch
                 g4 "{size=+7}Argh!!!{/size}"
@@ -10197,21 +10215,22 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
                 call set_u_ani("sex_cum_in_ani")
                 $ g_c_u_pic = "sex_cum_in_ani"
+                $ ccg3 = "s1"
                 call cum_block
                 show screen ctc
                 pause
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+                $ ccg2 = 41
                 call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 hide screen bld1
                 with d3
                 show screen ctc
                 pause
                 hide screen ctc
-                show screen bld1
-                with d3
                 $ g_c_u_pic = "01_hp/08_animation_02/23_cum_19.png"
+                $ ccg2 = 40
                 call her_head("You came inside of me...","body_133")
                 g9 "I sure did."
                 hide screen bld1
@@ -10232,6 +10251,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 m "And everyone knows that witchers are infertile..."
                 call her_head("[genie_name], you make no sense...","body_117")
                 call her_head("Can I please just get paid now...?")
+                hide screen ccg
     
     elif hg_pf_LetsHaveSex_OBJ.points == 1: # SECOND EVENT <============================================================== EVENT 02
         m "[hermione_name], are you keeping your pussy wet and ready for me?"
@@ -10263,7 +10283,11 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         show screen blkfade
         with d3
         # SEX
-        
+        $ ccg_folder = "herm_sex"
+        $ ccg1 = "blank"
+        $ ccg3 = "blank"
+        $ ccg2 = 2
+        show screen ccg
         $ renpy.play('sounds/gltch.mp3')
         with hpunch
         with kissiris
@@ -10274,8 +10298,6 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         $ genie_chibi_xpos = -210 #-185 behind the desk. (Also 5 is something).
         $ genie_chibi_ypos = 10
         $ g_c_u_pic = "sex_ani"
-        show screen chair_02
-        show screen g_c_u
         
         hide screen hermione_blink #Hermione stands still.
         hide screen blkfade
@@ -10285,15 +10307,17 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         with fade
         pause
         play music "music/(Orchestral) Playful Tension by Shadow16nh.mp3" fadein 1 fadeout 1 # SEX THEME.
-        show screen bld1
-        with d3    
         
         call her_head("Ah...{image=textheart}","body_131")
         m "Your pussy feels a bit looser today..."
+        $ ccg2 = 4
         call her_head("Does it...{image=textheart} ah...?{image=textheart}","body_131")
+        $ ccg2 = 5
         call her_head("That's all because of you [genie_name]...{image=textheart}","body_132")
+        $ ccg2 = 6
         call her_head("You are ruining my little pussy with your monstrous penis...{image=textheart}","body_134")
         g4 "Agh, you whore!"
+        $ ccg2 = 10
         call her_head("Ah...{image=textheart}{image=textheart}","body_134")
 #        if not ask_me_once: #Turns true after Hermione asks you about your true identity, during sex.
 #            $ ask_me_once = True #Turns true after Hermione asks you about your true identity, during sex.
@@ -10328,6 +10352,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
             g4 "..."
             "\"Be sweet but passionate.\"":
                 m "Yes, you're liking this?"
+                $ ccg2 = 14
                 call her_head("I do, [genie_name]... ah...{image=textheart}","body_127")
                 m "Good girl!"
                 m "Just relax and take my cock!"
@@ -10335,12 +10360,15 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 m "All the way in... all the way..."
                 call her_head("Ah...{image=textheart}{image=textheart}","body_131")
                 m "Yes, my little princess..."
+                $ ccg2 = 15
                 call her_head("What?","body_119")
                 call her_head("No, please don't call me that... ah...{image=textheart}","body_118")
                 call her_head("My daddy used to call me his little princess when I was little...")
                 m "Well, right now I am your daddy!"
+                $ ccg2 = 16
                 call her_head("Ah...{image=textheart} ah-ah...{image=textheart}{image=textheart}","body_121")
                 m "And you are my little princess-slut!"
+                $ ccg2 = 17
                 call her_head("Ah...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_123")
             "\"Be mean to her!\"":
                 m "Yes, you slut!"
@@ -10351,19 +10379,21 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 ">You pick up the pace."
                 hide screen blktone
                 with d3
+                $ ccg2 = 17
                 call her_head("Ah...{image=textheart} [genie_name]...","body_131")
                 m "You nasty slut!"
                 call her_head("Ah...{image=textheart} ah-a...{image=textheart}","body_132")
                 m "You are a disgrace, [hermione_name]!"
+                $ ccg2 = 18
                 call her_head("Ah-ah...{image=textheart}{image=textheart}{image=textheart}","body_132")
                 m "Your parents sent you here to study, not to screw your teachers, you disgusting cunt!"
+                $ ccg2 = 19
                 call her_head("Ah-a...{image=textheart} But I am only doing this--","body_132")
                 m "Nobody cares why you are doing this, cocksucker!"
                 m "Look at what you've become!"
                 m "Butt-naked, on your professor's old cock, like a cheap whore!"
+                $ ccg2 = 20
                 call her_head("Ah...{image=textheart} No...{image=textheart} stop saying...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_134")
-                show screen blktone
-                with d3
                 ">You pick up the pace some more."
                 $ g_c_u_pic = "sex2_ani"
                 ">The room fills up with rhythmical sound of a flesh hitting flesh..."
@@ -10371,12 +10401,14 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 with d3
                 m "You let me molest you... You suck my cock..."
                 m "What are you after that I ask you!?"
+                $ ccg2 = 21
                 call her_head("................","body_123")
                 call her_head("Ah...{image=textheart} ah....{image=textheart}{image=textheart}{image=textheart}","body_132")
                 call her_head(".......................","body_118")
                 call her_head("{size=-5}I am a whore...{/size}")
                 #her "{size=-5}I am a whore... ah...{\size}"
                 m "Yes! That's exactly what you are!"
+        $ ccg2 = 22
         call her_head("Ah... ah... ah...","body_118")
         call her_head("[genie_name], you think you could... ah...")
         m "What?"
@@ -10388,7 +10420,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         pause.1
         hide screen white
         with hpunch
-
+        $ ccg2 = 24
         call her_head("Aa-a-ah!{image=textheart}{image=textheart}{image=textheart}","body_139")
         m "You liked that one, huh?"
         $ renpy.play('sounds/slap.mp3')
@@ -10396,6 +10428,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         pause.1
         hide screen white
         with hpunch
+        $ ccg2 = 28
         call her_head("Ah..!{image=textheart} Yes!{image=textheart}{image=textheart}{image=textheart}","body_138")
         m "And some more!"
         $ renpy.play('sounds/slap.mp3')
@@ -10403,13 +10436,13 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         pause.1
         hide screen white
         with hpunch
+        $ ccg2 = 29
         call her_head("Ahh! Yes!","body_138")
-        show screen blktone
-        with d3
         ">You notice that every time you slap the girl's butt, her pussy clutches your cock tightly for a second..."
         ">You love the sensation..."
         ">You unleash another series of slaps on Hermione's ass-cheeks."
         ">Every single one met with a gasp of excitement from the girl."
+        $ ccg2 = 30
         $ renpy.play('sounds/slap.mp3')
         show screen white 
         pause.1
@@ -10435,19 +10468,21 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         pause.1
         hide screen white
         with hpunch
+        $ ccg2 = 31
         call her_head("Aah!!!{image=textheart}{image=textheart}{image=textheart} IT HURTS!{image=textheart}{image=textheart}{image=textheart}","body_138")
+        $ ccg2 = 32
         call her_head("It hurts...{image=textheart}{image=textheart}{image=textheart} It hurts...{image=textheart}{image=textheart}{image=textheart}","body_134")
         m "Hm?"
         m "Why your legs are shaking, [hermione_name]?"
         m "Are you cumming?"
+        $ ccg2 = 33
         call her_head("Yes...{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}{image=textheart}","body_133")
         m "Well, I think I will follow your example then."
         call her_head("..............","body_133")
-        show screen blktone 
-        with d3
         ">You start fucking Hermione with renewed determination!"
         hide screen blktone 
         with d3
+        $ ccg2 = 34
         call her_head("Ah! No! I can't...{image=textheart} I...{image=textheart} ah...{image=textheart}{image=textheart}{image=textheart}","body_139")
         m "Shut it whore!"
         g4 "Argh!"
@@ -10457,6 +10492,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 g4 "{size=+7}Argh, TAKE THIS!!!{/size}"
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
+                $ ccg3 = "s1"
                 $ g_c_u_pic = "sex_cum_in_ani"
                 call cum_block
                 show screen ctc
@@ -10464,7 +10500,9 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+                $ ccg2 = 33
                 call her_head("!!!","body_133")
+                $ ccg2 = 38
                 call her_head("AH! IT'S FILLING ME UP!{image=textheart}{image=textheart}{image=textheart}")
                 g4 "I'm Not done yet, bitch!"
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
@@ -10482,13 +10520,12 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 
                 $ g_c_u_pic = "01_hp/08_animation_02/23_cum_19.png"
                 
-                show screen blktone
-                with d7
-                
+                $ ccg2 = 40
                 m "Well, this was pretty great..."
                 call her_head("Ah...{image=textheart}","body_133")
                 m "You alright there, slut? Ehm, I mean, [hermione_name]."
                 call her_head("Yes... I...","body_133")
+                $ ccg2 = 41
                 call her_head("I feel so full...","body_135")
                 call her_head("!!!","body_130")
                 call her_head("You came inside of me, [genie_name]!")
@@ -10496,6 +10533,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call her_head("You shouldn't have...","body_131")
                 m "Didn't you enjoy it?"
                 call her_head("....maybe.","body_123")
+                $ ccg2 = 42
                 call her_head("I think I came several times...","body_121")
                 show screen blkfade
                 with d3
@@ -10508,12 +10546,14 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 call cum_block
                 g4 "{size=+15}ARGH!!!!!!!!!!!!!!!!{/size}"
                 $ g_c_u_pic = "sex_cum_out_ani"
+                $ ccg3 = "s3"
                 call cum_block
                 show screen ctc
                 pause
                 hide screen ctc
                 $ uni_sperm = True
                 $ u_sperm = "01_hp/13_hermione_main/auto_08.png"
+                $ ccg2 = 30
                 call her_head("Ah...{image=textheart}{image=textheart}{image=textheart}","body_133")
                 g4 "{size=+5}You whore! Take this!{/size}"
                 call her_head("{size=+5}!!!{/size}","body_138")
@@ -10526,10 +10566,12 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
                 with d3
                 $ g_c_u_pic = "sex_cum_out_blink_ani"
                 m "Well, that was pretty great..."
+                $ ccg2 = 31
                 call her_head("Ah...{image=textheart}","body_138")
                 m "You alright there, slut?"
                 call her_head("Yes... I...","body_133")
                 m "Didn't you enjoy this?"
+                $ ccg2 = 29
                 call her_head("....I think so...","body_123")
                 show screen ctc
                 pause
@@ -10754,6 +10796,7 @@ label hg_pf_LetsHaveSex: #LV.7 (Whoring = 18 - 20)
         call her_head("{size=-7}You can lick it off later...{/size}","body_121")
     
     hide screen h_c_u
+    hide screen ccg
     hide screen g_c_u
     hide screen g_c_c_u # Genie's sperm. Universal.
     hide screen ctc

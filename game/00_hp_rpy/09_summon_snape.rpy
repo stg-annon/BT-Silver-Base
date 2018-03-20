@@ -33,17 +33,17 @@ label summon_snape:
             sna_[21] "I've got some potions here that normally aren't available to students."
             sna_[21] "These might help speed up the process..."
             menu:
-                "-milking potion-" if "Milk Potion" in p_inv:
-                    ">You already have a milking potion."
+                "-lactantium-" if "Milk Potion" in p_inv:
+                    ">You already have a bottle of lactantium."
                     jump snape_ready
 
-                "-milking potion-" if "Milk Potion" not in p_inv:
+                "-lactantium-" if "Milk Potion" not in p_inv:
                     if potion_scene_11_progress < 1:
                         sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
                         sna_[13] "Just in case..."
                         sna_[18] "Here, take it!"
                         ">Snape quickly pushes the milky potion into your hands."
-                        ">Milking potion received!"
+                        ">lactantium received!"
                         $ p_inv.append("Milk Potion")
                     elif potion_scene_11_progress == 1:
                         sna_[9] "Good work on getting her to take it."
@@ -54,7 +54,7 @@ label summon_snape:
                         ">Snape hands you an odd leather and metal harness."
                         m "What is-"
                         ">Snape quickly pushes another milky potion into your hands."
-                        ">Milking potion received!"
+                        ">lactantium received!"
                         sna_[12] "Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest..."
                         sna_[6] "but I want it back before you leave!"
                         sna_[20] "I spent a fortune on the self cleaning model..."
@@ -80,40 +80,47 @@ label summon_snape:
                             pass
                         menu:
                             "-Normal potion-":
+                                m "Just the regular thanks."
                                 sna_[7] "Here you are Mr. Adventurous..."
                                 $ potion_version = 1
                             "-futa potion-":
+                                m "..."
                                 sna_[17] "What? Are you sure you want this one?"
                                 sna_[18] "I mean I figured you were a bit of a pervert..."
                                 sna_[19] "but I didn't think..."
                                 sna_[18] "Oh well, if you want it, it's yours..."
                                 menu:
                                     "-give it to me-":
+                                        m "I'll take it..."
                                         sna_[17] "really?"
                                         sna_[18] "you're more Adventurous than I thought!"
                                         sna_[20] "Here, I'll even give you an extra attachment for the milker!"
                                         ">Snape hands you a different cannister with a soft plastic opening in the bottom. It looks almost like an anus."
                                         sna_[19] "I also put an undetectable extension charm on the cannister... Promise to tell me what happens!"
                                     "-no-":
-                                          sna_[7] "Too bad..."
-                                          jump snape_potion_choice  
+                                        m "On second thought, maybe not..."
+                                        sna_[7] "Too bad..."
+                                        jump snape_potion_choice  
                                           
                                 $ potion_version = 2
                             "-Permanent breast expansion-":
-                                sna_[18] "The milk production will still only last a day..."
+                                m "I'll take the breast one you have!"
+                                sna_[18] "just so you know, The milk production will still only last a day..."
                                 sna_[9] "But her big boobs will be permanent..."
                                 sna_[18] "Are you sure you want this?"
                                 sna_[20] "She might not like it..."
                                 menu:
                                     "-yes-":
+                                        m "I'll like it!"
                                         sna_[19] "Fantastic!!!"
                                     "-no-":
-                                          sna_[7] "Too bad..."
-                                          jump snape_potion_choice  
+                                        "Hmmm... better not."
+                                        sna_[7] "Too bad..."
+                                        jump snape_potion_choice  
 
                                 $ potion_version = 3
                         ">Snape quickly pushes the milky potion into your hands."
-                        ">Milking potion received!"
+                        ">lactantium received!"
                         $ p_inv.append("Milk Potion")
                     jump snape_ready
                 "-Veritaserum-" if "Veritaserum" not in p_inv:
@@ -124,6 +131,46 @@ label summon_snape:
                     ">Snape hands you the tiny vial filled with a strange gold liquid."
                     ">Veritaserum received!"
                     $ p_inv.append("Veritaserum")
+                    jump snape_ready
+
+                "-voluptatem-" if "voluptatem" not in p_inv:
+                    m "Volupwhatem?"
+                    sna_[1] "This is actually an experimental potion of mine..."
+                    sna_[7] "I'm not sure if this is ready for testing on humans yet."
+                    sna_[3] "Although I'm not sure that bitch Granger counts as a human..."
+                    m "why? What does it do?"
+                    sna_[9] "It induces a state of extreme sexual arousal and sensitivity similar to that of the estrous cycle in certain female animals."
+                    m "..."
+                    sna_[13] "Basically makes women go into heat."
+                    m "Sounds great!"
+                    sna_[10] "That's what I thought at first."
+                    sna_[2] "But, early testing didn't turn out so well..."
+                    m "What happened?"
+                    sna_[7] "well on top of the arousal, it turns out the potion causes a pretty intense mental addiction."
+                    sna_[6] "The hamster I gave it to was so desperate for more it she... well let's not talk about noodles anymore..."
+                    sna_[2] "(Good bye sweet prince...)"
+                    sna_[10] "I've since added an obliviate draught to the brew that should kick in as the arousal starts to wear off..."
+                    m "So it's safe to use then?"
+                    sna_[7] "I have no idea..."
+                    sna_[6] "In theory it should wipe her mind afterwards so she forgets she was even addicted to it in the first place..."
+                    m "Fantastic! Give it here!"
+                    sna_[9] "Alright... I suppose Ms Granger will make a better Guinea pig than a hamster anyway."
+                    sna_[6] "Just make sure you only pour a drop onto her!"
+                    m "Wait, she doesn't drink it?"
+                    sna_[4] "{b}Good heavens no!{/b} one drop applied to her skin should be more than enough..."
+                    sna_[6] "Anymore and you'll risk permanent side effects."
+                    m "So I just pour a drop anywhere on her?"
+                    sna_[13] "Pretty much, although it does tend to increase the sensitivity of the surrounding area."
+                    m "Got it."
+                    sna_[6] "Good. And remember, if anyone asks where you got this, it wasn't from me!"
+
+                    ">Snape hands you the small bottle filled with a swirling pink and purple liquid."
+                    ">voluptatem received!"
+                    $ p_inv.append("voluptatem")
+                    jump snape_ready
+
+                "-voluptatem-" if "voluptatem" in p_inv:
+                    ">You already a bottle of voluptatem."
                     jump snape_ready
 
                 "\"Never mind.\"":
@@ -309,14 +356,14 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     g4 "{size=-4}(What the...?){/size}"
     sna_[2] ".............."
     sna_[2] "She used to be just an annoyance, but these days..."
-    sna_[1] "She became a fully fledged menace..."
+    sna_[1] "She's become a full-fledged menace..."
     sna_[1] "That witch is officially my least favorite student in the entire school now..."
     m "What about that Potter boy?"
     sna_[6] "The Potter boy? Ha! Who's that!?"
-    sna_[1] "No I'm serious..."
-    sna_[1] "I will go as far as to say that Potter jr. and his wretched father combined..."
-    sna_[1] "Didn't cause me nearly as much grief as this little witch does lately..."
-    m "Now, now, we both know that's not true..."
+    sna_[1] "No, I'm serious..."
+    sna_[1] "I will go as far as to say that Potter and his wretched father combined..."
+    sna_[1] "Have never caused me as much grief as this little witch does lately..."
+    m "Now, now. We both know that's not true..."
     sna_[2] "Yeah... You're probably right..."
     sna_[7] "That bastard James Potter really did a number on me--"
     sna_[6] "Wait, how do you know this?"
@@ -324,7 +371,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
     sna_[6] "What? What books?"
     m "Nah, never-mind. I'm a genie, remember? I know things..."
     sna_[9] "Hm... And yet you need me to teach you stuff..."
-    m "Well, I told you, my magic is acting up in your world..."
+    m "Well, I told you. My magic is acting up in your world..."
     sna_[9] "Sure, sure..."
     m "......"
     m "She came by the other day..."
@@ -356,7 +403,7 @@ label special_date_with_snape: #TAKES PLACE AFTER FIRST VISIT FROM HERMIONE.
         sna_[10] "Unfortunately, us mere mortals cannot afford such a luxury..."
         
     else:
-        m "Not sure... She's been talking a lot..."
+        m "Not sure... She's was talking a lot..."
         m "Something about some \"greefeendo\" points... and..."
         m "Er... I wasn't paying attention to be honest..."
         sna_[1] "Nah... Probably another load of self-righteous crap..."
@@ -400,7 +447,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "What do you mean?"
     with hpunch
     sna_[5] "{size=+6}I will have to kill her!{/size}"
-    g4 "Like literally kill her?"
+    g4 "Like, literally kill her?"
     sna_[6] "Do I have any other choice?"
     m "You're joking, right?"
     sna_[6] "Am i?!"
@@ -419,7 +466,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[2] "I would never actually harm a student..."
     sna_[3] "(...permanently that is.)"
     m "Listen, if she bugs you so much, why not just find a less radical way to deal with her?"
-    sna_[7] "Nah... Flogging has been outlawed years ago..."
+    sna_[7] "Nah... Flogging has been outlawed for years now..."
     m "That's not what I mean..."
     sna_[1] "Huh?"
     m "She is a top student, right?"
@@ -428,7 +475,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     sna_[6] "Oh, yes!"
     m "And she thinks that she is better than everyone else..."
     sna_[17] "Where are you going with this?"
-    m "Well it seems like all of her power comes from her reputation..."
+    m "Well, it seems like all of her power comes from her reputation..."
     sna_[11] "......................?"
     m "What if we take that away from her?"
     sna_[10] "That would shut her up I suppose..."
@@ -511,7 +558,7 @@ label special_date_with_snape_02: #TAKES PLACE AFTER SECOND VISIT FROM HERMIONE.
     m "You'll do what?"
     sna_[4] "Murder her for real!"
     m "Alright, alright... got it."
-    m "Let's choose the lesser of the two evils then."
+    m "Let's choose the lesser of two evils then."
     sna_[7] "Yes..."
     sna_[6] "Now, pour me some more wine."
 
@@ -707,7 +754,7 @@ label wine_not_first:
     $ the_gift = "01_hp/18_store/27.png" # WINE.
     show screen gift
     with d3
-    ">You hand over the bottle you fond in the cupboard to professor Snape..." 
+    ">You hand over the bottle you found in the cupboard to professor Snape..." 
     hide screen gift
     with d3
     $ wine -= 1
@@ -740,7 +787,7 @@ label wine_not_first:
     $ renpy.play('sounds/win_04.mp3')   #Not loud.
     hide screen notes
     show screen notes
-    ">Your relationships with Professor Snape have improved."
+    ">Your relationship with Professor Snape have improved."
     $ snape_friendship +=1
     hide screen bld1
     with d3
