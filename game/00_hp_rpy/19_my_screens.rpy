@@ -129,7 +129,7 @@ screen main_menu_01:
         yanchor "center"
         idle "01_hp/11_misc/Stats_Button.png"
         hover "01_hp/11_misc/Stats_Button_Hover.png"
-        action [Hide("main_menu_01"), Show("hermione_main"), Jump("stat_hermione")]
+        action [Hide("main_menu_01"), Show("hermione_main"), Jump("open_stat_menu")]
      
     if letters >= 1: #Adds one letter in waiting list to be read. Displays owl with envelope.:
         imagebutton: # OWL
@@ -155,31 +155,53 @@ screen main_menu_01:
         action [Hide("main_menu_01"), Hide("animation_feather"), Jump("open_guide")]
 
 ###MO SCREENS
-label stat_hermione:
-    $ hermione_xpos=400
-    hide screen luna
-    call updateHermioneWords
-    call update_her_uniform
-    call screen select_stat_character("HERMIONE")
-    jump day_main_menu
-
-label stat_luna:
-    $ luna_xpos=540
-    hide screen hermione_main
-    call screen select_stat_character("LUNA")
-    jump day_main_menu
+label open_stat_menu(charName="HERMIONE"):
+    if charName == "HERMIONE":
+        $ hermione_xpos=400
+        call updateHermioneWords
+        call update_her_uniform
+        show screen hermione_stat_menu
+        
+    elif charName == "LUNA":
+        $ luna_xpos=540
+        show screen luna
+        show screen luna_stat_menu
     
-screen select_stat_character(charName):
+    show screen select_character
+    $ _return = ui.interact()
+    
+    hide screen hermione_main
+    hide screen luna
+    hide screen hermione_stat_menu
+    hide screen luna_stat_menu
+    
+    if _return == "Cancel":
+        hide screen select_character
+        jump day_main_menu
+    elif _return == "HERMIONE":
+        call open_stat_menu("HERMIONE")
+    elif _return == "LUNA":
+        call open_stat_menu("LUNA")
+        
+   
+screen select_character:
     $ indexSize = 0 # just update this after each button and copy the code bellow and the button will automaticlig find the correct position in the index. The icon image need to be 200*210 pixel
     add "interface/stat_select/CharacterStats.png" xpos 0 ypos 0
     text "-Character Select-" xpos 40 ypos 115 size 14 
+
+    imagebutton: # X
+        xpos 1013
+        ypos 13
+        idle "01_hp/25_mo/close_ground.png"
+        hover "01_hp/25_mo/close_hover.png"
+        action Return("Cancel")
     
     imagebutton:
         xpos 40 + ( 85 * (indexSize%2))
         ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
         idle Transform("interface/stat_select/CharacterIcon/HermioneIcon.png", zoom=.40) 
         hover Transform("interface/stat_select/CharacterIcon/HermioneIcon_Hover.png", zoom=.40) 
-        action [Hide("select_stat_character"), Show("hermione_main"), Jump("stat_hermione")]
+        action Return("HERMIONE")
     $ indexSize += 1 
     
     if luna_unlocked == True:
@@ -188,141 +210,52 @@ screen select_stat_character(charName):
             ypos 140 + ( 90 * ((indexSize/2) - ((indexSize / 2)% 1)))
             idle Transform("interface/stat_select/CharacterIcon/LunaIcon.png", zoom=.40) 
             hover Transform("interface/stat_select/CharacterIcon/LunaIcon_Hover.png", zoom=.40) 
-            action [Hide("select_stat_character"), Show("luna"), Jump("stat_luna")]
+            action Return("LUNA")
         $ indexSize += 1 
-
-    
-    if charName == "HERMIONE":
-        text charName xalign 0.8 ypos 75 size 24
+    zorder 4
+ 
+screen hermione_stat_menu: 
+    text charName xalign 0.8 ypos 75 size 24
         
-        text "-Whoring-" xalign 0.375 ypos 50+68 size 30 bold 0.2
-        text "-Mood-" xalign 0.39 ypos 225+68 size 30 bold 0.2
-        text "-Reputation-" xalign 0.375 ypos 400+68 size 30 bold 0.2
+    text "-Whoring-" xalign 0.375 ypos 50+68 size 30 bold 0.2
+    text "-Mood-" xalign 0.39 ypos 225+68 size 30 bold 0.2
+    text "-Reputation-" xalign 0.375 ypos 400+68 size 30 bold 0.2
         
-        text "-"+whoringWord+"-" xalign 0.375 ypos 50+130 size 20 
-        text "-"+moodWord+"-" xalign 0.39 ypos 225+130 size 20
-        text "-"+reputationWord+"-" xalign 0.375 ypos 400+130 size 20 
+    text "-"+whoringWord+"-" xalign 0.375 ypos 50+130 size 20 
+    text "-"+moodWord+"-" xalign 0.39 ypos 225+130 size 20
+    text "-"+reputationWord+"-" xalign 0.375 ypos 400+130 size 20 
         
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
         
-        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 150
-        add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 325
-        add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 500
+    add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 150
+    add LiveCrop((0, 0, (madValue*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 325
+    add LiveCrop((0, 0, (int(whoring/2.4)*36), 600), "interface/stat_select/StatBar_Full.png") xpos 250 ypos 500
         
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
-
-        imagebutton: # X
-            xpos 1013
-            ypos 13
-            idle "01_hp/25_mo/close_ground.png"
-            hover "01_hp/25_mo/close_hover.png"
-            action [Hide("select_stat_character"), Hide("hermione_main"), Jump("day_main_menu")]
-    
-    elif charName == "LUNA":
-        text charName xalign 0.775 ypos 75 size 24
+    add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+    add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+    zorder 8
+               
+screen luna_stat_menu:
+    text charName xalign 0.775 ypos 75 size 24
         
-        text "-Corruption-" xalign 0.375 ypos 50+ 68 size 30 bold 0.2
-        text "-Dom points-" xalign 0.375 ypos 225+ 68 size 30 bold 0.2
-        text "-Sub points-" xalign 0.375 ypos 400+ 68 size 30 bold 0.2
+    text "-Corruption-" xalign 0.375 ypos 50+ 68 size 30 bold 0.2
+    text "-Dom points-" xalign 0.375 ypos 225+ 68 size 30 bold 0.2
+    text "-Sub points-" xalign 0.375 ypos 400+ 68 size 30 bold 0.2
 
-        text "-"+str(luna_corruption)+"-" xalign 0.39 ypos 50+130 size 20 
-        text "-"+str(luna_dom)+"-" xalign 0.39 ypos 225+130 size 20
-        text "-"+str(luna_sub)+"-" xalign 0.39 ypos 400+130 size 20 
+    text "-"+str(luna_corruption)+"-" xalign 0.39 ypos 50+130 size 20 
+    text "-"+str(luna_dom)+"-" xalign 0.39 ypos 225+130 size 20
+    text "-"+str(luna_sub)+"-" xalign 0.39 ypos 400+130 size 20 
         
-        #When the max amount of the diffrent stats add the full bare with crop
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
-        add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
+    #When the max amount of the diffrent stats add the full bare with crop
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 150
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 325
+    add "interface/stat_select/StatBar_Empty.png" xpos 250 ypos 500
         
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
-        add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
-        
-        imagebutton: # X
-            xpos 1013
-            ypos 13
-            idle "01_hp/25_mo/close_ground.png"
-            hover "01_hp/25_mo/close_hover.png"
-            action [Hide("select_stat_character"), Hide("luna"), Jump("day_main_menu")]
-        
-screen stat_screen_hermione:
-    zorder hermione_main_zorder-1
-
-    #add "01_hp/25_mo/stat_base.png" xpos 275
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos -175+30
-    add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos -175+30
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 0+30
-    add LiveCrop((0, 0, 750-(madValue*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos 0+30
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 175+30 
-    add LiveCrop((0, 0, 350+(int(whoring/2.4)*40), 600), "01_hp/25_mo/stat_full.png") xpos -20 ypos 175+30
-
-    text "-Whoring-" xalign 0.485 ypos 50+38 size 30 bold 0.2
-    text "-Mood-" xalign 0.485 ypos 225+38 size 30 bold 0.2
-    text "-Reputation-" xalign 0.485 ypos 400+38 size 30 bold 0.2
-
-    text "-"+whoringWord+"-" xalign 0.485 ypos 50+110 size 20 
-    text "-"+moodWord+"-" xalign 0.485 ypos 225+110 size 20
-    text "-"+reputationWord+"-" xalign 0.485 ypos 400+110 size 20 
-
-    #text "[hermione_name]" xalign 0.9 ypos 80 size 20 
-
-    imagebutton: # X
-        xpos 1013
-        ypos 13
-        idle "01_hp/25_mo/close_ground.png"
-        hover "01_hp/25_mo/close_hover.png"
-        action [Hide("stat_screen_hermione"), Hide("hermione_main"), Jump("day_main_menu")]
-
-    imagebutton: # STAT MENU SWAP
-        xpos 894
-        ypos 72
-        xanchor "center"
-        yanchor "center"
-        idle "01_hp/11_misc/points_03.png"
-        hover "01_hp/11_misc/points_04.png"
-        action [Hide("main_menu_01"), Show("luna"), Jump("stat_luna")]
-
-screen stat_screen_luna:
-    zorder luna_zorder-1
-
-    #add "01_hp/25_mo/stat_base.png" xpos 275
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos -175+30
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 0+30
-
-    add "01_hp/25_mo/stat_empty.png" xpos -20 ypos 175+30 
-
-    text "-Corruption-" xalign 0.485 ypos 50+38 size 30 bold 0.2
-    text "-Dom points-" xalign 0.485 ypos 225+38 size 30 bold 0.2
-    text "-Sub points-" xalign 0.485 ypos 400+38 size 30 bold 0.2
-
-    text "-"+str(luna_corruption)+"-" xalign 0.485 ypos 50+110 size 20 
-    text "-"+str(luna_dom)+"-" xalign 0.485 ypos 225+110 size 20
-    text "-"+str(luna_sub)+"-" xalign 0.485 ypos 400+110 size 20 
-
-    #text "[hermione_name]" xalign 0.9 ypos 80 size 20 
-
-    imagebutton: # X
-        xpos 1013
-        ypos 13
-        idle "01_hp/25_mo/close_ground.png"
-        hover "01_hp/25_mo/close_hover.png"
-        action [Hide("stat_screen_hermione"), Hide("luna"), Jump("day_main_menu")]
-
-    imagebutton: # STAT MENU SWAP
-        xpos 894
-        ypos 72
-        xanchor "center"
-        yanchor "center"
-        idle "01_hp/11_misc/points_03.png"
-        hover "01_hp/11_misc/points_04.png"
-        action [Hide("main_menu_01"), Show("hermione_main"), Jump("stat_hermione")]
+    add "interface/stat_select/PageBreak.png" xpos 250 ypos 237
+    add "interface/stat_select/PageBreak.png" xpos 250 ypos 412
+    zorder 8
 
 
 label updateHermioneWords:
