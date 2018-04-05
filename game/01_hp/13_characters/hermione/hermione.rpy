@@ -79,7 +79,18 @@ init python:
 
 label __init_variables:
     
-    $ reset_char_obj = True
+    #$ reset_char_obj = True
+    if not hasattr(renpy.store,'hermione_save_chibi'): 
+        $ hermione_save_chibi = hermione_character_chibi( 
+                stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png", 
+                blink_img = "ch_hem blink_a", 
+                blink_img_f = "ch_hem blink_a_flip", 
+                walk_img = "ch_hem walk_a", 
+                walk_img_f = "ch_hem walk_a_flip", 
+                xpos = 0, 
+                ypos = 250 
+        ) 
+    
     if not hasattr(renpy.store,'hermione_SC') or reset_char_obj: #important!
         $ hermione_SC = silver_character(
             root = "01_hp/13_characters/hermione/",
@@ -96,15 +107,7 @@ label __init_variables:
             screen = "test_herm_obj",
             screen_head = "test_herm_head_obj",
             
-            chibi = hermione_character_chibi(
-                stand_img = "01_hp/16_hermione_chibi/walk/h_walk_a_01.png",
-                blink_img = "ch_hem blink_a",
-                blink_img_f = "ch_hem blink_a_flip",
-                walk_img = "ch_hem walk_a",
-                walk_img_f = "ch_hem walk_a_flip",
-                xpos = 0,
-                ypos = 250
-            ),
+            chibi = hermione_save_chibi, 
             
             char_ref = Character('Hermione', color="#402313", window_left_padding=85, show_two_window=True, ctc="ctc3", ctc_position="fixed", window_right_padding=250),
             h_char_ref = Character('Hermione', color="#402313", window_right_padding=220, show_two_window=True, ctc="ctc3", ctc_position="fixed"),
@@ -134,6 +137,9 @@ label __init_variables:
             ),
             acc = ""
         )
+        
+    $hermione_SC.chibi = hermione_save_chibi 
+        
     $ hermione_SC.faces = getCharacterFaces('hermione_face',hermione_character_face)
     $ hermione_SC.setFace(1)
     
