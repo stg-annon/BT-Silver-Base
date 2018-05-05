@@ -561,7 +561,7 @@ label event_05:
     g4 "!!!"
     sna_[1] "Easy now... Just answer my question."
     
-    m "Alright, alright, just calm down, would you...?"
+    m "Alright, alright. Just calm down, would you?"
     sna_[1] "........"
     $ d_points = 0
     $ d_flag_01 = False
@@ -1069,7 +1069,7 @@ label event_08:
     her "Do you think it's fair that the people who deserve to be in the lead are being pushed back instead?"
     her "Do you think that's fair, professor? Do you?"
     call her_main("","body_03")
-    m "{size=-4}(Would you look at that pretty, little thing?){/size}"
+    m "{size=-4}(Would you look at that pretty little thing?){/size}"
     m "{size=-4}(Look at her going on and on about something... She's adorable.){/size}"
     m "{size=-4}(Damn, I haven't seen a woman in weeks.){/size}"
     menu:
@@ -1134,11 +1134,11 @@ label event_08:
         m "{size=-4}(Yes... I want to squeeze my dick between them...){/size}"
     her "As you can see, the situation is dire..."
     call her_main("But we can still set everything right...","body_02")
-    her "As the representative of our school's Student Representative Body..."
-    her "I have a few suggestions on how to do that more efficiently."
+    her "As the president of our school's Student Representative Body..."
+    her "I have a few suggestions on how to do that."
     if not d_flag_01:
         m ".............."
-    her "First of all, the house point system needs to be reinforced!"
+    her "First of all, the house point system needs to be maintained!"
     call her_main("You need to control the point distribution better, sir.","body_03")
     if d_flag_01:
         g4 "{size=-4}(Yes, you are a whore... A nasty little whore... I bet you love to suck cocks... Don't you? Yes, I bet you do...){/size}"
@@ -1146,7 +1146,7 @@ label event_08:
         with d3
         show screen blktone8
         with d4
-        ">You stroke your diamond-hard cock ferociously!"
+        ">You stroke your rock-hard cock ferociously!"
         hide screen blktone8 
         with d4
         show screen hermione_main
@@ -1174,7 +1174,7 @@ label event_08:
         m "{size=-4}(Do I? I honestly don't give a damn...){/size}"
         m "Uhm... I suppose I do..."
         her "{size=-4}(\"Suppose\"?){/size}"
-        her "{size=-4}(When did Professor Dumbledore become so... apathetic.){/size}"
+        her "{size=-4}(When did Professor Dumbledore become so... apathetic?){/size}"
     call her_main("Another measure you could take into consideration is tightening your control over the staff...","body_04")
     her "Especially the teachers..."
     call her_main("I hope I'm not stepping out of line here, sir, but some of the teachers really do require supervision...","body_03")
@@ -1536,7 +1536,7 @@ label event_09:
             pass
     
     her "I see that no matter what I do I simply cannot get through to you, sir."
-    call her_main("So in light of your negligence towards your duties I decided to take the initiative myself!","body_04")
+    call her_main("So in light of your negligence, I decided to take the initiative myself!","body_04")
     m "Did you now...?"
     her "Yes! We, the proud students of Hogwarts, detest sexism..."
     her "No individual shall be treated differently based on his or her gender."
@@ -1551,7 +1551,7 @@ label event_09:
     call her_main("You have no idea how hard it is to be a boy in our school these days...","body_11")
     menu:
         "\"Didn't see this one coming...\"":
-            call her_main("No, you did not, because you, as an authority figure, refuse to listen to us, sir!","body_04")
+            call her_main("No, you did not, because you refuse to listen to us, sir!","body_04")
             her "But we will make you hear us..."
         "{size=-3}\"That's literally the dumbest idea I've ever heard.\"{/size}":
             call her_main("I knew you would say something like that...","body_07")
@@ -2181,7 +2181,7 @@ label event_14:
         her "..............."
         call her_main("do You think you could tutor me a little, sir?","body_09")
         menu:
-            "\"I suppose that is possible\"":
+            "\"I suppose that is possible.\"":
                 pass
             "\"Hm... I'm quite busy actually.\"":
                 call her_main("Sir, please, you are the smartest wizard I know!","body_11")
