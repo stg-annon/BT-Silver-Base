@@ -49,7 +49,7 @@ label hg_pr_FlirtClassmate:
             m "We have been through this, [hermione_name]."
             m "Going to the \"Slytherin\" boys is in your best interests."
             call her_main("Yes, I know, [genie_name].","body_04")
-            her "But why must I this at all?"
+            her "But why must I do this at all?"
             m "Nobody is forcing you, [hermione_name]..."
             call her_main("You don't need to remind me of that, [genie_name]...","body_05")
             call her_main("Alright if I must... [genie_name]...","body_07")
