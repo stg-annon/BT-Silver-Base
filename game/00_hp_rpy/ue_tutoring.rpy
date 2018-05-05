@@ -88,9 +88,9 @@ label l_tutoring:
         play music ms_manatees fadein 1 fadeout 1
         call her_main("Yes?","body_13")
         m "Certain emotions like love and hate, pleasure and pain..."
-        g9 "{size=-2}(If she falls for that, I'm a true genius){/size}"
+        g9 "{size=-2}(If she falls for that, I'm a true genius!){/size}"
         call her_main("I've been studying magic for years and I've never heard of such a thing.","body_03")
-        g4 "{size=-2}(Shit){/size}"
+        g4 "{size=-2}(Shit.){/size}"
         m "And that's exactly why you're still a child. You still have much to learn about magic."
         call her_main("Please stop that, professor. Nobody considers me a child anymore.","body_02")
         m "Yes, technically..."
@@ -122,7 +122,7 @@ label l_tutoring:
         call her_walk(400,610,2)
         
         show screen hermione_stand_f
-        call her_head("{size=-4}(I'm glad the professor agreed to tutor me){/size}","head_exp/35")
+        call her_head("{size=-4}(I'm glad the professor agreed to tutor me!){/size}","head_exp/35")
         call her_head("{size=-4}(But pleasure and pain? I don't understand where this is going...){/size}","head_exp/2")
         hide screen hermione_stand_f
         with d3
