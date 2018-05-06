@@ -12597,7 +12597,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("please... ah... more...{image=textheart}","body_195", "blush")
             g4 "You need to be punished for being such a slut!"
             call her_main("yes, [genie_name]... punish me...","body_196", "blush")
-            call her_main("make me you're little slut....","body_196", "blush")
+            call her_main("make me your little slut....","body_196", "blush")
             call her_main("I will... ah... {image=textheart}do anything... ah...{image=textheart}","body_133", "blush")
             m "Anything [hermione_name]?"
             call her_main("Ah-a...{image=textheart} yessss...","body_212", "blush")
@@ -12615,7 +12615,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
             call her_main("*heavy panting*","body_135", "blush")
             call her_main("[genie_name]...{image=textheart}{image=textheart}{image=textheart}", "body_135", "blush")
             call her_main(".............","body_121", "blush")
-            ">Hermione takes a minute to collect herself"
+            ">Hermione takes a minute to collect herself."
             m "You feeling alright?"
             call her_main("Yes, [genie_name]... I just need a little longer...","body_139")
             m "take your time."
