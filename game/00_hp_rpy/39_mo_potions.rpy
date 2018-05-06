@@ -368,8 +368,8 @@ label potion_scene_2_1: #breast expansion - Until chibis are added for it tifuck
     ">You feel her push her crotch against your thigh."
     m "Feeling a little aroused are we?"
     ">You start to pinch and pull her nipples."
-    call her_main("Ohhh","body_121")
-    ">She starts grinding herself against your thigh"
+    call her_main("Ohhh...","body_121")
+    ">She starts grinding herself against your thigh."
     m "Well, well, well, you are sensitive now aren't you? Trying to grind out an orgasm on your headmasters leg, how shameless."
     call her_main("...","body_123")
     m "Well let's see if we can do something about that."
