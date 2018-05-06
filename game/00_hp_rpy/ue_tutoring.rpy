@@ -840,7 +840,7 @@ label l_tutoring:
         call her_main("With all your recent lessons you can imagine that this area isn't a *no man's land* any more.","body_46")
         g4 "Have you slept..."
         call her_main("No I haven't! I'm not a harlot who offers her pussy to every boy around.","body_217")
-        m "{size=-2}(Good, your pussy is mine alone){/size}"
+        m "{size=-2}(Good, your pussy is mine alone!){/size}"
         call her_main("","body_70")
         g9 "{size=-2}(Although I may agree to share it with other girls...){/size}"
         m "I'm happy you're behaving honorably, Miss Hermione."
@@ -973,8 +973,8 @@ label l_tutoring:
         with d3
         ">You give an assortment of porn magazines to Hermione."
         hide screen gift
-        call her_main("You can be certain that I'll study them profoundly.","body_155")
-        call her_main("Thank you and good night professor.","body_156")
+        call her_main("I promise to study them every night until I commit their lessons to memory!","body_155")
+        call her_main("Thank you and good night, professor.","body_156")
         m "Good night, my favorite little witch."
         hide screen hermione_main
         show screen blkfade
