@@ -3610,19 +3610,19 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                     hide screen ctc
                     with d3
                     call her_head("...................","body_87")
-                    call sna_head("Hm... You are being suspiciously quiet [hermione_name].","snape_05")
+                    call sna_head("Hm... You are being suspiciously quiet, Miss Granger.","snape_05")
                     call her_head("{size=-4}(Oh no! Is he onto us?){/size}","body_48")
-                    call her_head("I am just doing what the headmaster told me, [genie_name]...","body_57")
+                    call her_head("I'm just doing what the headmaster told me to, Professor Snape...","body_57")
                     call sna_head("Aren't you going to lecture me on the \"corruption that is taking over Hogwarts\" like you do every other day?","snape_03")
                     m "Severus..."
                     call sna_head("No, Albus I want to hear little miss perfect's answer.","snape_03")
-                    call her_head("I just want you to have a good time, [genie_name]...","body_57")
-                    call sna_head("Oh! It's \"[genie_name]\" now, is it?","snape_03")
-                    call sna_head("What happened to \"snape'o'doodle\" and \"Professor Snivellus\"??!","snape_10")
-                    g9 "{size=-5}( \"snape'o'doodle\, heh... that's funny.){/size}"
+                    call her_head("I just want you to have a good time, Professor Snape...","body_57")
+                    call sna_head("Oh! It's \"Professor Snape\" now, is it?","snape_03")
+                    call sna_head("What happened to \"snape'o'doodle\" and \"Snivellus\"??!","snape_10")
+                    g9 "{size=-5}( \"snape'o'doodle\", heh... that's funny.){/size}"
                     call her_head(".............","body_57")
                     call sna_head("Yes, I know what are you calling me behind my back, you wretched girl!","snape_08")
-                    call her_head("Well, maybe that's because you deserve it... [genie_name].","body_86")
+                    call her_head("Well, maybe that's because you deserve it... Snivellus.","body_86")
                     call sna_head("What?!","snape_10")
                     call sna_head("How dare you....?")
                     call sna_head("Who do you think you are? You filthy mu--","snape_15")
@@ -3724,7 +3724,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                             m "Alright, alright..."
                             call her_head("{size=-5}(Ginny...){/size}","body_87")
                         "\"How would you grade Hermione's butt?\"":
-                            call sna_head("miss Hermione's buttocks?","snape_05") 
+                            call sna_head("miss Granger's buttocks?","snape_05") 
                             call her_head("!!!............","body_69")
                             m "Sure! As you would grade a paper."
                             call sna_head("Hm...","snape_13")
