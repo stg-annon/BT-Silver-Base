@@ -1039,7 +1039,7 @@ label l_tutoring:
         show screen hermione_main
         with d3
         her "{size=-2}(Thinking of the headmaster masturbating makes me wet already {image=textheart}){/size}"
-        call her_main("{size=-2}(I've become such a whore. Not that I enjoy it all that much though){/size}","body_220")
+        call her_main("{size=-2}(I've become such a whore. Not that I don't enjoy it...){/size}","body_220")
         call her_main("So... where do we start?","body_190")
         if custom_bra == 0:
             m "Take off your shirt and bra, I want to see your tits."
