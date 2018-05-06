@@ -569,23 +569,23 @@ label potion_scene_2_2: #ass expansion
             ">You squeeze her ass-cheeks back together around your cock and start pumping in between them."
             call her_main("!!!","body_136")
             hide screen hermione_main
-            m "Fuck, you're ass is so soft. It's like fucking a pillow."
-            call her_main("Ahhh","body_138")
-            call her_main("Please [genie_name]","body_134")
+            m "Fuck, your ass is so soft. It's like fucking a pillow."
+            call her_main("Ahhh...","body_138")
+            call her_main("Please, [genie_name]...","body_134")
             hide screen hermione_main
             m "Ughh, this feels so good, we might have to make this permanent."
             call her_main("Permanent?","body_139")
             hide screen hermione_main
-            m "You wouldn't mind would you?"
+            m "You wouldn't mind, would you?"
             m "Having me use your ass a sex-toy everyday."
             call her_main("...","body_141")
             hide screen hermione_main
-            m "I asked you a question [hermione_name]."
+            m "I asked you a question, [hermione_name]."
             call her_main("... no [genie_name]...","body_133")
             hide screen hermione_main
             ">You feel her asshole start quiver as you glide over it."
             m "Of course you wouldn't, you're enjoying this more than I am, aren't you?"
-            call her_main("...yes... I'm loving... you using my ass as your toy","body_134")
+            call her_main("...yes... I'm loving... you using my ass as your toy...","body_134")
             hide screen hermione_main
             m "That's it girl, here I come!"
             ">With one final thrust you cum, covering her fat ass with your seed."
@@ -807,13 +807,13 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     show screen h_c_u
     hide screen g_c_u
     with d3 
-    her "All I could think about was the taste of your \nfilthy cum."
+    her "All I could think about was the taste of your filthy cum."
     hide screen h_c_u
     hide screen hermione_main
     show screen g_c_u
     with d3   
     her "*Slurp!* *Gulp!* *Gulp!*"
-    m "My my, someone is becoming quite the slut wouldn't you say [hermione_name]"
+    m "My my, someone is becoming quite the slut wouldn't you say, [hermione_name]?"
     her "*Slurp!* *Gulp!* *Slurp!*"
     call her_main("","body_65")
     show screen h_c_u
@@ -829,7 +829,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     show screen h_c_u
     hide screen g_c_u
     with d3 
-    her "Whatever was in that delicious potion you made \nme drink this morning."
+    her "Whatever was in that delicious potion you made me drink this morning."
     hide screen hermione_main
     m "Delicious? I thought you said it was just a bottle full of my cum?"
     m "Are you sure that you're just not a little slut who's become addicted to her Headmaster's semen?"
@@ -849,7 +849,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
     ">She is incredibly enthusiastic. You can feel your load building."
     menu:
         "-Cum down her throat-":
-            m "Here it comes slut."
+            m "Here it comes, slut!"
             ">Hermione quickly swallows the majority of your shaft. You can feel the tip of your head pressed against the entrance to her throat."
             m "You'll have to do better than that if you want your reward [hermione_name]."
             ">You place your hands on the back of her head pull her head into you."
@@ -877,7 +877,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
             ">The stimulation proves too much and she passes out."
             
         "-Cum in her mouth-":
-            m "This is it girl. Get ready."
+            m "This is it, girl! Get ready!"
             ">Hermione starts swirling her tongue and focusing on the tip of your shaft."
             g4 "That's done it slut! Start swallowing."
             ">You explode into her mouth."
@@ -905,7 +905,7 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
             hide screen hermione_main
             ">She collapses into a heap on the ground with her legs still shaking."
         "-Cum on her face-":
-            m "Get ready girl, here it comes."
+            m "Get ready, girl! here it comes!"
             ">Hermione increases her efforts and starts focusing on the head of your penis."
             m "Not so quick [hermione_name]."
             show screen h_c_u
@@ -939,8 +939,8 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
             hide screen hermione_main
             ">Hermione's voice trails off as she pass out from the over stimulation."
         "-Cum on the floor-":
-            m "I'm cumming whore."
-            call her_main("mmmmmmmm","body_115")
+            m "I'm cumming, whore!"
+            call her_main("mmmmmmmm...","body_115")
             hide screen hermione_main
             ">She goes to bury her face into her crouch but you put your palm on her forehead and push her away."
             show screen h_c_u
@@ -948,44 +948,44 @@ label potion_scene_3_2: #Scene where Hermione comes back addicted to your cum (r
             with d3 
             call her_main("[genie_name], what are you doing?","body_119")
             hide screen hermione_main
-            m "giving you your reward"
+            m "giving you your reward!"
             ">After a few quick pumps you point your dick at the floor and explode."
             call her_main("PROFESSOR! Why would you waste that?","body_118")
             hide screen hermione_main
             m "It's not wasted [hermione_name], your reward is right there waiting for you."
-            call her_main("I'm not going to eat that. The floor in here is\n disgusting.","body_117")
+            call her_main("I'm not going to eat that. The floor in here is disgusting.","body_117")
             hide screen hermione_main
             m "Well you can always wait until tomorrow morning then."
-            call her_main("TOMORROW MORNING!? I can't wait that long. \nCan't you just cum again?","body_119")
+            call her_main("TOMORROW MORNING!? I can't wait that long! Can't you just cum again?","body_119")
             hide screen hermione_main
             m "No [hermione_name], I'm a tired old man and it's time for me to go to sleep."
             m "You can either eat off the floor or you can come back tomorrow."
-            call her_main("...Fine","body_120")
+            call her_main("...Fine.","body_120")
             hide screen hermione_main
             ">She begrudgingly starts scooping your cum off the floor with her fingers."
             menu:
                 "-Watch her-":
                     call her_main("","body_125")
-                    ">She scoops up as much as she can into her palm \nand quickly moves it to her mouth."
+                    ">She scoops up as much as she can into her palm and quickly moves it to her mouth."
                     pass
                 "-Make her lick it up-":
-                    m "Not with your fingers [hermione_name]."
-                    call her_main("What do you mean not with my fingers? How \nelse am I supposed to eat it?","body_117")
+                    m "Not with your fingers, [hermione_name]."
+                    call her_main("What do you mean not with my fingers? How else am I supposed to eat it?","body_117")
                     hide screen hermione_main
                     m "You have a perfectly good tongue, I suggest that you put it to use."
-                    call her_main("You expect me to LICK your old cum off the \nfloor?","body_118")
+                    call her_main("You expect me to LICK your old cum off the floor?","body_118")
                     hide screen hermione_main
                     m "I do. Unless of course you would prefer to go back to your room hungry and unsatisfied."
                     call her_main("...","body_117")
                     hide screen hermione_main
                     ">She bends over with her head to the floor."
                     $ aftersperm = True
-                    call her_main("(This is so degrading)","body_116")
+                    call her_main("(This is so degrading...)","body_116")
                     hide screen hermione_main
                     ">She puts her tongue out licks your cum."
             ">The effect is instantaneous."
             $ aftersperm = True
-            call her_main("I-I'm cumming.","body_126") #small text
+            call her_main("I-I'm cumming...","body_126") #small text
             hide screen hermione_main
             m "What was that?"
             call her_main("I'm cumming!","body_133")
