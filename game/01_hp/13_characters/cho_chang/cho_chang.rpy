@@ -129,13 +129,13 @@ label cho_intro:
                         "-Listen to the Girl-":
                             pass
                         "-Play with Her Asshole-":
-                            "You ignore Hermione and gendlty slide your hands under her panties."
+                            "You ignore Hermione and gently slide your hands under her panties."
                             "Your left hand gently pulls her cheek back, exposing the smooth, muscular ring of her asshole."
                             "You extend your middle finger, and gingerly touch the soft, smooth skin."
                             call her_main("!","head_exp/21")
                             call her_main("Prof-","head_exp/22")
                             m "Shhh. Not too loud, girl. Wouldn't want to alarm anyone out in the hall."
-                            "Your finger presses against the firm muscle and you begin to trace a slow cirle around the ring."
+                            "Your finger presses against the firm muscle and you begin to trace a slow circle around the ring."
                             call her_main("......","head_exp/7")
                             call her_main("...","head_exp/11")
                             "You can feel Hermione's ass start to twitch."
@@ -152,18 +152,18 @@ label cho_intro:
     show screen no_groping_02
     call her_main("...","head_exp/30")
     call cho_main("...", 4, 2, 4, 3)
-    call her_main("..","head_exp/30")
-    call cho_main("..", 4, 2, 4, 2)
-    call her_main(".","head_exp/30")
-    m "."
-    call cho_main(".", 2, 2, 1, 2)
+    call her_main("....","head_exp/30")
+    call cho_main("....", 4, 2, 4, 2)
+    call her_main(".....","head_exp/30")
+    m "....."
+    call cho_main(".....", 2, 2, 1, 2)
     call her_main("It's not what it looks like!","head_exp/22")
     call cho_main("You lying bitch!", 2, 2, 1, 3)
     call cho_main("men's rights movement my ass!", 2, 2, 2, 4)
     call her_main("...","head_exp/24")
     call her_main("How dare you accuse me of trading favors with Professor Dumbledore!","head_exp/26")
     call her_main("He was merely massaging a pulled muscle in my...in my...leg!","head_exp/19")
-    call cho_main("Liar", 1, 2, 1, 2)
+    call cho_main("Liar!", 1, 2, 1, 2)
     call her_main("You... you...","head_exp/25")
     call her_main("You flatchested skank!","head_exp/26")
     call cho_main("Two-faced cow!", 5, 2, 1, 3)
@@ -171,8 +171,8 @@ label cho_intro:
     menu:
         "-Tell them to shut up-":
             m "Students! By the sands! Calm yourselves! There is a perfectly reasonable explanation!"
-            call her_main("..","head_exp/25")
-            call cho_main("..", 2, 2, 1, 2)
+            call her_main("...","head_exp/25")
+            call cho_main("...", 2, 2, 1, 2)
             call cho_main("....well?", 2, 2, 1, 3)
             m "Miss Granger was simply helping me clean my office when she pulled a muscle in her leg. It's quite painful. That's why she's so flustered."
             call cho_main("...", 5, 2, 2, 2)
