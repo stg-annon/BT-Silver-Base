@@ -782,10 +782,10 @@ label hg_pf_BreastMolester:
                     ">You keep on massaging her tits through her uniform..."
                     call her_head("A small price to pay for the honour of my house, really......{image=textheart}","body_200")
                 else:
-                    m "Really? It seems to me as if you love it"
-                    call her_head("I wouldn't say that I love it","body_213")
+                    m "Really? It seems to me as if you love it."
+                    call her_head("I wouldn't say that I love it...","body_213")
                     ">You keep on massaging her tits through her uniform..."
-                    m "What would you say then [hermione_name]?"
+                    m "What would you say then, [hermione_name]?"
                     call her_head("I just like it, {size=-4}a lot{image=textheart}{/size}","body_205")
             "-Pull on them abruptly with force-":
                 show screen blktone8
@@ -833,7 +833,7 @@ label hg_pf_BreastMolester:
         $ gryffindor +=15
         m "The \"Gryffindor\" house gets 15 points!"
     else:
-        m "you may leave now [hermione_name]"
+        m "you may leave now, [hermione_name]."
     
     $ hg_pf_BreastMolester_OBJ.points += 1
    
@@ -862,7 +862,7 @@ label hg_pf_BreastMolester:
         if whoring >= 20:
             call her_head("(eh, who cares)","body_213")
         else:
-            call her_head("(I'll just ask him about it next time)","body_12")
+            call her_head("(I'll just ask him about it next time...)","body_12")
         hide screen hermione_stand_f
     
     $ renpy.play('sounds/door.mp3') #Sound of a door.
@@ -1764,10 +1764,10 @@ label hg_pf_ButtMolester:
                 call her_head("....................","body_198")
                 m "not even a word..."
                 ">you  enjoy the sensation of her butt under your hands..."
-                m "as my hands explore you"
+                m "as my hands explore you..."
                 m "your thighs..."
                 ">your hands rub in circles from the sides of her legs to her inner thighs"
-                m "your big, firm ass"
+                m "your big, firm ass..."
                 ">You massage her ass-cheeks lightly..."
                 call her_head(".....................","body_136")
                 m "your loins..."
@@ -1784,12 +1784,12 @@ label hg_pf_ButtMolester:
                 call her_head("I... i said i want you to finger me!","body_132")
                 ">You swiftly plunge two fingers into her drenched snatch."
                 call her_head("!!!{image=textheart}{image=textheart}","body_136")
-                ">you start to pump your fingers inside her before she can do more than gasp"
+                ">you start to pump your fingers inside her before she can do more than gasp."
                 call her_head("...................................","body_199")
                 m "did i say you could look away?"
                 call her_head("..................................................","body_205","tears_01")
                 m "good girl"
-                ">her hips roll in rythm as you fuck her with your fingers"
+                ">her hips roll in rhythm as you fuck her with your fingers"
                 m "do you like this?"
                 m "you like it when i finger your cunt?"
                 call her_head("i love it!{image=textheart} i love your long fingers in my tight, wet cunt!!{image=textheart}","body_134","tears_02")
@@ -1800,11 +1800,11 @@ label hg_pf_ButtMolester:
                 ">you don't even need to move as she pounds herself against your fingers."
                 call her_head("fingering my cunt and ass!{image=textheart}{image=textheart}","body_133","tears_04")
                 m "no, we can still do better."
-                ">you force another finger up her ass"
+                ">you force another finger up her ass."
                 call her_head("iloveitiloveitiloveit","body_136","tears_04")
                 m "what do you love, [hermione_name]?"
                 call her_head("ah!!{image=textheart} i love your fingers in my ass and cunt!{image=textheart}","body_48","tears_04")
-                ">her movements have become more frantic"
+                ">her movements have become more frantic."
                 m "are you cumming, [hermione_name]?"
                 call her_head("yes!!","body_149")
                 call her_head("i'm cumming!!","body_147")
@@ -1840,7 +1840,7 @@ label hg_pf_ButtMolester:
         $ gryffindor +=15
         m "The \"Gryffindors\" get 15 points!"
     else:
-        m "good night [hermione_name]"
+        m "well done, [hermione_name]"
     $ hg_pf_ButtMolester_OBJ.points += 1
    
    
@@ -1853,7 +1853,7 @@ label hg_pf_ButtMolester:
     call her_main("..................","body_156",xpos=370,ypos=0)
     her "Thank you [genie_name]..."
     if daytime:
-        her "Now if you don't mind I'd better go. The classes are about to start."
+        her "Now if you don't mind I'd better go. My classes are about to start."
     else:
         her "I'd better go now then. It's getting pretty late..."
     
@@ -7899,7 +7899,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 call her_head("Not in my mou-","body_130")       
                 ">You grab the back of Hermione's head and force your cock into her open mouth..."
                 call her_head("!!!!!!!","body_132") 
-                ">The sensation of her warm mouth any squirming tongue overwhelm you and you start cumming like crazy"
+                ">The sensation of her warm mouth and squirming tongue overwhelm you and you start cumming like crazy."
                 show screen white 
                 pause.1
                 hide screen white
@@ -7908,7 +7908,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 pause .1
                 hide screen white
                 with hpunch
-                g4 "{size=+5}ARGH! YES!!! Take it slut{/size}"
+                g4 "{size=+5}ARGH! YES!!! Take it, slut!{/size}"
               
                 
                 
@@ -7945,7 +7945,7 @@ label hg_pf_TitJob: #LV.6 (Whoring = 15 - 17)
                 call her_head("Why on earth did you cum in my mouth!","body_34")
                 m "well you did say not to cum on your face."
                 call her_head("Ughhh... you came so much! I had to swallow most of it!","body_34")
-                m "That's you fault for doing such a great job..."
+                m "That's your fault for doing such a great job..."
                 call her_head("I don't want to hear it...","body_34")
                 if daytime:
                     call her_head("My classes are about to start and now I'm covered in your sperm...","body_34") 
