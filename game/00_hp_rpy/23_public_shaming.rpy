@@ -1066,21 +1066,21 @@ label hg_ps_WearMyCum_Scene_3:
     hide screen hermione_walk_01 
     hide screen blkfade
     $ hermione_head_ypos = 235
-    m "Gods you're good at this [hermione_name]/"
-    call her_head("Thank you... I've been thinking about what you asked me last time","body_121")
+    m "Gods, you're good at this, [hermione_name]!"
+    call her_head("Thank you... I've been thinking about what you asked me last time...","body_121")
     m "Last time?"
-    call her_head("about why I do this... sell you these sort of favours","body_120")
+    call her_head("about why I do this... sell you these sort of favours.","body_120")
     call her_head("At the start it was just just to get points, so that \'gryffindor\' could win the house cup...","body_122")
-    call her_head("but lately, it's been more than that sir...","body_124")
-    call her_head("But lately it’s been more than that... now I do it to make you happy [genie_name].","body_128")
-    call her_head("Because making you happy, make me happy...","body_129")
+    call her_head("but lately...","body_124")
+    call her_head("...it’s been more than that... now I do it to make you happy, [genie_name].","body_128")
+    call her_head("Because making you happy, makes me happy...","body_129")
     m "That's great... but what would really make me happy right now is you focusing a little more on the task at hand..."
-    call her_head("Oh! Of course [genie_name]...","body_131")
-    call her_head("Do you need some extra encouragement.","body_127")
+    call her_head("Oh! Of course, [genie_name]...","body_131")
+    call her_head("Do you need some extra encouragement?","body_127")
     m "it would help..."
     call her_head("well... do you know how much I've been thinking about this? How much I wanted to ask you to cover me again?","body_124")
     call her_head("I've become such a slut [genie_name], it's all I've been able to think about... going to class covered in your {image=textheart}cum{image=textheart}","body_106")
-    call her_head("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So, everyone knows who and what I am.”","body_123")
+    call her_head("I Imagine it staining my uniform, so much that I can never wash it out. I imagine being covered in your cum constantly. So everyone knows who and what I am.”","body_123")
     call her_head("not just A slut... a cumslut...","body_121")
     call her_head("Your {image=textheart}cum{image=textheart}slut...","body_134")
     g9 "That did it slut!"
@@ -1089,7 +1089,7 @@ label hg_ps_WearMyCum_Scene_3:
     menu:
         "\"take it on your tits!\"": # Cum on shirt front 
             $ cum_location = 7
-            call her_head("yes [genie_name]...","body_136")
+            call her_head("Please cover my tits with your sticky cum! I need it, [genie_name]!","body_136")
             ">Hermionely keeps jerking your cock, her eyes focused intently on it."
             g4 "Get ready whore, here i come!"
             call her_head("...","body_133")
@@ -1126,11 +1126,11 @@ label hg_ps_WearMyCum_Scene_3:
             m "That it is."
             call her_main("If it's alright with you, I think I better head to class now...","body_124") 
 
-        "\"Take it on your face slut!\"":
+        "\"Take it on your face, slut!\"":
             $ cum_location = 8
             ">Hermione bends down and place your cock in front of her face."
             m "Get ready slut, here it comes!"
-            call her_head("thank you [genie_name]","body_136")
+            call her_head("Please give it to me! I need it, [genie_name]!","body_136")
             g9 "{size=+5}ARGH! YES!!!{/size}"
             call her_head("...","body_135")
             ">You erupt onto her face, dousing her in your thick spunk."
@@ -1206,7 +1206,7 @@ label hg_ps_WearMyCum_complete_1:
     if cum_location == 1: #Cum under shirt
         $ aftersperm = True
         ">Hermione returns to your office, your cum stains still visible on her shirt."
-        call her_main("...I did it [genie_name].","body_53")
+        call her_main("...I did it, [genie_name].","body_53")
         call her_main("I kept your cum on me all day.","body_54")
         menu:
             "\"50 Points to gryffindor!\"":
@@ -1396,7 +1396,7 @@ label hg_ps_WearMyCum_complete_3:
         $ u_sperm = "01_hp/13_hermione_main/auto_07.png"
         $ uni_sperm = True
         ">Hermione returns to your office."
-        call her_main("I did it [genie_name].","body_08")
+        call her_main("I did it, [genie_name].","body_08")
         call her_main("I kept your cum on me all day.","body_45")
         menu:
             "\"Good Work!\"":
