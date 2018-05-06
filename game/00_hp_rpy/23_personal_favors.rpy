@@ -6169,7 +6169,7 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                 call her_head("Ah... [genie_name], please...","body_130")
                 show screen blktone8
                 with d3
-                ">Hermione clutches the edge of your desk to keep herself form taking a step towards you..."
+                ">Hermione clutches the edge of your desk to keep herself from taking a step towards you..."
                 hide screen blktone8
                 with d3
                 m "Good girl..."
@@ -6208,9 +6208,9 @@ label hg_pf_LetMeTouchThem: #LV.4 (Whoring = 9 - 11)
                     call her_head("But if you insist [genie_name]...","body_138")
                     m "Well, I do insist... apparently."
                 else:
-                    call her_head("Yes please [genie_name]","body_139")
+                    call her_head("Yes please, [genie_name]!","body_139")
                     call her_head("I'll even let you do it for free...","body_139")
-                    m "Well, in that case"
+                    m "Well, in that case..."
                 call her_head("Ah...","body_138")
                 hide screen blkfade
                 with d5
