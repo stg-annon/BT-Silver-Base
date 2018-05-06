@@ -142,7 +142,7 @@ label l_tutoring:
         hide screen hermione_main
         with d3
 
-        g9 "{size=-2}(And soon you'll love cock){/size}"
+        g9 "{size=-2}(And soon you'll love cock!){/size}"
         $ renpy.play('sounds/punch01.mp3') #Hermione lays books onto the floor.
 
         $ her_main_smooth_transition = True
@@ -263,7 +263,7 @@ label l_tutoring:
         call her_main("I managed to levitate a heavy rock while thinking about the behavior of two girls I saw earlier in the library.","body_127")
         call her_main("Usually I only manage to move small rocks. I don't know, I felt kind of warm inside thinking about that.","body_207")
         her "It felt weird but... {w=0.5}good at the same time."
-        m "{size=-2}(She is so ignorant of life, unbelievable){/size}"
+        m "{size=-2}(She is so ignorant of life! Unbelievable.){/size}"
         m "You've never felt such a sensation before?"
         call her_main("Generally I get angry and rush to stop such behavior.","body_140")
         call her_main("But yesterday, I don't know, I just watched without interrupting them.","body_182")
@@ -479,7 +479,7 @@ label l_tutoring:
         call her_main("Alright, but this must remain between us.","body_203")
         call her_main("You cannot disclose this to other professors, especially professor Snape!","body_71")
         m "Oh, I have no intention of shar.. speaking of you with professor Snape."
-        g9 "{size=-2}(You're mine){/size}"
+        g9 "{size=-2}(You're mine.){/size}"
         call her_main("Well, what must I do now?","body_127")
         m "Come here."
         hide screen hermione_main
@@ -513,7 +513,7 @@ label l_tutoring:
         call her_main("Professor...","body_182")
         m "And you felt those emotions without even touching yourself."
         call her_main("Yes...","body_183")
-        g9 "{size=-2}(What a slut){/size}"
+        g9 "{size=-2}(What a slut!){/size}"
         if whoring <= 12 or custom_bra >0:
             ">You move forward to her panties."
         else:
@@ -540,7 +540,7 @@ label l_tutoring:
         
         show screen hermione_stand_f
         call her_head("{size=-4}(This is wrong...){/size}","head_exp/12")
-        call her_head("{size=-4}(I shouldn't listen to him){/size}","head_exp/15")
+        call her_head("{size=-4}(I shouldn't listen to him.){/size}","head_exp/15")
         call her_head("{size=-4}(And yet...){/size}","head_exp/16")
         hide screen hermione_stand_f
         with d3
@@ -589,7 +589,7 @@ label l_tutoring:
         m "Don't lie to yourself. It's obvious that you feel a form of attraction to those two girls."
         call her_main("I...{w=0.3} I honestly don't know what to think anymore.","body_207")
         her "At the moment my feelings are so confusing..."
-        g9 "{size=-2}(Exactly what I was hoping){/size}"
+        g9 "{size=-2}(Exactly what I was hoping!){/size}"
         call her_main("I'm happy to earn points for my house and at the same time I feel so ashamed.","body_145")
         her "And the same goes for your lessons."
         m "Yet you can't deny your progress in the practice of magic."
@@ -659,7 +659,7 @@ label l_tutoring:
         m "Lesson is over. Time to practice by yourself."
         m "Good night my little witch."
         call her_main("Good night professor and thank you for this lesson.","body_74")
-        call her_main("{size=-2}(This too short of a lesson){/size}","body_17")
+        call her_main("{size=-2}(I just wish it had lasted longer...){/size}","body_17")
         hide screen hermione_main
         with d3
         
@@ -679,7 +679,7 @@ label l_tutoring:
         call her_main("Yes...{w=0.2} a little.","body_203")
         m "And?"
         call her_main("It feels even better when I'm naked.","body_80b")
-        call her_main("{size=-2}(Oh no, I should never have said that){/size}","body_206")
+        call her_main("{size=-2}(Oh no, I shouldn't have said that...){/size}","body_206")
         m "Well come here and undress, we'll practice."
         call her_main("Completely?!","body_207")
         m "No, only the top will suffice."
@@ -752,7 +752,7 @@ label l_tutoring:
         call her_main("Ah, noo, don't...","body_219")
         ">You chew on them even harder."
         call her_main("Not that hard, I will...","body_215")
-        g9 "{size=-2}(Time for the grand finale){/size}"
+        g9 "{size=-2}(Time for the grand finale!){/size}"
         if whoring <= 12 or custom_bra >0:
             ">You quickly slip your hand into her panties and rub her pussy furiously."
         else:
@@ -801,8 +801,8 @@ label l_tutoring:
         
         show screen hermione_stand_f
         call her_head("{size=-4}(I'm such a slut...){/size}","head_exp/6")
-        call her_head("{size=-4}(Coming in front of my professor){/size}","head_exp/16")
-        call her_head("{size=-4}(I definitely need to do that again){/size}","head_exp/18")
+        call her_head("{size=-4}(Cumming in front of my professor...){/size}","head_exp/16")
+        call her_head("{size=-4}(I definitely need to do that again!){/size}","head_exp/18")
         hide screen hermione_stand_f
         with d3
         
