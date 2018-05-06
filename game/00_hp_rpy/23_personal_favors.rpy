@@ -2574,7 +2574,7 @@ label hg_pf_ShowThemToMe: #LV.3 (Whoring = 6 - 8)
                         call her_main("","body_47")
                         pause
                         #play music "music/Chipper Doodle v2.mp3" fadein 1 fadeout 1 # HERMIONE'S THEME.
-                        her "How could you do this to mr, [genie_name]?!"
+                        her "How could you do this to me, [genie_name]?!"
                         her "You gave me your word!"
                         hide screen hermione_main
                         with d3
@@ -3105,7 +3105,7 @@ label hg_pf_DanceForMe: #LV.4 (Whoring = 9 - 11)
                 call her_head("I thought I could, but...","body_141")
                 call her_head("Stripping for points, [genie_name]?","body_141")
                 call her_head("People look up to me in this school!","body_141")
-                call her_head("I have reputation...*sob*","body_141")
+                call her_head("I have a reputation...*sob*","body_141")
                 call her_head("And If I do this...","body_148")
                 
         show screen blkfade 
@@ -5182,7 +5182,7 @@ label hg_pf_ShowMeYourAss: #LV.3 (Whoring = 9 - 11)
                 call her_head("...............","body_199")
                 m "Admit it, you like it a little bit..."
                 m "Maybe even a lot..."
-                call her_head("{size=-5}(It feels so weird to let him grope me){/size}","body_199")
+                call her_head("{size=-5}(It feels so weird to let him grope me...){/size}","body_199")
                 call her_head("[genie_name], I am letting you do this to me to help my house!","body_132")
                 call her_head("It doesn't matter how good it feels...","body_132")
                 m "So you admit that it does feel good."
