@@ -122,76 +122,75 @@ label __init_variables:
     $ Dear_Wifu_OBJ.picture = "01_hp/18_store/books/12.png"
     
     
-    $ Galadriel_I_OBJ.chapter_description = []
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel - a gentle and gracious elven princess is introduced into the story.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.")
-    $ Galadriel_I_OBJ.chapter_description.append("King Methis makes an announcement. His daughter, princess Galadriel is to be wed to chancellor Mofothelis.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel refuses to marry a man who is thrice her age and whom, up until now, she considered only as her uncle.")
-    $ Galadriel_I_OBJ.chapter_description.append("King Methis dismisses her daughter's \"foolish\" complaints. Galadriel decides to run away.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel manages to leave the royal residence at night unnoticed...")
-    $ Galadriel_I_OBJ.chapter_description.append("King Methis is furious about his daughter's escape. He decides to personally lead the search party.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel rides her mare \"white dove\" through the forest. The Princess enjoys her freedom... After a while she meets a rather handsome human nobleman on a horse...")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel rides alongside the nobleman. They exchange meaningless pleasantries. He makes her laugh. Suddenly the nobleman attacks the princess and knocks her out!...")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel comes about. To her horror she realizes that the nobleman is having his way with her. Galadriel is screaming for help but The handsome man keeps on raping her.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel tries to fight the nobleman off. Only now she notices that about half a dozen men are surrounding them. The men are sneering viciously.")
-    $ Galadriel_I_OBJ.chapter_description.append("After the nobleman is done with Galadriel, every one of his men in turn has a go at the elven princess. Galadriel cries and begs them to stop.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel finds herself in a cage at some sort of market. Her hands are tied, Her noble garments are ripped to shreds and her hair is full of twigs and dry semen.")
-    $ Galadriel_I_OBJ.chapter_description.append("A fat, rich looking man buys Galadriel and brings her to his house. The princess does not cry anymore. She is happy to be out of the cage.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel is allowed to take a bath after which a servant brings her clean clothes and some food.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel is starting to feel hopeful but it does not last. Soon she realizes what kind of establishment this is: a whorehouse.")
-    $ Galadriel_I_OBJ.chapter_description.append("The elven princess is forced to work as a whore. She detests her new life but has very little choice.")
-    $ Galadriel_I_OBJ.chapter_description.append("Galadriel gains popularity quickly. Humans, Dark Elves and even the occasional dwarf - she spreads her legs for everyone.")
-    $ Galadriel_I_OBJ.chapter_description.append("The fame of the young and beautiful elven whore spreads. Galadriel accepts her new life in the brothel.")
-    $ Galadriel_I_OBJ.chapter_description.append("Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-")
+    $ Galadriel_I_OBJ.chapter_description = [
+        "Galadriel - a gentle and gracious elven princess is introduced into the story.",
+        "Galadriel's father - King Methis and his childhood friend Mofothelis are introduced into the story.",
+        "King Methis makes an announcement. His daughter, princess Galadriel is to be wed to chancellor Mofothelis.",
+        "Galadriel refuses to marry a man who is thrice her age and whom, up until now, she considered only as her uncle.",
+        "King Methis dismisses her daughter's \"foolish\" complaints. Galadriel decides to run away.",
+        "Galadriel manages to leave the royal residence at night unnoticed...",
+        "King Methis is furious about his daughter's escape. He decides to personally lead the search party.",
+        "Galadriel rides her mare \"white dove\" through the forest. The Princess enjoys her freedom... After a while she meets a rather handsome human nobleman on a horse...",
+        "Galadriel rides alongside the nobleman. They exchange meaningless pleasantries. He makes her laugh. Suddenly the nobleman attacks the princess and knocks her out!...",
+        "Galadriel comes about. To her horror she realizes that the nobleman is having his way with her. Galadriel is screaming for help but The handsome man keeps on raping her.",
+        "Galadriel tries to fight the nobleman off. Only now she notices that about half a dozen men are surrounding them. The men are sneering viciously.",
+        "After the nobleman is done with Galadriel, every one of his men in turn has a go at the elven princess. Galadriel cries and begs them to stop.",
+        "Galadriel finds herself in a cage at some sort of market. Her hands are tied, Her noble garments are ripped to shreds and her hair is full of twigs and dry semen.",
+        "A fat, rich looking man buys Galadriel and brings her to his house. The princess does not cry anymore. She is happy to be out of the cage.",
+        "Galadriel is allowed to take a bath after which a servant brings her clean clothes and some food.",
+        "Galadriel is starting to feel hopeful but it does not last. Soon she realizes what kind of establishment this is: a whorehouse.",
+        "The elven princess is forced to work as a whore. She detests her new life but has very little choice.",
+        "Galadriel gains popularity quickly. Humans, Dark Elves and even the occasional dwarf - she spreads her legs for everyone.",
+        "The fame of the young and beautiful elven whore spreads. Galadriel accepts her new life in the brothel.",
+        "Suddenly and abruptly everything changes. Galadriel finds out that she is pregnant. -End of book one-"
+    ]
     
-    
-    
-    $ Galadriel_II_OBJ.chapter_description = []
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly.")
-    $ Galadriel_II_OBJ.chapter_description.append("Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel.")
-    $ Galadriel_II_OBJ.chapter_description.append("The Elven Princess-Whore knows nothing of the life outside the of walls of the brothel. But it does not affect her determination to escape.")
-    $ Galadriel_II_OBJ.chapter_description.append("It takes a lot of preparation and careful planning but Galadriel manages to successfully escape from the brothel.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel soon gets lost in the vast city and is forced to spend the night on the street.")
-    $ Galadriel_II_OBJ.chapter_description.append("Food is hard to come by on the streets. Galadriel fights a pack of stray dogs over some scraps and one of them bites her hand badly.")
-    $ Galadriel_II_OBJ.chapter_description.append("The Pregnant Galadriel offers her company to a couple of filthy looking homeless men in exchange for food. She spends the night with them.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel realizes that her live back in the brothel was a heaven compared to the live she's been leading for the past several days. She decides to return.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel's owner - the fat, wealthy man does not punish Galadriel for escaping. He is happy to have one of his most popular girls back.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel is, yet again, warm, clean and well fed. She is glad to be back and as popular as ever.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel keeps servicing the clients throughout the rest of her pregnancy. The baby is due any day now...")
-    $ Galadriel_II_OBJ.chapter_description.append("A wealthy man wearing a mask booked Galadriel for an entire day. Galadriel is wondering about the man's true identity rather lazily while pleasuring him.")
-    $ Galadriel_II_OBJ.chapter_description.append("The mystery man spends the entire day by having his way with Galadriel. Her engorged breasts drip milk heavily as the man fucks her.")
-    $ Galadriel_II_OBJ.chapter_description.append("The masked man splatters Galadriel's face with cum for the second time today. He then chooses to reveal his identity and takes his mask off.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel recognizes the man as her father - King Methis. Only now he realizes that the pregnant whore he fucked for hours is his daughter.")
-    # Only now he realizes that the pregnant whore he fucked for hours is his daughter.
-    $ Galadriel_II_OBJ.chapter_description.append("The man embraces his speechless child. Galadriel's eyes have a vacant look in them as her father's semen drips down her face...")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel screams in terror. To her surprise she finds herself back in the royal residence and in her own bed.")
-    $ Galadriel_II_OBJ.chapter_description.append("It takes the elven princess several minutes to realize that she was never pregnant. The entire adventure was nothing but a dream.")
-    $ Galadriel_II_OBJ.chapter_description.append("Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.")
-    $ Galadriel_II_OBJ.chapter_description.append("{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}")
-    
-    
-    
-    $ Armchairs_OBJ.chapter_description = []
-    $ Armchairs_OBJ.chapter_description.append("A family of noble northmen is introduced into the story.")
-    $ Armchairs_OBJ.chapter_description.append("The royal family and the king are introduced into the story.")
-    $ Armchairs_OBJ.chapter_description.append("Another family is introduced into the story.")
-    $ Armchairs_OBJ.chapter_description.append("Some incest action between a brother and his sister, the queen, is taking place.")
-    $ Armchairs_OBJ.chapter_description.append("Attempted child murder takes place. The kid barely survives and is now in a coma.")
-    $ Armchairs_OBJ.chapter_description.append("Some more characters are introduced into the story.")
-    $ Armchairs_OBJ.chapter_description.append("Some characters hatch an evil scheme against some other characters.")
-    $ Armchairs_OBJ.chapter_description.append("The king gets poisoned and dies. Some more brother on sister incest takes place.")
-    $ Armchairs_OBJ.chapter_description.append("A certain character you've been especially rooting for gets executed.")
-    $ Armchairs_OBJ.chapter_description.append("Some new characters are introduced into the story.")
-    $ Armchairs_OBJ.chapter_description.append("Some female characters get raped and then killed brutally.")
-    $ Armchairs_OBJ.chapter_description.append("Some more members of the noble family of northmen find their untimely demise.")
-    $ Armchairs_OBJ.chapter_description.append("Some more women get raped. Some of them manage to survive. (Surely only to get raped some more later).") 
-    $ Armchairs_OBJ.chapter_description.append("The characters you hate clash in an epic battle against the characters you are rooting for.")
-    $ Armchairs_OBJ.chapter_description.append("Most of the characters you hate survive the battle. Every single character you were rooting for is dead.")
-    $ Armchairs_OBJ.chapter_description.append("Some more rapes take place, then some more murders... (You don't even care anymore...)") 
-    $ Armchairs_OBJ.chapter_description.append("A new group of characters is introduced into the story. You sort of starting to root for one of them.")
-    $ Armchairs_OBJ.chapter_description.append("The character you were rooting for falls in love with a pretty girl.")
-    $ Armchairs_OBJ.chapter_description.append("The character you were rooting for gets brutally murdered. His girl gets raped and then murdered as well.")
-    $ Armchairs_OBJ.chapter_description.append("A new race of half-frozen undead monsters is introduced into the story. To be continued...")
+    $ Galadriel_II_OBJ.chapter_description = [
+        "Galadriel has been pregnant for several months now. To the princess' own surprise her popularity grows seemingly in direct correlation to the size of her belly.",
+        "Although Galadriel maintains the appearance of an obedient whore, in truth she contemplates her escape from the brothel.",
+        "The Elven Princess-Whore knows nothing of the life outside the of walls of the brothel. But it does not affect her determination to escape.",
+        "It takes a lot of preparation and careful planning but Galadriel manages to successfully escape from the brothel.",
+        "Galadriel soon gets lost in the vast city and is forced to spend the night on the street.",
+        "Food is hard to come by on the streets. Galadriel fights a pack of stray dogs over some scraps and one of them bites her hand badly.",
+        "The Pregnant Galadriel offers her company to a couple of filthy looking homeless men in exchange for food. She spends the night with them.",
+        "Galadriel realizes that her live back in the brothel was a heaven compared to the live she's been leading for the past several days. She decides to return.",
+        "Galadriel's owner - the fat, wealthy man does not punish Galadriel for escaping. He is happy to have one of his most popular girls back.",
+        "Galadriel is, yet again, warm, clean and well fed. She is glad to be back and as popular as ever.",
+        "Galadriel keeps servicing the clients throughout the rest of her pregnancy. The baby is due any day now...",
+        "A wealthy man wearing a mask booked Galadriel for an entire day. Galadriel is wondering about the man's true identity rather lazily while pleasuring him.",
+        "The mystery man spends the entire day by having his way with Galadriel. Her engorged breasts drip milk heavily as the man fucks her.",
+        "The masked man splatters Galadriel's face with cum for the second time today. He then chooses to reveal his identity and takes his mask off.",
+        "Galadriel recognizes the man as her father - King Methis. Only now he realizes that the pregnant whore he fucked for hours is his daughter.",
+        # Only now he realizes that the pregnant whore he fucked for hours is his daughter.
+        "The man embraces his speechless child. Galadriel's eyes have a vacant look in them as her father's semen drips down her face...",
+        "Galadriel screams in terror. To her surprise she finds herself back in the royal residence and in her own bed.",
+        "It takes the elven princess several minutes to realize that she was never pregnant. The entire adventure was nothing but a dream.",
+        "Galadriel rushes to her father's chambers and embraces him. The girl is relived to have her old life \"back\". She happy agrees to marry chancellor Mofothelis.",
+        "{size=-1}Galadriel is at the altar. She is content and happy. Suddenly she notices something that fills her heart with horror. There is a scar on her hand. The mark of a dog's bite. -The End-{/size}"
+    ]
+
+    $ Armchairs_OBJ.chapter_description = [
+        "A family of noble northmen is introduced into the story.",
+        "The royal family and the king are introduced into the story.",
+        "Another family is introduced into the story.",
+        "Some incest action between a brother and his sister, the queen, is taking place.",
+        "Attempted child murder takes place. The kid barely survives and is now in a coma.",
+        "Some more characters are introduced into the story.",
+        "Some characters hatch an evil scheme against some other characters.",
+        "The king gets poisoned and dies. Some more brother on sister incest takes place.",
+        "A certain character you've been especially rooting for gets executed.",
+        "Some new characters are introduced into the story.",
+        "Some female characters get raped and then killed brutally.",
+        "Some more members of the noble family of northmen find their untimely demise.",
+        "Some more women get raped. Some of them manage to survive. (Surely only to get raped some more later,.", 
+        "The characters you hate clash in an epic battle against the characters you are rooting for.",
+        "Most of the characters you hate survive the battle. Every single character you were rooting for is dead.",
+        "Some more rapes take place, then some more murders... (You don't even care anymore...)", 
+        "A new group of characters is introduced into the story. You sort of starting to root for one of them.",
+        "The character you were rooting for falls in love with a pretty girl.",
+        "The character you were rooting for gets brutally murdered. His girl gets raped and then murdered as well.",
+        "A new race of half-frozen undead monsters is introduced into the story. To be continued..."
+    ]
     
     
     $ fiction_book_list = []
@@ -532,5 +531,3 @@ init python:
         chapter_description = []
         def getChapterDesc(self):
            return self.chapter_description[self.progress-1] #"Chapter "+str(self.progress)+": "+
-           
-           
