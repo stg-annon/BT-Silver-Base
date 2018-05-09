@@ -1527,7 +1527,7 @@ label potion_scene_8: #Hypno potion
     m "[hermione_name], I have another special potion for you today."
     call her_main("Who are you even buying these off?","body_07")
     m "A good magician never tells."
-    call her_main("Magician? You're a wizard, and this better not have any long term side effects.","body_07")
+    call her_main("Magician? You're a wizard, and this better not have any long-term side effects.","body_07")
     call her_main("I'm still coughing up fur balls every now again from that polyjuice potion.","body_07")
     m "Of course it won't, now would you kindly drink the potion."
     call her_main("...","body_12")
@@ -1556,7 +1556,7 @@ label potion_scene_8: #Hypno potion
     $ hermione_badge = "01_hp/13_characters/hermione/accessories/badges/cum_badge.png"
     $ hermione_badges = True
     call her_main("I love being covered in your cum...","body_225b")
-    m "You're breasts are incredibly sensitive to pleasure."
+    m "Your breasts are incredibly sensitive to pleasure."
     call her_main("My breasts are incredibly sensitive to pleasure......","body_225b")
     ">Hermione closes her eyes and appears to nod off."
     call her_main("......","body_84")
