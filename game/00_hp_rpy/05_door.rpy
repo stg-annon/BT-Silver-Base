@@ -59,8 +59,8 @@ label door:
                 hide screen main_menu_01
                 call screen map_screen
             else:
-                m "I would almost certainly get lost without a map"
-                m "Maybe there is one hidden somewhere in this room"
+                m "I would almost certainly get lost without a map."
+                m "Maybe there is one hidden somewhere in this room..."
                 jump day_main_menu
                 
         "{color=#858585}-Summon Hermione-{/color}" if summoning_hermione_unlocked and hermione_takes_classes or hermione_sleeping:
