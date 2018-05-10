@@ -1280,7 +1280,7 @@ label your_whore:
         hide screen bld1
         with d7
         #her "As you say, professor..."
-        her "As you say, [genie_name]..."
+        her "As you say, professor..."
         show screen bld1
         with d7
         $ s_sprite = "01_hp/13_characters/snape/main/snape_12.png"
