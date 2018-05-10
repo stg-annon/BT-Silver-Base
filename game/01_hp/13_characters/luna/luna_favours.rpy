@@ -2614,12 +2614,12 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
 
     else: ###THIRD TIME EVENT IS RUN
         if luna_sub > luna_dom :
-            m "You don't mind taking your clothes off again do you [luna_name]?"
+            m "You don't mind taking your clothes off again, do you, [luna_name]?"
             call luna_main("...", 1, 2, 4, 2) 
             call luna_main("Well... {size=-3}I {size=-4}mean {size=-2}I {size=-2}do {size=-2}mind.", 1, 3, 4, 2) 
             m "..."
             call luna_main("...", 1, 1, 4, 2) 
-            call luna_main("alright then [l_genie_name]...", 1, 2, 4, 1) 
+            call luna_main("alright then, [l_genie_name]...", 1, 2, 4, 1) 
             hide screen luna
             with d3
             $ luna_xpos = 270
@@ -2662,7 +2662,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 m "Not quite..."
                 call luna_main("(Surely he doesn't want me to take off my panties?)", 6, 2, 2, 3)
                 call luna_main("[l_genie_name] please...", 7, 1, 4, 2)
-                m "Now now [luna_name], a deal's a deal..."
+                m "Now now, [luna_name], a deal's a deal..."
                 call luna_main("...", 6, 2, 4, 3)
                 $ luna_tears = 1
                 call luna_main("At least close your eyes...", 7, 1, 4, 2)
@@ -2681,13 +2681,13 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 g9 "I only expected you to take your shirt off!"
                 call luna_main("What!", 4, 1, 2, 15)
                 call luna_main("Please! let me put them back on!", 4, 1, 4, 2)
-                ">Luna scrambles to pick her panties back up off your desk but you're too fast for her, quickly snatching them up."
-                m "Ah ah ah miss lovegood."
+                ">Luna scrambles to pick her panties back up off your desk, but you're too fast for her, quickly snatching them up."
+                m "Ah ah ah, miss lovegood."
                 call luna_main("You're so... You're so mean!", 8, 2, 4, 2)
                 m "Don't complain too much, I was hoping you'd take those off anyway."
                 call luna_main("*hmph*", 6, 1, 1, 3)
-                m "Well seeing as how we've already crossed this line, how about you take off your top anyway."
-                call luna_main("You can't be serious! I think you've seen enough [l_genie_name]!", 7, 1, 2, 3)
+                m "Well, seeing as how we've already crossed this line, how about you take off your top anyway."
+                call luna_main("You can't be serious! I think you've seen enough, [l_genie_name]!", 7, 1, 2, 3)
 
             "\"Take off your shirt.\"" if luna_sub > luna_dom:
                 $ luna_choice = 2
@@ -2725,8 +2725,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                 hide screen blkfade
                 with d3
                 m "Very nice..."
-                m "Now you're skirt."
-                call luna_main("You can't be serious! I think you've seen enough [l_genie_name]!", 7, 1, 2, 3)
+                m "Now your skirt."
+                call luna_main("You can't be serious! I think you've seen enough, [l_genie_name]!", 7, 1, 2, 3)
 
 
             "\"Please take off your shirt.\"" if luna_dom >= luna_sub:
@@ -2785,14 +2785,14 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
         if luna_choice <= 2: #luna sub choices
             if luna_sub <= 6:
                 $ luna_sub += 1
-            m "I am. And I expect you to do it now, [luna_name]."
+            m "I am, and I expect you to do it now, [luna_name]."
             call luna_main("[l_genie_name]... please...", 5, 1, 4, 2)
-            m "Hmmm, well seeing as how I'm in a generous mood how about we make another deal?"
+            m "Hmmm, well seeing as how I'm in a generous mood, how about we make another deal?"
             call luna_main("...", 7, 2, 4, 2)
             $ luna_tears = 0
             call luna_main("Really? What sort?", 7, 2, 4, 2)
             m "what's the closest school to Howgsmorts?"
-            call luna_main("?...{p}Um, probably Beauxbatons Academy of Magic [l_genie_name]...", 5, 2, 4, 2)
+            call luna_main("?...{p}Um, probably Beauxbatons Academy of Magic, [l_genie_name]...", 5, 2, 4, 2)
             m "Well, how about I send a glowing letter of recommendation to them concerning your father's magazine?"
             m "I'm sure that will probably boost sales."
             call luna_main("Really sir? You'd do that?", 4, 1, 1, 1) 
@@ -2823,8 +2823,8 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen blkfade
             with d3
             call luna_main("......", 8, 3, 4, 2)
-            g9 "looking good [luna_name]!"
-            g9 "So good in fact I think I need a closer look!"
+            g9 "looking good, [luna_name]!"
+            g9 "So good, in fact, I think I need a closer look!"
             ">You stand up and walk in front of luna, towering over her."
             hide screen bld1
             hide screen genie
@@ -2839,7 +2839,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
             hide screen blkfade
             with d5
             pause
-            m "mmmm"
+            m "mmmm..."
             call luna_main("......", 8, 2, 4, 2)
             menu:
                 "-Grab her tits!-":
@@ -2855,27 +2855,27 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     hide screen blkfade
                     call luna_main("!!!", 4, 1, 3, 3)
                     ">YOu start gently kneading her breasts."
-                    m "Mmmm that's it [luna_name]..."
+                    m "Mmmm... that's it, [luna_name]..."
                     call luna_main("{size=-5}(What is he doing?){/size}", 9, 2, 4, 2)
-                    call luna_main("[l_genie_name] you really have to stop... ", 8, 1, 4, 3)
+                    call luna_main("[l_genie_name], you really have to stop... ", 8, 1, 4, 3)
                     if daytime:
-                        m "Come on [luna_name], just a little more then you'll be off to class."
+                        m "Come on [luna_name], just a little more, then you'll be off to class."
                     else:
-                        m "Come on [luna_name], just a little more then you'll be off to bed."
+                        m "Come on [luna_name], just a little more, then you'll be off to bed."
                     $ luna_tears = 2
                     call luna_main("[l_genie_name]... no...", 9, 3, 4, 2)
                     call luna_main("(I should stop him...)", 9, 2, 4, 2)   
                     call luna_main("(before he gets too excited...)", 9, 3, 4, 2) 
-                    ">Luna pushes shoves you back."
+                    ">Luna pushes you back."
                     call luna_main("......", 9, 1, 4, 2)
-                    ">You let her go and tack a step back."
+                    ">You let her go and take a step back."
                     $ genie_chibi_xpos = 20
                     call luna_main("...", 9, 3, 4, 3)
                     m "Sorry..."
                     call luna_main("It-it's alright [l_genie_name]...", 9, 2, 4, 2)
-                    call luna_main("You just got a little over excited...", 9, 3, 4, 2)
+                    call luna_main("You just got a little over-excited...", 9, 3, 4, 2)
                     call luna_main("Just, please, try and control yourself next time...", 9, 2, 4, 1)
-                    g9 "With tits like that I'm not so sure!"
+                    g9 "With tits like that, I'm not so sure!"
                     call luna_main("...", 9, 2, 4, 2)
 
 
@@ -2905,21 +2905,21 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     m "Yes... Ah, yes, this is good..."
                     $ luna_tears = 2
                     call luna_main("sir... please... don't...", 6, 3, 4, 3)
-                    m "I said shhhh [luna_name]..."
+                    m "I said \"shhhh\", [luna_name]..."
                     call luna_main("Sir... I-I'll leave if y-you don't stop...", 6, 2, 4, 3)
-                    m "If you leave, you can say goodbye to the squibbler or whatever it's called."
+                    m "If you leave, you can say goodbye to the squibbler, or whatever it's called."
                     call luna_main("(I can't do that to daddy...)", 7, 3, 4, 3)
-                    call luna_main("Fine! I hope your happy!", 7, 1, 4, 3)
-                    call luna_main("enjoy stroking that filthy old cock while you force me stand here...", 7, 3, 4, 3)
+                    call luna_main("Fine! I hope you're happy!", 7, 1, 4, 3)
+                    call luna_main("enjoy stroking that filthy old cock while you force me to stand here...", 7, 3, 4, 3)
                     g9 "{size=-4}(mmmm... yes...){/size}"
                     g9 "Oh I am!"
                     call luna_main("*hmph*...", 7, 1, 2, 2)
                     ">Luna tosses her hair over her shoulder in frustration."
                     call luna_main("You're disgusting...", 7, 3, 3, 2)
                     ">You keep on wanking while you gaze at Luna's milky tits..."
-                    m "mmmm that's it [luna_name]..."
+                    m "mmmm... that's it, [luna_name]..."
                     $ luna_tears = 3
-                    call luna_main("*hmph*... just hurry up get it over with [l_genie_name]...", 6, 3, 4, 3)
+                    call luna_main("*hmph*... just hurry up get it over with, [l_genie_name]...", 6, 3, 4, 3)
                     call luna_main("I'm sick of looking at that... thing...", 7, 2, 4, 2)
                     m "{size=-4}ah...{/size}"
                     m "that's it slut... keep looking..."
@@ -2969,7 +2969,7 @@ label luna_favour_3: #STRIP FOR ME - Have this as one favour with three options 
                     #show screen genie_jerking_off
                     with d3
                     call luna_main("......", 7, 1, 4, 2)
-                    m "Ah... you did good [luna_name]..."
+                    m "Ah... you did good, [luna_name]..."
 
             hide screen luna
             show screen blkfade
