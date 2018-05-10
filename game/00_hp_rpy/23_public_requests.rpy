@@ -2598,7 +2598,7 @@ label hg_pr_HandjobClassmate_complete:
             with d5
             show screen blktone
             with d3
-            call her_main("I definately want them both at the same time.","body_133")
+            call her_main("I definitely want them both at the same time.","body_133")
             m "..."
             call her_main("Yeah, two huge cocks exploding massive loads of cum everywhere.","body_134")
             m "........"
@@ -2632,7 +2632,7 @@ label hg_pr_HandjobClassmate_complete:
             call her_main("One thing lead to another...","body_128")
             m "And you ended up jerking off five cocks..."
             call her_main("...yes.","body_121")
-            m "Well done, miss Garnger."
+            m "Well done, miss Granger."
             call her_main("","body_128")
     
     $ gryffindor += current_payout #55
@@ -2692,11 +2692,11 @@ label hg_pr_BlowjobClassmate: #LV.7 (Whoring = 18 - 20)
         her "I'll do it..."
         m "Go do it, then!"
         m "Report back to me after your classes."
-        call her_main("......................................................................","body_187")
-        her "......................................................................"
-        her "......................................................................"
+        call her_main("...","body_187")
+        her "....."
+        her "......."
         m "You may leave, [hermione_name]."
-        her "........."
+        her "..."
     
     else: # <================================================================================ NOT FIRST TIME
         if whoring >= 18 and whoring <= 20: # LEVEL 07 FIRST EVENT.
@@ -2900,7 +2900,7 @@ label hg_pr_BlowjobClassmate_complete:
             call her_main("Today I did something I wanted to do for such a long time now...","body_78")
             her "But never could muster up enough courage for..."
             m "Hm..?"
-            call her_main("Today I sucked off my two best friend in the entire world!","body_121")
+            call her_main("Today I sucked off my two best friends in the entire world!","body_121")
             call her_main("And it was every bit as exciting as I thought it would be.","body_124")
             call her_main("I made their cocks all sloppy with saliva...","body_123")
             her "I sucked on their balls too..."

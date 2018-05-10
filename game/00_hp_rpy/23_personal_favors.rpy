@@ -10871,7 +10871,7 @@ label hg_pf_TimeForAnal: #LV.8 (Whoring = 21 - 23)
                     call her_main("What?","body_130")
                     her "You got me a new ball dress?"
                     m "Indeed I did, but you'll have to earn it."
-                    call her_main("Of course","body_119")
+                    call her_main("Of course!","body_119")
                     call her_main("Let me go try it on!","body_188")
                     $ renpy.play('sounds/door.mp3') #Sound of a door opening.
                     call set_hermione_outfit(hg_ballDress_OBJ)
@@ -12710,7 +12710,7 @@ label hg_pf_TouchYourself: #LV.4 (Whoring = 8 - 10)
                 call her_main("[genie_name], please, it's too embarrassing...","body_199")         
                 g4 "Well now I have to hear it."
                 call her_main("OK... but you have to promise not to tell anyone!","body_189")         
-                m "Wicher's honor."
+                m "Witcher's honor."
                 call her_main("......","body_81")         
                 m "[hermione_name]..."
                 call her_main("Alright. If you must know... I'm remembering the time I corrected professor Snape about the ingredients of a Hiccoughing potion.","body_87")      

@@ -38,19 +38,19 @@ label __init_variables:
 label clothes_store:
     if outfit_ready:
         maf "here to pick up your order?"
-        m "yes"
-        maf "one moment let me go fetch it"
+        m "yes."
+        maf "one moment, let me go fetch it."
         maf "..."
-        maf "here you are"
+        maf "here you are."
         call pickup_outfit
         if clothes_intro_done == False:
-            ">You enter to see an old woman busy sewing together too pieces of long dark fabric."
+            ">You enter to see an old woman busy sewing together two pieces of long dark fabric."
             ">The woman is dressed almost entirely in pink and has a warm, approachable air to her."
             m "Hello."
-            maf "Hello Professor Dumbledore."
-            maf "What can I do for you? Would you like a new cloak or do you require some alterations to an existing item?"
-            m "Neither thank you, I'm just here to make a few enquiries."
-            maf "Of course sir, what could I help you with."
+            maf "Hello, Professor Dumbledore."
+            maf "What can I do for you? Would you like a new cloak, or do you require some alterations to an existing item?"
+            m "Neither thank you, I'm just here to make a few inquiries."
+            maf "Of course sir, what could I help you with?"
             m "Firstly, what type of items do you sell?"
             maf "Well, I'm a tailor. I make uniforms for the staff and students."
             maf "I also perform alterations to existing items. This is mainly when a student goes through a growth spurt or gets a hole in their cloak."
@@ -59,11 +59,11 @@ label clothes_store:
             m "So you're interested in making unique outfits?"
             maf "Absolutely, although I would have to order the fabrics in. I don't really have a range of colors at the moment."
             maf "What did you have in mind?"
-            m "A few things. Haven't decided on anything specific yet."
+            m "A few things. I haven't decided on anything specific yet."
             m "Well, while your making up your mind, feel free to browse the store."
             $ clothes_intro_done = True
             jump clothes_menu
-    maf "Well what can I get for you today?"
+    maf "Well, what can I get for you today?"
     jump clothes_menu
     
 label clothes_menu:
@@ -76,8 +76,8 @@ label clothes_menu:
         "-Clothing-":
             jump existing_stock
         "-Leave-":
-            m "That's all for today thank you."
-            maf "You're welcome sir. Come back any time."
+            m "That's all for today, thank you."
+            maf "You're welcome, sir. Come back any time."
             jump day_main_menu
    
 label custom_orders:
