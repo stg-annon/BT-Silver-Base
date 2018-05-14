@@ -370,73 +370,24 @@ label silver_requests:
                 jump silver_requests_root
             "-Potions-" if daytime:
                 label request_potion_menu:
-                menu:
-                    "-Cat Ears-" if "Cat Transformation Potion" in p_inv:
-                        if p_potion_names[3] in p_inv:
-                            $ p_inv.remove(p_potion_names[3])
-                            jump potion_scene_1
+                python:
+                    potion_menu = []
+                    for potion in potion_lib.getRequests():
+                        if potion_inv.has(potion):
+                            potion_menu.append(("-"+potion.effect+"-",potion))
                         else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-Ass Expansion" if "Ass Expansion Potion" in p_inv:
-                        if p_potion_names[1] in p_inv:
-                            $ p_inv.remove(p_potion_names[1])
-                            jump potion_scene_2_2
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-Breast Expansion-" if "Breast Expansion Potion" in p_inv:
-                        if p_potion_names[2] in p_inv:
-                            $ p_inv.remove(p_potion_names[2])
-                            jump potion_scene_2_1
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-Cum Addiction-" if "Cum Addiction Potion" in p_inv:
-                        if p_potion_names[0] in p_inv:
-                            $ p_inv.remove(p_potion_names[0])
-                            jump potion_scene_3
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-Transparent Clothes-" if "Transparency Potion" in p_inv:
-                        if p_potion_names[6] in p_inv:
-                            $ p_inv.remove(p_potion_names[6])
-                            jump potion_scene_4
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-luna potion-" if "Luna Transformation Potion" in p_inv:
-                        if p_potion_names[4] in p_inv:
-                            $ p_inv.remove(p_potion_names[4])
-                            jump potion_scene_6
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    "-Hypno potion-" if "Hypno Potion" in p_inv:
-                        if p_potion_names[7] in p_inv:
-                            $ p_inv.remove(p_potion_names[7])
-                            jump potion_scene_8
-                        else:
-                            m "I don't have this potion..."
-                            jump request_potion_menu
-                    #"-Clone potion-" if "Clone Potion" in p_inv:
-                    #    if p_potion_names[8] in p_inv:
-                    #        $ p_inv.remove(p_potion_names[8])
-                    #        jump potion_scene_9
-                    #    else:
-                    #        m "I don't have this potion..."
-                    #        jump request_potion_menu
-                    "-lactantium-" if "Milk Potion" in p_inv: 
-                        $ p_inv.remove("Milk Potion")
-                        jump potion_scene_11
-                    "-voluptatem-" if "voluptatem" in p_inv: 
-                        $ p_inv.remove("voluptatem")
-                        jump potion_scene_7
-                    ##"-Snek-" if whoring >= 3:
-                    ##    jump potion_scene_5
-                    "-Nevermind -":
-                        jump silver_requests
+                            pass # uncomment and remove pass to show items they player does not have greyed out
+                            #potion_menu.append(("{color=#858585}-\""+potion.effect+"\"-{/color}","missing"))
+                    potion_menu.append(("-Never mind-", "nvm"))
+                    PotionOBJ = renpy.display_menu(potion_menu)
+                if isinstance(PotionOBJ, silver_potion):
+                    $ potion_inv.remove(PotionOBJ)
+                    $ renpy.jump(PotionOBJ.start_label)
+                if PotionOBJ == "missing":
+                    m "I don't have this potion..."
+                if PotionOBJ == "nvm":
+                    pass
+                jump silver_requests
                         
             "-Never mind-":
                 jump day_time_requests

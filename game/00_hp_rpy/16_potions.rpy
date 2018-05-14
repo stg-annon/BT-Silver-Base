@@ -1,170 +1,4 @@
 label __init_variables:
-    if not hasattr(renpy.store,'p_inv'): #important!
-        $ p_inv = []
-    
-    $ p_base = ["Polyjuice Potion", "Expanding Elixir", "Moreish Mead", "Transparent Tincture", "Coloring Concoction", "Imperius Potation"] #base potion names
-    $ p_items = ["Wormwood", "Knotgrass", "Root of Aconite", "Niffler's fancy", "Cat Hair", "Luna's Hair", "Basilisk Scale"] #item names
-    
-    $ p_potion_names = []
-    $ p_potion_names.append("Cum Addiction Potion")
-    $ p_potion_names.append("Ass Expansion Potion")
-    $ p_potion_names.append("Breast Expansion Potion")
-    $ p_potion_names.append("Cat Transformation Potion")
-    $ p_potion_names.append("Luna Transformation Potion")
-    $ p_potion_names.append("Lamia Transformation Potion")
-    $ p_potion_names.append("Transparency Potion")
-    $ p_potion_names.append("Hypno Potion")
-    $ p_potion_names.append("Clone Potion")
-    
-    $ p_cum_addiction = ["Wormwood","Moreish Mead"]
-    $ p_ass_expansion = ["Knotgrass","Expanding Elixir"]
-    $ p_breast_expansion = ["Root of Aconite","Expanding Elixir"]
-    $ p_cat_transformation = ["Cat Hair","Polyjuice Potion"]
-    $ p_luna_transformation = ["Luna's Hair","Polyjuice Potion"]
-    $ p_lamia_transformation = ["Basilisk Scale","Polyjuice Potion"]
-    $ p_transparency = ["Niffler's fancy","Transparent Tincture"]
-    $ p_hypno = ["Root of Aconite","Imperius Potation"]
-    $ p_clone = ["Polyjuice Potion","Imperius Potation"]
-    
-    $ p_ingredients = [[0 for i in xrange(3)] for i in xrange(9)]
-    $ p_ingredients[0] = ["Wormwood","Moreish Mead"]
-    $ p_ingredients[1] = ["Knotgrass","Expanding Elixir"]
-    $ p_ingredients[2] = ["Root of Aconite","Expanding Elixir"]
-    $ p_ingredients[3] = ["Cat Hair","Polyjuice Potion"]
-    $ p_ingredients[4] = ["Luna's Hair","Polyjuice Potion"]
-    $ p_ingredients[5] = ["Basilisk Scale","Polyjuice Potion"]
-    $ p_ingredients[6] = ["Niffler's fancy","Transparent Tincture"]
-    $ p_ingredients[7] = ["Root of Aconite","Imperius Potation"]
-    $ p_ingredients[8] = ["Polyjuice Potion","Imperius Potation"]
-    
-    return
-
-label potion_menu:
-    menu:
-        "-craft: \"[p_potion_names[0]]\"-" if set(p_cum_addiction).issubset(set(p_inv)):
-            ">You mix the {i}[p_cum_addiction[0]]{/i} with the {i}[p_cum_addiction[1]]{/i}"
-            ">...but it's missing the most important part."
-            menu:
-                "-Cum into the Potion-":
-                    #add jerk_off here at some point
-                    ">you cum into the potion"
-                    ">You received the item: \"[p_potion_names[0]]\"."
-                    $ p_inv.remove(p_cum_addiction[0])
-                    $ p_inv.remove(p_cum_addiction[1])
-                    $ p_inv.append(p_potion_names[0])
-                    jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[0]]\"-{/color}" if not set(p_cum_addiction).issubset(set(p_inv)):
-            call p_lack_materials(0)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[1]]\"-" if set(p_ass_expansion).issubset(set(p_inv)):
-            ">You mix the {i}[p_ass_expansion[0]]{/i} with the {i}[p_ass_expansion[1]]{/i}"
-            ">You received the item: \"[p_potion_names[1]]\"."
-            $ p_inv.remove(p_ass_expansion[0])
-            $ p_inv.remove(p_ass_expansion[1])
-            $ p_inv.append(p_potion_names[1])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[1]]\"-{/color}" if not set(p_ass_expansion).issubset(set(p_inv)):
-            call p_lack_materials(1)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[2]]\"-" if set(p_breast_expansion).issubset(set(p_inv)):
-            ">You mix the {i}[p_breast_expansion[0]]{/i} with the {i}[p_breast_expansion[1]]{/i}"
-            ">You received the item: \"[p_potion_names[2]]\"."
-            $ p_inv.remove(p_breast_expansion[0])
-            $ p_inv.remove(p_breast_expansion[1])
-            $ p_inv.append(p_potion_names[2])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[2]]\"-{/color}" if not set(p_breast_expansion).issubset(set(p_inv)):
-            call p_lack_materials(2)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[3]]\"-" if set(p_cat_transformation).issubset(set(p_inv)):
-            ">You mix the {i}[p_cat_transformation[0]]{/i} with the {i}[p_cat_transformation[1]]{/i}"
-            ">You received the item: \"[p_potion_names[3]]\"."
-            $ p_inv.remove(p_cat_transformation[0])
-            $ p_inv.remove(p_cat_transformation[1])
-            $ p_inv.append(p_potion_names[3])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[3]]\"-{/color}" if not set(p_cat_transformation).issubset(set(p_inv)):
-            call p_lack_materials(3)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[4]]-" if set(p_luna_transformation).issubset(set(p_inv)):
-            ">You mix the {i}[p_luna_transformation[0]]{/i} with the {i}[p_luna_transformation[1]]{/i}"
-            ">You received the item: \"[p_potion_names[4]]\"."
-            $ p_inv.remove(p_luna_transformation[0])
-            $ p_inv.remove(p_luna_transformation[1])
-            $ p_inv.append(p_potion_names[4])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[4]]\"-{/color}" if not set(p_luna_transformation).issubset(set(p_inv)):
-            call p_lack_materials(4)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[5]]-" if set(p_lamia_transformation).issubset(set(p_inv)):
-            ">You mix the {i}[p_lamia_transformation[0]]{/i} with the {i}[p_lamia_transformation[1]]{/i}"
-            ">You received the item: \"[p_potion_names[5]]\"."
-            $ p_inv.remove(p_lamia_transformation[0])
-            $ p_inv.remove(p_lamia_transformation[1])
-            $ p_inv.append(p_potion_names[5])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[5]]\"-{/color}" if not set(p_lamia_transformation).issubset(set(p_inv)):
-            call p_lack_materials(5)
-            jump potion_menu
-        
-        "-craft: \"[p_potion_names[6]]-" if set(p_transparency).issubset(set(p_inv)):
-            ">You mix the {i}[p_transparency[0]]{/i} with the {i}[p_transparency[1]]{/i}"
-            ">You received the item: \"[p_potion_names[6]]\"."
-            $ p_inv.remove(p_transparency[0])
-            $ p_inv.remove(p_transparency[1])
-            $ p_inv.append(p_potion_names[6])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[6]]\"-{/color}" if not set(p_transparency).issubset(set(p_inv)):
-            call p_lack_materials(6)
-            jump potion_menu
-        "-craft: \"[p_potion_names[7]]-" if set(p_hypno).issubset(set(p_inv)):
-            ">You mix the {i}[p_hypno[0]]{/i} with the {i}[p_hypno[1]]{/i}"
-            ">You received the item: \"[p_potion_names[7]]\"."
-            $ p_inv.remove(p_hypno[0])
-            $ p_inv.remove(p_hypno[1])
-            $ p_inv.append(p_potion_names[7])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[7]]\"-{/color}" if not set(p_hypno).issubset(set(p_inv)):
-            call p_lack_materials(7)
-            jump potion_menu
-        "-craft: \"[p_potion_names[8]]-" if set(p_clone).issubset(set(p_inv)):
-            ">You mix the {i}[p_clone[0]]{/i} with the {i}[p_clone[1]]{/i}"
-            ">You received the item: \"[p_potion_names[8]]\"."
-            $ p_inv.remove(p_clone[0])
-            $ p_inv.remove(p_clone[1])
-            $ p_inv.append(p_potion_names[8])
-            jump potion_menu
-        "{color=#858585}-craft: \"[p_potion_names[8]]\"-{/color}" if not set(p_clone).issubset(set(p_inv)):
-            call p_lack_materials(8)
-            jump potion_menu
-        "-Never mind-":
-            jump cupboard
-        
-        # "-craft: \"[p_potion_names[POT_INDEX_HERE]]\"-" if set(POT_ARRAY_HERE).issubset(set(p_inv)):
-            # ">You mix the {i}[POT_ARRAY_HERE[0]]{/i} with the {i}[POT_ARRAY_HERE[1]]{/i}"
-            # ">You received the item: \"[p_potion_names[POT_INDEX_HERE]]\"."
-            # $ p_inv.remove(POT_ARRAY_HERE[0])
-            # $ p_inv.remove(POT_ARRAY_HERE[1])
-            # $ p_inv.append(p_potion_names[POT_INDEX_HERE])
-            # jump potion_menu
-        # "{color=#858585}-craft: \"[p_potion_names[POT_INDEX_HERE]]\"-{/color}" if not set(POT_ARRAY_HERE).issubset(set(p_inv)):
-            # call p_lack_materials(POT_INDEX_HERE)
-            # jump potion_menu
-        
-        
-label p_lack_materials(potion_id):
-    show screen blktone8
-    ">You lack the required materials to make this."
-    $ tmp_str = "You need {size=+5}{b}"+str(p_ingredients[potion_id][0])+"{/b}{/size} and {size=+5}{b}"+str(p_ingredients[potion_id][1])+"{/b}{/size} to craft this"
-    ">[tmp_str]"
-    hide screen blktone8
-    return
-    
 
     #base potions:
     # Polyjuice potion (Luna, Cat, Lamia)
@@ -195,3 +29,402 @@ label p_lack_materials(potion_id):
     # cat_hair
     # luna_hair = brush from room?
     # basilisk_scale = ?
+
+
+    # all the metadata for the objects is stored statically any information
+    # that needs to be persistent is stored in a separate known dict value
+    $ potion_lib = potion_item_library(
+        lib = [
+            potion_ingredient(
+                id = "ing_wormwood",
+                name = "Wormwood",
+                effect = "",
+                description = "Wormwood is sometimes found in the forbidden forest.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_knotgrass",
+                name = "Knotgrass",
+                effect = "",
+                description = "You can sometimes find Knotgrass by the forbidden forest.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_aconite_root",
+                name = "Root of Aconite",
+                effect = "",
+                description = "Root of Aconite can be found down by the lake.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_niffler_fancy",
+                name = "Niffler's fancy",
+                effect = "",
+                description = "Hmm... I think I heard that it's found by the lake.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_luna_hair",
+                name = "Luna's Hair",
+                effect = "",
+                description = "The hair of Luna Lovegood.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_cat_hair",
+                name = "Cat Hair",
+                effect = "",
+                description = "The hair of a common cat.",
+                picture = ""
+            ),
+            potion_ingredient(
+                id = "ing_basilisk_scale",
+                name = "Basilisk Scale",
+                effect = "",
+                description = "The scale of what appears to be a large snake.",
+                picture = ""
+            ),
+
+
+            silver_potion(
+                id = "p_transparent_tincture",
+                cost = 20,
+                whoring_rec = 3,
+                name = "Transparent Tincture",
+                effect = "",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_polyjuice_potion",
+                cost = 40,
+                whoring_rec = 5,
+                name = "Polyjuice Potion",
+                effect = "",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_expanding_elixir",
+                cost = 30,
+                whoring_rec = 8,
+                name = "Expanding Elixir",
+                effect = "",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_imperius_potation",
+                cost = 45,
+                whoring_rec = 14,
+                name = "Imperius Potation",
+                effect = "",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_moreish_mead",
+                cost = 60,
+                whoring_rec = 14,
+                name = "Moreish Mead",
+                effect = "",
+                description = ""
+            ),
+
+            silver_potion(
+                id = "p_cum_addiction",
+                ingredients = ["ing_wormwood","p_moreish_mead"],
+                name = "Cum Addiction Potion",
+                effect = "Cum Addiction",
+                start_label = "potion_scene_3",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_ass_expansion",
+                ingredients = ["ing_knotgrass","p_expanding_elixir"],
+                name = "Ass Expansion Potion",
+                effect = "Ass Expansion",
+                start_label = "potion_scene_2_2",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_breast_expansion",
+                ingredients = ["ing_aconite_root","p_expanding_elixir"],
+                name = "Breast Expansion Potion",
+                effect = "Breast Expansion",
+                start_label = "potion_scene_2_1",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_cat_transformation",
+                ingredients = ["ing_cat_hair","p_polyjuice_potion"],
+                name = "Cat Transformation Potion",
+                effect = "Cat Ears",
+                start_label = "potion_scene_1",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_luna_transformation",
+                ingredients = ["ing_luna_hair","p_polyjuice_potion"],
+                name = "Luna Transformation Potion",
+                effect = "Luna Potion",
+                start_label = "potion_scene_6",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_lamia_transformation",
+                ingredients = ["ing_basilisk_scale","p_polyjuice_potion"],
+                name = "Lamia Transformation Potion",
+                start_label = "potion_scene_5",
+                effect = "Snek",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_transparency",
+                ingredients = ["ing_niffler_fancy","p_transparent_tincture"],
+                name = "Transparency Potion",
+                effect = "Transparent Clothes",
+                start_label = "potion_scene_4",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_hypno",
+                ingredients = ["ing_aconite_root","p_imperius_potation"],
+                name = "Hypno Potion",
+                effect = "Hypno Potion",
+                start_label = "potion_scene_8",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_clone",
+                ingredients = ["p_polyjuice_potion","p_imperius_potation"],
+                name = "Clone Potion",
+                effect = "Clone Potion",
+                start_label = "potion_scene_9",
+                description = ""
+            ),
+
+
+            silver_potion(
+                id = "p_milk_potion",
+                name = "Lactantium",
+                effect = "Lactantium",
+                start_label = "potion_scene_11",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_veritaserum",
+                name = "Veritaserum",
+                effect = "",
+                description = ""
+            ),
+            silver_potion(
+                id = "p_voluptatem",
+                name = "Voluptatem",
+                effect = "Voluptatem",
+                start_label = "potion_scene_7",
+                description = ""
+            )
+        ]
+    )
+
+
+    $ potion_inv = player_potion_invintory()
+    if not hasattr(renpy.store,'p_inv'): #important!
+        $ p_inv = {} # this stores the id and quantity of items the player has persistently
+
+    return
+
+
+
+label potion_menu:
+    python:
+        potion_menu = []
+        for potion in potion_lib.getCraftable():
+            if potion_inv.canCraft(potion):
+                potion_menu.append((potion.getCraftingMenu(),potion))
+            else:
+                potion_menu.append((potion.getMissingIngMenu(),potion.ingredients))
+        potion_menu.append(("-Never mind-", "nvm"))
+        PotionOBJ = renpy.display_menu(potion_menu)
+    if PotionOBJ == "nvm":
+        jump cupboard
+    elif isinstance(PotionOBJ, silver_potion):
+        $ renpy.say( None, PotionOBJ.getMixingMsg() )
+        if PotionOBJ.id == "p_cum_addiction":
+            ">...but it's missing the most important part."
+            menu:
+                "-Cum into the Potion-":
+                    # TODO: add jerk_off here at some point
+                    ">you cum into the potion"
+        $ renpy.say(None,">You received the item: \""+PotionOBJ.name+"\".")
+        python:
+            for ingredient in PotionOBJ.ingredients:
+                potion_inv.remove(ingredient)
+        $ potion_inv.add(PotionOBJ.id)
+    else:
+        show screen blktone8
+        ">You lack the required materials to make this."
+        $ missing_items = []
+        $ tmp_txt = "You still need "
+        python:
+            for item in PotionOBJ:
+                if not potion_inv.has(item):
+                    missing_items.append(item)
+            for i in range(len(missing_items)):
+                tmp_txt += "{size=+5}{b}"+potion_lib.getName(missing_items[i])+"{/b}{/size}"
+                if len(missing_items) > 1:
+                    if i < len(missing_items)-2:
+                        tmp_txt += ", "
+                    if i == len(missing_items)-2:
+                        tmp_txt += " and "
+        $ tmp_txt += " to craft this"
+        $ renpy.say(None, tmp_txt)
+        #$ renpy.say(None,"You need {size=+5}{b}"+potion_lib.getName(PotionOBJ[0])+"{/b}{/size} and {size=+5}{b}"+potion_lib.getName(PotionOBJ[1])+"{/b}{/size} to craft this")
+        hide screen blktone8
+    jump potion_menu
+
+
+init python:
+    
+    class silver_potion_obj(object):
+        id = ""
+
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+        
+        def __repr__(self):
+            return self.id
+        
+        def __eq__(self, other):
+            if isinstance(other, self.__class__): 
+                return self.id == other.id
+            else:
+                return False
+        def __ne__(self, other):
+            return not self.__eq__(other)
+
+    class silver_potion(silver_potion_obj):
+        id = ""
+        cost = 0
+        ingredients = []
+        name = ""
+        effect = ""
+        description = ""
+        picture = ""
+        whoring_rec = 0
+        start_label = None
+
+        def getStoreMenuText(self):
+            return "-"+self.name+"- ("+self.cost+" g.)"
+        def getFailBuyRecMenu(self):
+            return "{color=#858585}-"+self.name+"- ("+self.cost+" g.){/color}"
+        def getMissingIngMenu(self):
+            return "{color=#858585}-craft: \""+self.name+"\"-{/color}"
+        def getCraftingMenu(self):
+            return "-craft: \""+self.name+"\"-"
+        def getMixingMsg(self):
+            global potion_lib
+            return ">You mix the {i}"+potion_lib.getName(self.ingredients[0])+"{/i} with the {i}"+potion_lib.getName(self.ingredients[1])+"{/i}"
+
+
+    class potion_ingredient(silver_potion_obj):
+        id = ""
+        cost = 0
+        name = ""
+        effect = ""
+        description = ""
+        picture = ""
+
+
+    class potion_item_library(object):
+        lib = []
+
+        def __init__(self, **kwargs):
+            self.__dict__.update(**kwargs)
+
+        def getName(self,id):
+            for item in self.lib:
+                if item.id == id:
+                    return item.name
+            return None
+
+        def validId(self, id):
+            for item in self.lib:
+                if item.id == id:
+                    return True
+            return False
+
+        def getIdFromName(self, name):
+            for item in self.lib:
+                if item.name == name:
+                    return item.id
+            return None
+
+        def getCraftable(self):
+            craftable = []
+            for item in self.lib:
+                if hasattr(item, 'ingredients') and len(item.ingredients) > 0:
+                    craftable.append(item)
+            return craftable
+
+        def getBuyable(self):
+            buyable = []
+            for item in self.lib:
+                if hasattr(item, 'cost') and item.cost > 0:
+                    buyable.append(item)
+            return buyable
+
+        def getRequests(self):
+            requests = []
+            for item in self.lib:
+                if hasattr(item, 'start_label') and item.start_label != None:
+                    requests.append(item)
+            return requests
+
+
+
+    class player_potion_invintory(object):
+
+        def canCraft(self, potion):
+            global p_inv
+            for ing_id in potion.ingredients:
+                if ing_id in p_inv.keys():
+                    if p_inv[ing_id] < 1:
+                        return False
+                else:
+                    return False
+            return True
+
+        def has(self, potion):
+            global p_inv
+            if isinstance(potion, silver_potion):
+                potion = potion.id
+            return potion in p_inv.keys()
+
+        def add(self, potion, quant=1):
+            global p_inv, potion_lib
+            if isinstance(potion, silver_potion):
+                potion = potion.id
+            if potion_lib.getIdFromName(potion) != None:
+                potion = potion_lib.getIdFromName(potion)
+            if potion_lib.validId(potion):
+                if potion in p_inv.keys():
+                    p_inv[potion] = p_inv[potion] + quant
+                else:
+                    p_inv[potion] = quant
+                return True
+            else:
+                return False
+
+        def extend(self, list):
+            for item in list:
+                self.add(item)
+
+        def remove(self, potion, quant=1):
+            global p_inv
+            if isinstance(potion, silver_potion):
+                potion = potion.id
+            if potion in p_inv.keys():
+                p_inv[potion] = p_inv[potion] - quant
+                if p_inv[potion] < 1:
+                    p_inv.pop(potion, None)
+                return True
+            else:
+                return False

@@ -55,7 +55,7 @@ label cupboard:
                         "-Never mind-":
                             jump possessions
                 
-                "-Potion Items-" if False:
+                "-Potion Items-" if False: # TODO: remove this menu if unneeded and replaced by a GUI
                     label possessions_potions:
                     menu:
                         "-Crafting Items-" if False:
@@ -66,19 +66,19 @@ label cupboard:
                         "-Potions-":
                             label possessions_complete_potions:
                             menu:
-                                "-Cum Addiction Potion-" if "Cum Addiction Potion" in p_inv:
+                                "-Cum Addiction Potion-" if potion_inv.has("p_cum_addiction"):
                                     jump possessions_complete_potions
-                                "-Ass Expansion Potion-" if "Ass Expansion Potion" in p_inv:
+                                "-Ass Expansion Potion-" if potion_inv.has("p_ass_expansion"):
                                     jump possessions_complete_potions
-                                "-Breast Expansion Potion-" if "Breast Expansion Potion" in p_inv:
+                                "-Breast Expansion Potion-" if potion_inv.has("p_breast_expansion"):
                                     jump possessions_complete_potions
-                                "-Cat Transformation Potion-" if "Cat Transformation Potion" in p_inv:
+                                "-Cat Transformation Potion-" if potion_inv.has("p_cat_transformation"):
                                     jump possessions_complete_potions
-                                "-Luna Transformation Potion-" if "Luna Transformation Potion" in p_inv:
+                                "-Luna Transformation Potion-" if potion_inv.has("p_luna_transformation"):
                                     jump possessions_complete_potions
-                                "-Lamia Transformation Potion-" if "Lamia Transformation Potion" in p_inv:
+                                "-Lamia Transformation Potion-" if potion_inv.has("p_lamia_transformation"):
                                     jump possessions_complete_potions
-                                "-Transparency Potion-" if "Transparency Potion" in p_inv:
+                                "-Transparency Potion-" if potion_inv.has("p_transparency"):
                                     jump possessions_complete_potions
                                 "-Never mind-":
                                     jump possessions_potions
