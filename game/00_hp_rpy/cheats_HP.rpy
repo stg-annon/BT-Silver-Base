@@ -82,7 +82,7 @@ label cheats_ht:
                 "-never mind-":
                     jump cheats_ht
         "-Add all normal potions-":
-            $ p_inv = ["Cat Transformation Potion", "Ass Expansion Potion", "Breast Expansion Potion", "Cum Addiction Potion", "Transparency Potion","Luna Transformation Potion", "Hypno Potion"] #all potions
+            $ potion_inv.extend(["p_cum_addiction","p_ass_expansion","p_breast_expansion","p_cat_transformation","p_luna_transformation","p_transparency","p_hypno"])
             ">All potions added (Does not include Snape's potions)"
             jump cheats_ht
         "-Gold (+50,000g)-":

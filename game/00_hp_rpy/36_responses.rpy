@@ -9,6 +9,9 @@ init python:
 
 
 ###MAP LOCATIONS AND RESPONSES
+# TODO: change how "random" chance works for getting items from locations or immplement a 
+# limit to searching an area b/c currenly if day_random is above a vlaue the player can get
+# as many items as they want
 label map_attic: #Label controlling what happens when you access the attic
     if not attic_open:
         ">You venture up to the attic but find that the door is locked."
@@ -42,7 +45,7 @@ label map_forest: #Label controlling what happens when you go to the forest
                 menu: 
                     "-Take the wormwood-":
                         ">You gain 1 wormwood."
-                        $ p_inv.append("Wormwood")
+                        $ potion_inv.add("ing_wormwood")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
@@ -53,7 +56,7 @@ label map_forest: #Label controlling what happens when you go to the forest
                 menu: 
                     "-Take the Knotgrass-":
                         ">You gain 1 Knotgrass."
-                        $ p_inv.append("Knotgrass")
+                        $ potion_inv.add("ing_knotgrass")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
@@ -71,7 +74,7 @@ label map_lake: #Label controlling what happens when you go to the lake
                 menu: 
                     "-Take the Niffler's fancy-":
                         ">You gain 1 Niffler's fancy."
-                        $ p_inv.append("Niffler's fancy")
+                        $ potion_inv.add("ing_niffler_fancy")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
@@ -82,7 +85,7 @@ label map_lake: #Label controlling what happens when you go to the lake
                 menu: 
                     "-Take the Root of Aconite-":
                         ">You gain 1 Root of Aconite."
-                        $ p_inv.append("Root of Aconite")
+                        $ potion_inv.add("ing_aconite_root")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
@@ -100,7 +103,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                 menu: 
                     "-Take the Fur-":
                         ">You gain 1 Cat Fur."
-                        $ p_inv.append("Cat Hair")
+                        $ potion_inv.add("ing_cat_hair")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."
@@ -111,7 +114,7 @@ label map_dorms: #Label controlling what happens when you go to the dorms
                 menu: 
                     "-Take the hair-":
                         ">You gain 1 Luna's Hair."
-                        $ p_inv.append("Luna's Hair")
+                        $ potion_inv.add("ing_luna_hair")
                     "-Leave it-":
                         pass
                 ">Finding nothing else of interest you return to your office."

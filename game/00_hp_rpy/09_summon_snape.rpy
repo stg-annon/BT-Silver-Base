@@ -33,18 +33,17 @@ label summon_snape:
             sna_[21] "I've got some potions here that normally aren't available to students."
             sna_[21] "These might help speed up the process..."
             menu:
-                "-lactantium-" if "Milk Potion" in p_inv:
-                    ">You already have a bottle of lactantium."
+                "-Lactantium-" if potion_inv.has("p_milk_potion"):
+                    ">You already have a bottle of Lactantium."
                     jump snape_ready
-
-                "-lactantium-" if "Milk Potion" not in p_inv:
+                "-Lactantium-" if not potion_inv.has("p_milk_potion"):
                     if potion_scene_11_progress < 1:
                         sna_[9] "Ah yes, a unique concoction of mine. I have a bottle on hand at all times."
                         sna_[13] "Just in case..."
                         sna_[18] "Here, take it!"
                         ">Snape quickly pushes the milky potion into your hands."
                         ">lactantium received!"
-                        $ p_inv.append("Milk Potion")
+                        $ potion_inv.add("p_milk_potion")
                     elif potion_scene_11_progress == 1:
                         sna_[9] "Good work on getting her to take it."
                         sna_[13] "Her breasts did look magnificently full in class."
@@ -58,7 +57,7 @@ label summon_snape:
                         sna_[12] "Don't worry about it, just get her to put it on. It's enchanted so it will handle the rest..."
                         sna_[6] "but I want it back before you leave!"
                         sna_[20] "I spent a fortune on the self cleaning model..."
-                        $ p_inv.append("Milk Potion")
+                        $ potion_inv.add("p_milk_potion")
                     else:
                         sna_[13] "Mmmm, I wish I could be there to see you milk her..."
                         m "..."
@@ -121,19 +120,26 @@ label summon_snape:
                                 $ potion_version = 3
                         ">Snape quickly pushes the milky potion into your hands."
                         ">lactantium received!"
-                        $ p_inv.append("Milk Potion")
+                        $ potion_inv.add("p_milk_potion")
                     jump snape_ready
-                "-Veritaserum-" if "Veritaserum" not in p_inv:
+                
+                "-Veritaserum-" if potion_inv.has("p_veritaserum"):
+                    ">You already have a bottle of Veritaserum."
+                    jump snape_ready
+                "-Veritaserum-" if potion_inv.has("p_veritaserum"):
                     sna_[1] "Truth potion."
                     sna_[1] "This is dangerous stuff Genie..."
                     sna_[21] "Use it to make anyone tell the truth."
                     sna_[8] "Just not me!"
                     ">Snape hands you the tiny vial filled with a strange gold liquid."
                     ">Veritaserum received!"
-                    $ p_inv.append("Veritaserum")
+                    $ potion_inv.add("p_veritaserum")
                     jump snape_ready
 
-                "-voluptatem-" if "voluptatem" not in p_inv:
+                "-Voluptatem-" if potion_inv.has("p_voluptatem"):
+                    ">You already a bottle of Voluptatem."
+                    jump snape_ready
+                "-Voluptatem-" if not potion_inv.has("p_voluptatem"):
                     m "Volupwhatem?"
                     sna_[1] "This is actually an experimental potion of mine..."
                     sna_[7] "I'm not sure if this is ready for testing on humans yet."
@@ -166,12 +172,9 @@ label summon_snape:
 
                     ">Snape hands you the small bottle filled with a swirling pink and purple liquid."
                     ">voluptatem received!"
-                    $ p_inv.append("voluptatem")
+                    $ potion_inv.add("p_voluptatem")
                     jump snape_ready
 
-                "-voluptatem-" if "voluptatem" in p_inv:
-                    ">You already a bottle of voluptatem."
-                    jump snape_ready
 
                 "\"Never mind.\"":
                     jump snape_ready
