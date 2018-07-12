@@ -75,8 +75,8 @@ label cheats_ht:
                     jump cheats_ht_books
                 "-All Books-" if day >= 16:
                     python:
-                        for i in book_list:
-                            i.purchased = True
+                        for book in Books_OBJ.get_all():
+                            book.purchased = True
                     "Obtained All Books."
                     jump cheats_ht_books
                 "-never mind-":

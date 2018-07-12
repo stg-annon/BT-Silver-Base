@@ -209,49 +209,35 @@ label shop_books:
     menu:
         "-Educational Books-":
             label education_menu:
-                python:
-                    edu_menu = []
-                    edu_list = []
-                    edu_list.extend(speed_read_books)
-                    edu_list.extend(speed_write_books)
-                    for i in edu_list:
-                        if i.purchased:
-                            edu_menu.append((i.getMenuTextPurchased(),i))
-                        else:
-                            edu_menu.append((i.getStoreMenuText(),i))
-                    edu_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(edu_menu)
-                if result == "nvm":
-                    jump shop_book_menu
-                elif result.purchased:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump education_menu
-                else:
-                    call purchase_book(result)
+            $ books_menu_list = Books_OBJ.get_edu()
         "-Fiction books-":
             twi "These books are mostly light erotica..." 
             ger "Some of the girls insisted that I order them in."
             label fiction_menu:
-                python:
-                    fic_menu = []
-                    for i in fiction_book_list:
-                        if i.purchased:
-                            fic_menu.append((i.getMenuTextPurchased(),i))
-                        else:
-                            fic_menu.append((i.getStoreMenuText(),i))
-                    fic_menu.append(("-Never mind-", "nvm"))
-                    result = renpy.display_menu(fic_menu)
-                if result == "nvm":
-                    jump shop_book_menu
-                elif result.purchased:
-                    call do_have_book #Message that says that you already bought this book.
-                    jump fiction_menu
-                else:
-                    call purchase_book(result)
+            $ books_menu_list = Books_OBJ.get_fic()
         "-Never mind-":
-            call screen shop_screen
+            call screen shop_screen 
+    python:
+        books_menu = []
+        for book in books_menu_list:
+            if book.purchased:
+                books_menu.append((book.getMenuTextPurchased(),book))
+            else:
+                books_menu.append((book.getStoreMenuText(),book))
+        books_menu.append(("-Never mind-", "nvm"))
+        BookOBJ = renpy.display_menu(books_menu)
+    if BookOBJ == "nvm":
+        jump shop_book_menu
+    elif BookOBJ.purchased:
+        call do_have_book #Message that says that you already bought this book.
+    else:
+        call purchase_book
+    if BookOBJ in Books_OBJ.get_edu():
+        jump education_menu
+    if BookOBJ in Books_OBJ.get_fic():
+        jump fiction_menu
     
-label purchase_book(BookOBJ):
+label purchase_book:
     $ the_gift = BookOBJ.picture
     show screen gift
     with d3
@@ -264,22 +250,12 @@ label purchase_book(BookOBJ):
                 "Book [BookOBJ.name] has been added to your collection."
                 hide screen gift
                 with d3
-                if BookOBJ in fiction_book_list:
-                    jump fiction_menu
-                else:
-                    jump education_menu
             else:
                 call no_gold #Massage: m "I don't have enough gold".
-                if BookOBJ in fiction_book_list:
-                    jump fiction_menu
-                else:
-                    jump education_menu
+            return
         "-Never mind-":
             hide screen gift
-            if BookOBJ in fiction_book_list:
-                jump fiction_menu
-            else:
-                jump education_menu
+            return
     
     
 label shop_potion_menu:
